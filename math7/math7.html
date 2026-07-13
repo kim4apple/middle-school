@@ -452,6 +452,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 [data-theme="dark"] .level-gold { background: #2a1f0e; color: #f59e0b; }
 .diagram-module { background: var(--bg-secondary); border-radius: var(--radius); border: 1px solid var(--border); padding: 14px 18px; margin: 16px 0; }
 .diagram-module svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.quick-review { border: 2px solid #f59e0b !important; }
 </style>
 </head>
 <body>
@@ -596,7 +597,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
     <summary>💡 解题技巧</summary>
     <div class="content">
       <div class="technique-card">
-        <h3><span class="step-num">1</span> 数轴比较大小</h3>
+        <h3><span class="step-num">⚡ 1</span> 数轴比较大小</h3>
         <p class="method">利用数轴直观比较：右边的数总大于左边的数。画数轴，标出各点位置。</p>
         <p class="example"><strong>例题：</strong>比较 $-3$，$0$，$2$，$-1.5$ 的大小<br><strong>解：</strong>在数轴上从左到右排列：$-3 < -1.5 < 0 < 2$</p>
         <p class="pitfall">⚠️ 易错：负数比较时，绝对值大的反而小，如 $-5 < -3$（不要写成 $-5 > -3$）</p>
@@ -936,6 +937,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
         <div class="error-diagnosis"><div class="wrong">❌ 错误：配套问题 1:3 → 学生设 $3x+y$ 方程，写成 $x=3y$ 还是 $3x=y$ 搞反</div><div class="analysis">🔍 诊断：分清主次——1张桌子配3把椅子意为"椅子数=3×桌子数"即 $y=3x$。用文字检验：如果桌子5张→椅子15把，代入 $15=3×5$√。口诀："被配的写左边，配的写右边"。配套关系写成等式后再检查数量是否合理。</div></div>
         <p class="principle"><strong>💡 原理：</strong>配套问题的本质是"两个量的比例固定"。找到比例关系后，用一个量表示另一个量，等式：两种产品消耗总量=总资源。方案选择则利用不等式比较两种方案的成本/收益。</p>
         <div class="variant"><strong>📝 变式（方案选择）：</strong>某地有两种出租车：起步价8元/3km，超出每千米2元。方案B：每千米2.5元无起步价。问路程多少千米时两种方案费用相同？超过多少千米选A更划算？<br><strong>解：</strong>设 $x$ km。A费用：$x\leq3$ 时8元，$x>3$ 时 $8+2(x-3)=2x+2$。B费用：$2.5x$。当 $x>3$ 时，$2x+2=2.5x$，$x=4$km。$x<4$ 时 B 更划算，$x>4$ 时 A 更划算。</div>
+      <div class="technique-card"><h3><span class="step-num">5</span> ⚡ 行程问题秒杀模板</h3><p class="method"><strong>相遇问题：</strong>$s_{\text{甲}} + s_{\text{乙}} = s_{\text{总}}$，即 $v_{\text{甲}}t + v_{\text{乙}}t = s_{\text{总}}$。设时间为 $x$，列 $(v_{\text{甲}}+v_{\text{乙}})x = s_{\text{总}}$。<br><strong>追及问题：</strong>$s_{\text{快}} - s_{\text{慢}} = s_{\text{初始距离}}$，即 $v_{\text{快}}t - v_{\text{慢}}t = s_{\text{差}}$。<br><strong>顺逆流问题：</strong>$v_{\text{顺}} = v_{\text{静}} + v_{\text{水}}$，$v_{\text{逆}} = v_{\text{静}} - v_{\text{水}}$。顺流路程 = 逆流路程时：$(v_{\text{静}}+v_{\text{水}})t_{\text{顺}} = (v_{\text{静}}-v_{\text{水}})t_{\text{逆}}$。</p><p class="example"><strong>相遇例题：</strong>A、B两地相距120km，甲从A出发速度40km/h，乙从B出发速度20km/h，相向而行几小时相遇？<br><strong>解：</strong>设 $x$ 小时后相遇，$(40+20)x=120$，$x=2$。<br><br><strong>追及例题：</strong>甲先走1小时速度5km/h，乙从同地出发速度8km/h，乙几小时追上甲？<br><strong>解：</strong>甲先走 $5\times1=5$km。设 $x$ 小时后追上，$8x-5x=5$，$x=\frac{5}{3}$ 小时。<br><br><strong>顺逆流例题：</strong>轮船在静水中速度20km/h，水流速度5km/h，A到B顺流4小时，求B返回A的时间。<br><strong>解：</strong>$s=(20+5)\times4=100$km。逆流时间 $t=100/(20-5)=\frac{20}{3}$ 小时。</p><p class="principle"><strong>💡 核心：</strong>行程问题只有三个量——$s=vt$。所有题型都是在这个公式上加条件。画线段图是最有效的辅助手段。</p></div>
       </div>
     </div>
   </details>
@@ -1664,7 +1666,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
         <div class="error-diagnosis"><div class="wrong">❌ 错误：$\sqrt{16}=\pm 4$</div><div class="analysis">🔍 诊断：这是最常见错误之一。$\sqrt{16}$ 表示算术平方根，结果只能是正数→4。平方根是±4。符号不同含义不同：$\sqrt{}=$算术平方根（非负），"平方根"=±。看到根号直接写正数。</div></div>
       </div>
       <div class="technique-card">
-        <h3><span class="step-num">2</span> 无理数比较大小</h3>
+        <h3><span class="step-num">⚡ 2</span> 无理数比较大小</h3>
         <p class="method">方法一：平方比较法（正数：平方大的原数大）；方法二：估值比较法（先估算大约值）。</p>
         <p class="example"><strong>例题：</strong>比较 $\sqrt{10}$ 和 $\pi$ 的大小。<br><strong>解：</strong>$(\sqrt{10})^2=10$，$\pi^2\approx9.86$，$\therefore \sqrt{10}>\pi$</p>
         <p class="pitfall">⚠️ 易错：直接比较 $\sqrt{10}\approx3.162$ vs $\pi\approx3.142$ 可能估不准，平方法更可靠</p>
@@ -1994,6 +1996,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
         <div class="variant"><strong>📝 变式（配套问题）：</strong>某车间有28名工人，每人每天能生产螺栓12个或螺母18个。一个螺栓配两个螺母，应各安排多少人？<br><strong>解：</strong>设生产螺栓 $x$ 人，螺母 $y$ 人。$\begin{cases} x+y=28 \\ 2×12x = 18y \end{cases}$，解得 $\begin{cases} x=12 \\ y=16 \end{cases}$</div>
       </div>
       <div class="technique-card"><h3><span class="step-num">3</span> 代入法 vs 加减法 — 同一题两种解法</h3><p class="method"><strong>核心判断：</strong>有系数为 ±1 的未知数 → 优先代入法（无需运算直接表达）；两个方程的同一未知数系数成倍数或相同 → 优先加减法（消元效率最高）。</p><p class="example"><strong>例题：</strong>解方程组 $\begin{cases} y = 2x - 1 & \text{①} \\ 3x + 2y = 12 & \text{②} \end{cases}$<br><strong>解法一（代入法）：</strong>直接代①入②：$3x+2(2x-1)=12$ → $3x+4x-2=12$ → $7x=14$ → $x=2$。代回①：$y=2×2-1=3$。<br><strong>解法二（加减法）：</strong>①×2：$2y=4x-2$ → ②-①×2：$3x=14-4x$ → $7x=14$ → $x=2$。代回①：$y=3$。<br><strong>结论：</strong>此题因为有 $y=...$ 的显式表达，代入法<strong>更简</strong>——一步到位。</p><p class="principle"><strong>💡 原则：</strong>判断依据——哪个未知数系数简单、容易表达，就用它代入。哪个未知数在两个方程中系数成倍数关系，就用加减消元。不要固定用一种方法——每做一题先花 5 秒判断"哪种更快"。</p><p class="exam-hint">📋 中考怎么考：中考通常两种方法都能解，但选对方法能省 2-3 分钟。有分数系数时优先加减法（避免分数代入）。</p></div>
+      <div class="technique-card"><h3><span class="step-num">4</span> ⚡ 消元法选择决策树</h3><p class="method"><strong>5秒判断法：</strong><br>① 有未知数系数为 ±1？→ <strong>代入法</strong>（直接表达，无需运算）<br>② 同一未知数在两个方程中系数<strong>相同</strong>？→ 两式<strong>相减</strong>消元<br>③ 同一未知数在两个方程中系数<strong>互为相反数</strong>？→ 两式<strong>相加</strong>消元<br>④ 同一未知数在两个方程中系数<strong>成整数倍</strong>？→ 将倍数小的方程<strong>乘以倍数</strong>，再加减消元<br>⑤ 都不满足？→ 找系数最小公倍数，两个方程各自乘倍数后再加减消除</p><p class="example"><strong>快速判断练习：</strong><br>$\begin{cases} y=2x+1 \\ 3x+2y=9 \end{cases}$ → 系①：y系数-1，代入法 ✓<br>$\begin{cases} 2x+y=5 \\ 2x-y=1 \end{cases}$ → 系②：2x系数相同，两式相减 ✓<br>$\begin{cases} x+2y=7 \\ 3x-2y=5 \end{cases}$ → 系③：2y与-2y相反，两式相加 ✓</p><p class="pitfall">⚠️ 易错：加减消元时注意是两式相加还是相减，符号搞反会全盘皆错</p></div>
     </div>
   </details>
   <details class="exam-module">
@@ -2108,7 +2111,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
     <summary>💡 解题技巧</summary>
     <div class="content">
       <div class="technique-card">
-        <h3><span class="step-num">1</span> 乘除负数必须变号</h3>
+        <h3><span class="step-num">⚡ 1</span> 乘除负数必须变号</h3>
         <p class="method">解不等式跟解方程几乎一样，但<strong>只要乘或除以负数</strong>，不等号方向就<strong>必须改变</strong>。养成检查最后一步系数符号的习惯。</p>
         <p class="example"><strong>例题：</strong>解 $-3x \geq 12$<br><strong>解：</strong>两边同除以 $-3$（负数！），$x \leq -4$</p>
         <p class="pitfall">⚠️ 易错：$-3x \geq 12 \implies x \geq -4$（忘记变号，这是最高频错误！）</p>
@@ -2253,7 +2256,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
     <summary>💡 解题技巧</summary>
     <div class="content">
       <div class="technique-card">
-        <h3><span class="step-num">1</span> 选择合适的统计图</h3>
+        <h3><span class="step-num">⚡ 1</span> 选择合适的统计图</h3>
         <p class="method"><strong>比较数量大小</strong>→条形图；<strong>看变化趋势</strong>→折线图；<strong>看部分占整体的比重</strong>→扇形图；<strong>看数据分布</strong>→直方图。</p>
         <p class="example">描述一个学生5次考试成绩变化 → 折线图；全班各分数段人数分布 → 直方图。</p>
         <p class="pitfall">⚠️ 易错：扇形图各百分比之和必须为100%，考试常给不完整的扇形图让人补全</p>
@@ -2527,7 +2530,26 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
     </div></div>
   </details>
 
-          <span class="level-gold">🥇 黄金级</span>
+  <details class="module" style="margin-top:24px;border:2px solid #f59e0b;">
+    <summary>⏱️ 考前30分钟速查（打印版）</summary>
+    <div class="content" style="font-size:13px;line-height:2;">
+      <table style="width:100%;border-collapse:collapse;">
+        <tr style="border-bottom:1px solid var(--border);"><th style="text-align:left;padding:4px;width:80px;">章节</th><th style="text-align:left;padding:4px;">核心公式/法则</th><th style="text-align:left;padding:4px;">最高频陷阱</th></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:4px;">ch01</td><td style="padding:4px;">异号相加取大号符号</td><td style="padding:4px;color:#dc2626;">绝对值大的反而小</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:4px;">ch02</td><td style="padding:4px;">合并同类项=系数相加</td><td style="padding:4px;color:#dc2626;">3x+2y≠5xy</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:4px;">ch03</td><td style="padding:4px;">去分母→去括号→移项→合并→系数化1</td><td style="padding:4px;color:#dc2626;">移项忘变号、去分母漏乘常数</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:4px;">ch04</td><td style="padding:4px;">两点间线段最短 · 1°=60'</td><td style="padding:4px;color:#dc2626;">点C在直线AB上≠在线段AB上</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:4px;">ch05</td><td style="padding:4px;">同位F·内错Z·同旁内U</td><td style="padding:4px;color:#dc2626;">判定 vs 性质别混</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:4px;">ch06</td><td style="padding:4px;">√a²=|a| · √16=4(非±4)</td><td style="padding:4px;color:#dc2626;">√16≠±4</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:4px;">ch07</td><td style="padding:4px;">(x,y) 到x轴距离=|y|</td><td style="padding:4px;color:#dc2626;">到x轴距离和到y轴距离别搞反</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:4px;">ch08</td><td style="padding:4px;">代入法/加减法 消元</td><td style="padding:4px;color:#dc2626;">两式加减时右边忘了算</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:4px;">ch09</td><td style="padding:4px;">乘除负数→方向反转</td><td style="padding:4px;color:#dc2626;">-2x>6 → x<-3 (不是x>-3)</td></tr>
+        <tr><td style="padding:4px;">ch10</td><td style="padding:4px;">频数=频率×总数</td><td style="padding:4px;color:#dc2626;">抽样必须随机且有代表性</td></tr>
+      </table>
+      <p style="margin-top:10px;color:var(--accent);">📋 打印此页 → 考试前30分钟过一遍 → 入场</p>
+    </div>
+  </details>
+
         </div>
 
 </main>

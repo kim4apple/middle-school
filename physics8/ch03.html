@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第3章 物态变化 | 八年级物理</title>
+<link rel="stylesheet" href="css/physics.css">
+<link rel="stylesheet" href="../katex/katex.min.css">
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">八年级物理</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;" title="隐藏侧栏">✕</button>
+  </div>
+  <nav>
+    <a href="index.html">🏠 首页</a>
+    <a href="ch01.html">第1章 机械运动</a>
+    <a href="ch02.html">第2章 声现象</a>
+    <a href="ch03.html" class="active">第3章 物态变化</a>
+    <a href="ch04.html">第4章 光现象</a>
+    <a href="ch05.html">第5章 透镜及其应用</a>
+    <a href="ch06.html">第6章 质量与密度</a>
+    <a href="ch07.html">第7章 力</a>
+    <a href="ch08.html">第8章 运动和力</a>
+    <a href="ch09.html">第9章 压强</a>
+    <a href="ch10.html">第10章 浮力</a>
+    <a href="ch11.html">第11章 功和机械能</a>
+    <a href="ch12.html">第12章 简单机械</a>
+    <a href="appendix.html">附录</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button id="theme-toggle" class="theme-toggle" style="margin-top:10px;">🌙 暗色模式</button>
+</nav>
+
+<main id="content">
+
+<div class="chapter">
+  <h1>第3章 物态变化</h1>
+
+  <!-- 学习目标 -->
+  <div class="learning-goals">
+    <strong>🎯 学习目标</strong>
+    <p>① 掌握温度计的工作原理和正确使用方法，能准确读数；知道摄氏温标的标定方法</p>
+    <p>② 理解六种物态变化（熔化/凝固、汽化/液化、升华/凝华）及吸放热关系，区分晶体与非晶体</p>
+    <p>③ 会用图像法分析熔化、凝固曲线，通过斜率、平台判断晶体类型和物态变化阶段</p>
+  </div>
+
+  <!-- 前置知识关联 -->
+  <div class="knowledge-link">
+    <strong>📎 前置知识关联：</strong>
+    小学科学 · 水的三态变化（冰→水→水蒸气）、温度概念与温度计的使用；
+    生活经验 · 冰融化、水烧开、湿衣服变干、眼镜起雾、雪人消失；
+    地理知识 · 不同海拔的沸点差异、南北极的气温与物质状态。
+  </div>
+
+  <!-- 思维方法 -->
+  <div class="thought-method">
+    <strong>🔬 物理学思维方法：图像法分析物态变化</strong>
+    温度随时间的变化曲线是研究物态变化的"语言"。通过 $T$-$t$ 图像的<strong>斜率</strong>可以判断物质状态（固态升温、液态升温的斜率不同），通过<strong>平台</strong>（温度不变段）可以识别物态变化过程（熔化或凝固）。晶体图像有平台，非晶体图像没有平台——这是区分二者的关键。图像法将连续变化的温度数据转化为直观的可视化图形，是实验数据处理的基础方法。
+  </div>
+
+  <!-- 思维导图 -->
+  <details class="module" open>
+    <summary>🧠 思维导图</summary>
+    <div class="content">
+      <div class="mindmap">
+        <ul>
+          <li><span class="node-label">物态变化</span></li>
+          <li>
+            <span class="node-label">温度与温度计</span>
+            <ul>
+              <li>温度：表示物体冷热程度的物理量</li>
+              <li>摄氏温标（$^{\circ}\text{C}$）：标准大气压下冰水混合物 $0\ ^{\circ}\text{C}$，沸水 $100\ ^{\circ}\text{C}$，中间 100 等分</li>
+              <li>原理：<strong>液体的热胀冷缩</strong>（体温计：水银/酒精/煤油）</li>
+              <li>使用：量程→分度值→浸入（玻璃泡浸入被测液体，不能碰壁碰底）→稳定后读数（视线与液面相平）</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">晶体 vs 非晶体</span>
+            <ul>
+              <li>晶体：有<strong>固定熔点</strong>（如海波、冰、各种金属）</li>
+              <li>非晶体：<strong>没有</strong>固定熔点（如蜡、玻璃、沥青、松香）</li>
+              <li>$T$-$t$ 图像：晶体有水平段（平台），非晶体持续上升无平台</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">熔化与凝固</span>
+            <ul>
+              <li>熔化：固态 → 液态（<strong>吸热</strong>）</li>
+              <li>凝固：液态 → 固态（<strong>放热</strong>）</li>
+              <li>晶体熔化条件：达到熔点 + 继续吸热</li>
+              <li>晶体凝固条件：达到凝固点 + 继续放热</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">汽化与液化</span>
+            <ul>
+              <li>汽化：液态 → 气态（<strong>吸热</strong>）—— 蒸发（缓慢）和沸腾（剧烈）</li>
+              <li>沸腾条件：达到沸点 + 继续吸热；特点：温度不变（$T = T_{\text{沸}}$）</li>
+              <li>液化：气态 → 液态（<strong>放热</strong>）—— 降低温度 / 压缩体积</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">升华与凝华</span>
+            <ul>
+              <li>升华：固态 → 气态（<strong>吸热</strong>）—— 干冰升华、樟脑丸变小、雪人"消失"</li>
+              <li>凝华：气态 → 固态（<strong>放热</strong>）—— 霜、冰花、雾凇的形成</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">蒸发与沸腾的比较</span>
+            <ul>
+              <li>蒸发：液面进行、任何温度、缓慢、吸热降温</li>
+              <li>沸腾：液面和内部同时进行、达到沸点、剧烈、温度不变</li>
+              <li>影响蒸发快慢：温度、表面积、空气流速</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <!-- 核心概念 -->
+  <details class="module" open>
+    <summary>📖 核心概念</summary>
+    <div class="content">
+      <div class="card-grid">
+
+        <div class="concept-card">
+          <div class="name">温度计的原理与使用</div>
+          <p><strong>工作原理：</strong>利用液体（水银/酒精/煤油）的<strong>热胀冷缩</strong>性质。</p>
+          <p><strong>使用步骤：</strong>一看量程和分度值 → 二浸（玻璃泡浸入被测液体，壁底都不碰）→ 三稳（示数稳定后读）→ 四平（视线与液面相平）。</p>
+          <p><strong>体温计：</strong>量程 $35\sim42\ ^{\circ}\text{C}$，分度值 $0.1\ ^{\circ}\text{C}$，有缩口（可离开人体读数），用前需甩。</p>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">晶体与非晶体</div>
+          <p><strong>晶体：</strong>有规则的几何外形，有固定的熔点（凝固点）。如：冰、海波（硫代硫酸钠）、各种金属、食盐、石英。</p>
+          <p><strong>非晶体：</strong>没有规则的几何外形，没有固定熔点。如：蜡、玻璃、沥青、松香、橡胶、塑料。</p>
+          <p>本质区别：晶体分子（原子）排列有规则，非晶体分子排列无规则。</p>
+          <p>$T$-$t$ 图像特征：晶体熔化图有<strong>水平段（平台）</strong>，非晶体的温度持续上升。</p>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">熔化与凝固</div>
+          <p><strong>熔化：</strong>固态 → 液态，<strong>吸热</strong>。晶体熔化时温度不变（$T = T_{\text{熔}}$），非晶体熔化时温度持续上升。</p>
+          <p><strong>凝固：</strong>液态 → 固态，<strong>放热</strong>。晶体凝固时温度不变（$T = T_{\text{凝}}$），且 $T_{\text{凝}} = T_{\text{熔}}$。</p>
+          <p>晶体熔化条件：① 达到熔点；② 继续吸热（缺一不可）。</p>
+          <p>应用：冰袋降温（熔化吸热）、北方的"盐水冰"（加盐降低熔点）。</p>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">汽化：蒸发 vs 沸腾</div>
+          <p><strong>蒸发：</strong>只在液体<strong>表面</strong>进行的缓慢汽化，在<strong>任何温度</strong>下都能发生。蒸发吸热使液体和周围物体降温（如：出汗降温）。</p>
+          <p><strong>沸腾：</strong>在液体<strong>表面和内部同时</strong>进行的剧烈汽化，达到<strong>沸点</strong>才发生。沸腾时温度<strong>不变</strong>。</p>
+          <p>影响蒸发快慢的三因素：① 液体温度（越高越快）；② 液体表面积（越大越快）；③ 液体表面空气流速（越大越快）。</p>
+          <p>沸点与气压有关：气压越高，沸点越高（高压锅原理）。</p>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">液化</div>
+          <p><strong>液化：</strong>气态 → 液态，<strong>放热</strong>。液化方法有两种：（1）<strong>降低温度</strong>（常见方式，如空气中的水蒸气遇冷液化为露珠、雾）；（2）<strong>压缩体积</strong>（如液化石油气、打火机中的丁烷）。</p>
+          <p>"白气"不是水蒸气（水蒸气是无色透明的），而是水蒸气遇冷液化形成的<strong>小水滴</strong>。</p>
+          <p>液化放热：被 $100\ ^{\circ}\text{C}$ 水蒸气烫伤比被 $100\ ^{\circ}\text{C}$ 水烫伤更严重，因为水蒸气液化还要放出大量热。</p>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">升华与凝华</div>
+          <p><strong>升华：</strong>固态 → 气态，<strong>吸热</strong>。典型例子：干冰（固态 $CO_2$）升华吸热用于人工降雨、舞台烟雾效果；樟脑丸（卫生球）在衣柜中变小消失；冬天冻衣服变干。</p>
+          <p><strong>凝华：</strong>气态 → 固态，<strong>放热</strong>。典型例子：霜（不是露珠冻成的！是水蒸气直接凝华形成的）；冬天窗玻璃上形态各异的冰花；雾凇。</p>
+          <p>注意：灯泡用久了灯丝变细（钨丝升华）→ 灯泡内壁变黑（钨蒸气凝华）。</p>
+        </div>
+
+      </div>
+    </div>
+  </details>
+
+  <!-- 公式速查 -->
+  <details class="module" open>
+    <summary>📐 公式速查</summary>
+    <div class="content">
+
+      <div class="formula-card">
+        <strong>摄氏温标与温度计读数</strong>
+        <p>\[ t = \frac{b-a}{100} \times N + t_0 \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          不准确温度计的校正公式。$a$ — 冰水混合物的示数，$b$ — 沸水的示数，$N$ — 实际刻度的格数，$t_0$ — 实际 $0\ ^{\circ}\text{C}$ 对应的示数。
+        </p>
+      </div>
+
+      <div class="formula-card">
+        <strong>晶体熔化条件</strong>
+        <p>\[ T_{\text{物质}} = T_{\text{熔}} \quad\text{且}\quad Q_{\text{吸}} > 0 \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          晶体熔化需要同时满足两个条件：温度达到熔点 + 继续吸热。凝固条件类似：温度达到凝固点 + 继续放热。
+        </p>
+      </div>
+
+      <div class="formula-card">
+        <strong>沸点与气压的关系</strong>
+        <p>\[ p_{\text{气}} \uparrow \;\Rightarrow\; T_{\text{沸}} \uparrow \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          气压越高，沸点越高。标准大气压下：$T_{\text{水沸}} = 100\ ^{\circ}\text{C}$。高压锅可达 $120\ ^{\circ}\text{C}$ 以上。高原地区气压低，水约 $80\ ^{\circ}\text{C}$ 就沸腾。
+        </p>
+      </div>
+
+      <div class="formula-card">
+        <strong>常见晶体熔点 &amp; 沸点（标准大气压）</strong>
+        <p style="font-size:14px;margin-top:4px;">
+          <span style="display:inline-block;width:48%;vertical-align:top;">
+            冰 $0\ ^{\circ}\text{C}$<br>
+            海波 $48\ ^{\circ}\text{C}$<br>
+            水银 $-39\ ^{\circ}\text{C}$<br>
+            铝 $660\ ^{\circ}\text{C}$
+          </span>
+          <span style="display:inline-block;width:48%;vertical-align:top;">
+            铁 $1535\ ^{\circ}\text{C}$<br>
+            钨 $3410\ ^{\circ}\text{C}$<br>
+            水 $100\ ^{\circ}\text{C}$（沸点）<br>
+            酒精 $78\ ^{\circ}\text{C}$（沸点）
+          </span>
+        </p>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 实验探究 -->
+  <details class="module" open>
+    <summary>🔬 实验探究：固体熔化时温度的变化规律</summary>
+    <div class="content">
+      <div class="experiment-card">
+        <h3>实验：探究海波（晶体）和蜡（非晶体）的熔化规律</h3>
+
+        <div class="exp-step">
+          <span class="exp-step-num">1</span>
+          <div><strong>装置组装：</strong>将海波碾成粉末装入试管中，将试管放入盛有温水的烧杯中（<strong>水浴加热</strong>——使样品均匀受热）。插入温度计，使玻璃泡完全浸入海波粉末中，不碰试管壁和底。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">2</span>
+          <div><strong>水浴加热：</strong>用酒精灯对烧杯中的水进行加热，用搅拌器不断搅拌海波粉末，使其受热均匀。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">3</span>
+          <div><strong>数据记录：</strong>每隔 $1\ \text{min}$ 记录一次温度，观察海波的状态变化（固态 → 固液共存 → 液态）。特别注意熔化过程中的温度变化。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">4</span>
+          <div><strong>绘制图像：</strong>以时间为横轴、温度为纵轴，在坐标系内描点作图，画出海波的熔化曲线。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">5</span>
+          <div><strong>对比实验：</strong>用蜡（非晶体）代替海波，重复上述实验步骤，绘制蜡的熔化曲线。对比两条曲线的差异。</div>
+        </div>
+
+        <div class="exp-principle">
+          <strong>⚙ 实验原理：</strong>水浴法加热使固体均匀受热，温度计测量温度变化。晶体有固定的熔点，熔化过程中固液共存、温度不变；非晶体没有固定熔点，熔化过程中由硬变软，温度持续升高。
+        </div>
+
+        <div class="exp-tip">
+          <strong>💡 易错提示：</strong>① 海波要充分碾碎，以增大受热面积，使温度计玻璃泡能被完全包裹；② 水浴加热时试管内不能进水；③ 海波熔化后若继续加热，温度会继续升高——不能误以为熔化后温度不变；④ 搅拌要轻，避免温度计被搅动导致读数不稳。
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- 解题技巧 -->
+  <details class="module" open>
+    <summary>✍️ 解题技巧</summary>
+    <div class="content">
+
+      <div class="technique-card">
+        <h3><span class="step-num">1</span> 晶体熔化图像的"三步分析法"</h3>
+        <div class="method">📌 方法：一看平台、二看斜率、三看吸放热</div>
+        <div class="example">
+          <strong>例题：</strong>如图所示为某晶体熔化图像，请回答：<br>
+          （1）该晶体的熔点是多少？<br>
+          （2）第 $5\ \text{min}$ 时物质处于什么状态？<br>
+          <strong>解析：</strong>（1）图像中水平段对应的温度即熔点，$T_{\text{熔}} = 48\ ^{\circ}\text{C}$。<br>
+          （2）第 $5\ \text{min}$ 处于熔化过程中，物质为<strong>固液共存态</strong>。$\overline{AB}$ 段为固态升温，$\overline{BC}$ 段为熔化（固液共存），$\overline{CD}$ 段为液态升温。
+        </div>
+        <div class="pitfall">
+          ⚠️ 易错点：① 水平段（$T$ 不变）说明正在熔化（或凝固）——不是温度不变就是未开始熔化！② $BC$ 段虽然温度不变，但需要<strong>不断吸热</strong>（用于克服分子间作用力，改变分子排列）。③ "固液共存态"只出现在<strong>晶体</strong>熔化/凝固过程中，非晶体没有这个状态。
+        </div>
+        <div class="principle">
+          <strong>📐 原理依据：</strong>晶体有固定的熔点，熔化过程中吸收的热量全部用于破坏晶体的规则分子排列（增加分子势能），不增加分子平均动能（温度不变）。非晶体的分子排列无序，吸收热量时分子动能持续增加（温度持续上升），没有固定熔点。
+        </div>
+        <div class="exam-hint">
+          🏆 考场提示：中考必考图像题！记住"三段论"——固态升温段、熔化平台段（固液共存）、液态升温段。"平台"是晶体的独有标志。
+        </div>
+      </div>
+
+      <div class="technique-card">
+        <h3><span class="step-num">2</span> 物态变化的"吸放热"判断</h3>
+        <div class="method">📌 方法：记住六字口诀——"升吸、降放"和"两变方向"</div>
+        <div class="example">
+          <strong>口诀：</strong>"<strong>升吸</strong>"——从低能量状态升到高能量状态需吸热（固态→液态→气态）；"<strong>降放</strong>"——从高能量降到低能量状态需放热（气态→液态→固态）。<br>
+          <strong>快速判断：</strong>
+          <br>熔化（固→液）吸热 &nbsp;&nbsp; 凝固（液→固）放热
+          <br>汽化（液→气）吸热 &nbsp;&nbsp; 液化（气→液）放热
+          <br>升华（固→气）吸热 &nbsp;&nbsp; 凝华（气→固）放热
+        </div>
+        <div class="pitfall">
+          ⚠️ 易错点：① "白气"不是气体，是液化形成的小水滴（放热过程）；② 冰花（霜）是水蒸气直接凝华形成的（放热），不是由露珠冻成的；③ 灯泡内壁变黑包含了先升华（钨丝变细，吸热）后凝华（钨蒸气附着在壁上，放热）两个过程。
+        </div>
+        <div class="principle">
+          <strong>📐 原理依据：</strong>物质的内能由分子动能和分子势能组成。固态→液态→气态，分子间距增大、分子间作用力被克服、分子势能增加，需要从外界吸收能量；反之则向外界释放能量。
+        </div>
+        <div class="exam-hint">
+          🏆 考场提示：中考选择题高频——给出生活中某个现象，问属于哪种物态变化及吸放热。重点记忆：云/雾/露/"白气"→液化放热；霜/雪/冰花/雾凇→凝华放热；干冰/樟脑丸/雪人变小→升华吸热。
+        </div>
+      </div>
+
+      <div class="technique-card">
+        <h3><span class="step-num">3</span> 蒸发与沸腾的比较辨析</h3>
+        <div class="method">📌 方法：从"位置、温度、剧烈程度"三个维度对比记忆</div>
+        <div class="example">
+          <strong>对比表格：</strong><br>
+          ┌──────────┬──────────────┬──────────────┐<br>
+          │          &nbsp;&nbsp; 蒸发 &nbsp;&nbsp;    &nbsp;&nbsp; 沸腾 &nbsp;&nbsp;     │<br>
+          ├──────────┼──────────────┼──────────────┤<br>
+          │ 发生部位 │ 液体表面 &nbsp;│ 表面和内部   │<br>
+          │ 温度条件 │ 任何温度 &nbsp;│ 达到沸点 &nbsp;│<br>
+          │ 剧烈程度 │ 缓慢 &nbsp;&nbsp;│ 剧烈 &nbsp;&nbsp;│<br>
+          │ 温度变化 │ 液体降温 &nbsp;│ 保持不变 &nbsp;│<br>
+          └──────────┴──────────────┴──────────────┘
+        </div>
+        <div class="pitfall">
+          ⚠️ 易错点：① 沸腾的条件是两个（达到沸点 + 继续吸热），如停止加热或温度达不到沸点，即使满足另一条件也不能沸腾；② 水沸腾前气泡由大到小（上升过程中温度降低、水蒸气液化），沸腾时气泡由小到大（到达液面破裂）；③ 蒸发在任何温度下都能发生（包括零下的温度，如湿衣服冬天也会变干）。
+        </div>
+        <div class="principle">
+          <strong>📐 原理依据：</strong>蒸发是液体表面动能较大的分子脱离液体表面束缚的过程——温度越高、表面积越大、空气流速越快，逸出的分子就越多。沸腾是液体内部和表面同时汽化——达到沸点后，液体内部产生的气泡中的饱和蒸气压等于外界压强，气泡能上升到液面破裂。
+        </div>
+        <div class="exam-hint">
+          🏆 考场提示：中考中"水沸腾图像"是必考实验题。记住图像特点——加热段温度上升后到达沸点保持水平。另外，区分"水沸腾前"和"水沸腾时"气泡变化特征也是高频考点。
+        </div>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 中考真题 -->
+  <details class="exam-module" open>
+    <summary>📝 中考真题</summary>
+    <div class="content">
+
+      <div class="exam-q">
+        <span class="q-tag">2023 北京</span>
+        <strong>题 1</strong>
+        <div class="q-body">
+          如图是某种物质熔化时温度随时间变化的图像。根据图像判断下列说法正确的是（  ）
+          <br>A. 该物质是非晶体
+          <br>B. 该物质的熔点是 $80\ ^{\circ}\text{C}$
+          <br>C. 第 $10\ \text{min}$ 时该物质处于液态
+          <br>D. 该物质在熔化过程中温度不断升高
+        </div>
+        <div class="diagram">
+          <svg viewBox="0 0 340 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- axes -->
+            <line x1="60" y1="190" x2="300" y2="190" stroke="#333" stroke-width="1.2"/>
+            <line x1="60" y1="190" x2="60" y2="30" stroke="#333" stroke-width="1.2"/>
+            <text x="180" y="218" font-size="13" text-anchor="middle">t/min</text>
+            <text x="32" y="110" font-size="13" text-anchor="middle" transform="rotate(-90,32,110)">T/℃</text>
+            <!-- ticks on y -->
+            <line x1="60" y1="150" x2="52" y2="150" stroke="#999" stroke-width="0.8"/><text x="48" y="154" font-size="11" text-anchor="end">40</text>
+            <line x1="60" y1="110" x2="52" y2="110" stroke="#999" stroke-width="0.8"/><text x="48" y="114" font-size="11" text-anchor="end">50</text>
+            <line x1="60" y1="70" x2="52" y2="70" stroke="#999" stroke-width="0.8"/><text x="48" y="74" font-size="11" text-anchor="end">60</text>
+            <line x1="60" y1="30" x2="52" y2="30" stroke="#999" stroke-width="0.8"/><text x="48" y="34" font-size="11" text-anchor="end">70</text>
+            <text x="48" y="194" font-size="11" text-anchor="end">0</text>
+            <!-- ticks on x -->
+            <line x1="100" y1="190" x2="100" y2="196" stroke="#999" stroke-width="0.8"/><text x="100" y="207" font-size="11" text-anchor="middle">5</text>
+            <line x1="140" y1="190" x2="140" y2="196" stroke="#999" stroke-width="0.8"/><text x="140" y="207" font-size="11" text-anchor="middle">10</text>
+            <line x1="180" y1="190" x2="180" y2="196" stroke="#999" stroke-width="0.8"/><text x="180" y="207" font-size="11" text-anchor="middle">15</text>
+            <line x1="220" y1="190" x2="220" y2="196" stroke="#999" stroke-width="0.8"/><text x="220" y="207" font-size="11" text-anchor="middle">20</text>
+            <line x1="260" y1="190" x2="260" y2="196" stroke="#999" stroke-width="0.8"/><text x="260" y="207" font-size="11" text-anchor="middle">25</text>
+            <!-- temp scale: 0→190, 40→150, 50→110, 60→70, 70→30 => 10℃ = 40px -->
+            <!-- A at t=0, T=44℃ (y=190-(44-0)*4=190-176=14) wait that's off. Let me recalculate.
+                 Scale: 0℃~70℃ spans 190-30=160px, so 1℃=160/70≈2.29px. 
+                 That's weird. Let me just make it simpler: 0→190, 40→150 (40px for 40℃, so 1℃=1px) 
+                 Actually let me use: 0℃ at y=190, 40℃ at y=150, 80℃ at y=110... Let me use 1℃ = 1px.
+                 So 0℃→190, 40℃→150, 80℃→110, 120℃→70.
+                 Now: initial T=44℃: y=190-44=146
+                 Melting at 80℃: y=110
+                 Final T=110℃: y=190-110=80
+                 Time: 0→x=60, 5min→x=100, 10min→x=140, 15min→x=180, 20min→x=220, 25min→x=260
+                 Each min = 8px. -->
+            <!-- solid heating: from (60, 146) to (100, 110) ... 0~5min, temp rises from 44 to 80 -->
+            <line x1="60" y1="146" x2="100" y2="110" stroke="#2563eb" stroke-width="2.5"/>
+            <!-- A label -->
+            <text x="58" y="148" font-size="11" text-anchor="end" fill="#2563eb">A</text>
+            <!-- melting plateau: 5~15min, temp at 80℃, y=110 -->
+            <line x1="100" y1="110" x2="180" y2="110" stroke="#f59e0b" stroke-width="2.5"/>
+            <text x="108" y="104" font-size="11" fill="#f59e0b">B</text>
+            <text x="178" y="104" font-size="11" fill="#f59e0b">C</text>
+            <!-- liquid heating: 15~25min, temp rises from 80 to 110 -->
+            <line x1="180" y1="110" x2="260" y2="80" stroke="#dc2626" stroke-width="2.5"/>
+            <text x="258" y="78" font-size="11" text-anchor="end" fill="#dc2626">D</text>
+            <!-- dashed line showing melting point on y-axis -->
+            <line x1="52" y1="110" x2="100" y2="110" stroke="#999" stroke-width="0.8" stroke-dasharray="3,2"/>
+            <text x="50" y="108" font-size="11" text-anchor="end" fill="#999">80</text>
+            <!-- arrow pointing to melting plateau -->
+            <text x="125" y="130" font-size="11" fill="#16a34a">熔化（吸热）</text>
+            <line x1="140" y1="126" x2="140" y2="114" stroke="#16a34a" stroke-width="1" marker-end="url(#arrowG)"/>
+          </svg>
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong>A：图像有水平段（平台），说明该物质是晶体，错误。B：水平段对应的温度即熔点 $80\ ^{\circ}\text{C}$，正确。C：第 $10\ \text{min}$ 在熔化过程中（$BC$ 段），处于<strong>固液共存态</strong>，不是液态，错误。D：熔化过程中温度不变，错误。<br>
+          <strong>答案：</strong>B
+        </div>
+      </div>
+
+      <div class="exam-q">
+        <span class="q-tag">2022 广州</span>
+        <strong>题 2</strong>
+        <div class="q-body">
+          生活中有很多物态变化现象。以下说法正确的是（  ）
+          <br>A. 春天冰雪消融——熔化吸热
+          <br>B. 夏天湿衣服变干——液化放热
+          <br>C. 秋天清晨露珠的形成——汽化吸热
+          <br>D. 冬天窗玻璃上冰花的形成——凝固放热
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong>A：冰雪消融（固态→液态）属于熔化，吸热，正确。B：湿衣服变干（液态→气态）属于汽化（蒸发），吸热，不是液化放热，错误。C：露珠（水蒸气→液态）属于液化，放热，不是汽化，错误。D：冰花（水蒸气→固态）属于凝华，放热，不是凝固，错误。<br>
+          <strong>答案：</strong>A
+        </div>
+      </div>
+
+      <div class="exam-q">
+        <span class="q-tag">2023 杭州</span>
+        <strong>题 3</strong>
+        <div class="q-body">
+          在"探究水沸腾时温度变化的特点"实验中：
+          <br>（1）如图甲所示，安装实验器材时应按照 _____（"自上而下"/"自下而上"）的顺序；
+          <br>（2）水沸腾时，继续加热但温度 _____；
+          <br>（3）实验测得水的沸点低于 $100\ ^{\circ}\text{C}$，最可能的原因是 _____。
+        </div>
+        <div class="diagram">
+          <svg viewBox="0 0 330 200" xmlns="http://www.w3.org/2000/svg">
+            <!-- tripod -->
+            <line x1="80" y1="175" x2="80" y2="140" stroke="#6b7280" stroke-width="2"/>
+            <line x1="180" y1="175" x2="180" y2="140" stroke="#6b7280" stroke-width="2"/>
+            <line x1="70" y1="175" x2="190" y2="175" stroke="#6b7280" stroke-width="2"/>
+            <!-- asbestos net -->
+            <rect x="75" y="138" width="110" height="5" fill="#a8a29e" stroke="#78716c" stroke-width="0.8" rx="1"/>
+            <!-- beaker -->
+            <rect x="85" y="70" width="90" height="70" fill="none" stroke="#333" stroke-width="1.5" rx="3"/>
+            <!-- water -->
+            <rect x="89" y="100" width="82" height="38" fill="#93c5fd" opacity="0.5" rx="2"/>
+            <text x="130" y="122" font-size="11" text-anchor="middle" fill="#1e40af">水</text>
+            <!-- bubbles in pre-boiling: small -->
+            <circle cx="110" cy="108" r="3" fill="none" stroke="#60a5fa" stroke-width="1"/>
+            <circle cx="140" cy="112" r="4" fill="none" stroke="#60a5fa" stroke-width="1"/>
+            <!-- thermometer -->
+            <rect x="120" y="30" width="4" height="90" fill="#dc2626" rx="2"/>
+            <rect x="118" y="20" width="8" height="15" fill="#fca5a5" rx="2"/>
+            <line x1="114" y1="35" x2="132" y2="35" stroke="#333" stroke-width="0.8"/>
+            <line x1="114" y1="65" x2="132" y2="65" stroke="#333" stroke-width="0.8"/>
+            <text x="134" y="38" font-size="9" fill="#333">90</text>
+            <text x="134" y="68" font-size="9" fill="#333">100</text>
+            <!-- thermometer reading near 98 -->
+            <line x1="124" y1="55" x2="134" y2="55" stroke="#2563eb" stroke-width="1.2"/>
+            <text x="136" y="58" font-size="9" fill="#2563eb">98</text>
+            <!-- alcohol lamp -->
+            <ellipse cx="130" cy="182" rx="25" ry="8" fill="#fbbf24" stroke="#d97706" stroke-width="1.2"/>
+            <rect x="120" y="165" width="20" height="17" fill="#d4a574" stroke="#8b6914" stroke-width="1"/>
+            <!-- flame -->
+            <path d="M 122 165 Q 130 148 138 165" fill="#f97316" stroke="#ea580c" stroke-width="0.8"/>
+            <path d="M 126 165 Q 130 155 134 165" fill="#fef08a"/>
+            <!-- label -->
+            <text x="130" y="196" font-size="10" text-anchor="middle" fill="#666">酒精灯</text>
+          </svg>
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong>（1）安装实验器材应按照 <strong>自下而上</strong> 的顺序——先固定酒精灯和石棉网的高度，再放置烧杯和温度计，这样便于调节。如果先装温度计，后调整酒精灯高度就很麻烦。<br>
+          （2）水沸腾后，继续加热但温度 <strong>保持不变</strong>（等于沸点）。<br>
+          （3）沸点低于 $100\ ^{\circ}\text{C}$，最可能的原因是 <strong>当地气压低于标准大气压</strong>（如高原地区）。<br>
+          <strong>答案：</strong>（1）自下而上（2）保持不变（3）气压低于标准大气压
+        </div>
+      </div>
+
+      <div class="exam-q">
+        <span class="q-tag">2022 上海</span>
+        <strong>题 4</strong>
+        <div class="q-body">
+          已知在标准大气压下，酒精的熔点为 $-117\ ^{\circ}\text{C}$、沸点为 $78\ ^{\circ}\text{C}$；水银的熔点为 $-39\ ^{\circ}\text{C}$、沸点为 $357\ ^{\circ}\text{C}$。某地最低气温可达 $-90\ ^{\circ}\text{C}$，最高气温约 $40\ ^{\circ}\text{C}$；用来测量当地气温的温度计内应装 _____（酒精/水银）作为测温液体，理由是 _____。如果要测量沸水的温度（标准大气压下 $100\ ^{\circ}\text{C}$），则应选用 _____ 温度计。
+        </div>
+        <div class="diagram">
+          <svg viewBox="0 0 140 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- thermometer tube -->
+            <rect x="55" y="15" width="20" height="170" rx="10" fill="none" stroke="#333" stroke-width="1.5"/>
+            <!-- bulb -->
+            <circle cx="65" cy="195" r="15" fill="none" stroke="#333" stroke-width="1.5"/>
+            <!-- liquid (mercury or alcohol) -->
+            <rect x="60" y="60" width="10" height="135" rx="5" fill="#dc2626"/>
+            <circle cx="65" cy="195" r="11" fill="#dc2626"/>
+            <!-- scale marks -->
+            <!-- 0℃ -->
+            <line x1="75" y1="175" x2="88" y2="175" stroke="#333" stroke-width="1"/>
+            <text x="92" y="179" font-size="10">0</text>
+            <!-- 10℃ -->
+            <line x1="75" y1="155" x2="88" y2="155" stroke="#333" stroke-width="1"/>
+            <text x="92" y="159" font-size="10">10</text>
+            <!-- 20℃ -->
+            <line x1="75" y1="135" x2="88" y2="135" stroke="#333" stroke-width="1"/>
+            <text x="92" y="139" font-size="10">20</text>
+            <!-- 30℃ -->
+            <line x1="75" y1="115" x2="88" y2="115" stroke="#333" stroke-width="1"/>
+            <text x="92" y="119" font-size="10">30</text>
+            <!-- 40℃ -->
+            <line x1="75" y1="95" x2="88" y2="95" stroke="#333" stroke-width="1"/>
+            <text x="92" y="99" font-size="10">40</text>
+            <!-- 50℃ -->
+            <line x1="75" y1="75" x2="88" y2="75" stroke="#333" stroke-width="1"/>
+            <text x="92" y="79" font-size="10">50</text>
+            <!-- small ticks at 5℃ intervals -->
+            <line x1="75" y1="165" x2="82" y2="165" stroke="#999" stroke-width="0.7"/>
+            <line x1="75" y1="145" x2="82" y2="145" stroke="#999" stroke-width="0.7"/>
+            <line x1="75" y1="125" x2="82" y2="125" stroke="#999" stroke-width="0.7"/>
+            <line x1="75" y1="105" x2="82" y2="105" stroke="#999" stroke-width="0.7"/>
+            <line x1="75" y1="85" x2="82" y2="85" stroke="#999" stroke-width="0.7"/>
+            <!-- ℃ label top -->
+            <text x="82" y="30" font-size="12">℃</text>
+            <!-- reading indicator -->
+            <text x="10" y="95" font-size="11" fill="#2563eb">液柱在 30℃ 以下</text>
+            <line x1="42" y1="90" x2="57" y2="93" stroke="#2563eb" stroke-width="0.8"/>
+          </svg>
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong>（1）当地气温最低 $-90\ ^{\circ}\text{C}$，水银在 $-39\ ^{\circ}\text{C}$ 会凝固（凝固点为 $-39\ ^{\circ}\text{C}$），因此不能用水银温度计。酒精凝固点为 $-117\ ^{\circ}\text{C}$，在 $-90\ ^{\circ}\text{C}$ 时仍为液态，故应选用 <strong>酒精</strong> 温度计。<br>
+          （2）标准大气压下沸水温度 $100\ ^{\circ}\text{C}$，酒精的沸点只有 $78\ ^{\circ}\text{C}$（酒精会沸腾汽化），而水银的沸点为 $357\ ^{\circ}\text{C}$，所以测量沸水应选用 <strong>水银</strong> 温度计。<br>
+          <strong>答案：</strong>酒精（凝固点低）；水银（沸点高）
+        </div>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 自查清单 -->
+  <div class="checklist">
+    <h3>✅ 章节自查清单</h3>
+    <label><input type="checkbox"> 我会正确使用温度计（选→浸→稳→平），能区分体温计与普通温度计的异同</label>
+    <label><input type="checkbox"> 我能说出六种物态变化的名称和吸放热方向，辨析生活中的物态变化实例</label>
+    <label><input type="checkbox"> 我能从 $T$-$t$ 图像中识别晶体与非晶体，说出晶体的熔化和凝固特点</label>
+    <label><input type="checkbox"> 我会比较蒸发和沸腾的区别，能解释加快/减慢蒸发的三种方法</label>
+    <label><input type="checkbox"> 我能解释"白气"和"水蒸气"的区别，理解气压对沸点的影响</label>
+    <p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;">
+      <strong>🧑‍🏫 费曼挑战：</strong>用"分子运动"的观点向同桌解释：为什么同样是被烫伤，$100\ ^{\circ}\text{C}$ 的水蒸气比 $100\ ^{\circ}\text{C}$ 的水更严重？提示：水蒸气接触皮肤时发生了什么物态变化？
+    </p>
+  </div>
+
+</div>
+
+</main>
+
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/auto-render.min.js"></script>
+<script>
+(function() {
+  const toggle = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+  const saved = localStorage.getItem('physics-theme');
+  if (saved === 'dark') {
+    html.setAttribute('data-theme', 'dark');
+    toggle.textContent = '☀️ 亮色模式';
+  }
+  toggle.addEventListener('click', function() {
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    toggle.textContent = isDark ? '🌙 暗色模式' : '☀️ 亮色模式';
+    localStorage.setItem('physics-theme', isDark ? 'light' : 'dark');
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof renderMathInElement === 'function') {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ],
+        throwOnError: false
+      });
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const sidebarLinks = document.querySelectorAll('#sidebar nav a');
+    const modules = document.querySelectorAll('.module, .exam-module, .learning-goals');
+    if (modules.length === 0) return;
+    const observer = new IntersectionObserver(function(entries) {
+      let best = null;
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) best = entry.target;
+      });
+      if (best) {
+        sidebarLinks.forEach(function(link) { link.classList.remove('active'); });
+      }
+    }, { rootMargin: '-20% 0px -60% 0px' });
+    modules.forEach(function(m) { observer.observe(m); });
+  });
+  var sidebar = document.getElementById('sidebar');
+  var hideBtn = document.getElementById('sidebarHideBtn');
+  var sidebarHidden = localStorage.getItem('physics8-sidebar') === 'hidden';
+  if (sidebarHidden) sidebar.classList.add('hidden');
+  var showBtn = document.getElementById('sidebarShowBtn');
+  hideBtn.addEventListener('click', function() {
+    sidebar.classList.add('hidden');
+    localStorage.setItem('physics8-sidebar', 'hidden');
+  });
+  showBtn.addEventListener('click', function() {
+    sidebar.classList.remove('hidden');
+    localStorage.setItem('physics8-sidebar', '');
+  });
+  (function() {
+    var btn = document.getElementById('expandAllBtn');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      var allDetails = document.querySelectorAll('.module, .exam-module');
+      var allOpen = true;
+      for (var i = 0; i < allDetails.length; i++) {
+        if (!allDetails[i].hasAttribute('open')) { allOpen = false; break; }
+      }
+      for (var i = 0; i < allDetails.length; i++) {
+        if (allOpen) allDetails[i].removeAttribute('open');
+        else allDetails[i].setAttribute('open', '');
+      }
+      btn.textContent = allOpen ? '📂 展开全部章节' : '📖 收起全部章节';
+    });
+  })();
+  })();
+</script>
+
+</body>
+</html>

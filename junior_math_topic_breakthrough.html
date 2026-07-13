@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>初中数学 · 专题突破与高频模型</title>
+  <link rel="stylesheet" href="katex/katex.min.css">
+  <style>
+:root {
+  --bg: #ffffff;
+  --bg-secondary: #f8fafc;
+  --text: #1e293b;
+  --text-secondary: #64748b;
+  --accent: #4f46e5;
+  --accent-light: #eef2ff;
+  --border: #e2e8f0;
+  --shadow: 0 1px 2px rgba(0,0,0,0.06);
+  --radius: 6px;
+  --sidebar-width: 260px;
+  --g7: #4f46e5;
+  --g8: #0891b2;
+  --g9: #db2777;
+  --mixed: #7c3aed;
+  --ext: #059669;
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --bg-secondary: #1e293b;
+  --text: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --accent: #818cf8;
+  --accent-light: #1e1b4b;
+  --border: #334155;
+  --shadow: 0 1px 2px rgba(0,0,0,0.25);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  display: flex;
+}
+
+#sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border);
+  padding: 20px 14px;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+#sidebar h2 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--accent);
+}
+
+.sidebar-group { margin-bottom: 12px; }
+.sidebar-group-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0 10px 4px;
+}
+
+#sidebar nav a {
+  display: block;
+  padding: 5px 10px;
+  border-radius: 6px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 12px;
+  transition: background 0.15s, color 0.15s;
+}
+
+#sidebar nav a:hover,
+#sidebar nav a.active {
+  background: var(--accent-light);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.sidebar-actions {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.theme-toggle, .print-btn {
+  padding: 7px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 12px;
+  width: 100%;
+}
+
+#content {
+  flex: 1;
+  max-width: 920px;
+  padding: 32px 40px;
+}
+
+.cover {
+  text-align: center;
+  padding: 30px 0 24px;
+  margin-bottom: 28px;
+  border-bottom: 2px solid var(--border);
+}
+.cover h1 { font-size: 30px; margin-bottom: 8px; letter-spacing: -0.5px; }
+.cover p { color: var(--text-secondary); font-size: 14px; }
+
+.section { margin-bottom: 44px; }
+
+.section h1 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.module {
+  margin-bottom: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  page-break-inside: avoid;
+}
+
+.module summary {
+  padding: 11px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--bg-secondary);
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.module summary::-webkit-details-marker { display: none; }
+
+.module summary::before {
+  content: "▸";
+  display: inline-block;
+  font-size: 11px;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.module[open] summary::before { transform: rotate(90deg); }
+
+.module .content { padding: 14px 16px; }
+
+.problem-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow);
+  page-break-inside: avoid;
+}
+.problem-card h3 {
+  font-size: 15px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.problem-card .tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 7px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.3px;
+}
+.tag-7 { background: var(--g7); }
+.tag-8 { background: var(--g8); }
+.tag-9 { background: var(--g9); }
+.tag-mixed { background: var(--mixed); }
+.tag-ext { background: var(--ext); }
+.problem-card .target {
+  font-size: 12.5px;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 6px 10px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  border-left: 3px solid var(--accent);
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+.problem-card .method { font-weight: 600; margin-bottom: 4px; font-size: 13.5px; }
+.problem-card .example { color: var(--text-secondary); font-size: 12.5px; margin-bottom: 6px; line-height: 1.55; }
+.problem-card .pitfall {
+  font-size: 11.5px;
+  color: #dc2626;
+  background: #fef2f2;
+  padding: 5px 9px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  border-left: 3px solid #dc2626;
+  margin-bottom: 6px;
+}
+.problem-card .variation {
+  font-size: 12px;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border);
+  padding-top: 6px;
+  margin-top: 6px;
+}
+
+.formula-card {
+  background: var(--bg-secondary);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+.formula-card strong { color: var(--accent); }
+.formula-card p { margin-top: 3px; color: var(--text-secondary); font-size: 12px; }
+
+ul.plain { padding-left: 18px; margin: 6px 0; }
+ul.plain li { margin-bottom: 4px; font-size: 13px; }
+ol.plain { padding-left: 20px; margin: 6px 0; }
+ol.plain li { margin-bottom: 4px; font-size: 13px; }
+
+.signal-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  margin: 10px 0;
+}
+.signal-table th,
+.signal-table td {
+  border: 1px solid var(--border);
+  padding: 7px 9px;
+  text-align: left;
+  vertical-align: top;
+}
+.signal-table th {
+  background: var(--bg-secondary);
+  font-weight: 700;
+  color: var(--accent);
+}
+.signal-table td:first-child { font-weight: 600; white-space: nowrap; }
+
+.grade-legend {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+  font-size: 12px;
+}
+.grade-legend .item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.grade-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+@media (max-width: 768px) {
+  body { flex-direction: column; }
+  #sidebar { width: 100%; height: auto; position: relative; padding: 16px; }
+  #content { padding: 20px 16px; }
+}
+
+@media print {
+  @page { size: A4; margin: 10mm; }
+  body { background: #fff; color: #000; font-size: 9pt; line-height: 1.4; display: block; }
+  #sidebar, .theme-toggle, .print-btn, .sidebar-actions { display: none !important; }
+  #content { max-width: none; padding: 0; }
+  .cover { padding: 0 0 8px; margin-bottom: 10px; border-bottom: 1.5px solid #999; }
+  .cover h1 { font-size: 20px; }
+  .cover p { color: #333; }
+  .section { margin-bottom: 6mm; }
+  .section h1 { font-size: 13px; margin-bottom: 5px; padding-bottom: 3px; border-bottom: 1.5px solid #333; }
+  .module { box-shadow: none; border: 1px solid #999; margin-bottom: 4mm; page-break-inside: avoid; }
+  .module summary { background: #f3f4f6 !important; color: #000 !important; padding: 5px 8px; font-size: 10px; border-bottom: 1px solid #999; }
+  .module summary::before { display: none; }
+  .module .content { padding: 6px; display: block !important; }
+  details { display: block; }
+  .problem-card, .formula-card { box-shadow: none; border: 1px solid #bbb; padding: 6px; margin-bottom: 3mm; }
+  .problem-card h3 { color: #000; }
+  .tag-7, .tag-8, .tag-9, .tag-mixed, .tag-ext { border: 1px solid #000; background: #fff !important; color: #000 !important; padding: 1px 4px; }
+  .pitfall { background: #fff !important; color: #000 !important; border-left: 2px solid #000; }
+  .target { background: #fff !important; color: #000 !important; border-left: 2px solid #000; }
+  a { text-decoration: none; color: #000; }
+  .katex { font-size: 1em; }
+}
+  </style>
+</head>
+<body>
+  <nav id="sidebar">
+    <h2>初中数学专题突破</h2>
+    <div class="sidebar-group">
+      <div class="sidebar-group-title">专题导航</div>
+      <nav>
+        <a href="#topic1">专题一 · 尺规作图与几何构造</a>
+        <a href="#topic2">专题二 · 含参方程与不等式</a>
+        <a href="#topic3">专题三 · 函数与几何综合</a>
+        <a href="#topic4">专题四 · 解直角三角形应用</a>
+        <a href="#topic5">专题五 · 圆与相似综合</a>
+        <a href="#topic6">专题六 · 找规律与新定义</a>
+        <a href="#topic7">专题七 · 存在性问题</a>
+        <a href="#topic8">专题八 · 压轴题破题策略</a>
+      </nav>
+    </div>
+    <div class="sidebar-actions">
+      <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
+      <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
+    </div>
+  </nav>
+
+  <main id="content">
+    <div class="cover">
+      <h1>初中数学 · 专题突破与高频模型</h1>
+      <p>尺规作图 · 含参问题 · 函数几何综合 · 找规律 · 存在性问题 · 压轴策略 | A4 可打印版</p>
+    </div>
+
+    <div class="grade-legend">
+      <div class="item"><span class="grade-dot" style="background:var(--g7)"></span>七年级</div>
+      <div class="item"><span class="grade-dot" style="background:var(--g8)"></span>八年级</div>
+      <div class="item"><span class="grade-dot" style="background:var(--g9)"></span>九年级</div>
+      <div class="item"><span class="grade-dot" style="background:var(--mixed)"></span>综合</div>
+      <div class="item"><span class="grade-dot" style="background:var(--ext)"></span>拓展</div>
+    </div>
+
+    <!-- 专题一：尺规作图与几何构造 -->
+    <section class="section" id="topic1">
+      <h1>专题一 · 尺规作图与几何构造</h1>
+
+      <details class="module" open>
+        <summary>📐 五种基本尺规作图</summary>
+        <div class="content">
+          <div class="problem-card">
+            <h3>作一：作一条线段等于已知线段 <span class="tag-7">七</span></h3>
+            <div class="target"><strong>目标：</strong>已知线段 $a$，作线段 $AB=a$。</div>
+            <div class="method">① 画射线 $AM$；② 以 $A$ 为圆心，$a$ 为半径画弧交 $AM$ 于 $B$。</div>
+            <div class="variation"><strong>应用：</strong>作线段和、差、倍。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>作二：作一个角等于已知角 <span class="tag-7">七</span></h3>
+            <div class="target"><strong>目标：</strong>已知 $\angle AOB$，作 $\angle A'O'B'=\angle AOB$。</div>
+            <div class="method">① 以 $O$ 为圆心画弧交两边于 $C,D$；② 画射线 $O'A'$，以 $O'$ 为圆心、$OC$ 为半径画弧交于 $C'$；③ 以 $C'$ 为圆心、$CD$ 为半径画弧交前弧于 $D'$；④ 连接 $O'D'$。</div>
+            <div class="variation"><strong>原理：</strong>SSS 全等。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>作三：作已知角的平分线 <span class="tag-7">七</span></h3>
+            <div class="target"><strong>目标：</strong>已知 $\angle AOB$，作射线 $OC$ 平分它。</div>
+            <div class="method">① 以 $O$ 为圆心画弧交两边于 $M,N$；② 分别以 $M,N$ 为圆心，大于 $\frac{1}{2}MN$ 为半径画弧交于 $C$；③ 连接 $OC$。</div>
+            <div class="variation"><strong>原理：</strong>SSS 全等；角平分线上的点到角两边距离相等。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>作四：过一点作已知直线的垂线 <span class="tag-7">七</span></h3>
+            <div class="target"><strong>目标：</strong>过点 $P$ 作直线 $l$ 的垂线。</div>
+            <div class="method">① 以 $P$ 为圆心画弧交 $l$ 于 $A,B$（若 $P$ 在 $l$ 外）；② 分别以 $A,B$ 为圆心，大于 $\frac{1}{2}AB$ 画弧交于 $Q$；③ 连接 $PQ$。</div>
+            <div class="variation"><strong>应用：</strong>作三角形的高、点到直线的距离。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>作五：作已知线段的垂直平分线 <span class="tag-7">七</span></h3>
+            <div class="target"><strong>目标：</strong>已知线段 $AB$，作它的垂直平分线。</div>
+            <div class="method">① 分别以 $A,B$ 为圆心，大于 $\frac{1}{2}AB$ 为半径画弧，两弧交于 $M,N$；② 连接 $MN$。</div>
+            <div class="variation"><strong>应用：</strong>找线段中点、作等腰三角形底边高、找对称轴。</div>
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>🔧 进阶构造与综合应用</summary>
+        <div class="content">
+          <div class="problem-card">
+            <h3>构造一：过直线外一点作平行线 <span class="tag-7">七</span></h3>
+            <div class="method">过点 $P$ 作一条截线交已知直线于 $A$，作 $\angle APQ$ 等于同位角或内错角，则 $PQ \parallel$ 已知直线。</div>
+            <div class="variation"><strong>替代：</strong>可利用"同位角相等，两直线平行"构造。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>构造二：作三角形的外接圆/内切圆 <span class="tag-9">九</span></h3>
+            <div class="method"><strong>外接圆：</strong>作任意两边垂直平分线，交点为外心，到顶点距离为半径。</div>
+            <div class="method"><strong>内切圆：</strong>作任意两角平分线，交点为内心，到边的距离为半径。</div>
+            <div class="pitfall">⚠️ 外心可能在三角形外部（钝角三角形）；内心恒在内部。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>构造三：作正多边形 <span class="tag-9">九</span></h3>
+            <div class="method">正六边形：以圆上任一点为圆心、半径为半径连续画弧，将圆周六等分；正方形：作两条互相垂直的直径，连接端点。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- 专题二：含参方程与不等式 -->
+    <section class="section" id="topic2">
+      <h1>专题二 · 含参方程与不等式</h1>
+
+      <details class="module" open>
+        <summary>📊 含参一元一次方程</summary>
+        <div class="content">
+          <div class="problem-card">
+            <h3>类型一：解用参数表示 <span class="tag-7">七</span></h3>
+            <div class="method">把参数看作已知数，按常规步骤解方程，最后解中含有参数。</div>
+            <div class="example">例：解关于 $x$ 的方程 $ax+b=cx+d$。移项：$(a-c)x=d-b$。当 $a \ne c$ 时，$x=\frac{d-b}{a-c}$；当 $a=c$ 且 $d=b$ 时，无数解；当 $a=c$ 且 $d \ne b$ 时，无解。</div>
+            <div class="pitfall">⚠️ 除以含参数的系数时必须讨论是否为零。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>类型二：已知解求参数 <span class="tag-7">七</span></h3>
+            <div class="method">① 把已知解代入方程；② 解关于参数的方程。</div>
+            <div class="example">例：方程 $2x+a=5$ 的解为 $x=1$，则 $2+a=5$ ⇒ $a=3$。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>类型三：解的正负/整数要求 <span class="tag-7">七</span></h3>
+            <div class="method">先解出 $x$（用参数表示），再根据条件列不等式求参数范围。</div>
+            <div class="example">例：$3x-2a=6$ 的解为正数。解得 $x=\frac{6+2a}{3}>0$ ⇒ $a>-3$。</div>
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>📊 含参一元一次不等式（组）</summary>
+        <div class="content">
+          <div class="problem-card">
+            <h3>类型一：已知解集求参数 <span class="tag-7">七</span></h3>
+            <div class="method">先化简不等式，再与已知解集对比系数。</div>
+            <div class="example">例：不等式 $ax>3$ 的解集为 $x<\frac{3}{a}$，说明 $a<0$（两边除以负数变号）。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>类型二：不等式组有解/无解/整数解 <span class="tag-7">七</span></h3>
+            <div class="method">先分别求每个不等式解集，画数轴找公共部分，再根据条件列参数范围。</div>
+            <div class="example">例：$\begin{cases} x>a \\ x<3 \end{cases}$ 有解，则 $a<3$；若只有 3 个整数解，则 $-1\le a<0$。</div>
+            <div class="pitfall">⚠️ 端点是否取等号要单独验证，这是这类题最容易错的地方。</div>
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>📊 含参一元二次方程</summary>
+        <div class="content">
+          <div class="problem-card">
+            <h3>类型一：根的判别 <span class="tag-9">九</span></h3>
+            <div class="method">用 $\Delta=b^2-4ac$ 讨论根的情况，注意二次项系数不为 0。</div>
+            <div class="example">例：$(k-1)x^2+2x+1=0$ 有两个实根，需 $k-1\ne0$ 且 $\Delta=4-4(k-1)\ge0$ ⇒ $k\le2$ 且 $k\ne1$。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>类型二：根与系数关系求参数 <span class="tag-9">九</span></h3>
+            <div class="method">利用韦达定理 $x_1+x_2=-\frac{b}{a}$，$x_1x_2=\frac{c}{a}$，常结合 $x_1^2+x_2^2$、$\frac{1}{x_1}+\frac{1}{x_2}$ 等变形。</div>
+            <div class="example">例：$x^2-3x+k=0$ 的两根满足 $x_1^2+x_2^2=5$，则 $(x_1+x_2)^2-2x_1x_2=9-2k=5$ ⇒ $k=2$。验证 $\Delta=9-8=1>0$ 成立。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>类型三：分式方程增根求参数 <span class="tag-8">八</span></h3>
+            <div class="method">① 去分母化为整式方程；② 令最简公分母为 0 求出增根；③ 将增根代入整式方程求参数。</div>
+            <div class="example">例：$\frac{x}{x-2}-\frac{m}{2-x}=2$ 有增根。增根为 $x=2$，去分母得 $x+m=2(x-2)$，代入 $x=2$ 得 $2+m=0$ ⇒ $m=-2$。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- 专题三：函数与几何综合 -->
+    <section class="section" id="topic3">
+      <h1>专题三 · 函数与几何综合</h1>
+
+      <details class="module" open>
+        <summary>📈 一次函数与几何图形</summary>
+        <div class="content">
+          <div class="problem-card">
+            <h3>类型一：一次函数与三角形面积 <span class="tag-8">八</span></h3>
+            <div class="target"><strong>核心思路：</strong>求直线与坐标轴交点，利用割补法或公式求三角形面积。</div>
+            <div class="method">直线 $y=kx+b$ 与 $x$ 轴交于 $A\left(-\frac{b}{k},0\right)$，与 $y$ 轴交于 $B(0,b)$。$S_{\triangle AOB}=\frac{1}{2}|OA|\cdot|OB|=\frac{b^2}{2|k|}$。</div>
+            <div class="example">例：$y=-2x+4$ 与坐标轴围成三角形面积：$OA=2,OB=4$，$S=4$。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>类型二：等腰/直角三角形存在性 <span class="tag-8">八</span></h3>
+            <div class="method">设动点坐标，用两点间距离公式表示三边长，再按等腰（两边相等）或直角（勾股定理）分类讨论。</div>
+            <div class="example">例：$A(0,2),B(4,0)$，在 $x$ 轴上找 $P$ 使 $\triangle ABP$ 为等腰三角形。$AB=\sqrt{20}$，设 $P(x,0)$，分 $PA=PB$、$PA=AB$、$PB=AB$ 三种情况。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>类型三：一次函数与全等/相似 <span class="tag-8">八</span></h3>
+            <div class="method">利用 $k$ 值相等得平行，利用坐标构造"三垂直""K 字型"等全等相似模型。</div>
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>📈 反比例函数与几何图形</summary>
+        <div class="content">
+          <div class="problem-card">
+            <h3>类型一：$k$ 的几何意义综合 <span class="tag-9">九</span></h3>
+            <div class="method">双曲线上一点 $P$ 向坐标轴作垂线，$S_{\text{矩形}}=|k|$；若连接原点，$S_{\triangle}=\frac{|k|}{2}$。</div>
+            <div class="example">例：$P$ 在 $y=\frac{6}{x}$ 上，$PA\perp x$ 轴于 $A$，$PB\perp y$ 轴于 $B$，则 $S_{\text{矩形}OAPB}=6$；$S_{\triangle OPA}=3$。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>类型二：双曲线与直线交点 <span class="tag-9">九</span></h3>
+            <div class="method">联立 $y=\frac{k}{x}$ 与 $y=mx+n$，得到 $mx^2+nx-k=0$，用韦达定理求交点横坐标关系，进而求三角形面积。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>类型三：反比例函数与几何最值 <span class="tag-ext">拓展</span></h3>
+            <div class="method">常结合对称性、将军饮马模型，把折线距离转化为直线距离。</div>
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>📈 二次函数与几何图形</summary>
+        <div class="content">
+          <div class="problem-card">
+            <h3>类型一：二次函数与三角形面积 <span class="tag-9">九</span></h3>
+            <div class="method">常用"铅垂高×水平宽÷2"：过动点作铅垂线交对边于一点，三角形面积 = $\frac{1}{2}\times$ 水平宽 $\times$ 铅垂高。</div>
+            <div class="example">例：抛物线 $y=-x^2+2x+3$ 与 $x$ 轴交于 $A(-1,0),B(3,0)$，$P$ 在抛物线上，$S_{\triangle ABP}$ 最大。设 $P(x,-x^2+2x+3)$，铅垂高为 $P$ 纵坐标，$S=\frac{1}{2}\times4\times(-x^2+2x+3)$。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>类型二：特殊四边形存在性 <span class="tag-9">九</span></h3>
+            <div class="method">平行四边形：对角线中点重合（中点坐标公式）；菱形：邻边相等或对角线垂直；矩形：有一个角为直角或对角线相等。</div>
+            <div class="example">例：已知 $A,B,C$ 三点，找 $D$ 使四边形 $ABCD$ 为平行四边形。利用对角线互相平分：若 $AC$ 为对角线，则 $D=A+C-B$（坐标运算）。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>类型三：相似三角形存在性 <span class="tag-9">九</span></h3>
+            <div class="method">先确定固定三角形的三边比例和角度，再对动点三角形按对应关系分类（通常 2–4 种）。</div>
+            <div class="pitfall">⚠️ 相似三角形对应顶点不确定，必须分类讨论，避免漏解。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>类型四：二次函数与角度问题 <span class="tag-ext">拓展</span></h3>
+            <div class="method">常见转化：$\tan\theta=|k|$（直线倾斜角）；等角转化为相似或对称；特殊角（$30^\circ,45^\circ,60^\circ$）转化为三角函数值。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- 专题四：解直角三角形应用 -->
+    <section class="section" id="topic4">
+      <h1>专题四 · 解直角三角形应用</h1>
+
+      <details class="module" open>
+        <summary>📐 基本概念与测量模型</summary>
+        <div class="content">
+          <div class="problem-card">
+            <h3>仰角与俯角 <span class="tag-9">九</span></h3>
+            <div class="method">仰角：视线在水平线上方与水平线的夹角；俯角：视线在水平线下方与水平线的夹角。注意：都是与水平线的夹角。</div>
+            <div class="example">例：从地面 $A$ 看楼顶 $B$ 仰角 $30^\circ$，则 $\tan30^\circ=\frac{h}{d}$（$h$ 楼高，$d$ 水平距离）。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>坡度与坡角 <span class="tag-9">九</span></h3>
+            <div class="method">坡度 $i=\tan\alpha=\frac{h}{l}$（$\alpha$ 为坡角，$h$ 铅直高度，$l$ 水平宽度）。坡度常写成 $1:m$ 形式。</div>
+            <div class="example">例：坡度 $i=1:2$，坡角 $\alpha$ 满足 $\tan\alpha=\frac{1}{2}$。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>方位角 <span class="tag-9">九</span></h3>
+            <div class="method">以正北或正南方向为基准，描述物体方向的角。如"北偏东 $30^\circ$""南偏西 $45^\circ$"。</div>
+            <div class="example">例：$A$ 在 $B$ 北偏东 $30^\circ$ 方向 100m 处，则 $A$ 相对 $B$ 的水平位移为 $100\sin30^\circ=50$m，南北位移为 $100\cos30^\circ=50\sqrt{3}$m。</div>
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>📐 常见应用题型</summary>
+        <div class="content">
+          <div class="problem-card">
+            <h3>题型一：测量高度（底部不可达） <span class="tag-9">九</span></h3>
+            <div class="method">在距建筑物一定距离处测仰角，向前走一段再测仰角，利用两个直角三角形列方程求解。</div>
+            <div class="example">例：在 $C$ 处测楼顶 $A$ 仰角 $30^\circ$，前进 30m 到 $D$ 测仰角 $45^\circ$。设楼高 $AB=h$，则 $BD=h$，$BC=h+30$，$\tan30^\circ=\frac{h}{h+30}$，解得 $h=15(\sqrt{3}+1)$。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>题型二：航海/航行问题 <span class="tag-9">九</span></h3>
+            <div class="method">根据方位角画出示意图，通常构造三角形，用三角函数或正弦/余弦定理（初中用三角函数+勾股）求解。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>题型三：坡道/台阶改造 <span class="tag-9">九</span></h3>
+            <div class="method">抓住高度不变，改变水平长度或坡角，利用坡度公式计算。</div>
+            <div class="example">例：原坡道高 3m，坡角 $30^\circ$，水平长 $3\sqrt{3}$m；改为坡度 $1:3$，则水平长变为 9m，坡道增加 $9-3\sqrt{3}$m。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>题型四：非直角三角形化为直角三角形 <span class="tag-9">九</span></h3>
+            <div class="method">通过作高把斜三角形分成两个直角三角形，再用三角函数或勾股定理求解。</div>
+            <div class="pitfall">⚠️ 钝角三角形作高时，高可能在三角形外部，要画图判断。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- 专题五：圆与相似综合 -->
+    <section class="section" id="topic5">
+      <h1>专题五 · 圆与相似综合</h1>
+
+      <details class="module" open>
+        <summary>⭕ 圆中常见相似模型</summary>
+        <div class="content">
+          <div class="problem-card">
+            <h3>模型一：相交弦定理 <span class="tag-ext">拓展</span></h3>
+            <div class="method">圆内两条弦 $AB$、$CD$ 交于 $P$，则 $PA\cdot PB=PC\cdot PD$。可通过 $\triangle PAC \sim \triangle PDB$ 证明。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>模型二：切割线定理 <span class="tag-ext">拓展</span></h3>
+            <div class="method">从圆外一点 $P$ 引切线 $PT$ 和割线 $PAB$，则 $PT^2=PA\cdot PB$。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>模型三：圆内接四边形对角互补 <span class="tag-9">九</span></h3>
+            <div class="method">四边形 $ABCD$ 内接于圆，则 $\angle A+\angle C=180^\circ$，$\angle B+\angle D=180^\circ$；外角等于内对角。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>模型四：直径所对圆周角为直角 <span class="tag-9">九</span></h3>
+            <div class="method">$AB$ 为直径，$C$ 在圆上 ⇒ $\angle ACB=90^\circ$。常与勾股定理、相似结合。</div>
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>⭕ 圆中计算与证明策略</summary>
+        <div class="content">
+          <div class="problem-card">
+            <h3>策略一：证切线 <span class="tag-9">九</span></h3>
+            <div class="method">① 连半径，证垂直（$d=r$ 或 $\angle=90^\circ$）；② 作垂直，证等于半径。</div>
+            <div class="example">例：证 $AB$ 是圆的切线：连接 $OA$，证 $OA\perp AB$。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>策略二：圆中计算三部曲 <span class="tag-9">九</span></h3>
+            <div class="method">① 找直角三角形（半径、弦心距、半弦）；② 用勾股定理列方程；③ 结合相似或三角函数求比例。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>策略三：圆与相似综合 <span class="tag-9">九</span></h3>
+            <div class="method">同弧所对圆周角相等是找等角的重要依据；切线与弦的夹角（弦切角）等于所夹弧对的圆周角。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- 专题六：找规律与新定义 -->
+    <section class="section" id="topic6">
+      <h1>专题六 · 找规律与新定义</h1>
+
+      <details class="module" open>
+        <summary>🔍 数字与代数规律</summary>
+        <div class="content">
+          <div class="problem-card">
+            <h3>类型一：等差/等比数列 <span class="tag-7">七</span><span class="tag-8">八</span></h3>
+            <div class="method">等差：$a_n=a_1+(n-1)d$；等比：$a_n=a_1\cdot q^{n-1}$。</div>
+            <div class="example">例：$3,7,11,15,\cdots$ 是等差，$a_n=3+4(n-1)=4n-1$。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>类型二：平方/立方相关 <span class="tag-7">七</span><span class="tag-8">八</span></h3>
+            <div class="method">观察相邻项差是否为等差数列（二阶等差，常与 $n^2$ 有关）；或观察是否为 $n^2\pm1$、$n^2+n$ 等变形。</div>
+            <div class="example">例：$2,5,10,17,26,\cdots$，每项为 $n^2+1$。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>类型三：符号交替 <span class="tag-7">七</span></h3>
+            <div class="method">用 $(-1)^n$ 或 $(-1)^{n+1}$ 控制符号。</div>
+            <div class="example">例：$-1,2,-3,4,-5,\cdots$ 可写为 $(-1)^n\cdot n$。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>类型四：循环规律 <span class="tag-7">七</span></h3>
+            <div class="method">找到循环周期 $T$，用 $n$ 除以 $T$ 看余数。</div>
+            <div class="example">例：$1,-1,1,-1,\cdots$ 周期为 2；第 $n$ 项为 $(-1)^{n+1}$。</div>
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>🔍 图形规律</summary>
+        <div class="content">
+          <div class="problem-card">
+            <h3>类型一：图形计数 <span class="tag-7">七</span></h3>
+            <div class="method">观察第 $n$ 个图形中基本元素个数，常见为 $an+b$、$an^2+bn+c$ 或 $2^n$ 形式。</div>
+            <div class="example">例：摆 $n$ 个正方形所需火柴棒：第一个 4 根，每增加一个多 3 根，总数 $3n+1$。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>类型二：图形拼接与周长/面积 <span class="tag-7">七</span><span class="tag-8">八</span></h3>
+            <div class="method">分析每增加一个图形时，周长或面积的变化量是否恒定或呈等差/等比。</div>
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>📖 新定义问题</summary>
+        <div class="content">
+          <div class="problem-card">
+            <h3>解题策略 <span class="tag-ext">拓展</span></h3>
+            <div class="method"><strong>三步法：</strong>① 认真读定义，把文字语言转化为数学符号；② 套用定义，建立方程或不等式；③ 按常规方法求解，注意新定义下的特殊限制。</div>
+            <div class="example">例：定义运算 $a*b=ab+a-b$，则 $2*3=2\times3+2-3=5$。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>常见新定义类型 <span class="tag-ext">拓展</span></h3>
+            <div class="method">新运算、新概念（如"和谐点""关联数"）、新图形性质、新函数（如"折线距离"）。关键是严格按定义翻译，不要凭经验猜测。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- 专题七：存在性问题 -->
+    <section class="section" id="topic7">
+      <h1>专题七 · 存在性问题</h1>
+
+      <details class="module" open>
+        <summary>❓ 几何存在性问题</summary>
+        <div class="content">
+          <div class="problem-card">
+            <h3>类型一：等腰三角形存在性 <span class="tag-8">八</span><span class="tag-9">九</span></h3>
+            <div class="method">设动点坐标，用距离公式表示三边，分"腰=腰""腰=底""底=腰"三种情况。口诀："两圆一中垂"。</div>
+            <div class="example">例：$A(0,2),B(4,0)$，在 $x$ 轴上找 $P$ 使 $\triangle ABP$ 等腰。分别以 $A$、$B$ 为圆心 $AB$ 为半径画圆，再作 $AB$ 垂直平分线，与 $x$ 轴交点即为可能的 $P$。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>类型二：直角三角形存在性 <span class="tag-8">八</span><span class="tag-9">九</span></h3>
+            <div class="method">分三种情况讨论哪个角为直角，用勾股定理或斜率垂直关系（$k_1k_2=-1$）求解。口诀："两线一圆"。</div>
+            <div class="example">例：$A,B$ 固定，找 $P$ 使 $\triangle ABP$ 为直角三角形：分别以 $A,B$ 为直角顶点作垂线，再以 $AB$ 为直径作圆。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>类型三：平行四边形存在性 <span class="tag-8">八</span><span class="tag-9">九</span></h3>
+            <div class="method">已知三点求第四点，使四边形为平行四边形。利用对角线中点重合：若 $AC$ 为对角线，$D=A+C-B$（坐标运算）。共三种情况。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>类型四：相似三角形存在性 <span class="tag-9">九</span></h3>
+            <div class="method">先找固定三角形中的定角，再对动点三角形按对应关系分类。常见"A 字型""8 字型""一线三等角"。</div>
+            <div class="pitfall">⚠️ 对应顶点不确定时，常需分 2–4 种情况，切勿漏解。</div>
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>❓ 函数存在性问题</summary>
+        <div class="content">
+          <div class="problem-card">
+            <h3>类型一：抛物线上是否存在点使面积为定值 <span class="tag-9">九</span></h3>
+            <div class="method">设点坐标，用"铅垂高×水平宽÷2"表示面积，列方程求解。注意解的取舍。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>类型二：抛物线上是否存在点使某角为特殊角 <span class="tag-ext">拓展</span></h3>
+            <div class="method">转化为直线斜率或构造直角三角形，利用特殊角的三角函数值列方程。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>类型三：函数图象上是否存在点满足几何条件 <span class="tag-9">九</span></h3>
+            <div class="method">设动点坐标，代入函数解析式，再把几何条件（距离、垂直、平行、相切等）翻译为方程。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- 专题八：压轴题破题策略 -->
+    <section class="section" id="topic8">
+      <h1>专题八 · 压轴题破题策略</h1>
+
+      <details class="module" open>
+        <summary>🎯 压轴题常见结构</summary>
+        <div class="content">
+          <table class="signal-table">
+            <tr><th>题号位置</th><th>常见考点</th><th>破题关键</th></tr>
+            <tr><td>倒数第二题</td><td>几何综合（圆+相似/全等/三角函数）</td><td>找基本图形、作辅助线、用相似或勾股</td></tr>
+            <tr><td>倒数第一题</td><td>二次函数综合（动点、存在性、最值）</td><td>坐标法、分类讨论、数形结合</td></tr>
+            <tr><td>填空压轴</td><td>找规律、新定义、几何最值</td><td>归纳、画图、特殊化</td></tr>
+            <tr><td>选择压轴</td><td>函数图象、几何动态问题</td><td>排除法、特殊值法、数形结合</td></tr>
+          </table>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>🎯 压轴题通用解题步骤</summary>
+        <div class="content">
+          <div class="problem-card">
+            <h3>第一步：拿下第一问</h3>
+            <div class="method">压轴题第一问通常是求解析式、坐标、线段长等基础计算，必须稳稳拿下，它是后面问题的台阶。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>第二步：用第一问结论</h3>
+            <div class="method">第二问往往依赖第一问的结果。把第一问求出的坐标、解析式、特殊点标在图上，寻找可利用的条件。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>第三步：画图与分类</h3>
+            <div class="method">动点问题、存在性问题一定要画图，并考虑所有可能位置。不确定时按"上下左右""内外""顺序"分类。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>第四步：设坐标列方程</h3>
+            <div class="method">用坐标法把几何条件代数化：距离、垂直、平行、面积都可以写成方程或函数关系。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>第五步：检查与取舍</h3>
+            <div class="method">解出结果后，检验是否在定义域内、是否满足实际意义、是否所有情况都讨论到。</div>
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>🎯 抢分技巧与心态</summary>
+        <div class="content">
+          <div class="problem-card">
+            <h3>技巧一：步骤分</h3>
+            <div class="method">即使做不出最终结果，也要写出相关公式、设的未知数、列出的方程、辅助线作法，这些都可能有步骤分。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>技巧二：特殊值法</h3>
+            <div class="method">选择题、填空题中，可令 $n=1,2,3$ 或取特殊位置，快速验证选项或发现规律。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>技巧三：不会做的题也要写</h3>
+            <div class="method">把能转化的条件都写上去：如"由题意可设 $P(x,y)$""因为 $AB=AC$，所以...""由勾股定理得..."。有时写着写着思路就出来了。</div>
+          </div>
+
+          <div class="problem-card">
+            <h3>心态建议</h3>
+            <div class="method">压轴题不是给所有人满分设计的，目标是"拿到该拿的分"。遇到卡壳不要死磕，先标记，回头再做。保持卷面整洁、逻辑清晰。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <script defer src="katex/katex.min.js"></script>
+  <script defer src="katex/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "$", right: "$", display: false}
+        ],
+        throwOnError: false
+      });
+
+      const toggle = document.getElementById("theme-toggle");
+      if (toggle) {
+        toggle.addEventListener("click", function () {
+          const html = document.documentElement;
+          if (html.getAttribute("data-theme") === "dark") {
+            html.setAttribute("data-theme", "light");
+            toggle.textContent = "🌙 暗色模式";
+          } else {
+            html.setAttribute("data-theme", "dark");
+            toggle.textContent = "☀️ 亮色模式";
+          }
+        });
+      }
+
+      const links = document.querySelectorAll("#sidebar nav a");
+      const sections = document.querySelectorAll(".section");
+      function onScroll() {
+        let current = "";
+        sections.forEach(sec => {
+          const rect = sec.getBoundingClientRect();
+          if (rect.top <= 120) current = sec.id;
+        });
+        links.forEach(link => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === "#" + current) link.classList.add("active");
+        });
+      }
+      window.addEventListener("scroll", onScroll);
+      onScroll();
+    });
+  </script>
+</body>
+</html>

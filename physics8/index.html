@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>八年级物理 · 自学导航</title>
+<link rel="stylesheet" href="../katex/katex.min.css">
+<link rel="stylesheet" href="css/physics.css">
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+
+<div id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">📘 八年级物理</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;" title="隐藏侧栏">✕</button>
+  </div>
+  <nav>
+    <a href="ch01.html">第1章 机械运动</a>
+    <a href="ch02.html">第2章 声现象</a>
+    <a href="ch03.html">第3章 物态变化</a>
+    <a href="ch04.html">第4章 光现象</a>
+    <a href="ch05.html">第5章 透镜及其应用</a>
+    <a href="ch06.html">第6章 质量与密度</a>
+    <a href="ch07.html">第7章 力</a>
+    <a href="ch08.html">第8章 运动和力</a>
+    <a href="ch09.html">第9章 压强</a>
+    <a href="ch10.html">第10章 浮力</a>
+    <a href="ch11.html">第11章 功和机械能</a>
+    <a href="ch12.html">第12章 简单机械</a>
+    <a href="appendix.html" style="margin-top:12px;border-top:1px solid var(--border);padding-top:12px;font-weight:600;">📎 附录总汇</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button class="theme-toggle" id="themeToggle" style="margin-top:10px;">🌓 切换深色模式</button>
+</div>
+
+<div id="content">
+
+<!-- ==================== 前言 ==================== -->
+<div style="margin-bottom:48px;">
+  <h1 style="font-size:32px;font-weight:800;margin-bottom:8px;color:var(--accent);">八年级物理 · 自学导航</h1>
+  <p style="font-size:16px;color:var(--text-secondary);margin-bottom:16px;">人教版同步 · 零基础到精通的完整学习路径</p>
+  <div class="knowledge-link">
+    <strong>💡 使用建议：</strong> 点击左侧章节快速跳转 · 每个模块可展开/折叠 · 公式使用 LaTeX 渲染，需网络加载 KaTeX 字体
+  </div>
+</div>
+
+<!-- ==================== ch01: 机械运动 ==================== -->
+<section class="chapter" id="ch01">
+<h1>第1章 机械运动</h1>
+<div class="learning-goals">
+  <strong>📌 学习目标：</strong> 会使用刻度尺测量长度 · 理解参照物概念 · 掌握 $v=s/t$ 及其变形 · 能识读 $s$-$t$ 和 $v$-$t$ 图像
+  <p>⭐ 中考权重：★★★☆☆ · 常结合图像、平均速度计算出题</p>
+</div>
+
+<details class="module" open>
+<summary>长度与时间的测量</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">长度的单位与国际单位制</div>
+    <p>基本单位是<strong>米（m）</strong>，常用单位：千米(km)、分米(dm)、厘米(cm)、毫米(mm)、微米(μm)、纳米(nm)。</p>
+    <p style="margin-top:6px;font-size:14px;">换算关系：$1\;\text{km}=10^3\;\text{m}$, $1\;\text{mm}=10^{-3}\;\text{m}$, $1\;\text{μm}=10^{-6}\;\text{m}$, $1\;\text{nm}=10^{-9}\;\text{m}$</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">刻度尺的正确使用</div>
+    <p><strong>一看</strong>：量程、分度值（最小刻度）、零刻度是否磨损。<br>
+    <strong>二放</strong>：刻度线紧贴被测物体，与测量方向平行。<br>
+    <strong>三读</strong>：视线正对刻度线，<strong>估读到分度值的下一位</strong>。<br>
+    <strong>四记</strong>：测量值 = 准确值 + 估读值 + 单位。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">误差</div>
+    <p>测量值与真实值之间的差异。<strong>误差不可消除</strong>，只能减小（多次测量取平均值、选用精密仪器、改进测量方法）。</p>
+    <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">注意：误差 ≠ 错误（错误是可以避免的）</p>
+  </div>
+</div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>运动的描述与速度</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">参照物</div>
+    <p>描述物体运动时，被选作<strong>标准</strong>的物体。<strong>运动和静止是相对的</strong>——同一物体选择不同参照物，运动状态可能不同。</p>
+    <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">例：乘客看到树木后退，是以自己（车厢）为参照物。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">速度计算公式</div>
+    <p>$$v=\frac{s}{t}$$</p>
+    <p>$v$ — 速度 (m/s), $s$ — 路程 (m), $t$ — 时间 (s)</p>
+    <p style="margin-top:6px;font-size:14px;">单位换算：$1\;\text{m/s}=3.6\;\text{km/h}$</p>
+    <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">变形公式：$s=vt$, $t=s/v$</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">匀速直线运动</div>
+    <p>速度<strong>大小不变、方向不变</strong>的直线运动。路程与时间成正比，即 $\dfrac{s}{t}=$ 常数。</p>
+    <p style="margin-top:6px;font-size:14px;">平均速度：$\overline{v}=\dfrac{s_{\text{总}}}{t_{\text{总}}}$（不是速度的平均值）</p>
+  </div>
+</div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>运动图像分析</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">$s$-$t$ 图像</div>
+    <p>纵轴为路程 $s$，横轴为时间 $t$。<br>
+    <strong>水平线</strong> → 静止；<strong>倾斜直线</strong> → 匀速直线；<strong>曲线</strong> → 变速运动。<br>
+    斜率越大，速度越大。（斜率 = $v$）</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">$v$-$t$ 图像</div>
+    <p>纵轴为速度 $v$，横轴为时间 $t$。<br>
+    <strong>水平线</strong> → 匀速直线；<strong>倾斜直线</strong> → 匀变速。<br>
+    图像与 $t$ 轴围成的<strong>面积</strong> = 路程 $s$。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">图像对比技巧</div>
+    <p>$s$-$t$ 看斜率得速度；$v$-$t$ 看面积得路程。<br>
+    两种图像中的<strong>水平线含义不同</strong>——前者表示静止，后者表示匀速运动。</p>
+  </div>
+</div>
+</div>
+</details>
+</section>
+
+<!-- ==================== ch02: 声现象 ==================== -->
+<section class="chapter" id="ch02">
+<h1>第2章 声现象</h1>
+<div class="learning-goals">
+  <strong>📌 学习目标：</strong> 理解声音产生与传播条件 · 区分音调、响度、音色 · 知道超声波和次声波的应用
+  <p>⭐ 中考权重：★★☆☆☆ · 常结合生活现象进行辨析</p>
+</div>
+
+<details class="module" open>
+<summary>声音的产生与传播</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">声音的产生</div>
+    <p>声音由物体的<strong>振动</strong>产生。<strong>一切发声的物体都在振动</strong>，振动停止，发声停止。</p>
+    <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">例：说话时声带振动，敲鼓时鼓面振动，琴弦振动发声。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">声音的传播</div>
+    <p>声音靠<strong>介质</strong>传播（固体、液体、气体），<strong>真空不能传声</strong>。声速与介质种类和温度有关。</p>
+    <p style="margin-top:6px;">$$v_{\text{固}} &gt; v_{\text{液}} &gt; v_{\text{气}}$$</p>
+    <p style="font-size:14px;">15℃空气中声速 ≈ $340\;\text{m/s}$，温度每升高1℃声速增加 $0.6\;\text{m/s}$</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">回声</div>
+    <p>声音遇到障碍物反射回来。<strong>听到回声的条件</strong>：回声与原声时间差 $\ge 0.1\;\text{s}$（距离 $\ge 17\;\text{m}$）。</p>
+    <p style="margin-top:6px;font-size:14px;">利用回声测距：$s = \dfrac{vt}{2}$</p>
+  </div>
+</div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>声音的特性</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">音调</div>
+    <p>声音的<strong>高低</strong>，由<strong>频率</strong>决定。频率越高，音调越高。<br>
+    人耳可听范围：$20\;\text{Hz} \sim 20000\;\text{Hz}$。<br>
+    例：女高音音调高，男低音音调低。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">响度</div>
+    <p>声音的<strong>大小（强弱）</strong>，由<strong>振幅</strong>决定。振幅越大，响度越大。<br>
+    响度还与<strong>距离发声体的远近</strong>有关，距离越远，响度越小。</p>
+    <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">单位：分贝(dB)。$>90\;\text{dB}$ 会损伤听力。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">音色</div>
+    <p>声音的<strong>品质</strong>，由发声体的<strong>材料和结构</strong>决定。<br>
+    不同乐器演奏同一音符，音调响度相同但音色不同。<br>
+    可以用来辨别不同的人或乐器。</p>
+  </div>
+</div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>超声波与次声波</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">超声波（$f &gt; 20000\;\text{Hz}$）</div>
+    <p><strong>特点：</strong>方向性好、穿透力强、能量集中。<br>
+    <strong>应用：</strong>声呐（B超、鱼群探测）、超声波焊接/清洗、超声波测速、倒车雷达。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">次声波（$f &lt; 20\;\text{Hz}$）</div>
+    <p><strong>特点：</strong>传播距离远、可绕过障碍物。<br>
+    <strong>来源：</strong>地震、海啸、台风、核爆炸、火山喷发。<br>
+    <strong>应用：</strong>自然灾害预警、次声波探测。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">噪声的控制</div>
+    <p>减弱噪声的<strong>三条途径</strong>：</p>
+    <p style="font-size:14px;">① <strong>声源处</strong>减弱（禁鸣喇叭）<br>
+    ② <strong>传播过程中</strong>减弱（隔音墙、关窗）<br>
+    ③ <strong>人耳处</strong>减弱（戴耳塞）</p>
+  </div>
+</div>
+</div>
+</details>
+</section>
+
+<!-- ==================== ch03: 物态变化 ==================== -->
+<section class="chapter" id="ch03">
+<h1>第3章 物态变化</h1>
+<div class="learning-goals">
+  <strong>📌 学习目标：</strong> 掌握六种物态变化及其吸放热 · 理解晶体与非晶体的区别 · 会分析熔化/凝固/沸腾图像
+  <p>⭐ 中考权重：★★★☆☆ · 图像分析题常考</p>
+</div>
+
+<details class="module" open>
+<summary>温度与温度计</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">温度与温标</div>
+    <p><strong>摄氏温标</strong>：规定标准大气压下，冰水混合物的温度为 $0\;\text{℃}$，沸水的温度为 $100\;\text{℃}$，中间等分100份。</p>
+    <p style="margin-top:6px;font-size:14px;">热力学温标：$T = t + 273.15\;\text{K}$</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">温度计原理与使用</div>
+    <p>原理：<strong>液体的热胀冷缩</strong>。</p>
+    <p style="font-size:14px;">使用要点：<br>
+    ① 选择量程合适（不超量程）<br>
+    ② 玻璃泡完全浸入被测液体，不碰壁/底<br>
+    ③ 待示数稳定后读数<br>
+    ④ 读数时玻璃泡<strong>不能</strong>离开液体</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">体温计</div>
+    <p>量程 $35\;\text{℃}\sim42\;\text{℃}$，分度值 $0.1\;\text{℃}$。<br>
+    <strong>特殊结构：</strong>玻璃泡上方有一段极细的缩口，因此体温计<strong>可以离开人体读数</strong>。<br>
+    使用前需用力<strong>甩几下</strong>，使水银回落。</p>
+  </div>
+</div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>熔化与凝固</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">熔化和凝固</div>
+    <p><strong>熔化</strong>：固态 → 液态（<strong>吸热</strong>）<br>
+    <strong>凝固</strong>：液态 → 固态（<strong>放热</strong>）</p>
+    <p style="margin-top:6px;font-size:14px;">晶体熔化条件：① 达到熔点 ② 持续吸热<br>
+    晶体凝固条件：① 达到凝固点 ② 持续放热</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">晶体 vs 非晶体</div>
+    <p><strong>晶体：</strong>有固定的熔点（凝固点），熔化过程温度不变。例：冰、海波、各种金属。</p>
+    <p><strong>非晶体：</strong>没有固定的熔点，熔化过程温度持续升高。例：蜡、玻璃、沥青、松香。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">熔化图像分析</div>
+    <p>晶体熔化图像呈"<strong>水平段</strong>"——此时吸热但温度保持不变（固液共存态）。</p>
+    <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">注意：冰的熔点 $0\;\text{℃}$，海波熔点 $48\;\text{℃}$，水银凝固点 $-39\;\text{℃}$。</p>
+  </div>
+</div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>汽化与液化</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">汽化（液态→气态·吸热）</div>
+    <p><strong>蒸发：</strong>在任何温度下，只在液体表面发生的缓慢汽化。<br>
+    <strong>沸腾：</strong>在特定温度（沸点）下，液体内部和表面同时发生的剧烈汽化。</p>
+    <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">影响蒸发快慢的因素：温度、表面积、空气流速。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">沸腾条件与图像</div>
+    <p>沸腾条件：① 达到沸点 ② 持续吸热<br>
+    沸腾特点：达到沸点后继续吸热，但<strong>温度保持不变</strong>。</p>
+    <p style="margin-top:6px;font-size:14px;">气压越低，沸点越低（高山上煮不熟饭→高压锅原理）。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">液化（气态→液态·放热）</div>
+    <p>液化方式：① <strong>降低温度</strong>（水蒸气遇冷液化）② <strong>压缩体积</strong>（液化石油气）</p>
+    <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">生活中的液化现象："白气"、露水、冬天呼出的白雾（注意"白气"是<strong>小水滴</strong>，不是水蒸气）。</p>
+  </div>
+</div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>升华与凝华</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">升华（固态→气态·吸热）</div>
+    <p>物质直接从固态变为气态。<br>
+    <strong>例子：</strong>干冰（固态CO₂）升华吸热 → 人工降雨、舞台烟雾；樟脑丸变小；冰冻衣服变干。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">凝华（气态→固态·放热）</div>
+    <p>物质直接从气态变为固态。<br>
+    <strong>例子：</strong>霜、雪的形成；雾凇（树挂）；冬天玻璃窗内侧的冰花。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">六种物态变化总图</div>
+    <p style="font-size:14px;">熔化（固→液，吸）↔ 凝固（液→固，放）<br>
+    汽化（液→气，吸）↔ 液化（气→液，放）<br>
+    升华（固→气，吸）↔ 凝华（气→固，放）</p>
+  </div>
+</div>
+</div>
+</details>
+</section>
+
+<!-- ==================== ch04: 光现象 ==================== -->
+<section class="chapter" id="ch04">
+<h1>第4章 光现象</h1>
+<div class="learning-goals">
+  <strong>📌 学习目标：</strong> 掌握光的反射定律 · 理解平面镜成像特点 · 掌握光的折射规律 · 会作光路图
+  <p>⭐ 中考权重：★★★☆☆ · 作图题和实验探究题常考</p>
+</div>
+
+<details class="module" open>
+<summary>光的直线传播与反射</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">光的直线传播</div>
+    <p>光在<strong>同种均匀介质</strong>中沿直线传播。<br>
+    光速 $c = 3 \times 10^8\;\text{m/s}$（真空中），空气中近似此值，水中约为 $c$ 的 $\frac{3}{4}$，玻璃中约为 $c$ 的 $\frac{2}{3}$。</p>
+    <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">现象：影子、日食月食、小孔成像（倒立实像）。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">光的反射定律</div>
+    <p>① 反射光线、入射光线、法线在同一平面内<br>
+    ② 反射光线和入射光线分居法线两侧<br>
+    ③ <strong>反射角等于入射角</strong></p>
+    <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">注意：先说反射角后说入射角，不能反过来说"入射角等于反射角"。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">镜面反射与漫反射</div>
+    <p><strong>镜面反射</strong>：平行光射到光滑表面，反射光仍然平行（如镜子）<br>
+    <strong>漫反射</strong>：平行光射到粗糙表面，反射光向四面八方<br>
+    <strong>共同点</strong>：都遵守反射定律！</p>
+  </div>
+</div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>平面镜成像</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">成像特点（等大等距垂直）</div>
+    <p>① 像与物<strong>大小相等</strong><br>
+    ② 像与物到镜面的距离<strong>相等</strong><br>
+    ③ 像与物的连线与镜面<strong>垂直</strong><br>
+    ④ 平面镜成<strong>虚像</strong>（不能在光屏上呈现）</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">平面镜成像作图</div>
+    <p>对称法：以镜面为对称轴，作物点的对称点即为像点。<br>
+    原理：光的反射定律。<br>
+    技巧：反射光线的反向延长线过像点。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">球面镜</div>
+    <p><strong>凹面镜：</strong>会聚光（太阳灶、手电筒反光罩）<br>
+    <strong>凸面镜：</strong>发散光，扩大视野（汽车后视镜）</p>
+  </div>
+</div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>光的折射</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">光的折射规律</div>
+    <p>光从一种介质斜射入另一种介质时，传播方向发生偏折。</p>
+    <p style="font-size:14px;">① 共面、分居两侧（同反射）<br>
+    ② <strong>光从空气斜射入水中</strong>：折射角 &lt; 入射角（空气→玻璃同理）<br>
+    ③ <strong>光从水中斜射入空气</strong>：折射角 &gt; 入射角<br>
+    ④ 入射角增大，折射角也增大<br>
+    ⑤ 垂直入射时，方向不变</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">生活中的折射现象</div>
+    <p>① 池水看起来比实际<strong>浅</strong>（看到的其实是虚像）<br>
+    ② 筷子在水中"折断"<br>
+    ③ 海市蜃楼（空气密度不均匀引起的光折射）<br>
+    ④ 星星闪烁（大气折射不稳定）</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">光的色散</div>
+    <p>太阳光通过三棱镜分解成红、橙、黄、绿、蓝、靛、紫七色光——<strong>光的色散</strong>。<br>
+    本质：不同色光在玻璃中的折射率不同，紫光偏折最大，红光最小。</p>
+    <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">光的三原色：红、绿、蓝（RGB）</p>
+  </div>
+</div>
+</div>
+</details>
+</section>
+
+<!-- ==================== ch05: 透镜及其应用 ==================== -->
+<section class="chapter" id="ch05">
+<h1>第5章 透镜及其应用</h1>
+<div class="learning-goals">
+  <strong>📌 学习目标：</strong> 区分凸透镜和凹透镜 · 掌握凸透镜成像规律（五区三点） · 理解眼睛成像原理及矫正
+  <p>⭐ 中考权重：★★★★☆ · 成像规律实验是必考内容</p>
+</div>
+
+<details class="module" open>
+<summary>透镜基础</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">凸透镜与凹透镜</div>
+    <p><strong>凸透镜：</strong>中间厚、边缘薄 → <strong>会聚</strong>光线<br>
+    <strong>凹透镜：</strong>中间薄、边缘厚 → <strong>发散</strong>光线</p>
+    <p style="margin-top:6px;font-size:14px;">主光轴、光心（O）、焦点（F）、焦距（$f$）</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">三条特殊光线（凸透镜）</div>
+    <p>① 平行于主光轴 → 过焦点<br>
+    ② 过光心 → 方向不变<br>
+    ③ 过焦点 → 平行于主光轴</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">三条特殊光线（凹透镜）</div>
+    <p>① 平行于主光轴 → 发散，反向延长线过同侧焦点<br>
+    ② 过光心 → 方向不变<br>
+    ③ 指向异侧焦点 → 平行于主光轴</p>
+  </div>
+</div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>凸透镜成像规律</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">成像规律（物距 $u$）</div>
+    <p style="font-size:14px;"><strong>$u &gt; 2f$</strong>：倒立、缩小、实像（$f &lt; v &lt; 2f$）→ 照相机<br>
+    <strong>$u = 2f$</strong>：倒立、等大、实像（$v = 2f$）→ 特殊分界点<br>
+    <strong>$f &lt; u &lt; 2f$</strong>：倒立、放大、实像（$v &gt; 2f$）→ 投影仪<br>
+    <strong>$u = f$</strong>：不成像（平行光出射）→ 分界点<br>
+    <strong>$u &lt; f$</strong>：正立、放大、虚像 → 放大镜</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">成像动态分析</div>
+    <p><strong>物近像远像变大</strong>（成实像时）：物距减小，像距增大，像变大。<br>
+    <strong>物近像近像变小</strong>（成虚像时）：<br>
+    口诀：一倍焦距分虚实，二倍焦距分大小。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">实验注意事项</div>
+    <p>① 蜡烛、凸透镜、光屏<strong>三心等高</strong>（使像成在光屏中央）<br>
+    ② 光屏上得不到像的原因：$u \le f$（虚像或不成像），或三心不等高<br>
+    ③ 遮住半块透镜 → 像变暗但完整</p>
+  </div>
+</div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>眼睛与眼镜</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">眼睛成像原理</div>
+    <p>晶状体 + 角膜 = <strong>凸透镜</strong>（可调焦距），视网膜 = 光屏。<br>
+    <strong>正常眼：</strong>通过调节晶状体曲度（调节焦距），使像恰好落在视网膜上。<br>
+    远点（∞）→ 近点（约 $10\;\text{cm}$），明视距离 $25\;\text{cm}$。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">近视眼</div>
+    <p>晶状体曲度过大（会聚能力太强），或眼球前后径过长。<br>
+    像落在视网膜<strong>之前</strong>。<br>
+    矫正：配戴<strong>凹透镜</strong>。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">远视眼</div>
+    <p>晶状体曲度过小（会聚能力太弱），或眼球前后径过短。<br>
+    像落在视网膜<strong>之后</strong>。<br>
+    矫正：配戴<strong>凸透镜</strong>（老花镜）。</p>
+  </div>
+</div>
+</div>
+</details>
+</section>
+
+<!-- ==================== ch06: 质量与密度 ==================== -->
+<section class="chapter" id="ch06">
+<h1>第6章 质量与密度</h1>
+<div class="learning-goals">
+  <strong>📌 学习目标：</strong> 理解质量是物体属性 · 掌握 $\rho=m/V$ 及其应用 · 学会用天平和量筒测量密度
+  <p>⭐ 中考权重：★★★★☆ · 密度实验是中考实验探究重点</p>
+</div>
+
+<details class="module" open>
+<summary>质量</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">质量的概念</div>
+    <p>物体所含<strong>物质的多少</strong>叫做质量，符号 $m$。<br>
+    <strong>质量是物体的固有属性</strong>——不随物体的形状、状态、位置、温度的改变而改变。</p>
+    <p style="margin-top:6px;font-size:14px;">基本单位：千克(kg)。$1\;\text{t}=10^3\;\text{kg}$, $1\;\text{kg}=10^3\;\text{g}=10^6\;\text{mg}$</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">天平的使用</div>
+    <p><strong>放：</strong>水平桌面，游码归零<br>
+    <strong>调：</strong>调节平衡螺母使天平平衡（左偏右调）<br>
+    <strong>称：</strong>左物右码，先大后小<br>
+    <strong>读：</strong>$m_{\text{物}} = m_{\text{砝码}} + m_{\text{游码}}$</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">天平使用注意事项</div>
+    <p>① 潮湿或化学药品<strong>不能</strong>直接放在托盘上<br>
+    ② 取放砝码用镊子<br>
+    ③ 天平平衡时<strong>不能</strong>再调平衡螺母<br>
+    ④ 测量范围不能超过天平<strong>量程</strong></p>
+  </div>
+</div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>密度</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">密度的概念</div>
+    <p>单位体积某种物质的<strong>质量</strong>叫做密度。</p>
+    <p>$$\rho = \frac{m}{V}$$</p>
+    <p>单位：$\text{kg/m}^3$ 或 $\text{g/cm}^3$（$1\;\text{g/cm}^3 = 10^3\;\text{kg/m}^3$）</p>
+    <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">密度是物质的特性，与质量体积无关（同种物质密度相同）。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">常见物质密度</div>
+    <p style="font-size:14px;">水：$\rho = 1.0\times10^3\;\text{kg/m}^3$<br>
+    冰：$\rho = 0.9\times10^3\;\text{kg/m}^3$<br>
+    水银：$\rho = 13.6\times10^3\;\text{kg/m}^3$<br>
+    空气：$\rho \approx 1.29\;\text{kg/m}^3$<br>
+    铁：$\rho \approx 7.9\times10^3\;\text{kg/m}^3$</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">密度计算与判断</div>
+    <p><strong>鉴别物质：</strong>测密度与标准值比较。<br>
+    <strong>空心判断：</strong>求密度若小于材料密度则为空心。<br>
+    比例计算：同种物质 $\dfrac{m_1}{m_2} = \dfrac{V_1}{V_2}$<br>
+    等质量、等体积问题：合金密度 $\rho = \dfrac{m_1+m_2}{V_1+V_2}$</p>
+  </div>
+</div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>测量物质的密度</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">量筒的使用</div>
+    <p>测量液体体积或固体体积（排水法）。<br>
+    <strong>读数：</strong>视线与凹液面最低处相平。<br>
+    <strong>单位：</strong>$1\;\text{mL}=1\;\text{cm}^3$</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">测量固体密度</div>
+    <p>① 用天平测质量 $m$<br>
+    ② 用量筒排水法测体积 $V = V_2 - V_1$<br>
+    ③ 计算 $\rho = m/V$</p>
+    <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">先测质量再测体积（避免先排水使固体潮湿导致质量偏大）。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">测量液体密度</div>
+    <p>① 测烧杯+液体总质量 $m_1$<br>
+    ② 倒入量筒部分液体，测体积 $V$<br>
+    ③ 测烧杯+剩余液体质量 $m_2$<br>
+    ④ $\rho = \dfrac{m_1 - m_2}{V}$</p>
+    <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">此法优于先测空杯法（减小误差）。</p>
+  </div>
+</div>
+</div>
+</details>
+</section>
+
+<!-- ==================== ch07: 力 ==================== -->
+<section class="chapter" id="ch07">
+<h1>第7章 力</h1>
+<div class="learning-goals">
+  <strong>📌 学习目标：</strong> 理解力的作用效果与相互作用 · 掌握弹力和弹簧测力计 · 掌握重力的三要素
+  <p>⭐ 中考权重：★★★☆☆ · 力的示意图是基础作图能力</p>
+</div>
+
+<details class="module" open>
+<summary>力的基本概念</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">力的作用效果</div>
+    <p>① <strong>改变物体的形状</strong>（形变）<br>
+    ② <strong>改变物体的运动状态</strong>（快慢或方向变化）</p>
+    <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">注意：运动状态改变包括由静到动、由动到静、速度变化、方向变化。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">力的三要素与示意图</div>
+    <p>力的 <strong>大小、方向、作用点</strong> 称为力的三要素，任一要素改变，力的作用效果都会改变。</p>
+    <p style="margin-top:6px;font-size:14px;">力的示意图：用<strong>带箭头的线段</strong>表示力——起点表示作用点，箭头指向表示方向，线段长度大致表示大小。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">物体间力的作用是相互的</div>
+    <p>甲对乙施力，乙同时也对甲施力。<br>
+    相互作用力的特点：<strong>等大、反向、共线、异体</strong>。</p>
+    <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">例：人推墙，墙也推人（相互作用力）；马拉车，车也拉马。</p>
+  </div>
+</div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>弹力与重力</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">弹力</div>
+    <p>物体发生<strong>弹性形变</strong>时产生的力。<br>
+    常见弹力：支持力、压力、拉力、推力。<br>
+    弹簧测力计原理：在弹性限度内，弹簧的<strong>伸长量与所受拉力成正比</strong>。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">重力 $G=mg$</div>
+    <p>地球附近的物体由于<strong>地球的吸引</strong>而受到的力。</p>
+    <p>$$G = mg$$</p>
+    <p>$g = 9.8\;\text{N/kg}$（粗略计算取 $10\;\text{N/kg}$）<br>
+    <strong>方向：</strong>竖直向下（不是垂直向下）<br>
+    <strong>作用点：</strong>重心（规则均匀物体的重心在几何中心）</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">力的测量</div>
+    <p>力的单位：<strong>牛顿</strong>，简称牛，符号N。<br>
+    $1\;\text{N}$ 的力 ≈ 托起两个鸡蛋所用的力。</p>
+    <p style="margin-top:6px;font-size:14px;">弹簧测力计使用：① 校零 ② 沿轴线方向施力 ③ 不超过量程</p>
+  </div>
+</div>
+</div>
+</details>
+</section>
+
+<!-- ==================== ch08: 运动和力 ==================== -->
+<section class="chapter" id="ch08">
+<h1>第8章 运动和力</h1>
+<div class="learning-goals">
+  <strong>📌 学习目标：</strong> 理解牛顿第一定律和惯性 · 掌握二力平衡条件 · 会分析摩擦力的方向和大小
+  <p>⭐ 中考权重：★★★★☆ · 惯性解释题和二力平衡分析是必考</p>
+</div>
+
+<details class="module" open>
+<summary>牛顿第一定律与惯性</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">牛顿第一定律</div>
+    <p><strong>一切物体在没有受到力的作用时，总保持静止状态或匀速直线运动状态。</strong></p>
+    <p style="margin-top:6px;font-size:14px;">实验方法：<strong>理想实验法</strong>（伽利略斜面实验）—— 在实验基础上通过科学推理得出。<br>
+    说明：力不是维持运动的原因，而是<strong>改变</strong>物体运动状态的原因。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">惯性</div>
+    <p>一切物体都有<strong>保持原来运动状态不变</strong>的性质，叫做惯性。<br>
+    <strong>惯性是物体的固有属性</strong>，只与质量有关（质量越大惯性越大）。</p>
+    <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">注意：惯性是"属性"不是"力"，不能说"受到惯性力/惯性作用"。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">惯性的利用与防止</div>
+    <p><strong>利用：</strong>捶打衣服（锤头继续向下）、跳远助跑、套紧锤头。<br>
+    <strong>防止：</strong>系安全带、保持车距、限速限载。</p>
+  </div>
+</div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>二力平衡</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">二力平衡的条件</div>
+    <p>作用在同一物体上的两个力：</p>
+    <p style="font-size:14px;">① 大小相等<br>
+    ② 方向相反<br>
+    ③ 作用在同一直线上</p>
+    <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">"同体、等大、反向、共线"</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">平衡力 vs 相互作用力</div>
+    <p><strong>平衡力：</strong>作用在<strong>同一</strong>物体上，合力为零，效果抵消。</p>
+    <p><strong>相互作用力：</strong>作用在<strong>两个不同</strong>物体上，效果不抵消。</p>
+    <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">例：桌上静止的杯子——重力与支持力是平衡力；桌子对杯子的支持力与杯子对桌子的压力是相互作用力。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">力的合成</div>
+    <p>同向共线：$F_{\text{合}} = F_1 + F_2$，方向与两个力相同<br>
+    反向共线：$F_{\text{合}} = |F_1 - F_2|$，方向与较大的力相同</p>
+  </div>
+</div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>摩擦力</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">摩擦力的分类</div>
+    <p><strong>静摩擦力：</strong>有相对运动趋势但未运动（推桌子不动时）<br>
+    <strong>滑动摩擦力：</strong>物体在另一物体表面滑动时产生<br>
+    <strong>滚动摩擦力：</strong>物体滚动时产生（通常比滑动摩擦力小得多）</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">影响滑动摩擦力的因素</div>
+    <p>① <strong>压力大小</strong>（压力越大，摩擦力越大）<br>
+    ② <strong>接触面粗糙程度</strong>（越粗糙，摩擦力越大）</p>
+    <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">滑动摩擦力的大小与接触面积、运动速度<strong>无关</strong>。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">增大/减小摩擦的方法</div>
+    <p><strong>增大：</strong>增大压力（捏紧刹车）· 增大接触面粗糙程度（轮胎花纹、防滑链）</p>
+    <p><strong>减小：</strong>减小压力 · 减小粗糙程度 · 加润滑油 · 变滑动为滚动（滚珠轴承）· 气垫船</p>
+  </div>
+</div>
+</div>
+</details>
+</section>
+
+<!-- ==================== ch09: 压强 ==================== -->
+<section class="chapter" id="ch09">
+<h1>第9章 压强</h1>
+<div class="learning-goals">
+  <strong>📌 学习目标：</strong> 掌握 $p=F/S$ 和 $p=\rho gh$ · 会分析增大/减小压强的方法 · 理解大气压强的存在与测量
+  <p>⭐ 中考权重：★★★★★ · 压强浮力综合题是中考压轴常考点</p>
+</div>
+
+<details class="module" open>
+<summary>固体压强</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">压强定义与公式</div>
+    <p>物体所受<strong>压力</strong>与<strong>受力面积</strong>之比。</p>
+    <p>$$p = \frac{F}{S}$$</p>
+    <p>$p$ — 压强 (Pa), $F$ — 压力 (N), $S$ — 受力面积 (m²)<br>
+    单位：$1\;\text{Pa} = 1\;\text{N/m}^2$<br>
+    增大/减小压强：$F$ 一定时，$S$ 越小 $p$ 越大（刀刃、图钉尖）；$S$ 越大 $p$ 越小（书包带、坦克履带）。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">压力 ≠ 重力</div>
+    <p>压力是<strong>垂直</strong>作用在物体表面上的力。<br>
+    只有在<strong>水平面上、物体只受重力和支持力</strong>时，压力大小才等于重力大小。<br>
+    斜面上的物体对斜面的压力 $F &lt; G$。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">柱体压强</div>
+    <p>对于密度均匀的<strong>柱状固体</strong>（如圆柱体、长方体、正方体），放在水平面上：</p>
+    <p>$$p = \frac{F}{S} = \frac{G}{S} = \frac{\rho V g}{S} = \frac{\rho Sh g}{S} = \rho g h$$</p>
+    <p style="font-size:13px;color:var(--text-secondary);">即柱状固体对水平面的压强只与材料密度和高度有关，与底面积无关。</p>
+  </div>
+</div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>液体压强</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">液体压强公式</div>
+    <p>$$p = \rho g h$$</p>
+    <p>$p$ — 液体压强 (Pa), $\rho$ — 液体密度 (kg/m³), $h$ — 深度 (m)</p>
+    <p style="margin-top:6px;font-size:14px;">液体压强特点：<br>
+    ① 液体内部<strong>向各个方向</strong>都有压强<br>
+    ② 同种液体同一深度，各方向压强相等<br>
+    ③ 深度相同，密度越大压强越大</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">连通器</div>
+    <p>上端开口、下端连通的容器。<br>
+    <strong>原理：</strong>连通器中装同种液体且静止时，各液面始终保持相平。<br>
+    应用：茶壶、锅炉水位计、船闸、乳牛自动饮水器。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">固体与液体压强对比</div>
+    <p><strong>固体：</strong>先求压力 $F$（通常 $F=G$），再用 $p=F/S$ 求压强。</p>
+    <p><strong>液体：</strong>先求压强 $p=\rho gh$，再用 $F=pS$ 求压力。<br>
+    液体对容器底的压力不一定等于液体重力（取决于容器形状）。</p>
+  </div>
+</div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>大气压强</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">大气压强的存在</div>
+    <p><strong>马德堡半球实验</strong>——证明了大气压强的存在且很大。<br>
+    生活中：吸盘挂钩、吸管喝饮料、钢笔吸墨水、活塞式抽水机。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">大气压的测量</div>
+    <p><strong>托里拆利实验</strong>：</p>
+    <p>$$p_0 = \rho_{\text{Hg}} g h \approx 1.013 \times 10^5\;\text{Pa}$$</p>
+    <p>$h \approx 760\;\text{mm}$（标准大气压）<br>
+    玻璃管倾斜时，水银柱<strong>高度</strong>不变，长度变长。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">大气压的变化</div>
+    <p>① 海拔越高，大气压越<strong>小</strong>（高原反应）<br>
+    ② 沸点随气压减小而<strong>降低</strong>（高山上煮不熟饭）<br>
+    ③ 天气：晴天气压高，阴天气压低</p>
+    <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">应用：高压锅（增大内部气压 → 提高沸点 → 更快煮熟）。</p>
+  </div>
+</div>
+</div>
+</details>
+</section>
+
+<!-- ==================== ch10: 浮力 ==================== -->
+<section class="chapter" id="ch10">
+<h1>第10章 浮力</h1>
+<div class="learning-goals">
+  <strong>📌 学习目标：</strong> 理解浮力产生原因 · 掌握 $F_{\text{浮}} = \rho_{\text{液}} g V_{\text{排}}$ · 会分析物体浮沉条件
+  <p>⭐ 中考权重：★★★★★ · 浮力综合计算（浮力+压强+密度）是中考最高频压轴题</p>
+</div>
+
+<details class="module" open>
+<summary>浮力的基本概念</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">浮力的产生原因</div>
+    <p>浸在液体（或气体）中的物体，受到液体（或气体）<strong>向上和向下的压力差</strong>。</p>
+    <p>$$F_{\text{浮}} = F_{\text{向上}} - F_{\text{向下}}$$</p>
+    <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">如果物体下表面不受液体压力（如陷入淤泥的船底），则不受浮力。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">称重法测浮力</div>
+    <p>在空气中用弹簧测力计测重力 $G$，浸入液体中测示数 $F$：</p>
+    <p>$$F_{\text{浮}} = G - F$$</p>
+    <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">这是实验测量浮力最常用的方法。</p>
+  </div>
+</div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>阿基米德原理</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">阿基米德原理</div>
+    <p>浸在液体中的物体受到<strong>向上</strong>的浮力，浮力大小等于它排开的液体所受的<strong>重力</strong>。</p>
+    <p>$$F_{\text{浮}} = G_{\text{排}} = \rho_{\text{液}} g V_{\text{排}}$$</p>
+    <p style="margin-top:6px;font-size:14px;">$V_{\text{排}}$ — 物体排开液体的体积（m³）<br>
+    $\rho_{\text{液}}$ — 液体密度（kg/m³）</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">浮力影响因素</div>
+    <p>浮力只与<strong>液体密度</strong>和<strong>排开液体体积</strong>有关。</p>
+    <p style="font-size:14px;">与以下因素<strong>无关</strong>：<br>
+    ① 物体密度 ❌<br>
+    ② 物体形状 ❌<br>
+    ③ 浸没后的深度 ❌<br>
+    ④ 物体质量 ❌</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">阿基米德实验</div>
+    <p>① 测物重 $G_1$<br>
+    ② 测空桶重 $G_2$<br>
+    ③ 物体浸入液体，测拉力 $F$<br>
+    ④ 测桶+排开水总重 $G_3$<br>
+    <strong>验证：</strong>$G_1 - F = G_3 - G_2$</p>
+  </div>
+</div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>物体的浮沉条件</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">浮沉条件的判断</div>
+    <p>比较 $F_{\text{浮}}$ 与 $G$（或 $\rho_{\text{液}}$ 与 $\rho_{\text{物}}$）：</p>
+    <p style="font-size:14px;">
+    $F_{\text{浮}} &gt; G \;(\rho_{\text{液}} &gt; \rho_{\text{物}})$ → <strong>上浮</strong>（最终漂浮 $F_{\text{浮}} = G$）<br>
+    $F_{\text{浮}} = G \;(\rho_{\text{液}} = \rho_{\text{物}})$ → <strong>悬浮</strong>（可在任何深度静止）<br>
+    $F_{\text{浮}} &lt; G \;(\rho_{\text{液}} &lt; \rho_{\text{物}})$ → <strong>下沉</strong>（最终沉底）</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">漂浮与悬浮的区别</div>
+    <p><strong>相同：</strong>都处于平衡状态，$F_{\text{浮}} = G$。</p>
+    <p><strong>不同：</strong></p>
+    <p style="font-size:14px;">漂浮：$V_{\text{排}} &lt; V_{\text{物}}$，$\rho_{\text{液}} &gt; \rho_{\text{物}}$（部分露出液面）<br>
+    悬浮：$V_{\text{排}} = V_{\text{物}}$，$\rho_{\text{液}} = \rho_{\text{物}}$（完全浸没）</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">浮力的应用</div>
+    <p><strong>轮船：</strong>空心→增大$V_{\text{排}}$→增大浮力。轮船从江入海，会上浮一些（海水密度大）。</p>
+    <p><strong>潜水艇：</strong>改变<strong>自身重力</strong>实现浮沉（注水/排水）。</p>
+    <p><strong>气球和飞艇：</strong>充入密度小于空气的气体（氢气、氦气、热空气）。</p>
+    <p><strong>密度计：</strong>漂浮 $F_{\text{浮}}=G$，刻度"上小下大、上疏下密"。</p>
+  </div>
+</div>
+</div>
+</details>
+</section>
+
+<!-- ==================== ch11: 功和机械能 ==================== -->
+<section class="chapter" id="ch11">
+<h1>第11章 功和机械能</h1>
+<div class="learning-goals">
+  <strong>📌 学习目标：</strong> 理解做功的两个必要因素 · 掌握 $W=Fs$ 和 $P=W/t$ · 理解动能与势能的转化
+  <p>⭐ 中考权重：★★★☆☆ · 功和功率的计算、机械能转化分析是常考内容</p>
+</div>
+
+<details class="module" open>
+<summary>功与功率</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">功 $W=Fs$</div>
+    <p>力与物体在<strong>力的方向上移动距离</strong>的乘积。</p>
+    <p>$$W = Fs$$</p>
+    <p>$W$ — 功 (J), $F$ — 力 (N), $s$ — 沿力方向移动的距离 (m)</p>
+    <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">$1\;\text{J} = 1\;\text{N}\cdot\text{m}$</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">做功的两个必要因素</div>
+    <p>① 作用在物体上的<strong>力</strong><br>
+    ② 物体在力的方向上移动的<strong>距离</strong></p>
+    <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">三种不做功的情况：<br>
+    ① 有力无距离（扛着米站着不动）<br>
+    ② 有距离无力（物体靠惯性前进）<br>
+    ③ 力与距离垂直（提着水桶水平走——力向上、距离水平）</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">功率 $P=W/t$</div>
+    <p>功与做功所用时间之比，表示做功的<strong>快慢</strong>。</p>
+    <p>$$P = \frac{W}{t}$$</p>
+    <p>$P$ — 功率 (W), $W$ — 功 (J), $t$ — 时间 (s)</p>
+    <p style="margin-top:6px;">$$P = Fv$$</p>
+    <p style="font-size:13px;color:var(--text-secondary);">$1\;\text{kW} = 10^3\;\text{W}$。功率大 → 做功快（不一定做功多）。</p>
+  </div>
+</div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>机械能</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">动能与势能</div>
+    <p><strong>动能：</strong>物体由于<strong>运动</strong>而具有的能量。影响因素：质量、速度。</p>
+    <p>$$E_k = \frac{1}{2}mv^2$$</p>
+    <p><strong>重力势能：</strong>物体由于<strong>被举高</strong>而具有的能量。影响因素：质量、高度。<br>
+    <strong>弹性势能：</strong>物体由于发生<strong>弹性形变</strong>而具有的能量。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">机械能及其转化</div>
+    <p>动能和势能统称为<strong>机械能</strong>。<br>
+    动能与势能之间可以相互转化。</p>
+    <p style="font-size:14px;">例：<br>
+    单摆：最高点势能最大动能为零 → 最低点动能最大势能最小<br>
+    滚摆：上升动能→重力势能，下降重力势能→动能<br>
+    蹦床：弹性势能↔动能↔重力势能</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">机械能守恒</div>
+    <p>如果只有<strong>动能和势能相互转化</strong>（不受摩擦等阻力），机械能总量保持不变。</p>
+    <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">实际生活中总有阻力，机械能会转化为内能，机械能不守恒（但总能量守恒）。</p>
+  </div>
+</div>
+</div>
+</details>
+</section>
+
+<!-- ==================== ch12: 简单机械 ==================== -->
+<section class="chapter" id="ch12">
+<h1>第12章 简单机械</h1>
+<div class="learning-goals">
+  <strong>📌 学习目标：</strong> 理解杠杆平衡条件 $F_1l_1=F_2l_2$ · 掌握滑轮组的省力规律 · 会计算机械效率 $\eta = W_{\text{有}}/W_{\text{总}}$
+  <p>⭐ 中考权重：★★★★☆ · 机械效率的实验和计算是力学压轴题高频内容</p>
+</div>
+
+<details class="module" open>
+<summary>杠杆</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">杠杆的五要素</div>
+    <p><strong>支点(O)</strong> — 杠杆绕其转动的固定点<br>
+    <strong>动力($F_1$)</strong> — 使杠杆转动的力<br>
+    <strong>阻力($F_2$)</strong> — 阻碍杠杆转动的力<br>
+    <strong>动力臂($l_1$)</strong> — 支点到动力作用线的距离<br>
+    <strong>阻力臂($l_2$)</strong> — 支点到阻力作用线的距离</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">杠杆平衡条件</div>
+    <p>$$F_1 l_1 = F_2 l_2$$</p>
+    <p style="font-size:14px;"><strong>省力杠杆：</strong>$l_1 &gt; l_2$（省力但费距离）例：撬棍、开瓶器、钢丝钳<br>
+    <strong>费力杠杆：</strong>$l_1 &lt; l_2$（费力但省距离）例：钓鱼竿、镊子、筷子<br>
+    <strong>等臂杠杆：</strong>$l_1 = l_2$ 例：天平、跷跷板</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">最小力的画法</div>
+    <p>使力臂最大的力最小：<br>
+    ① 找支点 O<br>
+    ② 在杠杆上找离支点最远的点作为动力作用点<br>
+    ③ 连接支点与作用点（最大力臂 = 连线）<br>
+    ④ 作连线的<strong>垂线</strong>，合理确定方向</p>
+  </div>
+</div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>滑轮</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">定滑轮与动滑轮</div>
+    <p><strong>定滑轮：</strong>不省力（$F=G$），改变力的方向。实质是<strong>等臂杠杆</strong>。</p>
+    <p><strong>动滑轮：</strong>省一半力（$F=G/2$），不改变方向，费距离（$s=2h$）。实质是<strong>动力臂为阻力臂2倍</strong>的杠杆。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">滑轮组</div>
+    <p>滑轮组 = 定滑轮 + 动滑轮。<br>
+    <strong>省力规律：</strong>$F = \dfrac{G_{\text{物}} + G_{\text{动}}}{n}$（$n$ 为承担重物的绳子段数）</p>
+    <p style="font-size:14px;">$s = nh$（绳子自由端移动距离 = $n \times$ 物体上升高度）<br>
+    绳子段数 $n$ 的判断：与动滑轮相连的绳子段数。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">滑轮组的绕法</div>
+    <p><strong>奇动偶定</strong>：<br>
+    $n$ 为奇数时 → 绳子从动滑轮开始绕<br>
+    $n$ 为偶数时 → 绳子从定滑轮开始绕</p>
+    <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">一个滑轮组最多可省力 $1/n$，但费距离 $n$ 倍。</p>
+  </div>
+</div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>机械效率</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">有用功与总功</div>
+    <p><strong>有用功 $W_{\text{有}}$：</strong>对人们有用的功（克服物体重力：$W_{\text{有}} = Gh$）</p>
+    <p><strong>额外功 $W_{\text{额}}$：</strong>不得不额外做的功（克服摩擦、动滑轮自重）</p>
+    <p><strong>总功 $W_{\text{总}}$：</strong>动力做的功。$W_{\text{总}} = W_{\text{有}} + W_{\text{额}} = Fs$</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">机械效率 $\eta$</div>
+    <p>$$\eta = \frac{W_{\text{有}}}{W_{\text{总}}} \times 100\%$$</p>
+    <p style="font-size:14px;">$\eta$ 永远 < 1（因为 $W_{\text{额}} > 0$）<br>
+    提高方法：减轻动滑轮重、减小摩擦、增加物重（同一滑轮组，物重越大效率越高）。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">斜面与轮轴</div>
+    <p><strong>斜面：</strong>$FL = Gh$，高度相同时斜面越长越省力。<br>
+    <strong>轮轴：</strong>轮半径 $R$，轴半径 $r$，$FR = Gr$，$R$ 越大越省力。<br>
+    例：螺丝刀、方向盘（轮轴实质是连续旋转的杠杆）。</p>
+  </div>
+</div>
+</details>
+</section>
+
+<!-- ==================== 附录 ==================== -->
+<section class="chapter" id="appendix">
+<h1>📎 附录总汇</h1>
+<p style="color:var(--text-secondary);margin-bottom:32px;">公式速查 · 实验方法 · 易错陷阱 · 教学规划 · 自学技巧</p>
+
+<!-- ===== A1: 核心公式速查表 ===== -->
+<h2 style="font-size:22px;margin-bottom:16px;color:var(--accent);">A1 · 核心公式速查表</h2>
+<div style="margin-bottom:40px;">
+
+<div class="formula-card">
+  <strong>📏 运动学</strong>
+  <p>$v = \dfrac{s}{t}$，$s = vt$，$t = \dfrac{s}{v}$ &nbsp;·&nbsp; $\overline{v} = \dfrac{s_{\text{总}}}{t_{\text{总}}}$ &nbsp;·&nbsp; $1\;\text{m/s} = 3.6\;\text{km/h}$</p>
+</div>
+
+<div class="formula-card">
+  <strong>🔊 声学 / 光学</strong>
+  <p>回声测距：$s = \dfrac{vt}{2}$ &nbsp;·&nbsp; 反射定律：$i = r$ &nbsp;·&nbsp; 光速 $c = 3 \times 10^8\;\text{m/s}$ &nbsp;·&nbsp; $n = \dfrac{\sin i}{\sin r}$（折射率）</p>
+</div>
+
+<div class="formula-card">
+  <strong>🌡️ 物态变化 / 密度</strong>
+  <p>$\rho = \dfrac{m}{V}$，$m = \rho V$，$V = \dfrac{m}{\rho}$ &nbsp;·&nbsp; ℃与K换算：$T = t + 273$</p>
+</div>
+
+<div class="formula-card">
+  <strong>🪨 力 / 运动和力</strong>
+  <p>$G = mg$（$g=9.8\;\text{N/kg}$）&nbsp;·&nbsp; $F_{\text{合}} = F_1 \pm F_2$（同向/反向）&nbsp;·&nbsp; 弹簧：$F = k\Delta x$</p>
+</div>
+
+<div class="formula-card">
+  <strong>🏋️ 压强 / 浮力</strong>
+  <p>$p = \dfrac{F}{S}$ &nbsp;·&nbsp; $p = \rho g h$（液体）&nbsp;·&nbsp; $F_{\text{浮}} = G_{\text{排}} = \rho_{\text{液}} g V_{\text{排}}$ &nbsp;·&nbsp; $F_{\text{浮}} = G - F$（称重法）</p>
+</div>
+
+<div class="formula-card">
+  <strong>⚡ 功 / 机械</strong>
+  <p>$W = Fs$ &nbsp;·&nbsp; $P = \dfrac{W}{t} = Fv$ &nbsp;·&nbsp; $\eta = \dfrac{W_{\text{有}}}{W_{\text{总}}} \times 100\%$ &nbsp;·&nbsp; $F_1 l_1 = F_2 l_2$（杠杆）</p>
+</div>
+
+<div class="formula-card">
+  <strong>🏗️ 简单机械 / 滑轮组</strong>
+  <p>$F = \dfrac{G_{\text{物}} + G_{\text{动}}}{n}$（滑轮组省力）&nbsp;·&nbsp; $s = nh$ &nbsp;·&nbsp; $FL = Gh$（斜面）&nbsp;·&nbsp; $FR = Gr$（轮轴）</p>
+</div>
+
+</div>
+
+<!-- ===== A2: 物理实验方法汇总 ===== -->
+<h2 style="font-size:22px;margin-bottom:16px;color:var(--accent);">A2 · 物理实验方法汇总</h2>
+<div style="margin-bottom:40px;">
+
+<div class="technique-card">
+  <h3><span class="step-num">1</span> 控制变量法</h3>
+  <div class="method">方法概述</div>
+  <p>当一个物理量与多个因素有关时，每次只改变<strong>一个</strong>因素，控制其他因素不变，分别研究。</p>
+  <div class="example">📖 八上实验：</div>
+  <ul style="font-size:14px;padding-left:20px;margin-bottom:10px;">
+    <li>探究影响滑动摩擦力大小的因素（压力、接触面粗糙程度）</li>
+    <li>探究影响压力作用效果的因素（压力、受力面积）</li>
+    <li>探究液体内部压强的特点（深度、方向、密度）</li>
+    <li>探究动能大小的影响因素（质量、速度）</li>
+  </ul>
+</div>
+
+<div class="technique-card">
+  <h3><span class="step-num">2</span> 转换法</h3>
+  <div class="method">方法概述</div>
+  <p>将<strong>不易直接观察</strong>或测量的物理现象，通过其产生的效果，转换成<strong>易观察易测量</strong>的物理量。</p>
+  <div class="example">📖 典型应用：</div>
+  <ul style="font-size:14px;padding-left:20px;margin-bottom:10px;">
+    <li>声音的振动 → 音叉激起水花 / 乒乓球被弹开</li>
+    <li>压强 → 海绵的凹陷程度</li>
+    <li>动能 → 木块被推动的距离</li>
+    <li>温度 → 液体热胀冷缩（温度计液柱高度）</li>
+    <li>分子运动 → 扩散现象（宏观表现）</li>
+  </ul>
+</div>
+
+<div class="technique-card">
+  <h3><span class="step-num">3</span> 等效替代法</h3>
+  <div class="method">方法概述</div>
+  <p>用<strong>效果相同</strong>的已知量来替代未知量，使复杂问题简化。</p>
+  <div class="example">📖 典型应用：</div>
+  <ul style="font-size:14px;padding-left:20px;margin-bottom:10px;">
+    <li>平面镜成像实验：用相同的蜡烛找像的位置（等大替代）</li>
+    <li>测量不规则固体体积：排水法（排开水的体积 = $V_{\text{物}}$）</li>
+    <li>力的合成：一个合力替代多个分力</li>
+    <li>电阻的串联：总电阻替代各分电阻</li>
+  </ul>
+</div>
+
+<div class="technique-card">
+  <h3><span class="step-num">4</span> 理想实验法（科学推理法）</h3>
+  <div class="method">方法概述</div>
+  <p>在实验事实的基础上，通过<strong>科学推理</strong>得出理想条件下的结论（因为实际条件无法完全满足）。</p>
+  <div class="example">📖 典型应用：</div>
+  <ul style="font-size:14px;padding-left:20px;margin-bottom:10px;">
+    <li>伽利略斜面实验 → 牛顿第一定律（水平面绝对光滑时物体将匀速运动下去）</li>
+    <li>真空不能传声的实验验证（罩内空气越少，听到声音越小→推理出真空不能传声）</li>
+  </ul>
+  <div class="pitfall">⚠️ 注意：理想实验法必须有实验事实作为基础，不能凭空想象。</div>
+</div>
+
+</div>
+
+<!-- ===== A3: 高频易错陷阱总览 ===== -->
+<h2 style="font-size:22px;margin-bottom:16px;color:var(--accent);">A3 · 高频易错陷阱总览</h2>
+
+<div class="technique-card" style="border-left:4px solid #dc2626;margin-bottom:12px;">
+  <h3><span class="step-num">❶</span> 单位换算</h3>
+  <div class="pitfall">❌ $1\;\text{m/s}=3.6\;\text{km/h}$ 方向记反 — 口诀：×3.6得大数，÷3.6得小数</div>
+  <div class="pitfall">❌ $1\;\text{cm}^2=10^{-4}\;\text{m}^2$（非$10^{-2}$）— 面积单位是长度单位的平方</div>
+  <div class="pitfall">❌ $1\;\text{g/cm}^3=1000\;\text{kg/m}^3$（非相反）— 记住水的密度既是1也是$10^3$</div>
+  <div class="pitfall">❌ 计算前忘记统一单位 — 长度用m、质量用kg、时间用s</div>
+</div>
+
+<div class="technique-card" style="border-left:4px solid #9333ea;margin-bottom:12px;">
+  <h3><span class="step-num">❷</span> 概念混淆</h3>
+  <div class="pitfall">❌ 质量(kg)≠重力(N) — $G=mg$ 是关系不是定义</div>
+  <div class="pitfall">❌ 惯性不能说"受到惯性力"→ 正确表达"由于惯性"</div>
+  <div class="pitfall">❌ 压力≠重力 — 只有水平面静止时才相等</div>
+  <div class="pitfall">❌ 平衡力(同体)≠相互作用力(异体)</div>
+  <div class="pitfall">❌ 音调高≠响度大 — 蚊子音调高响度小，牛音调低响度大</div>
+  <div class="pitfall">❌ 实像(倒立/亮屏) vs 虚像(正立/不见屏)</div>
+  <div class="pitfall">❌ $s$-$t$水平=静止 ≠ $v$-$t$水平=匀速 — 图像语言不同！</div>
+</div>
+
+<div class="technique-card" style="border-left:4px solid #0891b2;margin-bottom:12px;">
+  <h3><span class="step-num">❸</span> 公式误用</h3>
+  <div class="pitfall">❌ $p=\rho gh$ 只适用于液体和柱状固体，不用于一般固体</div>
+  <div class="pitfall">❌ 液体对容器底压力：先$p=\rho gh$再$F=pS$，不能直接用液体重力</div>
+  <div class="pitfall">❌ $W=Fs$中$s$必须是沿$F$方向的距离</div>
+  <div class="pitfall">❌ 效率$\eta$永远$<100\%$ — $W_{\text{有}} < W_{\text{总}}$</div>
+  <div class="pitfall">❌ $F_{\text{浮}}=\rho_{\text{液}}gV_{\text{排}}$ — $\rho$是液体密度！</div>
+  <div class="pitfall">❌ 混合密度$\neq(\rho_1+\rho_2)/2$，要用总质量÷总体积</div>
+</div>
+
+<div class="technique-card" style="border-left:4px solid #ca8a04;margin-bottom:12px;">
+  <h3><span class="step-num">❹</span> 读题读图</h3>
+  <div class="pitfall">❌ "匀速直线"→合力为零，摩擦力=拉力</div>
+  <div class="pitfall">❌ "轻质"→$m=0$；"光滑"→$f=0$</div>
+  <div class="pitfall">❌ "浸没"→$V_{\text{排}}=V_{\text{物}}$；"浸入"→$V_{\text{排}}\le V_{\text{物}}$</div>
+  <div class="pitfall">❌ "标准大气压下"→沸点100℃，冰水0℃</div>
+  <div class="pitfall">❌ 透镜实验：蜡烛烧短→像向上移</div>
+  <div class="pitfall">❌ 弹簧测力计倒挂：示数=物重+自重</div>
+</div>
+
+<div class="technique-card" style="border-left:4px solid #059669;margin-bottom:12px;">
+  <h3><span class="step-num">❺</span> 计算逻辑</h3>
+  <div class="pitfall">❌ 液体压力：先$p=\rho gh$再$F=pS$，不可直接用液体重力</div>
+  <div class="pitfall">❌ 滑轮组$n$只看与动滑轮相连的绳子段数</div>
+  <div class="pitfall">❌ $P=Fv$中的$v$要求是匀速运动速度</div>
+  <div class="pitfall">❌ 先测体积再测质量→物体沾水→质量偏大→$\rho$偏大</div>
+</div>
+
+<!-- ===== A4: 科学教学法 · 零基础到精通 ===== -->
+<h2 style="font-size:22px;margin-bottom:16px;color:var(--accent);">A4 · 科学教学法 · 零基础到精通</h2>
+<div style="margin-bottom:40px;">
+
+<div class="technique-card">
+  <h3><span class="step-num">1</span> 学习路径总览</h3>
+  <div class="method" style="color:var(--accent);">基础阶段（第1-2周）→ 核心阶段（第3-4周）→ 提升阶段（第5-6周）→ 冲刺阶段（第7-8周）</div>
+  <div style="margin-top:10px;font-size:14px;">
+    <p><strong>破冰期（第1周）：</strong>运动学 + 声现象。重在建立物理思维，理解 $v=s/t$ 公式和图像法。</p>
+    <p><strong>热学与光学（第2周）：</strong>物态变化 + 光现象 + 透镜。多做实验，理解现象背后的原理。</p>
+    <p><strong>力学奠基（第3周）：</strong>质量密度 + 力 + 运动和力。这是难点集中区，务必理解概念。</p>
+    <p><strong>力学进阶（第4周）：</strong>压强 + 浮力 + 功和机械 + 简单机械。综合计算开始。</p>
+  </div>
+</div>
+
+<div class="technique-card">
+  <h3><span class="step-num">2</span> 40天学习计划</h3>
+  <div style="font-size:14px;">
+    <table style="width:100%;border-collapse:collapse;">
+      <tr style="background:var(--bg-secondary);"><td style="padding:6px 10px;border:1px solid var(--border);font-weight:600;">天数</td><td style="padding:6px 10px;border:1px solid var(--border);font-weight:600;">学习内容</td><td style="padding:6px 10px;border:1px solid var(--border);font-weight:600;">练习要求</td></tr>
+      <tr><td style="padding:6px 10px;border:1px solid var(--border);">1-3</td><td style="padding:6px 10px;border:1px solid var(--border);">长度测量、参照物、速度</td><td style="padding:6px 10px;border:1px solid var(--border);">10道基础题 + 2道图像题</td></tr>
+      <tr><td style="padding:6px 10px;border:1px solid var(--border);">4-5</td><td style="padding:6px 10px;border:1px solid var(--border);">声现象（传播、特性、超声）</td><td style="padding:6px 10px;border:1px solid var(--border);">概念辨析 + 回声计算</td></tr>
+      <tr><td style="padding:6px 10px;border:1px solid var(--border);">6-8</td><td style="padding:6px 10px;border:1px solid var(--border);">物态变化（六种、图像分析）</td><td style="padding:6px 10px;border:1px solid var(--border);">熔化和沸腾图像分析</td></tr>
+      <tr><td style="padding:6px 10px;border:1px solid var(--border);">9-11</td><td style="padding:6px 10px;border:1px solid var(--border);">光现象（反射、折射、色散）</td><td style="padding:6px 10px;border:1px solid var(--border);">作光路图 + 实验探究</td></tr>
+      <tr><td style="padding:6px 10px;border:1px solid var(--border);">12-14</td><td style="padding:6px 10px;border:1px solid var(--border);">透镜（成像规律实验）</td><td style="padding:6px 10px;border:1px solid var(--border);">成像规律表格背诵 + 实验</td></tr>
+      <tr><td style="padding:6px 10px;border:1px solid var(--border);">15-17</td><td style="padding:6px 10px;border:1px solid var(--border);">质量与密度（天平+密度测量）</td><td style="padding:6px 10px;border:1px solid var(--border);">密度实验 + 空心判断</td></tr>
+      <tr><td style="padding:6px 10px;border:1px solid var(--border);">18-20</td><td style="padding:6px 10px;border:1px solid var(--border);">力 + 运动和力（牛顿定律、摩擦）</td><td style="padding:6px 10px;border:1px solid var(--border);">力的示意图 + 惯性解释题</td></tr>
+      <tr><td style="padding:6px 10px;border:1px solid var(--border);">21-23</td><td style="padding:6px 10px;border:1px solid var(--border);">压强（固体+液体+大气）</td><td style="padding:6px 10px;border:1px solid var(--border);">综合计算 + 实验探究</td></tr>
+      <tr><td style="padding:6px 10px;border:1px solid var(--border);">24-26</td><td style="padding:6px 10px;border:1px solid var(--border);">浮力（阿基米德+浮沉条件）</td><td style="padding:6px 10px;border:1px solid var(--border);">浮力计算 + 浮沉判断</td></tr>
+      <tr><td style="padding:6px 10px;border:1px solid var(--border);">27-29</td><td style="padding:6px 10px;border:1px solid var(--border);">功和机械能 + 简单机械</td><td style="padding:6px 10px;border:1px solid var(--border);">机械效率计算 + 实验</td></tr>
+      <tr><td style="padding:6px 10px;border:1px solid var(--border);">30-35</td><td style="padding:6px 10px;border:1px solid var(--border);">综合复习（专题训练）</td><td style="padding:6px 10px;border:1px solid var(--border);">近3年真题 + 错题本</td></tr>
+      <tr><td style="padding:6px 10px;border:1px solid var(--border);">36-40</td><td style="padding:6px 10px;border:1px solid var(--border);">冲刺模拟（限时训练）</td><td style="padding:6px 10px;border:1px solid var(--border);">全真模拟 + 查漏补缺</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="technique-card">
+  <h3><span class="step-num">3</span> 核心教学方法</h3>
+  <div style="font-size:14px;">
+    <p><strong>📝 概念教学法：</strong>每个物理概念要讲清楚"是什么→为什么→怎么用"，结合生活实例。</p>
+    <p><strong>🔬 实验探究法：</strong>能用实验演示的就不空讲，让学生动手做（哪怕是家庭小实验）。</p>
+    <p><strong>📐 模型构建法：</strong>从实际问题中抽象出物理模型（如杠杆模型、浮力模型）。</p>
+    <p><strong>📊 图像教学法：</strong>学会用图像分析问题（$s$-$t$、$v$-$t$、$m$-$V$、熔化/沸腾图像）。</p>
+    <p><strong>🧮 规范计算法：</strong>严格的解题格式：已知 → 求 → 解（写公式→代数据→得结果+单位）→ 答。</p>
+  </div>
+</div>
+
+<div class="technique-card">
+  <h3><span class="step-num">4</span> 常见教学卡点与对策</h3>
+  <div style="font-size:14px;">
+    <div class="pitfall">⚠️ 卡点1：速度单位换算（m/s↔km/h）→ 用助记法：$\times 3.6$ 是 km/h</div>
+    <div class="pitfall">⚠️ 卡点2：透镜成像规律记不住 → 画图 + 实验 + 顺口溜"物近像远像变大"</div>
+    <div class="pitfall">⚠️ 卡点3：浮沉条件判断 → 比较两个量：$F_{\text{浮}}$ vs $G$ 或 $\rho_{\text{液}}$ vs $\rho_{\text{物}}$</div>
+    <div class="pitfall">⚠️ 卡点4：机械效率计算 → 分清有用功和总功，记住 $\eta$ 永远 < 1</div>
+    <div class="pitfall">⚠️ 卡点5：力的示意图 → 先确定研究对象，标出所有力（重力先画），注意平衡</div>
+  </div>
+</div>
+
+</div>
+
+<!-- ===== A5: 快速自学与提升技巧 ===== -->
+<h2 style="font-size:22px;margin-bottom:16px;color:var(--accent);">A5 · 快速自学与提升技巧</h2>
+<div style="margin-bottom:40px;">
+
+<div class="technique-card">
+  <h3><span class="step-num">1</span> 费曼学习法</h3>
+  <div class="method">"如果你不能简单地解释它，你就没有真正理解它。"</div>
+  <div style="font-size:14px;">
+    <p><strong>四步操作：</strong></p>
+    <ol style="padding-left:20px;margin:8px 0;">
+      <li>选择概念，在纸上写下名称</li>
+      <li>用自己的话解释（假装给一个完全不懂的人讲）</li>
+      <li>发现卡壳的地方 → 回去翻书弄懂</li>
+      <li>简化类比，形成自己的表达</li>
+    </ol>
+    <p style="margin-top:6px;">物理应用：学完一个公式，试着给同学讲清楚每个符号的含义、单位、使用前提。</p>
+  </div>
+  <div class="example">📌 例：讲"浮力"——"物体在水里会受到一个向上的推力，就像你按压乒乓球在水中感受到的反弹力，这个力的大小等于排开的水的重力。"</div>
+</div>
+
+<div class="technique-card">
+  <h3><span class="step-num">2</span> 三遍练习法（3-Round Practice）</h3>
+  <div style="font-size:14px;">
+    <p><strong>第一遍：拆解（R1）</strong> — 不计时，重在理解题意，标注已知条件和问题关键点。</p>
+    <p><strong>第二遍：限时（R2）</strong> — 计时完成，培养速度和应试节奏。</p>
+    <p><strong>第三遍：复盘（R3）</strong> — 对答案，分析错误原因（概念不清/计算粗心/审题遗漏），整理到错题本。</p>
+    <p style="margin-top:6px;"><strong>错题本格式：</strong><br>
+    ① 题目来源 + 日期<br>
+    ② 我的错误答案<br>
+    ③ 正确答案 + 解题过程<br>
+    ④ 错误类型 + 防范措施</p>
+  </div>
+  <div class="example">📌 推荐每周完成：3道综合题 × 3遍 = 9次练习，质量远高于做30道题不回顾。</div>
+</div>
+
+<div class="technique-card">
+  <h3><span class="step-num">3</span> 每日物理训练</h3>
+  <div style="font-size:14px;">
+    <p><strong>每天15分钟：</strong></p>
+    <ul style="padding-left:20px;margin:8px 0;">
+      <li><strong>Day 1-10：</strong>公式默写（7大板块轮流）+ 1道基础概念题</li>
+      <li><strong>Day 11-20：</strong>1道图像分析题 + 1道计算题（限时5分钟）</li>
+      <li><strong>Day 21-30：</strong>1道实验探究题 + 1道综合应用题</li>
+      <li><strong>Day 31-40：</strong>1道压轴题 + 错题回顾</li>
+    </ul>
+  </div>
+  <div class="example">📌 物理学习靠的是持续积累——每天15分钟比周末集中学3小时效果好10倍。</div>
+</div>
+
+<div class="technique-card">
+  <h3><span class="step-num">4</span> 自学资源推荐</h3>
+  <div style="font-size:14px;">
+    <p><strong>📚 教材：</strong>人教版八年级物理（上下册）</p>
+    <p><strong>📝 教辅：</strong>《五年中考三年模拟》·《典中点》·《启东作业本》</p>
+    <p><strong>▶️ 视频：</strong>物理大师·看鉴 · 柚子木教你学物理 · 李永乐老师</p>
+    <p><strong>📱 App：</strong>物理实验室（手机仿真实验）· 作业帮（搜题解析）</p>
+    <p><strong>🧑‍🏫 思维工具：</strong>思维导图（每章画一张）· 公式卡（随身携带）· 错题本</p>
+  </div>
+</div>
+
+<div class="technique-card">
+  <h3><span class="step-num">5</span> 考试提分技巧</h3>
+  <div style="font-size:14px;">
+    <p><strong>审题：</strong>圈出关键词——"匀速"、"轻质"、"光滑"、"浸没"、"恰好"、"最大"。</p>
+    <p><strong>作图：</strong>用铅笔 + 直尺，标力的时候注意<strong>大小关系</strong>（线段长度）和<strong>方向</strong>（箭头）。</p>
+    <p><strong>计算：</strong>先写字母公式，再代入数据（带单位），最后得结果。物理量要有<strong>下标</strong>区分（如 $F_{\text{浮}}$，$G_{\text{物}}$）。</p>
+    <p><strong>时间分配：</strong>选择题2分钟/道，填空题1分钟/空，实验题8分钟，计算题10分钟/道。先易后难。</p>
+    <p><strong>检查：</strong>单位是否统一、结果是否合理（例如效率>1、浮力大于重力但物体没浮起来→肯定错了）。</p>
+  </div>
+</div>
+
+</div>
+
+</section>
+
+<p style="text-align:center;padding:40px 0 20px;color:var(--text-secondary);font-size:14px;">📚 八年级物理自学导航 · 祝学习顺利！</p>
+
+</div><!-- /content -->
+
+<script defer src="../katex/katex.min.js"></script>
+<script defer src="../katex/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});"></script>
+
+<script>
+(function() {
+  var theme = localStorage.getItem('physics8-theme');
+  if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+
+  document.getElementById('themeToggle').addEventListener('click', function() {
+    var html = document.documentElement;
+    var isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? '' : 'dark');
+    localStorage.setItem('physics8-theme', isDark ? '' : 'dark');
+  });
+
+  var links = document.querySelectorAll('#sidebar nav a');
+  var sections = [];
+  links.forEach(function(link) {
+    var href = link.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      var el = document.getElementById(href.slice(1));
+      if (el) sections.push({ link: link, el: el });
+    }
+  });
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        sections.forEach(function(s) {
+          s.link.classList.toggle('active', s.el.id === entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-80px 0px -60% 0px' });
+
+  sections.forEach(function(s) { observer.observe(s.el); });
+
+  var sidebar = document.getElementById('sidebar');
+  var hideBtn = document.getElementById('sidebarHideBtn');
+  var sidebarHidden = localStorage.getItem('physics8-sidebar') === 'hidden';
+  if (sidebarHidden) sidebar.classList.add('hidden');
+  var showBtn = document.getElementById('sidebarShowBtn');
+  hideBtn.addEventListener('click', function() {
+    sidebar.classList.add('hidden');
+    localStorage.setItem('physics8-sidebar', 'hidden');
+  });
+  showBtn.addEventListener('click', function() {
+    sidebar.classList.remove('hidden');
+    localStorage.setItem('physics8-sidebar', '');
+  });
+  (function() {
+    var btn = document.getElementById('expandAllBtn');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      var allDetails = document.querySelectorAll('.module, .exam-module');
+      var allOpen = true;
+      for (var i = 0; i < allDetails.length; i++) {
+        if (!allDetails[i].hasAttribute('open')) { allOpen = false; break; }
+      }
+      for (var i = 0; i < allDetails.length; i++) {
+        if (allOpen) allDetails[i].removeAttribute('open');
+        else allDetails[i].setAttribute('open', '');
+      }
+      btn.textContent = allOpen ? '📂 展开全部章节' : '📖 收起全部章节';
+    });
+  })();
+})();
+</script>
+
+</div>
+</body>
+</html>

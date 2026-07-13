@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第2章 声现象 | 八年级物理</title>
+<link rel="stylesheet" href="css/physics.css">
+<link rel="stylesheet" href="../katex/katex.min.css">
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">八年级物理</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;" title="隐藏侧栏">✕</button>
+  </div>
+  <nav>
+    <a href="index.html">🏠 首页</a>
+    <a href="ch01.html">第1章 机械运动</a>
+    <a href="ch02.html" class="active">第2章 声现象</a>
+    <a href="ch03.html">第3章 物态变化</a>
+    <a href="ch04.html">第4章 光现象</a>
+    <a href="ch05.html">第5章 透镜及其应用</a>
+    <a href="ch06.html">第6章 质量与密度</a>
+    <a href="ch07.html">第7章 力</a>
+    <a href="ch08.html">第8章 运动和力</a>
+    <a href="ch09.html">第9章 压强</a>
+    <a href="ch10.html">第10章 浮力</a>
+    <a href="ch11.html">第11章 功和机械能</a>
+    <a href="ch12.html">第12章 简单机械</a>
+    <a href="appendix.html">附录</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button id="theme-toggle" class="theme-toggle" style="margin-top:10px;">🌙 暗色模式</button>
+</nav>
+
+<main id="content">
+
+<div class="chapter">
+  <h1>第2章 声现象</h1>
+
+  <!-- 学习目标 -->
+  <div class="learning-goals">
+    <strong>🎯 学习目标</strong>
+    <p>① 知道声音由物体振动产生，声音传播需要介质（固液气），了解声速在空气中的大小</p>
+    <p>② 理解声音的三要素——音调、响度、音色的决定因素，能辨析生活中的相关现象</p>
+    <p>③ 了解超声波和次声波的应用，掌握噪声控制的三种途径并能在实际情境中判断</p>
+  </div>
+
+  <!-- 前置知识关联 -->
+  <div class="knowledge-link">
+    <strong>📎 前置知识关联：</strong>
+    小学科学 · 声音的产生（振动）、声音的传播需要介质；
+    生活经验 · 回声现象、不同乐器的音色差异、音量调节、隔音材料；
+    数学基础 · 频率（每秒钟振动的次数）、振幅（偏离平衡位置的距离）的初步概念。
+  </div>
+
+  <!-- 思维方法 -->
+  <div class="thought-method">
+    <strong>🔬 物理学思维方法：转换法</strong>
+    声音的振动是肉眼看不见的，但我们可以通过观察它引起的其他现象来"看到"振动。例如：在发声的音叉旁悬挂一个轻质乒乓球，通过乒乓球的弹开显示音叉的振动；用发声扬声器旁的纸屑跳动或水面溅起水花来显示振动。这种将难以直接观察的物理现象转换为容易观察的现象的方法，称为<strong>转换法</strong>。
+  </div>
+
+  <!-- 思维导图 -->
+  <details class="module" open>
+    <summary>🧠 思维导图</summary>
+    <div class="content">
+      <div class="mindmap">
+        <ul>
+          <li><span class="node-label">声现象</span></li>
+          <li>
+            <span class="node-label">声音的产生</span>
+            <ul>
+              <li>一切发声的物体都在<strong>振动</strong>（声带、琴弦、空气柱振动）</li>
+              <li>振动停止，发声停止（但声音可能仍在传播）</li>
+              <li>转换法：通过乒乓球弹开、水花溅起等显示振动</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">声音的传播</span>
+            <ul>
+              <li>需要<strong>介质</strong>（固体、液体、气体都可传声）</li>
+              <li><strong>真空不能传声</strong>（太空中的宇航员需靠无线电交流）</li>
+              <li>声速：空气中 $v \approx 340\ \text{m/s}$（$15\ ^{\circ}\text{C}$）</li>
+              <li>声速比较：$v_{\text{固}} > v_{\text{液}} > v_{\text{气}}$</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">回声</span>
+            <ul>
+              <li>声音遇到障碍物反射回来形成回声</li>
+              <li>人耳区分回声与原声的条件：$\Delta t \ge 0.1\ \text{s}$</li>
+              <li>应用：$s = \dfrac{vt}{2}$（回声测距）</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">声音的三要素</span>
+            <ul>
+              <li><strong>音调</strong>：由 $f$（频率）决定——频率高则音调高（尖锐），频率低则音调低（低沉）</li>
+              <li><strong>响度</strong>：由 $A$（振幅）决定——振幅大则响度大（声音响亮）</li>
+              <li><strong>音色</strong>：由发声体本身的结构和材料决定，用于区分不同的发声体</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">超声波与次声波</span>
+            <ul>
+              <li>超声波 $f > 20000\ \text{Hz}$：B超、声呐（声纳）、超声波清洗/焊接</li>
+              <li>次声波 $f < 20\ \text{Hz}$：地震、海啸、核爆炸产生；传播距离远</li>
+              <li>人耳可听范围：$20\ \text{Hz} \sim 20000\ \text{Hz}$</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">噪声控制</span>
+            <ul>
+              <li>① 在<strong>声源处</strong>控制：消声器、禁止鸣笛</li>
+              <li>② 在<strong>传播途中</strong>控制：隔音墙、门窗关紧、植树</li>
+              <li>③ 在<strong>人耳处</strong>控制：戴耳塞、捂耳朵</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <!-- 核心概念 -->
+  <details class="module" open>
+    <summary>📖 核心概念</summary>
+    <div class="content">
+      <div class="card-grid">
+
+        <div class="concept-card">
+          <div class="name">声音的产生 —— 振动</div>
+          <p>一切发声的物体都在<strong>振动</strong>。用手触摸发声的喉咙会感觉到振动；正在发声的音叉放入水中会溅起水花。</p>
+          <p>振动<strong>停止</strong>，发声也<strong>停止</strong>。"振动停止，发声停止"但声音可能已经在介质中传播。</p>
+          <p>发声体可以是固体（琴弦）、液体（海浪声）、气体（哨子中的空气柱）。</p>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">声音的传播 —— 介质与声速</div>
+          <p>声音靠<strong>介质</strong>传播，<strong>真空不能传声</strong>。介质可以是固体、液体或气体。</p>
+          <p>传播形式：以<strong>声波</strong>的形式向外传播。</p>
+          <p>声速：在 $15\ ^{\circ}\text{C}$ 空气中约为 $340\ \text{m/s}$。声速随温度升高而增大。</p>
+          <p>不同介质中的声速：$v_{\text{固}} > v_{\text{液}} > v_{\text{气}}$（一般来说）。</p>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">回声</div>
+          <p>声音遇到障碍物反射回来，被再次听到即为回声。</p>
+          <p>人耳区分回声与原声的最小时间间隔为 $0.1\ \text{s}$。在 $15\ ^{\circ}\text{C}$ 空气中，$\Delta s \ge 17\ \text{m}$ 时才能区分回声。</p>
+          <p>回声测距原理：$s = \dfrac{vt}{2}$（声音传播的总路程除以 2 为人到障碍物的距离）。</p>
+          <p>应用：声呐系统（水声测距）、B超（医用超声成像）。</p>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">音调 —— 频率</div>
+          <p><strong>音调</strong>指声音的高低（尖细 vs 低沉），由<strong>频率</strong>决定。</p>
+          <p>频率 $f$：每秒振动的次数，单位：<strong>赫兹（Hz）</strong>。</p>
+          <p>频率越高，音调越高（如女高音、哨子声）；频率越低，音调越低（如男低音、大提琴声）。</p>
+          <p>弦乐器：弦越短、越细、越紧，频率越高，音调越高。</p>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">响度 —— 振幅</div>
+          <p><strong>响度</strong>指声音的大小（响亮 vs 微弱），由<strong>振幅</strong>决定。</p>
+          <p>振幅 $A$：物体振动时偏离平衡位置的最大距离。</p>
+          <p>振幅越大，响度越大。响度还与距离发声体的远近有关——距离越远，声音越分散，响度越小。</p>
+          <p>用力敲鼓（增大振幅）→ 鼓声更响（响度增大）。</p>
+          <p>单位：分贝（dB）。$0\ \text{dB}$ 是人耳能听到的最微弱的声音。</p>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">音色</div>
+          <p><strong>音色</strong>指声音的特色和品质，由发声体本身的<strong>材料、结构</strong>决定。</p>
+          <p>不同乐器演奏同一音符，音调和响度可以相同，但音色不同——我们能据此区分钢琴和小提琴。</p>
+          <p>不同人的音色也不同——这是"闻声识人"的基础。</p>
+          <p>在波形图上，音色表现为波形的<strong>形状</strong>不同（而音调取决于波的密集程度，响度取决于波的高度）。</p>
+        </div>
+
+      </div>
+    </div>
+  </details>
+
+  <!-- 公式速查 -->
+  <details class="module" open>
+    <summary>📐 公式速查</summary>
+    <div class="content">
+
+      <div class="formula-card">
+        <strong>声速</strong>
+        <p>\[ v = 340\ \text{m/s} \quad (\text{空气}, 15\ ^{\circ}\text{C}) \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          一般情况下，$v_{\text{固}} > v_{\text{液}} > v_{\text{气}}$。温度越高，声速越大。
+        </p>
+      </div>
+
+      <div class="formula-card">
+        <strong>回声测距</strong>
+        <p>\[ s = \frac{vt}{2} \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          $s$ — 人与障碍物之间的距离（$\text{m}$），$v$ — 声速（$\text{m/s}$），$t$ — 从发出到听到回声的时间（$\text{s}$）。<br>
+          注意：$vt$ 是声音往返的总路程，除以 2 才是单程距离。
+        </p>
+      </div>
+
+      <div class="formula-card">
+        <strong>频率与周期</strong>
+        <p>\[ f = \frac{1}{T} \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          $f$ — 频率（$\text{Hz}$），$T$ — 周期（$\text{s}$）。<br>
+          （拓展）人耳可听范围：$20\ \text{Hz} \le f \le 20000\ \text{Hz}$。
+        </p>
+      </div>
+
+      <div class="formula-card">
+        <strong>声强级（噪声等级）</strong>
+        <p>\[ 0\ \text{dB} \quad\text{(听觉下限)} \qquad 70\ \text{dB} \quad\text{(干扰谈话)} \qquad 90\ \text{dB} \quad\text{(损伤听力)} \]</p>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 实验探究 -->
+  <details class="module" open>
+    <summary>🔬 实验探究：声音是怎样传播的</summary>
+    <div class="content">
+      <div class="experiment-card">
+        <h3>实验一：真空罩实验（探究传声条件）</h3>
+
+        <div class="exp-step">
+          <span class="exp-step-num">1</span>
+          <div><strong>装置：</strong>将电铃放入玻璃罩内，接通电源，可以听到清晰的铃声。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">2</span>
+          <div><strong>抽气：</strong>用抽气机逐渐抽出罩内的空气，听到的铃声越来越<strong>弱</strong>。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">3</span>
+          <div><strong>推理：</strong>若罩内完全变成真空，将听不到铃声。但实验无法达到绝对真空，因此用<strong>理想实验法</strong>推理得出：<strong>真空不能传声</strong>，声音传播需要介质。</div>
+        </div>
+
+        <div class="exp-principle">
+          <strong>⚙ 实验原理：</strong>声音以声波的形式在介质中传播。介质分子将振动依次传递出去，形成疏密相间的声波。抽去空气后，缺少了传递振动的介质，声音就无法传播到人耳。
+        </div>
+
+        <div class="exp-tip">
+          <strong>💡 易错提示：</strong>① 实验中听到的铃声逐渐"变小"而不是"变慢"——声速跟介质种类有关，但声音变弱是因为能量减少，不是速度变慢；② 该实验运用了"理想实验法"（在实验基础上进行科学推理），与伽利略的斜面实验方法相同。
+        </div>
+      </div>
+
+      <div class="experiment-card">
+        <h3>实验二：音叉实验（显示振动）</h3>
+
+        <div class="exp-step">
+          <span class="exp-step-num">1</span>
+          <div><strong>装置：</strong>在铁架台上悬挂一个轻质泡沫小球，使小球紧靠音叉的一侧。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">2</span>
+          <div><strong>操作：</strong>敲击音叉，使音叉发声。将音叉靠近小球，观察到小球被<strong>反复弹开</strong>。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">3</span>
+          <div><strong>结论：</strong>发声的音叉在<strong>振动</strong>。用手握住音叉，振动停止，声音也随之消失。</div>
+        </div>
+
+        <div class="exp-principle">
+          <strong>⚙ 实验原理：</strong>运用<strong>转换法</strong>——将音叉微小的振动通过轻质小球的反复弹开放大显示，证明"声音由物体振动产生"。
+        </div>
+
+        <div class="exp-tip">
+          <strong>💡 易错提示：</strong>① 敲击音叉时不要用力过猛，以免损坏器材；② 小球应轻触音叉侧壁，而不是音叉顶端；③ 该实验同时体现了"转换法"和"放大法"的思想。
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- 解题技巧 -->
+  <details class="module" open>
+    <summary>✍️ 解题技巧</summary>
+    <div class="content">
+
+      <div class="technique-card">
+        <h3><span class="step-num">1</span> 声音三要素的辨析</h3>
+        <div class="method">📌 方法："一关键词定要素"——抓住题干关键词</div>
+        <div class="example">
+          <strong>例题：</strong>"女高音歌唱家"和"男低音歌唱家"中的"高"和"低"指的是什么？<br>
+          <strong>解析：</strong>"高"和"低"描述的是声音的<strong>音调</strong>（高低），女高音频率高、音调高，男低音频率低、音调低。<br>
+          <strong>变式：</strong>如说"引吭高歌"——这个"高"指的是<strong>响度</strong>大（大声唱）。<br>
+          <strong>速查口诀：</strong>"高低"指音调、"大小/强弱"指响度、"区分乐器/人"指音色。
+        </div>
+        <div class="pitfall">
+          ⚠️ 易错点：日常用语中的"高"有歧义——"声音高"可能是音调高（频率大），也可能是响度大（振幅大）。做题时需结合上下文判断。
+        </div>
+        <div class="principle">
+          <strong>📐 原理依据：</strong>音调由频率决定（$f$ 大→音调高），响度由振幅决定（$A$ 大→响度大），音色由发声体本身结构决定。三者相互独立，互不影响。同一人改变音量（改变响度）时，音调和音色不变。
+        </div>
+        <div class="exam-hint">
+          🏆 考场提示：中考高频——给出生活情景（如"调节音量""变声""分辨乐器"），判断涉及的是哪个要素。记住琴弦的"长粗松"对应低音，"短细紧"对应高音。
+        </div>
+      </div>
+
+      <div class="technique-card">
+        <h3><span class="step-num">2</span> 回声测距的计算</h3>
+        <div class="method">📌 方法：画出示意图，分清"单程"和"往返"</div>
+        <div class="example">
+          <strong>例题：</strong>小明站在山崖前大喊一声，经过 $0.6\ \text{s}$ 听到回声。已知空气中声速为 $340\ \text{m/s}$，求小明离山崖的距离。<br>
+          <strong>解：</strong>$s = \dfrac{vt}{2} = \dfrac{340\ \text{m/s} \times 0.6\ \text{s}}{2} = 102\ \text{m}$。<br>
+          <strong>注意：</strong>声音从人到山崖再返回，总路程是距离的 2 倍。
+        </div>
+        <div class="pitfall">
+          ⚠️ 易错点：① 忘记除以 2。应先求总路程 $s_{\text{总}} = vt$，再除以 2 得单程距离；② 时间 $t$ 是指从发出到听到回声的总时间，不是传播到障碍物的单程时间；③ 区分"听到回声"和"回声到达人耳"——如果声音已经反射但被其他声音掩盖，不是回声。
+        </div>
+        <div class="principle">
+          <strong>📐 原理依据：</strong>回声是波的反射现象。在传播过程中遇到尺寸比波长大的障碍物时，声波会发生反射。利用 $s = vt/2$ 可以间接测量距离——这是声呐、B超等技术的物理基础。
+        </div>
+        <div class="variant">
+          <strong>拓展：</strong>如果同时有汽车或火车运动（声源在运动），需考虑声源移动的距离。此时声波总路程 $=$ 初始距离 $\times 2$ $-$ 声源移动距离（若声源向障碍物运动）。
+        </div>
+        <div class="exam-hint">
+          🏆 考场提示：中考常考"汽车鸣笛+回声"综合题——汽车向山崖行驶，鸣笛后听到回声。需要设汽车速度为 $v$，列方程 $vt + v_{\text{声}}t = 2s_0$。
+        </div>
+      </div>
+
+      <div class="technique-card">
+        <h3><span class="step-num">3</span> 噪声控制的途径判断</h3>
+        <div class="method">📌 方法：三步分析法——先看措施作用在哪个环节</div>
+        <div class="example">
+          <strong>例题：</strong>以下措施各属于哪种噪声控制途径？<br>
+          ① 摩托车安装消声器；② 高架桥两侧安装隔音板；③ 工厂工人戴防噪耳罩。<br>
+          <strong>解析：</strong>① 消声器——在<strong>声源处</strong>减弱；② 隔音板——在<strong>传播途中</strong>减弱；③ 耳罩——在<strong>人耳处</strong>减弱。
+        </div>
+        <div class="pitfall">
+          ⚠️ 易错点：① 关紧门窗是在传播途中减弱，不是声源处——声源是室外的噪声源，关窗没有改变声源；② 戴耳塞/耳罩是在人耳处，不要误认为是声源处；③ 植树造林属于传播途中减弱。
+        </div>
+        <div class="principle">
+          <strong>📐 原理依据：</strong>噪声控制的三环节对应噪声传播链：声源 → 传播路径 → 人耳。在每个环节上采取阻断或吸收措施。从效率上讲，在源头上控制是最优方案。
+        </div>
+        <div class="exam-hint">
+          🏆 考场提示：必考概念辨析，通常以选择题形式考查。记住"禁止鸣笛—声源处、隔音墙—传播途中、戴耳罩—人耳处"三个代表案例。
+        </div>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 中考真题 -->
+  <details class="exam-module" open>
+    <summary>📝 中考真题</summary>
+    <div class="content">
+
+      <div class="exam-q">
+        <span class="q-tag">2023 北京</span>
+        <strong>题 1</strong>
+        <div class="q-body">
+          关于声现象，下列说法正确的是（  ）
+          <br>A. 声音在真空中传播速度最快
+          <br>B. 公路旁安装隔音墙是在声源处减弱噪声
+          <br>C. 用大小不同的力敲击同一个音叉，音调不同
+          <br>D. 超声波能粉碎人体内的结石，说明声波具有能量
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong>A：真空不能传声，错误。B：隔音墙是在传播途中减弱噪声，不是声源处，错误。C：大小不同的力改变的是振幅（响度），音调和音叉本身有关，不变，错误。D：超声波具有能量，能够击碎结石，正确。<br>
+          <strong>答案：</strong>D
+        </div>
+      </div>
+
+      <div class="exam-q">
+        <span class="q-tag">2022 广州</span>
+        <strong>题 2</strong>
+        <div class="q-body">
+          将一把钢尺紧按在桌面上，一端伸出桌边。拨动钢尺，听它振动发出的声音，同时注意钢尺振动的快慢。改变钢尺伸出桌边的长度，再次拨动，使钢尺每次振动幅度大致相同。实验发现：
+          <br>（1）钢尺伸出越长，振动越 _____（快/慢），音调越 _____（高/低）；
+          <br>（2）该实验说明音调的高低与 _____ 有关，_____ 越高，音调越高。
+        </div>
+        <div class="diagram">
+          <svg viewBox="0 0 360 150" xmlns="http://www.w3.org/2000/svg">
+            <!-- desk -->
+            <rect x="20" y="95" width="320" height="15" fill="#d4a574" stroke="#8b6914" stroke-width="1.5" rx="2"/>
+            <!-- steel ruler -->
+            <rect x="180" y="20" width="8" height="90" fill="#94a3b8" stroke="#475569" stroke-width="1" rx="1"/>
+            <!-- ruler above desk -->
+            <rect x="180" y="10" width="8" height="20" fill="#94a3b8" stroke="#475569" stroke-width="1" rx="1" transform="rotate(-10,184,30)"/>
+            <!-- hand pressing -->
+            <ellipse cx="230" cy="98" rx="30" ry="8" fill="#fcd34d" opacity="0.5"/>
+            <text x="230" y="78" font-size="11" text-anchor="middle" fill="#475569">手压紧</text>
+            <!-- edge of desk label -->
+            <line x1="188" y1="95" x2="188" y2="80" stroke="#dc2626" stroke-width="1" stroke-dasharray="3,2"/>
+            <text x="178" y="76" font-size="11" text-anchor="end" fill="#dc2626">桌边</text>
+            <!-- arrow showing vibration direction -->
+            <path d="M 184 5 Q 174 15 184 25 Q 194 15 184 5" fill="none" stroke="#2563eb" stroke-width="1.5"/>
+            <path d="M 184 10 Q 177 15 184 20" fill="none" stroke="#2563eb" stroke-width="1.2"/>
+            <text x="170" y="32" font-size="10" fill="#2563eb">拨动</text>
+            <!-- double arrow showing length -->
+            <line x1="160" y1="110" x2="160" y2="128" stroke="#999" stroke-width="0.8"/>
+            <line x1="160" y1="128" x2="280" y2="128" stroke="#999" stroke-width="0.8"/>
+            <line x1="280" y1="110" x2="280" y2="128" stroke="#999" stroke-width="0.8"/>
+            <text x="220" y="124" font-size="10" text-anchor="middle" fill="#999">伸出长度</text>
+          </svg>
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong>（1）钢尺伸出越长，振动越 <strong>慢</strong>，音调越 <strong>低</strong>。（2）该实验说明音调的高低与 <strong>频率</strong> 有关，<strong>频率</strong> 越高，音调越高。钢尺伸出短时，振动快、频率高、音调高；伸出长时，振动慢、频率低、音调低。<br>
+          <strong>答案：</strong>（1）慢；低（2）频率；频率
+        </div>
+      </div>
+
+      <div class="exam-q">
+        <span class="q-tag">2023 武汉</span>
+        <strong>题 3</strong>
+        <div class="q-body">
+          一辆汽车以 $72\ \text{km/h}$ 的速度匀速行驶在平直公路上，在距离前方山崖 $360\ \text{m}$ 处鸣笛，经过 $2\ \text{s}$ 后听到了回声。已知空气中声速为 $340\ \text{m/s}$，求汽车的速度。<br>
+          （提示：画声波传播路径示意图帮助分析）
+        </div>
+        <div class="diagram">
+          <svg viewBox="0 0 400 90" xmlns="http://www.w3.org/2000/svg">
+            <!-- ground -->
+            <line x1="10" y1="65" x2="390" y2="65" stroke="#666" stroke-width="1.5"/>
+            <!-- car -->
+            <rect x="30" y="45" width="30" height="18" fill="#60a5fa" stroke="#2563eb" stroke-width="1.5" rx="3"/>
+            <circle cx="36" cy="63" r="4" fill="#333"/><circle cx="54" cy="63" r="4" fill="#333"/>
+            <text x="45" y="42" font-size="10" text-anchor="middle" fill="#2563eb">汽车</text>
+            <!-- cliff -->
+            <rect x="360" y="20" width="25" height="58" fill="#a8a29e" stroke="#57534e" stroke-width="1.5" rx="2"/>
+            <text x="372" y="16" font-size="10" text-anchor="middle" fill="#57534e">山崖</text>
+            <!-- distance label -->
+            <line x1="60" y1="70" x2="60" y2="82" stroke="#dc2626" stroke-width="0.8"/>
+            <line x1="60" y1="82" x2="360" y2="82" stroke="#dc2626" stroke-width="0.8"/>
+            <line x1="360" y1="70" x2="360" y2="82" stroke="#dc2626" stroke-width="0.8"/>
+            <text x="210" y="78" font-size="11" text-anchor="middle" fill="#dc2626">360 m</text>
+            <!-- sound wave arc -->
+            <path d="M 60 55 Q 210 10 360 55" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <path d="M 65 58 Q 210 15 355 58" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <text x="200" y="12" font-size="10" text-anchor="middle" fill="#f59e0b">声波</text>
+          </svg>
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong>设汽车速度为 $v$（$\text{m/s}$）。汽车鸣笛后，声波从汽车传到山崖再反射回汽车。在 $2\ \text{s}$ 内：声波走过的路程 $s_{\text{声}} = 340 \times 2 = 680\ \text{m}$；汽车向山崖行驶的路程 $s_{\text{车}} = 2v$。声波总路程 $=$ 初始距离 $\times 2$ $-$ 汽车移动距离（因为汽车向山崖运动，缩短了回声的路程）：$s_{\text{声}} = 2 \times 360 - s_{\text{车}}$，即 $$680 = 720 - 2v$$ 解得 $v = 20\ \text{m/s} = 72\ \text{km/h}$。<br>
+          <strong>答案：</strong>$20\ \text{m/s}$（$72\ \text{km/h}$）
+        </div>
+      </div>
+
+      <div class="exam-q">
+        <span class="q-tag">2022 南京</span>
+        <strong>题 4</strong>
+        <div class="q-body">
+          如图所示是不同声音的波形图，下列说法正确的是（  ）
+        </div>
+        <div class="diagram">
+          <svg viewBox="0 0 460 280" xmlns="http://www.w3.org/2000/svg">
+            <!-- 高音 -->
+            <text x="10" y="25" font-size="12" fill="#2563eb">A. 高音（频率高）</text>
+            <path d="M 10 50 Q 28 20 46 50 Q 64 80 82 50 Q 100 20 118 50 Q 136 80 154 50 Q 172 20 190 50 Q 208 80 226 50 Q 244 20 262 50 Q 280 80 298 50 Q 316 20 334 50 Q 352 80 370 50 Q 388 20 406 50 Q 424 80 442 50 Q 460 20 478 50" fill="none" stroke="#2563eb" stroke-width="1.8"/>
+
+            <!-- 低音 -->
+            <text x="10" y="95" font-size="12" fill="#dc2626">B. 低音（频率低）</text>
+            <path d="M 10 120 Q 70 90 130 120 Q 190 150 250 120 Q 310 90 370 120 Q 430 150 490 120" fill="none" stroke="#dc2626" stroke-width="1.8"/>
+
+            <!-- 大响度 -->
+            <text x="10" y="165" font-size="12" fill="#16a34a">C. 大响度（振幅大）</text>
+            <path d="M 10 190 Q 45 140 80 190 Q 115 240 150 190 Q 185 140 220 190 Q 255 240 290 190 Q 325 140 360 190 Q 395 240 430 190 Q 465 140 500 190" fill="none" stroke="#16a34a" stroke-width="1.8"/>
+
+            <!-- 小响度 -->
+            <text x="10" y="235" font-size="12" fill="#9333ea">D. 小响度（振幅小）</text>
+            <path d="M 10 260 Q 45 250 80 260 Q 115 270 150 260 Q 185 250 220 260 Q 255 270 290 260 Q 325 250 360 260 Q 395 270 430 260 Q 465 250 500 260" fill="none" stroke="#9333ea" stroke-width="1.8"/>
+          </svg>
+        </div>
+        <div class="q-body">
+          A. 甲和乙的音调相同 &nbsp;&nbsp; B. 甲和丙的响度相同<br>
+          C. 甲和丁的音色相同 &nbsp;&nbsp; D. 以上说法都不正确
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong>波形图的横轴代表时间，纵轴代表振幅。A：甲（高频密集）和乙（低频稀疏）的频率不同，音调不同，错误。B：甲和丙的振幅明显不同（甲振幅小，丙振幅大），响度不同，错误。C：甲和丁的波形形状不同（一个是正弦波，一个是尖峰波），音色不同，错误。故选 D。<br>
+          <strong>技巧：</strong>看波形——数"波浪"密度判断音调高低（密度大→音调高）；量"波浪"高度判断响度大小（高度大→响度大）；看波形形状判断音色。<br>
+          <strong>答案：</strong>D
+        </div>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 自查清单 -->
+  <div class="checklist">
+    <h3>✅ 章节自查清单</h3>
+    <label><input type="checkbox"> 我能说出"声音由物体振动产生"并用转换法设计实验证明</label>
+    <label><input type="checkbox"> 我能解释真空罩实验的推理过程，知道声音传播需要介质</label>
+    <label><input type="checkbox"> 我会辨析生活中"高""低""大""小"分别指音调还是响度</label>
+    <label><input type="checkbox"> 我会用 $s = vt/2$ 解决回声测距问题，注意区分单程和往返</label>
+    <label><input type="checkbox"> 我能识别三种噪声控制途径，从实际措施对应到声源/传播路径/人耳</label>
+    <p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;">
+      <strong>🧑‍🏫 费曼挑战：</strong>请用"声波→介质→耳朵"的逻辑链，向同学解释为什么宇航员在月球上即使面对面也听不到对方说话，以及他们在太空中如何通信。
+    </p>
+  </div>
+
+</div>
+
+</main>
+
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/auto-render.min.js"></script>
+<script>
+(function() {
+  const toggle = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+  const saved = localStorage.getItem('physics-theme');
+  if (saved === 'dark') {
+    html.setAttribute('data-theme', 'dark');
+    toggle.textContent = '☀️ 亮色模式';
+  }
+  toggle.addEventListener('click', function() {
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    toggle.textContent = isDark ? '🌙 暗色模式' : '☀️ 亮色模式';
+    localStorage.setItem('physics-theme', isDark ? 'light' : 'dark');
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof renderMathInElement === 'function') {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ],
+        throwOnError: false
+      });
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const sidebarLinks = document.querySelectorAll('#sidebar nav a');
+    const modules = document.querySelectorAll('.module, .exam-module, .learning-goals');
+    if (modules.length === 0) return;
+    const observer = new IntersectionObserver(function(entries) {
+      let best = null;
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) best = entry.target;
+      });
+      if (best) {
+        sidebarLinks.forEach(function(link) { link.classList.remove('active'); });
+      }
+    }, { rootMargin: '-20% 0px -60% 0px' });
+    modules.forEach(function(m) { observer.observe(m); });
+  });
+  var sidebar = document.getElementById('sidebar');
+  var hideBtn = document.getElementById('sidebarHideBtn');
+  var sidebarHidden = localStorage.getItem('physics8-sidebar') === 'hidden';
+  if (sidebarHidden) sidebar.classList.add('hidden');
+  var showBtn = document.getElementById('sidebarShowBtn');
+  hideBtn.addEventListener('click', function() {
+    sidebar.classList.add('hidden');
+    localStorage.setItem('physics8-sidebar', 'hidden');
+  });
+  showBtn.addEventListener('click', function() {
+    sidebar.classList.remove('hidden');
+    localStorage.setItem('physics8-sidebar', '');
+  });
+  (function() {
+    var btn = document.getElementById('expandAllBtn');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      var allDetails = document.querySelectorAll('.module, .exam-module');
+      var allOpen = true;
+      for (var i = 0; i < allDetails.length; i++) {
+        if (!allDetails[i].hasAttribute('open')) { allOpen = false; break; }
+      }
+      for (var i = 0; i < allDetails.length; i++) {
+        if (allOpen) allDetails[i].removeAttribute('open');
+        else allDetails[i].setAttribute('open', '');
+      }
+      btn.textContent = allOpen ? '📂 展开全部章节' : '📖 收起全部章节';
+    });
+  })();
+  })();
+</script>
+
+</body>
+</html>

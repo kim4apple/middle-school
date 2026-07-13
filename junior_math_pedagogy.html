@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>初中数学 · 科学教学法与快速自学技巧</title>
+  <link rel="stylesheet" href="katex/katex.min.css">
+  <style>
+:root {
+  --bg: #ffffff;
+  --bg-secondary: #f8fafc;
+  --text: #1e293b;
+  --text-secondary: #64748b;
+  --accent: #4f46e5;
+  --accent-light: #eef2ff;
+  --border: #e2e8f0;
+  --shadow: 0 1px 2px rgba(0,0,0,0.06);
+  --radius: 6px;
+  --sidebar-width: 260px;
+  --level-basic: #10b981;
+  --level-medium: #f59e0b;
+  --level-advanced: #ef4444;
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --bg-secondary: #1e293b;
+  --text: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --accent: #818cf8;
+  --accent-light: #1e1b4b;
+  --border: #334155;
+  --shadow: 0 1px 2px rgba(0,0,0,0.25);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  display: flex;
+}
+
+#sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border);
+  padding: 20px 14px;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+#sidebar h2 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--accent);
+}
+
+.sidebar-group { margin-bottom: 12px; }
+.sidebar-group-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0 10px 4px;
+}
+
+#sidebar nav a {
+  display: block;
+  padding: 5px 10px;
+  border-radius: 6px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 12px;
+  transition: background 0.15s, color 0.15s;
+}
+
+#sidebar nav a:hover,
+#sidebar nav a.active {
+  background: var(--accent-light);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.sidebar-actions {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.theme-toggle, .print-btn {
+  padding: 7px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 12px;
+  width: 100%;
+}
+
+#content {
+  flex: 1;
+  max-width: 920px;
+  padding: 32px 40px;
+}
+
+.cover {
+  text-align: center;
+  padding: 30px 0 24px;
+  margin-bottom: 28px;
+  border-bottom: 2px solid var(--border);
+}
+.cover h1 { font-size: 30px; margin-bottom: 8px; letter-spacing: -0.5px; }
+.cover p { color: var(--text-secondary); font-size: 14px; }
+
+.section { margin-bottom: 44px; }
+
+.section h1 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.module {
+  margin-bottom: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  page-break-inside: avoid;
+}
+
+.module summary {
+  padding: 11px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--bg-secondary);
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.module summary::-webkit-details-marker { display: none; }
+
+.module summary::before {
+  content: "▸";
+  display: inline-block;
+  font-size: 11px;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.module[open] summary::before { transform: rotate(90deg); }
+
+.module .content { padding: 14px 16px; }
+
+.resource-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow);
+  page-break-inside: avoid;
+}
+.resource-card h3 {
+  font-size: 15px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.level-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 7px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.3px;
+  margin-left: 4px;
+}
+.level-basic { background: var(--level-basic); }
+.level-medium { background: var(--level-medium); }
+.level-advanced { background: var(--level-advanced); }
+
+.tip-box {
+  background: linear-gradient(135deg, #fef9e7 0%, var(--accent-light) 100%);
+  border-left: 4px solid #f59e0b;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.tip-box strong { color: #b45309; }
+
+.info-box {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  font-size: 13.5px;
+  line-height: 1.8;
+}
+.info-box strong { color: var(--accent); }
+.info-box p { margin-top: 4px; color: var(--text-secondary); }
+
+.formula-card {
+  background: var(--bg-secondary);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+.formula-card strong { color: var(--accent); }
+.formula-card p { margin-top: 3px; color: var(--text-secondary); font-size: 12px; }
+
+.method-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow);
+}
+.method-card h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.method-card .step-num {
+  width: 28px; height: 28px;
+  background: var(--accent);
+  color: white;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.method-card .desc { font-size: 13.5px; line-height: 1.7; margin-bottom: 8px; }
+.method-card .example {
+  font-size: 13px;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+}
+.method-card .why {
+  font-size: 12.5px;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 6px 10px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  border-left: 3px solid var(--accent);
+}
+
+.selection-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 10px 0;
+}
+.selection-table th,
+.selection-table td {
+  border: 1px solid var(--border);
+  padding: 9px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+.selection-table th {
+  background: var(--bg-secondary);
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 12px;
+}
+.selection-table tr:nth-child(even) td {
+  background: var(--bg-secondary);
+}
+
+ul.plain { padding-left: 18px; margin: 6px 0; }
+ul.plain li { margin-bottom: 4px; font-size: 13.5px; line-height: 1.6; }
+ol.plain { padding-left: 20px; margin: 6px 0; }
+ol.plain li { margin-bottom: 6px; font-size: 13.5px; line-height: 1.6; }
+
+.pitfall-box {
+  font-size: 12.5px;
+  color: #dc2626;
+  background: #fef2f2;
+  padding: 7px 10px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  border-left: 3px solid #dc2626;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  body { flex-direction: column; }
+  #sidebar { width: 100%; height: auto; position: relative; padding: 16px; }
+  #content { padding: 20px 16px; }
+}
+
+@media print {
+  @page { size: A4; margin: 10mm; }
+  body { background: #fff; color: #000; font-size: 9pt; line-height: 1.4; display: block; }
+  #sidebar, .theme-toggle, .print-btn, .sidebar-actions { display: none !important; }
+  #content { max-width: none; padding: 0; }
+  .cover { padding: 0 0 8px; margin-bottom: 10px; border-bottom: 1.5px solid #999; }
+  .cover h1 { font-size: 20px; }
+  .cover p { color: #333; }
+  .section { margin-bottom: 6mm; }
+  .section h1 { font-size: 13px; margin-bottom: 5px; padding-bottom: 3px; border-bottom: 1.5px solid #333; }
+  .module { box-shadow: none; border: 1px solid #999; margin-bottom: 4mm; page-break-inside: avoid; }
+  .module summary { background: #f3f4f6 !important; color: #000 !important; padding: 5px 8px; font-size: 10px; border-bottom: 1px solid #999; }
+  .module summary::before { display: none; }
+  .module .content { padding: 6px; display: block !important; }
+  details { display: block; }
+  .resource-card, .formula-card, .method-card, .tip-box, .info-box { box-shadow: none; border: 1px solid #bbb; padding: 6px; margin-bottom: 3mm; }
+  .method-card h3 { color: #000; }
+  .why { background: #fff !important; color: #000 !important; border-left: 2px solid #000; }
+  a { text-decoration: none; color: #000; }
+  .katex { font-size: 1em; }
+}
+  </style>
+</head>
+<body>
+  <nav id="sidebar">
+    <h2>教学法与自学导航</h2>
+    <div class="sidebar-group">
+      <div class="sidebar-group-title">教学法</div>
+      <nav>
+        <a href="#path">分阶段学习路径</a>
+        <a href="#template">每节课教学模板</a>
+        <a href="#blockers">数学卡点突破策略</a>
+        <a href="#parents">家长辅导指南</a>
+      </nav>
+    </div>
+    <div class="sidebar-group">
+      <div class="sidebar-group-title">自学技巧</div>
+      <nav>
+        <a href="#feynman">费曼学习法（数学版）</a>
+        <a href="#three-rounds">三遍练习法</a>
+        <a href="#wrongbook">错题本体系</a>
+        <a href="#daily">每日训练方案</a>
+        <a href="#exam">考场实战技巧</a>
+        <a href="#speedup">快速自学加速包</a>
+      </nav>
+    </div>
+    <div class="sidebar-actions">
+      <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
+      <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
+    </div>
+  </nav>
+
+  <main id="content">
+    <div class="cover">
+      <h1>初中数学 · 科学教学法与快速自学技巧</h1>
+      <p>零基础到精通 · 费曼学习法 · 三遍练习 · 错题体系 · 考场策略 | A4 可打印版</p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 核心教学理念 -->
+    <!-- ============================================================ -->
+    <section class="section" id="philosophy">
+      <div class="info-box">
+        <strong>📌 数学教学核心理念：</strong>
+        <p>数学不是靠背出来的，而是靠<strong>理解概念 → 内化方法 → 刻意练习 → 反思升华</strong>四位一体。数学学习的本质是<strong>思维训练</strong>：学会如何分析问题、选择策略、验证答案。</p>
+      </div>
+
+      <details class="module" open>
+        <summary>🧠 数学学习的五个层次</summary>
+        <div class="content">
+          <table class="selection-table">
+            <tr><th>层次</th><th>名称</th><th>能做什么</th><th>检测标准</th></tr>
+            <tr><td>L1</td><td>记忆</td><td>记住公式、定理、定义</td><td>能默写乘法公式、勾股定理、三角函数值</td></tr>
+            <tr><td>L2</td><td>理解</td><td>明白公式为什么成立、定理怎么推导</td><td>能用面积法证明 $(a+b)^2=a^2+2ab+b^2$，会推导韦达定理</td></tr>
+            <tr><td>L3</td><td>应用</td><td>用已知方法解决标准题目</td><td>给一个方程会求解，给一个三角形会用勾股定理</td></tr>
+            <tr><td>L4</td><td>分析</td><td>面对新题型，能分解问题、选择策略</td><td>给一道没见过的压轴题，能拆解出考查点并找到入</td></tr>
+            <tr><td>L5</td><td>创造</td><td>一题多解、自编变式、建立模型</td><td>对一道题给出 3 种解法，能自己设计变式题</td></tr>
+          </table>
+          <div class="tip-box" style="margin-top:10px;">
+            <strong>绝大多数学生的卡点：</strong>停留在 L1-L2，但中考要求 L3-L4。每天刷 50 道题只是 L1 的重复——不理解原理、不总结方法，低效勤奋而已。
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 教学法：分阶段学习路径 -->
+    <!-- ============================================================ -->
+    <section class="section" id="path">
+      <h1>一、分阶段学习路径：零基础到中考精通</h1>
+
+      <div class="info-box">
+        <strong>设计原则：</strong> 遵循"数与代数 → 几何直观 → 函数抽象"的认知发展规律。数学概念从具体到抽象逐步递进，不可跳级。如果跳过"整式"直接学"因式分解"，必定失败。
+      </div>
+
+      <details class="module" open>
+        <summary>🎯 阶段一：代数基础（约 3–4 周）</summary>
+        <div class="content">
+          <table class="selection-table">
+            <tr><th style="width:18%;">学习内容</th><th style="width:30%;">核心任务</th><th style="width:27%;">关键方法</th><th style="width:25%;">达标标准</th></tr>
+            <tr>
+              <td>有理数<br>整式加减<br>一元一次方程<br>二元一次方程组</td>
+              <td>
+                · 建立"数轴"数形结合观<br>
+                · 掌握移项、合并、去分母<br>
+                · 学会找等量关系列方程
+              </td>
+              <td>
+                · 用数轴理解绝对值、相反数<br>
+                · 方程解题五步法模板化<br>
+                · 应用题：审→设→列→解→验→答
+              </td>
+              <td>
+                · 有理数四则运算正确率 ≥ 95%<br>
+                · 能解系数为分数的方程<br>
+                · 行程/工程/利润应用题能独立完成
+              </td>
+            </tr>
+          </table>
+          <div class="tip-box" style="margin-top:8px;">
+            <strong>🔑 关键节点：</strong>如果"移项不变号""去分母漏乘"反复出错，需要停下来专门做 20 道针对性练习，不要赶进度。
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>🎯 阶段二：几何入门与不等式（约 3–4 周）</summary>
+        <div class="content">
+          <table class="selection-table">
+            <tr><th style="width:18%;">学习内容</th><th style="width:30%;">核心任务</th><th style="width:27%;">关键方法</th><th style="width:25%;">达标标准</th></tr>
+            <tr>
+              <td>几何图形初步<br>相交线与平行线<br>平面直角坐标系<br>不等式与不等式组</td>
+              <td>
+                · 建立"证明"的思维方式<br>
+                · 识别三线八角（F/Z/U）<br>
+                · 掌握坐标表示和平移<br>
+                · 理解不等式与方程的区别
+              </td>
+              <td>
+                · 平行线判定与性质不混淆<br>
+                · 坐标平移：右加左减，上加下减<br>
+                · 不等式变号检查清单
+              </td>
+              <td>
+                · 能写完整的两步几何证明<br>
+                · 能在坐标系中画点、描述位置<br>
+                · 不等式组能画数轴找公共解
+              </td>
+            </tr>
+          </table>
+          <div class="pitfall-box">
+            ⚠️ 这阶段拉开差距：几何需要逻辑推理而非机械计算。如果证明写不出，不是不会，是没建立"由条件→结论"的思维链路。
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>🎯 阶段三：核心提升（约 5–6 周）<span class="level-tag level-advanced">最关键的阶段</span></summary>
+        <div class="content">
+          <table class="selection-table">
+            <tr><th style="width:18%;">学习内容</th><th style="width:30%;">核心任务</th><th style="width:27%;">关键方法</th><th style="width:25%;">达标标准</th></tr>
+            <tr>
+              <td>实数与二次根式<br>三角形与全等<br>整式乘法与因式分解<br>分式<br>勾股定理</td>
+              <td>
+                · 理解无理数，掌握根式运算<br>
+                · 掌握全等三角形五种判定<br>
+                · 熟练乘法公式和十字相乘<br>
+                · 用勾股定理解决几何计算
+              </td>
+              <td>
+                · 全等证明：找对应、选判定<br>
+                · 因式分解：一提二套三分组<br>
+                · 分式：先化简再代入，不要硬算<br>
+                · 勾股：画图+找Rt△+列方程
+              </td>
+              <td>
+                · 全等证明几何书写规范<br>
+                · 因式分解看到式子能想到方法<br>
+                · 分式方程必验根<br>
+                · 勾股定理逆定理灵活使用
+              </td>
+            </tr>
+          </table>
+          <div class="tip-box" style="margin-top:8px;">
+            <strong>🔑 为什么最关键：</strong>这阶段的知识占中考 40% 以上分值。因式分解是解二次方程的前置技能；全等三角形是几何证明的核心；勾股定理是计算长度的基本工具。任何一项掉队，后面的学习都会受阻。
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>🎯 阶段四：函数与四边形（约 4–5 周）</summary>
+        <div class="content">
+          <table class="selection-table">
+            <tr><th style="width:18%;">学习内容</th><th style="width:30%;">核心任务</th><th style="width:27%;">关键方法</th><th style="width:25%;">达标标准</th></tr>
+            <tr>
+              <td>一次函数<br>平行四边形<br>特殊四边形<br>数据分析</td>
+              <td>
+                · 理解函数的本质：变量关系<br>
+                · 掌握 $y=kx+b$ 的图象和性质<br>
+                · 矩形/菱形/正方形的判定链<br>
+                · 中位线、方差的应用
+              </td>
+              <td>
+                · 函数必画图：开口、交点、增减性<br>
+                · 四边形：先证平行四边形再加条件<br>
+                · 待定系数法求解析式
+              </td>
+              <td>
+                · 能由图象读出 k、b 符号<br>
+                · 能判定和证明特殊四边形<br>
+                · 能解决一次函数与几何综合题
+              </td>
+            </tr>
+          </table>
+          <div class="tip-box" style="margin-top:8px;">
+            <strong>🔑 函数是分水岭：</strong>从"具体的数"到"变量关系"是认知的重大跳跃。很多学生第一次感到"数学变难了"就是在这里。关键在于画图——把抽象的解析式变成可视的直线。
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>🎯 阶段五：冲刺综合（约 6–8 周）<span class="level-tag level-advanced">决胜阶段</span></summary>
+        <div class="content">
+          <table class="selection-table">
+            <tr><th style="width:18%;">学习内容</th><th style="width:30%;">核心任务</th><th style="width:27%;">关键方法</th><th style="width:25%;">达标标准</th></tr>
+            <tr>
+              <td>一元二次方程<br>二次函数<br>旋转与圆<br>相似三角形<br>锐角三角函数<br>反比例函数</td>
+              <td>
+                · 掌握求根公式与韦达定理<br>
+                · 理解抛物线三要素：开口、对称轴、顶点<br>
+                · 圆周角圆心角关系<br>
+                · 相似三角形的判定与应用
+              </td>
+              <td>
+                · 二次函数：一般式↔顶点式↔交点式互化<br>
+                · 圆：垂径定理→Rt△→勾股<br>
+                · 相似：找等角、找比例<br>
+                · 三角：sin、cos、tan 的记忆口诀
+              </td>
+              <td>
+                · 二次函数区间最值不出错<br>
+                · 圆的切线证明能独立完成<br>
+                · 相似与函数的综合题 ≥ 60%
+              </td>
+            </tr>
+          </table>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>🎯 阶段六：总复习与真题实战（约 6–8 周）</summary>
+        <div class="content">
+          <table class="selection-table">
+            <tr><th style="width:18%;">阶段</th><th style="width:30%;">任务</th><th style="width:27%;">重点</th><th style="width:25%;">目标</th></tr>
+            <tr><td>第 1–2 周</td><td>知识体系重建</td><td>用思维导图串联所有知识点</td><td>能独立画出四大板块知识结构图</td></tr>
+            <tr><td>第 3–4 周</td><td>专题突破</td><td>压轴模型、含参问题、动点问题</td><td>每个专题正确率 ≥ 70%</td></tr>
+            <tr><td>第 5–6 周</td><td>真题限时训练</td><td>近 5 年本地中考真题</td><td>限时完成，分析错题归因</td></tr>
+            <tr><td>第 7–8 周</td><td>查漏补缺 + 模拟</td><td>错题本重做、考前模拟</td><td>模拟卷稳定 ≥ 90%</td></tr>
+          </table>
+        </div>
+      </details>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 教学模板 -->
+    <!-- ============================================================ -->
+    <section class="section" id="template">
+      <h1>二、数学教学 / 自学课堂模板</h1>
+
+      <details class="module" open>
+        <summary>📝 45 分钟标准课模板（教师/家长/自学适用）</summary>
+        <div class="content">
+          <div class="method-card">
+            <h3><span class="step-num">1</span> 导入激活（5 分钟）</h3>
+            <div class="desc">
+              <strong>目的：</strong>激活前知识，制造认知冲突。<br>
+              <strong>操作：</strong>用一道"看起来简单但容易错"的题开场，或一个生活场景。例如：<br>
+            </div>
+            <div class="example">📌 引入"韦达定理"时：方程 $x^2-5x+6=0$，不解方程，能否求出两根之和？学生试算后揭晓 $x_1+x_2=5$，引出韦达定理。</div>
+            <div class="why"><strong>原理：</strong>认知心理学表明——当学生发现"旧方法不够用"时，学习新知识的动机最强。</div>
+          </div>
+
+          <div class="method-card">
+            <h3><span class="step-num">2</span> 新知讲解（15 分钟）</h3>
+            <div class="desc">
+              <strong>四步法：</strong><br>
+              ① <strong>是什么</strong>——概念定义（2 分钟）<br>
+              ② <strong>为什么</strong>——推导过程（5 分钟）<br>
+              ③ <strong>怎么用</strong>——例题示范（5 分钟）<br>
+              ④ <strong>什么坑</strong>——易错预警（3 分钟）
+            </div>
+            <div class="example">📌 讲"相似三角形的判定"：① 定义（对应角相等、对应边成比例）→ ② 为什么 AA 就够了（三角形内角和 180° 决定第三个角）→ ③ 示范一道证明题 → ④ 易错：SSA 不能判定相似（同样也不能判定全等）。</div>
+            <div class="why"><strong>原理：</strong>学生需要知道"知识的来龙去脉"，而不仅仅是"结论"。理解了推导过程才能灵活运用。</div>
+          </div>
+
+          <div class="method-card">
+            <h3><span class="step-num">3</span> 互动练习（15 分钟）</h3>
+            <div class="desc">
+              <strong>"三道题递进法"：</strong><br>
+              ① 基础题（全班都会）→ 建立自信<br>
+              ② 变式题（80% 会）→ 暴露问题<br>
+              ③ 拓展题（50% 会）→ 激发思考<br>
+            </div>
+            <div class="example">📌 讲"完全平方公式"：① $(x+3)^2$（直接套公式）→ ② $(2a-3b)^2$（系数变复杂）→ ③ 已知 $x+\frac{1}{x}=3$，求 $x^2+\frac{1}{x^2}$（需要变形技巧）。</div>
+            <div class="why"><strong>原理：</strong>分层练习让每个学生都有收获——既不能全部都简单，也不能一开始就难到放弃。</div>
+          </div>
+
+          <div class="method-card">
+            <h3><span class="step-num">4</span> 小结与费曼任务（5 分钟）</h3>
+            <div class="desc">
+              ① 用思维导图或一句话总结本课核心<br>
+              ② 布置"费曼作业"：用 1 分钟把今天的核心内容讲给家人听
+            </div>
+            <div class="why"><strong>原理：</strong>总结帮助巩固记忆；而"教别人"是最有效的学习方式（学习金字塔理论：教别人的内容保留率达 90%）。</div>
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>⏱️ 自学时间分配建议</summary>
+        <div class="content">
+          <table class="selection-table">
+            <tr><th>自学方式</th><th>建议安排</th><th>适合人群</th></tr>
+            <tr><td>集中式</td><td>每天 1.5–2 小时，连续学习一个章节或专题</td><td>假期系统自学、初三总复习</td></tr>
+            <tr><td>分散式</td><td>每天 30–40 分钟，分"学新知识 + 练旧知识"两段</td><td>上学期间、跟课同步</td></tr>
+            <tr><td>碎片式</td><td>每天 15 分钟，只做一件事（概念/公式/一题）</td><td>时间紧张、保持手感</td></tr>
+          </table>
+          <div class="tip-box" style="margin-top:8px;">
+            <strong>💡 关键：</strong>无论哪种方式，每周必须有一个"总结日"——复习本周所有内容、重做本周错题、画出本周知识结构图。不总结等于白学。
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 数学卡点突破策略 -->
+    <!-- ============================================================ -->
+    <section class="section" id="blockers">
+      <h1>三、数学十大卡点与突破策略</h1>
+
+      <details class="module" open>
+        <summary>🔴 代数类卡点（5 个）</summary>
+        <div class="content">
+          <table class="selection-table">
+            <tr><th>卡点</th><th>具体表现</th><th>突破策略</th></tr>
+            <tr>
+              <td><strong>符号错误</strong></td>
+              <td>去括号、移项、乘除负数时符号搞反</td>
+              <td>① 建立"符号检查清单"：去括号→移项→系数化1，每步检查；② 放慢速度，每道题大声念出"负号变号"；③ 专用训练：连续做 50 道含负号的混合运算。</td>
+            </tr>
+            <tr>
+              <td><strong>因式分解不会选方法</strong></td>
+              <td>看到多项式不知道从哪下手</td>
+              <td>① 强制顺序训练："一提二套三分组"，每次按顺序试；② 一眼识别法训练：先看有无公因式→再看项数（两项→平方差，三项→完全平方或十字相乘，四项→分组）；③ 每天专门练 10 道。</td>
+            </tr>
+            <tr>
+              <td><strong>分式方程忘记验根</strong></td>
+              <td>解完就以为结束了</td>
+              <td>① 每次解题流程最后一步写上"验根：_____"，不写不给分；② 理解"增根"的本质：使最简公分母为零的值。</td>
+            </tr>
+            <tr>
+              <td><strong>二次根式化简不彻底</strong></td>
+              <td>$\sqrt{12}$ 不化为 $2\sqrt{3}$，同类根式不合并</td>
+              <td>① 口诀："先看能否开得尽，再看分母有没有"；② 背熟 1-20 的平方数；③ 每次化简后问自己"还能再化简吗？"</td>
+            </tr>
+            <tr>
+              <td><strong>韦达定理不会灵活变形</strong></td>
+              <td>只会用 $x_1+x_2$ 和 $x_1x_2$</td>
+              <td>① 背诵 6 个常用变形：$x_1^2+x_2^2$、$(x_1-x_2)^2$、$\frac{1}{x_1}+\frac{1}{x_2}$、$\frac{x_1}{x_2}+\frac{x_2}{x_1}$、$x_1^3+x_2^3$、$|x_1-x_2|$；② 推导一遍记一遍。</td>
+            </tr>
+          </table>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>🔵 几何与函数类卡点（5 个）</summary>
+        <div class="content">
+          <table class="selection-table">
+            <tr><th>卡点</th><th>具体表现</th><th>突破策略</th></tr>
+            <tr>
+              <td><strong>几何证明不知道从哪写</strong></td>
+              <td>看着题目无从下手</td>
+              <td>① 逆向分析法：从要证的结论倒推需要的条件；② 标注法：在图上用不同符号标出等边、等角；③ 模板法：熟记 5 种全等判定的书写框架。</td>
+            </tr>
+            <tr>
+              <td><strong>辅助线不会添加</strong></td>
+              <td>题目做不出，一看答案"哦要加辅助线"</td>
+              <td>① 见中点→中位线/倍长中线/斜边中线/三线合一；② 见切线→连半径；③ 见角平分线→作垂线；④ 做辅助线专题卡，每天练一类型。</td>
+            </tr>
+            <tr>
+              <td><strong>动点问题不会分类</strong></td>
+              <td>只想到一种情况，漏掉其他</td>
+              <td>① 习惯训练："这个点还能在哪？"每次解题后问自己；② 几何画图：用 Geogebra 拖动点看变化；③ 分类模板：等腰（两圆一中垂）、直角（两线一圆）、平行四边形（三种对角线）。</td>
+            </tr>
+            <tr>
+              <td><strong>函数图象不会分析</strong></td>
+              <td>知道公式但画不出图，或画了图不会读</td>
+              <td>① 每次做函数题必须先画草图；② 训练"由式到图"：给解析式能说出开口、对称轴、顶点、交点；③ 训练"由图到式"：给图象能说出系数符号和大致数值。</td>
+            </tr>
+            <tr>
+              <td><strong>实际问题不会建模</strong></td>
+              <td>应用题读不懂，不知道设什么未知数</td>
+              <td>① "圈画法"：圈出所有数字和关键词（"总共""多""少""倍"）；② 列表法：把已知量和未知量列成表格；③ 画线段图或示意图辅助理解。</td>
+            </tr>
+          </table>
+        </div>
+      </details>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 家长辅导指南 -->
+    <!-- ============================================================ -->
+    <section class="section" id="parents">
+      <h1>四、家长辅导指南</h1>
+
+      <details class="module" open>
+        <summary>👨‍👩‍👧 家长可以做什么（和不能做什么）</summary>
+        <div class="content">
+          <table class="selection-table">
+            <tr><th style="width:10%;">✅ / ❌</th><th style="width:40%;">做法</th><th style="width:50%;">说明</th></tr>
+            <tr>
+              <td>✅</td>
+              <td><strong>帮孩子建立固定的学习节奏</strong></td>
+              <td>每天固定时间学数学，形成条件反射。不是"有空再学"，而是"到点就学"。</td>
+            </tr>
+            <tr>
+              <td>✅</td>
+              <td><strong>检查错题本是否在用</strong></td>
+              <td>只问"这周的错题整理了吗？"而不需要亲自辅导题目。错题本是自学的核心。</td>
+            </tr>
+            <tr>
+              <td>✅</td>
+              <td><strong>让孩子讲给你听</strong></td>
+              <td>"今天学了什么？能给我讲讲吗？"你听不懂没关系，关键是孩子在"教"。这就是费曼学习法。</td>
+            </tr>
+            <tr>
+              <td>✅</td>
+              <td><strong>营造"错是正常的"氛围</strong></td>
+              <td>不要说"这么简单都不会"，而是"这个错很好，让我们看看怎么不再犯"。</td>
+            </tr>
+            <tr>
+              <td>❌</td>
+              <td><strong>不要直接给答案</strong></td>
+              <td>孩子问"这道题怎么做"，先反问"你试了什么方法？卡在哪里？"引导独立思考。</td>
+            </tr>
+            <tr>
+              <td>❌</td>
+              <td><strong>不要和别人比较</strong></td>
+              <td>"某某考了 100 分你为什么不行"——这破坏学习动力。只和自己比：上次错了这类题，这次对了吗？</td>
+            </tr>
+            <tr>
+              <td>❌</td>
+              <td><strong>不要盲目加量</strong></td>
+              <td>孩子已经很努力但成绩不提升，不是做的题不够多，而是方法或基础有问题。先诊断再施策。</td>
+            </tr>
+          </table>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>🔍 如何判断孩子卡在哪里</summary>
+        <div class="content">
+          <div class="formula-card"><strong>症状：计算总是出错 → </strong><p>不是粗心，是基础不牢。退回去练有理数运算、去括号、因式分解。</p></div>
+          <div class="formula-card"><strong>症状：应用题完全读不懂 → </strong><p>不是数学问题，是阅读理解问题。先练"把文字翻译成数学符号"。</p></div>
+          <div class="formula-card"><strong>症状：大题只会第一问 → </strong><p>缺少多步推理能力。从两步推理题开始练，逐步增加步骤。</p></div>
+          <div class="formula-card"><strong>症状：考试时间不够 → </strong><p>两个原因：① 基础题不够熟练（占时太多）；② 在一道题上死磕。训练限时策略。</p></div>
+        </div>
+      </details>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 自学技巧 -->
+    <!-- ============================================================ -->
+    <section class="section" id="feynman">
+      <h1>五、费曼学习法（数学版）</h1>
+
+      <div class="info-box">
+        <strong>📌 费曼原话：</strong>"The first principle is that you must not fool yourself — and you are the easiest person to fool." <br>（第一原则是你不能欺骗自己——而你是最容易欺骗自己的人。）
+      </div>
+
+      <details class="module" open>
+        <summary>📖 费曼四步法 · 数学实操版</summary>
+        <div class="content">
+          <div class="method-card">
+            <h3><span class="step-num">1</span> 选一个概念，写在纸上</h3>
+            <div class="desc">不要模糊地说"我今天学了函数"，而是具体到"二次函数 $y=ax^2+bx+c$ 中，$a$ 决定了开口方向和大小"。写在纸的最上方。</div>
+          </div>
+
+          <div class="method-card">
+            <h3><span class="step-num">2</span> 假装教给一个 10 岁小孩</h3>
+            <div class="desc">
+              用最简单的语言，不依赖专业术语。<br>
+              ❌ "二次函数的判别式 $\Delta=b^2-4ac$ 决定了方程根的个数"<br>
+              ✅ "$b^2-4ac$ 这个数，如果大于 0，抛物线和 $x$ 轴有两个交点；等于 0，刚好碰一下；小于 0，完全碰不到 $x$ 轴"
+            </div>
+          </div>
+
+          <div class="method-card">
+            <h3><span class="step-num">3</span> 卡住的地方 = 你没真懂的地方</h3>
+            <div class="desc">讲到某个环节说不下去了——恭喜，你找到了知识盲区。马上回去查课本、看解析，直到你能用大白话讲清楚为止。</div>
+            <div class="example">📌 常见卡住点："$k$ 为什么等于倾斜角的正切？"——如果你讲不明白，说明你还没真正理解 $k$ 的几何意义。</div>
+          </div>
+
+          <div class="method-card">
+            <h3><span class="step-num">4</span> 用一个生活类比收尾</h3>
+            <div class="desc">给这个数学概念找一个生活中的对应物。</div>
+            <div class="example">
+              📌 $k$（斜率）→ 爬坡的陡峭程度：$k$ 越大，坡越陡<br>
+              📌 $b$（截距）→ 起跑线：$b$ 决定了从哪开始<br>
+              📌 韦达定理 → 两个人知道他们年龄的和和积，就能反推出各自的年龄<br>
+              📌 将军饮马 → 去河边打水再回家，怎么走最近
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>🎯 费曼学习法应用示例</summary>
+        <div class="content">
+          <div class="formula-card">
+            <strong>用费曼法解释"完全平方公式"</strong>
+            <p>"想象你有一块正方形的地，边长是 $a+b$。你要算这块地多大。你可以把它切成四块：一块 $a\times a$ 的正方形、一块 $b\times b$ 的正方形、两块 $a\times b$ 的长方形。所以总面积就是 $a^2+b^2+2ab$。这就是为什么 $(a+b)^2=a^2+2ab+b^2$——它就是一个正方形的面积！"</p>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 三遍练习法 -->
+    <!-- ============================================================ -->
+    <section class="section" id="three-rounds">
+      <h1>六、三遍练习法（3-Round Practice System）</h1>
+
+      <div class="info-box">
+        <strong>核心思想：</strong>大多数学生的刷题是"做完→对答案→下一题"，这是最低效的方式。三遍练习法让每道题产生 3 倍的收获。
+      </div>
+
+      <details class="module" open>
+        <summary>📊 三遍练习法详解</summary>
+        <div class="content">
+          <table class="selection-table">
+            <tr><th style="width:12%;">轮次</th><th style="width:18%;">名称</th><th style="width:28%;">核心任务</th><th style="width:12%;">时限</th><th style="width:30%;">具体操作</th></tr>
+            <tr>
+              <td><strong>R1</strong></td>
+              <td>拆解</td>
+              <td>读题、画图、标已知、写公式</td>
+              <td>不限时</td>
+              <td>
+                ① 圈出题目中所有数字和条件<br>
+                ② 画图（几何）/ 写已知量和未知量（代数）<br>
+                ③ 判断本题考查什么知识点<br>
+                ④ 写出可能用到的公式
+              </td>
+            </tr>
+            <tr>
+              <td><strong>R2</strong></td>
+              <td>限时</td>
+              <td>完整书写解题过程</td>
+              <td>计时</td>
+              <td>
+                ① 设未知数→列方程→求解→检验<br>
+                ② 每一步写清楚，不能跳步<br>
+                ③ 不看答案，独立完成<br>
+                ④ 记录实际用时
+              </td>
+            </tr>
+            <tr>
+              <td><strong>R3</strong></td>
+              <td>复盘</td>
+              <td>对答案→标错→归类→整理错题本</td>
+              <td>5–10 分钟</td>
+              <td>
+                ① 对比答案，找出不同之处<br>
+                ② 判断错误类型（A/B/C/D）<br>
+                ③ 写出"为什么错"和"下次怎么做"<br>
+                ④ 如果是经典题，尝试第二种解法
+              </td>
+            </tr>
+          </table>
+          <div class="tip-box" style="margin-top:10px;">
+            <strong>💡 质量 > 数量：</strong>认真做 5 道题的"三遍练习"，效果远超粗暴刷 50 道题。每周选 3–5 道经典题做三遍练习，坚持一个月就能看到质的提升。
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 错题本体系 -->
+    <!-- ============================================================ -->
+    <section class="section" id="wrongbook">
+      <h1>七、错题本体系：从"记下来"到"不再错"</h1>
+
+      <details class="module" open>
+        <summary>📋 错题本六大字段</summary>
+        <div class="content">
+          <div class="formula-card">
+            <strong>标准错题格式：</strong>
+            <p>① 日期与来源 | ② 原题（可剪贴）| ③ 错误答案 | ④ 正确答案 | ⑤ 错误类型（A/B/C/D）| ⑥ 反思一句话</p>
+          </div>
+
+          <table class="selection-table">
+            <tr><th>错误类型</th><th>定义</th><th>处理方法</th></tr>
+            <tr>
+              <td><strong>A — 概念不清</strong></td>
+              <td>根本没掌握相关知识点，完全不知道怎么做</td>
+              <td>回看课本该知识点，找 5 道同类题重做</td>
+            </tr>
+            <tr>
+              <td><strong>B — 方法误用</strong></td>
+              <td>知道概念但用错了方法或公式</td>
+              <td>整理"公式适用条件对比表"贴在错题本上</td>
+            </tr>
+            <tr>
+              <td><strong>C — 审题失误</strong></td>
+              <td>看漏条件、看错数字、没注意"整数"等限制词</td>
+              <td>以后做题前先圈画关键词，训练审题习惯</td>
+            </tr>
+            <tr>
+              <td><strong>D — 计算错误</strong></td>
+              <td>符号搞错、去分母漏乘、代入数值算错</td>
+              <td>放慢计算速度，每步验算，建立"易错符号清单"</td>
+            </tr>
+            <tr>
+              <td><strong>E — 分类遗漏</strong></td>
+              <td>等腰三角形没讨论腰、动点只考虑一种位置</td>
+              <td>建立"分类讨论触发条件"卡片</td>
+            </tr>
+          </table>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>🔄 错题本的使用周期</summary>
+        <div class="content">
+          <table class="selection-table">
+            <tr><th>时间</th><th>操作</th></tr>
+            <tr><td>每天</td><td>当天错题当天整理，趁记忆新鲜</td></tr>
+            <tr><td>每周</td><td>重做本周所有错题，做对打 ✓，做错打 ✗</td></tr>
+            <tr><td>每月</td><td>重做本月 ✗ 标记的题，仍然错的用荧光笔标记</td></tr>
+            <tr><td>考前</td><td>只做荧光笔标记的"顽固错题"</td></tr>
+          </table>
+          <div class="tip-box" style="margin-top:10px;">
+            <strong>💡 错题本的关键不是"记"，而是"不再犯"：</strong>同一道错题如果重做 3 次都对了，可以从错题本中移除。错题本是动态的，不应该是"坟场"。
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>📝 错题本格式示例</summary>
+        <div class="content">
+          <div class="example" style="background:var(--bg-secondary);padding:12px;border-radius:var(--radius);">
+            <p><strong>2025-03-15 | 月考第 22 题 | 类型：B + E</strong></p>
+            <p><strong>原题：</strong>等腰三角形两边长分别为 4 和 9，则它的周长为_____。</p>
+            <p><strong>错误答案：</strong>17（只算了 4+4+9=17）</p>
+            <p><strong>正确答案：</strong>22（4+9+9=22。因为 4,4,9 不满足三角形三边关系 4+4&lt;9，不能组成三角形）</p>
+            <p><strong>反思：</strong>① 等腰三角形的腰需要分类讨论：4 是腰还是 9 是腰？② 每种情况要验证三边关系。③ 口诀："先分类，再验证"。</p>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 每日训练方案 -->
+    <!-- ============================================================ -->
+    <section class="section" id="daily">
+      <h1>八、每日数学训练方案</h1>
+
+      <details class="module" open>
+        <summary>📅 一周训练计划（轻量但持续）</summary>
+        <div class="content">
+          <table class="selection-table">
+            <tr><th style="width:10%;">日期</th><th style="width:28%;">内容</th><th style="width:22%;">耗时</th><th style="width:40%;">具体操作</th></tr>
+            <tr>
+              <td>周一</td>
+              <td><strong>计算基本功</strong></td>
+              <td>15 分钟</td>
+              <td>5 道有理数/二次根式混合运算；5 道因式分解。要求全对，错一补三。</td>
+            </tr>
+            <tr>
+              <td>周二</td>
+              <td><strong>概念与方法</strong></td>
+              <td>15 分钟</td>
+              <td>默写 3 个重要公式或定理（如韦达定理、相似判定、圆的性质）；做 3 道概念判断/选择题。</td>
+            </tr>
+            <tr>
+              <td>周三</td>
+              <td><strong>几何推理</strong></td>
+              <td>15 分钟</td>
+              <td>1 道几何证明题（完整书写）；不会做时用逆向分析法：从结论倒推条件。</td>
+            </tr>
+            <tr>
+              <td>周四</td>
+              <td><strong>函数与图象</strong></td>
+              <td>15 分钟</td>
+              <td>1 道函数综合题，必须画草图。训练"由式到图"和"由图到式"。</td>
+            </tr>
+            <tr>
+              <td>周五</td>
+              <td><strong>压轴挑战</strong></td>
+              <td>20 分钟</td>
+              <td>1 道中考压轴题。不要求全做对——要求拆解出考查点，写出"第一步做什么"。做不出的部分用费曼法讲给自己听。</td>
+            </tr>
+            <tr>
+              <td>周末</td>
+              <td><strong>复盘总结</strong></td>
+              <td>30 分钟</td>
+              <td>① 重做本周所有错题；② 画本周所学内容的思维导图；③ 翻看以前的错题本"顽固错题"。</td>
+            </tr>
+          </table>
+          <div class="tip-box" style="margin-top:10px;">
+            <strong>💡 轻量但持续是关键：</strong>每天 15–20 分钟的持续训练，效果远超周末突击 3 小时。数学需要"手感"——断一天都会生疏。
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>🚀 集中突破方案（假期/冲刺期）</summary>
+        <div class="content">
+          <table class="selection-table">
+            <tr><th>时间段</th><th colspan="2">内容</th></tr>
+            <tr>
+              <td>上午 9:00–10:30</td>
+              <td><strong>新知学习</strong>（45 分钟学 + 15 分钟练 + 30 分钟练）</td>
+              <td>用一个番茄钟学新课（看视频/看书），用两个番茄钟做配套练习</td>
+            </tr>
+            <tr>
+              <td>上午 10:45–11:30</td>
+              <td><strong>费曼输出</strong></td>
+              <td>把上午学的内容用大白话写一篇"给 10 岁小孩的讲解稿"</td>
+            </tr>
+            <tr>
+              <td>下午 2:00–3:00</td>
+              <td><strong>限时刷题</strong></td>
+              <td>一套章节测试卷，严格限时，模拟考试状态</td>
+            </tr>
+            <tr>
+              <td>下午 3:30–4:30</td>
+              <td><strong>复盘 + 错题整理</strong></td>
+              <td>对答案、分析错因、整理错题本、重做错题</td>
+            </tr>
+          </table>
+          <div class="tip-box" style="margin-top:10px;">
+            <strong>💡 "费曼输出"不能省略：</strong>很多人集中突破只做到了"学 + 练"，忽略了"输出"环节。而输出（讲给别人/写讲解稿）才是真正内化的关键步骤。
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 考场实战技巧 -->
+    <!-- ============================================================ -->
+    <section class="section" id="exam">
+      <h1>九、考场实战技巧</h1>
+
+      <details class="module" open>
+        <summary>⏱️ 时间分配（120 分钟中考卷）</summary>
+        <div class="content">
+          <table class="selection-table">
+            <tr><th>题型</th><th>建议时间</th><th>每题用时</th><th>策略</th></tr>
+            <tr><td>选择题（10–12 题）</td><td>20–25 分钟</td><td>约 2 分钟</td><td>先做简单的，一时想不通的标记后跳。用排除法、特殊值法、数形结合法。</td></tr>
+            <tr><td>填空题（6–8 题）</td><td>15–20 分钟</td><td>约 2.5 分钟</td><td>注意单位、符号、分类讨论。填完之后回读一遍。</td></tr>
+            <tr><td>解答题（中档，4–5 题）</td><td>35–40 分钟</td><td>约 8 分钟</td><td>规范书写、跳步会扣分。每一步都要有依据。</td></tr>
+            <tr><td>压轴题（2 题）</td><td>25–30 分钟</td><td>约 13–15 分钟</td><td>先拿下第一问；第二问用第一问结论；第三问尽量写步骤。写公式就有分。</td></tr>
+            <tr><td>检查</td><td>10–15 分钟</td><td>—</td><td>优先查：分式验根、不等式变号、分类讨论是否遗漏、单位是否统一。</td></tr>
+          </table>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>✅ 考试检查清单</summary>
+        <div class="content">
+          <div class="formula-card"><strong>代数类检查</strong><p>☐ 分式方程验根了吗？ ☐ 不等式乘除负数变号了吗？ ☐ 二次根式被开方数 ≥ 0？ ☐ 方程两边同乘时每一项都乘了吗？</p></div>
+          <div class="formula-card"><strong>几何类检查</strong><p>☐ 等腰三角形分类讨论了吗？ ☐ 动点问题所有位置都考虑了吗？ ☐ 相似三角形的对应顶点写对了吗？ ☐ 单位写了吗（cm/m/°）？</p></div>
+          <div class="formula-card"><strong>函数类检查</strong><p>☐ 二次函数最值考虑区间端点了吗？ ☐ 反比例函数强调"在每个象限内"了吗？ ☐ 实际问题定义域检查了吗？</p></div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>🎯 压轴题抢分策略</summary>
+        <div class="content">
+          <div class="method-card">
+            <h3><span class="step-num">1</span> 分步取分</h3>
+            <div class="desc">压轴题通常 3 问，分值约为 3+4+5 或 4+5+5。<strong>第一问必须拿满</strong>（通常是求解析式、坐标、线段长等基础计算，难度≈中档题）。第二问尽量拿。第三问能写多少写多少。</div>
+          </div>
+
+          <div class="method-card">
+            <h3><span class="step-num">2</span> "公式分"策略</h3>
+            <div class="desc">中考计算题中，<strong>写出正确公式通常能拿 40–60% 的步骤分</strong>。即使完全算不出结果，把相关公式写上去：勾股定理、相似比、韦达定理、面积公式、两点间距离公式……</div>
+            <div class="example">📌 压轴题最后一问完全不会？至少写出："设点 $P$ 坐标为 $(m, n)$，由点 $P$ 在抛物线上得 $n=am^2+bm+c$；由 $PA=PB$ 得 $(m-x_A)^2+(n-y_A)^2=(m-x_B)^2+(n-y_B)^2$……"</div>
+          </div>
+
+          <div class="method-card">
+            <h3><span class="step-num">3</span> 先易后难，不死磕</h3>
+            <div class="desc">一道选择题超过 3 分钟没思路——跳过。一道填空题超过 4 分钟没做出——跳过。与其花 15 分钟死磕一道 3 分的题，不如把这 15 分钟用在后面 12 分的压轴题上。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 快速自学加速包 -->
+    <!-- ============================================================ -->
+    <section class="section" id="speedup">
+      <h1>十、快速自学加速包</h1>
+
+      <details class="module" open>
+        <summary>⚡ 数学知识加速内化的 7 个技巧</summary>
+        <div class="content">
+          <div class="method-card">
+            <h3><span class="step-num">1</span> 先建框架，再填细节（自上而下学习法）</h3>
+            <div class="desc">开始学一个新章节前，先用 5 分钟浏览目录和小标题，画出"这一章的知识地图"。然后再逐个深入学习。有框架的知识记得更牢。</div>
+            <div class="example">📌 学"圆"之前：先知道本章有"圆的基本概念→垂径定理→圆周角→切线→弧长扇形"五个主题，然后再逐个击破。</div>
+          </div>
+
+          <div class="method-card">
+            <h3><span class="step-num">2</span> 概念用"一句话定义"（30 秒法）</h3>
+            <div class="desc">每学一个新概念，在 30 秒内用一句话把它说清楚。说不清楚说明没真懂。</div>
+            <div class="example">📌 "绝对值"→"一个数在数轴上到原点的距离。""概率"→"某件事在所有可能结果中占的比例。"</div>
+          </div>
+
+          <div class="method-card">
+            <h3><span class="step-num">3</span> 公式推导 > 死记硬背</h3>
+            <div class="desc">每个公式自己推导一遍。即使忘了公式，如果能推导，就等于永远不会忘。</div>
+            <div class="example">📌 完全平方公式 → 用 $(a+b)(a+b)$ 展开；韦达定理 → 设 $ax^2+bx+c=a(x-x_1)(x-x_2)$ 展开对比系数；弧长公式 → 圆周长 × 圆心角比例。</div>
+          </div>
+
+          <div class="method-card">
+            <h3><span class="step-num">4</span> 类比法：用已知学未知</h3>
+            <div class="desc">把新知识和已掌握的知识建立联系。</div>
+            <div class="example">
+              📌 分式运算 ↔ 分数运算（通分、约分、四则运算规则完全一样）<br>
+              📌 相似三角形 ↔ 全等三角形（全等是相似比=1 的特殊情况）<br>
+              📌 二次函数 ↔ 一元二次方程（$y=0$ 就是方程）
+            </div>
+          </div>
+
+          <div class="method-card">
+            <h3><span class="step-num">5</span> 间隔重复（Spaced Repetition）</h3>
+            <div class="desc">人类记忆的遗忘曲线决定：学完 1 天后忘记 50%，1 周后忘记 70%。对抗遗忘的唯一方法是间隔重复。</div>
+            <table class="selection-table" style="margin-top:8px;">
+              <tr><th>复习节点</th><td>学完后 1 天</td><td>学完后 1 周</td><td>学完后 1 个月</td><td>考前</td></tr>
+              <tr><th>操作</th><td>重做 5 道基础题</td><td>重做错题 + 费曼讲解</td><td>综合题 + 思维导图</td><td>错题本重点回顾</td></tr>
+            </table>
+          </div>
+
+          <div class="method-card">
+            <h3><span class="step-num">6</span> 交错练习（Interleaving）</h3>
+            <div class="desc">不要一次性做 20 道同类型的题（这只会训练"套公式"），而是混合不同类型。研究和实践表明：混合练习比集中练习的学习效果高约 40%。</div>
+            <div class="example">📌 不要：今天做 20 道一元二次方程 → 明天做 20 道二次函数 → 后天做 20 道圆<br>而要：每天都混合 1 道方程 + 1 道函数 + 1 道几何 + 1 道统计。这样大脑被迫在题型间切换，考试时才能灵活调用。</div>
+          </div>
+
+          <div class="method-card">
+            <h3><span class="step-num">7</span> 自编变式题（最高阶技巧）</h3>
+            <div class="desc">做完一道经典题后，尝试改编它：改变一个条件会发生什么？把"最大值"改成"最小值"？把"等腰三角形"改成"直角三角形"？如果你能自己编题，说明完全吃透了。</div>
+            <div class="example">📌 原题：$y=x^2-2x+3$ 在 $[0,3]$ 上的最小值是多少？<br>变式 1：改成 $[-2,0]$ 区间？变式 2：改成 $[a,a+2]$ 含参数？变式 3：改成 $y=-x^2+2x+3$ 开口向下？</div>
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>🎯 不同起点的加速路径</summary>
+        <div class="content">
+          <table class="selection-table">
+            <tr><th>当前水平</th><th>加速策略</th><th>预期效果</th></tr>
+            <tr>
+              <td><strong>零基础（< 40 分）</strong></td>
+              <td>① 回归课本，把书上每道例题独立做对；② 每天只练计算基本功；③ 不做难题，不买教辅，先吃透课本。</td>
+              <td>4–6 周达到基础计算不出错，概念理解完整</td>
+            </tr>
+            <tr>
+              <td><strong>基础薄弱（40–60 分）</strong></td>
+              <td>① 按"数与代数→几何→函数"顺序补基础；② 用错题本体系，重点消灭 A 类和 D 类错误；③ 每天费曼讲解一个概念。</td>
+              <td>8–10 周达到及格线以上</td>
+            </tr>
+            <tr>
+              <td><strong>中等水平（60–80 分）</strong></td>
+              <td>① 重点突破 C 类和 E 类错误（审题+分类）；② 几何辅助线、函数图象分析做专题训练；③ 每周一套限时模拟卷。</td>
+              <td>6–8 周冲刺 90 分</td>
+            </tr>
+            <tr>
+              <td><strong>优秀水平（80–90 分）</strong></td>
+              <td>① 集中攻克压轴模型（将军饮马、胡不归、一线三等角）；② 训练一题多解；③ 交错练习混合题型。</td>
+              <td>4–6 周冲击满分</td>
+            </tr>
+          </table>
+        </div>
+      </details>
+    </section>
+
+    <p style="text-align:center;padding:40px 0 20px;color:var(--text-secondary);font-size:14px;">
+      📚 初中数学 · 科学教学法与快速自学技巧 · A4 可打印版
+    </p>
+  </main>
+
+  <script defer src="katex/katex.min.js"></script>
+  <script defer src="katex/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "$", right: "$", display: false}
+        ],
+        throwOnError: false
+      });
+
+      const toggle = document.getElementById("theme-toggle");
+      if (toggle) {
+        toggle.addEventListener("click", function () {
+          const html = document.documentElement;
+          if (html.getAttribute("data-theme") === "dark") {
+            html.setAttribute("data-theme", "light");
+            toggle.textContent = "🌙 暗色模式";
+          } else {
+            html.setAttribute("data-theme", "dark");
+            toggle.textContent = "☀️ 亮色模式";
+          }
+        });
+      }
+
+      const links = document.querySelectorAll("#sidebar nav a");
+      const sections = document.querySelectorAll(".section");
+      function onScroll() {
+        let current = "";
+        sections.forEach(sec => {
+          const rect = sec.getBoundingClientRect();
+          if (rect.top <= 120) current = sec.id;
+        });
+        links.forEach(link => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === "#" + current) link.classList.add("active");
+        });
+      }
+      window.addEventListener("scroll", onScroll);
+      onScroll();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第1章 机械运动 | 八年级物理</title>
+<link rel="stylesheet" href="css/physics.css">
+<link rel="stylesheet" href="../katex/katex.min.css">
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">八年级物理</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;" title="隐藏侧栏">✕</button>
+  </div>
+  <nav>
+    <a href="index.html">🏠 首页</a>
+    <a href="ch01.html" class="active">第1章 机械运动</a>
+    <a href="ch02.html">第2章 声现象</a>
+    <a href="ch03.html">第3章 物态变化</a>
+    <a href="ch04.html">第4章 光现象</a>
+    <a href="ch05.html">第5章 透镜及其应用</a>
+    <a href="ch06.html">第6章 质量与密度</a>
+    <a href="ch07.html">第7章 力</a>
+    <a href="ch08.html">第8章 运动和力</a>
+    <a href="ch09.html">第9章 压强</a>
+    <a href="ch10.html">第10章 浮力</a>
+    <a href="ch11.html">第11章 功和机械能</a>
+    <a href="ch12.html">第12章 简单机械</a>
+    <a href="appendix.html">附录</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button id="theme-toggle" class="theme-toggle" style="margin-top:10px;">🌙 暗色模式</button>
+</nav>
+
+<main id="content">
+
+<div class="chapter">
+  <h1>第1章 机械运动</h1>
+
+  <!-- 学习目标 -->
+  <div class="learning-goals">
+    <strong>🎯 学习目标</strong>
+    <p>① 掌握长度和时间的基本测量方法，能正确使用刻度尺和停表，会估读到分度值的下一位</p>
+    <p>② 理解速度的概念，能用公式 $v = \frac{s}{t}$ 进行简单计算，熟练进行单位换算</p>
+    <p>③ 能识别并分析 $s$-$t$ 图像和 $v$-$t$ 图像，理解匀速直线运动的特征</p>
+  </div>
+
+  <!-- 前置知识关联 -->
+  <div class="knowledge-link">
+    <strong>📎 前置知识关联：</strong>
+    小学数学·长度单位（米、厘米、毫米）与时间单位（秒、分、时），以及"速度 = 路程 ÷ 时间"的初步认识；
+    六年级科学 · 简单运动的观察与描述；
+    生活经验 · 对"快""慢"的直观感受，乘坐交通工具的速度体验。
+  </div>
+
+  <!-- 思维方法 -->
+  <div class="thought-method">
+    <strong>🔬 物理学思维方法：图像法</strong>
+    用坐标图像直观描述物理量之间的关系。将抽象的速度、时间、路程关系转化为可视化的直线图像，通过图像的斜率、截距等信息获取物理规律。在 $s$-$t$ 图中，斜率表示速度大小；在 $v$-$t$ 图中，图线与坐标轴围成的"面积"表示路程。图像法是贯穿整个物理学习最基本的研究方法之一。
+  </div>
+
+  <!-- 思维导图 -->
+  <details class="module" open>
+    <summary>🧠 思维导图</summary>
+    <div class="content">
+      <div class="mindmap">
+        <ul>
+          <li><span class="node-label">机械运动</span></li>
+          <li>
+            <span class="node-label">长度测量</span>
+            <ul>
+              <li>单位：$\text{km}$、$\text{m}$、$\text{dm}$、$\text{cm}$、$\text{mm}$（$1\ \text{m}=10\ \text{dm}=100\ \text{cm}=1000\ \text{mm}$）</li>
+              <li>工具：刻度尺 —— 选对量程和分度值</li>
+              <li>读数：准确值 + 估读值 + 单位（估读到分度值的下一位）</li>
+              <li>特殊测量：累积法（测纸张厚度）、以曲代直法（测地图铁路线）、滚轮法</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">时间测量</span>
+            <ul>
+              <li>单位：$\text{h}$、$\text{min}$、$\text{s}$（$1\ \text{h}=60\ \text{min}=3600\ \text{s}$）</li>
+              <li>工具：停表（机械停表读数为分 + 秒）</li>
+              <li>常用：电子停表、手机计时器</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">运动的描述</span>
+            <ul>
+              <li>参照物：判断物体运动时被假定为不动的物体</li>
+              <li>运动和静止的相对性：选择不同参照物，运动状态结论可能不同</li>
+              <li>典型：同步卫星以地球为参照物静止，以太阳为参照物运动</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">速度 $v = \dfrac{s}{t}$</span>
+            <ul>
+              <li>物理意义：表示物体运动快慢的物理量</li>
+              <li>定义：路程与时间之比</li>
+              <li>单位：$\text{m/s}$（国际）、$\text{km/h}$（常用）</li>
+              <li>换算：$1\ \text{m/s}=3.6\ \text{km/h}$</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">匀速直线运动</span>
+            <ul>
+              <li>定义：速度大小和方向都不变的直线运动</li>
+              <li>$s$-$t$ 图像：过原点的倾斜直线，斜率 $k=v$</li>
+              <li>$v$-$t$ 图像：平行于时间轴的直线</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">平均速度 $\bar{v} = \dfrac{s_{\text{总}}}{t_{\text{总}}}$</span>
+            <ul>
+              <li>描述物体在某段路程或时间内的平均快慢程度</li>
+              <li>测量原理：$v = s/t$（斜面小车实验）</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <!-- 核心概念 -->
+  <details class="module" open>
+    <summary>📖 核心概念</summary>
+    <div class="content">
+      <div class="card-grid">
+
+        <div class="concept-card">
+          <div class="name">长度单位与换算</div>
+          <p>国际单位制中长度的基本单位是 <strong>米（m）</strong>。常用单位间的换算关系：</p>
+          <p>$1\ \text{km}=10^3\ \text{m}$，$1\ \text{dm}=10^{-1}\ \text{m}$，$1\ \text{cm}=10^{-2}\ \text{m}$，$1\ \text{mm}=10^{-3}\ \text{m}$</p>
+          <p>记忆口诀："千米到毫米，十的三、二、一、负一、负二、负三次方"（km→m→dm→cm→mm）。</p>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">刻度尺使用与估读</div>
+          <p><strong>选：</strong>根据测量对象选择合适的量程和分度值。</p>
+          <p><strong>放：</strong>刻度线紧靠被测物体，与待测边平行。</p>
+          <p><strong>读：</strong>视线正对刻度线，读数 = 准确值 + 估读值 + 单位。估读值要读到分度值的 <strong>下一位</strong>。</p>
+          <p>例如分度值为 $1\ \text{mm}$ 的刻度尺，读数为 $2.50\ \text{cm}$（$2.5\ \text{cm}$ 为准确值，$0.00\ \text{cm}$ 为估读值）。</p>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">参照物与相对性</div>
+          <p><strong>参照物：</strong>在研究物体运动时，被假定为不动的物体。</p>
+          <p><strong>运动和静止的相对性：</strong>选择不同的参照物，同一物体的运动状态描述可能不同。</p>
+          <p>例：坐在行驶列车中的乘客，以车厢为参照物是静止的，以地面为参照物是运动的。</p>
+          <p>选择参照物时，通常不选研究对象本身。</p>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">速度 $v = \dfrac{s}{t}$</div>
+          <p><strong>物理意义：</strong>描述物体运动快慢的物理量。</p>
+          <p><strong>定义：</strong>物体通过的路程与通过这段路程所用时间之比。</p>
+          <p><strong>公式：</strong>$v = \dfrac{s}{t}$，变形：$s = vt$，$t = \dfrac{s}{v}$。</p>
+          <p><strong>单位换算：</strong>$1\ \text{m/s} = 3.6\ \text{km/h}$</p>
+          <p>比较快慢：相同时间比路程，相同路程比时间。</p>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">匀速直线运动</div>
+          <p><strong>定义：</strong>物体沿着直线且速度大小和方向都不变的运动。</p>
+          <p>是最简单的机械运动模型，也是研究复杂运动的基础。</p>
+          <p>$s$-$t$ 图像特点：过原点的倾斜直线，倾斜程度（斜率）反映速度大小。</p>
+          <p>$v$-$t$ 图像特点：平行于时间轴的直线，与 $t$ 轴围成的矩形面积表示路程。</p>
+          <div class="diagram" style="margin-top:8px;">
+            <svg viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg">
+              <line x1="25" y1="95" x2="140" y2="95" stroke="#333" stroke-width="1"/>
+              <line x1="25" y1="95" x2="25" y2="20" stroke="#333" stroke-width="1"/>
+              <text x="82" y="112" font-size="10" text-anchor="middle">t/s</text>
+              <text x="16" y="55" font-size="10" transform="rotate(-90,16,55)" text-anchor="middle">v</text>
+              <line x1="30" y1="50" x2="135" y2="50" stroke="#2563eb" stroke-width="2"/>
+              <text x="135" y="46" font-size="10" fill="#2563eb">v=5m/s</text>
+              <text x="12" y="52" font-size="9" fill="#666">$v$</text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">平均速度</div>
+          <p><strong>定义：</strong>某段路程或某段时间内物体运动的平均快慢程度。</p>
+          <p>公式：$\bar{v} = \dfrac{s_{\text{总}}}{t_{\text{总}}}$</p>
+          <p><strong>注意：</strong>平均速度不是速度的平均值。计算时必须用总路程除以总时间，$t_{\text{总}}$ 包括中途停止、等待等所有花费的时间。</p>
+        </div>
+
+      </div>
+    </div>
+  </details>
+
+  <!-- 公式速查 -->
+  <details class="module" open>
+    <summary>📐 公式速查</summary>
+    <div class="content">
+
+      <div class="formula-card">
+        <strong>速度公式</strong>
+        <p>\[ v = \frac{s}{t} \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          $v$ — 速度（$\text{m/s}$），$s$ — 路程（$\text{m}$），$t$ — 时间（$\text{s}$）<br>
+          变形：$s = vt$ $t = \dfrac{s}{v}$
+        </p>
+      </div>
+
+      <div class="formula-card">
+        <strong>单位换算</strong>
+        <p>\[ 1\ \text{m/s} = 3.6\ \text{km/h} \quad \text{或} \quad 1\ \text{km/h} = \frac{1}{3.6}\ \text{m/s} \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          口诀："米每秒变大乘 3.6，千米每小时变小除以 3.6"。
+        </p>
+      </div>
+
+      <div class="formula-card">
+        <strong>平均速度</strong>
+        <p>\[ \bar{v} = \frac{s_{\text{总}}}{t_{\text{总}}} \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          其中 $s_{\text{总}}$ 是总路程，$t_{\text{总}}$ 是总时间（含中间停留时间）。
+        </p>
+      </div>
+
+      <div class="formula-card">
+        <strong>长度单位换算</strong>
+        <p>\[ 1\ \text{km} = 10^3\ \text{m} \quad 1\ \text{dm} = 10^{-1}\ \text{m} \quad 1\ \text{cm} = 10^{-2}\ \text{m} \quad 1\ \text{mm} = 10^{-3}\ \text{m} \]</p>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 实验探究 -->
+  <details class="module" open>
+    <summary>🔬 实验探究：测量物体运动的平均速度</summary>
+    <div class="content">
+      <div class="experiment-card">
+        <h3>实验：测量小车在斜面上的平均速度</h3>
+
+        <div class="exp-step">
+          <span class="exp-step-num">1</span>
+          <div><strong>组装斜面：</strong>将木板的一端垫高，构成一个坡度较小的斜面。坡度不宜过大，否则小车运动太快，不利于计时；坡度也不宜过小，否则小车可能无法自行下滑。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">2</span>
+          <div><strong>标记路程：</strong>在斜面上标记起点 $A$、中点 $B$ 和终点 $C$，用刻度尺分别测量 $AB$ 段和 $AC$ 段的路程，记录数据。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">3</span>
+          <div><strong>测量时间：</strong>将小车从 $A$ 点由静止释放，同时开始计时。当小车到达 $B$ 点时记录时间 $t_{AB}$，到达 $C$ 点时记录时间 $t_{AC}$。重复测量 3 次取平均值，以减小误差。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">4</span>
+          <div><strong>计算速度：</strong>用公式 $v_{AB} = \frac{s_{AB}}{t_{AB}}$ 计算小车在 $AB$ 段的平均速度，用 $v_{AC} = \frac{s_{AC}}{t_{AC}}$ 计算整段 $AC$ 的平均速度。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">5</span>
+          <div><strong>分析结论：</strong>比较 $v_{AB}$ 和 $v_{AC}$，发现小车在下滑过程中速度越来越大，做的是加速运动（非匀速）。</div>
+        </div>
+
+        <div class="exp-principle">
+          <strong>⚙ 实验原理：</strong>$v = \dfrac{s}{t}$。通过测量物体运动的路程 $s$ 和通过这段路程所用的时间 $t$，利用速度公式计算出平均速度。
+        </div>
+
+        <div class="exp-tip">
+          <strong>💡 易错提示：</strong>① 若小车过了 $B$ 点才停止计时，测得的时间偏大，计算出的平均速度偏小；② 若小车没有从 $A$ 点由静止释放（有初速度），则测得的速度偏大；③ 斜面的坡度应较小，使小车下滑缓慢，便于准确测量时间。
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- 解题技巧 -->
+  <details class="module" open>
+    <summary>✍️ 解题技巧</summary>
+    <div class="content">
+
+      <div class="technique-card">
+        <h3><span class="step-num">1</span> 速度公式的应用</h3>
+        <div class="method">📌 方法：根据题意明确已知量和待求量，选择合适的公式形式</div>
+        <div class="example">
+          <strong>例题：</strong>小明骑自行车从家到学校，以 $5\ \text{m/s}$ 的速度骑了 $600\ \text{s}$，求小明家到学校的距离。<br>
+          <strong>解：</strong>已知 $v=5\ \text{m/s}$，$t=600\ \text{s}$，由 $s=vt=5\ \text{m/s} \times 600\ \text{s}=3000\ \text{m}=3\ \text{km}$。
+        </div>
+        <div class="pitfall">
+          ⚠️ 易错点：代入公式前统一单位！当 $v$ 用 $\text{m/s}$ 时，$s$ 用 $\text{m}$，$t$ 用 $\text{s}$；当用 $\text{km/h}$ 时，$s$ 用 $\text{km}$，$t$ 用 $\text{h}$。不要混用。
+        </div>
+        <div class="principle">
+          <strong>📐 原理依据：</strong>速度的物理意义——单位时间内通过的路程。$v = \frac{s}{t}$ 是比值定义式，$v$ 与 $s$、$t$ 无关，由物体本身的运动状态决定。
+        </div>
+        <div class="exam-hint">
+          🏆 考场提示：中考中常以"时间—路程表格"形式出现，重点检查单位换算和代入计算的准确率。
+        </div>
+      </div>
+
+      <div class="technique-card">
+        <h3><span class="step-num">2</span> $s$-$t$ 图像分析</h3>
+        <div class="method">📌 方法："一看线、二看轴、三看点"</div>
+        <div class="example">
+          <strong>例题：</strong>甲、乙两物体同时同地出发，其 $s$-$t$ 图像如图所示。分析：（1）谁的速度大？（2）经过 $4\ \text{s}$，两物体相距多少？<br>
+          <strong>解：</strong>（1）相同时间内，甲通过的路程更大，故 $v_{\text{甲}} > v_{\text{乙}}$。<br>
+          （2）$t=4\ \text{s}$ 时，$s_{\text{甲}}=8\ \text{m}$，$s_{\text{乙}}=4\ \text{m}$，相距 $\Delta s = 8-4 = 4\ \text{m}$。
+        </div>
+        <div class="pitfall">
+          ⚠️ 易错点：$s$-$t$ 图像不是物体运动的轨迹！$s$-$t$ 图像中的"直线"不代表物体沿直线运动，只表示路程随时间均匀增加（匀速）。
+        </div>
+        <div class="principle">
+          <strong>📐 原理依据：</strong>在 $s$-$t$ 图像中，直线的倾斜程度（斜率）表示速度大小。斜率越大，速度越大。若图像与 $t$ 轴平行（水平线），表示物体静止。
+        </div>
+        <div class="exam-hint">
+          🏆 考场提示：中考必考题型！注意区分 $s$-$t$ 图和 $v$-$t$ 图。$s$-$t$ 图中的平行于 $t$ 轴表示静止；$v$-$t$ 图中平行于 $t$ 轴表示匀速。
+        </div>
+      </div>
+
+      <div class="technique-card">
+        <h3><span class="step-num">3</span> 平均速度计算</h3>
+        <div class="method">📌 方法：总路程 ÷ 总时间（含中途停留时间）</div>
+        <div class="example">
+          <strong>例题：</strong>一辆汽车从甲地到乙地，前半段路程速度为 $v_1$，后半段路程速度为 $v_2$，求全程平均速度。<br>
+          <strong>解：</strong>设全程路程为 $2s$，则前半段时间 $t_1=\frac{s}{v_1}$，后半段时间 $t_2=\frac{s}{v_2}$，$t_{\text{总}}=\frac{s}{v_1}+\frac{s}{v_2}$，$\bar{v} = \frac{2s}{t_{\text{总}}} = \frac{2s}{\frac{s}{v_1}+\frac{s}{v_2}} = \frac{2v_1v_2}{v_1+v_2}$。
+        </div>
+        <div class="pitfall">
+          ⚠️ 易错点：<strong>平均速度不是速度的平均值！</strong> $\bar{v} \neq \frac{v_1+v_2}{2}$。只有在"各段运动时间相等"时，平均速度才等于速度的平均值。
+        </div>
+        <div class="principle">
+          <strong>📐 原理依据：</strong>平均速度采用了整体法思想，将复杂的运动过程视为一个整体，用"总路程／总时间"来刻画整体的平均快慢。
+        </div>
+        <div class="exam-hint">
+          🏆 考场提示：中考高频题——"前一半时间/前一半路程"类问题。记住两个模型：时间相等用加权平均；路程相等用调和平均（$2v_1v_2/(v_1+v_2)$）。
+        </div>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 中考真题 -->
+  <details class="exam-module" open>
+    <summary>📝 中考真题</summary>
+    <div class="content">
+
+      <div class="exam-q">
+        <span class="q-tag">2023 北京</span>
+        <strong>题 1</strong>
+        <div class="q-body">
+          如图所示，用刻度尺测量一物体的长度。该刻度尺的分度值为 _____ $\text{mm}$，物体的长度为 _____ $\text{cm}$。
+        </div>
+        <div class="diagram">
+          <svg viewBox="0 0 460 90" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="15" width="430" height="28" fill="#fef9c3" stroke="#333" stroke-width="1.2" rx="2"/>
+            <text x="22" y="12" font-size="10" fill="#666">cm</text>
+            <!-- 0 -->
+            <line x1="35" y1="15" x2="35" y2="43" stroke="#333" stroke-width="1.2"/>
+            <text x="35" y="56" font-size="11" text-anchor="middle">0</text>
+            <!-- 1 -->
+            <line x1="125" y1="15" x2="125" y2="43" stroke="#333" stroke-width="1.2"/>
+            <text x="125" y="56" font-size="11" text-anchor="middle">1</text>
+            <!-- 2 -->
+            <line x1="215" y1="15" x2="215" y2="43" stroke="#333" stroke-width="1.2"/>
+            <text x="215" y="56" font-size="11" text-anchor="middle">2</text>
+            <!-- 3 -->
+            <line x1="305" y1="15" x2="305" y2="43" stroke="#333" stroke-width="1.2"/>
+            <text x="305" y="56" font-size="11" text-anchor="middle">3</text>
+            <!-- 4 -->
+            <line x1="395" y1="15" x2="395" y2="43" stroke="#333" stroke-width="1.2"/>
+            <text x="395" y="56" font-size="11" text-anchor="middle">4</text>
+            <!-- mm marks between 0-1, 1-2, 2-3, 3-4 each 9mm spacing -->
+            <!-- Actually each cm is 90px, so each mm is 9px -->
+            <!-- 1mm marks -->
+            <g stroke="#999" stroke-width="0.6">
+              <line x1="44" y1="15" x2="44" y2="38"/><line x1="53" y1="15" x2="53" y2="35"/><line x1="62" y1="15" x2="62" y2="38"/><line x1="71" y1="15" x2="71" y2="35"/><line x1="80" y1="15" x2="80" y2="38"/><line x1="89" y1="15" x2="89" y2="35"/><line x1="98" y1="15" x2="98" y2="38"/><line x1="107" y1="15" x2="107" y2="28"/><line x1="116" y1="15" x2="116" y2="38"/>
+            </g>
+            <!-- measured object: a rectangular bar -->
+            <rect x="35" y="48" width="180" height="20" fill="#60a5fa" stroke="#2563eb" stroke-width="1.5" rx="2"/>
+            <text x="125" y="80" font-size="12" text-anchor="middle" fill="#2563eb">物体</text>
+            <!-- measurement bracket -->
+            <line x1="35" y1="68" x2="35" y2="82" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="3,2"/>
+            <line x1="215" y1="68" x2="215" y2="82" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="3,2"/>
+            <line x1="35" y1="84" x2="215" y2="84" stroke="#dc2626" stroke-width="1.2"/>
+            <polygon points="35,84 42,80 42,88" fill="#dc2626"/>
+            <polygon points="215,84 208,80 208,88" fill="#dc2626"/>
+            <text x="125" y="74" font-size="13" text-anchor="middle" fill="#dc2626" font-weight="bold">?</text>
+          </svg>
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong>该刻度尺的 $1\ \text{cm}$ 之间有 10 个小格，所以分度值为 $1\ \text{mm}$。物体左端与零刻度线对齐，右端在 $2\ \text{cm}$ 后第 5 小格处，准确值为 $2.5\ \text{cm}$，再估读一位为 $0.00\ \text{cm}$，故长度为 $\boxed{2.50\ \text{cm}}$。<br>
+          <strong>答案：</strong>分度值 $1\ \text{mm}$，长度 $2.50\ \text{cm}$。
+        </div>
+      </div>
+
+      <div class="exam-q">
+        <span class="q-tag">2022 广州</span>
+        <strong>题 2</strong>
+        <div class="q-body">
+          甲、乙两物体同时从同一地点沿同一直线向东运动，它们的 $s$-$t$ 图像如图所示。由图像可知（  ）
+          <br>A. 甲的速度小于乙的速度
+          <br>B. 经过 $6\ \text{s}$，甲在乙前面 $1.2\ \text{m}$ 处
+          <br>C. 以甲为参照物，乙向东运动
+          <br>D. 以乙为参照物，甲向东运动
+        </div>
+        <div class="diagram">
+          <svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg">
+            <!-- axes -->
+            <line x1="50" y1="185" x2="270" y2="185" stroke="#333" stroke-width="1.2"/>
+            <line x1="50" y1="185" x2="50" y2="20" stroke="#333" stroke-width="1.2"/>
+            <text x="160" y="210" font-size="13" text-anchor="middle">$t$/s</text>
+            <text x="25" y="100" font-size="13" text-anchor="middle" transform="rotate(-90,25,100)">$s$/m</text>
+            <!-- origin label -->
+            <text x="42" y="198" font-size="11" text-anchor="end">O</text>
+            <!-- tick marks and labels -->
+            <line x1="50" y1="165" x2="45" y2="165" stroke="#999" stroke-width="0.8"/><text x="42" y="169" font-size="10" text-anchor="end">2</text>
+            <line x1="50" y1="145" x2="45" y2="145" stroke="#999" stroke-width="0.8"/><text x="42" y="149" font-size="10" text-anchor="end">4</text>
+            <line x1="50" y1="125" x2="45" y2="125" stroke="#999" stroke-width="0.8"/><text x="42" y="129" font-size="10" text-anchor="end">6</text>
+            <line x1="50" y1="105" x2="45" y2="105" stroke="#999" stroke-width="0.8"/><text x="42" y="109" font-size="10" text-anchor="end">8</text>
+            <line x1="90" y1="185" x2="90" y2="190" stroke="#999" stroke-width="0.8"/><text x="90" y="200" font-size="10" text-anchor="middle">2</text>
+            <line x1="130" y1="185" x2="130" y2="190" stroke="#999" stroke-width="0.8"/><text x="130" y="200" font-size="10" text-anchor="middle">4</text>
+            <line x1="170" y1="185" x2="170" y2="190" stroke="#999" stroke-width="0.8"/><text x="170" y="200" font-size="10" text-anchor="middle">6</text>
+            <line x1="210" y1="185" x2="210" y2="190" stroke="#999" stroke-width="0.8"/><text x="210" y="200" font-size="10" text-anchor="middle">8</text>
+            <!-- each step: x-axis 20px/s, y-axis 10px/m -->
+            <!-- 甲: steeper line, through (0,0) and (6s, 7.2m) => at 6s, y=185-72=113 -->
+            <line x1="50" y1="185" x2="170" y2="113" stroke="#2563eb" stroke-width="2.5"/>
+            <text x="175" y="108" font-size="12" fill="#2563eb" font-weight="bold">甲</text>
+            <!-- 乙: shallower line, through (0,0) and (6s, 4.8m) => at 6s, y=185-48=137 -->
+            <line x1="50" y1="185" x2="170" y2="137" stroke="#dc2626" stroke-width="2.5"/>
+            <text x="175" y="140" font-size="12" fill="#dc2626" font-weight="bold">乙</text>
+          </svg>
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong>由图像可知，相同时间内甲通过的路程更大，故 $v_{\text{甲}} > v_{\text{乙}}$，A 错误。$t=6\ \text{s}$ 时，$s_{\text{甲}}=7.2\ \text{m}$，$s_{\text{乙}}=4.8\ \text{m}$，相距 $\Delta s=7.2-4.8=2.4\ \text{m}$，B 错误。甲的速度大于乙，且两物体同向运动，以甲为参照物乙向西（向后）运动，以乙为参照物甲向东（向前）运动，故 D 正确。<br>
+          <strong>答案：</strong>D
+        </div>
+      </div>
+
+      <div class="exam-q">
+        <span class="q-tag">2023 杭州</span>
+        <strong>题 3</strong>
+        <div class="q-body">
+          一辆汽车在平直的公路上行驶。在 $10\ \text{min}$ 内前进了 $6\ \text{km}$，停车 $10\ \text{min}$ 后，又以 $72\ \text{km/h}$ 的速度匀速行驶 $20\ \text{min}$。求：
+          <br>（1）汽车停车前的平均速度；
+          <br>（2）汽车在全程中的平均速度。
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong><br>
+          （1）$v_1 = \dfrac{s_1}{t_1} = \dfrac{6\ \text{km}}{10\ \text{min}} = \dfrac{6\ \text{km}}{\frac{1}{6}\ \text{h}} = 36\ \text{km/h}$（或 $10\ \text{m/s}$）。<br>
+          （2）$s_2 = v_2 \cdot t_2 = 72\ \text{km/h} \times \dfrac{1}{3}\ \text{h} = 24\ \text{km}$；$s_{\text{总}} = 6 + 24 = 30\ \text{km}$；$t_{\text{总}} = 10 + 10 + 20 = 40\ \text{min} = \dfrac{2}{3}\ \text{h}$；$\bar{v} = \dfrac{s_{\text{总}}}{t_{\text{总}}} = \dfrac{30}{\frac{2}{3}} = 45\ \text{km/h}$。<br>
+          <strong>注意：</strong>总时间 $t_{\text{总}}$ 包含停车时间 $10\ \text{min}$！<br>
+          <strong>答案：</strong>（1）$36\ \text{km/h}$（2）$45\ \text{km/h}$
+        </div>
+      </div>
+
+      <div class="exam-q">
+        <span class="q-tag">2022 南京</span>
+        <strong>题 4</strong>
+        <div class="q-body">
+          如图所示，小明在"测量小车平均速度"的实验中，让小车从斜面的 $A$ 点由静止开始下滑，分别测出小车到达 $B$ 点和 $C$ 点的时间。
+          <br>（1）该实验的原理是 _____；
+          <br>（2）实验中，应使斜面保持较 _____（大/小）的坡度，目的是 _____；
+          <br>（3）如果小车过了 $B$ 点才停止计时，则测得 $AB$ 段的平均速度会偏 _____（大/小）。
+        </div>
+        <div class="diagram">
+          <svg viewBox="0 0 340 120" xmlns="http://www.w3.org/2000/svg">
+            <!-- slope -->
+            <line x1="30" y1="95" x2="300" y2="25" stroke="#6b7280" stroke-width="3" stroke-linecap="round"/>
+            <!-- A, B, C markers -->
+            <circle cx="30" cy="95" r="4" fill="#2563eb"/>
+            <text x="22" y="112" font-size="13" text-anchor="middle" font-weight="bold" fill="#2563eb">A</text>
+            <circle cx="165" cy="60" r="4" fill="#f59e0b"/>
+            <text x="157" y="55" font-size="13" text-anchor="middle" font-weight="bold" fill="#f59e0b">B</text>
+            <circle cx="300" cy="25" r="4" fill="#dc2626"/>
+            <text x="292" y="20" font-size="13" text-anchor="middle" font-weight="bold" fill="#dc2626">C</text>
+            <!-- brackets -->
+            <line x1="18" y1="98" x2="18" y2="110" stroke="#999" stroke-width="0.8"/>
+            <line x1="300" y1="28" x2="300" y2="110" stroke="#999" stroke-width="0.8" stroke-dasharray="3,2"/>
+            <line x1="18" y1="110" x2="300" y2="110" stroke="#999" stroke-width="0.8"/>
+            <text x="159" y="116" font-size="11" text-anchor="middle" fill="#999">s_{AC}</text>
+            <!-- car triangle -->
+            <polygon points="110,72 130,65 140,69 130,75" fill="#ef4444" stroke="#b91c1c" stroke-width="1"/>
+            <text x="125" y="64" font-size="8" text-anchor="middle" fill="white" font-weight="bold">车</text>
+          </svg>
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong><br>
+          （1）实验原理是 $v = \dfrac{s}{t}$。<br>
+          （2）应保持斜面坡度较 <strong>小</strong>，目的是 <strong>使小车下滑缓慢，便于准确测量时间</strong>。<br>
+          （3）如果过了 $B$ 点才停止计时，则 $t_{AB}$ 偏大，由 $v = s/t$ 可知，计算出的平均速度偏 <strong>小</strong>。<br>
+          <strong>答案：</strong>（1）$v=s/t$（2）小；使小车下滑缓慢，便于计时（3）小
+        </div>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 自查清单 -->
+  <div class="checklist">
+    <h3>✅ 章节自查清单</h3>
+    <label><input type="checkbox"> 我能说出长度测量中"估读"的含义并正确操作</label>
+    <label><input type="checkbox"> 我会用 $v=s/t$ 及变形公式解决简单运动问题，注意单位统一</label>
+    <label><input type="checkbox"> 我能区分 $s$-$t$ 图像和 $v$-$t$ 图像，读懂斜率和截距的物理含义</label>
+    <label><input type="checkbox"> 我理解平均速度和速度的平均值的区别，能正确计算全程平均速度</label>
+    <label><input type="checkbox"> 我能复述斜面小车实验的原理、步骤和注意事项，分析误差原因</label>
+    <p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;">
+      <strong>🧑‍🏫 费曼挑战：</strong>请用大白话向同桌解释"为什么平均速度不等于速度的平均值"，并举一个生活中的反例。
+    </p>
+  </div>
+
+</div>
+
+</main>
+
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/auto-render.min.js"></script>
+<script>
+(function() {
+  // Theme toggle
+  const toggle = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+  const saved = localStorage.getItem('physics-theme');
+  if (saved === 'dark') {
+    html.setAttribute('data-theme', 'dark');
+    toggle.textContent = '☀️ 亮色模式';
+  }
+  toggle.addEventListener('click', function() {
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    toggle.textContent = isDark ? '🌙 暗色模式' : '☀️ 亮色模式';
+    localStorage.setItem('physics-theme', isDark ? 'light' : 'dark');
+  });
+
+  // KaTeX auto-render
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof renderMathInElement === 'function') {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ],
+        throwOnError: false
+      });
+    }
+  });
+
+  // IntersectionObserver for sidebar active
+  document.addEventListener('DOMContentLoaded', function() {
+    const sidebarLinks = document.querySelectorAll('#sidebar nav a');
+    const modules = document.querySelectorAll('.module, .exam-module, .learning-goals');
+    if (modules.length === 0) return;
+    const observer = new IntersectionObserver(function(entries) {
+      let best = null;
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) best = entry.target;
+      });
+      if (best) {
+        sidebarLinks.forEach(function(link) { link.classList.remove('active'); });
+      }
+    }, { rootMargin: '-20% 0px -60% 0px' });
+    modules.forEach(function(m) { observer.observe(m); });
+  });
+  var sidebar = document.getElementById('sidebar');
+  var hideBtn = document.getElementById('sidebarHideBtn');
+  var sidebarHidden = localStorage.getItem('physics8-sidebar') === 'hidden';
+  if (sidebarHidden) sidebar.classList.add('hidden');
+  var showBtn = document.getElementById('sidebarShowBtn');
+  hideBtn.addEventListener('click', function() {
+    sidebar.classList.add('hidden');
+    localStorage.setItem('physics8-sidebar', 'hidden');
+  });
+  showBtn.addEventListener('click', function() {
+    sidebar.classList.remove('hidden');
+    localStorage.setItem('physics8-sidebar', '');
+  });
+  (function() {
+    var btn = document.getElementById('expandAllBtn');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      var allDetails = document.querySelectorAll('.module, .exam-module');
+      var allOpen = true;
+      for (var i = 0; i < allDetails.length; i++) {
+        if (!allDetails[i].hasAttribute('open')) { allOpen = false; break; }
+      }
+      for (var i = 0; i < allDetails.length; i++) {
+        if (allOpen) allDetails[i].removeAttribute('open');
+        else allDetails[i].setAttribute('open', '');
+      }
+      btn.textContent = allOpen ? '📂 展开全部章节' : '📖 收起全部章节';
+    });
+  })();
+  })();
+</script>
+
+</body>
+</html>

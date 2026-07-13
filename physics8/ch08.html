@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第8章 · 运动和力 · 八年级物理</title>
+  <link rel="stylesheet" href="../katex/katex.min.css">
+  <link rel="stylesheet" href="css/physics.css">
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+
+  <nav id="sidebar">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+      <h2 style="margin-bottom:0;">八年级物理</h2>
+      <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;" title="隐藏侧栏">✕</button>
+    </div>
+    <nav>
+      <a href="index.html">🏠 首页</a>
+      <a href="ch01.html">第1章 机械运动</a>
+      <a href="ch02.html">第2章 声现象</a>
+      <a href="ch03.html">第3章 物态变化</a>
+      <a href="ch04.html">第4章 光现象</a>
+      <a href="ch05.html">第5章 透镜及其应用</a>
+      <a href="ch06.html">第6章 质量与密度</a>
+      <a href="ch07.html">第7章 力</a>
+      <a href="ch08.html" class="active">第8章 运动和力</a>
+      <a href="ch09.html">第9章 压强</a>
+      <a href="ch10.html">第10章 浮力</a>
+      <a href="ch11.html">第11章 功和机械能</a>
+      <a href="ch12.html">第12章 简单机械</a>
+      <a href="appendix.html">附录</a>
+    </nav>
+    <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+    <button id="theme-toggle" class="theme-toggle" style="margin-top:10px;">🌙 暗色模式</button>
+  </nav>
+  <main id="content">
+    <div class="chapter">
+      <h1>第8章 · 运动和力</h1>
+
+      <div class="learning-goals">
+        <strong>🎯 学习目标</strong>
+        <p>① 理解牛顿第一定律，知道惯性的概念及影响因素</p>
+        <p>② 掌握二力平衡的条件，能区分平衡力与相互作用力</p>
+        <p>③ 知道滑动摩擦力的影响因素，会判断摩擦力的方向</p>
+      </div>
+
+      <div class="knowledge-link">
+        <strong>🔗 前置知识关联：</strong>
+        第7章 · 力的概念与三要素 → 第1章 · 运动（速度/匀速直线运动）→ 本章 · 力与运动的关系
+      </div>
+
+      <div class="thought-method">
+        <strong>💡 物理思维方法：理想实验法</strong>
+        —— 伽利略理想斜面实验：让小球从一个斜面滚下，如果没有摩擦，小球将在另一个斜面上达到相同高度；将斜面放平，小球将以恒定速度永远运动下去。这种<strong>在实验基础上进行理想化推理</strong>的方法，是牛顿第一定律的基石。
+      </div>
+
+      <details class="module" open>
+        <summary>🧠 思维导图</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">力和运动的关系</span>
+                <ul>
+                  <li><span class="node-label">牛顿第一定律</span>
+                    <ul>
+                      <li>一切物体在不受力时，总保持静止或匀速直线运动状态</li>
+                      <li>力不是维持运动的原因，力是改变运动状态的原因</li>
+                    </ul>
+                  </li>
+                  <li><span class="node-label">惯性</span>
+                    <ul>
+                      <li>定义：物体保持原来运动状态不变的性质</li>
+                      <li>大小只与质量有关（质量越大惯性越大）</li>
+                      <li>利用与防范（安全带/头枕）</li>
+                    </ul>
+                  </li>
+                  <li><span class="node-label">二力平衡</span>
+                    <ul>
+                      <li>条件：同体、等大、反向、共线</li>
+                      <li>平衡状态：静止或匀速直线运动</li>
+                      <li>平衡力 vs 相互作用力</li>
+                    </ul>
+                  </li>
+                  <li><span class="node-label">摩擦力</span>
+                    <ul>
+                      <li>滑动摩擦力、静摩擦力、滚动摩擦力</li>
+                      <li>滑动摩擦力影响因素：压力、接触面粗糙程度</li>
+                      <li>增大/减小摩擦的方法</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <details class="module" open>
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card">
+              <div class="name">牛顿第一定律</div>
+              <p><strong>一切物体在没有受到力的作用时，总保持静止状态或匀速直线运动状态。</strong>该定律不是直接由实验得出的，而是通过实验推理得出的理想规律。它揭示了<strong>力是改变运动状态的原因</strong>，而不是维持运动的原因。</p>
+            </div>
+            <div class="concept-card">
+              <div class="name">惯性</div>
+              <p>物体保持原来运动状态不变的<strong>性质</strong>，不是力。一切物体在任何状态下都有惯性。<strong>惯性大小只与质量有关</strong>，与速度大小无关。速度大只会让"刹车距离变长"，但不改变惯性大小。</p>
+            </div>
+            <div class="concept-card">
+              <div class="name">二力平衡条件</div>
+              <p>作用在<strong>同一物体</strong>上的两个力，大小相等、方向相反、作用在同一直线上（同体、等大、反向、共线）。物体受平衡力时保持静止或匀速直线运动状态。</p>
+            </div>
+            <div class="concept-card">
+              <div class="name">平衡力 vs 相互作用力</div>
+              <p><strong>关键区别：</strong>平衡力作用在同一物体上，可以不同性质；相互作用力作用在两个不同物体上，一定同种性质。例如：一本书静止在桌面上——书的重力和桌面的支持力是平衡力；书对桌面的压力和桌面对书的支持力是相互作用力。</p>
+            </div>
+            <div class="concept-card">
+              <div class="name">滑动摩擦力</div>
+              <p>一个物体在另一个物体表面上<strong>滑动</strong>时受到的阻碍相对运动的力。方向与<strong>相对运动方向相反</strong>（注意：不是与运动方向相反）。大小影响因素：<strong>压力</strong>和<strong>接触面粗糙程度</strong>。</p>
+            </div>
+            <div class="concept-card">
+              <div class="name">增大/减小摩擦</div>
+              <p><strong>增大：</strong>增大压力（捏紧刹车）、增大接触面粗糙程度（鞋底花纹/轮胎防滑链）；<strong>减小：</strong>减小压力、加润滑剂（机油/润滑油）、用滚动代替滑动（轴承滚珠）、使接触面分离（气垫船/磁悬浮）。</p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="module" open>
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card">
+            <strong>滑动摩擦力公式（定性）</strong>
+            <p>\[ f = \mu N \]</p>
+            <p style="font-size:13px;color:var(--text-secondary)">初中阶段<strong>不要求</strong>定量计算，只需定性理解：$f$ 与压力 $N$ 和接触面粗糙程度（$\mu$）有关。</p>
+          </div>
+          <div class="formula-card">
+            <strong>二力平衡条件</strong>
+            <p>\[ F_1 = F_2 \quad (\text{同体、等大、反向、共线}) \]</p>
+            <p style="font-size:13px;color:var(--text-secondary)">物体受平衡力 → 合力为零 → 运动状态不变</p>
+          </div>
+          <div class="formula-card">
+            <strong>合力与运动状态的关系</strong>
+            <p>\[ F_{\text{合}} = 0 \iff \text{静止或匀速直线运动} \]</p>
+            <p style="font-size:13px;color:var(--text-secondary)">\[ F_{\text{合}} \neq 0 \iff \text{加速或减速或曲线运动} \]</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="module" open>
+        <summary>🔬 实验探究</summary>
+        <div class="content">
+          <div class="experiment-card">
+            <h3>实验：探究滑动摩擦力大小与哪些因素有关</h3>
+            <div class="exp-step">
+              <span class="exp-step-num">1</span>
+              <span><strong>猜想：</strong>滑动摩擦力大小可能与①接触面所受压力有关②接触面粗糙程度有关③接触面积大小有关。</span>
+            </div>
+            <div class="exp-step">
+              <span class="exp-step-num">2</span>
+              <span><strong>方法：</strong>用弹簧测力计<strong>水平匀速拉动</strong>木块做直线运动，此时拉力等于摩擦力（二力平衡）。</span>
+            </div>
+            <div class="exp-step">
+              <span class="exp-step-num">3</span>
+              <span><strong>探究压力影响：</strong>在同一木板上，往木块上加砝码增大压力，测摩擦力。</span>
+            </div>
+            <div class="exp-step">
+              <span class="exp-step-num">4</span>
+              <span><strong>探究粗糙程度影响：</strong>保持压力不变，分别在木板/毛巾/棉布表面上拉动木块，比较摩擦力大小。</span>
+            </div>
+            <div class="exp-principle">
+              <strong>实验结论：</strong>滑动摩擦力的大小与<strong>接触面所受的压力</strong>和<strong>接触面的粗糙程度</strong>有关——压力越大摩擦力越大，接触面越粗糙摩擦力越大。与接触面积大小、运动速度大小<strong>无关</strong>。
+            </div>
+            <div class="exp-tip">
+              ⚠️ <strong>注意：</strong>必须用弹簧测力计<strong>水平</strong>拉动木块，并保证木块做<strong>匀速直线运动</strong>（否则拉力不等于摩擦力）。实验中要控制变量——探究压力时粗糙程度不变，探究粗糙程度时压力不变。
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="module" open>
+        <summary>✏️ 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span> 摩擦力方向的判断</h3>
+            <div class="method">方法：</div>
+            <div class="example">摩擦力方向与物体<strong>相对运动方向</strong>（或相对运动趋势方向）相反。判断步骤：① 确定研究对象 ② 确定研究对象相对于接触面的运动方向 ③ 摩擦力方向与之相反。</div>
+            <div class="principle"><strong>原理：</strong>人走路时，脚向后蹬地（相对运动趋势向后），地面给脚向前的摩擦力（静摩擦力），这就是人前进的动力。传送带上的物体随传送带一起加速时，摩擦力方向与传送带运动方向相同。</div>
+            <div class="pitfall">⚠️ <strong>易错：</strong>误认为"摩擦力方向总是与运动方向相反"。实际上摩擦力是与<strong>相对运动</strong>方向相反——人走路时摩擦力向前，正是人前进的动力；传送带上的物体摩擦力可以与运动方向相同。</div>
+            <div class="exam-hint">📌 <strong>中考提示：</strong>判断摩擦力方向时，画图分析"如果没有摩擦，物体会向哪个方向滑动"——摩擦力就指向那个方向的相反方向。</div>
+          </div>
+
+          <div class="technique-card">
+            <h3><span class="step-num">2</span> 二力平衡应用：受力分析</h3>
+            <div class="method">方法：</div>
+            <div class="example">静止在水平桌面上的物体：① 重力 $G$（向下）② 支持力 $F_{\text{支}}$（向上）→ 两者是一对平衡力，大小相等。</div>
+            <div class="principle"><strong>原理：</strong>受力分析步骤：① 先分析重力（一定有） ② 分析接触力（弹力/摩擦力）——看与哪些物体接触 ③ 根据运动状态判断平衡关系。静止或匀速 → 合力为零。</div>
+            <div class="pitfall">⚠️ <strong>易错：</strong>多画或漏画力。检查方法："每个力都要找到施力物体"，找不到施力物体的力一定不存在。不要画"惯性的力"——惯性不是力！</div>
+            <div class="variant"><strong>变式：</strong>水平面上物体受到拉力但未动 → 静摩擦力与拉力平衡；水平面上物体被拉动做匀速 → 滑动摩擦力与拉力平衡。</div>
+          </div>
+
+          <div class="technique-card">
+            <h3><span class="step-num">3</span> 惯性现象分析</h3>
+            <div class="method">方法：</div>
+            <div class="example">① 解释"刹车时人向前倒"：车刹车减速，人的脚随车减速，但上身由于惯性保持原来运动速度，所以向前倾倒。</div>
+            <div class="principle"><strong>原理：</strong>利用惯性解释"三要素法"：① 原来状态 ② 某部分发生了什么变化 ③ 另一部分由于惯性保持原来状态 → 产生现象。</div>
+            <div class="pitfall">⚠️ <strong>易错：</strong>说"受到惯性作用"或"产生惯性力"——惯性是性质不是力！正确表述为"由于惯性"或"具有惯性"。</div>
+            <div class="exam-hint">📌 <strong>中考提示：</strong>惯性题每年必考。常见生活实例：锤头松了撞地紧固、跳远助跑、泼水、系安全带、安全气囊等。</div>
+          </div>
+        </div>
+      </details>
+
+      <details class="exam-module" open>
+        <summary>📝 中考真题</summary>
+        <div class="content">
+          <div class="exam-q">
+            <span class="q-tag">2023 北京</span>
+            <div class="q-body">
+              <strong>1.</strong> 如图所示，一个重为 30 N 的物体放在水平地面上，在 $F = 10\,\text{N}$ 的水平拉力作用下向右做匀速直线运动。请画出物体在水平方向上的受力示意图。
+              <div class="diagram">
+                <svg viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="10" y1="100" x2="250" y2="100" stroke="#64748b" stroke-width="1.5"/>
+                  <rect x="70" y="60" width="80" height="40" fill="#93c5fd" stroke="#3b82f6" stroke-width="1.5" rx="3"/>
+                  <text x="95" y="85" font-size="13" fill="#1e293b" font-weight="bold">$G=30\,\text{N}$</text>
+                  <line x1="150" y1="80" x2="210" y2="80" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrowR)"/>
+                  <text x="165" y="74" font-size="13" fill="#dc2626" font-weight="bold">$F=10\,\text{N}$</text>
+                  <line x1="70" y1="80" x2="10" y2="80" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arrowG)"/>
+                  <text x="10" y="74" font-size="13" fill="#16a34a" font-weight="bold">$f$</text>
+                  <text x="235" y="110" font-size="11" fill="#64748b">水平地面</text>
+                  <defs>
+                    <marker id="arrowR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#dc2626"/></marker>
+                    <marker id="arrowG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#16a34a"/></marker>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+            <div class="q-solution">
+              <strong>解析：</strong>物体匀速直线运动 → 水平方向受力平衡。拉力 $F = 10\,\text{N}$ 向右 → 摩擦力 $f = 10\,\text{N}$ 向左。注意摩擦力方向与相对运动方向相反（物体向右运动，摩擦向左）。竖直方向：重力 $G=30\,\text{N}$ 向下，支持力 $F_{\text{支}}=30\,\text{N}$ 向上，也是一对平衡力。
+            </div>
+          </div>
+
+          <div class="exam-q">
+            <span class="q-tag">2022 深圳</span>
+            <div class="q-body">
+              <strong>2.</strong> 一个重 50 N 的物体放在水平面上，用 $F = 15\,\text{N}$ 的力向右拉但未拉动。求此时物体受到的摩擦力大小和方向。
+              <div class="diagram">
+                <svg viewBox="0 0 260 120" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="10" y1="85" x2="250" y2="85" stroke="#64748b" stroke-width="1.5"/>
+                  <rect x="80" y="50" width="70" height="35" fill="#fca5a5" stroke="#ef4444" stroke-width="1.5" rx="3"/>
+                  <text x="98" y="72" font-size="12" fill="#1e293b">50 N</text>
+                  <!-- 向右的拉力 -->
+                  <line x1="150" y1="67" x2="210" y2="67" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowB)"/>
+                  <text x="165" y="61" font-size="13" fill="#3b82f6" font-weight="bold">$F=15\,\text{N}$</text>
+                  <!-- 向左的静摩擦 -->
+                  <line x1="80" y1="67" x2="20" y2="67" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrowR2)"/>
+                  <text x="20" y="61" font-size="13" fill="#dc2626" font-weight="bold">$f_{\text{静}}$</text>
+                  <defs>
+                    <marker id="arrowB" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#3b82f6"/></marker>
+                    <marker id="arrowR2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#dc2626"/></marker>
+                  </defs>
+                  <text x="235" y="95" font-size="11" fill="#64748b">水平地面</text>
+                </svg>
+              </div>
+            </div>
+            <div class="q-solution">
+              <strong>解析：</strong>物体未拉动 → 静止 → 水平方向受力平衡。拉力向右 15 N → 静摩擦力向左，大小 <strong>15 N</strong>（与拉力等大）。注意：静摩擦力大小随外力变化而变化，直到达到最大静摩擦力时物体才开始滑动。当 $F=15\,\text{N}$ 时，$f_{\text{静}}=15\,\text{N}$。
+            </div>
+          </div>
+
+          <div class="exam-q">
+            <span class="q-tag">2023 南京</span>
+            <div class="q-body">
+              <strong>3.</strong> 如图所示，质量相同的 A、B 两物体分别放在粗糙程度相同的水平面上，A 的质量是 B 的 2 倍。现用水平力匀速拉动它们，比较摩擦力大小，并说明原因。
+              <div class="diagram">
+                <svg viewBox="0 0 280 100" xmlns="http://www.w3.org/2000/svg">
+                  <!-- A -->
+                  <rect x="20" y="15" width="60" height="40" fill="#93c5fd" stroke="#3b82f6" stroke-width="1.5" rx="3"/>
+                  <text x="35" y="40" font-size="13" fill="#1e293b" font-weight="bold">A</text>
+                  <text x="20" y="65" font-size="11" fill="#64748b">$m$</text>
+                  <!-- B -->
+                  <rect x="140" y="15" width="60" height="40" fill="#fca5a5" stroke="#ef4444" stroke-width="1.5" rx="3"/>
+                  <text x="155" y="40" font-size="13" fill="#1e293b" font-weight="bold">B</text>
+                  <text x="140" y="65" font-size="11" fill="#64748b">$2m$</text>
+                  <!-- 地面 -->
+                  <line x1="0" y1="55" x2="280" y2="55" stroke="#64748b" stroke-width="1"/>
+                </svg>
+              </div>
+            </div>
+            <div class="q-solution">
+              <strong>解析：</strong>B 的质量是 A 的 2 倍 → B 对地面压力是 A 的 2 倍 → 在同一粗糙程度表面上，B 受到的滑动摩擦力是 A 的 2 倍。<strong>结论：</strong>滑动摩擦力大小与压力成正比例关系（接触面粗糙程度相同时）。匀速拉动时拉力等于摩擦力，所以拉动 B 需要的拉力也更大。
+            </div>
+          </div>
+
+          <div class="exam-q">
+            <span class="q-tag">2022 成都</span>
+            <div class="q-body">
+              <strong>4.</strong> 关于惯性，下列说法正确的是？<br>
+              A. 运动的物体有惯性，静止的物体没有惯性<br>
+              B. 速度越大的物体惯性越大<br>
+              C. 质量越大的物体惯性越大<br>
+              D. 物体在受力时惯性会消失
+            </div>
+            <div class="q-solution">
+              <strong>解析：</strong>选 <strong>C</strong>。惯性是物体的固有属性，一切物体在任何状态下都有惯性（A 错）。惯性大小<strong>只与质量有关</strong>，与速度、受力情况、运动状态均无关（B、D 错）。质量越大，惯性越大，运动状态越难改变。
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <div class="checklist">
+        <h3>✅ 自我检测清单</h3>
+        <label><input type="checkbox"> 能准确表述牛顿第一定律，理解力与运动的关系</label>
+        <label><input type="checkbox"> 能正确判断摩擦力方向，知道影响滑动摩擦力的因素</label>
+        <label><input type="checkbox"> 会运用二力平衡条件解决受力分析问题</label>
+        <label><input type="checkbox"> 能区分平衡力和相互作用力，能分别举例</label>
+        <label><input type="checkbox"> 能用"三要素法"解释生活中的惯性现象</label>
+        <p style="margin-top:12px;font-size:13px;color:var(--accent)"><strong>🤯 费曼挑战：</strong>向同学解释"为什么汽车刹车时人往前倒，而汽车加速时人往后仰？"（不能提到"惯性"二字后直接结束——要讲清楚相对运动的变化。）</p>
+      </div>
+    </div>
+  </main>
+  <script src="../katex/katex.min.js"></script>
+  <script src="../katex/auto-render.min.js"></script>
+  <script>
+    (function () {
+      var theme = localStorage.getItem('physics-theme');
+      if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        document.getElementById('theme-toggle').textContent = '☀️ 亮色模式';
+      }
+      document.getElementById('theme-toggle').addEventListener('click', function () {
+        var html = document.documentElement;
+        var current = html.getAttribute('data-theme');
+        if (current === 'dark') {
+          html.setAttribute('data-theme', 'light');
+          localStorage.setItem('physics-theme', 'light');
+          this.textContent = '🌙 暗色模式';
+        } else {
+          html.setAttribute('data-theme', 'dark');
+          localStorage.setItem('physics-theme', 'dark');
+          this.textContent = '☀️ 亮色模式';
+        }
+      });
+      var links = document.querySelectorAll('#sidebar nav a');
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            links.forEach(function (l) { l.classList.remove('active'); });
+            var id = entry.target.id || 'ch08';
+            var match = document.querySelector('#sidebar nav a[href="' + id + '.html"]');
+            if (match) match.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-50% 0px -50% 0px' });
+      document.querySelectorAll('.chapter').forEach(function (el) { observer.observe(el); });
+      if (typeof renderMathInElement === 'function') {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '\\[', right: '\\]', display: true },
+            { left: '$', right: '$', display: false }
+          ]
+        });
+      }
+    var sidebar = document.getElementById('sidebar');
+    var hideBtn = document.getElementById('sidebarHideBtn');
+    var sidebarHidden = localStorage.getItem('physics8-sidebar') === 'hidden';
+    if (sidebarHidden) sidebar.classList.add('hidden');
+    var showBtn = document.getElementById('sidebarShowBtn');
+    hideBtn.addEventListener('click', function() {
+      sidebar.classList.add('hidden');
+      localStorage.setItem('physics8-sidebar', 'hidden');
+    });
+    showBtn.addEventListener('click', function() {
+      sidebar.classList.remove('hidden');
+      localStorage.setItem('physics8-sidebar', '');
+    });
+    (function() {
+      var btn = document.getElementById('expandAllBtn');
+      if (!btn) return;
+      btn.addEventListener('click', function() {
+        var allDetails = document.querySelectorAll('.module, .exam-module');
+        var allOpen = true;
+        for (var i = 0; i < allDetails.length; i++) {
+          if (!allDetails[i].hasAttribute('open')) { allOpen = false; break; }
+        }
+        for (var i = 0; i < allDetails.length; i++) {
+          if (allOpen) allDetails[i].removeAttribute('open');
+          else allDetails[i].setAttribute('open', '');
+        }
+        btn.textContent = allOpen ? '📂 展开全部章节' : '📖 收起全部章节';
+      });
+    })();
+    })();
+  </script>
+</body>
+</html>

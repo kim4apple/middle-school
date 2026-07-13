@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>八年级物理 · 附录全览</title>
+<link rel="stylesheet" href="../katex/katex.min.css">
+<link rel="stylesheet" href="css/physics.css">
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+
+<div id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">📘 附录全览</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;" title="隐藏侧栏">✕</button>
+  </div>
+  <nav>
+    <a href="#mindmap">🧠 全年级知识体系</a>
+    <a href="#formulas">📏 核心公式速查表</a>
+    <a href="#methods">🔬 实验方法汇总</a>
+    <a href="#pitfalls">⚠️ 高频易错陷阱</a>
+    <a href="#pedagogy">🎯 科学教学法</a>
+    <a href="#selfstudy">🚀 快速自学技巧</a>
+    <a href="index.html" style="margin-top:12px;border-top:1px solid var(--border);padding-top:12px;font-weight:600;">← 返回首页</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button class="theme-toggle" id="themeToggle" style="margin-top:10px;">🌓 切换深色模式</button>
+</div>
+
+<div id="content" style="max-width:960px;">
+
+<h1 style="font-size:32px;font-weight:800;margin-bottom:8px;color:var(--accent);">八年级物理 · 附录全览</h1>
+<p style="font-size:16px;color:var(--text-secondary);margin-bottom:32px;">知识体系 · 公式 · 实验 · 易错点 · 教学法 · 自学提升</p>
+
+<!-- ============================================================ -->
+<!-- A1: 全年级知识体系思维导图 -->
+<!-- ============================================================ -->
+<section id="mindmap" style="margin-bottom:64px;">
+<h2 style="font-size:26px;font-weight:700;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--accent);">
+  🧠 全年级知识体系思维导图
+</h2>
+
+<div class="mindmap">
+<ul>
+  <li><span class="node-label">🌡️ 热学</span><span class="node-desc">（第3章 物态变化）</span>
+    <ul>
+      <li><span class="node-label">温度与温度计</span><span class="node-desc">— 摄氏温标、液体热胀冷缩</span></li>
+      <li><span class="node-label">熔化与凝固</span><span class="node-desc">— 晶体/非晶体、熔点、吸放热</span></li>
+      <li><span class="node-label">汽化与液化</span><span class="node-desc">— 蒸发/沸腾、沸点与气压、液化方式</span></li>
+      <li><span class="node-label">升华与凝华</span><span class="node-desc">— 干冰、霜雪、六种物态变化循环</span></li>
+    </ul>
+  </li>
+
+  <li><span class="node-label">🔊 声学</span><span class="node-desc">（第2章 声现象）</span>
+    <ul>
+      <li><span class="node-label">声音的产生与传播</span><span class="node-desc">— 振动、介质、声速</span></li>
+      <li><span class="node-label">声音的特性</span><span class="node-desc">— 音调(频率)、响度(振幅)、音色(材料)</span></li>
+      <li><span class="node-label">噪声控制</span><span class="node-desc">— 声源/传播/人耳三途径</span></li>
+      <li><span class="node-label">超声/次声</span><span class="node-desc">— B超、声呐、地震预警</span></li>
+    </ul>
+  </li>
+
+  <li><span class="node-label">💡 光学</span><span class="node-desc">（第4章 光现象 + 第5章 透镜）</span>
+    <ul>
+      <li><span class="node-label">光的直线传播</span><span class="node-desc">— 小孔成像、光速3×10⁸ m/s</span></li>
+      <li><span class="node-label">光的反射</span><span class="node-desc">— 反射定律、镜面/漫反射、平面镜成像</span></li>
+      <li><span class="node-label">光的折射</span><span class="node-desc">— 折射规律、海市蜃楼、色散</span></li>
+      <li><span class="node-label">透镜成像</span><span class="node-desc">— 凸/凹透镜、五区三点成像规律、近视/远视矫正</span></li>
+    </ul>
+  </li>
+
+  <li><span class="node-label">🏃 运动学</span><span class="node-desc">（第1章 机械运动）</span>
+    <ul>
+      <li><span class="node-label">长度与时间</span><span class="node-desc">— 刻度尺、估读、误差</span></li>
+      <li><span class="node-label">速度</span><span class="node-desc">— $v=s/t$、平均速度、单位换算</span></li>
+      <li><span class="node-label">运动图像</span><span class="node-desc">— $s$-$t$ 图、$v$-$t$ 图</span></li>
+    </ul>
+  </li>
+
+  <li><span class="node-label">⚖️ 力学基础</span><span class="node-desc">（第6章 质量密度 + 第7章 力 + 第8章 运动和力）</span>
+    <ul>
+      <li><span class="node-label">质量与密度</span><span class="node-desc">— $\rho=m/V$、天平、量筒、排水法</span></li>
+      <li><span class="node-label">力</span><span class="node-desc">— 三要素、相互作用、弹力、$G=mg$</span></li>
+      <li><span class="node-label">运动与力</span><span class="node-desc">— 牛顿第一定律、惯性、二力平衡、摩擦力</span></li>
+    </ul>
+  </li>
+
+  <li><span class="node-label">🏗️ 力学应用</span><span class="node-desc">（第9章 压强 + 第10章 浮力 + 第11章 功与机械 + 第12章 简单机械）</span>
+    <ul>
+      <li><span class="node-label">压强</span><span class="node-desc">— $p=F/S$、$p=\rho gh$、大气压</span></li>
+      <li><span class="node-label">浮力</span><span class="node-desc">— 阿基米德原理 $F_{\text{浮}}=\rho_{\text{液}}gV_{\text{排}}$、浮沉条件</span></li>
+      <li><span class="node-label">功与功率</span><span class="node-desc">— $W=Fs$、$P=W/t=Fv$、机械能</span></li>
+      <li><span class="node-label">简单机械</span><span class="node-desc">— 杠杆 $F_1l_1=F_2l_2$、滑轮组、机械效率 $\eta=W_{\text{有}}/W_{\text{总}}$</span></li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+<div class="knowledge-link" style="margin-top:20px;">
+  <strong>💡 体系说明：</strong> 八年级物理分为六大板块——<strong>热学</strong>→<strong>声学</strong>→<strong>光学</strong>→<strong>运动学</strong>→<strong>力学基础</strong>→<strong>力学应用</strong>。力学（第6-12章）占全年级约70%的内容和80%的考试分值，是学习的重点和难点。
+</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- A2: 核心公式速查表 -->
+<!-- ============================================================ -->
+<section id="formulas" style="margin-bottom:64px;">
+<h2 style="font-size:26px;font-weight:700;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--accent);">
+  📏 核心公式速查表
+</h2>
+
+<div style="margin-bottom:12px;">
+<div class="formula-card">
+  <strong>📐 运动学（第1章）</strong><br>
+  $v = \dfrac{s}{t}$ &nbsp;&nbsp; $s = vt$ &nbsp;&nbsp; $t = \dfrac{s}{v}$<br>
+  平均速度：$\overline{v} = \dfrac{s_{\text{总}}}{t_{\text{总}}}$（总路程 ÷ 总时间，不是速度的平均）<br>
+  单位换算：$1\;\text{m/s} = 3.6\;\text{km/h}$ &nbsp;·&nbsp; 回声测距：$s = \dfrac{vt}{2}$
+</div>
+
+<div class="formula-card">
+  <strong>🔊 声学（第2章）</strong><br>
+  回声测距：$s = \dfrac{vt}{2}$（$v$ 为声速，$t$ 为回声时间差）<br>
+  15℃空气中声速：$v_{\text{声}} \approx 340\;\text{m/s}$
+</div>
+
+<div class="formula-card">
+  <strong>💡 光学（第4-5章）</strong><br>
+  反射定律：$i = r$（入射角等于反射角）<br>
+  折射定律（定性）：空气→水/玻璃 $\Rightarrow$ 折射角 &lt; 入射角<br>
+  光速：$c = 3 \times 10^8\;\text{m/s}$（真空中）<br>
+  凸透镜成像规律：$\dfrac{1}{u} + \dfrac{1}{v} = \dfrac{1}{f}$（高中拓展，$\text{八}$年级以实验记忆为主）
+</div>
+
+<div class="formula-card">
+  <strong>🌡️ 物态变化 + 密度（第3、6章）</strong><br>
+  密度：$\rho = \dfrac{m}{V}$ &nbsp;&nbsp; $m = \rho V$ &nbsp;&nbsp; $V = \dfrac{m}{\rho}$<br>
+  密度单位：$1\;\text{g/cm}^3 = 1 \times 10^3\;\text{kg/m}^3$<br>
+  水密度：$\rho_{\text{水}} = 1.0 \times 10^3\;\text{kg/m}^3$ &nbsp;·&nbsp; 冰密度：$\rho_{\text{冰}} = 0.9 \times 10^3\;\text{kg/m}^3$<br>
+  温度换算：$T = t + 273\;\text{K}$
+</div>
+
+<div class="formula-card">
+  <strong>🪨 力学基础（第7-8章）</strong><br>
+  重力：$G = mg$（$g = 9.8\;\text{N/kg}$，粗略取 $10\;\text{N/kg}$）<br>
+  胡克定律（弹簧）：$F = k \Delta x$（弹性限度内）<br>
+  同向合力：$F_{\text{合}} = F_1 + F_2$ &nbsp;·&nbsp; 反向合力：$F_{\text{合}} = |F_1 - F_2|$<br>
+  滑动摩擦力：$f = \mu N$（高中拓展，$\text{八}$年级只需理解影响因素）
+</div>
+
+<div class="formula-card">
+  <strong>🏋️ 压强与浮力（第9-10章）</strong><br>
+  固体压强：$p = \dfrac{F}{S}$ &nbsp;·&nbsp; 单位：$1\;\text{Pa} = 1\;\text{N/m}^2$<br>
+  液体压强：$p = \rho gh$（$h$ 为深度，从液面到所求点的竖直距离）<br>
+  柱体对水平面压强：$p = \rho gh$（与底面积无关）<br>
+  标准大气压：$p_0 = 1.013 \times 10^5\;\text{Pa} \approx 760\;\text{mmHg}$<br>
+  阿基米德原理：$F_{\text{浮}} = G_{\text{排}} = \rho_{\text{液}} g V_{\text{排}}$<br>
+  称重法测浮力：$F_{\text{浮}} = G - F$<br>
+  漂浮/悬浮：$F_{\text{浮}} = G$
+</div>
+
+<div class="formula-card">
+  <strong>⚡ 功与机械（第11-12章）</strong><br>
+  功：$W = Fs$（$F$ 与 $s$ 方向相同）&nbsp;·&nbsp; 单位：$1\;\text{J} = 1\;\text{N}\cdot\text{m}$<br>
+  功率：$P = \dfrac{W}{t} = Fv$（$v$ 为匀速运动速度）&nbsp;·&nbsp; $1\;\text{kW} = 10^3\;\text{W}$<br>
+  杠杆平衡：$F_1 l_1 = F_2 l_2$<br>
+  滑轮组省力：$F = \dfrac{G_{\text{物}} + G_{\text{动}}}{n}$ &nbsp;·&nbsp; 绳子移动：$s = nh$<br>
+  斜面：$FL = Gh$ &nbsp;·&nbsp; 轮轴：$FR = Gr$<br>
+  机械效率：$\eta = \dfrac{W_{\text{有}}}{W_{\text{总}}} \times 100\%$ &nbsp;·&nbsp; $\eta = \dfrac{G}{nF}$（滑轮组竖直时）<br>
+  动能：$E_k = \dfrac{1}{2}mv^2$ &nbsp;·&nbsp; 重力势能：$E_p = mgh$
+</div>
+</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- A3: 物理实验方法汇总 -->
+<!-- ============================================================ -->
+<section id="methods" style="margin-bottom:64px;">
+<h2 style="font-size:26px;font-weight:700;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--accent);">
+  🔬 物理实验方法汇总
+</h2>
+
+<div class="experiment-card">
+  <h3>🔹 1. 控制变量法</h3>
+  <div class="exp-principle"><strong>核心思想：</strong>当一个现象与多个因素有关时，每次只改变一个因素，控制其他因素相同，研究该因素的影响。</div>
+  <div style="margin:12px 0;font-size:14px;">
+    <p><strong>📖 八上典型实验：</strong></p>
+    <ul style="padding-left:20px;">
+      <li>探究滑动摩擦力大小与压力、接触面粗糙程度的关系</li>
+      <li>探究压力作用效果与压力大小、受力面积的关系</li>
+      <li>探究液体内部压强与深度、方向、密度的关系</li>
+      <li>探究动能大小与质量、速度的关系</li>
+      <li>探究影响蒸发快慢的因素（温度、表面积、空气流速）</li>
+    </ul>
+  </div>
+  <div class="exp-tip">💡 答题模板："保持 ×× 不变，改变 ××，观察 ×× 的变化，得出结论：×× 越 ××，×× 越 ××"</div>
+</div>
+
+<div class="experiment-card">
+  <h3>🔹 2. 转换法</h3>
+  <div class="exp-principle"><strong>核心思想：</strong>将不易直接观察或测量的物理量，通过其产生的效果，转换为易观察易测量的物理量。</div>
+  <div style="margin:12px 0;font-size:14px;">
+    <p><strong>📖 典型应用：</strong></p>
+    <ul style="padding-left:20px;">
+      <li>声音振动 → 水花飞溅 / 乒乓球弹开（微小振动放大）</li>
+      <li>压强大小 → 海绵/橡皮膜的凹陷程度</li>
+      <li>动能大小 → 木块被推动的距离</li>
+      <li>温度高低 → 温度计液柱高度（热胀冷缩）</li>
+      <li>力的大小 → 弹簧测力计指针位置（弹簧伸长量）</li>
+      <li>电流大小 → 灯泡亮度 / 电流表指针偏转</li>
+    </ul>
+  </div>
+  <div class="exp-tip">💡 转换法的本质是"化抽象为具体、化不可见为可见"。</div>
+</div>
+
+<div class="experiment-card">
+  <h3>🔹 3. 等效替代法</h3>
+  <div class="exp-principle"><strong>核心思想：</strong>用一个效果相同的已知量来替代未知量，使复杂问题简化。</div>
+  <div style="margin:12px 0;font-size:14px;">
+    <p><strong>📖 典型应用：</strong></p>
+    <ul style="padding-left:20px;">
+      <li><strong>平面镜成像实验：</strong>用完全相同的蜡烛替代像的位置（等大替代）</li>
+      <li><strong>排水法测体积：</strong>排开水的体积替代不规则固体的体积</li>
+      <li><strong>力的合成：</strong>一个合力替代多个分力的共同作用效果</li>
+      <li><strong>电阻串联：</strong>总电阻替代各分电阻（效果相同）</li>
+    </ul>
+  </div>
+  <div class="exp-tip">💡 关键：替代物与原来物体必须产生完全相同的效果。</div>
+</div>
+
+<div class="experiment-card">
+  <h3>🔹 4. 理想实验法（科学推理法）</h3>
+  <div class="exp-principle"><strong>核心思想：</strong>在可靠实验事实的基础上，通过科学推理得出理想条件下的结论（实际无法完全满足理想条件）。</div>
+  <div style="margin:12px 0;font-size:14px;">
+    <p><strong>📖 典型应用：</strong></p>
+    <ul style="padding-left:20px;">
+      <li><strong>伽利略斜面实验 → 牛顿第一定律：</strong>毛巾→棉布→木板→绝对光滑（推理出物体将匀速运动下去）</li>
+      <li><strong>真空不能传声实验：</strong>玻璃罩中空气越少，听到声音越小 → 推理出真空不能传声</li>
+    </ul>
+  </div>
+  <div class="exp-tip">💡 注意：理想实验≠空想实验，必须有实验事实作为推理基础！</div>
+</div>
+
+<div class="knowledge-link" style="margin-top:16px;">
+  <strong>📋 其他常用方法：</strong>
+  ① <strong>归纳法：</strong>从多个个别现象总结一般规律（如光的反射定律通过多次实验归纳得出）<br>
+  ② <strong>类比法：</strong>用熟悉的概念类比新的概念（如用水流类比电流）<br>
+  ③ <strong>图像法：</strong>用图像直观表示物理量和规律（$s$-$t$图、$m$-$V$图等）<br>
+  ④ <strong>比值定义法：</strong>用两个物理量的比值定义新物理量（$v=s/t$、$\rho=m/V$、$p=F/S$）
+</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- A4: 高频易错陷阱总览 -->
+<!-- ============================================================ -->
+<section id="pitfalls" style="margin-bottom:64px;">
+<h2 style="font-size:26px;font-weight:700;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--accent);">
+  ⚠️ 高频易错陷阱总览
+</h2>
+
+
+<div class="technique-card" style="border-left:4px solid #dc2626;">
+  <h3><span class="step-num">❶</span> 单位与换算</h3>
+  <div class="pitfall">❌ $1\;\text{m/s} = 3.6\;\text{km/h}$ 方向记反 → 口诀"×3.6得大数，÷3.6得小数"</div>
+  <div class="pitfall">❌ $1\;\text{cm}^2 = 10^{-4}\;\text{m}^2$（非 $10^{-2}$）→ 面积单位是长度单位的平方</div>
+  <div class="pitfall">❌ $1\;\text{g/cm}^3 = 1000\;\text{kg/m}^3$（非相反）→ 记住水的密度既是 $1$ 也是 $10^3$</div>
+  <div class="pitfall">❌ 计算前忘记统一单位 → 长度用 m、质量用 kg、时间用 s</div>
+</div>
+
+<div class="technique-card" style="border-left:4px solid #9333ea;">
+  <h3><span class="step-num">❷</span> 概念混淆</h3>
+  <div class="pitfall">❌ 质量(kg) ≠ 重力(N) — $G=mg$ 是关系不是定义</div>
+  <div class="pitfall">❌ 惯性不能说"受到惯性力"→ 正确表达"由于惯性"</div>
+  <div class="pitfall">❌ 压力 ≠ 重力 — 只有水平面静止时才相等</div>
+  <div class="pitfall">❌ 平衡力(同体) ≠ 相互作用力(异体)</div>
+  <div class="pitfall">❌ 音调高(蚊子) ≠ 响度大(牛) — 两个维度，不可混为一谈</div>
+  <div class="pitfall">❌ 实像(倒立/亮屏) vs 虚像(正立/不见屏)</div>
+  <div class="pitfall">❌ $s$-$t$ 水平=静止 ≠ $v$-$t$ 水平=匀速 — 图像语言不同！</div>
+</div>
+
+<div class="technique-card" style="border-left:4px solid #0891b2;">
+  <h3><span class="step-num">❸</span> 公式误用</h3>
+  <div class="pitfall">❌ $p=\rho gh$ 只适用于液体和柱状固体，不用于一般固体</div>
+  <div class="pitfall">❌ 液体对容器底压力：先 $p=\rho gh$ 再 $F=pS$，不能直接用液体重力</div>
+  <div class="pitfall">❌ $W=Fs$ 中 $s$ 必须是沿 $F$ 方向的距离</div>
+  <div class="pitfall">❌ 滑轮组 $n$ 只看与<strong>动滑轮</strong>相连的绳子段数</div>
+  <div class="pitfall">❌ 效率 $\eta$ 永远 $<100\%$ — $W_{\text{有}} < W_{\text{总}}$</div>
+  <div class="pitfall">❌ $F_{\text{浮}} = \rho_{\text{液}} g V_{\text{排}}$ — $\rho$ 是<strong>液体</strong>密度！</div>
+  <div class="pitfall">❌ 漂浮时 $F_{\text{浮}}=G$ 但 $V_{\text{排}} \neq V_{\text{物}}$</div>
+  <div class="pitfall">❌ 混合密度 $\rho \neq (\rho_1+\rho_2)/2$，要用总质量÷总体积</div>
+</div>
+
+<div class="technique-card" style="border-left:4px solid #ca8a04;">
+  <h3><span class="step-num">❹</span> 审题与图像</h3>
+  <div class="pitfall">❌ "匀速直线"→ 合力为零，摩擦力=拉力（$f=F$）</div>
+  <div class="pitfall">❌ "轻质"→ 质量不计 $m=0$；"光滑"→ 无摩擦 $f=0$</div>
+  <div class="pitfall">❌ "浸没"→ $V_{\text{排}}=V_{\text{物}}$；"浸入"→ $V_{\text{排}} \le V_{\text{物}}$</div>
+  <div class="pitfall">❌ "恰好"→ 临界状态（$F_{\text{浮}}=G$ / 拉力=最大承受）</div>
+  <div class="pitfall">❌ "标准大气压下"→ 沸点 100℃，冰水混合物 0℃</div>
+  <div class="pitfall">❌ 透镜实验：蜡烛烧短 → 光屏上的像向上移动</div>
+  <div class="pitfall">❌ 弹簧测力计倒挂测重：示数 = 物重 + 自重</div>
+</div>
+
+<div class="technique-card" style="border-left:4px solid #059669;">
+  <h3><span class="step-num">❺</span> 实验与操作</h3>
+  <div class="pitfall">❌ 先测体积再测质量 → 物体沾水导致质量偏大 → $\rho$ 偏大</div>
+  <div class="pitfall">❌ 温度计读数时取出液体 → 示数会变化（应留在液体中读）</div>
+  <div class="pitfall">❌ 平面镜实验用厚玻璃板 → 前后两个反射面→出现两个像</div>
+  <div class="pitfall">❌ 控制变量不彻底（如探究摩擦力时未控制压力相同）</div>
+  <div class="pitfall">❌ 多次实验目的混淆：找普遍规律 vs 减小误差</div>
+  <div class="pitfall">❌ 结论只说"数据不同"→ 应说"××越大，××越大/越小"</div>
+</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- A5: 科学教学法 · 零基础到精通 -->
+<!-- ============================================================ -->
+<section id="pedagogy" style="margin-bottom:64px;">
+<h2 style="font-size:26px;font-weight:700;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--accent);">
+  🎯 科学教学法 · 零基础到精通
+</h2>
+
+<div class="learning-goals">
+  <strong>📌 核心理念：</strong> 物理不是靠背出来的，而是靠<strong>理解 + 练习 + 反思</strong>三位一体。
+  <p>以下教学路径基于认知心理学和一线教学经验，适合零基础学生在 6-8 周内达到中考水平。</p>
+</div>
+
+<div class="technique-card">
+  <h3><span class="step-num">1</span> 分阶段教学路径</h3>
+  <table style="width:100%;border-collapse:collapse;font-size:14px;">
+    <tr style="background:var(--accent-light);">
+      <td style="padding:10px;border:1px solid var(--border);font-weight:600;">阶段</td>
+      <td style="padding:10px;border:1px solid var(--border);font-weight:600;">内容</td>
+      <td style="padding:10px;border:1px solid var(--border);font-weight:600;">核心任务</td>
+      <td style="padding:10px;border:1px solid var(--border);font-weight:600;">评估标准</td>
+    </tr>
+    <tr>
+      <td style="padding:10px;border:1px solid var(--border);background:var(--bg-secondary);font-weight:600;">🎯 第1-2周<br>基础奠基</td>
+      <td style="padding:10px;border:1px solid var(--border);">
+        ch01 机械运动<br>
+        ch02 声现象<br>
+        ch03 物态变化<br>
+        ch04 光现象
+      </td>
+      <td style="padding:10px;border:1px solid var(--border);">
+        · 建立物理概念体系<br>
+        · 学会使用公式 $v=s/t$<br>
+        · 识别六种物态变化<br>
+        · 会作反射/折射光路图
+      </td>
+      <td style="padding:10px;border:1px solid var(--border);">
+        · 能独立完成基础题<br>
+        · 概念选择题正确率 &ge; 80%<br>
+        · 会分析 $s$-$t$ 图像
+      </td>
+    </tr>
+    <tr>
+      <td style="padding:10px;border:1px solid var(--border);background:var(--bg-secondary);font-weight:600;">🔬 第3-4周<br>核心攻坚</td>
+      <td style="padding:10px;border:1px solid var(--border);">
+        ch05 透镜<br>
+        ch06 质量密度<br>
+        ch07 力<br>
+        ch08 运动和力
+      </td>
+      <td style="padding:10px;border:1px solid var(--border);">
+        · 掌握凸透镜成像规律<br>
+        · 学会密度实验测量<br>
+        · 画力的示意图<br>
+        · 理解惯性、二力平衡
+      </td>
+      <td style="padding:10px;border:1px solid var(--border);">
+        · 成像规律实验会做会背<br>
+        · 密度计算不出单位错<br>
+        · 能正确解释惯性现象
+      </td>
+    </tr>
+    <tr>
+      <td style="padding:10px;border:1px solid var(--border);background:var(--bg-secondary);font-weight:600;">🏗️ 第5-6周<br>综合进阶</td>
+      <td style="padding:10px;border:1px solid var(--border);">
+        ch09 压强<br>
+        ch10 浮力<br>
+        ch11 功和机械能<br>
+        ch12 简单机械
+      </td>
+      <td style="padding:10px;border:1px solid var(--border);">
+        · 区分固液压强计算<br>
+        · 掌握浮力综合题<br>
+        · 计算机械效率<br>
+        · 分析杠杆平衡
+      </td>
+      <td style="padding:10px;border:1px solid var(--border);">
+        · 压强浮力综合题 &ge; 60%<br>
+        · 机械效率大题会规范书写<br>
+        · 会判断省力/费力杠杆
+      </td>
+    </tr>
+    <tr>
+      <td style="padding:10px;border:1px solid var(--border);background:var(--bg-secondary);font-weight:600;">🚀 第7-8周<br>冲刺提升</td>
+      <td style="padding:10px;border:1px solid var(--border);">
+        专题复习<br>
+        真题训练<br>
+        错题复盘
+      </td>
+      <td style="padding:10px;border:1px solid var(--border);">
+        · 跨章节综合训练<br>
+        · 近3年中考真题限时<br>
+        · 建立完整错题本
+      </td>
+      <td style="padding:10px;border:1px solid var(--border);">
+        · 模拟卷 &ge; 85%<br>
+        · 易错题不再重复犯错<br>
+        · 能讲给别人听
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div class="technique-card">
+  <h3><span class="step-num">2</span> 每节课教学模板（45分钟）</h3>
+  <div style="font-size:14px;">
+    <p><strong>📝 导入（5分钟）：</strong>用生活现象/趣味实验引入 → "为什么？"<br>
+    <strong>📖 新知讲解（15分钟）：</strong>概念 → 公式 → 条件 → 例题示范（注重逻辑推导）<br>
+    <strong>✏️ 互动练习（15分钟）：</strong>学生做题 → 板演 → 同伴互评 → 教师总结<br>
+    <strong>📋 小结+作业（5分钟）：</strong>知识框架图 + 3-5道针对练习</p>
+  </div>
+  <div class="exp-tip">💡 高阶技巧：每次课结束时布置一道"费曼问题"——让学生回家用1分钟讲给家人听。</div>
+</div>
+
+<div class="technique-card">
+  <h3><span class="step-num">3</span> 五类卡点的突破策略</h3>
+  <table style="width:100%;border-collapse:collapse;font-size:14px;">
+    <tr style="background:var(--accent-light);">
+      <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">卡点</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">具体表现</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">突破策略</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid var(--border);background:var(--bg-secondary);">公式混用</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">用 $p=\rho gh$ 算固体</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">画"公式适用条件对比表"贴墙上</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid var(--border);background:var(--bg-secondary);">单位出错</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">m/s↔km/h 反向</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">用手势助记：大→小 ÷3.6，小→大 ×3.6</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid var(--border);background:var(--bg-secondary);">概念混淆</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">压力≠重力</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">画受力分析图 + 对比表格法</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid var(--border);background:var(--bg-secondary);">浮力综合</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">无法判断浮沉</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">三步骤法：①受力分析 ②比较密度 ③套公式</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid var(--border);background:var(--bg-secondary);">实验探究</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">控制变量不明确</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">用"控制 ×× 相同，改变 ××"固定句式训练</td>
+    </tr>
+  </table>
+</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- A6: 快速自学与提升技巧 -->
+<!-- ============================================================ -->
+<section id="selfstudy" style="margin-bottom:64px;">
+<h2 style="font-size:26px;font-weight:700;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--accent);">
+  🚀 快速自学与提升技巧
+</h2>
+
+<div class="technique-card">
+  <h3><span class="step-num">1</span> 费曼学习法（Feynman Technique）</h3>
+  <div class="method">"The first principle is that you must not fool yourself — and you are the easiest person to fool." — Richard Feynman</div>
+  <div style="font-size:14px;margin-top:10px;">
+    <p><strong>四步实操：</strong></p>
+    <ol style="padding-left:20px;">
+      <li><strong>明确概念：</strong>在纸上写下你要学的物理概念/公式的名称</li>
+      <li><strong>教给别人：</strong>假装给一个零基础的人讲解——用<strong>最简单的语言</strong>，不用专业术语</li>
+      <li><strong>发现盲区：</strong>讲着讲着卡住的地方 → 就是你还没弄懂的地方 → 回去翻书</li>
+      <li><strong>简化类比：</strong>用自己的语言重新组织，用一个<strong>生活类比</strong>替代生硬的定义</li>
+    </ol>
+  </div>
+  <div class="example">📌 例：压强 → "就是单位面积上挤的力。穿高跟鞋踩人比平底鞋疼，因为面积小的鞋跟产生的压强大。"</div>
+</div>
+
+<div class="technique-card">
+  <h3><span class="step-num">2</span> 三遍练习法（3-Round Practice System）</h3>
+  <table style="width:100%;border-collapse:collapse;font-size:14px;">
+    <tr style="background:var(--accent-light);">
+      <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">轮次</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">核心任务</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">时间</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">目标</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid var(--border);background:var(--bg-secondary);font-weight:600;">R1 拆解</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">读题、画图、标注已知/未知、写公式</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">不限时</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">理解题目结构</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid var(--border);background:var(--bg-secondary);font-weight:600;">R2 限时</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">在限定时间内完整写出解题过程</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">计时</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">训练速度和规范</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid var(--border);background:var(--bg-secondary);font-weight:600;">R3 复盘</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">对答案→标错→归类→整理错题本</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">5-10分钟</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">根治同类型错误</td>
+    </tr>
+  </table>
+  <div class="exp-tip" style="margin-top:10px;">💡 质量 &gt; 数量：认真做3遍胜过刷30道题不总结。每周选3-5道经典题做三遍练习。</div>
+</div>
+
+<div class="technique-card">
+  <h3><span class="step-num">3</span> 错题本标准格式</h3>
+  <div class="principle">
+    <p>题目来源 | 日期 | 错误答案 | 正确答案 | 错误类型 | 防范措施</p>
+  </div>
+  <div style="font-size:14px;">
+    <p><strong>错误类型分类：</strong></p>
+    <ul style="padding-left:20px;">
+      <li><strong>类型A — 概念不清：</strong>没掌握相关知识点 → 回看课本，找3道同类题重做</li>
+      <li><strong>类型B — 公式误用：</strong>用错了公式或适用条件 → 整理公式对比表</li>
+      <li><strong>类型C — 审题粗心：</strong>看漏条件、看错单位 → 训练圈画关键词的习惯</li>
+      <li><strong>类型D — 计算错误：</strong>算错数、单位换算错 → 放慢计算速度，养成验算习惯</li>
+    </ul>
+  </div>
+  <div class="example">📌 格式示例：<br>
+  "2025-01-15 | 月考选择题第8题 | 选了B (200Pa) | 正确答案C (2000Pa) | B型—漏算了液体高度 | 液体压强 $p=\rho gh$ 中的 $h$ 是从液面到目标点的竖直距离，下次标出 $h$"</div>
+</div>
+
+<div class="technique-card">
+  <h3><span class="step-num">4</span> 每日物理训练方案</h3>
+  <div style="font-size:14px;">
+    <table style="width:100%;border-collapse:collapse;">
+      <tr style="background:var(--accent-light);">
+        <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">时间</td>
+        <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">内容</td>
+        <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">耗时</td>
+      </tr>
+      <tr><td style="padding:8px 10px;border:1px solid var(--border);">周一</td><td style="padding:8px 10px;border:1px solid var(--border);">1道基础概念选择题 + 公式默写</td><td style="padding:8px 10px;border:1px solid var(--border);">15min</td></tr>
+      <tr><td style="padding:8px 10px;border:1px solid var(--border);">周二</td><td style="padding:8px 10px;border:1px solid var(--border);">1道图像分析题（$s$-$t$ / $m$-$V$ / 浮力）</td><td style="padding:8px 10px;border:1px solid var(--border);">15min</td></tr>
+      <tr><td style="padding:8px 10px;border:1px solid var(--border);">周三</td><td style="padding:8px 10px;border:1px solid var(--border);">1道实验探究题（控制变量/实验步骤）</td><td style="padding:8px 10px;border:1px solid var(--border);">15min</td></tr>
+      <tr><td style="padding:8px 10px;border:1px solid var(--border);">周四</td><td style="padding:8px 10px;border:1px solid var(--border);">1道中等计算题（规范书写全流程）</td><td style="padding:8px 10px;border:1px solid var(--border);">15min</td></tr>
+      <tr><td style="padding:8px 10px;border:1px solid var(--border);">周五</td><td style="padding:8px 10px;border:1px solid var(--border);">1道综合压轴题（费曼讲解）</td><td style="padding:8px 10px;border:1px solid var(--border);">20min</td></tr>
+      <tr><td style="padding:8px 10px;border:1px solid var(--border);">周末</td><td style="padding:8px 10px;border:1px solid var(--border);">错题回顾 + 本章知识体系图绘制</td><td style="padding:8px 10px;border:1px solid var(--border);">30min</td></tr>
+    </table>
+  </div>
+  <div class="exp-tip" style="margin-top:10px;">💡 物理学习的关键在于<strong>持续性和习惯化</strong>——每天坚持15分钟，远胜于周末集中学3小时。</div>
+</div>
+
+<div class="technique-card">
+  <h3><span class="step-num">5</span> 考场实战技巧</h3>
+  <div style="font-size:14px;">
+    <p><strong>⏱️ 时间分配（60分钟卷）：</strong><br>
+    选择题（12题）× 2min = 24min · 填空题（6题）× 2min = 12min · 实验题（2题）× 8min = 16min · 计算题（2题）× 10min = 20min</p>
+    <p><strong>📌 答题顺序：</strong>先做选择填空（保基础分）→ 再做实验题 → 最后做计算压轴题（有时间就做，没时间写公式拿步骤分）</p>
+    <p><strong>🧠 检查清单：</strong><br>
+    ☐ 单位是否统一（m、kg、s、N、Pa……）<br>
+    ☐ 结果是否合理（效率<1、浮力<重力但没沉→有问题）<br>
+    ☐ 有没有漏看条件（匀速？光滑？轻质？浸没？）<br>
+    ☐ 公式是否写正确（字母公式+代入数据+结果+单位）</p>
+  </div>
+  <div class="example">📌 计算题即使不会做也要写公式！中考计算题<strong>公式分占60%</strong>，写出正确的 $F_{\text{浮}}=\rho_{\text{液}}gV_{\text{排}}$ 就能拿分。</div>
+</div>
+
+<div class="technique-card">
+  <h3><span class="step-num">6</span> 推荐资源清单</h3>
+  <div style="font-size:14px;">
+    <table style="width:100%;border-collapse:collapse;">
+      <tr style="background:var(--accent-light);">
+        <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">类别</td>
+        <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">推荐</td>
+        <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">用途</td>
+      </tr>
+      <tr><td style="padding:8px 10px;border:1px solid var(--border);">📚 教材</td><td style="padding:8px 10px;border:1px solid var(--border);">人教版八年级物理（上下册）</td><td style="padding:8px 10px;border:1px solid var(--border);">系统学习</td></tr>
+      <tr><td style="padding:8px 10px;border:1px solid var(--border);">📝 教辅</td><td style="padding:8px 10px;border:1px solid var(--border);">《5年中考3年模拟》《典中点》</td><td style="padding:8px 10px;border:1px solid var(--border);">刷题巩固</td></tr>
+      <tr><td style="padding:8px 10px;border:1px solid var(--border);">▶️ 视频</td><td style="padding:8px 10px;border:1px solid var(--border);">李永乐老师、物理大师、柚子木</td><td style="padding:8px 10px;border:1px solid var(--border);">概念理解</td></tr>
+      <tr><td style="padding:8px 10px;border:1px solid var(--border);">📱 App</td><td style="padding:8px 10px;border:1px solid var(--border);">物理实验室（仿真实验）</td><td style="padding:8px 10px;border:1px solid var(--border);">动手探究</td></tr>
+      <tr><td style="padding:8px 10px;border:1px solid var(--border);">🧠 工具</td><td style="padding:8px 10px;border:1px solid var(--border);">思维导图 + 公式卡 + 错题本</td><td style="padding:8px 10px;border:1px solid var(--border);">知识结构化</td></tr>
+    </table>
+  </div>
+</div>
+</section>
+
+<p style="text-align:center;padding:40px 0 20px;color:var(--text-secondary);font-size:14px;">
+  📚 八年级物理附录全览 ·   <a href="index.html" style="color:var(--accent);">← 返回首页</a>
+</p>
+
+</div><!-- /content -->
+
+<script defer src="../katex/katex.min.js"></script>
+<script defer src="../katex/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});"></script>
+
+<script>
+(function() {
+  var theme = localStorage.getItem('physics8-theme');
+  if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+
+  document.getElementById('themeToggle').addEventListener('click', function() {
+    var html = document.documentElement;
+    var isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? '' : 'dark');
+    localStorage.setItem('physics8-theme', isDark ? '' : 'dark');
+  });
+
+  var links = document.querySelectorAll('#sidebar nav a');
+  var sections = [];
+  links.forEach(function(link) {
+    var href = link.getAttribute('href');
+    if (href && href.startsWith('#') && !href.includes('index')) {
+      var el = document.getElementById(href.slice(1));
+      if (el) sections.push({ link: link, el: el });
+    }
+  });
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        sections.forEach(function(s) {
+          s.link.classList.toggle('active', s.el.id === entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-80px 0px -60% 0px' });
+
+  sections.forEach(function(s) { observer.observe(s.el); });
+
+  var sidebar = document.getElementById('sidebar');
+  var hideBtn = document.getElementById('sidebarHideBtn');
+  var sidebarHidden = localStorage.getItem('physics8-sidebar') === 'hidden';
+  if (sidebarHidden) sidebar.classList.add('hidden');
+  var showBtn = document.getElementById('sidebarShowBtn');
+  hideBtn.addEventListener('click', function() {
+    sidebar.classList.add('hidden');
+    localStorage.setItem('physics8-sidebar', 'hidden');
+  });
+  showBtn.addEventListener('click', function() {
+    sidebar.classList.remove('hidden');
+    localStorage.setItem('physics8-sidebar', '');
+  });
+  (function() {
+    var btn = document.getElementById('expandAllBtn');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      var allDetails = document.querySelectorAll('.module, .exam-module');
+      var allOpen = true;
+      for (var i = 0; i < allDetails.length; i++) {
+        if (!allDetails[i].hasAttribute('open')) { allOpen = false; break; }
+      }
+      for (var i = 0; i < allDetails.length; i++) {
+        if (allOpen) allDetails[i].removeAttribute('open');
+        else allDetails[i].setAttribute('open', '');
+      }
+      btn.textContent = allOpen ? '📂 展开全部章节' : '📖 收起全部章节';
+    });
+  })();
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第4章 光现象 — 八年级物理</title>
+<link rel="stylesheet" href="css/physics.css">
+<link rel="stylesheet" href="../katex/katex.min.css">
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">八年级物理</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;" title="隐藏侧栏">✕</button>
+  </div>
+  <nav>
+    <a href="index.html">🏠 首页</a>
+    <a href="ch01.html">第1章 机械运动</a>
+    <a href="ch02.html">第2章 声现象</a>
+    <a href="ch03.html">第3章 物态变化</a>
+    <a href="ch04.html" class="active">第4章 光现象</a>
+    <a href="ch05.html">第5章 透镜及其应用</a>
+    <a href="ch06.html">第6章 质量与密度</a>
+    <a href="ch07.html">第7章 力</a>
+    <a href="ch08.html">第8章 运动和力</a>
+    <a href="ch09.html">第9章 压强</a>
+    <a href="ch10.html">第10章 浮力</a>
+    <a href="ch11.html">第11章 功和机械能</a>
+    <a href="ch12.html">第12章 简单机械</a>
+    <a href="appendix.html">附录</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button id="theme-toggle" class="theme-toggle" style="margin-top:10px;">🌙 暗色模式</button>
+</nav>
+<main id="content">
+
+<section class="chapter">
+<h1>第4章 光现象</h1>
+
+<div class="learning-goals">
+<strong>📖 学习目标</strong>
+<p>① 了解光源，知道光在同种均匀介质中沿直线传播及其应用 ② 掌握光的反射定律，能区分镜面反射和漫反射 ③ 理解平面镜成像的特点及其应用 ④ 了解光的折射现象，知道光发生折射的条件 ⑤ 知道光的色散现象和光的三原色 ⑥ 了解红外线和紫外线的特性及应用</p>
+</div>
+
+<div class="knowledge-link">
+<strong>🔗 知识衔接</strong>
+前面学习了声音的产生与传播——声音需要介质、以声波形式传播。光也是一种波（电磁波），但它与声有不同的传播特性：光可以在真空中传播，速度约为 \(3 \times 10^8 \text{m/s}\)。本章将从光的传播路径出发，逐步认识光的直线传播、反射、折射等核心规律。
+</div>
+
+<div class="thought-method">
+<strong>💡 思维方法：模型法</strong>
+物理学中常通过建立<strong>理想化模型</strong>来简化问题。本章用<strong>"光线"模型</strong>表示光的传播路径和方向——光线实际上并不存在，但用带箭头的直线能直观描述光的传播。通过光线模型，我们可以方便地研究反射、折射等光现象的定量规律。
+</div>
+
+<details class="module" open>
+<summary>🧠 思维导图</summary>
+<div class="content">
+<div class="mindmap">
+  <ul>
+    <li><span class="node-label">光现象</span>
+      <ul>
+        <li><span class="node-label">光的直线传播</span> <span class="node-desc">—— 同种均匀介质中沿直线传播</span>
+          <ul>
+            <li>小孔成像 <span class="node-desc">倒立实像，像形状与光源相同</span></li>
+            <li>日食月食 <span class="node-desc">月球/地球挡住光线</span></li>
+            <li>影子 / 瞄准 / 激光准直</li>
+          </ul>
+        </li>
+        <li><span class="node-label">光的反射</span>
+          <ul>
+            <li>反射定律 <span class="node-desc">三线共面 / 两线分居 / 两角相等</span></li>
+            <li>镜面反射 <span class="node-desc">如镜子、平静水面</span></li>
+            <li>漫反射 <span class="node-desc">如黑板、粗糙表面——仍遵循反射定律</span></li>
+          </ul>
+        </li>
+        <li><span class="node-label">平面镜成像</span>
+          <ul>
+            <li>等大、等距、正立、虚像</li>
+            <li>像与物关于镜面对称</li>
+            <li>应用：穿衣镜、潜望镜</li>
+          </ul>
+        </li>
+        <li><span class="node-label">光的折射</span>
+          <ul>
+            <li>从空气斜射入水/玻璃——靠近法线</li>
+            <li>从水/玻璃斜射入空气——远离法线</li>
+            <li>池水变浅 / 筷子折断 / 海市蜃楼</li>
+          </ul>
+        </li>
+        <li><span class="node-label">光的色散</span>
+          <ul>
+            <li>牛顿三棱镜实验——白光分解为七色光</li>
+            <li>光的三原色：红、绿、蓝</li>
+            <li>物体的颜色：反射色光决定</li>
+          </ul>
+        </li>
+        <li><span class="node-label">不可见光</span>
+          <ul>
+            <li>红外线 <span class="node-desc">热效应——遥控器、热成像</span></li>
+            <li>紫外线 <span class="node-desc">荧光效应——验钞、消毒</span></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>📦 核心概念</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">💡 光源</div>
+    <p>自身能够<strong>发光</strong>的物体。如太阳、电灯、蜡烛、萤火虫。<br>月亮不是光源——它反射太阳光。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">📏 光的直线传播</div>
+    <p>光在<strong>同种均匀介质</strong>中沿直线传播。光速 \(c = 3 \times 10^8 \text{m/s}\)（真空）。<br>应用：激光准直、射击瞄准、影子的形成。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">🪞 光的反射定律</div>
+    <p>① 反射光线、入射光线、法线在<strong>同一平面内</strong><br>② 反射光线与入射光线<strong>分居法线两侧</strong><br>③ 反射角<strong>等于</strong>入射角 \( \angle r = \angle i \)</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">🪞 镜面反射 vs 漫反射</div>
+    <p><strong>镜面反射</strong>：平行入射→平行反射（光滑表面）<br><strong>漫反射</strong>：平行入射→向各个方向反射（粗糙表面）<br>二者都遵循光的反射定律。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">👤 平面镜成像</div>
+    <p>像的特点：<strong>等大、等距、正立、虚像</strong><br>像与物关于镜面<strong>对称</strong>。<br>应用：穿衣镜、潜望镜、牙医检查镜。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">🌊 光的折射</div>
+    <p>光从一种介质斜射入另一种介质时，传播方向发生<strong>偏折</strong>。<br>空气→水/玻璃：折射角 < 入射角（靠近法线）<br>水/玻璃→空气：折射角 > 入射角（远离法线）</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">🌈 光的色散</div>
+    <p>白光通过三棱镜分解为<strong>红橙黄绿蓝靛紫</strong>七色光。<br>光的三原色：<strong>红、绿、蓝</strong>（RGB）——三者等比例混合为白光。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">🌡️ 红外线与紫外线</div>
+    <p><strong>红外线</strong>：热作用强——遥控器、热像仪、夜视仪<br><strong>紫外线</strong>：荧光效应——验钞机、杀菌消毒</p>
+  </div>
+</div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>📐 公式速查</summary>
+<div class="content">
+  <div class="formula-card">
+    \(\textbf{反射角} = \textbf{入射角}\) &nbsp;&nbsp; \( \angle r = \angle i \)
+  </div>
+  <div class="formula-card">
+    \(\textbf{像距} = \textbf{物距}\) &nbsp;&nbsp; \( v = u \) &nbsp;（平面镜成像）
+  </div>
+  <div class="formula-card">
+    \(\textbf{光速}\) &nbsp; \( c = 3 \times 10^8 \,\text{m/s} \)（真空）<br>
+    空气中光速近似为 \( 3 \times 10^8 \,\text{m/s} \)，水中约为 \(\frac{3}{4}c\)，玻璃中约为 \(\frac{2}{3}c\)
+  </div>
+  <div class="formula-card">
+    \(\textbf{折射率}\) &nbsp; \( n = \frac{c}{v} \)（\(c\) 为真空中光速，\(v\) 为介质中光速）
+  </div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>🔬 实验探究</summary>
+<div class="content">
+
+<div class="experiment-card">
+<h3>🔦 探究光的反射定律</h3>
+<div class="exp-step">
+  <span class="exp-step-num">1</span>
+  <span><strong>准备器材：</strong>激光笔、平面镜、量角器、白纸板、直尺、大头针</span>
+</div>
+<div class="exp-step">
+  <span class="exp-step-num">2</span>
+  <span><strong>搭建装置：</strong>将平面镜竖直立在白纸板上，在镜面中央标记法线 \(ON\)</span>
+</div>
+<div class="exp-step">
+  <span class="exp-step-num">3</span>
+  <span><strong>测量数据：</strong>用激光笔沿不同角度入射，分别记录入射角 \( \angle i \) 和反射角 \( \angle r \)</span>
+</div>
+<div class="exp-step">
+  <span class="exp-step-num">4</span>
+  <span><strong>分析结论：</strong>入射角改变时反射角随之改变，且 \( \angle r = \angle i \)。将纸板沿法线向后折，反射光线消失，说明三线共面。</span>
+</div>
+<div class="exp-principle">
+<strong>📌 实验原理：</strong>光在反射时遵循反射定律——三线共面、两线分居、两角相等。反射时光路是可逆的。
+</div>
+<div class="exp-tip">
+⚠️ <strong>注意事项：</strong>① 激光不可直射眼睛！② 纸板要垂直镜面放置 ③ 多次测量取平均值减小误差 ④ 改变入射角时应在入射点和法线不变的前提下进行
+</div>
+</div>
+
+</div>
+</details>
+
+<details class="module" open>
+<summary>✏️ 解题技巧</summary>
+<div class="content">
+
+<div class="technique-card">
+<h3><span class="step-num">1</span> 利用反射定律作图</h3>
+<div class="method">方法：已知入射光线求反射光线</div>
+<div class="example">过入射点作法线 → 量出入射角 → 在法线另一侧作等角 → 标箭头</div>
+<div class="pitfall">⚠️ 法线要画虚线，角度标注正确，箭头不能遗漏</div>
+<div class="principle">💡 原理：反射角等于入射角，反射光线和入射光线分居法线两侧</div>
+<div class="exam-hint">📌 中考常考：给出入射光线和镜面，要求画出反射光线并标出角度</div>
+</div>
+
+<div class="technique-card">
+<h3><span class="step-num">2</span> 平面镜成像作图</h3>
+<div class="method">方法：对称法（像与物关于镜面对称）</div>
+<div class="example">过物体上各点作镜面的垂线 → 等距延长（虚线）→ 连接各像点 → 像用虚线表示</div>
+<div class="pitfall">⚠️ 虚像必须画虚线，像与物的连线与镜面垂直，光的反射光线也用虚线延长</div>
+<div class="principle">💡 原理：平面镜成虚像，像距等于物距，像与物等大正立</div>
+<div class="exam-hint">📌 中考常考：给出物体和镜面，画出像的位置；或给出像和镜面确定物体位置</div>
+</div>
+
+<div class="technique-card">
+<h3><span class="step-num">3</span> 折射现象判断</h3>
+<div class="method">方法："空气角大"——光在空气一侧的角（入射角或折射角）总是更大</div>
+<div class="example">从空气中看水中的鱼——鱼的实际深度大于看到的深度（视深偏浅）</div>
+<div class="pitfall">⚠️ 注意区分"入射角"和"折射角"：入射角是入射光线与法线的夹角，折射角是折射光线与法线的夹角</div>
+<div class="principle">💡 原理：光从光速大的介质斜射入光速小的介质时，折射角小于入射角</div>
+<div class="exam-hint">📌 中考常考：给出光路图判断介质类型，或画出折射光线的方向</div>
+</div>
+
+</div>
+</details>
+
+<details class="exam-module" open>
+<summary>📝 中考真题</summary>
+<div class="content">
+
+<div class="exam-q">
+  <span class="q-tag">2022 北京</span>
+  <strong>1.</strong>
+  <div class="q-body">如图所示，一束光 \(AO\) 射到平面镜上，入射角为 \(30^\circ\)。请画出反射光线 \(OB\) 并标出反射角的度数。</div>
+  <div class="diagram">
+    <svg viewBox="0 0 240 180" width="240" height="180">
+      <line x1="120" y1="170" x2="120" y2="10" stroke="#333" stroke-width="1.5" stroke-dasharray="6,3"/>
+      <text x="126" y="16" font-size="12" fill="#333">N</text>
+      <line x1="120" y1="170" x2="220" y2="170" stroke="#555" stroke-width="2"/>
+      <text x="224" y="175" font-size="12" fill="#555">镜面</text>
+      <line x1="120" y1="170" x2="40" y2="80" stroke="#2563eb" stroke-width="2"/>
+      <polygon points="115,90 120,80 109,83" fill="#2563eb"/>
+      <text x="28" y="78" font-size="13" fill="#2563eb" font-weight="600">A</text>
+      <text x="50" y="66" font-size="12" fill="#2563eb">入射光线</text>
+      <path d="M 80,170 A 40,40 0 0,1 97,150" fill="none" stroke="#333" stroke-width="1"/>
+      <text x="74" y="158" font-size="13" fill="#dc2626">30°</text>
+      <text x="120" y="178" font-size="11" fill="#888">O</text>
+    </svg>
+  </div>
+  <div class="q-solution">
+    <strong>答案：</strong>反射角为 \(30^\circ\)，反射光线 \(OB\) 在法线右侧，与法线夹角 \(30^\circ\)。
+  </div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag">2021 上海</span>
+  <strong>2.</strong>
+  <div class="q-body">一个人站在平面镜前 2 m 处，他在镜中的像到他的距离为____m。若他向镜面走近 0.5 m，则像的大小将____（选填"变大""变小"或"不变"）。</div>
+  <div class="diagram">
+    <svg viewBox="0 0 300 140" width="300" height="140">
+      <line x1="200" y1="10" x2="200" y2="130" stroke="#555" stroke-width="3"/>
+      <line x1="200" y1="10" x2="198" y2="130" stroke="#888" stroke-width="1"/>
+      <text x="204" y="80" font-size="11" fill="#888">平面镜</text>
+      <rect x="120" y="60" width="20" height="50" rx="3" fill="#4f46e5" opacity="0.8"/>
+      <text x="125" y="54" font-size="11" fill="#4f46e5" font-weight="600">人</text>
+      <rect x="260" y="60" width="20" height="50" rx="3" fill="#4f46e5" opacity="0.35" stroke-dasharray="4,2" stroke="#4f46e5" stroke-width="1"/>
+      <text x="260" y="54" font-size="11" fill="#4f46e5" font-weight="600">像</text>
+      <text x="130" y="124" font-size="11" fill="#888">距镜 2m</text>
+      <text x="250" y="124" font-size="11" fill="#888">距镜 2m</text>
+      <line x1="140" y1="118" x2="195" y2="118" stroke="#888" stroke-width="1" stroke-dasharray="4,2" marker-start="url(#arw)" marker-end="url(#arw)"/>
+      <line x1="205" y1="118" x2="260" y2="118" stroke="#888" stroke-width="1" stroke-dasharray="4,2"/>
+      <text x="150" y="48" font-size="12" fill="#dc2626" font-weight="600">v = u = 2 m</text>
+      <text x="150" y="36" font-size="11" fill="#888">像到人 = 4 m</text>
+    </svg>
+  </div>
+  <div class="q-solution">
+    <strong>答案：</strong>4 m；不变。像距等于物距，故像到人的距离为 \(2 + 2 = 4\,\text{m}\)。平面镜成像大小与物体大小相同，与距离无关。
+  </div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag">2023 广州</span>
+  <strong>3.</strong>
+  <div class="q-body">如图所示，一束光从空气斜射入水中，在水面处发生反射和折射。请完成光路图并标出反射角 \(r\) 和折射角 \(\theta\)。</div>
+  <div class="diagram">
+    <svg viewBox="0 0 280 200" width="280" height="200">
+      <rect x="0" y="100" width="280" height="100" fill="#e0f2fe" opacity="0.3"/>
+      <text x="12" y="170" font-size="12" fill="#888">水</text>
+      <text x="12" y="30" font-size="12" fill="#888">空气</text>
+      <line x1="0" y1="100" x2="280" y2="100" stroke="#555" stroke-width="2"/>
+      <text x="244" y="96" font-size="11" fill="#555">水面</text>
+      <line x1="140" y1="100" x2="140" y2="10" stroke="#333" stroke-width="1.5" stroke-dasharray="6,3"/>
+      <text x="144" y="16" font-size="12" fill="#333">N</text>
+      <line x1="140" y1="100" x2="60" y2="40" stroke="#2563eb" stroke-width="2"/>
+      <polygon points="120,58 125,48 114,52" fill="#2563eb"/>
+      <text x="32" y="40" font-size="13" fill="#2563eb" font-weight="600">入射光线</text>
+      <line x1="140" y1="100" x2="220" y2="30" stroke="#dc2626" stroke-width="2"/>
+      <polygon points="160,56 155,46 165,50" fill="#dc2626"/>
+      <text x="210" y="28" font-size="13" fill="#dc2626" font-weight="600">反射光线</text>
+      <line x1="140" y1="100" x2="200" y2="160" stroke="#16a34a" stroke-width="2"/>
+      <polygon points="165,128 158,120 155,131" fill="#16a34a"/>
+      <text x="196" y="172" font-size="13" fill="#16a34a" font-weight="600">折射光线</text>
+      <path d="M 110,100 A 30,30 0 0,0 125,76" fill="none" stroke="#333" stroke-width="1"/>
+      <text x="96" y="84" font-size="13" fill="#dc2626">i</text>
+      <path d="M 160,100 A 35,35 0 0,1 175,72" fill="none" stroke="#333" stroke-width="1"/>
+      <text x="174" y="78" font-size="13" fill="#dc2626">r</text>
+      <path d="M 145,110 A 35,35 0 0,1 165,130" fill="none" stroke="#333" stroke-width="1"/>
+      <text x="165" y="136" font-size="13" fill="#16a34a">θ</text>
+    </svg>
+  </div>
+  <div class="q-solution">
+    <strong>答案：</strong>反射角 \(r\) 等于入射角 \(i\)（红色夹角）；折射角 \(\theta\) 小于入射角 \(i\)（空气→水，折射光线靠近法线）。
+  </div>
+</div>
+
+</div>
+</details>
+
+<div class="checklist">
+<h3>✅ 本章自查清单</h3>
+<label><input type="checkbox"> 我能说出光源的定义和常见例子</label>
+<label><input type="checkbox"> 我能完整叙述光的反射定律的三条内容</label>
+<label><input type="checkbox"> 我能区分镜面反射和漫反射，并知道它们都遵循反射定律</label>
+<label><input type="checkbox"> 我能说出平面镜成像的四个特点</label>
+<label><input type="checkbox"> 我能画出光从空气射入水中的折射光路图</label>
+<label><input type="checkbox"> 我能解释日食和月食的成因</label>
+<label><input type="checkbox"> 我能说明白光色散成七色光的原理</label>
+<label><input type="checkbox"> 我能区分红外线和紫外线的应用场景</label>
+</div>
+
+<div class="checklist" style="margin-top:16px">
+<h3>🔥 费曼挑战</h3>
+<p style="font-size:14px;color:var(--text-secondary);margin-bottom:10px">
+用简单的语言向一位七年级同学解释：<strong>"为什么平面镜成的像是虚像？为什么像与物到镜面的距离相等？"</strong><br>
+如果你能在不借助公式的情况下让对方听懂，说明你真正理解了光的反射和平面镜成像原理。
+</p>
+</div>
+
+</section>
+
+</main>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/auto-render.min.js"></script>
+<script>
+(function() {
+  var toggle = document.getElementById('theme-toggle');
+  if (toggle) {
+    var saved = localStorage.getItem('physics-theme');
+    if (saved === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      toggle.textContent = '☀️ 亮色模式';
+    }
+    toggle.addEventListener('click', function() {
+      var html = document.documentElement;
+      var isDark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      localStorage.setItem('physics-theme', isDark ? 'light' : 'dark');
+      toggle.textContent = isDark ? '🌙 暗色模式' : '☀️ 亮色模式';
+    });
+  }
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        document.querySelectorAll('#sidebar nav a').forEach(function(a) { a.classList.remove('active'); });
+        var id = entry.target.closest('section') ? entry.target.closest('section').id || '' : '';
+        var link = document.querySelector('#sidebar nav a[href$="' + (id || location.pathname.split('/').pop()) + '"]');
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  document.querySelectorAll('section[id]').forEach(function(s) { observer.observe(s); });
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof renderMathInElement === 'function') {
+      renderMathInElement(document.body, { delimiters: [{ left: '$$', right: '$$', display: true }, { left: '\\(', right: '\\)', display: false }] });
+    }
+  });
+  var sidebar = document.getElementById('sidebar');
+  var hideBtn = document.getElementById('sidebarHideBtn');
+  var sidebarHidden = localStorage.getItem('physics8-sidebar') === 'hidden';
+  if (sidebarHidden) sidebar.classList.add('hidden');
+  var showBtn = document.getElementById('sidebarShowBtn');
+  hideBtn.addEventListener('click', function() {
+    sidebar.classList.add('hidden');
+    localStorage.setItem('physics8-sidebar', 'hidden');
+  });
+  showBtn.addEventListener('click', function() {
+    sidebar.classList.remove('hidden');
+    localStorage.setItem('physics8-sidebar', '');
+  });
+  (function() {
+    var btn = document.getElementById('expandAllBtn');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      var allDetails = document.querySelectorAll('.module, .exam-module');
+      var allOpen = true;
+      for (var i = 0; i < allDetails.length; i++) {
+        if (!allDetails[i].hasAttribute('open')) { allOpen = false; break; }
+      }
+      for (var i = 0; i < allDetails.length; i++) {
+        if (allOpen) allDetails[i].removeAttribute('open');
+        else allDetails[i].setAttribute('open', '');
+      }
+      btn.textContent = allOpen ? '📂 展开全部章节' : '📖 收起全部章节';
+    });
+  })();
+  })();
+</script>
+</body>
+</html>

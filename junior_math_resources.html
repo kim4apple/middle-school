@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>初中数学 · 推荐资源清单</title>
+  <link rel="stylesheet" href="katex/katex.min.css">
+  <style>
+:root {
+  --bg: #ffffff;
+  --bg-secondary: #f8fafc;
+  --text: #1e293b;
+  --text-secondary: #64748b;
+  --accent: #4f46e5;
+  --accent-light: #eef2ff;
+  --border: #e2e8f0;
+  --shadow: 0 1px 2px rgba(0,0,0,0.06);
+  --radius: 6px;
+  --sidebar-width: 260px;
+  --level-basic: #10b981;
+  --level-medium: #f59e0b;
+  --level-advanced: #ef4444;
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --bg-secondary: #1e293b;
+  --text: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --accent: #818cf8;
+  --accent-light: #1e1b4b;
+  --border: #334155;
+  --shadow: 0 1px 2px rgba(0,0,0,0.25);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  display: flex;
+}
+
+#sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border);
+  padding: 20px 14px;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+#sidebar h2 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--accent);
+}
+
+.sidebar-group { margin-bottom: 12px; }
+.sidebar-group-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0 10px 4px;
+}
+
+#sidebar nav a {
+  display: block;
+  padding: 5px 10px;
+  border-radius: 6px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 12px;
+  transition: background 0.15s, color 0.15s;
+}
+
+#sidebar nav a:hover,
+#sidebar nav a.active {
+  background: var(--accent-light);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.sidebar-actions {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.theme-toggle, .print-btn {
+  padding: 7px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 12px;
+  width: 100%;
+}
+
+#content {
+  flex: 1;
+  max-width: 920px;
+  padding: 32px 40px;
+}
+
+.cover {
+  text-align: center;
+  padding: 30px 0 24px;
+  margin-bottom: 28px;
+  border-bottom: 2px solid var(--border);
+}
+.cover h1 { font-size: 30px; margin-bottom: 8px; letter-spacing: -0.5px; }
+.cover p { color: var(--text-secondary); font-size: 14px; }
+
+.section { margin-bottom: 44px; }
+
+.section h1 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.module {
+  margin-bottom: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  page-break-inside: avoid;
+}
+
+.module summary {
+  padding: 11px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--bg-secondary);
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.module summary::-webkit-details-marker { display: none; }
+
+.module summary::before {
+  content: "▸";
+  display: inline-block;
+  font-size: 11px;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.module[open] summary::before { transform: rotate(90deg); }
+
+.module .content { padding: 14px 16px; }
+
+.level-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 7px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.3px;
+  margin-left: 6px;
+}
+.level-basic { background: var(--level-basic); }
+.level-medium { background: var(--level-medium); }
+.level-advanced { background: var(--level-advanced); }
+
+.resource-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px;
+  margin-bottom: 10px;
+  box-shadow: var(--shadow);
+  page-break-inside: avoid;
+}
+.resource-card h3 {
+  font-size: 15px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.resource-card .meta {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+.resource-card .desc {
+  font-size: 13px;
+  line-height: 1.55;
+  margin-bottom: 6px;
+}
+.resource-card .why {
+  font-size: 12px;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 5px 9px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  border-left: 3px solid var(--accent);
+}
+
+.formula-card {
+  background: var(--bg-secondary);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+.formula-card strong { color: var(--accent); }
+.formula-card p { margin-top: 3px; color: var(--text-secondary); font-size: 12px; }
+
+ul.plain { padding-left: 18px; margin: 6px 0; }
+ul.plain li { margin-bottom: 4px; font-size: 13px; }
+ol.plain { padding-left: 20px; margin: 6px 0; }
+ol.plain li { margin-bottom: 4px; font-size: 13px; }
+
+.selection-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  margin: 10px 0;
+}
+.selection-table th,
+.selection-table td {
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+.selection-table th {
+  background: var(--bg-secondary);
+  font-weight: 700;
+  color: var(--accent);
+}
+.selection-table td:first-child { font-weight: 600; white-space: nowrap; }
+
+.level-legend {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+  font-size: 12px;
+}
+.level-legend .item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.level-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+.tip-box {
+  background: linear-gradient(135deg, #fef9e7 0%, var(--accent-light) 100%);
+  border-left: 4px solid #f59e0b;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.tip-box strong { color: #b45309; }
+
+@media (max-width: 768px) {
+  body { flex-direction: column; }
+  #sidebar { width: 100%; height: auto; position: relative; padding: 16px; }
+  #content { padding: 20px 16px; }
+}
+
+@media print {
+  @page { size: A4; margin: 10mm; }
+  body { background: #fff; color: #000; font-size: 9pt; line-height: 1.4; display: block; }
+  #sidebar, .theme-toggle, .print-btn, .sidebar-actions { display: none !important; }
+  #content { max-width: none; padding: 0; }
+  .cover { padding: 0 0 8px; margin-bottom: 10px; border-bottom: 1.5px solid #999; }
+  .cover h1 { font-size: 20px; }
+  .cover p { color: #333; }
+  .section { margin-bottom: 6mm; }
+  .section h1 { font-size: 13px; margin-bottom: 5px; padding-bottom: 3px; border-bottom: 1.5px solid #333; }
+  .module { box-shadow: none; border: 1px solid #999; margin-bottom: 4mm; page-break-inside: avoid; }
+  .module summary { background: #f3f4f6 !important; color: #000 !important; padding: 5px 8px; font-size: 10px; border-bottom: 1px solid #999; }
+  .module summary::before { display: none; }
+  .module .content { padding: 6px; display: block !important; }
+  details { display: block; }
+  .resource-card, .formula-card, .tip-box { box-shadow: none; border: 1px solid #bbb; padding: 6px; margin-bottom: 3mm; }
+  .resource-card h3 { color: #000; }
+  .level-basic, .level-medium, .level-advanced { border: 1px solid #000; background: #fff !important; color: #000 !important; padding: 1px 4px; }
+  .why { background: #fff !important; color: #000 !important; border-left: 2px solid #000; }
+  a { text-decoration: none; color: #000; }
+  .katex { font-size: 1em; }
+}
+  </style>
+</head>
+<body>
+  <nav id="sidebar">
+    <h2>资源清单导航</h2>
+    <div class="sidebar-group">
+      <div class="sidebar-group-title">分类导航</div>
+      <nav>
+        <a href="#choose">一、如何选择教辅</a>
+        <a href="#sync">二、同步学习类</a>
+        <a href="#topic">三、专题突破类</a>
+        <a href="#review">四、总复习与中考类</a>
+        <a href="#advanced">五、竞赛与拓展类</a>
+        <a href="#papers">六、试卷与真题类</a>
+        <a href="#tools">七、工具书与手册</a>
+        <a href="#online">八、在线资源与 APP</a>
+        <a href="#plan">九、不同水平搭配方案</a>
+      </nav>
+    </div>
+    <div class="sidebar-actions">
+      <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
+      <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
+    </div>
+  </nav>
+
+  <main id="content">
+    <div class="cover">
+      <h1>初中数学 · 推荐资源清单</h1>
+      <p>教辅 · 试卷 · 工具书 · 在线资源 | 国家特级教师精选推荐</p>
+    </div>
+
+    <div class="level-legend">
+      <div class="item"><span class="level-dot" style="background:var(--level-basic)"></span>基础巩固</div>
+      <div class="item"><span class="level-dot" style="background:var(--level-medium)"></span>能力提升</div>
+      <div class="item"><span class="level-dot" style="background:var(--level-advanced)"></span>压轴/竞赛</div>
+    </div>
+
+    <section class="section" id="choose">
+      <h1>一、如何选择教辅</h1>
+      <div class="tip-box">
+        <strong>选教辅三原则：</strong>① 跟紧教材版本（人教版/北师大版/华师大版等）；② 匹配当前水平，不盲目追求难题；③ 贵精不贵多，一本做透胜过三本浅尝。
+      </div>
+
+      <details class="module" open>
+        <summary>📋 按学习阶段选择</summary>
+        <div class="content">
+          <table class="selection-table">
+            <tr><th>学习阶段</th><th>推荐类型</th><th>选择要点</th></tr>
+            <tr><td>初一/初二同步</td><td>教材全解 + 同步练习</td><td>重视概念讲解、例题详细、梯度清晰</td></tr>
+            <tr><td>初二下学期/初三</td><td>专题突破 + 中考真题</td><td>关注压轴题、模型归纳、方法总结</td></tr>
+            <tr><td>初三总复习</td><td>总复习书 + 模拟卷 + 真题卷</td><td>体系完整、贴近本地中考、答案详尽</td></tr>
+            <tr><td>竞赛/自主招生</td><td>竞赛教程 + 专题集训</td><td>系统性强、难度递进、有完整解答</td></tr>
+          </table>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>⚠️ 避坑指南</summary>
+        <div class="content">
+          <ul class="plain">
+            <li><strong>不要贪多：</strong>同一阶段 1–2 本教辅足够，买多了做不完反而增加焦虑。</li>
+            <li><strong>不要盲目跟风：</strong>别人觉得好的不一定适合你，要看自己的薄弱环节。</li>
+            <li><strong>重视答案解析：</strong>解析不详细的教辅，做了错也不知道为什么错。</li>
+            <li><strong>关注版本匹配：</strong>不同版本教材顺序不同，买错版本会章节错乱。</li>
+            <li><strong>真题优先：</strong>临近中考，优先做本地近 5 年真题和高质量模拟题。</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <section class="section" id="sync">
+      <h1>二、同步学习类教辅</h1>
+      <p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px">适合初一、初二跟随课本进度使用，兼顾知识讲解与练习。</p>
+
+      <details class="module" open>
+        <summary>📖 讲解型</summary>
+        <div class="content">
+          <div class="resource-card">
+            <h3>《教材全解》（薛金星）<span class="level-tag level-basic">基础</span></h3>
+            <div class="meta">人教版/北师大版等多版本 · 同步教材逐节讲解</div>
+            <div class="desc">知识点讲解详细，例题典型，适合预习和课后巩固。对基础薄弱、上课没听懂的学生非常友好。</div>
+            <div class="why"><strong>适合：</strong>基础一般、需要详细讲解的学生。</div>
+          </div>
+
+          <div class="resource-card">
+            <h3>《点拨》（荣德基）<span class="level-tag level-basic">基础</span></h3>
+            <div class="meta">多版本同步 · 侧重方法点拨</div>
+            <div class="desc">讲解简洁，突出"方法"二字，有很多解题技巧和易错提醒。</div>
+            <div class="why"><strong>适合：</strong>基础尚可、想学方法技巧的学生。</div>
+          </div>
+
+          <div class="resource-card">
+            <h3>《学霸笔记》<span class="level-tag level-basic">基础</span></h3>
+            <div class="meta">彩色漫画式笔记 · 知识点梳理</div>
+            <div class="desc">图文并茂，重难点突出，适合查漏补缺和考前快速复习，但练习题较少。</div>
+            <div class="why"><strong>适合：</strong>视觉型学习者、考前梳理知识体系。</div>
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>✏️ 练习型</summary>
+        <div class="content">
+          <div class="resource-card">
+            <h3>《五年中考三年模拟》（曲一线）<span class="level-tag level-medium">提升</span></h3>
+            <div class="meta">经典同步练习 · 分基础/提升/素养</div>
+            <div class="desc">题目梯度好，既有基础题也有中考真题，答案解析详细。"五三"是国民级教辅，质量稳定。</div>
+            <div class="why"><strong>适合：</strong>大多数初中生，特别是想提前接触中考题的学生。</div>
+          </div>
+
+          <div class="resource-card">
+            <h3>《初中必刷题》（杨文彬）<span class="level-tag level-medium">提升</span></h3>
+            <div class="meta">题量较大 · 分刷基础/刷提升/刷素养</div>
+            <div class="desc">题目较新，难度略高于五三，适合有一定基础、想通过刷题提升的学生。</div>
+            <div class="why"><strong>适合：</strong>中等及以上学生，喜欢刷题训练。</div>
+          </div>
+
+          <div class="resource-card">
+            <h3>《一遍过》（天星教育）<span class="level-tag level-basic">基础</span></h3>
+            <div class="meta">题量适中 · 重基础过关</div>
+            <div class="desc">分层设计清晰，适合每天定量练习，打牢基础。</div>
+            <div class="why"><strong>适合：</strong>基础薄弱、需要稳步提升的学生。</div>
+          </div>
+
+          <div class="resource-card">
+            <h3>《启东中学作业本》<span class="level-tag level-medium">提升</span></h3>
+            <div class="meta">老牌名校作业题 · 难度中等偏上</div>
+            <div class="desc">题目经典，难度分层，适合课后巩固和提高。</div>
+            <div class="why"><strong>适合：</strong>中等及以上学生日常训练。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="section" id="topic">
+      <h1>三、专题突破类教辅</h1>
+      <p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px">针对某一类难点或中考压轴题进行专项训练。</p>
+
+      <details class="module" open>
+        <summary>🔥 压轴题专项</summary>
+        <div class="content">
+          <div class="resource-card">
+            <h3>《挑战中考数学压轴题》（华东师大版）<span class="level-tag level-advanced">压轴</span></h3>
+            <div class="meta">中考压轴题经典 · 分函数/几何/综合</div>
+            <div class="desc">系统讲解中考压轴题的常见类型和解题策略，例题难度接近中考最后两题。</div>
+            <div class="why"><strong>适合：</strong>目标重点高中、想突破最后两题的学生。</div>
+          </div>
+
+          <div class="resource-card">
+            <h3>《中考数学压轴题破解策略》<span class="level-tag level-advanced">压轴</span></h3>
+            <div class="meta">模型化训练 · 方法总结</div>
+            <div class="desc">按模型归纳压轴题，如将军饮马、胡不归、阿氏圆、手拉手等，适合系统突破。</div>
+            <div class="why"><strong>适合：</strong>初三冲刺阶段，专门攻克压轴模型。</div>
+          </div>
+
+          <div class="resource-card">
+            <h3>《新思维·探究应用新思维》（黄东坡）<span class="level-tag level-advanced">压轴</span></h3>
+            <div class="meta">培优拔高 · 思维拓展</div>
+            <div class="desc">题目灵活，注重思维训练，难度高于中考但低于竞赛，被称为"小蓝本入门"。</div>
+            <div class="why"><strong>适合：</strong>成绩优秀、想拓展思维的学生。</div>
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>🎯 几何/函数专题</summary>
+        <div class="content">
+          <div class="resource-card">
+            <h3>《几何辅助线》（万唯中考）<span class="level-tag level-medium">提升</span></h3>
+            <div class="meta">中考几何专项 · 辅助线方法</div>
+            <div class="desc">按条件归纳辅助线作法，如"见中点""遇切线""将军饮马"等，对几何薄弱学生帮助大。</div>
+            <div class="why"><strong>适合：</strong>几何证明和辅助线有困难的学生。</div>
+          </div>
+
+          <div class="resource-card">
+            <h3>《函数与图像》专题书<span class="level-tag level-medium">提升</span></h3>
+            <div class="meta">一次/反比例/二次函数综合</div>
+            <div class="desc">系统训练函数与几何综合题，如函数图象分析、存在性问题、最值问题。</div>
+            <div class="why"><strong>适合：</strong>函数综合题薄弱的学生。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="section" id="review">
+      <h1>四、总复习与中考类</h1>
+      <p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px">适合初三全年及中考冲刺阶段使用。</p>
+
+      <details class="module" open>
+        <summary>📚 中考总复习用书</summary>
+        <div class="content">
+          <div class="resource-card">
+            <h3>《五年中考三年模拟·中考版》<span class="level-tag level-medium">提升</span></h3>
+            <div class="meta">全国中考真题分类 · 系统复习</div>
+            <div class="desc">按知识点分类汇编近五年中考真题，适合一轮复习全面扫盲。</div>
+            <div class="why"><strong>适合：</strong>初三一轮复习，系统梳理知识点。</div>
+          </div>
+
+          <div class="resource-card">
+            <h3>《万唯中考·试题研究》<span class="level-tag level-medium">提升</span></h3>
+            <div class="meta">分省专版 · 贴近本地中考</div>
+            <div class="desc">按省份命题特点编写，更贴近本地中考题型和难度，是万唯的王牌产品。</div>
+            <div class="why"><strong>适合：</strong>想精准备考本地中考的学生。</div>
+          </div>
+
+          <div class="resource-card">
+            <h3>《中考数学一轮复习》<span class="level-tag level-basic">基础</span></h3>
+            <div class="meta">基础知识全覆盖 · 回归课本</div>
+            <div class="desc">注重基础知识的系统复习，适合基础薄弱学生查漏补缺。</div>
+            <div class="why"><strong>适合：</strong>基础不扎实、需要先补基础的学生。</div>
+          </div>
+
+          <div class="resource-card">
+            <h3>《中考数学压轴题全解析》<span class="level-tag level-advanced">压轴</span></h3>
+            <div class="meta">压轴题分类突破 · 详细解析</div>
+            <div class="desc">专注中考最后两题，按类型系统训练，解析过程详尽。</div>
+            <div class="why"><strong>适合：</strong>冲刺高分的学生。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="section" id="advanced">
+      <h1>五、竞赛与拓展类</h1>
+      <p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px">适合学有余力、参加竞赛或自主招生的学生。</p>
+
+      <details class="module" open>
+        <summary>🏆 竞赛经典</summary>
+        <div class="content">
+          <div class="resource-card">
+            <h3>《数学奥林匹克小丛书》（小蓝本）<span class="level-tag level-advanced">竞赛</span></h3>
+            <div class="meta">竞赛圣经 · 分专题系统</div>
+            <div class="desc">国内竞赛最权威的系列之一，初中版涵盖因式分解、方程、函数、几何、数论等专题。难度较高，需要扎实基础。</div>
+            <div class="why"><strong>适合：</strong>准备数学竞赛、自招的学生。</div>
+          </div>
+
+          <div class="resource-card">
+            <h3>《奥数教程》（单墫/熊斌）<span class="level-tag level-advanced">竞赛</span></h3>
+            <div class="meta">竞赛入门经典 · 例题+练习</div>
+            <div class="desc">系统介绍竞赛知识，难度低于小蓝本，适合竞赛入门。</div>
+            <div class="why"><strong>适合：</strong>初涉竞赛、想系统学习的学生。</div>
+          </div>
+
+          <div class="resource-card">
+            <h3>《培优新方法》（黄东坡）<span class="level-tag level-advanced">拓展</span></h3>
+            <div class="meta">中考压轴与竞赛衔接</div>
+            <div class="desc">难度介于中考压轴和竞赛之间，题目质量高，适合尖子生拓展。</div>
+            <div class="why"><strong>适合：</strong>成绩拔尖、想挑战更高难度的学生。</div>
+          </div>
+
+          <div class="resource-card">
+            <h3>《多功能题典·初中数学》<span class="level-tag level-advanced">竞赛</span></h3>
+            <div class="meta">大型题典 · 按知识点检索</div>
+            <div class="desc">题量巨大，按知识点分类，可作为竞赛刷题和查阅工具。</div>
+            <div class="why"><strong>适合：</strong>需要大量竞赛题训练的学生和教师。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="section" id="papers">
+      <h1>六、试卷与真题类</h1>
+      <p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px">适合阶段性检测和考前模拟。</p>
+
+      <details class="module" open>
+        <summary>📝 真题与模拟卷</summary>
+        <div class="content">
+          <div class="resource-card">
+            <h3>《天利38套·中考试题精选》<span class="level-tag level-medium">提升</span></h3>
+            <div class="meta">全国中考真题汇编 · 经典试卷集</div>
+            <div class="desc">收录全国各地中考真题，适合了解不同地区命题风格和难度。</div>
+            <div class="why"><strong>适合：</strong>二轮复习后每周模拟训练。</div>
+          </div>
+
+          <div class="resource-card">
+            <h3>《金考卷·中考真题分类卷》<span class="level-tag level-medium">提升</span></h3>
+            <div class="meta">真题分类 · 专题突破</div>
+            <div class="desc">按知识点或题型分类汇编真题，便于针对性训练。</div>
+            <div class="why"><strong>适合：</strong>专项薄弱、想集中突破某一类题的学生。</div>
+          </div>
+
+          <div class="resource-card">
+            <h3>《本地中考真题卷》（近 5 年）<span class="level-tag level-medium">提升</span></h3>
+            <div class="meta">本地命题风格 · 必做</div>
+            <div class="desc">本地近 5 年中考真题是最宝贵的复习资料，必须至少做一遍，熟悉本地题型、难度和评分标准。</div>
+            <div class="why"><strong>适合：</strong>所有初三学生，中考前必做。</div>
+          </div>
+
+          <div class="resource-card">
+            <h3>《名校模拟卷/联考卷》<span class="level-tag level-medium">提升</span></h3>
+            <div class="meta">本地名校月考/模考卷</div>
+            <div class="desc">质量高、贴近本地中考，可通过学校或网络平台获取。</div>
+            <div class="why"><strong>适合：</strong>考前模拟、适应考试节奏。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="section" id="tools">
+      <h1>七、工具书与手册</h1>
+      <p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px">适合查阅公式、定理和知识点，作为速查手册使用。</p>
+
+      <details class="module" open>
+        <summary>📖 推荐工具书</summary>
+        <div class="content">
+          <div class="resource-card">
+            <h3>《初中数学公式定律》（ pass 绿卡）<span class="level-tag level-basic">基础</span></h3>
+            <div class="desc">小巧便携，公式定理分类整理，适合随身携带、随时翻阅。</div>
+            <div class="why"><strong>适合：</strong>公式记忆不牢、需要随时查阅的学生。</div>
+          </div>
+
+          <div class="resource-card">
+            <h3>《知识清单·初中数学》<span class="level-tag level-basic">基础</span></h3>
+            <div class="desc">知识点系统梳理，配有例题和易错点，适合考前快速复习。</div>
+            <div class="why"><strong>适合：</strong>考前总复习、建立知识框架。</div>
+          </div>
+
+          <div class="resource-card">
+            <h3>《初中数学基础知识手册》（薛金星）<span class="level-tag level-basic">基础</span></h3>
+            <div class="desc">内容全面，涵盖初中全部知识点、公式、定理、方法，是初中数学的"词典"。</div>
+            <div class="why"><strong>适合：</strong>长期备查，特别是初三总复习。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="section" id="online">
+      <h1>八、在线资源与 APP</h1>
+      <p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px">数字化学习资源，可作为教辅的补充。</p>
+
+      <details class="module" open>
+        <summary>🌐 官方与教学平台</summary>
+        <div class="content">
+          <div class="resource-card">
+            <h3>国家中小学智慧教育平台<span class="level-tag level-basic">基础</span></h3>
+            <div class="desc">教育部官方平台，提供免费课程视频、教材、教案，内容权威，适合预习和复习。</div>
+            <div class="why"><strong>适合：</strong>所有学生，特别是需要免费优质课程资源的学生。</div>
+          </div>
+
+          <div class="resource-card">
+            <h3>学科网 / 菁优网<span class="level-tag level-medium">提升</span></h3>
+            <div class="desc">大量题库、试卷、课件资源，可按知识点、年级、地区筛选。部分资源需付费。</div>
+            <div class="why"><strong>适合：</strong>教师备课、学生找题练习。</div>
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>📱 学习 APP</summary>
+        <div class="content">
+          <div class="resource-card">
+            <h3>洋葱学院 / 洋葱数学<span class="level-tag level-basic">基础</span></h3>
+            <div class="desc">动画短视频讲解知识点，生动有趣，适合预习和基础薄弱学生。</div>
+            <div class="why"><strong>适合：</strong>视觉型学习者、基础概念理解困难的学生。</div>
+          </div>
+
+          <div class="resource-card">
+            <h3>乐乐课堂<span class="level-tag level-basic">基础</span></h3>
+            <div class="desc">短视频课程，覆盖初中数学知识点，适合碎片化学习。</div>
+            <div class="why"><strong>适合：</strong>利用碎片时间复习知识点。</div>
+          </div>
+
+          <div class="resource-card">
+            <h3>小猿搜题 / 作业帮<span class="level-tag level-medium">提升</span></h3>
+            <div class="desc">拍照搜题，查看解析。适合遇到难题时参考思路，但不应直接抄答案。</div>
+            <div class="why"><strong>适合：</strong>独立学习时遇到难题需要讲解的学生。</div>
+          </div>
+
+          <div class="resource-card">
+            <h3>Geogebra（图形计算器）<span class="level-tag level-medium">提升</span></h3>
+            <div class="desc">免费数学软件，可画函数图象、几何图形、动态演示，是数形结合的好工具。</div>
+            <div class="why"><strong>适合：</strong>想直观理解函数和几何动态变化的学生。</div>
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>⚠️ 使用建议</summary>
+        <div class="content">
+          <ul class="plain">
+            <li><strong>APP 是辅助不是主力：</strong>刷题和深度思考仍需纸质教辅。</li>
+            <li><strong>搜题要思考：</strong>先看解析理解，再独立重做，不要直接抄答案。</li>
+            <li><strong>控制屏幕时间：</strong>学习类 APP 也要限时，避免分心。</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <section class="section" id="plan">
+      <h1>九、不同水平搭配方案</h1>
+
+      <details class="module" open>
+        <summary>🎯 基础薄弱型（70 分以下）</summary>
+        <div class="content">
+          <div class="formula-card"><strong>核心目标：</strong><p>抓牢课本，掌握基础题，确保计算和基本概念不丢分。</p></div>
+          <ul class="plain">
+            <li><strong>同步：</strong>《教材全解》+《一遍过》</li>
+            <li><strong>复习：</strong>《知识清单》+ 本地近 5 年中考真题基础题</li>
+            <li><strong>方法：</strong>先搞懂课本例题，再做同步练习；错题整理，反复重做。</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>🎯 中等提升型（70–90 分）</summary>
+        <div class="content">
+          <div class="formula-card"><strong>核心目标：</strong><p>突破中档题，减少失误，挑战压轴题第一问。</p></div>
+          <ul class="plain">
+            <li><strong>同步：</strong>《五年中考三年模拟》+《初中必刷题》</li>
+            <li><strong>专题：</strong>《几何辅助线》+《挑战中考数学压轴题》</li>
+            <li><strong>复习：</strong>《万唯中考·试题研究》+ 本地真题 + 天利 38 套</li>
+            <li><strong>方法：</strong>建立错题本，按模型归类错题，每周做一套限时模拟。</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>🎯 尖子冲刺型（90 分以上）</summary>
+        <div class="content">
+          <div class="formula-card"><strong>核心目标：</strong><p>攻克压轴题，冲击满分，拓展竞赛思维。</p></div>
+          <ul class="plain">
+            <li><strong>同步/提升：</strong>《新思维·探究应用新思维》+《培优新方法》</li>
+            <li><strong>压轴：</strong>《中考数学压轴题破解策略》+ 名校模拟卷</li>
+            <li><strong>拓展：</strong>《奥数教程》或《数学奥林匹克小丛书》</li>
+            <li><strong>方法：</strong>一题多解、归纳模型、限时训练、参加数学竞赛或培优班。</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>📅 初三全年使用规划</summary>
+        <div class="content">
+          <table class="selection-table">
+            <tr><th>时间段</th><th>重点任务</th><th>推荐资料</th></tr>
+            <tr><td>初三上学期</td><td>完成新课，同步巩固</td><td>《五年中考三年模拟》同步版</td></tr>
+            <tr><td>寒假</td><td>一轮复习，系统梳理</td><td>《万唯中考·试题研究》或《五年中考三年模拟·中考版》</td></tr>
+            <tr><td>初三下学期 3–4 月</td><td>专题突破，攻克薄弱</td><td>《挑战中考数学压轴题》+ 专题卷</td></tr>
+            <tr><td>初三下学期 5 月</td><td>真题模拟，适应节奏</td><td>本地近 5 年真题 + 天利 38 套</td></tr>
+            <tr><td>中考前 2 周</td><td>回归基础，查漏补缺</td><td>错题本 + 《知识清单》+ 基础真题</td></tr>
+          </table>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <script defer src="katex/katex.min.js"></script>
+  <script defer src="katex/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "$", right: "$", display: false}
+        ],
+        throwOnError: false
+      });
+
+      const toggle = document.getElementById("theme-toggle");
+      if (toggle) {
+        toggle.addEventListener("click", function () {
+          const html = document.documentElement;
+          if (html.getAttribute("data-theme") === "dark") {
+            html.setAttribute("data-theme", "light");
+            toggle.textContent = "🌙 暗色模式";
+          } else {
+            html.setAttribute("data-theme", "dark");
+            toggle.textContent = "☀️ 亮色模式";
+          }
+        });
+      }
+
+      const links = document.querySelectorAll("#sidebar nav a");
+      const sections = document.querySelectorAll(".section");
+      function onScroll() {
+        let current = "";
+        sections.forEach(sec => {
+          const rect = sec.getBoundingClientRect();
+          if (rect.top <= 120) current = sec.id;
+        });
+        links.forEach(link => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === "#" + current) link.classList.add("active");
+        });
+      }
+      window.addEventListener("scroll", onScroll);
+      onScroll();
+    });
+  </script>
+</body>
+</html>

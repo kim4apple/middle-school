@@ -1,0 +1,2026 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>初中数学 · 知识点完全总结</title>
+  <link rel="stylesheet" href="katex/katex.min.css">
+  <style>
+:root {
+  --bg: #ffffff;
+  --bg-secondary: #f8fafc;
+  --text: #1e293b;
+  --text-secondary: #64748b;
+  --accent: #4f46e5;
+  --accent-light: #eef2ff;
+  --border: #e2e8f0;
+  --shadow: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-hover: 0 4px 12px rgba(0,0,0,0.12);
+  --radius: 8px;
+  --sidebar-width: 270px;
+  --g7: #4f46e5;
+  --g8: #0891b2;
+  --g9: #db2777;
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --bg-secondary: #1e293b;
+  --text: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --accent: #818cf8;
+  --accent-light: #1e1b4b;
+  --border: #334155;
+  --shadow: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-hover: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  display: flex;
+}
+
+#sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border);
+  padding: 22px 14px;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+#sidebar h2 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--accent);
+}
+
+.sidebar-group { margin-bottom: 12px; }
+.sidebar-group-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0 10px 4px;
+}
+
+#sidebar nav a {
+  display: block;
+  padding: 5px 10px;
+  border-radius: 6px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 12px;
+  transition: background 0.15s, color 0.15s;
+}
+
+#sidebar nav a:hover,
+#sidebar nav a.active {
+  background: var(--accent-light);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.sidebar-actions {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.theme-toggle, .print-btn {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 12px;
+  width: 100%;
+}
+
+#content {
+  flex: 1;
+  max-width: 920px;
+  padding: 36px 44px;
+}
+
+.cover {
+  text-align: center;
+  padding: 40px 0 28px;
+  margin-bottom: 36px;
+  border-bottom: 2px solid var(--border);
+}
+.cover h1 { font-size: 34px; margin-bottom: 10px; letter-spacing: -0.5px; }
+.cover p { color: var(--text-secondary); font-size: 15px; }
+
+.chapter { margin-bottom: 56px; }
+
+.chapter h1 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.module {
+  margin-bottom: 22px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.module summary {
+  padding: 13px 18px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--bg-secondary);
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.module summary::-webkit-details-marker { display: none; }
+
+.module summary::before {
+  content: "▸";
+  display: inline-block;
+  font-size: 11px;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.module[open] summary::before { transform: rotate(90deg); }
+
+.module .content { padding: 16px 18px; }
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.concept-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.2s;
+}
+.concept-card:hover { box-shadow: var(--shadow-hover); }
+
+.concept-card .name {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 6px;
+  color: var(--accent);
+}
+.concept-card p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+
+.formula-card {
+  background: var(--bg-secondary);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 11px 15px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.formula-card strong { color: var(--accent); }
+.formula-card p { margin-top: 4px; color: var(--text-secondary); font-size: 13px; }
+
+.technique-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow);
+}
+.technique-card h3 {
+  font-size: 15px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.technique-card .step-num {
+  width: 22px; height: 22px;
+  background: var(--accent);
+  color: white;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+.technique-card .method { font-weight: 600; margin-bottom: 3px; font-size: 14px; }
+.technique-card .example { color: var(--text-secondary); font-size: 13px; margin-bottom: 6px; line-height: 1.55; }
+.technique-card .pitfall {
+  font-size: 12px;
+  color: #dc2626;
+  background: #fef2f2;
+  padding: 6px 10px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  border-left: 3px solid #dc2626;
+}
+
+.grade-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.3px;
+  flex-shrink: 0;
+}
+.grade-7 { background: var(--g7); }
+.grade-8 { background: var(--g8); }
+.grade-9 { background: var(--g9); }
+
+.module-meta {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.mindmap { padding: 6px 0; }
+.mindmap ul { list-style: none; padding-left: 20px; border-left: 1px solid var(--border); margin-left: 6px; }
+.mindmap li { position: relative; padding: 4px 0 4px 13px; font-size: 13.5px; line-height: 1.6; }
+.mindmap li::before { content: ""; position: absolute; left: -1px; top: 13px; width: 10px; height: 1px; background: var(--border); }
+.mindmap .node-label { font-weight: 600; color: var(--accent); }
+.mindmap .node-desc { font-size: 12px; color: var(--text-secondary); margin-left: 4px; }
+
+ul.plain { padding-left: 18px; margin: 6px 0; }
+ul.plain li { margin-bottom: 4px; font-size: 13.5px; }
+
+@media (max-width: 768px) {
+  body { flex-direction: column; }
+  #sidebar { width: 100%; height: auto; position: relative; padding: 16px; }
+  #content { padding: 20px 16px; }
+  .card-grid { grid-template-columns: 1fr; }
+}
+
+@media print {
+  @page { size: A4; margin: 12mm; }
+  body { background: #fff; color: #000; font-size: 9.5pt; line-height: 1.45; display: block; }
+  #sidebar, .theme-toggle, .print-btn, .sidebar-actions { display: none !important; }
+  #content { max-width: none; padding: 0; }
+  .cover { padding: 0 0 10px; margin-bottom: 14px; border-bottom: 1.5px solid #999; }
+  .cover h1 { font-size: 22px; }
+  .cover p { color: #333; }
+  .chapter { margin-bottom: 8mm; }
+  .chapter h1 { font-size: 14px; margin-bottom: 6px; padding-bottom: 3px; border-bottom: 1.5px solid #333; }
+  .module { box-shadow: none; border: 1px solid #999; margin-bottom: 5mm; page-break-inside: avoid; }
+  .module summary { background: #f3f4f6 !important; color: #000 !important; padding: 7px 10px; font-size: 11px; border-bottom: 1px solid #999; }
+  .module summary::before { display: none; }
+  .module .content { padding: 8px; display: block !important; }
+  details { display: block; }
+  .card-grid { grid-template-columns: 1fr 1fr; gap: 5mm; }
+  .concept-card, .formula-card, .technique-card { page-break-inside: avoid; box-shadow: none; border: 1px solid #bbb; padding: 7px; margin-bottom: 4mm; }
+  .concept-card .name, .formula-card strong, .technique-card h3 { color: #000; }
+  .grade-badge { border: 1px solid #000; background: #fff !important; color: #000 !important; padding: 1px 5px; }
+  .pitfall { background: #fff !important; color: #000 !important; border-left: 2px solid #000; }
+  a { text-decoration: none; color: #000; }
+  .katex { font-size: 1em; }
+}
+  </style>
+</head>
+<body>
+  <nav id="sidebar">
+    <h2>初中数学完全总结</h2>
+    <div class="sidebar-group">
+      <div class="sidebar-group-title">七年级</div>
+      <nav>
+        <a href="#ch1">1. 有理数</a>
+        <a href="#ch2">2. 整式的加减</a>
+        <a href="#ch3">3. 一元一次方程</a>
+        <a href="#ch4">4. 几何图形初步</a>
+        <a href="#ch5">5. 相交线与平行线</a>
+        <a href="#ch6">6. 实数</a>
+        <a href="#ch7">7. 平面直角坐标系</a>
+        <a href="#ch8">8. 二元一次方程组</a>
+        <a href="#ch9">9. 不等式与不等式组</a>
+        <a href="#ch10">10. 数据的收集整理</a>
+      </nav>
+    </div>
+    <div class="sidebar-group">
+      <div class="sidebar-group-title">八年级</div>
+      <nav>
+        <a href="#ch11">11. 三角形</a>
+        <a href="#ch12">12. 全等三角形</a>
+        <a href="#ch13">13. 轴对称</a>
+        <a href="#ch14">14. 整式乘法与因式分解</a>
+        <a href="#ch15">15. 分式</a>
+        <a href="#ch16">16. 二次根式</a>
+        <a href="#ch17">17. 勾股定理</a>
+        <a href="#ch18">18. 平行四边形</a>
+        <a href="#ch19">19. 一次函数</a>
+        <a href="#ch20">20. 数据的分析</a>
+      </nav>
+    </div>
+    <div class="sidebar-group">
+      <div class="sidebar-group-title">九年级</div>
+      <nav>
+        <a href="#ch21">21. 一元二次方程</a>
+        <a href="#ch22">22. 二次函数</a>
+        <a href="#ch23">23. 旋转</a>
+        <a href="#ch24">24. 圆</a>
+        <a href="#ch25">25. 概率初步</a>
+        <a href="#ch26">26. 反比例函数</a>
+        <a href="#ch27">27. 相似</a>
+        <a href="#ch28">28. 锐角三角函数</a>
+        <a href="#ch29">29. 投影与视图</a>
+      </nav>
+    </div>
+    <div class="sidebar-actions">
+      <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
+      <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
+    </div>
+  </nav>
+
+  <main id="content">
+    <div class="cover">
+      <h1>初中数学 · 知识点完全总结</h1>
+      <p>七年级 · 八年级 · 九年级 | 概念 · 公式 · 解题技巧 | A4 可打印版</p>
+    </div>
+
+    <!-- 七年级 -->
+    <section class="chapter" id="ch1">
+      <h1><span>第1章 · 有理数</span><span class="grade-badge grade-7">七年级</span></h1>
+      <details class="module">
+        <summary>🧠 知识脉络</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">数的扩展</span> <span class="node-desc">正数 · 负数 · 0 · 有理数定义</span></li>
+              <li><span class="node-label">数轴</span> <span class="node-desc">原点 · 正方向 · 单位长度</span></li>
+              <li><span class="node-label">相关概念</span> <span class="node-desc">相反数 · 绝对值 · 倒数</span></li>
+              <li><span class="node-label">运算</span> <span class="node-desc">加减 · 乘除 · 乘方 · 混合运算顺序</span></li>
+              <li><span class="node-label">表示方法</span> <span class="node-desc">科学记数法 · 近似数 · 有效数字</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card"><div class="name">正数与负数</div><p>大于 0 的数为正数，小于 0 的数为负数；0 既不是正数也不是负数，是正负分界。</p></div>
+            <div class="concept-card"><div class="name">数轴三要素</div><p>原点、正方向、单位长度。数轴上右边的数总比左边大。</p></div>
+            <div class="concept-card"><div class="name">相反数</div><p>只有符号不同的两个数互为相反数；$a$ 的相反数是 $-a$；在数轴上关于原点对称。</p></div>
+            <div class="concept-card"><div class="name">绝对值</div><p>数轴上表示数 $a$ 的点到原点的距离，记作 $|a|$，恒有 $|a| \ge 0$。</p></div>
+            <div class="concept-card"><div class="name">倒数</div><p>乘积为 1 的两个数互为倒数；$a$ 的倒数是 $\frac{1}{a}\ (a \ne 0)$；0 没有倒数。</p></div>
+            <div class="concept-card"><div class="name">科学记数法</div><p>把数写成 $a \times 10^n$，其中 $1 \le |a| \lt 10$，$n$ 为整数。</p></div>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card"><strong>加减法</strong><p>同号相加取同号，异号相减取大号的符号：$a-b=a+(-b)$</p></div>
+          <div class="formula-card"><strong>乘除法</strong><p>同号得正，异号得负；$a \div b = a \times \frac{1}{b}\ (b \ne 0)$</p></div>
+          <div class="formula-card"><strong>乘方</strong><p>正数任何次幂为正；负数奇次幂为负、偶次幂为正；$(-1)^n = \pm 1$</p></div>
+          <div class="formula-card"><strong>运算顺序</strong><p>先乘方，再乘除，后加减；同级从左到右；有括号先算括号。</p></div>
+          <div class="formula-card"><strong>绝对值化简</strong><p>$|a| = a\ (a \ge 0)$，$|a| = -a\ (a \lt 0)$</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>💡 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span>数轴比较大小</h3>
+            <div class="method">负数比较：绝对值大的反而小，如 $-5 \lt -3$。</div>
+            <div class="example">例：$-3, -1.5, 0, 2$ 排序：$-3 \lt -1.5 \lt 0 \lt 2$。</div>
+            <div class="pitfall">⚠️ 不要把 $-5 \gt -3$。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">2</span>绝对值化简</h3>
+            <div class="method">先判断内部正负，再去绝对值符号。</div>
+            <div class="example">例：$-1 \lt x \lt 3$ 时，$|x-3|+|x+1| = (3-x)+(x+1)=4$。</div>
+            <div class="pitfall">⚠️ 绝对值结果一定非负，不能直接去掉符号。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="chapter" id="ch2">
+      <h1><span>第2章 · 整式的加减</span><span class="grade-badge grade-7">七年级</span></h1>
+      <details class="module">
+        <summary>🧠 知识脉络</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">代数式</span> <span class="node-desc">用运算符号把数或字母连接而成</span></li>
+              <li><span class="node-label">单项式</span> <span class="node-desc">系数 · 次数 · 单独数或字母</span></li>
+              <li><span class="node-label">多项式</span> <span class="node-desc">项 · 常数项 · 次数 · 升/降幂排列</span></li>
+              <li><span class="node-label">同类项</span> <span class="node-desc">字母相同且相同字母指数相同</span></li>
+              <li><span class="node-label">加减运算</span> <span class="node-desc">合并同类项 · 去括号 · 添括号</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card"><div class="name">单项式</div><p>由数与字母的积组成的代数式；单项式中的数字因数叫系数，所有字母指数和叫次数。</p></div>
+            <div class="concept-card"><div class="name">多项式</div><p>几个单项式的和；每个单项式叫项；不含字母的项叫常数项；次数最高项的次数叫多项式次数。</p></div>
+            <div class="concept-card"><div class="name">同类项</div><p>所含字母相同，并且相同字母的指数也相同的项；与系数无关，与字母顺序无关。</p></div>
+            <div class="concept-card"><div class="name">合并同类项</div><p>把同类项的系数相加，字母和指数不变。</p></div>
+            <div class="concept-card"><div class="name">去括号法则</div><p>括号前是“+”，去括号不变号；括号前是“−”，去括号都变号。</p></div>
+            <div class="concept-card"><div class="name">整式</div><p>单项式和多项式统称整式。</p></div>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card"><strong>合并同类项</strong><p>$ax^n + bx^n = (a+b)x^n$</p></div>
+          <div class="formula-card"><strong>去括号</strong><p>$a+(b-c)=a+b-c$；$a-(b-c)=a-b+c$</p></div>
+          <div class="formula-card"><strong>添括号</strong><p>$a+b-c = a+(b-c) = a-(-b+c)$</p></div>
+          <div class="formula-card"><strong>求值</strong><p>先化简，再代入；注意符号与括号。</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>💡 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span>整体代入</h3>
+            <div class="method">把含字母的式子看作整体，利用已知条件整体代换。</div>
+            <div class="example">例：已知 $x^2+x=3$，则 $2x^2+2x-5=2(x^2+x)-5=1$。</div>
+            <div class="pitfall">⚠️ 先化简再代入，避免直接硬算。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">2</span>不含某项</h3>
+            <div class="method">合并后令该项系数为 0，列方程求解参数。</div>
+            <div class="example">例：$(2x^2+ax-y+6)-(2bx^2-3x+5y-1)$ 不含 $x^2$ 和 $x$，则 $2-2b=0$，$a+3=0$。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="chapter" id="ch3">
+      <h1><span>第3章 · 一元一次方程</span><span class="grade-badge grade-7">七年级</span></h1>
+      <details class="module">
+        <summary>🧠 知识脉络</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">方程</span> <span class="node-desc">含未知数的等式 · 方程的解</span></li>
+              <li><span class="node-label">等式性质</span> <span class="node-desc">两边同加减、同乘除非零数仍相等</span></li>
+              <li><span class="node-label">解法步骤</span> <span class="node-desc">去分母 · 去括号 · 移项 · 合并 · 系数化 1</span></li>
+              <li><span class="node-label">应用</span> <span class="node-desc">行程 · 工程 · 利润 · 配套 · 数字问题</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card"><div class="name">一元一次方程</div><p>只含一个未知数，未知数次数为 1，且两边都是整式的等式；标准形式 $ax+b=0\ (a \ne 0)$。</p></div>
+            <div class="concept-card"><div class="name">方程的解</div><p>使方程左右两边相等的未知数的值。</p></div>
+            <div class="concept-card"><div class="name">移项</div><p>把等式一边的某项变号后移到另一边；依据等式性质 1。</p></div>
+            <div class="concept-card"><div class="name">去分母</div><p>两边同乘各分母的最小公倍数；注意每项都要乘，分子是多项式要加括号。</p></div>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card"><strong>解方程通法</strong><p>去分母 → 去括号 → 移项 → 合并同类项 → 系数化为 1</p></div>
+          <div class="formula-card"><strong>等式性质</strong><p>若 $a=b$，则 $a\pm c=b\pm c$，$ac=bc$，$\frac{a}{c}=\frac{b}{c}\ (c \ne 0)$</p></div>
+          <div class="formula-card"><strong>常用等量关系</strong><p>路程=速度×时间；工作总量=效率×时间；利润=售价−进价</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>💡 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span>去分母防漏乘</h3>
+            <div class="method">两边每一项都要乘最小公倍数，不含分母的项不能漏。</div>
+            <div class="example">例：$\frac{x}{2}+3=\frac{x-1}{4}$，两边乘 4 得 $2x+12=x-1$。</div>
+            <div class="pitfall">⚠️ 分子是多项式去分母后要加括号。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">2</span>应用题五步法</h3>
+            <div class="method">审 → 设 → 列 → 解 → 答；关键是找等量关系。</div>
+            <div class="example">例：相遇问题：甲路程 + 乙路程 = 总路程。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="chapter" id="ch4">
+      <h1><span>第4章 · 几何图形初步</span><span class="grade-badge grade-7">七年级</span></h1>
+      <details class="module">
+        <summary>🧠 知识脉络</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">立体图形</span> <span class="node-desc">柱体 · 锥体 · 球 · 三视图 · 展开图</span></li>
+              <li><span class="node-label">平面图形</span> <span class="node-desc">点 · 线 · 面 · 体</span></li>
+              <li><span class="node-label">直线、射线、线段</span> <span class="node-desc">表示法 · 公理 · 中点 · 距离</span></li>
+              <li><span class="node-label">角</span> <span class="node-desc">度量 · 换算 · 平分线 · 互余互补</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card"><div class="name">直线公理</div><p>两点确定一条直线；两点之间线段最短。</p></div>
+            <div class="concept-card"><div class="name">中点</div><p>把线段分成两条相等线段的点；若 $M$ 是 $AB$ 中点，则 $AM=BM=\frac{1}{2}AB$。</p></div>
+            <div class="concept-card"><div class="name">角</div><p>有公共端点的两条射线组成的图形；$1^\circ=60'$，$1'=60''$。</p></div>
+            <div class="concept-card"><div class="name">角平分线</div><p>把一个角分成两个相等角的射线；角平分线上的点到角两边距离相等（逆也成立）。</p></div>
+            <div class="concept-card"><div class="name">余角与补角</div><p>和为 $90^\circ$ 的两个角互余；和为 $180^\circ$ 的互补；同角（等角）的余角、补角相等。</p></div>
+            <div class="concept-card"><div class="name">对顶角与邻补角</div><p>对顶角相等；邻补角互补。</p></div>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card"><strong>线段中点</strong><p>$AB = 2AM = 2BM$</p></div>
+          <div class="formula-card"><strong>角度换算</strong><p>$1^\circ=60'$，$1'=60''$；大化小乘 60，小化大除 60。</p></div>
+          <div class="formula-card"><strong>互余互补</strong><p>$\angle A+\angle B=90^\circ$ 互余；$\angle A+\angle B=180^\circ$ 互补</p></div>
+          <div class="formula-card"><strong>对顶角</strong><p>对顶角相等；邻补角之和为 $180^\circ$</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>💡 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span>分类画图</h3>
+            <div class="method">点在直线上/外、角的一边在另一边两侧等情况要分类讨论。</div>
+            <div class="example">例：$C$ 在直线 $AB$ 上，$AB=6$，$BC=2$，则 $AC=4$ 或 $8$。</div>
+            <div class="pitfall">⚠️ 不要漏掉点在线段延长线上的情况。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">2</span>方程求角</h3>
+            <div class="method">设未知数，利用互余、互补、对顶角、角平分线列方程。</div>
+            <div class="example">例：一个角的补角比它的余角的 3 倍少 $10^\circ$，设角为 $x$，则 $180-x=3(90-x)-10$。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="chapter" id="ch5">
+      <h1><span>第5章 · 相交线与平行线</span><span class="grade-badge grade-7">七年级</span></h1>
+      <details class="module">
+        <summary>🧠 知识脉络</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">相交线</span> <span class="node-desc">对顶角 · 邻补角 · 垂线 · 点到直线距离</span></li>
+              <li><span class="node-label">平行线</span> <span class="node-desc">定义 · 平行公理 · 判定 · 性质</span></li>
+              <li><span class="node-label">命题</span> <span class="node-desc">题设 · 结论 · 真命题 · 假命题 · 定理</span></li>
+              <li><span class="node-label">平移</span> <span class="node-desc">平移前后图形全等且对应线段平行</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card"><div class="name">垂线</div><p>两条直线相交成直角；过一点有且只有一条直线与已知直线垂直；垂线段最短。</p></div>
+            <div class="concept-card"><div class="name">点到直线距离</div><p>直线外一点到这条直线的垂线段的长度。</p></div>
+            <div class="concept-card"><div class="name">平行公理</div><p>过直线外一点，有且只有一条直线与这条直线平行；平行于同一直线的两直线平行。</p></div>
+            <div class="concept-card"><div class="name">同位角、内错角、同旁内角</div><p>识别“F、Z、U”型三线八角；用于平行线判定与性质。</p></div>
+            <div class="concept-card"><div class="name">命题</div><p>判断一件事情的语句；由题设和结论组成；可改写为“如果…那么…”形式。</p></div>
+            <div class="concept-card"><div class="name">平移</div><p>图形沿某一直线方向移动；平移后对应点连线平行且相等。</p></div>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card"><strong>平行线判定</strong><p>同位角相等 ⇔ 两直线平行；内错角相等 ⇔ 两直线平行；同旁内角互补 ⇔ 两直线平行</p></div>
+          <div class="formula-card"><strong>平行线性质</strong><p>两直线平行 → 同位角相等、内错角相等、同旁内角互补</p></div>
+          <div class="formula-card"><strong>传递性</strong><p>$a \parallel b$，$b \parallel c$ ⇒ $a \parallel c$</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>💡 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span>拐点作平行线</h3>
+            <div class="method">遇到折线或拐角，过拐点作已知直线的平行线，利用平行线性质。</div>
+            <div class="example">例：$AB \parallel CD$，求 $\angle B + \angle E + \angle D$，过 $E$ 作平行线拆成 $180^\circ+180^\circ=360^\circ$。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">2</span>判定与性质互逆</h3>
+            <div class="method">已知平行用性质得角关系；已知角关系用判定证平行。</div>
+            <div class="pitfall">⚠️ 不要混淆：由角相等推平行是判定，由平行推角相等是性质。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="chapter" id="ch6">
+      <h1><span>第6章 · 实数</span><span class="grade-badge grade-7">七年级</span></h1>
+      <details class="module">
+        <summary>🧠 知识脉络</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">平方根</span> <span class="node-desc">算术平方根 · 平方根 · 被开方数非负</span></li>
+              <li><span class="node-label">立方根</span> <span class="node-desc">正数、负数、0 都有唯一立方根</span></li>
+              <li><span class="node-label">实数</span> <span class="node-desc">有理数 · 无理数 · 实数与数轴一一对应</span></li>
+              <li><span class="node-label">运算</span> <span class="node-desc">估算 · 比较大小 · 二次根式初步</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card"><div class="name">算术平方根</div><p>若 $x^2=a\ (a \ge 0, x \ge 0)$，则 $x=\sqrt{a}$；$\sqrt{a} \ge 0$。</p></div>
+            <div class="concept-card"><div class="name">平方根</div><p>若 $x^2=a$，则 $x=\pm\sqrt{a}\ (a \ge 0)$；正数有两个平方根，互为相反数。</p></div>
+            <div class="concept-card"><div class="name">立方根</div><p>若 $x^3=a$，则 $x=\sqrt[3]{a}$；任何实数都有唯一立方根。</p></div>
+            <div class="concept-card"><div class="name">无理数</div><p>无限不循环小数，如 $\sqrt{2}$、$\pi$；不能化为分数。</p></div>
+            <div class="concept-card"><div class="name">实数</div><p>有理数和无理数统称实数；与数轴上的点一一对应。</p></div>
+            <div class="concept-card"><div class="name">估算</div><p>夹逼法：$\sqrt{2} \approx 1.414$，$\sqrt{3} \approx 1.732$。</p></div>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card"><strong>平方根</strong><p>$(\sqrt{a})^2=a\ (a \ge 0)$；$\sqrt{a^2}=|a|$</p></div>
+          <div class="formula-card"><strong>立方根</strong><p>$(\sqrt[3]{a})^3=a$；$\sqrt[3]{a^3}=a$；$\sqrt[3]{-a}=-\sqrt[3]{a}$</p></div>
+          <div class="formula-card"><strong>常见值</strong><p>$\sqrt{4}=2$，$\sqrt{9}=3$，$\sqrt{16}=4$，$\sqrt{25}=5$，$\sqrt{36}=6$，$\sqrt{49}=7$，$\sqrt{64}=8$，$\sqrt{81}=9$，$\sqrt{100}=10$</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>💡 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span>双重非负性</h3>
+            <div class="method">$\sqrt{a}$ 中 $a \ge 0$ 且 $\sqrt{a} \ge 0$；常与非负数和为 0 结合。</div>
+            <div class="example">例：$\sqrt{x-2}+|y+1|=0$ ⇒ $x=2,y=-1$。</div>
+            <div class="pitfall">⚠️ $\sqrt{a^2}=|a|$，不是总是 $a$。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">2</span>比较实数</h3>
+            <div class="method">平方后比较、作差、数轴法。</div>
+            <div class="example">例：比较 $\sqrt{7}$ 与 $2.5$：$\sqrt{7}^2=7 \gt 6.25=2.5^2$ ⇒ $\sqrt{7} \gt 2.5$。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="chapter" id="ch7">
+      <h1><span>第7章 · 平面直角坐标系</span><span class="grade-badge grade-7">七年级</span></h1>
+      <details class="module">
+        <summary>🧠 知识脉络</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">坐标系</span> <span class="node-desc">横轴 x · 纵轴 y · 原点 · 象限</span></li>
+              <li><span class="node-label">点的坐标</span> <span class="node-desc">有序数对 $(x,y)$ · 坐标特征</span></li>
+              <li><span class="node-label">特殊位置</span> <span class="node-desc">x 轴 · y 轴 · 象限角平分线 · 对称点</span></li>
+              <li><span class="node-label">平移</span> <span class="node-desc">左右移 x 变 · 上下移 y 变</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card"><div class="name">有序数对</div><p>$(a,b)$ 与 $(b,a)$ 表示不同点；先横后纵。</p></div>
+            <div class="concept-card"><div class="name">象限</div><p>第一象限 $(+,+)$；第二象限 $(-,+)$；第三象限 $(-,-)$；第四象限 $(+,-)$。</p></div>
+            <div class="concept-card"><div class="name">坐标轴上的点</div><p>$x$ 轴上 $y=0$；$y$ 轴上 $x=0$；原点是 $(0,0)$。</p></div>
+            <div class="concept-card"><div class="name">对称点</div><p>关于 $x$ 轴对称：$(x,-y)$；关于 $y$ 轴：$(-x,y)$；关于原点：$(-x,-y)$。</p></div>
+            <div class="concept-card"><div class="name">角平分线</div><p>一、三象限角平分线：$y=x$；二、四象限：$y=-x$。</p></div>
+            <div class="concept-card"><div class="name">平移规律</div><p>右加左减横坐标；上加下减纵坐标。</p></div>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card"><strong>平移</strong><p>$(x,y)$ 向右 $a$ 个单位 → $(x+a,y)$；向上 $b$ → $(x,y+b)$</p></div>
+          <div class="formula-card"><strong>对称</strong><p>关于 $x$ 轴：$(x,-y)$；关于 $y$ 轴：$(-x,y)$；关于原点：$(-x,-y)$</p></div>
+          <div class="formula-card"><strong>距离</strong><p>$P(x,y)$ 到 $x$ 轴距离 $|y|$，到 $y$ 轴距离 $|x|$，到原点 $\sqrt{x^2+y^2}$</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>💡 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span>先定象限再定号</h3>
+            <div class="method">根据点所在象限确定横纵坐标符号，再结合距离求坐标。</div>
+            <div class="example">例：点 $P$ 在第二象限，到 $x$ 轴距离 3，到 $y$ 轴距离 5，则 $P(-5,3)$。</div>
+            <div class="pitfall">⚠️ 距离是长度取正值，坐标要再判断符号。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">2</span>平移与对称综合</h3>
+            <div class="method">多个变换按顺序进行，每次用坐标变化规律。</div>
+            <div class="example">例：$A(2,3)$ 先关于 $x$ 轴对称得 $(2,-3)$，再向左平移 2 得 $(0,-3)$。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="chapter" id="ch8">
+      <h1><span>第8章 · 二元一次方程组</span><span class="grade-badge grade-7">七年级</span></h1>
+      <details class="module">
+        <summary>🧠 知识脉络</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">二元一次方程</span> <span class="node-desc">含两个未知数 · 次数为 1 · 无数解</span></li>
+              <li><span class="node-label">方程组</span> <span class="node-desc">公共解 · 消元思想</span></li>
+              <li><span class="node-label">解法</span> <span class="node-desc">代入消元法 · 加减消元法</span></li>
+              <li><span class="node-label">应用</span> <span class="node-desc">和差倍分 · 行程 · 配套 · 利润</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card"><div class="name">二元一次方程</div><p>含有两个未知数，含未知数项次数都是 1 的整式方程；一般式 $ax+by=c$。</p></div>
+            <div class="concept-card"><div class="name">方程组的解</div><p>同时满足两个方程的未知数的值；二元一次方程组通常有唯一解。</p></div>
+            <div class="concept-card"><div class="name">代入消元</div><p>把一个方程变形为用含一个未知数的式子表示另一个未知数，再代入另一方程。</p></div>
+            <div class="concept-card"><div class="name">加减消元</div><p>把方程两边同乘适当数，使某未知数系数绝对值相等，再加减消元。</p></div>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card"><strong>代入消元</strong><p>由一方程得 $y=kx+b$，代入另一方程求 $x$。</p></div>
+          <div class="formula-card"><strong>加减消元</strong><p>同乘使系数相等 → 相加/减消去一个未知数 → 解一元一次方程。</p></div>
+          <div class="formula-card"><strong>检验</strong><p>把解代入两个方程，左右两边都相等即为正确解。</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>💡 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span>选系数简单的先消</h3>
+            <div class="method">系数为 1 或 −1 时用代入；系数成倍数或相反数时用加减。</div>
+            <div class="example">例：$\begin{cases} x+2y=5 \\ 3x-2y=7 \end{cases}$ 直接相加消 $y$ 得 $4x=12$。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">2</span>应用题找两个等量关系</h3>
+            <div class="method">设两个未知数，必须列出两个独立方程。</div>
+            <div class="example">例：鸡兔同笼：头数和 = 总数，脚数和 = 总脚数。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="chapter" id="ch9">
+      <h1><span>第9章 · 不等式与不等式组</span><span class="grade-badge grade-7">七年级</span></h1>
+      <details class="module">
+        <summary>🧠 知识脉络</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">不等式</span> <span class="node-desc">用 \gt · \lt · \ge · \le · \ne 连接</span></li>
+              <li><span class="node-label">性质</span> <span class="node-desc">加减不变向 · 乘除正数不变向 · 乘除负数变向</span></li>
+              <li><span class="node-label">一元一次不等式</span> <span class="node-desc">解法步骤 · 数轴表示解集</span></li>
+              <li><span class="node-label">不等式组</span> <span class="node-desc">分别求解 · 公共部分 · 四种解集情况</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card"><div class="name">不等式解集</div><p>使不等式成立的所有未知数的值；用数轴表示，注意空心/实心。</p></div>
+            <div class="concept-card"><div class="name">性质 1</div><p>两边加（减）同一个数或式子，不等号方向不变。</p></div>
+            <div class="concept-card"><div class="name">性质 2/3</div><p>两边乘（除）同一个正数，方向不变；乘（除）同一个负数，方向改变。</p></div>
+            <div class="concept-card"><div class="name">不等式组解集</div><p>各不等式解集的公共部分；同大取大，同小取小，大小小大中间找，大大小小无解。</p></div>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card"><strong>性质</strong><p>$a \gt b$ ⇒ $a\pm c \gt b\pm c$；$a \gt b, c \gt 0$ ⇒ $ac \gt bc$；$a \gt b, c \lt 0$ ⇒ $ac \lt bc$</p></div>
+          <div class="formula-card"><strong>解集口诀</strong><p>同大取大，同小取小，大小小大中间找，大大小小找不到</p></div>
+          <div class="formula-card"><strong>数轴表示</strong><p>$\gt$、$\lt$ 用空心圈；$\ge$、$\le$ 用实心点；方向向右表示大于，向左表示小于。</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>💡 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span>乘除负数要变号</h3>
+            <div class="method">去分母或系数化为 1 时，若乘除负数，必须改变不等号方向。</div>
+            <div class="example">例：$-2x \gt 6$ ⇒ $x \lt -3$。</div>
+            <div class="pitfall">⚠️ 去括号、移项时不变号；只有两边同乘除负数才变号。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">2</span>数轴定公共解集</h3>
+            <div class="method">把每个不等式解集画在同一数轴上，重叠部分即为不等式组解集。</div>
+            <div class="example">例：$x \gt 2$ 且 $x \le 5$ ⇒ $2 \lt x \le 5$。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="chapter" id="ch10">
+      <h1><span>第10章 · 数据的收集、整理与描述</span><span class="grade-badge grade-7">七年级</span></h1>
+      <details class="module">
+        <summary>🧠 知识脉络</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">调查方式</span> <span class="node-desc">全面调查（普查） · 抽样调查</span></li>
+              <li><span class="node-label">统计相关概念</span> <span class="node-desc">总体 · 个体 · 样本 · 样本容量</span></li>
+              <li><span class="node-label">整理数据</span> <span class="node-desc">频数 · 频率 · 频数分布表 · 直方图</span></li>
+              <li><span class="node-label">描述数据</span> <span class="node-desc">条形图 · 折线图 · 扇形图</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card"><div class="name">普查与抽样</div><p>普查得到准确结果但工作量大；抽样省时但结果有代表性要求。</p></div>
+            <div class="concept-card"><div class="name">总体与样本</div><p>总体是研究对象的全体；个体是每一个对象；样本是从总体中抽取的部分；样本容量是样本中个体数量。</p></div>
+            <div class="concept-card"><div class="name">频数与频率</div><p>频数是落在各小组内数据的个数；频率 = 频数 ÷ 总数；各组频率和为 1。</p></div>
+            <div class="concept-card"><div class="name">直方图</div><p>用长方形面积表示频数；组距、组数、分布表相互配合。</p></div>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card"><strong>频率</strong><p>$\text{频率}=\frac{\text{频数}}{\text{总数}}$；$\sum \text{频数}=\text{总数}$；$\sum \text{频率}=1$</p></div>
+          <div class="formula-card"><strong>组数与组距</strong><p>$\text{组数}=\frac{\text{最大值}-\text{最小值}}{\text{组距}}$（向上取整）</p></div>
+          <div class="formula-card"><strong>扇形圆心角</strong><p>$\text{圆心角}=360^\circ \times \text{频率}$</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>💡 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span>选合适调查方式</h3>
+            <div class="method">破坏性、数量大、不必要精确用抽样；人口普查、必须精确用全面调查。</div>
+            <div class="example">例：了解一批灯泡寿命用抽样；登机安检用普查。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">2</span>由图读信息</h3>
+            <div class="method">条形图看数量，折线图看趋势，扇形图看比例，直方图看分布。</div>
+            <div class="pitfall">⚠️ 扇形图中要会由百分比求具体数量和圆心角。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- 八年级 -->
+    <section class="chapter" id="ch11">
+      <h1><span>第11章 · 三角形</span><span class="grade-badge grade-8">八年级</span></h1>
+      <details class="module">
+        <summary>🧠 知识脉络</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">边</span> <span class="node-desc">三边关系 · 高 · 中线 · 角平分线</span></li>
+              <li><span class="node-label">角</span> <span class="node-desc">内角和 180° · 外角 · 外角和 360°</span></li>
+              <li><span class="node-label">分类</span> <span class="node-desc">按边：不等边 · 等腰 · 等边；按角：锐角 · 直角 · 钝角</span></li>
+              <li><span class="node-label">多边形</span> <span class="node-desc">内角和 · 外角和 · 对角线</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card"><div class="name">三边关系</div><p>任意两边之和大于第三边；任意两边之差小于第三边。</p></div>
+            <div class="concept-card"><div class="name">三线</div><p>高、中线、角平分线都是线段；三角形三条高交于垂心，三条中线交于重心，三条角平分线交于内心。</p></div>
+            <div class="concept-card"><div class="name">内角和</div><p>三角形内角和等于 $180^\circ$；直角三角形两锐角互余。</p></div>
+            <div class="concept-card"><div class="name">外角</div><p>三角形一个外角等于与它不相邻的两个内角之和；外角大于任一不相邻内角。</p></div>
+            <div class="concept-card"><div class="name">稳定性</div><p>三角形具有稳定性，四边形具有不稳定性。</p></div>
+            <div class="concept-card"><div class="name">多边形</div><p>$n$ 边形内角和 $(n-2)\times180^\circ$；外角和恒为 $360^\circ$。</p></div>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card"><strong>三边关系</strong><p>$a+b \gt c$，$|a-b| \lt c$</p></div>
+          <div class="formula-card"><strong>内角和</strong><p>$\angle A+\angle B+\angle C=180^\circ$</p></div>
+          <div class="formula-card"><strong>外角</strong><p>$\angle 1=\angle A+\angle B$（$\angle 1$ 为 $C$ 的外角）</p></div>
+          <div class="formula-card"><strong>多边形</strong><p>内角和 $=(n-2)\cdot180^\circ$；外角和 $=360^\circ$；对角线条数 $=\frac{n(n-3)}{2}$</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>💡 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span>判断能否组成三角形</h3>
+            <div class="method">只需判断两条较小边之和是否大于最大边。</div>
+            <div class="example">例：3,4,8 不能，因为 $3+4 \le 8$。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">2</span>外角转化内角</h3>
+            <div class="method">求复杂图形角度时，利用外角等于不相邻两内角和简化计算。</div>
+            <div class="example">例：五角星五个顶角之和为 $180^\circ$。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="chapter" id="ch12">
+      <h1><span>第12章 · 全等三角形</span><span class="grade-badge grade-8">八年级</span></h1>
+      <details class="module">
+        <summary>🧠 知识脉络</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">全等概念</span> <span class="node-desc">完全重合 · 对应边相等 · 对应角相等</span></li>
+              <li><span class="node-label">判定定理</span> <span class="node-desc">SSS · SAS · ASA · AAS · HL</span></li>
+              <li><span class="node-label">角平分线</span> <span class="node-desc">性质定理 · 判定定理</span></li>
+              <li><span class="node-label">应用</span> <span class="node-desc">证明线段相等、角相等、垂直</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card"><div class="name">全等三角形</div><p>能够完全重合的两个三角形；对应边、对应角、对应中线、高、角平分线都相等。</p></div>
+            <div class="concept-card"><div class="name">SSS</div><p>三边分别相等的两个三角形全等。</p></div>
+            <div class="concept-card"><div class="name">SAS</div><p>两边和它们的夹角分别相等的两个三角形全等。</p></div>
+            <div class="concept-card"><div class="name">ASA / AAS</div><p>两角和夹边 / 两角和其中一角的对边分别相等的两个三角形全等。</p></div>
+            <div class="concept-card"><div class="name">HL</div><p>斜边和一条直角边分别相等的两个直角三角形全等。</p></div>
+            <div class="concept-card"><div class="name">角平分线性质</div><p>角平分线上的点到角两边距离相等；逆定理也成立。</p></div>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card"><strong>全等性质</strong><p>$\triangle ABC \cong \triangle DEF$ ⇒ 对应边相等、对应角相等、周长相等、面积相等</p></div>
+          <div class="formula-card"><strong>判定</strong><p>SSS、SAS、ASA、AAS、HL（直角三角形）</p></div>
+          <div class="formula-card"><strong>角平分线</strong><p>点 $P$ 在 $\angle AOB$ 平分线上，$PD \perp OA$，$PE \perp OB$ ⇒ $PD=PE$</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>💡 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span>找对应关系</h3>
+            <div class="method">按位置、大小、公共边/角找对应顶点，写全等时顶点要对应。</div>
+            <div class="example">例：已知 $AB=DE$，$\angle B=\angle E$，$BC=EF$，用 SAS 证全等。</div>
+            <div class="pitfall">⚠️ “SSA” 与 “AAA” 不能判定全等。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">2</span>证线段或角相等</h3>
+            <div class="method">把要证的线段或角放到两个可能全等的三角形中，证全等后得对应相等。</div>
+            <div class="example">例：证 $AD=BC$，可证 $\triangle ABD \cong \triangle BAC$。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="chapter" id="ch13">
+      <h1><span>第13章 · 轴对称</span><span class="grade-badge grade-8">八年级</span></h1>
+      <details class="module">
+        <summary>🧠 知识脉络</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">轴对称</span> <span class="node-desc">对称轴 · 对应点连线被对称轴垂直平分</span></li>
+              <li><span class="node-label">轴对称图形</span> <span class="node-desc">沿一条直线折叠后两部分重合</span></li>
+              <li><span class="node-label">垂直平分线</span> <span class="node-desc">性质 · 判定 · 作图</span></li>
+              <li><span class="node-label">特殊三角形</span> <span class="node-desc">等腰三角形 · 等边三角形</span></li>
+              <li><span class="node-label">最短路径</span> <span class="node-desc">将军饮马 · 反射 · 平移转化</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card"><div class="name">轴对称</div><p>把一个图形沿某直线折叠，如果它能与另一个图形重合，则两图形成轴对称。</p></div>
+            <div class="concept-card"><div class="name">垂直平分线</div><p>线段垂直平分线上的点到线段两端距离相等；到两端距离相等的点在其垂直平分线上。</p></div>
+            <div class="concept-card"><div class="name">等腰三角形</div><p>两腰相等，两底角相等；顶角平分线、底边中线、底边高三线合一。</p></div>
+            <div class="concept-card"><div class="name">等边三角形</div><p>三边相等，三角都是 $60^\circ$；有三条对称轴。</p></div>
+            <div class="concept-card"><div class="name">对称点</div><p>对称轴是对应点连线的垂直平分线。</p></div>
+            <div class="concept-card"><div class="name">将军饮马</div><p>通过对称把折线转化为直线段，求最短路径。</p></div>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card"><strong>等腰三角形</strong><p>等边对等角；等角对等边；三线合一</p></div>
+          <div class="formula-card"><strong>等边三角形</strong><p>三边相等，三角均为 $60^\circ$</p></div>
+          <div class="formula-card"><strong>含 30° 的直角三角形</strong><p>$30^\circ$ 角所对直角边等于斜边的一半</p></div>
+          <div class="formula-card"><strong>最短路径</strong><p>作一点关于直线的对称点，连接对称点与另一点，交直线于所求点</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>💡 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span>遇等腰想三线合一</h3>
+            <div class="method">等腰三角形中，顶角平分线、底边中线、底边高互相重合，常作辅助线构造全等。</div>
+            <div class="example">例：等腰 $\triangle ABC$ 中 $AB=AC$，作 $AD \perp BC$，则 $BD=DC$，$\angle BAD=\angle CAD$。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">2</span>将军饮马模型</h3>
+            <div class="method">两定点在异侧直接连线；在同侧作对称点再连线。</div>
+            <div class="example">例：$A$、$B$ 在直线 $l$ 同侧，求 $l$ 上点 $P$ 使 $PA+PB$ 最小：作 $A$ 关于 $l$ 的对称点 $A'$，连 $A'B$ 交 $l$ 于 $P$。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="chapter" id="ch14">
+      <h1><span>第14章 · 整式的乘法与因式分解</span><span class="grade-badge grade-8">八年级</span></h1>
+      <details class="module">
+        <summary>🧠 知识脉络</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">幂的运算</span> <span class="node-desc">同底数幂 · 幂的乘方 · 积的乘方</span></li>
+              <li><span class="node-label">整式乘法</span> <span class="node-desc">单项式×单项式 · 单项式×多项式 · 多项式×多项式</span></li>
+              <li><span class="node-label">乘法公式</span> <span class="node-desc">平方差 · 完全平方</span></li>
+              <li><span class="node-label">因式分解</span> <span class="node-desc">提公因式 · 公式法 · 十字相乘</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card"><div class="name">同底数幂乘法</div><p>$a^m \cdot a^n = a^{m+n}$（$a \ne 0$，$m,n$ 为整数）。</p></div>
+            <div class="concept-card"><div class="name">幂的乘方</div><p>$(a^m)^n=a^{mn}$。</p></div>
+            <div class="concept-card"><div class="name">积的乘方</div><p>$(ab)^n=a^n b^n$。</p></div>
+            <div class="concept-card"><div class="name">乘法公式</div><p>平方差：$(a+b)(a-b)=a^2-b^2$；完全平方：$(a\pm b)^2=a^2\pm2ab+b^2$。</p></div>
+            <div class="concept-card"><div class="name">因式分解</div><p>把一个多项式化为几个整式的积；与整式乘法互为逆运算。</p></div>
+            <div class="concept-card"><div class="name">提公因式</div><p>提取各项公共的因式，如 $ma+mb=m(a+b)$。</p></div>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card"><strong>幂的运算</strong><p>$a^m \cdot a^n=a^{m+n}$；$a^m \div a^n=a^{m-n}$；$(a^m)^n=a^{mn}$；$(ab)^n=a^n b^n$</p></div>
+          <div class="formula-card"><strong>平方差</strong><p>$(a+b)(a-b)=a^2-b^2$</p></div>
+          <div class="formula-card"><strong>完全平方</strong><p>$(a+b)^2=a^2+2ab+b^2$；$(a-b)^2=a^2-2ab+b^2$</p></div>
+          <div class="formula-card"><strong>因式分解公式</strong><p>$a^2-b^2=(a+b)(a-b)$；$a^2\pm2ab+b^2=(a\pm b)^2$</p></div>
+          <div class="formula-card"><strong>十字相乘</strong><p>$x^2+(a+b)x+ab=(x+a)(x+b)$</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>💡 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span>因式分解顺序</h3>
+            <div class="method">一提二套三分组：先提公因式，再套用公式，必要时十字相乘或分组。</div>
+            <div class="example">例：$2x^2-8=2(x^2-4)=2(x+2)(x-2)$。</div>
+            <div class="pitfall">⚠️ 分解要彻底，直到不能再分解为止。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">2</span>公式活用</h3>
+            <div class="method">把多项式中某一部分看作整体，套用平方差或完全平方。</div>
+            <div class="example">例：$(x+y)^2-(x-y)^2=4xy$。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="chapter" id="ch15">
+      <h1><span>第15章 · 分式</span><span class="grade-badge grade-8">八年级</span></h1>
+      <details class="module">
+        <summary>🧠 知识脉络</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">分式概念</span> <span class="node-desc">$\frac{A}{B}$，$B$ 含字母且 $B \ne 0$</span></li>
+              <li><span class="node-label">基本性质</span> <span class="node-desc">$\frac{A}{B}=\frac{A\cdot C}{B\cdot C}=\frac{A\div C}{B\div C}$</span></li>
+              <li><span class="node-label">运算</span> <span class="node-desc">乘除 · 加减 · 通分 · 约分</span></li>
+              <li><span class="node-label">分式方程</span> <span class="node-desc">去分母 · 验根 · 增根</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card"><div class="name">分式有意义</div><p>分母不为 0；分式值为 0：分子为 0 且分母不为 0。</p></div>
+            <div class="concept-card"><div class="name">约分</div><p>分子分母同除公因式；约分后分子分母无公因式称为最简分式。</p></div>
+            <div class="concept-card"><div class="name">通分</div><p>把几个异分母分式化为同分母分式，公分母取最简公分母。</p></div>
+            <div class="concept-card"><div class="name">分式方程</div><p>分母中含有未知数的方程；解后必须验根，使分母为 0 的根为增根。</p></div>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card"><strong>乘除</strong><p>$\frac{a}{b}\cdot\frac{c}{d}=\frac{ac}{bd}$；$\frac{a}{b}\div\frac{c}{d}=\frac{a}{b}\cdot\frac{d}{c}=\frac{ad}{bc}$</p></div>
+          <div class="formula-card"><strong>加减</strong><p>同分母：$\frac{a}{c}\pm\frac{b}{c}=\frac{a\pm b}{c}$；异分母先通分再加减</p></div>
+          <div class="formula-card"><strong>幂</strong><p>$\left(\frac{a}{b}\right)^n=\frac{a^n}{b^n}$</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>💡 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span>分式方程必须验根</h3>
+            <div class="method">解后把解代入最简公分母，为 0 则是增根，原方程无解。</div>
+            <div class="example">例：$\frac{x}{x-2}=\frac{2}{x-2}$ 解得 $x=2$，使分母为 0，是增根。</div>
+            <div class="pitfall">⚠️ 增根不是原方程的解，但可用于求参数。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">2</span>化简求值</h3>
+            <div class="method">先因式分解、约分，再代入数值；注意代入后分母不能为 0。</div>
+            <div class="example">例：$\frac{x^2-1}{x^2+2x+1}\div\frac{x-1}{x}$，化简后代入。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="chapter" id="ch16">
+      <h1><span>第16章 · 二次根式</span><span class="grade-badge grade-8">八年级</span></h1>
+      <details class="module">
+        <summary>🧠 知识脉络</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">定义</span> <span class="node-desc">$\sqrt{a}\ (a \ge 0)$ · 被开方数非负</span></li>
+              <li><span class="node-label">性质</span> <span class="node-desc">$(\sqrt{a})^2=a$ · $\sqrt{a^2}=|a|$</span></li>
+              <li><span class="node-label">运算</span> <span class="node-desc">乘除 · 加减（先化最简）</span></li>
+              <li><span class="node-label">分母有理化</span> <span class="node-desc">$\frac{1}{\sqrt{a}}=\frac{\sqrt{a}}{a}$</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card"><div class="name">二次根式</div><p>形如 $\sqrt{a}\ (a \ge 0)$ 的式子；被开方数必须非负，结果也非负。</p></div>
+            <div class="concept-card"><div class="name">最简二次根式</div><p>被开方数不含分母，且不含能开得尽方的因数或因式。</p></div>
+            <div class="concept-card"><div class="name">同类二次根式</div><p>化简后被开方数相同的二次根式，可合并。</p></div>
+            <div class="concept-card"><div class="name">分母有理化</div><p>把分母中的根号化去，如 $\frac{1}{\sqrt{a}}=\frac{\sqrt{a}}{a}$，$\frac{1}{\sqrt{a}+\sqrt{b}}=\frac{\sqrt{a}-\sqrt{b}}{a-b}$。</p></div>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card"><strong>性质</strong><p>$(\sqrt{a})^2=a\ (a \ge 0)$；$\sqrt{a^2}=|a|$；$\sqrt{ab}=\sqrt{a}\cdot\sqrt{b}\ (a,b \ge 0)$</p></div>
+          <div class="formula-card"><strong>乘除</strong><p>$\sqrt{a}\cdot\sqrt{b}=\sqrt{ab}$；$\frac{\sqrt{a}}{\sqrt{b}}=\sqrt{\frac{a}{b}}\ (a \ge 0,b \gt 0)$</p></div>
+          <div class="formula-card"><strong>分母有理化</strong><p>$\frac{1}{\sqrt{a}}=\frac{\sqrt{a}}{a}$；$\frac{1}{\sqrt{a}\pm\sqrt{b}}=\frac{\sqrt{a}\mp\sqrt{b}}{a-b}$</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>💡 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span>先化最简再运算</h3>
+            <div class="method">把每个二次根式化为最简，再合并同类二次根式。</div>
+            <div class="example">例：$\sqrt{12}+\sqrt{27}-\sqrt{3}=2\sqrt{3}+3\sqrt{3}-\sqrt{3}=4\sqrt{3}$。</div>
+            <div class="pitfall">⚠️ $\sqrt{a}\pm\sqrt{b}$ 不能直接合并，除非化简后同类。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">2</span>隐含条件</h3>
+            <div class="method">由 $\sqrt{a}$ 有意义得 $a \ge 0$；由 $\sqrt{a}+|b|+(c)^2=0$ 得 $a=b=c=0$。</div>
+            <div class="example">例：$\sqrt{x-1}+|y+2|=0$ ⇒ $x=1,y=-2$。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="chapter" id="ch17">
+      <h1><span>第17章 · 勾股定理</span><span class="grade-badge grade-8">八年级</span></h1>
+      <details class="module">
+        <summary>🧠 知识脉络</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">勾股定理</span> <span class="node-desc">直角三角形两直角边平方和等于斜边平方</span></li>
+              <li><span class="node-label">逆定理</span> <span class="node-desc">若 $a^2+b^2=c^2$ 则为直角三角形</span></li>
+              <li><span class="node-label">勾股数</span> <span class="node-desc">3,4,5 · 5,12,13 · 8,15,17</span></li>
+              <li><span class="node-label">应用</span> <span class="node-desc">求边长 · 判断形状 · 最短路径</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card"><div class="name">勾股定理</div><p>直角三角形中，$a^2+b^2=c^2$（$c$ 为斜边）。</p></div>
+            <div class="concept-card"><div class="name">逆定理</div><p>若三角形三边满足 $a^2+b^2=c^2$，则该三角形是直角三角形。</p></div>
+            <div class="concept-card"><div class="name">勾股数</div><p>能作为直角三角形三边长的正整数，如 3,4,5 及其整数倍。</p></div>
+            <div class="concept-card"><div class="name">常见勾股数</div><p>5,12,13；7,24,25；8,15,17；9,40,41。</p></div>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card"><strong>勾股定理</strong><p>$a^2+b^2=c^2$</p></div>
+          <div class="formula-card"><strong>求直角边/斜边</strong><p>$c=\sqrt{a^2+b^2}$；$a=\sqrt{c^2-b^2}$</p></div>
+          <div class="formula-card"><strong>逆定理</strong><p>若 $a^2+b^2=c^2$，则 $C=90^\circ$</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>💡 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span>已知两边求第三边</h3>
+            <div class="method">先判断已知边是直角边还是斜边，再选用公式。</div>
+            <div class="example">例：直角边 5、12，斜边 $=\sqrt{25+144}=13$。</div>
+            <div class="pitfall">⚠️ 若已知一边为斜边，则第三边用减法：$\sqrt{c^2-b^2}$。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">2</span>折叠问题</h3>
+            <div class="method">折叠前后对应线段相等，设未知数用勾股定理列方程。</div>
+            <div class="example">例：矩形折叠，设 $AE=x$，利用 $Rt\triangle$ 列方程。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="chapter" id="ch18">
+      <h1><span>第18章 · 平行四边形</span><span class="grade-badge grade-8">八年级</span></h1>
+      <details class="module">
+        <summary>🧠 知识脉络</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">平行四边形</span> <span class="node-desc">定义 · 性质 · 判定</span></li>
+              <li><span class="node-label">特殊平行四边形</span> <span class="node-desc">矩形 · 菱形 · 正方形</span></li>
+              <li><span class="node-label">梯形</span> <span class="node-desc">等腰梯形 · 直角梯形</span></li>
+              <li><span class="node-label">中位线</span> <span class="node-desc">三角形中位线 · 梯形中位线</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card"><div class="name">平行四边形性质</div><p>对边平行且相等；对角相等；对角线互相平分。</p></div>
+            <div class="concept-card"><div class="name">平行四边形判定</div><p>两组对边分别平行/相等；一组对边平行且相等；对角线互相平分；两组对角分别相等。</p></div>
+            <div class="concept-card"><div class="name">矩形</div><p>有一个角是直角的平行四边形；对角线相等；四个角都是直角。</p></div>
+            <div class="concept-card"><div class="name">菱形</div><p>有一组邻边相等的平行四边形；四边相等；对角线互相垂直平分且平分对角。</p></div>
+            <div class="concept-card"><div class="name">正方形</div><p>既是矩形又是菱形；四边相等、四角直角、对角线相等且垂直平分。</p></div>
+            <div class="concept-card"><div class="name">三角形中位线</div><p>连接三角形两边中点的线段，平行于第三边且等于第三边的一半。</p></div>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card"><strong>平行四边形</strong><p>对边相等，对角相等，对角线互相平分</p></div>
+          <div class="formula-card"><strong>矩形面积</strong><p>$S=ab$（长×宽）；对角线 $d=\sqrt{a^2+b^2}$</p></div>
+          <div class="formula-card"><strong>菱形面积</strong><p>$S=\frac{1}{2}d_1 d_2$（对角线乘积的一半）</p></div>
+          <div class="formula-card"><strong>正方形面积</strong><p>$S=a^2=\frac{1}{2}d^2$</p></div>
+          <div class="formula-card"><strong>中位线</strong><p>$DE \parallel BC$，$DE=\frac{1}{2}BC$（$D,E$ 为中点）</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>💡 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span>判定特殊四边形</h3>
+            <div class="method">先证平行四边形，再证一个直角或一组邻边相等。</div>
+            <div class="example">例：对角线相等的平行四边形是矩形；对角线垂直的平行四边形是菱形。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">2</span>中位线构造</h3>
+            <div class="method">有中点时，常构造中位线得到平行和一半关系。</div>
+            <div class="example">例：四边形中点连线构成平行四边形。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="chapter" id="ch19">
+      <h1><span>第19章 · 一次函数</span><span class="grade-badge grade-8">八年级</span></h1>
+      <details class="module">
+        <summary>🧠 知识脉络</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">变量与函数</span> <span class="node-desc">自变量 · 因变量 · 函数值</span></li>
+              <li><span class="node-label">一次函数</span> <span class="node-desc">$y=kx+b\ (k \ne 0)$</span></li>
+              <li><span class="node-label">正比例函数</span> <span class="node-desc">$y=kx$（过原点）</span></li>
+              <li><span class="node-label">图象与性质</span> <span class="node-desc">$k$ 定增减 · $b$ 定截距</span></li>
+              <li><span class="node-label">应用</span> <span class="node-desc">待定系数法 · 方程不等式关系</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card"><div class="name">函数</div><p>在一个变化过程中，如果有两个变量 $x$、$y$，对于 $x$ 的每一个值，$y$ 都有唯一值对应。</p></div>
+            <div class="concept-card"><div class="name">一次函数</div><p>$y=kx+b$（$k,b$ 为常数，$k \ne 0$）。当 $b=0$ 时为正比例函数。</p></div>
+            <div class="concept-card"><div class="name">$k$ 的意义</div><p>$k \gt 0$ 时 $y$ 随 $x$ 增大而增大；$k \lt 0$ 时减小；$|k|$ 越大直线越陡。</p></div>
+            <div class="concept-card"><div class="name">$b$ 的意义</div><p>直线与 $y$ 轴交点纵坐标；$k$ 相同则两直线平行。</p></div>
+            <div class="concept-card"><div class="name">待定系数法</div><p>设 $y=kx+b$，代入两点坐标列方程组求解。</p></div>
+            <div class="concept-card"><div class="name">与方程不等式关系</div><p>$kx+b=0$ 的解即直线与 $x$ 轴交点横坐标；$kx+b \gt 0$ 即图象在 $x$ 轴上方的 $x$ 范围。</p></div>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card"><strong>一次函数</strong><p>$y=kx+b\ (k \ne 0)$</p></div>
+          <div class="formula-card"><strong>正比例函数</strong><p>$y=kx$，图象过原点</p></div>
+          <div class="formula-card"><strong>与坐标轴交点</strong><p>$x$ 轴交点：$\left(-\frac{b}{k},0\right)$；$y$ 轴交点：$(0,b)$</p></div>
+          <div class="formula-card"><strong>两直线位置</strong><p>$k_1=k_2,b_1 \ne b_2$ 平行；$k_1 k_2=-1$ 垂直</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>💡 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span>看图象定 $k,b$</h3>
+            <div class="method">上升趋势 $k \gt 0$，下降趋势 $k \lt 0$；与 $y$ 轴交点定 $b$。</div>
+            <div class="example">例：直线过一、二、四象限 ⇒ $k \lt 0,b \gt 0$。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">2</span>待定系数法</h3>
+            <div class="method">已知两点坐标时设 $y=kx+b$，列方程组求解。</div>
+            <div class="example">例：过 $(1,3)$、$(2,5)$ ⇒ $k=2,b=1$，$y=2x+1$。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="chapter" id="ch20">
+      <h1><span>第20章 · 数据的分析</span><span class="grade-badge grade-8">八年级</span></h1>
+      <details class="module">
+        <summary>🧠 知识脉络</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">平均数</span> <span class="node-desc">算术平均数 · 加权平均数</span></li>
+              <li><span class="node-label">中位数</span> <span class="node-desc">排序后中间位置的数</span></li>
+              <li><span class="node-label">众数</span> <span class="node-desc">出现次数最多的数据</span></li>
+              <li><span class="node-label">方差</span> <span class="node-desc">衡量波动大小 · $s^2$</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card"><div class="name">算术平均数</div><p>$\bar{x}=\frac{x_1+x_2+\cdots+x_n}{n}$。</p></div>
+            <div class="concept-card"><div class="name">加权平均数</div><p>$\bar{x}=\frac{x_1w_1+x_2w_2+\cdots+x_nw_n}{w_1+w_2+\cdots+w_n}$；权重影响结果。</p></div>
+            <div class="concept-card"><div class="name">中位数</div><p>数据排序后，中间位置的数；偶数个时取中间两个数的平均。</p></div>
+            <div class="concept-card"><div class="name">众数</div><p>一组数据中出现次数最多的数据；可能没有或多个。</p></div>
+            <div class="concept-card"><div class="name">方差</div><p>$s^2=\frac{1}{n}\sum_{i=1}^{n}(x_i-\bar{x})^2$；方差越大，波动越大。</p></div>
+            <div class="concept-card"><div class="name">标准差</div><p>方差的算术平方根 $s$。</p></div>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card"><strong>平均数</strong><p>$\bar{x}=\frac{1}{n}\sum x_i$</p></div>
+          <div class="formula-card"><strong>加权平均数</strong><p>$\bar{x}=\frac{\sum x_i w_i}{\sum w_i}$</p></div>
+          <div class="formula-card"><strong>方差</strong><p>$s^2=\frac{1}{n}[(x_1-\bar{x})^2+\cdots+(x_n-\bar{x})^2]$</p></div>
+          <div class="formula-card"><strong>简化方差</strong><p>若 $y_i=x_i+a$，则 $\bar{y}=\bar{x}+a$，$s_y^2=s_x^2$</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>💡 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span>选中位数先排序</h3>
+            <div class="method">中位数计算前必须将数据从小到大排列。</div>
+            <div class="example">例：3,1,7,5 排序为 1,3,5,7，中位数 $=(3+5)/2=4$。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">2</span>方差比较稳定性</h3>
+            <div class="method">平均数相近时，方差越小越稳定。</div>
+            <div class="example">例：甲、乙平均成绩相同，甲方差小 ⇒ 甲发挥更稳定。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- 九年级 -->
+    <section class="chapter" id="ch21">
+      <h1><span>第21章 · 一元二次方程</span><span class="grade-badge grade-9">九年级</span></h1>
+      <details class="module">
+        <summary>🧠 知识脉络</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">定义</span> <span class="node-desc">含一个未知数 · 最高次数 2 · 整式方程</span></li>
+              <li><span class="node-label">解法</span> <span class="node-desc">直接开平方法 · 配方法 · 公式法 · 因式分解法</span></li>
+              <li><span class="node-label">判别式</span> <span class="node-desc">$\Delta=b^2-4ac$ 判定根的情况</span></li>
+              <li><span class="node-label">根与系数</span> <span class="node-desc">韦达定理 · $x_1+x_2$ · $x_1x_2$</span></li>
+              <li><span class="node-label">应用</span> <span class="node-desc">增长率 · 利润 · 面积 · 运动</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card"><div class="name">一元二次方程</div><p>标准形式 $ax^2+bx+c=0\ (a \ne 0)$。</p></div>
+            <div class="concept-card"><div class="name">直接开平方法</div><p>形如 $x^2=p$ 或 $(mx+n)^2=p\ (p \ge 0)$。</p></div>
+            <div class="concept-card"><div class="name">配方法</div><p>把方程化为 $(x+m)^2=n$ 形式；配方关键是加上一次项系数一半的平方。</p></div>
+            <div class="concept-card"><div class="name">公式法</div><p>求根公式 $x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$。</p></div>
+            <div class="concept-card"><div class="name">判别式</div><p>$\Delta=b^2-4ac$；$\Delta \gt 0$ 两不等实根，$\Delta=0$ 两相等实根，$\Delta \lt 0$ 无实根。</p></div>
+            <div class="concept-card"><div class="name">韦达定理</div><p>$x_1+x_2=-\frac{b}{a}$，$x_1x_2=\frac{c}{a}$。</p></div>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card"><strong>求根公式</strong><p>$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\ (\Delta \ge 0)$</p></div>
+          <div class="formula-card"><strong>判别式</strong><p>$\Delta=b^2-4ac$</p></div>
+          <div class="formula-card"><strong>韦达定理</strong><p>$x_1+x_2=-\frac{b}{a}$，$x_1x_2=\frac{c}{a}$</p></div>
+          <div class="formula-card"><strong>常用变形</strong><p>$x_1^2+x_2^2=(x_1+x_2)^2-2x_1x_2$；$\frac{1}{x_1}+\frac{1}{x_2}=\frac{x_1+x_2}{x_1x_2}$</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>💡 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span>优先因式分解</h3>
+            <div class="method">能十字相乘的优先因式分解，快速得根。</div>
+            <div class="example">例：$x^2-5x+6=0$ ⇒ $(x-2)(x-3)=0$ ⇒ $x=2$ 或 $3$。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">2</span>二次项系数为负先化正</h3>
+            <div class="method">方程两边同乘 −1，使二次项系数为正，减少符号错误。</div>
+            <div class="example">例：$-x^2+3x+2=0$ 化为 $x^2-3x-2=0$。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">3</span>应用题检验</h3>
+            <div class="method">根要符合实际意义（正数、整数、不超过限制），增长率为正。</div>
+            <div class="pitfall">⚠️ 增长率的方程 $a(1+x)^2=b$ 开方后取正根。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="chapter" id="ch22">
+      <h1><span>第22章 · 二次函数</span><span class="grade-badge grade-9">九年级</span></h1>
+      <details class="module">
+        <summary>🧠 知识脉络</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">定义</span> <span class="node-desc">$y=ax^2+bx+c\ (a \ne 0)$</span></li>
+              <li><span class="node-label">图象</span> <span class="node-desc">抛物线 · 开口方向 · 对称轴 · 顶点</span></li>
+              <li><span class="node-label">性质</span> <span class="node-desc">增减性 · 最值 · 与坐标轴交点</span></li>
+              <li><span class="node-label">解析式</span> <span class="node-desc">一般式 · 顶点式 · 交点式</span></li>
+              <li><span class="node-label">与方程关系</span> <span class="node-desc">$ax^2+bx+c=0$ 的根 ⇔ 与 x 轴交点</span></li>
+              <li><span class="node-label">应用</span> <span class="node-desc">最值 · 抛物线型实际问题</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card"><div class="name">二次函数</div><p>$y=ax^2+bx+c$（$a \ne 0$）；图象是抛物线。</p></div>
+            <div class="concept-card"><div class="name">开口方向</div><p>$a \gt 0$ 向上，有最小值；$a \lt 0$ 向下，有最大值；$|a|$ 越大开口越小。</p></div>
+            <div class="concept-card"><div class="name">对称轴</div><p>直线 $x=-\frac{b}{2a}$。</p></div>
+            <div class="concept-card"><div class="name">顶点坐标</div><p>$\left(-\frac{b}{2a}, \frac{4ac-b^2}{4a}\right)$。</p></div>
+            <div class="concept-card"><div class="name">顶点式</div><p>$y=a(x-h)^2+k$，顶点 $(h,k)$，对称轴 $x=h$。</p></div>
+            <div class="concept-card"><div class="name">交点式</div><p>$y=a(x-x_1)(x-x_2)$，$x_1,x_2$ 为与 $x$ 轴交点横坐标。</p></div>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card"><strong>一般式</strong><p>$y=ax^2+bx+c\ (a \ne 0)$</p></div>
+          <div class="formula-card"><strong>对称轴</strong><p>$x=-\frac{b}{2a}$</p></div>
+          <div class="formula-card"><strong>顶点坐标</strong><p>$\left(-\frac{b}{2a}, \frac{4ac-b^2}{4a}\right)$</p></div>
+          <div class="formula-card"><strong>顶点式</strong><p>$y=a(x-h)^2+k$</p></div>
+          <div class="formula-card"><strong>与 x 轴交点</strong><p>令 $y=0$，解 $ax^2+bx+c=0$</p></div>
+          <div class="formula-card"><strong>最值</strong><p>$y_{\text{最值}}=\frac{4ac-b^2}{4a}$；自变量取值范围内还要比较端点</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>💡 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span>由三点选一般式，由顶点选顶点式</h3>
+            <div class="method">已知顶点或对称轴设顶点式；已知与 x 轴两交点设交点式。</div>
+            <div class="example">例：顶点 $(1,2)$ 设 $y=a(x-1)^2+2$，再代入另一点求 $a$。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">2</span>区间最值</h3>
+            <div class="method">若对称轴在区间内，顶点为最值；否则比较区间端点函数值。</div>
+            <div class="pitfall">⚠️ 不要直接把顶点纵坐标当作所有范围的最值。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">3</span>数形结合</h3>
+            <div class="method">画草图判断开口、对称轴、与坐标轴交点，解决 $y \gt 0$ 等问题。</div>
+            <div class="example">例：$ax^2+bx+c \gt 0$ 的解集是抛物线在 $x$ 轴上方部分对应的 $x$。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="chapter" id="ch23">
+      <h1><span>第23章 · 旋转</span><span class="grade-badge grade-9">九年级</span></h1>
+      <details class="module">
+        <summary>🧠 知识脉络</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">旋转</span> <span class="node-desc">旋转中心 · 旋转角 · 旋转方向</span></li>
+              <li><span class="node-label">性质</span> <span class="node-desc">对应点到中心距离相等 · 对应角相等</span></li>
+              <li><span class="node-label">中心对称</span> <span class="node-desc">绕某点旋转 180° 重合</span></li>
+              <li><span class="node-label">坐标特征</span> <span class="node-desc">关于原点对称：$(x,y)\to(-x,-y)$</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card"><div class="name">旋转三要素</div><p>旋转中心、旋转方向、旋转角。</p></div>
+            <div class="concept-card"><div class="name">旋转性质</div><p>对应点到旋转中心距离相等；对应点与旋转中心连线所成的角等于旋转角；旋转前后图形全等。</p></div>
+            <div class="concept-card"><div class="name">中心对称</div><p>把一个图形绕某点旋转 $180^\circ$ 后能与另一个图形重合；对称点连线经过对称中心且被平分。</p></div>
+            <div class="concept-card"><div class="name">中心对称图形</div><p>绕某点旋转 $180^\circ$ 后能与自身重合，如平行四边形、圆。</p></div>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card"><strong>旋转性质</strong><p>$OA=OA'$，$\angle AOA'=\text{旋转角}$，$\triangle OAB \cong \triangle OA'B'$</p></div>
+          <div class="formula-card"><strong>中心对称坐标</strong><p>关于原点：$(x,y)\to(-x,-y)$</p></div>
+          <div class="formula-card"><strong>特殊旋转</strong><p>绕原点旋转 $90^\circ$：$(x,y)\to(-y,x)$（逆时针）</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>💡 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span>构造旋转全等</h3>
+            <div class="method">遇到共顶点等线段（如等腰直角、等边），常旋转其中一个三角形构造全等。</div>
+            <div class="example">例：等腰直角 $\triangle ABC$ 中，$PA$ 旋转 $90^\circ$ 构造全等求 $PB$、$PC$ 关系。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">2</span>利用旋转角</h3>
+            <div class="method">旋转角等于对应点与中心连线的夹角，常用来求角度。</div>
+            <div class="example">例：$\triangle ABC$ 绕 $A$ 旋转 $60^\circ$ 得 $\triangle ADE$，则 $\angle BAD=60^\circ$。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="chapter" id="ch24">
+      <h1><span>第24章 · 圆</span><span class="grade-badge grade-9">九年级</span></h1>
+      <details class="module">
+        <summary>🧠 知识脉络</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">基本概念</span> <span class="node-desc">圆心 · 半径 · 直径 · 弦 · 弧 · 圆心角 · 圆周角</span></li>
+              <li><span class="node-label">垂径定理</span> <span class="node-desc">垂直于弦的直径平分弦及其所对的两条弧</span></li>
+              <li><span class="node-label">角度关系</span> <span class="node-desc">圆心角=2×圆周角 · 同弧所对圆周角相等</span></li>
+              <li><span class="node-label">位置关系</span> <span class="node-desc">点、直线、圆与圆的位置</span></li>
+              <li><span class="node-label">切线</span> <span class="node-desc">判定与性质 · 切线长定理</span></li>
+              <li><span class="node-label">计算</span> <span class="node-desc">弧长 · 扇形面积 · 圆锥侧面积</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card"><div class="name">垂径定理</div><p>垂直于弦的直径平分弦，并且平分弦所对的两条弧；逆定理：平分弦（非直径）的直径垂直于弦。</p></div>
+            <div class="concept-card"><div class="name">圆心角与圆周角</div><p>同弧所对圆心角是圆周角的 2 倍；同弧所对圆周角相等；直径所对圆周角为 $90^\circ$。</p></div>
+            <div class="concept-card"><div class="name">圆内接四边形</div><p>对角互补；外角等于内对角。</p></div>
+            <div class="concept-card"><div class="name">切线</div><p>切线垂直于过切点的半径；到圆心距离等于半径的直线是切线。</p></div>
+            <div class="concept-card"><div class="name">切线长定理</div><p>从圆外一点引圆的两条切线，切线长相等，且该点与圆心连线平分两条切线的夹角。</p></div>
+            <div class="concept-card"><div class="name">弧长与扇形</div><p>$l=\frac{n\pi R}{180}$，$S_{\text{扇形}}=\frac{n\pi R^2}{360}=\frac{1}{2}lR$。</p></div>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card"><strong>垂径定理</strong><p>若 $CD \perp AB$ 且 $CD$ 为直径，则 $AE=EB$，$\widehat{AC}=\widehat{BC}$</p></div>
+          <div class="formula-card"><strong>角度</strong><p>$\angle AOB=2\angle ACB$；$\angle ADB=\angle ACB$（同弧）</p></div>
+          <div class="formula-card"><strong>切线</strong><p>切线 $l \perp$ 半径 $OA$（$A$ 为切点）</p></div>
+          <div class="formula-card"><strong>弧长</strong><p>$l=\frac{n\pi R}{180}$</p></div>
+          <div class="formula-card"><strong>扇形面积</strong><p>$S=\frac{n\pi R^2}{360}=\frac{1}{2}lR$</p></div>
+          <div class="formula-card"><strong>圆锥</strong><p>侧面积 $S=\pi r l$（$r$ 底面半径，$l$ 母线）</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>💡 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span>遇切线连半径</h3>
+            <div class="method">看到切线，常连接切点与圆心得到垂直关系。</div>
+            <div class="example">例：$PA$ 切圆 $O$ 于 $A$，则 $OA \perp PA$，构造 $Rt\triangle$。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">2</span>直径对直角</h3>
+            <div class="method">直径所对圆周角是 $90^\circ$，反之 $90^\circ$ 圆周角所对弦是直径。</div>
+            <div class="example">例：$AB$ 为直径，$C$ 在圆上 ⇒ $\angle ACB=90^\circ$。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">3</span>圆中计算</h3>
+            <div class="method">利用垂径定理构造直角三角形，结合勾股定理求弦心距、半径、弦长。</div>
+            <div class="example">例：弦长 $AB=8$，弦心距 $3$，半径 $r=\sqrt{4^2+3^2}=5$。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="chapter" id="ch25">
+      <h1><span>第25章 · 概率初步</span><span class="grade-badge grade-9">九年级</span></h1>
+      <details class="module">
+        <summary>🧠 知识脉络</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">事件</span> <span class="node-desc">必然事件 · 不可能事件 · 随机事件</span></li>
+              <li><span class="node-label">概率</span> <span class="node-desc">$P(A)=\frac{m}{n}$ · $0 \le P(A) \le 1$</span></li>
+              <li><span class="node-label">求法</span> <span class="node-desc">列举法 · 列表法 · 树状图 · 频率估计</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card"><div class="name">随机事件</div><p>在一定条件下可能发生也可能不发生的事件；必然事件概率为 1，不可能事件概率为 0。</p></div>
+            <div class="concept-card"><div class="name">概率</div><p>大量重复试验中，事件发生的频率稳定在概率附近；$P(A)=\frac{\text{事件}A\text{包含的结果数}}{\text{所有等可能结果数}}$。</p></div>
+            <div class="concept-card"><div class="name">列举法</div><p>一次试验涉及两个因素且结果较多时用列表法或树状图，确保不重不漏。</p></div>
+            <div class="concept-card"><div class="name">频率估计概率</div><p>试验次数足够多时，频率趋近概率。</p></div>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card"><strong>概率</strong><p>$P(A)=\frac{m}{n}$（$n$ 为总结果数，$m$ 为事件 $A$ 包含结果数）</p></div>
+          <div class="formula-card"><strong>取值范围</strong><p>$0 \le P(A) \le 1$</p></div>
+          <div class="formula-card"><strong>互斥事件</strong><p>$P(A+B)=P(A)+P(B)$（$A$、$B$ 互斥）</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>💡 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span>放回与不放回</h3>
+            <div class="method">放回试验每次总数相同；不放回总数递减，第二次结果受第一次影响。</div>
+            <div class="example">例：袋中两红一白，不放回摸两球，树状图第一层 3 种，第二层 2 种。</div>
+            <div class="pitfall">⚠️ 区分“先摸红再摸白”与“一红一白”是否算同一种结果。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">2</span>游戏公平性</h3>
+            <div class="method">比较双方获胜概率，相等则公平，否则不公平。</div>
+            <div class="example">例：掷骰子点数大于 3 甲赢，小于 3 乙赢，$P(\text{甲})=\frac{1}{2}$，$P(\text{乙})=\frac{1}{3}$，不公平。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="chapter" id="ch26">
+      <h1><span>第26章 · 反比例函数</span><span class="grade-badge grade-9">九年级</span></h1>
+      <details class="module">
+        <summary>🧠 知识脉络</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">定义</span> <span class="node-desc">$y=\frac{k}{x}\ (k \ne 0)$</span></li>
+              <li><span class="node-label">图象</span> <span class="node-desc">双曲线 · 关于原点对称</span></li>
+              <li><span class="node-label">性质</span> <span class="node-desc">$k \gt 0$ 在一、三象限 · $k \lt 0$ 在二、四象限</span></li>
+              <li><span class="node-label">$k$ 的几何意义</span> <span class="node-desc">$S_{\text{矩形}}=|k|$ · $S_{\text{直角三角形}}=\frac{|k|}{2}$</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card"><div class="name">反比例函数</div><p>$y=\frac{k}{x}$（$k$ 为常数，$k \ne 0$）；也可写成 $y=kx^{-1}$ 或 $xy=k$。</p></div>
+            <div class="concept-card"><div class="name">图象</div><p>双曲线，两支，关于原点成中心对称。</p></div>
+            <div class="concept-card"><div class="name">$k$ 的符号</div><p>$k \gt 0$ 时图象在一、三象限，每个象限内 $y$ 随 $x$ 增大而减小；$k \lt 0$ 在二、四象限，每个象限内 $y$ 随 $x$ 增大而增大。</p></div>
+            <div class="concept-card"><div class="name">$k$ 的几何意义</div><p>图象上任一点向坐标轴作垂线，与原点构成的矩形面积为 $|k|$；直角三角形面积为 $|k|/2$。</p></div>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card"><strong>解析式</strong><p>$y=\frac{k}{x}\ (k \ne 0)$</p></div>
+          <div class="formula-card"><strong>求 $k$</strong><p>代入一点 $(x_0,y_0)$，$k=x_0 y_0$</p></div>
+          <div class="formula-card"><strong>面积</strong><p>$S_{\text{矩形}}=|k|$；$S_{\triangle}=\frac{|k|}{2}$</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>💡 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span>利用 $k=xy$</h3>
+            <div class="method">反比例函数图象上所有点满足横纵坐标乘积为 $k$。</div>
+            <div class="example">例：$y=\frac{6}{x}$ 过 $(2,m)$，则 $m=3$。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">2</span>增减性分象限说</h3>
+            <div class="method">必须强调“在每个象限内”，不能跨象限比较。</div>
+            <div class="pitfall">⚠️ 错误：$k \gt 0$ 时 $x_1=-1,y_1=-6$；$x_2=1,y_2=6$，不能说 $y$ 随 $x$ 增大而减小。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="chapter" id="ch27">
+      <h1><span>第27章 · 相似</span><span class="grade-badge grade-9">九年级</span></h1>
+      <details class="module">
+        <summary>🧠 知识脉络</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">相似图形</span> <span class="node-desc">形状相同 · 对应角相等 · 对应边成比例</span></li>
+              <li><span class="node-label">比例</span> <span class="node-desc">比 · 比例中项 · 黄金分割</span></li>
+              <li><span class="node-label">相似三角形</span> <span class="node-desc">判定 · 性质 · 应用</span></li>
+              <li><span class="node-label">位似</span> <span class="node-desc">位似中心 · 位似比 · 坐标变化</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card"><div class="name">相似多边形</div><p>对应角相等，对应边成比例；相似比为对应边之比。</p></div>
+            <div class="concept-card"><div class="name">相似三角形判定</div><p>AA（两角对应相等）、SAS（两边成比例且夹角相等）、SSS（三边成比例）；平行于三角形一边的直线截另两边得相似三角形。</p></div>
+            <div class="concept-card"><div class="name">相似三角形性质</div><p>对应线段比等于相似比；周长比等于相似比；面积比等于相似比的平方。</p></div>
+            <div class="concept-card"><div class="name">黄金分割</div><p>点 $P$ 把线段 $AB$ 分成 $AP \gt PB$，若 $AP^2=PB\cdot AB$，则 $AP=\frac{\sqrt{5}-1}{2}AB \approx 0.618AB$。</p></div>
+            <div class="concept-card"><div class="name">位似</div><p>对应顶点连线交于位似中心，对应边互相平行或在同一直线上；位似比等于相似比。</p></div>
+            <div class="concept-card"><div class="name">坐标变化</div><p>以原点为位似中心，位似比 $k$：对应点坐标为 $(kx,ky)$ 或 $(-kx,-ky)$。</p></div>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card"><strong>相似比</strong><p>$k=\frac{\text{对应边}}{\text{对应边}}$</p></div>
+          <div class="formula-card"><strong>周长与面积</strong><p>$\frac{C_1}{C_2}=k$；$\frac{S_1}{S_2}=k^2$</p></div>
+          <div class="formula-card"><strong>黄金分割</strong><p>$\frac{AP}{AB}=\frac{\sqrt{5}-1}{2}\approx 0.618$</p></div>
+          <div class="formula-card"><strong>平行线分线段成比例</strong><p>$l_1 \parallel l_2 \parallel l_3$ ⇒ $\frac{AB}{BC}=\frac{DE}{EF}$</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>💡 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span>找相似模型</h3>
+            <div class="method">A 字型、8 字型、射影定理、母子型是常见相似结构。</div>
+            <div class="example">例：$DE \parallel BC$ ⇒ $\triangle ADE \sim \triangle ABC$（A 字型）。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">2</span>面积比是相似比平方</h3>
+            <div class="method">涉及面积时，先用相似比求边，再平方得面积比。</div>
+            <div class="example">例：相似比 2:3，面积比 4:9。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="chapter" id="ch28">
+      <h1><span>第28章 · 锐角三角函数</span><span class="grade-badge grade-9">九年级</span></h1>
+      <details class="module">
+        <summary>🧠 知识脉络</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">定义</span> <span class="node-desc">sin · cos · tan 在 Rt△ 中的定义</span></li>
+              <li><span class="node-label">特殊角</span> <span class="node-desc">30° · 45° · 60° 的三角函数值</span></li>
+              <li><span class="node-label">关系</span> <span class="node-desc">$\sin^2 A+\cos^2 A=1$ · $\tan A=\frac{\sin A}{\cos A}$</span></li>
+              <li><span class="node-label">解直角三角形</span> <span class="node-desc">已知两边或一边一角求其余元素</span></li>
+              <li><span class="node-label">应用</span> <span class="node-desc">仰角 · 俯角 · 坡度 · 方位角</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card"><div class="name">正弦</div><p>$\sin A=\frac{\text{对边}}{\text{斜边}}$。</p></div>
+            <div class="concept-card"><div class="name">余弦</div><p>$\cos A=\frac{\text{邻边}}{\text{斜边}}$。</p></div>
+            <div class="concept-card"><div class="name">正切</div><p>$\tan A=\frac{\text{对边}}{\text{邻边}}$。</p></div>
+            <div class="concept-card"><div class="name">互余关系</div><p>$\sin(90^\circ-A)=\cos A$；$\cos(90^\circ-A)=\sin A$。</p></div>
+            <div class="concept-card"><div class="name">同角关系</div><p>$\sin^2 A+\cos^2 A=1$；$\tan A=\frac{\sin A}{\cos A}$。</p></div>
+            <div class="concept-card"><div class="name">坡度</div><p>坡面的铅直高度与水平宽度之比，即坡角 $\alpha$ 的正切 $\tan\alpha$。</p></div>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card"><strong>定义</strong><p>$\sin A=\frac{a}{c}$，$\cos A=\frac{b}{c}$，$\tan A=\frac{a}{b}$（$a$ 对边，$b$ 邻边，$c$ 斜边）</p></div>
+          <div class="formula-card"><strong>特殊角</strong><p>$\sin 30^\circ=\frac{1}{2}$，$\cos 30^\circ=\frac{\sqrt{3}}{2}$，$\tan 30^\circ=\frac{\sqrt{3}}{3}$；$\sin 45^\circ=\cos 45^\circ=\frac{\sqrt{2}}{2}$，$\tan 45^\circ=1$；$\sin 60^\circ=\frac{\sqrt{3}}{2}$，$\cos 60^\circ=\frac{1}{2}$，$\tan 60^\circ=\sqrt{3}$</p></div>
+          <div class="formula-card"><strong>同角关系</strong><p>$\sin^2 A+\cos^2 A=1$；$\tan A=\frac{\sin A}{\cos A}$</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>💡 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span>构造直角三角形</h3>
+            <div class="method">非直角三角形中常作高，把斜三角形转化为直角三角形。</div>
+            <div class="example">例：已知两边及夹角求第三边，可过顶点作高用三角函数。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">2</span>仰俯角问题</h3>
+            <div class="method">仰角、俯角都是视线与水平线的夹角；常设水平距离为未知数列方程。</div>
+            <div class="example">例：楼高 $h$ 观测仰角 $30^\circ$，水平距离 $d$，则 $h=d\tan 30^\circ$。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="chapter" id="ch29">
+      <h1><span>第29章 · 投影与视图</span><span class="grade-badge grade-9">九年级</span></h1>
+      <details class="module">
+        <summary>🧠 知识脉络</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">投影</span> <span class="node-desc">平行投影 · 中心投影 · 正投影</span></li>
+              <li><span class="node-label">三视图</span> <span class="node-desc">主视图 · 左视图 · 俯视图</span></li>
+              <li><span class="node-label">关系</span> <span class="node-desc">长对正 · 高平齐 · 宽相等</span></li>
+              <li><span class="node-label">展开图</span> <span class="node-desc">正方体 · 圆柱 · 圆锥表面展开</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card"><div class="name">平行投影</div><p>由平行光线形成的投影；同一时刻，不同物体的高度与影长成比例。</p></div>
+            <div class="concept-card"><div class="name">中心投影</div><p>由同一点发出的光线形成的投影；点光源位置影响影长。</p></div>
+            <div class="concept-card"><div class="name">正投影</div><p>投影线垂直于投影面；三视图即正投影。</p></div>
+            <div class="concept-card"><div class="name">三视图</div><p>主视图（正）、左视图（左）、俯视图（上）；遵循“长对正、高平齐、宽相等”。</p></div>
+          </div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card"><strong>投影</strong><p>同一时刻，$\frac{\text{物高}_1}{\text{影长}_1}=\frac{\text{物高}_2}{\text{影长}_2}$</p></div>
+          <div class="formula-card"><strong>三视图对应</strong><p>主俯长对正；主左高平齐；俯左宽相等</p></div>
+          <div class="formula-card"><strong>正方体展开</strong><p>11 种展开图；相对面在展开图中相隔一个面</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>💡 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span>由三视图求表面积/体积</h3>
+            <div class="method">先根据三视图还原几何体，再计算。</div>
+            <div class="example">例：三视图为三个矩形，几何体为长方体，体积 = 长×宽×高。</div>
+          </div>
+          <div class="technique-card">
+            <h3><span class="step-num">2</span>中心投影光源</h3>
+            <div class="method">连接物体顶端与其影子顶端，交点即为点光源位置。</div>
+            <div class="pitfall">⚠️ 中心投影下，物高与影长不一定成比例。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="chapter" id="appendix">
+      <h1><span>附录 · 初中数学核心公式速记</span></h1>
+      <details class="module">
+        <summary>📚 代数</summary>
+        <div class="content">
+          <div class="formula-card"><strong>乘法公式</strong><p>$(a+b)(a-b)=a^2-b^2$；$(a\pm b)^2=a^2\pm2ab+b^2$</p></div>
+          <div class="formula-card"><strong>幂的运算</strong><p>$a^m\cdot a^n=a^{m+n}$；$(a^m)^n=a^{mn}$；$(ab)^n=a^n b^n$</p></div>
+          <div class="formula-card"><strong>一元二次方程</strong><p>$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$；$x_1+x_2=-\frac{b}{a}$；$x_1x_2=\frac{c}{a}$</p></div>
+          <div class="formula-card"><strong>二次函数</strong><p>$y=ax^2+bx+c$；对称轴 $x=-\frac{b}{2a}$；顶点 $\left(-\frac{b}{2a},\frac{4ac-b^2}{4a}\right)$</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📐 几何</summary>
+        <div class="content">
+          <div class="formula-card"><strong>三角形</strong><p>$\angle A+\angle B+\angle C=180^\circ$；外角等于不相邻两内角和</p></div>
+          <div class="formula-card"><strong>勾股定理</strong><p>$a^2+b^2=c^2$</p></div>
+          <div class="formula-card"><strong>多边形</strong><p>内角和 $=(n-2)\cdot180^\circ$；外角和 $=360^\circ$</p></div>
+          <div class="formula-card"><strong>圆</strong><p>$l=\frac{n\pi R}{180}$；$S_{\text{扇形}}=\frac{n\pi R^2}{360}=\frac{1}{2}lR$</p></div>
+          <div class="formula-card"><strong>相似</strong><p>周长比 $=k$；面积比 $=k^2$</p></div>
+          <div class="formula-card"><strong>三角函数</strong><p>$\sin A=\frac{a}{c}$；$\cos A=\frac{b}{c}$；$\tan A=\frac{a}{b}$；$\sin^2 A+\cos^2 A=1$</p></div>
+        </div>
+      </details>
+      <details class="module">
+        <summary>📊 统计与概率</summary>
+        <div class="content">
+          <div class="formula-card"><strong>平均数与方差</strong><p>$\bar{x}=\frac{1}{n}\sum x_i$；$s^2=\frac{1}{n}\sum(x_i-\bar{x})^2$</p></div>
+          <div class="formula-card"><strong>概率</strong><p>$P(A)=\frac{m}{n}$；$0 \le P(A) \le 1$</p></div>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <script defer src="katex/katex.min.js"></script>
+  <script defer src="katex/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "$", right: "$", display: false}
+        ],
+        throwOnError: false
+      });
+
+      const toggle = document.getElementById("theme-toggle");
+      if (toggle) {
+        toggle.addEventListener("click", function () {
+          const html = document.documentElement;
+          if (html.getAttribute("data-theme") === "dark") {
+            html.setAttribute("data-theme", "light");
+            toggle.textContent = "🌙 暗色模式";
+          } else {
+            html.setAttribute("data-theme", "dark");
+            toggle.textContent = "☀️ 亮色模式";
+          }
+        });
+      }
+
+      // Highlight active sidebar link
+      const links = document.querySelectorAll("#sidebar nav a");
+      const chapters = document.querySelectorAll(".chapter");
+      function onScroll() {
+        let current = "";
+        chapters.forEach(ch => {
+          const rect = ch.getBoundingClientRect();
+          if (rect.top <= 120) current = ch.id;
+        });
+        links.forEach(link => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === "#" + current) link.classList.add("active");
+        });
+      }
+      window.addEventListener("scroll", onScroll);
+      onScroll();
+    });
+  </script>
+</body>
+</html>

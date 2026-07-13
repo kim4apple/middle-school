@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第7章 · 力 · 八年级物理</title>
+  <link rel="stylesheet" href="../katex/katex.min.css">
+  <link rel="stylesheet" href="css/physics.css">
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+
+  <nav id="sidebar">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+      <h2 style="margin-bottom:0;">八年级物理</h2>
+      <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;" title="隐藏侧栏">✕</button>
+    </div>
+    <nav>
+      <a href="index.html">🏠 首页</a>
+      <a href="ch01.html">第1章 机械运动</a>
+      <a href="ch02.html">第2章 声现象</a>
+      <a href="ch03.html">第3章 物态变化</a>
+      <a href="ch04.html">第4章 光现象</a>
+      <a href="ch05.html">第5章 透镜及其应用</a>
+      <a href="ch06.html">第6章 质量与密度</a>
+      <a href="ch07.html" class="active">第7章 力</a>
+      <a href="ch08.html">第8章 运动和力</a>
+      <a href="ch09.html">第9章 压强</a>
+      <a href="ch10.html">第10章 浮力</a>
+      <a href="ch11.html">第11章 功和机械能</a>
+      <a href="ch12.html">第12章 简单机械</a>
+      <a href="appendix.html">附录</a>
+    </nav>
+    <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+    <button id="theme-toggle" class="theme-toggle" style="margin-top:10px;">🌙 暗色模式</button>
+  </nav>
+  <main id="content">
+    <div class="chapter">
+      <h1>第7章 · 力</h1>
+
+      <div class="learning-goals">
+        <strong>🎯 学习目标</strong>
+        <p>① 理解力的概念，知道力是物体对物体的相互作用</p>
+        <p>② 能说出力的三要素，会用力的示意图表示力</p>
+        <p>③ 理解弹力和重力的概念，会使用弹簧测力计测量力的大小</p>
+      </div>
+
+      <div class="knowledge-link">
+        <strong>🔗 前置知识关联：</strong>
+        小学科学 · 推拉提压等日常经验 → 第6章 · 质量概念 → 本章 · 力的定量描述
+      </div>
+
+      <div class="thought-method">
+        <strong>💡 物理思维方法：示意图法</strong>
+        —— 用带箭头的线段直观表示力的三要素（起点→作用点，方向→箭头指向，长短→力的大小）。示意图法是受力分析的"语言"，后续所有力学章节都要用到。
+      </div>
+
+      <details class="module" open>
+        <summary>🧠 思维导图</summary>
+        <div class="content">
+          <div class="mindmap">
+            <ul>
+              <li><span class="node-label">力</span><span class="node-desc">—— 物体间的相互作用</span>
+                <ul>
+                  <li><span class="node-label">力的作用效果</span>
+                    <ul>
+                      <li>使物体发生形变（拉伸/压缩/弯曲）</li>
+                      <li>改变物体的运动状态（速度大小或方向变化）</li>
+                    </ul>
+                  </li>
+                  <li><span class="node-label">力的三要素</span>
+                    <ul>
+                      <li>大小（牛顿 N）</li>
+                      <li>方向（箭头指向）</li>
+                      <li>作用点（起点位置）</li>
+                    </ul>
+                  </li>
+                  <li><span class="node-label">力的示意图</span>
+                    <ul>
+                      <li>线段长短 → 力的大小</li>
+                      <li>箭头 → 力的方向</li>
+                      <li>起点 → 力的作用点</li>
+                    </ul>
+                  </li>
+                  <li><span class="node-label">弹力</span>
+                    <ul>
+                      <li>定义：发生弹性形变的物体产生的力</li>
+                      <li>条件：接触 + 弹性形变</li>
+                      <li>弹簧测力计：测量工具</li>
+                    </ul>
+                  </li>
+                  <li><span class="node-label">重力</span>
+                    <ul>
+                      <li>定义：地球吸引产生的力</li>
+                      <li>大小：$G=mg$（$g=9.8\,\text{N/kg}$）</li>
+                      <li>方向：竖直向下</li>
+                      <li>作用点：重心</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <details class="module" open>
+        <summary>📖 核心概念</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card">
+              <div class="name">力的定义</div>
+              <p>力是<strong>物体对物体的相互作用</strong>。发生作用的两个物体，一个是施力物体，一个是受力物体。<strong>物体间力的作用是相互的</strong>（作用力与反作用力）。</p>
+            </div>
+            <div class="concept-card">
+              <div class="name">力的作用效果</div>
+              <p>① <strong>使物体发生形变</strong>——形状或体积改变；② <strong>改变物体的运动状态</strong>——速度大小变化（加速/减速）或运动方向变化。只要物体运动状态改变，一定受到了力。</p>
+            </div>
+            <div class="concept-card">
+              <div class="name">力的三要素</div>
+              <p><strong>大小</strong>（用牛顿 N 作单位）、<strong>方向</strong>、<strong>作用点</strong>。三要素中任何一个改变，力的作用效果都会改变。</p>
+            </div>
+            <div class="concept-card">
+              <div class="name">弹力</div>
+              <p>物体发生<strong>弹性形变</strong>时产生的力。常见弹力：支持力、压力、拉力、推力。<strong>弹力大小与形变程度有关</strong>，弹簧测力计就是利用"在弹性限度内，弹簧伸长量与拉力成正比"的原理。</p>
+            </div>
+            <div class="concept-card">
+              <div class="name">重力</div>
+              <p>由于<strong>地球吸引</strong>而使物体受到的力。重力<strong>方向竖直向下</strong>（指向地心），作用点在<strong>重心</strong>。大小计算公式：$G = mg$，其中 $g \approx 9.8\,\text{N/kg}$，表示质量为 1 kg 的物体受到的重力约为 9.8 N。</p>
+            </div>
+            <div class="concept-card">
+              <div class="name">重力 vs 质量</div>
+              <p><strong>区别：</strong>重力是力（随位置变），质量是物质的量（不变）；<strong>联系：</strong>$G = mg$。同一物体在地球上重力约为月球上的 6 倍，但质量不变。</p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="module" open>
+        <summary>📐 公式速查</summary>
+        <div class="content">
+          <div class="formula-card">
+            <strong>重力公式</strong>
+            <p>\[ G = mg \]</p>
+            <p style="font-size:13px;color:var(--text-secondary)">$G$—重力（N），$m$—质量（kg），$g \approx 9.8\,\text{N/kg}$（粗略计算取 $10\,\text{N/kg}$）</p>
+          </div>
+          <div class="formula-card">
+            <strong>胡克定律（定性）</strong>
+            <p>在弹性限度内，弹簧的伸长量与受到的拉力成正比：$\Delta L \propto F$</p>
+            <p style="font-size:13px;color:var(--text-secondary)">弹簧测力计的原理依据</p>
+          </div>
+          <div class="formula-card">
+            <strong>同一直线上二力合成</strong>
+            <p>同向：$F = F_1 + F_2$ &nbsp;&nbsp;|&nbsp;&nbsp; 反向：$F = |F_1 - F_2|$（方向与较大的力相同）</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="module" open>
+        <summary>🔬 实验探究</summary>
+        <div class="content">
+          <div class="experiment-card">
+            <h3>实验：弹簧测力计的使用</h3>
+            <div class="exp-step">
+              <span class="exp-step-num">1</span>
+              <span><strong>观察与调零：</strong>使用前观察量程和分度值，轻轻拉动挂钩几次，确保指针在零刻度线。若不在零位，调节调零螺丝。</span>
+            </div>
+            <div class="exp-step">
+              <span class="exp-step-num">2</span>
+              <span><strong>测量：</strong>使弹簧测力计的轴线方向与受力方向一致，避免摩擦外壳。挂钩上的力必须沿弹簧轴线方向。</span>
+            </div>
+            <div class="exp-step">
+              <span class="exp-step-num">3</span>
+              <span><strong>读数：</strong>待指针稳定后读数，视线<strong>正对</strong>刻度线（平视），记录数值和单位。</span>
+            </div>
+            <div class="exp-step">
+              <span class="exp-step-num">4</span>
+              <span><strong>记录：</strong>测量完毕后及时整理仪器，弹簧测力计应归零存放。</span>
+            </div>
+            <div class="exp-principle">
+              <strong>实验原理：</strong>在弹性限度内，弹簧的伸长量与受到的拉力成正比。通过弹簧伸长量间接测量力的大小。
+            </div>
+            <div class="exp-tip">
+              ⚠️ <strong>注意：</strong>被测力不能超过弹簧测力计的量程，否则会损坏测力计；弹簧测力计读数不需要估读到分度值的下一位（与刻度尺不同！）。
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="module" open>
+        <summary>✏️ 解题技巧</summary>
+        <div class="content">
+          <div class="technique-card">
+            <h3><span class="step-num">1</span> 力的示意图画法</h3>
+            <div class="method">方法：</div>
+            <div class="example">① 确定受力物体 → ② 找到作用点（通常画在几何中心） → ③ 从作用点沿力的方向画线段 → ④ 标出箭头和力的符号（$F$、$G$、$f$ 等）→ ⑤ 标注大小（如 $F=10\,\text{N}$）</div>
+            <div class="principle"><strong>原理：</strong>线段长短代表力的大小比例，不需要严格按比例尺，但多个力要大致成比例。</div>
+            <div class="pitfall">⚠️ <strong>易错：</strong>误将作用点画在施力物体上；忘记标箭头；作图时线段超过箭头尖端；重力方向误画为"垂直向下"而非"竖直向下"。</div>
+          </div>
+
+          <div class="technique-card">
+            <h3><span class="step-num">2</span> 重力的计算与分析</h3>
+            <div class="method">方法：</div>
+            <div class="example">已知质量求重力用 $G = mg$；已知重力求质量用 $m = G/g$。g 取 $10\,\text{N/kg}$ 时计算更简便。</div>
+            <div class="principle"><strong>原理：</strong>重力的方向总是竖直向下（垂直于水平面），不是垂直向下（垂直于接触面）。在斜面上的物体，重力方向仍然是竖直向下，不是沿斜面向下。</div>
+            <div class="pitfall">⚠️ <strong>易错：</strong>混淆"竖直向下"和"垂直向下"——竖直向下是指向地心方向，垂直向下是垂直于接触面方向，两者只在水平面上一致。</div>
+            <div class="exam-hint">📌 <strong>中考提示：</strong>作图题中，重力用 $G$ 表示，标注 $G=mg$ 或具体数值；重心用空心圆点·标记。</div>
+          </div>
+
+          <div class="technique-card">
+            <h3><span class="step-num">3</span> 相互作用力与平衡力的区分</h3>
+            <div class="method">方法：</div>
+            <div class="example">相互作用的两个力分别作用在<strong>两个不同的物体</strong>上（异体）；一对平衡力作用在<strong>同一个物体</strong>上（同体）。</div>
+            <div class="principle"><strong>原理：</strong>相互作用力：等大、反向、共线、异体、同种性质；平衡力：等大、反向、共线、同体、性质可不同。</div>
+            <div class="pitfall">⚠️ <strong>易错：</strong>认为"压力和支持力是一对平衡力"——实际上它们作用在不同物体上，是相互作用力。</div>
+          </div>
+        </div>
+      </details>
+
+      <details class="exam-module" open>
+        <summary>📝 中考真题</summary>
+        <div class="content">
+          <div class="exam-q">
+            <span class="q-tag">2022 北京</span>
+            <div class="q-body">
+              <strong>1.</strong> 如图所示，一个木块静止在斜面上。请画出木块所受重力的示意图。
+              <div class="diagram">
+                <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+                  <!-- 斜面 -->
+                  <polygon points="20,140 180,140 180,40" fill="#e2e8f0" stroke="#64748b" stroke-width="1.5"/>
+                  <!-- 木块 -->
+                  <rect x="100" y="85" width="50" height="30" fill="#fbbf24" stroke="#d97706" stroke-width="1.5" rx="2"/>
+                  <!-- 重心标记 -->
+                  <circle cx="125" cy="100" r="2" fill="#dc2626"/>
+                  <!-- 标注 -->
+                  <text x="185" y="145" font-size="11" fill="#64748b">斜面</text>
+                </svg>
+              </div>
+            </div>
+            <div class="q-solution">
+              <strong>解析：</strong>重力作用点在木块重心（几何中心），方向竖直向下（垂直于水平地面，不是垂直于斜面），用箭头 $G$ 表示。正确作图需注意：线段从重心引出，箭头竖直向下。
+            </div>
+          </div>
+
+          <div class="exam-q">
+            <span class="q-tag">2021 上海</span>
+            <div class="q-body">
+              <strong>2.</strong> 如图所示，小车在水平地面上向右做匀速直线运动，请画出小车在水平方向上的受力示意图。
+              <div class="diagram">
+                <svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+                  <!-- 地面 -->
+                  <line x1="10" y1="120" x2="270" y2="120" stroke="#64748b" stroke-width="1.5"/>
+                  <rect x="60" y="85" width="80" height="35" fill="#93c5fd" stroke="#3b82f6" stroke-width="1.5" rx="3"/>
+                  <circle cx="80" cy="120" r="12" fill="#cbd5e1" stroke="#64748b" stroke-width="1.5"/>
+                  <circle cx="120" cy="120" r="12" fill="#cbd5e1" stroke="#64748b" stroke-width="1.5"/>
+                  <!-- 拉力箭头 -->
+                  <line x1="140" y1="102" x2="190" y2="102" stroke="#dc2626" stroke-width="2" marker-end="url(#arrowRed)"/>
+                  <text x="155" y="96" font-size="12" fill="#dc2626" font-weight="bold">$F$</text>
+                  <!-- 摩擦力箭头 -->
+                  <line x1="60" y1="102" x2="10" y2="102" stroke="#16a34a" stroke-width="2" marker-end="url(#arrowGreen)"/>
+                  <text x="16" y="96" font-size="12" fill="#16a34a" font-weight="bold">$f$</text>
+                  <defs>
+                    <marker id="arrowRed" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#dc2626"/></marker>
+                    <marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#16a34a"/></marker>
+                  </defs>
+                  <text x="250" y="130" font-size="11" fill="#64748b">水平地面</text>
+                </svg>
+              </div>
+            </div>
+            <div class="q-solution">
+              <strong>解析：</strong>小车匀速直线运动，水平方向受平衡力——"向右的拉力 $F$"与"向左的摩擦力 $f$"大小相等、方向相反。注意摩擦力方向与相对运动方向相反（车向右，摩擦向左）。
+            </div>
+          </div>
+
+          <div class="exam-q">
+            <span class="q-tag">2023 广州</span>
+            <div class="q-body">
+              <strong>3.</strong> 一个质量为 5 kg 的物体静止在水平桌面上。求：
+              <br>（1）物体所受重力的大小；
+              <br>（2）桌面对物体的支持力的大小和方向。（$g$ 取 $10\,\text{N/kg}$）
+            </div>
+            <div class="q-solution">
+              <strong>解析：</strong>（1）$G = mg = 5 \times 10 = 50\,\text{N}$，方向竖直向下。<br>
+              （2）物体静止，支持力与重力是一对平衡力，所以 $F_{\text{支}} = G = 50\,\text{N}$，方向竖直向上。<br>
+              <strong>关键思路：</strong>由运动状态推断受力——静止 → 平衡力合力为零。
+            </div>
+          </div>
+
+          <div class="exam-q">
+            <span class="q-tag">2023 武汉</span>
+            <div class="q-body">
+              <strong>4.</strong> 如图所示，弹簧测力计下悬挂一个重物。请根据示数读出重物所受重力的大小，并说明弹簧测力计的原理。
+              <div class="diagram">
+                <svg viewBox="0 0 160 220" xmlns="http://www.w3.org/2000/svg">
+                  <!-- 顶板 -->
+                  <rect x="40" y="10" width="80" height="6" fill="#64748b" rx="2"/>
+                  <!-- 弹簧部分（用波浪线表示） -->
+                  <line x1="80" y1="16" x2="80" y2="90" stroke="#94a3b8" stroke-width="1.5"/>
+                  <path d="M74,30 Q80,36 86,30" stroke="#94a3b8" stroke-width="1" fill="none"/>
+                  <path d="M74,40 Q80,46 86,40" stroke="#94a3b8" stroke-width="1" fill="none"/>
+                  <path d="M74,50 Q80,56 86,50" stroke="#94a3b8" stroke-width="1" fill="none"/>
+                  <path d="M74,60 Q80,66 86,60" stroke="#94a3b8" stroke-width="1" fill="none"/>
+                  <!-- 刻度板 -->
+                  <rect x="55" y="90" width="50" height="70" fill="white" stroke="#64748b" stroke-width="1" rx="2"/>
+                  <line x1="60" y1="100" x2="70" y2="100" stroke="#333" stroke-width="0.8"/>
+                  <line x1="60" y1="110" x2="75" y2="110" stroke="#333" stroke-width="0.8"/>
+                  <line x1="60" y1="120" x2="70" y2="120" stroke="#333" stroke-width="0.8"/>
+                  <line x1="60" y1="130" x2="75" y2="130" stroke="#333" stroke-width="0.8"/>
+                  <line x1="60" y1="140" x2="70" y2="140" stroke="#333" stroke-width="0.8"/>
+                  <line x1="60" y1="150" x2="75" y2="150" stroke="#333" stroke-width="0.8"/>
+                  <!-- 指针 -->
+                  <line x1="80" y1="115" x2="100" y2="115" stroke="#dc2626" stroke-width="2"/>
+                  <polygon points="95,112 100,115 95,118" fill="#dc2626"/>
+                  <!-- 挂钩和重物 -->
+                  <line x1="80" y1="160" x2="80" y2="175" stroke="#64748b" stroke-width="1.5"/>
+                  <rect x="55" y="175" width="50" height="30" fill="#cbd5e1" stroke="#64748b" stroke-width="1.5" rx="3"/>
+                  <!-- 标注 -->
+                  <text x="108" y="118" font-size="10" fill="#dc2626">指针</text>
+                  <text x="108" y="105" font-size="10" fill="#64748b">刻度</text>
+                  <line x1="105" y1="116" x2="108" y2="116" stroke="#dc2626" stroke-width="0.8"/>
+                  <line x1="105" y1="103" x2="108" y2="103" stroke="#64748b" stroke-width="0.8"/>
+                  <text x="115" y="193" font-size="10" fill="#64748b">挂钩</text>
+                  <line x1="105" y1="190" x2="113" y2="190" stroke="#64748b" stroke-width="0.8"/>
+                </svg>
+              </div>
+            </div>
+            <div class="q-solution">
+              <strong>解析：</strong>图中指针指示在 2.0 N 位置。弹簧测力计的原理是<strong>在弹性限度内，弹簧的伸长量与拉力成正比</strong>（胡克定律）。读数时视线要正对指针，记录数据为 $F = 2.0\,\text{N}$。
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <div class="checklist">
+        <h3>✅ 自我检测清单</h3>
+        <label><input type="checkbox"> 能准确说出力的定义和力的作用效果</label>
+        <label><input type="checkbox"> 能熟练画力的示意图（三要素齐全）</label>
+        <label><input type="checkbox"> 会用 $G = mg$ 计算重力，分清重力与质量的区别</label>
+        <label><input type="checkbox"> 会正确操作和读数弹簧测力计</label>
+        <label><input type="checkbox"> 能区分平衡力与相互作用力</label>
+        <p style="margin-top:12px;font-size:13px;color:var(--accent)"><strong>🤯 费曼挑战：</strong>用最简单的语言向同学解释"为什么弹簧测力计能测力？"</p>
+      </div>
+    </div>
+  </main>
+  <script src="../katex/katex.min.js"></script>
+  <script src="../katex/auto-render.min.js"></script>
+  <script>
+    (function () {
+      var theme = localStorage.getItem('physics-theme');
+      if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        document.getElementById('theme-toggle').textContent = '☀️ 亮色模式';
+      }
+      document.getElementById('theme-toggle').addEventListener('click', function () {
+        var html = document.documentElement;
+        var current = html.getAttribute('data-theme');
+        if (current === 'dark') {
+          html.setAttribute('data-theme', 'light');
+          localStorage.setItem('physics-theme', 'light');
+          this.textContent = '🌙 暗色模式';
+        } else {
+          html.setAttribute('data-theme', 'dark');
+          localStorage.setItem('physics-theme', 'dark');
+          this.textContent = '☀️ 亮色模式';
+        }
+      });
+      var links = document.querySelectorAll('#sidebar nav a');
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            links.forEach(function (l) { l.classList.remove('active'); });
+            var id = entry.target.id || 'ch07';
+            var match = document.querySelector('#sidebar nav a[href="' + id + '.html"]');
+            if (match) match.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-50% 0px -50% 0px' });
+      document.querySelectorAll('.chapter').forEach(function (el) { observer.observe(el); });
+      if (typeof renderMathInElement === 'function') {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '\\[', right: '\\]', display: true },
+            { left: '$', right: '$', display: false }
+          ]
+        });
+      }
+    var sidebar = document.getElementById('sidebar');
+    var hideBtn = document.getElementById('sidebarHideBtn');
+    var sidebarHidden = localStorage.getItem('physics8-sidebar') === 'hidden';
+    if (sidebarHidden) sidebar.classList.add('hidden');
+    var showBtn = document.getElementById('sidebarShowBtn');
+    hideBtn.addEventListener('click', function() {
+      sidebar.classList.add('hidden');
+      localStorage.setItem('physics8-sidebar', 'hidden');
+    });
+    showBtn.addEventListener('click', function() {
+      sidebar.classList.remove('hidden');
+      localStorage.setItem('physics8-sidebar', '');
+    });
+    (function() {
+      var btn = document.getElementById('expandAllBtn');
+      if (!btn) return;
+      btn.addEventListener('click', function() {
+        var allDetails = document.querySelectorAll('.module, .exam-module');
+        var allOpen = true;
+        for (var i = 0; i < allDetails.length; i++) {
+          if (!allDetails[i].hasAttribute('open')) { allOpen = false; break; }
+        }
+        for (var i = 0; i < allDetails.length; i++) {
+          if (allOpen) allDetails[i].removeAttribute('open');
+          else allDetails[i].setAttribute('open', '');
+        }
+        btn.textContent = allOpen ? '📂 展开全部章节' : '📖 收起全部章节';
+      });
+    })();
+    })();
+  </script>
+</body>
+</html>

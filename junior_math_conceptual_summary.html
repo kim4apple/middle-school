@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>初中数学 · 思想方法与知识网络完全总结</title>
+  <link rel="stylesheet" href="katex/katex.min.css">
+  <style>
+:root {
+  --bg: #ffffff;
+  --bg-secondary: #f8fafc;
+  --text: #1e293b;
+  --text-secondary: #64748b;
+  --accent: #4f46e5;
+  --accent-light: #eef2ff;
+  --border: #e2e8f0;
+  --shadow: 0 1px 2px rgba(0,0,0,0.06);
+  --radius: 6px;
+  --sidebar-width: 260px;
+  --g7: #4f46e5;
+  --g8: #0891b2;
+  --g9: #db2777;
+  --mixed: #7c3aed;
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --bg-secondary: #1e293b;
+  --text: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --accent: #818cf8;
+  --accent-light: #1e1b4b;
+  --border: #334155;
+  --shadow: 0 1px 2px rgba(0,0,0,0.25);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  display: flex;
+}
+
+#sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border);
+  padding: 20px 14px;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+#sidebar h2 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--accent);
+}
+
+.sidebar-group { margin-bottom: 12px; }
+.sidebar-group-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0 10px 4px;
+}
+
+#sidebar nav a {
+  display: block;
+  padding: 5px 10px;
+  border-radius: 6px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 12px;
+  transition: background 0.15s, color 0.15s;
+}
+
+#sidebar nav a:hover,
+#sidebar nav a.active {
+  background: var(--accent-light);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.sidebar-actions {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.theme-toggle, .print-btn {
+  padding: 7px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 12px;
+  width: 100%;
+}
+
+#content {
+  flex: 1;
+  max-width: 920px;
+  padding: 32px 40px;
+}
+
+.cover {
+  text-align: center;
+  padding: 30px 0 24px;
+  margin-bottom: 28px;
+  border-bottom: 2px solid var(--border);
+}
+.cover h1 { font-size: 30px; margin-bottom: 8px; letter-spacing: -0.5px; }
+.cover p { color: var(--text-secondary); font-size: 14px; }
+
+.section { margin-bottom: 44px; }
+
+.section h1 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.module {
+  margin-bottom: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  page-break-inside: avoid;
+}
+
+.module summary {
+  padding: 11px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--bg-secondary);
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.module summary::-webkit-details-marker { display: none; }
+
+.module summary::before {
+  content: "▸";
+  display: inline-block;
+  font-size: 11px;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.module[open] summary::before { transform: rotate(90deg); }
+
+.module .content { padding: 14px 16px; }
+
+.network {
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+.network h3 {
+  font-size: 13px;
+  color: var(--accent);
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.network-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+.network-node {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+}
+.network-node .title {
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.network-node .desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 12px;
+}
+
+.concept-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px;
+  box-shadow: var(--shadow);
+}
+.concept-card .name {
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: var(--accent);
+}
+.concept-card p { font-size: 12.5px; color: var(--text-secondary); line-height: 1.55; }
+
+.formula-card {
+  background: var(--bg-secondary);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 9px 13px;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+.formula-card strong { color: var(--accent); }
+.formula-card p { margin-top: 3px; color: var(--text-secondary); font-size: 12px; }
+
+.model-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px;
+  margin-bottom: 10px;
+  box-shadow: var(--shadow);
+  page-break-inside: avoid;
+}
+.model-card h3 {
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.model-card .tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.3px;
+}
+.tag-7 { background: var(--g7); }
+.tag-8 { background: var(--g8); }
+.tag-9 { background: var(--g9); }
+.tag-mixed { background: var(--mixed); }
+.tag-ext { background: #059669; }
+.model-card .method { font-weight: 600; margin-bottom: 3px; font-size: 13px; }
+.model-card .example { color: var(--text-secondary); font-size: 12px; margin-bottom: 5px; line-height: 1.5; }
+.model-card .signal {
+  font-size: 11.5px;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 5px 9px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  border-left: 3px solid var(--accent);
+  margin-bottom: 5px;
+}
+.model-card .pitfall {
+  font-size: 11px;
+  color: #dc2626;
+  background: #fef2f2;
+  padding: 5px 9px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  border-left: 3px solid #dc2626;
+}
+
+.thought-box {
+  background: linear-gradient(135deg, #fef9e7 0%, var(--accent-light) 100%);
+  border-left: 4px solid #f59e0b;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.thought-box strong { color: #b45309; }
+
+.signal-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  margin: 10px 0;
+}
+.signal-table th,
+.signal-table td {
+  border: 1px solid var(--border);
+  padding: 7px 9px;
+  text-align: left;
+  vertical-align: top;
+}
+.signal-table th {
+  background: var(--bg-secondary);
+  font-weight: 700;
+  color: var(--accent);
+}
+.signal-table td:first-child { font-weight: 600; white-space: nowrap; }
+
+ul.plain { padding-left: 18px; margin: 6px 0; }
+ul.plain li { margin-bottom: 3px; font-size: 13px; }
+
+.grade-legend {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+  font-size: 12px;
+}
+.grade-legend .item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.grade-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+.mindmap { padding: 4px 0; }
+.mindmap ul { list-style: none; padding-left: 18px; border-left: 1px solid var(--border); margin-left: 6px; }
+.mindmap li { position: relative; padding: 3px 0 3px 12px; font-size: 13px; line-height: 1.55; }
+.mindmap li::before { content: ""; position: absolute; left: -1px; top: 12px; width: 9px; height: 1px; background: var(--border); }
+.mindmap .node-label { font-weight: 600; color: var(--accent); }
+.mindmap .node-desc { font-size: 11.5px; color: var(--text-secondary); margin-left: 3px; }
+
+.flow-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0;
+}
+.flow-item {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 5px 10px;
+  font-size: 12px;
+}
+.flow-arrow { color: var(--text-secondary); align-self: center; font-size: 12px; }
+
+@media (max-width: 768px) {
+  body { flex-direction: column; }
+  #sidebar { width: 100%; height: auto; position: relative; padding: 16px; }
+  #content { padding: 20px 16px; }
+  .card-grid { grid-template-columns: 1fr; }
+  .network-grid { grid-template-columns: 1fr; }
+}
+
+@media print {
+  @page { size: A4; margin: 10mm; }
+  body { background: #fff; color: #000; font-size: 9pt; line-height: 1.4; display: block; }
+  #sidebar, .theme-toggle, .print-btn, .sidebar-actions { display: none !important; }
+  #content { max-width: none; padding: 0; }
+  .cover { padding: 0 0 8px; margin-bottom: 10px; border-bottom: 1.5px solid #999; }
+  .cover h1 { font-size: 20px; }
+  .cover p { color: #333; }
+  .section { margin-bottom: 6mm; }
+  .section h1 { font-size: 13px; margin-bottom: 5px; padding-bottom: 3px; border-bottom: 1.5px solid #333; }
+  .module { box-shadow: none; border: 1px solid #999; margin-bottom: 4mm; page-break-inside: avoid; }
+  .module summary { background: #f3f4f6 !important; color: #000 !important; padding: 5px 8px; font-size: 10px; border-bottom: 1px solid #999; }
+  .module summary::before { display: none; }
+  .module .content { padding: 6px; display: block !important; }
+  details { display: block; }
+  .card-grid { grid-template-columns: 1fr 1fr; gap: 4mm; }
+  .network-grid { grid-template-columns: 1fr 1fr; gap: 4mm; }
+  .concept-card, .formula-card, .model-card, .network-node { box-shadow: none; border: 1px solid #bbb; padding: 5px; margin-bottom: 3mm; }
+  .concept-card .name, .formula-card strong, .model-card h3 { color: #000; }
+  .tag-7, .tag-8, .tag-9, .tag-mixed, .tag-ext { border: 1px solid #000; background: #fff !important; color: #000 !important; padding: 1px 4px; }
+  .pitfall { background: #fff !important; color: #000 !important; border-left: 2px solid #000; }
+  .signal { background: #fff !important; color: #000 !important; border-left: 2px solid #000; }
+  a { text-decoration: none; color: #000; }
+  .katex { font-size: 1em; }
+}
+  </style>
+</head>
+<body>
+  <nav id="sidebar">
+    <h2>初中数学思想方法总结</h2>
+    <div class="sidebar-group">
+      <div class="sidebar-group-title">板块导航</div>
+      <nav>
+        <a href="#sec1">板块一 · 数与代数</a>
+        <a href="#sec2">板块二 · 图形与几何</a>
+        <a href="#sec3">板块三 · 函数与方程</a>
+        <a href="#sec4">板块四 · 统计与概率</a>
+        <a href="#sec5">板块五 · 数学建模与考试策略</a>
+        <a href="#appendix">附录 · 核心思想与压轴模型总览</a>
+      </nav>
+    </div>
+    <div class="sidebar-actions">
+      <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
+      <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
+    </div>
+  </nav>
+
+  <main id="content">
+    <div class="cover">
+      <h1>初中数学 · 思想方法与知识网络完全总结</h1>
+      <p>数与代数 · 图形与几何 · 函数与方程 · 统计与概率 · 数学建模 | A4 可打印版</p>
+    </div>
+
+    <div class="grade-legend">
+      <div class="item"><span class="grade-dot" style="background:var(--g7)"></span>七年级</div>
+      <div class="item"><span class="grade-dot" style="background:var(--g8)"></span>八年级</div>
+      <div class="item"><span class="grade-dot" style="background:var(--g9)"></span>九年级</div>
+      <div class="item"><span class="grade-dot" style="background:var(--mixed)"></span>跨年级综合</div>
+      <div class="item"><span class="grade-dot" style="background:#059669"></span>拓展/压轴</div>
+    </div>
+
+    <!-- 板块一：数与代数 -->
+    <section class="section" id="sec1">
+      <h1>板块一 · 数与代数</h1>
+
+      <details class="module" open>
+        <summary>🌐 知识网络</summary>
+        <div class="content">
+          <div class="network">
+            <h3>数的扩充脉络</h3>
+            <div class="flow-list">
+              <span class="flow-item">正整数 <span class="tag-7">七</span></span>
+              <span class="flow-arrow">→</span>
+              <span class="flow-item">整数 <span class="tag-7">七</span></span>
+              <span class="flow-arrow">→</span>
+              <span class="flow-item">有理数 <span class="tag-7">七</span></span>
+              <span class="flow-arrow">→</span>
+              <span class="flow-item">实数 <span class="tag-7">七</span></span>
+              <span class="flow-arrow">→</span>
+              <span class="flow-item">复数（高中）</span>
+            </div>
+          </div>
+          <div class="network">
+            <h3>代数式与方程的层级</h3>
+            <div class="mindmap">
+              <ul>
+                <li><span class="node-label">数</span> <span class="node-desc">有理数、实数、二次根式</span>
+                  <ul>
+                    <li><span class="node-label">式</span> <span class="node-desc">整式 → 分式 → 二次根式</span></li>
+                    <li><span class="node-label">方程</span> <span class="node-desc">一元一次 → 二元一次组 → 不等式组 → 一元二次</span></li>
+                    <li><span class="node-label">应用</span> <span class="node-desc">行程、工程、利润、增长率、几何计算</span></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="network-grid">
+            <div class="network-node">
+              <div class="title">有理数 <span class="tag-7">七</span></div>
+              <div class="desc">数轴 · 相反数 · 绝对值 · 倒数 · 四则运算 · 乘方 · 科学记数法</div>
+            </div>
+            <div class="network-node">
+              <div class="title">整式与因式分解 <span class="tag-7">七</span><span class="tag-8">八</span></div>
+              <div class="desc">单项式 · 多项式 · 同类项 · 乘法公式 · 提公因式 · 公式法 · 十字相乘</div>
+            </div>
+            <div class="network-node">
+              <div class="title">分式 <span class="tag-8">八</span></div>
+              <div class="desc">约分 · 通分 · 四则运算 · 分式方程 · 增根检验</div>
+            </div>
+            <div class="network-node">
+              <div class="title">二次根式 <span class="tag-8">八</span></div>
+              <div class="desc">$\sqrt{a}\ (a\ge0)$ · 最简二次根式 · 乘除加减 · 分母有理化</div>
+            </div>
+            <div class="network-node">
+              <div class="title">一次方程与不等式 <span class="tag-7">七</span></div>
+              <div class="desc">等式性质 · 解方程五步法 · 不等式性质（变号）· 数轴表示解集</div>
+            </div>
+            <div class="network-node">
+              <div class="title">一元二次方程 <span class="tag-9">九</span></div>
+              <div class="desc">直接开平方法 · 配方法 · 公式法 · 因式分解法 · 判别式 · 韦达定理</div>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>🧠 核心思想方法</summary>
+        <div class="content">
+          <div class="thought-box">
+            <strong>数形结合（一）：</strong>数轴是最原始的"坐标系"。数→点，大小→位置，运算→移动。从有理数到平面直角坐标系，再到函数图象，一脉相承。遇到绝对值、不等式、根式估值，先画数轴。
+          </div>
+          <div class="thought-box">
+            <strong>分类讨论：</strong>绝对值化简、含参数不等式、等腰三角形边长、圆中弦的位置等问题，常因图形或符号不确定而需要分类。原则：分类标准统一、不重不漏、最后汇总。
+          </div>
+          <div class="thought-box">
+            <strong>整体思想：</strong>把某个代数式看作整体代入，避免单独求每个字母。常用于整式化简求值、韦达定理变形、方程组换元。
+          </div>
+          <div class="thought-box">
+            <strong>转化与化归：</strong>复杂问题转化为简单问题。如分式方程→整式方程，高次方程→低次方程，无理式→有理式，多元→少元。
+          </div>
+
+          <h3 style="font-size:14px;margin:16px 0 8px;color:var(--accent)">何时使用这些思想？</h3>
+          <table class="signal-table">
+            <tr><th>思想方法</th><th>识别信号</th><th>常用场景</th></tr>
+            <tr><td>数形结合</td><td>看到绝对值、不等式解集、函数图象、几何与代数混合</td><td>数轴比较、函数取值范围、几何计算坐标化</td></tr>
+            <tr><td>分类讨论</td><td>条件含"可能"、图形位置不确定、含参数、去绝对值/根号</td><td>等腰三角形边长、圆中弦位置、含参不等式</td></tr>
+            <tr><td>整体思想</td><td>已知一个代数式的值，求与之相关的另一个式子的值</td><td>整式求值、韦达定理应用、方程组整体消元</td></tr>
+            <tr><td>转化化归</td><td>陌生问题、复合问题、高次/多元/分式形式</td><td>分式方程去分母、换元法、几何问题代数化</td></tr>
+          </table>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>📐 必背公式与性质</summary>
+        <div class="content">
+          <div class="formula-card"><strong>乘法公式</strong><p>$(a+b)(a-b)=a^2-b^2$；$(a\pm b)^2=a^2\pm2ab+b^2$</p></div>
+          <div class="formula-card"><strong>幂的运算</strong><p>$a^m\cdot a^n=a^{m+n}$；$(a^m)^n=a^{mn}$；$(ab)^n=a^n b^n$；$a^0=1\ (a\ne0)$</p></div>
+          <div class="formula-card"><strong>二次根式</strong><p>$(\sqrt{a})^2=a$；$\sqrt{a^2}=|a|$；$\sqrt{ab}=\sqrt{a}\cdot\sqrt{b}\ (a,b\ge0)$</p></div>
+          <div class="formula-card"><strong>一元二次方程求根公式</strong><p>$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$；$\Delta=b^2-4ac$</p></div>
+          <div class="formula-card"><strong>韦达定理</strong><p>$x_1+x_2=-\frac{b}{a}$；$x_1x_2=\frac{c}{a}$；$x_1^2+x_2^2=(x_1+x_2)^2-2x_1x_2$</p></div>
+          <div class="formula-card"><strong>分式方程</strong><p>去分母化整式方程 → 解方程 → 代入最简公分母验根（增根使分母为0）</p></div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>💡 典型模型与技巧</summary>
+        <div class="content">
+          <div class="model-card">
+            <h3>模型一：非负数和为0 <span class="tag-7">七</span><span class="tag-8">八</span></h3>
+            <div class="signal"><strong>识别信号：</strong>几个非负项相加等于 0，或同时出现绝对值、根号、平方。</div>
+            <div class="method">若 $|A|+\sqrt{B}+C^2=0$，则 $A=B=C=0$。</div>
+            <div class="example">例：$|x-2|+\sqrt{y+3}+(z-1)^2=0$ ⇒ $x=2,y=-3,z=1$。</div>
+            <div class="pitfall">⚠️ 注意：只有绝对值、算术平方根、平方数具有非负性。</div>
+          </div>
+          <div class="model-card">
+            <h3>模型二：绝对值化简 <span class="tag-7">七</span></h3>
+            <div class="signal"><strong>识别信号：</strong>式子中含有绝对值，且绝对值内式子的符号需要判断。</div>
+            <div class="method">先判断绝对值内式子的正负，再去符号；$|a|=a\ (a\ge0)$，$|a|=-a\ (a<0)$。</div>
+            <div class="example">例：$-1<x<3$ 时，$|x-3|+|x+1|=(3-x)+(x+1)=4$。</div>
+            <div class="pitfall">⚠️ 常见错误：$\sqrt{a^2}=a$。正确应为 $\sqrt{a^2}=|a|$。</div>
+          </div>
+          <div class="model-card">
+            <h3>模型三：整体代入求值 <span class="tag-7">七</span><span class="tag-9">九</span></h3>
+            <div class="signal"><strong>识别信号：</strong>已知一个代数式的值，求另一个与之相关的代数式的值。</div>
+            <div class="method">将已知条件中的代数式看作整体，代入待求式。</div>
+            <div class="example">例：已知 $x^2+x=3$，则 $2x^2+2x-5=2(x^2+x)-5=1$；已知 $x_1+x_2=3,x_1x_2=2$，求 $x_1^2+x_2^2=5$。</div>
+          </div>
+          <div class="model-card">
+            <h3>模型四：含参不等式求参数 <span class="tag-7">七</span></h3>
+            <div class="signal"><strong>识别信号：</strong>不等式（组）的解集已知，反求参数的值或范围。</div>
+            <div class="method">先解不等式（组），再根据解集特征列关于参数的方程。</div>
+            <div class="example">例：不等式 $2x+a>0$ 的解集为 $x>2$，则 $-\frac{a}{2}=2$ ⇒ $a=-4$。</div>
+          </div>
+          <div class="model-card">
+            <h3>模型五：一元二次方程根的判别 <span class="tag-9">九</span></h3>
+            <div class="signal"><strong>识别信号：</strong>题目问方程有几个实根、参数取值范围、两根关系。</div>
+            <div class="method">$\Delta>0$ 两不等实根；$\Delta=0$ 两相等实根；$\Delta<0$ 无实根。逆向：已知根的情况求参数范围。</div>
+            <div class="example">例：$x^2-2x+k=0$ 有两个不等实根，则 $\Delta=4-4k>0$ ⇒ $k<1$。</div>
+          </div>
+          <div class="model-card">
+            <h3>模型六：根式估值与夹逼 <span class="tag-7">七</span><span class="tag-8">八</span></h3>
+            <div class="signal"><strong>识别信号：</strong>估算无理数大小、判断根式在哪两个整数之间。</div>
+            <div class="method">找与被开方数相邻的完全平方数，确定整数部分和小数部分。</div>
+            <div class="example">例：$\sqrt{7}$：因为 $4<7<9$，所以 $2<\sqrt{7}<3$；因为 $2.6^2=6.76$，$2.7^2=7.29$，所以 $2.6<\sqrt{7}<2.7$。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- 板块二：图形与几何 -->
+    <section class="section" id="sec2">
+      <h1>板块二 · 图形与几何</h1>
+
+      <details class="module" open>
+        <summary>🌐 知识网络</summary>
+        <div class="content">
+          <div class="network">
+            <h3>几何学习的两条主线</h3>
+            <div class="mindmap">
+              <ul>
+                <li><span class="node-label">位置关系</span> <span class="node-desc">点、线、面、角 → 相交线与平行线 → 三角形 → 四边形 → 圆</span>
+                  <ul>
+                    <li><span class="node-label">数量关系</span> <span class="node-desc">长度、角度、面积、比例</span></li>
+                    <li><span class="node-label">变换关系</span> <span class="node-desc">平移、轴对称、旋转、位似</span></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="network-grid">
+            <div class="network-node">
+              <div class="title">基础图形 <span class="tag-7">七</span></div>
+              <div class="desc">直线、射线、线段 · 角 · 余角补角 · 对顶角 · 三线八角</div>
+            </div>
+            <div class="network-node">
+              <div class="title">相交线与平行线 <span class="tag-7">七</span></div>
+              <div class="desc">垂线 · 平行公理 · 判定（F/Z/U）· 性质 · 平移</div>
+            </div>
+            <div class="network-node">
+              <div class="title">三角形 <span class="tag-8">八</span></div>
+              <div class="desc">三边关系 · 内角和 · 外角 · 全等 · 等腰/等边 · 角平分线</div>
+            </div>
+            <div class="network-node">
+              <div class="title">四边形 <span class="tag-8">八</span></div>
+              <div class="desc">平行四边形 → 矩形/菱形 → 正方形；中位线</div>
+            </div>
+            <div class="network-node">
+              <div class="title">圆 <span class="tag-9">九</span></div>
+              <div class="desc">垂径定理 · 圆周角 · 切线 · 弧长扇形 · 圆锥</div>
+            </div>
+            <div class="network-node">
+              <div class="title">相似与变换 <span class="tag-9">九</span></div>
+              <div class="desc">相似三角形 · 位似 · 旋转 · 投影与视图</div>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>🧠 核心思想方法</summary>
+        <div class="content">
+          <div class="thought-box">
+            <strong>分类讨论：</strong>几何中分类讨论最频繁：点在线段上还是延长线上、三角形形状（锐角/钝角/直角）、圆中弦的位置、相似三角形对应关系不确定、等腰三角形腰和底不确定。
+          </div>
+          <div class="thought-box">
+            <strong>转化与化归：</strong>四边形问题→三角形（对角线分割）；圆中问题→直角三角形（半径、弦心距、半弦构成 Rt△）；斜三角形→直角三角形（作高）；复杂图形→基本模型。
+          </div>
+          <div class="thought-box">
+            <strong>构造法：</strong>有中点想中位线；有角平分线想垂线或截长补短；有切线连半径；有等腰作三线合一；求最短路径作对称点。
+          </div>
+          <div class="thought-box">
+            <strong>运动变化思想：</strong>平移、旋转、翻折（轴对称）是改变图形位置但不改变形状大小的三大变换；位似是相似的特殊位置关系。
+          </div>
+
+          <h3 style="font-size:14px;margin:16px 0 8px;color:var(--accent)">几何辅助线识别信号</h3>
+          <table class="signal-table">
+            <tr><th>条件</th><th>常作辅助线</th><th>目的</th></tr>
+            <tr><td>中点</td><td>中位线、倍长中线、斜边中线、三线合一</td><td>得到平行、一半、全等</td></tr>
+            <tr><td>角平分线</td><td>向两边作垂线、截长补短</td><td>利用角平分线性质构造全等</td></tr>
+            <tr><td>切线</td><td>连接圆心与切点</td><td>得到垂直，构造直角三角形</td></tr>
+            <tr><td>直径</td><td>连接直径所对圆周角</td><td>得到 90° 角</td></tr>
+            <tr><td>等腰三角形</td><td>作底边上的高（三线合一）</td><td>得到全等、垂直、角平分</td></tr>
+            <tr><td>最短路径</td><td>作对称点</td><td>化折线为直线</td></tr>
+          </table>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>📐 必背定理与公式</summary>
+        <div class="content">
+          <div class="formula-card"><strong>三角形</strong><p>$\angle A+\angle B+\angle C=180^\circ$；外角等于不相邻两内角和；三边关系 $a+b>c$</p></div>
+          <div class="formula-card"><strong>全等三角形</strong><p>SSS、SAS、ASA、AAS、HL；对应边、角、周长、面积相等</p></div>
+          <div class="formula-card"><strong>特殊三角形</strong><p>等腰：等边对等角，三线合一；等边：三角均为 $60^\circ$；含 $30^\circ$ 直角三角形：$30^\circ$ 对边 = 斜边一半</p></div>
+          <div class="formula-card"><strong>平行四边形</strong><p>对边平行且相等，对角相等，对角线互相平分；矩形对角线相等，菱形对角线垂直</p></div>
+          <div class="formula-card"><strong>勾股定理</strong><p>$a^2+b^2=c^2$；逆定理判定直角三角形</p></div>
+          <div class="formula-card"><strong>圆</strong><p>垂径定理；圆心角=2×圆周角；直径对直角；切线⊥半径；$l=\frac{n\pi R}{180}$；$S_{\text{扇形}}=\frac{n\pi R^2}{360}=\frac{1}{2}lR$</p></div>
+          <div class="formula-card"><strong>相似</strong><p>AA、SAS、SSS 判定；周长比=k，面积比=$k^2$</p></div>
+          <div class="formula-card"><strong>多边形</strong><p>内角和=$(n-2)\cdot180^\circ$；外角和=$360^\circ$</p></div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>💡 典型模型与技巧</summary>
+        <div class="content">
+          <div class="model-card">
+            <h3>模型一：将军饮马（最短路径） <span class="tag-8">八</span></h3>
+            <div class="signal"><strong>识别信号：</strong>求直线上一点到两定点距离之和最小，或类似"最短路径""最少费用"。</div>
+            <div class="method">两定点在异侧直接连线；在同侧作对称点再连线。</div>
+            <div class="example">例：$A$、$B$ 在直线 $l$ 同侧，作 $A$ 关于 $l$ 的对称点 $A'$，连 $A'B$ 交 $l$ 于 $P$，则 $PA+PB$ 最小。</div>
+          </div>
+          <div class="model-card">
+            <h3>模型二：一线三等角 <span class="tag-9">九</span></h3>
+            <div class="signal"><strong>识别信号：</strong>一条直线上出现三个相等的角，常伴随垂直或正方形背景。</div>
+            <div class="method">一条直线上三个角相等，常可证相似或全等。特殊情形：K 字型、三垂直模型。</div>
+            <div class="example">例：$\angle A=\angle B=\angle CPD$，$P$ 在 $AB$ 上，则 $\triangle ACP \sim \triangle BPD$。</div>
+          </div>
+          <div class="model-card">
+            <h3>模型三：手拉手模型 <span class="tag-8">八</span><span class="tag-9">九</span></h3>
+            <div class="signal"><strong>识别信号：</strong>两个共顶点的等腰三角形（等边或等腰直角），连接对应顶点。</div>
+            <div class="method">通过旋转可证全等或相似，对应边相等、夹角等于旋转角。</div>
+            <div class="example">例：等边 $\triangle ABC$ 与等边 $\triangle ADE$ 共顶点 $A$，连接 $BD$、$CE$，则 $BD=CE$，夹角为 $60^\circ$。</div>
+          </div>
+          <div class="model-card">
+            <h3>模型四：中点联想 <span class="tag-8">八</span></h3>
+            <div class="signal"><strong>识别信号：</strong>题目中出现中点、中线、中位线等关键词。</div>
+            <div class="method">见中点：① 中位线（平行+一半）；② 倍长中线构造全等；③ 直角三角形斜边中线等于斜边一半；④ 等腰三角形三线合一。</div>
+            <div class="example">例：$D$、$E$ 分别为 $AB$、$AC$ 中点 ⇒ $DE \parallel BC$，$DE=\frac{1}{2}BC$。</div>
+          </div>
+          <div class="model-card">
+            <h3>模型五：垂径定理与勾股结合 <span class="tag-9">九</span></h3>
+            <div class="signal"><strong>识别信号：</strong>圆中已知弦长、弦心距、半径中的两个量，求第三个。</div>
+            <div class="method">垂直于弦的直径平分弦，构造由半径、弦心距、半弦组成的直角三角形。</div>
+            <div class="example">例：弦长 8，弦心距 3，则半径 $r=\sqrt{4^2+3^2}=5$。</div>
+          </div>
+          <div class="model-card">
+            <h3>模型六：遇切线连半径 <span class="tag-9">九</span></h3>
+            <div class="signal"><strong>识别信号：</strong>题目中出现"切线""切点""相切"等关键词。</div>
+            <div class="method">切线垂直于过切点的半径；由切线长定理得切线长相等。</div>
+            <div class="example">例：$PA$、$PB$ 切圆于 $A$、$B$，则 $PA=PB$，$OP$ 平分 $\angle APB$。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- 板块三：函数与方程 -->
+    <section class="section" id="sec3">
+      <h1>板块三 · 函数与方程</h1>
+
+      <details class="module" open>
+        <summary>🌐 知识网络</summary>
+        <div class="content">
+          <div class="network">
+            <h3>从方程到函数：数与形的统一</h3>
+            <div class="flow-list">
+              <span class="flow-item">一元一次方程 <span class="tag-7">七</span></span>
+              <span class="flow-arrow">→</span>
+              <span class="flow-item">一次函数 <span class="tag-8">八</span></span>
+              <span class="flow-arrow">↔</span>
+              <span class="flow-item">方程与不等式 <span class="tag-7">七</span></span>
+            </div>
+            <div class="flow-list">
+              <span class="flow-item">一元二次方程 <span class="tag-9">九</span></span>
+              <span class="flow-arrow">→</span>
+              <span class="flow-item">二次函数 <span class="tag-9">九</span></span>
+              <span class="flow-arrow">↔</span>
+              <span class="flow-item">反比例函数 <span class="tag-9">九</span></span>
+            </div>
+          </div>
+          <div class="network-grid">
+            <div class="network-node">
+              <div class="title">一次函数 <span class="tag-8">八</span></div>
+              <div class="desc">$y=kx+b$；$k$ 定增减，$b$ 定截距；与 $x$ 轴交点即方程 $kx+b=0$ 的解</div>
+            </div>
+            <div class="network-node">
+              <div class="title">反比例函数 <span class="tag-9">九</span></div>
+              <div class="desc">$y=\frac{k}{x}$；双曲线；$k$ 的几何意义；分象限讨论增减性</div>
+            </div>
+            <div class="network-node">
+              <div class="title">二次函数 <span class="tag-9">九</span></div>
+              <div class="desc">$y=ax^2+bx+c$；开口、对称轴、顶点；一般式、顶点式、交点式</div>
+            </div>
+            <div class="network-node">
+              <div class="title">函数与方程不等式 <span class="tag-mixed">综合</span></div>
+              <div class="desc">函数图象交点 ⇔ 方程组解；图象在 $x$ 轴上方 ⇔ 不等式解集</div>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>🧠 核心思想方法</summary>
+        <div class="content">
+          <div class="thought-box">
+            <strong>函数与方程思想：</strong>函数研究变化规律，方程研究特定状态。很多问题可设未知数列方程（函数零点），也可构造函数研究取值范围和最值。
+          </div>
+          <div class="thought-box">
+            <strong>数形结合（二）：</strong>函数问题必画图。由解析式定开口、对称轴、截距、交点；由图象读增减性、最值、不等式解集。代数问题几何化，几何问题代数化（坐标法）。
+          </div>
+          <div class="thought-box">
+            <strong>待定系数法：</strong>已知函数类型，设出解析式，代入已知条件列方程组求参数。选设形式是关键：顶点式（已知顶点/对称轴）、交点式（已知两 $x$ 轴交点）、一般式（已知三点）。
+          </div>
+          <div class="thought-box">
+            <strong>最值思想：</strong>二次函数在顶点处取最值；实际问题中要注意自变量取值范围，区间端点可能与顶点同时竞争最值。
+          </div>
+
+          <h3 style="font-size:14px;margin:16px 0 8px;color:var(--accent)">函数问题破题路径</h3>
+          <table class="signal-table">
+            <tr><th>问题类型</th><th>首选工具</th><th>关键步骤</th></tr>
+            <tr><td>求解析式</td><td>待定系数法</td><td>判断用一般式/顶点式/交点式</td></tr>
+            <tr><td>求交点</td><td>联立方程</td><td>令函数值相等，解方程</td></tr>
+            <tr><td>求最值</td><td>顶点公式/区间端点</td><td>先定对称轴是否在范围内</td></tr>
+            <tr><td>比较大小</td><td>图象法/作差法</td><td>利用增减性或代入计算</td></tr>
+            <tr><td>不等式解集</td><td>图象上下位置</td><td>找交点，看图象上下方</td></tr>
+          </table>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>📐 必背公式与性质</summary>
+        <div class="content">
+          <div class="formula-card"><strong>一次函数</strong><p>$y=kx+b\ (k\ne0)$；$k>0$ 递增，$k<0$ 递减；与 $x$ 轴交于 $\left(-\frac{b}{k},0\right)$</p></div>
+          <div class="formula-card"><strong>反比例函数</strong><p>$y=\frac{k}{x}$；$k>0$ 在一、三象限，$k<0$ 在二、四象限；$S_{\text{矩形}}=|k|$，$S_{\triangle}=\frac{|k|}{2}$</p></div>
+          <div class="formula-card"><strong>二次函数一般式</strong><p>$y=ax^2+bx+c$；对称轴 $x=-\frac{b}{2a}$；顶点 $\left(-\frac{b}{2a},\frac{4ac-b^2}{4a}\right)$</p></div>
+          <div class="formula-card"><strong>二次函数顶点式</strong><p>$y=a(x-h)^2+k$，顶点 $(h,k)$，对称轴 $x=h$</p></div>
+          <div class="formula-card"><strong>函数与方程关系</strong><p>$kx+b=0$ 的解 ⇔ 直线与 $x$ 轴交点横坐标；$ax^2+bx+c=0$ 的根 ⇔ 抛物线与 $x$ 轴交点横坐标</p></div>
+          <div class="formula-card"><strong>函数与不等式</strong><p>$kx+b>0$ 的解集 ⇔ 直线在 $x$ 轴上方对应的 $x$ 范围；两函数图象上下位置关系 ⇔ 不等式解集</p></div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>💡 典型模型与技巧</summary>
+        <div class="content">
+          <div class="model-card">
+            <h3>模型一：看图象定参数 <span class="tag-8">八</span><span class="tag-9">九</span></h3>
+            <div class="signal"><strong>识别信号：</strong>给出函数图象，要求判断系数符号或取值范围。</div>
+            <div class="method">由一次/二次函数图象判断 $k$、$b$ 或 $a$、$b$、$c$ 符号。</div>
+            <div class="example">例：抛物线开口向下 ⇒ $a<0$；对称轴在 $y$ 轴右侧 ⇒ $ab<0$；与 $y$ 轴交于正半轴 ⇒ $c>0$。</div>
+          </div>
+          <div class="model-card">
+            <h3>模型二：二次函数区间最值 <span class="tag-9">九</span></h3>
+            <div class="signal"><strong>识别信号：</strong>二次函数在某一范围内求最大/最小值。</div>
+            <div class="method">若对称轴在区间内，顶点为最值之一；否则比较区间端点函数值。实际问题还要检验实际意义。</div>
+            <div class="example">例：$y=x^2-2x+3$ 在 $[0,3]$，对称轴 $x=1$ 在区间内，最小值 $y(1)=2$，最大值 $y(3)=6$。</div>
+            <div class="pitfall">⚠️ 不要直接认为顶点纵坐标就是所有情况的最值。</div>
+          </div>
+          <div class="model-card">
+            <h3>模型三：函数图象交点问题 <span class="tag-9">九</span></h3>
+            <div class="signal"><strong>识别信号：</strong>两个函数图象有几个交点、交点坐标、参数取值范围。</div>
+            <div class="method">联立解析式得方程，方程解的个数即交点个数；$\Delta>0$ 两交点，$\Delta=0$ 一切点，$\Delta<0$ 无交点。</div>
+            <div class="example">例：抛物线 $y=x^2$ 与直线 $y=x+m$ 联立得 $x^2-x-m=0$，$\Delta=1+4m$。</div>
+          </div>
+          <div class="model-card">
+            <h3>模型四：反比例函数 $k$ 的几何意义 <span class="tag-9">九</span></h3>
+            <div class="signal"><strong>识别信号：</strong>双曲线上一点向坐标轴作垂线，求相关图形面积。</div>
+            <div class="method">双曲线上任一点向坐标轴作垂线，与原点构成矩形面积为 $|k|$，直角三角形面积为 $\frac{|k|}{2}$。</div>
+            <div class="example">例：$P$ 在 $y=\frac{6}{x}$ 上，$PA\perp x$ 轴，$PB\perp y$ 轴，则 $S_{\text{矩形}OAPB}=6$。</div>
+          </div>
+          <div class="model-card">
+            <h3>模型五：一次函数与方程组 <span class="tag-8">八</span></h3>
+            <div class="signal"><strong>识别信号：</strong>两条直线的交点、两一次函数图象关系。</div>
+            <div class="method">两条直线的交点坐标即对应二元一次方程组的解。</div>
+            <div class="example">例：$y=2x+1$ 与 $y=-x+4$ 的交点：$2x+1=-x+4$ ⇒ $x=1,y=3$。</div>
+          </div>
+          <div class="model-card">
+            <h3>模型六：函数的实际应用 <span class="tag-mixed">综合</span></h3>
+            <div class="signal"><strong>识别信号：</strong>实际问题中的最值、方案选择、利润最大、费用最少。</div>
+            <div class="method">先建立函数模型，注意自变量的实际限制（正数、整数、不超过总量），再求最值。</div>
+            <div class="pitfall">⚠️ 实际问题中，函数图象往往只是抛物线/直线的一部分，不要忽略端点和实际意义。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- 板块四：统计与概率 -->
+    <section class="section" id="sec4">
+      <h1>板块四 · 统计与概率</h1>
+
+      <details class="module" open>
+        <summary>🌐 知识网络</summary>
+        <div class="content">
+          <div class="network">
+            <h3>统计研究全过程</h3>
+            <div class="flow-list">
+              <span class="flow-item">收集数据 <span class="tag-7">七</span></span>
+              <span class="flow-arrow">→</span>
+              <span class="flow-item">整理数据 <span class="tag-7">七</span></span>
+              <span class="flow-arrow">→</span>
+              <span class="flow-item">描述数据 <span class="tag-7">七</span><span class="tag-8">八</span></span>
+              <span class="flow-arrow">→</span>
+              <span class="flow-item">分析推断 <span class="tag-8">八</span><span class="tag-9">九</span></span>
+            </div>
+          </div>
+          <div class="network-grid">
+            <div class="network-node">
+              <div class="title">数据收集 <span class="tag-7">七</span></div>
+              <div class="desc">全面调查（普查） · 抽样调查 · 总体 · 个体 · 样本 · 样本容量</div>
+            </div>
+            <div class="network-node">
+              <div class="title">数据整理 <span class="tag-7">七</span></div>
+              <div class="desc">频数 · 频率 · 频数分布表 · 直方图 · 组距 · 组数</div>
+            </div>
+            <div class="network-node">
+              <div class="title">数据描述 <span class="tag-7">七</span></div>
+              <div class="desc">条形图 · 折线图 · 扇形图 · 三视图</div>
+            </div>
+            <div class="network-node">
+              <div class="title">数据分析 <span class="tag-8">八</span></div>
+              <div class="desc">平均数 · 加权平均数 · 中位数 · 众数 · 方差 · 标准差</div>
+            </div>
+            <div class="network-node">
+              <div class="title">概率 <span class="tag-9">九</span></div>
+              <div class="desc">随机事件 · 概率 $P(A)=\frac{m}{n}$ · 列举法 · 树状图 · 频率估计概率</div>
+            </div>
+            <div class="network-node">
+              <div class="title">统计推断 <span class="tag-mixed">综合</span></div>
+              <div class="desc">用样本估计总体 · 用频率估计概率</div>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>🧠 核心思想方法</summary>
+        <div class="content">
+          <div class="thought-box">
+            <strong>统计思想：</strong>用样本估计总体、用数据说话。抽样要具有代表性和广泛性；分析数据时要根据目的选择合适的统计量。
+          </div>
+          <div class="thought-box">
+            <strong>随机思想：</strong>概率描述随机事件发生的可能性大小。大量重复试验中频率稳定于概率；单个随机事件结果不确定，但规律可预测。
+          </div>
+          <div class="thought-box">
+            <strong>数形结合（三）：</strong>统计图是数据的可视化表达。条形图比数量，折线图看趋势，扇形图看比例，直方图看分布。
+          </div>
+
+          <h3 style="font-size:14px;margin:16px 0 8px;color:var(--accent)">统计量选用指南</h3>
+          <table class="signal-table">
+            <tr><th>统计量</th><th>反映什么</th><th>适用场景</th></tr>
+            <tr><td>平均数</td><td>整体平均水平</td><td>数据比较集中、无极端值时</td></tr>
+            <tr><td>中位数</td><td>中间水平</td><td>有极端值、关注"中等"水平时</td></tr>
+            <tr><td>众数</td><td>出现最多的数据</td><td>选举、最受欢迎、尺码选择</td></tr>
+            <tr><td>方差</td><td>波动/稳定程度</td><td>比较两组数据的稳定性</td></tr>
+          </table>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>📐 必背公式与方法</summary>
+        <div class="content">
+          <div class="formula-card"><strong>平均数</strong><p>$\bar{x}=\frac{1}{n}\sum x_i$；加权平均数 $\bar{x}=\frac{\sum x_i w_i}{\sum w_i}$</p></div>
+          <div class="formula-card"><strong>中位数与众数</strong><p>中位数：排序后中间位置的数（偶数个取平均）；众数：出现次数最多的数据</p></div>
+          <div class="formula-card"><strong>方差</strong><p>$s^2=\frac{1}{n}\sum(x_i-\bar{x})^2$；方差越大，波动越大</p></div>
+          <div class="formula-card"><strong>频率</strong><p>$\text{频率}=\frac{\text{频数}}{\text{总数}}$；$\sum\text{频率}=1$；扇形圆心角 $=360^\circ\times\text{频率}$</p></div>
+          <div class="formula-card"><strong>概率</strong><p>$P(A)=\frac{m}{n}$（$m$ 为事件 $A$ 包含结果数，$n$ 为总结果数）；$0\le P(A)\le 1$</p></div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>💡 典型模型与技巧</summary>
+        <div class="content">
+          <div class="model-card">
+            <h3>模型一：统计量的选择 <span class="tag-8">八</span></h3>
+            <div class="signal"><strong>识别信号：</strong>题目问"用哪个统计量代表这组数据更合适"。</div>
+            <div class="method">平均数反映整体水平；中位数反映中间水平；众数反映多数水平；方差反映稳定性。</div>
+            <div class="example">例：比较两人射击成绩，平均数相同，方差小者更稳定。</div>
+          </div>
+          <div class="model-card">
+            <h3>模型二：扇形图与数据互求 <span class="tag-7">七</span></h3>
+            <div class="signal"><strong>识别信号：</strong>扇形统计图与频数、频率、圆心角之间的换算。</div>
+            <div class="method">已知总数和百分比可求频数；已知频数可求百分比和圆心角。</div>
+            <div class="example">例：总数 200，某部分占 25%，则该部分频数为 50，圆心角为 $90^\circ$。</div>
+          </div>
+          <div class="model-card">
+            <h3>模型三：放回与不放回概率 <span class="tag-9">九</span></h3>
+            <div class="signal"><strong>识别信号：</strong>摸球、抽卡片等试验中明确"放回"或"不放回"。</div>
+            <div class="method">放回：每次总数相同；不放回：总数递减。用列表法或树状图列举所有等可能结果。</div>
+            <div class="example">例：袋中两红一白，不放回摸两球，树状图第一层 3 种，第二层 2 种，共 6 种等可能。</div>
+            <div class="pitfall">⚠️ 区分"先红后白"与"一红一白"是否算同一结果。</div>
+          </div>
+          <div class="model-card">
+            <h3>模型四：游戏公平性判断 <span class="tag-9">九</span></h3>
+            <div class="signal"><strong>识别信号：</strong>游戏规则是否公平、如何修改规则。</div>
+            <div class="method">计算各方获胜概率，相等则公平，否则不公平。</div>
+            <div class="example">例：掷骰子点数大于 3 甲赢（$P=\frac{1}{2}$），小于 3 乙赢（$P=\frac{1}{3}$），不公平。</div>
+          </div>
+          <div class="model-card">
+            <h3>模型五：用样本估计总体 <span class="tag-8">八</span><span class="tag-9">九</span></h3>
+            <div class="signal"><strong>识别信号：</strong>由样本数据估计总体数量、总体特征或总体比例。</div>
+            <div class="method">用样本平均数估计总体平均数；用样本频率估计总体比例；注意样本的代表性和容量。</div>
+            <div class="example">例：抽取 100 名学生中有 20 人喜欢篮球，估计全校 1000 名学生中约有 200 人喜欢篮球。</div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- 板块五：数学建模与考试策略 -->
+    <section class="section" id="sec5">
+      <h1>板块五 · 数学建模与考试策略</h1>
+
+      <details class="module" open>
+        <summary>🧠 数学建模思想</summary>
+        <div class="content">
+          <div class="thought-box">
+            <strong>数学建模：</strong>把现实世界中的实际问题抽象为数学问题，用数学语言（方程、函数、不等式、统计量等）描述，求解后再回归实际意义进行解释。
+          </div>
+          <div class="network">
+            <h3>初中常见数学模型</h3>
+            <div class="network-grid">
+              <div class="network-node">
+                <div class="title">方程模型 <span class="tag-7">七</span><span class="tag-9">九</span></div>
+                <div class="desc">行程问题、工程问题、利润问题、增长率问题、配套问题</div>
+              </div>
+              <div class="network-node">
+                <div class="title">函数模型 <span class="tag-8">八</span><span class="tag-9">九</span></div>
+                <div class="desc">最大利润、最低费用、最优方案、运动轨迹</div>
+              </div>
+              <div class="network-node">
+                <div class="title">不等式模型 <span class="tag-7">七</span></div>
+                <div class="desc">方案选择、至少/至多、范围限制</div>
+              </div>
+              <div class="network-node">
+                <div class="title">统计模型 <span class="tag-8">八</span><span class="tag-9">九</span></div>
+                <div class="desc">用样本估计总体、用频率估计概率、数据分析决策</div>
+              </div>
+              <div class="network-node">
+                <div class="title">几何模型 <span class="tag-mixed">综合</span></div>
+                <div class="desc">测量高度、最短路径、旋转折叠、相似测距</div>
+              </div>
+              <div class="network-node">
+                <div class="title">存在性模型 <span class="tag-ext">拓展</span></div>
+                <div class="desc">是否存在某点使图形为特殊形状（直角、等腰、平行四边形等）</div>
+              </div>
+            </div>
+          </div>
+          <div class="model-card">
+            <h3>建模五步法</h3>
+            <div class="method"><strong>审</strong>：读懂题意，找出已知量和未知量</div>
+            <div class="method"><strong>设</strong>：合理设未知数或变量</div>
+            <div class="method"><strong>建</strong>：根据等量/不等量关系建立数学模型</div>
+            <div class="method"><strong>解</strong>：求解数学问题</div>
+            <div class="method"><strong>验</strong>：检验解是否符合实际意义，作答</div>
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>📝 考试策略与审题方法</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card">
+              <div class="name">审题三读</div>
+              <p>第一遍通读，了解大意；第二遍细读，圈画关键词（"至少""不超过""整数""整数解"）；第三遍对照，检查条件是否用完。</p>
+            </div>
+            <div class="concept-card">
+              <div class="name">时间分配</div>
+              <p>选择题、填空题控制在 30–40 分钟；压轴题留 20–30 分钟；简单题"一遍对"，中档题"稳准快"，压轴题"能拿分就拿"。</p>
+            </div>
+            <div class="concept-card">
+              <div class="name">检查重点</div>
+              <p>分式方程验根、不等式变号、二次根式有意义的条件、函数定义域、几何分类讨论是否遗漏、计算符号。</p>
+            </div>
+            <div class="concept-card">
+              <div class="name">压轴题策略</div>
+              <p>第一问通常可拿；第二问用第一问结论；第三问尽量写步骤分。不会时也要写出相关公式和可能思路。</p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>❌ 初中数学十大高频错误源</summary>
+        <div class="content">
+          <table class="signal-table">
+            <tr><th>序号</th><th>错误源</th><th>正确做法</th></tr>
+            <tr><td>1</td><td>$\sqrt{a^2}=a$</td><td>$\sqrt{a^2}=|a|$</td></tr>
+            <tr><td>2</td><td>不等式两边乘负数不变号</td><td>必须改变不等号方向</td></tr>
+            <tr><td>3</td><td>分式方程不验根</td><td>解后代入最简公分母检验</td></tr>
+            <tr><td>4</td><td>二次函数顶点当作区间最值</td><td>先判断对称轴是否在区间内</td></tr>
+            <tr><td>5</td><td>反比例函数跨象限说增减</td><td>必须强调"在每个象限内"</td></tr>
+            <tr><td>6</td><td>相似三角形面积比=相似比</td><td>面积比=相似比的平方</td></tr>
+            <tr><td>7</td><td>等腰三角形不分类</td><td>边或角不确定时分类讨论</td></tr>
+            <tr><td>8</td><td>圆中弦位置不考虑两种情况</td><td>弦可能在圆心同侧或异侧</td></tr>
+            <tr><td>9</td><td>概率列举遗漏或重复</td><td>列表法/树状图，确保等可能</td></tr>
+            <tr><td>10</td><td>实际问题忽略定义域</td><td>注意正数、整数、范围限制</td></tr>
+          </table>
+        </div>
+      </details>
+    </section>
+
+    <!-- 附录 -->
+    <section class="section" id="appendix">
+      <h1>附录 · 核心思想与压轴模型总览</h1>
+
+      <details class="module" open>
+        <summary>🎯 初中数学六大思想方法</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="concept-card">
+              <div class="name">数形结合</div>
+              <p>数轴、坐标系、函数图象、几何图形与代数表达式的相互转化。适用于绝对值、不等式、函数、几何计算。</p>
+            </div>
+            <div class="concept-card">
+              <div class="name">分类讨论</div>
+              <p>绝对值、等腰三角形、圆中弦、相似对应关系、含参问题中按图形位置或参数范围分类。</p>
+            </div>
+            <div class="concept-card">
+              <div class="name">转化与化归</div>
+              <p>复杂→简单、未知→已知、几何→代数、分式→整式、多元→少元。</p>
+            </div>
+            <div class="concept-card">
+              <div class="name">函数与方程思想</div>
+              <p>用方程刻画等量关系，用函数研究变化规律和最值。</p>
+            </div>
+            <div class="concept-card">
+              <div class="name">整体思想</div>
+              <p>整体代入、换元、韦达定理应用，避免单独求每个未知数。</p>
+            </div>
+            <div class="concept-card">
+              <div class="name">统计思想</div>
+              <p>用样本估计总体、用频率估计概率、用数据描述和推断现实世界。</p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>🔥 中考高频压轴模型速查</summary>
+        <div class="content">
+          <div class="formula-card"><strong>将军饮马</strong><p>作对称点，化折线为直线，求最短路径。常与一次函数、勾股定理结合。</p></div>
+          <div class="formula-card"><strong>胡不归问题</strong><p>$PA+k\cdot PB$ 型最值（$0<k<1$），通过三角函数构造垂线段转化。</p></div>
+          <div class="formula-card"><strong>阿氏圆</strong><p>到两定点距离比为定值的点的轨迹是圆；利用相似转化线段比求最值。</p></div>
+          <div class="formula-card"><strong>手拉手模型</strong><p>共顶点等腰三角形旋转，证全等或相似，得边相等、角相等。</p></div>
+          <div class="formula-card"><strong>一线三等角</strong><p>一条直线上三个等角，构造相似或全等。常见于矩形、正方形背景。</p></div>
+          <div class="formula-card"><strong>半角模型</strong><p>正方形（或等腰直角三角形）中 $45^\circ$ 夹半角，旋转构造全等。</p></div>
+          <div class="formula-card"><strong>中点四大用法</strong><p>中位线、倍长中线、直角三角形斜边中线、等腰三线合一。</p></div>
+          <div class="formula-card"><strong>圆中辅助线</strong><p>遇切线连半径；见直径想直角；垂径定理构造 Rt△；圆内接四边形对角互补。</p></div>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary>📋 考前必查清单</summary>
+        <div class="content">
+          <ul class="plain">
+            <li><strong>代数：</strong>乘法公式、因式分解、二次根式化简、一元二次方程求根与韦达定理</li>
+            <li><strong>函数：</strong>一次/反比例/二次函数图象性质、待定系数法、区间最值、函数与方程关系</li>
+            <li><strong>几何：</strong>三角形全等相似、特殊四边形判定、勾股定理、圆的性质、三角函数</li>
+            <li><strong>统计概率：</strong>平均数中位数众数方差、频率概率计算、列举法（放回/不放回）</li>
+            <li><strong>思想方法：</strong>数形结合、分类讨论、转化化归、函数方程思想、整体思想</li>
+            <li><strong>易错点：</strong>绝对值/根式非负性、不等式变号、分式增根、相似面积比、二次函数区间最值</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <script defer src="katex/katex.min.js"></script>
+  <script defer src="katex/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "$", right: "$", display: false}
+        ],
+        throwOnError: false
+      });
+
+      const toggle = document.getElementById("theme-toggle");
+      if (toggle) {
+        toggle.addEventListener("click", function () {
+          const html = document.documentElement;
+          if (html.getAttribute("data-theme") === "dark") {
+            html.setAttribute("data-theme", "light");
+            toggle.textContent = "🌙 暗色模式";
+          } else {
+            html.setAttribute("data-theme", "dark");
+            toggle.textContent = "☀️ 亮色模式";
+          }
+        });
+      }
+
+      const links = document.querySelectorAll("#sidebar nav a");
+      const sections = document.querySelectorAll(".section");
+      function onScroll() {
+        let current = "";
+        sections.forEach(sec => {
+          const rect = sec.getBoundingClientRect();
+          if (rect.top <= 120) current = sec.id;
+        });
+        links.forEach(link => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === "#" + current) link.classList.add("active");
+        });
+      }
+      window.addEventListener("scroll", onScroll);
+      onScroll();
+    });
+  </script>
+</body>
+</html>

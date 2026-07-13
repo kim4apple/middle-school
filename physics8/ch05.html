@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第5章 透镜及其应用 — 八年级物理</title>
+<link rel="stylesheet" href="css/physics.css">
+<link rel="stylesheet" href="../katex/katex.min.css">
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">八年级物理</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;" title="隐藏侧栏">✕</button>
+  </div>
+  <nav>
+    <a href="index.html">🏠 首页</a>
+    <a href="ch01.html">第1章 机械运动</a>
+    <a href="ch02.html">第2章 声现象</a>
+    <a href="ch03.html">第3章 物态变化</a>
+    <a href="ch04.html">第4章 光现象</a>
+    <a href="ch05.html" class="active">第5章 透镜及其应用</a>
+    <a href="ch06.html">第6章 质量与密度</a>
+    <a href="ch07.html">第7章 力</a>
+    <a href="ch08.html">第8章 运动和力</a>
+    <a href="ch09.html">第9章 压强</a>
+    <a href="ch10.html">第10章 浮力</a>
+    <a href="ch11.html">第11章 功和机械能</a>
+    <a href="ch12.html">第12章 简单机械</a>
+    <a href="appendix.html">附录</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button id="theme-toggle" class="theme-toggle" style="margin-top:10px;">🌙 暗色模式</button>
+</nav>
+<main id="content">
+
+<section class="chapter">
+<h1>第5章 透镜及其应用</h1>
+
+<div class="learning-goals">
+<strong>📖 学习目标</strong>
+<p>① 能区分凸透镜和凹透镜，知道它们对光线的作用 ② 理解焦点、焦距的概念，能画出三条特殊光线 ③ 掌握凸透镜成像规律（物距与成像的关系） ④ 了解照相机、投影仪、放大镜的成像原理 ⑤ 了解眼睛的成像原理及近视眼/远视眼的矫正 ⑥ 了解显微镜和望远镜的基本结构</p>
+</div>
+
+<div class="knowledge-link">
+<strong>🔗 知识衔接</strong>
+上一章学习了光的折射——光从一种介质进入另一种介质时传播方向发生偏折。透镜正是利用光的折射原理工作的：凸透镜使光线向中间会聚，凹透镜使光线向四周发散。本章将深入探讨透镜如何成像以及成像规律在实际生活中的应用。
+</div>
+
+<div class="thought-method">
+<strong>💡 思维方法：分类讨论法</strong>
+凸透镜成像规律复杂多变，需要按<strong>物距 \(u\)</strong> 的大小分情况讨论：\(u > 2f\)、\(u = 2f\)、\(f < u < 2f\)、\(u = f\)、\(u < f\) 五种情况。每种情况对应不同的像距、像的性质（大小/正倒/虚实）和应用。掌握分类讨论法，就能系统完整地分析透镜成像问题。
+</div>
+
+<details class="module" open>
+<summary>🧠 思维导图</summary>
+<div class="content">
+<div class="mindmap">
+  <ul>
+    <li><span class="node-label">透镜及其应用</span>
+      <ul>
+        <li><span class="node-label">透镜分类</span>
+          <ul>
+            <li>凸透镜 <span class="node-desc">中间厚、边缘薄 → 会聚光线</span></li>
+            <li>凹透镜 <span class="node-desc">中间薄、边缘厚 → 发散光线</span></li>
+            <li>主光轴 / 光心 O / 焦点 F / 焦距 f</li>
+            <li>三条特殊光线 <span class="node-desc">平行过焦点 / 过光心不变 / 过焦点平行</span></li>
+          </ul>
+        </li>
+        <li><span class="node-label">凸透镜成像规律</span>
+          <ul>
+            <li>\(u > 2f\) <span class="node-desc">倒立缩小实像，\(f<v<2f\) → 照相机</span></li>
+            <li>\(u = 2f\) <span class="node-desc">倒立等大实像，\(v=2f\)</span></li>
+            <li>\(f < u < 2f\) <span class="node-desc">倒立放大实像，\(v>2f\) → 投影仪</span></li>
+            <li>\(u = f\) <span class="node-desc">不成像（平行光出射）</span></li>
+            <li>\(u < f\) <span class="node-desc">正立放大虚像 → 放大镜</span></li>
+          </ul>
+        </li>
+        <li><span class="node-label">生活中的应用</span>
+          <ul>
+            <li>照相机 <span class="node-desc">\(u > 2f\)，成倒立缩小实像</span></li>
+            <li>投影仪 <span class="node-desc">\(f < u < 2f\)，成倒立放大实像</span></li>
+            <li>放大镜 <span class="node-desc">\(u < f\)，成正立放大虚像</span></li>
+          </ul>
+        </li>
+        <li><span class="node-label">眼睛与眼镜</span>
+          <ul>
+            <li>晶状体 = 凸透镜，视网膜 = 光屏</li>
+            <li>近视眼 <span class="node-desc">像成在视网膜前 → 凹透镜矫正</span></li>
+            <li>远视眼 <span class="node-desc">像成在视网膜后 → 凸透镜矫正</span></li>
+            <li>度数 \(D = \frac{100}{f}\)（\(f\) 单位米）</li>
+          </ul>
+        </li>
+        <li><span class="node-label">光学仪器</span>
+          <ul>
+            <li>显微镜 <span class="node-desc">物镜+目镜，两次放大</span></li>
+            <li>望远镜 <span class="node-desc">物镜+目镜，拉近视角</span></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>📦 核心概念</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">🔍 凸透镜</div>
+    <p>中间<strong>厚</strong>、边缘<strong>薄</strong>的透镜。对光线有<strong>会聚</strong>作用。<br>平行于主光轴的光通过凸透镜后，会聚于主光轴上的一点——<strong>焦点 F</strong>。<br>焦点到光心的距离——<strong>焦距 f</strong>。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">🔍 凹透镜</div>
+    <p>中间<strong>薄</strong>、边缘<strong>厚</strong>的透镜。对光线有<strong>发散</strong>作用。<br>平行于主光轴的光通过凹透镜后发散，其反向延长线交于主光轴上的一点——<strong>虚焦点 F</strong>。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">📐 三条特殊光线（凸透镜）</div>
+    <p>① 平行于主光轴 → 过焦点 \(F\)<br>② 过光心 \(O\) → 传播方向不变<br>③ 过焦点 \(F\) → 平行于主光轴</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">📸 照相机原理</div>
+    <p>物距 \(u > 2f\)：成<strong>倒立、缩小、实像</strong>，像距 \(f < v < 2f\)。<br>镜头 = 凸透镜，胶片/CMOS = 光屏。<br>调焦 = 调整镜头到胶片的距离（像距）。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">📽️ 投影仪原理</div>
+    <p>物距 \(f < u < 2f\)：成<strong>倒立、放大、实像</strong>，像距 \(v > 2f\)。<br>投影片倒插 → 屏幕上成正立的像。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">🔎 放大镜原理</div>
+    <p>物距 \(u < f\)（物体在焦点以内）：成<strong>正立、放大、虚像</strong>。<br>像与物在透镜同侧。物体离焦点越近，像越大。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">👁️ 眼睛与矫正</div>
+    <p>晶状体和角膜 = 凸透镜，视网膜 = 光屏。<br><strong>近视眼</strong>：像成在视网膜<strong>前</strong>（晶状体太厚）→ 戴<strong>凹</strong>透镜<br><strong>远视眼</strong>：像成在视网膜<strong>后</strong>（晶状体太薄）→ 戴<strong>凸</strong>透镜</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">🔬 显微镜 vs 望远镜</div>
+    <p><strong>显微镜</strong>：物镜（短焦距，成放大实像）+ 目镜（放大虚像），两次放大<br><strong>望远镜</strong>：物镜（长焦距，成缩小实像）+ 目镜（放大虚像），拉近视角</p>
+  </div>
+</div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>📐 公式速查</summary>
+<div class="content">
+  <div class="formula-card">
+    <strong>凸透镜成像规律全表</strong>
+  </div>
+  <div class="formula-card" style="overflow-x:auto;padding:0;border-left:none;background:transparent">
+    <table style="width:100%;border-collapse:collapse;font-size:13px">
+      <thead>
+        <tr style="background:var(--accent);color:#fff">
+          <th style="padding:8px 10px;text-align:center">物距 \(u\)</th>
+          <th style="padding:8px 10px;text-align:center">像距 \(v\)</th>
+          <th style="padding:8px 10px;text-align:center">正倒</th>
+          <th style="padding:8px 10px;text-align:center">大小</th>
+          <th style="padding:8px 10px;text-align:center">虚实</th>
+          <th style="padding:8px 10px;text-align:center">应用</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--border)">
+          <td style="padding:6px 10px;text-align:center">\(u > 2f\)</td>
+          <td style="padding:6px 10px;text-align:center">\(f < v < 2f\)</td>
+          <td style="padding:6px 10px;text-align:center">倒立</td>
+          <td style="padding:6px 10px;text-align:center">缩小</td>
+          <td style="padding:6px 10px;text-align:center;">实像</td>
+          <td style="padding:6px 10px;text-align:center">照相机</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border)">
+          <td style="padding:6px 10px;text-align:center">\(u = 2f\)</td>
+          <td style="padding:6px 10px;text-align:center">\(v = 2f\)</td>
+          <td style="padding:6px 10px;text-align:center">倒立</td>
+          <td style="padding:6px 10px;text-align:center">等大</td>
+          <td style="padding:6px 10px;text-align:center;">实像</td>
+          <td style="padding:6px 10px;text-align:center">测焦距</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border)">
+          <td style="padding:6px 10px;text-align:center">\(f < u < 2f\)</td>
+          <td style="padding:6px 10px;text-align:center">\(v > 2f\)</td>
+          <td style="padding:6px 10px;text-align:center">倒立</td>
+          <td style="padding:6px 10px;text-align:center">放大</td>
+          <td style="padding:6px 10px;text-align:center;">实像</td>
+          <td style="padding:6px 10px;text-align:center">投影仪</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border)">
+          <td style="padding:6px 10px;text-align:center">\(u = f\)</td>
+          <td style="padding:6px 10px;text-align:center">—</td>
+          <td style="padding:6px 10px;text-align:center">—</td>
+          <td style="padding:6px 10px;text-align:center">—</td>
+          <td style="padding:6px 10px;text-align:center;">不成像</td>
+          <td style="padding:6px 10px;text-align:center">平行光源</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 10px;text-align:center">\(u < f\)</td>
+          <td style="padding:6px 10px;text-align:center">\(v > u\)</td>
+          <td style="padding:6px 10px;text-align:center">正立</td>
+          <td style="padding:6px 10px;text-align:center">放大</td>
+          <td style="padding:6px 10px;text-align:center;">虚像</td>
+          <td style="padding:6px 10px;text-align:center">放大镜</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="formula-card">
+    <strong>记忆口诀：</strong>一倍焦距分虚实，二倍焦距分大小；物近像远像变大，物远像近像变小。
+  </div>
+  <div class="formula-card">
+    \(\textbf{眼镜度数}\) &nbsp; \( D = \frac{100}{f} \)（\(f\) 的单位为米）<br>
+    凸透镜（远视镜）度数为正，凹透镜（近视镜）度数为负。
+  </div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>🔬 实验探究</summary>
+<div class="content">
+
+<div class="experiment-card">
+<h3>🕯️ 探究凸透镜成像的规律</h3>
+<div class="exp-step">
+  <span class="exp-step-num">1</span>
+  <span><strong>准备器材：</strong>光具座（带刻度尺）、凸透镜（\(f = 10\,\text{cm}\)）、光屏、蜡烛、火柴</span>
+</div>
+<div class="exp-step">
+  <span class="exp-step-num">2</span>
+  <span><strong>调节共轴：</strong>将蜡烛、凸透镜、光屏依次摆在光具座上，使三者的中心大致在同一高度（共线）</span>
+</div>
+<div class="exp-step">
+  <span class="exp-step-num">3</span>
+  <span><strong>测焦距：</strong>将凸透镜正对太阳光（或平行光源），在另一侧移动光屏直到出现最小最亮的光斑，测出光斑到透镜的距离即焦距 \(f\)</span>
+</div>
+<div class="exp-step">
+  <span class="exp-step-num">4</span>
+  <span><strong>实验操作：</strong>改变蜡烛到透镜的距离（物距 \(u\)），移动光屏直到像清晰，记录物距、像距和像的性质（大小、正倒、虚实）</span>
+</div>
+<div class="exp-step">
+  <span class="exp-step-num">5</span>
+  <span><strong>数据记录：</strong>分别取 \(u > 2f\)、\(u = 2f\)、\(f < u < 2f\)、\(u < f\) 四种情况，重复实验验证规律</span>
+</div>
+<div class="exp-principle">
+<strong>📌 实验原理：</strong>凸透镜对光线有会聚作用，不同物距下折射像距不同，形成不同类型的像。物距 \(u\) 是决定成像性质的关键因素。
+</div>
+<div class="exp-tip">
+⚠️ <strong>注意事项：</strong>① 蜡烛、透镜、光屏三者中心要等高 ② 光屏上像清晰后才读数 ③ 用遮光板挡住透镜上半部分，像仍然完整但变暗 ④ 蜡烛燃烧变短后，像会向上移动
+</div>
+</div>
+
+</div>
+</details>
+
+<details class="module" open>
+<summary>✏️ 解题技巧</summary>
+<div class="content">
+
+<div class="technique-card">
+<h3><span class="step-num">1</span> 三条特殊光线作图</h3>
+<div class="method">方法：从物体顶端发出三条特殊光线，交点即像点位置</div>
+<div class="example">物体 AB 位于凸透镜二倍焦距之外（\(u > 2f\)）：<br>
+① 从 B 点作平行于主光轴的光线 → 经过焦点 F<br>
+② 从 B 点作过光心 O 的光线 → 方向不变<br>
+③ 两条光线交点 B' 即 B 的像点<br>
+④ 过 B' 向主光轴作垂线得 A'B'（倒立缩小实像）</div>
+<div class="pitfall">⚠️ 只需画两条特殊光线即可确定像点（第三条用于检验）。记住实像用实线，虚像用虚线。</div>
+<div class="principle">💡 原理：透镜成像的本质是光的折射。三条特殊光线利用对称性简化作图。</div>
+<div class="exam-hint">📌 中考常考：给出透镜和物距范围，要求用三条特殊光线画出像的位置和性质</div>
+</div>
+
+<div class="technique-card">
+<h3><span class="step-num">2</span> 成像规律应用</h3>
+<div class="method">方法："物近像远像变大" + 一倍焦距分虚实</div>
+<div class="example">用照相机照相时，若想使照片上的人像更大，应如何操作？<br>
+→ 人（物体）靠近相机，同时将镜头向外伸（增大像距）。<br>
+原理：物距减小 → 像距增大 → 像变大。</div>
+<div class="pitfall">⚠️ 虚像和实像的关键区别：实像可以在光屏上承接，虚像不能。实像是实际光线会聚而成，虚像是光线反向延长线会聚而成。</div>
+<div class="principle">💡 原理：凸透镜成像规律——物距决定像距和像的性质</div>
+<div class="exam-hint">📌 中考常考：给出应用场景问成像性质，或给出像的情况判断物距范围</div>
+</div>
+
+<div class="technique-card">
+<h3><span class="step-num">3</span> 近视眼与远视眼判断</h3>
+<div class="method">方法：看像的位置——像在视网膜前是近视，在视网膜后是远视</div>
+<div class="example">小明看远处的物体模糊，近处的物体清晰。他是什么眼？应戴什么眼镜？<br>
+→ 近视眼（远处物体像成在视网膜前）→ 戴凹透镜（发散光线，使像后移到视网膜上）</div>
+<div class="pitfall">⚠️ 注意：近视镜是凹透镜（度数负），远视镜是凸透镜（度数正）。度数计算 \(D = 100/f\)，\(f\) 单位 m。</div>
+<div class="principle">💡 原理：近视眼晶状体曲度过大（太厚）→ 折光能力过强；远视眼晶状体曲度过小（太薄）→ 折光能力过弱。</div>
+<div class="exam-hint">📌 中考常考：给出视力症状判断眼病类型和矫正方法，或计算眼镜度数</div>
+</div>
+
+</div>
+</details>
+
+<details class="exam-module" open>
+<summary>📝 中考真题</summary>
+<div class="content">
+
+<div class="exam-q">
+  <span class="q-tag">2022 武汉</span>
+  <strong>1.</strong>
+  <div class="q-body">如图所示，平行于主光轴的光线经过凸透镜后会聚于焦点。请画出图中三条入射光线经凸透镜后的折射光线，并标出焦点 F 的位置。</div>
+  <div class="diagram">
+    <svg viewBox="0 0 360 180" width="360" height="180">
+      <line x1="180" y1="80" x2="180" y2="20" stroke="#333" stroke-width="1" stroke-dasharray="4,2"/>
+      <text x="182" y="18" font-size="11" fill="#333">主光轴</text>
+      <path d="M 260,40 Q 270,80 260,120" stroke="#555" stroke-width="2.5" fill="none"/>
+      <path d="M 100,40 Q 110,80 100,120" stroke="#555" stroke-width="2.5" fill="none"/>
+      <line x1="100" y1="80" x2="260" y2="80" stroke="#888" stroke-width="1"/>
+      <text x="170" y="132" font-size="12" fill="#888">凸透镜</text>
+      <text x="164" y="78" font-size="10" fill="#888">O</text>
+      <line x1="50" y1="30" x2="100" y2="30" stroke="#2563eb" stroke-width="2"/>
+      <polygon points="95,32 100,30 95,28" fill="#2563eb"/>
+      <text x="30" y="28" font-size="12" fill="#2563eb">①</text>
+      <line x1="50" y1="55" x2="100" y2="55" stroke="#2563eb" stroke-width="2"/>
+      <polygon points="95,57 100,55 95,53" fill="#2563eb"/>
+      <text x="30" y="53" font-size="12" fill="#2563eb">②</text>
+      <line x1="50" y1="80" x2="100" y2="80" stroke="#2563eb" stroke-width="2"/>
+      <polygon points="95,82 100,80 95,78" fill="#2563eb"/>
+      <text x="30" y="78" font-size="12" fill="#2563eb">③</text>
+      <line x1="260" y1="30" x2="320" y2="30" stroke="#dc2626" stroke-width="2"/>
+      <polygon points="315,32 320,30 315,28" fill="#dc2626"/>
+      <line x1="260" y1="55" x2="310" y2="80" stroke="#dc2626" stroke-width="2"/>
+      <polygon points="305,78 310,80 306,76" fill="#dc2626"/>
+      <line x1="260" y1="80" x2="320" y2="80" stroke="#dc2626" stroke-width="2"/>
+      <polygon points="315,82 320,80 315,78" fill="#dc2626"/>
+      <line x1="320" y1="80" x2="320" y2="20" stroke="#333" stroke-width="1" stroke-dasharray="3,2"/>
+      <circle cx="320" cy="80" r="3" fill="#dc2626"/>
+      <text x="322" y="96" font-size="12" fill="#dc2626" font-weight="600">F</text>
+    </svg>
+  </div>
+  <div class="q-solution">
+    <strong>答案：</strong>① 平行于主光轴 → 过焦点 F；② 过光心 O → 方向不变；③ 过焦点 F → 平行于主光轴。折射光线分别如图中红色箭头所示。
+  </div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag">2023 深圳</span>
+  <strong>2.</strong>
+  <div class="q-body">如图所示，凸透镜焦距 \(f = 10\,\text{cm}\)，物体 AB 高 4 cm，放在距透镜 25 cm 处。① 请画出像 A'B' 的位置和方向；② 判断像的性质；③ 求出像距和像高。</div>
+  <div class="diagram">
+    <svg viewBox="0 0 360 200" width="360" height="200">
+      <line x1="20" y1="100" x2="340" y2="100" stroke="#333" stroke-width="1.5"/>
+      <text x="338" y="97" font-size="11" fill="#333">主光轴</text>
+      <path d="M 240,60 Q 250,100 240,140" stroke="#555" stroke-width="3" fill="none"/>
+      <path d="M 120,60 Q 130,100 120,140" stroke="#555" stroke-width="3" fill="none"/>
+      <text x="168" y="152" font-size="12" fill="#888">凸透镜</text>
+      <line x1="80" y1="100" x2="80" y2="64" stroke="#4f46e5" stroke-width="3"/>
+      <polygon points="80,60 76,68 84,68" fill="#4f46e5"/>
+      <text x="84" y="58" font-size="12" fill="#4f46e5" font-weight="600">A</text>
+      <text x="82" y="116" font-size="11" fill="#4f46e5">B</text>
+      <text x="74" y="118" font-size="10" fill="#888">物高 4 cm</text>
+      <circle cx="240" cy="100" r="3" fill="#dc2626"/>
+      <text x="234" y="94" font-size="11" fill="#dc2626">F</text>
+      <circle cx="120" cy="100" r="3" fill="#dc2626"/>
+      <text x="120" y="116" font-size="11" fill="#dc2626">F'</text>
+      <text x="100" y="92" font-size="10" fill="#888">u=25 cm</text>
+      <line x1="80" y1="64" x2="240" y2="64" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4,2"/>
+      <line x1="80" y1="64" x2="120" y2="100" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4,2"/>
+      <line x1="120" y1="100" x2="310" y2="54" stroke="#2563eb" stroke-width="1.5"/>
+      <polygon points="305,56 310,54 306,52" fill="#2563eb"/>
+      <line x1="240" y1="100" x2="310" y2="64" stroke="#2563eb" stroke-width="1.5"/>
+      <polygon points="306,66 310,64 305,62" fill="#2563eb"/>
+      <line x1="310" y1="100" x2="310" y2="54" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="5,2"/>
+      <polygon points="310,50 306,58 314,58" fill="#dc2626"/>
+      <text x="314" y="48" font-size="12" fill="#dc2626" font-weight="600">A'</text>
+      <text x="312" y="114" font-size="11" fill="#dc2626">B'</text>
+      <line x1="80" y1="100" x2="310" y2="100" stroke="#888" stroke-width="1" stroke-dasharray="6,3"/>
+    </svg>
+  </div>
+  <div class="q-solution">
+    <strong>答案：</strong>① 如图红色箭头 A'B' 所示。② \(u = 25\,\text{cm} > 2f\)，成倒立缩小实像。③ 由 \(1/u + 1/v = 1/f\) 得 \(v = uf/(u-f) = 25 \times 10 / 15 \approx 16.7\,\text{cm}\)；像高 \(h' = h \cdot v/u = 4 \times 16.7/25 \approx 2.67\,\text{cm}\)。
+  </div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag">2022 成都</span>
+  <strong>3.</strong>
+  <div class="q-body">小华用焦距为 10 cm 的凸透镜做"探究凸透镜成像规律"实验。当她将蜡烛置于距透镜 8 cm 处时，移动光屏____（选填"能"或"不能"）承接到像。此时透过透镜可看到蜡烛____立、____的____像，这相当于____（选填"照相机""投影仪"或"放大镜"）的原理。</div>
+  <div class="diagram">
+    <svg viewBox="0 0 300 140" width="300" height="140">
+      <rect x="20" y="60" width="22" height="30" rx="2" fill="#f59e0b" opacity="0.8"/>
+      <polygon points="42,70 48,75 42,80" fill="#f59e0b"/>
+      <text x="18" y="54" font-size="11" fill="#f59e0b">蜡烛</text>
+      <path d="M 140,50 Q 150,70 140,90" stroke="#555" stroke-width="3" fill="none"/>
+      <path d="M 80,50 Q 90,70 80,90" stroke="#555" stroke-width="3" fill="none"/>
+      <text x="108" y="100" font-size="11" fill="#888">f=10 cm</text>
+      <rect x="230" y="55" width="40" height="40" rx="3" fill="#e2e8f0" stroke="#888" stroke-width="1"/>
+      <text x="236" y="78" font-size="10" fill="#666">光屏</text>
+      <line x1="20" y1="130" x2="280" y2="130" stroke="#bbb" stroke-width="1"/>
+      <text x="48" y="126" font-size="10" fill="#888">u=8 cm</text>
+      <circle cx="140" cy="70" r="2" fill="#dc2626"/>
+      <text x="134" y="66" font-size="10" fill="#dc2626">F</text>
+      <circle cx="80" cy="70" r="2" fill="#dc2626"/>
+      <text x="74" y="66" font-size="10" fill="#dc2626">F'</text>
+    </svg>
+  </div>
+  <div class="q-solution">
+    <strong>答案：</strong>不能；正、放大、虚、放大镜。\(u = 8\,\text{cm} < f = 10\,\text{cm}\)，成虚像，虚像不能呈现在光屏上，只能透过透镜观察。
+  </div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag">2021 济南</span>
+  <strong>4.</strong>
+  <div class="q-body">某同学患了近视眼，请画出近视眼的成像光路示意图，并说明应采用什么透镜矫正。</div>
+  <div class="diagram">
+    <svg viewBox="0 0 320 160" width="320" height="160">
+      <circle cx="160" cy="80" r="50" fill="none" stroke="#888" stroke-width="1.5"/>
+      <ellipse cx="120" cy="80" rx="25" ry="28" fill="none" stroke="#4f46e5" stroke-width="2"/>
+      <text x="104" y="78" font-size="11" fill="#4f46e5">晶状体</text>
+      <path d="M 205,80 Q 230,60 250,80 Q 230,100 205,80" fill="none" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+      <text x="242" y="76" font-size="10" fill="#888">视网膜</text>
+      <line x1="20" y1="30" x2="120" y2="70" stroke="#2563eb" stroke-width="1.5"/>
+      <polygon points="114,66 120,70 116,73" fill="#2563eb"/>
+      <line x1="20" y1="80" x2="120" y2="80" stroke="#2563eb" stroke-width="1.5"/>
+      <polygon points="115,82 120,80 115,78" fill="#2563eb"/>
+      <line x1="20" y1="130" x2="120" y2="90" stroke="#2563eb" stroke-width="1.5"/>
+      <polygon points="115,93 120,90 114,87" fill="#2563eb"/>
+      <line x1="120" y1="70" x2="185" y2="72" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,2"/>
+      <polygon points="180,73 185,72 180,71" fill="#dc2626"/>
+      <line x1="120" y1="80" x2="190" y2="80" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,2"/>
+      <polygon points="185,81 190,80 185,79" fill="#dc2626"/>
+      <line x1="120" y1="90" x2="185" y2="88" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,2"/>
+      <polygon points="180,89 185,88 180,87" fill="#dc2626"/>
+      <text x="100" y="134" font-size="11" fill="#dc2626" font-weight="600">像成在视网膜前</text>
+      <text x="50" y="16" font-size="11" fill="#888">远处物体</text>
+      <text x="30" y="148" font-size="12" fill="#dc2626">→ 戴凹透镜矫正</text>
+    </svg>
+  </div>
+  <div class="q-solution">
+    <strong>答案：</strong>近视眼成像在视网膜前方（如图红色虚线与主光轴交点在前）。应戴凹透镜——凹透镜先使光线发散一些，再经晶状体会聚后正好落在视网膜上。
+  </div>
+</div>
+
+</div>
+</details>
+
+<div class="checklist">
+<h3>✅ 本章自查清单</h3>
+<label><input type="checkbox"> 我能区分凸透镜和凹透镜，知道它们对光线的作用</label>
+<label><input type="checkbox"> 我能画出凸透镜的三条特殊光线</label>
+<label><input type="checkbox"> 我能背出凸透镜成像规律的完整表格（五种情况）</label>
+<label><input type="checkbox"> 我能解释照相机、投影仪、放大镜分别对应哪种物距范围</label>
+<label><input type="checkbox"> 我能画出近视眼和远视眼的矫正光路图</label>
+<label><input type="checkbox"> 我能通过实验探究凸透镜成像规律</label>
+<label><input type="checkbox"> 我能用"物近像远像变大"判断像的变化</label>
+<label><input type="checkbox"> 我知道显微镜和望远镜的基本结构原理</label>
+</div>
+
+<div class="checklist" style="margin-top:16px">
+<h3>🔥 费曼挑战</h3>
+<p style="font-size:14px;color:var(--text-secondary);margin-bottom:10px">
+向一位五年级学生解释：<strong>"为什么老花镜（远视镜）能把字放大？为什么近视镜会把东西变小？"</strong><br>
+用日常语言说明凸透镜和凹透镜对光线的作用原理，不得使用"焦距""物距"等专业术语。
+</p>
+</div>
+
+</section>
+
+</main>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/auto-render.min.js"></script>
+<script>
+(function() {
+  var toggle = document.getElementById('theme-toggle');
+  if (toggle) {
+    var saved = localStorage.getItem('physics-theme');
+    if (saved === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      toggle.textContent = '☀️ 亮色模式';
+    }
+    toggle.addEventListener('click', function() {
+      var html = document.documentElement;
+      var isDark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      localStorage.setItem('physics-theme', isDark ? 'light' : 'dark');
+      toggle.textContent = isDark ? '🌙 暗色模式' : '☀️ 亮色模式';
+    });
+  }
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        document.querySelectorAll('#sidebar nav a').forEach(function(a) { a.classList.remove('active'); });
+        var id = entry.target.closest('section') ? entry.target.closest('section').id || '' : '';
+        var link = document.querySelector('#sidebar nav a[href$="' + (id || location.pathname.split('/').pop()) + '"]');
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  document.querySelectorAll('section[id]').forEach(function(s) { observer.observe(s); });
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof renderMathInElement === 'function') {
+      renderMathInElement(document.body, { delimiters: [{ left: '$$', right: '$$', display: true }, { left: '\\(', right: '\\)', display: false }] });
+    }
+  });
+  var sidebar = document.getElementById('sidebar');
+  var hideBtn = document.getElementById('sidebarHideBtn');
+  var sidebarHidden = localStorage.getItem('physics8-sidebar') === 'hidden';
+  if (sidebarHidden) sidebar.classList.add('hidden');
+  var showBtn = document.getElementById('sidebarShowBtn');
+  hideBtn.addEventListener('click', function() {
+    sidebar.classList.add('hidden');
+    localStorage.setItem('physics8-sidebar', 'hidden');
+  });
+  showBtn.addEventListener('click', function() {
+    sidebar.classList.remove('hidden');
+    localStorage.setItem('physics8-sidebar', '');
+  });
+  (function() {
+    var btn = document.getElementById('expandAllBtn');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      var allDetails = document.querySelectorAll('.module, .exam-module');
+      var allOpen = true;
+      for (var i = 0; i < allDetails.length; i++) {
+        if (!allDetails[i].hasAttribute('open')) { allOpen = false; break; }
+      }
+      for (var i = 0; i < allDetails.length; i++) {
+        if (allOpen) allDetails[i].removeAttribute('open');
+        else allDetails[i].setAttribute('open', '');
+      }
+      btn.textContent = allOpen ? '📂 展开全部章节' : '📖 收起全部章节';
+    });
+  })();
+  })();
+</script>
+</body>
+</html>

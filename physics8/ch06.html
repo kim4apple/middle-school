@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第6章 质量与密度 — 八年级物理</title>
+<link rel="stylesheet" href="css/physics.css">
+<link rel="stylesheet" href="../katex/katex.min.css">
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">八年级物理</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;" title="隐藏侧栏">✕</button>
+  </div>
+  <nav>
+    <a href="index.html">🏠 首页</a>
+    <a href="ch01.html">第1章 机械运动</a>
+    <a href="ch02.html">第2章 声现象</a>
+    <a href="ch03.html">第3章 物态变化</a>
+    <a href="ch04.html">第4章 光现象</a>
+    <a href="ch05.html">第5章 透镜及其应用</a>
+    <a href="ch06.html" class="active">第6章 质量与密度</a>
+    <a href="ch07.html">第7章 力</a>
+    <a href="ch08.html">第8章 运动和力</a>
+    <a href="ch09.html">第9章 压强</a>
+    <a href="ch10.html">第10章 浮力</a>
+    <a href="ch11.html">第11章 功和机械能</a>
+    <a href="ch12.html">第12章 简单机械</a>
+    <a href="appendix.html">附录</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button id="theme-toggle" class="theme-toggle" style="margin-top:10px;">🌙 暗色模式</button>
+</nav>
+<main id="content">
+
+<section class="chapter">
+<h1>第6章 质量与密度</h1>
+
+<div class="learning-goals">
+<strong>📖 学习目标</strong>
+<p>① 知道质量的概念、单位及单位换算 ② 会正确使用托盘天平测量质量 ③ 理解密度的概念、公式和单位 ④ 掌握密度公式 \(\rho = m/V\) 的应用与计算 ⑤ 学会用天平和量筒测量物质的密度 ⑥ 能运用密度知识鉴别物质、判断空心实心</p>
+</div>
+
+<div class="knowledge-link">
+<strong>🔗 知识衔接</strong>
+小学学过"物体含有物质的多少叫质量"，但那时没有严格定义。本章将给出质量的严格定义，并引入"单位体积的质量——密度"这一全新概念。密度是物质的一种特性，它将质量和体积联系起来，为我们认识物质世界提供了新的视角。上一章我们学习了透镜成像，本章将体会"比值定义法"在物理学中的广泛应用。
+</div>
+
+<div class="thought-method">
+<strong>💡 思维方法：比值定义法</strong>
+物理学中常把两个物理量的<strong>比值</strong>定义为一个新物理量，以便揭示物质的内在属性。本章的<strong>密度 \(\rho = m/V\)</strong> 就是用物体的质量与体积的比值来定义密度——它反映了物质在"单位体积"内所含质量的多少，是物质本身的特性，与物体的质量和体积无关。
+</div>
+
+<details class="module" open>
+<summary>🧠 思维导图</summary>
+<div class="content">
+<div class="mindmap">
+  <ul>
+    <li><span class="node-label">质量与密度</span>
+      <ul>
+        <li><span class="node-label">质量 \(m\)</span>
+          <ul>
+            <li>定义 <span class="node-desc">物体所含物质的多少</span></li>
+            <li>属性 <span class="node-desc">不随形状、状态、位置、温度改变</span></li>
+            <li>单位 <span class="node-desc">kg（主）、g、mg、t</span></li>
+            <li>测量 <span class="node-desc">托盘天平（左物右码）、电子秤</span></li>
+          </ul>
+        </li>
+        <li><span class="node-label">密度 \(\rho\)</span>
+          <ul>
+            <li>定义 <span class="node-desc">单位体积的质量 \(\rho = m/V\)</span></li>
+            <li>特性 <span class="node-desc">物质固有属性，与 m、V 无关</span></li>
+            <li>单位 <span class="node-desc">kg/m³（主）、g/cm³</span></li>
+            <li>换算 <span class="node-desc">1 g/cm³ = 1000 kg/m³</span></li>
+          </ul>
+        </li>
+        <li><span class="node-label">密度应用</span>
+          <ul>
+            <li>鉴别物质 <span class="node-desc">测 \(\rho\) 查密度表</span></li>
+            <li>空心实心判断 <span class="node-desc">比较 \(\rho\) 或 m 或 V</span></li>
+            <li>计算质量 <span class="node-desc">\(m = \rho V\)（不便直接称量）</span></li>
+            <li>计算体积 <span class="node-desc">\(V = m/\rho\)（不规则物体）</span></li>
+          </ul>
+        </li>
+        <li><span class="node-label">测量密度</span>
+          <ul>
+            <li>规则固体 <span class="node-desc">天平 + 刻度尺（计算体积）</span></li>
+            <li>不规则固体 <span class="node-desc">天平 + 量筒（排水法）</span></li>
+            <li>液体 <span class="node-desc">天平 + 量筒（差值法）</span></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>📦 核心概念</summary>
+<div class="content">
+<div class="card-grid">
+  <div class="concept-card">
+    <div class="name">⚖️ 质量</div>
+    <p>物体所含<strong>物质的多少</strong>叫质量，用 \(m\) 表示。<br>质量是物体的<strong>属性</strong>——不随形状、状态、位置和温度的改变而变化。<br>一杯水凝固成冰，质量不变；从地球到月球，质量也不变。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">⚖️ 质量单位</div>
+    <p>国际单位：<strong>千克（kg）</strong><br>换算：\(1\,\text{t} = 10^3\,\text{kg}\)，\(1\,\text{kg} = 10^3\,\text{g}\)，\(1\,\text{g} = 10^3\,\text{mg}\)<br>常见质量：一个鸡蛋约 50 g，中学生约 50 kg，一头大象约 5 t</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">⚖️ 托盘天平</div>
+    <p>结构：横梁、指针、分度盘、托盘、平衡螺母、游码、标尺<br>使用步骤：<strong>放→调→测→读</strong><br>① 放水平 ② 游码归零 ③ 调平衡螺母使指针指中 ④ 左物右码 ⑤ 砝码质量+游码读数</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">📊 密度</div>
+    <p>单位体积内所含物质的多少——<strong>密度 \(\rho\)</strong><br>\(\rho = \dfrac{m}{V}\)（质量与体积的比值）<br>密度是物质的<strong>特性</strong>，与质量、体积无关——同种物质密度相同，不同物质密度一般不同。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">📊 密度单位换算</div>
+    <p>国际单位：\(\text{kg/m}^3\) &nbsp; 常用单位：\(\text{g/cm}^3\)<br>\(1\,\text{g/cm}^3 = 1000\,\text{kg/m}^3\)<br>水的密度：\(\rho_{\text{水}} = 1.0 \times 10^3\,\text{kg/m}^3 = 1\,\text{g/cm}^3\)</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">🧪 排水法测体积</div>
+    <p>不规则固体放入量筒中，利用<strong>排水法</strong>测体积：<br>\(V = V_2 - V_1\)（放入后的读数减去放入前的读数）<br>注意量筒读数时视线应与<strong>凹液面最低处</strong>相平。</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">🕳️ 空心与实心</div>
+    <p>判断方法（三种）：<br>① 比较密度：\(\rho_{\text{算}} < \rho_{\text{实}}\) → 空心<br>② 比较质量：\(m_{\text{算}} > m_{\text{实}}\) → 空心<br>③ 比较体积：\(V_{\text{算}} > V_{\text{实}}\) → 空心</p>
+  </div>
+  <div class="concept-card">
+    <div class="name">🔬 鉴别物质</div>
+    <p>测出待测物的密度 \(\rho_{\text{测}}\)，查阅<strong>密度表</strong>，找到与之最接近的标准物质。<br>例如：测得某金属块 \(\rho = 2.7\,\text{g/cm}^3\) → 可能是<strong>铝</strong>（铝的密度 \(2.7\,\text{g/cm}^3\)）</p>
+  </div>
+</div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>📐 公式速查</summary>
+<div class="content">
+  <div class="formula-card">
+    <strong>密度公式</strong> &nbsp; \(\displaystyle \rho = \frac{m}{V}\) &nbsp;&nbsp;&nbsp; \(m = \rho V\) &nbsp;&nbsp;&nbsp; \(V = \frac{m}{\rho}\)
+  </div>
+  <div class="formula-card">
+    <strong>单位换算</strong> &nbsp; \(1\,\text{g/cm}^3 = 10^3\,\text{kg/m}^3\)<br>
+    水的密度 \(\rho_{\text{水}} = 1.0 \times 10^3\,\text{kg/m}^3 = 1\,\text{g/cm}^3\)<br>
+    铁的密度 \(\rho_{\text{铁}} = 7.9 \times 10^3\,\text{kg/m}^3 = 7.9\,\text{g/cm}^3\)
+  </div>
+  <div class="formula-card">
+    <strong>常用密度（单位 \(\times 10^3\,\text{kg/m}^3\)）</strong><br>
+    水 1.0 &nbsp; 酒精 0.8 &nbsp; 水银 13.6 &nbsp; 空气（标准）0.00129<br>
+    铁 7.9 &nbsp; 铜 8.9 &nbsp; 铝 2.7 &nbsp; 金 19.3 &nbsp; 银 10.5 &nbsp; 冰 0.9
+  </div>
+  <div class="formula-card">
+    <strong>质量单位换算</strong> &nbsp; \(1\,\text{kg} = 10^3\,\text{g} = 10^6\,\text{mg}\) &nbsp; \(1\,\text{t} = 10^3\,\text{kg}\)
+  </div>
+</div>
+</details>
+
+<details class="module" open>
+<summary>🔬 实验探究</summary>
+<div class="content">
+
+<div class="experiment-card">
+<h3>🧪 测量物质的密度</h3>
+<div class="exp-step">
+  <span class="exp-step-num">1</span>
+  <span><strong>准备器材：</strong>托盘天平（含砝码）、量筒、待测固体（小石块）、待测液体（盐水）、细线、烧杯</span>
+</div>
+<div class="exp-step">
+  <span class="exp-step-num">2</span>
+  <span><strong>测固体密度：</strong>① 用天平测出石块质量 \(m\) ② 量筒中倒入适量水，读数 \(V_1\) ③ 用细线系住石块，缓慢浸入水中，读数 \(V_2\) ④ \(V = V_2 - V_1\)，\(\rho = m/V\)</span>
+</div>
+<div class="exp-step">
+  <span class="exp-step-num">3</span>
+  <span><strong>测液体密度（差值法）：</strong>① 用天平测出烧杯和盐水的总质量 \(m_1\) ② 将部分盐水倒入量筒，读数 \(V\) ③ 测出剩余烧杯和盐水质量 \(m_2\) ④ \(m = m_1 - m_2\)，\(\rho = m/V\)</span>
+</div>
+<div class="exp-principle">
+<strong>📌 实验原理：</strong>\(\rho = m/V\)——用天平测质量，用量筒（或刻度尺）测体积，通过比值求得密度。固体用排水法测体积，液体用差值法减小误差。
+</div>
+<div class="exp-tip">
+⚠️ <strong>注意事项：</strong>① 天平使用前要调平（游码归零、调平衡螺母） ② 量筒读数视线与凹液面最低处相平 ③ 排水法测固体体积时固体要完全浸没 ④ 测液体密度时，先测总质量再倒出部分测剩余质量（避免倒不干净带来的误差）
+</div>
+</div>
+
+</div>
+</details>
+
+<details class="module" open>
+<summary>✏️ 解题技巧</summary>
+<div class="content">
+
+<div class="technique-card">
+<h3><span class="step-num">1</span> 天平读数与误差分析</h3>
+<div class="method">方法：砝码总质量 + 游码左侧对应刻度值</div>
+<div class="example">右盘砝码 50g + 20g + 10g = 80g，游码在标尺上对准 2.4g 刻度，则物体质量 \(m = 80 + 2.4 = 82.4\,\text{g}\)。</div>
+<div class="pitfall">⚠️ 常见错误：① 游码读成右侧值 ② 忘了游码归零就开始调平衡 ③ 物码放反（左码右物）时正确读数 = 砝码 - 游码</div>
+<div class="principle">💡 原理：天平是等臂杠杆，左盘质量 = 右盘质量 + 游码示数</div>
+<div class="exam-hint">📌 中考常考：给出天平读数和砝码组合求物体质量，或判断物码放反时的正确质量</div>
+</div>
+
+<div class="technique-card">
+<h3><span class="step-num">2</span> 密度计算——比例法</h3>
+<div class="method">方法：同种物质 \(\rho\) 不变 → \(m_1/m_2 = V_1/V_2\)</div>
+<div class="example">已知铝的密度 \(2.7\,\text{g/cm}^3\)，一块铝质量为 54 g，体积为 20 cm³。另一块同种铝质量为 81 g，求其体积。<br>
+\(\because \rho\) 相同 \(\therefore m_1/m_2 = V_1/V_2\)<br>
+\(V_2 = V_1 \times m_2/m_1 = 20 \times 81/54 = 30\,\text{cm}^3\)</div>
+<div class="pitfall">⚠️ 注意单位统一——通常体积用 cm³，质量用 g，密度单位就是 g/cm³。若用 kg/m³，体积需用 m³。</div>
+<div class="principle">💡 原理：密度是物质特性，同种物质密度相同，质量与体积成正比</div>
+<div class="exam-hint">📌 中考常考：已知部分数据，通过密度不变求另一物体的质量或体积</div>
+</div>
+
+<div class="technique-card">
+<h3><span class="step-num">3</span> 空心实心判断</h3>
+<div class="method">方法：三种比较法——比较密度、比较质量、比较体积</div>
+<div class="example">一个铜球质量 178 g，体积 30 cm³，判断是否空心。（\(\rho_{\text{铜}} = 8.9\,\text{g/cm}^3\)）<br>
+<strong>法一——比密度：</strong>\(\rho_{\text{球}} = 178/30 \approx 5.93 < 8.9\) → 空心<br>
+<strong>法二——比质量：</strong>若实心则 \(m = 8.9 \times 30 = 267 > 178\) → 空心<br>
+<strong>法三——比体积：</strong>若实心则 \(V = 178/8.9 = 20 < 30\) → 空心，空心部分体积 \(V_{\text{空}} = 30 - 20 = 10\,\text{cm}^3\)</div>
+<div class="pitfall">⚠️ 三种方法任选一种即可判断，法三还能求出空心部分的体积。最常见错误是未统一单位或忘记换算。</div>
+<div class="principle">💡 原理：\(\rho = m/V\) 的变形应用，通过实测值与理论值的比较判断</div>
+<div class="exam-hint">📌 中考常考：给出总质量和外观体积，判断空心并计算空心部分体积或注水后的总质量</div>
+</div>
+
+</div>
+</details>
+
+<details class="exam-module" open>
+<summary>📝 中考真题</summary>
+<div class="content">
+
+<div class="exam-q">
+  <span class="q-tag">2022 南京</span>
+  <strong>1.</strong>
+  <div class="q-body">小明在实验室测量某种液体的密度。他先用天平测出烧杯和液体的总质量为 152.4 g，将部分液体倒入量筒后，剩余液体和烧杯的质量如图所示，量筒中液体的体积为 40 mL。求该液体的密度。</div>
+  <div class="diagram">
+    <svg viewBox="0 0 380 180" width="380" height="180">
+      <text x="10" y="20" font-size="13" fill="#333" font-weight="600">天平读数</text>
+      <rect x="10" y="28" width="120" height="60" rx="4" fill="#f1f5f9" stroke="#888" stroke-width="1"/>
+      <text x="22" y="50" font-size="12" fill="#333">砝码: 100g + 20g</text>
+      <text x="22" y="68" font-size="12" fill="#333">游码: 2.4g</text>
+      <text x="22" y="82" font-size="13" fill="#dc2626" font-weight="600">总 = 122.4 g</text>
+      <line x1="150" y1="50" x2="170" y2="50" stroke="#888" stroke-width="1.5"/>
+      <text x="160" y="66" font-size="24" fill="#888">→</text>
+      <text x="190" y="20" font-size="13" fill="#333" font-weight="600">量筒读数</text>
+      <rect x="190" y="28" width="70" height="100" rx="6" fill="none" stroke="#888" stroke-width="1.5"/>
+      <rect x="206" y="38" width="38" height="80" rx="2" fill="none" stroke="#888" stroke-width="1"/>
+      <path d="M 206,42 Q 225,48 244,42" fill="none" stroke="#2563eb" stroke-width="1.5"/>
+      <path d="M 206,62 Q 225,68 244,62" fill="none" stroke="#2563eb" stroke-width="1.5"/>
+      <path d="M 206,82 Q 225,88 244,82" fill="none" stroke="#2563eb" stroke-width="1.5"/>
+      <path d="M 206,102 Q 225,108 244,102" fill="none" stroke="#2563eb" stroke-width="1.5"/>
+      <rect x="207" y="52" width="36" height="10" fill="#93c5fd" opacity="0.5"/>
+      <rect x="207" y="42" width="36" height="10" fill="#93c5fd" opacity="0.5"/>
+      <rect x="207" y="72" width="36" height="10" fill="#93c5fd" opacity="0.5"/>
+      <rect x="207" y="92" width="36" height="10" fill="#93c5fd" opacity="0.4"/>
+      <line x1="245" y1="118" x2="245" y2="38" stroke="#333" stroke-width="0.8" stroke-dasharray="3,2"/>
+      <line x1="230" y1="118" x2="230" y2="38" stroke="#333" stroke-width="0.8" stroke-dasharray="3,2"/>
+      <text x="212" y="128" font-size="11" fill="#2563eb">40 mL</text>
+      <line x1="190" y1="130" x2="260" y2="130" stroke="#888" stroke-width="0.8"/>
+      <text x="206" y="142" font-size="10" fill="#888">凹液面最低处</text>
+      <text x="275" y="96" font-size="13" fill="#333" font-weight="600">m = 152.4 - 122.4</text>
+      <text x="275" y="112" font-size="13" fill="#dc2626" font-weight="600">= 30.0 g</text>
+      <text x="275" y="128" font-size="13" fill="#333">V = 40 mL = 40 cm³</text>
+      <text x="275" y="146" font-size="14" fill="#4f46e5" font-weight="600">ρ = 30/40 = 0.75 g/cm³</text>
+    </svg>
+  </div>
+  <div class="q-solution">
+    <strong>答案：</strong>倒入量筒的液体质量 \(m = 152.4\,\text{g} - 122.4\,\text{g} = 30.0\,\text{g}\)，体积 \(V = 40\,\text{mL} = 40\,\text{cm}^3\)，密度 \(\rho = m/V = 30.0/40 = 0.75\,\text{g/cm}^3 = 0.75 \times 10^3\,\text{kg/m}^3\)。
+  </div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag">2023 武汉</span>
+  <strong>2.</strong>
+  <div class="q-body">一个质量为 158 g 的铁球，体积为 30 cm³。（\(\rho_{\text{铁}} = 7.9 \times 10^3\,\text{kg/m}^3\)）<br>① 判断该铁球是实心还是空心？<br>② 若空心，求空心部分的体积。<br>③ 若在空心部分注满水，求注水后球的总质量。</div>
+  <div class="diagram">
+    <svg viewBox="0 0 320 150" width="320" height="150">
+      <circle cx="80" cy="75" r="40" fill="none" stroke="#888" stroke-width="2"/>
+      <circle cx="80" cy="75" r="22" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,2"/>
+      <text x="52" y="80" font-size="11" fill="#888">铁</text>
+      <text x="68" y="68" font-size="10" fill="#dc2626">空心</text>
+      <line x1="120" y1="75" x2="150" y2="75" stroke="#888" stroke-width="1.5"/>
+      <polygon points="145,77 150,75 145,73" fill="#888"/>
+      <rect x="150" y="40" width="18" height="70" rx="9" fill="none" stroke="#2563eb" stroke-width="2"/>
+      <text x="170" y="75" font-size="12" fill="#2563eb">= V空</text>
+      <text x="160" y="130" font-size="11" fill="#2563eb">注满水</text>
+      <rect x="210" y="35" width="90" height="90" rx="8" fill="none" stroke="#888" stroke-width="1.5"/>
+      <circle cx="255" cy="65" r="18" fill="none" stroke="#888" stroke-width="1.5" fill-opacity="0.3"/>
+      <circle cx="255" cy="65" r="10" fill="none" stroke="#2563eb" stroke-width="4" stroke-dasharray="2,2" fill-opacity="0.5"/>
+      <text x="237" y="118" font-size="11" fill="#2563eb">水</text>
+      <text x="240" y="102" font-size="10" fill="#888">铁</text>
+      <text x="236" y="136" font-size="12" fill="#dc2626">总 = m铁 + m水</text>
+    </svg>
+  </div>
+  <div class="q-solution">
+    <strong>答案：</strong>① \(\rho_{\text{铁}} = 7.9\,\text{g/cm}^3\)（换算后）。\(\rho_{\text{球}} = 158/30 \approx 5.27 < 7.9\) → 空心。<br>② 实心部分体积 \(V_{\text{实}} = m/\rho = 158/7.9 = 20\,\text{cm}^3\)，\(V_{\text{空}} = 30 - 20 = 10\,\text{cm}^3\)。<br>③ \(m_{\text{水}} = \rho_{\text{水}} V_{\text{空}} = 1 \times 10 = 10\,\text{g}\)，总质量 \(158 + 10 = 168\,\text{g}\)。
+  </div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag">2021 北京</span>
+  <strong>3.</strong>
+  <div class="q-body">为鉴别一块金属片的材质，小华用天平和量筒测量其密度。测得金属片质量为 54 g，在量筒中放入 20 mL 水，金属片浸没后水面上升到 40 mL。请计算该金属片的密度，并判断它可能是什么金属。</div>
+  <div class="diagram">
+    <svg viewBox="0 0 320 190" width="320" height="190">
+      <text x="10" y="20" font-size="13" fill="#333" font-weight="600">排水法测体积</text>
+      <rect x="10" y="30" width="65" height="120" rx="6" fill="none" stroke="#888" stroke-width="1.5"/>
+      <rect x="20" y="40" width="45" height="100" rx="2" fill="none" stroke="#888" stroke-width="1"/>
+      <text x="24" y="56" font-size="10" fill="#888">20</text>
+      <line x1="20" y1="110" x2="65" y2="110" stroke="#2563eb" stroke-width="0.8"/>
+      <path d="M 20,110 Q 42,116 65,110" fill="none" stroke="#2563eb" stroke-width="1.5"/>
+      <text x="28" y="130" font-size="11" fill="#2563eb">20 mL</text>
+      <text x="22" y="154" font-size="10" fill="#888">放入前</text>
+      <line x1="95" y1="90" x2="120" y2="90" stroke="#888" stroke-width="1.5"/>
+      <polygon points="115,92 120,90 115,88" fill="#888"/>
+      <rect x="120" y="30" width="65" height="120" rx="6" fill="none" stroke="#888" stroke-width="1.5"/>
+      <rect x="130" y="40" width="45" height="100" rx="2" fill="none" stroke="#888" stroke-width="1"/>
+      <text x="134" y="56" font-size="10" fill="#888">40</text>
+      <line x1="130" y1="90" x2="175" y2="90" stroke="#2563eb" stroke-width="0.8"/>
+      <path d="M 130,90 Q 152,96 175,90" fill="none" stroke="#2563eb" stroke-width="1.5"/>
+      <text x="138" y="130" font-size="11" fill="#2563eb">40 mL</text>
+      <rect x="148" y="60" width="10" height="12" rx="1" fill="#4f46e5" opacity="0.7"/>
+      <text x="146" y="56" font-size="9" fill="#4f46e5">金属</text>
+      <text x="132" y="154" font-size="10" fill="#888">放入后</text>
+      <text x="195" y="80" font-size="13" fill="#333">V = 40 - 20 = 20 cm³</text>
+      <text x="195" y="100" font-size="14" fill="#4f46e5" font-weight="600">ρ = 54/20 = 2.7 g/cm³</text>
+      <text x="195" y="120" font-size="13" fill="#dc2626">→ 可能是铝</text>
+      <text x="195" y="138" font-size="11" fill="#888">铝的密度 2.7 g/cm³</text>
+    </svg>
+  </div>
+  <div class="q-solution">
+    <strong>答案：</strong>金属片体积 \(V = 40 - 20 = 20\,\text{cm}^3\)，密度 \(\rho = 54/20 = 2.7\,\text{g/cm}^3 = 2.7 \times 10^3\,\text{kg/m}^3\)。查密度表可知该密度与铝的密度（\(2.7 \times 10^3\,\text{kg/m}^3\)）吻合，该金属片可能是铝。
+  </div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag">2022 长沙</span>
+  <strong>4.</strong>
+  <div class="q-body">某品牌调和油的瓶上标有"净含量 1.8 L"字样，测得瓶和油的总质量为 1.68 kg，瓶的质量为 0.12 kg。求：① 调和油的密度；② 若用该空瓶装水，最多能装多少 kg？</div>
+  <div class="diagram">
+    <svg viewBox="0 0 280 160" width="280" height="160">
+      <rect x="60" y="20" width="80" height="120" rx="8" fill="none" stroke="#888" stroke-width="1.5"/>
+      <rect x="56" y="14" width="88" height="14" rx="4" fill="none" stroke="#888" stroke-width="1.5"/>
+      <text x="66" y="106" font-size="11" fill="#888">调和油</text>
+      <text x="74" y="120" font-size="10" fill="#888">1.8 L</text>
+      <rect x="66" y="36" width="68" height="80" rx="4" fill="#fbbf24" opacity="0.2"/>
+      <line x1="90" y1="140" x2="150" y2="140" stroke="#888" stroke-width="1"/>
+      <text x="85" y="154" font-size="10" fill="#888">m总 = 1.68 kg</text>
+      <text x="170" y="50" font-size="13" fill="#333">m油 = 1.68 - 0.12</text>
+      <text x="170" y="68" font-size="13" fill="#dc2626" font-weight="600">= 1.56 kg</text>
+      <text x="170" y="88" font-size="13" fill="#333">V = 1.8 L = 1.8 × 10⁻³ m³</text>
+      <text x="170" y="108" font-size="14" fill="#4f46e5" font-weight="600">ρ = 1.56 / 0.0018</text>
+      <text x="170" y="126" font-size="14" fill="#4f46e5" font-weight="600">= 867 kg/m³</text>
+      <text x="170" y="146" font-size="13" fill="#2563eb">m水 = 1000 × 0.0018 = 1.8 kg</text>
+    </svg>
+  </div>
+  <div class="q-solution">
+    <strong>答案：</strong>① 油的质量 \(m_{\text{油}} = 1.68 - 0.12 = 1.56\,\text{kg}\)，体积 \(V = 1.8\,\text{L} = 1.8 \times 10^{-3}\,\text{m}^3\)，\(\rho_{\text{油}} = m/V = 1.56/(1.8 \times 10^{-3}) \approx 867\,\text{kg/m}^3\)。<br>② 瓶容积 \(V_{\text{瓶}} = 1.8\,\text{L} = 1.8 \times 10^{-3}\,\text{m}^3\)，\(m_{\text{水}} = \rho_{\text{水}} V = 1.0 \times 10^3 \times 1.8 \times 10^{-3} = 1.8\,\text{kg}\)。
+  </div>
+</div>
+
+</div>
+</details>
+
+<div class="checklist">
+<h3>✅ 本章自查清单</h3>
+<label><input type="checkbox"> 我能说出质量的定义及其属性（不随形状、状态、位置改变）</label>
+<label><input type="checkbox"> 我能正确使用托盘天平测量物体质量</label>
+<label><input type="checkbox"> 我能写出密度公式 \(\rho = m/V\) 及其两个变形公式</label>
+<label><input type="checkbox"> 我能熟练进行密度单位换算 (\(1\,\text{g/cm}^3 = 1000\,\text{kg/m}^3\))</label>
+<label><input type="checkbox"> 我会用排水法测不规则固体的体积</label>
+<label><input type="checkbox"> 我会用差值法测液体的密度</label>
+<label><input type="checkbox"> 我能用三种方法判断空心实心并计算空心部分体积</label>
+<label><input type="checkbox"> 我能通过查密度表鉴别物质种类</label>
+</div>
+
+<div class="checklist" style="margin-top:16px">
+<h3>🔥 费曼挑战</h3>
+<p style="font-size:14px;color:var(--text-secondary);margin-bottom:10px">
+用一杯水、一枚鸡蛋和一勺盐向邻居小朋友解释：<strong>"什么是密度？为什么淡水中沉底的鸡蛋，在盐水中能浮起来？"</strong><br>
+用密度知识解释现象，不需要公式。让对方明白"盐水比淡水更'密'，所以能托起鸡蛋"。
+</p>
+</div>
+
+</section>
+
+</main>
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/auto-render.min.js"></script>
+<script>
+(function() {
+  var toggle = document.getElementById('theme-toggle');
+  if (toggle) {
+    var saved = localStorage.getItem('physics-theme');
+    if (saved === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      toggle.textContent = '☀️ 亮色模式';
+    }
+    toggle.addEventListener('click', function() {
+      var html = document.documentElement;
+      var isDark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      localStorage.setItem('physics-theme', isDark ? 'light' : 'dark');
+      toggle.textContent = isDark ? '🌙 暗色模式' : '☀️ 亮色模式';
+    });
+  }
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        document.querySelectorAll('#sidebar nav a').forEach(function(a) { a.classList.remove('active'); });
+        var id = entry.target.closest('section') ? entry.target.closest('section').id || '' : '';
+        var link = document.querySelector('#sidebar nav a[href$="' + (id || location.pathname.split('/').pop()) + '"]');
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  document.querySelectorAll('section[id]').forEach(function(s) { observer.observe(s); });
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof renderMathInElement === 'function') {
+      renderMathInElement(document.body, { delimiters: [{ left: '$$', right: '$$', display: true }, { left: '\\(', right: '\\)', display: false }] });
+    }
+  });
+  var sidebar = document.getElementById('sidebar');
+  var hideBtn = document.getElementById('sidebarHideBtn');
+  var sidebarHidden = localStorage.getItem('physics8-sidebar') === 'hidden';
+  if (sidebarHidden) sidebar.classList.add('hidden');
+  var showBtn = document.getElementById('sidebarShowBtn');
+  hideBtn.addEventListener('click', function() {
+    sidebar.classList.add('hidden');
+    localStorage.setItem('physics8-sidebar', 'hidden');
+  });
+  showBtn.addEventListener('click', function() {
+    sidebar.classList.remove('hidden');
+    localStorage.setItem('physics8-sidebar', '');
+  });
+  (function() {
+    var btn = document.getElementById('expandAllBtn');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      var allDetails = document.querySelectorAll('.module, .exam-module');
+      var allOpen = true;
+      for (var i = 0; i < allDetails.length; i++) {
+        if (!allDetails[i].hasAttribute('open')) { allOpen = false; break; }
+      }
+      for (var i = 0; i < allDetails.length; i++) {
+        if (allOpen) allDetails[i].removeAttribute('open');
+        else allDetails[i].setAttribute('open', '');
+      }
+      btn.textContent = allOpen ? '📂 展开全部章节' : '📖 收起全部章节';
+    });
+  })();
+  })();
+</script>
+</body>
+</html>

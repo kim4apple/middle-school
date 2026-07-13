@@ -1,0 +1,2058 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>七年级数学 · 完全总结</title>
+  <link rel="stylesheet" href="katex/katex.min.css">
+  <style>
+:root {
+  --bg: #ffffff;
+  --bg-secondary: #f1f5f9;
+  --text: #1a1a2e;
+  --text-secondary: #64748b;
+  --accent: #4f46e5;
+  --accent-light: #eef2ff;
+  --border: #e2e8f0;
+  --shadow: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-hover: 0 4px 12px rgba(0,0,0,0.12);
+  --radius: 8px;
+  --sidebar-width: 280px;
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --bg-secondary: #1e293b;
+  --text: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --accent: #818cf8;
+  --accent-light: #1e1b4b;
+  --border: #334155;
+  --shadow: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-hover: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  display: flex;
+}
+
+#sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border);
+  padding: 24px 16px;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+#sidebar h2 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--accent);
+}
+
+#sidebar nav a {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.15s, color 0.15s;
+}
+
+#sidebar nav a:hover,
+#sidebar nav a.active {
+  background: var(--accent-light);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.theme-toggle {
+  margin-top: 24px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 13px;
+  width: 100%;
+}
+
+#content {
+  flex: 1;
+  max-width: 900px;
+  padding: 40px 48px;
+}
+
+.chapter { margin-bottom: 64px; }
+
+.chapter h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--accent);
+}
+
+.module {
+  margin-bottom: 32px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.module summary {
+  padding: 16px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--bg-secondary);
+  user-select: none;
+  list-style: none;
+}
+
+.module summary::-webkit-details-marker { display: none; }
+
+.module summary::before {
+  content: "▸";
+  display: inline-block;
+  margin-right: 8px;
+  transition: transform 0.2s;
+  font-size: 12px;
+}
+
+.module[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.module .content { padding: 20px; }
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.concept-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.2s;
+}
+
+.concept-card:hover { box-shadow: var(--shadow-hover); }
+
+.concept-card .name {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: var(--accent);
+}
+
+.formula-card {
+  background: var(--bg-secondary);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+}
+
+.technique-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow);
+}
+
+.technique-card h3 {
+  font-size: 17px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.technique-card .step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px; height: 28px;
+  background: var(--accent);
+  color: white;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.technique-card .method { font-weight: 600; margin-bottom: 4px; }
+.technique-card .example { color: var(--text-secondary); font-size: 14px; margin-bottom: 8px; }
+.technique-card .pitfall {
+  font-size: 13px;
+  color: #dc2626;
+  background: #fef2f2;
+  padding: 8px 12px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  border-left: 3px solid #dc2626;
+}
+
+[data-theme="dark"] .technique-card .pitfall {
+  background: #451a1a;
+  color: #fca5a5;
+}
+
+.technique-card .principle {
+  font-size: 14px;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+.technique-card .variant {
+  font-size: 13px;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+  padding-top: 10px;
+}
+.technique-card .variant strong { color: var(--text); }
+
+.mindmap { padding: 16px 0; }
+.mindmap ul { list-style: none; padding-left: 24px; border-left: 1px solid var(--border); margin-left: 8px; }
+.mindmap li { position: relative; padding: 6px 0 6px 16px; font-size: 15px; }
+.mindmap li::before { content: ""; position: absolute; left: -1px; top: 16px; width: 12px; height: 1px; background: var(--border); }
+.mindmap .node-label { font-weight: 600; color: var(--accent); }
+.mindmap .node-desc { font-size: 13px; color: var(--text-secondary); margin-left: 4px; }
+
+.learning-goals {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.learning-goals strong { color: var(--accent); }
+.learning-goals p { margin-top: 6px; color: var(--text-secondary); }
+
+.checklist {
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-top: 24px;
+}
+.checklist h3 { font-size: 16px; margin-bottom: 12px; color: var(--accent); }
+.checklist label { display: flex; align-items: flex-start; gap: 8px; padding: 6px 0; font-size: 14px; cursor: pointer; }
+.checklist input[type="checkbox"] { margin-top: 3px; accent-color: var(--accent); }
+
+.knowledge-link {
+  background: var(--bg);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  margin-bottom: 24px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+.knowledge-link strong { color: var(--accent); }
+
+.thought-method {
+  background: linear-gradient(135deg, #fef9e7 0%, var(--accent-light) 100%);
+  border-left: 4px solid #f59e0b;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.thought-method strong { color: #b45309; }
+
+.solve-template {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+.solve-template h4 { color: #166534; margin-bottom: 8px; }
+.solve-template ol { padding-left: 20px; }
+.solve-template ol li { margin-bottom: 4px; }
+
+.exam-module {
+  margin-bottom: 32px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.exam-module summary {
+  padding: 16px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #fef2f2;
+  user-select: none;
+  list-style: none;
+}
+.exam-module summary::before { content: "▸"; display: inline-block; margin-right: 8px; transition: transform 0.2s; font-size: 12px; }
+.exam-module[open] summary::before { transform: rotate(90deg); }
+.exam-module .content { padding: 20px; }
+
+.exam-q { margin-bottom: 20px; padding: 16px; border: 1px solid var(--border); border-radius: 6px; background: #fffbeb; }
+.exam-q .q-tag { font-size: 12px; background: #dc2626; color: #fff; padding: 2px 8px; border-radius: 4px; margin-right: 8px; }
+.exam-q .q-body { margin-top: 8px; font-size: 15px; }
+.exam-q .q-solution { margin-top: 10px; padding: 10px 14px; background: #f0fdf4; border-radius: 4px; font-size: 14px; color: #166534; }
+.exam-q .q-solution strong { color: #065f46; }
+
+.technique-card .exam-hint {
+  font-size: 13px;
+  color: #dc2626;
+  margin-top: 8px;
+  padding: 6px 10px;
+  background: #fef2f2;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+[data-theme="dark"] .thought-method { background: linear-gradient(135deg, #451a03 0%, #1e1b4b 100%); }
+[data-theme="dark"] .thought-method strong { color: #fbbf24; }
+[data-theme="dark"] .solve-template { background: #0f2d1a; border-color: #166534; }
+[data-theme="dark"] .solve-template h4 { color: #4ade80; }
+[data-theme="dark"] .exam-module summary { background: #451a1a; }
+[data-theme="dark"] .exam-q { background: #2a1f0e; }
+[data-theme="dark"] .exam-q .q-solution { background: #0f2d1a; color: #86efac; }
+[data-theme="dark"] .exam-q .q-solution strong { color: #4ade80; }
+[data-theme="dark"] .technique-card .exam-hint { background: #451a1a; color: #fca5a5; }
+
+.exam-q .diagram {
+  margin: 10px 0;
+  text-align: center;
+}
+.exam-q .diagram svg {
+  max-width: 280px;
+  height: auto;
+}
+[data-theme="dark"] .exam-q .diagram svg line,
+[data-theme="dark"] .exam-q .diagram svg path,
+[data-theme="dark"] .exam-q .diagram svg polyline,
+[data-theme="dark"] .exam-q .diagram svg rect {
+  stroke: #94a3b8;
+}
+[data-theme="dark"] .exam-q .diagram svg text {
+  fill: #e2e8f0;
+}
+[data-theme="dark"] .exam-q .diagram svg circle {
+  stroke: #94a3b8;
+}
+
+#sidebar.hidden { display: none; }
+
+#sidebarShowBtn {
+  position: fixed; top: 12px; left: 12px; z-index: 99;
+  background: var(--bg-secondary); border: 1px solid var(--border);
+  border-radius: 6px; padding: 6px 10px; cursor: pointer; font-size: 14px;
+  color: var(--text); box-shadow: var(--shadow); display: none;
+  align-items: center; gap: 4px;
+}
+body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
+
+.expand-btn {
+  width: 100%; margin-top: 10px; padding: 6px 10px;
+  background: var(--accent-light); color: var(--accent);
+  border: 1px solid var(--border); border-radius: 6px;
+  cursor: pointer; font-size: 13px; font-weight: 600;
+}
+.expand-btn:hover { background: var(--accent); color: white; }
+
+@media (max-width: 768px) {
+  #sidebar { padding: 12px; }
+  #sidebar.hidden { display: none; }
+  #sidebar h2 { font-size: 15px; margin-bottom: 8px; }
+  #sidebar nav a { display: inline-block; padding: 4px 8px; font-size: 12px; margin: 1px; white-space: nowrap; }
+  #sidebarShowBtn { display: flex; font-size: 13px; padding: 5px 8px; top: 8px; left: 8px; }
+  #content { padding: 16px 12px; }
+  .card-grid { grid-template-columns: 1fr; gap: 10px; }
+  .chapter h1 { font-size: 22px; }
+  .module summary { font-size: 16px; padding: 12px 14px; }
+  .module .content { padding: 14px; }
+  .concept-card { padding: 12px; }
+  .technique-card { padding: 14px; }
+  .technique-card .principle { font-size: 13px; }
+  .exam-q { padding: 12px; }
+  .exam-q .diagram svg { max-width: 200px; }
+}
+
+@media print {
+  * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  #sidebar { display: none; }
+  #sidebarShowBtn { display: none; }
+  .expand-btn { display: none; }
+  details .content { display: block !important; }
+  details[open] .content { display: block !important; }
+  body { display: block; }
+  .module { box-shadow: none; border: 1px solid #ccc; page-break-inside: avoid; }
+  [data-theme="dark"] .module,
+  [data-theme="dark"] .concept-card,
+  [data-theme="dark"] .technique-card { background: #0f172a !important; color: #e2e8f0 !important; }
+  [data-theme="dark"] .technique-card .pitfall { background: #451a1a !important; color: #fca5a5 !important; }
+  [data-theme="dark"] .exam-q { background: #2a1f0e !important; }
+  [data-theme="dark"] .exam-q .q-solution { background: #0f2d1a !important; color: #86efac !important; }
+}
+</style>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 章节</button>
+  <nav id="sidebar">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+      <h2 style="margin-bottom:0;">七年级数学</h2>
+      <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;" title="隐藏侧栏">✕</button>
+    </div>
+    <nav>
+      <a href="#chapter1">第1章 · 有理数</a>
+      <a href="#chapter2">第2章 · 整式的加减</a>
+      <a href="#chapter3">第3章 · 一元一次方程</a>
+      <a href="#chapter4">第4章 · 几何图形初步</a>
+      <a href="#chapter5">第5章 · 相交线与平行线</a>
+      <a href="#chapter6">第6章 · 实数</a>
+      <a href="#chapter7">第7章 · 平面直角坐标系</a>
+      <a href="#chapter8">第8章 · 二元一次方程组</a>
+      <a href="#chapter9">第9章 · 不等式与不等式组</a>
+      <a href="#chapter10">第10章 · 数据的收集整理</a>
+      <a href="#chapter0">附录 · 完整总结</a>
+    </nav>
+    <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+    <button id="theme-toggle" class="theme-toggle" style="margin-top:10px;">🌙 暗色模式</button>
+  </nav>
+  <main id="content">
+<div class="chapter" id="chapter1">
+  <h1>第1章 · 有理数</h1>
+    <div class="learning-goals">
+      <strong>🎯 学习目标</strong>
+      <p>理解正负数的意义；掌握有理数的四则运算及乘方；会用科学记数法表示数；理解绝对值的几何意义</p>
+    </div>
+    <div class="thought-method"><strong>🧭 数形结合（一）：</strong>数轴是最原始的"坐标系"。在数轴上，数→点，大小关系→左右位置，运算→移动。画出数轴是解决有理数题的"第一武器"。本章到第7章平面直角坐标系，再到八年级一次函数，一脉相承。</div>
+  <details class="module" open>
+    <summary>🧠 思维导图</summary>
+    <div class="content">
+      <div class="mindmap">
+        <div class="node-label" style="font-size:16px;margin-bottom:12px;">有理数</div>
+        <ul>
+          <li><span class="node-label">基本概念</span> <span class="node-desc">正负数 · 数轴（原点、正方向、单位长度）</span></li>
+          <li><span class="node-label">相反数</span> <span class="node-desc">$a + (-a) = 0$ · 绝对值 $\left|a\right| = \begin{cases} a & a \geq 0 \\ -a & a < 0 \end{cases}$</span></li>
+          <li><span class="node-label">分类</span> <span class="node-desc">有理数 = 整数 ∪ 分数，可化为有限小数或无限循环小数</span></li>
+          <li>
+            <span class="node-label">运算</span>
+            <ul>
+              <li><span class="node-label">加减</span> <span class="node-desc">同号相加取同号，异号相加取绝对值大的符号</span></li>
+              <li><span class="node-label">乘除</span> <span class="node-desc">同号得正，异号得负；除以一个数 = 乘以它的倒数</span></li>
+              <li><span class="node-label">乘方</span> <span class="node-desc">$a^n$：$a$为底数，$n$为指数；负数的偶次幂为正，奇次幂为负</span></li>
+              <li><span class="node-label">混合运算</span> <span class="node-desc">先乘方 → 再乘除 → 后加减，同级从左到右，有括号先算括号</span></li>
+            </ul>
+          </li>
+          <li><span class="node-label">科学记数法</span> <span class="node-desc">$a \times 10^n$，其中 $1 \leq |a| < 10$，$n$ 为整数</span></li>
+          <li><span class="node-label">近似数</span> <span class="node-desc">精确度 · 有效数字 · 四舍五入</span></li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>📖 核心概念</summary>
+    <div class="content">
+      <div class="card-grid">
+        <div class="concept-card">
+          <div class="name">正数与负数</div>
+          <p>大于 $0$ 的数为<strong>正数</strong>（$+$ 可省略），小于 $0$ 的数为<strong>负数</strong>。$0$ 既不是正数也不是负数，是正负数的分界。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">数轴</div>
+          <p>规定了<strong>原点</strong>、<strong>正方向</strong>和<strong>单位长度</strong>的直线。数轴上右边的数总比左边大。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">相反数</div>
+          <p>只有符号不同的两个数互为相反数。$a$ 的相反数是 $-a$。$0$ 的相反数是 $0$。在数轴上关于原点对称。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">绝对值</div>
+          <p>数轴上表示数 $a$ 的点到原点的<strong>距离</strong>，记作 $|a|$。$|a| \geq 0$ 恒成立。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">倒数</div>
+          <p>乘积为 $1$ 的两个数互为倒数。$a$ 的倒数是 $\frac{1}{a}\ (a \neq 0)$。$0$ 没有倒数。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">科学记数法</div>
+          <p>把一个数写成 $a \times 10^n$ 的形式，其中 $1 \leq |a| < 10$。方便表示很大的数或很小的数。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">近似数与精确度</div>
+          <p><strong>近似数：</strong>与准确数接近的数。<strong>精确度：</strong>近似数与准确数的接近程度。四舍五入法是最常用的取近似数方法。精确到哪一位，就看它的下一位数字，大于等于5进1，小于5舍去。</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>📐 公式速查</summary>
+    <div class="content">
+      <div class="formula-card"><strong>加法法则</strong><p style="margin-top:6px;">同号：$|a|+|b|$，取相同符号</p><p>异号：$||a|-|b||$，取绝对值较大的符号</p><p>$a + 0 = a$</p></div>
+      <div class="formula-card"><strong>减法法则</strong><p style="margin-top:6px;">$$a - b = a + (-b)$$</p><p>减去一个数，等于加上它的相反数</p></div>
+      <div class="formula-card"><strong>乘法法则</strong><p style="margin-top:6px;">同号得正：$(+a) \times (+b) = ab$，$(-a) \times (-b) = ab$</p><p>异号得负：$(+a) \times (-b) = -ab$</p><p>$a \times 0 = 0$</p></div>
+      <div class="formula-card"><strong>除法法则</strong><p style="margin-top:6px;">$$a \div b = a \times \frac{1}{b}\ (b \neq 0)$$</p><p>除以一个非零数，等于乘以它的倒数</p></div>
+      <div class="formula-card"><strong>乘方法则</strong><p style="margin-top:6px;">正数的任何次幂为正；负数的奇次幂为负、偶次幂为正</p><p>$(-1)^n = \begin{cases} 1 & n \text{为偶数} \\ -1 & n \text{为奇数} \end{cases}$</p></div>
+      <div class="formula-card"><strong>运算顺序</strong><p style="margin-top:6px;">第一级：乘方（先算） → 第二级：乘除 → 第三级：加减</p><p>同级从左到右，有括号先算括号</p></div>
+      <div class="formula-card"><strong>科学记数法</strong><p style="margin-top:6px;">$$a \times 10^n \quad (1 \leq |a| < 10,\ n\text{为整数})$$</p><p>整数位数 = $n+1$；从小数点后第 $k$ 位开始非零：$n=-k$</p></div>
+      <div class="formula-card"><strong>绝对值</strong><p style="margin-top:6px;">$$|a| = \begin{cases} a & a \geq 0 \\ -a & a < 0 \end{cases}$$</p><p>$|a| \geq 0$ 恒成立；$|a| = 0 \iff a = 0$</p></div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>💡 解题技巧</summary>
+    <div class="content">
+      <div class="technique-card">
+        <h3><span class="step-num">1</span> 数轴比较大小</h3>
+        <p class="method">利用数轴直观比较：右边的数总大于左边的数。画数轴，标出各点位置。</p>
+        <p class="example"><strong>例题：</strong>比较 $-3$，$0$，$2$，$-1.5$ 的大小<br><strong>解：</strong>在数轴上从左到右排列：$-3 < -1.5 < 0 < 2$</p>
+        <p class="pitfall">⚠️ 易错：负数比较时，绝对值大的反而小，如 $-5 < -3$（不要写成 $-5 > -3$）</p>
+      </div>
+      <div class="technique-card">
+        <h3><span class="step-num">2</span> 绝对值化简</h3>
+        <p class="method">先判断符号确定去绝对值的结果，再运算。牢记 $|a| \geq 0$。</p>
+        <p class="example"><strong>例题：</strong>化简 $|x-3| + |x+1|$，当 $-1 < x < 3$<br><strong>解：</strong>$x-3<0$，$|x-3|=3-x$；$x+1>0$，$|x+1|=x+1$。原式$=(3-x)+(x+1)=4$</p>
+        <p class="pitfall">⚠️ 易错：绝对值总是非负的，忘记判断符号直接去掉绝对值符号</p>
+      </div>
+      <div class="technique-card">
+        <h3><span class="step-num">3</span> 分配律巧算</h3>
+        <p class="method">遇到 $a(b+c)$ 或带分数除法，先化为乘法再用分配律简化计算。</p>
+        <p class="example"><strong>例题：</strong>计算 $(-\frac{3}{4}) \times (8 - 1\frac{1}{3} - 0.04)$<br><strong>解：</strong>$= -\frac{3}{4} \times 8 + \frac{3}{4} \times \frac{4}{3} + \frac{3}{4} \times 0.04 = -6 + 1 + 0.03 = -4.97$</p>
+        <p class="pitfall">⚠️ 易错：负号分配时要变号，$-(a+b)=-a-b$</p>
+      </div>
+      <div class="technique-card">
+        <h3><span class="step-num">4</span> 辨别 $(-a)^n$ 与 $-a^n$</h3>
+        <p class="method"><strong>括号决定底数范围：</strong>$(-a)^n$ 的底数是 $-a$（含负号），$-a^n$ 的底数是 $a$（不含负号）。先确定底数，再计算符号。</p>
+        <p class="example"><strong>例题：</strong>计算 $(-2)^2$ 和 $-2^2$<br><strong>解：</strong>$(-2)^2$ 底数是 $-2$，$(-2)^2 = (-2)\times(-2) = 4$；$-2^2$ 底数是 $2$，$-2^2 = -(2\times2) = -4$。两者差一个负号！</p>
+        <p class="pitfall">⚠️ 易错：$-2^2$ 不是 $(-2)\times(-2)$！负号在指数运算之后才起作用</p>
+      </div>
+      <div class="technique-card">
+        <h3><span class="step-num">5</span> 科学记数法 $a$ 的范围</h3>
+        <p class="method">$a \times 10^n$ 中必须满足 $1 \leq |a| < 10$。整数位数$-$1 = $n$（$n$为整数）。</p>
+        <p class="example"><strong>例题：</strong>将 $1200000$ 用科学记数法表示。<br><strong>解：</strong>$1200000 = 1.2 \times 10^6$（不是 $12 \times 10^5$ 或 $0.12 \times 10^7$！）</p>
+        <p class="pitfall">⚠️ 易错：$120$ 写成 $12 \times 10^1$（$12 \geq 10$，不符合要求）；或写成 $0.12 \times 10^3$（$0.12 < 1$，不符合要求）</p>
+      </div>
+    </div>
+  </details>
+  <details class="exam-module">
+    <summary>🎯 中考真题精选（有理数 · 近年典型）</summary>
+    <div class="content">
+      <div class="exam-q"><span class="q-tag">2023广东</span><div class="q-body">$-2$ 的相反数是（ ）<br>A. $-2$ &nbsp; B. $2$ &nbsp; C. $-\frac{1}{2}$ &nbsp; D. $\frac{1}{2}$</div><div class="q-solution"><strong>答案：B</strong>。相反数：只有符号不同的两个数，$-2$ 的相反数是 $2$。</div></div>
+      <div class="exam-q"><span class="q-tag">2023北京</span><div class="q-body">$|-3|$ 的值是（ ）<br>A. $-3$ &nbsp; B. $-\frac{1}{3}$ &nbsp; C. $\frac{1}{3}$ &nbsp; D. $3$</div><div class="q-solution"><strong>答案：D</strong>。绝对值表示数轴上点到原点的距离。$|-3| = 3$。</div></div>
+      <div class="exam-q"><span class="q-tag">2022广州</span><div class="q-body">计算：$(-2)^2 + \sqrt{16} \div (-2)$</div><div class="q-solution"><strong>答案：2</strong>。$(-2)^2=4$，$\sqrt{16}=4$，$4\div(-2)=-2$，$4+(-2)=2$。</div></div>
+      <div class="exam-q"><span class="q-tag">2023重庆</span><div class="q-body">将 $21800000$ 用科学记数法表示为____。</div><div class="q-solution"><strong>答案：$2.18 \times 10^7$</strong>。$21800000 = 2.18 \times 10^7$，注意 $1 \leq |a| < 10$。</div></div>
+      <div class="exam-q"><span class="q-tag">2022杭州</span><div class="q-body">计算：$-3^2 \times (-\frac{1}{3})^2$</div><div class="q-solution"><strong>答案：-1</strong>。$-3^2 = -9$（注意底数是3，不是-3），$(-\frac{1}{3})^2 = \frac{1}{9}$，$-9 \times \frac{1}{9} = -1$。⚠️ 区分 $-3^2$ 和 $(-3)^2$ 是中考高频陷阱。</div></div>
+    </div>
+  </details>
+    <div class="checklist">
+      <h3>✅ 本章自查清单</h3>
+      <label><input type="checkbox"> 能判断一个数是正数还是负数</label>
+      <label><input type="checkbox"> 会在数轴上表示有理数并比较大小</label>
+      <label><input type="checkbox"> 能求一个数的相反数、绝对值和倒数</label>
+      <label><input type="checkbox"> 能正确进行有理数的加减乘除乘方混合运算</label>
+      <label><input type="checkbox"> 会用科学记数法表示大数和小数</label>
+      <p style="margin-top:14px;font-size:13px;color:var(--accent);padding:10px 0;border-top:1px dashed var(--border);"><strong>🗣 费曼挑战：</strong>试着不看资料，用你自己的话讲一遍本章最重要的 3 个概念。讲不清楚的地方，回去重看对应模块。</p>
+    </div>
+</div>
+
+<div class="chapter" id="chapter2">
+  <h1>第2章 · 整式的加减</h1>
+    <div class="learning-goals">
+      <strong>🎯 学习目标</strong>
+      <p>识别单项式和多项式的系数与次数；熟练合并同类项与去括号；能进行整式的加减运算并化简求值</p>
+    </div>
+    <div class="knowledge-link"><strong>🔗 前置知识：</strong>有理数运算（第1章）。本章整式的系数运算依赖有理数法则，熟练后可直接迁移。</div>
+    <div class="thought-method"><strong>🧭 整体思想：</strong>把 $a^2-ab$ 看成一个"整体"来合并，不要拆开再拼回去。整体代入是化简求值的核心技巧——"能整体就不拆散"，这种思维在方程组消元（第8章）中还会用到。</div>
+  <details class="module" open>
+    <summary>🧠 思维导图</summary>
+    <div class="content">
+      <div class="mindmap">
+        <div class="node-label" style="font-size:16px;margin-bottom:12px;">整式的加减</div>
+        <ul>
+          <li>
+            <span class="node-label">单项式</span> <span class="node-desc">数与字母的乘积<br>系数：数字因数 · 次数：所有字母指数之和</span>
+          </li>
+          <li>
+            <span class="node-label">多项式</span> <span class="node-desc">几个单项式的和<br>项（含常数项） · 次数：最高次项次数</span>
+          </li>
+          <li><span class="node-label">整式</span> <span class="node-desc">单项式 + 多项式</span></li>
+          <li><span class="node-label">同类项</span> <span class="node-desc">所含字母相同 + 相同字母指数相同</span></li>
+          <li><span class="node-label">合并同类项</span> <span class="node-desc">系数相加，字母部分不变</span></li>
+          <li><span class="node-label">去括号</span> <span class="node-desc">括号前"+"不变号 · 括号前"-"全变号</span></li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>📖 核心概念</summary>
+    <div class="content">
+      <div class="card-grid">
+        <div class="concept-card">
+          <div class="name">单项式</div>
+          <p>由<strong>数</strong>与<strong>字母</strong>的乘积组成的代数式。单独一个数或字母也是单项式。<strong>系数</strong>是数字因数，<strong>次数</strong>是所有字母的指数之和。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">多项式</div>
+          <p>几个单项式的<strong>和</strong>。每个单项式叫<strong>项</strong>，不含字母的项叫<strong>常数项</strong>。次数为<strong>最高次项</strong>的次数。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">整式</div>
+          <p><strong>单项式</strong>和<strong>多项式</strong>统称整式。注意区分整式与分式（分母含字母为分式）。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">同类项</div>
+          <p>所含<strong>字母相同</strong>且<strong>相同字母的指数也相同</strong>的项。常数项与常数项也是同类项。同类项与系数无关。</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>📐 公式速查</summary>
+    <div class="content">
+      <div class="formula-card"><strong>合并同类项法则</strong><p style="margin-top:6px;">系数相加，字母部分（字母及其指数）保持不变</p><p>例：$3x^2 + 5x^2 = (3+5)x^2 = 8x^2$</p></div>
+      <div class="formula-card"><strong>去括号法则</strong><p style="margin-top:6px;">括号前是 $+$：$$+(a + b - c) = a + b - c$$</p><p>括号前是 $-$：$$-(a + b - c) = -a - b + c$$</p></div>
+      <div class="formula-card"><strong>整式加减步骤</strong><p style="margin-top:6px;">① 去括号（注意变号） → ② 找同类项 → ③ 合并同类项</p><p>代数式求值：先进化简，再代入求值！</p></div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>💡 解题技巧</summary>
+    <div class="content">
+      <div class="technique-card">
+        <h3><span class="step-num">1</span> 先找同类项再合并</h3>
+        <p class="method">做题时先划出同类项（相同字母+相同指数），再合并系数。避免遗漏。</p>
+        <p class="example"><strong>例题：</strong>合并 $3x^2y - 2xy^2 + 5x^2y + xy^2$<br><strong>解：</strong>$3x^2y$ 与 $5x^2y$ 同类 → $8x^2y$；$-2xy^2$ 与 $xy^2$ 同类 → $-xy^2$。结果为 $8x^2y - xy^2$</p>
+        <p class="pitfall">⚠️ 易错：$x^2y$ 与 $xy^2$ 不是同类项！指数位置不同</p>
+      </div>
+      <div class="technique-card">
+        <h3><span class="step-num">2</span> 先化简再求值</h3>
+        <p class="method">遇到代数式求值，一定<strong>先化简</strong>（去括号+合并），再代入数值，这样计算量最小。</p>
+        <p class="example"><strong>例题：</strong>求值 $2(a^2-ab)-3(a^2-ab)$，其中 $a=3,b=-2$<br><strong>解：</strong>原式$=(2-3)(a^2-ab) = -(a^2-ab) = -a^2+ab$；代入得 $-9+(-6)=-15$</p>
+        <p class="pitfall">⚠️ 易错：不化简直接代入，数值复杂容易算错</p>
+        <p class="pitfall">⚠️ 易错：去括号漏乘：$2(x+3)=2x+3$ 是错的！分配律要乘遍每一项 $2x+6$</p>
+      </div>
+    </div>
+  </details>
+  <details class="exam-module">
+    <summary>🎯 中考真题精选（整式 · 近年典型）</summary>
+    <div class="content">
+      <div class="exam-q"><span class="q-tag">2022北京</span><div class="q-body">化简：$3a^2 - 2a + 4a^2 - 7a$</div><div class="q-solution"><strong>答案：$7a^2 - 9a$</strong>。合并同类项：$3a^2+4a^2=7a^2$，$-2a-7a=-9a$。</div></div>
+      <div class="exam-q"><span class="q-tag">2023杭州</span><div class="q-body">先化简，再求值：$(x+2)(x-2) - x(x-1)$，其中 $x = 3$</div><div class="q-solution"><strong>答案：1</strong>。化简：$=x^2-4-x^2+x = x-4$。代入 $x=3$：$3-4=-1$。⚠️ 中考标准步骤：先化简再代入！</div></div>
+      <div class="exam-q"><span class="q-tag">2022广州</span><div class="q-body">已知 $x + y = 3$，求整式 $2x + 2y + 1$ 的值。</div><div class="q-solution"><strong>答案：7</strong>。整体代入：$2x+2y+1 = 2(x+y)+1 = 2×3+1 = 7$。能整体就不拆散！</div></div>
+      <div class="exam-q"><span class="q-tag">2023重庆</span><div class="q-body">化简：$(2a - b) - (a + 2b)$</div><div class="q-solution"><strong>答案：$a - 3b$</strong>。去括号：$=2a-b-a-2b = a-3b$。括号前是"-"，去掉括号后每一项都要变号。</div></div>
+    </div>
+  </details>
+    <div class="checklist">
+      <h3>✅ 本章自查清单</h3>
+      <label><input type="checkbox"> 能说出单项式的系数和次数</label>
+      <label><input type="checkbox"> 能区分多项式的项、常数项和次数</label>
+      <label><input type="checkbox"> 能准确判断同类项并合并</label>
+      <label><input type="checkbox"> 能正确运用去括号法则</label>
+      <label><input type="checkbox"> 能先化简整式再代入求值</label>
+      <p style="margin-top:14px;font-size:13px;color:var(--accent);padding:10px 0;border-top:1px dashed var(--border);"><strong>🗣 费曼挑战：</strong>试着不看资料，用你自己的话讲一遍本章最重要的 3 个概念。讲不清楚的地方，回去重看对应模块。</p>
+    </div>
+</div>
+
+<div class="chapter" id="chapter3">
+  <h1>第3章 · 一元一次方程</h1>
+    <div class="learning-goals">
+      <strong>🎯 学习目标</strong>
+      <p>掌握等式的基本性质；熟练解一元一次方程；能用方程解决行程、工程、利润等实际问题</p>
+    </div>
+    <div class="knowledge-link"><strong>🔗 前置知识：</strong>整式化简（第2章）· 等式的性质（本章核心）。<strong>后续关联：</strong>方程组（第8章）、不等式（第9章）的解法前四步与本章完全相同，仅最后一步有差异。</div>
+    <div class="thought-method"><strong>🧭 方程思想：</strong>方程是七年级最重要的数学工具。核心思维：设未知数→用未知数表示已知量→找等量关系→列方程→求解。这种"用方程描述现实"的能力，是第3章、第8章乃至整个中学数学的灵魂。</div>
+    <div class="solve-template">
+      <h4>📋 应用题通用解题模板（7步法）</h4>
+      <ol>
+        <li><strong>审</strong> — 读题，划出关键词和数据</li>
+        <li><strong>找</strong> — 找到等量关系（谁和谁相等/谁的几倍是谁/谁比谁多多少……）</li>
+        <li><strong>设</strong> — 设未知数（一般设"求什么"或设"关键量"）</li>
+        <li><strong>列</strong> — 用未知数表示所有相关量，根据等量关系列出方程</li>
+        <li><strong>解</strong> — 解方程（移项→合并→系数化1）</li>
+        <li><strong>验</strong> — 代入检验（方程是否成立 + 答案是否符合实际）</li>
+        <li><strong>答</strong> — 写出完整答句</li>
+      </ol>
+    </div>
+  <details class="module" open>
+    <summary>🧠 思维导图</summary>
+    <div class="content">
+      <div class="mindmap">
+        <div class="node-label" style="font-size:16px;margin-bottom:12px;">一元一次方程 $ax + b = 0\ (a \neq 0)$</div>
+        <ul>
+          <li><span class="node-label">基本概念</span> <span class="node-desc">方程 · 方程的解 · 解方程 · 一元一次方程</span></li>
+          <li>
+            <span class="node-label">等式性质</span> <span class="node-desc">加减：$a=b \implies a\pm c=b\pm c$ · 乘除：$a=b \implies ac=bc\ (c\neq0)$</span>
+          </li>
+          <li>
+            <span class="node-label">解法步骤</span> <span class="node-desc">去分母 → 去括号 → 移项 → 合并同类项 → 系数化为1</span>
+          </li>
+          <li>
+            <span class="node-label">应用题</span>
+            <ul>
+              <li><span class="node-label">行程问题</span> <span class="node-desc">$s=vt$（相遇、追及、顺逆流）</span></li>
+              <li><span class="node-label">工程问题</span> <span class="node-desc">工作量 = 工作效率 × 时间，常设总量为 1</span></li>
+              <li><span class="node-label">利润问题</span> <span class="node-desc">利润 = 售价 − 进价；利润率 = 利润 ÷ 进价 × 100%</span></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>📖 核心概念</summary>
+    <div class="content">
+      <div class="card-grid">
+        <div class="concept-card">
+          <div class="name">方程与解</div>
+          <p>含有<strong>未知数</strong>的<strong>等式</strong>叫方程。使方程左右两边相等的未知数的值叫<strong>方程的解</strong>。求方程解的过程叫<strong>解方程</strong>。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">一元一次方程</div>
+          <p>只含<strong>一个</strong>未知数，未知数的次数都是<strong>1</strong>，等号两边都是<strong>整式</strong>。标准形式：$ax+b=0\ (a\neq0)$。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">等式的性质</div>
+          <p><strong>性质1：</strong>等式两边加（或减）同一个数（或式子），结果仍相等。</p><p><strong>性质2：</strong>等式两边乘同一个数，或除以同一个不为 $0$ 的数，结果仍相等。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">移项</div>
+          <p>把方程一边的某项<strong>变号</strong>后移到另一边，即移项要<strong>变号</strong>。实质是利用等式性质1。</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>📐 公式速查</summary>
+    <div class="content">
+      <div class="formula-card"><strong>等式性质</strong><p style="margin-top:6px;">$a = b \implies a \pm c = b \pm c$</p><p>$a = b \implies ac = bc$ &nbsp;·&nbsp; $a = b \implies \frac{a}{c} = \frac{b}{c}\ (c \neq 0)$</p></div>
+      <div class="formula-card"><strong>解方程五步法</strong><p style="margin-top:6px;">① 去分母（找最小公倍数乘各项）</p><p>② 去括号（注意变号）</p><p>③ 移项（移项要变号！）</p><p>④ 合并同类项</p><p>⑤ 系数化为 $1$（两边同除以系数）</p></div>
+      <div class="formula-card"><strong>行程问题</strong><p style="margin-top:6px;">路程 = 速度 × 时间：$s = vt$</p><p>相遇：$s_A + s_B = S_{\text{总}}$ &nbsp;·&nbsp; 追及：$s_A - s_B = S_{\text{距离}}$</p><p>顺流：$v = v_{\text{静}} + v_{\text{水}}$ &nbsp;·&nbsp; 逆流：$v = v_{\text{静}} - v_{\text{水}}$</p></div>
+      <div class="formula-card"><strong>工程与利润</strong><p style="margin-top:6px;">工作量 = 工作效率 × 时间（设总量为 $1$）</p><p>利润 = 售价 − 进价</p><p>利润率 = $\frac{\text{利润}}{\text{进价}} \times 100\%$</p></div>
+      <div class="formula-card"><strong>利率与利息</strong><p style="margin-top:6px;">利息 = 本金 × 利率 × 时间</p><p>本息和 = 本金 + 利息 = 本金 × $(1 + \text{利率} \times \text{时间})$</p></div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>💡 解题技巧</summary>
+    <div class="content">
+      <div class="technique-card">
+        <h3><span class="step-num">1</span> 移项要变号</h3>
+        <p class="method">解方程的核心纪律：把某一项从等号一边移到另一边，<strong>必须改变符号</strong>。</p>
+        <p class="example"><strong>例题：</strong>解 $3x + 5 = 2x - 1$<br><strong>解：</strong>移项 $3x - 2x = -1 - 5$，得 $x = -6$</p>
+        <p class="pitfall">⚠️ 易错：$5$ 从左边移到右边变 $-5$，忘记变号是最高频错误</p>
+        <p class="principle"><strong>💡 原理：</strong>移项的本质是利用等式的性质1——等式两边同时减去（或加上）同一个数，等式仍成立。将 $2x$ 从右边移到左边，等价于两边同时减 $2x$，所以右边剩下 $-1-2x$，左边变成 $3x-2x$。变号不是魔法，是等式性质的结果。</p>
+        <div class="variant"><strong>📝 变式：</strong>解方程 $5x - 7 = 3x + 1$<br><strong>解：</strong>移项 $5x-3x=1+7$，$2x=8$，$x=4$。<br><strong>验证：</strong>左边 $5×4-7=13$，右边 $3×4+1=13$，✓</div>
+        <p class="exam-hint">📋 中考怎么考：中考基础题（选择/填空），通常作为解方程的中间步骤。1分2分的题，错在移项变号太可惜。</p>
+      </div>
+      <div class="technique-card">
+        <h3><span class="step-num">2</span> 去分母找最小公倍数</h3>
+        <p class="method">含分母的方程，先找出所有分母的<strong>最小公倍数</strong>，再每项都乘这个数。不要漏乘没有分母的项！</p>
+        <p class="example"><strong>例题：</strong>解 $\frac{x-1}{2} = \frac{x+2}{3}$<br><strong>解：</strong>两边乘6，$3(x-1) = 2(x+2)$，$3x-3=2x+4$，$x=7$</p>
+        <p class="pitfall">⚠️ 易错：漏乘整数项或常数项，如 $\frac{x}{2}+1=3$ 乘2时忘记乘 $1$</p>
+        <p class="principle"><strong>💡 原理：</strong>去分母的本质是利用等式的性质2——等式两边乘以同一个不为零的数，等式仍成立。乘最小公倍数保证去分母后系数为整数且最小，减少计算量。注意：没有分母的项也必须乘！</p>
+        <div class="variant"><strong>📝 变式（真题型）：</strong>解 $\frac{2x-1}{3} - \frac{x+1}{6} = 1$<br><strong>解：</strong>两边乘6：$2(2x-1)-(x+1)=6$，$4x-2-x-1=6$，$3x-3=6$，$3x=9$，$x=3$</div>
+        <p class="exam-hint">📋 中考怎么考：中考必考解答题第一题（6-8分），去分母漏乘是这里最常扣分的点。</p>
+      </div>
+      <div class="technique-card">
+        <h3><span class="step-num">3</span> 行程问题画线段图</h3>
+        <p class="method">相遇/追及问题，先<strong>画线段图</strong>理清各段路程关系，再列方程。</p>
+        <p class="example"><strong>例题：</strong>甲从A出发速度5km/h，乙从B出发速度3km/h，AB相距24km，相向而行几小时相遇？<br><strong>解：</strong>设 $x$ 小时后相遇，$5x + 3x = 24$，$x = 3$</p>
+        <p class="pitfall">⚠️ 易错：忽略单位统一（如速度是 km/h，时间给的分钟，先换算）</p>
+        <p class="principle"><strong>💡 原理：</strong>行程问题的核心关系式是 $s=vt$。相遇问题中两人路程之和等于总路程；追及问题中两人路程之差等于初始距离。画线段图是将"文字"转化为"数学关系"的桥梁——各段标上未知数，等量关系一目了然。</p>
+        <div class="variant"><strong>📝 变式（追及问题）：</strong>甲从A地出发速度6km/h，1小时后乙从A地出发速度10km/h追甲，几小时后追上？<br><strong>解：</strong>设乙出发 $x$ 小时后追上。甲已走 $6×1=6$km，甲路程 $6+6x$，乙路程 $10x$。$10x = 6+6x$，$4x=6$，$x=1.5$</div>
+      </div>
+      <div class="technique-card">
+        <h3><span class="step-num">4</span> 配套问题与方案选择</h3>
+        <p class="method"><strong>配套问题：</strong>找"几比几搭配"→列乘积等式。<strong>方案选择：</strong>分别算出两种方案的费用/数量表达式，用方程找平衡点。</p>
+        <p class="example"><strong>例题：</strong>一张桌子配4把椅子。现有木料可做20张桌子或60把椅子，如何分配使桌椅恰好配套？<br><strong>解：</strong>设做桌子 $x$ 张，则做椅子 $4x$ 把。$\frac{x}{20} + \frac{4x}{60} = 1$，$\frac{3x+4x}{60}=1$，$x=\frac{60}{7}$，取整数讨论。</p>
+        <p class="pitfall">⚠️ 易错：配套关系不是"数量相等"，而是"按比例对应"——1张桌配4把椅，椅子 = 4×桌子</p>
+        <p class="principle"><strong>💡 原理：</strong>配套问题的本质是"两个量的比例固定"。找到比例关系后，用一个量表示另一个量，等式：两种产品消耗总量=总资源。方案选择则利用不等式比较两种方案的成本/收益。</p>
+        <div class="variant"><strong>📝 变式（方案选择）：</strong>某地有两种出租车：起步价8元/3km，超出每千米2元。方案B：每千米2.5元无起步价。问路程多少千米时两种方案费用相同？超过多少千米选A更划算？<br><strong>解：</strong>设 $x$ km。A费用：$x\leq3$ 时8元，$x>3$ 时 $8+2(x-3)=2x+2$。B费用：$2.5x$。当 $x>3$ 时，$2x+2=2.5x$，$x=4$km。$x<4$ 时 B 更划算，$x>4$ 时 A 更划算。</div>
+      </div>
+    </div>
+  </details>
+  <details class="exam-module">
+    <summary>🎯 中考真题精选（一元一次方程 · 近年典型）</summary>
+    <div class="content">
+      <div class="exam-q"><span class="q-tag">2022杭州</span><div class="q-body">解方程：$\frac{x+1}{2} - 1 = \frac{2-x}{3}$</div><div class="q-solution"><strong>答案：$x = \frac{7}{5}$</strong>。去分母（×6）：$3(x+1)-6=2(2-x)$，$3x+3-6=4-2x$，$5x=7$，$x=\frac{7}{5}$。</div></div>
+      <div class="exam-q"><span class="q-tag">2023广州</span><div class="q-body">解方程：$2(x - 3) = 3x - 7$</div><div class="q-solution"><strong>答案：$x = -1$</strong>。去括号：$2x-6=3x-7$，移项：$2x-3x=-7+6$，$-x=-1$，$x=1$。⚠️ 最后一步 $-x=-1 \implies x=1$，两边同除-1。</div></div>
+      <div class="exam-q"><span class="q-tag">2023北京</span><div class="q-body">某商店购进一批商品，进价为每件 8 元。若按每件 10 元出售，每天可售出 100 件。经调查，每降价 0.1 元，每天可多售 10 件。问每件定价多少元时，每天利润为 200 元？</div><div class="q-solution"><strong>答案：9元或6元</strong>。设降价 $x$ 元，售价 $10-x$，利润 = $(2-x) \times (100+100x) = 200$。解得 $x=1$ 或 $x=4$，即定价 9 元或 6 元。</div></div>
+      <div class="exam-q"><span class="q-tag">2022广州</span><div class="q-body">甲、乙两人从相距 36 千米的两地相向而行。如果甲比乙先出发 1 小时，那么在乙出发 2 小时后两人相遇；如果两人同时出发，1.5 小时后两人还相距 6 千米。求甲、乙的速度。</div><div class="q-solution"><strong>答案：甲8km/h，乙6km/h</strong>。设甲速度 $x$ km/h，乙速度 $y$ km/h。$\begin{cases} 3x+2y=36 \\ 1.5x+1.5y=30 \end{cases}$，解方程组即可。此题既可用方程也可用方程组解。</div></div>
+    </div>
+  </details>
+    <div class="checklist">
+      <h3>✅ 本章自查清单</h3>
+      <label><input type="checkbox"> 能说出等式的两条基本性质</label>
+      <label><input type="checkbox"> 能按五步法解一元一次方程</label>
+      <label><input type="checkbox"> 解方程时不会忘记移项变号</label>
+      <label><input type="checkbox"> 会列方程解行程问题（相遇/追及）</label>
+      <label><input type="checkbox"> 会列方程解利润问题（利润/利润率）</label>
+      <p style="margin-top:14px;font-size:13px;color:var(--accent);padding:10px 0;border-top:1px dashed var(--border);"><strong>🗣 费曼挑战：</strong>试着不看资料，用你自己的话讲一遍本章最重要的 3 个概念。讲不清楚的地方，回去重看对应模块。</p>
+    </div>
+</div>
+
+<div class="chapter" id="chapter4">
+  <h1>第4章 · 几何图形初步</h1>
+    <div class="learning-goals">
+      <strong>🎯 学习目标</strong>
+      <p>能识别三视图；掌握正方体展开图的判断；理解线段中点和角平分线；掌握余角与补角的计算</p>
+    </div>
+    <div class="knowledge-link"><strong>🔗 前置知识：</strong>数轴与有理数（第1章）· 角的度量、线段比较。立体图形（本章）→ 将来用于三视图、体积计算。</div>
+    <div class="thought-method"><strong>🧭 分类讨论思想（一）：</strong>"点C在直线AB上"≠"点C在线段AB上"。位置不确定时必须分情况讨论——在左/在右、在上/在下、在线段上/在延长线上。本章线段问题是分类讨论的起点，第7章坐标系中还会强化。</div>
+  <details class="module" open>
+    <summary>🧠 思维导图</summary>
+    <div class="content">
+      <div class="mindmap">
+        <div class="node-label" style="font-size:16px;margin-bottom:12px;">几何图形初步</div>
+        <ul>
+          <li>
+            <span class="node-label">立体图形</span> <span class="node-desc">从不同方向看（三视图） · 展开图</span>
+          </li>
+          <li><span class="node-label">三视图</span> <span class="node-desc">主视图（从正面）· 俯视图（从上面）· 左视图（从左面）</span></li>
+          <li><span class="node-label">展开图</span> <span class="node-desc">正方体11种展开图 · 对立面判断 · 邻面判断</span></li>
+          <li>
+            <span class="node-label">直线·射线·线段</span> <span class="node-desc">两点确定一直线 · 两点之间线段最短 · 中点</span>
+          </li>
+          <li>
+            <span class="node-label">角</span>
+            <ul>
+              <li><span class="node-label">定义</span> <span class="node-desc">有公共端点的两条射线</span></li>
+              <li><span class="node-label">度量</span> <span class="node-desc">$1° = 60'$，$1' = 60''$</span></li>
+              <li><span class="node-label">角平分线</span> <span class="node-desc">将一个角分成两个相等角的射线</span></li>
+            </ul>
+          </li>
+          <li><span class="node-label">余角与补角</span> <span class="node-desc">余角 $\alpha+\beta=90°$ · 补角 $\alpha+\beta=180°$ · 等角性质</span></li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>📖 核心概念</summary>
+    <div class="content">
+      <div class="card-grid">
+        <div class="concept-card">
+          <div class="name">直线·射线·线段</div>
+          <p><strong>直线：</strong>没有端点，向两端无限延伸，两点确定一条直线。<br><strong>射线：</strong>一个端点，向一端无限延伸。<br><strong>线段：</strong>两个端点，可度量长度。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">线段中点</div>
+          <p>若点 $M$ 是线段 $AB$ 的中点，则 $AM = MB = \frac{1}{2}AB$。这是七年级最重要的几何关系之一。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">角的概念</div>
+          <p>有<strong>公共端点</strong>的两条<strong>射线</strong>组成的图形。公共端点叫<strong>角的顶点</strong>，两条射线叫<strong>角的边</strong>。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">余角与补角</div>
+          <p><strong>余角：</strong>两角之和为 $90°$。$\angle\alpha + \angle\beta = 90°$。<br><strong>补角：</strong>两角之和为 $180°$。$\angle\alpha + \angle\beta = 180°$。<br>同角（等角）的余角相等，同角（等角）的补角相等。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">三视图</div>
+          <p>从<strong>正面</strong>看→主视图，从<strong>上面</strong>看→俯视图，从<strong>左面</strong>看→左视图。三视图位置：主视图左上，俯视图在主视图正下方，左视图在主视图正右方。<strong>长对正、高平齐、宽相等</strong>。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">正方体展开图</div>
+          <p>正方体表面展开图共<strong>11种</strong>，分四类：1-4-1型（6种）、2-3-1型（3种）、2-2-2型（1种）、3-3型（1种）。口诀：<strong>一线不过四，田凹不能有</strong>。对立面不会相邻。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">角平分线</div>
+          <p>从一个角的顶点出发，把这个角分成<strong>两个相等角</strong>的射线。若 $OC$ 是 $\angle AOB$ 的平分线，则 $\angle AOC = \angle COB = \frac{1}{2}\angle AOB$。角平分线是几何中的重要概念，与线段中点对称对应。</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>📐 公式速查</summary>
+    <div class="content">
+      <div class="formula-card"><strong>度分秒换算</strong><p style="margin-top:6px;">$$1° = 60' \quad 1' = 60'' \quad 1° = 3600''$$</p><p>度化分：乘60；分化秒：乘60；秒化度：除以3600</p></div>
+      <div class="formula-card"><strong>线段</strong><p style="margin-top:6px;">中点：$AM = MB = \frac{1}{2}AB$</p><p>两点之间线段最短（线段公理）</p></div>
+      <div class="formula-card"><strong>余角与补角</strong><p style="margin-top:6px;">若 $\angle\alpha + \angle\beta = 90°$，则 $\angle\alpha$ 与 $\angle\beta$ 互余</p><p>若 $\angle\alpha + \angle\beta = 180°$，则 $\angle\alpha$ 与 $\angle\beta$ 互补</p><p>等角的余角相等，等角的补角相等</p></div>
+      <div class="formula-card"><strong>角平分线</strong><p style="margin-top:6px;">若 $OC$ 是 $\angle AOB$ 的平分线，则：</p><p>$$\angle AOC = \angle COB = \frac{1}{2}\angle AOB$$</p></div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>💡 解题技巧</summary>
+    <div class="content">
+      <div class="technique-card">
+        <h3><span class="step-num">1</span> 三视图与展开图判断</h3>
+        <p class="method"><strong>三视图：</strong>"长对正"（主俯长相等）、"高平齐"（主左高相等）、"宽相等"（俯左宽相等）。<br><strong>展开图：</strong>判断能否折成正方体——相邻面最多4个，不能有"田""凹"字形。</p>
+        <p class="example"><strong>例题：</strong>下图能否折成正方体？（一个"田"字形排列的4个正方形）<br><strong>解：</strong>不能。正方体展开图中不能出现"田"字排列。</p>
+        <p class="pitfall">⚠️ 易错："1-4-1"型中，中间4个一排，上下各一个不能都在同一侧</p>
+      </div>
+      <div class="technique-card">
+        <h3><span class="step-num">2</span> 度分秒的加减运算</h3>
+        <p class="method"><strong>加法：</strong>度+度、分+分、秒+秒。满 $60$ 进位（$60''=1'$，$60'=1°$）。<br><strong>减法：</strong>不够减时向前一位借 $1$ 当 $60$。</p>
+        <p class="example"><strong>例题：</strong>计算 $28°35'42'' + 36°48'25''$<br><strong>解：</strong>$42''+25''=67''=1'7''$，$35'+48'+1'=84'=1°24'$，$28°+36°+1°=65°$。结果为 $65°24'7''$。</p>
+        <p class="pitfall">⚠️ 易错：忘掉进位，直接写 $64°83'67''$ 不化简；减法借位时忘记 $1°=60'$</p>
+      </div>
+      <div class="technique-card">
+        <h3><span class="step-num">3</span> 分类讨论线段问题</h3>
+        <p class="method">当点在线段上的位置不确定时，要分类讨论（在线段上、在线段的延长线上等）。</p>
+        <p class="example"><strong>例题：</strong>线段 $AB=10$，点 $C$ 在直线 $AB$ 上，$BC=4$，求 $AC$。<br><strong>解：</strong>① $C$ 在 $B$ 右侧：$AC=AB+BC=14$；② $C$ 在 $B$ 左侧（$AB$ 上）：$AC=AB-BC=6$。$AC=6$ 或 $14$</p>
+        <p class="pitfall">⚠️ 易错："在直线AB上"≠"在线段AB上"；审题注意"直线"、"线段"、"射线"的区别</p>
+      </div>
+      <div class="technique-card">
+        <h3><span class="step-num">4</span> 钟表角度问题</h3>
+        <p class="method">钟表一圈 $360°$，12 大格，每格 $30°$。分针每分钟走 $6°$，时针每分钟走 $0.5°$。</p>
+        <p class="example"><strong>例题：</strong>3点整，时针与分针夹角为多少？<br><strong>解：</strong>3点整分针在12，时针在3，差3大格。$3 \times 30° = 90°$</p>
+        <p class="pitfall">⚠️ 易错：计算某一时刻夹角时，时针不是恰好指在刻度上，需加偏移量（n点m分：时针角度=$30n+0.5m$）</p>
+        <div class="variant"><strong>📝 变式（含偏移量）：</strong>3:15时，时针与分针的夹角是多少？<br><strong>解：</strong>分针在3处（15分→90°位置）。时针：$30×3 + 0.5×15 = 90+7.5 = 97.5°$。夹角 = $|97.5°-90°| = 7.5°$（注意：不只3点整才简单，用偏移公式 $30n+0.5m$ 算任意时刻）</div>
+      </div>
+    </div>
+  </details>
+  <details class="exam-module">
+    <summary>🎯 中考真题精选（几何图形初步 · 近年典型）</summary>
+    <div class="content">
+      <div class="exam-q"><span class="q-tag">2023北京</span><div class="q-body">下列图形中，能折成正方体的是（ ）</div>
+<div class="diagram">
+  <svg width="300" height="200" viewBox="0 0 300 200">
+    <text x="10" y="18" font-size="12" fill="var(--text)">A.</text>
+    <rect x="20" y="4" width="18" height="18" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <rect x="38" y="4" width="18" height="18" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <rect x="20" y="22" width="18" height="18" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <rect x="38" y="22" width="18" height="18" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="26" y="36" font-size="9" fill="#dc2626">✗田字</text>
+    <text x="75" y="18" font-size="12" fill="var(--text)">B.</text>
+    <rect x="121" y="4" width="18" height="18" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <rect x="85" y="22" width="18" height="18" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <rect x="103" y="22" width="18" height="18" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <rect x="121" y="22" width="18" height="18" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <rect x="139" y="22" width="18" height="18" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <rect x="121" y="40" width="18" height="18" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="114" y="56" font-size="9" fill="#16a34a">✓1-4-1型</text>
+    <text x="175" y="18" font-size="12" fill="var(--text)">C.</text>
+    <rect x="185" y="4" width="18" height="18" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <rect x="203" y="4" width="18" height="18" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <rect x="221" y="4" width="18" height="18" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <rect x="239" y="4" width="18" height="18" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <rect x="257" y="4" width="18" height="18" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="210" y="20" font-size="9" fill="#dc2626">✗一排5个</text>
+    <text x="10" y="85" font-size="12" fill="var(--text)">D.</text>
+    <rect x="20" y="70" width="18" height="18" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <rect x="38" y="70" width="18" height="18" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <rect x="56" y="70" width="18" height="18" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <rect x="29" y="88" width="18" height="18" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <rect x="47" y="88" width="18" height="18" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="52" y="104" font-size="9" fill="#dc2626">✗缺面</text>
+  </svg>
+</div><div class="q-solution"><strong>答案：B</strong>。口诀：一线不过四，田凹不能有。A出现"田"→不能；C一排5个→不能。</div></div>
+      <div class="exam-q"><span class="q-tag">2022广东</span><div class="q-body">如图是由 4 个相同的小正方体搭成的几何体，它的左视图是（ ）</div>
+<div class="diagram">
+  <svg width="280" height="200" viewBox="0 0 280 200">
+    <polygon points="40,130 70,115 70,75 40,90" fill="none" stroke="#4f46e5" stroke-width="1.5"/>
+    <polygon points="70,115 100,130 100,90 70,75" fill="none" stroke="#4f46e5" stroke-width="1.5"/>
+    <polygon points="40,130 70,115 100,130 70,145" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.5"/>
+    <polygon points="100,130 130,115 130,75 100,90" fill="none" stroke="#4f46e5" stroke-width="1.5"/>
+    <polygon points="130,115 160,130 160,90 130,75" fill="none" stroke="#4f46e5" stroke-width="1.5"/>
+    <polygon points="100,130 130,115 160,130 130,145" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.5"/>
+    <polygon points="160,130 190,115 190,75 160,90" fill="none" stroke="#4f46e5" stroke-width="1.5"/>
+    <polygon points="190,115 220,130 220,90 190,75" fill="none" stroke="#4f46e5" stroke-width="1.5"/>
+    <polygon points="160,130 190,115 220,130 190,145" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.5"/>
+    <polygon points="100,90 130,75 130,35 100,50" fill="none" stroke="#4f46e5" stroke-width="1.5"/>
+    <polygon points="130,75 160,90 160,50 130,35" fill="none" stroke="#4f46e5" stroke-width="1.5"/>
+    <polygon points="100,90 130,75 160,90 130,105" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.5"/>
+    <text x="130" y="170" font-size="12" fill="var(--text)" text-anchor="middle">（立体图形）</text>
+    <text x="10" y="18" font-size="12" fill="var(--text)">A.</text>
+    <rect x="20" y="4" width="18" height="36" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <rect x="38" y="4" width="18" height="36" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="75" y="18" font-size="12" fill="var(--text)">B.</text>
+    <rect x="85" y="4" width="36" height="18" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <rect x="85" y="22" width="36" height="18" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="145" y="18" font-size="12" fill="var(--text)">C.</text>
+    <rect x="155" y="22" width="18" height="18" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <rect x="173" y="22" width="18" height="18" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <rect x="164" y="4" width="18" height="18" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="210" y="18" font-size="12" fill="var(--text)">D.</text>
+    <rect x="220" y="4" width="18" height="36" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <rect x="220" y="4" width="36" height="18" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+  </svg>
+</div><div class="q-solution"><strong>答案：选与左面观察一致的图</strong>。左视图：从左面看，能看到每一列最高有多高。口诀：长对正、高平齐、宽相等。</div></div>
+      <div class="exam-q"><span class="q-tag">2023广州</span><div class="q-body">计算：$35°24' + 28°48'$</div><div class="q-solution"><strong>答案：$64°12'$</strong>。$35°+28°=63°$，$24'+48'=72'=1°12'$，$63°+1°12'=64°12'$。注意 60 进制进位！</div></div>
+      <div class="exam-q"><span class="q-tag">2022杭州</span><div class="q-body">已知线段 $AB = 8$，点 $C$ 在直线 $AB$ 上，$BC = 3$，求 $AC$ 的长。</div><div class="q-solution"><strong>答案：5 或 11</strong>。"在直线AB上"≠"在线段AB上"！① C在B右侧：$AC=AB+BC=11$；② C在B左侧且在AB上：$AC=AB-BC=5$。两个答案！</div></div>
+      <div class="exam-q"><span class="q-tag">2023重庆</span><div class="q-body">若 $\angle \alpha$ 的补角是 $120°$，则 $\angle \alpha$ 的余角是多少度？</div><div class="q-solution"><strong>答案：$30°$</strong>。$\angle\alpha = 180°-120°=60°$，余角 $=90°-60°=30°$。用概念直接算，不要死记公式。</div></div>
+    </div>
+  </details>
+    <div class="checklist">
+      <h3>✅ 本章自查清单</h3>
+      <label><input type="checkbox"> 能根据三视图判断立体图形</label>
+      <label><input type="checkbox"> 能判断一个展开图能否折成正方体</label>
+      <label><input type="checkbox"> 会进行度分秒的加减与换算</label>
+      <label><input type="checkbox"> 会利用线段中点列方程</label>
+      <label><input type="checkbox"> 能正确计算余角和补角</label>
+      <p style="margin-top:14px;font-size:13px;color:var(--accent);padding:10px 0;border-top:1px dashed var(--border);"><strong>🗣 费曼挑战：</strong>试着不看资料，用你自己的话讲一遍本章最重要的 3 个概念。讲不清楚的地方，回去重看对应模块。</p>
+    </div>
+</div>
+
+<div class="chapter" id="chapter5">
+  <h1>第5章 · 相交线与平行线</h1>
+    <div class="learning-goals">
+      <strong>🎯 学习目标</strong>
+      <p>理解对顶角、邻补角、垂线；掌握平行线的判定和性质；能区分判定与性质的不同用法</p>
+    </div>
+    <div class="knowledge-link"><strong>🔗 前置知识：</strong>角的概念与度量、余角补角（第4章）。本章在此基础上引入相交与平行关系。<strong>后续关联：</strong>平行线性质可用于坐标几何（第7章）中求点的位置。</div>
+    <div class="thought-method"><strong>🧭 逻辑推理：</strong>判定（由角推线）→充分条件；性质（由线推角）→必要条件。这种"条件→结论""结论→条件"的双向推理，是七年级第一次接触严谨的数学证明。命题与定理—如果…那么…的形式化是逻辑训练的开端。</div>
+    <div class="solve-template">
+      <h4>📋 几何证明/计算通用模板</h4>
+      <ol>
+        <li><strong>标图</strong> — 在图上标出所有已知角和线段</li>
+        <li><strong>找已知</strong> — 列出题目给出的所有条件</li>
+        <li><strong>找关系</strong> — 识别角的类型（对顶角/邻补角/同位角/内错角/同旁内角）</li>
+        <li><strong>选定理</strong> — 判断用"判定"还是"性质"：要证明平行→判定；已知平行求角度→性质</li>
+        <li><strong>写过程</strong> — 用"∵……∴……"格式写出推理步骤</li>
+      </ol>
+    </div>
+  <details class="module" open>
+    <summary>🧠 思维导图</summary>
+    <div class="content">
+      <div class="mindmap">
+        <div class="node-label" style="font-size:16px;margin-bottom:12px;">相交线与平行线</div>
+        <ul>
+          <li>
+            <span class="node-label">相交线</span>
+            <ul>
+              <li><span class="node-label">两线相交</span> <span class="node-desc">对顶角（相等） · 邻补角（互补）</span></li>
+              <li><span class="node-label">垂线</span> <span class="node-desc">夹角为 $90°$ · 垂线段最短 · 点到直线的距离</span></li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">三线八角</span>
+            <ul>
+              <li><span class="node-label">同位角</span> <span class="node-desc">位置相同（F型）</span></li>
+              <li><span class="node-label">内错角</span> <span class="node-desc">内部交错（Z型）</span></li>
+              <li><span class="node-label">同旁内角</span> <span class="node-desc">内部同侧（U型）</span></li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">平行线</span>
+            <ul>
+              <li><span class="node-label">平行公理</span> <span class="node-desc">过直线外一点有且只有一条平行线</span></li>
+              <li><span class="node-label">判定（由角推线）</span> <span class="node-desc">同位角相等 · 内错角相等 · 同旁内角互补 $\implies$ 平行</span></li>
+              <li><span class="node-label">性质（由线推角）</span> <span class="node-desc">平行 $\implies$ 同位角相等 · 内错角相等 · 同旁内角互补</span></li>
+            </ul>
+          </li>
+          <li>
+                <span class="node-label">命题与定理</span>
+                <ul>
+                  <li><span class="node-label">命题</span> <span class="node-desc">题设 + 结论（"如果……那么……"）</span></li>
+                  <li><span class="node-label">真命题</span> <span class="node-desc">正确命题 → 定理</span></li>
+                  <li><span class="node-label">假命题</span> <span class="node-desc">错误命题 → 举反例</span></li>
+                </ul>
+              </li>
+          <li><span class="node-label">平移</span> <span class="node-desc">平移不改变形状和大小 · 对应点连线平行且相等 · 平移作图</span></li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>📖 核心概念</summary>
+    <div class="content">
+      <div class="card-grid">
+        <div class="concept-card">
+          <div class="name">对顶角与邻补角</div>
+          <p><strong>对顶角：</strong>两直线相交，一个角的两边是另一个角两边的反向延长线。对顶角<strong>相等</strong>。<br><strong>邻补角：</strong>有一条公共边，另一边互为反向延长线。邻补角<strong>互补</strong>。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">垂线</div>
+          <p>两直线相交成 $90°$ 时，两直线<strong>互相垂直</strong>。过一点<strong>有且只有一条</strong>直线与已知直线垂直。连接直线外一点与直线上各点的所有线段中，<strong>垂线段最短</strong>。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">三线八角</div>
+          <p>两条直线被第三条直线所截，形成8个角。<strong>同位角</strong>（F型）、<strong>内错角</strong>（Z型）、<strong>同旁内角</strong>（U型）。识别时看位置关系，不要死记图形。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">判定 vs 性质</div>
+          <p><strong>判定（由角推线）：</strong>已知角的关系 → 判断两直线平行。<br><strong>性质（由线推角）：</strong>已知两直线平行 → 得出角的关系。两者互逆，不可混淆！</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">平移</div>
+          <p>把一个图形整体沿某一直线方向移动。<strong>性质：</strong>①平移不改变图形的形状和大小；②连接各组对应点的线段<strong>平行（或在同一直线上）且相等</strong>。平移由<strong>方向</strong>和<strong>距离</strong>决定。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">命题</div>
+          <p><strong>命题：</strong>判断一件事情的语句。由<strong>题设</strong>和<strong>结论</strong>两部分组成，通常写成"<strong>如果</strong>……<strong>那么</strong>……"的形式。"如果"后是题设，"那么"后是结论。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">真命题与假命题</div>
+          <p><strong>真命题：</strong>正确的命题（题设成立时，结论一定成立）。经过推理证实的真命题叫<strong>定理</strong>。<br><strong>假命题：</strong>错误的命题。判断假命题只需举一个<strong>反例</strong>（满足题设但不满足结论）。</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>📐 公式速查</summary>
+    <div class="content">
+      <div class="formula-card"><strong>相交线结论</strong><p style="margin-top:6px;">对顶角：$\angle 1 = \angle 3$，$\angle 2 = \angle 4$</p><p>邻补角：$\angle 1 + \angle 2 = 180°$</p></div>
+      <div class="formula-card"><strong>平行线判定（已知角→判平行）</strong><p style="margin-top:6px;">同位角相等 $\implies l_1 \parallel l_2$</p><p>内错角相等 $\implies l_1 \parallel l_2$</p><p>同旁内角互补 $\implies l_1 \parallel l_2$</p></div>
+      <div class="formula-card"><strong>平行线性质（已知平行→得角）</strong><p style="margin-top:6px;">$l_1 \parallel l_2 \implies$ 同位角相等</p><p>$l_1 \parallel l_2 \implies$ 内错角相等</p><p>$l_1 \parallel l_2 \implies$ 同旁内角互补</p></div>
+      <div class="formula-card"><strong>平行公理与距离</strong><p style="margin-top:6px;"><strong>平行公理：</strong>过直线外一点有且只有一条直线与已知直线平行</p><p>点到直线的距离 = 垂线段的长度</p><p>两平行线间的距离处处相等</p></div>
+      <div class="formula-card"><strong>平移性质</strong><p style="margin-top:6px;">平移前后：对应线段平行且相等；对应角相等</p><p>对应点所连线段平行（或在同一直线上）且相等</p><p>平移作图：定方向 → 定距离 → 画对应点 → 连线</p></div>
+      <div class="formula-card"><strong>命题相关公式</strong><p style="margin-top:6px;"><strong>命题改写：</strong>"对顶角相等" → "如果两个角是对顶角，那么这两个角相等"</p><p><strong>判断真假：</strong>若题设成立但结论不成立，则命题为假命题</p><p><strong>举反例：</strong>只需一个反例即可证明假命题</p></div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>💡 解题技巧</summary>
+    <div class="content">
+      <div class="technique-card">
+        <h3><span class="step-num">1</span> 三线八角快速识别</h3>
+        <p class="method">看两个角的两边分别由截线和被截线构成。先找<strong>截线</strong>（公共边所在直线），再看两边位置关系确定是同位角、内错角还是同旁内角。</p>
+        <p class="example"><strong>口诀：</strong>同位"F"型、内错"Z"型、同旁内"U"型（辅助记忆，实际位置可能变形）</p>
+        <p class="pitfall">⚠️ 易错：两条被截线不平行时，同位角不一定相等！判定定理的前提是"被第三条直线所截"</p>
+        <p class="principle"><strong>💡 原理：</strong>三线八角的本质是两条直线被第三条直线所截形成的8个角。三条线中有一条是"截线"（公共边所在直线），另外两条是"被截线"。先确定截线，再看两个角的边分别属于哪两条被截线，位置关系自然就明确了。不要死记"F""Z""U"——有时图形旋转后就认不出来了。</p>
+        <div class="variant"><strong>📝 变式：</strong>两条平行线被第三条直线所截，已知 $\angle 1 = 65°$，求其余7个角的度数。<br><strong>解：</strong>利用对顶角相等和邻补角互补写出同截点4个角，再利用平行性质（同位角相等/内错角相等）映射到另一截点。$\angle 1 = 65°$，则 $\angle 3 = 65°$（对顶角），$\angle 2 = \angle 4 = 115°$（邻补角），另一截点对应角同理。</div>
+      </div>
+      <div class="technique-card">
+        <h3><span class="step-num">2</span> 命题的改写与判断</h3>
+        <p class="method"><strong>改写：</strong>找出题设和结论，用"如果……那么……"连接。<strong>判断真假：</strong>假设题设成立，验证结论是否必然成立。成立→真命题，不成立→假命题（给一个反例）。</p>
+        <p class="example"><strong>例题1：</strong>将"同位角相等"改写为"如果……那么……"形式，并判断真假。<br><strong>解：</strong>如果两个角是同位角，那么这两个角相等。这是<strong>假命题</strong>（两条直线不平行时同位角不相等）。</p>
+        <p class="example"><strong>例题2：</strong>判断"相等的角是对顶角"的真假。<br><strong>解：</strong><strong>假命题。</strong>反例：两条平行线被第三条直线所截，同位角相等但不是对顶角。</p>
+        <p class="pitfall">⚠️ 易错：真命题的逆命题不一定是真命题。如"对顶角相等"为真，但逆命题"相等的角是对顶角"为假</p>
+      </div>
+      <div class="technique-card">
+        <h3><span class="step-num">3</span> "由角推线" vs "由线推角"</h3>
+        <p class="method">审题时分清方向：要求证明平行（用<strong>判定</strong>），还是已知平行求角度（用<strong>性质</strong>）。判定和性质是互逆命题。</p>
+        <p class="example"><strong>判定：</strong>已知 $\angle 1 = \angle 2$，求证 $a \parallel b$。<br><strong>性质：</strong>已知 $a \parallel b$，$\angle 1 = 70°$，求 $\angle 2$。</p>
+        <p class="pitfall">⚠️ 易错：把性质当判定用，或反过来</p>
+        <p class="principle"><strong>💡 原理：</strong>这是初一最重要的逻辑思维训练——<strong>充分条件</strong>和<strong>必要条件</strong>的区别。判定定理：已知角的条件 → 结论是平行（角是平行的充分条件）；性质定理：已知平行 → 结论是角的关系（平行是角相等的充分条件）。两者互为逆命题，真命题的逆命题不一定真！</p>
+        <div class="variant"><strong>📝 变式（真题型）：</strong>如图，已知 $\angle 1 = \angle 2$，判断 $AB$ 是否平行于 $CD$，并说明理由。<br><strong>解：</strong>$\angle 1$ 和 $\angle 2$ 是同位角，同位角相等 → $AB \parallel CD$（用的是<strong>判定</strong>定理）。若已知 $AB \parallel CD$，求 $\angle 2=70°$ 时 $\angle 1$ 的度数，则用<strong>性质</strong>定理回答 $\angle 1 = 70°$。</div>
+        <p class="exam-hint">📋 中考怎么考：中考几何证明题的核心（6-8分）。阅卷时"判定理由写错"直接0分——题目问为什么平行要写判定定理，问为什么角相等要写性质定理。</p>
+      </div>
+    </div>
+  </details>
+  <details class="exam-module">
+    <summary>🎯 中考真题精选（相交线与平行线 · 近年典型）</summary>
+    <div class="content">
+      <div class="exam-q"><span class="q-tag">2023北京</span><div class="q-body">如图，直线 $a \parallel b$，直线 $c$ 与 $a$、$b$ 分别交于 $A$、$B$ 两点，$\angle 1 = 60°$，则 $\angle 2$ 的度数为____。</div>
+<div class="diagram">
+  <svg width="240" height="160" viewBox="0 0 240 160">
+    <line x1="20" y1="40" x2="220" y2="40" stroke="#4f46e5" stroke-width="2"/>
+    <text x="224" y="44" font-size="12" fill="#4f46e5">a</text>
+    <line x1="60" y1="110" x2="230" y2="110" stroke="#4f46e5" stroke-width="2"/>
+    <text x="234" y="114" font-size="12" fill="#4f46e5">b</text>
+    <line x1="120" y1="10" x2="50" y2="145" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="122" y="14" font-size="12" fill="#dc2626">c</text>
+    <path d="M 95,40 Q 100,20 120,40" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="85" y="28" font-size="12" fill="#f59e0b">1</text>
+    <path d="M 143,110 Q 133,130 153,110" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="148" y="130" font-size="12" fill="#f59e0b">2</text>
+    <text x="100" y="54" font-size="11" fill="var(--text)">A</text>
+    <text x="152" y="108" font-size="11" fill="var(--text)">B</text>
+  </svg>
+</div>
+<div class="q-solution"><strong>答案：$120°$</strong>。$a\parallel b$，同位角 $\angle 1 = \angle 3 = 60°$（设 $\angle 3$ 为 $\angle 1$ 的同位角），$\angle 2$ 与 $\angle 3$ 是邻补角，$\angle 2 = 180°-60° = 120°$。</div></div>
+      <div class="exam-q"><span class="q-tag">2023广州</span><div class="q-body">如图，$AB \parallel CD$，$\angle 1 = 50°$，$\angle 2 = 30°$，则 $\angle 3$ 的度数为____。</div>
+<div class="diagram">
+  <svg width="200" height="160" viewBox="0 0 200 160">
+    <line x1="40" y1="15" x2="40" y2="145" stroke="#4f46e5" stroke-width="2"/>
+    <text x="14" y="80" font-size="12" fill="#4f46e5">A</text>
+    <text x="14" y="100" font-size="12" fill="#4f46e5">B</text>
+    <line x1="160" y1="15" x2="160" y2="145" stroke="#4f46e5" stroke-width="2"/>
+    <text x="162" y="80" font-size="12" fill="#4f46e5">C</text>
+    <text x="162" y="100" font-size="12" fill="#4f46e5">D</text>
+    <line x1="40" y1="30" x2="160" y2="55" stroke="#dc2626" stroke-width="1.5"/>
+    <line x1="40" y1="120" x2="100" y2="60" stroke="#dc2626" stroke-width="1.5"/>
+    <line x1="100" y1="60" x2="160" y2="55" stroke="#dc2626" stroke-width="1.5"/>
+    <path d="M 45,30 Q 50,40 55,32" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="52" y="28" font-size="12" fill="#f59e0b">1</text>
+    <path d="M 155,55 Q 148,62 155,68" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="132" y="68" font-size="12" fill="#f59e0b">2</text>
+    <circle cx="100" cy="60" r="3" fill="#4f46e5"/>
+    <path d="M 95,58 Q 80,48 93,50" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="74" y="52" font-size="12" fill="#f59e0b">3</text>
+  </svg>
+</div>
+<div class="q-solution"><strong>答案：$80°$</strong>。过折点作 $AB$ 的平行线（辅助线法），或利用内错角+对顶角。$\angle 3 = \angle 1 + \angle 2 = 80°$。</div></div>
+      <div class="exam-q"><span class="q-tag">2022重庆</span><div class="q-body">写出命题"对顶角相等"的逆命题，并判断其真假。</div><div class="q-solution"><strong>答案：逆命题"相等的角是对顶角"，是假命题</strong>。反例：两条平行线被第三条直线所截，同位角相等但不是对顶角。真命题的逆命题不一定真！</div></div>
+      <div class="exam-q"><span class="q-tag">2023杭州</span><div class="q-body">如图，直线 $AB$ 与 $CD$ 被直线 $EF$ 所截，已知 $\angle 1 = \angle 2$，判断 $AB$ 与 $CD$ 是否平行，并说明理由。</div>
+<div class="diagram">
+  <svg width="220" height="150" viewBox="0 0 220 150">
+    <line x1="10" y1="35" x2="210" y2="35" stroke="#4f46e5" stroke-width="2"/>
+    <text x="212" y="39" font-size="12" fill="#4f46e5">A</text>
+    <text x="2" y="32" font-size="12" fill="#4f46e5">B</text>
+    <line x1="30" y1="115" x2="210" y2="115" stroke="#4f46e5" stroke-width="2"/>
+    <text x="212" y="119" font-size="12" fill="#4f46e5">C</text>
+    <text x="22" y="112" font-size="12" fill="#4f46e5">D</text>
+    <line x1="50" y1="5" x2="180" y2="145" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="178" y="142" font-size="12" fill="#dc2626">F</text>
+    <text x="42" y="8" font-size="12" fill="#dc2626">E</text>
+    <path d="M 95,35 Q 100,20 118,35" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="100" y="22" font-size="12" fill="#f59e0b">1</text>
+    <path d="M 117,115 Q 122,135 138,115" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="122" y="138" font-size="12" fill="#f59e0b">2</text>
+  </svg>
+</div>
+<div class="q-solution"><strong>答案：$AB \parallel CD$</strong>。$\angle 1$ 和 $\angle 2$ 是内错角，内错角相等 ⇒ 两直线平行。用的是<strong>判定</strong>定理（由角推线）。</div></div>
+    </div>
+  </details>
+    <div class="checklist">
+      <h3>✅ 本章自查清单</h3>
+      <label><input type="checkbox"> 能识别对顶角、邻补角并运用其性质</label>
+      <label><input type="checkbox"> 能区分同位角、内错角、同旁内角</label>
+      <label><input type="checkbox"> 能用判定定理证明两直线平行</label>
+      <label><input type="checkbox"> 能利用平行线性质求角度</label>
+      <label><input type="checkbox"> 能区分"由角推线"和"由线推角"</label>
+      <label><input type="checkbox"> 能把命题改写成"如果...那么..."形式</label>
+      <label><input type="checkbox"> 能判断命题真假并会举反例</label>
+      <p style="margin-top:14px;font-size:13px;color:var(--accent);padding:10px 0;border-top:1px dashed var(--border);"><strong>🗣 费曼挑战：</strong>试着不看资料，用你自己的话讲一遍本章最重要的 3 个概念。讲不清楚的地方，回去重看对应模块。</p>
+    </div>
+</div>
+
+<div class="chapter" id="chapter6">
+  <h1>第6章 · 实数</h1>
+    <div class="learning-goals">
+      <strong>🎯 学习目标</strong>
+      <p>理解平方根、算术平方根、立方根的概念；能估算无理数；掌握实数的运算法则</p>
+    </div>
+    <div class="knowledge-link"><strong>🔗 前置知识：</strong>有理数运算（第1章）。<strong>注意：</strong>$\sqrt{a}$ 的结果总是 ≥ 0（算术平方根），这和第1章绝对值的非负性一脉相承。</div>
+    <div class="thought-method"><strong>🧭 数形结合（二）：</strong>$\sqrt{2}$ 有多大？在数轴上找到1和2之间，用夹逼法逐步逼近——这是"无限逼近"思想的雏形。$\sqrt{a^2} = |a|$ 本质是：算术平方根总是非负的（数轴上只能取非负距离）。</div>
+  <details class="module" open>
+    <summary>🧠 思维导图</summary>
+    <div class="content">
+      <div class="mindmap">
+        <div class="node-label" style="font-size:16px;margin-bottom:12px;">实数</div>
+        <ul>
+          <li>
+            <span class="node-label">平方根</span>
+            <ul>
+              <li><span class="node-label">算术平方根</span> <span class="node-desc">$\sqrt{a} \geq 0$（非负平方根）</span></li>
+              <li><span class="node-label">平方根</span> <span class="node-desc">$\pm\sqrt{a}$（正数有两个，0只有一个，负数没有）</span></li>
+            </ul>
+          </li>
+          <li><span class="node-label">立方根</span> <span class="node-desc">$\sqrt[3]{a}$：每个实数有唯一立方根</span></li>
+          <li><span class="node-label">无理数</span> <span class="node-desc">无限不循环小数（如 $\sqrt{2}, \pi$）</span></li>
+          <li>
+            <span class="node-label">实数分类</span> <span class="node-desc">实数 = 有理数（整数+分数）+ 无理数</span>
+          </li>
+          <li><span class="node-label">实数运算</span> <span class="node-desc">数轴可一一对应 · 运算法则同有理数</span></li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>📖 核心概念</summary>
+    <div class="content">
+      <div class="card-grid">
+        <div class="concept-card">
+          <div class="name">算术平方根</div>
+          <p>若 $x^2 = a$ 且 $x \geq 0$，则 $x = \sqrt{a}$（$a \geq 0$）。$\sqrt{0}=0$，负数<strong>没有</strong>算术平方根。$\sqrt{a^2} = |a|$。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">平方根</div>
+          <p>若 $x^2 = a$，则 $x = \pm\sqrt{a}$。正数有<strong>两个</strong>互为相反数的平方根，$0$ 只有一个，负数<strong>没有</strong>平方根。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">立方根</div>
+          <p>若 $x^3 = a$，则 $x = \sqrt[3]{a}$。每个实数都有<strong>唯一</strong>的立方根。$\sqrt[3]{-a} = -\sqrt[3]{a}$。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">实数的分类</div>
+          <p>实数 $\begin{cases} \text{有理数} \begin{cases} \text{整数} \\ \text{分数} \end{cases} \\ \text{无理数（无限不循环小数）} \end{cases}$</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>📐 公式速查</summary>
+    <div class="content">
+      <div class="formula-card"><strong>平方根</strong><p style="margin-top:6px;">$\sqrt{a} \geq 0\ (a \geq 0)$</p><p>$(\sqrt{a})^2 = a\ (a \geq 0)$</p><p>$\sqrt{a^2} = |a| = \begin{cases} a & a \geq 0 \\ -a & a < 0 \end{cases}$</p></div>
+      <div class="formula-card"><strong>立方根</strong><p style="margin-top:6px;">$(\sqrt[3]{a})^3 = \sqrt[3]{a^3} = a$</p><p>$\sqrt[3]{-a} = -\sqrt[3]{a}$</p><p>负数有立方根，且为负数</p></div>
+      <div class="formula-card"><strong>根式运算</strong><p style="margin-top:6px;">$\sqrt{a} \cdot \sqrt{b} = \sqrt{ab}\ (a,b \geq 0)$</p><p>$\frac{\sqrt{a}}{\sqrt{b}} = \sqrt{\frac{a}{b}}\ (a \geq 0, b > 0)$</p><p>$\sqrt{a^2 b} = a\sqrt{b}\ (a \geq 0, b \geq 0)$</p></div>
+      <div class="formula-card"><strong>常见平方根值</strong><p style="margin-top:6px;">$\sqrt{4}=2,\ \sqrt{9}=3,\ \sqrt{16}=4,\ \sqrt{25}=5,\ \sqrt{36}=6$</p><p>$\sqrt{2}\approx1.414,\ \sqrt{3}\approx1.732,\ \sqrt{5}\approx2.236$</p></div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>💡 解题技巧</summary>
+    <div class="content">
+      <div class="technique-card">
+        <h3><span class="step-num">1</span> 估算无理数（夹逼法）</h3>
+        <p class="method">找到比这个数小的最大完全平方数和比它大的最小完全平方数，夹在中间估计。</p>
+        <p class="example"><strong>例题：</strong>估计 $\sqrt{50}$ 在哪两个整数之间。<br><strong>解：</strong>$7^2=49<50$，$8^2=64>50$，$\therefore 7 < \sqrt{50} < 8$</p>
+        <p class="pitfall">⚠️ 易错：$\sqrt{50} \neq 25$，不要和 $50 \div 2$ 混淆</p>
+      </div>
+      <div class="technique-card">
+        <h3><span class="step-num">2</span> 无理数比较大小</h3>
+        <p class="method">方法一：平方比较法（正数：平方大的原数大）；方法二：估值比较法（先估算大约值）。</p>
+        <p class="example"><strong>例题：</strong>比较 $\sqrt{10}$ 和 $\pi$ 的大小。<br><strong>解：</strong>$(\sqrt{10})^2=10$，$\pi^2\approx9.86$，$\therefore \sqrt{10}>\pi$</p>
+        <p class="pitfall">⚠️ 易错：直接比较 $\sqrt{10}\approx3.162$ vs $\pi\approx3.142$ 可能估不准，平方法更可靠</p>
+      </div>
+      <div class="technique-card">
+        <h3><span class="step-num">3</span> 平方根 vs 算术平方根</h3>
+        <p class="method"><strong>平方根有两个：</strong>正数的平方根是 $\pm\sqrt{a}$，0的平方根是0。$\sqrt{16} = 4$，但16的平方根是 $\pm4$。<strong>区分技巧：</strong>看到 $\sqrt{\phantom{x}}$ 符号，结果 ≥ 0（算术平方根）；问"平方根"必须写 $\pm$。</p>
+        <p class="example"><strong>例题：</strong>求 $16$ 的平方根和算术平方根。<br><strong>解：</strong>平方根为 $\pm 4$，算术平方根为 $4$（即 $\sqrt{16} = 4$）。</p>
+        <p class="pitfall">⚠️ 易错：$\sqrt{16} = \pm 4$（错误！√符号只表示算术平方根，必须 ≥ 0）</p>
+      </div>
+      <div class="technique-card">
+        <h3><span class="step-num">4</span> $\sqrt{a^2} = |a|$ 防遗忘</h3>
+        <p class="method">$\sqrt{a^2}$ 不等于 $a$，而是等于 $|a|$。因为 $\sqrt{\phantom{x}}$ 的结果必须 ≥ 0。若 $a$ 为负，$|a| = -a$。</p>
+        <p class="example"><strong>例题：</strong>化简 $\sqrt{(-5)^2}$<br><strong>解：</strong>$\sqrt{(-5)^2} = |-5| = 5$（不是 $-5$！）</p>
+        <p class="pitfall">⚠️ 易错：$\sqrt{a^2} = a$ 不全面，必须是 $\sqrt{a^2} = |a|$，考试极高频</p>
+      </div>
+    </div>
+  </details>
+  <details class="exam-module">
+    <summary>🎯 中考真题精选（实数 · 近年典型）</summary>
+    <div class="content">
+      <div class="exam-q"><span class="q-tag">2023广东</span><div class="q-body">$\sqrt{16}$ 的平方根是（ ）<br>A. $4$ &nbsp; B. $\pm 4$ &nbsp; C. $2$ &nbsp; D. $\pm 2$</div><div class="q-solution"><strong>答案：D（$\pm 2$）</strong>。$\sqrt{16}=4$（算术平方根），4 的平方根是 $\pm 2$。⚠️ 这是中考最高频陷阱：先算 $\sqrt{16}=4$，再求 4 的平方根！</div></div>
+      <div class="exam-q"><span class="q-tag">2023北京</span><div class="q-body">计算：$|-\sqrt{3}| + \sqrt{(-2)^2} - \sqrt[3]{-8}$</div><div class="q-solution"><strong>答案：$\sqrt{3} + 4$</strong>。$|-\sqrt{3}|=\sqrt{3}$，$\sqrt{(-2)^2} = |-2| = 2$（不是 $-2$），$\sqrt[3]{-8} = -2$。$\sqrt{3} + 2 - (-2) = \sqrt{3} + 4$。⚠️ $\sqrt{(-2)^2} \neq -2$！</div></div>
+      <div class="exam-q"><span class="q-tag">2022杭州</span><div class="q-body">在数轴上表示 $\sqrt{17}$ 的点位于哪两个整数之间？</div><div class="q-solution"><strong>答案：4和5之间</strong>。$\sqrt{16}=4$，$\sqrt{25}=5$，$16<17<25$，$\therefore 4<\sqrt{17}<5$（夹逼法）。</div></div>
+      <div class="exam-q"><span class="q-tag">2022广州</span><div class="q-body">下列各数中，是无理数的是（ ）<br>A. $\sqrt{4}$ &nbsp; B. $\frac{22}{7}$ &nbsp; C. $\sqrt{3}$ &nbsp; D. $0.1010010001$</div><div class="q-solution"><strong>答案：C</strong>。$\sqrt{4}=2$（有理数），$\frac{22}{7}$是分数（有理数），$0.1010010001$虽是无限但循环则有理数。$\sqrt{3}$是无限不循环小数→无理数。</div></div>
+    </div>
+  </details>
+    <div class="checklist">
+      <h3>✅ 本章自查清单</h3>
+      <label><input type="checkbox"> 能求一个数的平方根和算术平方根（不混淆）</label>
+      <label><input type="checkbox"> 能求立方根</label>
+      <label><input type="checkbox"> 会用夹逼法估算无理数大小</label>
+      <label><input type="checkbox"> 能正确化简 $\sqrt{a^2}$ 为 $|a|$</label>
+      <label><input type="checkbox"> 能进行根式的乘除运算</label>
+      <p style="margin-top:14px;font-size:13px;color:var(--accent);padding:10px 0;border-top:1px dashed var(--border);"><strong>🗣 费曼挑战：</strong>试着不看资料，用你自己的话讲一遍本章最重要的 3 个概念。讲不清楚的地方，回去重看对应模块。</p>
+    </div>
+</div>
+
+<div class="chapter" id="chapter7">
+  <h1>第7章 · 平面直角坐标系</h1>
+    <div class="learning-goals">
+      <strong>🎯 学习目标</strong>
+      <p>理解平面直角坐标系的概念；能根据坐标描点；掌握点的平移和对称坐标规律</p>
+    </div>
+    <div class="knowledge-link"><strong>🔗 前置知识：</strong>数轴（第1章）· 数的比较大小。<strong>后续关联：</strong>坐标系是函数（八年级）的基础，平移概念与第5章平移一节紧密相关。</div>
+    <div class="thought-method"><strong>🧭 数形结合（三）：</strong>坐标系将"数"和"形"完美统一——一个点对应一对数，一条线段对应一个距离公式，平移对应坐标加减。从数轴（一维）到坐标系（二维），是数学抽象能力的一次跃升。</div>
+  <details class="module" open>
+    <summary>🧠 思维导图</summary>
+    <div class="content">
+      <div class="mindmap">
+        <div class="node-label" style="font-size:16px;margin-bottom:12px;">平面直角坐标系</div>
+        <ul>
+          <li><span class="node-label">有序数对</span> <span class="node-desc">$(a,b)$ 表示位置，顺序不能颠倒</span></li>
+          <li><span class="node-label">坐标</span> <span class="node-desc">$P(x,y)$：$x$横坐标，$y$纵坐标</span></li>
+          <li>
+            <span class="node-label">象限</span>
+            <ul>
+              <li><span class="node-label">第一象限</span> <span class="node-desc">$(+,+)$</span></li>
+              <li><span class="node-label">第二象限</span> <span class="node-desc">$(-,+)$</span></li>
+              <li><span class="node-label">第三象限</span> <span class="node-desc">$(-,-)$</span></li>
+              <li><span class="node-label">第四象限</span> <span class="node-desc">$(+,-)$</span></li>
+            </ul>
+          </li>
+          <li><span class="node-label">坐标轴上的点</span> <span class="node-desc">$x$轴上 $y=0$ · $y$轴上 $x=0$ · 原点 $(0,0)$ 不在任何象限</span></li>
+          <li><span class="node-label">平移</span> <span class="node-desc">左减右加 $x$，上加下减 $y$</span></li>
+              <li><span class="node-label">点到坐标轴距离</span> <span class="node-desc">到 $x$ 轴：$|y|$ · 到 $y$ 轴：$|x|$</span></li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>📖 核心概念</summary>
+    <div class="content">
+      <div class="card-grid">
+        <div class="concept-card">
+          <div class="name">有序数对</div>
+          <p>用<strong>两个数</strong>表示一个确定的位置，如 $(3,2)$ 表示第3列第2排。$(a,b)$ 与 $(b,a)$ 一般表示不同位置。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">象限知识点</div>
+          <p>第一象限 $(+,+)$、第二象限 $(-,+)$、第三象限 $(-,-)$、第四象限 $(+,-)$。坐标轴上的点<strong>不属于</strong>任何象限。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">坐标轴上的点</div>
+          <p>$x$ 轴上的点：纵坐标为 $0$，即 $(a,0)$。<br>$y$ 轴上的点：横坐标为 $0$，即 $(0,b)$。<br>原点：$(0,0)$。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">对称点坐标</div>
+          <p>关于 $x$ 轴对称：$(a,b) \to (a,-b)$<br>关于 $y$ 轴对称：$(a,b) \to (-a,b)$<br>关于原点对称：$(a,b) \to (-a,-b)$</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">点到坐标轴的距离</div>
+          <p>$P(a,b)$ 到 $x$ 轴的距离 = $|b|$（纵坐标绝对值）；到 $y$ 轴的距离 = $|a|$（横坐标绝对值）。注意：到坐标轴的距离一定是<strong>非负</strong>的！考试极高频率。</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>📐 公式速查</summary>
+    <div class="content">
+      <div class="formula-card"><strong>点的平移</strong><p style="margin-top:6px;">向左移 $a$ 个单位：$(x,y) \to (x-a,y)$</p><p>向右移 $a$ 个单位：$(x,y) \to (x+a,y)$</p><p>向上移 $b$ 个单位：$(x,y) \to (x,y+b)$</p><p>向下移 $b$ 个单位：$(x,y) \to (x,y-b)$</p><p style="margin-top:4px;">口诀：<strong>左减右加 x，上加下减 y</strong></p></div>
+      <div class="formula-card"><strong>对称规律</strong><p style="margin-top:6px;">关于 $x$ 轴对称：$y$ 变相反数</p><p>关于 $y$ 轴对称：$x$ 变相反数</p><p>关于原点对称：$x$、$y$ 都变相反数</p></div>
+      <div class="formula-card"><strong>坐标求线段长与面积</strong><p style="margin-top:6px;">水平线段（$y_1=y_2$）：长度 = $|x_1 - x_2|$</p><p>竖直线段（$x_1=x_2$）：长度 = $|y_1 - y_2|$</p><p>三角形面积（割补法）：用长方形包围，减去外围三角形</p></div>
+      <div class="formula-card"><strong>点到坐标轴的距离</strong><p style="margin-top:6px;">点 $P(x, y)$ 到 $x$ 轴的距离 = $|y|$</p><p>点 $P(x, y)$ 到 $y$ 轴的距离 = $|x|$</p><p style="margin-top:4px;">⚠️ 距离开绝对值！如 $P(3,-4)$ 到 $x$ 轴距离为 $|-4|=4$，不是 $-4$</p></div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>💡 解题技巧</summary>
+    <div class="content">
+      <div class="technique-card">
+        <h3><span class="step-num">1</span> 描点法画图</h3>
+        <p class="method">先列表（选取 $x$ 值算出对应的 $y$），再在坐标系中描点，最后连线。注意点取得越多越精确。</p>
+        <p class="example"><strong>例题：</strong>描出 $A(-2,3)$、$B(4,0)$、$C(1,-2)$ 的位置。<br><strong>解：</strong>分别在两条坐标轴上标出横纵坐标，过该点作垂线的交点即所求。</p>
+        <p class="pitfall">⚠️ 易错：$(x,y)$ 第一个数是横坐标，第二个是纵坐标，顺序不能搞反</p>
+      </div>
+      <div class="technique-card">
+        <h3><span class="step-num">2</span> 坐标求面积（割补法）</h3>
+        <p class="method">不规则三角形面积：用<strong>长方形包围</strong>三角形，总面积减去周围几个小三角形面积。</p>
+        <p class="example"><strong>例题：</strong>给三点坐标 $A(1,1),B(5,1),C(3,4)$，求 $\triangle ABC$ 面积。<br><strong>解：</strong>$S = \frac{1}{2} \times |5-1| \times |4-1| = \frac{1}{2} \times 4 \times 3 = 6$（底在x轴平行方向）</p>
+        <p class="pitfall">⚠️ 易错：线段长度 = 坐标差的绝对值，别忘加绝对值符号</p>
+      </div>
+    </div>
+  </details>
+  <details class="exam-module">
+    <summary>🎯 中考真题精选（平面直角坐标系 · 近年典型）</summary>
+    <div class="content">
+      <div class="exam-q"><span class="q-tag">2023北京</span><div class="q-body">在平面直角坐标系中，点 $A(1,2)$ 关于 $y$ 轴对称的点的坐标是____。</div><div class="q-solution"><strong>答案：$(-1, 2)$</strong>。关于 $y$ 轴对称：$x$ 变相反数，$y$ 不变。$(x,y) \to (-x,y)$。</div></div>
+      <div class="exam-q"><span class="q-tag">2022广州</span><div class="q-body">将点 $P(-1, 2)$ 向右平移 3 个单位，再向下平移 1 个单位，得到的点的坐标是____。</div><div class="q-solution"><strong>答案：$(2, 1)$</strong>。右移：$x+3$，下移：$y-1$。$(-1+3, 2-1) = (2, 1)$。左减右加 x，上加下减 y。</div></div>
+      <div class="exam-q"><span class="q-tag">2023杭州</span><div class="q-body">点 $P(a+1, 2a-3)$ 在 $x$ 轴上，则 $a$ 的值为____。</div><div class="q-solution"><strong>答案：$\frac{3}{2}$</strong>。$x$ 轴上的点的纵坐标 $=0$，即 $2a-3=0$，$a=\frac{3}{2}$。</div></div>
+      <div class="exam-q"><span class="q-tag">2022重庆</span><div class="q-body">点 $M(2,-3)$ 到 $x$ 轴的距离是____。</div><div class="q-solution"><strong>答案：3</strong>。点到 $x$ 轴的距离 = $|y|$ = $|-3| = 3$。⚠️ 距离总是 ≥ 0，必须加绝对值！</div></div>
+    </div>
+  </details>
+    <div class="checklist">
+      <h3>✅ 本章自查清单</h3>
+      <label><input type="checkbox"> 能根据坐标在坐标系中描点</label>
+      <label><input type="checkbox"> 能说出坐标轴上点的特征</label>
+      <label><input type="checkbox"> 能正确判断点所在象限</label>
+      <label><input type="checkbox"> 能进行点的平移计算</label>
+      <label><input type="checkbox"> 能求出关于坐标轴/原点对称的点的坐标</label>
+      <label><input type="checkbox"> 会求点到坐标轴的距离（加上绝对值）</label>
+      <p style="margin-top:14px;font-size:13px;color:var(--accent);padding:10px 0;border-top:1px dashed var(--border);"><strong>🗣 费曼挑战：</strong>试着不看资料，用你自己的话讲一遍本章最重要的 3 个概念。讲不清楚的地方，回去重看对应模块。</p>
+    </div>
+</div>
+
+<div class="chapter" id="chapter8">
+  <h1>第8章 · 二元一次方程组</h1>
+    <div class="learning-goals">
+      <strong>🎯 学习目标</strong>
+      <p>理解二元一次方程（组）的概念；熟练运用代入法和加减法解方程组；能建立方程组解决实际问题</p>
+    </div>
+    <div class="knowledge-link"><strong>🔗 前置知识：</strong>一元一次方程解法（第3章）。消元的核心是将二元降为一元，与第3章解法完全一致。<strong>后续关联：</strong>三元方程组（九年级）同理逐步消元。</div>
+    <div class="thought-method"><strong>🧭 消元思想：</strong>二元→一元，化未知为已知，化复杂为简单——这是数学最核心的降维思维。选择消元方法的标准：哪个未知数容易表示 → 代入法；哪个未知数系数已有关系 → 加减法。选择比计算更重要。</div>
+    <div class="solve-template">
+      <h4>📋 方程组应用题通用模板</h4>
+      <ol>
+        <li><strong>设两个元</strong> — 设两个未知数，写清楚各代表什么</li>
+        <li><strong>找两个等量关系</strong> — 两个条件→两个方程（缺一不可）</li>
+        <li><strong>选方法</strong> — 观察系数：有±1→代入法；系数相同/相反→加减法</li>
+        <li><strong>消元求解</strong> — 化二元为一元，解出后再回代求另一个</li>
+        <li><strong>规范书写</strong> — 解必须写成 $\begin{cases} x=m \\ y=n \end{cases}$ 形式</li>
+        <li><strong>检验</strong> — 代入两个原方程都成立</li>
+      </ol>
+    </div>
+  <details class="module" open>
+    <summary>🧠 思维导图</summary>
+    <div class="content">
+      <div class="mindmap">
+        <div class="node-label" style="font-size:16px;margin-bottom:12px;">二元一次方程组</div>
+        <ul>
+          <li><span class="node-label">二元一次方程</span> <span class="node-desc">含两个未知数，未知数次数为1的整式方程 $ax+by=c$</span></li>
+          <li><span class="node-label">二元一次方程组</span> <span class="node-desc">两个二元一次方程联立 $\begin{cases} ax+by=c \\ dx+ey=f \end{cases}$</span></li>
+          <li><span class="node-label">方程组的解</span> <span class="node-desc">同时满足两个方程的 $x,y$ 值，写成 $\begin{cases} x=m \\ y=n \end{cases}$</span></li>
+          <li>
+            <span class="node-label">解法</span>
+            <ul>
+              <li><span class="node-label">代入消元法</span> <span class="node-desc">将一个未知数用另一个表示，代入另一方程</span></li>
+              <li><span class="node-label">加减消元法</span> <span class="node-desc">乘适当倍数使某未知数系数相等或相反，相加减消元</span></li>
+            </ul>
+          </li>
+          <li><span class="node-label">应用</span> <span class="node-desc">鸡兔同笼 · 配套问题 · 数字问题 · 方案选择</span></li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>📖 核心概念</summary>
+    <div class="content">
+      <div class="card-grid">
+        <div class="concept-card">
+          <div class="name">二元一次方程</div>
+          <p>含有<strong>两个</strong>未知数，且含有未知数的项的次数都是<strong>1</strong>的整式方程。标准形式：$ax + by = c$（$a$、$b$<strong>不全为</strong>$0$）。一个二元一次方程有<strong>无数</strong>组解。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">二元一次方程组</div>
+          <p>由<strong>两个</strong>二元一次方程联立组成。两个方程中同一未知数表示<strong>同一个量</strong>。一般有<strong>唯一解</strong>。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">消元思想</div>
+          <p>将<strong>二元</strong>转化为<strong>一元</strong>是解方程组的<strong>核心思想</strong>。两种方法：代入消元法（用一个未知数表示另一个然后代入）、加减消元法（通过加减消除一个未知数）。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">三元一次方程组*</div>
+          <p>含三个未知数的方程组，解法思路相同——逐步消元，化为二元→一元求解。人教版七年级下册阅读材料，中考常涉及。</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>📐 公式速查</summary>
+    <div class="content">
+      <div class="formula-card"><strong>代入消元法步骤</strong><p style="margin-top:6px;">① 从一个方程中解出一个未知数（用含另一个的式子表示）</p><p>② 代入另一个方程，消去一个未知数 → 得一元一次方程</p><p>③ 解出这个未知数，再回代求另一个</p><p>④ 写出解 $\begin{cases} x=m \\ y=n \end{cases}$</p></div>
+      <div class="formula-card"><strong>加减消元法步骤</strong><p style="margin-top:6px;">① 观察系数，看哪个未知数系数绝对值相等或成倍数</p><p>② 必要时方程两边同乘一个数，使某未知数系数相等或相反</p><p>③ 相加（系数相反）或相减（系数相同）消去一个未知数</p><p>④ 解一元一次方程，回代求另一个</p></div>
+      <div class="formula-card"><strong>常用应用题公式</strong><p style="margin-top:6px;">鸡兔同笼：头数 $x+y=n$，腿数 $2x+4y=m$</p><p>配套问题：产品A的某比例 = 产品B的某比例</p><p>数字问题：两位数 $=10a+b$（$a$为十位，$b$为个位）</p></div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>💡 解题技巧</summary>
+    <div class="content">
+      <div class="technique-card">
+        <h3><span class="step-num">1</span> 选择消元方法</h3>
+        <p class="method"><strong>代入法适用：</strong>某个方程中一个未知数的系数为1或-1时最方便。<br><strong>加减法适用：</strong>两个方程中某未知数系数相等、相反或成倍数关系时。</p>
+        <p class="example"><strong>例：</strong>$\begin{cases} x = 2y + 1 \\ 3x + y = 10 \end{cases}$ 用代入法；$\begin{cases} 2x + 3y = 7 \\ 4x - 3y = 5 \end{cases}$ 用加减法（$3y$与$-3y$）</p>
+        <p class="pitfall">⚠️ 易错：选错方法导致计算量大增，先观察系数再决定</p>
+        <p class="principle"><strong>💡 原理：</strong>消元的核心思想是"化二元为一元"。代入法——用含一个未知数的式子替换另一个方程中的该未知数，消去一个未知数；加减法——利用等式性质使某一未知数的系数相等或相反，然后加减消去。选择标准：哪个未知数容易用一个表示（系数为±1）→代入法；哪个未知数系数已相等/相反/成倍数→加减法。</p>
+        <div class="variant"><strong>📝 变式（真题型）：</strong>解 $\begin{cases} 3x - 2y = 10 \\ x + y = 5 \end{cases}$<br><strong>分析：</strong>第二个方程 $y=5-x$ 代入第一个，或第二个×2加第一个消 $y$。代入更快：$3x-2(5-x)=10$，$3x-10+2x=10$，$5x=20$，$x=4$，代入得 $y=1$</div>
+        <p class="exam-hint">📋 中考怎么考：中考解答题第2-3题（6-8分）。选对方法可节省一半时间，选错方法可能导致计算量大增甚至算错。先观察30秒再动笔！</p>
+      </div>
+      <div class="technique-card">
+        <h3><span class="step-num">2</span> 鸡兔同笼问题</h3>
+        <p class="method">设未知量时选好变量（如设鸡x只，兔y只），利用"头数"和"腿数"两个等量关系列方程组。</p>
+        <p class="example"><strong>例题：</strong>鸡兔同笼，共35头，94条腿。求鸡兔各几只。<br><strong>解：</strong>设鸡 $x$ 只，兔 $y$ 只。$\begin{cases} x+y=35 \\ 2x+4y=94 \end{cases}$，解得 $\begin{cases} x=23 \\ y=12 \end{cases}$</p>
+        <p class="pitfall">⚠️ 易错：兔4条腿、鸡2条腿，别写反了</p>
+        <p class="principle"><strong>💡 原理：</strong>鸡兔同笼是二元一次方程组最经典的应用。两个等量关系：①头数（鸡+兔=总数）；②腿数（2×鸡+4×兔=总腿数）。设两个未知数后，两个条件正好对应两个方程。如果只有一个条件，方程有无数组解——这就是为什么要两个方程才能确定两个未知数。</p>
+        <div class="variant"><strong>📝 变式（配套问题）：</strong>某车间有28名工人，每人每天能生产螺栓12个或螺母18个。一个螺栓配两个螺母，应各安排多少人？<br><strong>解：</strong>设生产螺栓 $x$ 人，螺母 $y$ 人。$\begin{cases} x+y=28 \\ 2×12x = 18y \end{cases}$，解得 $\begin{cases} x=12 \\ y=16 \end{cases}$</div>
+      </div>
+    </div>
+  </details>
+  <details class="exam-module">
+    <summary>🎯 中考真题精选（二元一次方程组 · 近年典型）</summary>
+    <div class="content">
+      <div class="exam-q"><span class="q-tag">2023重庆</span><div class="q-body">解方程组：$\begin{cases} x - y = 1 \\ 2x + y = 5 \end{cases}$</div><div class="q-solution"><strong>答案：$\begin{cases} x=2 \\ y=1 \end{cases}$</strong>。方法一（加减法）：两式相加得 $3x=6$，$x=2$，代入得 $y=1$。方法二（代入法）：$x=y+1$ 代入第二式。</div></div>
+      <div class="exam-q"><span class="q-tag">2023广州</span><div class="q-body">某停车场有汽车和摩托车共 40 辆，共有 130 个轮子。求汽车和摩托车各几辆？（汽车 4 轮，摩托车 2 轮）</div><div class="q-solution"><strong>答案：汽车25辆，摩托车15辆</strong>。设汽车 $x$ 辆，摩托车 $y$ 辆。$\begin{cases} x+y=40 \\ 4x+2y=130 \end{cases}$，解得 $\begin{cases} x=25 \\ y=15 \end{cases}$。</div></div>
+      <div class="exam-q"><span class="q-tag">2022杭州</span><div class="q-body">某学校购买甲、乙两种图书共 100 本，甲种每本 30 元，乙种每本 25 元，共花费 2750 元。甲、乙各买了多少本？</div><div class="q-solution"><strong>答案：甲50本，乙50本</strong>。设甲 $x$ 本，乙 $y$ 本。$\begin{cases} x+y=100 \\ 30x+25y=2750 \end{cases}$，解得 $\begin{cases} x=50 \\ y=50 \end{cases}$。</div></div>
+      <div class="exam-q"><span class="q-tag">2022深圳</span><div class="q-body">解方程组：$\begin{cases} 3x + 2y = 7 \\ 4x - y = 2 \end{cases}$</div><div class="q-solution"><strong>答案：$\begin{cases} x=1 \\ y=2 \end{cases}$</strong>。第二式 $y=4x-2$ 代入第一式：$3x+2(4x-2)=7$，$11x=11$，$x=1$，$y=2$。</div></div>
+    </div>
+  </details>
+    <div class="checklist">
+      <h3>✅ 本章自查清单</h3>
+      <label><input type="checkbox"> 能选择合适的方法（代入/加减）解方程组</label>
+      <label><input type="checkbox"> 加减消元时不会搞错符号</label>
+      <label><input type="checkbox"> 能解鸡兔同笼问题</label>
+      <label><input type="checkbox"> 能解配套问题</label>
+      <label><input type="checkbox"> 会用规范格式书写方程组的解</label>
+      <p style="margin-top:14px;font-size:13px;color:var(--accent);padding:10px 0;border-top:1px dashed var(--border);"><strong>🗣 费曼挑战：</strong>试着不看资料，用你自己的话讲一遍本章最重要的 3 个概念。讲不清楚的地方，回去重看对应模块。</p>
+    </div>
+</div>
+
+<div class="chapter" id="chapter9">
+  <h1>第9章 · 不等式与不等式组</h1>
+    <div class="learning-goals">
+      <strong>🎯 学习目标</strong>
+      <p>掌握不等式的三条性质；熟练解一元一次不等式；能解不等式组并用数轴表示解集</p>
+    </div>
+    <div class="knowledge-link"><strong>🔗 前置知识：</strong>等式的性质（第3章）。不等式性质1、2与等式性质相同，性质3乘除负数变号是关键区别。<strong>解法前四步与方程完全一致！</strong></div>
+    <div class="thought-method"><strong>🧭 类比思想：</strong>解不等式 = 解方程的前四步 + 最后一步注意方向。不重新学一套新方法，而是在已有方法上"加一条规则"。这是最高效的学习方式——找到新知识和旧知识的"相同"和"不同"。</div>
+  <details class="module" open>
+    <summary>🧠 思维导图</summary>
+    <div class="content">
+      <div class="mindmap">
+        <div class="node-label" style="font-size:16px;margin-bottom:12px;">不等式与不等式组</div>
+        <ul>
+          <li><span class="node-label">不等式概念</span> <span class="node-desc">用 $>,<,\geq,\leq,\neq$ 连接的式子</span></li>
+          <li><span class="node-label">解与解集</span> <span class="node-desc">使不等式成立的未知数的值 → 所有解的集合</span></li>
+          <li>
+            <span class="node-label">不等式性质</span>
+            <ul>
+              <li><span class="node-label">性质1</span> <span class="node-desc">$a>b \implies a\pm c > b\pm c$（加减不变号）</span></li>
+              <li><span class="node-label">性质2</span> <span class="node-desc">$a>b,c>0 \implies ac>bc$（乘除正数不变号）</span></li>
+              <li><span class="node-label">性质3</span> <span class="node-desc">$a>b,c<0 \implies ac<bc$（乘除负数必变号！）</span></li>
+            </ul>
+          </li>
+          <li><span class="node-label">解集表示</span> <span class="node-desc">数轴：实心●（含等号）· 空心○（不含等号）· 不等式组取公共部分</span></li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>📖 核心概念</summary>
+    <div class="content">
+      <div class="card-grid">
+        <div class="concept-card">
+          <div class="name">不等式与解集</div>
+          <p><strong>不等式：</strong>用不等号连接的式子。<br><strong>解集：</strong>一个不等式<strong>所有解</strong>的集合（与方程的"解"不同，方程一般只有一个或几个解）。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">性质3（关键）</div>
+          <p>不等式两边乘（或除以）同一个<strong>负数</strong>，不等号的<strong>方向改变</strong>。这是整个章节最易错的点！</p><p>例：$-2x > 6 \implies x < -3$</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">数轴表示</div>
+          <p>$>$ 或 $<$：画<strong>空心圆</strong>○，表示不包含该点。<br>$\geq$ 或 $\leq$：画<strong>实心圆</strong>●，表示包含该点。<br>大于向右画，小于向左画。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">不等式组</div>
+          <p>几个一元一次不等式合在一起，取各不等式解集的<strong>公共部分</strong>（交集）。口诀：<strong>同大取大，同小取小，大小小大中间找，大大小小无解了</strong>。</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>📐 公式速查</summary>
+    <div class="content">
+      <div class="formula-card"><strong>不等式性质（3条）</strong><p style="margin-top:6px;"><strong>性质1：</strong>$a > b \implies a \pm c > b \pm c$</p><p><strong>性质2：</strong>$a > b,\ c > 0 \implies ac > bc,\ \frac{a}{c} > \frac{b}{c}$</p><p><strong>性质3：</strong>$a > b,\ c < 0 \implies ac < bc,\ \frac{a}{c} < \frac{b}{c}$（方向改变！）</p></div>
+      <div class="formula-card"><strong>解不等式步骤（同一元一次方程）</strong><p style="margin-top:6px;">去分母 → 去括号 → 移项 → 合并同类项 → 系数化为1</p><p style="margin-top:4px;">⚠️ 最后一步若除以<strong>负数</strong>，<strong>不等号方向改变</strong></p></div>
+      <div class="formula-card"><strong>不等式组解集口诀</strong><p style="margin-top:6px;">$\begin{cases} x>a \\ x>b \end{cases}$ 且 $a>b$：解集为 $x>a$（同大取大）</p><p>$\begin{cases} x<a \\ x<b \end{cases}$ 且 $a>b$：解集为 $x<b$（同小取小）</p><p>$\begin{cases} x>a \\ x<b \end{cases}$ 且 $a<b$：$a<x<b$（中间找）</p></div>
+      <div class="formula-card"><strong>解集的数轴表示</strong><p style="margin-top:6px;">$<$ 或 $>$：画<strong>空心圆</strong> ○，表示不包含该点</p><p>$\leq$ 或 $\geq$：画<strong>实心圆</strong> ●，表示包含该点</p><p>大于号向右画箭头，小于号向左画箭头</p></div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>💡 解题技巧</summary>
+    <div class="content">
+      <div class="technique-card">
+        <h3><span class="step-num">1</span> 乘除负数必须变号</h3>
+        <p class="method">解不等式跟解方程几乎一样，但<strong>只要乘或除以负数</strong>，不等号方向就<strong>必须改变</strong>。养成检查最后一步系数符号的习惯。</p>
+        <p class="example"><strong>例题：</strong>解 $-3x \geq 12$<br><strong>解：</strong>两边同除以 $-3$（负数！），$x \leq -4$</p>
+        <p class="pitfall">⚠️ 易错：$-3x \geq 12 \implies x \geq -4$（忘记变号，这是最高频错误！）</p>
+        <p class="principle"><strong>💡 原理：</strong>为什么乘除负数要变号？以 $-3 > -5$ 为例，两边除以 $-3$（负数）得 $1 < \frac{5}{3}$。如果不变号就变成 $1 > \frac{5}{3}$，这显然是错的。从数轴上看：乘除负数相当于把数轴"翻转"（乘-1就是关于原点对称），原本右边的大数翻转到左边，变成小数。</p>
+        <div class="variant"><strong>📝 变式（真题型）：</strong>解不等式 $\frac{2x+1}{3} \leq 1$，并在数轴上表示解集。<br><strong>解：</strong>$2x+1 \leq 3$，$2x \leq 2$，$x \leq 1$。数轴：在 $1$ 处画实心圆●，向左画箭头。注意此题没有乘除负数，不需要变号！</div>
+      </div>
+      <div class="technique-card">
+        <h3><span class="step-num">2</span> "至少/至多"翻译技巧</h3>
+        <p class="method"><strong>至少：</strong>$\geq$ &nbsp;·&nbsp; <strong>至多/不超过：</strong>$\leq$ &nbsp;·&nbsp; <strong>超过/大于：</strong>$>$ &nbsp;·&nbsp; <strong>不足/小于：</strong>$<$</p>
+        <p class="example"><strong>例题：</strong>某班至少42人及格，总人数50人，求及格率。<br><strong>解：</strong>设及格人数 $x$，则 $x \geq 42$。及格率 $\frac{x}{50} \times 100\% \geq \frac{42}{50} \times 100\% = 84\%$</p>
+        <p class="pitfall">⚠️ 易错："至少"用 $\geq$ 还是 $>$？至少包含这个数，用 $\geq$</p>
+        <p class="principle"><strong>💡 原理：</strong>应用题翻译的难点是把"语文"转化为"数学"。口诀：至少→≥（不少于），至多→≤（不超过），超过→>，不足→<。注意"至少"包含该数（用≥），"超过"不包含该数（用>）。例："至少80分"意思是 ≥80，"超过80分"意思是 >80。</p>
+        <div class="variant"><strong>📝 变式（真题型）：</strong>某次竞赛共20道题，答对一题得5分，答错或不答扣2分。小华要至少得80分，至少答对几道？<br><strong>解：</strong>设答对 $x$ 道，则 $5x - 2(20-x) \geq 80$，$5x-40+2x \geq 80$，$7x \geq 120$，$x \geq 17\frac{1}{7}$。$\because$ $x$ 为整数，$\therefore x \geq 18$，至少答对18道。</div>
+      </div>
+      <div class="technique-card">
+        <h3><span class="step-num">3</span> 不等式组取交集口诀</h3>
+        <p class="method">口诀：<strong>同大取大，同小取小，大小小大中间找，大大小小无解了。</strong>在数轴上画出每个不等式的解集，重叠部分就是解集。用数轴验证，不要死记！</p>
+        <p class="example"><strong>例题：</strong>解 $\begin{cases} x > 5 \\ x < 3 \end{cases}$<br><strong>解：</strong>数轴上 $x>5$ 向右画，$x<3$ 向左画，没有公共部分，$\therefore$ 无解。</p>
+        <p class="pitfall">⚠️ 易错："大大小小"是指大于较大的数同时小于较小的数（如 $x>5$ 且 $x<3$），这种情况永远无解，不要乱写交集</p>
+        <p class="principle"><strong>💡 原理：</strong>口诀的记忆逻辑——数轴上 $x>a$ 向右画，$x<b$ 向左画。同大取大：两个都>，取右边那个大的 $a$（公共部分从 $a$ 开始）；同小取小：两个都<，取左边那个小的 $b$；大大小小：$x>a$（大于大数）且 $x<b$（小于小数）中间是空的，永远无解；大小小大：$x<a$ 且 $x>b$，取两个圆之间的部分。</p>
+        <div class="variant"><strong>📝 变式（真题型）：</strong>解不等式组 $\begin{cases} 2x-1 > 3 \\ 3x+1 \leq 10 \end{cases}$<br><strong>解：</strong>① $2x>4$，$x>2$；② $3x\leq9$，$x\leq3$。数轴上画出 $x>2$（空心○在2向右）和 $x\leq3$（实心●在3向左），公共部分 $2<x\leq3$</div>
+      </div>
+    </div>
+  </details>
+  <details class="exam-module">
+    <summary>🎯 中考真题精选（不等式与不等式组 · 近年典型）</summary>
+    <div class="content">
+      <div class="exam-q"><span class="q-tag">2023北京</span><div class="q-body">解不等式组：$\begin{cases} x - 2 > -3 \\ 2x + 1 \leq 7 \end{cases}$</div><div class="q-solution"><strong>答案：$-1 < x \leq 3$</strong>。① $x>-1$；② $2x\leq6$，$x\leq3$。公共部分：$-1 < x \leq 3$。</div></div>
+      <div class="exam-q"><span class="q-tag">2022广州</span><div class="q-body">解不等式：$3x - 5 \leq 2x + 1$，并在数轴上表示解集。</div><div class="q-solution"><strong>答案：$x \leq 6$</strong>。移项：$3x-2x \leq 1+5$，$x \leq 6$。数轴：在6处画实心圆●，向左画箭头。此题没有乘除负数，不需要变号。</div></div>
+      <div class="exam-q"><span class="q-tag">2023杭州</span><div class="q-body">解不等式：$\frac{x-1}{2} \geq x - 2$</div><div class="q-solution"><strong>答案：$x \leq 3$</strong>。去分母（×2）：$x-1 \geq 2x-4$，移项：$x-2x \geq -4+1$，$-x \geq -3$，两边同除 $-1$（负数！），变号：$x \leq 3$。⚠️ 最后一步不变量会得 $x \geq 3$。</div></div>
+      <div class="exam-q"><span class="q-tag">2022重庆</span><div class="q-body">某校举行数学竞赛，共 20 道题。答对一题得 5 分，答错或不答一题扣 2 分。小明至少要得 80 分，他至少要答对多少道题？</div><div class="q-solution"><strong>答案：18道</strong>。设答对 $x$ 道，则 $5x-2(20-x) \geq 80$，$5x-40+2x \geq 80$，$7x \geq 120$，$x \geq 17\frac{1}{7}$，取整数 $x \geq 18$。</div></div>
+    </div>
+  </details>
+    <div class="checklist">
+      <h3>✅ 本章自查清单</h3>
+      <label><input type="checkbox"> 能说出不等式的三条性质</label>
+      <label><input type="checkbox"> 解不等式时乘除负数会变号</label>
+      <label><input type="checkbox"> 会用数轴表示不等式的解集</label>
+      <label><input type="checkbox"> 能解一元一次不等式组并取交集</label>
+      <label><input type="checkbox"> 能翻译"至少/至多/不超过"为不等式</label>
+      <p style="margin-top:14px;font-size:13px;color:var(--accent);padding:10px 0;border-top:1px dashed var(--border);"><strong>🗣 费曼挑战：</strong>试着不看资料，用你自己的话讲一遍本章最重要的 3 个概念。讲不清楚的地方，回去重看对应模块。</p>
+    </div>
+</div>
+
+<div class="chapter" id="chapter10">
+  <h1>第10章 · 数据的收集整理</h1>
+    <div class="learning-goals">
+      <strong>🎯 学习目标</strong>
+      <p>区分全面调查与抽样调查；掌握总体、个体、样本、样本容量；能选择合适的统计图表</p>
+    </div>
+    <div class="knowledge-link"><strong>🔗 前置知识：</strong>百分数、分数运算（小学数学基础）。本章与有理数（第1章）的除法、比例密切相关。</div>
+  <details class="module" open>
+    <summary>🧠 思维导图</summary>
+    <div class="content">
+      <div class="mindmap">
+        <div class="node-label" style="font-size:16px;margin-bottom:12px;">数据的收集、整理与描述</div>
+        <ul>
+          <li>
+            <span class="node-label">调查方式</span>
+            <ul>
+              <li><span class="node-label">全面调查（普查）</span> <span class="node-desc">考察全体对象</span></li>
+              <li><span class="node-label">抽样调查</span> <span class="node-desc">只取一部分对象 · 总体/个体/样本/样本容量</span></li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">统计图表</span>
+            <ul>
+              <li><span class="node-label">条形图</span> <span class="node-desc">表现具体数量</span></li>
+              <li><span class="node-label">折线图</span> <span class="node-desc">反映变化趋势</span></li>
+              <li><span class="node-label">扇形图</span> <span class="node-desc">反映各部分占比（圆心角=百分比×360°）</span></li>
+              <li><span class="node-label">直方图</span> <span class="node-desc">频数分布（组距·频数·频率）</span></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>📖 核心概念</summary>
+    <div class="content">
+      <div class="card-grid">
+        <div class="concept-card">
+          <div class="name">调查方式</div>
+          <p><strong>全面调查（普查）：</strong>对全体对象进行调查，结果准确但工作量大。<br><strong>抽样调查：</strong>抽取一部分对象调查，根据样本估计总体。关键在于样本要有<strong>代表性</strong>和<strong>足够大</strong>。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">总体·个体·样本</div>
+          <p><strong>总体：</strong>要考察的<strong>全体对象</strong>。<br><strong>个体：</strong>总体中<strong>每一个</strong>考察对象。<br><strong>样本：</strong>从总体中抽取的<strong>一部分</strong>个体。<br><strong>样本容量：</strong>样本中个体的<strong>数目</strong>（没有单位）。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">统计图选择</div>
+          <p><strong>条形图：</strong>比较数量多少。<br><strong>折线图：</strong>展示变化趋势。<br><strong>扇形图：</strong>展示百分比构成。<br><strong>直方图：</strong>展示连续数据的分布情况。</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">频数分布直方图</div>
+          <p><strong>组距：</strong>每组两个端点之间的距离。<br><strong>频数：</strong>落在各小组内的数据个数。<br><strong>频率：</strong>频数与数据总数的比值。各小长方形面积表示频数。</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>📐 公式速查</summary>
+    <div class="content">
+      <div class="formula-card"><strong>扇形圆心角</strong><p style="margin-top:6px;">$$\text{圆心角} = \text{百分比} \times 360°$$</p><p>或：$\text{圆心角} = \frac{\text{该部分数量}}{\text{总数}} \times 360°$</p></div>
+      <div class="formula-card"><strong>频率</strong><p style="margin-top:6px;">$$\text{频率} = \frac{\text{频数}}{\text{数据总数}}$$</p><p>所有频率之和 = $1$（100%）</p></div>
+      <div class="formula-card"><strong>组数与组距</strong><p style="margin-top:6px;">组数 ≈ $\frac{\text{最大值} - \text{最小值}}{\text{组距}}$（向上取整）</p><p>组数一般取 5~12 组为宜</p></div>
+      <div class="formula-card"><strong>统计概念区分</strong><p style="margin-top:6px;"><strong>总体：</strong>要考察的全体对象</p><p><strong>个体：</strong>总体中的每一个考察对象</p><p><strong>样本：</strong>从总体中抽取的一部分个体</p><p><strong>样本容量：</strong>样本中个体的数目（无单位）</p></div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>💡 解题技巧</summary>
+    <div class="content">
+      <div class="technique-card">
+        <h3><span class="step-num">1</span> 选择合适的统计图</h3>
+        <p class="method"><strong>比较数量大小</strong>→条形图；<strong>看变化趋势</strong>→折线图；<strong>看部分占整体的比重</strong>→扇形图；<strong>看数据分布</strong>→直方图。</p>
+        <p class="example">描述一个学生5次考试成绩变化 → 折线图；全班各分数段人数分布 → 直方图。</p>
+        <p class="pitfall">⚠️ 易错：扇形图各百分比之和必须为100%，考试常给不完整的扇形图让人补全</p>
+      </div>
+      <div class="technique-card">
+        <h3><span class="step-num">2</span> 读图提取信息</h3>
+        <p class="method">看到统计图先看<strong>标题</strong>了解内容，再看<strong>横纵轴</strong>各代表什么，注意<strong>单位</strong>。扇形图会看百分比和对应数量。</p>
+        <p class="example"><strong>例题：</strong>扇形图中篮球占40%，全班50人，求喜欢篮球的人数。<br><strong>解：</strong>$50 \times 40\% = 20$ 人</p>
+        <p class="pitfall">⚠️ 易错：混淆频数和频率，频数是实际个数，频率是比值（0到1之间）</p>
+      </div>
+    </div>
+  </details>
+  <details class="exam-module">
+    <summary>🎯 中考真题精选（数据的收集整理 · 近年典型）</summary>
+    <div class="content">
+      <div class="exam-q"><span class="q-tag">2023北京</span><div class="q-body">下列调查中，适合采用全面调查（普查）的是（ ）<br>A.了解一批灯泡的使用寿命<br>B.了解某班学生的身高情况<br>C.了解全国中学生每天锻炼的时间<br>D.了解某市中学生的课外阅读量</div><div class="q-solution"><strong>答案：B</strong>。普查适用于范围小、易操作的对象。破坏性调查（A灯泡）、范围大（C/D）适合抽样调查。</div></div>
+      <div class="exam-q"><span class="q-tag">2022广州</span><div class="q-body">某校为调查学生对"垃圾分类"知识的了解情况，从全校 1200 名学生中随机抽取了 100 名进行测试。请指出总体、个体、样本、样本容量。</div><div class="q-solution"><strong>答案：</strong>总体=全校1200名学生；个体=每名学生；样本=被抽取的100名学生；样本容量=100（注意：没有单位）。</div></div>
+      <div class="exam-q"><span class="q-tag">2023重庆</span><div class="q-body">如图是某班学生最喜爱的球类运动扇形统计图。已知喜欢篮球的有 12 人，篮球占 40%。求全班人数和足球对应的圆心角度数。</div><div class="q-solution"><strong>答案：</strong>全班 $12 \div 40\% = 30$ 人。足球圆心角 $=$ 百分比 $\times 360°$。先读图找到足球的百分比，代入公式。</div></div>
+    </div>
+  </details>
+    <div class="checklist">
+      <h3>✅ 本章自查清单</h3>
+      <label><input type="checkbox"> 能区分全面调查和抽样调查</label>
+      <label><input type="checkbox"> 能区分总体、个体、样本、样本容量</label>
+      <label><input type="checkbox"> 会计算扇形圆心角</label>
+      <label><input type="checkbox"> 会计算频率和组数</label>
+      <label><input type="checkbox"> 能根据情境选择合适的统计图</label>
+      <p style="margin-top:14px;font-size:13px;color:var(--accent);padding:10px 0;border-top:1px dashed var(--border);"><strong>🗣 费曼挑战：</strong>试着不看资料，用你自己的话讲一遍本章最重要的 3 个概念。讲不清楚的地方，回去重看对应模块。</p>
+    </div>
+</div>
+
+<div class="chapter" id="chapter0">
+  <h1>附录 · 完整总结（学完全部内容后阅读）</h1>
+
+  <details class="module" open>
+    <summary>🧠 全年级知识体系思维导图</summary>
+    <div class="content">
+      <div class="mindmap">
+        <div class="node-label" style="font-size:18px;margin-bottom:16px;">七年级数学</div>
+        <ul>
+          <li>
+            <span class="node-label">上册</span>
+            <ul>
+              <li><span class="node-label">有理数</span> <span class="node-desc">数轴 · 相反数 · 绝对值 · 四则运算 · 乘方 · 科学记数法 · 近似数</span></li>
+              <li><span class="node-label">整式的加减</span> <span class="node-desc">单项式 · 多项式 · 合并同类项 · 去括号</span></li>
+              <li><span class="node-label">一元一次方程</span> <span class="node-desc">等式性质 · 解法步骤 · 应用（行程/工程/利润/利率）</span></li>
+              <li><span class="node-label">几何图形初步</span> <span class="node-desc">三视图 · 正方体展开图 · 线段 · 角 · 余角补角</span></li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">下册</span>
+            <ul>
+              <li><span class="node-label">相交线与平行线</span> <span class="node-desc">对顶角 · 垂线 · 平移 · 平行线判定与性质 · 命题与定理</span></li>
+              <li><span class="node-label">实数</span> <span class="node-desc">平方根 · 立方根 · 无理数 · 实数运算</span></li>
+              <li><span class="node-label">平面直角坐标系</span> <span class="node-desc">有序数对 · 象限 · 平移 · 点到坐标轴距离 · 坐标应用</span></li>
+              <li><span class="node-label">二元一次方程组</span> <span class="node-desc">代入法 · 加减法 · 应用问题 · 三元*</span></li>
+              <li><span class="node-label">不等式与不等式组</span> <span class="node-desc">不等式性质 · 解集 · 数轴表示 · 实际应用</span></li>
+              <li><span class="node-label">数据的收集整理</span> <span class="node-desc">调查方式 · 统计图 · 频数分布直方图</span></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <details class="module" open>
+    <summary>📐 核心公式速查表</summary>
+    <div class="content">
+      <div class="formula-card">
+        <strong>有理数运算</strong>
+        <p style="margin-top:8px;">$a + (-b) = a - b$ &nbsp;·&nbsp; $a - (-b) = a + b$</p>
+        <p>$(-a) \times b = -(a \times b)$ &nbsp;·&nbsp; $(-a) \times (-b) = ab$</p>
+        <p>$a^n = \underbrace{a \times a \times \cdots \times a}_{n \text{个}}$ &nbsp;·&nbsp; 科学记数法：$a \times 10^n\ (1 \leq |a| < 10)$</p>
+        <p>$|a| \geq 0$ &nbsp;·&nbsp; $|a| = |-a|$</p>
+      </div>
+      <div class="formula-card">
+        <strong>整式</strong>
+        <p style="margin-top:8px;">合并同类项：系数相加，字母部分不变</p>
+        <p>去括号：$+(a+b-c) = a+b-c$ &nbsp;·&nbsp; $-(a+b-c) = -a-b+c$</p>
+      </div>
+      <div class="formula-card">
+        <strong>一元一次方程</strong>
+        <p style="margin-top:8px;">等式性质：$a=b \implies a\pm c = b\pm c$</p>
+        <p>$a=b \implies ac = bc\ (c \neq 0)$</p>
+        <p>步骤：去分母 → 去括号 → 移项 → 合并同类项 → 系数化为1</p>
+        <p>$s=vt$ &nbsp;·&nbsp; 利润 = 售价 − 进价 &nbsp;·&nbsp; 利息 = 本金 × 利率 × 时间</p>
+      </div>
+      <div class="formula-card">
+        <strong>几何（Ch4+Ch5）</strong>
+        <p style="margin-top:8px;">$1° = 60'$ &nbsp;·&nbsp; $1' = 60''$ &nbsp;·&nbsp; 对顶角相等</p>
+        <p>正方体展开图11种 &nbsp;·&nbsp; 三视图：长对正、高平齐、宽相等</p>
+        <p>平行线判定：同位角相等 / 内错角相等 / 同旁内角互补 $\implies$ 平行</p>
+        <p>平行线性质：平行 $\implies$ 同位角相等 / 内错角相等 / 同旁内角互补</p>
+        <p>平移：不改变形状大小 · 对应点连线平行且相等</p>
+      </div>
+      <div class="formula-card">
+        <strong>实数</strong>
+        <p style="margin-top:8px;">$\sqrt{a} \cdot \sqrt{b} = \sqrt{ab}\ (a,b \geq 0)$</p>
+        <p>$\frac{\sqrt{a}}{\sqrt{b}} = \sqrt{\frac{a}{b}}\ (a \geq 0, b > 0)$ &nbsp;·&nbsp; $\sqrt{a^2} = |a|$</p>
+        <p>$\sqrt[3]{a^3} = a$ &nbsp;·&nbsp; $\sqrt[3]{-a} = -\sqrt[3]{a}$</p>
+        <p>$\sqrt{2}\approx1.414,\ \sqrt{3}\approx1.732,\ \sqrt{5}\approx2.236$</p>
+      </div>
+      <div class="formula-card">
+        <strong>平面直角坐标系</strong>
+        <p style="margin-top:8px;">平移：左减右加 $x$，上加下减 $y$</p>
+        <p>对称：$x$轴对称 $(x,y)\to(x,-y)$ &nbsp;·&nbsp; $y$轴对称 $(x,y)\to(-x,y)$</p>
+        <p>原点对称 $(x,y)\to(-x,-y)$</p>
+        <p>水平线段长 $=\|x_1-x_2\|$（$y_1=y_2$）· 竖直线段 $=\|y_1-y_2\|$（$x_1=x_2$）</p>
+        <p>点到 $x$ 轴距离：$|y|$ &nbsp;·&nbsp; 点到 $y$ 轴距离：$|x|$</p>
+      </div>
+      <div class="formula-card">
+        <strong>二元一次方程组</strong>
+        <p style="margin-top:8px;">代入法：将一个未知数用另一个表示后代入</p>
+        <p>加减法：两方程相加/减消去一个未知数</p>
+        <p>鸡兔同笼 · 配套问题 · 数字问题（两位数$=10a+b$）</p>
+      </div>
+      <div class="formula-card">
+        <strong>不等式</strong>
+        <p style="margin-top:8px;">$a>b \implies a\pm c > b\pm c$</p>
+        <p>$a>b,c>0 \implies ac>bc$ &nbsp;·&nbsp; $a>b,c<0 \implies ac<bc$（注意变号！）</p>
+        <p>解集数轴表示：$<$ 或 $>$ 空心○ · $\leq$ 或 $\geq$ 实心●</p>
+        <p>同大取大，同小取小，大小小大中间找，大大小小无解了</p>
+      </div>
+      <div class="formula-card">
+        <strong>数据的收集整理</strong>
+        <p style="margin-top:8px;">扇形圆心角 = 百分比 × $360°$</p>
+        <p>频率 = $\frac{\text{频数}}{\text{数据总数}}$ &nbsp;·&nbsp; 组数 ≈ $\frac{\text{最大值}-\text{最小值}}{\text{组距}}$</p>
+        <p>总体/个体/样本/样本容量（样本容量无单位）</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="module" open>
+    <summary>💡 解题技巧索引</summary>
+    <div class="content">
+      <div class="card-grid">
+        <div class="concept-card">
+          <div class="name">🔢 计算技巧</div>
+          <p style="font-size:14px;color:var(--text-secondary);">数轴比较大小（第1章）· 绝对值化简（第1章）· $(-a)^n$与$-a^n$区分（第1章）· 分配律巧算（第1章）· 科学记数法a的范围（第1章）· 先化简再求值+去括号不漏乘（第2章）· 整体代入法（第2章）· 平方根vs算术平方根+$\sqrt{a^2}=\|a\|$（第6章）· 根式化简（第6章）</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">⚖️ 方程技巧</div>
+          <p style="font-size:14px;color:var(--text-secondary);">移项要变号（第3章）· 去分母找最小公倍数+不漏乘（第3章）· 行程问题画线段图（第3章）· 消元法选择（第8章）· 鸡兔同笼/配套问题（第8章）</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">📏 几何技巧</div>
+          <p style="font-size:14px;color:var(--text-secondary);">三视图与展开图判断（第4章）· 度分秒加减（第4章）· 分类讨论线段（第4章）· 钟表角度（第4章）· 三线八角识别（第5章）· 由角推线vs由线推角（第5章）· 点到坐标轴距离（第7章）· 坐标求面积（第7章）</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">📝 应用技巧</div>
+          <p style="font-size:14px;color:var(--text-secondary);">行程问题（第3章）· 工程/利润/利率问题（第3章）· 配套问题（第8章）· "至少/至多"翻译（第9章）· 不等式组取交集口诀（第9章）· 乘除负数必变号（第9章）· 统计图选择（第10章）</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="module">
+    <summary>⚠️ 高频易错陷阱总览</summary>
+    <div class="content">
+      <div class="card-grid">
+        <div class="concept-card">
+          <div class="name">🔴 符号错误</div>
+          <p style="font-size:13px;">$(-2)^2=4$ 别写成 $-4$（底数是$-2$）<br>$-2^2=-4$ 别写成 $4$（底数是$2$）<br>移项不変号（$x+5=3 \to x=3+5$）<br>去括号不変号（$-(a+b) \to -a+b$）<br>解不等式乘除负数不変号</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">🔴 漏乘漏项</div>
+          <p style="font-size:13px;">去分母漏乘沒有分母的項<br>$2(x+3)$ 写成 $2x+3$（漏乘$2\times3$）<br>多项式缺项忘补0占位<br>合并同类项忘系数为1時不写</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">🔴 概念混淆</div>
+          <p style="font-size:13px;">$\sqrt{16}=4$ ≠ $\pm4$（符号表示算术平方根）<br>$\sqrt{a^2}=|a|$ ≠ $a$<br>$x^2y$与$xy^2$不是同类项<br>判定vs性质混淆（由角推线 vs 由线推角）<br>频数（个数）vs 频率（比值）混淆</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">🔴 审题不清</div>
+          <p style="font-size:13px;">"在直线AB上"≠"在线段AB上"（需分类讨论）<br>"平方根"vs"算术平方根"<br>"非负"包括0<br>坐标$(x,y)$顺序不能反<br>"至少"=≥，"超过"=>，"不超过"=≤</p>
+        </div>
+        <div class="concept-card">
+          <div class="name">🔴 格式不规范</div>
+          <p style="font-size:13px;">方程组解写成 $x=1,y=2$ 而非 $\begin{cases}x=1\\y=2\end{cases}$<br>度分秒不化簡（$64°83'$ → $65°23'$）<br>几何证明不写"∵∴"<br>应用题只写算式不写"答："</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="module" open>
+    <summary>📖 科学教学法·零基础到精通（七年级）</summary>
+    <div class="content"><div class="card-grid">
+      <div class="concept-card"><div class="name">四层递进知识树</div><p style="font-size:13px;"><strong>数系扩充层：</strong>Ch1有理数（引入负数，数系从自然数→有理数）<br><strong>代数入门层：</strong>Ch2整式加减→Ch3一元一次方程（从算术到代数）<br><strong>几何奠基层：</strong>Ch4图形认识→Ch5相交线与平行线（空间直觉→逻辑推理）<br><strong>坐标系层：</strong>Ch6实数→Ch7坐标系→Ch8方程组→Ch9不等式→Ch10统计<br>七上是"从算术到代数"的关键跃迁，核心在Ch3。</p></div>
+      <div class="concept-card"><div class="name">负数与符号运算·21天专项</div><p style="font-size:13px;"><strong>第1-7天：</strong>负数加减（每天10道，限时5分钟）<br><strong>第8-14天：</strong>乘除+乘方（区分$(-2)^2$与$-2^2$）<br><strong>第15-21天：</strong>综合混合运算+去括号<br>全程对照附录陷阱，错一罚三。</p></div>
+      <div class="concept-card"><div class="name">方程应用题·六步法</div><p style="font-size:13px;">①读题圈已知→②找等量（"比…多/少""一共""是…倍"=等号）→③设未知数→④列方程→⑤去分母→去括号→移项→合并→系数化1→⑥验算。行程/工程/利润三类各练5道以上。</p></div>
+      <div class="concept-card"><div class="name">三线八角·分清判定与性质</div><p style="font-size:13px;">每天5张图识别8个角。区分：<strong>判定</strong>（角等→平行）vs <strong>性质</strong>（平行→角等）。中考高频陷阱——问判定用了性质，或反了，0分。</p></div>
+      <div class="concept-card"><div class="name">建议节奏（40天）</div><p style="font-size:13px;">Ch1有理数5天→Ch2整式3天→Ch3方程6天(难)→Ch4图形2天→Ch5平行线4天→Ch6实数3天→Ch7坐标系3天→Ch8方程组5天→Ch9不等式4天→Ch10统计2天→机动3天。</p></div>
+    </div></div>
+  </details>
+
+  <details class="module" open>
+    <summary>📖 快速自学与提升技巧</summary>
+    <div class="content"><div class="card-grid">
+      <div class="concept-card"><div class="name">费曼挑战法</div><p style="font-size:13px;">每章费曼挑战——<strong>用自己的话讲给别人听</strong>。讲不出来=没真懂。每天10分钟，选一题对着镜子讲一遍。</p></div>
+      <div class="concept-card"><div class="name">三遍刷题法</div><p style="font-size:13px;">第1遍（学完当天）：盖住例题自己做，卡住才看答案。<br>第2遍（周末）：只做错题。<br>第3遍（考前）：看附录易错陷阱。</p></div>
+      <div class="concept-card"><div class="name">负数每日练</div><p style="font-size:13px;">每天5道混合运算，限时8分钟。错一罚三，一个月后符号问题消除。</p></div>
+      <div class="concept-card"><div class="name">应用题"找等量"训练</div><p style="font-size:13px;">只看题不列式，口头说出等量关系。每天3题、只找不写，10天后见效。</p></div>
+      <div class="concept-card"><div class="name">优先级</div><p style="font-size:13px;">🥇Ch3方程（代数思维起点）<br>🥇Ch1有理数（基础）<br>🥇Ch5平行线（几何入门）<br>考前必看附录：公式速查+陷阱总览</p></div>
+    </div></div>
+  </details>
+</div>
+
+</main>
+  <script src="katex/katex.min.js"></script>
+  <script src="katex/auto-render.min.js"></script>
+  <script>
+(function() {
+  const STORAGE_KEY = 'math7-theme';
+
+  function getTheme() {
+    return localStorage.getItem(STORAGE_KEY) ||
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  }
+
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem(STORAGE_KEY, theme);
+    const btn = document.getElementById('theme-toggle');
+    if (btn) btn.textContent = theme === 'dark' ? '☀ 亮色模式' : '🌙 暗色模式';
+  }
+
+  setTheme(getTheme());
+
+  document.getElementById('theme-toggle').addEventListener('click', function() {
+    const current = document.documentElement.getAttribute('data-theme');
+    setTheme(current === 'dark' ? 'light' : 'dark');
+  });
+})();
+
+(function() {
+  const links = document.querySelectorAll('#sidebar nav a');
+  const chapters = document.querySelectorAll('.chapter');
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        links.forEach(function(link) { link.classList.remove('active'); });
+        const active = document.querySelector('#sidebar nav a[href="#' + entry.target.id + '"]');
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+
+  chapters.forEach(function(ch) { observer.observe(ch); });
+})();
+
+(function() {
+  var sidebar = document.getElementById('sidebar');
+  var hideBtn = document.getElementById('sidebarHideBtn');
+  var showBtn = document.getElementById('sidebarShowBtn');
+  var sidebarHidden = localStorage.getItem('math7-sidebar') === 'hidden';
+  if (sidebarHidden) sidebar.classList.add('hidden');
+  hideBtn.addEventListener('click', function() {
+    sidebar.classList.add('hidden');
+    localStorage.setItem('math7-sidebar', 'hidden');
+  });
+  showBtn.addEventListener('click', function() {
+    sidebar.classList.remove('hidden');
+    localStorage.setItem('math7-sidebar', '');
+  });
+})();
+
+(function() {
+  var btn = document.getElementById('expandAllBtn');
+  btn.addEventListener('click', function() {
+    var allDetails = document.querySelectorAll('.module, .exam-module');
+    var allOpen = true;
+    for (var i = 0; i < allDetails.length; i++) {
+      if (!allDetails[i].hasAttribute('open')) { allOpen = false; break; }
+    }
+    for (var i = 0; i < allDetails.length; i++) {
+      if (allOpen) allDetails[i].removeAttribute('open');
+      else allDetails[i].setAttribute('open', '');
+    }
+    btn.textContent = allOpen ? '📂 展开全部章节' : '📖 收起全部章节';
+  });
+})();
+
+document.addEventListener('DOMContentLoaded', function() {
+  renderMathInElement(document.body, {
+    delimiters: [
+      { left: '$$', right: '$$', display: true },
+      { left: '$', right: '$', display: false }
+    ],
+    throwOnError: false
+  });
+});
+</script>
+</body>
+</html>

@@ -485,7 +485,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
       <p>理解正负数的意义；掌握有理数的四则运算及乘方；会用科学记数法表示数；理解绝对值的几何意义</p>
     </div>
     <div class="knowledge-link"><strong>🔗 前置知识：</strong>小学学过的自然数（0,1,2,3...）、正分数（1/2, 0.75...）及其四则运算。你已经知道<strong>减法</strong>是加法的逆运算、<strong>除法</strong>是乘法的逆运算。还知道"0"不能做除数。</div>
-    <div class="thought-method"><strong>🧭 数形结合（一）：</strong>数轴是最原始的"坐标系"。在数轴上，数→点，大小关系→左右位置，运算→移动。画出数轴是解决有理数题的"第一武器"。本章到第7章平面直角坐标系，再到八年级一次函数，一脉相承。</div>
+    <div class="thought-method"><strong>🧭 数形结合思想：</strong>数轴是"数形结合"的第一个工具——每一个数对应数轴上的一个点。负数在左边、正数在右边、越往右越大。看到比较几个负数大小：画一条数轴、标出位置、右边>左边，比死记"绝对值大的反而小"可靠得多。<strong>核心思想：数和形互相转化——抽象的数用直观的形（点/线段）来表达。</strong></div>
     <div class="advance-organizer"><strong>🔍 先行组织者：</strong>想象你有一个温度计——零度以上是正数（暖和），零度以下是负数（寒冷）。今天的数学课就是把这种"冷热"的感觉用数字精确表达出来。负数是人类的一个伟大发明——有了它，我们才能描述<strong>欠债、亏损、海平面以下</strong>等生活现象。小学只学了正数，现在我们要打开"负数"这扇新大门。</div>
   <details class="module" open>
     <summary>🧠 思维导图</summary>
@@ -806,6 +806,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
       </ol>
     </div>
     <div class="advance-organizer"><strong>🔍 先行组织者：</strong>你做过这样的题吗："某数乘以3再加5等于20，这个数是多少？"小学时我们倒推（20-5=15, 15÷3=5）。但遇到更复杂的条件，倒推就不好用了。方程思维是正着想——设未知数为 x，根据条件列出等式，然后系统性地解出 x。这种方法就像<strong>有了一个万能求解器</strong>——不管问题多复杂，列好方程就能解。</div>
+  <div class="solve-template"><h4>📋 解方程标准六步法</h4><ol><li><strong>去分母</strong> — 找各分母的最小公倍数，等式两边同乘</li><li><strong>去括号</strong> — 注意括号前是"-"时括号内每一项都要变号</li><li><strong>移项</strong> — 把含未知数的项移到左边，常数项移到右边，<strong>移项必变号</strong></li><li><strong>合并同类项</strong> — 化为 $ax=b$ 的形式</li><li><strong>系数化为1</strong> — 两边同除以 $a$（$a \neq 0$）</li><li><strong>检验</strong> — 把解代入原方程，验证左右两边相等</li></ol></div>
   <details class="module" open>
     <summary>🧠 思维导图</summary>
     <div class="content">
@@ -901,7 +902,8 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
         <h3><span class="step-num">1</span> 移项要变号</h3>
         <p class="method">解方程的核心纪律：把某一项从等号一边移到另一边，<strong>必须改变符号</strong>。</p>
         <p class="example"><strong>例题：</strong>解 $3x + 5 = 2x - 1$<br><strong>解：</strong>移项 $3x - 2x = -1 - 5$，得 $x = -6$</p>
-        <p class="pitfall">⚠️ 易错：$5$ 从左边移到右边变 $-5$，忘记变号是最高频错误</p>
+                 <p class="pitfall">⚠️ 易错：$5$ 从左边移到右边变 $-5$，忘记变号是最高频错误</p>
+        <div class="error-diagnosis"><div class="wrong">❌ 错误：$\frac{x}{2} + \frac{x}{3} = 10$ → 两边同乘6 → $3x + 2x = 10$（忘了右边10也要×6）</div><div class="analysis">🔍 诊断：等式两边同乘一个数时，<strong>等号右边的每一项都要乘</strong>——包括常数项！$10 \times 6 = 60$。这是去分母最高频的错误，也是中考扣分最多的点之一。</div></div>
         <div class="error-diagnosis"><div class="wrong">❌ 错误：移项时忘了变号——$2x+3=7$ → $2x=7+3$</div><div class="analysis">🔍 诊断：移项的本质是等式两边同时加（减）同一个数。$2x+3=7$ → 两边同时减3 → $2x=7-3$。移项口诀："过等号，变符号"。</div></div>
         <p class="principle"><strong>💡 原理：</strong>移项的本质是利用等式的性质1——等式两边同时减去（或加上）同一个数，等式仍成立。将 $2x$ 从右边移到左边，等价于两边同时减 $2x$，所以右边剩下 $-1-2x$，左边变成 $3x-2x$。变号不是魔法，是等式性质的结果。</p>
         <div class="variant"><strong>📝 变式：</strong>解方程 $5x - 7 = 3x + 1$<br><strong>解：</strong>移项 $5x-3x=1+7$，$2x=8$，$x=4$。<br><strong>验证：</strong>左边 $5×4-7=13$，右边 $3×4+1=13$，✓</div>
@@ -949,7 +951,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
     <div class="checklist">
       <h3>✅ 本章自查清单</h3>
       <label><span class="self-score">🔴→🟡→🟢</span>  能说出等式的两条基本性质</label>
-      <label><span class="self-score">🔴→🟡→🟢</span>  能按五步法解一元一次方程</label>
+       <label><span class="self-score">🔴→🟡→🟢</span>  能按六步法解一元一次方程</label>
       <label><span class="self-score">🔴→🟡→🟢</span>  解方程时不会忘记移项变号</label>
       <label><span class="self-score">🔴→🟡→🟢</span>  会列方程解行程问题（相遇/追及）</label>
       <label><span class="self-score">🔴→🟡→🟢</span>  会列方程解利润问题（利润/利润率）</label>
@@ -1271,7 +1273,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
       <p>理解对顶角、邻补角、垂线；掌握平行线的判定和性质；能区分判定与性质的不同用法</p>
     </div>
     <div class="knowledge-link"><strong>🔗 前置知识：</strong>角的概念与度量、余角补角（第4章）。本章在此基础上引入相交与平行关系。<strong>后续关联：</strong>平行线性质可用于坐标几何（第7章）中求点的位置。</div>
-    <div class="thought-method"><strong>🧭 逻辑推理：</strong>判定（由角推线）→充分条件；性质（由线推角）→必要条件。这种"条件→结论""结论→条件"的双向推理，是七年级第一次接触严谨的数学证明。命题与定理—如果…那么…的形式化是逻辑训练的开端。</div>
+    <div class="thought-method"><strong>🧭 转化思想：</strong>平行线的核心思想是"角的转化"——通过平行线把不同位置的角联系起来。看到同位角相等→条件反射想到a∥b；看到a∥b→自动想到三种角的关系。后面的三角形内角和（第11章）和全等证明（第12章）都需要这种"从条件跳转到结论"的转化能力。</div>
     <div class="solve-template">
       <h4>📋 几何证明/计算通用模板</h4>
       <ol>
@@ -1469,7 +1471,8 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
         <h3><span class="step-num">3</span> "由角推线" vs "由线推角"</h3>
         <p class="method">审题时分清方向：要求证明平行（用<strong>判定</strong>），还是已知平行求角度（用<strong>性质</strong>）。判定和性质是互逆命题。</p>
         <p class="example"><strong>判定：</strong>已知 $\angle 1 = \angle 2$，求证 $a \parallel b$。<br><strong>性质：</strong>已知 $a \parallel b$，$\angle 1 = 70°$，求 $\angle 2$。</p>
-        <p class="pitfall">⚠️ 易错：把性质当判定用，或反过来</p>
+                 <p class="pitfall">⚠️ 易错：把性质当判定用，或反过来</p>
+        <div class="error-diagnosis"><div class="wrong">❌ 错误：证平行线时写"∵∠1=∠2 ∴a∥b"但没说明用的是什么角</div><div class="analysis">🔍 诊断：证明题必须写清楚依据——"同位角相等，两直线平行"和"内错角相等，两直线平行"是不同的判定定理。不能笼统写"角相等→平行"。</div></div>
         <div class="error-diagnosis"><div class="wrong">❌ 错误：已知 a∥b，∠1=50°→求∠2=50°→写理由"同位角相等，两直线平行"</div><div class="analysis">🔍 诊断：已知平行线求角度是"用性质"——理由应为"两直线平行，同位角相等"。判定=由角推线（角等→平行），性质=由线推角（平行→角等）。区分口诀："证平行用判定，算角度用性质"。考试写反直接0分。</div></div>
         <p class="principle"><strong>💡 原理：</strong>这是初一最重要的逻辑思维训练——<strong>充分条件</strong>和<strong>必要条件</strong>的区别。判定定理：已知角的条件 → 结论是平行（角是平行的充分条件）；性质定理：已知平行 → 结论是角的关系（平行是角相等的充分条件）。两者互为逆命题，真命题的逆命题不一定真！</p>
         <div class="variant"><strong>📝 变式（真题型）：</strong>如图，已知 $\angle 1 = \angle 2$，判断 $AB$ 是否平行于 $CD$，并说明理由。<br><strong>解：</strong>$\angle 1$ 和 $\angle 2$ 是同位角，同位角相等 → $AB \parallel CD$（用的是<strong>判定</strong>定理）。若已知 $AB \parallel CD$，求 $\angle 2=70°$ 时 $\angle 1$ 的度数，则用<strong>性质</strong>定理回答 $\angle 1 = 70°$。</div>
@@ -1712,7 +1715,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
       <p>理解平面直角坐标系的概念；能根据坐标描点；掌握点的平移和对称坐标规律</p>
     </div>
     <div class="knowledge-link"><strong>🔗 前置知识：</strong>数轴（第1章）· 数的比较大小。<strong>后续关联：</strong>坐标系是函数（八年级）的基础，平移概念与第5章平移一节紧密相关。</div>
-    <div class="thought-method"><strong>🧭 数形结合（三）：</strong>坐标系将"数"和"形"完美统一——一个点对应一对数，一条线段对应一个距离公式，平移对应坐标加减。从数轴（一维）到坐标系（二维），是数学抽象能力的一次跃升。</div>
+    <div class="thought-method"><strong>🧭 数形结合思想（进阶）：</strong>坐标系是"数形结合"的巅峰工具——点用数对表示、直线用一次方程表示、距离用勾股定理算。本章学的是"用数定位形"——从平面上的一个位置到一对数，再从一对数回到一个位置。这是函数图像（第19章）和向量（高中）的基础。</div>
     <div class="advance-organizer"><strong>🔍 先行组织者：</strong>电影院找座位：5排3座 → (5,3)。看地图：E120° N30° → (120,30)。"用两个数确定一个位置"——这就是坐标思想。笛卡尔在病床上看到天花板上的苍蝇，想到用两个数定位它，坐标系就这样诞生了。坐标系是<strong>数和形之间的桥梁</strong>——每个点对应一个"数对"（坐标），每条线对应一个方程。</div>
 <div class="diagram-module" style="text-align:center;margin:16px 0;">
 <strong style="font-size:13px;color:var(--text-secondary);">象限与坐标</strong>
@@ -1985,6 +1988,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
         <p class="principle"><strong>💡 原理：</strong>鸡兔同笼是二元一次方程组最经典的应用。两个等量关系：①头数（鸡+兔=总数）；②腿数（2×鸡+4×兔=总腿数）。设两个未知数后，两个条件正好对应两个方程。如果只有一个条件，方程有无数组解——这就是为什么要两个方程才能确定两个未知数。</p>
         <div class="variant"><strong>📝 变式（配套问题）：</strong>某车间有28名工人，每人每天能生产螺栓12个或螺母18个。一个螺栓配两个螺母，应各安排多少人？<br><strong>解：</strong>设生产螺栓 $x$ 人，螺母 $y$ 人。$\begin{cases} x+y=28 \\ 2×12x = 18y \end{cases}$，解得 $\begin{cases} x=12 \\ y=16 \end{cases}$</div>
       </div>
+      <div class="technique-card"><h3><span class="step-num">3</span> 代入法 vs 加减法 — 同一题两种解法</h3><p class="method"><strong>核心判断：</strong>有系数为 ±1 的未知数 → 优先代入法（无需运算直接表达）；两个方程的同一未知数系数成倍数或相同 → 优先加减法（消元效率最高）。</p><p class="example"><strong>例题：</strong>解方程组 $\begin{cases} y = 2x - 1 & \text{①} \\ 3x + 2y = 12 & \text{②} \end{cases}$<br><strong>解法一（代入法）：</strong>直接代①入②：$3x+2(2x-1)=12$ → $3x+4x-2=12$ → $7x=14$ → $x=2$。代回①：$y=2×2-1=3$。<br><strong>解法二（加减法）：</strong>①×2：$2y=4x-2$ → ②-①×2：$3x=14-4x$ → $7x=14$ → $x=2$。代回①：$y=3$。<br><strong>结论：</strong>此题因为有 $y=...$ 的显式表达，代入法<strong>更简</strong>——一步到位。</p><p class="principle"><strong>💡 原则：</strong>判断依据——哪个未知数系数简单、容易表达，就用它代入。哪个未知数在两个方程中系数成倍数关系，就用加减消元。不要固定用一种方法——每做一题先花 5 秒判断"哪种更快"。</p><p class="exam-hint">📋 中考怎么考：中考通常两种方法都能解，但选对方法能省 2-3 分钟。有分数系数时优先加减法（避免分数代入）。</p></div>
     </div>
   </details>
   <details class="exam-module">

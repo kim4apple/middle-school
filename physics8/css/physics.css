@@ -516,3 +516,24 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 .next-stop { background: linear-gradient(135deg, #eef2ff 0%, #f0fdf4 100%); border-radius: var(--radius); padding: 14px 18px; margin-top: 20px; font-size: 14px; line-height: 1.8; border: 1px dashed var(--border); }
 [data-theme="dark"] .next-stop { background: linear-gradient(135deg, #1e1b4b 0%, #0f2c1a 100%); }
 .next-stop strong { color: var(--accent); }
+
+.self-score { border: 1px solid var(--border); border-radius: 4px; padding: 2px 4px; font-size: 12px; margin-right: 6px; background: var(--bg); color: var(--text); }
+
+.advance-organizer { background: linear-gradient(135deg, #eef2ff 0%, #fdf2f8 100%); border-left: 4px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; padding: 14px 18px; margin-bottom: 20px; font-size: 14px; line-height: 1.8; }
+[data-theme="dark"] .advance-organizer { background: linear-gradient(135deg, #1e1b4b 0%, #3b1f2b 100%); }
+.advance-organizer strong { color: var(--accent); }
+
+.q-diff { font-size: 12px; padding: 1px 6px; border-radius: 3px; display: inline-block; margin-left: 6px; font-weight: 600; }
+.q-diff.easy { background: #dcfce7; color: #166534; }
+.q-diff.mid { background: #fef9c3; color: #854d0e; }
+.q-diff.hard { background: #fce7f3; color: #9d174d; }
+[data-theme="dark"] .q-diff.easy { background: #064e3b; color: #6ee7b7; }
+[data-theme="dark"] .q-diff.mid { background: #452a08; color: #fcd34d; }
+[data-theme="dark"] .q-diff.hard { background: #4a1831; color: #f9a8d4; }
+
+.level-bronze { display: inline-block; font-size: 12px; padding: 1px 6px; border-radius: 3px; background: #fdf6e3; color: #92400e; margin-top: 8px; }
+.level-silver { display: inline-block; font-size: 12px; padding: 1px 6px; border-radius: 3px; background: #f1f5f9; color: #64748b; margin-top: 8px; }
+.level-gold { display: inline-block; font-size: 12px; padding: 1px 6px; border-radius: 3px; background: #fefce8; color: #a16207; margin-top: 8px; }
+[data-theme="dark"] .level-bronze { background: #452a08; color: #fcd34d; }
+[data-theme="dark"] .level-silver { background: #1e293b; color: #94a3b8; }
+[data-theme="dark"] .level-gold { background: #462c08; color: #fbbf24; }

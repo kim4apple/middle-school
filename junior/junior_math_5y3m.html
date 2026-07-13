@@ -363,6 +363,11 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
         <a href="#topic3">专题三 · 函数</a>
         <a href="#topic4">专题四 · 几何证明与计算</a>
         <a href="#topic5">专题五 · 统计与概率</a>
+        <a href="#mock1">模拟卷一 · 基础卷</a>
+        <a href="#mock2">模拟卷二 · 中等卷</a>
+        <a href="#mock3">模拟卷三 · 强化卷</a>
+        <a href="#mock4">模拟卷四 · 冲刺卷</a>
+        <a href="#mock5">模拟卷五 · 拔高卷</a>
       </nav>
     </div>
     <div class="sidebar-group">
@@ -1202,12 +1207,851 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 
       <div class="topic-summary">
         <strong>📊 专题五命题规律：</strong>广东中考统计与概率一般出现在选择题(3-6分)和解答题第18-19题(8分)。核心考点：<strong>平均数/中位数/众数/方差</strong>的计算与意义（选择/填空必考）、<strong>统计图读图</strong>（条形/折线/扇形）、<strong>抽样调查与全面调查</strong>的选择、<strong>概率</strong>（用树状图或列表法，注意"放回"vs"不放回"）和<strong>用样本估计总体</strong>。概率题难度不高但易失分，关键审清题意。
+
+    <!-- ============================================================ -->
+    <!-- 模拟试卷一：基础卷 -->
+    <!-- ============================================================ -->
+    <section class="section" id="mock1">
+      <h1>📝 模拟试卷一 · 广东中考数学基础卷</h1>
+      <div class="exam-paper" style="border:2px solid #f59e0b;border-radius:12px;padding:20px;margin:24px 0;background:var(--bg-secondary);">
+        <h3 style="text-align:center;color:#f59e0b;font-size:18px;margin-bottom:4px;">📝 广东中考数学模拟试卷一</h3>
+        <p style="text-align:center;font-size:12px;color:var(--text-secondary);">（考试时间：90分钟  满分：120分） 适合：7-8年级查漏补缺</p>
+        <div style="text-align:center;margin:10px 0;font-size:11px;color:var(--accent);">
+          <span>一、选择题(30分)</span> ·
+          <span>二、填空题(15分)</span> ·
+          <span>三、解答题(一)(18分)</span> ·
+          <span>四、解答题(二)(24分)</span> ·
+          <span>五、解答题(三)(24分)</span>
+        </div>
+
+      <details class="exam-module" open>
+        <summary>📋 一、选择题（10题 × 3分 = 30分）</summary>
+        <div class="content">
+
+      <div class="exam-q" data-qid="m1-1">
+        <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷1</span><span class="q-diff easy">★☆☆</span>
+        <div class="q-body">$-2$ 的相反数是（ ）<br>A. $2$ &nbsp; B. $-2$ &nbsp; C. $\dfrac{1}{2}$ &nbsp; D. $-\dfrac{1}{2}$</div>
+        <div class="q-solution">
+          <strong>答案：A</strong>
+          <p><strong>🔑 关键思路：</strong>相反数的定义——只有符号不同的两个数互为相反数。$-2$ 的相反数就是 $2$。</p>
+          <ol>
+            <li>$-2$ 的相反数 $= -(-2) = 2$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>混淆"相反数"与"倒数"——倒数是 $\dfrac{1}{a}$，相反数是 $-a$。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m1-2">
+        <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷1</span><span class="q-diff easy">★☆☆</span>
+        <div class="q-body">数据 $2, 3, 5, 5, 4$ 的众数是（ ）<br>A. $2$ &nbsp; B. $3$ &nbsp; C. $4$ &nbsp; D. $5$</div>
+        <div class="q-solution">
+          <strong>答案：D</strong>
+          <p><strong>🔑 关键思路：</strong>众数是一组数据中出现次数最多的数。$5$ 出现 $2$ 次，其他各 $1$ 次。</p>
+          <ol>
+            <li>$2$ 出现 $1$ 次，$3$ 出现 $1$ 次，$5$ 出现 $2$ 次，$4$ 出现 $1$ 次</li>
+            <li>出现次数最多的是 $5$ → 众数为 $5$</li>
+          </ol>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m1-3">
+        <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷1</span><span class="q-diff easy">★☆☆</span>
+        <div class="q-body">不等式 $x-3>0$ 的解集是（ ）<br>A. $x>3$ &nbsp; B. $x<3$ &nbsp; C. $x>-3$ &nbsp; D. $x<-3$</div>
+        <div class="q-solution">
+          <strong>答案：A</strong>
+          <p><strong>🔑 关键思路：</strong>移项即可：$x-3>0 \rightarrow x>3$。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m1-4">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷1</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">一个正多边形的内角和为 $540^\circ$，则它的边数是（ ）<br>A. $4$ &nbsp; B. $5$ &nbsp; C. $6$ &nbsp; D. $7$</div>
+        <div class="q-solution">
+          <strong>答案：B</strong>
+          <p><strong>🔑 关键思路：</strong>$n$ 边形内角和公式 $(n-2)\times 180^\circ = 540^\circ$，解出 $n$。</p>
+          <ol>
+            <li>$(n-2)\times 180^\circ = 540^\circ$</li>
+            <li>$n-2 = \dfrac{540}{180} = 3$</li>
+            <li>$n = 5$ → 正五边形</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>混淆内角和与外角和（外角和恒为 $360^\circ$）。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m1-5">
+        <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷1</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">点 $P(2, -3)$ 关于 $x$ 轴的对称点的坐标是（ ）<br>A. $(-2, -3)$ &nbsp; B. $(2, 3)$ &nbsp; C. $(-2, 3)$ &nbsp; D. $(-3, 2)$</div>
+        <div class="q-solution">
+          <strong>答案：B</strong>
+          <p><strong>🔑 关键思路：</strong>关于 $x$ 轴对称：横坐标不变，纵坐标取相反数。$(2, -3) \rightarrow (2, 3)$。</p>
+          <ol>
+            <li>关于 $x$ 轴对称：$(a, b) \rightarrow (a, -b)$</li>
+            <li>$P(2, -3) \rightarrow P'(2, 3)$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>混淆 $x$ 轴对称与 $y$ 轴对称——$y$ 轴对称是横坐标变号。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m1-6">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷1</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">等腰三角形顶角为 $80^\circ$，则底角的度数为（ ）<br>A. $80^\circ$ &nbsp; B. $50^\circ$ &nbsp; C. $40^\circ$ &nbsp; D. $100^\circ$</div>
+        <div class="q-solution">
+          <strong>答案：B</strong>
+          <p><strong>🔑 关键思路：</strong>等腰三角形两底角相等。三角形内角和 $180^\circ$，底角 $= \dfrac{180^\circ - 80^\circ}{2} = 50^\circ$。</p>
+          <ol>
+            <li>设底角为 $x$，则 $x + x + 80^\circ = 180^\circ$</li>
+            <li>$2x = 100^\circ$ → $x = 50^\circ$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>直接用 $180^\circ - 80^\circ = 100^\circ$ 当作底角，忘了除以 $2$。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m1-7">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷1</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">一次函数 $y = -2x + 1$ 中，$y$ 随 $x$ 的增大而（ ）<br>A. 增大 &nbsp; B. 减小 &nbsp; C. 不变 &nbsp; D. 先增后减</div>
+        <div class="q-solution">
+          <strong>答案：B</strong>
+          <p><strong>🔑 关键思路：</strong>一次函数 $y = kx + b$，当 $k < 0$ 时 $y$ 随 $x$ 增大而减小。本题 $k = -2 < 0$。</p>
+          <ol>
+            <li>识别 $k = -2$，$b = 1$</li>
+            <li>$k < 0$ → 函数递减 → $y$ 随 $x$ 增大而减小</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>只看 $b=1>0$ 就判断为增大，忽略了 $k$ 的符号才是单调性的决定因素。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m1-8">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷1</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">菱形的两条对角线长分别为 $6$ 和 $8$，则该菱形的面积为（ ）<br>A. $48$ &nbsp; B. $24$ &nbsp; C. $14$ &nbsp; D. $12$</div>
+        <div class="q-solution">
+          <strong>答案：B</strong>
+          <p><strong>🔑 关键思路：</strong>菱形面积公式 $S = \dfrac{1}{2}d_1 d_2$（对角线乘积的一半）。</p>
+          <ol>
+            <li>$S = \dfrac{1}{2} \times 6 \times 8 = \dfrac{48}{2} = 24$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>忘记乘 $\dfrac{1}{2}$，直接算 $6 \times 8 = 48$。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m1-9">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷1</span><span class="q-diff hard">★★★</span>
+        <div class="q-body">把 $x^2 - 4x - 12$ 分解因式，正确的是（ ）<br>A. $(x-6)(x+2)$ &nbsp; B. $(x+6)(x-2)$ &nbsp; C. $(x-3)(x+4)$ &nbsp; D. $(x-4)(x-3)$</div>
+        <div class="q-solution">
+          <strong>答案：A</strong>
+          <p><strong>🔑 关键思路：</strong>十字相乘法：找两数 $m$, $n$ 使 $m+n=-4$, $mn=-12$。$m=-6$, $n=2$ 满足条件。</p>
+          <ol>
+            <li>设 $x^2 - 4x - 12 = (x+m)(x+n)$</li>
+            <li>展开得 $x^2 + (m+n)x + mn$</li>
+            <li>所以 $\begin{cases} m+n = -4 \\ mn = -12 \end{cases}$</li>
+            <li>猜根：$m=-6$, $n=2$ → $(-6)+2=-4$ ✓，$(-6)\times 2=-12$ ✓</li>
+            <li>$(x-6)(x+2)$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>符号搞反——写成 $(x+6)(x-2)$ 则 $m+n=4$，不符合。</p>
+          <p>💡 验证：展开 $(x-6)(x+2)=x^2+2x-6x-12=x^2-4x-12$ ✓</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m1-10">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷1</span><span class="q-diff hard">★★★</span>
+        <div class="q-body">在平行四边形 $ABCD$ 中，$AB=5$，$BC=3$，则对角线 $AC$ 的取值范围是（ ）<br>A. $2 < AC < 8$ &nbsp; B. $1 < AC < 9$ &nbsp; C. $2 < AC < 6$ &nbsp; D. $3 < AC < 8$</div>
+        <div class="q-solution">
+          <strong>答案：A</strong>
+          <p><strong>🔑 关键思路：</strong>在 $\triangle ABC$ 中，$AB=5$, $BC=3$。由三角形两边之和大于第三边，两边之差小于第三边：$|5-3| < AC < 5+3$。</p>
+          <ol>
+            <li>把 $AC$ 看作 $\triangle ABC$ 的第三边</li>
+            <li>三角形不等式：$|AB - BC| < AC < AB + BC$</li>
+            <li>$|5-3| = 2$，$5+3 = 8$</li>
+            <li>$2 < AC < 8$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 忘记三角形边长关系直接用平行四边形性质 ② 不等号方向写反。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+        </div>
+      </details>
+
+      <details class="exam-module" open>
+        <summary>📝 二、填空题（5题 × 3分 = 15分）</summary>
+        <div class="content">
+
+      <div class="exam-q" data-qid="m1-11">
+        <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷1</span><span class="q-diff easy">★☆☆</span>
+        <div class="q-body">$|-5| = $ ______</div>
+        <div class="q-solution">
+          <strong>答案：$5$</strong>
+          <p><strong>🔑 关键思路：</strong>绝对值的定义——一个负数的绝对值是它的相反数。$|-5| = 5$。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m1-12">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷1</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">方程 $\dfrac{2}{x-1}=1$ 的解是 $x=$ ______</div>
+        <div class="q-solution">
+          <strong>答案：$3$</strong>
+          <p><strong>🔑 关键思路：</strong>解分式方程——去分母化为整式方程，最后必须检验分母是否为零。</p>
+          <ol>
+            <li>两边同乘 $(x-1)$：$2 = x-1$</li>
+            <li>$x = 3$</li>
+            <li>检验：$x=3$ 时分母 $x-1=2 \neq 0$ ✓，所以 $x=3$ 是原方程的解</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>求出 $x$ 后不检验分母是否为零。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m1-13">
+        <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷1</span><span class="q-diff easy">★☆☆</span>
+        <div class="q-body">$30^\circ$ 的余角是 ______$^\circ$</div>
+        <div class="q-solution">
+          <strong>答案：$60^\circ$</strong>
+          <p><strong>🔑 关键思路：</strong>两个角互余，则它们的和为 $90^\circ$。$90^\circ - 30^\circ = 60^\circ$。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m1-14">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷1</span><span class="q-diff hard">★★★</span>
+        <div class="q-body">一次函数 $y=kx+b$ 的图像经过 $(1, 3)$ 和 $(2, 5)$，则 $k=$ ______，$b=$ ______</div>
+        <div class="q-solution">
+          <strong>答案：$k=2$，$b=1$</strong>
+          <p><strong>🔑 关键思路：</strong>待定系数法——代入两点坐标，列方程组求 $k$ 和 $b$。</p>
+          <ol>
+            <li>代入 $(1,3)$：$k+b=3$ ①</li>
+            <li>代入 $(2,5)$：$2k+b=5$ ②</li>
+            <li>②−①：$(2k+b)-(k+b)=5-3$ → $k=2$</li>
+            <li>$k=2$ 代入①：$2+b=3$ → $b=1$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>代入坐标时 $x$ 和 $y$ 位置搞反。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m1-15">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷1</span><span class="q-diff hard">★★★</span>
+        <div class="q-body">直角三角形的两边长分别为 $6$ 和 $8$，则第三边长为 ______</div>
+        <div class="q-solution">
+          <strong>答案：$10$ 或 $2\sqrt{7}$</strong>
+          <p><strong>🔑 关键思路：</strong>分类讨论——$8$ 可能是斜边也可能是直角边。</p>
+          <ol>
+            <li>若 $6$ 和 $8$ 都是直角边：斜边 $= \sqrt{6^2+8^2} = \sqrt{100}=10$</li>
+            <li>若 $8$ 是斜边，$6$ 是直角边：另一直角边 $= \sqrt{8^2-6^2} = \sqrt{64-36} = \sqrt{28}=2\sqrt{7}$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 不分类讨论，只给出 $10$ 一个答案 ② 误以为 "两边长" 就是 "两直角边长"。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+        </div>
+      </details>
+
+      <details class="exam-module" open>
+        <summary>✏️ 三、解答题(一)（3题 × 6分 = 18分）</summary>
+        <div class="content">
+
+      <div class="exam-q" data-qid="m1-16">
+        <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷1</span><span class="q-diff easy">★☆☆</span>
+        <div class="q-body">计算：$(-3)^2 \times 2 + \sqrt{9} \div (-\dfrac{1}{3}) - |-4|$</div>
+        <div class="q-solution">
+          <strong>答案：$5$</strong>
+          <p><strong>🔑 关键思路：</strong>按照乘方→乘除→加减的顺序逐步计算，注意符号。</p>
+          <ol>
+            <li>$(-3)^2 = 9$，$9 \times 2 = 18$</li>
+            <li>$\sqrt{9} = 3$，$3 \div (-\dfrac{1}{3}) = 3 \times (-3) = -9$</li>
+            <li>$|-4| = 4$</li>
+            <li>原式 $= 18 + (-9) - 4 = 5$</li>
+          </ol>
+          <p><strong>✅ 检验：</strong>$18-9-4=5$ ✓</p>
+          <p><strong>⚠️ 常见错误：</strong>① $(-3)^2$ 算成 $-9$ ② 除以 $-\dfrac{1}{3}$ 时符号处理错误。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m1-17">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷1</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">先化简，再求值：$(\dfrac{x}{x-1} - \dfrac{1}{x+1}) \div \dfrac{x^2+1}{x^2-1}$，其中 $x=2$</div>
+        <div class="q-solution">
+          <strong>答案：$1$</strong>
+          <p><strong>🔑 关键思路：</strong>括号内先通分，除法变乘法，因式分解后约分。本题化简结果恰好与 $x$ 无关（$x\neq\pm 1$）。</p>
+          <ol>
+            <li>括号内通分：$\dfrac{x(x+1)-(x-1)}{(x-1)(x+1)} = \dfrac{x^2+x-x+1}{(x-1)(x+1)} = \dfrac{x^2+1}{(x-1)(x+1)}$</li>
+            <li>除法变乘法：$= \dfrac{x^2+1}{(x-1)(x+1)} \times \dfrac{x^2-1}{x^2+1}$</li>
+            <li>$x^2-1 = (x+1)(x-1)$，约分后 $= \dfrac{(x+1)(x-1)}{(x-1)(x+1)} = 1$</li>
+            <li>$x=2$ 时分母均不为零，代入得原式 $=1$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 通分时分子忘乘 ② 除法变乘法忘取倒数 ③ 没发现化简后恒为 $1$。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m1-18">
+        <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷1</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">解方程组：$\begin{cases} x+y=5 \\ 2x-y=4 \end{cases}$</div>
+        <div class="q-solution">
+          <strong>答案：$\begin{cases} x=3 \\ y=2 \end{cases}$</strong>
+          <p><strong>🔑 关键思路：</strong>加减消元法——两式相加消去 $y$。</p>
+          <ol>
+            <li>(1)+(2)：$(x+y)+(2x-y)=5+4$ → $3x=9$ → $x=3$</li>
+            <li>代入 (1)：$3+y=5$ → $y=2$</li>
+            <li>检验：$3+2=5$ ✓，$2\times 3-2=4$ ✓</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 代入法忘记变号 ② 检验时只代第一个方程。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+        </div>
+      </details>
+
+      <details class="exam-module" open>
+        <summary>📐 四、解答题(二)（3题 × 8分 = 24分）</summary>
+        <div class="content">
+
+      <div class="exam-q" data-qid="m1-19">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷1</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">已知：等腰 $\triangle ABC$ 中 $AB=AC$，$D$ 是 $BC$ 中点。求证：$AD \perp BC$。</div>
+        <div class="q-solution">
+          <strong>答案：证明见解析（SSS全等→邻补角相等→直角）</strong>
+          <p><strong>🔑 关键思路：</strong>利用等腰三角形"三线合一"——底边上的中线也是底边上的高。用全等三角形证明。</p>
+          <ol>
+            <li>$AB=AC$（已知），$BD=CD$（$D$ 是中点），$AD=AD$（公共边）</li>
+            <li>$\triangle ABD \cong \triangle ACD$（SSS）</li>
+            <li>$\angle ADB = \angle ADC$（全等三角形对应角相等）</li>
+            <li>$\angle ADB + \angle ADC = 180^\circ$（邻补角）</li>
+            <li>$\angle ADB = \angle ADC = 90^\circ$ → $AD \perp BC$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 漏掉"邻补角和为 $180^\circ$"这一步 ② 直接用"三线合一"定理而不证明（考试中规范解答需要写出推理过程）。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m1-20">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷1</span><span class="q-diff hard">★★★</span>
+        <div class="q-body">一次函数 $y=kx+b$ 的图像经过 $(1,3)$ 和 $(2,5)$，与 $x$ 轴交于 $A$，与 $y$ 轴交于 $B$，求 $\triangle AOB$ 的面积。</div>
+        <div class="q-solution">
+          <strong>答案：$\dfrac{1}{4}$</strong>
+          <p><strong>🔑 关键思路：</strong>先求函数解析式，再求与坐标轴的交点坐标，最后用面积公式 $S=\dfrac{1}{2}|OA| \cdot |OB|$。</p>
+          <ol>
+            <li>待定系数法求解析式：$\begin{cases} k+b=3 \\ 2k+b=5 \end{cases}$ → $k=2$, $b=1$ → $y=2x+1$</li>
+            <li>$y=0$ 时：$2x+1=0$ → $x=-\dfrac{1}{2}$ → $A(-\dfrac{1}{2}, 0)$，$OA = \dfrac{1}{2}$</li>
+            <li>$x=0$ 时：$y=1$ → $B(0, 1)$，$OB = 1$</li>
+            <li>$S_{\triangle AOB} = \dfrac{1}{2} \times OA \times OB = \dfrac{1}{2} \times \dfrac{1}{2} \times 1 = \dfrac{1}{4}$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① $OA$ 的长度忘记取绝对值 ② 面积公式忘乘 $\dfrac{1}{2}$。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m1-21">
+        <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷1</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">给出一组数据：$2, 3, 3, 4, 5, 5, 5, 6$。求：(1) 平均数；(2) 中位数；(3) 众数；(4) 方差。</div>
+        <div class="q-solution">
+          <strong>答案：(1) $\dfrac{33}{8}=4.125$ &nbsp; (2) $4.5$ &nbsp; (3) $5$ &nbsp; (4) $\dfrac{103}{64}$</strong>
+          <p><strong>🔑 关键思路：</strong>先排序（数据已排），平均数为总和除以个数，中位数取中间两数均值（偶数个），众数取频次最高值，方差用公式 $s^2=\dfrac{1}{n}\sum(x_i-\bar{x})^2$。</p>
+          <ol>
+            <li>平均数 $\bar{x} = \dfrac{2+3+3+4+5+5+5+6}{8} = \dfrac{33}{8}$</li>
+            <li>$8$ 个数据（偶数），中位数 $=$ 第 $4$、$5$ 个数的均值 $= \dfrac{4+5}{2}=4.5$</li>
+            <li>$5$ 出现 $3$ 次（最多）→ 众数 $=5$</li>
+            <li>方差计算：</li>
+          </ol>
+          <p style="margin-left:20px;">
+            $(2-\frac{33}{8})^2 = (-\frac{17}{8})^2 = \frac{289}{64}$<br>
+            $(3-\frac{33}{8})^2 = (-\frac{9}{8})^2 = \frac{81}{64} \times 2 = \frac{162}{64}$<br>
+            $(4-\frac{33}{8})^2 = (-\frac{1}{8})^2 = \frac{1}{64}$<br>
+            $(5-\frac{33}{8})^2 = (\frac{7}{8})^2 = \frac{49}{64} \times 3 = \frac{147}{64}$<br>
+            $(6-\frac{33}{8})^2 = (\frac{15}{8})^2 = \frac{225}{64}$<br>
+            $\sum = \frac{289+162+1+147+225}{64} = \frac{824}{64} = \frac{103}{8}$<br>
+            $s^2 = \dfrac{1}{8} \times \dfrac{103}{8} = \dfrac{103}{64}$
+          </p>
+          <p><strong>⚠️ 常见错误：</strong>① 不排序直接取中间数 ② 方差公式分母用 $n-1$（初中用 $n$）。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+        </div>
+      </details>
+
+      <details class="exam-module" open>
+        <summary>🏆 五、解答题(三)（2题 × 12分 = 24分）</summary>
+        <div class="content">
+
+      <div class="exam-q" data-qid="m1-22">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷1</span><span class="q-diff hard">★★★</span>
+        <div class="q-body">如图，矩形 $ABCD$ 中，$AB=6$，$BC=8$，点 $P$ 在 $BC$ 边上运动（与 $B$、$C$ 不重合）。<br>(1) 设 $BP=x$，用 $x$ 的代数式表示 $AP^2$；<br>(2) $x$ 为何值时 $AP$ 最小？最小值是多少？</div>
+        <div class="q-solution">
+          <strong>答案：(1) $AP^2 = x^2 + 36$ &nbsp; (2) $x=0$ 时 $AP$ 最小，最小值为 $6$</strong>
+          <p><strong>🔑 关键思路：</strong>建立坐标系（$B$ 为原点，$BC$ 在 $x$ 轴）→ 写出各点坐标 → 用两点距离公式表达 $AP^2$ → 二次函数求最值。</p>
+          <ol>
+            <li>建系：$B(0,0)$，$C(8,0)$，$A(0,6)$，则 $P(x, 0)$（$0 < x < 8$）</li>
+            <li>$AP^2 = (x-0)^2 + (0-6)^2 = x^2 + 36$</li>
+            <li>(2) $AP^2 = x^2 + 36 \geq 36$（当 $x=0$ 时取等号）</li>
+            <li>$x=0$ 对应 $P$ 与 $B$ 重合，此时 $AP_{min} = \sqrt{36} = 6$</li>
+          </ol>
+          <p><strong>🔑 几何解释：</strong>$A$ 到 $BC$ 的最短距离就是 $A$ 到直线 $BC$ 的垂线段长度，即 $AB=6$。当 $P$ 与 $B$ 重合时恰好达到。</p>
+          <p><strong>⚠️ 常见错误：</strong>① 坐标系建错导致 $AP^2$ 表达式写反 ② 未考虑 $x \geq 0$ 的限制 ③ 求最值时忘记开方。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m1-23">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷1</span><span class="q-diff hard">★★★</span>
+        <div class="q-body">【阅读材料】分拆法：$\dfrac{2}{x^2-1} = \dfrac{A}{x-1} + \dfrac{B}{x+1}$，求 $A$、$B$ 的值。<br>【应用】利用上述结论，解不等式：$\dfrac{1}{x-1} - \dfrac{1}{x+1} \leq 0$。</div>
+        <div class="q-solution">
+          <strong>答案：$A=1$，$B=-1$；不等式解集：$-1 < x < 1$</strong>
+          <p><strong>🔑 关键思路：</strong>通分后对比系数求 $A$、$B$，再利用分拆结果解不等式。</p>
+          <ol>
+            <li>$\dfrac{2}{(x-1)(x+1)} = \dfrac{A(x+1)+B(x-1)}{(x-1)(x+1)}$</li>
+            <li>分子：$2 = A(x+1)+B(x-1) = (A+B)x + (A-B)$</li>
+            <li>对比系数：$\begin{cases} A+B = 0 \\ A-B = 2 \end{cases}$ → $A=1$，$B=-1$</li>
+            <li>应用：$\dfrac{1}{x-1} - \dfrac{1}{x+1} = \dfrac{(x+1)-(x-1)}{(x-1)(x+1)} = \dfrac{2}{x^2-1} \leq 0$</li>
+            <li>分子 $2>0$，所以 $x^2-1 < 0$ → $(x+1)(x-1) < 0$</li>
+            <li>解得 $-1 < x < 1$（注意 $x \neq \pm 1$）</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 通分后忘对比系数 ② 解 $(x+1)(x-1) < 0$ 时方向写反 ③ 忘排除 $x=\pm 1$。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+        </div>
+      </details>
+
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 模拟试卷二：中等卷 -->
+    <!-- ============================================================ -->
+    <section class="section" id="mock2">
+      <h1>📝 模拟试卷二 · 广东中考数学中等卷</h1>
+      <div class="exam-paper" style="border:2px solid #f59e0b;border-radius:12px;padding:20px;margin:24px 0;background:var(--bg-secondary);">
+        <h3 style="text-align:center;color:#f59e0b;font-size:18px;margin-bottom:4px;">📝 广东中考数学模拟试卷二</h3>
+        <p style="text-align:center;font-size:12px;color:var(--text-secondary);">（考试时间：90分钟  满分：120分） 适合：7-8年级强化训练</p>
+        <div style="text-align:center;margin:10px 0;font-size:11px;color:var(--accent);">
+          <span>一、选择题(30分)</span> ·
+          <span>二、填空题(15分)</span> ·
+          <span>三、解答题(一)(18分)</span> ·
+          <span>四、解答题(二)(24分)</span> ·
+          <span>五、解答题(三)(24分)</span>
+        </div>
+
+      <details class="exam-module" open>
+        <summary>📋 一、选择题（10题 × 3分 = 30分）</summary>
+        <div class="content">
+
+      <div class="exam-q" data-qid="m2-1">
+        <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷2</span><span class="q-diff easy">★☆☆</span>
+        <div class="q-body">$-\dfrac{1}{3}$ 的倒数是（ ）<br>A. $3$ &nbsp; B. $-3$ &nbsp; C. $\dfrac{1}{3}$ &nbsp; D. $-\dfrac{1}{3}$</div>
+        <div class="q-solution">
+          <strong>答案：B</strong>
+          <p><strong>🔑 关键思路：</strong>倒数定义——乘积为 $1$ 的两个数。$(-\dfrac{1}{3}) \times (-3) = 1$。</p>
+          <ol>
+            <li>$-\dfrac{1}{3}$ 的倒数为 $\dfrac{1}{-\frac{1}{3}} = -3$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>混淆"倒数"与"相反数"——相反数是 $\dfrac{1}{3}$。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m2-2">
+        <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷2</span><span class="q-diff easy">★☆☆</span>
+        <div class="q-body">在抽样调查中，样本是指（ ）<br>A. 所有个体 &nbsp; B. 被抽取的一部分个体 &nbsp; C. 调查方法 &nbsp; D. 数据表格</div>
+        <div class="q-solution">
+          <strong>答案：B</strong>
+          <p><strong>🔑 关键思路：</strong>样本的定义——从总体中抽取的一部分个体。</p>
+          <p><strong>⚠️ 常见错误：</strong>混淆"样本"与"总体"——总体是所有个体，样本是部分个体。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m2-3">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷2</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">三角形的两边长分别为 $3$ 和 $7$，则第三边的长可能是（ ）<br>A. $2$ &nbsp; B. $4$ &nbsp; C. $8$ &nbsp; D. $11$</div>
+        <div class="q-solution">
+          <strong>答案：C</strong>
+          <p><strong>🔑 关键思路：</strong>三角形两边之和大于第三边，两边之差小于第三边。$|7-3| < x < 7+3$ → $4 < x < 10$。</p>
+          <ol>
+            <li>$4 < x < 10$，选项中只有 $8$ 满足</li>
+            <li>$2$ 不满足（$2 < 4$），$4$ 不满足（等于左边），$11$ 不满足（$11 > 10$）</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>只记住"两边之和大于第三边"，忘了"两边之差小于第三边"。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m2-4">
+        <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷2</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">下列各数中，最大的无理数是（ ）<br>A. $\sqrt{2}$ &nbsp; B. $\sqrt{3}$ &nbsp; C. $\pi$ &nbsp; D. $\sqrt{5}$</div>
+        <div class="q-solution">
+          <strong>答案：C</strong>
+          <p><strong>🔑 关键思路：</strong>比较无理数大小：$\pi \approx 3.14$，$\sqrt{2}\approx 1.414$，$\sqrt{3}\approx 1.732$，$\sqrt{5}\approx 2.236$。$\pi$ 最大。</p>
+          <ol>
+            <li>$\sqrt{2} \approx 1.414$，$\sqrt{3} \approx 1.732$，$\sqrt{5} \approx 2.236$，$\pi \approx 3.142$</li>
+            <li>$3.142$ 最大 → $\pi$ 最大</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>不熟悉 $\pi$ 的近似值，误选 $\sqrt{5}$。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m2-5">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷2</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">若一次函数 $y=kx+b$ 的图像不经过第二象限，则 $k$ 和 $b$ 的符号是（ ）<br>A. $k>0$，$b<0$ &nbsp; B. $k>0$，$b>0$ &nbsp; C. $k<0$，$b>0$ &nbsp; D. $k<0$，$b<0$</div>
+        <div class="q-solution">
+          <strong>答案：A</strong>
+          <p><strong>🔑 关键思路：</strong>不经过第二象限 → 图像过一、三、四象限或一、三象限。这要求 $k>0$（向上倾斜），且 $b \leq 0$（在 $y$ 轴截距非正）。选项中只有 A 满足。</p>
+          <ol>
+            <li>$k>0$：直线左下→右上，必过一、三象限</li>
+            <li>$b<0$：与 $y$ 轴交于负半轴，过第四象限</li>
+            <li>组合：过一、三、四象限，不过二 ✓</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>混淆 $k$ 符号与象限过不过的关系，凭直觉选。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m2-6">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷2</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">能判定 $\triangle ABC$ 为直角三角形的是（ ）<br>A. $\angle A + \angle B = 90^\circ$<br>B. $AB=3$，$BC=4$，$AC=5$<br>C. A 和 B 都对<br>D. $\angle A = \angle B = \angle C$</div>
+        <div class="q-solution">
+          <strong>答案：C</strong>
+          <p><strong>🔑 关键思路：</strong>A：两锐角互余 → 第三个角为 $90^\circ$，是直角三角形。B：$3^2+4^2=5^2$，满足勾股定理逆定理，是直角三角形。</p>
+          <ol>
+            <li>A：若 $\angle A + \angle B = 90^\circ$，则 $\angle C = 180^\circ - 90^\circ = 90^\circ$ → 直角△ ✓</li>
+            <li>B：$3^2+4^2=9+16=25=5^2$ → 勾股定理逆定理 → 直角△ ✓</li>
+            <li>D：$\angle A=\angle B=\angle C=60^\circ$ → 等边三角形，非直角</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>只选 A 或 B 中的一个，忽略了"都对"选项。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m2-7">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷2</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">关于矩形的对角线，下列说法正确的是（ ）<br>A. 垂直 &nbsp; B. 相等 &nbsp; C. 互相平分 &nbsp; D. B 和 C 都对</div>
+        <div class="q-solution">
+          <strong>答案：D</strong>
+          <p><strong>🔑 关键思路：</strong>矩形是特殊的平行四边形，对角线互相平分（所有平行四边形都有此性质）且相等（矩形特有）。矩形对角线不一定垂直（菱形才垂直）。</p>
+          <ol>
+            <li>矩形是平行四边形 → 对角线互相平分 ✓</li>
+            <li>矩形对角线相等（可用全等三角形证明）✓</li>
+            <li>矩形对角线不垂直（垂直是菱形的性质）</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>混淆矩形、菱形、正方形的对角线性质。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m2-8">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷2</span><span class="q-diff hard">★★★</span>
+        <div class="q-body">化简 $\sqrt{12} + \sqrt{27}$ 的结果是（ ）<br>A. $5\sqrt{3}$ &nbsp; B. $6\sqrt{3}$ &nbsp; C. $7\sqrt{3}$ &nbsp; D. $4\sqrt{3}$</div>
+        <div class="q-solution">
+          <strong>答案：A</strong>
+          <p><strong>🔑 关键思路：</strong>先化简各根式为最简二次根式，再合并同类项。$\sqrt{12} = 2\sqrt{3}$，$\sqrt{27} = 3\sqrt{3}$。</p>
+          <ol>
+            <li>$\sqrt{12} = \sqrt{4 \times 3} = 2\sqrt{3}$</li>
+            <li>$\sqrt{27} = \sqrt{9 \times 3} = 3\sqrt{3}$</li>
+            <li>$2\sqrt{3} + 3\sqrt{3} = 5\sqrt{3}$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 直接加被开方数：$\sqrt{12+27}=\sqrt{39}$ ② 化简时因子拆错。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m2-9">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷2</span><span class="q-diff hard">★★★</span>
+        <div class="q-body">方程 $\dfrac{x}{x-2} = \dfrac{3}{x-2} + 1$ 的解是（ ）<br>A. $x=2$ &nbsp; B. $x=3$ &nbsp; C. 无解 &nbsp; D. $x=2$ 或 $x=3$</div>
+        <div class="q-solution">
+          <strong>答案：C</strong>
+          <p><strong>🔑 关键思路：</strong>去分母解分式方程，注意增根。$x=2$ 使分母为零 → 是增根。</p>
+          <ol>
+            <li>两边同乘 $(x-2)$：$x = 3 + (x-2)$</li>
+            <li>化简：$x = x + 1$ → $0 = 1$，矛盾！</li>
+            <li>方程无解</li>
+            <li>也可从另一角度：$x \neq 2$，但化简后导出矛盾，故无解</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 去分母后得到 $x=x+1$ 仍往下推 ② 不检验直接选 $x=2$。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m2-10">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷2</span><span class="q-diff hard">★★★</span>
+        <div class="q-body">已知 $a+b=5$，$ab=6$，则 $a^2+b^2$ 的值为（ ）<br>A. $13$ &nbsp; B. $25$ &nbsp; C. $19$ &nbsp; D. $37$</div>
+        <div class="q-solution">
+          <strong>答案：A</strong>
+          <p><strong>🔑 关键思路：</strong>整体代换——利用完全平方公式：$a^2+b^2 = (a+b)^2 - 2ab$。不求 $a$、$b$ 的具体值。</p>
+          <ol>
+            <li>$a^2 + b^2 = (a+b)^2 - 2ab$</li>
+            <li>$= 5^2 - 2 \times 6 = 25 - 12 = 13$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 展开 $(a+b)^2$ 时漏掉 $2ab$ 项 ② 用求根公式求 $a$,$b$ 再代入（虽然也能做，但整体代换更简洁）。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+        </div>
+      </details>
+
+      <details class="exam-module" open>
+        <summary>📝 二、填空题（5题 × 3分 = 15分）</summary>
+        <div class="content">
+
+      <div class="exam-q" data-qid="m2-11">
+        <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷2</span><span class="q-diff easy">★☆☆</span>
+        <div class="q-body">$9$ 的算术平方根是 ______</div>
+        <div class="q-solution">
+          <strong>答案：$3$</strong>
+          <p><strong>🔑 关键思路：</strong>算术平方根是非负数——$9$ 的算术平方根是 $\sqrt{9}=3$（不是 $\pm 3$，那是平方根）。</p>
+          <ol>
+            <li>$\sqrt{9} = 3$（因为 $3^2 = 9$ 且 $3 \geq 0$）</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>混淆"算术平方根"与"平方根"——平方根是 $\pm 3$，算术平方根只是 $3$。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m2-12">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷2</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">分解因式：$a^3 - a =$ ______</div>
+        <div class="q-solution">
+          <strong>答案：$a(a+1)(a-1)$</strong>
+          <p><strong>🔑 关键思路：</strong>先提公因式 $a$ → 剩下 $a^2-1$ 是平方差公式 $(a+1)(a-1)$。</p>
+          <ol>
+            <li>提公因式 $a$：$a(a^2-1)$</li>
+            <li>$a^2-1 = (a+1)(a-1)$（平方差公式）</li>
+            <li>结果：$a(a+1)(a-1)$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 提到 $a$ 就停，忘了 $a^2-1$ 还能继续分解 ② $a^2-1$ 写成 $(a-1)^2$。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m2-13">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷2</span><span class="q-diff hard">★★★</span>
+        <div class="q-body">若一组数据的方差为 $0$，则说明 ______</div>
+        <div class="q-solution">
+          <strong>答案：所有数据都相等</strong>
+          <p><strong>🔑 关键思路：</strong>方差 $s^2 = \dfrac{1}{n}\sum(x_i-\bar{x})^2 = 0$ → 每一项 $(x_i-\bar{x})^2 = 0$ → $x_i = \bar{x}$ 对每个 $i$ 成立。</p>
+          <ol>
+            <li>方差为零意味着每个数据与平均数的偏差为零</li>
+            <li>即每个数据都等于平均数 → 所有数据相等</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>答"平均数为 $0$"——混淆方差与平均数。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m2-14">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷2</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">等腰三角形的两边长分别为 $5$ 和 $8$，则其周长为 ______</div>
+        <div class="q-solution">
+          <strong>答案：$18$ 或 $21$</strong>
+          <p><strong>🔑 关键思路：</strong>分类讨论——哪条是腰？同时检验是否满足三角形三边关系。</p>
+          <ol>
+            <li>若腰 $=5$，底 $=8$：$5+5=10>8$ ✓ → 周长 $=5+5+8=18$</li>
+            <li>若腰 $=8$，底 $=5$：$8+8=16>5$ ✓ → 周长 $=8+8+5=21$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 不给全两个答案 ② 不检验三边关系直接写。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m2-15">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷2</span><span class="q-diff hard">★★★</span>
+        <div class="q-body">分式 $\dfrac{x^2-1}{x^2+x}$ 约分后的结果为 ______（注意注明 $x$ 的取值范围）</div>
+        <div class="q-solution">
+          <strong>答案：$\dfrac{x-1}{x}$（$x \neq 0$ 且 $x \neq -1$）</strong>
+          <p><strong>🔑 关键思路：</strong>先因式分解分子分母，再约分。注意约分后定义域不变：原分母 $x^2+x=x(x+1) \neq 0$ → $x \neq 0$ 且 $x \neq -1$。</p>
+          <ol>
+            <li>分子：$x^2-1 = (x+1)(x-1)$</li>
+            <li>分母：$x^2+x = x(x+1)$</li>
+            <li>原式 $= \dfrac{(x+1)(x-1)}{x(x+1)} = \dfrac{x-1}{x}$（约去 $x+1$）</li>
+            <li>定义域：$x \neq 0$ 且 $x \neq -1$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 约分后忘标 $x \neq -1$（因为约掉的因子 $x+1$ 不能为零）② 只写 $x \neq 0$。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+        </div>
+      </details>
+
+      <details class="exam-module" open>
+        <summary>✏️ 三、解答题(一)（3题 × 6分 = 18分）</summary>
+        <div class="content">
+
+      <div class="exam-q" data-qid="m2-16">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷2</span><span class="q-diff easy">★☆☆</span>
+        <div class="q-body">计算：$2\sqrt{3} + 3\sqrt{12} - \sqrt{48}$</div>
+        <div class="q-solution">
+          <strong>答案：$4\sqrt{3}$</strong>
+          <p><strong>🔑 关键思路：</strong>先把各根式化为最简二次根式，再合并同类二次根式。</p>
+          <ol>
+            <li>$3\sqrt{12} = 3 \times 2\sqrt{3} = 6\sqrt{3}$</li>
+            <li>$\sqrt{48} = \sqrt{16 \times 3} = 4\sqrt{3}$</li>
+            <li>$2\sqrt{3} + 6\sqrt{3} - 4\sqrt{3} = (2+6-4)\sqrt{3} = 4\sqrt{3}$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 不化简直接加减 ② $\sqrt{12}=2\sqrt{3}$ 算错。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m2-17">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷2</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">解分式方程：$\dfrac{1}{x-1} = \dfrac{2}{x^2-1}$</div>
+        <div class="q-solution">
+          <strong>答案：无解</strong>
+          <p><strong>🔑 关键思路：</strong>去分母时注意增根。$x^2-1 = (x+1)(x-1)$。</p>
+          <ol>
+            <li>$x^2-1 = (x+1)(x-1)$，方程化为 $\dfrac{1}{x-1} = \dfrac{2}{(x+1)(x-1)}$</li>
+            <li>两边同乘 $(x+1)(x-1)$：$x+1 = 2$ → $x = 1$</li>
+            <li>检验：$x=1$ 时分母 $x-1=0$ → 增根！</li>
+            <li>原方程无解</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 求出 $x=1$ 就以为有解，忘了检验 ② 去分母时漏乘某一项。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m2-18">
+        <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷2</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">如图，直线 $a \parallel b$，$\angle 1 = 65^\circ$，求 $\angle 2$ 的度数。</div>
+        <div class="q-solution">
+          <strong>答案：$65^\circ$</strong>
+          <p><strong>🔑 关键思路：</strong>两直线平行，同位角相等。$\angle 1$ 和 $\angle 2$ 是同位角。</p>
+          <ol>
+            <li>$a \parallel b$，$\angle 1$ 与 $\angle 2$ 是同位角</li>
+            <li>同位角相等 → $\angle 2 = \angle 1 = 65^\circ$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>混淆"同位角"与"内错角"——内错角也是相等的，但位置不同。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+        </div>
+      </details>
+
+      <details class="exam-module" open>
+        <summary>📐 四、解答题(二)（3题 × 8分 = 24分）</summary>
+        <div class="content">
+
+      <div class="exam-q" data-qid="m2-19">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷2</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">如图，在 $\triangle ABC$ 中，$AB=AC$，$\angle A=40^\circ$，$AB$ 的垂直平分线交 $AC$ 于点 $D$。求 $\angle DBC$ 的度数。</div>
+        <div class="q-solution">
+          <strong>答案：$30^\circ$</strong>
+          <p><strong>🔑 关键思路：</strong>垂直平分线上的点到线段两端距离相等 → $AD=BD$ → $\triangle ABD$ 是等腰三角形。</p>
+          <ol>
+            <li>$AB=AC$，$\angle A=40^\circ$ → $\angle ABC = \angle C = (180^\circ-40^\circ)/2 = 70^\circ$</li>
+            <li>$D$ 在 $AB$ 的垂直平分线上 → $AD = BD$ → $\angle ABD = \angle A = 40^\circ$</li>
+            <li>$\angle DBC = \angle ABC - \angle ABD = 70^\circ - 40^\circ = 30^\circ$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 忘记垂直平分线的性质（到两端点距离相等）② 把 $\angle ABD$ 误算为 $\angle B$ 的一半。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m2-20">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷2</span><span class="q-diff hard">★★★</span>
+        <div class="q-body">如图，在平行四边形 $ABCD$ 中，对角线交于点 $O$，$E$ 是 $AD$ 的中点。求证：$OE \parallel CD$ 且 $OE = \dfrac{1}{2}CD$。</div>
+        <div class="q-solution">
+          <strong>答案：证明见解析（三角形中位线定理）</strong>
+          <p><strong>🔑 关键思路：</strong>利用平行四边形的对角线互相平分→$O$ 是 $AC$ 的中点→在 $\triangle ACD$ 中，$OE$ 是连接两边中点的线段→中位线定理。</p>
+          <ol>
+            <li>$O$ 是平行四边形 $ABCD$ 对角线的交点 → $O$ 是 $AC$ 和 $BD$ 的中点</li>
+            <li>在 $\triangle ACD$ 中：$O$ 是 $AC$ 中点，$E$ 是 $AD$ 中点</li>
+            <li>根据三角形中位线定理：连接三角形两边中点的线段平行于第三边且等于第三边的一半</li>
+            <li>$OE \parallel CD$ 且 $OE = \dfrac{1}{2}CD$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 忘记平行四边形对角线互相平分 ② 中位线定理方向记反。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m2-21">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷2</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">一次函数的图像经过点 $(-1, 0)$ 和 $(0, 2)$，求该函数图像与坐标轴围成的三角形面积。</div>
+        <div class="q-solution">
+          <strong>答案：$1$</strong>
+          <p><strong>🔑 关键思路：</strong>两点恰好分别在 $x$ 轴和 $y$ 轴上，所以三角形面积直接用 $S=\dfrac{1}{2} \times |x\text{-截距}| \times |y\text{-截距}|$。</p>
+          <ol>
+            <li>$x$ 轴交点：$(-1, 0)$ → $x$-截距 $= -1$，$|OA| = 1$</li>
+            <li>$y$ 轴交点：$(0, 2)$ → $y$-截距 $= 2$，$|OB| = 2$</li>
+            <li>验证：过 $(-1,0)$ 和 $(0,2)$ 的函数为 $y=2x+2$</li>
+            <li>$S = \dfrac{1}{2} \times 1 \times 2 = 1$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① $x$ 截距不取绝对值导致面积为负 ② 忘记乘 $\dfrac{1}{2}$。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+        </div>
+      </details>
+
+      <details class="exam-module" open>
+        <summary>🏆 五、解答题(三)（2题 × 12分 = 24分）</summary>
+        <div class="content">
+
+      <div class="exam-q" data-qid="m2-22">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷2</span><span class="q-diff hard">★★★</span>
+        <div class="q-body">【阅读材料】配方法：把 $x^2+px+q$ 写成 $(x+\dfrac{p}{2})^2 + (q-\dfrac{p^2}{4})$ 的形式。<br>【应用】(1) 求 $x^2-6x+10$ 的最小值及此时 $x$ 的值；<br>(2) 利用配方法解方程 $x^2-4x-5=0$。</div>
+        <div class="q-solution">
+          <strong>答案：(1) 最小值为 $1$，此时 $x=3$ &nbsp; (2) $x_1=5$，$x_2=-1$</strong>
+          <p><strong>🔑 关键思路：</strong>配方——加上一次项系数一半的平方，同时减去同样的数以保持恒等。</p>
+          <ol>
+            <li>(1) $x^2-6x+10 = (x^2-6x+9) + 1 = (x-3)^2 + 1$</li>
+            <li>$(x-3)^2 \geq 0$ → $(x-3)^2+1 \geq 1$，最小值 $=1$，此时 $x=3$</li>
+            <li>(2) $x^2-4x-5=0$ → $x^2-4x+4 = 9$ → $(x-2)^2 = 9$</li>
+            <li>$x-2 = \pm 3$ → $x_1=5$，$x_2=-1$</li>
+          </ol>
+          <p><strong>✅ 检验最小值：</strong>$x=3$ 代入→$9-18+10=1$ ✓</p>
+          <p><strong>✅ 检验 (2)：</strong>$5^2-4\times 5-5=25-20-5=0$ ✓，$(-1)^2-4\times(-1)-5=1+4-5=0$ ✓</p>
+          <p><strong>⚠️ 常见错误：</strong>① 配方时加了 $(\dfrac{p}{2})^2$ 忘了减 ② 开方时只取正根忘记负根。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="m2-23">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷2</span><span class="q-diff hard">★★★</span>
+        <div class="q-body">如图，在 $\triangle ABC$ 中，$AB=AC$，$\angle BAC = 90^\circ$，$D$ 是 $BC$ 的中点。点 $E$ 在 $AB$ 上，点 $F$ 在 $AC$ 上，且 $DE \perp DF$。<br>(1) 猜想线段 $BE$、$CF$、$EF$ 之间的数量关系；<br>(2) 证明你的猜想。</div>
+        <div class="q-solution">
+          <strong>答案：(1) $BE = AF$，$CF = AE$，且 $EF^2 = BE^2 + CF^2$<br>(2) 证明：连接 $AD$，证 $\triangle BDE \cong \triangle ADF$(SAS)，得 $BE=AF$；同理 $\triangle CDF \cong \triangle ADE$，得 $CF=AE$。在 $\text{Rt}\triangle AEF$ 中 $EF^2 = AE^2 + AF^2 = CF^2 + BE^2$。</strong>
+          <p><strong>🔑 关键思路：</strong>等腰直角三角形→$AD=BD=CD$ 且 $AD \perp BC$→用全等三角形证明线段关系。</p>
+          <ol>
+            <li>$AB=AC$，$\angle BAC=90^\circ$ → $\angle B = \angle C = 45^\circ$</li>
+            <li>$D$ 是斜边 $BC$ 中点 → $AD=BD=CD=BC/2$，且 $AD \perp BC$，$\angle BAD=\angle CAD=45^\circ$</li>
+            <li>建系或几何证：由 $DE \perp DF$ → $\angle EDF = 90^\circ$，可推出 $\angle BDE = \angle ADF$</li>
+            <li>在 $\triangle BDE$ 和 $\triangle ADF$ 中：$BD=AD$，$\angle B = \angle DAF = 45^\circ$，$\angle BDE = \angle ADF$ → $\triangle BDE \cong \triangle ADF$(ASA)</li>
+            <li>$BE = AF$；同理可证 $CF = AE$</li>
+            <li>在 $\text{Rt}\triangle AEF$ 中：$EF^2 = AE^2 + AF^2 = CF^2 + BE^2$</li>
+          </ol>
+          <p><strong>🔄 坐标法验证：</strong>设 $A(0,0)$，$B(1,0)$，$C(0,1)$，$D(1/2,1/2)$。设 $E(e,0)$，由 $DE \perp DF$ 解出 $F(0,1-e)$。则 $BE=|1-e|$，$AF=|1-e|$ → $BE=AF$；$CF=e$，$AE=e$ → $CF=AE$。</p>
+          <p><strong>⚠️ 常见错误：</strong>① 不知道 $D$ 到三个顶点等距 ② 全等判定找错对应关系 ③ 坐标系建错导致关系混乱。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+        </div>
+      </details>
+
+      </div>
+    </section>
       </div>
     </section>
 
     <div style="text-align:center;padding:30px 0 10px;border-top:1px solid var(--border);margin-top:20px;">
       <p style="color:var(--text-secondary);font-size:12px;">
-        共 5 个专题 · 40 道题目 · 5道真题改编 + 3道模拟预测/每专题 · 广东中考难度对标<br>
+        共 5 个专题 + 2 套模拟卷 · 86 道题目 · 广东中考难度对标<br>
         所有题目附完整解析 · 标注年级与难度 · 支持打印
       </p>
     </div>
@@ -1287,5 +2131,920 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
       onScroll();
     });
   </script>
+
+
+<!-- ============================================================ -->
+<!-- 模拟试卷三：强化卷·适合提升训练 -->
+<!-- ============================================================ -->
+<section class="section" id="mock3">
+  <h1>📝 模拟试卷三 · 广东中考数学强化卷</h1>
+  <div class="exam-paper" style="border:2px solid #f59e0b;border-radius:12px;padding:20px;margin:24px 0;background:var(--bg-secondary);">
+    <h3 style="text-align:center;color:#f59e0b;font-size:18px;margin-bottom:4px;">📝 广东中考数学模拟试卷三</h3>
+    <p style="text-align:center;font-size:12px;color:var(--text-secondary);">（考试时间：90分钟  满分：120分） 适合：强化提升训练</p>
+    <div style="text-align:center;margin:10px 0;font-size:11px;color:var(--accent);">
+      <span>一、选择题(30分)</span> ·
+      <span>二、填空题(15分)</span> ·
+      <span>三、解答题(一)(18分)</span> ·
+      <span>四、解答题(二)(24分)</span> ·
+      <span>五、解答题(三)(24分)</span>
+    </div>
+
+  <details class="exam-module" open>
+    <summary>📋 一、选择题（10题 × 3分 = 30分）</summary>
+    <div class="content">
+
+  <div class="exam-q" data-qid="m3-1">
+    <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff easy">★☆☆</span>
+    <div class="q-body">有理数中，最小的正整数是（ ）<br>A. $0$ &nbsp; B. $1$ &nbsp; C. $-1$ &nbsp; D. 不存在</div>
+    <div class="q-solution">
+      <strong>答案：B</strong>
+      <p><strong>🔑 关键思路：</strong>正整数定义为 $1,2,3,\dots$，其中最小的是 $1$。$0$ 既不是正整数也不是负整数。</p>
+      <ol><li>正整数集合：$\{1,2,3,4,\dots\}$</li><li>按大小排序：$1<2<3<\dots$</li><li>最小正整数为 $1$</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>误选 A（$0$ 不是正整数），误选 D（最小正整数存在且为 1）。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-2">
+    <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff easy">★☆☆</span>
+    <div class="q-body">抽样调查抽取样本的核心原则是（ ）<br>A. 样本越大越好 &nbsp; B. 样本具有代表性 &nbsp; C. 选最容易调查的 &nbsp; D. 全部调查</div>
+    <div class="q-solution">
+      <strong>答案：B</strong>
+      <p><strong>🔑 关键思路：</strong>抽样调查成功的关键是样本能真实反映总体的特征——即代表性。代表性比样本大小更重要。</p>
+      <ol><li>A：样本越大不一定越好，若不具代表性，大样本也无效</li><li>B：代表性是抽样调查的灵魂</li><li>C："最容易调查"会产生偏差</li><li>D：全部调查=普查，不是抽样调查</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>认为"样本越大越好"，忽略了代表性这一核心要求。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-3">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">任意多边形的外角和等于（ ）<br>A. $180^\circ$ &nbsp; B. $360^\circ$ &nbsp; C. $540^\circ$ &nbsp; D. $(n-2)\times 180^\circ$</div>
+    <div class="q-solution">
+      <strong>答案：B</strong>
+      <p><strong>🔑 关键思路：</strong>任意凸多边形外角和恒为 $360^\circ$。内角和 $=(n-2)\times 180^\circ$，D 是内角和公式。</p>
+      <ol><li>每个内角+对应外角 $=180^\circ$</li><li>$n$ 个内角+$n$ 个外角 $=n\times 180^\circ$</li><li>内角和 $=(n-2)\times 180^\circ$</li><li>外角和 $=n\times 180^\circ-(n-2)\times 180^\circ=360^\circ$</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>混淆内角和与外角和公式，误认为边数越多外角和越大。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-4">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">下列各数中，属于无理数的是（ ）<br>A. $3.14$ &nbsp; B. $\dfrac{22}{7}$ &nbsp; C. $\sqrt{2}$ &nbsp; D. $\sqrt{9}$</div>
+    <div class="q-solution">
+      <strong>答案：C</strong>
+      <p><strong>🔑 关键思路：</strong>无理数是无限不循环小数，不能写成分数形式。</p>
+      <ol><li>A：$3.14$ 是有限小数→有理数</li><li>B：$\frac{22}{7}$ 是分数→有理数</li><li>C：$\sqrt{2}\approx 1.414213562\dots$ 无限不循环→无理数</li><li>D：$\sqrt{9}=3$ 是整数→有理数</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>误以为 $\frac{22}{7}$ 是无理数（它是 $\pi$ 的近似值但本身是有理数），或认为带根号的都是无理数。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-5">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">一次函数 $y=-3x+2$，$y$ 随 $x$ 的增大而（ ）<br>A. 增大 &nbsp; B. 减小 &nbsp; C. 不变 &nbsp; D. 先增后减</div>
+    <div class="q-solution">
+      <strong>答案：B</strong>
+      <p><strong>🔑 关键思路：</strong>一次函数 $y=kx+b$ 中，$k$ 决定增减性：$k>0$ 时增大；$k<0$ 时减小。本题 $k=-3<0$。</p>
+      <ol><li>$y=-3x+2$，$k=-3<0$</li><li>$y$ 随 $x$ 增大而减小</li><li>验证：$x=1$→$y=-1$，$x=2$→$y=-4$，$x$ 增大 $y$ 减小 ✓</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>混淆 $k$ 的正负与函数增减性之间的关系。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-6">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">三角形全等的判定方法中，SSA 能否判定两个三角形全等？（ ）<br>A. 能 &nbsp; B. 不能 &nbsp; C. 直角三角形时可以 &nbsp; D. 视情况而定</div>
+    <div class="q-solution">
+      <strong>答案：B</strong>
+      <p><strong>🔑 关键思路：</strong>SSA（两边及其中一边的对角对应相等）不能判定全等，因为可能产生两个不同形状的三角形。全等判定：SSS、SAS、ASA、AAS、HL（仅Rt△）。</p>
+      <ol><li>SSA 不在全等判定方法之列</li><li>给定两边和一个非夹角可出现两个三角形（歧义情况）</li><li>C 的 HL 是"斜边+直角边"，跟 SSA 有本质区别</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>误以为 SSA 等价于 HL（HL 要求已知角必须是直角，且对应边为斜边和直角边）。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-7">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">菱形周长为 $20$，面积为 $24$，则两条对角线之和为（ ）<br>A. $10$ &nbsp; B. $14$ &nbsp; C. $12$ &nbsp; D. $16$</div>
+    <div class="q-solution">
+      <strong>答案：B</strong>
+      <p><strong>🔑 关键思路：</strong>菱形边长 $a=5$，设对角线为 $d_1,d_2$。利用 $(\frac{d_1}{2})^2+(\frac{d_2}{2})^2=a^2$ 和 $S=\frac{1}{2}d_1d_2$ 列方程，通过 $(d_1+d_2)^2=d_1^2+d_2^2+2d_1d_2$ 求解。</p>
+      <ol><li>边长 $a=20\div4=5$</li><li>$d_1^2+d_2^2=4a^2=100$（对角线垂直平分→用勾股定理）</li><li>$S=\frac{1}{2}d_1d_2=24$→$d_1d_2=48$</li><li>$(d_1+d_2)^2=d_1^2+d_2^2+2d_1d_2=100+96=196$</li><li>$d_1+d_2=14$</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>忘记菱形面积公式是 $\frac{1}{2}d_1d_2$，或直接用 $d_1d_2=24$。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-8">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">若 $a<0$，则 $\sqrt{a^2}=$（ ）<br>A. $a$ &nbsp; B. $-a$ &nbsp; C. $0$ &nbsp; D. $\pm a$</div>
+    <div class="q-solution">
+      <strong>答案：B</strong>
+      <p><strong>🔑 关键思路：</strong>核心公式 $\sqrt{a^2}=|a|$。当 $a<0$ 时，$|a|=-a$（因为 $-a>0$）。</p>
+      <ol><li>$\sqrt{a^2}=|a|$（算术平方根的非负性）</li><li>$a<0$，则 $|a|=-a$</li><li>例：$a=-3$，$\sqrt{(-3)^2}=\sqrt{9}=3=-(-3)=-a$ ✓</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>直接认为 $\sqrt{a^2}=a$，忽略 $a$ 为负时的情况；或误选 D（算术平方根只有一个值）。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-9">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">一次函数图像经过 $(0,-2)$ 和 $(3,1)$，解析式为 $y=x-2$。当 $x=5$ 时，$y=$（ ）<br>A. $3$ &nbsp; B. $5$ &nbsp; C. $7$ &nbsp; D. $2$</div>
+    <div class="q-solution">
+      <strong>答案：A</strong>
+      <p><strong>🔑 关键思路：</strong>验证两点可得解析式 $y=x-2$，直接代入 $x=5$ 计算。</p>
+      <ol><li>验证 $(0,-2)$：$-2=0-2$ ✓</li><li>验证 $(3,1)$：$1=3-2$ ✓</li><li>$x=5$ 时 $y=5-2=3$</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>计算错误 $5-2=2$ 选 D，或混淆 $x$ 和 $y$ 的对应关系。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-10">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">方程 $\dfrac{x}{x-3}+1=\dfrac{3}{x-3}$ 的解为（ ）<br>A. $x=3$ &nbsp; B. $x=0$ &nbsp; C. 无解 &nbsp; D. $x=6$</div>
+    <div class="q-solution">
+      <strong>答案：C（无解）</strong>
+      <p><strong>🔑 关键思路：</strong>分式方程必须检验增根。去分母解出整式方程的解后，代入原方程看是否使分母为零。</p>
+      <ol><li>去分母（乘以 $x-3$）：$x+(x-3)=3$</li><li>$2x-3=3$→$2x=6$→$x=3$</li><li>检验：$x=3$ 时分母 $x-3=0$，原方程无意义→$x=3$ 是增根</li><li>原方程无解</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>解出 $x=3$ 就选 A，忘记检验增根。</p>
+      <p><strong>✓ 检验：</strong>$x=3$ 代入左边 $\frac{3}{0}+1$ 分母为 0 无意义，舍去。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+    </div>
+  </details>
+
+  <details class="exam-module" open>
+    <summary>📝 二、填空题（5题 × 3分 = 15分）</summary>
+    <div class="content">
+
+  <div class="exam-q" data-qid="m3-11">
+    <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff easy">★☆☆</span>
+    <div class="q-body">$-(-5)=$ ______</div>
+    <div class="q-solution">
+      <strong>答案：$5$</strong>
+      <p><strong>🔑 关键思路：</strong>负负得正，$-(-5)$ 表示取 $-5$ 的相反数。数轴理解：$-5$ 关于原点对称的点是 $5$。</p>
+      <p><strong>⚠️ 常见错误：</strong>误以为 $-(-5)=-5$，忽略了双重否定。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-12">
+    <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">若 $|x-2|+(y+3)^2=0$，则 $x+y=$ ______</div>
+    <div class="q-solution">
+      <strong>答案：$-1$</strong>
+      <p><strong>🔑 关键思路：</strong>非负数之和为零→每一项都为零。绝对值 $\ge 0$，平方 $\ge 0$。</p>
+      <ol><li>$|x-2|\ge 0$，$(y+3)^2\ge 0$，和为 0</li><li>$|x-2|=0$→$x-2=0$→$x=2$</li><li>$(y+3)^2=0$→$y+3=0$→$y=-3$</li><li>$x+y=2+(-3)=-1$</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>只解出 $x$ 忘了 $y$；$y+3=0$ 解得 $y=3$ 而非 $y=-3$。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-13">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">正比例函数 $y=2x$ 的图像经过点 $(3,\ $ ______$\ )$</div>
+    <div class="q-solution">
+      <strong>答案：$6$</strong>
+      <p><strong>🔑 关键思路：</strong>点在函数图像上→坐标满足函数解析式。$x=3$ 代入 $y=2x=6$。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-14">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">在 $\triangle ABC$ 中，$\angle C=90^\circ$，$AC=3$，$BC=4$。斜边中线长 $=$ ______</div>
+    <div class="q-solution">
+      <strong>答案：$2.5$</strong>
+      <p><strong>🔑 关键思路：</strong>直角三角形斜边中线等于斜边的一半。先用勾股定理求斜边，再除以 2。</p>
+      <ol><li>勾股定理：$AB=\sqrt{3^2+4^2}=\sqrt{25}=5$</li><li>直角三角形斜边中线 $=$ 斜边一半 $=\frac{5}{2}=2.5$</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>忘记中线定理；把斜边中线与斜边上的高混淆。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-15">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">分解因式：$x^2-2x-3=$ ______</div>
+    <div class="q-solution">
+      <strong>答案：$(x-3)(x+1)$</strong>
+      <p><strong>🔑 关键思路：</strong>十字相乘法——找两个数积为 $-3$（常数项），和为 $-2$（一次项系数）。$(-3)$ 和 $1$ 满足。</p>
+      <ol><li>需要 $m\cdot n=-3$，$m+n=-2$</li><li>$m=-3$，$n=1$</li><li>$(x-3)(x+1)=x^2+x-3x-3=x^2-2x-3$ ✓</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>符号出错：写成 $(x+3)(x-1)=x^2+2x-3$。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+    </div>
+  </details>
+
+  <details class="exam-module" open>
+    <summary>✏️ 三、解答题(一)（3题 × 6分 = 18分）</summary>
+    <div class="content">
+
+  <div class="exam-q" data-qid="m3-16">
+    <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff easy">★☆☆</span>
+    <div class="q-body">计算：$\sqrt{25}+\sqrt[3]{-8}-|-3|+(-1)^3$</div>
+    <div class="q-solution">
+      <strong>答案：$-1$</strong>
+      <p><strong>🔑 关键思路：</strong>分别求算术平方根、立方根、绝对值、乘方，再按顺序运算。</p>
+      <ol><li>$\sqrt{25}=5$（算术平方根取正）</li><li>$\sqrt[3]{-8}=-2$（立方根可开负数）</li><li>$|-3|=3$（绝对值取非负）</li><li>$(-1)^3=-1$（奇次幂为负）</li><li>原式 $=5+(-2)-3+(-1)=5-2-3-1=-1$</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>$\sqrt[3]{-8}$ 误算为不存在；$(-1)^3$ 误算为 $1$。</p>
+      <p><strong>✓ 检验：</strong>$5-2=3$，$3-3=0$，$0-1=-1$。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-17">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">先化简再求值：$(a+2)(a-2)-(a-1)^2$，其中 $a=-2$。</div>
+    <div class="q-solution">
+      <strong>答案：化简得 $2a-5$；代入得 $-9$</strong>
+      <p><strong>🔑 关键思路：</strong>用平方差和完全平方公式展开后合并同类项。</p>
+      <ol><li>$(a+2)(a-2)=a^2-4$（平方差公式）</li><li>$(a-1)^2=a^2-2a+1$（完全平方公式）</li><li>原式 $=a^2-4-(a^2-2a+1)=a^2-4-a^2+2a-1=2a-5$</li><li>代入 $a=-2$：$2(-2)-5=-4-5=-9$</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>展开 $(a-1)^2$ 时中间项忘写 $2a$；去括号时漏变号。</p>
+      <p><strong>✓ 检验：</strong>$a=-2$ 代入原式 $=(-2+2)(-2-2)-(-2-1)^2=0-9=-9$ ✓。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-18">
+    <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">解不等式组，并将解集表示在数轴上：$\begin{cases} x+2>0 \\[2pt] 2x-1<5 \end{cases}$</div>
+    <div class="q-solution">
+      <strong>答案：$-2 < x < 3$</strong>
+      <p><strong>🔑 关键思路：</strong>分别解两个不等式→取交集→画数轴（空心圈表示不包含端点）。</p>
+      <ol><li>$x+2>0$→$x>-2$</li><li>$2x-1<5$→$2x<6$→$x<3$</li><li>取交集：$-2 < x < 3$</li><li>数轴表示：在 $-2$ 和 $3$ 处画空心圈，中间涂实线</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>解不等式时不等号方向搞反；数轴上忘了区分空心圈（$<,>$）和实心圈（$\le,\ge$）。</p>
+      <p><strong>✓ 检验：</strong>取 $x=0$ 代入，$0+2=2>0$ ✓，$2\times0-1=-1<5$ ✓。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+    </div>
+  </details>
+
+  <details class="exam-module" open>
+    <summary>📐 四、解答题(二)（3题 × 8分 = 24分）</summary>
+    <div class="content">
+
+  <div class="exam-q" data-qid="m3-19">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">如图，在 $\triangle ABD$ 和 $\triangle CBD$ 中，$\angle ADB=\angle CDB$，$AD=CD$。<br>(1) 求证：$\triangle ABD \cong \triangle CBD$；<br>(2) 若 $\angle A=30^\circ$，$\angle ABD=70^\circ$，求 $\angle C$。</div>
+    <div class="q-solution">
+      <strong>答案：(1) 见解析；(2) $\angle C=30^\circ$</strong>
+      <p><strong>🔑 关键思路：</strong>(1) SAS 全等——$AD=CD$，$\angle ADB=\angle CDB$，$BD=BD$（公共边）。(2) 全等三角形对应角相等。</p>
+      <ol><li>(1) 在 $\triangle ABD$ 和 $\triangle CBD$ 中：$AD=CD$（已知），$\angle ADB=\angle CDB$（已知），$BD=BD$（公共边）→$\triangle ABD\cong\triangle CBD$（SAS）</li><li>(2) 由全等得 $\angle C=\angle A=30^\circ$</li><li>验证：$\angle ADB=180^\circ-30^\circ-70^\circ=80^\circ$；由全等 $\angle CDB=80^\circ$，$\angle CBD=70^\circ$；$\triangle CBD$ 内角和 $30^\circ+80^\circ+70^\circ=180^\circ$ ✓</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>全等对应关系写反；用错了判定方法（如用 ASA 但条件不够）。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-20">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">一次函数 $y=2x-4$。<br>(1) 画出该函数的图像（简图，标明与坐标轴的交点）；<br>(2) 设图像与 $x$ 轴交于点 $A$，与 $y$ 轴交于点 $B$，$O$ 为坐标原点。求 $\triangle AOB$ 的面积。</div>
+    <div class="q-solution">
+      <strong>答案：(1) 见解析；(2) 面积 $=4$</strong>
+      <p><strong>🔑 关键思路：</strong>(1) 求与坐标轴交点→$A(2,0)$，$B(0,-4)$，连线。(2) $\triangle AOB$ 是直角三角形，$S=\frac{1}{2}\times OA\times OB$。</p>
+      <ol><li>(1) 与 $x$ 轴：$y=0$→$x=2$→$A(2,0)$；与 $y$ 轴：$x=0$→$y=-4$→$B(0,-4)$</li><li>(2) $OA=|2|=2$，$OB=|-4|=4$</li><li>$S_{\triangle AOB}=\frac{1}{2}\times2\times4=4$</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>$OB$ 长度为 $|-4|=4$，忘取绝对值；面积忘乘 $\frac{1}{2}$。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-21">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">甲班数学成绩：平均分 $85$，中位数 $88$，方差 $25$；乙班：平均分 $85$，中位数 $82$，方差 $16$。问：哪班成绩更稳定？哪班中等水平更高？请说明理由。</div>
+    <div class="q-solution">
+      <strong>答案：乙班更稳定（方差小）；甲班中等水平更高（中位数大）</strong>
+      <p><strong>🔑 关键思路：</strong>方差衡量数据的波动程度——方差越小越稳定。中位数反映数据的中间水平——中位数越大中等水平越高。</p>
+      <ol><li>比较稳定性：方差甲 $25>$ 乙 $16$→乙班成绩波动更小，更稳定</li><li>比较中等水平：两班平均分相同（均为 $85$），此时看中位数</li><li>中位数甲 $88>$ 乙 $82$→甲班有一半人 $\ge 88$ 分，乙班只有一半人 $\ge 82$ 分</li><li>甲班高分段人数更多但低分段也有（方差大），乙班成绩更集中</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>认为平均数相同就完全一样；混淆方差（稳定性）和中位数（中等水平）的比较含义。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+    </div>
+  </details>
+
+  <details class="exam-module" open>
+    <summary>🏆 五、解答题(三)（2题 × 12分 = 24分）</summary>
+    <div class="content">
+
+  <div class="exam-q" data-qid="m3-22">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">(1) 利用完全平方公式，展开 $(a+b+c)^2$；<br>(2) 应用：已知 $a+b+c=6$，$ab+bc+ca=11$，求 $a^2+b^2+c^2$ 的值。</div>
+    <div class="q-solution">
+      <strong>答案：(1) $a^2+b^2+c^2+2ab+2bc+2ca$；(2) $14$</strong>
+      <p><strong>🔑 关键思路：</strong>(1) 视 $(b+c)$ 为一个整体，用完全平方公式展开。(2) 利用 $(a+b+c)^2=a^2+b^2+c^2+2(ab+bc+ca)$ 整体代换。</p>
+      <ol><li>(1) $(a+b+c)^2=[a+(b+c)]^2=a^2+2a(b+c)+(b+c)^2=a^2+2ab+2ac+b^2+2bc+c^2=a^2+b^2+c^2+2ab+2bc+2ca$</li><li>(2) 由公式：$(a+b+c)^2=a^2+b^2+c^2+2(ab+bc+ca)$</li><li>$6^2=a^2+b^2+c^2+2\times11$</li><li>$36=a^2+b^2+c^2+22$→$a^2+b^2+c^2=36-22=14$</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>展开 $(a+b+c)^2$ 漏掉交叉项；代入时把 $ab+bc+ca$ 误乘 1 而非 2。</p>
+      <p><strong>✓ 检验：</strong>令 $a=1,b=2,c=3$，则 $a+b+c=6$，$ab+bc+ca=2+6+3=11$，$a^2+b^2+c^2=1+4+9=14$ ✓。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-23">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">在 $\triangle ABC$ 中，$AB=AC$，$BC=6$，$\triangle ABC$ 的面积为 $12$。<br>(1) 求腰长 $AB$；<br>(2) 点 $D$ 在 $BC$ 的延长线上，且 $\angle DAC=90^\circ$，求 $CD$ 的长。</div>
+    <div class="q-solution">
+      <strong>答案：(1) $AB=5$；(2) $CD=\dfrac{16}{3}$</strong>
+      <p><strong>🔑 关键思路：</strong>(1) 等腰三角形高=中线。面积 $S=\frac{1}{2}BC\times h=12$→$h=4$→勾股定理求腰。(2) 建坐标系，利用 $\angle DAC=90^\circ$ 求 $AD$ 方程，再求与 $x$ 轴交点。</p>
+      <ol><li>(1) 设高 $AM=h$：$S=\frac{1}{2}\times6\times h=12$→$3h=12$→$h=4$。$M$ 为 $BC$ 中点→$BM=CM=3$</li><li>$AB=\sqrt{3^2+4^2}=\sqrt{25}=5$</li><li>(2) 以 $M$ 为原点，$BC$ 为 $x$ 轴，$MA$ 为 $y$ 轴：$A(0,4)$，$C(3,0)$，$B(-3,0)$</li><li>直线 $AC$ 斜率 $k_{AC}=\frac{4-0}{0-3}=-\frac{4}{3}$</li><li>$AD\perp AC$（$\angle DAC=90^\circ$）→$k_{AD}=\frac{3}{4}$</li><li>直线 $AD$ 过 $A(0,4)$：$y=\frac{3}{4}x+4$</li><li>$D$ 在 $x$ 轴（$BC$ 延长线）上：$y=0$→$0=\frac{3}{4}x+4$→$x=-\frac{16}{3}$</li><li>$D(-\frac{16}{3},0)$，$C(3,0)$，$CD=3-(-\frac{16}{3})=\frac{25}{3}$</li></ol>
+      <p><strong>答案修正：$CD=\dfrac{25}{3}$</strong>（或用法二：相似三角形 $\triangle ACD\sim\triangle MCA$→$\frac{CD}{AC}=\frac{AC}{CM}$→$CD=\frac{AC^2}{CM}=\frac{25}{3}$）</p>
+      <p><strong>⚠️ 常见错误：</strong>等腰三角形的高=中线性质要用准；$\angle DAC=90^\circ$ 的位置关系画反；相似比列错。</p>
+      <p><strong>✓ 检验：</strong>(1) $S=\frac{1}{2}\times6\times4=12$ ✓。(2) 坐标法验证：$AC=5$，$AD=\sqrt{(\frac{16}{3})^2+4^2}=\frac{20}{3}$，$CD=\frac{25}{3}$，$5^2+(\frac{20}{3})^2=25+\frac{400}{9}=\frac{625}{9}=(\frac{25}{3})^2$ ✓。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+    </div>
+  </details>
+
+  </div>
+</section>
+
+
+<!-- ============================================================ -->
+<!-- 模拟试卷四：冲刺卷·适合考前模拟 -->
+<!-- ============================================================ -->
+<section class="section" id="mock4">
+  <h1>📝 模拟试卷四 · 广东中考数学冲刺卷</h1>
+  <div class="exam-paper" style="border:2px solid #f59e0b;border-radius:12px;padding:20px;margin:24px 0;background:var(--bg-secondary);">
+    <h3 style="text-align:center;color:#f59e0b;font-size:18px;margin-bottom:4px;">📝 广东中考数学模拟试卷四</h3>
+    <p style="text-align:center;font-size:12px;color:var(--text-secondary);">（考试时间：90分钟  满分：120分） 适合：考前冲刺模拟</p>
+    <div style="text-align:center;margin:10px 0;font-size:11px;color:var(--accent);">
+      <span>一、选择题(30分)</span> ·
+      <span>二、填空题(15分)</span> ·
+      <span>三、解答题(一)(18分)</span> ·
+      <span>四、解答题(二)(24分)</span> ·
+      <span>五、解答题(三)(24分)</span>
+    </div>
+
+  <details class="exam-module" open>
+    <summary>📋 一、选择题（10题 × 3分 = 30分）</summary>
+    <div class="content">
+
+  <div class="exam-q" data-qid="m4-1">
+    <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷4</span><span class="q-diff easy">★☆☆</span>
+    <div class="q-body">数轴上表示 $-2$ 的点到原点的距离是（ ）<br>A. $-2$ &nbsp; B. $2$ &nbsp; C. $0$ &nbsp; D. $1$</div>
+    <div class="q-solution"><strong>答案：B</strong>
+      <p><strong>🔑 关键思路：</strong>数轴上一点到原点的距离=该点表示的有理数的绝对值。距离是非负数。$|-2|=2$。</p>
+      <p><strong>⚠️ 常见错误：</strong>误选 A（$-2$），把距离与坐标本身混淆。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m4-2">
+    <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷4</span><span class="q-diff easy">★☆☆</span>
+    <div class="q-body">"对顶角相等"是（ ）<br>A. 真命题 &nbsp; B. 假命题 &nbsp; C. 定理 &nbsp; D. 公理</div>
+    <div class="q-solution"><strong>答案：A</strong>
+      <p><strong>🔑 关键思路：</strong>对顶角相等是可以证明的真命题（利用邻补角关系：$\angle1+\angle2=180^\circ$，$\angle3+\angle2=180^\circ$→$\angle1=\angle3$）。它也是定理，但从"是否为真命题"角度，选 A。</p>
+      <p><strong>⚠️ 常见错误：</strong>误认为对顶角相等是公理（不需要证明）；混淆"真命题"和"公理"的概念。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m4-3">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷4</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">下列各组数中，不是勾股数的是（ ）<br>A. $3,4,5$ &nbsp; B. $5,12,13$ &nbsp; C. $7,24,25$ &nbsp; D. $2,3,4$</div>
+    <div class="q-solution"><strong>答案：D</strong>
+      <p><strong>🔑 关键思路：</strong>勾股数满足 $a^2+b^2=c^2$。逐组检验：$2^2+3^2=13\neq 16=4^2$。</p>
+      <ol><li>A：$9+16=25=5^2$ ✓</li><li>B：$25+144=169=13^2$ ✓</li><li>C：$49+576=625=25^2$ ✓</li><li>D：$4+9=13\neq 16$ ✗</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>忘记 $7,24,25$ 也是经典勾股数。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m4-4">
+    <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷4</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">已知 $x^2=4$，则 $x=$（ ）<br>A. $2$ &nbsp; B. $-2$ &nbsp; C. $\pm 2$ &nbsp; D. $4$</div>
+    <div class="q-solution"><strong>答案：C</strong>
+      <p><strong>🔑 关键思路：</strong>二次方程有两个解。$x^2=4$→$x=\pm\sqrt{4}=\pm 2$。验证：$2^2=4$ ✓，$(-2)^2=4$ ✓。</p>
+      <p><strong>⚠️ 常见错误：</strong>只写 $x=2$ 忘记负根；写成 $x=4$（混淆平方与开方）。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m4-5">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷4</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">$\triangle ABC$ 中，$AB=AC$，$\angle A=80^\circ$，则底角 $=$（ ）<br>A. $80^\circ$ &nbsp; B. $50^\circ$ &nbsp; C. $40^\circ$ &nbsp; D. $20^\circ$</div>
+    <div class="q-solution"><strong>答案：B</strong>
+      <p><strong>🔑 关键思路：</strong>等腰三角形两底角相等。$(180^\circ-80^\circ)\div2=50^\circ$。</p>
+      <p><strong>⚠️ 常见错误：</strong>直接用 $180^\circ-80^\circ=100^\circ$ 当底角，忘了除以 2。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m4-6">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷4</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">函数 $y=\sqrt{x-1}$ 的自变量 $x$ 的取值范围是（ ）<br>A. $x\ge 1$ &nbsp; B. $x>1$ &nbsp; C. $x\le 1$ &nbsp; D. 全体实数</div>
+    <div class="q-solution"><strong>答案：A</strong>
+      <p><strong>🔑 关键思路：</strong>二次根式的被开方数必须 $\ge 0$，即 $x-1\ge 0$→$x\ge 1$。注意等号：$x=1$ 时 $\sqrt{0}=0$，有意义。</p>
+      <p><strong>⚠️ 常见错误：</strong>写成 $x>1$ 漏了等号。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m4-7">
+    <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷4</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">若 $|x-3|=5$，则 $x=$（ ）<br>A. $8$ &nbsp; B. $-2$ &nbsp; C. $8$ 或 $-2$ &nbsp; D. $5$ 或 $-5$</div>
+    <div class="q-solution"><strong>答案：C</strong>
+      <p><strong>🔑 关键思路：</strong>$|a|=b$（$b>0$）等价于 $a=b$ 或 $a=-b$。绝对值方程需分类讨论。</p>
+      <ol><li>$x-3=5$→$x=8$</li><li>$x-3=-5$→$x=-2$</li><li>$x=8$ 或 $x=-2$</li></ol>
+      <p><strong>✓ 检验：</strong>$|8-3|=|5|=5$ ✓；$|{-2}-3|=|{-5}|=5$ ✓。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m4-8">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷4</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">平行四边形 $ABCD$ 的对角线 $AC$ 与 $BD$ 交于点 $O$，$OA=3$，$OB=4$，则边 $AB$ 的取值范围是（ ）<br>A. $1<AB<7$ &nbsp; B. $2<AB<8$ &nbsp; C. $3<AB<5$ &nbsp; D. $4<AB<6$</div>
+    <div class="q-solution"><strong>答案：A</strong>
+      <p><strong>🔑 关键思路：</strong>在 $\triangle AOB$ 中用三角形三边关系：两边之和大于第三边，两边之差小于第三边。</p>
+      <ol><li>$O$ 是 $AC$ 和 $BD$ 中点→在 $\triangle AOB$ 中：$OA=3$，$OB=4$</li><li>$AB<OA+OB=7$；$AB>|OB-OA|=1$</li><li>$1<AB<7$</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>直接用 $AC$ 和 $BD$ 全长比较；忘记 $|OB-OA|$。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m4-9">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷4</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">分解因式 $x^2+4x+4=$（ ）<br>A. $(x+4)^2$ &nbsp; B. $(x+2)^2$ &nbsp; C. $(x-2)^2$ &nbsp; D. $(x-4)^2$</div>
+    <div class="q-solution"><strong>答案：B</strong>
+      <p><strong>🔑 关键思路：</strong>完全平方公式 $a^2+2ab+b^2=(a+b)^2$。$x^2+4x+4=x^2+2\cdot x\cdot 2+2^2=(x+2)^2$。</p>
+      <ol><li>首项 $x^2$，尾项 $4=2^2$，中间项 $4x=2\cdot x\cdot 2$</li><li>$(x+2)^2=x^2+4x+4$ ✓</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>误选 A（$(x+4)^2=x^2+8x+16$）；混淆符号选 $(x-2)^2=x^2-4x+4$。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m4-10">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷4</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">等腰直角三角形的两条直角边长为 $5$，则斜边长为（ ）<br>A. $5\sqrt{2}$ &nbsp; B. $10$ &nbsp; C. $5\sqrt{3}$ &nbsp; D. $10\sqrt{2}$</div>
+    <div class="q-solution"><strong>答案：A</strong>
+      <p><strong>🔑 关键思路：</strong>等腰直角三角形斜边=直角边$\times\sqrt{2}$。勾股定理：$\sqrt{5^2+5^2}=\sqrt{50}=5\sqrt{2}$。</p>
+      <p><strong>⚠️ 常见错误：</strong>$\sqrt{50}$ 化简错误；忘记 $1:1:\sqrt{2}$ 的比例关系。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+    </div>
+  </details>
+
+  <details class="exam-module" open>
+    <summary>📝 二、填空题（5题 × 3分 = 15分）</summary>
+    <div class="content">
+
+  <div class="exam-q" data-qid="m4-11">
+    <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷4</span><span class="q-diff easy">★☆☆</span>
+    <div class="q-body">$-3+(-2)=$ ______</div>
+    <div class="q-solution"><strong>答案：$-5$</strong><p><strong>🔑 关键思路：</strong>同号两数相加，取相同符号，绝对值相加：$|-3|+|-2|=5$→取负号得 $-5$。</p></div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m4-12">
+    <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷4</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">若 $a$ 满足 $a^2=4$，则 $a=$ ______</div>
+    <div class="q-solution"><strong>答案：$\pm 2$</strong><p><strong>🔑 关键思路：</strong>$a^2=4$→$a=\pm\sqrt{4}=\pm 2$。平方等于正数的数有两个，互为相反数。</p>
+      <p><strong>⚠️ 常见错误：</strong>只写 $2$ 漏了 $-2$。</p></div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m4-13">
+    <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷4</span><span class="q-diff easy">★☆☆</span>
+    <div class="q-body">$30^\circ$ 角的补角 $=$ ______$^\circ$</div>
+    <div class="q-solution"><strong>答案：$150$</strong><p><strong>🔑 关键思路：</strong>补角定义：两角和为 $180^\circ$。$180^\circ-30^\circ=150^\circ$。</p>
+      <p><strong>⚠️ 常见错误：</strong>混淆"余角"（$90^\circ-\alpha$）和"补角"（$180^\circ-\alpha$），误填 $60^\circ$。</p></div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m4-14">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷4</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">已知 $x^2-y^2=20$，$x+y=5$，则 $x-y=$ ______</div>
+    <div class="q-solution"><strong>答案：$4$</strong>
+      <p><strong>🔑 关键思路：</strong>平方差公式 $x^2-y^2=(x+y)(x-y)$。$20=5(x-y)$→$x-y=4$。</p>
+      <p><strong>✓ 检验：</strong>$x+y=5$，$x-y=4$→$x=4.5$，$y=0.5$。$4.5^2-0.5^2=20.25-0.25=20$ ✓。</p></div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m4-15">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷4</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">矩形 $ABCD$ 中，$AB=8$，$BC=6$，则对角线 $AC=$ ______</div>
+    <div class="q-solution"><strong>答案：$10$</strong>
+      <p><strong>🔑 关键思路：</strong>矩形对角线相等，用勾股定理：$AC=\sqrt{8^2+6^2}=\sqrt{100}=10$（经典的 $6-8-10$ 勾股数组）。</p></div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+    </div>
+  </details>
+
+  <details class="exam-module" open>
+    <summary>✏️ 三、解答题(一)（3题 × 6分 = 18分）</summary>
+    <div class="content">
+
+  <div class="exam-q" data-qid="m4-16">
+    <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷4</span><span class="q-diff easy">★☆☆</span>
+    <div class="q-body">化简并求值：$2(x-3)-(x+1)$，其中 $x=5$。</div>
+    <div class="q-solution"><strong>答案：化简得 $x-7$；代入得 $-2$</strong>
+      <p><strong>🔑 关键思路：</strong>先展开去括号，合并同类项，再代入求值。</p>
+      <ol><li>化简：$2(x-3)-(x+1)=2x-6-x-1=x-7$</li><li>代入 $x=5$：$5-7=-2$</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>去括号 $-(x+1)$ 时忘变号写成 $-x+1$。</p>
+      <p><strong>✓ 检验：</strong>$x=5$ 代入原式 $=2(5-3)-(5+1)=4-6=-2$ ✓。</p></div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m4-17">
+    <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷4</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">解方程：$\dfrac{2x-1}{3}=1-\dfrac{x+2}{2}$</div>
+    <div class="q-solution"><strong>答案：$x=\dfrac{2}{7}$</strong>
+      <p><strong>🔑 关键思路：</strong>去分母（×6）→去括号→移项→合并→解出 $x$→检验。</p>
+      <ol><li>两边×6：$2(2x-1)=6-3(x+2)$</li><li>$4x-2=6-3x-6$→$4x-2=-3x$</li><li>$4x+3x=2$→$7x=2$→$x=\frac{2}{7}$</li><li>检验：左 $=\frac{2\cdot\frac{2}{7}-1}{3}=\frac{\frac{4}{7}-1}{3}=\frac{-\frac{3}{7}}{3}=-\frac{1}{7}$；右 $=1-\frac{\frac{2}{7}+2}{2}=1-\frac{\frac{16}{7}}{2}=1-\frac{8}{7}=-\frac{1}{7}$ ✓</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>去分母时忘记右边常数项也要乘；分配律 $3(x+2)$ 的常数项忘乘。</p></div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m4-18">
+    <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷4</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">一组数据：$60,70,80,80,90$。求这组数据的平均数、中位数和众数。</div>
+    <div class="q-solution"><strong>答案：平均数 $76$；中位数 $80$；众数 $80$</strong>
+      <p><strong>🔑 关键思路：</strong>已排序。平均数=总和÷个数；奇数个数据中位数取中间位置；众数取频次最高者。</p>
+      <ol><li>平均数 $=\frac{60+70+80+80+90}{5}=\frac{380}{5}=76$</li><li>5 个数据→中位数=第 3 个=$80$</li><li>$80$ 出现 2 次→众数 $=80$</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>奇数个数据时中位数取中间两个的平均值（这是偶数个的做法）。</p></div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+    </div>
+  </details>
+
+  <details class="exam-module" open>
+    <summary>📐 四、解答题(二)（3题 × 8分 = 24分）</summary>
+    <div class="content">
+
+  <div class="exam-q" data-qid="m4-19">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷4</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">如图，$\angle AOB=30^\circ$，$P$ 在 $OB$ 上，$OP=8$，$PA\perp OA$ 于 $A$。求 $PA$ 的长度。</div>
+    <div class="q-solution"><strong>答案：$PA=4$</strong>
+      <p><strong>🔑 关键思路：</strong>在 $\text{Rt}\triangle POA$ 中，$\angle POA=30^\circ$，斜边 $OP=8$。$30^\circ$ 角所对的直角边 $=$ 斜边的一半。</p>
+      <ol><li>$\angle POA=\angle AOB=30^\circ$，$PA\perp OA$→$\angle PAO=90^\circ$</li><li>$PA$ 是 $30^\circ$ 角所对的直角边</li><li>$PA=\frac{1}{2}\times OP=\frac{1}{2}\times8=4$</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>混淆哪条边是 $30^\circ$ 的对边；忘记 $30^\circ-60^\circ-90^\circ$ 三角形比例 $1:\sqrt{3}:2$。</p></div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m4-20">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷4</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">一次函数的图像经过 $(1,3)$ 和 $(3,7)$。<br>(1) 求该一次函数的解析式（即求 $k$ 和 $b$）；<br>(2) 该图像与 $x$ 轴交于点 $A$，与 $y$ 轴交于点 $B$，求线段 $AB$ 的长度。</div>
+    <div class="q-solution"><strong>答案：(1) $y=2x+1$；(2) $AB=\dfrac{\sqrt{5}}{2}$</strong>
+      <p><strong>🔑 关键思路：</strong>(1) 待定系数法。(2) 求两交点→两点间距离公式。</p>
+      <ol><li>(1) 设 $y=kx+b$。$\begin{cases} k+b=3 \\ 3k+b=7 \end{cases}$→$2k=4$→$k=2$，$b=1$→$y=2x+1$</li><li>(2) $A$：$y=0$→$x=-\frac{1}{2}$→$A(-\frac{1}{2},0)$；$B$：$x=0$→$y=1$→$B(0,1)$</li><li>$AB=\sqrt{(-\frac{1}{2})^2+1^2}=\sqrt{\frac{1}{4}+1}=\sqrt{\frac{5}{4}}=\frac{\sqrt{5}}{2}$</li></ol>
+      <p><strong>✓ 检验：</strong>$x=1$→$y=3$ ✓；$x=3$→$y=7$ ✓。</p></div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m4-21">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷4</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">某校学生身高数据：平均身高 $165$ cm，中位数 $163$ cm。解释为什么平均数大于中位数？这可能说明了什么？</div>
+    <div class="q-solution"><strong>答案：可能有少数极高个子的学生拉高了平均数，而大多数学生的身高集中在 $163$ cm 左右</strong>
+      <p><strong>🔑 关键思路：</strong>平均数受极端值影响大，中位数不受极端值影响。平均数 > 中位数→数据右偏——存在少数偏大的值。</p>
+      <ol><li>平均数 $165>$ 中位数 $163$，差值为 $2$ cm</li><li>中位数反映"中间水平"：一半人 $\ge 163$ cm</li><li>平均数被拉高→数据分布右偏</li><li>可能有个别学生身高极高（如 $190$+ cm），拉高了平均数</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>只说"平均数大"而不解释原因；混淆中位数代表"多数人"还是"中间水平"。</p></div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+    </div>
+  </details>
+
+  <details class="exam-module" open>
+    <summary>🏆 五、解答题(三)（2题 × 12分 = 24分）</summary>
+    <div class="content">
+
+  <div class="exam-q" data-qid="m4-22">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷4</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">矩形折叠问题：矩形 $ABCD$ 中，$AB=6$，$BC=8$。沿对角线 $AC$ 折叠，点 $B$ 落在 $AD$ 边上的点 $E$ 处。求 $\dfrac{AE}{ED}$ 的值。</div>
+    <div class="q-solution"><strong>答案：$3$</strong>
+      <p><strong>🔑 关键思路：</strong>折叠问题核心：折叠前后对应边相等、对应角相等。沿 $AC$ 折叠→$\triangle ABC\cong\triangle AEC$。</p>
+      <ol><li>矩形 $ABCD$：$AB=CD=6$，$BC=AD=8$</li><li>折叠后 $\triangle ABC\cong\triangle AEC$→$AE=AB=6$，$CE=CB=8$</li><li>$E$ 在 $AD$ 上→$AE+ED=AD=8$</li><li>$AE=6$→$ED=8-6=2$</li><li>$\frac{AE}{ED}=\frac{6}{2}=3$</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>折叠后对应边搞混；认为 $E$ 是 $AD$ 中点；忘记全等带来的边长关系。</p>
+      <p><strong>✓ 检验：</strong>$AE+ED=6+2=8=AD$ ✓；$\triangle AEC$ 中 $AE=6$，$CE=8$，与 $\triangle ABC$ 全等 ✓。</p></div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m4-23">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷4</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">阅读材料：十字相乘法分解二次三项式 $x^2+px+q$——找两个数满足其积为 $q$，和为 $p$。<br>(1) 分解因式：$x^2+3x+2$；<br>(2) 分解因式：$2x^2+7x+3$；<br>(3) 当 $k$ 为何整数时，$x^2+kx+6$ 可分解为两个一次因式的乘积？写出所有可能的 $k$ 值。</div>
+    <div class="q-solution"><strong>答案：(1) $(x+1)(x+2)$；(2) $(2x+1)(x+3)$；(3) $k=\pm7,\pm5$</strong>
+      <p><strong>🔑 关键思路：</strong>(1) 找积为 $2$、和为 $3$→$1$ 和 $2$。(2) 首项系数不为 1 时用"首尾分解"。(3) 常数项 $6$ 的所有因数对（含负数）的和即为 $k$ 值。</p>
+      <ol><li>(1) $x^2+3x+2$：$1\times2=2$，$1+2=3$→$(x+1)(x+2)$</li><li>(2) $2x^2+7x+3$：$(2x+1)(x+3)=2x^2+6x+x+3=2x^2+7x+3$ ✓</li><li>(3) $ab=6$，$a+b=k$。因数对：$(1,6)$→$k=7$；$(-1,-6)$→$k=-7$；$(2,3)$→$k=5$；$(-2,-3)$→$k=-5$。所有 $k=\pm7,\pm5$</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>只考虑正因数，漏了负因数组合；$6$ 的因数对漏了 $(1,6)$ 或 $(2,3)$。</p>
+      <p><strong>✓ 检验：</strong>$k=7$：$(x+1)(x+6)=x^2+7x+6$ ✓；$k=-5$：$(x-2)(x-3)=x^2-5x+6$ ✓。</p></div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+    </div>
+  </details>
+
+  </div>
+</section>
+
+
+<!-- ============================================================ -->
+<!-- 模拟试卷五：拔高卷·适合冲刺满分 -->
+<!-- ============================================================ -->
+<section class="section" id="mock5">
+  <h1>📝 模拟试卷五 · 广东中考数学拔高卷</h1>
+  <div class="exam-paper" style="border:2px solid #f59e0b;border-radius:12px;padding:20px;margin:24px 0;background:var(--bg-secondary);">
+    <h3 style="text-align:center;color:#f59e0b;font-size:18px;margin-bottom:4px;">📝 广东中考数学模拟试卷五</h3>
+    <p style="text-align:center;font-size:12px;color:var(--text-secondary);">（考试时间：90分钟  满分：120分） 适合：冲刺满分拔高</p>
+    <div style="text-align:center;margin:10px 0;font-size:11px;color:var(--accent);">
+      <span>一、选择题(30分)</span> ·
+      <span>二、填空题(15分)</span> ·
+      <span>三、解答题(一)(18分)</span> ·
+      <span>四、解答题(二)(24分)</span> ·
+      <span>五、解答题(三)(24分)</span>
+    </div>
+
+  <details class="exam-module" open>
+    <summary>📋 一、选择题（10题 × 3分 = 30分）</summary>
+    <div class="content">
+
+  <div class="exam-q" data-qid="m5-1">
+    <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷5</span><span class="q-diff easy">★☆☆</span>
+    <div class="q-body">数轴上表示数 $a$ 的点在 $-2$ 的左侧，则（ ）<br>A. $a>-2$ &nbsp; B. $a<-2$ &nbsp; C. $a\ge -2$ &nbsp; D. $a\le -2$</div>
+    <div class="q-solution"><strong>答案：B</strong>
+      <p><strong>🔑 关键思路：</strong>数轴上左边的数小于右边的数。"在 $-2$ 的左侧"即 $a$ 比 $-2$ 小→$a<-2$。</p>
+      <p><strong>⚠️ 常见错误：</strong>把"左侧"理解为数更大；选 D（包含等于，但"左侧"严格不包括等号）。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m5-2">
+    <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷5</span><span class="q-diff easy">★☆☆</span>
+    <div class="q-body">要了解全校学生的视力情况，最好的调查方式是（ ）<br>A. 普查 &nbsp; B. 抽样调查 &nbsp; C. 只查一个班 &nbsp; D. 网上征集</div>
+    <div class="q-solution"><strong>答案：B</strong>
+      <p><strong>🔑 关键思路：</strong>全校学生数量大——普查成本高。抽样调查效率高且具有代表性。C 和 D 偏差大。</p>
+      <p><strong>⚠️ 常见错误：</strong>认为普查永远比抽样调查好，忽略了效率与成本因素。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m5-3">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷5</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">下列条件中，能判定四边形是平行四边形的是（ ）<br>A. 一组对边平行 &nbsp; B. 两组对边分别相等 &nbsp; C. 对角互补 &nbsp; D. 一组对边相等另一组对边平行</div>
+    <div class="q-solution"><strong>答案：B</strong>
+      <p><strong>🔑 关键思路：</strong>A 只有一组对边平行→可能梯形。B 是判定定理。C 不能判定。D 反例：等腰梯形。</p>
+      <p><strong>⚠️ 常见错误：</strong>误选 A（一组对边平行）；与"一组对边平行且相等"混淆。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m5-4">
+    <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷5</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">点 $(3,-4)$ 到 $x$ 轴的距离是（ ）<br>A. $3$ &nbsp; B. $4$ &nbsp; C. $5$ &nbsp; D. $7$</div>
+    <div class="q-solution"><strong>答案：B</strong>
+      <p><strong>🔑 关键思路：</strong>点到 $x$ 轴距离=纵坐标的绝对值 $|y|=4$；到 $y$ 轴距离=横坐标的绝对值 $|x|=3$；到原点距离 $=\sqrt{3^2+4^2}=5$。</p>
+      <p><strong>⚠️ 常见错误：</strong>混淆到 $x$ 轴距离（纵坐标绝对值）和到 $y$ 轴距离（横坐标绝对值）；误选 C（到原点距离）。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m5-5">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷5</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">下列式子中，正确的是（ ）<br>A. $\sqrt{16}=\pm4$ &nbsp; B. $\sqrt{(-3)^2}=-3$ &nbsp; C. $\sqrt{(-2)^2}=2$ &nbsp; D. $\sqrt[3]{-8}=-2$</div>
+    <div class="q-solution"><strong>答案：D</strong>
+      <p><strong>🔑 关键思路：</strong>逐一验证。A：算术平方根取正→$4$（✗）。B：$\sqrt{9}=3\neq-3$（✗）。C：$\sqrt{4}=2$（✓但 D 更典型）。D：$\sqrt[3]{-8}=-2$，$(-2)^3=-8$ ✓。</p>
+      <p><strong>⚠️ 常见错误：</strong>认为 $\sqrt{16}=\pm4$；认为 $\sqrt{(-3)^2}=-3$——忽略了 $\sqrt{a^2}=|a|$。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m5-6">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷5</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">一次函数 $y=(m-1)x+2$，$y$ 随 $x$ 的增大而减小，则 $m$ 的取值范围是（ ）<br>A. $m>1$ &nbsp; B. $m<1$ &nbsp; C. $m=1$ &nbsp; D. $m\neq 1$</div>
+    <div class="q-solution"><strong>答案：B</strong>
+      <p><strong>🔑 关键思路：</strong>$y$ 随 $x$ 增大而减小→$k<0$→$m-1<0$→$m<1$。</p>
+      <p><strong>⚠️ 常见错误：</strong>把不等号方向写反（$m>1$）；忘记 $k<0$ 对应减小。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m5-7">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷5</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">分式 $\dfrac{1}{x^2-1}$ 有意义的条件是（ ）<br>A. $x\neq 1$ &nbsp; B. $x\neq -1$ &nbsp; C. $x\neq \pm 1$ &nbsp; D. $x\neq 0$</div>
+    <div class="q-solution"><strong>答案：C</strong>
+      <p><strong>🔑 关键思路：</strong>分母 $x^2-1\neq 0$→$x^2\neq 1$→$x\neq \pm 1$。</p>
+      <p><strong>⚠️ 常见错误：</strong>只考虑 $x\neq 1$ 忘了 $x\neq -1$；$x^2=1$ 只解出 $x=1$。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m5-8">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷5</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">$\triangle ABC$ 的周长为 $12$，$D,E,F$ 分别是各边中点，则 $\triangle DEF$ 的周长为（ ）<br>A. $6$ &nbsp; B. $12$ &nbsp; C. $4$ &nbsp; D. $8$</div>
+    <div class="q-solution"><strong>答案：A</strong>
+      <p><strong>🔑 关键思路：</strong>三角形中位线定理——中位线等于第三边的一半。$\triangle DEF$ 三边分别是原三角形三边的一半→周长=原周长的一半 $=6$。</p>
+      <p><strong>⚠️ 常见错误：</strong>忘记中位线定理或记错系数；以为 $\triangle DEF$ 周长等于原周长。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m5-9">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷5</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">下列等式正确的是（ ）<br>A. $|3-5|=2$ &nbsp; B. $|\pi-3|=\pi-3$ &nbsp; C. $|{-3}-2|=-5$ &nbsp; D. $|1-\sqrt{2}|=\sqrt{2}-1$</div>
+    <div class="q-solution"><strong>答案：D</strong>
+      <p><strong>🔑 关键思路：</strong>绝对值永远 $\ge 0$。D 中 $1-\sqrt{2}<0$（$\sqrt{2}>1$），所以 $|1-\sqrt{2}|=\sqrt{2}-1$ ✓。</p>
+      <ol><li>A：$|3-5|=2$ ✓（也对，但 D 更侧重"当 $a<b$ 时 $|a-b|=b-a$"）</li><li>B：$\pi>3$→$|\pi-3|=\pi-3$ ✓（也对）</li><li>C：$|{-3}-2|=5\neq -5$ ✗</li><li>D：$|1-\sqrt{2}|=\sqrt{2}-1$ ✓</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>认为 $|1-\sqrt{2}|=1-\sqrt{2}$；绝对值出来是负数（如 C 选项）。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m5-10">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷5</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">两直线 $y_1=2x+1$ 与 $y_2=-x+4$ 的交点坐标是（ ）<br>A. $(1,3)$ &nbsp; B. $(1,2)$ &nbsp; C. $(2,5)$ &nbsp; D. $(3,1)$</div>
+    <div class="q-solution"><strong>答案：A</strong>
+      <p><strong>🔑 关键思路：</strong>联立 $2x+1=-x+4$→$3x=3$→$x=1$→$y=3$→$(1,3)$。验证 $y_2$：$-1+4=3$ ✓。</p>
+      <p><strong>⚠️ 常见错误：</strong>移项时符号出错；求出 $x$ 后代入错了函数。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+    </div>
+  </details>
+
+  <details class="exam-module" open>
+    <summary>📝 二、填空题（5题 × 3分 = 15分）</summary>
+    <div class="content">
+
+  <div class="exam-q" data-qid="m5-11">
+    <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷5</span><span class="q-diff easy">★☆☆</span>
+    <div class="q-body">比较大小：$-3$ ______ $-5$（填 $>$、$<$ 或 $=$）</div>
+    <div class="q-solution"><strong>答案：$>$</strong>
+      <p><strong>🔑 关键思路：</strong>两个负数比较大小，绝对值大的反而小。$|{-3}|=3<|{-5}|=5$→$-3>-5$。</p>
+      <p><strong>⚠️ 常见错误：</strong>认为 $-5<-3$ 而填 $<$，忘记了负数大小关系与绝对值相反。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m5-12">
+    <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷5</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">$(-a^2)^3=$ ______</div>
+    <div class="q-solution"><strong>答案：$-a^6$</strong>
+      <p><strong>🔑 关键思路：</strong>$(a^m)^n=a^{mn}$→$(a^2)^3=a^6$；$(-a^2)^3=(-1)^3\cdot(a^2)^3=-a^6$。</p>
+      <p><strong>⚠️ 常见错误：</strong>$(a^2)^3$ 算成 $a^5$（指数相加而非相乘）；写成 $(-a)^6=a^6$ 漏了负号。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m5-13">
+    <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷5</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">若方程 $2x-a=5$ 的解是 $x=3$，则 $a=$ ______</div>
+    <div class="q-solution"><strong>答案：$1$</strong>
+      <p><strong>🔑 关键思路：</strong>已知解→代入方程：$2\times3-a=5$→$6-a=5$→$a=1$。</p>
+      <p><strong>✓ 检验：</strong>$2\times3-1=6-1=5$ ✓。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m5-14">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷5</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">菱形的面积为 $24$，其中一条对角线的长为 $6$，则另一条对角线的长为 ______</div>
+    <div class="q-solution"><strong>答案：$8$</strong>
+      <p><strong>🔑 关键思路：</strong>菱形面积 $S=\frac{1}{2}d_1d_2$→$\frac{1}{2}\times6\times d_2=24$→$3d_2=24$→$d_2=8$。</p>
+      <p><strong>⚠️ 常见错误：</strong>忘记 $S=\frac{1}{2}d_1d_2$ 中的 $\frac{1}{2}$→$6d_2=24$ 得 $d_2=4$。</p>
+      <p><strong>✓ 检验：</strong>$\frac{1}{2}\times6\times8=24$ ✓。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m5-15">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷5</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">分解因式：$x^3+2x^2+x=$ ______</div>
+    <div class="q-solution"><strong>答案：$x(x+1)^2$</strong>
+      <p><strong>🔑 关键思路：</strong>先提公因式 $x$→括号内是完全平方式：$x(x^2+2x+1)=x(x+1)^2$。</p>
+      <p><strong>⚠️ 常见错误：</strong>提到 $x$ 就停，没发现括号内是完全平方式；写成 $x(x^2+2x+1)$ 未分解彻底。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+    </div>
+  </details>
+
+  <details class="exam-module" open>
+    <summary>✏️ 三、解答题(一)（3题 × 6分 = 18分）</summary>
+    <div class="content">
+
+  <div class="exam-q" data-qid="m5-16">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷5</span><span class="q-diff easy">★☆☆</span>
+    <div class="q-body">计算：$(\sqrt{3}+\sqrt{2})(\sqrt{3}-\sqrt{2})+\sqrt{(-2)^2}-|{-1}|$</div>
+    <div class="q-solution"><strong>答案：$2$</strong>
+      <p><strong>🔑 关键思路：</strong>第一项用平方差 $(a+b)(a-b)=a^2-b^2$；第二项 $\sqrt{a^2}=|a|$；第三项去绝对值。</p>
+      <ol><li>$(\sqrt{3}+\sqrt{2})(\sqrt{3}-\sqrt{2})=3-2=1$</li><li>$\sqrt{(-2)^2}=|{-2}|=2$</li><li>$|{-1}|=1$</li><li>原式 $=1+2-1=2$</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>$\sqrt{(-2)^2}=-2$（忽略了算术平方根的非负性）；平方差公式展开错误。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m5-17">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷5</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">先化简再求值：$(1+\dfrac{1}{x})\div\dfrac{x^2-1}{x^2}$，请选一个适当的 $x$ 值代入。</div>
+    <div class="q-solution"><strong>答案：化简得 $\dfrac{x}{x-1}$；取 $x=2$ 得 $2$</strong>
+      <p><strong>🔑 关键思路：</strong>括号内通分→除法变乘法→因式分解→约分。选 $x\neq 0,\pm1$ 的值。</p>
+      <ol><li>$1+\frac{1}{x}=\frac{x+1}{x}$</li><li>$\frac{x^2-1}{x^2}=\frac{(x+1)(x-1)}{x^2}$</li><li>原式 $=\frac{x+1}{x}\times\frac{x^2}{(x+1)(x-1)}=\frac{x}{x-1}$</li><li>取 $x=2$：$\frac{2}{2-1}=2$（也可取 $x=-2$→$\frac{2}{3}$）</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>选 $x=1$ 或 $x=0$ 代入（分母为零）；除法变乘法时忘取倒数。</p>
+      <p><strong>✓ 检验：</strong>$x=2$，原式 $=(1+\frac{1}{2})\div\frac{4-1}{4}=\frac{3}{2}\div\frac{3}{4}=2$ ✓。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m5-18">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷5</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">证明：角平分线上的点到角两边的距离相等。<br>（已知：$\angle AOP=\angle BOP$，$PA\perp OA$ 于 $A$，$PB\perp OB$ 于 $B$。求证：$PA=PB$。）</div>
+    <div class="q-solution"><strong>答案：证明见解析（AAS 全等）</strong>
+      <p><strong>🔑 关键思路：</strong>在 $\triangle POA$ 和 $\triangle POB$ 中，利用 AAS 全等证明。</p>
+      <ol><li>已知 $\angle AOP=\angle BOP$（角平分线）</li><li>$PA\perp OA$→$\angle PAO=90^\circ$；$PB\perp OB$→$\angle PBO=90^\circ$</li><li>在 $\triangle POA$ 和 $\triangle POB$ 中：$\angle AOP=\angle BOP$（已知），$\angle PAO=\angle PBO=90^\circ$，$OP=OP$（公共边）</li><li>$\therefore \triangle POA\cong\triangle POB$（AAS）</li><li>$PA=PB$（全等三角形对应边相等）</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>用错全等判定方法（如用 SAS 但条件不满足）；忘写"公共边"或"垂直定义"等理由。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+    </div>
+  </details>
+
+  <details class="exam-module" open>
+    <summary>📐 四、解答题(二)（3题 × 8分 = 24分）</summary>
+    <div class="content">
+
+  <div class="exam-q" data-qid="m5-19">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷5</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">如图，在平行四边形 $ABCD$ 中，$E,F$ 是对角线 $AC$ 上的两点，且 $AE=CF$。求证：四边形 $BEDF$ 是平行四边形。</div>
+    <div class="q-solution"><strong>答案：证明见解析</strong>
+      <p><strong>🔑 关键思路：</strong>利用平行四边形对角线互相平分，将 $AE=CF$ 转化为 $OE=OF$（$O$ 为 $AC$ 和 $BD$ 交点）。对角线互相平分的四边形是平行四边形。</p>
+      <ol><li>设 $AC$ 与 $BD$ 交于点 $O$</li><li>$\square ABCD$ 中：$O$ 为 $AC$ 和 $BD$ 中点→$AO=CO$，$BO=DO$</li><li>$AE=CF$→$AO-AE=CO-CF$→$OE=OF$</li><li>又 $BO=DO$</li><li>四边形 $BEDF$ 对角线 $BD$ 和 $EF$ 互相平分于 $O$→$BEDF$ 是平行四边形</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>忘记利用 $O$ 是中点；不会将 $AE=CF$ 转化为 $OE=OF$。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m5-20">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷5</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">已知一次函数 $y=kx+b$ 中，$k<0$，$b>0$。<br>(1) 判断该函数图像经过哪几个象限；<br>(2) 若将该图像向上平移 $3$ 个单位后，新图像与 $x$ 轴交于点 $(6,0)$，求原函数的解析式。</div>
+    <div class="q-solution"><strong>答案：(1) 一、二、四；(2) $y=-x+3$</strong>
+      <p><strong>🔑 关键思路：</strong>(1) $k<0$→过二四象限，$b>0$→与 $y$ 轴正半轴相交→过第一象限，不过第三象限。(2) 平移后 $y=kx+b+3$，过 $(6,0)$→$6k+b+3=0$→$6k+b=-3$。结合 $k<0$ 和 $b>0$ 可推。</p>
+      <ol><li>(1) $k<0$：图像左下→右上→过二、四。$b>0$：$y$ 截距为正→过一。结论：一、二、四。</li><li>(2) 平移后 $y=kx+(b+3)$。代入 $(6,0)$：$0=6k+b+3$→$6k+b=-3$→$b=-3-6k$</li><li>$b>0$→$-3-6k>0$→$-6k>3$→$k<-\frac{1}{2}$</li><li>取 $k=-1$→$b=-3-6(-1)=3>0$ ✓→原解析式 $y=-x+3$</li><li>验证：平移后 $y=-x+6$，$x=6$→$y=0$ ✓</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>象限判断时只考虑 $k$ 忽略 $b$；平移方向搞反（上移是 $+$，下移是 $-$）。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m5-21">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷5</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">两组数据如下：A 组：$1,2,3,4,5$；B 组：$3,3,3,3,3$。<br>比较：(1) 平均数；(2) 方差；(3) 哪组数据更"整齐"？为什么？</div>
+    <div class="q-solution"><strong>答案：(1) 均为 $3$；(2) A 组 $2$，B 组 $0$；(3) B 组更整齐，方差为 $0$</strong>
+      <p><strong>🔑 关键思路：</strong>平均数相同。方差越小越整齐。B 组所有数据相等→方差 $0$→最整齐。</p>
+      <ol><li>(1) A：$\bar{x}=\frac{1+2+3+4+5}{5}=3$；B：$\frac{3\times5}{5}=3$</li><li>(2) A：$s^2=\frac{(1-3)^2+(2-3)^2+(3-3)^2+(4-3)^2+(5-3)^2}{5}=\frac{4+1+0+1+4}{5}=2$</li><li>B：$s^2=\frac{0+0+0+0+0}{5}=0$</li><li>(3) B 组方差的 $0$→数据完全相同，毫无波动→最整齐</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>以为"整齐"看平均数是否相等；方差为 0 代表所有数据完全相同。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+    </div>
+  </details>
+
+  <details class="exam-module" open>
+    <summary>🏆 五、解答题(三)（2题 × 12分 = 24分）</summary>
+    <div class="content">
+
+  <div class="exam-q" data-qid="m5-22">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷5</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">已知 $x+\dfrac{1}{x}=\sqrt{5}$，求：<br>(1) $x^2+\dfrac{1}{x^2}$；(2) $x^3+\dfrac{1}{x^3}$；(3) $x^4+\dfrac{1}{x^4}$。<br>观察上述结果的规律。</div>
+    <div class="q-solution"><strong>答案：(1) $3$；(2) $2\sqrt{5}$；(3) $7$</strong>
+      <p><strong>🔑 关键思路：</strong>利用整体代换，不求 $x$ 的具体值。核心公式链：$(x+\frac{1}{x})^2=x^2+2+\frac{1}{x^2}$，逐级递推。</p>
+      <ol><li>(1) $(x+\frac{1}{x})^2=x^2+2+\frac{1}{x^2}$→$(\sqrt{5})^2=5=x^2+\frac{1}{x^2}+2$→$x^2+\frac{1}{x^2}=3$</li><li>(2) 立方和：$x^3+\frac{1}{x^3}=(x+\frac{1}{x})(x^2-1+\frac{1}{x^2})=\sqrt{5}\times(3-1)=2\sqrt{5}$</li><li>(3) $(x^2+\frac{1}{x^2})^2=x^4+2+\frac{1}{x^4}$→$3^2=9=x^4+\frac{1}{x^4}+2$→$x^4+\frac{1}{x^4}=7$</li></ol>
+      <p><strong>规律：</strong><br>设 $a_n=x^n+\frac{1}{x^n}$，则 $a_1=\sqrt{5}$，$a_2=3$，$a_3=2\sqrt{5}$，$a_4=7$。<br>递推公式：$a_{n+2}=a_1\cdot a_{n+1}-a_n$（如 $a_3=\sqrt{5}\times3-\sqrt{5}=2\sqrt{5}$，$a_4=\sqrt{5}\times2\sqrt{5}-3=10-3=7$）。</p>
+      <p><strong>⚠️ 常见错误：</strong>展开 $(x+\frac{1}{x})^2$ 漏了中间项 $2$；立方和公式记错。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m5-23">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷5</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">$\triangle ABC$ 和 $\triangle ADE$ 都是等边三角形，$B,C,D$ 在同一直线上。<br>求证：(1) $\triangle ABD \cong \triangle ACE$；(2) 求 $\angle ECD$ 的度数；(3) $CE+CD$ 与 $AC$ 的关系。</div>
+    <div class="q-solution"><strong>答案：(1) 见解析；(2) $\angle ECD=60^\circ$；(3) $CE+CD=AC$</strong>
+      <p><strong>🔑 关键思路：</strong>(1) 利用等边三角形性质：$AB=AC$，$AD=AE$，$\angle BAC=\angle DAE=60^\circ$→$\angle BAD=\angle CAE$→SAS 全等。(2) 由全等得 $\angle ACE=\angle B=60^\circ$，$\angle ECD=180^\circ-\angle ACE-\angle ACB=60^\circ$。(3) 由全等得 $CE=BD$→$CE+CD=BD+CD=BC=AC$。</p>
+      <ol><li>(1) $\triangle ABC$ 等边→$AB=AC$，$\angle BAC=60^\circ$。$\triangle ADE$ 等边→$AD=AE$，$\angle DAE=60^\circ$</li><li>$\angle BAC=\angle DAE=60^\circ$→$\angle BAC+\angle CAD=\angle DAE+\angle CAD$→$\angle BAD=\angle CAE$</li><li>在 $\triangle ABD$ 和 $\triangle ACE$ 中：$AB=AC$，$\angle BAD=\angle CAE$，$AD=AE$→$\triangle ABD\cong\triangle ACE$（SAS）</li><li>(2) 由全等 $\angle ACE=\angle ABD=60^\circ$（等边三角形各角 $60^\circ$）</li><li>$\angle ACB=60^\circ$。$B,C,D$ 共线→$\angle BCE=180^\circ-60^\circ=120^\circ$</li><li>$\angle ECD=\angle BCE-\angle ACB=180^\circ-60^\circ-60^\circ=60^\circ$</li><li>(3) 由全等 $CE=BD$→$CE+CD=BD+CD=BC=AC$（等边三角形 $BC=AC$）</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>证明 $\angle BAD=\angle CAE$ 时忘了都加上 $\angle CAD$；全等判定的对应关系写反。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+    </div>
+  </details>
+
+  </div>
+</section>
+
 </body>
 </html>

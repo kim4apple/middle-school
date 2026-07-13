@@ -517,6 +517,9 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 [data-theme="dark"] .next-stop { background: linear-gradient(135deg, #1e1b4b 0%, #0f2c1a 100%); }
 .next-stop strong { color: var(--accent); }
 
+.diagram-module { background: var(--bg-secondary); border-radius: var(--radius); border: 1px solid var(--border); padding: 14px 18px; margin: 16px 0; }
+.diagram-module svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+
 .self-score { border: 1px solid var(--border); border-radius: 4px; padding: 2px 4px; font-size: 12px; margin-right: 6px; background: var(--bg); color: var(--text); }
 
 .advance-organizer { background: linear-gradient(135deg, #eef2ff 0%, #fdf2f8 100%); border-left: 4px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; padding: 14px 18px; margin-bottom: 20px; font-size: 14px; line-height: 1.8; }

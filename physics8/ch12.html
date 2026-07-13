@@ -96,6 +96,28 @@
         <summary>📖 核心概念</summary>
         <div class="content">
           <div class="advance-organizer"><strong>🔍 先行组织者：</strong>阿基米德说"给我一个支点，我能撬动地球"——这就是杠杆原理：$F_1L_1=F_2L_2$。力臂越长越省力（但费距离）。生活中到处都是简单机械：筷子（费力杠杆——力臂短，但手移动小距离筷子头移动大距离）、开瓶器（省力杠杆）、滑轮组（动滑轮省力，定滑轮改变方向）。所有机械都遵循<strong>"省力不省功"</strong>——你要么省力（但费距离），要么省距离（但费力）。</div>
+
+<div class="diagram-module" style="text-align:center;margin:16px 0;">
+<strong style="font-size:13px;color:var(--text-secondary);">杠杆五要素</strong>
+<svg width="380" height="180" viewBox="0 0 380 180" style="margin-top:8px;">
+  <line x1="30" y1="90" x2="350" y2="60" stroke="#64748b" stroke-width="4" stroke-linecap="round"/>
+  <polygon points="180,90 170,105 190,105" fill="#dc2626"/>
+  <text x="180" y="120" text-anchor="middle" font-size="9" fill="#dc2626" font-weight="bold">O 支点</text>
+  <line x1="350" y1="60" x2="350" y2="20" stroke="#4f46e5" stroke-width="2" marker-end="url(#arr-up2)"/>
+  <text x="358" y="22" font-size="9" fill="#4f46e5">F₁ 动力</text>
+  <line x1="30" y1="90" x2="30" y2="130" stroke="#f59e0b" stroke-width="2" marker-end="url(#arr-down2)"/>
+  <text x="8" y="140" font-size="9" fill="#f59e0b">F₂ 阻力(物重)</text>
+  <line x1="180" y1="90" x2="180" y2="60" stroke="#16a34a" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="185" y="55" font-size="9" fill="#16a34a">L₁=L₂</text>
+  <line x1="180" y1="90" x2="180" y2="60" stroke="#16a34a" stroke-width="1"/>
+  <text x="145" y="95" font-size="9" fill="#dc2626">F₁L₁=F₂L₂</text>
+  <defs>
+    <marker id="arr-up2" viewBox="0 0 10 10" refX="5" refY="0" markerWidth="6" markerHeight="6" orient="auto"><path d="M 5 10 L 0 0 L 10 0 z" fill="#4f46e5"/></marker>
+    <marker id="arr-down2" viewBox="0 0 10 10" refX="5" refY="10" markerWidth="6" markerHeight="6" orient="auto"><path d="M 5 0 L 0 10 L 10 10 z" fill="#f59e0b"/></marker>
+  </defs>
+</svg>
+</div>
+
           <div class="card-grid">
             <div class="concept-card">
               <div class="name">杠杆五要素</div>
@@ -122,6 +144,45 @@
               <div>定滑轮 + 动滑轮组合。拉力 $F=\dfrac{G}{n}$（$n$ 为承担物重的绳子段数，不计摩擦和绳重）。绳子自由端移动距离 $s=nh$。绕绳规律：奇动偶定（奇数段从动滑轮开始绕，偶数段从定滑轮开始绕）。</div>
               <div class="level-silver">🥈</div>
             </div>
+
+<div class="diagram-module" style="text-align:center;margin:10px 0;">
+<svg width="360" height="160" viewBox="0 0 360 160">
+  <text x="180" y="12" text-anchor="middle" font-size="11" font-weight="bold">滑轮组绕绳示意</text>
+  <g transform="translate(10,10)">
+    <rect x="55" y="0" width="60" height="30" fill="none" stroke="#94a3b8" stroke-width="1" rx="4"/>
+    <circle cx="95" cy="30" r="15" fill="none" stroke="#4f46e5" stroke-width="2"/>
+    <circle cx="95" cy="30" r="5" fill="#4f46e5"/>
+    <circle cx="95" cy="90" r="15" fill="none" stroke="#dc2626" stroke-width="2"/>
+    <circle cx="95" cy="90" r="5" fill="#dc2626"/>
+    <line x1="95" y1="0" x2="95" y2="45" stroke="#4f46e5" stroke-width="1.5"/>
+    <line x1="95" y1="45" x2="95" y2="75" stroke="#4f46e5" stroke-width="1.5"/>
+    <line x1="95" y1="75" x2="30" y2="75" stroke="#4f46e5" stroke-width="1.5"/>
+    <line x1="30" y1="75" x2="30" y2="120" stroke="#4f46e5" stroke-width="1.5" marker-end="url(#ar)"/>
+    <rect x="20" y="120" width="25" height="20" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+    <text x="32" y="133" text-anchor="middle" font-size="8">G</text>
+    <text x="95" y="115" text-anchor="middle" font-size="9" fill="#f59e0b">F=G/2</text>
+    <text x="95" y="155" text-anchor="middle" font-size="9" fill="#64748b">n=2</text>
+  </g>
+  <g transform="translate(200,10)">
+    <rect x="55" y="0" width="60" height="30" fill="none" stroke="#94a3b8" stroke-width="1" rx="4"/>
+    <circle cx="95" cy="30" r="15" fill="none" stroke="#4f46e5" stroke-width="2"/>
+    <circle cx="95" cy="30" r="5" fill="#4f46e5"/>
+    <circle cx="95" cy="90" r="15" fill="none" stroke="#dc2626" stroke-width="2"/>
+    <circle cx="95" cy="90" r="5" fill="#dc2626"/>
+    <line x1="95" y1="0" x2="95" y2="45" stroke="#4f46e5" stroke-width="1.5"/>
+    <line x1="95" y1="45" x2="150" y2="45" stroke="#4f46e5" stroke-width="1.5"/>
+    <line x1="150" y1="45" x2="150" y2="75" stroke="#4f46e5" stroke-width="1.5"/>
+    <line x1="95" y1="75" x2="30" y2="75" stroke="#4f46e5" stroke-width="1.5"/>
+    <line x1="30" y1="75" x2="30" y2="120" stroke="#4f46e5" stroke-width="1.5" marker-end="url(#ar)"/>
+    <rect x="20" y="120" width="25" height="20" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+    <text x="32" y="133" text-anchor="middle" font-size="8">G</text>
+    <text x="95" y="115" text-anchor="middle" font-size="9" fill="#f59e0b">F=G/3</text>
+    <text x="95" y="155" text-anchor="middle" font-size="9" fill="#64748b">n=3</text>
+  </g>
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="5" refY="10" markerWidth="6" markerHeight="6" orient="auto"><path d="M 5 0 L 0 10 L 10 10 z" fill="#4f46e5"/></marker></defs>
+</svg>
+</div>
+
             <div class="concept-card">
               <div class="name">机械效率</div>
               <div>有用功与总功的比值：$\eta=\dfrac{W_\text{有}}{W_\text{总}}\times100\%$。实际机械效率 < $100\%$（额外功不可避免）。提高方法：①减轻机械自重；②减小摩擦（加润滑油）；③增大物重（同一机械提起更重的物体时效率更高）。</div>

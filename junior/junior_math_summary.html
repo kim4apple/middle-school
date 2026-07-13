@@ -124,6 +124,9 @@ body {
 .cover h1 { font-size: 34px; margin-bottom: 10px; letter-spacing: -0.5px; }
 .cover p { color: var(--text-secondary); font-size: 15px; }
 
+.diagram-module { background: var(--bg-secondary); border-radius: var(--radius); border: 1px solid var(--border); padding: 14px 18px; margin: 16px 0; }
+.diagram-module svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+
 .chapter { margin-bottom: 56px; }
 
 .chapter h1 {
@@ -402,6 +405,38 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
   </nav>
 
   <main id="content">
+    <div class="diagram-module" style="text-align:center;margin:16px 0;">
+<strong style="font-size:13px;color:var(--text-secondary);">初中数学知识体系概览</strong>
+<svg width="480" height="200" viewBox="0 0 480 200" style="margin-top:8px;">
+  <rect x="5" y="5" width="470" height="190" rx="8" fill="none" stroke="#94a3b8" stroke-width="1"/>
+  <!-- 七年级 -->
+  <rect x="15" y="20" width="140" height="160" rx="6" fill="#ede9fe" stroke="#4f46e5" stroke-width="1" opacity="0.6"/>
+  <text x="85" y="40" text-anchor="middle" font-size="11" font-weight="bold" fill="#4f46e5">七年级</text>
+  <text x="85" y="55" text-anchor="middle" font-size="8" fill="#4f46e5">有理数→代数式→方程</text>
+  <text x="85" y="68" text-anchor="middle" font-size="8" fill="#4f46e5">几何初步→平行线</text>
+  <text x="85" y="81" text-anchor="middle" font-size="8" fill="#4f46e5">实数→坐标系</text>
+  <text x="85" y="94" text-anchor="middle" font-size="8" fill="#4f46e5">方程组→不等式</text>
+  <text x="85" y="107" text-anchor="middle" font-size="8" fill="#4f46e5">统计初步</text>
+  <text x="85" y="150" text-anchor="middle" font-size="9" fill="#7c3aed" font-weight="bold">数→式→方程→几何</text>
+  <!-- 八年级 -->
+  <rect x="170" y="20" width="140" height="160" rx="6" fill="#dbeafe" stroke="#0891b2" stroke-width="1" opacity="0.6"/>
+  <text x="240" y="40" text-anchor="middle" font-size="11" font-weight="bold" fill="#0891b2">八年级</text>
+  <text x="240" y="55" text-anchor="middle" font-size="8" fill="#0891b2">三角形→全等→轴对称</text>
+  <text x="240" y="68" text-anchor="middle" font-size="8" fill="#0891b2">因式分解→分式→根式</text>
+  <text x="240" y="81" text-anchor="middle" font-size="8" fill="#0891b2">勾股定理→平行四边形</text>
+  <text x="240" y="94" text-anchor="middle" font-size="8" fill="#0891b2">一次函数→统计分析</text>
+  <text x="240" y="150" text-anchor="middle" font-size="9" fill="#0891b2" font-weight="bold">几何证明→函数入门</text>
+  <!-- 九年级 -->
+  <rect x="325" y="20" width="140" height="160" rx="6" fill="#fef2f2" stroke="#db2777" stroke-width="1" opacity="0.6"/>
+  <text x="395" y="40" text-anchor="middle" font-size="11" font-weight="bold" fill="#db2777">九年级</text>
+  <text x="395" y="55" text-anchor="middle" font-size="8" fill="#db2777">二次方程→二次函数</text>
+  <text x="395" y="68" text-anchor="middle" font-size="8" fill="#db2777">圆→旋转→相似</text>
+  <text x="395" y="81" text-anchor="middle" font-size="8" fill="#db2777">锐角三角函数</text>
+  <text x="395" y="94" text-anchor="middle" font-size="8" fill="#db2777">反比例函数</text>
+  <text x="395" y="107" text-anchor="middle" font-size="8" fill="#db2777">概率→视图</text>
+  <text x="395" y="150" text-anchor="middle" font-size="9" fill="#db2777" font-weight="bold">综合→建模→应试</text>
+</svg>
+</div>
     <div class="cover">
       <h1>初中数学 · 知识点完全总结</h1>
       <p>七年级 · 八年级 · 九年级 | 概念 · 公式 · 解题技巧 | A4 可打印版</p>

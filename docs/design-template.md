@@ -123,6 +123,26 @@ katex/                     ← 共享 KaTeX 本地文件
 | `.sidebar-toggle` / `#sidebar.hidden` | 侧栏隐藏 | 固定左上位置 |
 | `#sidebarShowBtn` | 显示侧栏按钮 | 侧栏隐藏时出现 |
 
+### 图解区 (.diagram-module)
+
+```css
+.diagram-module {
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 14px 18px;
+  margin: 16px 0;
+}
+.diagram-module svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+```
+
+**用途**：每章核心概念后放置教学SVG图解
+**每章至少几张图**：几何章 3-5 张，代数章 1-2 张，物理章 2-4 张
+**必备图解清单**：
+- 数学几何：三线八角、全等判定总览、勾股弦图、四边形家族树、将军饮马
+- 数学代数：坐标象限图、一次函数k/b含义图
+- 物理：力的三要素、二力平衡vs相互作用力、浮沉条件、杠杆五要素、滑轮组绕绳、能量转化链、s-t/v-t图像
+
 ### SVG 示意图样式
 
 ```css

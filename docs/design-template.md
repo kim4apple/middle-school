@@ -148,17 +148,79 @@ katex/                     ← 共享 KaTeX 本地文件
 }
 ```
 
+### 新增 CSS 类（教学法增强）
+
+```css
+/* 先行组织者 */
+.advance-organizer {
+  background: #f0fdf4; border: 1px solid #bbf7d0;
+  border-radius: var(--radius); padding: 14px 18px;
+  margin-bottom: 20px; font-size: 14px; line-height: 1.8;
+}
+.advance-organizer strong { color: #166534; }
+
+/* 错误诊断三段式 */
+.error-diagnosis {
+  font-size: 14px; margin: 10px 0; padding: 10px 14px;
+  border-radius: 6px; border-left: 3px solid #dc2626;
+  background: #fef2f2;
+}
+.error-diagnosis .wrong { color: #dc2626; font-weight: 600; }
+.error-diagnosis .analysis { color: #b45309; margin-top: 4px; }
+.error-diagnosis .correct { color: #16a34a; font-weight: 600; margin-top: 4px; }
+
+/* 水位线标记 */
+.level-bronze { color: #cd7f32; } .level-silver { color: #9ca3af; }
+.level-gold { color: #f59e0b; }
+
+/* 复习时间表 */
+.review-schedule {
+  background: var(--bg-secondary); border-radius: var(--radius);
+  padding: 14px 18px; margin-top: 20px; font-size: 13px;
+}
+.review-dot {
+  display: inline-block; padding: 4px 10px; margin: 4px;
+  border-radius: 20px; background: var(--accent-light);
+  color: var(--accent); font-size: 12px;
+}
+
+/* 下一站预告 */
+.next-stop {
+  background: linear-gradient(135deg, #eef2ff 0%, #f0fdf4 100%);
+  border-radius: var(--radius); padding: 14px 18px;
+  margin-top: 20px; font-size: 14px; line-height: 1.8;
+  border: 1px dashed var(--border);
+}
+.next-stop strong { color: var(--accent); }
+
+/* 自评选择 */
+.self-score {
+  border: 1px solid var(--border); border-radius: 4px;
+  padding: 2px 4px; font-size: 12px; margin-right: 6px;
+  background: var(--bg); color: var(--text);
+}
+
+/* 难度标签 */
+.q-diff { font-size: 11px; padding: 1px 6px; border-radius: 3px; margin-left: 4px; }
+.q-diff.easy { background: #f0fdf4; color: #16a34a; }
+.q-diff.mid { background: #fef9e7; color: #b45309; }
+.q-diff.hard { background: #fef2f2; color: #dc2626; }
+```
+
 ---
 
-## 四、每章模块模板（10 个模块，严格顺序）
+## 四、每章模块模板（13 个模块，严格顺序）
 
 ```
 ┌─ 🎯 学习目标（.learning-goals）
 ├─ 🔗 前置知识（.knowledge-link）
 ├─ 🧭 学科思维方法（.thought-method）
 ├─ 🧠 思维导图（.mindmap）
+├─ 🔍 先行组织者（.advance-organizer）   ← 新增！用生活场景引入
 ├─ 📖 核心概念（.card-grid > .concept-card × 4-8 张）
+│   └─ 每张标注水位线 🥉🥈🥇             ← 新增！
 ├─ 📐 公式速查（.formula-card × 3-6 张）
+│   └─ 每张标注水位线 🥉🥈🥇             ← 新增！
 ├─ 🔬 实验探究（.experiment-card — 仅物理/化学/生物）
 │   ├─ .exp-step（步骤，带 .exp-step-num 圆形编号）
 │   ├─ .exp-principle（实验原理）
@@ -168,14 +230,31 @@ katex/                     ← 共享 KaTeX 本地文件
 │   ├─ .example（例题）
 │   ├─ .pitfall（易错点）
 │   ├─ .principle（原理讲解）
-│   ├─ .variant（变式题）
+│   ├─ .error-diagnosis（❌错误→🔍诊断→✅纠正） ← 新增！
+│   ├─ .variant × 3（🌱基础→🌿综合→🌳拓展变式） ← 增强！
 │   └─ .exam-hint（中考怎么考）
 ├─ 🎯 中考真题（.exam-module > .exam-q × 3-5 道）
 │   ├─ .q-tag（年份+城市标签）
+│   ├─ .q-diff（难度：★☆☆/★★☆/★★★）    ← 新增！
 │   ├─ .q-body（题目，可含 .diagram > svg）
 │   └─ .q-solution（答案+解析）
-└─ ✅ 自查清单 + 费曼挑战（.checklist）
+├─ ✅ 自查评分清单（.checklist）
+│   └─ 三级评分：🔴不会→🟡印象→🟢掌握   ← 增强！
+├─ 📅 间隔复习时间表（.review-schedule）     ← 新增！
+│   └─ 1天后·3天后·1周后·1月后
+└─ ➡️ 下一站预告（.next-stop）              ← 新增！
+    └─ 本章内容通向下一章的桥梁
 ```
+
+### 水位线设计（🥉🥈🥇）
+
+每个知识点标注学生应达到的水平：
+
+| 水位 | 要求 | 标记 | 能做什么 |
+|------|------|------|---------|
+| 青铜 | 识记 | 🥉 | 背公式、做对基础题（准确率60%） |
+| 白银 | 理解 | 🥈 | 解释原理、做对变式题（准确率80%） |
+| 黄金 | 精通 | 🥇 | 讲给别人听、做对压轴题（准确率95%+） |
 
 ### 模块数量参考
 
@@ -190,12 +269,12 @@ katex/                     ← 共享 KaTeX 本地文件
 
 ## 五、附录模块（完整总结）
 
-1. **全年级知识体系思维导图** — 所有章节总览
+1. **全年级知识体系思维导图** — 所有章节总览 + 依赖关系箭头
 2. **核心公式速查表** — 按主题分组（约 20-30 条公式）
 3. **学科方法汇总** — 数学思想方法 / 物理实验方法 / 化学实验方法
 4. **高频易错陷阱总览** — 按类别分组（符号/概念/公式/审题/计算）
 5. **科学教学法·零基础到精通** — 学习路径 + 教学节奏参考（40天计划）
-6. **快速自学与提升技巧** — 费曼挑战法 / 三遍刷题法 / 每日一练
+6. **快速自学与提升技巧** — 费曼挑战法 / 三遍刷题法 / 每日一练 / 出声思考模板
 
 ---
 

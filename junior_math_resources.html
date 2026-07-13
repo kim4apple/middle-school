@@ -312,11 +312,47 @@ ol.plain li { margin-bottom: 4px; font-size: 13px; }
   a { text-decoration: none; color: #000; }
   .katex { font-size: 1em; }
 }
+
+#sidebar.hidden { display: none; }
+
+#sidebarShowBtn {
+  display: none;
+  position: fixed;
+  top: 12px; left: 12px; z-index: 1000;
+  background: var(--bg); color: var(--accent);
+  border: 1px solid var(--border); border-radius: 6px;
+  cursor: pointer; font-weight: 600; font-size: 14px;
+  padding: 6px 10px; box-shadow: var(--shadow);
+}
+
+body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
+
+@media (max-width: 768px) {
+  #sidebar { position: fixed; z-index: 900; box-shadow: var(--shadow-hover); }
+  #sidebar.hidden { display: none; }
+  #sidebarShowBtn { display: flex; font-size: 13px; padding: 5px 8px; top: 8px; left: 8px; }
+  #content { margin-left: 0 !important; }
+}
+
+@media print {
+  * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  #sidebar { display: none !important; }
+  #sidebarShowBtn { display: none !important; }
+  body { display: block; }
+  details, .module, .exam-module { display: block !important; }
+  details .content { display: block !important; }
+  details[open] .content { display: block !important; }
+  .module { box-shadow: none; border: 1px solid #ccc; page-break-inside: avoid; }
+}
   </style>
 </head>
 <body>
+  <button id="sidebarShowBtn">☰ 侧栏</button>
   <nav id="sidebar">
-    <h2>资源清单导航</h2>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">资源清单导航</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;" title="隐藏侧栏">✕</button>
+  </div>
     <div class="sidebar-group">
       <div class="sidebar-group-title">分类导航</div>
       <nav>
@@ -332,6 +368,7 @@ ol.plain li { margin-bottom: 4px; font-size: 13px; }
       </nav>
     </div>
     <div class="sidebar-actions">
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
       <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
       <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
     </div>
@@ -799,6 +836,37 @@ ol.plain li { margin-bottom: 4px; font-size: 13px; }
       window.addEventListener("scroll", onScroll);
       onScroll();
     });
+
+      var hideBtn = document.getElementById('sidebarHideBtn');
+      var sidebar = document.getElementById('sidebar');
+      var sidebarHidden = localStorage.getItem('math-resources-sidebar') === 'hidden';
+      if (sidebarHidden) sidebar.classList.add('hidden');
+      var showBtn = document.getElementById('sidebarShowBtn');
+      if (hideBtn) hideBtn.addEventListener('click', function() {
+        sidebar.classList.add('hidden');
+        localStorage.setItem('math-resources-sidebar', 'hidden');
+      });
+      if (showBtn) showBtn.addEventListener('click', function() {
+        sidebar.classList.remove('hidden');
+        localStorage.setItem('math-resources-sidebar', '');
+      });
+      (function() {
+        var btn = document.getElementById('expandAllBtn');
+        if (!btn) return;
+        btn.addEventListener('click', function() {
+          var allDetails = document.querySelectorAll('.module, .exam-module');
+          if (allDetails.length === 0) { allDetails = document.querySelectorAll('details'); }
+          var allOpen = true;
+          for (var i = 0; i < allDetails.length; i++) {
+            if (!allDetails[i].hasAttribute('open')) { allOpen = false; break; }
+          }
+          for (var i = 0; i < allDetails.length; i++) {
+            if (allOpen) allDetails[i].removeAttribute('open');
+            else allDetails[i].setAttribute('open', '');
+          }
+          btn.textContent = allOpen ? '📂 展开全部章节' : '📖 收起全部章节';
+        });
+      })();
   </script>
 </body>
 </html>

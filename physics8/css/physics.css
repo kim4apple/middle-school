@@ -506,3 +506,13 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 [data-theme="dark"] .exam-q .diagram svg circle {
   stroke: #94a3b8;
 }
+
+.error-diagnosis { font-size: 14px; margin: 10px 0; padding: 10px 14px; border-radius: 6px; border-left: 3px solid #dc2626; background: #fef2f2; }
+[data-theme="dark"] .error-diagnosis { background: #3b1111; border-left-color: #ef4444; }
+.error-diagnosis .wrong { color: #dc2626; font-weight: 600; }
+.error-diagnosis .analysis { color: #b45309; margin-top: 4px; }
+.review-schedule { background: var(--bg-secondary); border-radius: var(--radius); padding: 14px 18px; margin-top: 20px; font-size: 13px; }
+.review-dot { display: inline-block; padding: 4px 10px; margin: 4px; border-radius: 20px; background: var(--accent-light); color: var(--accent); font-size: 12px; }
+.next-stop { background: linear-gradient(135deg, #eef2ff 0%, #f0fdf4 100%); border-radius: var(--radius); padding: 14px 18px; margin-top: 20px; font-size: 14px; line-height: 1.8; border: 1px dashed var(--border); }
+[data-theme="dark"] .next-stop { background: linear-gradient(135deg, #1e1b4b 0%, #0f2c1a 100%); }
+.next-stop strong { color: var(--accent); }

@@ -525,7 +525,17 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
   <text x="90" y="48" text-anchor="middle" font-size="10" fill="#dc2626">AB+BC</text>
   <text x="130" y="82" text-anchor="middle" font-size="10" fill="#4f46e5">AC &lt; AB+BC</text>
 </svg>
-      <div class="concept-card"><div class="name">三角形内角和定理</div><p>三角形三个内角的和等于 $180°$。即 $\angle A + \angle B + \angle C = 180°$。证明方法：过顶点作对边的平行线，利用平行线性质。</p><span class="level-gold">🥇 黄金级</span></div>
+      <div class="concept-card"><div class="name">三角形内角和定理</div><p>三角形三个内角的和等于 $180°$。即 $\angle A + \angle B + \angle C = 180°$。证明方法：过顶点作对边的平行线，利用平行线性质。</p>
+<svg width="200" height="90" viewBox="0 0 200 90" style="display:block;margin:8px auto 0;">
+  <polygon points="100,5 15,85 185,85" fill="#ede9fe" stroke="#4f46e5" stroke-width="2"/>
+  <text x="100" y="25" font-size="11" fill="#4f46e5">A</text>
+  <text x="5" y="95" font-size="11" fill="#4f46e5">B</text>
+  <text x="185" y="95" font-size="11" fill="#4f46e5">C</text>
+  <line x1="100" y1="5" x2="15" y2="85" stroke="#dc2626" stroke-width="0.8" stroke-dasharray="4,3"/>
+  <text x="50" y="50" font-size="9" fill="#dc2626">∠A+∠B+∠C=180°</text>
+  <text x="55" y="65" font-size="8" fill="#64748b">折纸:把3个角拼成平角</text>
+</svg>
+<span class="level-gold">🥇 黄金级</span></div>
       <div class="concept-card"><div class="name">三角形的外角</div><p>三角形的一边与另一边的延长线组成的角。性质：① 三角形的外角<strong>等于</strong>与它<strong>不相邻的两个内角之和</strong>；② 三角形的外角<strong>大于</strong>任何一个与它不相邻的内角。三角形的外角和 = $360°$。</p><span class="level-silver">🥈 白银级</span></div>
       <div class="concept-card"><div class="name">多边形的内角和与外角和</div><p><strong>n 边形内角和</strong> = $(n - 2) \times 180°$。<strong>任意多边形的外角和永远等于 $360°$</strong>（与边数无关）。对角线总数 = $\frac{n(n-3)}{2}$ 条。</p><span class="level-silver">🥈 白银级</span></div>
     </div></div>
@@ -637,7 +647,17 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 </div><div class="card-grid">
       <div class="concept-card"><div class="name">全等三角形</div><p>能够<strong>完全重合</strong>的两个三角形。对应边相等、对应角相等。记作 $\triangle ABC \cong \triangle DEF$，注意<strong>对应顶点写在对应位置</strong>。</p><span class="level-bronze">🥉 青铜级</span></div>
       <div class="concept-card"><div class="name">SSS（边边边）</div><p>三边分别相等的两个三角形全等。最"无脑"的判定——给三边长，直接证。常用于已知"中点→两段相等"的情形。</p><span class="level-silver">🥈 白银级</span></div>
-      <div class="concept-card"><div class="name">SAS（边角边）</div><p>两边和它们的<strong>夹角</strong>分别相等的两个三角形全等。注意：必须是<strong>夹角</strong>——SSA（边边角）不能判定全等！这是八年级最高频陷阱。</p><span class="level-silver">🥈 白银级</span></div>
+      <div class="concept-card"><div class="name">SAS（边角边）</div><p>两边和它们的<strong>夹角</strong>分别相等的两个三角形全等。注意：必须是<strong>夹角</strong>——SSA（边边角）不能判定全等！这是八年级最高频陷阱。</p>
+<svg width="280" height="80" viewBox="0 0 280 80" style="display:block;margin:8px auto 0;">
+  <text x="10" y="14" font-size="9" fill="#16a34a">✓ SAS正确</text>
+  <polygon points="30,65 70,20 110,65" fill="none" stroke="#16a34a" stroke-width="2"/>
+  <polygon points="170,65 210,20 250,65" fill="none" stroke="#16a34a" stroke-width="2"/>
+  <text x="70" y="75" text-anchor="middle" font-size="9" fill="#16a34a">夹角</text>
+  <text x="150" y="50" text-anchor="middle" font-size="9" fill="#dc2626">✗ SSA错误</text>
+  <polygon points="170,55 210,30 250,65" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="210" y="75" text-anchor="middle" font-size="9" fill="#dc2626">非夹!</text>
+</svg>
+<span class="level-silver">🥈 白银级</span></div>
       <div class="concept-card"><div class="name">ASA / AAS</div><p><strong>ASA：</strong>两角和它们的<strong>夹边</strong>。 <strong>AAS：</strong>两角和其中一角的<strong>对边</strong>。三角形内角和为180°，知两角即知第三角 → ASA 和 AAS 本质等价，都可推导出全等。</p><span class="level-silver">🥈 白银级</span></div>
       <div class="concept-card"><div class="name">HL（斜边直角边）</div><p><strong>仅用于直角三角形</strong>：斜边和一条直角边分别相等的两个直角三角形全等。本质是 SSA 在直角三角形中的特例——因为直角确定了第三边。</p><span class="level-silver">🥈 白银级</span></div>
       <div class="concept-card"><div class="name">角平分线的性质</div><p>角平分线上的点到角<strong>两边的距离相等</strong>。逆定理：角的内部到两边距离相等的点在角平分线上。这两个定理是全等三角形最经典的应用——用全等证距离相等。</p><span class="level-gold">🥇 黄金级</span></div>
@@ -1001,8 +1021,31 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
       <div class="concept-card"><div class="name">勾股定理</div><p>直角三角形两条直角边的<strong>平方和</strong>等于斜边的<strong>平方</strong>。$a^2 + b^2 = c^2$。其中 $a$、$b$ 为直角边，$c$ 为斜边。这是几何中最著名的定理，有近 400 种证明方法。</p><span class="level-gold">🥇 黄金级</span></div>
       <div class="concept-card"><div class="name">赵爽弦图证明</div><p>中国古代数学家赵爽用"弦图"证明勾股定理：四个全等的直角三角形拼成一个大正方形，中间空出一个小正方形。大正方形面积 $c^2 = 4 \times \frac{1}{2}ab + (b-a)^2 = a^2+b^2$。面积法证明，完美！</p><span class="level-silver">🥈 白银级</span></div>
       <div class="concept-card"><div class="name">勾股定理的逆定理</div><p>如果三角形的三边长满足 $a^2 + b^2 = c^2$，那么这个三角形是<strong>直角三角形</strong>。最长边 $c$ 所对的角为 $90°$。用于判断三角形的形状。</p><span class="level-gold">🥇 黄金级</span></div>
-      <div class="concept-card"><div class="name">30°-60°-90° 三角形</div><p>在 $30°-60°-90°$ 的直角三角形中：<br>30°所对直角边 = $\frac{1}{2}$ 斜边；<br>边比：<strong>短直角边 : 长直角边 : 斜边 = $1 : \sqrt{3} : 2$</strong>。</p><span class="level-silver">🥈 白银级</span></div>
-      <div class="concept-card"><div class="name">45°-45°-90° 三角形</div><p>在等腰直角三角形中：斜边 = $\sqrt{2}$ × 直角边。<br>边比：<strong>直角边 : 直角边 : 斜边 = $1 : 1 : \sqrt{2}$</strong>。</p><span class="level-silver">🥈 白银级</span></div>
+      <div class="concept-card"><div class="name">30°-60°-90° 三角形</div><p>在 $30°-60°-90°$ 的直角三角形中：<br>30°所对直角边 = $\frac{1}{2}$ 斜边；<br>边比：<strong>短直角边 : 长直角边 : 斜边 = $1 : \sqrt{3} : 2$</strong>。</p>
+<svg width="180" height="130" viewBox="0 0 180 130" style="display:block;margin:8px auto 0;">
+  <polygon points="10,115 170,115 10,15" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <rect x="10" y="103" width="12" height="12" fill="none" stroke="#dc2626" stroke-width="1"/>
+  <text x="8" y="18" font-size="10" fill="#dc2626">A</text>
+  <text x="170" y="125" font-size="10" fill="#dc2626">B</text>
+  <text x="8" y="125" font-size="10" fill="#dc2626">C</text>
+  <text x="80" y="60" font-size="10" fill="#4f46e5">30°</text>
+  <text x="40" y="110" font-size="10" fill="#4f46e5">60°</text>
+  <text x="90" y="120" font-size="9" fill="#0891b2">AC=1</text>
+  <text x="85" y="90" font-size="9" fill="#0891b2">BC=√3</text>
+  <text x="160" y="75" font-size="9" fill="#dc2626">AB=2</text>
+</svg>
+<span class="level-silver">🥈 白银级</span></div>
+      <div class="concept-card"><div class="name">45°-45°-90° 三角形</div><p>在等腰直角三角形中：斜边 = $\sqrt{2}$ × 直角边。<br>边比：<strong>直角边 : 直角边 : 斜边 = $1 : 1 : \sqrt{2}$</strong>。</p>
+<svg width="150" height="130" viewBox="0 0 150 130" style="display:block;margin:8px auto 0;">
+  <polygon points="10,115 130,115 10,15" fill="#ede9fe" stroke="#4f46e5" stroke-width="2"/>
+  <rect x="10" y="103" width="12" height="12" fill="none" stroke="#dc2626" stroke-width="1"/>
+  <text x="15" y="60" font-size="10" fill="#4f46e5">45°</text>
+  <text x="55" y="118" font-size="10" fill="#4f46e5">45°</text>
+  <text x="20" y="120" font-size="9" fill="#0891b2">1</text>
+  <text x="70" y="120" font-size="9" fill="#0891b2">1</text>
+  <text x="70" y="70" font-size="9" fill="#dc2626">√2</text>
+</svg>
+<span class="level-silver">🥈 白银级</span></div>
     </div></div>
   </details>
   <details class="module">
@@ -1087,7 +1130,19 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 </svg>
 </div><div class="card-grid">
       <div class="concept-card"><div class="name">平行四边形性质</div><p>① 对边平行且相等；② 对角相等，邻角互补；③ 对角线<strong>互相平分</strong>。核心性质：对角线互相平分是平行四边形最重要的特征（可通过全等证明）。</p><span class="level-silver">🥈 白银级</span></div>
-      <div class="concept-card"><div class="name">平行四边形判定（5法）</div><p>① 两组对边平行；② 两组对边相等；③ 一组对边平行且相等（高频！）；④ 两组对角相等；⑤ 对角线互相平分。记住口诀即可。</p><span class="level-gold">🥇 黄金级</span></div>
+      <div class="concept-card"><div class="name">平行四边形判定（5法）</div><p>① 两组对边平行；② 两组对边相等；③ 一组对边平行且相等（高频！）；④ 两组对角相等；⑤ 对角线互相平分。记住口诀即可。</p>
+<svg width="240" height="90" viewBox="0 0 240 90" style="display:block;margin:8px auto 0;">
+  <polygon points="30,15 150,15 170,75 50,75" fill="none" stroke="#4f46e5" stroke-width="2"/>
+  <line x1="30" y1="15" x2="150" y2="15" stroke="#16a34a" stroke-width="2"/>
+  <line x1="50" y1="75" x2="170" y2="75" stroke="#16a34a" stroke-width="2"/>
+  <text x="90" y="10" text-anchor="middle" font-size="8" fill="#16a34a">∥且=</text>
+  <line x1="30" y1="15" x2="50" y2="75" stroke="#dc2626" stroke-width="2"/>
+  <line x1="150" y1="15" x2="170" y2="75" stroke="#dc2626" stroke-width="2"/>
+  <text x="190" y="50" font-size="9" fill="#dc2626">对边</text>
+  <text x="190" y="65" font-size="9" fill="#dc2626">∥且=</text>
+  <text x="80" y="85" text-anchor="middle" font-size="9" fill="#64748b">一组对边平行且相等→▱</text>
+</svg>
+<span class="level-gold">🥇 黄金级</span></div>
       <div class="concept-card"><div class="name">矩形</div><p>有一个角是<strong>直角</strong>的平行四边形。额外性质：① 四个角都是90°；② <strong>对角线相等</strong>。判定：① 有一个角为直角的平行四边形；② 对角线相等的平行四边形；③ 有三个角为直角的四边形。</p><span class="level-silver">🥈 白银级</span></div>
       <div class="concept-card"><div class="name">菱形与正方形</div><p><strong>菱形：</strong>有一组邻边相等的平行四边形。额外性质：四边相等、对角线<strong>互相垂直且平分对角</strong>。面积=对角线乘积的一半。<br><strong>正方形：</strong>既是矩形又是菱形的四边形——具有两者的所有性质。</p><span class="level-gold">🥇 黄金级</span></div>
       <div class="concept-card"><div class="name">三角形中位线</div><p>连接三角形<strong>两边中点</strong>的线段。性质：中位线<strong>平行于</strong>第三边且<strong>等于第三边的一半</strong>。这是平行四边形应用的经典题目。</p><span class="level-gold">🥇 黄金级</span></div>
@@ -1177,7 +1232,19 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 </svg>
 </div><div class="card-grid">
       <div class="concept-card"><div class="name">函数的概念</div><p>在一个变化过程中，如果有两个变量 $x$ 和 $y$，对于 $x$ 的<strong>每一个</strong>确定的值，$y$ 都有<strong>唯一</strong>确定的值与其对应，那么 $y$ 是 $x$ 的函数。$x$ 是自变量，$y$ 是因变量。函数的图象是一条平滑的线（一次函数为直线）。</p><span class="level-bronze">🥉 青铜级</span></div>
-      <div class="concept-card"><div class="name">正比例函数 $y=kx$</div><p>过原点 $(0,0)$ 的直线。$k>0$：图象经过<strong>一、三象限</strong>，$y$ 随 $x$ 增大而增大。$k<0$：图象经过<strong>二、四象限</strong>，$y$ 随 $x$ 增大而减小。$|k|$ 越大，直线越陡。</p><span class="level-silver">🥈 白银级</span></div>
+      <div class="concept-card"><div class="name">正比例函数 $y=kx$</div><p>过原点 $(0,0)$ 的直线。$k>0$：图象经过<strong>一、三象限</strong>，$y$ 随 $x$ 增大而增大。$k<0$：图象经过<strong>二、四象限</strong>，$y$ 随 $x$ 增大而减小。$|k|$ 越大，直线越陡。</p>
+<svg width="260" height="100" viewBox="0 0 260 100" style="display:block;margin:8px auto 0;">
+  <line x1="40" y1="80" x2="40" y2="5" stroke="#94a3b8" stroke-width="0.8"/>
+  <line x1="40" y1="80" x2="240" y2="80" stroke="#94a3b8" stroke-width="0.8"/>
+  <polygon points="240,75 240,85 250,80" fill="#94a3b8"/>
+  <text x="50" y="20" font-size="8">y</text>
+  <text x="250" y="90" font-size="8">x</text>
+  <line x1="40" y1="80" x2="220" y2="20" stroke="#16a34a" stroke-width="2"/>
+  <text x="225" y="18" font-size="9" fill="#16a34a">k>0↗</text>
+  <line x1="40" y1="80" x2="220" y2="70" stroke="#dc2626" stroke-width="2"/>
+  <text x="225" y="68" font-size="9" fill="#dc2626">k<0↘</text>
+</svg>
+<span class="level-silver">🥈 白银级</span></div>
       <div class="concept-card"><div class="name">一次函数 $y=kx+b$</div><p>$k$（斜率）决定<strong>方向</strong>和<strong>陡峭程度</strong>；$b$（截距）决定与 $y$ 轴的<strong>交点位置</strong>。$y=kx+b$ 的图象是 $y=kx$ 向上平移 $b$ 个单位（$b>0$ 时）。</p><span class="level-silver">🥈 白银级</span></div>
       <div class="concept-card"><div class="name">一次函数与方程、不等式</div><p><strong>与方程：</strong>$kx+b=0$ 的解 = 函数图象与 $x$ 轴交点的横坐标。两直线 $y=k_1x+b_1$ 与 $y=k_2x+b_2$ 的交点 = 方程组 $\begin{cases} y=k_1x+b_1 \\ y=k_2x+b_2 \end{cases}$ 的解。<br><strong>与不等式：</strong>$kx+b>0$ 的解 = 图象在 $x$ 轴上方的 $x$ 范围。</p><span class="level-gold">🥇 黄金级</span></div>
     </div></div>

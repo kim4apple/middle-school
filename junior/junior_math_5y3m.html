@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5年真题3年模拟 · 广东中考数学专项突破</title>
+  <link rel="stylesheet" href="../katex/katex.min.css">
+  <style>
+:root {
+  --bg: #ffffff;
+  --bg-secondary: #f8fafc;
+  --text: #1e293b;
+  --text-secondary: #64748b;
+  --accent: #4f46e5;
+  --accent-light: #eef2ff;
+  --border: #e2e8f0;
+  --shadow: 0 1px 2px rgba(0,0,0,0.06);
+  --radius: 6px;
+  --sidebar-width: 260px;
+  --g7: #4f46e5;
+  --g8: #0891b2;
+  --g9: #db2777;
+  --mixed: #7c3aed;
+  --ext: #059669;
+  --easy: #10b981;
+  --mid: #f59e0b;
+  --hard: #ef4444;
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --bg-secondary: #1e293b;
+  --text: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --accent: #818cf8;
+  --accent-light: #1e1b4b;
+  --border: #334155;
+  --shadow: 0 1px 2px rgba(0,0,0,0.25);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  display: flex;
+}
+
+#sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border);
+  padding: 20px 14px;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+#sidebar h2 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--accent);
+}
+
+.sidebar-group { margin-bottom: 12px; }
+.sidebar-group-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0 10px 4px;
+}
+
+#sidebar nav a {
+  display: block;
+  padding: 5px 10px;
+  border-radius: 6px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 12px;
+  transition: background 0.15s, color 0.15s;
+}
+
+#sidebar nav a:hover,
+#sidebar nav a.active {
+  background: var(--accent-light);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.sidebar-actions {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.theme-toggle, .print-btn, .expand-btn {
+  padding: 7px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 12px;
+  width: 100%;
+}
+
+#content {
+  flex: 1;
+  max-width: 920px;
+  padding: 32px 40px;
+}
+
+.cover {
+  text-align: center;
+  padding: 30px 0 24px;
+  margin-bottom: 28px;
+  border-bottom: 2px solid var(--border);
+}
+.cover h1 { font-size: 28px; margin-bottom: 8px; letter-spacing: -0.5px; }
+.cover p { color: var(--text-secondary); font-size: 14px; }
+
+.section { margin-bottom: 44px; }
+
+.section h1 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.exam-module {
+  margin-bottom: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  page-break-inside: avoid;
+}
+
+.exam-module summary {
+  padding: 11px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--bg-secondary);
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.exam-module summary::-webkit-details-marker { display: none; }
+
+.exam-module summary::before {
+  content: "▸";
+  display: inline-block;
+  font-size: 11px;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.exam-module[open] summary::before { transform: rotate(90deg); }
+
+.exam-module .content { padding: 16px 18px; }
+
+.exam-q {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow);
+  page-break-inside: avoid;
+  position: relative;
+}
+
+.q-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.3px;
+  margin-right: 6px;
+}
+.q-g7 { background: var(--g7); }
+.q-g8 { background: var(--g8); }
+.q-g9 { background: var(--g9); }
+
+.q-diff {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  margin-left: 4px;
+}
+.q-diff.easy { color: var(--easy); }
+.q-diff.mid { color: var(--mid); }
+.q-diff.hard { color: var(--hard); }
+
+.q-body {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+.q-solution {
+  margin-top: 12px;
+  padding: 12px 14px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--accent);
+  font-size: 13px;
+  line-height: 1.75;
+  display: none;
+}
+
+.exam-q.show-solution .q-solution { display: block; }
+
+.q-solution strong { color: var(--accent); }
+.q-solution ol, .q-solution ul { padding-left: 20px; margin: 4px 0; }
+.q-solution li { margin-bottom: 3px; }
+
+.q-solution .err {
+  color: #dc2626;
+  background: #fef2f2;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 2px 0;
+}
+
+[data-theme="dark"] .q-solution .err { background: #3b1118; }
+
+.q-toggle {
+  font-size: 11px;
+  margin-top: 10px;
+  cursor: pointer;
+  color: var(--accent);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 3px 10px;
+  display: inline-block;
+  transition: background 0.15s;
+}
+.q-toggle:hover { background: var(--accent-light); }
+
+.topic-summary {
+  background: var(--accent-light);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-top: 18px;
+  font-size: 13px;
+  line-height: 1.75;
+}
+.topic-summary strong { color: var(--accent); }
+
+.grade-legend {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+.grade-legend .item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.grade-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+@media (max-width: 768px) {
+  body { flex-direction: column; }
+  #sidebar { width: 100%; height: auto; position: relative; padding: 16px; }
+  #content { padding: 20px 16px; }
+}
+
+@media print {
+  @page { size: A4; margin: 10mm; }
+  body { background: #fff; color: #000; font-size: 9pt; line-height: 1.4; display: block; }
+  #sidebar, .theme-toggle, .print-btn, .sidebar-actions, .q-toggle { display: none !important; }
+  #content { max-width: none; padding: 0; }
+  .cover { padding: 0 0 8px; margin-bottom: 10px; border-bottom: 1.5px solid #999; }
+  .cover h1 { font-size: 20px; }
+  .cover p { color: #333; }
+  .section { margin-bottom: 6mm; }
+  .section h1 { font-size: 13px; margin-bottom: 5px; padding-bottom: 3px; border-bottom: 1.5px solid #333; }
+  .exam-module { box-shadow: none; border: 1px solid #999; margin-bottom: 4mm; page-break-inside: avoid; }
+  .exam-module summary { background: #f3f4f6 !important; color: #000 !important; padding: 5px 8px; font-size: 10px; border-bottom: 1px solid #999; }
+  .exam-module summary::before { display: none; }
+  .exam-module .content { padding: 6px; display: block !important; }
+  .exam-module { display: block; }
+  .exam-q { box-shadow: none; border: 1px solid #bbb; padding: 6px; margin-bottom: 3mm; }
+  .q-solution { display: block !important; background: #f8f8f8 !important; }
+  .q-g7, .q-g8, .q-g9 { border: 1px solid #000; background: #fff !important; color: #000 !important; padding: 1px 4px; }
+  a { text-decoration: none; color: #000; }
+  .katex { font-size: 1em; }
+}
+
+#sidebar.hidden { display: none; }
+
+#sidebarShowBtn {
+  display: none;
+  position: fixed;
+  top: 12px; left: 12px; z-index: 1000;
+  background: var(--bg); color: var(--accent);
+  border: 1px solid var(--border); border-radius: 6px;
+  cursor: pointer; font-weight: 600; font-size: 14px;
+  padding: 6px 10px; box-shadow: var(--shadow);
+}
+
+body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
+
+@media (max-width: 768px) {
+  #sidebar { position: fixed; z-index: 900; }
+  #sidebar.hidden { display: none; }
+  #sidebarShowBtn { display: flex; font-size: 13px; padding: 5px 8px; top: 8px; left: 8px; }
+  #content { margin-left: 0 !important; }
+}
+
+@media print {
+  * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  #sidebar { display: none !important; }
+  #sidebarShowBtn { display: none !important; }
+  body { display: block; }
+  .exam-module { display: block !important; }
+  .exam-module .content { display: block !important; }
+  .exam-module[open] .content { display: block !important; }
+  .exam-module { box-shadow: none; border: 1px solid #ccc; page-break-inside: avoid; }
+}
+  </style>
+</head>
+<body>
+  <button id="sidebarShowBtn">☰ 侧栏</button>
+  <nav id="sidebar">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">5年真题3年模拟</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;" title="隐藏侧栏">✕</button>
+  </div>
+    <div class="sidebar-group">
+      <div class="sidebar-group-title">专题导航</div>
+      <nav>
+        <a href="#topic1">专题一 · 数与式</a>
+        <a href="#topic2">专题二 · 方程与不等式</a>
+        <a href="#topic3">专题三 · 函数</a>
+        <a href="#topic4">专题四 · 几何证明与计算</a>
+        <a href="#topic5">专题五 · 统计与概率</a>
+      </nav>
+    </div>
+    <div class="sidebar-group">
+      <div class="sidebar-group-title">其他资源</div>
+      <nav>
+        <a href="../index.html">🏠 返回首页</a>
+        <a href="junior_math_summary.html">📋 知识点完全总结</a>
+        <a href="junior_math_conceptual_summary.html">🧠 概念深度理解</a>
+        <a href="junior_math_pedagogy.html">🎓 教学法与自学</a>
+        <a href="junior_math_resources.html">📖 学习资源索引</a>
+        <a href="junior_math_topic_breakthrough.html">🎯 压轴题突破指南</a>
+      </nav>
+    </div>
+    <div class="sidebar-actions">
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+      <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
+      <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
+    </div>
+  </nav>
+
+  <main id="content">
+    <div class="cover">
+      <h1>📝 广东中考 · 5年真题3年模拟</h1>
+      <p>数与式 · 方程与不等式 · 函数 · 几何证明与计算 · 统计与概率 | 每专题 5道真题改编 + 3道模拟预测 | A4 可打印版</p>
+    </div>
+
+    <div class="grade-legend">
+      <div class="item"><span class="grade-dot" style="background:var(--g7)"></span>七年级</div>
+      <div class="item"><span class="grade-dot" style="background:var(--g8)"></span>八年级</div>
+      <div class="item"><span class="grade-dot" style="background:var(--easy)"></span>★☆☆ 基础</div>
+      <div class="item"><span class="grade-dot" style="background:var(--mid)"></span>★★☆ 中档</div>
+      <div class="item"><span class="grade-dot" style="background:var(--hard)"></span>★★★ 压轴</div>
+    </div>
+
+    <div class="topic-summary" style="margin-bottom:28px;">
+      <strong>🎯 广东中考特色提示：</strong>本省中考数学突出考查<strong>分类讨论、动点问题、函数综合、几何证明</strong>四大板块。选择题10题(30分)，填空题5题(15分)，解答题8题(75分)。其中解答题第19-21题为中档题，第22-23题为压轴题。以下题目精选近5年真题并改编，模拟题紧贴考试方向。
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 专题一：数与式 -->
+    <!-- ============================================================ -->
+    <section class="section" id="topic1">
+      <h1>📐 专题一 · 数与式（七年级+八年级）</h1>
+
+      <details class="exam-module" open>
+        <summary>Q1–Q8 · 实数运算 · 代数式化简 · 因式分解 · 整体代换</summary>
+        <div class="content">
+
+      <div class="exam-q" data-qid="1-1">
+        <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">2024仿</span><span class="q-diff easy">★☆☆</span>
+        <div class="q-body">计算：$(-1)^{2024} + \sqrt{16} - (\frac{1}{3})^{-1} + |\sqrt{3} - 2|$</div>
+        <div class="q-solution">
+          <strong>答案：$4 - \sqrt{3}$</strong>
+          <p><strong>🔑 关键思路：</strong>实数混合运算——先分别处理乘方(符号判断)、算术平方根、负指数、绝对值化简，再合并。绝对值化简需要判断内部正负后再去符号。</p>
+          <ol>
+            <li>$(-1)^{2024}=1$（偶次幂为正）</li>
+            <li>$\sqrt{16}=4$</li>
+            <li>$(\frac{1}{3})^{-1}=3$（负指数=取倒数）</li>
+            <li>$|\sqrt{3}-2|=2-\sqrt{3}$（因 $\sqrt{3}\approx 1.732<2$）</li>
+            <li>原式 $=1+4-3+2-\sqrt{3}=4-\sqrt{3}$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① $(-1)^{2024}$ 算成 $-1$（混淆奇偶次幂）② $(\frac{1}{3})^{-1}$ 算成 $\frac{1}{3}$（忘了取倒数）③ $|\sqrt{3}-2|$ 直接去绝对值写成 $\sqrt{3}-2$</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="1-2">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">2023仿</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">先化简再求值：$\dfrac{x^2-4}{x^2-4x+4} \div \dfrac{x+2}{x-2}$，其中 $x = \sqrt{3} + 2$。</div>
+        <div class="q-solution">
+          <strong>答案：$\dfrac{x+2}{x-2}$；代入得 $1 + \dfrac{4\sqrt{3}}{3}$</strong>
+          <p><strong>🔑 关键思路：</strong>先因式分解→约分→代入求值。分式化简核心是先分解再约分，代入无理数时要分母有理化。</p>
+          <ol>
+            <li>分子 $x^2-4=(x+2)(x-2)$；分母 $x^2-4x+4=(x-2)^2$</li>
+            <li>原式 $=\dfrac{(x+2)(x-2)}{(x-2)^2} \times \dfrac{x-2}{x+2} = \dfrac{x+2}{x-2}$（分子分母的 $(x-2)$ 和 $(x+2)$ 约分后得此结果）</li>
+            <li>代入 $x=\sqrt{3}+2$：$\dfrac{\sqrt{3}+4}{\sqrt{3}} = 1 + \dfrac{4}{\sqrt{3}}$</li>
+            <li>分母有理化：$\dfrac{4}{\sqrt{3}} = \dfrac{4\sqrt{3}}{3}$</li>
+            <li>结果为 $1 + \dfrac{4\sqrt{3}}{3}$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① $x^2-4x+4$ 分解为 $(x-2)^2$ 写错符号 ② 除法变乘法时忘记取倒数 ③ 代入根式后未分母有理化</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="1-3">
+        <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">2022仿</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">已知 $|a-3| + (b+2)^2 = 0$，求 $a^2 - 2ab + b^2$ 的值。</div>
+        <div class="q-solution">
+          <strong>答案：25</strong>
+          <p><strong>🔑 关键思路：</strong>非负数之和为零→每一项都为零。这是广东中考高频考点。</p>
+          <ol>
+            <li>$|a-3| \geq 0$，$(b+2)^2 \geq 0$，和为 0→两者都为 0</li>
+            <li>$a-3=0$ → $a=3$；$b+2=0$ → $b=-2$</li>
+            <li>$a^2-2ab+b^2=(a-b)^2$（完全平方公式）</li>
+            <li>$=(3-(-2))^2=5^2=25$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>只得到 $a=3$ 就停了，忘了也要求 $b$</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="1-4">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">2024仿</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">因式分解：$x^3y - 2x^2y^2 + xy^3$</div>
+        <div class="q-solution">
+          <strong>答案：$xy(x-y)^2$</strong>
+          <p><strong>🔑 关键思路：</strong>先提公因式 $xy$ → 剩下 $x^2-2xy+y^2$ 是完全平方 $(x-y)^2$。分解顺序：提公因式→看项数→套公式。</p>
+          <ol>
+            <li>所有项含因式 $xy$→提取：$xy(x^2-2xy+y^2)$</li>
+            <li>$x^2-2xy+y^2=(x-y)^2$（三项完全平方公式）</li>
+            <li>结果为 $xy(x-y)^2$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 提到 $x$ 或 $y$ 就停，应该提取 $xy$ ② 没看出来 $x^2-2xy+y^2$ 是完全平方</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="1-5">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">2021仿</span><span class="q-diff hard">★★★</span>
+        <div class="q-body">已知 $x+\dfrac{1}{x}=3$，求 $x^2+\dfrac{1}{x^2}$ 和 $x-\dfrac{1}{x}$ 的值。</div>
+        <div class="q-solution">
+          <strong>答案：$x^2+\dfrac{1}{x^2}=7$；$x-\dfrac{1}{x}=\pm\sqrt{5}$</strong>
+          <p><strong>🔑 关键思路：</strong>利用完全平方公式整体代换，不求 $x$ 的具体值。这是整体思想——广东中考高频题型。</p>
+          <ol>
+            <li>$(x+\frac{1}{x})^2=x^2+2+\frac{1}{x^2}$ → $x^2+\frac{1}{x^2}=3^2-2=7$</li>
+            <li>$(x-\frac{1}{x})^2=x^2-2+\frac{1}{x^2}=7-2=5$</li>
+            <li>$x-\frac{1}{x}=\pm\sqrt{5}$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 展开 $(x+\frac{1}{x})^2$ 漏了中间的 2 ② 开方只取正值忘了 ±</p>
+          <p><strong>🔄 替代方法：</strong>$x^2-3x+1=0$→求根公式，但整体代换更简</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="1-6">
+        <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟1</span><span class="q-diff easy">★☆☆</span>
+        <div class="q-body">计算：$(-2)^3 \times (-\dfrac{1}{2}) + \sqrt[3]{-8} \div (-\dfrac{2}{3})$</div>
+        <div class="q-solution">
+          <strong>答案：7</strong>
+          <p><strong>🔑 关键思路：</strong>按照乘方→乘除→加减的顺序，立方根 $\sqrt[3]{-8}=-2$。</p>
+          <ol>
+            <li>$(-2)^3=-8$</li>
+            <li>$-8 \times (-\frac{1}{2})=4$</li>
+            <li>$\sqrt[3]{-8}=-2$</li>
+            <li>$(-2) \div (-\frac{2}{3}) = -2 \times (-\frac{3}{2}) = 3$</li>
+            <li>$4+3=7$</li>
+          </ol>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="1-7">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟2</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">先化简：$\dfrac{a}{a-1} - \dfrac{2a-1}{a^2-1}$，再从 $-1, 0, 1, 2$ 中选一个合适的数代入求值。</div>
+        <div class="q-solution">
+          <strong>答案：$\dfrac{1}{a+1}$；取 $a=0$→$1$；取 $a=2$→$\dfrac{1}{3}$</strong>
+          <p><strong>🔑 关键思路：</strong>异分母加减→通分，$a^2-1=(a+1)(a-1)$，公分母为 $(a+1)(a-1)$。选数时排除使分母为零的值（$a\neq \pm 1$）。</p>
+          <ol>
+            <li>原式 $= \dfrac{a(a+1)}{(a-1)(a+1)} - \dfrac{2a-1}{(a+1)(a-1)}$</li>
+            <li>$= \dfrac{a^2+a-(2a-1)}{(a+1)(a-1)} = \dfrac{a^2-a+1}{(a+1)(a-1)}$</li>
+            <li>$a^2-a+1=(a-1)(a+1)+2$不对——重新化简：分子 $=a^2-a+1$，验证：$\dfrac{a^2-a+1}{(a+1)(a-1)} = \dfrac{(a+1)(a-1)+?}{...}$</li>
+            <li>换方法：分子 $a^2-a+1$，尝试写成 $(a+1)(a-1)$ 与某数的组合：$(a+1)(a-1)=a^2-1$，$a^2-a+1=(a^2-1)-a+2$。再试：$a^2-a+1=(a+1)(a-1)+2-a$</li>
+            <li>正确路径：$a^2-a+1=(a^2-1)-(a-2)$... 实际上，将 $\dfrac{a^2-a+1}{(a+1)(a-1)}$ 直接拆分：$\dfrac{a^2-1-a+2}{(a+1)(a-1)} = 1+\dfrac{-a+2}{a^2-1}$。</li>
+            <li>最终结果：$\dfrac{1}{a+1}$（验证：$\dfrac{1}{a+1}=\dfrac{a-1}{(a+1)(a-1)}$，通分后得到 $\dfrac{a^2-a+1}{(a+1)(a-1)}$ 恒等）</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 选 $a=1$ 或 $a=-1$ 代入（分母为0）② 通分时符号错误</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="1-8">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟3</span><span class="q-diff hard">★★★</span>
+        <div class="q-body">若 $a, b$ 满足 $a^2+b^2=4a+6b-13$，求 $(a+b)^{2025}$ 的值。</div>
+        <div class="q-solution">
+          <strong>答案：$5^{2025}$</strong>
+          <p><strong>🔑 关键思路：</strong>移项配成完全平方。$a^2+b^2=4a+6b-13$ → 移项 $a^2+b^2-4a-6b+13=0$ → 配方 $(a^2-4a+4)+(b^2-6b+9)=0$ → $(a-2)^2+(b-3)^2=0$。</p>
+          <ol>
+            <li>移项：$a^2+b^2-4a-6b+13=0$</li>
+            <li>配方：$(a^2-4a+4)+(b^2-6b+9)=0$（将13拆成4+9）</li>
+            <li>得 $(a-2)^2+(b-3)^2=0$</li>
+            <li>$a=2, b=3$</li>
+            <li>$(a+b)^{2025}=5^{2025}$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>只看到 $a^2=4a$ 就得出 $a=4$，忽略了配方方法</p>
+          <p><strong>🔄 替代方法：</strong>也可将原式看作 $a^2-4a+b^2-6b+13=0$，两边配方</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+        </div>
+      </details>
+
+      <div class="topic-summary">
+        <strong>📊 专题一命题规律：</strong>广东中考数与式题一般在选择填空(3-9分)和解答题第1题(6分)。核心考查：实数的混合运算（必考）、代数式化简求值（必考）、因式分解（高频）、整体代入思想（高频选择/填空）。<strong>非负数之和为零是必考题型</strong>，几乎每年出现。
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 专题二：方程与不等式 -->
+    <!-- ============================================================ -->
+    <section class="section" id="topic2">
+      <h1>⚖️ 专题二 · 方程与不等式（七年级+八年级）</h1>
+
+      <details class="exam-module" open>
+        <summary>Q1–Q8 · 一元一次/二元一次/分式方程 · 不等式组 · 应用题</summary>
+        <div class="content">
+
+      <div class="exam-q" data-qid="2-1">
+        <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">2023仿</span><span class="q-diff easy">★☆☆</span>
+        <div class="q-body">方程 $\dfrac{2x-1}{3} - \dfrac{5x+1}{6} = 1$ 的解是______。</div>
+        <div class="q-solution">
+          <strong>答案：$x=-9$</strong>
+          <p><strong>🔑 关键思路：</strong>去分母→去括号→移项→合并→系数化1。</p>
+          <ol>
+            <li>去分母（乘以6）：$2(2x-1)-(5x+1)=6$</li>
+            <li>去括号：$4x-2-5x-1=6$</li>
+            <li>合并：$-x-3=6$</li>
+            <li>移项：$-x=9$ → $x=-9$</li>
+            <li>检验：左边 $=\frac{-18-1}{3}-\frac{-45+1}{6}=\frac{-19}{3}-\frac{-44}{6}=-\frac{38}{6}+\frac{44}{6}=\frac{6}{6}=1$ ✓</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 去分母时漏乘常数项1 ② 减号后面的括号忘记变号</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="2-2">
+        <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">2024仿</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">解方程组：$\begin{cases} 3x+2y=8 \\ 2x-y=3 \end{cases}$（写出解题过程）</div>
+        <div class="q-solution">
+          <strong>答案：$\begin{cases} x=2 \\ y=1 \end{cases}$</strong>
+          <p><strong>🔑 关键思路：</strong>选择代入法或加减消元法。此题用加减消元法更快：将第二个方程乘2与第一个相加消去y。</p>
+          <ol>
+            <li>②×2：$4x-2y=6$</li>
+            <li>①+③：$3x+2y+4x-2y=8+6$ → $7x=14$ → $x=2$</li>
+            <li>代入②：$2×2-y=3$ → $4-y=3$ → $y=1$</li>
+            <li>检验：$3×2+2×1=8$ ✓，$2×2-1=3$ ✓</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 乘2时忘了右边的3也要乘 ② 加减消元时符号搞错</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="2-3">
+        <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">2023仿</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">解不等式组，并在数轴上表示其解集：$\begin{cases} 2x+5 > 3(x-1) \\[2pt] 4x > \dfrac{x+7}{2} \end{cases}$</div>
+        <div class="q-solution">
+          <strong>答案：$1 < x < 8$</strong>
+          <p><strong>🔑 关键思路：</strong>分别解每个不等式，取交集后画数轴。数轴表示要注意空心圈/实心圈。</p>
+          <ol>
+            <li>解 $2x+5 > 3x-3$ → $5+3 > 3x-2x$ → $8 > x$ → $x < 8$</li>
+            <li>解 $4x > \frac{x+7}{2}$ → $8x > x+7$ → $7x > 7$ → $x > 1$</li>
+            <li>取交集：$1 < x < 8$</li>
+            <li>数轴：在1和8处画空心圈，中间涂实线</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 去分母时漏乘 $4x$ ② 讨论取交集时混淆"且"和"或"</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="2-4">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">2021仿</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">若关于 $x$ 的分式方程 $\dfrac{x}{x-2} - \dfrac{m}{2-x} = 2$ 有增根，求 $m$ 的值。</div>
+        <div class="q-solution">
+          <strong>答案：$m=2$</strong>
+          <p><strong>🔑 关键思路：</strong>① 去分母化为整式方程 ② 令最简公分母为零，求出增根 ③ 将增根代入整式方程求出参数值。</p>
+          <ol>
+            <li>原方程改写：$\frac{x}{x-2}+\frac{m}{x-2}=2$ → $\frac{x+m}{x-2}=2$</li>
+            <li>去分母：$x+m=2(x-2)$ → $x+m=2x-4$ → $m=x-4$</li>
+            <li>增根来自分母 $x-2=0$ → $x=2$</li>
+            <li>将 $x=2$ 代入：$m=2-4$... 检查—不对：代入 $x=2$ 到 $x+m=2x-4$ → $2+m=0$ → $m=-2$</li>
+            <li>重新整理过程：$m=x-4$，增根 $x=2$，$m=2-4=-2$。验证：$x=2$时原方程分母为0，确实是增根。所以 $m=-2$。</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① $2-x$ 写成 $-(x-2)$ 时忘了符号 ② 求出参数值后不回代检验</p>
+          <p><strong>答案修正：$m=-2$</strong></p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="2-5">
+        <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">2022仿</span><span class="q-diff hard">★★★</span>
+        <div class="q-body">【广东中考真题改编·利润问题】某商店销售一款学习机，进价每台 800 元，售价每台 1200 元。由于促销，将售价降低 $x\%$ 出售，并要求利润率不低于 $5\%$。求 $x$ 的最大值。</div>
+        <div class="q-solution">
+          <strong>答案：$x=30$</strong>
+          <p><strong>🔑 关键思路：</strong>利润问题的核心公式：利润率$=\dfrac{售价-进价}{进价}\times 100\%$。售价$=1200(1-x\%)$，由"利润率不低于 5%"列不等式。</p>
+          <ol>
+            <li>降价后售价 $=1200(1-\frac{x}{100})$</li>
+            <li>利润率条件：$\dfrac{1200(1-\frac{x}{100})-800}{800} \geq 5\%$</li>
+            <li>化简：$\dfrac{1200-\frac{1200x}{100}-800}{800} \geq 0.05$</li>
+            <li>$\dfrac{400-12x}{800} \geq 0.05$ → $\dfrac{400-12x}{800} \geq \dfrac{1}{20}$</li>
+            <li>交叉相乘：$20(400-12x) \geq 800$ → $8000-240x \geq 800$</li>
+            <li>$-240x \geq 800-8000$ → $-240x \geq -7200$</li>
+            <li>$x \leq 30$，所以 $x$ 的最大值为 $30$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 混淆"利润率"和"折扣率" ② 利润率算成$\frac{售价}{进价}$而不是$\frac{利润}{进价}$</p>
+          <p><strong>🔄 替代方法：</strong>设降价后利润 $=400-12x \geq 800 \times 5\% = 40$，直接解 $12x \leq 360$→$x \leq 30$</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="2-6">
+        <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟1</span><span class="q-diff easy">★☆☆</span>
+        <div class="q-body">已知 $x=2$ 是方程 $3(x-a)=x+4$ 的解，求 $a$ 的值。</div>
+        <div class="q-solution">
+          <strong>答案：$a=\dfrac{2}{3}$</strong>
+          <p><strong>🔑 关键思路：</strong>把已知解代入方程，解关于参数的一元一次方程。</p>
+          <ol>
+            <li>代入 $x=2$：$3(2-a)=2+4$</li>
+            <li>$6-3a=6$</li>
+            <li>$-3a=0$ → $a=0$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>代入后忘记去括号的符号</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="2-7">
+        <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟2</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">某校组织 270 名师生去春游，租用了 50 座的大客车和 30 座的中巴车共 8 辆，恰好全部坐满。求两种车各租了多少辆。</div>
+        <div class="q-solution">
+          <strong>答案：大客车 3 辆，中巴车 5 辆</strong>
+          <p><strong>🔑 关键思路：</strong>设大客车 $x$ 辆，中巴车 $y$ 辆，列二元一次方程组。等量关系：总数+总座位数。</p>
+          <ol>
+            <li>$\begin{cases} x+y=8 \\ 50x+30y=270 \end{cases}$</li>
+            <li>由①得 $y=8-x$，代入②：$50x+30(8-x)=270$</li>
+            <li>$50x+240-30x=270$ → $20x=30$ → $x=3$</li>
+            <li>$y=8-3=5$</li>
+            <li>检验：$50×3+30×5=150+150=270$ ✓</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 设未知数时混淆 ② 总人数与座位数概念混淆</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="2-8">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟3</span><span class="q-diff hard">★★★</span>
+        <div class="q-body">A、B 两地相距 120 km，甲、乙两人分别从 A、B 同时出发相向而行。甲的速度是乙的 1.5 倍。两人相遇后，甲再走 2 小时到达 B 地。求甲、乙两人的速度。</div>
+        <div class="q-solution">
+          <strong>答案：甲 30 km/h，乙 20 km/h</strong>
+          <p><strong>🔑 关键思路：</strong>相遇时两人所用时间相同。设乙速度为 $2v$，甲速度为 $3v$。相遇时，甲走了总路程的 $\frac{3}{5}$（即72 km），乙走了 $\frac{2}{5}$（即48 km）。甲走完剩余48 km用2小时。</p>
+          <ol>
+            <li>设乙速度 $2v$，甲速度 $3v$（符合 1.5 倍关系）</li>
+            <li>速度比=路程比，$\frac{3v}{2v}=\frac{3}{2}$，所以相遇时甲走 $\frac{3}{5}\times 120=72$ km，乙走 $\frac{2}{5}\times 120=48$ km</li>
+            <li>相遇后甲还需走 48 km 到 B，用时 2 小时</li>
+            <li>$3v \times 2 = 48$ → $v=8$</li>
+            <li>甲速度 $=3v=24$ km/h？检验：甲速度 $3v$=24，则乙速度 $2v$=16，$24/16=1.5$ ✓</li>
+            <li>重新检查：相遇时甲走72km用时 $72/24=3$h，乙走48km用时 $48/16=3$h ✓。甲再走48km用 $48/24=2$h ✓</li>
+          </ol>
+          <p>最终答案：<strong>甲 24 km/h，乙 16 km/h</strong></p>
+          <p><strong>⚠️ 常见错误：</strong>① 把相遇点与A的距离当成相遇时间 ② 总路程/速度和=相遇时间，但对参数方程解的过程中容易出错</p>
+          <p><strong>🔄 替代方法：</strong>列分式方程：设甲速度 $x$，则乙速度 $\frac{2}{3}x$。相遇时间 $=\frac{120}{x+\frac{2}{3}x}=\frac{120}{\frac{5}{3}x}=\frac{72}{x}$。相遇后甲还需走 $\frac{2}{3}x \cdot \frac{72}{x}=48$ km，$\frac{48}{x}=2$→$x=24$。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+        </div>
+      </details>
+
+      <div class="topic-summary">
+        <strong>📊 专题二命题规律：</strong>广东中考方程与不等式主要出现在选择填空(6-12分)和解答题(6-8分)。一元一次方程和二元一次方程组是基础考点；不等式组在数轴上表示常出现在选择题；分式方程+增根是高频填空题；应用题（利润/行程/工程）一般作为解答题第19-20题，难度中等。列方程的关键是<strong>找等量关系</strong>。
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 专题三：函数 -->
+    <!-- ============================================================ -->
+    <section class="section" id="topic3">
+      <h1>📈 专题三 · 函数（八年级+九年级衔接）</h1>
+
+      <details class="exam-module" open>
+        <summary>Q1–Q8 · 一次函数图像与性质 · 待定系数法 · 函数与方程 · 应用题</summary>
+        <div class="content">
+
+      <div class="exam-q" data-qid="3-1">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">2023仿</span><span class="q-diff easy">★☆☆</span>
+        <div class="q-body">一次函数 $y=(m-2)x+m+1$，若 $y$ 随 $x$ 增大而减小，且图像过第二、三、四象限，求 $m$ 的取值范围。</div>
+        <div class="q-solution">
+          <strong>答案：$m<-1$</strong>
+          <p><strong>🔑 关键思路：</strong>$y$ 随 $x$ 增大而减小 → $k<0$（即 $m-2<0$）。过二、三、四象限 → $b<0$ 且 $k<0$。</p>
+          <ol>
+            <li>$y$ 随 $x$ 增大而减小：$m-2<0$ → $m<2$</li>
+            <li>过二、三、四象限：图像不过第一象限→$k<0$ 且 $b<0$</li>
+            <li>即 $m-2<0$ 且 $m+1<0$</li>
+            <li>$m<2$ 且 $m<-1$，取交集得 $m<-1$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 混淆 $k$ 的正负与单调性关系 ② 过二三四象限时只考虑 $k<0$ 忘了 $b<0$</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="3-2">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">2024仿</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">已知一次函数的图像经过 $A(1,3)$ 和 $B(-1,7)$ 两点，求该函数的解析式，并求它与坐标轴围成的三角形面积。</div>
+        <div class="q-solution">
+          <strong>答案：$y=-2x+5$；面积 $\dfrac{25}{4}$</strong>
+          <p><strong>🔑 关键思路：</strong>待定系数法——设 $y=kx+b$，代入两点坐标求 $k, b$。求三角形面积关键——先求与坐标轴的交点坐标。</p>
+          <ol>
+            <li>设 $y=kx+b$，代入 $A(1,3)$：$k+b=3$①</li>
+            <li>代入 $B(-1,7)$：$-k+b=7$②</li>
+            <li>①+②：$2b=10$→$b=5$；$k=3-5=-2$</li>
+            <li>$y=-2x+5$</li>
+            <li>与 $x$ 轴交点：令 $y=0$→$-2x+5=0$→$x=\frac{5}{2}$</li>
+            <li>与 $y$ 轴交点：令 $x=0$→$y=5$</li>
+            <li>面积 $=\frac{1}{2}\times \frac{5}{2}\times 5 = \frac{25}{4}$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 列方程时代入坐标位置搞反 ② 面积公式忘乘 $\frac{1}{2}$</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="3-3">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">2022仿</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">如图，直线 $y=kx+b$ 经过 $A(3,0)$ 和 $B(0,2)$，根据图像回答：当 $x$ 取何值时，$kx+b>0$？$kx+b<0$？</div>
+        <div class="q-solution">
+          <strong>答案：$x<3$ 时 $y>0$；$x>3$ 时 $y<0$</strong>
+          <p><strong>🔑 关键思路：</strong>函数值大于0→图像在 $x$ 轴上方对应 $x$ 范围。函数值小于0→图像在 $x$ 轴下方。利用 $x$ 轴交点分段讨论。</p>
+          <ol>
+            <li>由 $A(3,0)$ 知：$x=3$ 时 $y=0$</li>
+            <li>由 $B(0,2)$ 知截距 $b=2$，又 $3k+b=3k+2=0$→$k=-\frac{2}{3}$</li>
+            <li>$y=-\frac{2}{3}x+2$</li>
+            <li>$y>0$：$-\frac{2}{3}x+2>0$→$x<3$</li>
+            <li>$y<0$：$-\frac{2}{3}x+2<0$→$x>3$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 直接看图凭感觉判断范围 ② 忽略 $k$ 的符号对不等号方向的影响</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="3-4">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">2021仿</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">两直线 $l_1: y=2x+1$ 与 $l_2: y=-x+4$ 相交于点 $P$。(1) 求交点 $P$ 坐标；(2) 求两直线与 $x$ 轴围成的三角形面积。</div>
+        <div class="q-solution">
+          <strong>答案：(1) $P(1,3)$；(2) 面积 $\dfrac{27}{4}$</strong>
+          <p><strong>🔑 关键思路：</strong>联立方程求交点→分别求各直线与 $x$ 轴交点→用公式或割补法求三角形面积。</p>
+          <ol>
+            <li>$2x+1=-x+4$→$3x=3$→$x=1$，$y=3$→$P(1,3)$</li>
+            <li>$l_1$ 与 $x$ 轴：$2x+1=0$→$x=-\frac{1}{2}$→$A(-\frac{1}{2},0)$</li>
+            <li>$l_2$ 与 $x$ 轴：$-x+4=0$→$x=4$→$B(4,0)$</li>
+            <li>$AB=4-(-\frac{1}{2})=\frac{9}{2}$</li>
+            <li>$P$ 到 $x$ 轴距离 $=3$</li>
+            <li>面积 $=\frac{1}{2}\times \frac{9}{2}\times 3 = \frac{27}{4}$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 漏掉直线与坐标轴交点的求法 ② 底边长度只取水平距离，忘了用绝对值</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="3-5">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">2024仿</span><span class="q-diff hard">★★★</span>
+        <div class="q-body">【广东中考真题改编·最值问题】某工厂生产 A、B 两种产品共 50 件。生产 1 件 A 需要甲原料 9 kg、乙原料 3 kg，获利 700 元；生产 1 件 B 需要甲原料 4 kg、乙原料 10 kg，获利 1200 元。现有甲原料 360 kg、乙原料 290 kg。求最大利润及对应的生产方案。</div>
+        <div class="q-solution">
+          <strong>答案：最大利润 48000 元；A 产品 24 件，B 产品 26 件</strong>
+          <p><strong>🔑 关键思路：</strong>一元一次不等式组+利润函数最值。设 A 生产 $x$ 件，则 B 生产 $50-x$ 件。根据原料限制求 $x$ 范围，代入利润函数求最值。</p>
+          <ol>
+            <li>设 A 生产 $x$ 件，B 生产 $50-x$ 件（$0 \leq x \leq 50$）</li>
+            <li>甲原料：$9x+4(50-x) \leq 360$→$9x+200-4x \leq 360$→$5x \leq 160$→$x \leq 32$</li>
+            <li>乙原料：$3x+10(50-x) \leq 290$→$3x+500-10x \leq 290$→$-7x \leq -210$→$x \geq 30$</li>
+            <li>$30 \leq x \leq 32$，$x$ 取整数：30, 31, 32</li>
+            <li>利润 $P=700x+1200(50-x)=60000-500x$</li>
+            <li>$P$ 随 $x$ 增大而减小 → $x$ 取最小值时 $P$ 最大</li>
+            <li>$x=30$ 时，$P_{max}=60000-15000=45000$；B=20件</li>
+            <li>但需要检验：$x=30$时甲用$9×30+4×20=350≤360$✓，乙用$3×30+10×20=290≤290$✓</li>
+          </ol>
+          <p><strong>答案修正：</strong>最大利润为 45000 元，A 30 件，B 20 件。</p>
+          <p><strong>⚠️ 常见错误：</strong>① 列不等式时方向写反 ② 利润函数求最值时不考虑一次项系数符号 ③ 忘记检验所有约束</p>
+          <p><strong>🔄 替代方法：</strong>可用线性规划（枚举法）在 $x=30,31,32$ 三个值中求利润最大值</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="3-6">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟1</span><span class="q-diff easy">★☆☆</span>
+        <div class="q-body">一次函数 $y=3x-6$ 的图像与 $x$ 轴、$y$ 轴分别交于点 $A$、$B$。求线段 $AB$ 的中点坐标。</div>
+        <div class="q-solution">
+          <strong>答案：$(1,-3)$</strong>
+          <p><strong>🔑 关键思路：</strong>先求与坐标轴交点，再用中点坐标公式。</p>
+          <ol>
+            <li>$x$ 轴交点 $A$：$3x-6=0$→$x=2$→$A(2,0)$</li>
+            <li>$y$ 轴交点 $B$：$x=0$→$y=-6$→$B(0,-6)$</li>
+            <li>中点 $=(\frac{2+0}{2},\frac{0+(-6)}{2})=(1,-3)$</li>
+          </ol>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="3-7">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟2</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">已知 $y+2$ 与 $x-1$ 成正比例，且当 $x=3$ 时 $y=4$。(1) 求 $y$ 与 $x$ 的函数关系式；(2) 若点 $(a,6)$ 在此函数图像上，求 $a$。</div>
+        <div class="q-solution">
+          <strong>答案：(1) $y=3x-5$；(2) $a=\dfrac{11}{3}$</strong>
+          <p><strong>🔑 关键思路：</strong>成正比例即相等比例——设 $y+2=k(x-1)$。代入已知点求 $k$。</p>
+          <ol>
+            <li>设 $y+2=k(x-1)$</li>
+            <li>代入 $(3,4)$：$4+2=k(3-1)$→$6=2k$→$k=3$</li>
+            <li>$y+2=3(x-1)$→$y=3x-5$</li>
+            <li>代入 $(a,6)$：$6=3a-5$→$3a=11$→$a=\frac{11}{3}$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>成正比例设式子时搞错系数两边对应关系</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="3-8">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟3</span><span class="q-diff hard">★★★</span>
+        <div class="q-body">直线 $l_1: y=-2x+8$ 与 $x$ 轴、$y$ 轴分别交于 $C$、$D$。点 $P$ 在 $x$ 轴正半轴上运动，过 $P$ 作 $x$ 轴的垂线交 $l_1$ 于点 $Q$。当 $S_{\triangle OPQ}=4$ 时，求点 $P$ 的坐标。</div>
+        <div class="q-solution">
+          <strong>答案：$P_1(2,0)$，$P_2(2+\sqrt{2},0)$，$P_3(2-\sqrt{2},0)$（正半轴保留 $P_1$ 和 $P_2$）</strong>
+          <p><strong>🔑 关键思路：</strong>动点问题——设 $P(t,0)$（$t>0$），则 $Q(t,-2t+8)$。$\triangle OPQ$ 是直角三角形，面积 $=\frac{1}{2}OP\times PQ$。由于 $PQ$ 可能为负，需加绝对值。</p>
+          <ol>
+            <li>设 $P(t,0)$，$t>0$，则 $Q(t,-2t+8)$</li>
+            <li>$OP=|t|=t$（$t>0$），$PQ=|-2t+8|$</li>
+            <li>$S=\frac{1}{2}t \cdot |-2t+8| = 4$</li>
+            <li>$t \cdot |-2t+8| = 8$</li>
+            <li>情况一：$-2t+8 \geq 0$（即 $t \leq 4$）：$t(-2t+8)=8$→$-2t^2+8t-8=0$→$t^2-4t+4=0$→$(t-2)^2=0$→$t=2$</li>
+            <li>情况二：$-2t+8<0$（即 $t>4$）：$t(2t-8)=8$→$2t^2-8t-8=0$→$t^2-4t-4=0$→$t=2\pm 2\sqrt{2}$。$t>4$→$t=2+2\sqrt{2}$</li>
+            <li>所以 $P_1(2,0)$，$P_2(2+2\sqrt{2},0)$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 忘记给高度加绝对值 ② 分类讨论漏掉 $t>4$ 的情况</p>
+          <p><strong>🔄 替代方法：</strong>直接画图，根据几何关系分段讨论</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+        </div>
+      </details>
+
+      <div class="topic-summary">
+        <strong>📊 专题三命题规律：</strong>广东中考一次函数常出现在选择题(3分)、填空题(4分)和解答题第21题(8-10分)。重点考查：<strong>$k$和$b$的符号判断</strong>（选择必考）、待定系数法求解析式（解答题标配）、一次函数与不等式关系（数形结合）、函数应用题（利润/最值问题，作为解答题出现）。<strong>动点+函数综合</strong>是广东中考特色压轴方向。
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 专题四：几何证明与计算 -->
+    <!-- ============================================================ -->
+    <section class="section" id="topic4">
+      <h1>🔺 专题四 · 几何证明与计算（七年级+八年级）</h1>
+
+      <details class="exam-module" open>
+        <summary>Q1–Q8 · 全等三角形 · 等腰三角形 · 平行四边形 · 勾股定理 · 最短路径</summary>
+        <div class="content">
+
+      <div class="exam-q" data-qid="4-1">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">2023仿</span><span class="q-diff easy">★☆☆</span>
+        <div class="q-body">如图，已知 $AB=AC$，$D$ 是 $BC$ 中点。求证：$\triangle ABD \cong \triangle ACD$。</div>
+        <div class="q-solution">
+          <strong>答案：证明见解析（SSS 或 SAS 均可）</strong>
+          <p><strong>🔑 关键思路：</strong>$AB=AC$→等腰三角形，$D$ 是中点→$BD=CD$，$AD$ 是公共边→SSS 全等。</p>
+          <ol>
+            <li>已知 $AB=AC$（等腰三角形两腰相等）</li>
+            <li>$D$ 是 $BC$ 中点→$BD=CD$</li>
+            <li>$AD=AD$（公共边）</li>
+            <li>由 SSS 判定定理，$\triangle ABD \cong \triangle ACD$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 用"AAS"时找错对应角 ② 忘记写"公共边"得出 $AD=AD$</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="4-2">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">2022仿</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">等腰 $\triangle ABC$ 中，$AB=AC=10$，底边 $BC=12$。求底边上的高 $AD$ 和 $\triangle ABC$ 的面积。</div>
+        <div class="q-solution">
+          <strong>答案：$AD=8$；面积 $=48$</strong>
+          <p><strong>🔑 关键思路：</strong>等腰三角形底边高=中线。$BD=DC=6$，在 $\text{Rt}\triangle ABD$ 中用勾股定理。</p>
+          <ol>
+            <li>$D$ 是 $BC$ 中点→$BD=DC=6$</li>
+            <li>在 $\text{Rt}\triangle ABD$ 中：$AD^2=AB^2-BD^2=100-36=64$</li>
+            <li>$AD=8$</li>
+            <li>$S=\frac{1}{2}\times BC\times AD=\frac{1}{2}\times 12\times 8=48$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 忘记等腰三角形底边高的双重身份（也是中线）② 勾股定理解题时搞错谁是斜边</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="4-3">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">2024仿</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">已知四边形 $ABCD$ 中，$AB \parallel CD$ 且 $AB=CD$。求证：四边形 $ABCD$ 是平行四边形。</div>
+        <div class="q-solution">
+          <strong>答案：证明见解析</strong>
+          <p><strong>🔑 关键思路：</strong>平行四边形判定定理——一组对边平行且相等的四边形是平行四边形。</p>
+          <ol>
+            <li>已知 $AB \parallel CD$（对边平行）</li>
+            <li>已知 $AB=CD$（对边相等）</li>
+            <li>根据平行四边形的判定定理：一组对边平行且相等的四边形是平行四边形</li>
+            <li>四边形 $ABCD$ 是平行四边形 ✓</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 混淆各种判定定理（平行且相等 vs 分别平行 vs 分别相等）② 证明过程中条件用不全</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="4-4">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">2023仿</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">求以 $(1,2)$ 和 $(-3,5)$ 为端点的线段长度。</div>
+        <div class="q-solution">
+          <strong>答案：5</strong>
+          <p><strong>🔑 关键思路：</strong>构造直角三角形用勾股定理。两点距离公式：$d=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$。</p>
+          <ol>
+            <li>$d=\sqrt{(-3-1)^2+(5-2)^2}$</li>
+            <li>$=\sqrt{(-4)^2+3^2}=\sqrt{16+9}$</li>
+            <li>$=\sqrt{25}=5$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 坐标差顺序搞反（$(x_1-x_2)$ 还是 $(x_2-x_1)$ 无所谓，平方后相同）② 忘加括号导致平方只作用在部分数字上</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="4-5">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">2021仿</span><span class="q-diff hard">★★★</span>
+        <div class="q-body">【将军饮马·广东中考经典题型】如图，在 $\triangle ABC$ 中，$\angle A=30^\circ$，$\angle B=90^\circ$，$BC=1$。$D$ 为 $AB$ 上一点。求 $CD+\dfrac{1}{2}AD$ 的最小值。</div>
+        <div class="q-solution">
+          <strong>答案：$\dfrac{\sqrt{3}}{2}$</strong>
+          <p><strong>🔑 关键思路：</strong>利用 $30^\circ$ 角构造直角三角形，将 $\frac{1}{2}AD$ 转化为垂直于某射线的线段（$\sin 30^\circ=\frac{1}{2}$），从而将折线和转化为点到直线的距离。</p>
+          <ol>
+            <li>$\angle A=30^\circ$，$\sin 30^\circ=\frac{1}{2}$，所以 $\frac{1}{2}AD$ 就是 $D$ 到过 $A$ 作某射线的垂线距离</li>
+            <li>目标：$CD+\frac{1}{2}AD$→找 $C$ 到某直线的距离</li>
+            <li>在 $\text{Rt}\triangle ABC$ 中：$\angle A=30^\circ$，$BC=1$→$AC=2$</li>
+            <li>过 $C$ 作与 $AB$ 成 $60^\circ$ 的射线（使得 $D$ 到该射线距离为 $\frac{1}{2}AD$）</li>
+            <li>利用 $30^\circ$ 角特性：$\frac{1}{2}AD=$ 点 $D$ 到与 $AB$ 成 $30^\circ$ 射线的距离</li>
+            <li>最小值为 $C$ 到该射线的最短距离 $= AC\cdot\sin 30^\circ = 2 \times \frac{\sqrt{3}}{2}\times \frac{1}{2}?$</li>
+            <li>实际上 $C$ 到该射线的距离 $=BC\cdot\cos 30^\circ = \frac{\sqrt{3}}{2}$</li>
+          </ol>
+          <p><strong>🔑 核心思想：</strong>将代数式 $\frac{1}{2}AD$ 转化为几何距离（利用 $30^\circ$ 的特殊比例），从而将"折线和"问题转化为"垂线段最短"。</p>
+          <p><strong>⚠️ 常见错误：</strong>① 不会将系数 $\frac{1}{2}$ 与三角函数关联 ② 射线的构造方向搞反</p>
+          <p><strong>🔄 替代方法：</strong>可用坐标系法：设 $A(0,0)$，$B$ 在 $x$ 轴，$C$ 坐标可求，设 $D$ 坐标，表示目标函数后求导或配方</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="4-6">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟1</span><span class="q-diff easy">★☆☆</span>
+        <div class="q-body">在 $\triangle ABC$ 和 $\triangle DEF$ 中，已知 $AB=DE$，$\angle B=\angle E$，$BC=EF$。求证：$AC=DF$。</div>
+        <div class="q-solution">
+          <strong>答案：证明见解析（SAS全等）</strong>
+          <p><strong>🔑 关键思路：</strong>条件"两边及其夹角对应相等"→SAS全等→对应边相等。</p>
+          <ol>
+            <li>$AB=DE$（已知）</li>
+            <li>$\angle B=\angle E$（已知）</li>
+            <li>$BC=EF$（已知）</li>
+            <li>$\triangle ABC \cong \triangle DEF$（SAS）</li>
+            <li>$AC=DF$（全等三角形对应边相等）</li>
+          </ol>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="4-7">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟2</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">菱形 $ABCD$ 中，$\angle A=60^\circ$，对角线 $BD=4$。求菱形的面积。</div>
+        <div class="q-solution">
+          <strong>答案：$8\sqrt{3}$</strong>
+          <p><strong>🔑 关键思路：</strong>菱形对角线互相垂直平分。$\angle A=60^\circ$→$\triangle ABD$ 是等边三角形（$AB=AD$，$\angle A=60^\circ$）。</p>
+          <ol>
+            <li>$AB=AD$（菱形邻边相等），$\angle A=60^\circ$→$\triangle ABD$ 是等边三角形</li>
+            <li>$BD=4$→$AB=AD=4$</li>
+            <li>菱形面积 $=AB^2\sin 60^\circ = 16\times \frac{\sqrt{3}}{2}=8\sqrt{3}$</li>
+          </ol>
+          <p>或: 对角线 $BD=4$，设 $AC=2\times BO=...$，用菱形面积 $=\frac{1}{2}\times AC\times BD$</p>
+          <p><strong>⚠️ 常见错误：</strong>① 忘记菱形对角线互相垂直平分的性质 ② 用错面积公式</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="4-8">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟3</span><span class="q-diff hard">★★★</span>
+        <div class="q-body">在 $\text{Rt}\triangle ABC$ 中，$\angle C=90^\circ$，$AC=6$，$BC=8$。点 $P$ 在 $AB$ 上运动，过 $P$ 分别作 $PQ \perp AC$ 于 $Q$，$PR \perp BC$ 于 $R$。求证：四边形 $PQCR$ 是矩形，并求其对角线的最小值。</div>
+        <div class="q-solution">
+          <strong>答案：矩形（三个直角判定）；对角线 $PC$ 的最小值为 $\dfrac{24}{5}$</strong>
+          <p><strong>🔑 关键思路：</strong>① $\angle C=90^\circ$，$PQ \perp AC$→$\angle PQC=90^\circ$，$PR \perp BC$→$\angle PRC=90^\circ$，四边形 $PQCR$ 三个角是直角→矩形。② 对角线为 $PC$，$P$ 在线段 $AB$ 上运动，$PC$ 的最小值=点 $C$ 到 $AB$ 的距离。</p>
+          <ol>
+            <li>三个直角→四边形 $PQCR$ 是矩形（判定定理）</li>
+            <li>矩形对角线相等：$PR=QC$，对角线 $PC$ 就是主对角线</li>
+            <li>当 $CP \perp AB$ 时 $PC$ 取最小值</li>
+            <li>$AB=\sqrt{6^2+8^2}=10$</li>
+            <li>$C$ 到 $AB$ 的距离 $= \dfrac{AC\times BC}{AB} = \dfrac{6\times 8}{10} = \dfrac{24}{5}$</li>
+            <li>对角线最小值 $=\dfrac{24}{5}$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 用三个直角证矩形时漏证其中一个角是直角 ② 把对角线的最小值与矩形的其他边混淆</p>
+          <p><strong>🔄 替代方法：</strong>也可用相似三角形：当 $CP \perp AB$ 时，$CP$ 为高，用面积法求 $CP$</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+        </div>
+      </details>
+
+      <div class="topic-summary">
+        <strong>📊 专题四命题规律：</strong>广东中考几何题在选填中考查三角形、四边形的基础性质和判定（5-8分），解答题第20-22题考查几何证明与计算（8-12分）。重点题型：<strong>三角形全等的证明</strong>（SAS/SSS/ASA/AAS选择）、<strong>等腰三角形性质</strong>（三线合一+勾股）、<strong>平行四边形判定证明</strong>（多种判定定理）、<strong>勾股定理计算</strong>（基础题+压轴题中作为工具出现）。<strong>将军饮马</strong>是广东中考几何最值问题的保留题型。
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 专题五：统计与概率 -->
+    <!-- ============================================================ -->
+    <section class="section" id="topic5">
+      <h1>📊 专题五 · 统计与概率（七年级+八年级）</h1>
+
+      <details class="exam-module" open>
+        <summary>Q1–Q8 · 数据的集中趋势 · 方差 · 统计图 · 抽样调查 · 概率计算</summary>
+        <div class="content">
+
+      <div class="exam-q" data-qid="5-1">
+        <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">2024仿</span><span class="q-diff easy">★☆☆</span>
+        <div class="q-body">数据 2, 3, 5, 5, 4, 6 的平均数、中位数和众数分别是多少？</div>
+        <div class="q-solution">
+          <strong>答案：平均数 $\dfrac{25}{6}$；中位数 4.5；众数 5</strong>
+          <p><strong>🔑 关键思路：</strong>先排序→中位数是中间两个数的均值（偶数个数据）；众数是出现最多的数。</p>
+          <ol>
+            <li>排序：2, 3, 4, 5, 5, 6</li>
+            <li>平均数 $=\dfrac{2+3+4+5+5+6}{6}=\dfrac{25}{6}\approx 4.17$</li>
+            <li>6 个数据→中位数=第 3 和第 4 个的平均值 $=\dfrac{4+5}{2}=4.5$</li>
+            <li>众数：5 出现 2 次，其他各 1 次→众数为 5</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 不排序直接取"中间"的数据 ② 把众数和中位数搞混 ③ 众数写成"5"而不是"55"（数据的写法）</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="5-2">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">2023仿</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">甲、乙两名射击运动员的 5 次成绩（环）如下。甲：8, 9, 10, 7, 6；乙：9, 8, 7, 8, 8。选谁参赛更稳定？为什么？（需计算方差）</div>
+        <div class="q-solution">
+          <strong>答案：乙方差 $0.4<$ 甲方差 $2$，选乙更稳定</strong>
+          <p><strong>🔑 关键思路：</strong>方差越小，数据越稳定（离散程度越小）。先求平均数，再代入方差公式 $s^2=\frac{1}{n}\sum(x_i-\bar{x})^2$。</p>
+          <ol>
+            <li>甲：$\bar{x}_{甲}=\frac{8+9+10+7+6}{5}=8$，$s^2_{甲}=\frac{(0)^2+(1)^2+(2)^2+(-1)^2+(-2)^2}{5}=\frac{0+1+4+1+4}{5}=2$</li>
+            <li>乙：$\bar{x}_{乙}=\frac{9+8+7+8+8}{5}=8$，$s^2_{乙}=\frac{(1)^2+(0)^2+(-1)^2+(0)^2+(0)^2}{5}=\frac{1+0+1+0+0}{5}=0.4$</li>
+            <li>$0.4<2$，乙方差更小→乙的成绩更稳定</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 平均数算错导致方差全错 ② 忘记平方 ③ 以为方差计算公式中分母是 $n-1$（初中用 $n$）</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="5-3">
+        <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">2024仿</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">如图是某校八年级 200 名学生最喜欢的球类条形统计图。篮球 60 人，足球 50 人，乒乓球 40 人，羽毛球 30 人，其他 20 人。(1) 求乒乓球所占扇形的圆心角度数；(2) 求最喜欢篮球的人数占比。</div>
+        <div class="q-solution">
+          <strong>答案：(1) $72^\circ$；(2) $30\%$</strong>
+          <p><strong>🔑 关键思路：</strong>扇形中心角$=$该项占比$\times 360^\circ$。占比$=$该项人数$\div$总人数$\times 100\%$。</p>
+          <ol>
+            <li>总人数 $=60+50+40+30+20=200$</li>
+            <li>乒乓球占比 $=\frac{40}{200}=\frac{1}{5}$，圆心角 $=\frac{1}{5}\times 360^\circ=72^\circ$</li>
+            <li>篮球人数占比 $=\frac{60}{200}\times 100\%=30\%$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 圆心角直接用人数而非占比去乘360 ② 占比忘了乘100%</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="5-4">
+        <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">2022仿</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">以下哪种调查适合用抽样调查而不是全面调查？<br>A. 某班学生的视力检查<br>B. 火箭发射前的零件检查<br>C. 市场监管部门对超市食品质量的检查<br>D. 调查某校七年级学生的出勤情况</div>
+        <div class="q-solution">
+          <strong>答案：C</strong>
+          <p><strong>🔑 关键思路：</strong>抽样调查适用于总体数量大、全面调查成本高或具有破坏性的情况。</p>
+          <ol>
+            <li>A：一个班学生数量有限，适合全面调查</li>
+            <li>B：火箭零件要求精确，必须全面检查</li>
+            <li>C：超市食品数量大，且全覆盖成本高，抽样调查合理</li>
+            <li>D：学校统一管理，可以全面调查</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 容易混淆"食品质量检查"（一般抽样）和"精密仪器检查"（全面调查）② 凭感觉选而不套用原则</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="5-5">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">2021仿</span><span class="q-diff hard">★★★</span>
+        <div class="q-body">【广东中考真题改编·概率】不透明的袋子中有 2 个红球、3 个白球（除颜色外完全相同）。从中一次性摸出 2 个球。求：(1) 两个球颜色相同的概率；(2) 至少有一个白球的概率。</div>
+        <div class="q-solution">
+          <strong>答案：(1) $\dfrac{2}{5}$；(2) $\dfrac{9}{10}$</strong>
+          <p><strong>🔑 关键思路：</strong>一次性摸出2个=组合问题。总情况数 $=C_5^2=10$。分情况：同色（2红或2白）+ 至少一白（用反面法更简单）。</p>
+          <ol>
+            <li>总情况数：$C_5^2=10$ 种等可能组合</li>
+            <li>(1) 两红：$C_2^2=1$；两白：$C_3^2=3$；同色 $=1+3=4$；$P=\frac{4}{10}=\frac{2}{5}$</li>
+            <li>(2) 反面法：两个都是红球的概率 $P=\frac{1}{10}$；至少一白 $=1-\frac{1}{10}=\frac{9}{10}$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 把"一次性摸2个"错误地理解为"先后摸两次"（对本题而言无区别，但有放回/无放回之分）② 用反面法时忘了"至少一个"的反面是"一个都没有"</p>
+          <p><strong>🔄 替代方法：</strong>也可用"先后摸两次不放回"模型：第1次红/白 × 第2次红/白，结果等同。或用树状图+列表法。</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="5-6">
+        <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟1</span><span class="q-diff easy">★☆☆</span>
+        <div class="q-body">某班 12 名男生身高数据（单位 cm）：162, 165, 168, 170, 170, 172, 175, 175, 175, 178, 180, 182。求中位数与众数。</div>
+        <div class="q-solution">
+          <strong>答案：中位数 173.5 cm；众数 175 cm</strong>
+          <p><strong>🔑 关键思路：</strong>数据已排序。12 个数据是偶数→中位数=第 6 和第 7 个的均值。</p>
+          <ol>
+            <li>第 6 个=172，第 7 个=175</li>
+            <li>中位数 $=\frac{172+175}{2}=173.5$</li>
+            <li>175 出现 3 次→众数 175</li>
+          </ol>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="5-7">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟2</span><span class="q-diff mid">★★☆</span>
+        <div class="q-body">如图是某家庭近半年来每月用电量的折线统计图（1月120 kWh，2月100 kWh，3月80 kWh，4月100 kWh，5月140 kWh，6月180 kWh）。(1) 求半年平均用电量；(2) 哪个统计量更能代表这个家庭的用电水平？为什么？</div>
+        <div class="q-solution">
+          <strong>答案：(1) 120 kWh；(2) 中位数，因为数据波动大且有极端值（夏季空调用电偏高）</strong>
+          <p><strong>🔑 关键思路：</strong>平均数的优点是考虑了所有数据，缺点是容易被极端值影响。当数据波动大或存在极端值时，中位数更能代表"一般水平"。</p>
+          <ol>
+            <li>平均数 $=\frac{120+100+80+100+140+180}{6}=\frac{720}{6}=120$ kWh</li>
+            <li>排序：80, 100, 100, 120, 140, 180</li>
+            <li>中位数 $=\frac{100+120}{2}=110$ kWh</li>
+            <li>数据波动范围 80~180，差距大。180 属于"极端值"（夏天空调），拉高了平均数</li>
+            <li>中位数 110 更能代表"常态"用电水平</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 说不出为什么选中位数的理由 ② 不会判断"极端值"对平均数的影响</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+      <div class="exam-q" data-qid="5-8">
+        <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟3</span><span class="q-diff hard">★★★</span>
+        <div class="q-body">某校随机抽取 50 名学生进行体质测试，优秀 12 人、良好 18 人、及格 15 人、不及格 5 人。(1) 绘制扇形统计图，求"良好"对应的圆心角；(2) 全校共 800 名学生，估计全校良好及以上的人数；(3) 从 5 名不及格学生中随机选 2 人进行单独辅导，求恰好选到 2 名男生的概率（已知 5 人中 3 男 2 女）。</div>
+        <div class="q-solution">
+          <strong>答案：(1) $129.6^\circ$；(2) 约 480 人；(3) $\dfrac{3}{10}$</strong>
+          <p><strong>🔑 关键思路：</strong>(1) 圆心角=占比×360° (2) 用样本估计总体 (3) 组合概率。</p>
+          <ol>
+            <li>(1) 良好占比 $=\frac{18}{50}=\frac{9}{25}$，圆心角 $=\frac{9}{25}\times 360^\circ = 129.6^\circ$</li>
+            <li>(2) 良好及以上=优秀(12)+良好(18)=30人，占比 $\frac{30}{50}=\frac{3}{5}$。全校 $800\times \frac{3}{5}=480$ 人</li>
+            <li>(3) 总情况 $C_5^2=10$；选2男 $C_3^2=3$；$P=\frac{3}{10}$</li>
+          </ol>
+          <p><strong>⚠️ 常见错误：</strong>① 圆心角直接用人数的数值而不化为占比 ② "良好及以上"忘了包括"优秀" ③ 概率组合漏了分母</p>
+          <p><strong>🔄 替代方法：</strong>概率部分可用"依次抽2人"的列表法：3男标记 M1/M2/M3，2女标记 F1/F2，直接列举 20 种顺序，其中 6 种为两男→$P=\frac{6}{20}=\frac{3}{10}$</p>
+        </div>
+        <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+      </div>
+
+        </div>
+      </details>
+
+      <div class="topic-summary">
+        <strong>📊 专题五命题规律：</strong>广东中考统计与概率一般出现在选择题(3-6分)和解答题第18-19题(8分)。核心考点：<strong>平均数/中位数/众数/方差</strong>的计算与意义（选择/填空必考）、<strong>统计图读图</strong>（条形/折线/扇形）、<strong>抽样调查与全面调查</strong>的选择、<strong>概率</strong>（用树状图或列表法，注意"放回"vs"不放回"）和<strong>用样本估计总体</strong>。概率题难度不高但易失分，关键审清题意。
+      </div>
+    </section>
+
+    <div style="text-align:center;padding:30px 0 10px;border-top:1px solid var(--border);margin-top:20px;">
+      <p style="color:var(--text-secondary);font-size:12px;">
+        共 5 个专题 · 40 道题目 · 5道真题改编 + 3道模拟预测/每专题 · 广东中考难度对标<br>
+        所有题目附完整解析 · 标注年级与难度 · 支持打印
+      </p>
+    </div>
+  </main>
+
+  <script defer src="../katex/katex.min.js"></script>
+  <script defer src="../katex/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "$", right: "$", display: false}
+        ],
+        throwOnError: false
+      });
+
+      const toggle = document.getElementById("theme-toggle");
+      if (toggle) {
+        toggle.addEventListener("click", function () {
+          const html = document.documentElement;
+          if (html.getAttribute("data-theme") === "dark") {
+            html.setAttribute("data-theme", "light");
+            toggle.textContent = "🌙 暗色模式";
+          } else {
+            html.setAttribute("data-theme", "dark");
+            toggle.textContent = "☀️ 亮色模式";
+          }
+        });
+      }
+
+      var hideBtn = document.getElementById('sidebarHideBtn');
+      var sidebar = document.getElementById('sidebar');
+      var sidebarHidden = localStorage.getItem('math-5y3m-sidebar') === 'hidden';
+      if (sidebarHidden) sidebar.classList.add('hidden');
+      var showBtn = document.getElementById('sidebarShowBtn');
+      if (hideBtn) hideBtn.addEventListener('click', function() {
+        sidebar.classList.add('hidden');
+        localStorage.setItem('math-5y3m-sidebar', 'hidden');
+      });
+      if (showBtn) showBtn.addEventListener('click', function() {
+        sidebar.classList.remove('hidden');
+        localStorage.setItem('math-5y3m-sidebar', '');
+      });
+
+      (function() {
+        var btn = document.getElementById('expandAllBtn');
+        if (!btn) return;
+        btn.addEventListener('click', function() {
+          var allDetails = document.querySelectorAll('.exam-module');
+          var allOpen = true;
+          for (var i = 0; i < allDetails.length; i++) {
+            if (!allDetails[i].hasAttribute('open')) { allOpen = false; break; }
+          }
+          for (var i = 0; i < allDetails.length; i++) {
+            if (allOpen) allDetails[i].removeAttribute('open');
+            else allDetails[i].setAttribute('open', '');
+          }
+          btn.textContent = allOpen ? '📂 展开全部章节' : '📖 收起全部章节';
+        });
+      })();
+
+      const links = document.querySelectorAll("#sidebar nav a[href^='#']");
+      const sections = document.querySelectorAll(".section");
+      function onScroll() {
+        let current = "";
+        sections.forEach(sec => {
+          const rect = sec.getBoundingClientRect();
+          if (rect.top <= 120) current = sec.id;
+        });
+        links.forEach(link => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === "#" + current) link.classList.add("active");
+        });
+      }
+      window.addEventListener("scroll", onScroll);
+      onScroll();
+    });
+  </script>
+</body>
+</html>

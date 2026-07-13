@@ -564,9 +564,36 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
   <details class="exam-module">
     <summary>🎯 中考真题精选（三角形 · 近年典型）</summary>
     <div class="content">
-      <div class="exam-q"><span class="q-tag">2023北京</span><div class="q-diff easy">★☆☆</div><div class="q-body">下列各组线段中，能组成三角形的是（ ）<br>A. 1, 2, 3 &nbsp; B. 2, 3, 5 &nbsp; C. 3, 4, 8 &nbsp; D. 4, 5, 6</div><div class="q-solution"><strong>答案：D</strong>。A: 1+2=3（等于，不能），B: 2+3=5（等于），C: 3+4=7<8，D: 4+5=9>6 ✓。</div></div>
-      <div class="exam-q"><span class="q-tag">2022广州</span><div class="q-diff mid">★★☆</div><div class="q-body">一个 n 边形的内角和是 $900°$，则 $n =$ ____。</div><div class="q-solution"><strong>答案：7</strong>。$(n-2)×180°=900°$，$n-2=5$，$n=7$。</div></div>
-      <div class="exam-q"><span class="q-tag">2023杭州</span><div class="q-diff hard">★★★</div><div class="q-body">如图，在 $\triangle ABC$ 中，$\angle A = 50°$，$\angle B = 60°$，则 $\angle ACD$ 的度数为____。</div><div class="diagram"><svg width="180" height="130" viewBox="0 0 180 130"><polygon points="90,10 20,110 160,110" fill="none" stroke="#4f46e5" stroke-width="2"/><line x1="160" y1="110" x2="175" y2="110" stroke="#dc2626" stroke-width="1.5"/><text x="86" y="25" font-size="12" fill="#4f46e5">A</text><text x="8" y="122" font-size="12" fill="#4f46e5">B</text><text x="160" y="122" font-size="12" fill="#4f46e5">C</text><text x="176" y="114" font-size="11" fill="#dc2626">D</text><path d="M 50,100 Q 60,112 70,100" fill="none" stroke="#f59e0b" stroke-width="1.5"/><text x="55" y="98" font-size="11" fill="#f59e0b">50°</text><path d="M 130,100 Q 140,112 150,100" fill="none" stroke="#f59e0b" stroke-width="1.5"/><text x="140" y="98" font-size="11" fill="#f59e0b">60°</text></svg></div><div class="q-solution"><strong>答案：$110°$</strong>。外角 = 不相邻两内角之和 = $50°+60°=110°$。</div></div>
+      <div class="exam-q"><span class="q-tag">2023北京</span><div class="q-diff easy">★☆☆</div><div class="q-body">下列各组线段中，能组成三角形的是（ ）<br>A. 1, 2, 3 &nbsp; B. 2, 3, 5 &nbsp; C. 3, 4, 8 &nbsp; D. 4, 5, 6</div><div class="q-solution"><strong>答案：D</strong>
+  <p><strong>🔑 关键思路：</strong>判断三线段能否构成三角形，只需验证<strong>最短两边之和是否大于最长边</strong>——这是必要条件也是充分条件。</p>
+  <ol>
+    <li><strong>排序识别最长边：</strong>每组数从小到大排列，找出最长边。A: 1,2,3；B: 2,3,5；C: 3,4,8；D: 4,5,6。</li>
+    <li><strong>验证最短两边之和：</strong>A: 1+2=3（等于最长边，不能构成）；B: 2+3=5（等于最长边，不能）；C: 3+4=7<8（小于最长边，不能）；D: 4+5=9>6 ✓。</li>
+  </ol>
+</div></div>
+      <div class="exam-q"><span class="q-tag">2022广州</span><div class="q-diff mid">★★☆</div><div class="q-body">一个 n 边形的内角和是 $900°$，则 $n =$ ____。</div><div class="q-solution"><strong>答案：7</strong>
+  <p><strong>🔑 关键思路：</strong>利用 n 边形内角和公式 $(n-2)\times180°$ 反解边数，注意公式中是 $(n-2)$ 而非 $n$。</p>
+  <ol>
+    <li><strong>列方程：</strong>$(n-2)\times180°=900°$。</li>
+    <li><strong>两边除以 $180°$：</strong>$n-2=900°\div180°=5$。</li>
+    <li><strong>解出 $n$：</strong>$n=5+2=7$。</li>
+    <li><strong>验证：</strong>七边形内角和 $=(7-2)\times180°=5\times180°=900°$ ✓。</li>
+  </ol>
+  <p><strong>⚠️ 常见错误：</strong>忘记加回2，直接用 $900°\div180°=5$ 答 $n=5$。公式是 $(n-2)\times180°$，$n-2=5$ → $n=7$，不是 $n=5$。</p>
+</div></div>
+      <div class="exam-q"><span class="q-tag">2023杭州</span><div class="q-diff hard">★★★</div><div class="q-body">如图，在 $\triangle ABC$ 中，$\angle A = 50°$，$\angle B = 60°$，则 $\angle ACD$ 的度数为____。</div><div class="diagram"><svg width="180" height="130" viewBox="0 0 180 130"><polygon points="90,10 20,110 160,110" fill="none" stroke="#4f46e5" stroke-width="2"/><line x1="160" y1="110" x2="175" y2="110" stroke="#dc2626" stroke-width="1.5"/><text x="86" y="25" font-size="12" fill="#4f46e5">A</text><text x="8" y="122" font-size="12" fill="#4f46e5">B</text><text x="160" y="122" font-size="12" fill="#4f46e5">C</text><text x="176" y="114" font-size="11" fill="#dc2626">D</text><path d="M 50,100 Q 60,112 70,100" fill="none" stroke="#f59e0b" stroke-width="1.5"/><text x="55" y="98" font-size="11" fill="#f59e0b">50°</text><path d="M 130,100 Q 140,112 150,100" fill="none" stroke="#f59e0b" stroke-width="1.5"/><text x="140" y="98" font-size="11" fill="#f59e0b">60°</text></svg></div><div class="q-solution"><strong>答案：$110°$</strong>
+  <p><strong>🔑 关键思路：</strong>三角形的一个外角等于与它不相邻的两个内角之和。图中 $\angle ACD$ 是延长 BC 至 D 形成的外角，不相邻的内角是 $\angle A$ 和 $\angle B$。</p>
+  <ol>
+    <li><strong>识别外角：</strong>图中 BC 延长至 D，$\angle ACD$ 是 $\triangle ABC$ 在顶点 C 处的外角。</li>
+    <li><strong>确定不相邻内角：</strong>与 $\angle ACD$ 相邻的是 $\angle ACB$，不相邻的是 $\angle A=50°$ 和 $\angle B=60°$。</li>
+    <li><strong>应用外角定理：</strong>$\angle ACD=\angle A+\angle B=50°+60°=110°$。</li>
+    <li><strong>验证：</strong>由邻补角得 $\angle ACB=180°-110°=70°$，内角和 $50°+60°+70°=180°$ ✓。</li>
+  </ol>
+  <p><strong>🔄 替代方法：</strong>先用内角和求 $\angle ACB=180°-50°-60°=70°$，再用邻补角 $\angle ACD=180°-70°=110°$。外角定理更直接，一步到位。</p>
+  <p><strong>⚠️ 常见错误1：</strong>混淆"外角=不相邻两内角之和"与"邻补角=180°"，用 $180°-110°$ 去求不相邻内角——但题目并未给出 $110°$。</p>
+  <p><strong>⚠️ 常见错误2：</strong>外角定理漏加一个内角，写成 $\angle ACD=\angle A=50°$（只取了一个内角）。</p>
+  <p><strong>✅ 检验：</strong>内角和验证——$\angle A+\angle B+(\angle ACD的补角)=50°+60°+70°=180°$ ✓。</p>
+</div></div>
     </div>
   </details>
     <div class="checklist"><h3>✅ 本章自查清单</h3><label><span class="self-score">🔴→🟡→🟢</span>  能利用三边关系判断能否构成三角形</label><label><span class="self-score">🔴→🟡→🟢</span>  已知两边能求第三边取值范围</label><label><span class="self-score">🔴→🟡→🟢</span>  能灵活运用内外角关系求角度</label><label><span class="self-score">🔴→🟡→🟢</span>  会计算 n 边形的内角和与外角和</label><label><span class="self-score">🔴→🟡→🟢</span>  会计算多边形的对角线数量</label><p style="margin-top:14px;font-size:13px;color:var(--accent);padding:10px 0;border-top:1px dashed var(--border);"><strong>🗣 费曼挑战：</strong>用折纸或画图的方式，向同学解释"为什么三角形内角和是180°"和"为什么外角和永远是360°"。</p></div>
@@ -693,10 +720,44 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
   <details class="exam-module">
     <summary>🎯 中考真题精选（全等三角形 · 近年典型）</summary>
     <div class="content">
-      <div class="exam-q"><span class="q-tag">2023广州</span><div class="q-diff easy">★☆☆</div><div class="q-body">如图，$AB = AC$，$D$ 是 $BC$ 中点。求证：$\triangle ABD \cong \triangle ACD$。</div><div class="diagram"><svg width="180" height="140" viewBox="0 0 180 140"><polygon points="90,10 10,120 170,120" fill="none" stroke="#4f46e5" stroke-width="2"/><line x1="90" y1="10" x2="90" y2="120" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,3"/><text x="86" y="30" font-size="12" fill="#4f46e5">A</text><text x="2" y="135" font-size="12" fill="#4f46e5">B</text><text x="170" y="135" font-size="12" fill="#4f46e5">C</text><text x="93" y="135" font-size="12" fill="#dc2626">D</text></svg></div><div class="q-solution"><strong>证明：</strong>在△ABD和△ACD中，① AB=AC（已知），② BD=CD（中点定义），③ AD=AD（公共边）。SSS→△ABD≌△ACD。关键：公共边AD是隐含条件！</div></div>
-      <div class="exam-q"><span class="q-tag">2023北京</span><div class="q-diff mid">★★☆</div><div class="q-body">如图，$C$ 是线段 $AB$ 的中点，$CD = CE$，$\angle ACD = \angle BCE$。求证：$\triangle ACD \cong \triangle BCE$。</div><div class="diagram"><svg width="220" height="120" viewBox="0 0 220 120"><line x1="20" y1="60" x2="200" y2="60" stroke="#4f46e5" stroke-width="2"/><line x1="110" y1="60" x2="70" y2="20" stroke="#dc2626" stroke-width="1.5"/><line x1="110" y1="60" x2="150" y2="100" stroke="#dc2626" stroke-width="1.5"/><circle cx="110" cy="60" r="3" fill="#f59e0b"/><text x="10" y="55" font-size="11" fill="#4f46e5">A</text><text x="200" y="55" font-size="11" fill="#4f46e5">B</text><text x="113" y="55" font-size="11" fill="#f59e0b">C</text><text x="58" y="18" font-size="11" fill="#dc2626">D</text><text x="152" y="112" font-size="11" fill="#dc2626">E</text></svg></div><div class="q-solution"><strong>证明：</strong>隐含条件——C是中点→AC=BC。加上已知CD=CE, ∠ACD=∠BCE。SAS→△ACD≌△BCE。考点：中点带来的隐含条件！</div></div>
-      <div class="exam-q"><span class="q-tag">2022杭州</span><div class="q-diff mid">★★☆</div><div class="q-body">如图，$AB = DE$，$AC = DF$，$BE = CF$。求证：$\angle A = \angle D$。</div><div class="diagram"><svg width="180" height="120" viewBox="0 0 180 120"><polygon points="30,90 70,15 120,90" fill="none" stroke="#4f46e5" stroke-width="2"/><polygon points="60,30 100,15 150,50" fill="none" stroke="#4f46e5" stroke-width="2"/><text x="20" y="105" font-size="11" fill="#4f46e5">A</text><text x="68" y="12" font-size="11" fill="#4f46e5">B</text><text x="122" y="105" font-size="11" fill="#4f46e5">C</text><text x="48" y="28" font-size="11" fill="#dc2626">D</text><text x="98" y="12" font-size="11" fill="#dc2626">E</text><text x="152" y="48" font-size="11" fill="#dc2626">F</text></svg></div><div class="q-solution"><strong>证明：</strong>由BE=CF→BE+EC=CF+EC→BC=EF。加上AB=DE, AC=DF。SSS→△ABC≌△DEF→∠A=∠D。考点：利用公共部分转化边相等。</div></div>
-      <div class="exam-q"><span class="q-tag">2023重庆</span><div class="q-diff hard">★★★</div><div class="q-body">$\triangle ABC$ 中，$AD$ 是角平分线，$DE \perp AB$ 于 $E$，$DF \perp AC$ 于 $F$。求证：$DE = DF$。</div><div class="q-solution"><strong>证明：</strong>这是角平分线性质的直接应用——角平分线上的点到角两边的距离相等。用全等证也行：△ADE≌△ADF(AAS或HL)。</div></div>
+      <div class="exam-q"><span class="q-tag">2023广州</span><div class="q-diff easy">★☆☆</div><div class="q-body">如图，$AB = AC$，$D$ 是 $BC$ 中点。求证：$\triangle ABD \cong \triangle ACD$。</div><div class="diagram"><svg width="180" height="140" viewBox="0 0 180 140"><polygon points="90,10 10,120 170,120" fill="none" stroke="#4f46e5" stroke-width="2"/><line x1="90" y1="10" x2="90" y2="120" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,3"/><text x="86" y="30" font-size="12" fill="#4f46e5">A</text><text x="2" y="135" font-size="12" fill="#4f46e5">B</text><text x="170" y="135" font-size="12" fill="#4f46e5">C</text><text x="93" y="135" font-size="12" fill="#dc2626">D</text></svg></div><div class="q-solution"><strong>答案：SSS判定，$\triangle ABD \cong \triangle ACD$</strong>
+  <p><strong>🔑 关键思路：</strong>三边相等 → SSS。两个已知边（AB=AC，中点→BD=CD）加一个隐含条件（公共边AD）。全等证明先列三个条件，再写判定方法。</p>
+  <ol>
+    <li><strong>标注已知条件：</strong>在图中标出 $AB=AC$（用"\mark"），$D$ 是 $BC$ 中点 → $BD=CD$（用不同标记）。</li>
+    <li><strong>发现隐含条件：</strong>$AD$ 是 $\triangle ABD$ 和 $\triangle ACD$ 的公共边 → $AD=AD$。公共边是 SSS 证明中最常见的隐含条件。</li>
+    <li><strong>选择判定方法：</strong>三组边分别相等 → SSS。</li>
+  </ol>
+</div></div>
+      <div class="exam-q"><span class="q-tag">2023北京</span><div class="q-diff mid">★★☆</div><div class="q-body">如图，$C$ 是线段 $AB$ 的中点，$CD = CE$，$\angle ACD = \angle BCE$。求证：$\triangle ACD \cong \triangle BCE$。</div><div class="diagram"><svg width="220" height="120" viewBox="0 0 220 120"><line x1="20" y1="60" x2="200" y2="60" stroke="#4f46e5" stroke-width="2"/><line x1="110" y1="60" x2="70" y2="20" stroke="#dc2626" stroke-width="1.5"/><line x1="110" y1="60" x2="150" y2="100" stroke="#dc2626" stroke-width="1.5"/><circle cx="110" cy="60" r="3" fill="#f59e0b"/><text x="10" y="55" font-size="11" fill="#4f46e5">A</text><text x="200" y="55" font-size="11" fill="#4f46e5">B</text><text x="113" y="55" font-size="11" fill="#f59e0b">C</text><text x="58" y="18" font-size="11" fill="#dc2626">D</text><text x="152" y="112" font-size="11" fill="#dc2626">E</text></svg></div><div class="q-solution"><strong>答案：SAS判定，$\triangle ACD \cong \triangle BCE$</strong>
+  <p><strong>🔑 关键思路：</strong>两边一角 → 先确认角是夹角。已知 CD=CE（边1），∠ACD=∠BCE（夹角🎯），隐含 AC=BC（边2）→ SAS。</p>
+  <ol>
+    <li><strong>列出已知条件：</strong>$CD=CE$（已知），$\angle ACD=\angle BCE$（已知）。</li>
+    <li><strong>发掘隐含条件：</strong>$C$ 是 $AB$ 中点 → $AC=BC$。中点带来边相等是八年级最常考的隐含条件。</li>
+    <li><strong>确认角的位置：</strong>在 $\triangle ACD$ 中，$\angle ACD$ 是边 $AC$ 和 $CD$ 的夹角；在 $\triangle BCE$ 中，$\angle BCE$ 是边 $BC$ 和 $CE$ 的夹角。角是两边夹角 → SAS。</li>
+    <li><strong>书写证明：</strong>在 $\triangle ACD$ 和 $\triangle BCE$ 中，$AC=BC$（中点定义），$\angle ACD=\angle BCE$（已知），$CD=CE$（已知）。∴ $\triangle ACD \cong \triangle BCE$（SAS）。</li>
+  </ol>
+  <p><strong>⚠️ 常见错误：</strong>看到了"两边一角"就写 SAS，但没确认角是否是夹角。如果角不是夹角就是 SSA，不能判定全等。本题中 $\angle ACD$ 恰好在 $AC$ 和 $CD$ 之间，是标准的夹角。</p>
+</div></div>
+      <div class="exam-q"><span class="q-tag">2022杭州</span><div class="q-diff mid">★★☆</div><div class="q-body">如图，$AB = DE$，$AC = DF$，$BE = CF$。求证：$\angle A = \angle D$。</div><div class="diagram"><svg width="180" height="120" viewBox="0 0 180 120"><polygon points="30,90 70,15 120,90" fill="none" stroke="#4f46e5" stroke-width="2"/><polygon points="60,30 100,15 150,50" fill="none" stroke="#4f46e5" stroke-width="2"/><text x="20" y="105" font-size="11" fill="#4f46e5">A</text><text x="68" y="12" font-size="11" fill="#4f46e5">B</text><text x="122" y="105" font-size="11" fill="#4f46e5">C</text><text x="48" y="28" font-size="11" fill="#dc2626">D</text><text x="98" y="12" font-size="11" fill="#dc2626">E</text><text x="152" y="48" font-size="11" fill="#dc2626">F</text></svg></div><div class="q-solution"><strong>答案：SSS判定，$\triangle ABC \cong \triangle DEF$ → $\angle A = \angle D$</strong>
+  <p><strong>🔑 关键思路：</strong>已知三组线段相等但 BC 和 EF 不是直接给出的——需利用公共部分 $EC$ 将 $BE=CF$ 转化为 $BC=EF$。</p>
+  <ol>
+    <li><strong>转化已知条件：</strong>$BE=CF$，两边同时加 $EC$：$BE+EC=CF+EC$，即 $BC=EF$。</li>
+    <li><strong>汇总三组等量：</strong>$AB=DE$（已知），$AC=DF$（已知），$BC=EF$（已证）。</li>
+    <li><strong>选择判定方法：</strong>三边分别相等 → SSS。</li>
+    <li><strong>推出结论：</strong>$\triangle ABC \cong \triangle DEF$（SSS）→ 对应角相等，$\angle A=\angle D$。</li>
+  </ol>
+  <p><strong>⚠️ 常见错误：</strong>直接从 $BE=CF$ 推出 $BC=EF$ 而不写中间步骤 "$BE+EC=CF+EC$"。几何证明每一步推理都要有依据，跳步会扣分。</p>
+</div></div>
+      <div class="exam-q"><span class="q-tag">2023重庆</span><div class="q-diff hard">★★★</div><div class="q-body">$\triangle ABC$ 中，$AD$ 是角平分线，$DE \perp AB$ 于 $E$，$DF \perp AC$ 于 $F$。求证：$DE = DF$。</div><div class="q-solution"><strong>答案：$DE = DF$（角平分线性质）</strong>
+  <p><strong>🔑 关键思路：</strong>角平分线上的点到角两边的距离相等——这是角平分线核心性质，可直接引用无需证全等。也可用 HL 证 $\triangle ADE \cong \triangle ADF$。</p>
+  <ol>
+    <li><strong>标记关键条件：</strong>$AD$ 平分 $\angle BAC$ → $\angle BAD=\angle CAD$（角平分线定义）；$DE \perp AB$，$DF \perp AC$ → $\angle AED=\angle AFD=90°$。</li>
+    <li><strong>方法一（HL判定）：</strong>在 Rt$\triangle ADE$ 和 Rt$\triangle ADF$ 中，$AD=AD$（公共斜边），$DE \perp AB$、$DF \perp AC$ 加 $AD$ 平分 $\angle BAC$ → 可证 $DE=DF$。</li>
+    <li><strong>方法二（角平分线性质）：</strong>直接引用定理——"角平分线上的点到角两边距离相等" → $DE=DF$。</li>
+    <li><strong>书写模板：</strong>方法二只需写：∵ $AD$ 平分 $\angle BAC$，$DE \perp AB$，$DF \perp AC$，∴ $DE=DF$（角平分线性质）。</li>
+  </ol>
+  <p><strong>⚠️ 常见错误：</strong>忘记在 HL 中标注 $\angle AED=\angle AFD=90°$。HL 判定前必须先说明两个三角形是直角三角形，这一句漏写直接扣步骤分。</p>
+</div></div>
     </div>
   </details>
     <div class="checklist"><h3>✅ 本章自查清单</h3><label><span class="self-score">🔴→🟡→🟢</span>  能说出五种全等判定方法的名称和条件</label><label><span class="self-score">🔴→🟡→🟢</span>  知道 SSA 不能判定全等</label><label><span class="self-score">🔴→🟡→🟢</span>  能正确找到隐含条件（公共边/角、对顶角、中点）</label><label><span class="self-score">🔴→🟡→🟢</span>  能用"∵…∴…"格式写出完整证明过程</label><label><span class="self-score">🔴→🟡→🟢</span>  能运用角平分线性质证明线段相等</label><p style="margin-top:14px;font-size:13px;color:var(--accent);padding:10px 0;border-top:1px dashed var(--border);"><strong>🗣 费曼挑战：</strong>不看资料，说出五种判定方法，各举一个例子。特别要向别人解释清楚为什么 SSA 有时能判定、有时不能。</p></div>
@@ -778,9 +839,35 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
   <details class="exam-module">
     <summary>🎯 中考真题精选（轴对称 · 近年典型）</summary>
     <div class="content">
-      <div class="exam-q"><span class="q-tag">2023北京</span><div class="q-diff easy">★☆☆</div><div class="q-body">等腰三角形的一个底角是 $50°$，则它的顶角是____。</div><div class="q-solution"><strong>答案：$80°$</strong>。底角=50°，顶角=180°-50°-50°=80°。</div></div>
-      <div class="exam-q"><span class="q-tag">2022广州</span><div class="q-diff mid">★★☆</div><div class="q-body">等腰三角形的两边长分别为 3 和 7，则周长为____。</div><div class="q-solution"><strong>答案：17</strong>。需分类讨论：3为腰→底7，3+3=6<7不能构成；3为底→腰7，7+7+3=17。注意先判断能否构成三角形！</div></div>
-      <div class="exam-q"><span class="q-tag">2023杭州</span><div class="q-diff hard">★★★</div><div class="q-body">如图，$\triangle ABC$ 中，$AB = AC$，$AD \perp BC$ 于 $D$。若 $BC = 6$，$AD = 4$，求 $\triangle ABC$ 的面积。</div><div class="q-solution"><strong>答案：12</strong>。$S = \frac{1}{2} \times BC \times AD = \frac{1}{2} \times 6 \times 4 = 12$。</div></div>
+      <div class="exam-q"><span class="q-tag">2023北京</span><div class="q-diff easy">★☆☆</div><div class="q-body">等腰三角形的一个底角是 $50°$，则它的顶角是____。</div><div class="q-solution"><strong>答案：$80°$</strong>
+  <p><strong>🔑 关键思路：</strong>等腰三角形两底角相等，三角内角和为 $180°$。已知一个底角 → 两个底角相等 → 用 $180°$ 减两个底角得顶角。</p>
+  <ol>
+    <li><strong>确定底角关系：</strong>等腰三角形"等边对等角"，两个底角相等，均为 $50°$。</li>
+    <li><strong>计算顶角：</strong>顶角 $=180°-50°-50°=180°-100°=80°$。</li>
+  </ol>
+</div></div>
+      <div class="exam-q"><span class="q-tag">2022广州</span><div class="q-diff mid">★★☆</div><div class="q-body">等腰三角形的两边长分别为 3 和 7，则周长为____。</div><div class="q-solution"><strong>答案：17</strong>
+  <p><strong>🔑 关键思路：</strong>等腰三角形已知两边必须<strong>分类讨论</strong>——哪个是腰、哪个是底？每种情况都要用三边关系验证能否构成三角形，不能构成的直接舍去。</p>
+  <ol>
+    <li><strong>分类讨论① — 3为腰、7为底：</strong>两腰均为3，底为7。验证：最短两边和 $3+3=6<7$，不满足三边关系 → 不能构成三角形，舍去。</li>
+    <li><strong>分类讨论② — 7为腰、3为底：</strong>两腰均为7，底为3。验证：最短两边和 $7+7=14>3$ ✓ → 能构成三角形。</li>
+    <li><strong>计算周长：</strong>周长 $=7+7+3=17$。</li>
+  </ol>
+  <p><strong>⚠️ 常见错误：</strong>不分类讨论直接取一种写答案。两种情况都算出结果后必须用三边关系验证——不验证直接写的在中考中丢分率极高。</p>
+</div></div>
+      <div class="exam-q"><span class="q-tag">2023杭州</span><div class="q-diff hard">★★★</div><div class="q-body">如图，$\triangle ABC$ 中，$AB = AC$，$AD \perp BC$ 于 $D$。若 $BC = 6$，$AD = 4$，求 $\triangle ABC$ 的面积。</div><div class="q-solution"><strong>答案：12</strong>
+  <p><strong>🔑 关键思路：</strong>等腰三角形中 $AD \perp BC$ → 由三线合一知 $AD$ 既是高也是中线 → 直接用底×高÷2 求面积，无需单独求底边长度。</p>
+  <ol>
+    <li><strong>应用三线合一：</strong>$AB=AC$（等腰），$AD \perp BC$（已知 AD 是高）→ 由三线合一知 $AD$ 同时也是底边 $BC$ 上的中线。</li>
+    <li><strong>确认底和高：</strong>已知 $BC=6$（底），$AD=4$（高），无需计算 $BD$ 或 $DC$。</li>
+    <li><strong>代入面积公式：</strong>$S_{\triangle ABC} = \frac{1}{2} \times BC \times AD = \frac{1}{2} \times 6 \times 4 = 12$。</li>
+    <li><strong>验证：</strong>由勾股定理，$BD=BC/2=3$，$AB=\sqrt{BD^2+AD^2}=\sqrt{9+16}=5$。面积也可用 $\frac{1}{2} \times 6 \times 4 = 12$ ✓。</li>
+  </ol>
+  <p><strong>🔄 替代方法：</strong>不求面积而求底边一半→ $BD=BC/2=3$（三线合一），用勾股定理求腰长 $AB=5$，再代入 $S=\frac{1}{2} \times BC \times AD = 12$。结果相同，但直接代入公式更快。</p>
+  <p><strong>⚠️ 常见错误1：</strong>忘记等腰三角形 $AD \perp BC$ 蕴含 $BD=DC$（三线合一），误以为需要单独求 $BD$ 再算面积。</p>
+  <p><strong>⚠️ 常见错误2：</strong>用 $S=\frac{1}{2} \times AB \times AC$ 当成直角三角形面积公式。等腰三角形不是直角三角形，面积必须用底×高÷2。</p>
+  <p><strong>✅ 检验：</strong>用勾股定理反推：$BD=3$，$AB=5$，$S=\frac{1}{2} \times 6 \times 4 = 12$，与底×高÷2 结果一致 ✓。</p>
+</div></div>
     </div>
   </details>
     <div class="checklist"><h3>✅ 本章自查清单</h3><label><span class="self-score">🔴→🟡→🟢</span>  能区分轴对称与轴对称图形</label><label><span class="self-score">🔴→🟡→🟢</span>  能熟练使用等腰三角形"等边对等角"和"三线合一"</label><label><span class="self-score">🔴→🟡→🟢</span>  知道等腰三角形的判定方法（等角对等边）</label><label><span class="self-score">🔴→🟡→🟢</span>  能用"将军饮马"法解决最短路径问题</label><label><span class="self-score">🔴→🟡→🟢</span>  会求等边三角形的高和面积</label><p style="margin-top:14px;font-size:13px;color:var(--accent);padding:10px 0;border-top:1px dashed var(--border);"><strong>🗣 费曼挑战：</strong>画图解释"三线合一"——为什么等腰三角形的顶角平分线、底边中线和底边上的高是同一条线？试着用全等三角形证明。</p></div>
@@ -849,11 +936,56 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
   <details class="exam-module">
     <summary>🎯 中考真题精选（整式乘法与因式分解 · 近年典型）</summary>
     <div class="content">
-      <div class="exam-q"><span class="q-tag">2023北京</span><div class="q-diff easy">★☆☆</div><div class="q-body">计算：$(2x + 1)(2x - 1) =$____。</div><div class="q-solution"><strong>答案：$4x^2 - 1$</strong>。平方差公式：$(a+b)(a-b)=a^2-b^2$。</div></div>
-      <div class="exam-q"><span class="q-tag">2023广州</span><div class="q-diff mid">★★☆</div><div class="q-body">因式分解：$x^2 - 4 =$____。</div><div class="q-solution"><strong>答案：$(x+2)(x-2)$</strong>。平方差逆用：$a^2-b^2=(a+b)(a-b)$。</div></div>
-      <div class="exam-q"><span class="q-tag">2022杭州</span><div class="q-diff mid">★★☆</div><div class="q-body">因式分解：$x^3 - 4x =$____。</div><div class="q-solution"><strong>答案：$x(x+2)(x-2)$</strong>。先提公因式 $x$：$x(x^2-4)=x(x+2)(x-2)$。不先提取就错了！</div></div>
-      <div class="exam-q"><span class="q-tag">2023重庆</span><div class="q-diff mid">★★☆</div><div class="q-body">因式分解：$x^2 + 6x + 9 =$____。</div><div class="q-solution"><strong>答案：$(x+3)^2$</strong>。完全平方公式逆用：$a^2+2ab+b^2=(a+b)^2$。$x^2+6x+9=x^2+2·x·3+3^2=(x+3)^2$。</div></div>
-      <div class="exam-q"><span class="q-tag">2022深圳</span><div class="q-diff hard">★★★</div><div class="q-body">因式分解：$a^4 - 1 =$____。</div><div class="q-solution"><strong>答案：$(a^2+1)(a+1)(a-1)$</strong>。$a^4-1=(a^2+1)(a^2-1)=(a^2+1)(a+1)(a-1)$。分解到底！</div></div>
+      <div class="exam-q"><span class="q-tag">2023北京</span><div class="q-diff easy">★☆☆</div><div class="q-body">计算：$(2x + 1)(2x - 1) =$____。</div><div class="q-solution"><strong>答案：$4x^2 - 1$</strong>
+  <p><strong>🔑 关键思路：</strong>识别平方差公式结构——两项和乘以两项差 = 平方差。$(2x+1)(2x-1)$ 中 $a=2x$，$b=1$。</p>
+  <ol>
+    <li><strong>识别公式类型：</strong>$(2x+1)(2x-1)$ 是 $(a+b)(a-b)$ 形式，$a=2x$，$b=1$。</li>
+    <li><strong>代入平方差公式：</strong>$(a+b)(a-b)=a^2-b^2=(2x)^2-1^2=4x^2-1$。</li>
+  </ol>
+</div></div>
+      <div class="exam-q"><span class="q-tag">2023广州</span><div class="q-diff mid">★★☆</div><div class="q-body">因式分解：$x^2 - 4 =$____。</div><div class="q-solution"><strong>答案：$(x+2)(x-2)$</strong>
+  <p><strong>🔑 关键思路：</strong>两项且是平方相减 → 平方差公式。$x^2-4=x^2-2^2$，识别 $a=x$，$b=2$。</p>
+  <ol>
+    <li><strong>识别类型：</strong>两项，$x^2$ 和 $4=2^2$ 都是完全平方，中间是减号 → 平方差公式。</li>
+    <li><strong>代入逆公式：</strong>$a^2-b^2=(a+b)(a-b)$ → $x^2-2^2=(x+2)(x-2)$。</li>
+    <li><strong>验证：</strong>展开 $(x+2)(x-2)=x^2-4$ ✓。</li>
+  </ol>
+  <p><strong>⚠️ 常见错误：</strong>$x^2-4$ 写成 $(x-4)(x+1)$——这是瞎拆。因式分解必须能展开还原验证。</p>
+</div></div>
+      <div class="exam-q"><span class="q-tag">2022杭州</span><div class="q-diff mid">★★☆</div><div class="q-body">因式分解：$x^3 - 4x =$____。</div><div class="q-solution"><strong>答案：$x(x+2)(x-2)$</strong>
+  <p><strong>🔑 关键思路：</strong>因式分解第一步永远是<strong>先提公因式</strong>！$x^3$ 和 $4x$ 都有公因式 $x$，提出来后再用平方差分解剩余部分。</p>
+  <ol>
+    <li><strong>提取公因式：</strong>$x^3-4x=x(x^2-4)$。</li>
+    <li><strong>识别剩余结构：</strong>$x^2-4$ 是平方差，$a=x$，$b=2$。</li>
+    <li><strong>继续分解：</strong>$x(x^2-4)=x(x+2)(x-2)$。</li>
+    <li><strong>检查分解到底：</strong>$x$（一次式，不可再分）；$(x+2)$（一次式，不可再分）；$(x-2)$（一次式，不可再分）→ 分解到底 ✓。</li>
+  </ol>
+  <p><strong>⚠️ 常见错误：</strong>跳过提公因式直接用平方差，写成 $(x\sqrt{x}+2\sqrt{x})(x\sqrt{x}-2\sqrt{x})$——既复杂又错误。先提公因式是铁律。</p>
+</div></div>
+      <div class="exam-q"><span class="q-tag">2023重庆</span><div class="q-diff mid">★★☆</div><div class="q-body">因式分解：$x^2 + 6x + 9 =$____。</div><div class="q-solution"><strong>答案：$(x+3)^2$</strong>
+  <p><strong>🔑 关键思路：</strong>识别完全平方公式的特征——首尾都是平方项，中间项是 $2\times首\times尾$。$x^2$ 是首平方，$9=3^2$ 是尾平方，$6x=2\cdot x\cdot 3$ 匹配中间项。</p>
+  <ol>
+    <li><strong>检查首尾是否为平方：</strong>$x^2$（首平方✓），$9=3^2$（尾平方✓）。</li>
+    <li><strong>验证中间项：</strong>$2\times首\times尾=2\cdot x\cdot 3=6x$ ✓，匹配题目中的 $+6x$。</li>
+    <li><strong>确定符号：</strong>中间项为 $+6x$ → 用 $(a+b)^2$ 形式。</li>
+    <li><strong>写出结果：</strong>$x^2+6x+9=(x+3)^2$。</li>
+  </ol>
+  <p><strong>⚠️ 常见错误：</strong>中间项验证失败时强行套公式。如 $x^2+6x+10$，$10 \neq 3^2$，不能写成 $(x+3)^2$。</p>
+</div></div>
+      <div class="exam-q"><span class="q-tag">2022深圳</span><div class="q-diff hard">★★★</div><div class="q-body">因式分解：$a^4 - 1 =$____。</div><div class="q-solution"><strong>答案：$(a^2+1)(a+1)(a-1)$</strong>
+  <p><strong>🔑 关键思路：</strong>高次幂因式分解的核心是<strong>反复使用平方差公式</strong>，直到每个因式都不能再分解为止。$a^4$ 可视为 $(a^2)^2$，与 $1=1^2$ 构成平方差。</p>
+  <ol>
+    <li><strong>第一次平方差：</strong>$a^4-1=(a^2)^2-1^2=(a^2+1)(a^2-1)$。</li>
+    <li><strong>检查能否继续分解：</strong>$a^2+1$ 在实数范围内不能继续分解（不是平方差，不能写成两平方相减）。$a^2-1$ 是平方差 → 继续。</li>
+    <li><strong>第二次平方差：</strong>$a^2-1=a^2-1^2=(a+1)(a-1)$。</li>
+    <li><strong>检查分解到底：</strong>$a^2+1$（实数范围不可再分✓），$a+1$（一次式✓），$a-1$（一次式✓）。</li>
+    <li><strong>完整结果：</strong>$a^4-1=(a^2+1)(a+1)(a-1)$。</li>
+  </ol>
+  <p><strong>🔄 替代方法：</strong>也可先凑完全平方：$a^4-1=(a^4+2a^2+1)-2a^2=(a^2+1)^2-(\sqrt{2}a)^2$，但引入根号不简便，不如两次平方差直接。</p>
+  <p><strong>⚠️ 常见错误1：</strong>第一次平方差后停手，写成 $(a^2+1)(a^2-1)$ 就交卷——$a^2-1$ 还能再分！中考"分解到底"检查是必考扣分点。</p>
+  <p><strong>⚠️ 常见错误2：</strong>把 $a^2+1$ 继续用平方差写成 $(a+1)(a-1)$——但 $a^2+1$ 是平方和，不是平方差，在实数范围内不能再分解。</p>
+  <p><strong>✅ 检验：</strong>展开验证：$(a^2+1)(a+1)(a-1)=(a^2+1)(a^2-1)=a^4-1$ ✓。</p>
+</div></div>
     </div>
   </details>
     <div class="checklist"><h3>✅ 本章自查清单</h3><label><span class="self-score">🔴→🟡→🟢</span>  能正确运用幂的运算法则</label><label><span class="self-score">🔴→🟡→🟢</span>  熟练使用平方差和完全平方公式</label><label><span class="self-score">🔴→🟡→🟢</span>  因式分解前不会忘记先提公因式</label><label><span class="self-score">🔴→🟡→🟢</span>  会使用十字相乘法分解二次三项式</label><label><span class="self-score">🔴→🟡→🟢</span>  分解后会检查"是否分解到底了"</label><p style="margin-top:14px;font-size:13px;color:var(--accent);padding:10px 0;border-top:1px dashed var(--border);"><strong>🗣 费曼挑战：</strong>给同学解释十字相乘法的原理——为什么 $x^2+(m+n)x+mn$ 等于 $(x+m)(x+n)$？用分配律展开验证。</p></div>
@@ -915,9 +1047,37 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
   <details class="exam-module">
     <summary>🎯 中考真题精选（分式 · 近年典型）</summary>
     <div class="content">
-      <div class="exam-q"><span class="q-tag">2023北京</span><div class="q-diff easy">★☆☆</div><div class="q-body">化简：$\frac{x^2-4}{x+2} =$____。</div><div class="q-solution"><strong>答案：$x-2$</strong>。$\frac{(x+2)(x-2)}{x+2} = x-2$（$x\neq-2$）。</div></div>
-      <div class="exam-q"><span class="q-tag">2022广州</span><div class="q-diff mid">★★☆</div><div class="q-body">解方程：$\frac{2}{x-3} = \frac{1}{x}$</div><div class="q-solution"><strong>答案：$x=-3$</strong>。去分母：$2x = x-3$，$x=-3$。检验：$x=-3$时不使分母为0，∴ $x=-3$ 是原方程的解。</div></div>
-      <div class="exam-q"><span class="q-tag">2023杭州</span><div class="q-diff hard">★★★</div><div class="q-body">解方程：$\frac{x}{x-1} - 1 = \frac{3}{(x-1)(x+2)}$</div><div class="q-solution"><strong>答案：$x=1$ 是增根，无解</strong>。去分母：$x(x+2)-(x-1)(x+2)=3$，解得 $x=1$。检验：$x=1$ 使分母 $x-1=0$→增根。</div></div>
+      <div class="exam-q"><span class="q-tag">2023北京</span><div class="q-diff easy">★☆☆</div><div class="q-body">化简：$\frac{x^2-4}{x+2} =$____。</div><div class="q-solution"><strong>答案：$x-2$</strong>
+  <p><strong>🔑 关键思路：</strong>分式化简先对分子因式分解，再约分。$x^2-4$ 是平方差，分解后与分母 $x+2$ 约去公因式。注意标注定义域 $x\neq-2$。</p>
+  <ol>
+    <li><strong>分子因式分解：</strong>$x^2-4=(x+2)(x-2)$（平方差公式）。</li>
+    <li><strong>约去公因式：</strong>$\frac{(x+2)(x-2)}{x+2}=x-2$（$x\neq-2$，分母不为零）。</li>
+  </ol>
+</div></div>
+      <div class="exam-q"><span class="q-tag">2022广州</span><div class="q-diff mid">★★☆</div><div class="q-body">解方程：$\frac{2}{x-3} = \frac{1}{x}$</div><div class="q-solution"><strong>答案：$x=-3$</strong>
+  <p><strong>🔑 关键思路：</strong>分式方程先交叉相乘去分母变为整式方程，再解，最后<strong>必须检验</strong>——把解代入原方程各分母，确认不为零。</p>
+  <ol>
+    <li><strong>确定定义域：</strong>分母 $x-3 \neq 0$ → $x \neq 3$；$x \neq 0$。禁用值：$x=0$ 和 $x=3$。</li>
+    <li><strong>去分母（交叉相乘）：</strong>$\frac{2}{x-3}=\frac{1}{x}$ → $2x = x-3$。</li>
+    <li><strong>解整式方程：</strong>$2x-x=-3$，$x=-3$。</li>
+    <li><strong>检验增根：</strong>$x=-3$ 代入原方程：分母 $x-3=-6\neq0$，$x=-3\neq0$。不在禁用名单中 → 是原方程的解。</li>
+  </ol>
+  <p><strong>⚠️ 常见错误：</strong>解完不检验直接写答案。分式方程检验是必写步骤，漏写在中考中至少扣1-2分。</p>
+</div></div>
+      <div class="exam-q"><span class="q-tag">2023杭州</span><div class="q-diff hard">★★★</div><div class="q-body">解方程：$\frac{x}{x-1} - 1 = \frac{3}{(x-1)(x+2)}$</div><div class="q-solution"><strong>答案：$x=1$ 是增根，原方程无解</strong>
+  <p><strong>🔑 关键思路：</strong>复杂分式方程先去分母（找最简公分母），解整式方程后必须检验——解出的 $x$ 若使任何分母为零即为增根，应舍去。</p>
+  <ol>
+    <li><strong>确定定义域：</strong>分母 $x-1\neq0$ → $x\neq1$；$(x-1)(x+2)\neq0$ → $x\neq1,-2$。禁用值：$x=1$ 和 $x=-2$。</li>
+    <li><strong>找最简公分母：</strong>各分母为 $x-1$、$1$、$(x-1)(x+2)$，最简公分母 $(x-1)(x+2)$。</li>
+    <li><strong>去分母：</strong>两边乘以 $(x-1)(x+2)$：$x(x+2)-(x-1)(x+2)=3$。</li>
+    <li><strong>展开并化简：</strong>$x^2+2x-(x^2+2x-x-2)=3$ → $x^2+2x-(x^2+x-2)=3$ → $x^2+2x-x^2-x+2=3$ → $x+2=3$ → $x=1$。</li>
+    <li><strong>检验增根：</strong>$x=1$ 代入原方程：分母 $x-1=0$，原方程无意义。$x=1$ 在禁用名单中 → 是增根，舍去。</li>
+  </ol>
+  <p><strong>🔄 替代方法：</strong>先将减号左边的分式通分：$\frac{x}{x-1}-1=\frac{x-(x-1)}{x-1}=\frac{1}{x-1}$，方程化为 $\frac{1}{x-1}=\frac{3}{(x-1)(x+2)}$，交叉相乘得 $x+2=3$，$x=1$。步骤更简但结果相同。</p>
+  <p><strong>⚠️ 常见错误1：</strong>解出 $x=1$ 后不检验直接写"解为 $x=1$"。分式方程的解必须排除增根——$x=1$ 使原方程无意义，这不是真解。</p>
+  <p><strong>⚠️ 常见错误2：</strong>去分母时漏乘某一项。方程左边有 $\frac{x}{x-1}$ 和 $-1$ 两项，去分母时 $-1$ 也要乘以 $(x-1)(x+2)$。漏乘导致方程变形错误。</p>
+  <p><strong>✅ 检验：</strong>将 $x=1$ 代入原方程各分母：$x-1=0$（无意义），$(x-1)(x+2)=0$（无意义）。∴ $x=1$ 是增根，原方程无解 ✓。</p>
+</div></div>
     </div>
   </details>
     <div class="checklist"><h3>✅ 本章自查清单</h3><label><span class="self-score">🔴→🟡→🟢</span>  能判断分式有意义的条件</label><label><span class="self-score">🔴→🟡→🟢</span>  熟练进行分式的乘除运算</label><label><span class="self-score">🔴→🟡→🟢</span>  会通分后进行分式加减</label><label><span class="self-score">🔴→🟡→🟢</span>  解分式方程后不会忘记检验</label><label><span class="self-score">🔴→🟡→🟢</span>  能识别增根并正确舍去</label><p style="margin-top:14px;font-size:13px;color:var(--accent);padding:10px 0;border-top:1px dashed var(--border);"><strong>🗣 费曼挑战：</strong>为什么解分式方程会产生增根？用 $\frac{1}{x-2} = \frac{2}{x-2}$ 为例，解释去分母后多出来的解从哪来。</p></div>
@@ -977,9 +1137,37 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
   <details class="exam-module">
     <summary>🎯 中考真题精选（二次根式 · 近年典型）</summary>
     <div class="content">
-      <div class="exam-q"><span class="q-tag">2023北京</span><div class="q-diff easy">★☆☆</div><div class="q-body">计算：$\sqrt{12} - \sqrt{3} =$____。</div><div class="q-solution"><strong>答案：$\sqrt{3}$</strong>。$\sqrt{12}=2\sqrt{3}$，$2\sqrt{3}-\sqrt{3}=\sqrt{3}$。</div></div>
-      <div class="exam-q"><span class="q-tag">2022广州</span><div class="q-diff mid">★★☆</div><div class="q-body">计算：$\sqrt{8} + \sqrt{18} - \sqrt{2}$</div><div class="q-solution"><strong>答案：$4\sqrt{2}$</strong>。$\sqrt{8}=2\sqrt{2}$，$\sqrt{18}=3\sqrt{2}$，$2\sqrt{2}+3\sqrt{2}-\sqrt{2}=4\sqrt{2}$。</div></div>
-      <div class="exam-q"><span class="q-tag">2023杭州</span><div class="q-diff hard">★★★</div><div class="q-body">分母有理化：$\frac{1}{\sqrt{7}+\sqrt{6}} =$____。</div><div class="q-solution"><strong>答案：$\sqrt{7}-\sqrt{6}$</strong>。分子分母同乘 $\sqrt{7}-\sqrt{6}$：$\frac{\sqrt{7}-\sqrt{6}}{7-6}=\sqrt{7}-\sqrt{6}$。</div></div>
+      <div class="exam-q"><span class="q-tag">2023北京</span><div class="q-diff easy">★☆☆</div><div class="q-body">计算：$\sqrt{12} - \sqrt{3} =$____。</div><div class="q-solution">
+<strong>答案：$\sqrt{3}$</strong>
+<p><strong>🔑 关键思路：</strong>先化为最简二次根式，再合并同类二次根式。根式加减与合并同类项规则一致——只有被开方数相同的根式才能合并。</p>
+<ol>
+<li><strong>化最简：</strong>$\sqrt{12} = \sqrt{4 \times 3} = \sqrt{4} \cdot \sqrt{3} = 2\sqrt{3}$（找到被开方数中最大的完全平方因子 4，开出根号）。</li>
+<li><strong>合并同类：</strong>$2\sqrt{3} - \sqrt{3} = (2-1)\sqrt{3} = \sqrt{3}$（系数相加减，根号部分 $\sqrt{3}$ 不变）。</li>
+</ol>
+</div></div>
+      <div class="exam-q"><span class="q-tag">2022广州</span><div class="q-diff mid">★★☆</div><div class="q-body">计算：$\sqrt{8} + \sqrt{18} - \sqrt{2}$</div><div class="q-solution">
+<strong>答案：$4\sqrt{2}$</strong>
+<p><strong>🔑 关键思路：</strong>三个根式看似不同，但化简后都会出现 $\sqrt{2}$ 这个公共因子——化为最简后才能发现它们是同类二次根式。核心是先化简，再合并。</p>
+<ol>
+<li><strong>逐项化简：</strong>$\sqrt{8} = \sqrt{4 \times 2} = 2\sqrt{2}$；$\sqrt{18} = \sqrt{9 \times 2} = 3\sqrt{2}$；$\sqrt{2}$ 已经是最简。</li>
+<li><strong>重新书写算式：</strong>原式 $= 2\sqrt{2} + 3\sqrt{2} - \sqrt{2}$。</li>
+<li><strong>合并系数：</strong>$(2 + 3 - 1)\sqrt{2} = 4\sqrt{2}$。</li>
+</ol>
+<p><strong>⚠️ 常见错误：</strong>未化简就直接将被开方数相加减——如 $\sqrt{8} + \sqrt{18} = \sqrt{26}$。正确做法是必须<strong>先各自化为最简</strong>根式，再判断是否为同类才能合并。</p>
+</div></div>
+      <div class="exam-q"><span class="q-tag">2023杭州</span><div class="q-diff hard">★★★</div><div class="q-body">分母有理化：$\frac{1}{\sqrt{7}+\sqrt{6}} =$____。</div><div class="q-solution">
+<strong>答案：$\sqrt{7} - \sqrt{6}$</strong>
+<p><strong>🔑 关键思路：</strong>分母为两项相加的根式，利用平方差公式 $(a+b)(a-b)=a^2-b^2$，将分母有理化因式 $\sqrt{7}-\sqrt{6}$ 同乘分子分母，即可将分母化为整数。</p>
+<ol>
+<li><strong>识别分母形式：</strong>分母为 $\sqrt{7} + \sqrt{6}$，其共轭有理化因式是 $\sqrt{7} - \sqrt{6}$。</li>
+<li><strong>分子分母同乘共轭式：</strong>$\frac{1}{\sqrt{7}+\sqrt{6}} \times \frac{\sqrt{7}-\sqrt{6}}{\sqrt{7}-\sqrt{6}} = \frac{\sqrt{7}-\sqrt{6}}{(\sqrt{7}+\sqrt{6})(\sqrt{7}-\sqrt{6})}$。</li>
+<li><strong>应用平方差公式化简分母：</strong>$(\sqrt{7})^2 - (\sqrt{6})^2 = 7 - 6 = 1$。</li>
+<li><strong>写出最终结果：</strong>$\frac{\sqrt{7}-\sqrt{6}}{1} = \sqrt{7} - \sqrt{6}$。</li>
+</ol>
+<p><strong>⚠️ 常见错误：</strong>① 只乘分母不乘分子——这样改变了分式的值，必须分子分母<strong>同时</strong>乘以相同因式。② 有理化因式取错符号——分母为 $\sqrt{a}+\sqrt{b}$ 时，共轭式是 $\sqrt{a}-\sqrt{b}$，不要取成相反的。</p>
+<p><strong>🔄 替代方法：</strong>也可以直接使用公式 $\frac{1}{\sqrt{a}+\sqrt{b}} = \frac{\sqrt{a}-\sqrt{b}}{a-b}$，代入 $a=7$, $b=6$ 即得 $\sqrt{7}-\sqrt{6}$。</p>
+<p><strong>✅ 检验：</strong>$\frac{1}{\sqrt{7}+\sqrt{6}} \approx \frac{1}{2.646+2.449} = \frac{1}{5.095} \approx 0.196$；$\sqrt{7}-\sqrt{6} \approx 2.646-2.449 = 0.197$，两者近似相等 ✓。</p>
+</div></div>
     </div>
   </details>
     <div class="checklist"><h3>✅ 本章自查清单</h3><label><span class="self-score">🔴→🟡→🟢</span>  能将二次根式化为最简形式</label><label><span class="self-score">🔴→🟡→🟢</span>  能识别和合并同类二次根式</label><label><span class="self-score">🔴→🟡→🟢</span>  熟练进行二次根式的乘除运算</label><label><span class="self-score">🔴→🟡→🟢</span>  能进行分母有理化</label><label><span class="self-score">🔴→🟡→🟢</span>  不会忘记 $\sqrt{a^2}=|a|$</label><p style="margin-top:14px;font-size:13px;color:var(--accent);padding:10px 0;border-top:1px dashed var(--border);"><strong>🗣 费曼挑战：</strong>解释为什么 $\sqrt{a+b} \neq \sqrt{a} + \sqrt{b}$。用具体数字证明，比如 $\sqrt{9+16} \neq \sqrt{9} + \sqrt{16}$。</p></div>
@@ -1081,10 +1269,50 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
   <details class="exam-module">
     <summary>🎯 中考真题精选（勾股定理 · 近年典型）</summary>
     <div class="content">
-      <div class="exam-q"><span class="q-tag">2023北京</span><div class="q-diff easy">★☆☆</div><div class="q-body">在 Rt$\triangle ABC$ 中，$\angle C = 90°$，$AC = 3$，$BC = 4$，则 $AB =$____。</div><div class="diagram"><svg width="160" height="130" viewBox="0 0 160 130"><polygon points="20,110 80,110 20,20" fill="none" stroke="#4f46e5" stroke-width="2"/><text x="5" y="110" font-size="11" fill="#4f46e5">A</text><text x="78" y="110" font-size="11" fill="#4f46e5">B</text><text x="5" y="22" font-size="11" fill="#4f46e5">C</text><rect x="20" y="98" width="12" height="12" fill="none" stroke="#dc2626" stroke-width="1"/><text x="38" y="70" font-size="11">3</text><text x="70" y="112" font-size="11">4</text></svg></div><div class="q-solution"><strong>答案：5</strong>。$AB = \sqrt{3^2+4^2} = \sqrt{25} = 5$。</div></div>
-      <div class="exam-q"><span class="q-tag">2022广州</span><div class="q-diff mid">★★☆</div><div class="q-body">下列各组数中，能作为直角三角形三边长的是（ ）<br>A. 1, 2, 3 &nbsp; B. 3, 4, 5 &nbsp; C. 4, 5, 6 &nbsp; D. 5, 6, 7</div><div class="q-solution"><strong>答案：B</strong>。$3^2+4^2=25=5^2$ ✓。用逆定理判断：最大边的平方是否等于另两边平方和。</div></div>
-      <div class="exam-q"><span class="q-tag">2023杭州</span><div class="q-diff mid">★★☆</div><div class="q-body">已知直角三角形的两直角边分别为 $5$ 和 $12$，求斜边上的高。</div><div class="q-solution"><strong>答案：$\frac{60}{13}$</strong>。斜边$=\sqrt{5^2+12^2}=13$。面积法：$\frac{1}{2}×5×12 = \frac{1}{2}×13×h$，$h=\frac{60}{13}$。此题是勾股定理+面积法的经典组合。</div></div>
-      <div class="exam-q"><span class="q-tag">2022深圳</span><div class="q-diff hard">★★★</div><div class="q-body">一根旗杆在离地面 $6$ 米处折断，旗杆顶部落在离旗杆底部 $8$ 米处。旗杆原来有多高？</div><div class="q-solution"><strong>答案：16米</strong>。折断部分长$=\sqrt{6^2+8^2}=10$米。原来高度 $=6+10=16$ 米。</div></div>
+      <div class="exam-q"><span class="q-tag">2023北京</span><div class="q-diff easy">★☆☆</div><div class="q-body">在 Rt$\triangle ABC$ 中，$\angle C = 90°$，$AC = 3$，$BC = 4$，则 $AB =$____。</div><div class="diagram"><svg width="160" height="130" viewBox="0 0 160 130"><polygon points="20,110 80,110 20,20" fill="none" stroke="#4f46e5" stroke-width="2"/><text x="5" y="110" font-size="11" fill="#4f46e5">A</text><text x="78" y="110" font-size="11" fill="#4f46e5">B</text><text x="5" y="22" font-size="11" fill="#4f46e5">C</text><rect x="20" y="98" width="12" height="12" fill="none" stroke="#dc2626" stroke-width="1"/><text x="38" y="70" font-size="11">3</text><text x="70" y="112" font-size="11">4</text></svg></div><div class="q-solution">
+<strong>答案：5</strong>
+<p><strong>🔑 关键思路：</strong>∠C = 90° 意味着 AB 为斜边（直角所对的边），直接用勾股定理 $AB = \sqrt{AC^2 + BC^2}$ 求斜边。3-4-5 是最经典的勾股数。</p>
+<ol>
+<li><strong>确认斜边：</strong>∠C = 90° → 斜边是 AB（直角所对的边）。AC = 3 和 BC = 4 是两条直角边。</li>
+<li><strong>套用勾股定理求斜边：</strong>$AB = \sqrt{AC^2 + BC^2} = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5$。</li>
+</ol>
+</div></div>
+      <div class="exam-q"><span class="q-tag">2022广州</span><div class="q-diff mid">★★☆</div><div class="q-body">下列各组数中，能作为直角三角形三边长的是（ ）<br>A. 1, 2, 3 &nbsp; B. 3, 4, 5 &nbsp; C. 4, 5, 6 &nbsp; D. 5, 6, 7</div><div class="q-solution">
+<strong>答案：B</strong>
+<p><strong>🔑 关键思路：</strong>使用勾股定理的逆定理——若三边满足 $a^2 + b^2 = c^2$（c 为最长边），则为直角三角形。核心操作：找出每组中的最长边，验证"两条较短边的平方和是否等于最长边的平方"。</p>
+<ol>
+<li><strong>逐组检验（c = 每组中最大数）：</strong></li>
+<li><strong>A 组</strong>（max=3）：$1^2 + 2^2 = 1 + 4 = 5 \neq 3^2 = 9$ → 不是。</li>
+<li><strong>B 组</strong>（max=5）：$3^2 + 4^2 = 9 + 16 = 25 = 5^2$ → ✓ 是直角三角形（经典 3-4-5）。</li>
+<li><strong>C 组</strong>（max=6）：$4^2 + 5^2 = 16 + 25 = 41 \neq 36$ → 不是。</li>
+<li><strong>D 组</strong>（max=7）：$5^2 + 6^2 = 25 + 36 = 61 \neq 49$ → 不是。</li>
+</ol>
+<p><strong>⚠️ 常见错误：</strong>不先找出最长边，直接用任意两条边的平方和去对照第三条边。例如对 C 组有人算 $4^2+6^2 \neq 5^2$ → 虽然也得出"不是"的结论，但若换一组数据可能误判。逆定理要求验证 $a^2+b^2$ 是否等于<strong>最长边</strong>的平方。</p>
+</div></div>
+      <div class="exam-q"><span class="q-tag">2023杭州</span><div class="q-diff mid">★★☆</div><div class="q-body">已知直角三角形的两直角边分别为 $5$ 和 $12$，求斜边上的高。</div><div class="q-solution">
+<strong>答案：$\dfrac{60}{13}$</strong>
+<p><strong>🔑 关键思路：</strong>此题是勾股定理与面积法的经典组合。先用勾股定理求出斜边，再利用"面积相等"建立方程——同一个三角形，面积可以用两条直角边算，也可以用斜边×斜边上的高算，两者相等即得高。</p>
+<ol>
+<li><strong>求斜边（勾股定理）：</strong>$c = \sqrt{5^2 + 12^2} = \sqrt{25 + 144} = \sqrt{169} = 13$（5-12-13 勾股数）。</li>
+<li><strong>用直角边求三角形面积：</strong>$S = \frac{1}{2} \times 5 \times 12 = 30$。</li>
+<li><strong>用斜边和斜边上的高表示同一面积：</strong>$S = \frac{1}{2} \times 13 \times h = 30$。</li>
+<li><strong>解出高：</strong>$h = \frac{30 \times 2}{13} = \frac{60}{13}$。</li>
+</ol>
+<p><strong>⚠️ 常见错误：</strong>混淆"斜边上的高"和"任意一条直角边"——斜边上的高是从直角顶点向斜边所作的垂线段，不是给定的直角边 5 或 12。另一个常见错误是忘记面积公式中的 $\frac{1}{2}$。</p>
+</div></div>
+      <div class="exam-q"><span class="q-tag">2022深圳</span><div class="q-diff hard">★★★</div><div class="q-body">一根旗杆在离地面 $6$ 米处折断，旗杆顶部落在离旗杆底部 $8$ 米处。旗杆原来有多高？</div><div class="q-solution">
+<strong>答案：16 米</strong>
+<p><strong>🔑 关键思路：</strong>旗杆折断后形成一个直角三角形——未折断的竖直部分（6米）为一直角边，地面距离（8米）为另一直角边，折断倒下的部分为斜边。先求斜边长，再加上未折断部分即得原高度。</p>
+<ol>
+<li><strong>建立几何模型：</strong>旗杆底部为 A，折断处为 B，旗杆顶部落地处为 C。AB = 6 m（竖直未断部分），AC = 8 m（地面水平距离），∠A = 90°。</li>
+<li><strong>勾股定理求BC（折断部分长）：</strong>$BC = \sqrt{AB^2 + AC^2} = \sqrt{6^2 + 8^2} = \sqrt{36 + 64} = \sqrt{100} = 10$ 米。</li>
+<li><strong>求原高度：</strong>原高度 = 未断部分 AB + 折断部分 BC = $6 + 10 = 16$ 米。</li>
+<li><strong>验证数据合理性：</strong>6-8-10 是 3-4-5 的 2 倍，符合勾股数关系 ✓。</li>
+</ol>
+<p><strong>⚠️ 常见错误：</strong>① 把 6 当作斜边——6 是竖直的未断部分，折断部分 BC 从折点斜着倒下去才是斜边。判断依据：直角在旗杆底部，斜边必然是最长边。② 只算折断部分 10 米，忘了加上未断的 6 米——题目问"原来多高"，不要把两部分加起来等于答案。</p>
+<p><strong>🔄 替代方法：</strong>若用方程法——设折断部分长为 $x$ 米，原高 $= 6 + x$，由勾股定理 $x^2 = 6^2 + 8^2$ 解 $x = 10$，原高 $= 16$ 米。思路一致但表述不同。</p>
+<p><strong>✅ 检验：</strong>6² + 8² = 36 + 64 = 100 = 10² ✓。原高 16 = 6 + 10 ✓。</p>
+</div></div>
     </div>
   </details>
     <div class="checklist"><h3>✅ 本章自查清单</h3><label><span class="self-score">🔴→🟡→🟢</span>  能用勾股定理求直角三角形的任意一边</label><label><span class="self-score">🔴→🟡→🟢</span>  能用逆定理判断三角形是否为直角三角形</label><label><span class="self-score">🔴→🟡→🟢</span>  熟记 3-4-5 等常用勾股数</label><label><span class="self-score">🔴→🟡→🟢</span>  掌握 30°-60°-90° 和 45°-45°-90° 的边比</label><label><span class="self-score">🔴→🟡→🟢</span>  会用勾股定理解决实际问题</label><p style="margin-top:14px;font-size:13px;color:var(--accent);padding:10px 0;border-top:1px dashed var(--border);"><strong>🗣 费曼挑战：</strong>用自己手中的直角三角形（比如三角尺），量出三边长，验证勾股定理。然后换一种方法（面积法、弦图法）证明它。</p></div>
@@ -1186,10 +1414,47 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
   <details class="exam-module">
     <summary>🎯 中考真题精选（平行四边形 · 近年典型）</summary>
     <div class="content">
-      <div class="exam-q"><span class="q-tag">2023北京</span><div class="q-diff easy">★☆☆</div><div class="q-body">$\square ABCD$ 中，对角线 $AC$ 与 $BD$ 交于点 $O$，$AC=8$，$BD=6$，则 $OA =$____。</div><div class="diagram"><svg width="160" height="110" viewBox="0 0 160 110"><polygon points="20,20 120,20 130,80 30,80" fill="none" stroke="#4f46e5" stroke-width="2"/><line x1="20" y1="20" x2="130" y2="80" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6,3"/><line x1="120" y1="20" x2="30" y2="80" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6,3"/><circle cx="75" cy="50" r="2" fill="#f59e0b"/><text x="12" y="18" font-size="11" fill="#4f46e5">A</text><text x="120" y="18" font-size="11" fill="#4f46e5">B</text><text x="130" y="92" font-size="11" fill="#4f46e5">C</text><text x="22" y="92" font-size="11" fill="#4f46e5">D</text><text x="78" y="48" font-size="11" fill="#f59e0b">O</text></svg></div><div class="q-solution"><strong>答案：4</strong>。平行四边形对角线互相平分，∴ $OA=AC/2=4$。</div></div>
-      <div class="exam-q"><span class="q-tag">2022广州</span><div class="q-diff mid">★★☆</div><div class="q-body">菱形 $ABCD$ 中，对角线 $AC=6$，$BD=8$，则菱形的面积为____。</div><div class="q-solution"><strong>答案：24</strong>。$S = \frac{1}{2} \times 6 \times 8 = 24$。</div></div>
-      <div class="exam-q"><span class="q-tag">2023杭州</span><div class="q-diff mid">★★☆</div><div class="q-body">$\triangle ABC$ 中，$D$、$E$ 分别是 $AB$、$AC$ 的中点，$BC=10$，则 $DE=$____。</div><div class="q-solution"><strong>答案：5</strong>。三角形中位线 = 第三边的一半：$10 \div 2 = 5$。</div></div>
-      <div class="exam-q"><span class="q-tag">2023重庆</span><div class="q-diff hard">★★★</div><div class="q-body">矩形 $ABCD$，$AB=3$，$BC=4$，则对角线 $AC=$____。</div><div class="q-solution"><strong>答案：5</strong>。勾股定理：$AC = \sqrt{3^2+4^2} = 5$。</div></div>
+      <div class="exam-q"><span class="q-tag">2023北京</span><div class="q-diff easy">★☆☆</div><div class="q-body">$\square ABCD$ 中，对角线 $AC$ 与 $BD$ 交于点 $O$，$AC=8$，$BD=6$，则 $OA =$____。</div><div class="diagram"><svg width="160" height="110" viewBox="0 0 160 110"><polygon points="20,20 120,20 130,80 30,80" fill="none" stroke="#4f46e5" stroke-width="2"/><line x1="20" y1="20" x2="130" y2="80" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6,3"/><line x1="120" y1="20" x2="30" y2="80" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6,3"/><circle cx="75" cy="50" r="2" fill="#f59e0b"/><text x="12" y="18" font-size="11" fill="#4f46e5">A</text><text x="120" y="18" font-size="11" fill="#4f46e5">B</text><text x="130" y="92" font-size="11" fill="#4f46e5">C</text><text x="22" y="92" font-size="11" fill="#4f46e5">D</text><text x="78" y="48" font-size="11" fill="#f59e0b">O</text></svg></div><div class="q-solution">
+<strong>答案：4</strong>
+<p><strong>🔑 关键思路：</strong>平行四边形最核心的对角线性质——对角线<strong>互相平分</strong>。点 O 是对角线交点，O 把每条对角线分成相等的两段，所以 OA = AC ÷ 2。</p>
+<ol>
+<li><strong>回顾平行四边形对角线性质：</strong>在 $\square ABCD$ 中，对角线 AC 与 BD 交于 O，有 OA = OC，OB = OD（互相平分）。</li>
+<li><strong>直接计算：</strong>$OA = \dfrac{AC}{2} = \dfrac{8}{2} = 4$。</li>
+</ol>
+</div></div>
+      <div class="exam-q"><span class="q-tag">2022广州</span><div class="q-diff mid">★★☆</div><div class="q-body">菱形 $ABCD$ 中，对角线 $AC=6$，$BD=8$，则菱形的面积为____。</div><div class="q-solution">
+<strong>答案：24</strong>
+<p><strong>🔑 关键思路：</strong>菱形面积有两个公式——通用公式 $S = ah$（底×高）和专用公式 $S = \frac{1}{2}d_1 d_2$（对角线乘积的一半）。题目直接给了两条对角线长度，用专用公式一步到位。</p>
+<ol>
+<li><strong>识别已知条件：</strong>给了对角线长 6 和 8，而非边长与高 → 应使用菱形对角线面积公式。</li>
+<li><strong>公式依据：</strong>菱形对角线互相垂直平分，将菱形分成 4 个全等的直角三角形，每个小三角形面积 = $\frac{1}{2} \times \frac{d_1}{2} \times \frac{d_2}{2} = \frac{d_1 d_2}{8}$，4 个合计 $4 \times \frac{d_1 d_2}{8} = \frac{d_1 d_2}{2}$。</li>
+<li><strong>代入计算：</strong>$S = \frac{1}{2} \times 6 \times 8 = \frac{48}{2} = 24$。</li>
+</ol>
+<p><strong>⚠️ 常见错误：</strong>① 混淆公式——用了矩形面积公式 $S = ab$（直接乘对角线得 48）而忘了除以 2。② 混淆菱形和矩形性质——菱形对角线互相<strong>垂直</strong>但不一定相等，矩形对角线相等但不一定垂直。</p>
+</div></div>
+      <div class="exam-q"><span class="q-tag">2023杭州</span><div class="q-diff mid">★★☆</div><div class="q-body">$\triangle ABC$ 中，$D$、$E$ 分别是 $AB$、$AC$ 的中点，$BC=10$，则 $DE=$____。</div><div class="q-solution">
+<strong>答案：5</strong>
+<p><strong>🔑 关键思路：</strong>连接三角形两边中点的线段是中位线。中位线有两个核心结论：① 平行于第三边；② <strong>等于第三边的一半</strong>。看到"两个中点"就条件反射想到中位线定理。</p>
+<ol>
+<li><strong>识别中位线：</strong>D 是 AB 中点，E 是 AC 中点 → DE 是 $\triangle ABC$ 的中位线（连接两边中点的线段）。</li>
+<li><strong>应用中位线定理：</strong>$DE \parallel BC$ 且 $DE = \frac{1}{2}BC$。</li>
+<li><strong>代入计算：</strong>$DE = \frac{1}{2} \times 10 = 5$。</li>
+</ol>
+<p><strong>⚠️ 常见错误：</strong>① 记成中位线<strong>等于</strong>第三边（忘了乘 $\frac{1}{2}$），错答 10。② 把中位线当成仅平行第三边而忽略了长度关系——中位线同时具备"平行"和"一半"两个结论。</p>
+</div></div>
+      <div class="exam-q"><span class="q-tag">2023重庆</span><div class="q-diff hard">★★★</div><div class="q-body">矩形 $ABCD$，$AB=3$，$BC=4$，则对角线 $AC=$____。</div><div class="q-solution">
+<strong>答案：5</strong>
+<p><strong>🔑 关键思路：</strong>矩形对角线将矩形分成两个全等的直角三角形，每条对角线都是该直角三角形的斜边。利用矩形的角都是直角的性质，用勾股定理直接求对角线长。</p>
+<ol>
+<li><strong>识别几何结构：</strong>矩形 ABCD 中，∠B = 90°（矩形四个角都是直角），AB = 3 和 BC = 4 是矩形的两条邻边。</li>
+<li><strong>将对角线问题转化为直角三角形问题：</strong>连接 AC，△ABC 为直角三角形（∠B = 90°），AB 和 BC 为两条直角边，AC 为斜边。</li>
+<li><strong>勾股定理求斜边：</strong>$AC = \sqrt{AB^2 + BC^2} = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5$。</li>
+<li><strong>验证矩形对角线性质：</strong>矩形对角线相等，若题目同时问 BD，答案也为 5。</li>
+</ol>
+<p><strong>⚠️ 常见错误：</strong>① 混淆矩形对角线和菱形对角线——矩形对角线<strong>相等</strong>但不一定垂直，菱形对角线<strong>垂直</strong>但不一定相等。② 记错矩形对角线长度公式——不是 $\sqrt{AB \times BC}$（别把面积公式和勾股定理搞混）。</p>
+<p><strong>🔄 替代方法：</strong>已知 3-4-5 是经典勾股数，AB = 3, BC = 4 → 直接得出 AC = 5，无需计算。熟记勾股数可以大幅提升解题速度。</p>
+<p><strong>✅ 检验：</strong>3² + 4² = 9 + 16 = 25 = 5² ✓。矩形对角线相等的性质：BD 同样 = 5，用勾股定理 $BD = \sqrt{3^2 + 4^2} = 5$ ✓。</p>
+</div></div>
     </div>
   </details>
     <div class="checklist"><h3>✅ 本章自查清单</h3><label><span class="self-score">🔴→🟡→🟢</span>  能说出平行四边形的性质和五种判定方法</label><label><span class="self-score">🔴→🟡→🟢</span>  能区分矩形、菱形、正方形的不同性质</label><label><span class="self-score">🔴→🟡→🟢</span>  会用三角形中位线定理进行计算和证明</label><label><span class="self-score">🔴→🟡→🟢</span>  会用菱形面积的两个公式</label><label><span class="self-score">🔴→🟡→🟢</span>  理解"正方形=矩形+菱形"的条件叠加关系</label><p style="margin-top:14px;font-size:13px;color:var(--accent);padding:10px 0;border-top:1px dashed var(--border);"><strong>🗣 费曼挑战：</strong>画一个四边形家族的"进化树"——从一般四边形到平行四边形到矩形/菱形到正方形。标注每层新增了什么性质。</p></div>
@@ -1287,10 +1552,48 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
   <details class="exam-module">
     <summary>🎯 中考真题精选（一次函数 · 近年典型）</summary>
     <div class="content">
-      <div class="exam-q"><span class="q-tag">2023北京</span><div class="q-diff easy">★☆☆</div><div class="q-body">正比例函数 $y = kx$ 的图象经过点 $(2, 6)$，则 $k =$____。</div><div class="q-solution"><strong>答案：3</strong>。代入：$6 = k \times 2$，$k = 3$。</div></div>
-      <div class="exam-q"><span class="q-tag">2022广州</span><div class="q-diff mid">★★☆</div><div class="q-body">一次函数 $y = -2x + 3$ 的图象不经过第几象限？</div><div class="q-solution"><strong>答案：第三象限</strong>。$k=-2<0$（下降），$b=3>0$（交y轴正半轴）。过一、二、四象限，不过三。</div></div>
-      <div class="exam-q"><span class="q-tag">2023杭州</span><div class="q-diff mid">★★☆</div><div class="q-body">一次函数过 $(0,2)$ 和 $(3,8)$，求解析式。</div><div class="q-solution"><strong>答案：$y=2x+2$</strong>。$k=\frac{8-2}{3-0}=2$，$b=2$（点$(0,2)$直接给出）。</div></div>
-      <div class="exam-q"><span class="q-tag">2023重庆</span><div class="q-diff hard">★★★</div><div class="q-body">已知一次函数 $y = kx + b$ 的图象与 $y = 2x - 1$ 平行，且过点 $(1, 4)$，求解析式。</div><div class="q-solution"><strong>答案：$y=2x+2$</strong>。平行→$k=2$，过$(1,4)$→$4=2×1+b$→$b=2$。</div></div>
+      <div class="exam-q"><span class="q-tag">2023北京</span><div class="q-diff easy">★☆☆</div><div class="q-body">正比例函数 $y = kx$ 的图象经过点 $(2, 6)$，则 $k =$____。</div><div class="q-solution">
+<strong>答案：3</strong>
+<p><strong>🔑 关键思路：</strong>点在函数图象上 → 点的坐标满足函数解析式。将 $(x,y)=(2,6)$ 代入 $y=kx$，直接解出 $k$。</p>
+<ol>
+<li><strong>代入坐标：</strong>将 $x=2$, $y=6$ 代入 $y=kx$，得 $6 = k \times 2$。</li>
+<li><strong>解出 k：</strong>$k = \frac{6}{2} = 3$。</li>
+</ol>
+</div></div>
+      <div class="exam-q"><span class="q-tag">2022广州</span><div class="q-diff mid">★★☆</div><div class="q-body">一次函数 $y = -2x + 3$ 的图象不经过第几象限？</div><div class="q-solution">
+<strong>答案：第三象限</strong>
+<p><strong>🔑 关键思路：</strong>一次函数图象经过哪些象限，由 $k$ 和 $b$ 的正负号共同决定。$k$ 决定直线的升降方向，$b$ 决定与 y 轴的交点位置。先判断 $k<0$ 还是 $k>0$，再判断 $b$ 的符号，就能确定直线穿过哪几个象限。</p>
+<ol>
+<li><strong>判断 $k$ 的符号：</strong>$k = -2 < 0$，图象从左向右下降（↘），穿过二、四象限。</li>
+<li><strong>判断 $b$ 的符号：</strong>$b = 3 > 0$，与 y 轴交于正半轴 $(0, 3)$，即经过第一象限。</li>
+<li><strong>综合分析图象走向：</strong>从 y 轴正半轴 $(0, 3)$ 出发，向右下方（k<0）延伸 → 经过第一象限（含交点）、第四象限。向左上方延伸 → 经过第二象限。永远不会进入第三象限（因为 $b>0$ 且直线下降，不可能进入左下区域）。</li>
+<li><strong>快速判断法——口诀：</strong>$k<0$, $b>0$ → 过一、二、四象限，不过三。</li>
+</ol>
+<p><strong>⚠️ 常见错误：</strong>① 混淆 $k$ 和 $b$ 的作用——$k$ 决定<strong>升降方向</strong>，$b$ 决定<strong>起点高低</strong>。$k<0$ 不意味着"不过第一象限"，还要看 $b$。② 口诀死记硬背而不会推导——关键是自己画出位置再判断。</p>
+</div></div>
+      <div class="exam-q"><span class="q-tag">2023杭州</span><div class="q-diff mid">★★☆</div><div class="q-body">一次函数过 $(0,2)$ 和 $(3,8)$，求解析式。</div><div class="q-solution">
+<strong>答案：$y = 2x + 2$</strong>
+<p><strong>🔑 关键思路：</strong>用待定系数法——先求斜率 $k = \frac{\Delta y}{\Delta x}$，再利用已知点代入求 $b$。注意点 $(0, 2)$ 的 $x=0$，意味着它恰好在 y 轴上，直接给出截距 $b=2$。</p>
+<ol>
+<li><strong>求斜率 $k$：</strong>$k = \frac{y_2 - y_1}{x_2 - x_1} = \frac{8 - 2}{3 - 0} = \frac{6}{3} = 2$。</li>
+<li><strong>求截距 $b$（利用点 $(0,2)$）：</strong>$y = kx + b$，代入 $x=0, y=2$：$2 = 2 \times 0 + b$，$b = 2$。（$b$ 的几何意义：点 $(0,b)$ 就是与 y 轴的交点，此题直接给出来了。）</li>
+<li><strong>验证另一个点：</strong>将 $x=3$ 代入 $y = 2x + 2$，得 $y = 2 \times 3 + 2 = 8$ ✓。</li>
+</ol>
+<p><strong>⚠️ 常见错误：</strong>① 斜率公式分子分母颠倒——写成 $k = \frac{x_2-x_1}{y_2-y_1} = \frac{3}{6} = 0.5$（错误）。正确公式 $k = \frac{y_2-y_1}{x_2-x_1}$，分子是 y 的差。② 忽略点 $(0,2)$ 直接给了 $b$ 的便利，又去列方程组算一遍，浪费时间。</p>
+</div></div>
+      <div class="exam-q"><span class="q-tag">2023重庆</span><div class="q-diff hard">★★★</div><div class="q-body">已知一次函数 $y = kx + b$ 的图象与 $y = 2x - 1$ 平行，且过点 $(1, 4)$，求解析式。</div><div class="q-solution">
+<strong>答案：$y = 2x + 2$</strong>
+<p><strong>🔑 关键思路：</strong>两条直线平行 → 斜率相等（$k_1 = k_2$）。直接从已知直线读出 $k=2$，然后代入点 $(1,4)$ 求出 $b$。平行关系把两个未知量 $(k,b)$ 减少为一个，只需一个条件（过某点）即可确定。</p>
+<ol>
+<li><strong>由平行确定 $k$：</strong>目标直线与 $y = 2x - 1$ 平行，两直线平行 $\implies$ 斜率相同，$k = 2$。</li>
+<li><strong>代入点求 $b$：</strong>$y = 2x + b$ 过点 $(1, 4)$，代入：$4 = 2 \times 1 + b$。</li>
+<li><strong>解出 $b$：</strong>$b = 4 - 2 = 2$。</li>
+<li><strong>写出解析式：</strong>$y = 2x + 2$。</li>
+</ol>
+<p><strong>⚠️ 常见错误：</strong>① 把"平行"理解成 $b$ 相同——两条直线平行要求 <strong>$k$ 相同、$b$ 不同</strong>。若 $k$ 和 $b$ 都相同则两条直线<strong>重合</strong>，不是平行。② 读题时将已知直线 $y=2x-1$ 中的 $b=-1$ 误用为目标直线的 $b$。</p>
+<p><strong>🔄 替代方法：</strong>也可以设解析式为 $y=2x+b$，然后直接代入 $(1,4)$ 得 $b=2$。方法本质上与 $k = \frac{y - y_1}{x - x_1}$ 的"点斜式"思路相同——知道斜率和一点，即可唯一确定直线。</p>
+<p><strong>✅ 检验：</strong>代入 $x=1$：$y=2\times1+2=4$ ✓。验证平行性：目标 $k=2$ = 已知直线 $k=2$ ✓。</p>
+</div></div>
     </div>
   </details>
     <div class="checklist"><h3>✅ 本章自查清单</h3><label><span class="self-score">🔴→🟡→🟢</span>  理解函数概念和变量关系</label><label><span class="self-score">🔴→🟡→🟢</span>  能用待定系数法求一次函数解析式</label><label><span class="self-score">🔴→🟡→🟢</span>  能画出一次函数的图象</label><label><span class="self-score">🔴→🟡→🟢</span>  理解 $k$ 和 $b$ 的几何意义</label><label><span class="self-score">🔴→🟡→🟢</span>  知道一次函数与方程和不等式的关系</label><p style="margin-top:14px;font-size:13px;color:var(--accent);padding:10px 0;border-top:1px dashed var(--border);"><strong>🗣 费曼挑战：</strong>用 $y=2x+1$ 解释"函数是一种对应关系"——给定 $x$ 值如何得到 $y$ 值？反过来，给定 $y$ 值如何得到 $x$ 值？</p></div>
@@ -1350,9 +1653,37 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
   <details class="exam-module">
     <summary>🎯 中考真题精选（数据分析 · 近年典型）</summary>
     <div class="content">
-      <div class="exam-q"><span class="q-tag">2023北京</span><div class="q-diff easy">★☆☆</div><div class="q-body">数据：2, 4, 4, 6, 8 的平均数是____，众数是____。</div><div class="q-solution"><strong>答案：平均数4.8，众数4</strong>。平均=$(2+4+4+6+8)/5=24/5=4.8$。4出现2次最多→众数=4。</div></div>
-      <div class="exam-q"><span class="q-tag">2022广州</span><div class="q-diff mid">★★☆</div><div class="q-body">数据：3, 5, 7, 7, 9 的中位数是____。</div><div class="q-solution"><strong>答案：7</strong>。已排序，中间位置的数是7。</div></div>
-      <div class="exam-q"><span class="q-tag">2023杭州</span><div class="q-diff hard">★★★</div><div class="q-body">甲组数据：1, 2, 3, 4, 5；乙组数据：1, 1, 5, 9, 9。哪组数据的方差大？</div><div class="q-solution"><strong>答案：乙组方差大</strong>。甲组数据均匀分布（方差小）；乙组数据两极分化明显（方差大）。</div></div>
+      <div class="exam-q"><span class="q-tag">2023北京</span><div class="q-diff easy">★☆☆</div><div class="q-body">数据：2, 4, 4, 6, 8 的平均数是____，众数是____。</div><div class="q-solution">
+<strong>答案：平均数 4.8，众数 4</strong>
+<p><strong>🔑 关键思路：</strong>平均数是所有数据之和除以数据个数；众数是出现频次最高的数。两个统计量分别反映数据的"一般水平"和"多数情况"。</p>
+<ol>
+<li><strong>求平均数：</strong>$\bar{x} = \dfrac{2 + 4 + 4 + 6 + 8}{5} = \dfrac{24}{5} = 4.8$。</li>
+<li><strong>求众数：</strong>统计频次：2（1次）、4（2次）、6（1次）、8（1次）→ 出现最多的是 4，众数 = 4。</li>
+</ol>
+</div></div>
+      <div class="exam-q"><span class="q-tag">2022广州</span><div class="q-diff mid">★★☆</div><div class="q-body">数据：3, 5, 7, 7, 9 的中位数是____。</div><div class="q-solution">
+<strong>答案：7</strong>
+<p><strong>🔑 关键思路：</strong>中位数是数据排序后位于最中间的数，不受极端值影响。数据个数为奇数时，取正中间那个数；偶数时，取中间两个数的平均数。</p>
+<ol>
+<li><strong>确认数据已排序：</strong>数据 3, 5, 7, 7, 9 已按从小到大的顺序排列。</li>
+<li><strong>确定中位数位置：</strong>共 5 个数据（奇数个），中位数是第 $\frac{5+1}{2} = 3$ 个。</li>
+<li><strong>取出中位数：</strong>第 3 个数据是 7。</li>
+</ol>
+<p><strong>⚠️ 常见错误：</strong>① 忘记先排序就直接取"看起来中间"的数——如果数据是乱序（如 9, 3, 7, 5, 7），必须先排序才能找中位数。② 数据个数为奇数时误用"中间两个取平均"——只有偶数个数据时才取中间两个的平均数。</p>
+</div></div>
+      <div class="exam-q"><span class="q-tag">2023杭州</span><div class="q-diff hard">★★★</div><div class="q-body">甲组数据：1, 2, 3, 4, 5；乙组数据：1, 1, 5, 9, 9。哪组数据的方差大？</div><div class="q-solution">
+<strong>答案：乙组方差大</strong>
+<p><strong>🔑 关键思路：</strong>方差衡量数据偏离平均数的程度——方差越小数据越稳定（越集中），方差越大数据越分散。定性判断：观察两组数据的分布特点，甲组均匀递增（每个数差距≈1），乙组两极分化（1和1 vs 9和9），显然乙组更分散 → 方差更大。</p>
+<ol>
+<li><strong>求甲组平均数与方差：</strong>$\bar{x}_甲 = \frac{1+2+3+4+5}{5} = 3$。$s^2_甲 = \frac{(1-3)^2+(2-3)^2+(3-3)^2+(4-3)^2+(5-3)^2}{5} = \frac{4+1+0+1+4}{5} = \frac{10}{5} = 2$。</li>
+<li><strong>求乙组平均数与方差：</strong>$\bar{x}_乙 = \frac{1+1+5+9+9}{5} = \frac{25}{5} = 5$。$s^2_乙 = \frac{(1-5)^2+(1-5)^2+(5-5)^2+(9-5)^2+(9-5)^2}{5} = \frac{16+16+0+16+16}{5} = \frac{64}{5} = 12.8$。</li>
+<li><strong>比较：</strong>$s^2_甲 = 2$，$s^2_乙 = 12.8$。$12.8 > 2$ → 乙组方差大。</li>
+<li><strong>直观验证：</strong>甲组数据集中在 1~5，离平均数 3 的偏差在 ±2 以内；乙组数据在 1 和 9 处分别有 2 个值，离平均数 5 的偏差达 ±4——乙组数据波动剧烈得多。</li>
+</ol>
+<p><strong>⚠️ 常见错误：</strong>① 认为"方差越大越好"——方差衡量的是<strong>波动程度</strong>，不是数据大小。比赛成绩中方差小意味着发挥稳定。② 计算方差时忘记先求平均数，直接用数据套公式——方差的核心是"与平均数的偏差"。</p>
+<p><strong>🔄 替代方法：</strong>对于选择题，无需精确计算即可判断。甲组每个数间隔均匀（1,2,3,4,5），方差必小；乙组数据出现明显的两端集中（1,1 vs 9,9），方差必大。定性分析可秒杀结论。</p>
+<p><strong>✅ 检验：</strong>甲组标准差 $s_甲 \approx 1.41$，乙组标准差 $s_乙 \approx 3.58$。标准差的量级差异也验证了乙组方差更大 ✓。</p>
+</div></div>
     </div>
   </details>
     <div class="checklist"><h3>✅ 本章自查清单</h3><label><span class="self-score">🔴→🟡→🟢</span>  能正确计算平均数、中位数、众数</label><label><span class="self-score">🔴→🟡→🟢</span>  理解加权平均数的含义</label><label><span class="self-score">🔴→🟡→🟢</span>  会用方差衡量数据的波动程度</label><label><span class="self-score">🔴→🟡→🟢</span>  知道平均数受极端值影响大、中位数不受影响</label><label><span class="self-score">🔴→🟡→🟢</span>  能根据实际情境选合适的数据代表</label><p style="margin-top:14px;font-size:13px;color:var(--accent);padding:10px 0;border-top:1px dashed var(--border);"><strong>🗣 费曼挑战：</strong>解释为什么"去掉一个最高分和一个最低分"能让比赛评分更公平？这和平均数、中位数的性质有什么关系？</p></div>

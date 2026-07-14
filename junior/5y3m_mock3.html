@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5年真题3年模拟 · 广东中考数学专项突破</title>
+  <link rel="stylesheet" href="../katex/katex.min.css">
+  <style>
+:root {
+  --bg: #ffffff;
+  --bg-secondary: #f8fafc;
+  --text: #1e293b;
+  --text-secondary: #64748b;
+  --accent: #4f46e5;
+  --accent-light: #eef2ff;
+  --border: #e2e8f0;
+  --shadow: 0 1px 2px rgba(0,0,0,0.06);
+  --radius: 6px;
+  --sidebar-width: 260px;
+  --g7: #4f46e5;
+  --g8: #0891b2;
+  --g9: #db2777;
+  --mixed: #7c3aed;
+  --ext: #059669;
+  --easy: #10b981;
+  --mid: #f59e0b;
+  --hard: #ef4444;
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --bg-secondary: #1e293b;
+  --text: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --accent: #818cf8;
+  --accent-light: #1e1b4b;
+  --border: #334155;
+  --shadow: 0 1px 2px rgba(0,0,0,0.25);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  display: flex;
+}
+
+#sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border);
+  padding: 20px 14px;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+#sidebar h2 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--accent);
+}
+
+.sidebar-group { margin-bottom: 12px; }
+.sidebar-group-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0 10px 4px;
+}
+
+#sidebar nav a {
+  display: block;
+  padding: 5px 10px;
+  border-radius: 6px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 12px;
+  transition: background 0.15s, color 0.15s;
+}
+
+#sidebar nav a:hover,
+#sidebar nav a.active {
+  background: var(--accent-light);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.sidebar-actions {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.theme-toggle, .print-btn, .expand-btn {
+  padding: 7px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 12px;
+  width: 100%;
+}
+
+#content {
+  flex: 1;
+  max-width: 960px;
+  padding: 32px 44px;
+}
+
+.cover {
+  text-align: center;
+  padding: 30px 0 24px;
+  margin-bottom: 28px;
+  border-bottom: 2px solid var(--border);
+}
+.cover h1 { font-size: 28px; margin-bottom: 8px; letter-spacing: -0.5px; }
+.cover p { color: var(--text-secondary); font-size: 14px; }
+
+.section { margin-bottom: 56px; padding-top: 8px; }
+
+.section h1 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  padding: 8px 0 10px;
+  border-bottom: 3px solid var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.exam-module {
+  margin-bottom: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  page-break-inside: avoid;
+}
+
+.exam-module summary {
+  padding: 11px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--bg-secondary);
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.exam-module summary::-webkit-details-marker { display: none; }
+
+.exam-module summary::before {
+  content: "▸";
+  display: inline-block;
+  font-size: 11px;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.exam-module[open] summary::before { transform: rotate(90deg); }
+
+.exam-module .content { padding: 16px 18px; }
+
+.exam-q {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.15s;
+  page-break-inside: avoid;
+  position: relative;
+}
+.exam-q:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+
+.q-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.3px;
+  margin-right: 6px;
+}
+.q-g7 { background: var(--g7); }
+.q-g8 { background: var(--g8); }
+.q-g9 { background: var(--g9); }
+
+.q-diff {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  margin-left: 4px;
+}
+.q-diff.easy { color: var(--easy); }
+.q-diff.mid { color: var(--mid); }
+.q-diff.hard { color: var(--hard); }
+
+.q-body {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--text);
+}
+
+.q-solution {
+  margin-top: 12px;
+  padding: 12px 14px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--accent);
+  font-size: 13px;
+  line-height: 1.75;
+  display: none;
+}
+
+.exam-q.show-solution .q-solution { display: block; }
+
+.q-solution strong { color: var(--accent); }
+.q-solution ol, .q-solution ul { padding-left: 20px; margin: 4px 0; }
+.q-solution li { margin-bottom: 3px; }
+
+.q-solution .err {
+  color: #dc2626;
+  background: #fef2f2;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 2px 0;
+}
+
+[data-theme="dark"] .q-solution .err { background: #3b1118; }
+
+.q-toggle {
+  font-size: 11px;
+  margin-top: 10px;
+  cursor: pointer;
+  color: var(--accent);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 3px 10px;
+  display: inline-block;
+  transition: background 0.15s;
+}
+.q-toggle:hover { background: var(--accent-light); }
+
+.topic-summary {
+  background: var(--accent-light);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-top: 18px;
+  font-size: 13px;
+  line-height: 1.75;
+}
+.topic-summary strong { color: var(--accent); }
+
+.grade-legend {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+.grade-legend .item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.grade-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+@media (max-width: 768px) {
+  body { flex-direction: column; }
+  #sidebar { width: 100%; height: auto; position: relative; padding: 16px; }
+  #content { padding: 20px 14px; }
+  .paper-score-bar { gap: 10px; }
+  .exam-q { padding: 14px; margin-bottom: 14px; }
+}
+
+.paper-divider {
+  border: none;
+  border-top: 2px dashed var(--border);
+  margin: 10px 0 16px;
+}
+
+.exam-paper {
+  border: 2px solid #f59e0b;
+  border-radius: 14px;
+  padding: 28px 24px;
+  margin: 32px 0 40px;
+  background: var(--bg-secondary);
+  position: relative;
+}
+
+.exam-paper::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #f59e0b, #ef4444, #f59e0b);
+  border-radius: 14px 14px 0 0;
+}
+
+.paper-header {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.paper-header h3 {
+  font-size: 20px;
+  color: #b45309;
+  margin-bottom: 6px;
+}
+
+.paper-score-bar {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin: 12px 0;
+  flex-wrap: wrap;
+}
+
+.paper-section-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 18px 0 10px;
+  padding: 4px 0 4px 10px;
+  border-left: 3px solid var(--accent);
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  z-index: 999;
+}
+.back-to-top:hover { opacity: 0.9; }
+
+@media print {
+  @page { size: A4; margin: 10mm; }
+  body { background: #fff; color: #000; font-size: 9pt; line-height: 1.4; display: block; }
+  #sidebar, .theme-toggle, .print-btn, .sidebar-actions, .q-toggle { display: none !important; }
+  #content { max-width: none; padding: 0; }
+  .cover { padding: 0 0 8px; margin-bottom: 10px; border-bottom: 1.5px solid #999; }
+  .cover h1 { font-size: 20px; }
+  .cover p { color: #333; }
+  .section { margin-bottom: 6mm; }
+  .section h1 { font-size: 13px; margin-bottom: 5px; padding-bottom: 3px; border-bottom: 1.5px solid #333; }
+  .exam-module { box-shadow: none; border: 1px solid #999; margin-bottom: 4mm; page-break-inside: avoid; }
+  .exam-module summary { background: #f3f4f6 !important; color: #000 !important; padding: 5px 8px; font-size: 10px; border-bottom: 1px solid #999; }
+  .exam-module summary::before { display: none; }
+  .exam-module .content { padding: 6px; display: block !important; }
+  .exam-module { display: block; }
+  .exam-q { box-shadow: none; border: 1px solid #bbb; padding: 6px; margin-bottom: 3mm; }
+  .q-solution { display: block !important; background: #f8f8f8 !important; }
+  .q-g7, .q-g8, .q-g9 { border: 1px solid #000; background: #fff !important; color: #000 !important; padding: 1px 4px; }
+  a { text-decoration: none; color: #000; }
+  .katex { font-size: 1em; }
+}
+
+#sidebar.hidden { display: none; }
+
+#sidebarShowBtn {
+  display: none;
+  position: fixed;
+  top: 12px; left: 12px; z-index: 1000;
+  background: var(--bg); color: var(--accent);
+  border: 1px solid var(--border); border-radius: 6px;
+  cursor: pointer; font-weight: 600; font-size: 14px;
+  padding: 6px 10px; box-shadow: var(--shadow);
+}
+
+body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
+
+@media (max-width: 768px) {
+  #sidebar { position: fixed; z-index: 900; }
+  #sidebar.hidden { display: none; }
+  #sidebarShowBtn { display: flex; font-size: 13px; padding: 5px 8px; top: 8px; left: 8px; }
+  #content { margin-left: 0 !important; }
+}
+
+@media print {
+  * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  #sidebar { display: none !important; }
+  #sidebarShowBtn { display: none !important; }
+  body { display: block; }
+  .exam-module { display: block !important; }
+  .exam-module .content { display: block !important; }
+  .exam-module[open] .content { display: block !important; }
+  .exam-module { box-shadow: none; border: 1px solid #ccc; page-break-inside: avoid; }
+}
+  </style>
+</head>
+<body>
+  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="回到顶部">↑</button>
+  <button id="sidebarShowBtn">☰ 侧栏</button>
+  <nav id="sidebar">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+      <h2 style="margin-bottom:0;">模拟试卷3 强化卷</h2>
+      <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;" title="隐藏侧栏">✕</button>
+    </div>
+    <div class="sidebar-group">
+      <div class="sidebar-group-title">导航</div>
+      <nav>
+        <a href="junior_math_5y3m.html">📖 专题总览</a>
+        <a href="5y3m_mock1.html">模拟卷1 · 基础</a>
+        <a href="5y3m_mock2.html">模拟卷2 · 中等</a>
+        <a href="5y3m_mock3.html" style="font-weight:700;color:var(--accent);">模拟卷3 · 强化</a>
+        <a href="5y3m_mock4.html">模拟卷4 · 冲刺</a>
+        <a href="5y3m_mock5.html">模拟卷5 · 拔高</a>
+        <a href="../index.html" style="margin-top:8px;border-top:1px solid var(--border);padding-top:8px;">🏠 返回首页</a>
+      </nav>
+    </div>
+    <div class="sidebar-actions">
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+      <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
+      <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
+    </div>
+  </nav>
+
+  <main id="content">
+    <div class="cover">
+      <h1>📝 广东中考数学模拟试卷3</h1>
+      <p>强化卷 · 适合提升训练 · 考试时间：90分钟 · 满分：120分</p>
+      <p style="margin-top:6px;"><a href="junior_math_5y3m.html" style="color:var(--accent);font-size:13px;">← 返回专题总览</a> | <a href="5y3m_mock2.html" style="color:var(--accent);font-size:13px;">← 上一套</a> | <a href="5y3m_mock4.html" style="color:var(--accent);font-size:13px;">下一套 →</a></p>
+    </div>
+
+<!-- 模拟试卷三：强化卷·适合提升训练 -->
+<!-- ============================================================ -->
+<section class="section" id="mock3">
+  <h1>📝 模拟试卷三 · 广东中考数学强化卷</h1>
+  <div class="exam-paper" style="border:2px solid #f59e0b;border-radius:12px;padding:20px;margin:24px 0;background:var(--bg-secondary);">
+    <h3 style="text-align:center;color:#f59e0b;font-size:18px;margin-bottom:4px;">📝 广东中考数学模拟试卷三</h3>
+    <p style="text-align:center;font-size:12px;color:var(--text-secondary);">（考试时间：90分钟  满分：120分） 适合：强化提升训练</p>
+    <div style="text-align:center;margin:10px 0;font-size:11px;color:var(--accent);">
+      <span>一、选择题(30分)</span> ·
+      <span>二、填空题(15分)</span> ·
+      <span>三、解答题(一)(18分)</span> ·
+      <span>四、解答题(二)(24分)</span> ·
+      <span>五、解答题(三)(24分)</span>
+    </div>
+
+<hr class="paper-divider">
+  <div class="paper-section-label">一、选择题（本大题共10小题，每小题3分，共30分）</div>
+  <details class="exam-module" open>
+    <summary>📋 一、选择题（10题 × 3分 = 30分）</summary>
+    <div class="content">
+
+  <div class="exam-q" data-qid="m3-1">
+    <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff easy">★☆☆</span>
+    <div class="q-body">有理数中，最小的正整数是（ ）<br>A. $0$ &nbsp; B. $1$ &nbsp; C. $-1$ &nbsp; D. 不存在</div>
+    <div class="q-solution">
+      <strong>答案：B</strong>
+      <p><strong>🔑 关键思路：</strong>正整数定义为 $1,2,3,\dots$，其中最小的是 $1$。$0$ 既不是正整数也不是负整数。</p>
+      <ol><li>正整数集合：$\{1,2,3,4,\dots\}$</li><li>按大小排序：$1<2<3<\dots$</li><li>最小正整数为 $1$</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>误选 A（$0$ 不是正整数），误选 D（最小正整数存在且为 1）。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-2">
+    <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff easy">★☆☆</span>
+    <div class="q-body">抽样调查抽取样本的核心原则是（ ）<br>A. 样本越大越好 &nbsp; B. 样本具有代表性 &nbsp; C. 选最容易调查的 &nbsp; D. 全部调查</div>
+    <div class="q-solution">
+      <strong>答案：B</strong>
+      <p><strong>🔑 关键思路：</strong>抽样调查成功的关键是样本能真实反映总体的特征——即代表性。代表性比样本大小更重要。</p>
+      <ol><li>A：样本越大不一定越好，若不具代表性，大样本也无效</li><li>B：代表性是抽样调查的灵魂</li><li>C："最容易调查"会产生偏差</li><li>D：全部调查=普查，不是抽样调查</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>认为"样本越大越好"，忽略了代表性这一核心要求。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-3">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">任意多边形的外角和等于（ ）<br>A. $180^\circ$ &nbsp; B. $360^\circ$ &nbsp; C. $540^\circ$ &nbsp; D. $(n-2)\times 180^\circ$</div>
+    <div class="q-solution">
+      <strong>答案：B</strong>
+      <p><strong>🔑 关键思路：</strong>任意凸多边形外角和恒为 $360^\circ$。内角和 $=(n-2)\times 180^\circ$，D 是内角和公式。</p>
+      <ol><li>每个内角+对应外角 $=180^\circ$</li><li>$n$ 个内角+$n$ 个外角 $=n\times 180^\circ$</li><li>内角和 $=(n-2)\times 180^\circ$</li><li>外角和 $=n\times 180^\circ-(n-2)\times 180^\circ=360^\circ$</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>混淆内角和与外角和公式，误认为边数越多外角和越大。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-4">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">下列各数中，属于无理数的是（ ）<br>A. $3.14$ &nbsp; B. $\dfrac{22}{7}$ &nbsp; C. $\sqrt{2}$ &nbsp; D. $\sqrt{9}$</div>
+    <div class="q-solution">
+      <strong>答案：C</strong>
+      <p><strong>🔑 关键思路：</strong>无理数是无限不循环小数，不能写成分数形式。</p>
+      <ol><li>A：$3.14$ 是有限小数→有理数</li><li>B：$\frac{22}{7}$ 是分数→有理数</li><li>C：$\sqrt{2}\approx 1.414213562\dots$ 无限不循环→无理数</li><li>D：$\sqrt{9}=3$ 是整数→有理数</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>误以为 $\frac{22}{7}$ 是无理数（它是 $\pi$ 的近似值但本身是有理数），或认为带根号的都是无理数。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-5">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">一次函数 $y=-3x+2$，$y$ 随 $x$ 的增大而（ ）<br>A. 增大 &nbsp; B. 减小 &nbsp; C. 不变 &nbsp; D. 先增后减</div>
+    <div class="q-solution">
+      <strong>答案：B</strong>
+      <p><strong>🔑 关键思路：</strong>一次函数 $y=kx+b$ 中，$k$ 决定增减性：$k>0$ 时增大；$k<0$ 时减小。本题 $k=-3<0$。</p>
+      <ol><li>$y=-3x+2$，$k=-3<0$</li><li>$y$ 随 $x$ 增大而减小</li><li>验证：$x=1$→$y=-1$，$x=2$→$y=-4$，$x$ 增大 $y$ 减小 ✓</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>混淆 $k$ 的正负与函数增减性之间的关系。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-6">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">三角形全等的判定方法中，SSA 能否判定两个三角形全等？（ ）<br>A. 能 &nbsp; B. 不能 &nbsp; C. 直角三角形时可以 &nbsp; D. 视情况而定</div>
+    <div class="q-solution">
+      <strong>答案：B</strong>
+      <p><strong>🔑 关键思路：</strong>SSA（两边及其中一边的对角对应相等）不能判定全等，因为可能产生两个不同形状的三角形。全等判定：SSS、SAS、ASA、AAS、HL（仅Rt△）。</p>
+      <ol><li>SSA 不在全等判定方法之列</li><li>给定两边和一个非夹角可出现两个三角形（歧义情况）</li><li>C 的 HL 是"斜边+直角边"，跟 SSA 有本质区别</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>误以为 SSA 等价于 HL（HL 要求已知角必须是直角，且对应边为斜边和直角边）。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-7">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">菱形周长为 $20$，面积为 $24$，则两条对角线之和为（ ）<br>A. $10$ &nbsp; B. $14$ &nbsp; C. $12$ &nbsp; D. $16$</div>
+    <div class="q-solution">
+      <strong>答案：B</strong>
+      <p><strong>🔑 关键思路：</strong>菱形边长 $a=5$，设对角线为 $d_1,d_2$。利用 $(\frac{d_1}{2})^2+(\frac{d_2}{2})^2=a^2$ 和 $S=\frac{1}{2}d_1d_2$ 列方程，通过 $(d_1+d_2)^2=d_1^2+d_2^2+2d_1d_2$ 求解。</p>
+      <ol><li>边长 $a=20\div4=5$</li><li>$d_1^2+d_2^2=4a^2=100$（对角线垂直平分→用勾股定理）</li><li>$S=\frac{1}{2}d_1d_2=24$→$d_1d_2=48$</li><li>$(d_1+d_2)^2=d_1^2+d_2^2+2d_1d_2=100+96=196$</li><li>$d_1+d_2=14$</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>忘记菱形面积公式是 $\frac{1}{2}d_1d_2$，或直接用 $d_1d_2=24$。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-8">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">若 $a<0$，则 $\sqrt{a^2}=$（ ）<br>A. $a$ &nbsp; B. $-a$ &nbsp; C. $0$ &nbsp; D. $\pm a$</div>
+    <div class="q-solution">
+      <strong>答案：B</strong>
+      <p><strong>🔑 关键思路：</strong>核心公式 $\sqrt{a^2}=|a|$。当 $a<0$ 时，$|a|=-a$（因为 $-a>0$）。</p>
+      <ol><li>$\sqrt{a^2}=|a|$（算术平方根的非负性）</li><li>$a<0$，则 $|a|=-a$</li><li>例：$a=-3$，$\sqrt{(-3)^2}=\sqrt{9}=3=-(-3)=-a$ ✓</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>直接认为 $\sqrt{a^2}=a$，忽略 $a$ 为负时的情况；或误选 D（算术平方根只有一个值）。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-9">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">一次函数图像经过 $(0,-2)$ 和 $(3,1)$，解析式为 $y=x-2$。当 $x=5$ 时，$y=$（ ）<br>A. $3$ &nbsp; B. $5$ &nbsp; C. $7$ &nbsp; D. $2$</div>
+    <div class="q-solution">
+      <strong>答案：A</strong>
+      <p><strong>🔑 关键思路：</strong>验证两点可得解析式 $y=x-2$，直接代入 $x=5$ 计算。</p>
+      <ol><li>验证 $(0,-2)$：$-2=0-2$ ✓</li><li>验证 $(3,1)$：$1=3-2$ ✓</li><li>$x=5$ 时 $y=5-2=3$</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>计算错误 $5-2=2$ 选 D，或混淆 $x$ 和 $y$ 的对应关系。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-10">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">方程 $\dfrac{x}{x-3}+1=\dfrac{3}{x-3}$ 的解为（ ）<br>A. $x=3$ &nbsp; B. $x=0$ &nbsp; C. 无解 &nbsp; D. $x=6$</div>
+    <div class="q-solution">
+      <strong>答案：C（无解）</strong>
+      <p><strong>🔑 关键思路：</strong>分式方程必须检验增根。去分母解出整式方程的解后，代入原方程看是否使分母为零。</p>
+      <ol><li>去分母（乘以 $x-3$）：$x+(x-3)=3$</li><li>$2x-3=3$→$2x=6$→$x=3$</li><li>检验：$x=3$ 时分母 $x-3=0$，原方程无意义→$x=3$ 是增根</li><li>原方程无解</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>解出 $x=3$ 就选 A，忘记检验增根。</p>
+      <p><strong>✓ 检验：</strong>$x=3$ 代入左边 $\frac{3}{0}+1$ 分母为 0 无意义，舍去。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+    </div>
+  </details>
+
+<hr class="paper-divider">
+  <div class="paper-section-label">二、填空题（本大题共5小题，每小题3分，共15分）</div>
+  <details class="exam-module" open>
+    <summary>📝 二、填空题（5题 × 3分 = 15分）</summary>
+    <div class="content">
+
+  <div class="exam-q" data-qid="m3-11">
+    <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff easy">★☆☆</span>
+    <div class="q-body">$-(-5)=$ ______</div>
+    <div class="q-solution">
+      <strong>答案：$5$</strong>
+      <p><strong>🔑 关键思路：</strong>负负得正，$-(-5)$ 表示取 $-5$ 的相反数。数轴理解：$-5$ 关于原点对称的点是 $5$。</p>
+      <p><strong>⚠️ 常见错误：</strong>误以为 $-(-5)=-5$，忽略了双重否定。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-12">
+    <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">若 $|x-2|+(y+3)^2=0$，则 $x+y=$ ______</div>
+    <div class="q-solution">
+      <strong>答案：$-1$</strong>
+      <p><strong>🔑 关键思路：</strong>非负数之和为零→每一项都为零。绝对值 $\ge 0$，平方 $\ge 0$。</p>
+      <ol><li>$|x-2|\ge 0$，$(y+3)^2\ge 0$，和为 0</li><li>$|x-2|=0$→$x-2=0$→$x=2$</li><li>$(y+3)^2=0$→$y+3=0$→$y=-3$</li><li>$x+y=2+(-3)=-1$</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>只解出 $x$ 忘了 $y$；$y+3=0$ 解得 $y=3$ 而非 $y=-3$。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-13">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">正比例函数 $y=2x$ 的图像经过点 $(3,\ $ ______$\ )$</div>
+    <div class="q-solution">
+      <strong>答案：$6$</strong>
+      <p><strong>🔑 关键思路：</strong>点在函数图像上→坐标满足函数解析式。$x=3$ 代入 $y=2x=6$。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-14">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">在 $\triangle ABC$ 中，$\angle C=90^\circ$，$AC=3$，$BC=4$。斜边中线长 $=$ ______</div>
+    <div class="q-solution">
+      <strong>答案：$2.5$</strong>
+      <p><strong>🔑 关键思路：</strong>直角三角形斜边中线等于斜边的一半。先用勾股定理求斜边，再除以 2。</p>
+      <ol><li>勾股定理：$AB=\sqrt{3^2+4^2}=\sqrt{25}=5$</li><li>直角三角形斜边中线 $=$ 斜边一半 $=\frac{5}{2}=2.5$</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>忘记中线定理；把斜边中线与斜边上的高混淆。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-15">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">分解因式：$x^2-2x-3=$ ______</div>
+    <div class="q-solution">
+      <strong>答案：$(x-3)(x+1)$</strong>
+      <p><strong>🔑 关键思路：</strong>十字相乘法——找两个数积为 $-3$（常数项），和为 $-2$（一次项系数）。$(-3)$ 和 $1$ 满足。</p>
+      <ol><li>需要 $m\cdot n=-3$，$m+n=-2$</li><li>$m=-3$，$n=1$</li><li>$(x-3)(x+1)=x^2+x-3x-3=x^2-2x-3$ ✓</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>符号出错：写成 $(x+3)(x-1)=x^2+2x-3$。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+    </div>
+  </details>
+
+<hr class="paper-divider">
+  <div class="paper-section-label">三、解答题（一）（本大题共3小题，每小题6分，共18分）</div>
+  <details class="exam-module" open>
+    <summary>✏️ 三、解答题(一)（3题 × 6分 = 18分）</summary>
+    <div class="content">
+
+  <div class="exam-q" data-qid="m3-16">
+    <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff easy">★☆☆</span>
+    <div class="q-body">计算：$\sqrt{25}+\sqrt[3]{-8}-|-3|+(-1)^3$</div>
+    <div class="q-solution">
+      <strong>答案：$-1$</strong>
+      <p><strong>🔑 关键思路：</strong>分别求算术平方根、立方根、绝对值、乘方，再按顺序运算。</p>
+      <ol><li>$\sqrt{25}=5$（算术平方根取正）</li><li>$\sqrt[3]{-8}=-2$（立方根可开负数）</li><li>$|-3|=3$（绝对值取非负）</li><li>$(-1)^3=-1$（奇次幂为负）</li><li>原式 $=5+(-2)-3+(-1)=5-2-3-1=-1$</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>$\sqrt[3]{-8}$ 误算为不存在；$(-1)^3$ 误算为 $1$。</p>
+      <p><strong>✓ 检验：</strong>$5-2=3$，$3-3=0$，$0-1=-1$。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-17">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">先化简再求值：$(a+2)(a-2)-(a-1)^2$，其中 $a=-2$。</div>
+    <div class="q-solution">
+      <strong>答案：化简得 $2a-5$；代入得 $-9$</strong>
+      <p><strong>🔑 关键思路：</strong>用平方差和完全平方公式展开后合并同类项。</p>
+      <ol><li>$(a+2)(a-2)=a^2-4$（平方差公式）</li><li>$(a-1)^2=a^2-2a+1$（完全平方公式）</li><li>原式 $=a^2-4-(a^2-2a+1)=a^2-4-a^2+2a-1=2a-5$</li><li>代入 $a=-2$：$2(-2)-5=-4-5=-9$</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>展开 $(a-1)^2$ 时中间项忘写 $2a$；去括号时漏变号。</p>
+      <p><strong>✓ 检验：</strong>$a=-2$ 代入原式 $=(-2+2)(-2-2)-(-2-1)^2=0-9=-9$ ✓。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-18">
+    <span class="q-tag q-g7">7年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">解不等式组，并将解集表示在数轴上：$\begin{cases} x+2>0 \\[2pt] 2x-1<5 \end{cases}$</div>
+    <div class="q-solution">
+      <strong>答案：$-2 < x < 3$</strong>
+      <p><strong>🔑 关键思路：</strong>分别解两个不等式→取交集→画数轴（空心圈表示不包含端点）。</p>
+      <ol><li>$x+2>0$→$x>-2$</li><li>$2x-1<5$→$2x<6$→$x<3$</li><li>取交集：$-2 < x < 3$</li><li>数轴表示：在 $-2$ 和 $3$ 处画空心圈，中间涂实线</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>解不等式时不等号方向搞反；数轴上忘了区分空心圈（$<,>$）和实心圈（$\le,\ge$）。</p>
+      <p><strong>✓ 检验：</strong>取 $x=0$ 代入，$0+2=2>0$ ✓，$2\times0-1=-1<5$ ✓。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+    </div>
+  </details>
+
+<hr class="paper-divider">
+  <div class="paper-section-label">四、解答题（二）（本大题共3小题，每小题8分，共24分）</div>
+  <details class="exam-module" open>
+    <summary>📐 四、解答题(二)（3题 × 8分 = 24分）</summary>
+    <div class="content">
+
+  <div class="exam-q" data-qid="m3-19">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">如图，在 $\triangle ABD$ 和 $\triangle CBD$ 中，$\angle ADB=\angle CDB$，$AD=CD$。<br>(1) 求证：$\triangle ABD \cong \triangle CBD$；<br>(2) 若 $\angle A=30^\circ$，$\angle ABD=70^\circ$，求 $\angle C$。</div>
+    <div class="q-solution">
+      <strong>答案：(1) 见解析；(2) $\angle C=30^\circ$</strong>
+      <p><strong>🔑 关键思路：</strong>(1) SAS 全等——$AD=CD$，$\angle ADB=\angle CDB$，$BD=BD$（公共边）。(2) 全等三角形对应角相等。</p>
+      <ol><li>(1) 在 $\triangle ABD$ 和 $\triangle CBD$ 中：$AD=CD$（已知），$\angle ADB=\angle CDB$（已知），$BD=BD$（公共边）→$\triangle ABD\cong\triangle CBD$（SAS）</li><li>(2) 由全等得 $\angle C=\angle A=30^\circ$</li><li>验证：$\angle ADB=180^\circ-30^\circ-70^\circ=80^\circ$；由全等 $\angle CDB=80^\circ$，$\angle CBD=70^\circ$；$\triangle CBD$ 内角和 $30^\circ+80^\circ+70^\circ=180^\circ$ ✓</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>全等对应关系写反；用错了判定方法（如用 ASA 但条件不够）。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-20">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">一次函数 $y=2x-4$。<br>(1) 画出该函数的图像（简图，标明与坐标轴的交点）；<br>(2) 设图像与 $x$ 轴交于点 $A$，与 $y$ 轴交于点 $B$，$O$ 为坐标原点。求 $\triangle AOB$ 的面积。</div>
+    <div class="q-solution">
+      <strong>答案：(1) 见解析；(2) 面积 $=4$</strong>
+      <p><strong>🔑 关键思路：</strong>(1) 求与坐标轴交点→$A(2,0)$，$B(0,-4)$，连线。(2) $\triangle AOB$ 是直角三角形，$S=\frac{1}{2}\times OA\times OB$。</p>
+      <ol><li>(1) 与 $x$ 轴：$y=0$→$x=2$→$A(2,0)$；与 $y$ 轴：$x=0$→$y=-4$→$B(0,-4)$</li><li>(2) $OA=|2|=2$，$OB=|-4|=4$</li><li>$S_{\triangle AOB}=\frac{1}{2}\times2\times4=4$</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>$OB$ 长度为 $|-4|=4$，忘取绝对值；面积忘乘 $\frac{1}{2}$。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-21">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff mid">★★☆</span>
+    <div class="q-body">甲班数学成绩：平均分 $85$，中位数 $88$，方差 $25$；乙班：平均分 $85$，中位数 $82$，方差 $16$。问：哪班成绩更稳定？哪班中等水平更高？请说明理由。</div>
+    <div class="q-solution">
+      <strong>答案：乙班更稳定（方差小）；甲班中等水平更高（中位数大）</strong>
+      <p><strong>🔑 关键思路：</strong>方差衡量数据的波动程度——方差越小越稳定。中位数反映数据的中间水平——中位数越大中等水平越高。</p>
+      <ol><li>比较稳定性：方差甲 $25>$ 乙 $16$→乙班成绩波动更小，更稳定</li><li>比较中等水平：两班平均分相同（均为 $85$），此时看中位数</li><li>中位数甲 $88>$ 乙 $82$→甲班有一半人 $\ge 88$ 分，乙班只有一半人 $\ge 82$ 分</li><li>甲班高分段人数更多但低分段也有（方差大），乙班成绩更集中</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>认为平均数相同就完全一样；混淆方差（稳定性）和中位数（中等水平）的比较含义。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+    </div>
+  </details>
+
+<hr class="paper-divider">
+  <div class="paper-section-label">五、解答题（三）（本大题共2小题，每小题12分，共24分）</div>
+  <details class="exam-module" open>
+    <summary>🏆 五、解答题(三)（2题 × 12分 = 24分）</summary>
+    <div class="content">
+
+  <div class="exam-q" data-qid="m3-22">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">(1) 利用完全平方公式，展开 $(a+b+c)^2$；<br>(2) 应用：已知 $a+b+c=6$，$ab+bc+ca=11$，求 $a^2+b^2+c^2$ 的值。</div>
+    <div class="q-solution">
+      <strong>答案：(1) $a^2+b^2+c^2+2ab+2bc+2ca$；(2) $14$</strong>
+      <p><strong>🔑 关键思路：</strong>(1) 视 $(b+c)$ 为一个整体，用完全平方公式展开。(2) 利用 $(a+b+c)^2=a^2+b^2+c^2+2(ab+bc+ca)$ 整体代换。</p>
+      <ol><li>(1) $(a+b+c)^2=[a+(b+c)]^2=a^2+2a(b+c)+(b+c)^2=a^2+2ab+2ac+b^2+2bc+c^2=a^2+b^2+c^2+2ab+2bc+2ca$</li><li>(2) 由公式：$(a+b+c)^2=a^2+b^2+c^2+2(ab+bc+ca)$</li><li>$6^2=a^2+b^2+c^2+2\times11$</li><li>$36=a^2+b^2+c^2+22$→$a^2+b^2+c^2=36-22=14$</li></ol>
+      <p><strong>⚠️ 常见错误：</strong>展开 $(a+b+c)^2$ 漏掉交叉项；代入时把 $ab+bc+ca$ 误乘 1 而非 2。</p>
+      <p><strong>✓ 检验：</strong>令 $a=1,b=2,c=3$，则 $a+b+c=6$，$ab+bc+ca=2+6+3=11$，$a^2+b^2+c^2=1+4+9=14$ ✓。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+  <div class="exam-q" data-qid="m3-23">
+    <span class="q-tag q-g8">8年级</span><span style="font-size:11px;color:var(--text-secondary);">模拟卷3</span><span class="q-diff hard">★★★</span>
+    <div class="q-body">在 $\triangle ABC$ 中，$AB=AC$，$BC=6$，$\triangle ABC$ 的面积为 $12$。<br>(1) 求腰长 $AB$；<br>(2) 点 $D$ 在 $BC$ 的延长线上，且 $\angle DAC=90^\circ$，求 $CD$ 的长。</div>
+    <div class="q-solution">
+      <strong>答案：(1) $AB=5$；(2) $CD=\dfrac{16}{3}$</strong>
+      <p><strong>🔑 关键思路：</strong>(1) 等腰三角形高=中线。面积 $S=\frac{1}{2}BC\times h=12$→$h=4$→勾股定理求腰。(2) 建坐标系，利用 $\angle DAC=90^\circ$ 求 $AD$ 方程，再求与 $x$ 轴交点。</p>
+      <ol><li>(1) 设高 $AM=h$：$S=\frac{1}{2}\times6\times h=12$→$3h=12$→$h=4$。$M$ 为 $BC$ 中点→$BM=CM=3$</li><li>$AB=\sqrt{3^2+4^2}=\sqrt{25}=5$</li><li>(2) 以 $M$ 为原点，$BC$ 为 $x$ 轴，$MA$ 为 $y$ 轴：$A(0,4)$，$C(3,0)$，$B(-3,0)$</li><li>直线 $AC$ 斜率 $k_{AC}=\frac{4-0}{0-3}=-\frac{4}{3}$</li><li>$AD\perp AC$（$\angle DAC=90^\circ$）→$k_{AD}=\frac{3}{4}$</li><li>直线 $AD$ 过 $A(0,4)$：$y=\frac{3}{4}x+4$</li><li>$D$ 在 $x$ 轴（$BC$ 延长线）上：$y=0$→$0=\frac{3}{4}x+4$→$x=-\frac{16}{3}$</li><li>$D(-\frac{16}{3},0)$，$C(3,0)$，$CD=3-(-\frac{16}{3})=\frac{25}{3}$</li></ol>
+      <p><strong>答案修正：$CD=\dfrac{25}{3}$</strong>（或用法二：相似三角形 $\triangle ACD\sim\triangle MCA$→$\frac{CD}{AC}=\frac{AC}{CM}$→$CD=\frac{AC^2}{CM}=\frac{25}{3}$）</p>
+      <p><strong>⚠️ 常见错误：</strong>等腰三角形的高=中线性质要用准；$\angle DAC=90^\circ$ 的位置关系画反；相似比列错。</p>
+      <p><strong>✓ 检验：</strong>(1) $S=\frac{1}{2}\times6\times4=12$ ✓。(2) 坐标法验证：$AC=5$，$AD=\sqrt{(\frac{16}{3})^2+4^2}=\frac{20}{3}$，$CD=\frac{25}{3}$，$5^2+(\frac{20}{3})^2=25+\frac{400}{9}=\frac{625}{9}=(\frac{25}{3})^2$ ✓。</p>
+    </div>
+    <div class="q-toggle" onclick="this.parentElement.classList.toggle('show-solution')">💡 显示/隐藏解析</div>
+  </div>
+
+    </div>
+  </details>
+
+  </div>
+</section>
+  </main>
+
+  <script defer src="../katex/katex.min.js"></script>
+  <script defer src="../katex/auto-render.min.js"></script>
+  <script>
+    window.addEventListener('scroll', function() {
+      document.getElementById('backToTop').style.display = window.scrollY > 400 ? 'block' : 'none';
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "$", right: "$", display: false}
+        ],
+        throwOnError: false
+      });
+
+      const toggle = document.getElementById("theme-toggle");
+      if (toggle) {
+        toggle.addEventListener("click", function () {
+          const html = document.documentElement;
+          if (html.getAttribute("data-theme") === "dark") {
+            html.setAttribute("data-theme", "light");
+            toggle.textContent = "🌙 暗色模式";
+          } else {
+            html.setAttribute("data-theme", "dark");
+            toggle.textContent = "☀️ 亮色模式";
+          }
+        });
+      }
+
+      var hideBtn = document.getElementById('sidebarHideBtn');
+      var sidebar = document.getElementById('sidebar');
+      var sidebarHidden = localStorage.getItem('math-mock3-sidebar') === 'hidden';
+      if (sidebarHidden) sidebar.classList.add('hidden');
+      var showBtn = document.getElementById('sidebarShowBtn');
+      if (hideBtn) hideBtn.addEventListener('click', function() {
+        sidebar.classList.add('hidden');
+        localStorage.setItem('math-mock3-sidebar', 'hidden');
+      });
+      if (showBtn) showBtn.addEventListener('click', function() {
+        sidebar.classList.remove('hidden');
+        localStorage.setItem('math-mock3-sidebar', '');
+      });
+
+      (function() {
+        var btn = document.getElementById('expandAllBtn');
+        if (!btn) return;
+        btn.addEventListener('click', function() {
+          var allDetails = document.querySelectorAll('.exam-module');
+          var allOpen = true;
+          for (var i = 0; i < allDetails.length; i++) {
+            if (!allDetails[i].hasAttribute('open')) { allOpen = false; break; }
+          }
+          for (var i = 0; i < allDetails.length; i++) {
+            if (allOpen) allDetails[i].removeAttribute('open');
+            else allDetails[i].setAttribute('open', '');
+          }
+          btn.textContent = allOpen ? '📂 展开全部章节' : '📖 收起全部章节';
+        });
+      })();
+    });
+  </script>
+
+
+</body>
+</html>

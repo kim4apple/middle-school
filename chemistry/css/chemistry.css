@@ -1,0 +1,210 @@
+/* 初中化学自学资料 共享样式 v1.0 */
+/* 基于 design-template.md §6 UI 骨架 + 化学专用扩展 */
+
+:root {
+  --bg: #ffffff; --bg-secondary: #f1f5f9; --text: #1a1a2e;
+  --text-secondary: #64748b; --accent: #0891b2; --accent-light: #ecfeff;
+  --border: #e2e8f0; --shadow: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-hover: 0 4px 12px rgba(0,0,0,0.12); --radius: 8px;
+  --sidebar-width: 270px;
+  /* 化学专用色 */
+  --chem-blue: #0891b2;    /* 溶液/沉淀蓝色 */
+  --chem-green: #16a34a;   /* 气体/反应 */
+  --chem-red: #dc2626;     /* 警示/氧气 */
+  --chem-purple: #7c3aed;  /* 催化剂 */
+  --chem-yellow: #f59e0b;  /* 硫/沉淀 */
+  --chem-pink: #db2777;    /* 指示剂 */
+  --chem-teal: #0d9488;    /* 铜盐 */
+  --sol-cuso4: #2196f3;    /* 硫酸铜蓝 */
+  --sol-fecl3: #ff9800;    /* 氯化铁黄 */
+  --sol-kmno4: #9c27b0;    /* 高锰酸钾紫 */
+  --sol-fecl2: #4caf50;    /* 氯化亚铁浅绿 */
+}
+[data-theme="dark"] {
+  --bg: #0f172a; --bg-secondary: #1e293b; --text: #e2e8f0;
+  --text-secondary: #94a3b8; --accent: #22d3ee; --accent-light: #0f2c2c;
+  --border: #334155;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg); color: var(--text); line-height: 1.7; display: flex;
+}
+
+/* ====== 侧边栏 ====== */
+#sidebar {
+  width: var(--sidebar-width); height: 100vh; position: sticky; top: 0;
+  background: var(--bg-secondary); border-right: 1px solid var(--border);
+  padding: 20px 14px; overflow-y: auto; flex-shrink: 0;
+}
+#sidebar h2 { font-size: 17px; font-weight: 700; margin-bottom: 14px; color: var(--accent); }
+#sidebar nav a {
+  display: block; padding: 5px 10px; border-radius: 6px;
+  color: var(--text-secondary); text-decoration: none; font-size: 13px;
+  transition: background .15s, color .15s;
+}
+#sidebar nav a:hover, #sidebar nav a.active { background: var(--accent-light); color: var(--accent); font-weight: 600; }
+#sidebar.hidden { display: none; }
+
+#sidebarShowBtn {
+  display: none; position: fixed; top: 12px; left: 12px; z-index: 1000;
+  background: var(--bg); color: var(--accent); border: 1px solid var(--border);
+  border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 14px;
+  padding: 6px 10px; box-shadow: var(--shadow);
+}
+body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
+
+/* ====== 内容区 ====== */
+#content { flex: 1; max-width: 1000px; padding: 32px 40px; }
+
+.cover { text-align: center; padding: 20px 0; margin-bottom: 28px; border-bottom: 2px solid var(--border); }
+.cover h1 { font-size: 28px; margin-bottom: 6px; }
+
+/* ====== 化学 10 模块 ====== */
+/* 1. 实验观察 */
+.experiment-observation {
+  background: linear-gradient(135deg, #fef2f2 0%, #f0fdf4 100%);
+  border: 2px solid var(--chem-red); border-radius: var(--radius);
+  padding: 18px 22px; margin-bottom: 24px;
+}
+.experiment-observation .exp-title { font-size: 18px; font-weight: 700; color: var(--chem-red); margin-bottom: 10px; }
+.experiment-observation .exp-step { display: flex; align-items: flex-start; gap: 10px; margin: 8px 0; font-size: 14px; }
+.experiment-observation .exp-step-num {
+  background: var(--chem-red); color: #fff; border-radius: 50%;
+  width: 24px; height: 24px; display: flex; align-items: center;
+  justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0;
+}
+[data-theme="dark"] .experiment-observation { background: linear-gradient(135deg, #3b1111 0%, #0f2c1a 100%); }
+
+/* 2. 微观解释 */
+.micro-explanation {
+  background: var(--accent-light); border: 1px solid var(--accent);
+  border-radius: var(--radius); padding: 18px 22px; margin-bottom: 24px;
+}
+.micro-explanation .model-viewer { margin: 12px 0; min-height: 200px; border-radius: 8px; overflow: hidden; }
+
+/* 3. 概念卡 */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; margin-bottom: 20px; }
+.concept-card {
+  background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 16px 18px; box-shadow: var(--shadow); transition: box-shadow .15s;
+}
+.concept-card:hover { box-shadow: var(--shadow-hover); }
+.concept-card .name { font-size: 15px; font-weight: 700; margin-bottom: 6px; color: var(--accent); }
+.concept-card p { font-size: 13px; line-height: 1.8; }
+
+/* 4. 化学方程式卡 */
+.equation-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
+.equation-card {
+  background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 14px 16px; border-left: 4px solid var(--chem-teal);
+}
+.equation-card .eq { font-size: 15px; text-align: center; margin: 6px 0; color: var(--text); }
+.equation-card .eq-type {
+  display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600;
+}
+.eq-combine { background: #dbeafe; color: #1e40af; }    /* 化合 */
+.eq-decomp { background: #fef2f2; color: #b91c1c; }      /* 分解 */
+.eq-replace { background: #fef3c7; color: #92400e; }     /* 置换 */
+.eq-exchange { background: #f3e8ff; color: #6b21a8; }   /* 复分解 */
+
+/* 5. 计算专题 */
+.calc-card {
+  background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 16px 18px; margin-bottom: 14px; border-left: 4px solid var(--chem-purple);
+}
+.calc-card h3 { font-size: 15px; color: var(--chem-purple); margin-bottom: 8px; }
+
+/* 6. 实验安全 + 易错 */
+.safety-pitfall {
+  background: #fffbeb; border: 2px solid var(--chem-yellow); border-radius: var(--radius);
+  padding: 16px 20px; margin-bottom: 20px;
+}
+.safety-pitfall h3 { color: #92400e; margin-bottom: 8px; }
+[data-theme="dark"] .safety-pitfall { background: #2d1f00; }
+
+/* 7. 真题模块 */
+.exam-module { margin-bottom: 18px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg); box-shadow: var(--shadow); }
+.exam-module summary { padding: 11px 16px; font-size: 15px; font-weight: 600; cursor: pointer; background: var(--bg-secondary); user-select: none; list-style: none; display: flex; align-items: center; gap: 8px; }
+.exam-module summary::-webkit-details-marker { display: none; }
+.exam-module summary::before { content: "▸"; display: inline-block; font-size: 11px; transition: transform .2s; flex-shrink: 0; }
+.exam-module[open] summary::before { transform: rotate(90deg); }
+.exam-module .content { padding: 16px 18px; }
+
+.exam-q { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; margin-bottom: 16px; box-shadow: var(--shadow); }
+.q-tag { display: inline-flex; align-items: center; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 700; color: #fff; letter-spacing: .3px; margin-right: 6px; }
+.q-diff { display: inline-block; font-size: 11px; font-weight: 700; margin-left: 4px; }
+.q-diff.easy { color: #16a34a; } .q-diff.mid { color: #f59e0b; } .q-diff.hard { color: #dc2626; }
+.q-body { margin-top: 10px; font-size: 14px; line-height: 1.8; }
+.q-solution { display: none; margin-top: 12px; padding: 12px 14px; background: var(--bg-secondary); border-radius: var(--radius); border-left: 3px solid var(--accent); font-size: 13px; line-height: 1.75; }
+.exam-q.show-solution .q-solution { display: block; }
+.q-toggle { font-size: 11px; margin-top: 10px; cursor: pointer; color: var(--accent); border: 1px solid var(--border); border-radius: 4px; padding: 3px 10px; display: inline-block; }
+
+/* 8. 实验探究设计 */
+.experiment-design { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 22px; margin-bottom: 20px; }
+
+/* 9. 自查清单 */
+.checklist { background: var(--bg-secondary); border-radius: var(--radius); padding: 16px 20px; margin-bottom: 20px; }
+.checklist h3 { margin-bottom: 10px; }
+.checklist label { display: block; margin: 4px 0; font-size: 13px; cursor: pointer; }
+.self-score { border: 1px solid var(--border); border-radius: 4px; padding: 1px 5px; font-size: 11px; margin-right: 6px; background: var(--bg); }
+
+/* 10. 下一站 + 复习 */
+.review-schedule { background: var(--bg-secondary); border-radius: var(--radius); padding: 14px 18px; margin-top: 20px; font-size: 13px; }
+.review-dot { display: inline-block; padding: 4px 10px; margin: 4px; border-radius: 20px; background: var(--accent-light); color: var(--accent); font-size: 12px; }
+.next-stop { background: linear-gradient(135deg, #eef2ff 0%, #f0fdf4 100%); border-radius: var(--radius); padding: 14px 18px; margin-top: 20px; font-size: 14px; line-height: 1.8; border: 1px dashed var(--border); }
+.next-stop strong { color: var(--accent); }
+
+/* ====== 化学专用组件 ====== */
+.solution-color { display: inline-block; width: 16px; height: 16px; border-radius: 4px; vertical-align: middle; margin: 0 2px; }
+.sol-cu { background: var(--sol-cuso4); } .sol-fe3 { background: var(--sol-fecl3); }
+.sol-mn { background: var(--sol-kmno4); } .sol-fe2 { background: var(--sol-fecl2); }
+
+.precipitate { text-decoration: underline; text-decoration-style: wavy; text-underline-offset: 3px; }
+.gas-arrow { color: var(--chem-green); font-weight: 700; }
+
+.periodic-element {
+  display: inline-flex; flex-direction: column; align-items: center;
+  justify-content: center; width: 48px; height: 52px;
+  border: 1px solid var(--border); border-radius: 6px;
+  margin: 2px; font-size: 9px; background: var(--bg); text-align: center; line-height: 1.2;
+}
+.periodic-element .num { font-size: 8px; color: var(--text-secondary); }
+.periodic-element .sym { font-size: 16px; font-weight: 700; color: var(--accent); }
+.periodic-element .name { font-size: 8px; color: var(--text-secondary); }
+.periodic-element.metal { border-color: var(--chem-yellow); } .periodic-element.nonmetal { border-color: var(--chem-green); }
+
+/* ====== 按钮 ====== */
+.theme-toggle, .expand-btn, .print-btn {
+  padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border);
+  background: var(--bg); color: var(--text); cursor: pointer; font-size: 12px; width: 100%; margin-top: 8px;
+}
+.theme-toggle:hover, .expand-btn:hover, .print-btn:hover { background: var(--accent-light); }
+.back-to-top {
+  position: fixed; bottom: 24px; right: 24px; width: 44px; height: 44px;
+  border-radius: 50%; background: var(--accent); color: #fff; border: none;
+  cursor: pointer; font-size: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none; z-index: 999;
+}
+
+/* ====== 响应式 ====== */
+@media (max-width: 768px) {
+  #sidebar { position: fixed; z-index: 900; }
+  #sidebar.hidden { display: none; }
+  #sidebarShowBtn { display: flex; font-size: 13px; padding: 5px 8px; top: 8px; left: 8px; }
+  #content { padding: 20px 14px; }
+  .card-grid, .equation-grid { grid-template-columns: 1fr; }
+}
+
+/* ====== 打印 ====== */
+@media print {
+  * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  #sidebar, #sidebarShowBtn, .back-to-top, .q-toggle, .theme-toggle, .expand-btn, .print-btn { display: none !important; }
+  body { display: block; }
+  details, .exam-module { display: block !important; }
+  details .content, details[open] .content { display: block !important; }
+  .experiment-observation, .micro-explanation, .safety-pitfall { border: 1px solid #ccc; box-shadow: none; }
+  .exam-q { page-break-inside: avoid; }
+  .q-solution { display: block !important; }
+}

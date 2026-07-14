@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第1章 走进化学世界 | 初中化学</title>
+<link rel="stylesheet" href="css/chemistry.css">
+<link rel="stylesheet" href="../katex/katex.min.css">
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">化学九上</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+  </div>
+  <nav>
+    <a href="index.html">🏠 首页</a>
+    <a href="ch01.html" class="active">第1章 走进化学世界</a>
+    <a href="ch02.html">第2章 空气·氧气</a>
+    <a href="ch03.html">第3章 物质构成的奥秘</a>
+    <a href="ch04.html">第4章 自然界的水</a>
+    <a href="ch05.html">第5章 化学方程式</a>
+    <a href="ch06.html">第6章 碳和碳的氧化物</a>
+    <a href="ch07.html">第7章 燃料及其利用</a>
+    <a href="ch08.html">第8章 金属和金属材料</a>
+    <a href="ch09.html">第9章 溶液</a>
+    <a href="ch10.html">第10章 酸和碱</a>
+    <a href="ch11.html">第11章 盐·化肥</a>
+    <a href="ch12.html">第12章 化学与生活</a>
+    <a href="appendix.html">📚 附录</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
+  <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
+</nav>
+
+<main id="content">
+<div class="cover"><h1>第1章 · 走进化学世界</h1><p>九年级上册 | 实验驱动 · 三重表征 | 本章无方程式和计算</p></div>
+
+<!-- ====== 模块1: 实验观察 ====== -->
+<section class="experiment-observation">
+  <div class="exp-title">🧪 实验观察一：蜡烛的燃烧</div>
+  <div class="exp-step"><span class="exp-step-num">1</span><span>取一支蜡烛，观察其颜色、状态、形状。用小刀切下一小块，放入水中——<strong>石蜡浮在水面上</strong>（密度比水小，不溶于水）。</span></div>
+  <div class="exp-step"><span class="exp-step-num">2</span><span>点燃蜡烛，观察火焰分三层：<strong>外焰</strong>（最亮、温度最高）、<strong>内焰</strong>（较暗）、<strong>焰心</strong>（最暗、温度最低）。用火柴梗平放在火焰中——外焰处最先碳化变黑。</span></div>
+  <div class="exp-step"><span class="exp-step-num">3</span><span>在蜡烛火焰上方罩一个<strong>干冷</strong>烧杯——烧杯内壁出现<strong>水雾</strong>（说明蜡烛燃烧生成了水）。</span></div>
+  <div class="exp-step"><span class="exp-step-num">4</span><span>换一个内壁蘸有<strong>澄清石灰水</strong>的烧杯——石灰水变<strong>浑浊</strong>（说明蜡烛燃烧生成了二氧化碳 CO₂）。</span></div>
+  <div class="exp-step"><span class="exp-step-num">5</span><span>熄灭蜡烛，立即用火柴点燃白烟——<strong>白烟被点燃</strong>，蜡烛复燃（白烟是石蜡蒸气冷凝成的固体小颗粒，具有可燃性）。</span></div>
+  <p style="margin-top:12px;font-weight:700;color:var(--chem-green);">📋 结论：蜡烛燃烧是化学变化，生成了新物质——水和二氧化碳。</p>
+</section>
+
+<section class="experiment-observation">
+  <div class="exp-title">🧪 实验观察二：呼出气体与空气的对比</div>
+  <div class="exp-step"><span class="exp-step-num">1</span><span>用排水法收集两瓶<strong>呼出的气体</strong>，另取两瓶<strong>空气</strong>。</span></div>
+  <div class="exp-step"><span class="exp-step-num">2</span><span>分别向一瓶空气和一瓶呼出气体中滴入等量澄清石灰水——呼出气体中石灰水<strong>更浑浊</strong>（说明呼出气体中CO₂含量更高）。</span></div>
+  <div class="exp-step"><span class="exp-step-num">3</span><span>将燃着的木条分别伸入另一瓶空气和呼出气体——空气中木条继续燃烧，呼出气体中木条<strong>熄灭</strong>（说明呼出气体中氧气含量更低）。</span></div>
+  <div class="exp-step"><span class="exp-step-num">4</span><span>取两块干燥的玻璃片，对其中一块哈气——哈气的玻璃片上出现<strong>水雾</strong>（说明呼出气体中水蒸气含量更高）。</span></div>
+  <p style="margin-top:12px;font-weight:700;color:var(--chem-green);">📋 结论：呼出气体中氧气减少、二氧化碳和水蒸气增多。呼吸作用是一个化学变化。</p>
+</section>
+
+<!-- ====== 模块2: 微观解释 ====== -->
+<section class="micro-explanation">
+  <h3>🧠 微观解释：物理变化 vs 化学变化</h3>
+  <p>蜡烛燃烧时，石蜡分子（由碳原子和氢原子构成）与空气中的氧气分子发生反应，<strong>分子被破坏</strong>，原子重新组合，生成新的分子——水分子（H₂O）和二氧化碳分子（CO₂）。</p>
+  <p style="margin-top:8px;">而石蜡熔化只是石蜡分子从固态排列变成液态排列——<strong>分子本身没有改变</strong>，只是分子间距离和排列方式变了。这就是物理变化和化学变化的<strong>本质区别</strong>：</p>
+  <table style="width:100%;margin-top:10px;border-collapse:collapse;font-size:13px;">
+    <tr style="background:var(--accent-light);"><th style="padding:8px;text-align:left;border:1px solid var(--border);">特征</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">物理变化</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">化学变化</th></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">本质</td><td style="padding:8px;border:1px solid var(--border);"><strong>分子本身不变</strong></td><td style="padding:8px;border:1px solid var(--border);"><strong>分子被破坏，生成新分子</strong></td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">伴随现象</td><td style="padding:8px;border:1px solid var(--border);">形状/状态变化</td><td style="padding:8px;border:1px solid var(--border);">发光/发热/变色/生成气体/生成沉淀</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">举例</td><td style="padding:8px;border:1px solid var(--border);">石蜡熔化、水结冰、铁铸成锅</td><td style="padding:8px;border:1px solid var(--border);">蜡烛燃烧、铁生锈、食物腐败</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">联系</td><td style="padding:8px;border:1px solid var(--border);" colspan="2"><strong>化学变化一定伴随物理变化</strong>（如蜡烛燃烧时石蜡先熔化成液体才能燃烧）；物理变化<strong>不一定</strong>伴有化学变化。</td></tr>
+  </table>
+</section>
+
+<!-- ====== 模块3: 核心概念 ====== -->
+<h3 style="margin:20px 0 12px;color:var(--accent);">📖 核心概念</h3>
+<div class="card-grid">
+  <div class="concept-card"><div class="name">化学变化（化学反应）</div><p>生成<strong>新物质</strong>的变化。特征：伴随发光、发热、变色、生成气体或沉淀等现象（但现象不是判断依据——本质是是否生成新物质）。</p></div>
+  <div class="concept-card"><div class="name">物理变化</div><p>没有生成新物质的变化。如：物质三态变化（熔化、凝固、汽化）、形状改变、溶解（如食盐溶于水——NaCl分子没有改变）。</p></div>
+  <div class="concept-card"><div class="name">化学性质</div><p>物质在<strong>化学变化</strong>中表现出来的性质。如：可燃性（蜡烛能燃烧）、氧化性、还原性、酸碱性、腐蚀性。关键词："能/可以/会" + 化学变化。</p></div>
+  <div class="concept-card"><div class="name">物理性质</div><p>物质<strong>不需要</strong>发生化学变化就表现出来的性质。如：颜色、状态、气味、熔点、沸点、密度、硬度、溶解性、导电性。可直接观察或测量。</p></div>
+  <div class="concept-card"><div class="name">化学实验基本操作</div><p>① 药品取用：固体用<strong>药匙</strong>或<strong>镊子</strong>，液体用<strong>胶头滴管</strong>或直接倾倒；② 加热：试管口<strong>不对人</strong>，先预热再集中加热；③ 闻气体：<strong>扇闻法</strong>（用手在瓶口轻轻扇动，使少量气体飘入鼻孔）。</p></div>
+  <div class="concept-card"><div class="name">科学探究的步骤</div><p><strong>提出问题</strong> → 猜想与假设 → 设计实验 → 进行实验 → 收集证据 → 解释与结论 → 反思与评价 → 表达与交流。这八步是化学学习的核心方法。</p></div>
+</div>
+
+<!-- ====== 模块4: 化学方程式 ====== -->
+<p style="margin:20px 0 10px;color:var(--text-secondary);font-size:14px;">⚗️ 本章为化学启蒙，不涉及化学方程式的书写和配平（从第5章开始）。</p>
+
+<!-- ====== 模块5: 计算专题 ====== -->
+<p style="margin:10px 0 20px;color:var(--text-secondary);font-size:14px;">🔢 本章不涉及化学计算（从第5章开始）。</p>
+
+<!-- ====== 模块6: 实验安全 + 易错 ====== -->
+<section class="safety-pitfall">
+  <h3>🚨 实验安全与常见错误</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:13px;margin-top:10px;">
+    <div style="background:var(--bg);padding:10px 14px;border-radius:6px;border:1px solid var(--border);">
+      <strong style="color:var(--chem-red);">🔴 安全规则</strong>
+      <p>禁止用手直接接触药品，禁止品尝任何药品。<br>加热试管时，管口不能对着自己或他人。<br>酒精灯用灯帽盖灭，<strong>禁止用嘴吹灭</strong>。<br>闻气体：扇闻法，不可凑近瓶口直接闻。<br>实验后废液倒入指定容器，不可随意倾倒。<br>若酒精灯不慎碰倒着火：用<strong>湿抹布</strong>盖灭。</p>
+    </div>
+    <div style="background:var(--bg);padding:10px 14px;border-radius:6px;border:1px solid var(--border);">
+      <strong style="color:var(--chem-yellow);">⚠️ 最高频易错</strong>
+      <p>❌ "发光发热的变化一定是化学变化"——错！电灯发光发热是物理变化。<br>❌ "有气体生成一定是化学变化"——错！水沸腾生成水蒸气是物理变化。<br>❌ 混淆"物理性质"和"化学性质"——关键看是否需要化学变化来表现。<br>❌ "爆炸一定是化学变化"——错！气球爆炸是物理变化（只是体积急剧膨胀）。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 模块7: 中考真题 ====== -->
+<details class="exam-module" open>
+<summary>🎯 中考真题精选（走进化学世界 · 近年典型）</summary>
+<div class="content">
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九上</span><span class="q-diff easy">★☆☆</span>
+  <div class="q-body">下列变化属于化学变化的是（ ）<br>A. 石蜡熔化 &nbsp; B. 酒精挥发 &nbsp; C. 铁钉生锈 &nbsp; D. 玻璃破碎</div>
+  <div class="q-solution"><strong>答案：C</strong><br><strong>🔑 关键思路：</strong>判断是否生成新物质。铁钉生锈生成铁锈（Fe₂O₃ · xH₂O）——新物质；石蜡熔化只是状态变化——无新物质；酒精挥发是液态变气态——无新物质；玻璃破碎是形状变化——无新物质。<br><strong>⚠️ 易错：</strong>看到"锈""燃烧""腐烂""变质"等词 → 化学变化。看到"熔化""蒸发""破碎""变形"等词 → 物理变化。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九上</span><span class="q-diff mid">★★☆</span>
+  <div class="q-body">下列物质的用途中，利用其化学性质的是（ ）<br>A. 铜丝作导线 &nbsp; B. 干冰用于人工降雨 &nbsp; C. 天然气作燃料 &nbsp; D. 金刚石切割玻璃</div>
+  <div class="q-solution"><strong>答案：C</strong><br><strong>🔑 关键思路：</strong>化学性质=需要通过化学变化表现的性质。天然气作燃料利用了"可燃性"——燃烧是化学变化。A铜丝导电是物理性质，B干冰升华吸热是物理变化，D金刚石硬是物理性质。<br><strong>⚠️ 易错：</strong>干冰（固体CO₂）用于人工降雨是利用它升华吸热的<strong>物理性质</strong>——没有生成新物质！金刚石切割利用了<strong>硬度大</strong>——也是物理性质。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九上</span><span class="q-diff mid">★★☆</span>
+  <div class="q-body">在蜡烛火焰上方罩一个干冷的烧杯，观察到烧杯内壁出现水雾；向烧杯中倒入少量澄清石灰水振荡，石灰水变浑浊。由此可以得出的结论是：蜡烛燃烧生成了____和____。</div>
+  <div class="q-solution"><strong>答案：水（H₂O）；二氧化碳（CO₂）</strong><br><strong>🔑 关键思路：</strong>干冷烧杯内壁出现水雾→产物中有水（水蒸气遇冷凝结）。澄清石灰水变浑浊→产物中有CO₂（CO₂ + Ca(OH)₂ → CaCO₃↓ + H₂O，此反应第6章会学）。这是典型的"由实验现象推断产物"的逻辑推理题。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九上</span><span class="q-diff hard">★★★</span>
+  <div class="q-body">某同学对蜡烛燃烧进行探究：①切下一小块石蜡放入水中——石蜡浮在水面上；②点燃蜡烛，在火焰上方罩一个干冷烧杯——内壁有水雾；③在火焰上方罩一个内壁蘸有澄清石灰水的烧杯——石灰水变浑浊；④熄灭蜡烛，用火柴去点刚熄灭时的白烟——蜡烛复燃。请分析每一步可得出什么结论。</div>
+  <div class="q-solution"><strong>答案：</strong>①石蜡密度比水小，不溶于水；②蜡烛燃烧生成了水；③蜡烛燃烧生成了二氧化碳；④白烟是石蜡蒸气冷凝成的固体小颗粒，具有可燃性。<br><strong>🔑 关键思路：</strong>实验探究题的核心逻辑——观察→推理→结论。每一步的实验现象对应一个具体的结论，不能跳跃也不能过度推断。<br><strong>⚠️ 易错：</strong>步骤④的白烟容易被误认为是水蒸气——但水蒸气是无色的，看到的是石蜡蒸气冷凝的固体颗粒。白烟能被点燃验证了它仍然是石蜡（可燃物）。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+</div>
+</details>
+
+<!-- ====== 模块8: 实验探究设计 ====== -->
+<section class="experiment-design">
+  <h3>🔬 实验探究设计：如何证明某变化是化学变化？</h3>
+  <p style="margin:8px 0;">设计思路：<strong>是否生成新物质</strong>是判断化学变化的唯一标准。</p>
+  <p>① 如果有气体生成——用澄清石灰水验证CO₂，用带火星木条验证O₂；</p>
+  <p>② 如果有沉淀生成——观察是否有不溶性固体出现，颜色发生变化；</p>
+  <p>③ 如果有颜色变化——记录反应前后颜色（如铁钉生锈：银白色→红棕色）；</p>
+  <p>④ 设计<strong>对照实验</strong>——变量唯一原则（如探究铁生锈的条件时，需控制水和氧气两个变量）。</p>
+</section>
+
+<!-- ====== 模块9: 自查清单 + 间隔复习 ====== -->
+<div class="checklist">
+  <h3>✅ 本章自查清单</h3>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能区分物理变化和化学变化，并各举3个例子</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能区分物理性质和化学性质</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 知道蜡烛燃烧实验的每一步操作和对应结论</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 知道科学探究的8个步骤</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能说出5条化学实验基本安全规则</label>
+  <p style="margin-top:12px;color:var(--accent);border-top:1px dashed var(--border);padding-top:12px;"><strong>🗣 费曼挑战：</strong>用蜡烛燃烧实验向别人解释"什么是化学变化"，必须用到"生成新物质"这个关键词。能讲清楚蜡烛燃烧的两个产物（H₂O和CO₂）分别是如何通过实验现象推断出来的。</p>
+</div>
+
+<div class="review-schedule">
+  <strong>📅 间隔复习</strong>
+  <span class="review-dot">🔵 1天后：重做蜡烛燃烧实验现象→结论对照</span>
+  <span class="review-dot">🟢 3天后：做物理/化学变化分类练习20题</span>
+  <span class="review-dot">🟡 1周后：讲解科学探究8步骤给同学听</span>
+  <span class="review-dot">🔴 1月后：做本章中考真题4题</span>
+</div>
+
+<!-- ====== 模块10: 下一站 ====== -->
+<div class="next-stop">
+  <strong>➡️ 下一站：空气·氧气</strong><br>
+  你知道了"化学变化会生成新物质"。下一章我们将研究空气中最活泼的成分——氧气。你会亲手在实验室制取氧气（高锰酸钾分解/过氧化氢分解），观察木炭、硫磺、铁丝在氧气中剧烈燃烧的现象。蜡烛燃烧用了"空气中的氧气"，下一章你会真正认识这个看不见的伙伴。
+</div>
+
+<!-- 章内翻页 -->
+<div style="display:flex;justify-content:space-between;margin:30px 0;padding-top:16px;border-top:1px solid var(--border);font-size:13px;">
+  <span></span>
+  <a href="ch02.html" style="color:var(--accent);">第2章 →</a>
+</div>
+
+</main>
+
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+
+// Theme
+(function(){
+  var k='chemistry-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+  document.documentElement.setAttribute('data-theme',t);
+  var b=document.getElementById('theme-toggle');if(b)b.textContent=t==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
+  b.addEventListener('click',function(){
+    var c=document.documentElement.getAttribute('data-theme'),n=c==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',n);localStorage.setItem(k,n);
+    b.textContent=n==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
+  });
+})();
+
+// Sidebar
+(function(){
+  var s=document.getElementById('sidebar'),k='chemistry-sidebar';
+  if(localStorage.getItem(k)==='hidden')s.classList.add('hidden');
+  document.getElementById('sidebarHideBtn').addEventListener('click',function(){s.classList.add('hidden');localStorage.setItem(k,'hidden')});
+  document.getElementById('sidebarShowBtn').addEventListener('click',function(){s.classList.remove('hidden');localStorage.setItem(k,'')});
+})();
+
+// Expand all
+(function(){
+  var b=document.getElementById('expandAllBtn');if(!b)return;
+  b.addEventListener('click',function(){
+    var a=document.querySelectorAll('.exam-module,details'),o=true;
+    for(var i=0;i<a.length;i++)if(!a[i].hasAttribute('open')){o=false;break}
+    for(var i=0;i<a.length;i++){if(o)a[i].removeAttribute('open');else a[i].setAttribute('open','')}
+    b.textContent=o?'📂 展开全部章节':'📖 收起全部章节';
+  });
+})();
+
+// Back to top
+window.addEventListener('scroll',function(){document.getElementById('backToTop').style.display=scrollY>400?'block':'none'});
+
+// Solution toggle
+document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution')})});
+</script>
+</body>
+</html>

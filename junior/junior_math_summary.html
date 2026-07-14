@@ -289,10 +289,19 @@ ul.plain li { margin-bottom: 4px; font-size: 13.5px; }
   .card-grid { grid-template-columns: 1fr; }
 }
 
+.back-to-top {
+  position: fixed; bottom: 24px; right: 24px;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--accent); color: #fff;
+  border: none; cursor: pointer; font-size: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none; z-index: 999;
+}
+
 @media print {
   @page { size: A4; margin: 12mm; }
   body { background: #fff; color: #000; font-size: 9.5pt; line-height: 1.45; display: block; }
-  #sidebar, .theme-toggle, .print-btn, .sidebar-actions { display: none !important; }
+  #sidebar, .theme-toggle, .print-btn, .sidebar-actions, .back-to-top { display: none !important; }
   #content { max-width: none; padding: 0; }
   .cover { padding: 0 0 10px; margin-bottom: 14px; border-bottom: 1.5px solid #999; }
   .cover h1 { font-size: 22px; }
@@ -336,7 +345,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 
 @media print {
   * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-  #sidebar { display: none !important; }
+  #sidebar, .theme-toggle, .print-btn, .sidebar-actions, .back-to-top { display: none !important; }
   #sidebarShowBtn { display: none !important; }
   body { display: block; }
   details, .module, .exam-module { display: block !important; }
@@ -347,6 +356,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
   </style>
 </head>
 <body>
+  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="回到顶部">↑</button>
   <button id="sidebarShowBtn">☰ 侧栏</button>
   <nav id="sidebar">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
@@ -356,6 +366,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
     <div class="sidebar-group">
       <div class="sidebar-group-title">七年级</div>
       <nav>
+        <a href="../index.html" style="font-weight:600;">🏠 返回首页</a>
         <a href="#ch1">1. 有理数</a>
         <a href="#ch2">2. 整式的加减</a>
         <a href="#ch3">3. 一元一次方程</a>
@@ -2092,6 +2103,10 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
       }
       window.addEventListener("scroll", onScroll);
       onScroll();
+      window.addEventListener('scroll', function() {
+        var btn = document.getElementById('backToTop');
+        if (btn) btn.style.display = window.scrollY > 400 ? 'block' : 'none';
+      });
     });
 
       var hideBtn = document.getElementById('sidebarHideBtn');

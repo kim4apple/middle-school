@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="../katex/katex.min.css">
 </head>
 <body>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="回到顶部">↑</button>
 <button id="sidebarShowBtn">☰ 侧栏</button>
 
 <nav id="sidebar">
@@ -498,6 +499,11 @@
     });
   })();
   })();
+  window.addEventListener('scroll', function() {
+    var btn = document.getElementById('backToTop');
+    if (btn) btn.style.display = window.scrollY > 400 ? 'block' : 'none';
+  });
 </script>
+
 </body>
 </html>

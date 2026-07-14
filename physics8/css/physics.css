@@ -349,8 +349,18 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
   .exam-q .diagram svg { max-width: 160px; }
 }
 
+.back-to-top {
+  position: fixed; bottom: 24px; right: 24px;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--accent); color: #fff;
+  border: none; cursor: pointer; font-size: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none; z-index: 999;
+}
+
 @media print {
    * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+   .back-to-top { display: none !important; }
    #sidebar { display: none; }
    #sidebarShowBtn { display: none; }
    .expand-btn { display: none; }

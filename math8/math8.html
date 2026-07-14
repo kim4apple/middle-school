@@ -438,9 +438,19 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 .diagram-module { background: var(--bg-secondary); border-radius: var(--radius); border: 1px solid var(--border); padding: 14px 18px; margin: 16px 0; }
 .diagram-module svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
 .quick-review { border: 2px solid #f59e0b !important; }
+.back-to-top {
+  position: fixed; bottom: 24px; right: 24px;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--accent); color: #fff;
+  border: none; cursor: pointer; font-size: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none; z-index: 999;
+}
+@media print { .back-to-top { display: none !important; } }
 </style>
 </head>
 <body>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="回到顶部">↑</button>
 <button id="sidebarShowBtn">☰ 章节</button>
   <nav id="sidebar">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
@@ -448,6 +458,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
       <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;" title="隐藏侧栏">✕</button>
     </div>
     <nav>
+        <a href="../index.html" style="font-weight:600;">🏠 返回首页</a>
       <a href="#chapter11">第11章 · 三角形</a>
       <a href="#chapter12">第12章 · 全等三角形</a>
       <a href="#chapter13">第13章 · 轴对称</a>
@@ -1797,6 +1808,9 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
     </div>
   </details>
 </div>
+<p style="text-align:center;margin:40px 0 10px;font-size:13px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:20px;">
+  <a href="../index.html" style="color:var(--accent);">🏠 返回首页</a>
+</p>
   </main>
   <script src="../katex/katex.min.js"></script>
   <script src="../katex/auto-render.min.js"></script>
@@ -1881,6 +1895,10 @@ document.addEventListener('DOMContentLoaded', function() {
     ],
     throwOnError: false
   });
+});
+window.addEventListener('scroll', function() {
+  var btn = document.getElementById('backToTop');
+  if (btn) btn.style.display = window.scrollY > 400 ? 'block' : 'none';
 });
 </script>
 </body>

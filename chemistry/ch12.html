@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第12章 化学与生活 | 初中化学</title>
+<link rel="stylesheet" href="css/chemistry.css">
+<link rel="stylesheet" href="../katex/katex.min.css">
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">化学九下</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+  </div>
+  <nav>
+    <a href="../index.html" style="font-weight:600;">🏠 返回首页</a>
+    <a href="index.html">⚗️ 化学导航</a>
+    <a href="ch01.html">第1章 走进化学世界</a>
+    <a href="ch02.html">第2章 空气·氧气</a>
+    <a href="ch03.html">第3章 物质构成的奥秘</a>
+    <a href="ch04.html">第4章 自然界的水</a>
+    <a href="ch05.html">第5章 化学方程式</a>
+    <a href="ch06.html">第6章 碳和碳的氧化物</a>
+    <a href="ch07.html">第7章 燃料及其利用</a>
+    <a href="ch08.html">第8章 金属和金属材料</a>
+    <a href="ch09.html">第9章 溶液</a>
+    <a href="ch10.html">第10章 酸和碱</a>
+    <a href="ch11.html">第11章 盐·化肥</a>
+    <a href="ch12.html" class="active">第12章 化学与生活</a>
+    <a href="appendix.html">📚 附录</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
+  <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
+</nav>
+
+<main id="content">
+<div class="cover"><h1>第12章 · 化学与生活</h1><p>九年级下册 | 营养素 · 有机合成材料 · 白色污染 | 核心：化学在实际生活中的应用</p></div>
+
+<!-- ====== 模块1: 实验观察 ====== -->
+<section class="experiment-observation">
+  <div class="exp-title">🧪 实验：检验食物中的淀粉</div>
+  <div class="exp-step"><span class="exp-step-num">1</span><span>取一片馒头（或面包、土豆片），在上面滴一滴<strong>碘水（碘酒稀释液）</strong>。</span></div>
+  <div class="exp-step"><span class="exp-step-num">2</span><span>观察：滴加碘水的地方立即变成<strong>蓝色</strong>。</span></div>
+  <div class="exp-step"><span class="exp-step-num">3</span><span>原理：淀粉遇碘会变蓝色（这是淀粉的特征反应，用于检验淀粉的存在）。</span></div>
+  <p style="margin-top:12px;font-weight:700;color:var(--chem-green);">📋 结论：馒头/米饭/土豆等主食中含有大量淀粉。碘水（或碘酒）是检验淀粉的简便试剂。</p>
+</section>
+
+<section class="experiment-observation">
+  <div class="exp-title">🧪 观察实验：蛋白质的灼烧</div>
+  <div class="exp-step"><span class="exp-step-num">1</span><span>取一小段<strong>羊毛线</strong>（或头发、羽毛、蚕丝），用镊子夹住后置于酒精灯火焰上灼烧。</span></div>
+  <div class="exp-step"><span class="exp-step-num">2</span><span>观察：羊毛燃烧时有<strong>烧焦羽毛的气味</strong>（蛋白质燃烧的特征气味），灰烬呈黑色、易碎。</span></div>
+  <div class="exp-step"><span class="exp-step-num">3</span><span>对照：取一段棉花灼烧——有<strong>烧纸的气味</strong>（纤维素燃烧），灰烬呈灰色。</span></div>
+  <p style="margin-top:12px;font-weight:700;color:var(--chem-green);">📋 结论：燃烧法可以鉴别天然纤维的种类——烧焦羽毛味=蛋白质纤维（羊毛/蚕丝），烧纸味=棉/麻（纤维素），特殊气味+熔化收缩=合成纤维。</p>
+</section>
+
+<!-- ====== 模块2: 微观解释 ====== -->
+<section class="micro-explanation">
+  <h3>🧠 微观解释：有机高分子——长链分子的世界</h3>
+  <p><strong>淀粉</strong>和<strong>蛋白质</strong>都是有机高分子化合物——由成千上万个<strong>小分子单元</strong>通过化学键连接而成的<strong>长链大分子</strong>。</p>
+  <table style="width:100%;margin-top:10px;border-collapse:collapse;font-size:13px;">
+    <tr style="background:var(--accent-light);"><th style="padding:8px;text-align:left;border:1px solid var(--border);">高分子</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">小分子单元</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">链的结构特点</th></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">淀粉 (C₆H₁₀O₅)<sub>n</sub></td><td style="padding:8px;border:1px solid var(--border);">葡萄糖 C₆H₁₂O₆</td><td style="padding:8px;border:1px solid var(--border);">葡萄糖单元连成的<strong>直链或支链</strong></td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">纤维素 (C₆H₁₀O₅)<sub>n</sub></td><td style="padding:8px;border:1px solid var(--border);">葡萄糖 C₆H₁₂O₆</td><td style="padding:8px;border:1px solid var(--border);">与淀粉同分异构，但链的连接方式不同（人体不能消化纤维素）</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">蛋白质</td><td style="padding:8px;border:1px solid var(--border);">氨基酸</td><td style="padding:8px;border:1px solid var(--border);">20种氨基酸按不同顺序排列，折叠成复杂的<strong>空间结构</strong></td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">塑料（聚乙烯）</td><td style="padding:8px;border:1px solid var(--border);">乙烯 C₂H₄</td><td style="padding:8px;border:1px solid var(--border);">乙烯分子打开双键互相连接形成长链—CH₂—CH₂—</td></tr>
+  </table>
+  <p style="margin-top:10px;">淀粉在人体中经过酶的催化，逐步<strong>水解</strong>为葡萄糖——这是消化过程的化学本质。蛋白质在体内水解为<strong>氨基酸</strong>后被吸收，再重新合成人体所需的各种蛋白质。</p>
+</section>
+
+<!-- ====== 模块3: 核心概念 ====== -->
+<h3 style="margin:20px 0 12px;color:var(--accent);">📖 核心概念</h3>
+<div class="card-grid">
+  <div class="concept-card"><div class="name">六大营养素（一）</div><p><strong>蛋白质</strong>：构成细胞的基本物质。来源：肉类、蛋类、豆类、奶类。每克约供能 18 kJ。<strong>糖类</strong>：人体最主要的供能物质。包括：葡萄糖 C₆H₁₂O₆、蔗糖 C₁₂H₂₂O₁₁、淀粉 (C₆H₁₀O₅)<sub>n</sub>。来源：米饭、面食、薯类。每克约供能 16 kJ。</p></div>
+  <div class="concept-card"><div class="name">六大营养素（二）</div><p><strong>油脂</strong>：备用能源（储能物质）。分为植物油脂（液态，如花生油、大豆油）和动物油脂（固态，如猪油、牛油）。每克约供能 39 kJ（能量密度最高）。<strong>维生素</strong>：不提供能量，但调节新陈代谢——缺乏 VA→夜盲症，缺乏 VC→坏血病，缺乏 VD→佝偻病。主要从蔬菜水果中获取。</p></div>
+  <div class="concept-card"><div class="name">无机盐与水</div><p><strong>无机盐</strong>：人体必需元素（Ca、Fe、Zn、I、Se等）。缺 Ca→佝偻病/骨质疏松，缺 Fe→贫血（Fe 是血红蛋白成分），缺 I→甲状腺肿大（加碘盐），缺 Zn→食欲不振/发育不良。<strong>水</strong>：人体中最重要的溶剂和运输介质，约占人体体重的 60%~70%。</p></div>
+  <div class="concept-card"><div class="name">有机合成材料</div><p><strong>三大合成材料</strong>：<strong>塑料</strong>（如聚乙烯 PE——食品袋、聚氯乙烯 PVC——电线皮）、<strong>合成纤维</strong>（如涤纶、锦纶/尼龙、腈纶——强度高、耐磨、不易皱但透气性差）、<strong>合成橡胶</strong>（汽车轮胎、胶鞋）。合成材料优点是成本低、耐用，缺点是难以自然降解→导致"<strong>白色污染</strong>"。</p></div>
+  <div class="concept-card"><div class="name">"白色污染"</div><p>废弃塑料制品在自然环境中<strong>难以降解</strong>（埋在地下数百年不腐烂），随意丢弃造成环境污染。防治：① 减少使用一次性塑料制品；② 回收利用（分类回收）；③ 使用<strong>可降解塑料</strong>（如聚乳酸 PLA、淀粉基塑料）；④ 推广布袋替代塑料袋。</p></div>
+  <div class="concept-card"><div class="name">天然纤维 vs 合成纤维鉴别</div><p><strong>燃烧法是最简便的鉴别方法：</strong><br>棉/麻（天然植物纤维）：烧纸味，灰烬灰色易碎。<br>羊毛/蚕丝（天然动物纤维/蛋白质）：<strong>烧焦羽毛味</strong>，灰烬黑色易碎。<br>合成纤维（涤纶/尼龙/腈纶）：燃烧时<strong>熔化收缩</strong>，有特殊气味，冷却后结成<strong>硬块</strong>。</p></div>
+</div>
+
+<!-- ====== 模块4: 化学方程式 ====== -->
+<section class="equation-section">
+  <h3>⚗️ 本章核心化学方程式</h3>
+  <table style="width:100%;margin-top:10px;border-collapse:collapse;font-size:13px;">
+    <tr style="background:var(--accent-light);"><th style="padding:8px;text-align:left;border:1px solid var(--border);">#</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">化学方程式</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">意义</th></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">1</td><td style="padding:8px;border:1px solid var(--border);">$C_6H_{12}O_6 + 6O_2 \rightarrow 6CO_2 + 6H_2O$</td><td style="padding:8px;border:1px solid var(--border);">葡萄糖在体内<strong>缓慢氧化</strong>（呼吸作用），释放能量供人体使用</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">2</td><td style="padding:8px;border:1px solid var(--border);">$(C_6H_{10}O_5)_n + nH_2O \xrightarrow{酶} nC_6H_{12}O_6$</td><td style="padding:8px;border:1px solid var(--border);">淀粉水解为葡萄糖——消化的化学本质</td></tr>
+  </table>
+</section>
+
+<!-- ====== 模块5: 计算专题 ====== -->
+<section class="calculation-section">
+  <h3>🔢 计算专题：简单营养素计算</h3>
+  <p style="margin:8px 0 16px;font-size:13px;color:var(--text-secondary);">本章计算较简单——主要涉及能量计算和元素含量。</p>
+  <div style="background:var(--bg-secondary);padding:14px 18px;border-radius:8px;border-left:4px solid var(--accent);margin-bottom:12px;">
+    <strong>【例题】</strong>一盒 250 mL 纯牛奶标注：每 100 mL 含蛋白质 3.2 g、脂肪 3.6 g、碳水化合物 4.8 g。① 计算这盒牛奶能提供的总能量；② 其中蛋白质提供的能量占总能量的百分比。<br><br>
+    <strong>解：</strong>一盒中各营养素总质量：蛋白质=3.2×2.5=8 g，脂肪=3.6×2.5=9 g，碳水化合物=4.8×2.5=12 g。<br>
+    能量：蛋白质=8×18=144 kJ，脂肪=9×39=351 kJ，碳水化合物=12×16=192 kJ。<br>
+    总能量 = 144+351+192 = 687 kJ。<br>
+    蛋白质能量占比 = $\dfrac{144}{687} \times 100\% \approx 21.0\%$<br>
+    <strong>答：</strong>总能量约 687 kJ，蛋白质供能约占 21%。
+  </div>
+</section>
+
+<!-- ====== 模块6: 实验安全 + 易错 ====== -->
+<section class="safety-pitfall">
+  <h3>🚨 安全与常见错误</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:13px;margin-top:10px;">
+    <div style="background:var(--bg);padding:10px 14px;border-radius:6px;border:1px solid var(--border);">
+      <strong style="color:var(--chem-red);">🔴 核心辨析</strong>
+      <p><strong>有机物与无机物的分界：</strong>含碳元素的化合物是有机物（CO、CO₂、CaCO₃、Na₂CO₃ 等碳酸盐虽含碳，但具有无机物的性质，属于<strong>无机物</strong>）。最简单的有机物是<strong>甲烷 CH₄</strong>。<br>
+      <strong>甲醛（福尔马林）有毒</strong>——不能用于浸泡食品保鲜！甲醛水溶液（福尔马林）用于浸制生物标本。</p>
+    </div>
+    <div style="background:var(--bg);padding:10px 14px;border-radius:6px;border:1px solid var(--border);">
+      <strong style="color:var(--chem-yellow);">⚠️ 最高频易错</strong>
+      <p>❌ "含碳元素的化合物就是有机物"——<strong>错！</strong>CO、CO₂、H₂CO₃、CaCO₃、Na₂CO₃、NaHCO₃ 等含碳但属于<strong>无机物</strong>。<br>
+      ❌ 混淆"淀粉遇碘变蓝"和"碘遇淀粉变蓝"——表达要准确：<strong>淀粉遇碘变蓝</strong>。<br>
+      ❌ 塑料、合成纤维、合成橡胶是<strong>有机合成材料</strong>（三大合成材料），棉/羊毛/天然橡胶不是合成材料。<br>
+      ❌ 甲醛可用于消毒，但<strong>不可用于食品保鲜</strong>——有毒！</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 模块7: 中考真题 ====== -->
+<details class="exam-module" open>
+<summary>🎯 中考真题精选（化学与生活 · 近年典型）</summary>
+<div class="content">
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九下</span><span class="q-diff easy">★☆☆</span>
+  <div class="q-body">下列物质中，富含蛋白质的是（ ）<br>A. 米饭 &nbsp; B. 鸡蛋 &nbsp; C. 植物油 &nbsp; D. 青菜</div>
+  <div class="q-solution"><strong>答案：B</strong><br><strong>🔑 关键思路：</strong>米饭富含<strong>糖类</strong>（淀粉）；鸡蛋富含<strong>蛋白质</strong>；植物油富含<strong>油脂</strong>；青菜富含<strong>维生素</strong>。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九下</span><span class="q-diff mid">★★☆</span>
+  <div class="q-body">下列材料中，属于有机合成材料的是（ ）<br>A. 棉花 &nbsp; B. 羊毛 &nbsp; C. 塑料 &nbsp; D. 蚕丝</div>
+  <div class="q-solution"><strong>答案：C</strong><br><strong>🔑 关键思路：</strong>三大合成材料：<strong>塑料、合成纤维、合成橡胶</strong>。棉花、羊毛、蚕丝都是<strong>天然</strong>材料。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九下</span><span class="q-diff mid">★★☆</span>
+  <div class="q-body">下列关于"白色污染"的说法，<strong>不正确</strong>的是（ ）<br>A. 指废弃塑料造成的污染 &nbsp; B. 塑料在自然界中难以降解 &nbsp; C. 塑料本身有毒所以造成污染 &nbsp; D. 使用可降解塑料可减少白色污染</div>
+  <div class="q-solution"><strong>答案：C</strong><br><strong>🔑 关键思路：</strong>塑料本身一般<strong>无毒</strong>，白色污染的危害在于难降解——废弃塑料在自然环境中长期存在，不是毒性问题。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九下</span><span class="q-diff hard">★★★</span>
+  <div class="q-body">有两件衣服标签模糊，已知一件是纯棉，一件是涤纶（合成纤维）。请设计实验鉴别，写出方法、现象和结论。</div>
+  <div class="q-solution"><strong>答案：</strong>分别从两件衣服取一小段线头，点燃。有<strong>烧纸气味</strong>、灰烬灰色易碎的→<strong>纯棉</strong>（天然植物纤维，成分为纤维素）。燃烧时<strong>熔化收缩</strong>、有特殊气味、冷却后形成<strong>硬块</strong>的→<strong>涤纶</strong>（合成纤维）。<br><strong>🔑 关键思路：</strong>燃烧法是鉴别天然纤维和合成纤维最简便的方法。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+</div>
+</details>
+
+<!-- ====== 模块8: 实验探究设计 ====== -->
+<section class="experiment-design">
+  <h3>🔬 实验探究设计：鉴别棉纤维、羊毛纤维、合成纤维</h3>
+  <p style="margin:8px 0 14px;">设计思路：<strong>燃烧法</strong>——利用不同纤维燃烧时的气味、火焰特征和灰烬性状进行鉴别。</p>
+  <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:12px;">
+    <tr style="background:var(--accent-light);"><th style="padding:8px;text-align:left;border:1px solid var(--border);">纤维种类</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">燃烧气味</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">燃烧特征</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">灰烬状态</th></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">棉（植物纤维）</td><td style="padding:8px;border:1px solid var(--border);">烧纸气味</td><td style="padding:8px;border:1px solid var(--border);">易燃，产生黄色火焰</td><td style="padding:8px;border:1px solid var(--border);">灰色粉末，易碎</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">羊毛（动物纤维）</td><td style="padding:8px;border:1px solid var(--border);"><strong>烧焦羽毛味</strong></td><td style="padding:8px;border:1px solid var(--border);">不易燃烧，离火熄灭</td><td style="padding:8px;border:1px solid var(--border);">黑褐色块状，易碎</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">涤纶/尼龙（合成纤维）</td><td style="padding:8px;border:1px solid var(--border);">特殊气味（化学生味）</td><td style="padding:8px;border:1px solid var(--border);"><strong>熔化收缩</strong>，边熔边烧</td><td style="padding:8px;border:1px solid var(--border);"><strong>硬块</strong>，不易捏碎</td></tr>
+  </table>
+  <p style="margin-top:8px;"><strong>操作注意：</strong>在通风处进行，用镊子夹取纤维，避免烫伤。取样要小（约 1 cm 长线头即可）。</p>
+</section>
+
+<!-- ====== 模块9: 自查清单 + 间隔复习 ====== -->
+<div class="checklist">
+  <h3>✅ 本章自查清单</h3>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能准确说出六大营养素并各举2种食物来源</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能说出三大合成材料并区分天然纤维和合成纤维</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能解释"白色污染"的成因和防治措施</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能用燃烧法鉴别棉、羊毛、合成纤维</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能说出三种人体必需元素及其缺乏症</label>
+  <p style="margin-top:12px;color:var(--accent);border-top:1px dashed var(--border);padding-top:12px;"><strong>🗣 费曼挑战：</strong>向家人解释"为什么塑料袋会造成白色污染，我们有什么办法解决"。用"燃烧法鉴别衣服材质"做一个生活实验。总结初中化学12章的知识体系——你学到的不是零散的方程式，而是一套看世界的化学视角。</p>
+</div>
+
+<div class="review-schedule">
+  <strong>📅 间隔复习</strong>
+  <span class="review-dot">🔵 1天后：列出六大营养素+常见缺乏症+三大合成材料</span>
+  <span class="review-dot">🟢 3天后：用燃烧法实际鉴别家中3种衣物纤维</span>
+  <span class="review-dot">🟡 1周后：向家人做"化学与生活"10分钟科普</span>
+  <span class="review-dot">🔴 1月后：做本章中考真题4题</span>
+</div>
+
+<!-- ====== 模块10: 终章 ====== -->
+<div class="next-stop" style="background:var(--accent-light);border-left-color:var(--chem-purple);">
+  <strong>🏁 初中化学课程至此完成！</strong><br>
+  12 章，从蜡烛燃烧到人体代谢，从微观原子到宏观肥料——你走完了初中化学的全部旅程。接下来请去<strong>附录</strong>：那里有全书化学方程式总表、物质颜色速查、俗名对照、金属活动性顺序、常见原子团和化合价、中考规范——是一份浓缩的"化学口袋书"。<br><br>
+  <a href="appendix.html" style="color:var(--chem-purple);font-weight:700;">📚 前往附录 →</a>
+</div>
+
+<!-- 章内翻页 -->
+<div style="display:flex;justify-content:space-between;margin:30px 0;padding-top:16px;border-top:1px solid var(--border);font-size:13px;">
+  <a href="ch11.html" style="color:var(--accent);">← 第11章</a>
+  <a href="appendix.html" style="color:var(--accent);">📚 附录 →</a>
+</div>
+
+</main>
+
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+(function(){
+  var k='chemistry-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+  document.documentElement.setAttribute('data-theme',t);
+  var b=document.getElementById('theme-toggle');if(b)b.textContent=t==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
+  b.addEventListener('click',function(){
+    var c=document.documentElement.getAttribute('data-theme'),n=c==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',n);localStorage.setItem(k,n);
+    b.textContent=n==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
+  });
+})();
+(function(){
+  var s=document.getElementById('sidebar'),k='chemistry-sidebar';
+  if(localStorage.getItem(k)==='hidden')s.classList.add('hidden');
+  document.getElementById('sidebarHideBtn').addEventListener('click',function(){s.classList.add('hidden');localStorage.setItem(k,'hidden')});
+  document.getElementById('sidebarShowBtn').addEventListener('click',function(){s.classList.remove('hidden');localStorage.setItem(k,'')});
+})();
+(function(){
+  var b=document.getElementById('expandAllBtn');if(!b)return;
+  b.addEventListener('click',function(){
+    var a=document.querySelectorAll('.exam-module,details'),o=true;
+    for(var i=0;i<a.length;i++)if(!a[i].hasAttribute('open')){o=false;break}
+    for(var i=0;i<a.length;i++){if(o)a[i].removeAttribute('open');else a[i].setAttribute('open','')}
+    b.textContent=o?'📂 展开全部章节':'📖 收起全部章节';
+  });
+})();
+window.addEventListener('scroll',function(){document.getElementById('backToTop').style.display=scrollY>400?'block':'none'});
+document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution')})});
+</script>
+</body>
+</html>

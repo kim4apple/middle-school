@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第8章 金属和金属材料 | 初中化学</title>
+<link rel="stylesheet" href="css/chemistry.css">
+<link rel="stylesheet" href="../katex/katex.min.css">
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">化学九下</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+  </div>
+  <nav>
+    <a href="../index.html" style="font-weight:600;">🏠 返回首页</a>
+    <a href="index.html">⚗️ 化学导航</a>
+    <a href="ch01.html">第1章 走进化学世界</a>
+    <a href="ch02.html">第2章 空气·氧气</a>
+    <a href="ch03.html">第3章 物质构成的奥秘</a>
+    <a href="ch04.html">第4章 自然界的水</a>
+    <a href="ch05.html">第5章 化学方程式</a>
+    <a href="ch06.html">第6章 碳和碳的氧化物</a>
+    <a href="ch07.html">第7章 燃料及其利用</a>
+    <a href="ch08.html" class="active">第8章 金属和金属材料</a>
+    <a href="ch09.html">第9章 溶液</a>
+    <a href="ch10.html">第10章 酸和碱</a>
+    <a href="ch11.html">第11章 盐·化肥</a>
+    <a href="ch12.html">第12章 化学与生活</a>
+    <a href="appendix.html">📚 附录</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
+  <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
+</nav>
+
+<main id="content">
+<div class="cover"><h1>第8章 · 金属和金属材料</h1><p>九年级下册 | 金属活动性顺序 · 铁的冶炼 · 合金 | 核心：置换反应与金属腐蚀</p></div>
+
+<!-- ====== 模块1: 实验观察 ====== -->
+<section class="experiment-observation">
+  <div class="exp-title">🧪 实验：金属与酸反应——探究金属活动性顺序</div>
+  <div class="exp-step"><span class="exp-step-num">1</span><span>取四支试管，分别放入<strong>镁条（Mg）、锌粒（Zn）、铁钉（Fe）、铜片（Cu）</strong>各一小块。试管编号。</span></div>
+  <div class="exp-step"><span class="exp-step-num">2</span><span>向每支试管中分别加入等量<strong>稀盐酸（HCl）</strong> 5 mL，观察现象。</span></div>
+  <div class="exp-step"><span class="exp-step-num">3</span><span><strong>镁</strong>：剧烈反应，产生大量气泡（H₂），试管壁发烫——反应最剧烈，最快。<br><strong>锌</strong>：较快反应，产生较多气泡——反应速率中等。<br><strong>铁</strong>：缓慢反应，产生少量气泡，溶液由无色变<strong>浅绿色</strong>（FeCl₂）。<br><strong>铜</strong>：<strong>无现象</strong>——不反应。</span></div>
+  <div class="exp-step"><span class="exp-step-num">4</span><span>用燃着的木条放在试管口——气体能燃烧，产生<strong>淡蓝色火焰</strong>（氢气 H₂）。</span></div>
+  <p style="margin-top:12px;font-weight:700;color:var(--chem-green);">📋 结论：Mg、Zn、Fe、Cu 的金属活动性依次减弱。Mg 最活泼，Cu 最不活泼（排在H之后，不能置换酸中的氢）。</p>
+</section>
+
+<section class="experiment-observation">
+  <div class="exp-title">🧪 实验：金属与盐溶液反应——铁与硫酸铜</div>
+  <div class="exp-step"><span class="exp-step-num">1</span><span>取一支试管，注入约 5 mL 蓝色<strong>硫酸铜（CuSO₄）溶液</strong>。</span></div>
+  <div class="exp-step"><span class="exp-step-num">2</span><span>将一根打磨光亮的<strong>铁钉</strong>浸入溶液中，静置几分钟。</span></div>
+  <div class="exp-step"><span class="exp-step-num">3</span><span>观察：铁钉表面附着了一层<strong>红色固体</strong>（铜 Cu），溶液颜色由<strong>蓝色逐渐变为浅绿色</strong>（FeSO₄）。</span></div>
+  <div class="exp-step"><span class="exp-step-num">4</span><span>化学方程式：Fe + CuSO₄ → FeSO₄ + Cu。这是<strong>湿法炼铜</strong>的原理——用较活泼金属将较不活泼金属从其盐溶液中置换出来。</span></div>
+  <p style="margin-top:12px;font-weight:700;color:var(--chem-green);">📋 结论：铁比铜活泼（活动性：Fe ＞ Cu），铁能将铜从硫酸铜溶液中置换出来。</p>
+</section>
+
+<!-- ====== 模块2: 微观解释 ====== -->
+<section class="micro-explanation">
+  <h3>🧠 微观解释：金属晶体与合金</h3>
+  <p>金属具有金属光泽、导电性、导热性和延展性的根本原因：金属原子<strong>规则排列</strong>，自由电子在金属阳离子之间自由移动——形成了"<strong>金属键</strong>"。</p>
+  <table style="width:100%;margin-top:10px;border-collapse:collapse;font-size:13px;">
+    <tr style="background:var(--accent-light);"><th style="padding:8px;text-align:left;border:1px solid var(--border);">特征</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">纯金属</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">合金</th></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">原子排列</td><td style="padding:8px;border:1px solid var(--border);"><strong>严格有序</strong>的规则排列</td><td style="padding:8px;border:1px solid var(--border);">加入了其他元素的原子，<strong>排列被扰乱</strong></td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">原子层滑动</td><td style="padding:8px;border:1px solid var(--border);">原子层易滑动 → <strong>延展性好</strong></td><td style="padding:8px;border:1px solid var(--border);">不同大小的原子阻碍滑动 → <strong>更硬</strong></td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">熔点</td><td style="padding:8px;border:1px solid var(--border);">固定熔点</td><td style="padding:8px;border:1px solid var(--border);"><strong>比纯金属低</strong>（如焊锡比纯锡熔点低）</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">举例</td><td style="padding:8px;border:1px solid var(--border);">纯铁（软）、纯铝（软）</td><td style="padding:8px;border:1px solid var(--border);">钢（铁+碳）、黄铜（铜+锌）、焊锡（锡+铅）</td></tr>
+  </table>
+  <p style="margin-top:10px;">合金中，由于加入了大小不同的异种原子，金属原子的规则排列被打破，原子层之间滑动变困难 —— 因此<strong>合金的硬度比组成它的纯金属大，熔点比组成它的纯金属低</strong>。</p>
+</section>
+
+<!-- ====== 模块3: 核心概念 ====== -->
+<h3 style="margin:20px 0 12px;color:var(--accent);">📖 核心概念</h3>
+<div class="card-grid">
+  <div class="concept-card"><div class="name">金属的共性</div><p>① 有<strong>金属光泽</strong>；② 良好的<strong>导电性</strong>和<strong>导热性</strong>；③ 良好的<strong>延展性</strong>（能拉成丝、压成薄片）；④ 常温下多数为固体（<strong>汞 Hg 是液体</strong>）。</p></div>
+  <div class="concept-card"><div class="name">金属的特性（个性）</div><p>不同金属差异巨大：铜呈<strong>紫红色</strong>，铁能被磁铁吸引，钨的熔点最高（>3400°C）用作灯丝，铬硬度大用于镀层，金化学性质极稳定（"真金不怕火炼"）。</p></div>
+  <div class="concept-card"><div class="name">合金——性能更优</div><p><strong>定义</strong>：在金属中加热熔合某些金属或非金属制得的具有金属特征的混合物。合金<strong>比纯金属硬</strong>且<strong>熔点更低</strong>。常见合金：<strong>生铁</strong>和<strong>钢</strong>（铁合金，含碳量不同）；黄铜（Cu-Zn合金）；青铜（Cu-Sn合金）；硬铝（Al-Cu-Mg合金）。</p></div>
+  <div class="concept-card"><div class="name">铁的冶炼（高炉炼铁）</div><p><strong>原料</strong>：铁矿石（Fe₂O₃）、焦炭（C）、石灰石（CaCO₃ 除去杂质）、空气。<strong>原理</strong>（核心反应）：$Fe_2O_3 + 3CO \xrightarrow{高温} 2Fe + 3CO_2$。CO 来自焦炭与氧气生成 CO₂，CO₂ 再被碳还原：$C + CO_2 \xrightarrow{高温} 2CO$。石灰石作用：将矿石中的 SiO₂ 转化为炉渣 CaSiO₃ 除去。</p></div>
+  <div class="concept-card"><div class="name">金属的锈蚀与防护</div><p>铁生锈的条件：同时与<strong>水</strong>和<strong>氧气</strong>接触。铁锈的主要成分：$Fe_2O_3 \cdot xH_2O$（疏松多孔，不能阻止内部铁继续生锈）。防护方法：① 保持干燥；② 涂保护层（刷漆/涂油/电镀/搪瓷）；③ 制成合金（如不锈钢——含Cr、Ni的铁合金，抗腐蚀）。</p></div>
+</div>
+
+<!-- ====== 模块4: 化学方程式 ====== -->
+<section class="equation-section">
+  <h3>⚗️ 本章核心化学方程式</h3>
+  <table style="width:100%;margin-top:10px;border-collapse:collapse;font-size:13px;">
+    <tr style="background:var(--accent-light);"><th style="padding:8px;text-align:left;border:1px solid var(--border);">#</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">化学方程式</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">反应类型</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">考点</th></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">1</td><td style="padding:8px;border:1px solid var(--border);">$Fe + CuSO_4 \rightarrow FeSO_4 + Cu$</td><td style="padding:8px;border:1px solid var(--border);">置换反应</td><td style="padding:8px;border:1px solid var(--border);"><strong>湿法炼铜</strong>；溶液由蓝色→浅绿色；铁钉表面附着红色固体</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">2</td><td style="padding:8px;border:1px solid var(--border);">$Fe_2O_3 + 3CO \xrightarrow{高温} 2Fe + 3CO_2$</td><td style="padding:8px;border:1px solid var(--border);">还原反应</td><td style="padding:8px;border:1px solid var(--border);"><strong>高炉炼铁核心反应</strong>；CO 是还原剂；Fe₂O₃ 被还原</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">3</td><td style="padding:8px;border:1px solid var(--border);">$3Fe + 2O_2 \xrightarrow{点燃} Fe_3O_4$</td><td style="padding:8px;border:1px solid var(--border);">化合反应</td><td style="padding:8px;border:1px solid var(--border);">铁丝在氧气中剧烈燃烧；火星四射；生成<strong>黑色固体</strong>Fe₃O₄</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">4</td><td style="padding:8px;border:1px solid var(--border);">$Zn + H_2SO_4 \rightarrow ZnSO_4 + H_2\uparrow$</td><td style="padding:8px;border:1px solid var(--border);">置换反应</td><td style="padding:8px;border:1px solid var(--border);">实验室制取 H₂ 常用反应之一</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">5</td><td style="padding:8px;border:1px solid var(--border);">$Fe + 2HCl \rightarrow FeCl_2 + H_2\uparrow$</td><td style="padding:8px;border:1px solid var(--border);">置换反应</td><td style="padding:8px;border:1px solid var(--border);">溶液变<strong>浅绿色</strong>（Fe²⁺）；不是 FeCl₃！</td></tr>
+  </table>
+</section>
+
+<!-- ====== 模块5: 计算专题 ====== -->
+<section class="calculation-section">
+  <h3>🔢 计算专题：含杂质铁矿石的炼铁计算</h3>
+  <p style="margin:8px 0 16px;font-size:13px;color:var(--text-secondary);">核心思路：杂质不参与反应 → 先求纯物质质量，再按化学方程式计算。</p>
+  <div style="background:var(--bg-secondary);padding:14px 18px;border-radius:8px;border-left:4px solid var(--accent);margin-bottom:12px;">
+    <strong>【例题】</strong>某铁矿石含 $Fe_2O_3$ 80%（杂质不含铁），用 1000 t 该铁矿石进行高炉炼铁，理论上可炼出含铁 96% 的生铁多少吨？<br><br>
+    <strong>解：</strong>$Fe_2O_3$ 的质量 = $1000 \times 80\% = 800\ t$<br>
+    $Fe_2O_3 + 3CO \xrightarrow{高温} 2Fe + 3CO_2$<br>
+    160 → 112<br>
+    $800 \rightarrow x$<br>
+    $x = \dfrac{800 \times 112}{160} = 560\ t$（纯铁质量）<br>
+    生铁质量 = $\dfrac{560}{96\%} \approx 583.3\ t$<br>
+    <strong>答：</strong>理论上可炼出含铁 96% 的生铁约 583.3 t。
+  </div>
+  <div style="background:var(--bg-secondary);padding:14px 18px;border-radius:8px;border-left:4px solid var(--chem-yellow);">
+    <strong>⚠️ 关键步骤总结：</strong><br>
+    ① 求纯物质质量 = 样品质量 × 纯度（质量分数）<br>
+    ② 按化学方程式进行比例计算 → 得产物纯质量<br>
+    ③ 若求含杂质的产物质量 = 纯质量 ÷ 纯度
+  </div>
+</section>
+
+<!-- ====== 模块6: 实验安全 + 易错 ====== -->
+<section class="safety-pitfall">
+  <h3>🚨 安全与常见错误</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:13px;margin-top:10px;">
+    <div style="background:var(--bg);padding:10px 14px;border-radius:6px;border:1px solid var(--border);">
+      <strong style="color:var(--chem-red);">🔴 金属活动性顺序（必背）</strong>
+      <p><strong>K Ca Na Mg Al &nbsp; Zn Fe Sn Pb (H) &nbsp; Cu Hg Ag Pt Au</strong><br>
+      口诀：<strong>嫁给那美女，身体细纤轻，统共一百斤</strong><br>
+      K→Au，活动性<strong>逐渐减弱</strong>。<br>
+      排在<strong>H之前</strong>的金属能量换酸中的氢；<br>
+      排在前面的金属能把后面的金属从盐溶液中置换出来（K、Ca、Na除外——太活泼，先与水反应）。</p>
+    </div>
+    <div style="background:var(--bg);padding:10px 14px;border-radius:6px;border:1px solid var(--border);">
+      <strong style="color:var(--chem-yellow);">⚠️ 最高频易错</strong>
+      <p>❌ 铁与酸/盐溶液反应生成的是<strong>+2价铁（Fe²⁺）</strong>，不是+3价！——铁与盐酸反应：$Fe + 2HCl \rightarrow FeCl_2 + H_2\uparrow$（生成<strong>FeCl₂ 氯化亚铁</strong>，不是 FeCl₃）。溶液为<strong>浅绿色</strong>。<br>
+      ❌ 铁与硫酸铜反应：$Fe + CuSO_4 \rightarrow FeSO_4 + Cu$（生成<strong>FeSO₄ 硫酸亚铁</strong>）。<br>
+      ❌ "铁生锈是因为与氧气接触"不完整——必须同时有<strong>水和氧气</strong>。<br>
+      ❌ 合金是<strong>混合物</strong>（不是纯净物也不是化合物）。<br>
+      ❌ 不能用铁制容器盛放波尔多液（含 CuSO₄）——铁会置换出铜。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 模块7: 中考真题 ====== -->
+<details class="exam-module" open>
+<summary>🎯 中考真题精选（金属和金属材料 · 近年典型）</summary>
+<div class="content">
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九下</span><span class="q-diff easy">★☆☆</span>
+  <div class="q-body">下列金属中，活动性最强的是（ ）<br>A. Mg &nbsp; B. Zn &nbsp; C. Fe &nbsp; D. Cu</div>
+  <div class="q-solution"><strong>答案：A</strong><br><strong>🔑 关键思路：</strong>金属活动性顺序：K Ca Na <strong>Mg</strong> Al Zn Fe Sn Pb (H) Cu Hg Ag Pt Au。Mg 在这四个中排最前面 → 活动性最强。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九下</span><span class="q-diff mid">★★☆</span>
+  <div class="q-body">将铁钉放入硫酸铜溶液中，观察到的现象是____，反应的化学方程式为____。</div>
+  <div class="q-solution"><strong>答案：铁钉表面出现红色固体，溶液由蓝色逐渐变为浅绿色；$Fe + CuSO_4 \rightarrow FeSO_4 + Cu$</strong><br><strong>⚠️ 易错：</strong>现象描述必须完整——铁的"消失"+铜的"出现"+溶液颜色变化。只写"生成铜"不写"溶液变色"会丢分。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九下</span><span class="q-diff mid">★★☆</span>
+  <div class="q-body">下列关于合金的说法正确的是（ ）<br>A. 合金是化合物 &nbsp; B. 合金的硬度比纯金属小 &nbsp; C. 合金的熔点比纯金属高 &nbsp; D. 生铁和钢都是铁合金</div>
+  <div class="q-solution"><strong>答案：D</strong><br><strong>🔑 关键思路：</strong>合金是混合物（A错）；合金硬度比纯金属<strong>大</strong>（B错）；合金熔点比纯金属<strong>低</strong>（C错）；生铁和钢都是铁碳合金，含碳量不同（D对）。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九下</span><span class="q-diff hard">★★★</span>
+  <div class="q-body">某化学小组为探究铁生锈的条件，设计了如下实验：①试管A中加入少量水，使铁钉一半浸在水中；②试管B中加入煮沸后迅速冷却的水（液面上覆盖一层植物油），浸没铁钉；③试管C中加入干燥剂（如CaCl₂），放入铁钉后密封。一周后观察：A中铁钉生锈，B、C中铁钉不生锈。请回答：(1) B中煮沸+植物油的目的；(2) 由A和B对比得出的结论；(3) 由A和C对比得出的结论。</div>
+  <div class="q-solution"><strong>答案：</strong>(1) 除去水中溶解的氧气 + 隔绝空气——使铁钉只与水接触而不与氧气接触；(2) 铁生锈需要<strong>氧气</strong>；(3) 铁生锈需要<strong>水</strong>。<br><strong>🔑 关键思路：</strong>控制变量法——三组实验分别提供"水+氧气""只有水""只有氧气"。A与B的唯一变量是<strong>氧气</strong>，A与C的唯一变量是<strong>水</strong>。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+</div>
+</details>
+
+<!-- ====== 模块8: 实验探究设计 ====== -->
+<section class="experiment-design">
+  <h3>🔬 实验探究设计：探究铁生锈的条件</h3>
+  <p style="margin:8px 0 14px;">设计思路：<strong>控制变量法</strong>——分别控制水和氧气两个变量。</p>
+  <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:12px;">
+    <tr style="background:var(--accent-light);"><th style="padding:8px;text-align:left;border:1px solid var(--border);">试管</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">条件</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">与水的接触</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">与氧气的接触</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">是否生锈</th></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">A</td><td style="padding:8px;border:1px solid var(--border);">铁钉一半在水中</td><td style="padding:8px;border:1px solid var(--border);">✅</td><td style="padding:8px;border:1px solid var(--border);">✅</td><td style="padding:8px;border:1px solid var(--border);"><strong>生锈</strong></td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">B</td><td style="padding:8px;border:1px solid var(--border);">煮沸冷却水 + 植物油密封</td><td style="padding:8px;border:1px solid var(--border);">✅</td><td style="padding:8px;border:1px solid var(--border);">❌（隔绝空气）</td><td style="padding:8px;border:1px solid var(--border);">不生锈</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">C</td><td style="padding:8px;border:1px solid var(--border);">干燥剂 + 密封</td><td style="padding:8px;border:1px solid var(--border);">❌</td><td style="padding:8px;border:1px solid var(--border);">✅</td><td style="padding:8px;border:1px solid var(--border);">不生锈</td></tr>
+  </table>
+  <p><strong>A vs B</strong>：控制"水"变量 → 证明铁生锈需要<strong>氧气</strong>。</p>
+  <p><strong>A vs C</strong>：控制"氧气"变量 → 证明铁生锈需要<strong>水</strong>。</p>
+  <p style="margin-top:8px;"><strong>综合结论：</strong>铁生锈必须同时与水和氧气接触。防锈原理：隔绝水或隔绝氧气（或两者都隔绝）。</p>
+</section>
+
+<!-- ====== 模块9: 自查清单 + 间隔复习 ====== -->
+<div class="checklist">
+  <h3>✅ 本章自查清单</h3>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能熟练背诵金属活动性顺序（K→Au），并解释其应用</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能写出铁与硫酸铜、铁与盐酸的化学方程式并描述现象</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能解释为什么合金比纯金属硬、熔点更低（微观角度）</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能完成含杂质铁矿石的炼铁计算</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能说出铁生锈的条件并用控制变量法设计实验</label>
+  <p style="margin-top:12px;color:var(--accent);border-top:1px dashed var(--border);padding-top:12px;"><strong>🗣 费曼挑战：</strong>用"金属键"和"自由电子"解释金属为什么能导电、导热、有延展性。用"合金中不同大小原子阻碍滑动"解释合金为何更硬。</p>
+</div>
+
+<div class="review-schedule">
+  <strong>📅 间隔复习</strong>
+  <span class="review-dot">🔵 1天后：默写金属活动性顺序 + 铁与酸/盐溶液方程式</span>
+  <span class="review-dot">🟢 3天后：做含杂质计算3题 + 铁生锈探究分析</span>
+  <span class="review-dot">🟡 1周后：讲解高炉炼铁原理（CO来源+石灰石作用）</span>
+  <span class="review-dot">🔴 1月后：做本章中考真题4题</span>
+</div>
+
+<!-- ====== 模块10: 下一站 ====== -->
+<div class="next-stop">
+  <strong>➡️ 下一站：溶液</strong><br>
+  你知道了金属能从盐溶液中"置换"出另一种金属，这个过程发生在溶液环境中。下一章我们将深入探究溶液的本质——什么是溶剂，什么是溶质？为什么食盐能溶于水而沙子不能？饱和溶液和溶解度的概念会让你真正理解"盐溶液"中的"盐"到底是怎样溶解在水中的。
+</div>
+
+<!-- 章内翻页 -->
+<div style="display:flex;justify-content:space-between;margin:30px 0;padding-top:16px;border-top:1px solid var(--border);font-size:13px;">
+  <a href="ch07.html" style="color:var(--accent);">← 第7章</a>
+  <a href="ch09.html" style="color:var(--accent);">第9章 →</a>
+</div>
+
+</main>
+
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+(function(){
+  var k='chemistry-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+  document.documentElement.setAttribute('data-theme',t);
+  var b=document.getElementById('theme-toggle');if(b)b.textContent=t==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
+  b.addEventListener('click',function(){
+    var c=document.documentElement.getAttribute('data-theme'),n=c==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',n);localStorage.setItem(k,n);
+    b.textContent=n==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
+  });
+})();
+(function(){
+  var s=document.getElementById('sidebar'),k='chemistry-sidebar';
+  if(localStorage.getItem(k)==='hidden')s.classList.add('hidden');
+  document.getElementById('sidebarHideBtn').addEventListener('click',function(){s.classList.add('hidden');localStorage.setItem(k,'hidden')});
+  document.getElementById('sidebarShowBtn').addEventListener('click',function(){s.classList.remove('hidden');localStorage.setItem(k,'')});
+})();
+(function(){
+  var b=document.getElementById('expandAllBtn');if(!b)return;
+  b.addEventListener('click',function(){
+    var a=document.querySelectorAll('.exam-module,details'),o=true;
+    for(var i=0;i<a.length;i++)if(!a[i].hasAttribute('open')){o=false;break}
+    for(var i=0;i<a.length;i++){if(o)a[i].removeAttribute('open');else a[i].setAttribute('open','')}
+    b.textContent=o?'📂 展开全部章节':'📖 收起全部章节';
+  });
+})();
+window.addEventListener('scroll',function(){document.getElementById('backToTop').style.display=scrollY>400?'block':'none'});
+document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution')})});
+</script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第9章 溶液 | 初中化学</title>
+<link rel="stylesheet" href="css/chemistry.css">
+<link rel="stylesheet" href="../katex/katex.min.css">
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">化学九下</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+  </div>
+  <nav>
+    <a href="../index.html" style="font-weight:600;">🏠 返回首页</a>
+    <a href="index.html">⚗️ 化学导航</a>
+    <a href="ch01.html">第1章 走进化学世界</a>
+    <a href="ch02.html">第2章 空气·氧气</a>
+    <a href="ch03.html">第3章 物质构成的奥秘</a>
+    <a href="ch04.html">第4章 自然界的水</a>
+    <a href="ch05.html">第5章 化学方程式</a>
+    <a href="ch06.html">第6章 碳和碳的氧化物</a>
+    <a href="ch07.html">第7章 燃料及其利用</a>
+    <a href="ch08.html">第8章 金属和金属材料</a>
+    <a href="ch09.html" class="active">第9章 溶液</a>
+    <a href="ch10.html">第10章 酸和碱</a>
+    <a href="ch11.html">第11章 盐·化肥</a>
+    <a href="ch12.html">第12章 化学与生活</a>
+    <a href="appendix.html">📚 附录</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
+  <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
+</nav>
+
+<main id="content">
+<div class="cover"><h1>第9章 · 溶液</h1><p>九年级下册 | 溶解度 · 溶质质量分数 · 结晶 | 核心：定量描述溶液组成</p></div>
+
+<!-- ====== 模块1: 实验观察 ====== -->
+<section class="experiment-observation">
+  <div class="exp-title">🧪 实验：配制一定溶质质量分数的 NaCl 溶液</div>
+  <div class="exp-step"><span class="exp-step-num">1</span><span><strong>计算</strong>：要配制 50 g 质量分数为 6% 的 NaCl 溶液——需 NaCl 固体质量：$50 \times 6\% = 3\ g$；需水：$50 - 3 = 47\ g$（即 47 mL）。</span></div>
+  <div class="exp-step"><span class="exp-step-num">2</span><span><strong>称量</strong>：用<strong>托盘天平</strong>称取 3 g NaCl（左右盘各放一张等质量的纸，左物右码）。用<strong>量筒</strong>量取 47 mL 水（读数：视线与凹液面最低处平齐）。</span></div>
+  <div class="exp-step"><span class="exp-step-num">3</span><span><strong>溶解</strong>：将 NaCl 倒入烧杯中，加水后用<strong>玻璃棒搅拌</strong>，直至 NaCl 全部溶解。</span></div>
+  <div class="exp-step"><span class="exp-step-num">4</span><span><strong>装瓶</strong>：将配好的溶液倒入试剂瓶中，贴上标签（注明：<strong>NaCl溶液</strong>、<strong>6%</strong>、<strong>日期</strong>）。</span></div>
+  <p style="margin-top:12px;font-weight:700;color:var(--chem-green);">📋 仪器清单：托盘天平、药匙、量筒、胶头滴管、烧杯、玻璃棒、试剂瓶。</p>
+</section>
+
+<section class="experiment-observation">
+  <div class="exp-title">🧪 观察实验：溶解时的吸热与放热</div>
+  <div class="exp-step"><span class="exp-step-num">1</span><span>取三支试管，分别加入等量水，测初始温度。</span></div>
+  <div class="exp-step"><span class="exp-step-num">2</span><span>分别加入<strong>NaOH 固体</strong>——温度计示数<strong>升高</strong>（NaOH 溶于水<strong>放热</strong>）。</span></div>
+  <div class="exp-step"><span class="exp-step-num">3</span><span>加入<strong>NH₄NO₃ 固体</strong>——温度计示数<strong>降低</strong>（NH₄NO₃ 溶于水<strong>吸热</strong>）。</span></div>
+  <div class="exp-step"><span class="exp-step-num">4</span><span>加入<strong>NaCl 固体</strong>——温度计示数<strong>几乎不变</strong>（NaCl 溶解时热量变化不明显）。</span></div>
+  <p style="margin-top:12px;font-weight:700;color:var(--chem-green);">📋 结论：不同物质溶解时的热效应不同。NaOH 放热（可用于自热食品），NH₄NO₃ 吸热（可用于制作冷敷袋）。</p>
+</section>
+
+<!-- ====== 模块2: 微观解释 ====== -->
+<section class="micro-explanation">
+  <h3>🧠 微观解释：溶解的微观过程</h3>
+  <p>当 NaCl 固体放入水中时，水分子不断运动撞击 NaCl 晶体表面——Na⁺ 和 Cl⁻ 在水分子的作用下脱离晶体表面，<strong>扩散</strong>到水中，被水分子包围形成<strong>水合离子</strong>。</p>
+  <p style="margin-top:8px;">溶解过程包含两个步骤：</p>
+  <table style="width:100%;margin-top:10px;border-collapse:collapse;font-size:13px;">
+    <tr style="background:var(--accent-light);"><th style="padding:8px;text-align:left;border:1px solid var(--border);">步骤</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">过程</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">能量变化</th></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">① 扩散</td><td style="padding:8px;border:1px solid var(--border);">溶质粒子（分子/离子）克服粒子间作用力向溶剂中扩散</td><td style="padding:8px;border:1px solid var(--border);"><strong>吸热</strong></td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">② 水合</td><td style="padding:8px;border:1px solid var(--border);">溶质粒子与水分子结合形成水合分子/水合离子</td><td style="padding:8px;border:1px solid var(--border);"><strong>放热</strong></td></tr>
+  </table>
+  <p style="margin-top:10px;">溶解总热效应 = 扩散吸热 + 水合放热。若扩散吸热 > 水合放热 → 总效果为<strong>吸热</strong>（如 NH₄NO₃）；反之则<strong>放热</strong>（如 NaOH）；两者相当时温度几乎不变（如 NaCl）。</p>
+  <p style="margin-top:8px;"><strong>蔗糖</strong>溶于水：蔗糖分子（C₁₂H₂₂O₁₁）从晶体中扩散进入水中，以<strong>分子</strong>形式分散在水分子之间——这是物理变化（分子本身不变）。</p>
+</section>
+
+<!-- ====== 模块3: 核心概念 ====== -->
+<h3 style="margin:20px 0 12px;color:var(--accent);">📖 核心概念</h3>
+<div class="card-grid">
+  <div class="concept-card"><div class="name">溶液 · 溶质 · 溶剂</div><p><strong>溶液</strong>：一种或几种物质分散到另一种物质中形成的<strong>均一</strong>、<strong>稳定</strong>的混合物。特征：均一（各处浓度相同）、稳定（久置不分层）。<strong>溶质</strong>：被溶解的物质（可为固/液/气体）。<strong>溶剂</strong>：能溶解其他物质的物质（水是最常见的溶剂）。溶液质量 = 溶质质量 + 溶剂质量。</p></div>
+  <div class="concept-card"><div class="name">饱和溶液 vs 不饱和溶液</div><p><strong>饱和溶液</strong>：在一定温度下、一定量溶剂中，<strong>不能</strong>继续溶解某种溶质的溶液。<strong>不饱和溶液</strong>：还能继续溶解。相互转化：不饱和 → 饱和：加溶质 / 蒸发溶剂 / 降温（多数物质）；饱和 → 不饱和：加溶剂 / 升温（多数物质）。</p></div>
+  <div class="concept-card"><div class="name">溶解度（四要素）</div><p><strong>定义</strong>：在一定<strong>温度</strong>下，某固态物质在<strong>100 g 溶剂</strong>中达到<strong>饱和状态</strong>时所溶解的<strong>质量</strong>（单位：<strong>克 g</strong>）。四要素缺一不可！如：20°C 时 NaCl 的溶解度为 36 g——表示 20°C 时 100 g 水中最多溶解 36 g NaCl。</p></div>
+  <div class="concept-card"><div class="name">溶解度曲线</div><p>以温度为横坐标、溶解度为纵坐标的曲线。① 大多数固体物质的溶解度随温度升高而<strong>增大</strong>（如 KNO₃——陡升型）；② NaCl 随温度变化<strong>不大</strong>（平缓型）；③ <strong>Ca(OH)₂</strong> 的溶解度随温度升高反而<strong>减小</strong>（特例！）。气体溶解度随温度升高而<strong>减小</strong>，随压强增大而<strong>增大</strong>。</p></div>
+  <div class="concept-card"><div class="name">结晶——从溶液中析出固体</div><p><strong>蒸发结晶（蒸发溶剂）</strong>：适用于溶解度受温度影响<strong>不大</strong>的物质，如 NaCl（海水晒盐）。<strong>降温结晶（冷却热饱和溶液）</strong>：适用于溶解度受温度影响<strong>较大</strong>的物质，如 KNO₃。混合溶液分离：先蒸发浓缩，再降温结晶，使 KNO₃ 先结晶析出，NaCl 留在母液中。</p></div>
+  <div class="concept-card"><div class="name">乳化</div><p>一种液体以<strong>微小液滴</strong>分散在另一种不相溶液体中形成的混合物叫<strong>乳浊液</strong>（不均一、不稳定）。加入<strong>乳化剂</strong>（如洗涤剂、洗衣液、肥皂）能使油分散成微小液滴均匀悬浮在水中，形成较稳定的乳浊液——此过程叫<strong>乳化</strong>。乳化 ≠ 溶解（乳化是物理分散，不形成均一溶液）。</p></div>
+</div>
+
+<!-- ====== 模块4: 化学方程式 ====== -->
+<section style="margin:20px 0;">
+  <h3>⚗️ 本章方程式应用</h3>
+  <p style="font-size:13px;">本章无新增化学方程式。溶液的计算基于已学过的化学方程式（如中和反应、金属与酸反应等），结合<strong>溶质质量分数</strong>进行定量计算。</p>
+  <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">示例：10 g 含杂质 10% 的锌粒与足量稀硫酸反应，求生成 H₂ 的质量。→ 先求纯 Zn = 10×90% = 9 g，再按 Zn + H₂SO₄ → ZnSO₄ + H₂↑ 计算。</p>
+</section>
+
+<!-- ====== 模块5: 计算专题 ====== -->
+<section class="calculation-section">
+  <h3>🔢 计算专题：溶质质量分数</h3>
+  <p style="margin:8px 0 16px;font-size:13px;color:var(--text-secondary);">核心公式 + 稀释公式——本章最重要的计算工具。</p>
+  <div style="background:var(--bg-secondary);padding:14px 18px;border-radius:8px;border-left:4px solid var(--accent);margin-bottom:12px;">
+    <strong>【公式 1】溶质质量分数：</strong>$\omega = \dfrac{m_{溶质}}{m_{溶液}} \times 100\%$<br>
+    $m_{溶液} = m_{溶质} + m_{溶剂}$<br><br>
+    <strong>【公式 2】稀释公式：</strong>$m_{浓} \cdot \omega_{浓} = m_{稀} \cdot \omega_{稀}$<br>
+    稀释前后<strong>溶质质量不变</strong>，变的只是溶剂质量（溶液总质量增大）。<br><br>
+    <strong>【例题】</strong>用 20% 的 NaCl 溶液配制 100 g 5% 的 NaCl 溶液，需要 20% 溶液多少克？加水多少克？<br>
+    <strong>解：</strong>$m_{浓} \times 20\% = 100 \times 5\%$ → $m_{浓} = 25\ g$；加水 = $100 - 25 = 75\ g$。<br>
+    <strong>答：</strong>需 20% 溶液 25 g，加水 75 g。
+  </div>
+  <div style="background:var(--bg-secondary);padding:14px 18px;border-radius:8px;border-left:4px solid var(--chem-yellow);">
+    <strong>⚠️ 易错提醒：</strong><br>
+    ① 溶质质量分数 = 溶质 / <strong>溶液</strong>（不是溶剂！）<br>
+    ② 饱和溶液中，$\omega = \dfrac{溶解度}{100+溶解度} \times 100\%$<br>
+    ③ 稀释计算：加水质量 = 稀溶液质量 − 浓溶液质量
+  </div>
+</section>
+
+<!-- ====== 模块6: 实验安全 + 易错 ====== -->
+<section class="safety-pitfall">
+  <h3>🚨 安全与常见错误</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:13px;margin-top:10px;">
+    <div style="background:var(--bg);padding:10px 14px;border-radius:6px;border:1px solid var(--border);">
+      <strong style="color:var(--chem-red);">🔴 关键概念辨析</strong>
+      <p><strong>饱和溶液 ≠ 浓溶液！</strong>饱和溶液只表明已溶解的溶质达到了该温度下的最大量，但"最大量"可能很少（如 Ca(OH)₂ 饱和溶液浓度很低——它在水中溶解度很小）。同样，<strong>不饱和溶液 ≠ 稀溶液</strong>（如 KNO₃ 的不饱和溶液可能很浓）。</p>
+    </div>
+    <div style="background:var(--bg);padding:10px 14px;border-radius:6px;border:1px solid var(--border);">
+      <strong style="color:var(--chem-yellow);">⚠️ 最高频易错</strong>
+      <p>❌ 溶解度的<strong>"四要素"</strong>缺一不可：一定温度 / 100 g 溶剂 / 饱和状态 / 单位克（不可写成 %）。<br>
+      ❌ <strong>Ca(OH)₂ 的溶解度随温度升高反而减小</strong>——这是唯一的常考特例！<br>
+      ❌ 气体溶解度随温度升高而<strong>减小</strong>（夏天鱼浮头就是因为水中溶氧量降低）。<br>
+      ❌ 溶质质量分数没有单位——是<strong>百分数</strong>。<br>
+      ❌ 乳化形成的乳浊液<strong>不是溶液</strong>（不均一、不稳定）。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 模块7: 中考真题 ====== -->
+<details class="exam-module" open>
+<summary>🎯 中考真题精选（溶液 · 近年典型）</summary>
+<div class="content">
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九下</span><span class="q-diff easy">★☆☆</span>
+  <div class="q-body">下列物质放入水中，能形成溶液的是（ ）<br>A. 面粉 &nbsp; B. 花生油 &nbsp; C. 食盐 &nbsp; D. 泥土</div>
+  <div class="q-solution"><strong>答案：C</strong><br><strong>🔑 关键思路：</strong>食盐（NaCl）能溶于水形成均一、稳定的混合物——溶液。面粉、泥土形成<strong>悬浊液</strong>，花生油形成<strong>乳浊液</strong>。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九下</span><span class="q-diff mid">★★☆</span>
+  <div class="q-body">20°C 时，NaCl 的溶解度为 36 g。该温度下，将 20 g NaCl 放入 50 g 水中，充分搅拌，所得溶液是____（填"饱和"或"不饱和"）溶液，溶质质量分数为____。</div>
+  <div class="q-solution"><strong>答案：饱和；约 26.5%</strong><br><strong>🔑 关键思路：</strong>20°C 时 100 g 水最多溶 36 g NaCl → 50 g 水最多溶 18 g。20 g ＞ 18 g → <strong>不能全部溶解</strong>，有 2 g 剩余 → 是饱和溶液。溶质质量分数 = $\dfrac{18}{50+18} \times 100\% \approx 26.5\%$。<br><strong>⚠️ 易错：</strong>不能用 $\dfrac{20}{50+20}$ 算——多余溶质不溶解，不算入溶质！</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九下</span><span class="q-diff mid">★★☆</span>
+  <div class="q-body">将 60°C 的 KNO₃ 饱和溶液降温至 20°C，下列说法一定正确的是（ ）<br>A. 溶质质量不变 &nbsp; B. 溶剂质量不变 &nbsp; C. 溶液质量不变 &nbsp; D. 溶质质量分数不变</div>
+  <div class="q-solution"><strong>答案：B</strong><br><strong>🔑 关键思路：</strong>KNO₃ 溶解度随温度降低而减小 → 降温后 KNO₃ 会<strong>结晶析出</strong> → 溶质减少、溶液质量减少、溶质质量分数减小。但温度变化只影响溶质析出，<strong>溶剂质量不变</strong>。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九下</span><span class="q-diff hard">★★★</span>
+  <div class="q-body">下图是甲、乙两种固体物质的溶解度曲线。① t₁°C 时，甲的溶解度____（填"＞""＜"或"＝"）乙的溶解度；② t₂°C 时，将等质量的甲和乙分别配成饱和溶液，所需水的质量为甲____乙（填"＞""＜"或"＝"）；③ 要使接近饱和的甲溶液变为饱和溶液，可采用的方法是____。</div>
+  <div class="q-solution"><strong>答案：</strong>① ＜（t₁°C 时甲曲线在乙下方，甲的溶解度小）；② ＜（t₂°C 时甲的溶解度比乙大，要饱和需水量更少）；③ 加甲固体 / 蒸发溶剂 / 降温（甲溶解度随温度升高而增大）。<br><strong>🔑 关键思路：</strong>溶解度曲线题三大问法——比大小（看纵轴）、比水量（溶解度大的需水少）、饱和/不饱和转化。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+</div>
+</details>
+
+<!-- ====== 模块8: 实验探究设计 ====== -->
+<section class="experiment-design">
+  <h3>🔬 实验探究设计：探究 NaCl 和 KNO₃ 溶解能力随温度变化的差异</h3>
+  <p style="margin:8px 0 14px;">设计思路：控制变量法——不同温度下比较等量水中最多能溶解多少溶质。</p>
+  <p><strong>步骤：</strong></p>
+  <p>① 在 20°C、40°C、60°C 三种温度条件下，分别向 10 mL 水中每次加入 1 g 溶质，搅拌至完全溶解后再加入下一份，记录恰好不能再溶解时的溶质总量。</p>
+  <p>② 绘制两种物质的温度—溶解度曲线（近似）。</p>
+  <p><strong>预期结果：</strong>KNO₃ 的溶解度随温度升高<strong>大幅增加</strong>（陡升型曲线），NaCl 的溶解度随温度升高<strong>变化很小</strong>（平缓型曲线）。</p>
+  <p style="margin-top:8px;"><strong>结论与应用：</strong>可利用二者溶解度变化规律不同，用<strong>降温结晶</strong>法从 KNO₃ 和 NaCl 的混合溶液中分离出 KNO₃ 晶体。</p>
+</section>
+
+<!-- ====== 模块9: 自查清单 + 间隔复习 ====== -->
+<div class="checklist">
+  <h3>✅ 本章自查清单</h3>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能区分溶液、悬浊液、乳浊液，并各举一例</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能完整说出溶解度的"四要素"</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能计算溶质质量分数，并用稀释公式解题</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能读懂溶解度曲线——比较大小、判断饱和/不饱和</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能说出蒸发结晶和降温结晶分别适用于什么情况</label>
+  <p style="margin-top:12px;color:var(--accent);border-top:1px dashed var(--border);padding-top:12px;"><strong>🗣 费曼挑战：</strong>向别人解释"饱和溶液 ≠ 浓溶液"——用 Ca(OH)₂ 的例子。解释为什么海水晒盐用蒸发结晶而分离 KNO₃ 和 NaCl 用降温结晶。</p>
+</div>
+
+<div class="review-schedule">
+  <strong>📅 间隔复习</strong>
+  <span class="review-dot">🔵 1天后：独立配制一次模拟溶液（纸上）并规范标注标签</span>
+  <span class="review-dot">🟢 3天后：做溶解度曲线读图题5道 + 溶质质量分数计算10道</span>
+  <span class="review-dot">🟡 1周后：用费曼法讲解"溶解的微观过程"</span>
+  <span class="review-dot">🔴 1月后：做本章中考真题4题</span>
+</div>
+
+<!-- ====== 模块10: 下一站 ====== -->
+<div class="next-stop">
+  <strong>➡️ 下一站：酸和碱</strong><br>
+  你学会了溶液的概念和浓度计算。下一章我们将面对化学中最"有感觉"的物质——酸（如醋酸、柠檬酸、胃酸盐酸）和碱（如石灰水、氢氧化钠）。酸碱指示剂的变色、中和反应的实际应用、pH 试纸的使用——溶液的知识从这里开始变得"有味"。
+</div>
+
+<!-- 章内翻页 -->
+<div style="display:flex;justify-content:space-between;margin:30px 0;padding-top:16px;border-top:1px solid var(--border);font-size:13px;">
+  <a href="ch08.html" style="color:var(--accent);">← 第8章</a>
+  <a href="ch10.html" style="color:var(--accent);">第10章 →</a>
+</div>
+
+</main>
+
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+(function(){
+  var k='chemistry-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+  document.documentElement.setAttribute('data-theme',t);
+  var b=document.getElementById('theme-toggle');if(b)b.textContent=t==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
+  b.addEventListener('click',function(){
+    var c=document.documentElement.getAttribute('data-theme'),n=c==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',n);localStorage.setItem(k,n);
+    b.textContent=n==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
+  });
+})();
+(function(){
+  var s=document.getElementById('sidebar'),k='chemistry-sidebar';
+  if(localStorage.getItem(k)==='hidden')s.classList.add('hidden');
+  document.getElementById('sidebarHideBtn').addEventListener('click',function(){s.classList.add('hidden');localStorage.setItem(k,'hidden')});
+  document.getElementById('sidebarShowBtn').addEventListener('click',function(){s.classList.remove('hidden');localStorage.setItem(k,'')});
+})();
+(function(){
+  var b=document.getElementById('expandAllBtn');if(!b)return;
+  b.addEventListener('click',function(){
+    var a=document.querySelectorAll('.exam-module,details'),o=true;
+    for(var i=0;i<a.length;i++)if(!a[i].hasAttribute('open')){o=false;break}
+    for(var i=0;i<a.length;i++){if(o)a[i].removeAttribute('open');else a[i].setAttribute('open','')}
+    b.textContent=o?'📂 展开全部章节':'📖 收起全部章节';
+  });
+})();
+window.addEventListener('scroll',function(){document.getElementById('backToTop').style.display=scrollY>400?'block':'none'});
+document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution')})});
+</script>
+</body>
+</html>

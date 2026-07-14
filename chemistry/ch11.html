@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第11章 盐·化肥 | 初中化学</title>
+<link rel="stylesheet" href="css/chemistry.css">
+<link rel="stylesheet" href="../katex/katex.min.css">
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">化学九下</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+  </div>
+  <nav>
+    <a href="../index.html" style="font-weight:600;">🏠 返回首页</a>
+    <a href="index.html">⚗️ 化学导航</a>
+    <a href="ch01.html">第1章 走进化学世界</a>
+    <a href="ch02.html">第2章 空气·氧气</a>
+    <a href="ch03.html">第3章 物质构成的奥秘</a>
+    <a href="ch04.html">第4章 自然界的水</a>
+    <a href="ch05.html">第5章 化学方程式</a>
+    <a href="ch06.html">第6章 碳和碳的氧化物</a>
+    <a href="ch07.html">第7章 燃料及其利用</a>
+    <a href="ch08.html">第8章 金属和金属材料</a>
+    <a href="ch09.html">第9章 溶液</a>
+    <a href="ch10.html">第10章 酸和碱</a>
+    <a href="ch11.html" class="active">第11章 盐·化肥</a>
+    <a href="ch12.html">第12章 化学与生活</a>
+    <a href="appendix.html">📚 附录</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
+  <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
+</nav>
+
+<main id="content">
+<div class="cover"><h1>第11章 · 盐·化肥</h1><p>九年级下册 | 复分解反应 · 化肥分类 · 粗盐提纯 | 核心：离子反应的条件与鉴别</p></div>
+
+<!-- ====== 模块1: 实验观察 ====== -->
+<section class="experiment-observation">
+  <div class="exp-title">🧪 实验：粗盐提纯（溶解 → 过滤 → 蒸发 → 结晶）</div>
+  <div class="exp-step"><span class="exp-step-num">1</span><span><strong>称量与溶解</strong>：用托盘天平称取约 5 g 粗盐，放入烧杯中，加入约 20 mL 水，用玻璃棒<strong>搅拌</strong>加速溶解。</span></div>
+  <div class="exp-step"><span class="exp-step-num">2</span><span><strong>过滤</strong>：将滤纸对折两次放入漏斗中，用水润湿使其紧贴漏斗壁。将粗盐水沿<strong>玻璃棒</strong>引流倒入漏斗中——不溶性杂质（泥沙）留在滤纸上，澄清滤液流入烧杯。</span></div>
+  <div class="exp-step"><span class="exp-step-num">3</span><span><strong>蒸发</strong>：将滤液倒入蒸发皿中，用酒精灯加热并用玻璃棒<strong>不断搅拌</strong>——防止局部温度过高导致液体飞溅。当蒸发皿中出现<strong>较多固体</strong>时停止加热，利用余热蒸干。</span></div>
+  <div class="exp-step"><span class="exp-step-num">4</span><span><strong>转移</strong>：用玻璃棒将蒸发皿中的 NaCl 晶体转移到指定容器中。</span></div>
+  <p style="margin-top:12px;font-weight:700;color:var(--chem-green);">📋 仪器：托盘天平、药匙、烧杯、量筒、玻璃棒、铁架台（带铁圈）、漏斗、滤纸、蒸发皿、酒精灯、坩埚钳。</p>
+</section>
+
+<!-- ====== 模块2: 微观解释 ====== -->
+<section class="micro-explanation">
+  <h3>🧠 微观解释：NaCl 离子晶体与复分解反应的离子实质</h3>
+  <p><strong>NaCl 离子晶体结构：</strong>NaCl 晶体中，Na⁺ 和 Cl⁻ 按一定规律交替排列，形成<strong>离子晶体</strong>。每个 Na⁺ 周围有 6 个 Cl⁻，每个 Cl⁻ 周围有 6 个 Na⁺。离子键将 Na⁺ 和 Cl⁻ 牢牢束缚在晶格中 → NaCl 固体<strong>不导电</strong>。溶于水后，Na⁺ 和 Cl⁻ 自由移动 → 溶液<strong>能导电</strong>。</p>
+  <p style="margin-top:12px;padding:10px 14px;background:var(--accent-light);border-radius:6px;border-left:4px solid var(--accent);"><strong>复分解反应的离子实质：</strong>复分解反应的本质是溶液中<strong>某些离子的浓度减小</strong>——生成气体（↑）、沉淀（↓）或水（弱电解质）。<br>例如：$AgNO_3 + NaCl \rightarrow AgCl\downarrow + NaNO_3$，从离子看：$Ag^+ + Cl^- \rightarrow AgCl\downarrow$。Ag⁺ 和 Cl⁻ 结合成不溶于水的 AgCl 沉淀，Na⁺ 和 NO₃⁻ 是"旁观离子"。</p>
+</section>
+
+<!-- ====== 模块3: 核心概念 ====== -->
+<h3 style="margin:20px 0 12px;color:var(--accent);">📖 核心概念</h3>
+<div class="card-grid">
+  <div class="concept-card"><div class="name">常见盐</div><p><strong>NaCl（氯化钠/食盐）</strong>：调味品、防腐剂、工业制钠和氯气。<strong>Na₂CO₃（碳酸钠/纯碱/苏打）</strong>：<strong>注意：它是盐不是碱！</strong>水溶液呈碱性。用于玻璃、造纸。<strong>NaHCO₃（碳酸氢钠/小苏打）</strong>：发酵粉主要成分、治疗胃酸过多。<strong>CaCO₃（碳酸钙）</strong>：大理石/石灰石的主要成分，建筑材料。</p></div>
+  <div class="concept-card"><div class="name">复分解反应及条件</div><p><strong>定义</strong>：两种化合物互相交换成分，生成另外两种化合物的反应。通式：AB + CD → AD + CB。<strong>发生条件（三者至少满足其一）</strong>：① 生成<strong>沉淀</strong>（↓）；② 生成<strong>气体</strong>（↑）；③ 生成<strong>水</strong>（或弱电解质）。三者都无，反应不能发生。反应物须可溶（有酸参加时例外——酸能与不溶性碱/盐反应）。</p></div>
+  <div class="concept-card"><div class="name">化肥——N、P、K</div><p><strong>氮肥（N）</strong>：促进茎叶生长茂盛，叶色浓绿。如：尿素 CO(NH₂)₂、NH₄NO₃、NH₄HCO₃。<strong>磷肥（P）</strong>：促进根系发达、籽粒饱满。如：过磷酸钙 Ca(H₂PO₄)₂。<strong>钾肥（K）</strong>：增强抗倒伏、抗病虫害能力。如：KCl、K₂SO₄。<strong>复合肥</strong>：含 N+P+K 两种以上，如 KNO₃（K+N）、NH₄H₂PO₄（N+P）。</p></div>
+  <div class="concept-card"><div class="name">常见化肥的简易鉴别</div><p>① 外观：氮肥、钾肥多为<strong>白色晶体</strong>，磷肥多为<strong>灰白色粉末</strong>。② 溶解性：氮肥、钾肥<strong>全部溶于水</strong>，磷肥<strong>部分溶或不溶</strong>。③ 加碱——铵态氮肥（NH₄⁺）与碱共热会放出<strong>NH₃</strong>（刺激性气味，使湿润红色石蕊试纸变蓝）。④ 钾肥加碱无此现象。</p></div>
+  <div class="concept-card"><div class="name">粗盐中可溶性杂质的去除</div><p>粗盐除含泥沙（不溶性杂质）外，还含 CaCl₂、MgCl₂、Na₂SO₄ 等可溶性杂质。去除方法：依次加入过量 <strong>BaCl₂</strong>（除 SO₄²⁻）、<strong>NaOH</strong>（除 Mg²⁺）、<strong>Na₂CO₃</strong>（除 Ca²⁺ 和多余 Ba²⁺），过滤后再加适量<strong>稀盐酸</strong>中和多余的 NaOH 和 Na₂CO₃，最后蒸发结晶得纯 NaCl。</p></div>
+</div>
+
+<!-- ====== 模块4: 化学方程式 ====== -->
+<section class="equation-section">
+  <h3>⚗️ 本章核心化学方程式</h3>
+  <table style="width:100%;margin-top:10px;border-collapse:collapse;font-size:13px;">
+    <tr style="background:var(--accent-light);"><th style="padding:8px;text-align:left;border:1px solid var(--border);">#</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">化学方程式</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">反应类型</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">考点</th></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">1</td><td style="padding:8px;border:1px solid var(--border);">$Na_2CO_3 + 2HCl \rightarrow 2NaCl + H_2O + CO_2\uparrow$</td><td style="padding:8px;border:1px solid var(--border);">复分解反应</td><td style="padding:8px;border:1px solid var(--border);">有气体生成；纯碱与酸反应——检验 CO₃²⁻</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">2</td><td style="padding:8px;border:1px solid var(--border);">$NaHCO_3 + HCl \rightarrow NaCl + H_2O + CO_2\uparrow$</td><td style="padding:8px;border:1px solid var(--border);">复分解反应</td><td style="padding:8px;border:1px solid var(--border);">小苏打治胃酸过多的原理</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">3</td><td style="padding:8px;border:1px solid var(--border);">$AgNO_3 + NaCl \rightarrow AgCl\downarrow + NaNO_3$</td><td style="padding:8px;border:1px solid var(--border);">复分解反应</td><td style="padding:8px;border:1px solid var(--border);">白色沉淀（AgCl 不溶于稀硝酸）——检验 Cl⁻</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">4</td><td style="padding:8px;border:1px solid var(--border);">$BaCl_2 + Na_2SO_4 \rightarrow BaSO_4\downarrow + 2NaCl$</td><td style="padding:8px;border:1px solid var(--border);">复分解反应</td><td style="padding:8px;border:1px solid var(--border);">白色沉淀（BaSO₄ 不溶于稀硝酸）——检验 SO₄²⁻</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">5</td><td style="padding:8px;border:1px solid var(--border);">$NH_4HCO_3 \xrightarrow{\Delta} NH_3\uparrow + H_2O + CO_2\uparrow$</td><td style="padding:8px;border:1px solid var(--border);">分解反应</td><td style="padding:8px;border:1px solid var(--border);">碳铵分解——铵态氮肥应低温密封保存</td></tr>
+  </table>
+</section>
+
+<!-- ====== 模块5: 计算专题 ====== -->
+<section class="calculation-section">
+  <h3>🔢 计算专题：化肥中营养元素的质量分数</h3>
+  <p style="margin:8px 0 16px;font-size:13px;color:var(--text-secondary);">核心思路：计算化肥中 N、P₂O₅、K₂O 的含量，判断化肥纯度。</p>
+  <div style="background:var(--bg-secondary);padding:14px 18px;border-radius:8px;border-left:4px solid var(--accent);margin-bottom:12px;">
+    <strong>【例题】</strong>计算 NH₄NO₃（硝酸铵）中氮元素的质量分数。某硝酸铵样品含氮量实际为 33.6%，求样品纯度。<br><br>
+    <strong>解：</strong>$Mr(NH_4NO_3) = 14 \times 2 + 1 \times 4 + 16 \times 3 = 80$<br>
+    N 的质量分数（理论值）= $\dfrac{14 \times 2}{80} \times 100\% = 35\%$<br>
+    样品纯度 = $\dfrac{\text{实际 N 含量}}{\text{理论 N 含量}} \times 100\% = \dfrac{33.6\%}{35\%} \times 100\% = 96\%$<br>
+    <strong>答：</strong>NH₄NO₃ 中 N 的理论含量为 35%，样品纯度为 96%。
+  </div>
+</section>
+
+<!-- ====== 模块6: 实验安全 + 易错 ====== -->
+<section class="safety-pitfall">
+  <h3>🚨 安全与常见错误</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:13px;margin-top:10px;">
+    <div style="background:var(--bg);padding:10px 14px;border-radius:6px;border:1px solid var(--border);">
+      <strong style="color:var(--chem-red);">🔴 核心辨析</strong>
+      <p><strong>Na₂CO₃ 俗名"纯碱"，但它是<strong>盐</strong>不是碱</strong>！它的水溶液显碱性是因为 CO₃²⁻ 水解产生 OH⁻（初中不要求理解水解，但须知道它是盐）。NaHCO₃（小苏打）也是盐。<br>
+      <strong>铵态氮肥不能与碱性物质混用</strong>——NH₄⁺ + OH⁻ → NH₃↑ + H₂O，NH₃ 逸出导致氮元素损失，降低肥效。</p>
+    </div>
+    <div style="background:var(--bg);padding:10px 14px;border-radius:6px;border:1px solid var(--border);">
+      <strong style="color:var(--chem-yellow);">⚠️ 最高频易错</strong>
+      <p>❌ 判断复分解反应是否发生——三个条件（气体/沉淀/水）至少满足其一。<br>
+      ❌ 复分解反应中，反应物一般要求<strong>可溶</strong>（有酸参加时例外）。<br>
+      ❌ 常见不溶性盐：<strong>AgCl（白）、BaSO₄（白）</strong>——都不溶于稀硝酸。<br>
+      ❌ "硝"字含 N 如 KNO₃——既是钾肥又是氮肥（复合肥）。<br>
+      ❌ 蒸发操作中，不可将水分完全蒸干再停止加热——防止固体飞溅。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 模块7: 中考真题 ====== -->
+<details class="exam-module" open>
+<summary>🎯 中考真题精选（盐·化肥 · 近年典型）</summary>
+<div class="content">
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九下</span><span class="q-diff easy">★☆☆</span>
+  <div class="q-body">下列物质中，属于盐的是（ ）<br>A. NaOH &nbsp; B. Na₂CO₃ &nbsp; C. H₂SO₄ &nbsp; D. CaO</div>
+  <div class="q-solution"><strong>答案：B</strong><br><strong>🔑 关键思路：</strong>NaOH 是碱、H₂SO₄ 是酸、CaO 是氧化物。Na₂CO₃ 是<strong>盐</strong>（金属离子 Na⁺ + 酸根离子 CO₃²⁻），虽然俗名"纯碱"。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九下</span><span class="q-diff mid">★★☆</span>
+  <div class="q-body">下列各组物质混合后，<strong>能</strong>发生复分解反应的是（ ）<br>A. NaCl + KNO₃ &nbsp; B. Na₂CO₃ + HCl &nbsp; C. Fe + CuSO₄ &nbsp; D. CO₂ + NaOH</div>
+  <div class="q-solution"><strong>答案：B</strong><br><strong>🔑 关键思路：</strong>A 交换后无沉淀/气体/水→不反应；B 生成 CO₂↑ → 发生反应；C 是置换反应不是复分解；D 不是复分解（CO₂ 非酸）。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九下</span><span class="q-diff mid">★★☆</span>
+  <div class="q-body">铵态氮肥不能与碱性物质混用的原因是（ ）<br>A. 降低肥效 &nbsp; B. 生成有毒物质 &nbsp; C. 发生燃烧 &nbsp; D. 生成沉淀</div>
+  <div class="q-solution"><strong>答案：A</strong><br><strong>🔑 关键思路：</strong>铵态氮肥含 NH₄⁺，与碱（OH⁻）反应生成 NH₃ 气体逸出——氮元素损失 → 降低肥效。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九下</span><span class="q-diff hard">★★★</span>
+  <div class="q-body">某白色固体可能是 Na₂CO₃、NaCl、Na₂SO₄ 中的一种或几种。(1) 溶于水，滴加 BaCl₂ 溶液，产生白色沉淀；(2) 向沉淀中加入足量稀硝酸，沉淀部分溶解并产生气泡。判断该白色固体的组成，写出相关化学方程式。</div>
+  <div class="q-solution"><strong>答案：一定含 Na₂CO₃ 和 Na₂SO₄，可能含 NaCl。</strong>含 Na₂CO₃→与 HCl 产生 CO₂（气泡），生成的 BaCO₃ 溶于稀硝酸；含 Na₂SO₄→生成 BaSO₄ 不溶于稀硝酸（沉淀部分溶解的原因）。方程式：$Na_2CO_3 + BaCl_2 \rightarrow BaCO_3\downarrow + 2NaCl$；$BaCO_3 + 2HNO_3 \rightarrow Ba(NO_3)_2 + H_2O + CO_2\uparrow$；$Na_2SO_4 + BaCl_2 \rightarrow BaSO_4\downarrow + 2NaCl$。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+</div>
+</details>
+
+<!-- ====== 模块8: 实验探究设计 ====== -->
+<section class="experiment-design">
+  <h3>🔬 实验探究设计：鉴别 (NH₄)₂SO₄ 和 K₂SO₄</h3>
+  <p style="margin:8px 0 14px;">设计思路：利用铵根离子（NH₄⁺）的特性——加碱加热放出 NH₃。</p>
+  <p><strong>方法：</strong>取两种白色固体各少量，分别放入两支试管，加入 <strong>NaOH 溶液</strong>后加热。</p>
+  <p><strong>现象与判断：</strong></p>
+  <p>① 试管口放置<strong>湿润的红色石蕊试纸</strong>——若试纸<strong>变蓝</strong>→ 该固体为 (NH₄)₂SO₄（产生 NH₃）。<br>
+  ② 无此现象/K₂SO₄ 试纸不变蓝。</p>
+  <p><strong>化学方程式：</strong>$(NH_4)_2SO_4 + 2NaOH \xrightarrow{\Delta} Na_2SO_4 + 2H_2O + 2NH_3\uparrow$</p>
+  <p style="margin-top:8px;"><strong>补充：</strong>也可直接闻气味——(NH₄)₂SO₄ 与碱研磨后有<strong>刺激性气味</strong>（NH₃），K₂SO₄ 无气味。</p>
+</section>
+
+<!-- ====== 模块9: 自查清单 ====== -->
+<div class="checklist">
+  <h3>✅ 本章自查清单</h3>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能说出 Na₂CO₃ 是盐不是碱的原因，并写出它与酸反应的方程式</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能判断复分解反应能否发生（三个条件），各举两例</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能区分氮肥、磷肥、钾肥的作用和外观特征</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能完成化肥含氮量的计算</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能设计实验鉴别铵态氮肥（加碱+加热+湿润红色石蕊试纸）</label>
+  <p style="margin-top:12px;color:var(--accent);border-top:1px dashed var(--border);padding-top:12px;"><strong>🗣 费曼挑战：</strong>用"复分解反应实质是溶液中离子浓度减小"解释为什么 NaCl 和 KNO₃ 混合不发生反应。用"纯碱不是碱"的例子说明化学命名不是望文生义。</p>
+</div>
+
+<div class="review-schedule">
+  <strong>📅 间隔复习</strong>
+  <span class="review-dot">🔵 1天后：默写5个核心方程式 + 复分解反应三个条件</span>
+  <span class="review-dot">🟢 3天后：做化肥计算题5道 + 复分解反应判断10道</span>
+  <span class="review-dot">🟡 1周后：讲解粗盐提纯的完整流程（含可溶性杂质去除）</span>
+  <span class="review-dot">🔴 1月后：做本章中考真题4题</span>
+</div>
+
+<!-- ====== 模块10: 下一站 ====== -->
+<div class="next-stop">
+  <strong>➡️ 下一站：化学与生活</strong><br>
+  你学完了酸、碱、盐——初中化学的三大核心物质类别。最后一章我们将回到生活：你吃的食物含哪些营养素？穿的衣服是什么纤维？塑料袋为什么叫"白色污染"？化学不再是课本上的方程式，而是你每天的生活。
+</div>
+
+<!-- 章内翻页 -->
+<div style="display:flex;justify-content:space-between;margin:30px 0;padding-top:16px;border-top:1px solid var(--border);font-size:13px;">
+  <a href="ch10.html" style="color:var(--accent);">← 第10章</a>
+  <a href="ch12.html" style="color:var(--accent);">第12章 →</a>
+</div>
+
+</main>
+
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+(function(){
+  var k='chemistry-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+  document.documentElement.setAttribute('data-theme',t);
+  var b=document.getElementById('theme-toggle');if(b)b.textContent=t==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
+  b.addEventListener('click',function(){
+    var c=document.documentElement.getAttribute('data-theme'),n=c==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',n);localStorage.setItem(k,n);
+    b.textContent=n==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
+  });
+})();
+(function(){
+  var s=document.getElementById('sidebar'),k='chemistry-sidebar';
+  if(localStorage.getItem(k)==='hidden')s.classList.add('hidden');
+  document.getElementById('sidebarHideBtn').addEventListener('click',function(){s.classList.add('hidden');localStorage.setItem(k,'hidden')});
+  document.getElementById('sidebarShowBtn').addEventListener('click',function(){s.classList.remove('hidden');localStorage.setItem(k,'')});
+})();
+(function(){
+  var b=document.getElementById('expandAllBtn');if(!b)return;
+  b.addEventListener('click',function(){
+    var a=document.querySelectorAll('.exam-module,details'),o=true;
+    for(var i=0;i<a.length;i++)if(!a[i].hasAttribute('open')){o=false;break}
+    for(var i=0;i<a.length;i++){if(o)a[i].removeAttribute('open');else a[i].setAttribute('open','')}
+    b.textContent=o?'📂 展开全部章节':'📖 收起全部章节';
+  });
+})();
+window.addEventListener('scroll',function(){document.getElementById('backToTop').style.display=scrollY>400?'block':'none'});
+document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution')})});
+</script>
+</body>
+</html>

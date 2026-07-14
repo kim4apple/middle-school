@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第7章 燃料及其利用 | 初中化学</title>
+<link rel="stylesheet" href="css/chemistry.css">
+<link rel="stylesheet" href="../katex/katex.min.css">
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">化学九上</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+  </div>
+  <nav>
+    <a href="../index.html" style="font-weight:600;">🏠 返回首页</a>
+    <a href="index.html">⚗️ 化学导航</a>
+    <a href="ch01.html">第1章 走进化学世界</a>
+    <a href="ch02.html">第2章 空气·氧气</a>
+    <a href="ch03.html">第3章 物质构成的奥秘</a>
+    <a href="ch04.html">第4章 自然界的水</a>
+    <a href="ch05.html">第5章 化学方程式</a>
+    <a href="ch06.html">第6章 碳和碳的氧化物</a>
+    <a href="ch07.html" class="active">第7章 燃料及其利用</a>
+    <a href="ch08.html">第8章 金属和金属材料</a>
+    <a href="ch09.html">第9章 溶液</a>
+    <a href="ch10.html">第10章 酸和碱</a>
+    <a href="ch11.html">第11章 盐·化肥</a>
+    <a href="ch12.html">第12章 化学与生活</a>
+    <a href="appendix.html">📚 附录</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
+  <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
+</nav>
+
+<main id="content">
+<div class="cover"><h1>第7章 · 燃料及其利用</h1><p>九年级上册 | 燃烧条件 · 灭火原理 | 化石燃料 + 清洁能源 · 九上收尾章</p></div>
+
+<!-- ====== 模块1: 实验观察 ====== -->
+<section class="experiment-observation">
+  <div class="exp-title">🧪 实验：燃烧条件探究——铜片上的红磷和白磷</div>
+  <div class="exp-step"><span class="exp-step-num">1</span><span>在500mL烧杯底部放入<strong>一小块白磷</strong>，注入约400mL<strong>热水</strong>（约80℃——高于白磷着火点40℃但低于水的沸点）。另取一铜片放在烧杯上方。</span></div>
+  <div class="exp-step"><span class="exp-step-num">2</span><span>在铜片两端各放一小块<strong>白磷</strong>和<strong>红磷</strong>（均用滤纸吸干水分）。观察：铜片上的白磷<strong>自发燃烧</strong>产生白烟——而铜片上的红磷和水中的白磷均<strong>不燃烧</strong>。</span></div>
+  <div class="exp-step"><span class="exp-step-num">3</span><span>用导管向水中的白磷表面<strong>通入氧气（或空气）</strong>——水中的白磷<strong>燃烧起来</strong>，在水中发出火光！（白磷燃烧生成P₂O₅白色固体）。</span></div>
+  <p style="margin-top:12px;font-weight:700;color:var(--chem-green);">📋 结论——燃烧的三个条件（缺一不可）：<strong>①可燃物 ②氧气（或空气）③温度达到着火点</strong>。<br>铜片上白磷——三个条件都满足→燃烧。铜片上红磷——达到了着火点？红磷着火点约240℃，热水温度80℃未达到→不燃烧。水中白磷——有可燃物、温度达着火点，但<strong>没有氧气</strong>→不燃烧。通入氧气后→满足全部三个条件→燃烧。</p>
+</section>
+
+<!-- ====== 模块2: 微观解释 ====== -->
+<section class="micro-explanation">
+  <h3>🧠 甲烷CH₄分子与化石燃料的形成</h3>
+  <p><strong>甲烷分子结构：</strong>CH₄是<strong>最简单的有机物</strong>。1个碳原子位于正四面体中心，4个氢原子位于四面体的四个顶点。C—H键的键角约为109.5°。甲烷是<strong>天然气的主要成分</strong>，也是沼气（生物分解有机物产生）的主要成分。</p>
+  <p><strong>三大化石燃料的形成：</strong></p>
+  <table style="width:100%;margin-top:10px;border-collapse:collapse;font-size:13px;">
+    <tr style="background:var(--accent-light);"><th style="padding:8px;text-align:left;border:1px solid var(--border);">燃料</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">形成过程</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">主要成分</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">是否可再生</th></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">煤</td><td style="padding:8px;border:1px solid var(--border);">古代植物遗体经长期复杂化学变化形成（"工业的粮食"）</td><td style="padding:8px;border:1px solid var(--border);">主要是碳，含少量H、O、N、S等</td><td style="padding:8px;border:1px solid var(--border);">不可再生</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">石油</td><td style="padding:8px;border:1px solid var(--border);">古代动植物遗体经长期地质作用形成（"工业的血液"）</td><td style="padding:8px;border:1px solid var(--border);">主要是C、H元素（各种烃的混合物）</td><td style="padding:8px;border:1px solid var(--border);">不可再生</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">天然气</td><td style="padding:8px;border:1px solid var(--border);">与石油类似条件下形成的可燃气体</td><td style="padding:8px;border:1px solid var(--border);">主要是甲烷CH₄</td><td style="padding:8px;border:1px solid var(--border);">不可再生</td></tr>
+  </table>
+  <p style="margin-top:8px;">化石燃料是<strong>不可再生能源</strong>——形成需要上亿年，而人类消耗速度极快。燃烧产物：C+O₂→CO₂ 和 H+O→H₂O。含硫的化石燃料燃烧还会生成SO₂——导致<strong>酸雨</strong>（SO₂→H₂SO₃→H₂SO₄）。</p>
+</section>
+
+<!-- ====== 模块3: 核心概念 ====== -->
+<h3 style="margin:20px 0 12px;color:var(--accent);">📖 核心概念</h3>
+<div class="card-grid">
+  <div class="concept-card"><div class="name">燃烧三条件</div><p>燃烧是<strong>可燃物</strong>与<strong>氧气</strong>发生的一种发光放热的剧烈的<strong>氧化反应</strong>。三个条件必须<strong>同时满足</strong>：①有可燃物（如木材、煤、天然气）②与氧气（或空气）接触（提供氧化剂）③温度达到可燃物的<strong>着火点</strong>。着火点是物质固有的属性，<strong>一般不随外界条件改变</strong>。</p></div>
+  <div class="concept-card"><div class="name">灭火原理</div><p><strong>破坏燃烧三条件中任何一个</strong>即可灭火：①隔离（或清除）可燃物——如森林灭火砍出<strong>隔离带</strong>；②隔绝氧气（空气）——如用<strong>灯帽盖灭</strong>酒精灯、CO₂灭火器覆盖；③降温至着火点以下——如用水灭火（水蒸发吸热降温，同时水蒸气隔绝空气）。</p></div>
+  <div class="concept-card"><div class="name">三大化石燃料</div><p><strong>煤：</strong>主要含C，被誉为"工业的粮食"。煤的干馏（隔绝空气加强热）可得焦炭、煤焦油、煤气（H₂+CH₄+CO等）。<strong>石油：</strong>主要含C、H，是各种烃的混合物。石油的分馏（利用沸点不同）可得汽油、柴油、煤油等。<strong>天然气：</strong>主要成分CH₄，相对清洁——含碳比例较低，燃烧产物比煤和石油更干净。</p></div>
+  <div class="concept-card"><div class="name">清洁能源</div><p><strong>可再生能源：</strong>①氢气H₂——燃烧产物只有水（2H₂+O₂→2H₂O），最清洁，但制取成本高、储存困难；②乙醇（C₂H₅OH）——由植物发酵制得，可再生，可加入汽油中减少排放；③太阳能、风能、潮汐能、地热能、生物质能。使用清洁能源可减少CO₂和SO₂排放，缓解温室效应和酸雨。</p></div>
+  <div class="concept-card"><div class="name">爆炸极限</div><p>可燃气体或粉尘在空气中达到<strong>一定浓度范围</strong>，遇到明火就会发生爆炸。这个浓度范围称为<strong>爆炸极限</strong>。如：氢气的爆炸极限约为4%~74%（体积分数），甲烷约5%~15%。浓度低于下限→不会爆炸；浓度高于上限→只会燃烧不会爆炸。煤矿瓦斯爆炸、面粉厂粉尘爆炸都是因为达到了爆炸极限。</p></div>
+</div>
+
+<!-- ====== 模块4: 化学方程式 ====== -->
+<h3 style="margin:20px 0 12px;color:var(--accent);">⚗️ 化学方程式</h3>
+<div style="background:var(--bg);padding:12px 16px;border-radius:8px;border:1px solid var(--border);font-size:14px;">
+  <p style="margin:6px 0;">① 甲烷燃烧（天然气燃烧）：<strong>CH₄ + 2O₂ → CO₂ + 2H₂O</strong>（蓝色火焰，热值高）</p>
+  <p style="margin:6px 0;">② 氢气燃烧：<strong>2H₂ + O₂ → 2H₂O</strong>（淡蓝色火焰，产物只有水——最清洁燃料）</p>
+  <p style="margin:6px 0;">③ 乙醇燃烧：<strong>C₂H₅OH + 3O₂ → 2CO₂ + 3H₂O</strong>（可再生燃料——乙醇汽油）</p>
+  <p style="margin:6px 0;">④ 碳充分燃烧：<strong>C + O₂ → CO₂</strong>（复习第6章）</p>
+  <p style="margin:6px 0;">⑤ 白磷燃烧：<strong>4P + 5O₂ → 2P₂O₅</strong>（复习——用于测空气中O₂含量）</p>
+</div>
+
+<!-- ====== 模块5: 计算专题 ====== -->
+<section class="safety-pitfall">
+  <h3>🔢 燃料燃烧放出热量的简单计算</h3>
+  <p style="margin:8px 0;"><strong>解题思路：</strong>利用化学方程式，由燃料质量→CO₂生成质量 或由CO₂生成质量→燃料质量</p>
+  <p style="margin:8px 0;"><strong>例题1：</strong>完全燃烧16g甲烷（CH₄），能生成多少克CO₂？</p>
+  <div style="background:var(--accent-light);padding:8px 12px;border-radius:4px;font-size:13px;margin:4px 0;">
+    <p style="margin:2px 0;">解：设生成CO₂的质量为x。</p>
+    <p style="margin:2px 0;">CH₄ + 2O₂ → CO₂ + 2H₂O</p>
+    <p style="margin:2px 0;">16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;44</p>
+    <p style="margin:2px 0;">16g&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x</p>
+    <p style="margin:2px 0;">16/44 = 16g/x → x = 44g</p>
+    <p style="margin:2px 0;">答：能生成44g CO₂。</p>
+  </div>
+  <p style="margin:8px 0;"><strong>例题2：</strong>完全燃烧4g氢气，消耗氧气的质量是多少？</p>
+  <div style="background:var(--accent-light);padding:8px 12px;border-radius:4px;font-size:13px;margin:4px 0;">
+    <p style="margin:2px 0;">解：设消耗O₂的质量为x。</p>
+    <p style="margin:2px 0;">2H₂ + O₂ → 2H₂O</p>
+    <p style="margin:2px 0;">4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;32</p>
+    <p style="margin:2px 0;">4g&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x</p>
+    <p style="margin:2px 0;">4/32 = 4g/x → x = 32g</p>
+    <p style="margin:2px 0;">答：消耗32g氧气。（即1g H₂需要8g O₂——氢氧质量比为1:8，与水中质量比相同！）</p>
+  </div>
+</section>
+
+<!-- ====== 模块6: 安全 + 易错 ====== -->
+<section class="safety-pitfall">
+  <h3>🚨 安全知识与常见错误</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:13px;margin-top:10px;">
+    <div style="background:var(--bg);padding:10px 14px;border-radius:6px;border:1px solid var(--border);">
+      <strong style="color:var(--chem-red);">🔴 爆炸极限 + 煤气中毒</strong>
+      <p>① 可燃气体或粉尘在爆炸极限范围内遇明火→<strong>爆炸</strong>。低于下限不爆炸（燃气太少），高于上限只燃烧不爆炸（氧气不够）。<br>② <strong>煤气中毒 = CO中毒</strong>（复习第6章）。使用燃气热水器、煤炉取暖必须保持通风。<br>③ 发现煤气泄漏：第一时间<strong>开窗通风</strong>，关闭阀门，<strong>禁止开电器开关</strong>（防止电火花引爆）。</p>
+    </div>
+    <div style="background:var(--bg);padding:10px 14px;border-radius:6px;border:1px solid var(--border);">
+      <strong style="color:var(--chem-yellow);">⚠️ 灭火原理辨析</strong>
+      <p>❌ "用水灭火是因为水能隔绝氧气"——不完全！水的灭火原理主要是<strong>降温至着火点以下</strong>（水蒸发吸收大量热），同时产生的水蒸气也有隔绝空气的作用。<br>❌ "隔离带"是清除可燃物，不是隔绝氧气！<br>✅ 森林灭火砍出隔离带——<strong>清除可燃物</strong>。<br>✅ 油锅着火盖锅盖——<strong>隔绝氧气</strong>。<br>✅ 酒精灯用灯帽盖灭——<strong>隔绝氧气</strong>。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 模块7: 中考真题 ====== -->
+<details class="exam-module" open>
+<summary>🎯 中考真题精选（燃料及其利用 · 近年典型）</summary>
+<div class="content">
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九上</span><span class="q-diff easy">★☆☆</span>
+  <div class="q-body">下列不属于化石燃料的是（ ）<br>A. 煤 &nbsp; B. 石油 &nbsp; C. 天然气 &nbsp; D. 氢气</div>
+  <div class="q-solution"><strong>答案：D</strong><br><strong>🔑 关键思路：</strong>三大化石燃料——煤、石油、天然气——都是古代生物遗骸经长期地质作用形成的<strong>不可再生</strong>能源。氢气不是化石燃料，它是通过电解水或化工生产制备的二次能源（需要消耗其他能源来制取）。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九上</span><span class="q-diff easy">★☆☆</span>
+  <div class="q-body">铜片上的白磷燃烧而水中的白磷不燃烧，说明燃烧需要（ ）<br>A. 可燃物 &nbsp; B. 氧气 &nbsp; C. 温度达到着火点 &nbsp; D. 白磷</div>
+  <div class="q-solution"><strong>答案：B</strong><br><strong>🔑 关键思路：</strong>铜片上的白磷和水中白磷都是可燃物（排除A、D），都接触了80℃热水（温度都达到40℃着火点——排除C）。唯一区别是：铜片上白磷接触空气，水中白磷被水隔绝了空气（氧气）。→燃烧需要氧气。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九上</span><span class="q-diff mid">★★☆</span>
+  <div class="q-body">下列关于灭火方法的叙述错误的是（ ）<br>A. 油锅着火盖锅盖——隔绝氧气 &nbsp; B. 森林着火砍隔离带——清除可燃物<br>C. 图书馆着火用CO₂灭火器——降温和隔绝氧气 &nbsp; D. 熄灭酒精灯用嘴吹——降温至着火点以下</div>
+  <div class="q-solution"><strong>答案：D</strong><br><strong>🔑 关键思路：</strong>D是明显错误操作——熄灭酒精灯<strong>严禁用嘴吹</strong>！应用灯帽盖灭（隔绝氧气）。用嘴吹可能将火焰吹入灯内导致灯内酒精蒸气燃烧发生危险。A/B/C的灭火方法和原理解释均正确。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九上</span><span class="q-diff hard">★★★</span>
+  <div class="q-body">"釜底抽薪"这个成语体现的灭火原理是（ ）<br>A. 清除可燃物 &nbsp; B. 隔绝氧气 &nbsp; C. 降温至着火点以下 &nbsp; D. 降低可燃物的着火点</div>
+  <div class="q-solution"><strong>答案：A</strong><br><strong>🔑 关键思路：</strong>"釜底抽薪"——抽掉锅底下的柴火。柴火（可燃物）被移除→破坏了燃烧三条件之一→火灭。这是<strong>清除可燃物</strong>法。D是经典错误选项——<strong>着火点是物质固有属性，不能随意降低或提高</strong>。可以降温至着火点以下，但不能改变着火点本身。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+</div>
+</details>
+
+<!-- ====== 模块8: 实验探究设计 ====== -->
+<section class="experiment-design">
+  <h3>🔬 实验探究设计：证明燃烧需要氧气——蜡烛+烧杯实验</h3>
+  <p style="margin:8px 0;">设计目的：用最简单的器材验证"燃烧需要氧气"这个条件。</p>
+  <p>① 点燃两支相同大小的蜡烛，分别放在实验台上。其中一支用<strong>大烧杯倒扣</strong>罩住。</p>
+  <p>② 观察：被烧杯罩住的蜡烛火焰先逐渐变小，约几秒后<strong>熄灭</strong>。未被罩住的蜡烛继续正常燃烧。</p>
+  <p>③ <strong>控制变量分析：</strong>两支蜡烛都是可燃物、都已被点燃（温度达到着火点）。唯一变量是——被罩住的蜡烛消耗完烧杯内有限的氧气后无法再接触外界空气→火焰熄灭。未被罩住的蜡烛始终与空气接触→正常燃烧。</p>
+  <p style="margin-top:8px;font-weight:700;color:var(--chem-green);">📋 结论：燃烧一定需要氧气（或空气）。实验中烧杯内蜡烛熄灭不是因为没有可燃物或温度不够，而是因为<strong>缺氧</strong>——这验证了燃烧三条件中"与氧气接触"是必要条件之一。</p>
+</section>
+
+<!-- ====== 模块9: 自查清单 + 间隔复习 ====== -->
+<div class="checklist">
+  <h3>✅ 本章自查清单</h3>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能完整说出燃烧三条件并能用白磷/红磷实验验证</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能区分灭火的三种原理并能举实际生活中的例子</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能写出CH₄、H₂、C₂H₅OH燃烧的化学方程式</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能说出三大化石燃料的形成和特点</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能解释爆炸极限、煤气中毒的原理和预防措施</label>
+  <p style="margin-top:12px;color:var(--accent);border-top:1px dashed var(--border);padding-top:12px;"><strong>🗣 费曼挑战：</strong>用一个白磷燃烧探究实验，完整串讲"燃烧三条件→灭火三原理→白磷的特殊保存方法（保存在水中→隔绝空气+降温）→CO₂灭火器的使用限制（镁着火不能用CO₂）"的知识链条。</p>
+</div>
+
+<div class="review-schedule">
+  <strong>📅 间隔复习</strong>
+  <span class="review-dot">🔵 1天后：默写燃烧三条件 + 灭火三原理 + 对应生活实例各3个</span>
+  <span class="review-dot">🟢 3天后：做燃烧与灭火情境判断专项30题</span>
+  <span class="review-dot">🟡 1周后：梳理九上7章形成知识导图</span>
+  <span class="review-dot">🔴 1月后：做本章中考真题4题 + 九上综合卷</span>
+</div>
+
+<!-- ====== 模块10: 下一站 ====== -->
+<div class="next-stop">
+  <strong>➡️ 下一站：金属和金属材料（下册第8章）</strong><br>
+  🎉 恭喜你完成了九年级上册7章的学习！你从"走进化学世界"一路走到"燃料及其利用"，掌握了化学实验基本操作→微观粒子→化学方程式计算→碳家族→燃烧的原理。下学期，我们会进入全新的领域——金属世界！铁如何变成钢？为什么铝比铁活泼却不生锈？什么是合金？敬请期待！
+</div>
+
+<!-- 章内翻页 -->
+<div style="display:flex;justify-content:space-between;margin:30px 0;padding-top:16px;border-top:1px solid var(--border);font-size:13px;">
+  <a href="ch06.html" style="color:var(--accent);">← 第6章</a>
+  <a href="ch08.html" style="color:var(--accent);">第8章 →</a>
+</div>
+
+</main>
+
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+
+(function(){
+  var k='chemistry-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+  document.documentElement.setAttribute('data-theme',t);
+  var b=document.getElementById('theme-toggle');if(b)b.textContent=t==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
+  b.addEventListener('click',function(){
+    var c=document.documentElement.getAttribute('data-theme'),n=c==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',n);localStorage.setItem(k,n);
+    b.textContent=n==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
+  });
+})();
+
+(function(){
+  var s=document.getElementById('sidebar'),k='chemistry-sidebar';
+  if(localStorage.getItem(k)==='hidden')s.classList.add('hidden');
+  document.getElementById('sidebarHideBtn').addEventListener('click',function(){s.classList.add('hidden');localStorage.setItem(k,'hidden')});
+  document.getElementById('sidebarShowBtn').addEventListener('click',function(){s.classList.remove('hidden');localStorage.setItem(k,'')});
+})();
+
+(function(){
+  var b=document.getElementById('expandAllBtn');if(!b)return;
+  b.addEventListener('click',function(){
+    var a=document.querySelectorAll('.exam-module,details'),o=true;
+    for(var i=0;i<a.length;i++)if(!a[i].hasAttribute('open')){o=false;break}
+    for(var i=0;i<a.length;i++){if(o)a[i].removeAttribute('open');else a[i].setAttribute('open','')}
+    b.textContent=o?'📂 展开全部章节':'📖 收起全部章节';
+  });
+})();
+
+window.addEventListener('scroll',function(){document.getElementById('backToTop').style.display=scrollY>400?'block':'none'});
+
+document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution')})});
+</script>
+</body>
+</html>

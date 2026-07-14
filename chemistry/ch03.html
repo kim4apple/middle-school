@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第3章 物质构成的奥秘 | 初中化学</title>
+<link rel="stylesheet" href="css/chemistry.css">
+<link rel="stylesheet" href="../katex/katex.min.css">
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">化学九上</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+  </div>
+  <nav>
+    <a href="../index.html" style="font-weight:600;">🏠 返回首页</a>
+    <a href="index.html">⚗️ 化学导航</a>
+    <a href="ch01.html">第1章 走进化学世界</a>
+    <a href="ch02.html">第2章 空气·氧气</a>
+    <a href="ch03.html" class="active">第3章 物质构成的奥秘</a>
+    <a href="ch04.html">第4章 自然界的水</a>
+    <a href="ch05.html">第5章 化学方程式</a>
+    <a href="ch06.html">第6章 碳和碳的氧化物</a>
+    <a href="ch07.html">第7章 燃料及其利用</a>
+    <a href="ch08.html">第8章 金属和金属材料</a>
+    <a href="ch09.html">第9章 溶液</a>
+    <a href="ch10.html">第10章 酸和碱</a>
+    <a href="ch11.html">第11章 盐·化肥</a>
+    <a href="ch12.html">第12章 化学与生活</a>
+    <a href="appendix.html">📚 附录</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
+  <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
+</nav>
+
+<main id="content">
+<div class="cover"><h1>第3章 · 物质构成的奥秘</h1><p>九年级上册 | 微观粒子 · 三重表征基石 | 相对原子质量计算</p></div>
+
+<!-- ====== 模块1: 实验观察 ====== -->
+<section class="experiment-observation">
+  <div class="exp-title">🧪 实验：酒精与水混合——证明分子间有间隔</div>
+  <div class="exp-step"><span class="exp-step-num">1</span><span>取一根细长的玻璃管，先加入约一半体积的<strong>水</strong>（可滴加少许红墨水染红以便观察），再加入约一半体积的<strong>酒精</strong>（上层）。标记此时液面的总高度。</span></div>
+  <div class="exp-step"><span class="exp-step-num">2</span><span>用手指堵住管口，<strong>反复颠倒</strong>玻璃管，使水和酒精充分混合。</span></div>
+  <div class="exp-step"><span class="exp-step-num">3</span><span>静置片刻，观察混合后的液面高度——<strong>液面下降</strong>，总体积小于混合前两液体体积之和！</span></div>
+  <p style="margin-top:12px;font-weight:700;color:var(--chem-green);">📋 结论：分子间有间隔。水分子和酒精分子相互填充到彼此的间隔中，就像把一桶石子和一桶沙子倒在一起，石子间的空隙被沙子填满，总体积减小。</p>
+</section>
+
+<section class="experiment-observation">
+  <div class="exp-title">🧪 补充实验：品红在水中扩散</div>
+  <div class="exp-step"><span class="exp-step-num">1</span><span>向盛有水的烧杯中<strong>缓慢</strong>加入少量品红（固体）——品红沉入杯底，周围水渐渐变红。无需搅拌，整个烧杯中的水最终全部变为红色。</span></div>
+  <div class="exp-step"><span class="exp-step-num">2</span><span>对比：用<strong>热水</strong>重复实验——品红扩散速度明显加快。</span></div>
+  <p style="margin-top:12px;font-weight:700;color:var(--chem-green);">📋 结论：分子在<strong>不断运动</strong>。温度越高，分子运动速率越快。</p>
+</section>
+
+<!-- ====== 模块2: 微观解释 ====== -->
+<section class="micro-explanation">
+  <h3>🧠 原子结构——探索比分子更小的世界</h3>
+  <p>原子由位于<strong>原子中心</strong>的<strong>原子核</strong>和<strong>核外电子</strong>构成。原子核由<strong>质子</strong>和<strong>中子</strong>构成（H-1无中子）。</p>
+  <table style="width:100%;margin-top:10px;border-collapse:collapse;font-size:13px;">
+    <tr style="background:var(--accent-light);"><th style="padding:8px;text-align:left;border:1px solid var(--border);">粒子</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">符号</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">位置</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">带电量</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">相对质量</th></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">质子</td><td style="padding:8px;border:1px solid var(--border);">p</td><td style="padding:8px;border:1px solid var(--border);">原子核内</td><td style="padding:8px;border:1px solid var(--border);">+1</td><td style="padding:8px;border:1px solid var(--border);">≈1</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">中子</td><td style="padding:8px;border:1px solid var(--border);">n</td><td style="padding:8px;border:1px solid var(--border);">原子核内</td><td style="padding:8px;border:1px solid var(--border);">0（不带电）</td><td style="padding:8px;border:1px solid var(--border);">≈1</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">电子</td><td style="padding:8px;border:1px solid var(--border);">e⁻</td><td style="padding:8px;border:1px solid var(--border);">原子核外</td><td style="padding:8px;border:1px solid var(--border);">-1</td><td style="padding:8px;border:1px solid var(--border);">≈1/1836（可忽略）</td></tr>
+  </table>
+  <p style="margin-top:8px;"><strong>核电荷数 = 质子数 = 核外电子数（在原子中）</strong></p>
+  <p><strong>核外电子排布规律：</strong>①分层排布（K、L、M、N…），能量低的在离核近的层；②最外层最多排8个（K层为2个）；③前20号元素的排布需要熟记——这是画原子结构示意图的基础。</p>
+  <p><strong>元素周期表简介：</strong>7个周期（横行）、16个族（纵行）。原子序数 = 质子数。同周期从左到右，元素从金属→非金属过渡；同族从上到下，元素化学性质相似（因为最外层电子数相同）。</p>
+</section>
+
+<!-- ====== 模块3: 核心概念 ====== -->
+<h3 style="margin:20px 0 12px;color:var(--accent);">📖 核心概念</h3>
+<div class="card-grid">
+  <div class="concept-card"><div class="name">分子</div><p>由分子构成的物质，<strong>分子是保持其化学性质的最小粒子</strong>。分子由原子构成。同种分子化学性质相同，不同种分子化学性质不同。如：H₂O分子保持水的化学性质。</p></div>
+  <div class="concept-card"><div class="name">原子</div><p><strong>原子是化学变化中的最小粒子</strong>——在化学变化中，分子分解为原子，原子重新组合，但原子本身不变（种类、数目、质量都不变）。这也是质量守恒定律的微观解释。</p></div>
+  <div class="concept-card"><div class="name">离子</div><p>带电的<strong>原子</strong>或<strong>原子团</strong>。阳离子：原子失去电子→带正电（如 Na⁺、Mg²⁺、Al³⁺）。阴离子：原子得到电子→带负电（如 Cl⁻、O²⁻、SO₄²⁻）。离子也是构成物质的一种微粒（如NaCl由Na⁺和Cl⁻构成）。</p></div>
+  <div class="concept-card"><div class="name">相对原子质量</div><p>以一种碳原子（C-12）质量的1/12为标准，其他原子的质量与它相比较所得的比值。相对原子质量 ≈ <strong>质子数 + 中子数</strong>（忽略电子质量）。如：O的相对原子质量≈16。</p></div>
+  <div class="concept-card"><div class="name">元素</div><p><strong>质子数（即核电荷数）相同的一类原子的总称。</strong>决定元素种类的是质子数，与中子数和电子数无关。元素是宏观概念，只讲种类不讲个数，而原子是微观概念，既讲种类又讲个数。</p></div>
+  <div class="concept-card"><div class="name">元素符号与原子结构示意图</div><p>元素符号书写：<strong>"一大二小"</strong>——第一个字母大写，第二个字母小写（如Na、Cl、Ca，不能写成na或NA）。原子结构示意图：圆圈代表原子核（标核电数），弧线代表电子层（标各层电子数）。</p></div>
+</div>
+
+<!-- ====== 模块4: 化学方程式 ====== -->
+<section class="micro-explanation">
+  <h3>🧠 粒子模型图（本章无方程式）</h3>
+  <p>本章关注物质的微观构成，用<strong>粒子模型图</strong>来理解化学变化的本质：</p>
+  <p>例如，氧化汞加热分解：HgO → Hg + O₂↑ —— 从微观角度看，每个HgO分子分解为一个Hg原子和一个O原子，每2个O原子结合成一个O₂分子，大量Hg原子聚集形成金属汞。</p>
+  <p>物质由微粒构成的方式有三种：①由<strong>分子</strong>构成（如 H₂O、CO₂、O₂）；②由<strong>原子</strong>直接构成（如 金属铁Fe、金刚石C、稀有气体He）；③由<strong>离子</strong>构成（如 NaCl、NaOH）。</p>
+</section>
+
+<!-- ====== 模块5: 计算专题 ====== -->
+<section class="safety-pitfall">
+  <h3>🔢 相对原子质量计算</h3>
+  <p style="margin:8px 0;"><strong>公式：</strong>相对原子质量 ≈ 质子数 + 中子数</p>
+  <p style="margin:8px 0;"><strong>例题1：</strong>已知钠原子的质子数为11，中子数为12，求钠的相对原子质量。</p>
+  <p style="margin:4px 0;color:var(--chem-green);">解：相对原子质量 ≈ 11 + 12 = <strong>23</strong></p>
+  <p style="margin:8px 0;"><strong>例题2：</strong>某原子的相对原子质量为56，质子数为26，求中子数和核外电子数。</p>
+  <p style="margin:4px 0;color:var(--chem-green);">解：中子数 = 56 - 26 = 30；原子中核外电子数 = 质子数 = 26</p>
+  <p style="margin:8px 0;"><strong>例题3：</strong>已知碳-12原子的质量为1.993×10⁻²⁶ kg，某原子R的一个原子的质量为2.657×10⁻²⁶ kg，求R的相对原子质量。</p>
+  <p style="margin:4px 0;color:var(--chem-green);">解：R的相对原子质量 = 2.657×10⁻²⁶ / (1.993×10⁻²⁶ × 1/12) ≈ <strong>16</strong>（氧元素）</p>
+</section>
+
+<!-- ====== 模块6: 安全+易错 ====== -->
+<section class="safety-pitfall">
+  <h3>🚨 常见错误辨析</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:13px;margin-top:10px;">
+    <div style="background:var(--bg);padding:10px 14px;border-radius:6px;border:1px solid var(--border);">
+      <strong style="color:var(--chem-red);">🔴 分子 vs 原子</strong>
+      <p>❌ "分子一定比原子大"——错！如氢分子H₂比铁原子Fe小得多。<br>❌ "原子不能直接构成物质"——错！金属（Fe、Cu）、稀有气体（He）、碳单质（金刚石）都由原子直接构成。<br>✅ 分子在化学变化中<strong>可再分</strong>；原子在化学变化中<strong>不可再分</strong>。这是两者在化学中最重要的区别。</p>
+    </div>
+    <div style="background:var(--bg);padding:10px 14px;border-radius:6px;border:1px solid var(--border);">
+      <strong style="color:var(--chem-yellow);">⚠️ 离子 = 带电的原子/原子团</strong>
+      <p>❌ "Na⁺和Na是同一种微粒"——错！Na⁺最外层8个电子（稳定），Na原子最外层1个电子（易失去），化学性质完全不同。<br>❌ "原子变成离子后，质子数发生改变"——错！离子变化的是电子数，质子数不变。质子数变 => 元素种类变。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 模块7: 中考真题 ====== -->
+<details class="exam-module" open>
+<summary>🎯 中考真题精选（物质构成的奥秘 · 近年典型）</summary>
+<div class="content">
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九上</span><span class="q-diff easy">★☆☆</span>
+  <div class="q-body">下列粒子结构示意图中，表示阳离子的是（ ）<br><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3C/svg%3E" style="display:none;" alt="">（示意图略，考察核电数 ≠ 电子数时带正电）</div>
+  <div class="q-solution"><strong>答案：核电荷数 > 核外电子数的选项</strong><br><strong>🔑 关键思路：</strong>原子中：质子数 = 电子数（中性）。阳离子：质子数 > 电子数（带正电）。阴离子：质子数 < 电子数（带负电）。直接数弧线上电子总数与圆圈内核电数比较。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九上</span><span class="q-diff easy">★☆☆</span>
+  <div class="q-body">下列符号中，既能表示一种元素，又能表示该元素的一个原子的是（ ）<br>A. O₂ &nbsp; B. 2H &nbsp; C. Fe &nbsp; D. N₂</div>
+  <div class="q-solution"><strong>答案：C</strong><br><strong>🔑 关键思路：</strong>元素符号Fe有三层含义：①铁元素（宏观）②一个铁原子（微观）③铁单质（物质）。A表示氧气分子/氧分子/氧气；B只表示两个氢原子；D表示氮气分子/氮分子/氮气。只有金属、稀有气体、部分固态非金属的元素符号有宏观三层含义。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九上</span><span class="q-diff mid">★★☆</span>
+  <div class="q-body">已知某原子核内有12个质子、12个中子，核外有10个电子。该微粒是（ ）<br>A. 原子 &nbsp; B. 阳离子 &nbsp; C. 阴离子 &nbsp; D. 无法判断</div>
+  <div class="q-solution"><strong>答案：B</strong><br><strong>🔑 关键思路：</strong>质子数(12) > 电子数(10) —— 带2个单位正电荷，是阳离子（Mg²⁺）。如果质子数=电子数才是原子；质子数<电子数是阴离子。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九上</span><span class="q-diff hard">★★★</span>
+  <div class="q-body">酒精和水混合后总体积减小，下列解释正确的是（ ）<br>A. 分子很小 &nbsp; B. 分子在不断运动 &nbsp; C. 分子间有间隔 &nbsp; D. 分子可以再分</div>
+  <div class="q-solution"><strong>答案：C</strong><br><strong>🔑 关键思路：</strong>总体积缩小→水分子和酒精分子相互填充彼此间的间隔。A是分子基本性质但不解释体积变化；B解释扩散但不解释体积缩小；D与本题无关（混合是物理变化，分子本身未分解）。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+</div>
+</details>
+
+<!-- ====== 模块8: 实验探究设计 ====== -->
+<section class="experiment-design">
+  <h3>🔬 实验探究设计：证明分子在不断运动——氨水+酚酞实验</h3>
+  <p style="margin:8px 0;">设计思路：用<strong>对比实验</strong>验证分子运动——看不见分子，但可以通过现象推断。</p>
+  <p>① 取两根长条滤纸，用酚酞溶液浸湿，分别放入两支试管中。</p>
+  <p>② 试管A：底部放入一小团棉花，滴加浓氨水——观察滤纸由下往上逐渐<strong>变红</strong>。</p>
+  <p>③ 试管B：不放氨水（对照组）——滤纸<strong>不变色</strong>。</p>
+  <p>④ 取一个烧杯，倒扣在盛有浓氨水的小烧杯外——烧杯内壁悬挂的酚酞试纸也变红。</p>
+  <p style="margin-top:8px;font-weight:700;color:var(--chem-green);">📋 结论：浓氨水挥发出的<strong>氨分子</strong>不断运动，接触到酚酞使溶液变红。试管A由下往上变红证明氨分子从底部向上扩散——分子运动不受重力限制。</p>
+</section>
+
+<!-- ====== 模块9: 自查清单 + 间隔复习 ====== -->
+<div class="checklist">
+  <h3>✅ 本章自查清单</h3>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能说出分子、原子、离子的定义和区别</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能画出前20号元素的原子结构示意图</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能解释酒精与水混合体积缩小的原因</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 会用"质子数+中子数"计算相对原子质量</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能从结构示意图判断原子/阳离子/阴离子</label>
+  <p style="margin-top:12px;color:var(--accent);border-top:1px dashed var(--border);padding-top:12px;"><strong>🗣 费曼挑战：</strong>用"分子→原子→原子核→质子/中子/电子"的递进关系，向一个完全没学过化学的人讲清楚"物质到底由什么构成"，要求对方能在听完后画出氧原子的结构示意图。</p>
+</div>
+
+<div class="review-schedule">
+  <strong>📅 间隔复习</strong>
+  <span class="review-dot">🔵 1天后：默写前20号元素名称和符号</span>
+  <span class="review-dot">🟢 3天后：画H→Ca原子结构示意图全练习</span>
+  <span class="review-dot">🟡 1周后：做分子/原子/离子概念判断30题</span>
+  <span class="review-dot">🔴 1月后：做本章中考真题4题</span>
+</div>
+
+<!-- ====== 模块10: 下一站 ====== -->
+<div class="next-stop">
+  <strong>➡️ 下一站：自然界的水</strong><br>
+  你已经知道物质由分子、原子、离子构成。水——H₂O——这个最熟悉的分子，它到底由什么元素组成？我们将用电解水实验把水分子"拆开"来看：正极产生氧气，负极产生氢气，体积比恰好1:2。你会第一次亲眼"看到"水的元素组成！
+</div>
+
+<!-- 章内翻页 -->
+<div style="display:flex;justify-content:space-between;margin:30px 0;padding-top:16px;border-top:1px solid var(--border);font-size:13px;">
+  <a href="ch02.html" style="color:var(--accent);">← 第2章</a>
+  <a href="ch04.html" style="color:var(--accent);">第4章 →</a>
+</div>
+
+</main>
+
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+
+(function(){
+  var k='chemistry-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+  document.documentElement.setAttribute('data-theme',t);
+  var b=document.getElementById('theme-toggle');if(b)b.textContent=t==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
+  b.addEventListener('click',function(){
+    var c=document.documentElement.getAttribute('data-theme'),n=c==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',n);localStorage.setItem(k,n);
+    b.textContent=n==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
+  });
+})();
+
+(function(){
+  var s=document.getElementById('sidebar'),k='chemistry-sidebar';
+  if(localStorage.getItem(k)==='hidden')s.classList.add('hidden');
+  document.getElementById('sidebarHideBtn').addEventListener('click',function(){s.classList.add('hidden');localStorage.setItem(k,'hidden')});
+  document.getElementById('sidebarShowBtn').addEventListener('click',function(){s.classList.remove('hidden');localStorage.setItem(k,'')});
+})();
+
+(function(){
+  var b=document.getElementById('expandAllBtn');if(!b)return;
+  b.addEventListener('click',function(){
+    var a=document.querySelectorAll('.exam-module,details'),o=true;
+    for(var i=0;i<a.length;i++)if(!a[i].hasAttribute('open')){o=false;break}
+    for(var i=0;i<a.length;i++){if(o)a[i].removeAttribute('open');else a[i].setAttribute('open','')}
+    b.textContent=o?'📂 展开全部章节':'📖 收起全部章节';
+  });
+})();
+
+window.addEventListener('scroll',function(){document.getElementById('backToTop').style.display=scrollY>400?'block':'none'});
+
+document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution')})});
+</script>
+</body>
+</html>

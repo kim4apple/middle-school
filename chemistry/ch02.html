@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第2章 空气·氧气 | 初中化学</title>
+<link rel="stylesheet" href="css/chemistry.css">
+<link rel="stylesheet" href="../katex/katex.min.css">
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">化学九上</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+  </div>
+  <nav>
+    <a href="../index.html" style="font-weight:600;">🏠 返回首页</a>
+    <a href="index.html">⚗️ 化学导航</a>
+    <a href="ch01.html">第1章 走进化学世界</a>
+    <a href="ch02.html" class="active">第2章 空气·氧气</a>
+    <a href="ch03.html">第3章 物质构成的奥秘</a>
+    <a href="ch04.html">第4章 自然界的水</a>
+    <a href="ch05.html">第5章 化学方程式</a>
+    <a href="ch06.html">第6章 碳和碳的氧化物</a>
+    <a href="ch07.html">第7章 燃料及其利用</a>
+    <a href="ch08.html">第8章 金属和金属材料</a>
+    <a href="ch09.html">第9章 溶液</a>
+    <a href="ch10.html">第10章 酸和碱</a>
+    <a href="ch11.html">第11章 盐·化肥</a>
+    <a href="ch12.html">第12章 化学与生活</a>
+    <a href="appendix.html">📚 附录</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
+  <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
+</nav>
+
+<main id="content">
+<div class="cover"><h1>第2章 · 空气·氧气</h1><p>九年级上册 | 实验驱动 · 物质性质 | 4个化学方程式 + 空气成分计算</p></div>
+
+<!-- ====== 模块1: 实验观察 ====== -->
+<section class="experiment-observation">
+  <div class="exp-title">🧪 实验一：红磷燃烧测定空气中氧气含量</div>
+  <div class="exp-step"><span class="exp-step-num">1</span><span>在集气瓶中加入少量水，将水面上方空间分为<strong>5等份</strong>，夹紧弹簧夹。</span></div>
+  <div class="exp-step"><span class="exp-step-num">2</span><span>点燃燃烧匙内的红磷，<strong>迅速伸入</strong>集气瓶中，塞紧瓶塞。观察：红磷燃烧产生<strong>大量白烟</strong>（P₂O₅固体小颗粒），放出热量。</span></div>
+  <div class="exp-step"><span class="exp-step-num">3</span><span>火焰熄灭、冷却至室温后，打开弹簧夹——烧杯中的水<strong>沿导管倒吸进入集气瓶</strong>，进入水的体积约占集气瓶内空气体积的<strong>1/5</strong>。</span></div>
+  <p style="margin-top:12px;font-weight:700;color:var(--chem-green);">📋 结论：氧气约占空气体积的1/5。红磷燃烧消耗了集气瓶中的氧气，瓶内压强减小，水被大气压压入瓶内，进入水的体积 = 消耗掉的氧气体积。</p>
+</section>
+
+<section class="experiment-observation">
+  <div class="exp-title">🧪 实验二：氧气的实验室制取（两套方案对比）</div>
+  <table style="width:100%;margin-top:10px;border-collapse:collapse;font-size:13px;">
+    <tr style="background:var(--accent-light);"><th style="padding:8px;text-align:left;border:1px solid var(--border);">方案</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">方案A：高锰酸钾分解</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">方案B：过氧化氢分解</th></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">原理</td><td style="padding:8px;border:1px solid var(--border);">2KMnO₄ → K₂MnO₄ + MnO₂ + O₂↑</td><td style="padding:8px;border:1px solid var(--border);">2H₂O₂ → 2H₂O + O₂↑（MnO₂作催化剂）</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">装置</td><td style="padding:8px;border:1px solid var(--border);">固固加热型（试管口略向下倾斜，管口放一团棉花防止粉末进入导管）</td><td style="padding:8px;border:1px solid var(--border);">固液不加热型（长颈漏斗下端管口必须伸入液面以下——液封防漏气）</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">收集方法</td><td style="padding:8px;border:1px solid var(--border);">排水法（O₂不易溶于水）或向上排空气法（O₂密度比空气略大）</td><td style="padding:8px;border:1px solid var(--border);">排水法或向上排空气法</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">优点</td><td style="padding:8px;border:1px solid var(--border);">无需催化剂，原料稳定</td><td style="padding:8px;border:1px solid var(--border);">不需加热，操作简便，反应速率可控（通过控制H₂O₂的滴加速度）</td></tr>
+  </table>
+  <p style="margin-top:12px;font-weight:700;color:var(--chem-green);">📋 误差分析（红磷实验）：结果偏小——①红磷不足（氧气未被全部消耗）②装置漏气（外界空气进入）③未冷却就打开弹簧夹（气体受热膨胀）。结果偏大——①燃烧匙伸入过慢（瓶内空气受热逸出）②弹簧夹未夹紧（红磷燃烧时空气受热从导管逸出）。</p>
+</section>
+
+<!-- ====== 模块2: 微观解释 ====== -->
+<section class="micro-explanation">
+  <h3>🧠 空气是混合物——成分比例精确记忆</h3>
+  <p>空气不是单一物质，而是由多种气体组成的<strong>混合物</strong>。各成分按体积分数计：</p>
+  <table style="width:100%;margin-top:10px;border-collapse:collapse;font-size:13px;">
+    <tr style="background:var(--accent-light);"><th style="padding:8px;text-align:left;border:1px solid var(--border);">成分</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">体积分数</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">性质与用途</th></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">氮气 N₂</td><td style="padding:8px;border:1px solid var(--border);"><strong>78%</strong></td><td style="padding:8px;border:1px solid var(--border);">化学性质不活泼，用作保护气、食品充氮防腐、液氮冷冻</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">氧气 O₂</td><td style="padding:8px;border:1px solid var(--border);"><strong>21%</strong></td><td style="padding:8px;border:1px solid var(--border);">供给呼吸、支持燃烧；是化学性质最活泼的空气主要成分</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">稀有气体</td><td style="padding:8px;border:1px solid var(--border);"><strong>0.94%</strong></td><td style="padding:8px;border:1px solid var(--border);">He、Ne、Ar、Kr、Xe——通电发不同颜色光，作霓虹灯、航标灯；化学性质极不活泼</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">二氧化碳 CO₂</td><td style="padding:8px;border:1px solid var(--border);"><strong>0.03%</strong></td><td style="padding:8px;border:1px solid var(--border);">光合作用原料；含量升高导致温室效应</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">其他气体和杂质</td><td style="padding:8px;border:1px solid var(--border);"><strong>0.03%</strong></td><td style="padding:8px;border:1px solid var(--border);">水蒸气、稀有气体之外的少量气体、尘埃等</td></tr>
+  </table>
+  <p style="margin-top:10px;">空气成分的测定无法用一种物质一次性完成——氧气的含量用燃烧法（红磷/铜粉），这说明混合物中各组分保持各自的性质，这是混合物区别于化合物的关键。</p>
+</section>
+
+<!-- ====== 模块3: 核心概念 ====== -->
+<h3 style="margin:20px 0 12px;color:var(--accent);">📖 核心概念</h3>
+<div class="card-grid">
+  <div class="concept-card"><div class="name">空气的组成</div><p>空气是混合物，主要成分为 N₂(78%)、O₂(21%)、稀有气体(0.94%)、CO₂(0.03%)、其他气体和杂质(0.03%)。各成分保持各自的化学性质。</p></div>
+  <div class="concept-card"><div class="name">氧气的物理性质</div><p>通常状况下为无色无味气体，密度比空气<strong>略大</strong>（1.429 g/L），<strong>不易溶于水</strong>（可用排水法收集）。液态氧和固态氧为<strong>淡蓝色</strong>。</p></div>
+  <div class="concept-card"><div class="name">氧气的化学性质</div><p>氧气化学性质<strong>比较活泼</strong>，具有<strong>氧化性</strong>。①与碳反应：C + O₂ → CO₂，空气中发红光，氧气中发白光；②与硫反应：S + O₂ → SO₂，空气中淡蓝色火焰，氧气中蓝紫色火焰；③与铁反应：3Fe + 2O₂ → Fe₃O₄，空气中红热不燃烧，氧气中剧烈燃烧、火星四射、放出大量热、生成黑色固体。</p></div>
+  <div class="concept-card"><div class="name">催化剂</div><p>在化学反应中能<strong>改变</strong>其他物质的反应速率，而本身的<strong>质量</strong>和<strong>化学性质</strong>在反应前后都没有发生变化的物质。MnO₂不是任何反应的催化剂——催化剂具有<strong>专一性</strong>。</p></div>
+  <div class="concept-card"><div class="name">化合反应</div><p>由<strong>两种或两种以上</strong>物质生成<strong>另一种</strong>物质的反应。特点："多变一"——A + B + … → X。如：C + O₂ → CO₂，S + O₂ → SO₂，3Fe + 2O₂ → Fe₃O₄。</p></div>
+  <div class="concept-card"><div class="name">氧化反应</div><p>物质与<strong>氧气</strong>发生的反应。包括<strong>剧烈氧化</strong>（如燃烧）和<strong>缓慢氧化</strong>（如铁生锈、食物腐烂、呼吸作用）。缓慢氧化可能引起<strong>自燃</strong>——热量积累使温度达到着火点。</p></div>
+</div>
+
+<!-- ====== 模块4: 化学方程式 ====== -->
+<h3 style="margin:20px 0 12px;color:var(--accent);">⚗️ 化学方程式</h3>
+<div style="background:var(--bg);padding:12px 16px;border-radius:8px;border:1px solid var(--border);font-size:14px;">
+  <p style="margin:6px 0;">① 碳在氧气中燃烧：<strong>C + O₂ → CO₂</strong>（化合反应，也是氧化反应）</p>
+  <p style="margin:6px 0;">② 硫在氧气中燃烧：<strong>S + O₂ → SO₂</strong>（化合反应，也是氧化反应）</p>
+  <p style="margin:6px 0;">③ 铁在氧气中燃烧：<strong>3Fe + 2O₂ → Fe₃O₄</strong>（化合反应，也是氧化反应）</p>
+  <p style="margin:6px 0;">④ 高锰酸钾分解制氧气：<strong>2KMnO₄ → K₂MnO₄ + MnO₂ + O₂↑</strong>（分解反应）</p>
+  <p style="margin:6px 0;">⑤ 过氧化氢分解制氧气：<strong>2H₂O₂ → 2H₂O + O₂↑</strong>（MnO₂作催化剂，分解反应）</p>
+</div>
+
+<!-- ====== 模块5: 计算专题 ====== -->
+<section class="safety-pitfall">
+  <h3>🔢 空气成分计算</h3>
+  <p style="margin:8px 0;"><strong>核心原理：</strong>进入集气瓶中水的体积 = 被消耗掉的氧气体积</p>
+  <p style="margin:8px 0;"><strong>例题1：</strong>用红磷燃烧法测定空气中氧气含量。集气瓶容积为250 mL，实验结束后进入集气瓶的水的体积约为多少？</p>
+  <p style="margin:4px 0;color:var(--chem-green);">解：进入水的体积 = 氧气体积 ≈ 250 mL × 1/5 = <strong>50 mL</strong></p>
+  <p style="margin:8px 0;"><strong>例题2：</strong>实验中烧杯内的水实际进入45 mL，分析可能的原因。</p>
+  <p style="margin:4px 0;color:var(--chem-red);">答：45 mL < 50 mL，结果偏小。可能原因：①红磷量不足，瓶内氧气未完全耗尽；②装置气密性不好，外界空气进入；③未等装置冷却至室温就打开了弹簧夹。</p>
+  <p style="margin:8px 0;"><strong>例题3：</strong>100 L空气中，氮气、氧气、稀有气体、二氧化碳的体积各约为多少？</p>
+  <p style="margin:4px 0;color:var(--chem-green);">解：N₂: 100 L × 78% = 78 L；O₂: 100 L × 21% = 21 L；稀有气体: 100 L × 0.94% = 0.94 L；CO₂: 100 L × 0.03% = 0.03 L</p>
+</section>
+
+<!-- ====== 模块6: 实验安全 + 易错 ====== -->
+<section class="safety-pitfall">
+  <h3>🚨 实验安全与常见错误</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:13px;margin-top:10px;">
+    <div style="background:var(--bg);padding:10px 14px;border-radius:6px;border:1px solid var(--border);">
+      <strong style="color:var(--chem-red);">🔴 O₂的检验 vs 验满</strong>
+      <p><strong>检验方法：</strong>将<strong>带火星</strong>的木条伸入集气瓶中，若木条复燃，证明是氧气。<br><strong>验满方法：</strong>将带火星的木条放在<strong>集气瓶口</strong>，若木条复燃，证明已收集满。<br>关键区别：检验伸入瓶中，验满放在瓶口！</p>
+    </div>
+    <div style="background:var(--bg);padding:10px 14px;border-radius:6px;border:1px solid var(--border);">
+      <strong style="color:var(--chem-yellow);">⚠️ 催化剂"一变两不变"</strong>
+      <p>❌ "催化剂不参加反应"——错！催化剂参与反应，但反应后质量不变。<br>❌ "MnO₂是所有反应的催化剂"——错！催化剂的催化作用有专一性。<br>❌ "催化剂只加快反应速率"——错！也可以减慢（如防腐剂）。<br>✅ 催化剂"一变两不变"：改变反应速率，质量和化学性质不变。物理性质可能改变（如颗粒大小变化）。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 模块7: 中考真题 ====== -->
+<details class="exam-module" open>
+<summary>🎯 中考真题精选（空气·氧气 · 近年典型）</summary>
+<div class="content">
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九上</span><span class="q-diff easy">★☆☆</span>
+  <div class="q-body">空气的成分中，体积分数约占21%的是（ ）<br>A. 氮气 &nbsp; B. 氧气 &nbsp; C. 二氧化碳 &nbsp; D. 稀有气体</div>
+  <div class="q-solution"><strong>答案：B</strong><br><strong>🔑 关键思路：</strong>空气成分按体积：N₂≈78%，O₂≈21%，稀有气体≈0.94%，CO₂≈0.03%。口诀：氮七八，氧二一，零点九四是稀气，零点零三是CO₂。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九上</span><span class="q-diff mid">★★☆</span>
+  <div class="q-body">下列关于催化剂的叙述正确的是（ ）<br>A. 催化剂在化学反应中不参加反应 &nbsp; B. 催化剂一定能加快反应速率<br>C. 反应前后催化剂的质量和化学性质都不变 &nbsp; D. MnO₂可以用作任何反应的催化剂</div>
+  <div class="q-solution"><strong>答案：C</strong><br><strong>🔑 关键思路：</strong>"一变两不变"——催化剂改变速率（不只是加快），质量不变，化学性质不变。A错：催化剂参与反应，但反应后又生成出来；B错：减慢也是改变；D错：催化剂有专一性。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九上</span><span class="q-diff mid">★★☆</span>
+  <div class="q-body">实验室用高锰酸钾制取氧气，下列操作正确的是（ ）<br>A. 试管口向上倾斜 &nbsp; B. 导管口开始冒气泡时立即收集<br>C. 实验结束时先熄灭酒精灯，后从水槽中撤出导管 &nbsp; D. 用排水法收集时，当集气瓶口有气泡冒出时证明已收集满</div>
+  <div class="q-solution"><strong>答案：D</strong><br><strong>🔑 关键思路：</strong>A错：试管口应略向下倾斜（防止冷凝水倒流炸裂试管）。B错：刚开始冒出的气泡是空气，应等气泡连续均匀冒出再收集。C错：应先撤导管再灭酒精灯（防止水倒吸炸裂试管）。D对：排水法验满的标志。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九上</span><span class="q-diff hard">★★★</span>
+  <div class="q-body">某同学用红磷燃烧法测定空气中氧气含量，结果进入集气瓶的水的体积小于1/5。请分析可能的原因（至少写3条）。</div>
+  <div class="q-solution"><strong>答案：</strong>①红磷量不足——集气瓶内氧气未被全部消耗完；②装置漏气——外界空气进入集气瓶补充了压强；③未等装置冷却至室温就打开弹簧夹——瓶内气体仍受热膨胀，压强差较小。<br><strong>⚠️ 易错：</strong>答"导管内有水残留"也算偏小原因。答"燃烧匙伸入太慢导致空气逸出"会让结果偏大而非偏小——注意审题方向！</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+</div>
+</details>
+
+<!-- ====== 模块8: 实验探究设计 ====== -->
+<section class="experiment-design">
+  <h3>🔬 实验探究设计：证明MnO₂是H₂O₂分解的催化剂</h3>
+  <p style="margin:8px 0;">设计思路：验证催化剂的"一变两不变"——必须设计<strong>控制变量</strong>实验。</p>
+  <p>① <strong>验证"改变速率"：</strong>取两支试管，各加入3 mL 5% H₂O₂溶液。试管A加入少量MnO₂，试管B不加。观察——A迅速产生大量气泡（带火星木条复燃），B几乎无气泡。证明MnO₂加快了H₂O₂分解速率。</p>
+  <p>② <strong>验证"质量不变"：</strong>精确称量MnO₂质量m₁ → 加入过量H₂O₂中反应 → 反应完全后，过滤、洗涤、干燥剩余固体 → 称量得m₂ → 比较m₁和m₂ → m₁ = m₂。</p>
+  <p>③ <strong>验证"化学性质不变"：</strong>将步骤②中回收的MnO₂再次加入新的H₂O₂溶液中，仍能加快H₂O₂分解速率。</p>
+  <p style="margin-top:8px;font-weight:700;color:var(--chem-green);">📋 结论： MnO₂能改变H₂O₂分解速率，反应前后自身的质量和化学性质不变——MnO₂是H₂O₂分解的催化剂。</p>
+</section>
+
+<!-- ====== 模块9: 自查清单 + 间隔复习 ====== -->
+<div class="checklist">
+  <h3>✅ 本章自查清单</h3>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能准确说出空气中各成分的体积分数（N₂ 78%, O₂ 21%, 稀有气体 0.94%, CO₂ 0.03%）</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能写出碳/硫/铁在氧气中燃烧的化学方程式和现象</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能比较两种制取O₂方案的装置、原理、注意事项</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能区分O₂的检验方法（伸入瓶中）和验满方法（放在瓶口）</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能用"一变两不变"解释催化剂概念并设计验证实验</label>
+  <p style="margin-top:12px;color:var(--accent);border-top:1px dashed var(--border);padding-top:12px;"><strong>🗣 费曼挑战：</strong>用一个红磷燃烧实验把"空气成分测定""化合反应""混合物与纯净物"三个概念串起来讲给同学听，必须同时解释误差偏小和偏大的全部原因。</p>
+</div>
+
+<div class="review-schedule">
+  <strong>📅 间隔复习</strong>
+  <span class="review-dot">🔵 1天后：默写4个方程式 + 空气成分百分比</span>
+  <span class="review-dot">🟢 3天后：画两种制O₂装置图并标注注意事项</span>
+  <span class="review-dot">🟡 1周后：做红磷燃烧误差分析专项10题</span>
+  <span class="review-dot">🔴 1月后：做本章中考真题4题</span>
+</div>
+
+<!-- ====== 模块10: 下一站 ====== -->
+<div class="next-stop">
+  <strong>➡️ 下一站：物质构成的奥秘</strong><br>
+  你已经认识了氧气——它能与碳、硫、铁剧烈反应。但为什么不同的物质性质差异这么大？为什么金刚石和石墨都是碳原子构成却硬度天差地别？下一章我们将进入微观世界，认识分子、原子、离子的真实面貌，用粒子模型解释你看到的一切化学现象。
+</div>
+
+<!-- 章内翻页 -->
+<div style="display:flex;justify-content:space-between;margin:30px 0;padding-top:16px;border-top:1px solid var(--border);font-size:13px;">
+  <a href="ch01.html" style="color:var(--accent);">← 第1章</a>
+  <a href="ch03.html" style="color:var(--accent);">第3章 →</a>
+</div>
+
+</main>
+
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+
+// Theme
+(function(){
+  var k='chemistry-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+  document.documentElement.setAttribute('data-theme',t);
+  var b=document.getElementById('theme-toggle');if(b)b.textContent=t==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
+  b.addEventListener('click',function(){
+    var c=document.documentElement.getAttribute('data-theme'),n=c==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',n);localStorage.setItem(k,n);
+    b.textContent=n==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
+  });
+})();
+
+// Sidebar
+(function(){
+  var s=document.getElementById('sidebar'),k='chemistry-sidebar';
+  if(localStorage.getItem(k)==='hidden')s.classList.add('hidden');
+  document.getElementById('sidebarHideBtn').addEventListener('click',function(){s.classList.add('hidden');localStorage.setItem(k,'hidden')});
+  document.getElementById('sidebarShowBtn').addEventListener('click',function(){s.classList.remove('hidden');localStorage.setItem(k,'')});
+})();
+
+// Expand all
+(function(){
+  var b=document.getElementById('expandAllBtn');if(!b)return;
+  b.addEventListener('click',function(){
+    var a=document.querySelectorAll('.exam-module,details'),o=true;
+    for(var i=0;i<a.length;i++)if(!a[i].hasAttribute('open')){o=false;break}
+    for(var i=0;i<a.length;i++){if(o)a[i].removeAttribute('open');else a[i].setAttribute('open','')}
+    b.textContent=o?'📂 展开全部章节':'📖 收起全部章节';
+  });
+})();
+
+// Back to top
+window.addEventListener('scroll',function(){document.getElementById('backToTop').style.display=scrollY>400?'block':'none'});
+
+// Solution toggle
+document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution')})});
+</script>
+</body>
+</html>

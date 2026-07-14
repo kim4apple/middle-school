@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>附录 · 化学口袋书 | 初中化学</title>
+<link rel="stylesheet" href="css/chemistry.css">
+<link rel="stylesheet" href="../katex/katex.min.css">
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">化学九下</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+  </div>
+  <nav>
+    <a href="../index.html" style="font-weight:600;">🏠 返回首页</a>
+    <a href="index.html">⚗️ 化学导航</a>
+    <a href="ch01.html">第1章 走进化学世界</a>
+    <a href="ch02.html">第2章 空气·氧气</a>
+    <a href="ch03.html">第3章 物质构成的奥秘</a>
+    <a href="ch04.html">第4章 自然界的水</a>
+    <a href="ch05.html">第5章 化学方程式</a>
+    <a href="ch06.html">第6章 碳和碳的氧化物</a>
+    <a href="ch07.html">第7章 燃料及其利用</a>
+    <a href="ch08.html">第8章 金属和金属材料</a>
+    <a href="ch09.html">第9章 溶液</a>
+    <a href="ch10.html">第10章 酸和碱</a>
+    <a href="ch11.html">第11章 盐·化肥</a>
+    <a href="ch12.html">第12章 化学与生活</a>
+    <a href="appendix.html" class="active">📚 附录</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
+  <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
+</nav>
+
+<main id="content">
+<div class="cover"><h1>📚 化学附录</h1><p>全书速查 · 考前口袋书 | 化学方程式总表 · 俗名对照 · 颜色速查 · 中考规范</p></div>
+
+<!-- ====== 1. 基础知识体系思维导图 ====== -->
+<section style="margin:24px 0;">
+  <h3 style="color:var(--accent);">🧭 一、基础知识体系（12章脉络）</h3>
+  <div style="background:var(--bg-secondary);padding:16px;border-radius:8px;margin-top:10px;font-size:13px;line-height:2;">
+    <strong>九上（基础篇）</strong><br>
+    第1章 走进化学世界 → 第2章 空气·氧气 → 第3章 物质构成的奥秘 → 第4章 自然界的水 → 第5章 化学方程式 → 第6章 碳和碳的氧化物 → 第7章 燃料及其利用<br><br>
+    <strong>九下（深化篇）</strong><br>
+    第8章 金属和金属材料 → 第9章 溶液 → 第10章 酸和碱 → 第11章 盐·化肥 → 第12章 化学与生活<br><br>
+    <strong>核心主线：</strong>物质变化 → 元素/原子/分子 → 化学式/化学方程式（定量）→ 碳→金属→溶液→酸碱盐（物质分类与反应规律）→ 生活应用
+  </div>
+</section>
+
+<!-- ====== 2. 化学方程式总表 ====== -->
+<section style="margin:24px 0;">
+  <h3 style="color:var(--accent);">⚗️ 二、化学方程式总表（按反应类型分类）</h3>
+  
+  <h4 style="margin:16px 0 8px;color:var(--chem-blue);">化合反应（20个）</h4>
+  <table style="width:100%;border-collapse:collapse;font-size:12px;">
+    <tr style="background:var(--accent-light);"><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">#</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">化学方程式</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">现象/备注</th></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">1</td><td style="padding:6px 8px;border:1px solid var(--border);">$C + O_2 \xrightarrow{点燃} CO_2$</td><td style="padding:6px 8px;border:1px solid var(--border);">碳在氧气中充分燃烧</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">2</td><td style="padding:6px 8px;border:1px solid var(--border);">$2C + O_2 \xrightarrow{点燃} 2CO$</td><td style="padding:6px 8px;border:1px solid var(--border);">碳不充分燃烧（氧气不足）</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">3</td><td style="padding:6px 8px;border:1px solid var(--border);">$S + O_2 \xrightarrow{点燃} SO_2$</td><td style="padding:6px 8px;border:1px solid var(--border);">硫在氧气中燃烧——蓝紫色火焰</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">4</td><td style="padding:6px 8px;border:1px solid var(--border);">$4P + 5O_2 \xrightarrow{点燃} 2P_2O_5$</td><td style="padding:6px 8px;border:1px solid var(--border);">红磷燃烧——产生大量白烟</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">5</td><td style="padding:6px 8px;border:1px solid var(--border);">$3Fe + 2O_2 \xrightarrow{点燃} Fe_3O_4$</td><td style="padding:6px 8px;border:1px solid var(--border);">铁丝燃烧——火星四射、黑色固体</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">6</td><td style="padding:6px 8px;border:1px solid var(--border);">$2Mg + O_2 \xrightarrow{点燃} 2MgO$</td><td style="padding:6px 8px;border:1px solid var(--border);">镁条燃烧——耀眼白光、白色固体</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">7</td><td style="padding:6px 8px;border:1px solid var(--border);">$2H_2 + O_2 \xrightarrow{点燃} 2H_2O$</td><td style="padding:6px 8px;border:1px solid var(--border);">氢气燃烧——淡蓝色火焰</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">8</td><td style="padding:6px 8px;border:1px solid var(--border);">$2CO + O_2 \xrightarrow{点燃} 2CO_2$</td><td style="padding:6px 8px;border:1px solid var(--border);">CO燃烧——蓝色火焰</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">9</td><td style="padding:6px 8px;border:1px solid var(--border);">$CO_2 + H_2O \rightarrow H_2CO_3$</td><td style="padding:6px 8px;border:1px solid var(--border);">CO₂溶于水——石蕊变红</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">10</td><td style="padding:6px 8px;border:1px solid var(--border);">$CaO + H_2O \rightarrow Ca(OH)_2$</td><td style="padding:6px 8px;border:1px solid var(--border);">生石灰与水反应——放大量热</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">11</td><td style="padding:6px 8px;border:1px solid var(--border);">$CO_2 + C \xrightarrow{高温} 2CO$</td><td style="padding:6px 8px;border:1px solid var(--border);">碳还原CO₂（高炉中CO来源）</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">12</td><td style="padding:6px 8px;border:1px solid var(--border);">$2Na + Cl_2 \xrightarrow{点燃} 2NaCl$</td><td style="padding:6px 8px;border:1px solid var(--border);">钠与氯气化合</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">13</td><td style="padding:6px 8px;border:1px solid var(--border);">$2Al + 3O_2 \xrightarrow{点燃} 2Al_2O_3$</td><td style="padding:6px 8px;border:1px solid var(--border);">铝在氧气中燃烧</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">14</td><td style="padding:6px 8px;border:1px solid var(--border);">$Cu + O_2 \xrightarrow{\Delta} 2CuO$</td><td style="padding:6px 8px;border:1px solid var(--border);">铜在氧气中加热——红色变黑</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">15</td><td style="padding:6px 8px;border:1px solid var(--border);">$N_2 + 3H_2 \xrightarrow{高温高压} 2NH_3$</td><td style="padding:6px 8px;border:1px solid var(--border);">合成氨</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">16</td><td style="padding:6px 8px;border:1px solid var(--border);">$4Al + 3O_2 \rightarrow 2Al_2O_3$</td><td style="padding:6px 8px;border:1px solid var(--border);">铝在常温下氧化</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">17</td><td style="padding:6px 8px;border:1px solid var(--border);">$2Cu + O_2 + H_2O + CO_2 \rightarrow Cu_2(OH)_2CO_3$</td><td style="padding:6px 8px;border:1px solid var(--border);">铜生锈——铜绿/碱式碳酸铜</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">18</td><td style="padding:6px 8px;border:1px solid var(--border);">$4Fe + 3O_2 + xH_2O \rightarrow 2Fe_2O_3 \cdot xH_2O$</td><td style="padding:6px 8px;border:1px solid var(--border);">铁生锈</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">19</td><td style="padding:6px 8px;border:1px solid var(--border);">$SO_2 + H_2O \rightarrow H_2SO_3$</td><td style="padding:6px 8px;border:1px solid var(--border);">二氧化硫溶于水——酸雨成因</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">20</td><td style="padding:6px 8px;border:1px solid var(--border);">$P_2O_5 + 3H_2O \rightarrow 2H_3PO_4$</td><td style="padding:6px 8px;border:1px solid var(--border);">五氧化二磷溶于热水</td></tr>
+  </table>
+
+  <h4 style="margin:16px 0 8px;color:var(--chem-red);">分解反应（10个）</h4>
+  <table style="width:100%;border-collapse:collapse;font-size:12px;">
+    <tr style="background:var(--accent-light);"><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">#</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">化学方程式</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">现象/备注</th></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">1</td><td style="padding:6px 8px;border:1px solid var(--border);">$2KMnO_4 \xrightarrow{\Delta} K_2MnO_4 + MnO_2 + O_2\uparrow$</td><td style="padding:6px 8px;border:1px solid var(--border);">高锰酸钾制氧气——试管口放棉花</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">2</td><td style="padding:6px 8px;border:1px solid var(--border);">$2KClO_3 \xrightarrow[MnO_2]{\Delta} 2KCl + 3O_2\uparrow$</td><td style="padding:6px 8px;border:1px solid var(--border);">氯酸钾制氧气——MnO₂作催化剂</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">3</td><td style="padding:6px 8px;border:1px solid var(--border);">$2H_2O_2 \xrightarrow{MnO_2} 2H_2O + O_2\uparrow$</td><td style="padding:6px 8px;border:1px solid var(--border);">过氧化氢制氧气——常温</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">4</td><td style="padding:6px 8px;border:1px solid var(--border);">$2H_2O \xrightarrow{通电} 2H_2\uparrow + O_2\uparrow$</td><td style="padding:6px 8px;border:1px solid var(--border);">电解水——H₂:O₂=2:1</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">5</td><td style="padding:6px 8px;border:1px solid var(--border);">$CaCO_3 \xrightarrow{高温} CaO + CO_2\uparrow$</td><td style="padding:6px 8px;border:1px solid var(--border);">煅烧石灰石——工业制生石灰</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">6</td><td style="padding:6px 8px;border:1px solid var(--border);">$H_2CO_3 \rightarrow H_2O + CO_2\uparrow$</td><td style="padding:6px 8px;border:1px solid var(--border);">碳酸分解</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">7</td><td style="padding:6px 8px;border:1px solid var(--border);">$2NaHCO_3 \xrightarrow{\Delta} Na_2CO_3 + H_2O + CO_2\uparrow$</td><td style="padding:6px 8px;border:1px solid var(--border);">小苏打受热分解</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">8</td><td style="padding:6px 8px;border:1px solid var(--border);">$NH_4HCO_3 \xrightarrow{\Delta} NH_3\uparrow + H_2O + CO_2\uparrow$</td><td style="padding:6px 8px;border:1px solid var(--border);">碳铵分解</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">9</td><td style="padding:6px 8px;border:1px solid var(--border);">$Cu_2(OH)_2CO_3 \xrightarrow{\Delta} 2CuO + H_2O + CO_2\uparrow$</td><td style="padding:6px 8px;border:1px solid var(--border);">铜绿受热分解</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">10</td><td style="padding:6px 8px;border:1px solid var(--border);">$2HgO \xrightarrow{\Delta} 2Hg + O_2\uparrow$</td><td style="padding:6px 8px;border:1px solid var(--border);">氧化汞分解</td></tr>
+  </table>
+
+  <h4 style="margin:16px 0 8px;color:var(--chem-green);">置换反应（5个）</h4>
+  <table style="width:100%;border-collapse:collapse;font-size:12px;">
+    <tr style="background:var(--accent-light);"><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">#</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">化学方程式</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">现象/备注</th></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">1</td><td style="padding:6px 8px;border:1px solid var(--border);">$Zn + H_2SO_4 \rightarrow ZnSO_4 + H_2\uparrow$</td><td style="padding:6px 8px;border:1px solid var(--border);">实验室制H₂</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">2</td><td style="padding:6px 8px;border:1px solid var(--border);">$Fe + 2HCl \rightarrow FeCl_2 + H_2\uparrow$</td><td style="padding:6px 8px;border:1px solid var(--border);">生成Fe²⁺（浅绿色）非Fe³⁺</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">3</td><td style="padding:6px 8px;border:1px solid var(--border);">$Fe + CuSO_4 \rightarrow FeSO_4 + Cu$</td><td style="padding:6px 8px;border:1px solid var(--border);">湿法炼铜——蓝色→浅绿色</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">4</td><td style="padding:6px 8px;border:1px solid var(--border);">$C + 2CuO \xrightarrow{高温} 2Cu + CO_2\uparrow$</td><td style="padding:6px 8px;border:1px solid var(--border);">碳还原氧化铜——黑色变红色</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">5</td><td style="padding:6px 8px;border:1px solid var(--border);">$H_2 + CuO \xrightarrow{\Delta} Cu + H_2O$</td><td style="padding:6px 8px;border:1px solid var(--border);">氢气还原氧化铜</td></tr>
+  </table>
+
+  <h4 style="margin:16px 0 8px;color:var(--chem-purple);">复分解反应（5个核心）</h4>
+  <table style="width:100%;border-collapse:collapse;font-size:12px;">
+    <tr style="background:var(--accent-light);"><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">#</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">化学方程式</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">现象/备注</th></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">1</td><td style="padding:6px 8px;border:1px solid var(--border);">$HCl + NaOH \rightarrow NaCl + H_2O$</td><td style="padding:6px 8px;border:1px solid var(--border);">中和反应——无明显现象</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">2</td><td style="padding:6px 8px;border:1px solid var(--border);">$Na_2CO_3 + 2HCl \rightarrow 2NaCl + H_2O + CO_2\uparrow$</td><td style="padding:6px 8px;border:1px solid var(--border);">有气体生成——检验CO₃²⁻</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">3</td><td style="padding:6px 8px;border:1px solid var(--border);">$AgNO_3 + NaCl \rightarrow AgCl\downarrow + NaNO_3$</td><td style="padding:6px 8px;border:1px solid var(--border);">白色沉淀（不溶于酸）——检验Cl⁻</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">4</td><td style="padding:6px 8px;border:1px solid var(--border);">$BaCl_2 + Na_2SO_4 \rightarrow BaSO_4\downarrow + 2NaCl$</td><td style="padding:6px 8px;border:1px solid var(--border);">白色沉淀（不溶于酸）——检验SO₄²⁻</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">5</td><td style="padding:6px 8px;border:1px solid var(--border);">$NaCl + AgNO_3 \rightarrow AgCl\downarrow + NaNO_3$</td><td style="padding:6px 8px;border:1px solid var(--border);">同上——检验Cl⁻</td></tr>
+  </table>
+</section>
+
+<!-- ====== 3. 常见物质颜色/状态速查表 ====== -->
+<section style="margin:24px 0;">
+  <h3 style="color:var(--accent);">🎨 三、常见物质颜色/状态速查表</h3>
+  
+  <h4 style="margin:16px 0 8px;color:var(--chem-blue);">溶液颜色</h4>
+  <table style="width:100%;border-collapse:collapse;font-size:12px;">
+    <tr style="background:var(--accent-light);"><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">颜色</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">溶液（含溶质）</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">原因离子</th></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">蓝色</td><td style="padding:6px 8px;border:1px solid var(--border);">CuSO₄ 溶液、CuCl₂ 溶液、Cu(NO₃)₂ 溶液</td><td style="padding:6px 8px;border:1px solid var(--border);"><strong>Cu²⁺</strong></td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">浅绿色</td><td style="padding:6px 8px;border:1px solid var(--border);">FeCl₂ 溶液、FeSO₄ 溶液、Fe(NO₃)₂ 溶液</td><td style="padding:6px 8px;border:1px solid var(--border);"><strong>Fe²⁺</strong></td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">黄色</td><td style="padding:6px 8px;border:1px solid var(--border);">FeCl₃ 溶液、Fe₂(SO₄)₃ 溶液、Fe(NO₃)₃ 溶液</td><td style="padding:6px 8px;border:1px solid var(--border);"><strong>Fe³⁺</strong></td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">紫红色</td><td style="padding:6px 8px;border:1px solid var(--border);">KMnO₄ 溶液</td><td style="padding:6px 8px;border:1px solid var(--border);">MnO₄⁻</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">无色</td><td style="padding:6px 8px;border:1px solid var(--border);">NaCl、Na₂SO₄、NaNO₃、KNO₃ 溶液等</td><td style="padding:6px 8px;border:1px solid var(--border);">—</td></tr>
+  </table>
+
+  <h4 style="margin:16px 0 8px;color:var(--chem-red);">沉淀颜色</h4>
+  <table style="width:100%;border-collapse:collapse;font-size:12px;">
+    <tr style="background:var(--accent-light);"><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">颜色</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">沉淀</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">特征</th></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);"><strong>白色</strong></td><td style="padding:6px 8px;border:1px solid var(--border);">AgCl、BaSO₄、CaCO₃、BaCO₃、Mg(OH)₂、Al(OH)₃</td><td style="padding:6px 8px;border:1px solid var(--border);">AgCl和BaSO₄<strong>不溶于</strong>稀硝酸</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);"><strong>蓝色</strong></td><td style="padding:6px 8px;border:1px solid var(--border);">Cu(OH)₂</td><td style="padding:6px 8px;border:1px solid var(--border);">—</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);"><strong>红褐色</strong></td><td style="padding:6px 8px;border:1px solid var(--border);">Fe(OH)₃</td><td style="padding:6px 8px;border:1px solid var(--border);">—</td></tr>
+  </table>
+
+  <h4 style="margin:16px 0 8px;color:var(--chem-teal);">固体颜色</h4>
+  <table style="width:100%;border-collapse:collapse;font-size:12px;">
+    <tr style="background:var(--accent-light);"><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">颜色</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">固体</th></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">黑色</td><td style="padding:6px 8px;border:1px solid var(--border);">C(碳粉)、Fe₃O₄、CuO、MnO₂、Fe 粉(铁粉)</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">红色</td><td style="padding:6px 8px;border:1px solid var(--border);">Cu(紫红色)、Fe₂O₃(红棕色)、红磷(暗红色)</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">白色</td><td style="padding:6px 8px;border:1px solid var(--border);">NaCl、NaOH、CaO、Ca(OH)₂、MgO、P₂O₅、KClO₃</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">蓝色</td><td style="padding:6px 8px;border:1px solid var(--border);">CuSO₄·5H₂O（胆矾/蓝矾）</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">黄色</td><td style="padding:6px 8px;border:1px solid var(--border);">FeCl₃·6H₂O、硫磺 S</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">紫黑色</td><td style="padding:6px 8px;border:1px solid var(--border);">KMnO₄(高锰酸钾)、I₂(碘)</td></tr>
+  </table>
+</section>
+
+<!-- ====== 4. 物质俗名对照表 ====== -->
+<section style="margin:24px 0;">
+  <h3 style="color:var(--accent);">📛 四、物质俗名对照表</h3>
+  <table style="width:100%;border-collapse:collapse;font-size:13px;">
+    <tr style="background:var(--accent-light);"><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">俗名</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">化学式</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">化学名</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">备注</th></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">烧碱/火碱/苛性钠</td><td style="padding:6px 8px;border:1px solid var(--border);">NaOH</td><td style="padding:6px 8px;border:1px solid var(--border);">氢氧化钠</td><td style="padding:6px 8px;border:1px solid var(--border);">强碱/强腐蚀性</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">纯碱/苏打</td><td style="padding:6px 8px;border:1px solid var(--border);">Na₂CO₃</td><td style="padding:6px 8px;border:1px solid var(--border);">碳酸钠</td><td style="padding:6px 8px;border:1px solid var(--border);"><strong>是盐不是碱！</strong></td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">小苏打</td><td style="padding:6px 8px;border:1px solid var(--border);">NaHCO₃</td><td style="padding:6px 8px;border:1px solid var(--border);">碳酸氢钠</td><td style="padding:6px 8px;border:1px solid var(--border);">发酵粉/治胃酸</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">生石灰</td><td style="padding:6px 8px;border:1px solid var(--border);">CaO</td><td style="padding:6px 8px;border:1px solid var(--border);">氧化钙</td><td style="padding:6px 8px;border:1px solid var(--border);">与水反应放热</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">熟石灰/消石灰</td><td style="padding:6px 8px;border:1px solid var(--border);">Ca(OH)₂</td><td style="padding:6px 8px;border:1px solid var(--border);">氢氧化钙</td><td style="padding:6px 8px;border:1px solid var(--border);">微溶于水/石灰水</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">干冰</td><td style="padding:6px 8px;border:1px solid var(--border);">CO₂</td><td style="padding:6px 8px;border:1px solid var(--border);">二氧化碳（固体）</td><td style="padding:6px 8px;border:1px solid var(--border);">升华吸热/人工降雨</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">大理石/石灰石</td><td style="padding:6px 8px;border:1px solid var(--border);">CaCO₃</td><td style="padding:6px 8px;border:1px solid var(--border);">碳酸钙</td><td style="padding:6px 8px;border:1px solid var(--border);">建筑材料</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">食盐</td><td style="padding:6px 8px;border:1px solid var(--border);">NaCl</td><td style="padding:6px 8px;border:1px solid var(--border);">氯化钠</td><td style="padding:6px 8px;border:1px solid var(--border);">调味品/防腐</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">胆矾/蓝矾</td><td style="padding:6px 8px;border:1px solid var(--border);">CuSO₄·5H₂O</td><td style="padding:6px 8px;border:1px solid var(--border);">五水合硫酸铜</td><td style="padding:6px 8px;border:1px solid var(--border);">蓝色晶体</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">明矾</td><td style="padding:6px 8px;border:1px solid var(--border);">KAl(SO₄)₂·12H₂O</td><td style="padding:6px 8px;border:1px solid var(--border);">十二水合硫酸铝钾</td><td style="padding:6px 8px;border:1px solid var(--border);">净水剂</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">酒精</td><td style="padding:6px 8px;border:1px solid var(--border);">C₂H₅OH</td><td style="padding:6px 8px;border:1px solid var(--border);">乙醇</td><td style="padding:6px 8px;border:1px solid var(--border);">可再生能源</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">醋酸/食醋</td><td style="padding:6px 8px;border:1px solid var(--border);">CH₃COOH</td><td style="padding:6px 8px;border:1px solid var(--border);">乙酸</td><td style="padding:6px 8px;border:1px solid var(--border);">有机酸</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">铜绿</td><td style="padding:6px 8px;border:1px solid var(--border);">Cu₂(OH)₂CO₃</td><td style="padding:6px 8px;border:1px solid var(--border);">碱式碳酸铜</td><td style="padding:6px 8px;border:1px solid var(--border);">绿色</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">铁锈</td><td style="padding:6px 8px;border:1px solid var(--border);">Fe₂O₃·xH₂O</td><td style="padding:6px 8px;border:1px solid var(--border);">水合氧化铁</td><td style="padding:6px 8px;border:1px solid var(--border);">红棕色</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">双氧水</td><td style="padding:6px 8px;border:1px solid var(--border);">H₂O₂</td><td style="padding:6px 8px;border:1px solid var(--border);">过氧化氢</td><td style="padding:6px 8px;border:1px solid var(--border);">消毒/制氧</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">尿素</td><td style="padding:6px 8px;border:1px solid var(--border);">CO(NH₂)₂</td><td style="padding:6px 8px;border:1px solid var(--border);">碳酰胺</td><td style="padding:6px 8px;border:1px solid var(--border);">氮肥（含N量最高）</td></tr>
+  </table>
+</section>
+
+<!-- ====== 5. 金属活动性顺序 ====== -->
+<section style="margin:24px 0;">
+  <h3 style="color:var(--accent);">🔩 五、金属活动性顺序完整表格</h3>
+  <div style="background:var(--bg-secondary);padding:16px;border-radius:8px;margin-top:10px;font-size:14px;text-align:center;letter-spacing:2px;">
+    <strong style="font-size:16px;">K Ca Na Mg Al   Zn Fe Sn Pb (H)   Cu Hg Ag Pt Au</strong><br><br>
+    <span style="font-size:13px;color:var(--text-secondary);">活动性由强到弱 →</span><br><br>
+    <span style="font-size:13px;">口诀：<strong>嫁给那美女，身体细纤轻，统共一百斤</strong></span>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:13px;margin-top:12px;">
+    <div style="background:var(--bg);padding:10px 14px;border-radius:6px;border:1px solid var(--border);">
+      <strong>排在前面的金属能把后面的金属从它的盐溶液中置换出来</strong>（K、Ca、Na 除外——它们太活泼，先与水反应）。
+    </div>
+    <div style="background:var(--bg);padding:10px 14px;border-radius:6px;border:1px solid var(--border);">
+      <strong>排在 H 前面的金属能置换出酸中的氢</strong>（生成 H₂）；排在 H 后面的金属不与稀盐酸/稀硫酸反应。
+    </div>
+  </div>
+</section>
+
+<!-- ====== 6. 常见原子团及化合价 ====== -->
+<section style="margin:24px 0;">
+  <h3 style="color:var(--accent);">🔢 六、常见原子团及化合价</h3>
+  <table style="width:100%;border-collapse:collapse;font-size:13px;">
+    <tr style="background:var(--accent-light);"><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">原子团</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">名称</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">化合价</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">常见物质</th></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">OH⁻</td><td style="padding:6px 8px;border:1px solid var(--border);">氢氧根</td><td style="padding:6px 8px;border:1px solid var(--border);">−1</td><td style="padding:6px 8px;border:1px solid var(--border);">NaOH、Ca(OH)₂、Fe(OH)₃</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">NO₃⁻</td><td style="padding:6px 8px;border:1px solid var(--border);">硝酸根</td><td style="padding:6px 8px;border:1px solid var(--border);">−1</td><td style="padding:6px 8px;border:1px solid var(--border);">HNO₃、AgNO₃、KNO₃</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">ClO₃⁻</td><td style="padding:6px 8px;border:1px solid var(--border);">氯酸根</td><td style="padding:6px 8px;border:1px solid var(--border);">−1</td><td style="padding:6px 8px;border:1px solid var(--border);">KClO₃（制氧气原料）</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">MnO₄⁻</td><td style="padding:6px 8px;border:1px solid var(--border);">高锰酸根</td><td style="padding:6px 8px;border:1px solid var(--border);">−1</td><td style="padding:6px 8px;border:1px solid var(--border);">KMnO₄（紫黑色）</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">CO₃²⁻</td><td style="padding:6px 8px;border:1px solid var(--border);">碳酸根</td><td style="padding:6px 8px;border:1px solid var(--border);">−2</td><td style="padding:6px 8px;border:1px solid var(--border);">Na₂CO₃、CaCO₃</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">SO₄²⁻</td><td style="padding:6px 8px;border:1px solid var(--border);">硫酸根</td><td style="padding:6px 8px;border:1px solid var(--border);">−2</td><td style="padding:6px 8px;border:1px solid var(--border);">H₂SO₄、CuSO₄、BaSO₄</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">PO₄³⁻</td><td style="padding:6px 8px;border:1px solid var(--border);">磷酸根</td><td style="padding:6px 8px;border:1px solid var(--border);">−3</td><td style="padding:6px 8px;border:1px solid var(--border);">Ca₃(PO₄)₂</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">NH₄⁺</td><td style="padding:6px 8px;border:1px solid var(--border);">铵根</td><td style="padding:6px 8px;border:1px solid var(--border);">+1</td><td style="padding:6px 8px;border:1px solid var(--border);">NH₄Cl、NH₄NO₃、(NH₄)₂SO₄</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">HCO₃⁻</td><td style="padding:6px 8px;border:1px solid var(--border);">碳酸氢根</td><td style="padding:6px 8px;border:1px solid var(--border);">−1</td><td style="padding:6px 8px;border:1px solid var(--border);">NaHCO₃（小苏打）</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">MnO₄²⁻</td><td style="padding:6px 8px;border:1px solid var(--border);">锰酸根</td><td style="padding:6px 8px;border:1px solid var(--border);">−2</td><td style="padding:6px 8px;border:1px solid var(--border);">K₂MnO₄（墨绿色）</td></tr>
+  </table>
+</section>
+
+<!-- ====== 7. 实验方法汇总 ====== -->
+<section style="margin:24px 0;">
+  <h3 style="color:var(--accent);">🔬 七、实验方法汇总</h3>
+  
+  <h4 style="margin:16px 0 8px;">气体制取方法</h4>
+  <table style="width:100%;border-collapse:collapse;font-size:12px;">
+    <tr style="background:var(--accent-light);"><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">气体</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">制取方法</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">收集方法</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">验满/检验</th></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">O₂</td><td style="padding:6px 8px;border:1px solid var(--border);">KMnO₄加热 / KClO₃+MnO₂加热 / H₂O₂+MnO₂常温</td><td style="padding:6px 8px;border:1px solid var(--border);">排水法 / 向上排空气法</td><td style="padding:6px 8px;border:1px solid var(--border);">带火星木条复燃</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">CO₂</td><td style="padding:6px 8px;border:1px solid var(--border);">CaCO₃+稀盐酸（不能用稀硫酸——生成微溶CaSO₄覆盖表面阻止反应）</td><td style="padding:6px 8px;border:1px solid var(--border);">向上排空气法（不能用排水法——CO₂溶于水）</td><td style="padding:6px 8px;border:1px solid var(--border);">澄清石灰水变浑浊</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">H₂</td><td style="padding:6px 8px;border:1px solid var(--border);">Zn+稀H₂SO₄/稀HCl</td><td style="padding:6px 8px;border:1px solid var(--border);">排水法 / 向下排空气法</td><td style="padding:6px 8px;border:1px solid var(--border);">点燃听到轻微"噗"声</td></tr>
+  </table>
+
+  <h4 style="margin:16px 0 8px;">常见离子检验</h4>
+  <table style="width:100%;border-collapse:collapse;font-size:12px;">
+    <tr style="background:var(--accent-light);"><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">离子</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">检验方法</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">现象</th></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">H⁺（酸）</td><td style="padding:6px 8px;border:1px solid var(--border);">石蕊试液 / 加活泼金属</td><td style="padding:6px 8px;border:1px solid var(--border);">变红 / 产生气泡(H₂)</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">OH⁻（碱）</td><td style="padding:6px 8px;border:1px solid var(--border);">石蕊 / 酚酞试液</td><td style="padding:6px 8px;border:1px solid var(--border);">变蓝 / 变红</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">CO₃²⁻</td><td style="padding:6px 8px;border:1px solid var(--border);">加稀盐酸，将产生的气体通入澄清石灰水</td><td style="padding:6px 8px;border:1px solid var(--border);">产生气泡 → 石灰水变浑浊</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">Cl⁻</td><td style="padding:6px 8px;border:1px solid var(--border);">加AgNO₃溶液 + 稀HNO₃</td><td style="padding:6px 8px;border:1px solid var(--border);">白色沉淀（不溶于稀硝酸）</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">SO₄²⁻</td><td style="padding:6px 8px;border:1px solid var(--border);">加BaCl₂溶液 + 稀HNO₃</td><td style="padding:6px 8px;border:1px solid var(--border);">白色沉淀（不溶于稀硝酸）</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">NH₄⁺</td><td style="padding:6px 8px;border:1px solid var(--border);">加NaOH溶液加热，试管口放湿润红色石蕊试纸</td><td style="padding:6px 8px;border:1px solid var(--border);">产生刺激性气味气体 → 试纸变蓝</td></tr>
+  </table>
+
+  <h4 style="margin:16px 0 8px;">分离提纯方法</h4>
+  <table style="width:100%;border-collapse:collapse;font-size:12px;">
+    <tr style="background:var(--accent-light);"><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">方法</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">适用情况</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">举例</th></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);"><strong>过滤</strong></td><td style="padding:6px 8px;border:1px solid var(--border);">分离不溶性固体和液体</td><td style="padding:6px 8px;border:1px solid var(--border);">粗盐提纯除去泥沙；分离MnO₂（催化剂）和H₂O₂反应后的溶液</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);"><strong>蒸发结晶</strong></td><td style="padding:6px 8px;border:1px solid var(--border);">溶解度受温度影响不大的物质</td><td style="padding:6px 8px;border:1px solid var(--border);">海水晒盐（NaCl）</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);"><strong>降温结晶</strong></td><td style="padding:6px 8px;border:1px solid var(--border);">溶解度受温度影响较大的物质</td><td style="padding:6px 8px;border:1px solid var(--border);">从KNO₃和NaCl混合溶液中分离KNO₃</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);"><strong>蒸馏</strong></td><td style="padding:6px 8px;border:1px solid var(--border);">分离沸点不同的液态混合物</td><td style="padding:6px 8px;border:1px solid var(--border);">制取蒸馏水；分离酒精和水</td></tr>
+  </table>
+</section>
+
+<!-- ====== 8. 高频易错陷阱总览 ====== -->
+<section style="margin:24px 0;">
+  <h3 style="color:var(--accent);">⚠️ 八、高频易错陷阱总览</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px;margin-top:10px;">
+    <div style="background:var(--bg-secondary);padding:10px 14px;border-radius:6px;border-left:4px solid var(--chem-red);">
+      <strong>① 铁与酸/盐溶液 → 生成 Fe²⁺ 不是 Fe³⁺</strong><br>铁与盐酸：$Fe + 2HCl \rightarrow FeCl_2 + H_2\uparrow$（浅绿色）<br>铁与硫酸铜：$Fe + CuSO_4 \rightarrow FeSO_4 + Cu$（浅绿色）
+    </div>
+    <div style="background:var(--bg-secondary);padding:10px 14px;border-radius:6px;border-left:4px solid var(--chem-red);">
+      <strong>② 纯碱是盐不是碱</strong><br>Na₂CO₃ 俗称纯碱，但化学分类属<strong>盐</strong>（金属离子+酸根离子）。水溶液显碱性 ≠ 它是碱。
+    </div>
+    <div style="background:var(--bg-secondary);padding:10px 14px;border-radius:6px;border-left:4px solid var(--chem-red);">
+      <strong>③ 有机物 ≠ 含碳化合物</strong><br>CO、CO₂、H₂CO₃、CaCO₃、Na₂CO₃、NaHCO₃ 虽含碳，但属于<strong>无机物</strong>。
+    </div>
+    <div style="background:var(--bg-secondary);padding:10px 14px;border-radius:6px;border-left:4px solid var(--chem-red);">
+      <strong>④ 浓硫酸稀释：酸入水！</strong><br>严禁水入酸。口诀：酸入水、沿内壁、慢倒入、不断搅拌。
+    </div>
+    <div style="background:var(--bg-secondary);padding:10px 14px;border-radius:6px;border-left:4px solid var(--chem-yellow);">
+      <strong>⑤ 饱和溶液 ≠ 浓溶液</strong><br>Ca(OH)₂ 饱和溶液很稀（溶解度小）。KNO₃ 不饱和溶液可以很浓（溶解度大）。
+    </div>
+    <div style="background:var(--bg-secondary);padding:10px 14px;border-radius:6px;border-left:4px solid var(--chem-yellow);">
+      <strong>⑥ Ca(OH)₂ 溶解度随温度升高而减小</strong><br>这是唯一的常考特例！大多数固体溶解度随温度升高而增大。
+    </div>
+    <div style="background:var(--bg-secondary);padding:10px 14px;border-radius:6px;border-left:4px solid var(--chem-yellow);">
+      <strong>⑦ 中和反应一定生成盐和水，但生成盐和水的反应不一定是中和反应</strong><br>$CO_2 + 2NaOH \rightarrow Na_2CO_3 + H_2O$ 不是中和反应（CO₂ 不是酸）。
+    </div>
+    <div style="background:var(--bg-secondary);padding:10px 14px;border-radius:6px;border-left:4px solid var(--chem-yellow);">
+      <strong>⑧ 合金是混合物，硬度比纯金属大，熔点比纯金属低</strong><br>生铁和钢都是铁合金（含碳量不同：生铁2%~4.3%，钢0.03%~2%）。
+    </div>
+    <div style="background:var(--bg-secondary);padding:10px 14px;border-radius:6px;border-left:4px solid var(--chem-orange);">
+      <strong>⑨ 铵态氮肥不能与碱性物质混用</strong><br>$NH_4^+ + OH^- \rightarrow NH_3\uparrow + H_2O$，NH₃ 逸出 → 氮元素损失 → 肥效降低。
+    </div>
+    <div style="background:var(--bg-secondary);padding:10px 14px;border-radius:6px;border-left:4px solid var(--chem-orange);">
+      <strong>⑩ 铁生锈必须同时有水+氧气</strong><br>铁锈（$Fe_2O_3 \cdot xH_2O$）疏松多孔，不能阻止内部铁继续生锈。
+    </div>
+    <div style="background:var(--bg-secondary);padding:10px 14px;border-radius:6px;border-left:4px solid var(--chem-orange);">
+      <strong>⑪ 溶解度"四要素"缺一不可</strong><br>一定温度、100g溶剂、饱和状态、单位g。不能用"%"表示溶解度。
+    </div>
+    <div style="background:var(--bg-secondary);padding:10px 14px;border-radius:6px;border-left:4px solid var(--chem-orange);">
+      <strong>⑫ AgCl 和 BaSO₄ 不溶于稀硝酸</strong><br>这是检验 Cl⁻ 和 SO₄²⁻ 时加稀硝酸的原因——排除其他沉淀（如 BaCO₃ 溶于酸会产生气泡）。
+    </div>
+  </div>
+</section>
+
+<!-- ====== 9. 中考化学答题规范 ====== -->
+<section style="margin:24px 0;">
+  <h3 style="color:var(--accent);">✍️ 九、中考化学答题规范</h3>
+  <div style="font-size:13px;line-height:1.9;margin-top:10px;">
+    <p><strong>1. 化学用语规范：</strong></p>
+    <p>• 元素符号：首字母大写，第二个字母小写（如 Co 是钴，CO 是一氧化碳——大小写决定含义）</p>
+    <p>• 化学式：下标数字不可写成正常大小（H₂O 不是 H2O）</p>
+    <p>• 化学方程式：必须配平 + 注明条件（点燃/加热△/高温/催化剂）+ 标↑↓</p>
+    <p>• 条件标注：加热用"△"（不可省略），催化剂写上方，"点燃"≠ "燃烧"（"点燃"是条件，"燃烧"是现象描述）</p>
+    
+    <p style="margin-top:10px;"><strong>2. 实验题规范：</strong></p>
+    <p>• 现象描述 = 看到/听到/闻到的，<strong>不能出现生成物名称</strong>作为现象</p>
+    <p>• 正确：铁钉表面出现<strong>红色固体</strong>，溶液由<strong>蓝色</strong>逐渐变为<strong>浅绿色</strong></p>
+    <p>• 错误：铁钉表面生成了<strong>铜</strong>，溶液变为<strong>硫酸亚铁溶液</strong>（这是结论不是现象）</p>
+    
+    <p style="margin-top:10px;"><strong>3. 计算题规范：</strong></p>
+    <p>• 必须有"解：设...为x" → 写方程式 → 找比例关系 → 列比例式 → 求解 → "答："</p>
+    <p>• 计算结果保留要求（通常保留到小数点后1位或整数）</p>
+    <p>• 单位必须标注且前后一致</p>
+    
+    <p style="margin-top:10px;"><strong>4. 推断题规范：</strong></p>
+    <p>• 结论要按题目要求书写（化学式、化学方程式还是名称？读清楚！）</p>
+    <p>• 常见"题眼"：颜色（蓝色=Cu²⁺，浅绿=Fe²⁺，黄色=Fe³⁺，红褐色沉淀=Fe(OH)₃）</p>
+    
+    <p style="margin-top:10px;"><strong>5. 选择题规范：</strong></p>
+    <p>• "正确"vs"不正确"——圈出"不"字！</p>
+    <p>• "一定"vs"可能"——过于绝对的说法常是错的</p>
+    <p>• 单选题——最符合题意的一项（可能有部分正确的干扰项）</p>
+  </div>
+</section>
+
+<!-- ====== 10. 考前30分钟速查表 ====== -->
+<section style="margin:24px 0;">
+  <h3 style="color:var(--accent);">⏱️ 十、考前30分钟速查表</h3>
+  <div style="font-size:12px;line-height:1.8;margin-top:10px;background:var(--bg-secondary);padding:16px;border-radius:8px;">
+    <table style="width:100%;border-collapse:collapse;">
+      <tr><td style="padding:4px 8px;border:1px solid var(--border);width:50%;"><strong>🔩 金属活动性：</strong>K Ca Na Mg Al Zn Fe Sn Pb (H) Cu Hg Ag Pt Au</td><td style="padding:4px 8px;border:1px solid var(--border);"><strong>🎨 溶液颜色：</strong>Cu²⁺蓝色 Fe²⁺浅绿 Fe³⁺黄色 MnO₄⁻紫红</td></tr>
+      <tr><td style="padding:4px 8px;border:1px solid var(--border);"><strong>⚗️ 气体制备：</strong>O₂=KMnO₄/KClO₃/H₂O₂ CO₂=CaCO₃+HCl H₂=Zn+H₂SO₄</td><td style="padding:4px 8px;border:1px solid var(--border);"><strong>📐 溶解度特例：</strong>Ca(OH)₂随温度↑而↓ 气体随温度↑而↓</td></tr>
+      <tr><td style="padding:4px 8px;border:1px solid var(--border);"><strong>🧪 指示剂变色：</strong>石蕊酸红碱蓝中紫 酚酞酸无碱红中无</td><td style="padding:4px 8px;border:1px solid var(--border);"><strong>⚠️ 铁+酸：</strong>生成Fe²⁺（浅绿）非Fe³⁺（黄）</td></tr>
+      <tr><td style="padding:4px 8px;border:1px solid var(--border);"><strong>🧂 纯碱是盐不是碱：</strong>Na₂CO₃</td><td style="padding:4px 8px;border:1px solid var(--border);"><strong>📛 俗名：</strong>烧碱=NaOH 纯碱=Na₂CO₃ 小苏打=NaHCO₃ 生石灰=CaO 熟石灰=Ca(OH)₂ 干冰=CO₂(s)</td></tr>
+      <tr><td style="padding:4px 8px;border:1px solid var(--border);"><strong>🔬 复分解条件：</strong>气体↑/沉淀↓/水（三选一）</td><td style="padding:4px 8px;border:1px solid var(--border);"><strong>🧹 不溶于酸的沉淀：</strong>AgCl（白） BaSO₄（白）</td></tr>
+      <tr><td style="padding:4px 8px;border:1px solid var(--border);"><strong>🌿 化肥：</strong>N=叶 P=根 K=茎/抗倒伏</td><td style="padding:4px 8px;border:1px solid var(--border);"><strong>🔍 Cl⁻检验：</strong>AgNO₃+稀HNO₃ → 白色沉淀 SO₄²⁻检验：BaCl₂+稀HNO₃ → 白色沉淀</td></tr>
+      <tr><td style="padding:4px 8px;border:1px solid var(--border);"><strong>💧 浓硫酸稀释：</strong>酸入水！严禁水入酸</td><td style="padding:4px 8px;border:1px solid var(--border);"><strong>🍳 营养素供能：</strong>蛋白质18 糖类16 油脂39 (kJ/g)</td></tr>
+      <tr><td style="padding:4px 8px;border:1px solid var(--border);"><strong>🔥 三大合成材料：</strong>塑料 合成纤维 合成橡胶</td><td style="padding:4px 8px;border:1px solid var(--border);"><strong>🔢 原子团化合价：</strong>OH⁻-1 NO₃⁻-1 CO₃²⁻-2 SO₄²⁻-2 NH₄⁺+1</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- 翻页 -->
+<div style="display:flex;justify-content:space-between;margin:30px 0;padding-top:16px;border-top:1px solid var(--border);font-size:13px;">
+  <a href="ch12.html" style="color:var(--accent);">← 第12章</a>
+  <a href="ch01.html" style="color:var(--accent);">🔙 回到第1章复习</a>
+</div>
+
+</main>
+
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+(function(){
+  var k='chemistry-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+  document.documentElement.setAttribute('data-theme',t);
+  var b=document.getElementById('theme-toggle');if(b)b.textContent=t==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
+  b.addEventListener('click',function(){
+    var c=document.documentElement.getAttribute('data-theme'),n=c==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',n);localStorage.setItem(k,n);
+    b.textContent=n==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
+  });
+})();
+(function(){
+  var s=document.getElementById('sidebar'),k='chemistry-sidebar';
+  if(localStorage.getItem(k)==='hidden')s.classList.add('hidden');
+  document.getElementById('sidebarHideBtn').addEventListener('click',function(){s.classList.add('hidden');localStorage.setItem(k,'hidden')});
+  document.getElementById('sidebarShowBtn').addEventListener('click',function(){s.classList.remove('hidden');localStorage.setItem(k,'')});
+})();
+(function(){
+  var b=document.getElementById('expandAllBtn');if(!b)return;
+  b.addEventListener('click',function(){
+    var a=document.querySelectorAll('.exam-module,details'),o=true;
+    for(var i=0;i<a.length;i++)if(!a[i].hasAttribute('open')){o=false;break}
+    for(var i=0;i<a.length;i++){if(o)a[i].removeAttribute('open');else a[i].setAttribute('open','')}
+    b.textContent=o?'📂 展开全部章节':'📖 收起全部章节';
+  });
+})();
+window.addEventListener('scroll',function(){document.getElementById('backToTop').style.display=scrollY>400?'block':'none'});
+document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution')})});
+</script>
+</body>
+</html>

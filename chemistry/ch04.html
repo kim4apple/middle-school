@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第4章 自然界的水 | 初中化学</title>
+<link rel="stylesheet" href="css/chemistry.css">
+<link rel="stylesheet" href="../katex/katex.min.css">
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">化学九上</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+  </div>
+  <nav>
+    <a href="../index.html" style="font-weight:600;">🏠 返回首页</a>
+    <a href="index.html">⚗️ 化学导航</a>
+    <a href="ch01.html">第1章 走进化学世界</a>
+    <a href="ch02.html">第2章 空气·氧气</a>
+    <a href="ch03.html">第3章 物质构成的奥秘</a>
+    <a href="ch04.html" class="active">第4章 自然界的水</a>
+    <a href="ch05.html">第5章 化学方程式</a>
+    <a href="ch06.html">第6章 碳和碳的氧化物</a>
+    <a href="ch07.html">第7章 燃料及其利用</a>
+    <a href="ch08.html">第8章 金属和金属材料</a>
+    <a href="ch09.html">第9章 溶液</a>
+    <a href="ch10.html">第10章 酸和碱</a>
+    <a href="ch11.html">第11章 盐·化肥</a>
+    <a href="ch12.html">第12章 化学与生活</a>
+    <a href="appendix.html">📚 附录</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
+  <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
+</nav>
+
+<main id="content">
+<div class="cover"><h1>第4章 · 自然界的水</h1><p>九年级上册 | 电解水实验 · 净水方法 | 必背方程式 + 质量分数计算</p></div>
+
+<!-- ====== 模块1: 实验观察 ====== -->
+<section class="experiment-observation">
+  <div class="exp-title">🧪 电解水实验——把水分子"拆开"！</div>
+  <div class="exp-step"><span class="exp-step-num">1</span><span>在水电解器中加入水，并加入少量<strong>硫酸</strong>或<strong>氢氧化钠</strong>——目的：<strong>增强水的导电性</strong>（纯水几乎不导电），硫酸和NaOH不参与电极反应。</span></div>
+  <div class="exp-step"><span class="exp-step-num">2</span><span>接通<strong>直流电</strong>（不能用交流电），观察两个电极——均有<strong>气泡</strong>产生。</span></div>
+  <div class="exp-step"><span class="exp-step-num">3</span><span>用燃着的木条检验<strong>正极</strong>产生的气体——木条燃烧更旺（是<strong>氧气 O₂</strong>）。用燃着的木条检验<strong>负极</strong>产生的气体——气体燃烧，产生<strong>淡蓝色火焰</strong>（是<strong>氢气 H₂</strong>）。</span></div>
+  <div class="exp-step"><span class="exp-step-num">4</span><span>观察负极管和正极管中收集到的气体体积——负极管：正极管 ≈ <strong>2 : 1</strong></span></div>
+  <p style="margin-top:12px;font-weight:700;color:var(--chem-green);">📋 结论：水是由<strong>氢元素</strong>和<strong>氧元素</strong>组成的化合物。化学方程式：2H₂O → 2H₂↑ + O₂↑。口诀："正氧负氢，氢二氧一"（V(H₂) : V(O₂) = 2 : 1）。</p>
+</section>
+
+<!-- ====== 模块2: 微观解释 ====== -->
+<section class="micro-explanation">
+  <h3>🧠 电解水——微观过程解析</h3>
+  <p>通电前：水分子（H₂O）杂乱运动。通电后：每个水分子分解为<strong>2个氢原子</strong>和<strong>1个氧原子</strong>。</p>
+  <p>氢原子两两结合 → 氢气分子（H₂）；氧原子两两结合 → 氧气分子（O₂）。大量H₂分子聚集 → 氢气（负极）；大量O₂分子聚集 → 氧气（正极）。</p>
+  <p>从微观角度看，水分子中氢原子和氧原子的个数比是2:1，所以电解后生成的H₂和O₂的<strong>分子个数比为2:1</strong>，在相同条件下<strong>体积比也为2:1</strong>。</p>
+  <table style="width:100%;margin-top:10px;border-collapse:collapse;font-size:13px;">
+    <tr style="background:var(--accent-light);"><th style="padding:8px;text-align:left;border:1px solid var(--border);">对比项</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">正极（阳极）</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">负极（阴极）</th></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">生成气体</td><td style="padding:8px;border:1px solid var(--border);">氧气 O₂</td><td style="padding:8px;border:1px solid var(--border);">氢气 H₂</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">体积比</td><td style="padding:8px;border:1px solid var(--border);">1</td><td style="padding:8px;border:1px solid var(--border);">2</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">检验方法</td><td style="padding:8px;border:1px solid var(--border);">带火星木条复燃</td><td style="padding:8px;border:1px solid var(--border);">气体燃烧，淡蓝色火焰</td></tr>
+  </table>
+</section>
+
+<!-- ====== 模块3: 核心概念 ====== -->
+<h3 style="margin:20px 0 12px;color:var(--accent);">📖 核心概念</h3>
+<div class="card-grid">
+  <div class="concept-card"><div class="name">水的组成</div><p>水由<strong>氢元素</strong>和<strong>氧元素</strong>组成。每个水分子由2个氢原子和1个氧原子构成（H₂O）。电解水实验是验证水元素组成的经典实验——"正氧负氢，氢二氧一"。</p></div>
+  <div class="concept-card"><div class="name">单质、化合物、氧化物</div><p><strong>单质：</strong>由同种元素组成的纯净物（如O₂、Fe、He）。<strong>化合物：</strong>由不同种元素组成的纯净物（如H₂O、NaCl、CO₂）。<strong>氧化物：</strong>由两种元素组成，其中一种是氧元素的化合物（如H₂O、CO₂、Fe₃O₄）。氧化物一定是化合物，化合物不一定是氧化物。</p></div>
+  <div class="concept-card"><div class="name">过滤</div><p>分离<strong>不溶性固体</strong>与液体的操作。仪器：铁架台、漏斗、烧杯、玻璃棒。操作要点"一贴二低三靠"：滤纸紧贴漏斗内壁、滤纸边缘低于漏斗边缘、液面低于滤纸边缘、烧杯口紧靠玻璃棒、玻璃棒轻靠三层滤纸一边、漏斗下端管口紧靠烧杯内壁。过滤后滤液仍浑浊→滤纸破损或液面高于滤纸边缘。</p></div>
+  <div class="concept-card"><div class="name">蒸馏</div><p>利用液体混合物中各组分<strong>沸点不同</strong>进行分离。蒸馏水中含<strong>极少量</strong>可溶性杂质。蒸馏是净水程度<strong>最高</strong>的方法。自来水厂不采用蒸馏（成本高），而用沉淀→过滤→吸附→消毒。</p></div>
+  <div class="concept-card"><div class="name">硬水 vs 软水</div><p><strong>硬水：</strong>含较多<strong>可溶性钙镁化合物</strong>的水。肥皂水检验：搅拌后泡沫少、浮渣多的是硬水；泡沫多的是软水。<strong>硬水软化：</strong>①煮沸（生活中，可除去暂时硬水中的Ca(HCO₃)₂、Mg(HCO₃)₂）②蒸馏（实验室，最彻底）。硬水浪费肥皂，锅炉结垢可能引发爆炸。</p></div>
+</div>
+
+<!-- ====== 模块4: 化学方程式 ====== -->
+<h3 style="margin:20px 0 12px;color:var(--accent);">⚗️ 化学方程式</h3>
+<div style="background:var(--bg);padding:12px 16px;border-radius:8px;border:1px solid var(--border);font-size:14px;">
+  <p style="margin:6px 0;">① 电解水：<strong>2H₂O → 2H₂↑ + O₂↑</strong>（分解反应）——本章核心方程式，必考</p>
+  <p style="margin:6px 0;">② 氢气燃烧（补充）：<strong>2H₂ + O₂ → 2H₂O</strong>（化合反应，也是氧化反应）——电解水的逆反应，验证水由氢氧元素组成</p>
+</div>
+
+<!-- ====== 模块5: 计算专题 ====== -->
+<section class="safety-pitfall">
+  <h3>🔢 水中元素质量比与质量分数</h3>
+  <p style="margin:8px 0;"><strong>水分子中氢氧元素质量比：</strong>H₂O中，H元素质量 : O元素质量 = (1×2) : 16 = 2 : 16 = <strong>1 : 8</strong></p>
+  <p style="margin:8px 0;"><strong>水中氢元素的质量分数：</strong>ω(H) = (2×1) / 18 × 100% ≈ <strong>11.1%</strong></p>
+  <p style="margin:8px 0;"><strong>水中氧元素的质量分数：</strong>ω(O) = 16 / 18 × 100% ≈ <strong>88.9%</strong></p>
+  <p style="margin:8px 0;"><strong>例题1：</strong>36 g水中，氢元素和氧元素的质量各是多少？</p>
+  <p style="margin:4px 0;color:var(--chem-green);">解：m(H) = 36 g × (2/18) = <strong>4 g</strong>；m(O) = 36 g × (16/18) = <strong>32 g</strong>（或 36 - 4 = 32 g）。</p>
+  <p style="margin:8px 0;"><strong>例题2：</strong>多少克水中含有8 g氧元素？</p>
+  <p style="margin:4px 0;color:var(--chem-green);">解：设水的质量为x，则 x × (16/18) = 8 g → x = 8 × (18/16) = <strong>9 g</strong>。</p>
+</section>
+
+<!-- ====== 模块6: 实验安全 + 易错 ====== -->
+<section class="safety-pitfall">
+  <h3>🚨 实验安全与常见错误</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:13px;margin-top:10px;">
+    <div style="background:var(--bg);padding:10px 14px;border-radius:6px;border:1px solid var(--border);">
+      <strong style="color:var(--chem-red);">🔴 电解水误区</strong>
+      <p>❌ "电解水实验证明了水由氢气和氧气组成"——错！水是<strong>纯净物（化合物）</strong>，由氢元素和氧元素组成。实验生成的H₂和O₂是产物，不是水的成分。<br>❌ 加入硫酸或NaOH是参与反应——错！只增强导电性，不参与电极反应。</p>
+    </div>
+    <div style="background:var(--bg);padding:10px 14px;border-radius:6px;border:1px solid var(--border);">
+      <strong style="color:var(--chem-yellow);">⚠️ 净水误区</strong>
+      <p>❌ "过滤可以除去水中所有的杂质"——错！过滤只能除去<strong>不溶性杂质</strong>，无法除去可溶性杂质（如食盐溶于水后无法过滤除去）。<br>❌ "煮沸后的自来水是纯净水"——错！煮沸能降低硬度，但水中仍含少量可溶性物质。<br>❌ 活性炭在净水中起<strong>吸附</strong>作用（除去色素、异味），不是过滤。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 模块7: 中考真题 ====== -->
+<details class="exam-module" open>
+<summary>🎯 中考真题精选（自然界的水 · 近年典型）</summary>
+<div class="content">
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九上</span><span class="q-diff easy">★☆☆</span>
+  <div class="q-body">电解水实验中，与电源正极相连的电极上产生的气体是（ ）<br>A. 氢气 &nbsp; B. 氧气 &nbsp; C. 氮气 &nbsp; D. 水蒸气</div>
+  <div class="q-solution"><strong>答案：B</strong><br><strong>🔑 关键思路：</strong>口诀"正氧负氢"——正极产生O₂，负极产生H₂。验证方法：正极气体使带火星木条复燃，负极气体可燃（淡蓝色火焰）。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九上</span><span class="q-diff mid">★★☆</span>
+  <div class="q-body">下列关于过滤操作的叙述错误的是（ ）<br>A. 玻璃棒的作用是引流 &nbsp; B. 漏斗下端的管口要紧靠烧杯内壁<br>C. 液面应高于滤纸的边缘 &nbsp; D. 过滤可以除去水中的不溶性杂质</div>
+  <div class="q-solution"><strong>答案：C</strong><br><strong>🔑 关键思路：</strong>过滤"三靠"之一是液面<strong>低于</strong>滤纸边缘（防止液体从滤纸与漏斗壁之间的缝隙流下导致过滤失败）。玻璃棒引流、漏斗管口靠烧杯内壁都是正确操作。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九上</span><span class="q-diff mid">★★☆</span>
+  <div class="q-body">用肥皂水分别检验硬水和软水，现象描述正确的是（ ）<br>A. 硬水泡沫多 &nbsp; B. 软水浮渣多 &nbsp; C. 硬水泡沫少、浮渣多 &nbsp; D. 两者现象无明显差异</div>
+  <div class="q-solution"><strong>答案：C</strong><br><strong>🔑 关键思路：</strong>硬水中含较多钙镁离子，与肥皂中的硬脂酸钠反应生成不溶性的硬脂酸钙/镁沉淀（浮渣），故泡沫少。软水中钙镁离子少，泡沫丰富。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九上</span><span class="q-diff hard">★★★</span>
+  <div class="q-body">水是生命之源。关于水的以下说法正确的是（ ）<br>A. 水由氢气和氧气组成 &nbsp; B. 电解水时正极和负极产生气体体积比为2:1<br>C. 硬水通过过滤可以变为软水 &nbsp; D. 活性炭可以吸附水中的色素和异味</div>
+  <div class="q-solution"><strong>答案：D</strong><br><strong>🔑 关键思路：</strong>A错：水由氢元素和氧元素组成（纯净物，不是氢气和氧气的混合物）。B错：正极:负极 = 1:2。C错：过滤只能除去不溶性杂质，不能除去钙镁离子。D对：活性炭具有疏松多孔结构，吸附色素和异味是物理吸附。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+</div>
+</details>
+
+<!-- ====== 模块8: 实验探究设计 ====== -->
+<section class="experiment-design">
+  <h3>🔬 实验探究设计：自制简易净水器</h3>
+  <p style="margin:8px 0;">设计思路：模拟自来水厂的净水流程，用分层填充材料去除不同杂质。</p>
+  <p>① 取一个塑料瓶，切去底部，倒置（瓶口朝下）。</p>
+  <p>② 从下往上（从瓶口→瓶底方向）依次放入：<strong>棉花</strong>（最下层）→ <strong>活性炭</strong> → <strong>细沙</strong> → <strong>石子</strong>（最上层）。</p>
+  <p>③ 从上方倒入浑浊的泥水——观察滤出液变澄清。</p>
+  <p>④ 各层作用：石子、细沙——<strong>过滤</strong>较大和较小的不溶性杂质；活性炭——<strong>吸附</strong>色素和异味；棉花——<strong>最终过滤</strong>，防止活性炭颗粒流出。</p>
+  <p style="margin-top:8px;font-weight:700;color:var(--chem-green);">📋 结论：多种净水方法的组合可以实现较好的净水效果。但此简易净水器不能除去可溶性杂质和细菌——得到的不是纯净水，不能直接饮用。</p>
+</section>
+
+<!-- ====== 模块9: 自查清单 + 间隔复习 ====== -->
+<div class="checklist">
+  <h3>✅ 本章自查清单</h3>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能完整描述电解水实验的装置、现象、结论（正氧负氢，氢二氧一）</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能区分单质、化合物、氧化物并各举3例</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能说清过滤、蒸馏、吸附三种净水方法的区别和适用场景</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能计算水中氢氧元素质量比(1:8)和质量分数</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能用肥皂水区分硬水和软水，知道硬水软化方法</label>
+  <p style="margin-top:12px;color:var(--accent);border-top:1px dashed var(--border);padding-top:12px;"><strong>🗣 费曼挑战：</strong>用"电解水实验"向别人证明水由氢元素和氧元素组成，必须讲清楚为什么不能说"水由氢气和氧气组成"。</p>
+</div>
+
+<div class="review-schedule">
+  <strong>📅 间隔复习</strong>
+  <span class="review-dot">🔵 1天后：默写电解水方程式 + "正氧负氢，氢二氧一"</span>
+  <span class="review-dot">🟢 3天后：画电解水装置图并标注各电极产物</span>
+  <span class="review-dot">🟡 1周后：做单质/化合物/氧化物分类专项30题</span>
+  <span class="review-dot">🔴 1月后：做本章中考真题4题</span>
+</div>
+
+<!-- ====== 模块10: 下一站 ====== -->
+<div class="next-stop">
+  <strong>➡️ 下一站：化学方程式</strong><br>
+  电解水的方程式 2H₂O → 2H₂↑ + O₂↑ 你已经会读了。但你知道这个方程式是怎么"配平"出来的吗？为什么左边和右边的原子个数必须相等？第5章将为你揭开化学方程式的书写规则、配平方法，以及用它进行精确计算的完整方法——这是初中化学最重要的计算工具！
+</div>
+
+<!-- 章内翻页 -->
+<div style="display:flex;justify-content:space-between;margin:30px 0;padding-top:16px;border-top:1px solid var(--border);font-size:13px;">
+  <a href="ch03.html" style="color:var(--accent);">← 第3章</a>
+  <a href="ch05.html" style="color:var(--accent);">第5章 →</a>
+</div>
+
+</main>
+
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+
+(function(){
+  var k='chemistry-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+  document.documentElement.setAttribute('data-theme',t);
+  var b=document.getElementById('theme-toggle');if(b)b.textContent=t==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
+  b.addEventListener('click',function(){
+    var c=document.documentElement.getAttribute('data-theme'),n=c==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',n);localStorage.setItem(k,n);
+    b.textContent=n==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
+  });
+})();
+
+(function(){
+  var s=document.getElementById('sidebar'),k='chemistry-sidebar';
+  if(localStorage.getItem(k)==='hidden')s.classList.add('hidden');
+  document.getElementById('sidebarHideBtn').addEventListener('click',function(){s.classList.add('hidden');localStorage.setItem(k,'hidden')});
+  document.getElementById('sidebarShowBtn').addEventListener('click',function(){s.classList.remove('hidden');localStorage.setItem(k,'')});
+})();
+
+(function(){
+  var b=document.getElementById('expandAllBtn');if(!b)return;
+  b.addEventListener('click',function(){
+    var a=document.querySelectorAll('.exam-module,details'),o=true;
+    for(var i=0;i<a.length;i++)if(!a[i].hasAttribute('open')){o=false;break}
+    for(var i=0;i<a.length;i++){if(o)a[i].removeAttribute('open');else a[i].setAttribute('open','')}
+    b.textContent=o?'📂 展开全部章节':'📖 收起全部章节';
+  });
+})();
+
+window.addEventListener('scroll',function(){document.getElementById('backToTop').style.display=scrollY>400?'block':'none'});
+
+document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution')})});
+</script>
+</body>
+</html>

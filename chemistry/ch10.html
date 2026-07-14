@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第10章 酸和碱 | 初中化学</title>
+<link rel="stylesheet" href="css/chemistry.css">
+<link rel="stylesheet" href="../katex/katex.min.css">
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">化学九下</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+  </div>
+  <nav>
+    <a href="../index.html" style="font-weight:600;">🏠 返回首页</a>
+    <a href="index.html">⚗️ 化学导航</a>
+    <a href="ch01.html">第1章 走进化学世界</a>
+    <a href="ch02.html">第2章 空气·氧气</a>
+    <a href="ch03.html">第3章 物质构成的奥秘</a>
+    <a href="ch04.html">第4章 自然界的水</a>
+    <a href="ch05.html">第5章 化学方程式</a>
+    <a href="ch06.html">第6章 碳和碳的氧化物</a>
+    <a href="ch07.html">第7章 燃料及其利用</a>
+    <a href="ch08.html">第8章 金属和金属材料</a>
+    <a href="ch09.html">第9章 溶液</a>
+    <a href="ch10.html" class="active">第10章 酸和碱</a>
+    <a href="ch11.html">第11章 盐·化肥</a>
+    <a href="ch12.html">第12章 化学与生活</a>
+    <a href="appendix.html">📚 附录</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
+  <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
+</nav>
+
+<main id="content">
+<div class="cover"><h1>第10章 · 酸和碱</h1><p>九年级下册 | 酸的通性 · 碱的通性 · 中和反应 | 核心：H⁺ 和 OH⁻ 的化学</p></div>
+
+<!-- ====== 模块1: 实验观察 ====== -->
+<section class="experiment-observation">
+  <div class="exp-title">🧪 实验：酸碱指示剂的变色</div>
+  <div class="exp-step"><span class="exp-step-num">1</span><span>取三支试管，分别加入稀盐酸（酸性）、蒸馏水（中性）、NaOH 溶液（碱性）各 2 mL。</span></div>
+  <div class="exp-step"><span class="exp-step-num">2</span><span>向每支试管中滴加 2-3 滴<strong>紫色石蕊溶液</strong>——酸中变<strong>红色</strong>，中性不变色（<strong>紫色</strong>），碱中变<strong>蓝色</strong>。口诀："<strong>酸红碱蓝中为紫</strong>"。</span></div>
+  <div class="exp-step"><span class="exp-step-num">3</span><span>另取三支试管重复步骤 1，滴加 2-3 滴<strong>无色酚酞溶液</strong>——酸中<strong>无色</strong>，中性<strong>无色</strong>，碱中变<strong>红色</strong>。口诀："<strong>酸无碱红中无</strong>"。</span></div>
+  <div class="exp-step"><span class="exp-step-num">4</span><span>注意：酚酞遇碱变红，遇酸不变色（并非所有酸都不变色——"酚酞遇酸不变色"是结论，不是性质判断）。</span></div>
+  <p style="margin-top:12px;font-weight:700;color:var(--chem-green);">📋 结论：石蕊和酚酞是酸碱指示剂，能根据溶液酸碱性的不同呈现不同颜色。</p>
+</section>
+
+<section class="experiment-observation">
+  <div class="exp-title">🧪 实验：浓硫酸的稀释——"酸入水"</div>
+  <div class="exp-step"><span class="exp-step-num">1</span><span>在烧杯中加入一定量的<strong>水</strong>（先在烧杯中）。</span></div>
+  <div class="exp-step"><span class="exp-step-num">2</span><span>用<strong>玻璃棒引流</strong>，将浓硫酸沿烧杯内壁<strong>缓慢注入</strong>水中，并用玻璃棒不断搅拌。</span></div>
+  <div class="exp-step"><span class="exp-step-num">3</span><span>用手触摸烧杯外壁——<strong>发烫</strong>（浓硫酸溶于水<strong>放大量热</strong>）。</span></div>
+  <div class="exp-step"><span class="exp-step-num">4</span><span><strong>严禁将水倒入浓硫酸！</strong>水的密度比浓硫酸小，倒入后会浮在硫酸表面，剧烈放热会导致<strong>液体飞溅</strong>，非常危险。</span></div>
+  <p style="margin-top:12px;font-weight:700;color:var(--chem-red);">🚨 安全铁律：<strong>酸入水、沿内壁、慢倒入、不断搅。</strong>绝对禁止"水入酸"！</p>
+</section>
+
+<!-- ====== 模块2: 微观解释 ====== -->
+<section class="micro-explanation">
+  <h3>🧠 微观解释：酸和碱的通性</h3>
+  <p><strong>酸的通性来自 H⁺：</strong>酸在水溶液中都能解离出<strong>氢离子（H⁺）</strong>。如 HCl → H⁺ + Cl⁻，H₂SO₄ → 2H⁺ + SO₄²⁻。因此所有酸的溶液都表现出共同的化学性质：能使石蕊变红、能与活泼金属反应生成 H₂、能与碱发生中和反应。</p>
+  <p style="margin-top:10px;"><strong>碱的通性来自 OH⁻：</strong>碱在水溶液中都能解离出<strong>氢氧根离子（OH⁻）</strong>。如 NaOH → Na⁺ + OH⁻，Ca(OH)₂ → Ca²⁺ + 2OH⁻。因此所有碱的溶液都表现出共同的化学性质：能使石蕊变蓝、能使酚酞变红、能与酸发生中和反应。</p>
+  <p style="margin-top:10px;padding:10px 14px;background:var(--accent-light);border-radius:6px;border-left:4px solid var(--accent);"><strong>中和反应的实质（微观核心）：</strong>$H^+ + OH^- \rightarrow H_2O$<br>酸中的 H⁺ 和碱中的 OH⁻ 结合生成<strong>水分子</strong>，这是所有酸碱中和反应的共同本质。如 NaOH + HCl → NaCl + H₂O，从离子角度看就是：$Na^+ + OH^- + H^+ + Cl^- \rightarrow Na^+ + Cl^- + H_2O$，Na⁺ 和 Cl⁻ 实际没有参与反应（"旁观离子"）。</p>
+</section>
+
+<!-- ====== 模块3: 核心概念 ====== -->
+<h3 style="margin:20px 0 12px;color:var(--accent);">📖 核心概念</h3>
+<div class="card-grid">
+  <div class="concept-card"><div class="name">常见酸</div><p><strong>盐酸（HCl）</strong>：无色、有刺激性气味、<strong>易挥发</strong>（敞口冒白雾——挥发出的 HCl 与水蒸气结合成盐酸小液滴）。胃酸主要成分。<strong>硫酸（H₂SO₄）</strong>：无色黏稠液体、不挥发、有<strong>强腐蚀性</strong>和<strong>吸水性</strong>（浓硫酸作干燥剂）。<strong>硝酸（HNO₃）</strong>：有强腐蚀性和强氧化性。</p></div>
+  <div class="concept-card"><div class="name">常见碱</div><p><strong>氢氧化钠（NaOH）</strong>：白色固体、俗称<strong>烧碱/火碱/苛性钠</strong>。在空气中易吸收水分而<strong>潮解</strong>（可作干燥剂），也吸收 CO₂ 变质（$2NaOH + CO_2 \rightarrow Na_2CO_3 + H_2O$）→ 必须<strong>密封保存</strong>。<strong>氢氧化钙 Ca(OH)₂</strong>：俗称<strong>熟石灰/消石灰</strong>，微溶于水，其水溶液叫<strong>石灰水</strong>。</p></div>
+  <div class="concept-card"><div class="name">pH——酸碱度的定量表示</div><p>pH 范围通常为 0~14。pH &lt; 7：<strong>酸性</strong>（pH 越小酸性越强）；pH = 7：<strong>中性</strong>；pH ＞ 7：<strong>碱性</strong>（pH 越大碱性越强）。<strong>pH 试纸使用方法</strong>：用<strong>干燥洁净的玻璃棒</strong>蘸取待测液滴到 pH 试纸上，与<strong>标准比色卡</strong>比较读数。不能将试纸直接伸入溶液！</p></div>
+  <div class="concept-card"><div class="name">中和反应</div><p><strong>定义</strong>：酸与碱作用生成<strong>盐</strong>和<strong>水</strong>的反应。通式：酸 + 碱 → 盐 + 水。属于<strong>复分解反应</strong>。<strong>应用</strong>：① 改良酸性土壤——用<strong>熟石灰</strong>（Ca(OH)₂）；② 处理工业废水——酸性废水加碱中和，碱性废水加酸中和；③ 医药——含 Al(OH)₃ 或 NaHCO₃ 的药物中和过多胃酸。</p></div>
+  <div class="concept-card"><div class="name">酸溶液 ≠ 酸性溶液</div><p><strong>酸溶液</strong>：溶质是"酸"的溶液（如盐酸、稀硫酸），一定显酸性。<strong>酸性溶液</strong>：溶质不一定是酸，但溶液显酸性。如 NaHSO₄ 溶液显酸性，但 NaHSO₄ 是<strong>盐</strong>而不是酸。同样，<strong>碱溶液 ≠ 碱性溶液</strong>（如 Na₂CO₃ 溶液显碱性，但 Na₂CO₃ 是盐而非碱）。</p></div>
+</div>
+
+<!-- ====== 模块4: 化学方程式 ====== -->
+<section class="equation-section">
+  <h3>⚗️ 本章核心化学方程式</h3>
+  <table style="width:100%;margin-top:10px;border-collapse:collapse;font-size:13px;">
+    <tr style="background:var(--accent-light);"><th style="padding:8px;text-align:left;border:1px solid var(--border);">#</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">化学方程式</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">反应类型</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">考点</th></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">1</td><td style="padding:8px;border:1px solid var(--border);">$HCl + NaOH \rightarrow NaCl + H_2O$</td><td style="padding:8px;border:1px solid var(--border);">中和反应<br>（复分解）</td><td style="padding:8px;border:1px solid var(--border);">最经典中和反应；无明显现象（需加指示剂判断终点）</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">2</td><td style="padding:8px;border:1px solid var(--border);">$H_2SO_4 + 2NaOH \rightarrow Na_2SO_4 + 2H_2O$</td><td style="padding:8px;border:1px solid var(--border);">中和反应</td><td style="padding:8px;border:1px solid var(--border);">注意配平：2NaOH（因为 H₂SO₄ 提供 2 个 H⁺）</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">3</td><td style="padding:8px;border:1px solid var(--border);">$CO_2 + 2NaOH \rightarrow Na_2CO_3 + H_2O$</td><td style="padding:8px;border:1px solid var(--border);">非中和反应！</td><td style="padding:8px;border:1px solid var(--border);">NaOH 吸收 CO₂ 变质，常用 NaOH 溶液吸收/检验 CO₂</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">4</td><td style="padding:8px;border:1px solid var(--border);">$CO_2 + Ca(OH)_2 \rightarrow CaCO_3\downarrow + H_2O$</td><td style="padding:8px;border:1px solid var(--border);">非中和反应</td><td style="padding:8px;border:1px solid var(--border);"><strong>检验 CO₂</strong> 的方法——澄清石灰水变浑浊</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">5</td><td style="padding:8px;border:1px solid var(--border);">$Zn + H_2SO_4 \rightarrow ZnSO_4 + H_2\uparrow$</td><td style="padding:8px;border:1px solid var(--border);">置换反应</td><td style="padding:8px;border:1px solid var(--border);">实验室制 H₂；酸与活泼金属反应</td></tr>
+  </table>
+</section>
+
+<!-- ====== 模块5: 计算专题 ====== -->
+<section class="calculation-section">
+  <h3>🔢 计算专题：中和反应中溶质质量分数的计算</h3>
+  <p style="margin:8px 0 16px;font-size:13px;color:var(--text-secondary);">核心思路：利用中和反应方程式进行化学计量计算，结合溶质质量分数公式。</p>
+  <div style="background:var(--bg-secondary);padding:14px 18px;border-radius:8px;border-left:4px solid var(--accent);margin-bottom:12px;">
+    <strong>【例题】</strong>用 20 g 20% 的 NaOH 溶液与一定量稀盐酸恰好完全反应，求：(1) 参加反应的 HCl 的质量；(2) 若稀盐酸的溶质质量分数为 10%，求所用稀盐酸的质量。<br><br>
+    <strong>解：</strong>NaOH 质量 = $20 \times 20\% = 4\ g$<br>
+    $HCl + NaOH \rightarrow NaCl + H_2O$<br>
+    36.5 → 40<br>
+    $x \rightarrow 4$<br>
+    $x = \dfrac{4 \times 36.5}{40} = 3.65\ g$（HCl 质量）<br>
+    稀盐酸质量 = $\dfrac{3.65}{10\%} = 36.5\ g$<br>
+    <strong>答：</strong>参加反应的 HCl 为 3.65 g，需 10% 稀盐酸 36.5 g。
+  </div>
+</section>
+
+<!-- ====== 模块6: 实验安全 + 易错 ====== -->
+<section class="safety-pitfall">
+  <h3>🚨 安全与常见错误</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:13px;margin-top:10px;">
+    <div style="background:var(--bg);padding:10px 14px;border-radius:6px;border:1px solid var(--border);">
+      <strong style="color:var(--chem-red);">🔴 实验安全</strong>
+      <p><strong>浓硫酸稀释</strong>：酸入水、沿内壁、慢倒入、不断搅。严禁水入酸！<br>
+      <strong>浓硫酸腐蚀性</strong>：若不慎溅到皮肤上——先用<strong>干布拭去</strong>，再用大量水冲洗，最后涂 3%~5% NaHCO₃ 溶液。<br>
+      <strong>NaOH 固体保存</strong>：必须<strong>密封</strong>——因为它既<strong>潮解</strong>（吸收空气中水分），又吸收 CO₂ 变质。</p>
+    </div>
+    <div style="background:var(--bg);padding:10px 14px;border-radius:6px;border:1px solid var(--border);">
+      <strong style="color:var(--chem-yellow);">⚠️ 最高频易错</strong>
+      <p>❌ pH ＜ 7 是酸性，pH ＞ 7 是碱性——<strong>不是反比关系</strong>！不能说"pH 越小酸性越弱"。<br>
+      ❌ <strong>酸溶液</strong>（溶质是酸）一定显酸性，但<strong>酸性溶液</strong>不一定是酸溶液（如 NaHSO₄ 是盐）。<br>
+      ❌ 中和反应一定生成盐和水，但<strong>生成盐和水的反应不一定是中和反应</strong>（如 $CO_2 + 2NaOH \rightarrow Na_2CO_3 + H_2O$ 不是中和反应——CO₂ 不是酸，只是酸性氧化物）。<br>
+      ❌ pH 试纸不能用水润湿——会稀释待测液，导致 pH 测量不准。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 模块7: 中考真题 ====== -->
+<details class="exam-module" open>
+<summary>🎯 中考真题精选（酸和碱 · 近年典型）</summary>
+<div class="content">
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九下</span><span class="q-diff easy">★☆☆</span>
+  <div class="q-body">能使紫色石蕊溶液变红的物质是（ ）<br>A. NaOH 溶液 &nbsp; B. 稀盐酸 &nbsp; C. 蒸馏水 &nbsp; D. 石灰水</div>
+  <div class="q-solution"><strong>答案：B</strong><br><strong>🔑 关键思路：</strong>石蕊遇酸变红。"酸红碱蓝中为紫"——稀盐酸是酸 → 变红；NaOH 溶液和石灰水是碱 → 变蓝。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九下</span><span class="q-diff mid">★★☆</span>
+  <div class="q-body">下列关于浓硫酸稀释操作的说法，正确的是（ ）<br>A. 将水倒入浓硫酸中 &nbsp; B. 将浓硫酸沿容器内壁缓慢注入水中并搅拌 &nbsp; C. 不需要搅拌 &nbsp; D. 倒入顺序无所谓</div>
+  <div class="q-solution"><strong>答案：B</strong><br><strong>🔑 关键思路：</strong>浓硫酸稀释必须"酸入水、沿内壁、慢倒入、不断搅拌"。水的密度比浓硫酸小，水倒入酸中会浮在表面，剧烈放热导致飞溅。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九下</span><span class="q-diff mid">★★☆</span>
+  <div class="q-body">用 pH 试纸测定溶液 pH 的正确操作是（ ）<br>A. 将 pH 试纸伸入溶液中 &nbsp; B. 用玻璃棒蘸取待测液滴在 pH 试纸上，与标准比色卡比较 &nbsp; C. 先用蒸馏水润湿 pH 试纸，再滴上待测液 &nbsp; D. 读取 pH 试纸上的数字</div>
+  <div class="q-solution"><strong>答案：B</strong><br><strong>⚠️ 易错：</strong>A 会污染试剂；C 润湿会稀释待测液，导致测定值不准确（酸性溶液测出 pH 偏大，碱性溶液测出 pH 偏小）；D pH 试纸没有数字，需与比色卡对照。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+<div class="exam-q">
+  <span class="q-tag" style="background:#4f46e5;">九下</span><span class="q-diff hard">★★★</span>
+  <div class="q-body">向滴有酚酞的 NaOH 溶液中逐滴滴加稀盐酸，至溶液恰好变为无色。下列说法正确的是（ ）<br>A. 此时溶液的 pH ＞ 7 &nbsp; B. 反应的化学方程式为 $NaOH + HCl \rightarrow NaCl + H_2O$ &nbsp; C. 溶液变为无色说明酚酞已不存在 &nbsp; D. 继续滴加稀盐酸，溶液会重新变红</div>
+  <div class="q-solution"><strong>答案：B</strong><br><strong>🔑 关键思路：</strong>酚酞在碱中显红色，中和后变为中性→酚酞在<strong>中性和酸性</strong>溶液中均为无色，"恰好变为无色"说明 NaOH 恰好被中和→pH≈7（A错）。酚酞没有消失，只是在中性/酸性中呈无色（C错）。继续加酸，溶液仍为无色（D错）。</div>
+  <div class="q-toggle">💡 显示/隐藏解析</div>
+</div>
+
+</div>
+</details>
+
+<!-- ====== 模块8: 实验探究设计 ====== -->
+<section class="experiment-design">
+  <h3>🔬 实验探究设计：用 pH 试纸测定生活中常见物质的酸碱性</h3>
+  <p style="margin:8px 0 14px;">设计思路：收集生活中常见液体，用 pH 试纸逐一测定，与标准比色卡对比，记录 pH 值和酸碱性。</p>
+  <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:12px;">
+    <tr style="background:var(--accent-light);"><th style="padding:8px;text-align:left;border:1px solid var(--border);">物质</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">预期 pH 范围</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">酸碱性</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">原因</th></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">食醋（白醋）</td><td style="padding:8px;border:1px solid var(--border);">2~3</td><td style="padding:8px;border:1px solid var(--border);">酸性</td><td style="padding:8px;border:1px solid var(--border);">含醋酸 CH₃COOH</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">肥皂水</td><td style="padding:8px;border:1px solid var(--border);">9~10</td><td style="padding:8px;border:1px solid var(--border);">碱性</td><td style="padding:8px;border:1px solid var(--border);">含碱性物质</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">自来水</td><td style="padding:8px;border:1px solid var(--border);">约 6.5~7.5</td><td style="padding:8px;border:1px solid var(--border);">近中性</td><td style="padding:8px;border:1px solid var(--border);">经过处理的自来水</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">柠檬汁</td><td style="padding:8px;border:1px solid var(--border);">2~3</td><td style="padding:8px;border:1px solid var(--border);">酸性</td><td style="padding:8px;border:1px solid var(--border);">含柠檬酸</td></tr>
+    <tr><td style="padding:8px;border:1px solid var(--border);">苏打水</td><td style="padding:8px;border:1px solid var(--border);">8~9</td><td style="padding:8px;border:1px solid var(--border);">弱碱性</td><td style="padding:8px;border:1px solid var(--border);">含 NaHCO₃</td></tr>
+  </table>
+  <p><strong>操作要点：</strong>pH 试纸不可润湿，不可伸入待测液中；用干净玻璃棒蘸取，与比色卡在自然光下对比。</p>
+</section>
+
+<!-- ====== 模块9: 自查清单 + 间隔复习 ====== -->
+<div class="checklist">
+  <h3>✅ 本章自查清单</h3>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能准确描述石蕊和酚酞在不同溶液中的变色规律</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能说出浓硫酸稀释的正确操作步骤和安全原因</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能从微观角度解释酸/碱通性的来源和中和反应的实质</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能正确书写 5 个核心化学方程式</label>
+  <label><span class="self-score">🔴→🟡→🟢</span> 能区分"酸溶液 vs 酸性溶液"和"中和反应 vs 生成盐和水的反应"</label>
+  <p style="margin-top:12px;color:var(--accent);border-top:1px dashed var(--border);padding-top:12px;"><strong>🗣 费曼挑战：</strong>用离子方程式 H⁺ + OH⁻ → H₂O 解释所有中和反应的共同本质。用"酸入水"的原理解释为什么浓硫酸稀释不能反过来操作。</p>
+</div>
+
+<div class="review-schedule">
+  <strong>📅 间隔复习</strong>
+  <span class="review-dot">🔵 1天后：默写5个核心方程式 + 石蕊/酚酞变色表</span>
+  <span class="review-dot">🟢 3天后：做中和反应计算题5道</span>
+  <span class="review-dot">🟡 1周后：讲解酸的通性来自H⁺、碱的通性来自OH⁻</span>
+  <span class="review-dot">🔴 1月后：做本章中考真题4题</span>
+</div>
+
+<!-- ====== 模块10: 下一站 ====== -->
+<div class="next-stop">
+  <strong>➡️ 下一站：盐·化肥</strong><br>
+  酸 + 碱 → 盐 + 水。你刚刚学过了中和反应生成<strong>盐</strong>。下一章我们将深入认识盐的世界——食盐（NaCl）不只是调味品，纯碱（Na₂CO₃）其实不是碱而是盐！还有复分解反应的条件、化肥的分类和使用——盐的知识将带你走进应用化学的大门。
+</div>
+
+<!-- 章内翻页 -->
+<div style="display:flex;justify-content:space-between;margin:30px 0;padding-top:16px;border-top:1px solid var(--border);font-size:13px;">
+  <a href="ch09.html" style="color:var(--accent);">← 第9章</a>
+  <a href="ch11.html" style="color:var(--accent);">第11章 →</a>
+</div>
+
+</main>
+
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+(function(){
+  var k='chemistry-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+  document.documentElement.setAttribute('data-theme',t);
+  var b=document.getElementById('theme-toggle');if(b)b.textContent=t==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
+  b.addEventListener('click',function(){
+    var c=document.documentElement.getAttribute('data-theme'),n=c==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',n);localStorage.setItem(k,n);
+    b.textContent=n==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
+  });
+})();
+(function(){
+  var s=document.getElementById('sidebar'),k='chemistry-sidebar';
+  if(localStorage.getItem(k)==='hidden')s.classList.add('hidden');
+  document.getElementById('sidebarHideBtn').addEventListener('click',function(){s.classList.add('hidden');localStorage.setItem(k,'hidden')});
+  document.getElementById('sidebarShowBtn').addEventListener('click',function(){s.classList.remove('hidden');localStorage.setItem(k,'')});
+})();
+(function(){
+  var b=document.getElementById('expandAllBtn');if(!b)return;
+  b.addEventListener('click',function(){
+    var a=document.querySelectorAll('.exam-module,details'),o=true;
+    for(var i=0;i<a.length;i++)if(!a[i].hasAttribute('open')){o=false;break}
+    for(var i=0;i<a.length;i++){if(o)a[i].removeAttribute('open');else a[i].setAttribute('open','')}
+    b.textContent=o?'📂 展开全部章节':'📖 收起全部章节';
+  });
+})();
+window.addEventListener('scroll',function(){document.getElementById('backToTop').style.display=scrollY>400?'block':'none'});
+document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution')})});
+</script>
+</body>
+</html>

@@ -25,7 +25,7 @@
     <a href="#selfstudy">🚀 快速自学技巧</a>
     <a href="index.html" style="margin-top:12px;border-top:1px solid var(--border);padding-top:12px;font-weight:600;">← 返回首页</a>
   </nav>
-  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
   <button class="theme-toggle" id="themeToggle" style="margin-top:10px;">🌓 切换深色模式</button>
   <button class="print-btn" onclick="window.print()" style="margin-top:8px;padding:8px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px;width:100%;">🖨️ 打印 / 存 PDF</button>
 </div>
@@ -668,7 +668,7 @@
         if (allOpen) allDetails[i].removeAttribute('open');
         else allDetails[i].setAttribute('open', '');
       }
-      btn.textContent = allOpen ? '📂 展开全部章节' : '📖 收起全部章节';
+      btn.textContent = allOpen ? '📂 展开全部模块' : '📖 收起全部模块';
     });
   })();
   })();

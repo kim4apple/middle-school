@@ -33,7 +33,7 @@
     <a href="ch12.html">第12章 化学与生活</a>
     <a href="appendix.html">📚 附录</a>
   </nav>
-  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
   <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
   <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
 </nav>
@@ -58,6 +58,17 @@
   <div class="exp-step"><span class="exp-step-num">3</span><span>观察：铁钉表面附着了一层<strong>红色固体</strong>（铜 Cu），溶液颜色由<strong>蓝色逐渐变为浅绿色</strong>（FeSO₄）。</span></div>
   <div class="exp-step"><span class="exp-step-num">4</span><span>化学方程式：Fe + CuSO₄ → FeSO₄ + Cu。这是<strong>湿法炼铜</strong>的原理——用较活泼金属将较不活泼金属从其盐溶液中置换出来。</span></div>
   <p style="margin-top:12px;font-weight:700;color:var(--chem-green);">📋 结论：铁比铜活泼（活动性：Fe ＞ Cu），铁能将铜从硫酸铜溶液中置换出来。</p>
+</section>
+
+<!-- ====== CO还原Fe₂O₃实验 ====== -->
+<section class="experiment-observation" style="margin-top:16px;">
+  <div class="exp-title">🧪 实验：一氧化碳还原氧化铁（实验室模拟炼铁）</div>
+  <div class="exp-step"><span class="exp-step-num">1</span><span>组装装置：硬质玻璃管中装入少量<strong>红棕色 Fe₂O₃ 粉末</strong>，先通入 CO 排尽装置内空气（<strong>防止加热时发生爆炸</strong>）。</span></div>
+  <div class="exp-step"><span class="exp-step-num">2</span><span>点燃酒精喷灯加热，观察：红棕色粉末逐渐变为<strong>黑色</strong>（铁粉）。</span></div>
+  <div class="exp-step"><span class="exp-step-num">3</span><span>将产生的气体通入澄清石灰水——石灰水变<strong>浑浊</strong>（证明生成了 CO₂）。</span></div>
+  <div class="exp-step"><span class="exp-step-num">4</span><span><strong>⚠️ 尾气处理：</strong>实验结束后继续通 CO 直到装置冷却（防止灼烧的铁重新被氧化），尾气中的 CO 必须<strong>点燃</strong>或用气囊收集（CO 有毒！）。</span></div>
+  <p style="margin-top:10px;"><strong>化学方程式：</strong>Fe₂O₃ + 3CO →(高温) 2Fe + 3CO₂</p>
+  <p style="margin-top:4px;font-size:13px;color:var(--text-secondary);"><strong>中考高频考点：</strong>① 先通CO再加热（排尽空气防爆）② 尾气处理（CO有毒，点燃或收集）③ 红棕色变黑色 ④ 石灰水变浑浊 ⑤ 实验结束后继续通CO至冷却。</p>
 </section>
 
 <!-- ====== 模块2: 微观解释 ====== -->
@@ -102,6 +113,22 @@
     <span style="background:#4f46e5;color:#fff;padding:6px 10px;border-radius:6px;font-weight:700;">Au</span>
   </div>
   <p style="font-size:11px;color:var(--text-secondary);margin-top:8px;">← 金属活动性由强到弱 → · H前金属可置换酸中的氢 · 前位金属可从盐溶液中置换后位金属</p>
+</div>
+
+<div style="background:var(--bg-secondary);border-radius:8px;padding:16px;margin:16px 0;">
+  <h4 style="margin-bottom:8px;">🎯 自测：比较金属活动性</h4>
+  <p style="font-size:13px;margin-bottom:10px;color:var(--text-secondary);">选择两种金属，比较它们的活动性强弱：</p>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+    <select id="metalA" style="flex:1;min-width:80px;padding:6px 10px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:14px;">
+      <option value="K">K 钾</option><option value="Ca">Ca 钙</option><option value="Na">Na 钠</option><option value="Mg">Mg 镁</option><option value="Al">Al 铝</option><option value="Zn">Zn 锌</option><option value="Fe">Fe 铁</option><option value="Sn">Sn 锡</option><option value="Pb">Pb 铅</option><option value="Cu">Cu 铜</option><option value="Hg">Hg 汞</option><option value="Ag">Ag 银</option><option value="Pt">Pt 铂</option><option value="Au">Au 金</option>
+    </select>
+    <span><strong>vs</strong></span>
+    <select id="metalB" style="flex:1;min-width:80px;padding:6px 10px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:14px;">
+      <option value="K">K 钾</option><option value="Ca">Ca 钙</option><option value="Na">Na 钠</option><option value="Mg">Mg 镁</option><option value="Al">Al 铝</option><option value="Zn">Zn 锌</option><option value="Fe">Fe 铁</option><option value="Sn">Sn 锡</option><option value="Pb">Pb 铅</option><option value="Cu">Cu 铜</option><option value="Hg">Hg 汞</option><option value="Ag">Ag 银</option><option value="Pt">Pt 铂</option><option value="Au">Au 金</option>
+    </select>
+    <button onclick="compareMetals()" style="padding:8px 16px;border-radius:6px;border:none;background:var(--accent);color:#fff;cursor:pointer;font-size:13px;">比较</button>
+  </div>
+  <div id="metalResult" style="margin-top:10px;padding:10px 14px;border-radius:6px;font-size:14px;display:none;"></div>
 </div>
 
 <!-- ====== 模块4: 化学方程式 ====== -->
@@ -283,7 +310,7 @@ try { renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',displ
     var a=document.querySelectorAll('.exam-module,details'),o=true;
     for(var i=0;i<a.length;i++)if(!a[i].hasAttribute('open')){o=false;break}
     for(var i=0;i<a.length;i++){if(o)a[i].removeAttribute('open');else a[i].setAttribute('open','')}
-    b.textContent=o?'📂 展开全部章节':'📖 收起全部章节';
+    b.textContent=o?'📂 展开全部模块':'📖 收起全部模块';
   });
 })();
 
@@ -292,6 +319,18 @@ window.addEventListener('scroll',function(){var b=document.getElementById('backT
 
 // Solution toggle
 document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution')})});
+
+function compareMetals(){
+  var order=['K','Ca','Na','Mg','Al','Zn','Fe','Sn','Pb','(H)','Cu','Hg','Ag','Pt','Au'];
+  var a=document.getElementById('metalA').value;
+  var b=document.getElementById('metalB').value;
+  var ia=order.indexOf(a);var ib=order.indexOf(b);
+  var r=document.getElementById('metalResult');r.style.display='block';
+  if(a===b){r.innerHTML='❌ 请选择<strong>两种不同</strong>的金属！';r.style.background='var(--bg-secondary)';r.style.border='1px solid var(--border)';r.style.color='var(--text)';return;}
+  if(ia<ib){r.innerHTML='✅ <strong>'+a+'</strong> 比 <strong>'+b+'</strong> 更活泼。<br>'+a+' 位于活动性顺序中 '+b+' 的前面，可以置换 '+b+' 的盐溶液中的 '+b+'。';r.style.background='rgba(34,197,94,0.1)';r.style.border='1px solid #22c55e';r.style.color='var(--text)';}
+  else{r.innerHTML='✅ <strong>'+b+'</strong> 比 <strong>'+a+'</strong> 更活泼。<br>'+b+' 位于活动性顺序中 '+a+' 的前面，可以置换 '+a+' 的盐溶液中的 '+a+'。';r.style.background='rgba(34,197,94,0.1)';r.style.border='1px solid #22c55e';r.style.color='var(--text)';}
+  if((ia<5&&ib>=5)||(ia>=5&&ib<5)){r.innerHTML+='<br><span style="font-size:12px;color:var(--text-secondary);">💡 注意：'+a+' 和 '+b+' 分别在 H 的两侧，活动性差距较大。</span>';}
+}
 </script>
 <script src="lib/3dmol-min.js"></script>
 <script>
@@ -300,7 +339,7 @@ document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('c
   if (!GL || !GL.createViewer) return;
   var el = document.getElementById('viewer-ch08');
   if (!el) return;
-  var viewer = GL.createViewer(el, { backgroundColor: '0x1e293b' });
+  var viewer = GL.createViewer(el, { backgroundColor: document.documentElement.getAttribute('data-theme')==='dark'?'0x1e293b':'0xf1f5f9' });
   var s = 2.5;
   for (var x = -1; x <= 1; x++)
     for (var y = -1; y <= 1; y++)
@@ -312,6 +351,7 @@ document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('c
   for (var i = 0; i < 20; i++)
     viewer.addSphere({ center: {x:(Math.random()-0.5)*6, y:(Math.random()-0.5)*6, z:(Math.random()-0.5)*6}, radius: 0.13, color: '#0891b2', opacity: 0.7 });
   viewer.zoomTo(); viewer.render();
+  if(!window._3dV){window._3dV=[];new MutationObserver(function(){var _b=document.documentElement.getAttribute('data-theme')==='dark'?'0x1e293b':'0xf1f5f9';window._3dV.forEach(function(v){v.setBackgroundColor(_b);v.render()})}).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']})}window._3dV.push(viewer);
 })();
 </script>
 </body>

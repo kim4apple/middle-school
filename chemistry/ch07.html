@@ -33,7 +33,7 @@
     <a href="ch12.html">第12章 化学与生活</a>
     <a href="appendix.html">📚 附录</a>
   </nav>
-  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
   <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
   <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
 </nav>
@@ -77,11 +77,11 @@
 <!-- ====== 模块4: 化学方程式 ====== -->
 <h3 style="margin:20px 0 12px;color:var(--accent);">⚗️ 化学方程式</h3>
 <div style="background:var(--bg);padding:12px 16px;border-radius:8px;border:1px solid var(--border);font-size:14px;">
-  <p style="margin:6px 0;">① 甲烷燃烧（天然气燃烧）：<strong>CH₄ + 2O₂ → CO₂ + 2H₂O</strong>（蓝色火焰，热值高）</p>
-  <p style="margin:6px 0;">② 氢气燃烧：<strong>2H₂ + O₂ → 2H₂O</strong>（淡蓝色火焰，产物只有水——最清洁燃料）</p>
-  <p style="margin:6px 0;">③ 乙醇燃烧：<strong>C₂H₅OH + 3O₂ → 2CO₂ + 3H₂O</strong>（可再生燃料——乙醇汽油）</p>
-  <p style="margin:6px 0;">④ 碳充分燃烧：<strong>C + O₂ → CO₂</strong>（复习第6章）</p>
-  <p style="margin:6px 0;">⑤ 白磷燃烧：<strong>4P + 5O₂ → 2P₂O₅</strong>（复习——用于测空气中O₂含量）</p>
+  <p style="margin:6px 0;">① 甲烷燃烧（天然气燃烧）：<strong>CH₄ + 2O₂ $\xrightarrow{点燃}$ CO₂ + 2H₂O</strong>（蓝色火焰，热值高）</p>
+  <p style="margin:6px 0;">② 氢气燃烧：<strong>2H₂ + O₂ $\xrightarrow{点燃}$ 2H₂O</strong>（淡蓝色火焰，产物只有水——最清洁燃料）</p>
+  <p style="margin:6px 0;">③ 乙醇燃烧：<strong>C₂H₅OH + 3O₂ $\xrightarrow{点燃}$ 2CO₂ + 3H₂O</strong>（可再生燃料——乙醇汽油）</p>
+  <p style="margin:6px 0;">④ 碳充分燃烧：<strong>C + O₂ $\xrightarrow{点燃}$ CO₂</strong>（复习第6章）</p>
+  <p style="margin:6px 0;">⑤ 白磷燃烧：<strong>4P + 5O₂ $\xrightarrow{点燃}$ 2P₂O₅</strong>（复习——用于测空气中O₂含量）</p>
 </div>
 
 <!-- ====== 模块5: 计算专题 ====== -->
@@ -239,7 +239,7 @@ try { renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',displ
     var a=document.querySelectorAll('.exam-module,details'),o=true;
     for(var i=0;i<a.length;i++)if(!a[i].hasAttribute('open')){o=false;break}
     for(var i=0;i<a.length;i++){if(o)a[i].removeAttribute('open');else a[i].setAttribute('open','')}
-    b.textContent=o?'📂 展开全部章节':'📖 收起全部章节';
+    b.textContent=o?'📂 展开全部模块':'📖 收起全部模块';
   });
 })();
 

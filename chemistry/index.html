@@ -167,7 +167,7 @@ try { renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',displ
     var a=document.querySelectorAll('.exam-module,details'),o=true;
     for(var i=0;i<a.length;i++)if(!a[i].hasAttribute('open')){o=false;break}
     for(var i=0;i<a.length;i++){if(o)a[i].removeAttribute('open');else a[i].setAttribute('open','')}
-    b.textContent=o?'📂 展开全部章节':'📖 收起全部章节';
+    b.textContent=o?'📂 展开全部模块':'📖 收起全部模块';
   });
 })();
 

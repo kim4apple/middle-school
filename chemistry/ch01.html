@@ -33,7 +33,7 @@
     <a href="ch12.html">第12章 化学与生活</a>
     <a href="appendix.html">📚 附录</a>
   </nav>
-  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
   <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
   <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
 </nav>
@@ -79,7 +79,7 @@
 <h3 style="margin:20px 0 12px;color:var(--accent);">📖 核心概念</h3>
 <div class="card-grid">
   <div class="concept-card"><div class="name">化学变化（化学反应）</div><p>生成<strong>新物质</strong>的变化。特征：伴随发光、发热、变色、生成气体或沉淀等现象（但现象不是判断依据——本质是是否生成新物质）。</p></div>
-  <div class="concept-card"><div class="name">物理变化</div><p>没有生成新物质的变化。如：物质三态变化（熔化、凝固、汽化）、形状改变、溶解（如食盐溶于水——NaCl分子没有改变）。</p></div>
+  <div class="concept-card"><div class="name">物理变化</div><p>没有生成新物质的变化。如：物质三态变化（熔化、凝固、汽化）、形状改变、溶解（如食盐溶于水——Na⁺ 和 Cl⁻ 离子只是分散到水中，没有生成新物质）。</p></div>
   <div class="concept-card"><div class="name">化学性质</div><p>物质在<strong>化学变化</strong>中表现出来的性质。如：可燃性（蜡烛能燃烧）、氧化性、还原性、酸碱性、腐蚀性。关键词："能/可以/会" + 化学变化。</p></div>
   <div class="concept-card"><div class="name">物理性质</div><p>物质<strong>不需要</strong>发生化学变化就表现出来的性质。如：颜色、状态、气味、熔点、沸点、密度、硬度、溶解性、导电性。可直接观察或测量。</p></div>
   <div class="concept-card"><div class="name">化学实验基本操作</div><p>① 药品取用：固体用<strong>药匙</strong>或<strong>镊子</strong>，液体用<strong>胶头滴管</strong>或直接倾倒；② 加热：试管口<strong>不对人</strong>，先预热再集中加热；③ 闻气体：<strong>扇闻法</strong>（用手在瓶口轻轻扇动，使少量气体飘入鼻孔）。</p></div>
@@ -223,7 +223,7 @@ try { renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',displ
     var a=document.querySelectorAll('.exam-module,details'),o=true;
     for(var i=0;i<a.length;i++)if(!a[i].hasAttribute('open')){o=false;break}
     for(var i=0;i<a.length;i++){if(o)a[i].removeAttribute('open');else a[i].setAttribute('open','')}
-    b.textContent=o?'📂 展开全部章节':'📖 收起全部章节';
+    b.textContent=o?'📂 展开全部模块':'📖 收起全部模块';
   });
 })();
 

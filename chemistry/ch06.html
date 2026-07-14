@@ -33,7 +33,7 @@
     <a href="ch12.html">第12章 化学与生活</a>
     <a href="appendix.html">📚 附录</a>
   </nav>
-  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
   <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
   <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
 </nav>
@@ -264,7 +264,7 @@ try { renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',displ
     var a=document.querySelectorAll('.exam-module,details'),o=true;
     for(var i=0;i<a.length;i++)if(!a[i].hasAttribute('open')){o=false;break}
     for(var i=0;i<a.length;i++){if(o)a[i].removeAttribute('open');else a[i].setAttribute('open','')}
-    b.textContent=o?'📂 展开全部章节':'📖 收起全部章节';
+    b.textContent=o?'📂 展开全部模块':'📖 收起全部模块';
   });
 })();
 
@@ -281,7 +281,7 @@ document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('c
   if (!GL || !GL.createViewer) return;
   var el = document.getElementById('viewer-ch06');
   if (!el) return;
-  var viewer = GL.createViewer(el, { backgroundColor: '0x1e293b' });
+  var viewer = GL.createViewer(el, { backgroundColor: document.documentElement.getAttribute('data-theme')==='dark'?'0x1e293b':'0xf1f5f9' });
   var desc = document.getElementById('desc-ch06');
   
   function buildDiamond() {
@@ -331,6 +331,7 @@ document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('c
   window.showGraphite = buildGraphite;
   window.showC60 = buildC60;
   buildDiamond();
+  if(!window._3dV){window._3dV=[];new MutationObserver(function(){var _b=document.documentElement.getAttribute('data-theme')==='dark'?'0x1e293b':'0xf1f5f9';window._3dV.forEach(function(v){v.setBackgroundColor(_b);v.render()})}).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']})}window._3dV.push(viewer);
 })();
 </script>
 </body>

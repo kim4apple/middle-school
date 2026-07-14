@@ -33,7 +33,7 @@
     <a href="ch12.html">第12章 化学与生活</a>
     <a href="appendix.html">📚 附录</a>
   </nav>
-  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
   <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
   <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
 </nav>
@@ -99,6 +99,14 @@
   <h4 style="margin-bottom:8px;">📈 酸碱中和滴定曲线 (强酸+强碱)</h4>
   <canvas id="titrationChart" style="max-height:300px;"></canvas>
   <p style="font-size:11px;color:var(--text-secondary);margin-top:6px;">突跃范围：pH 4-10。指示剂选择：甲基橙(pH3.1-4.4)或酚酞(pH8.2-10.0)。</p>
+</div>
+
+<div style="background:var(--bg-secondary);border-radius:8px;padding:14px 18px;margin:12px 0;font-size:13px;line-height:2;">
+  <h4 style="margin-bottom:6px;">🧪 中和滴定操作要点</h4>
+  <p>① <strong>仪器：</strong>酸式滴定管（装酸）、碱式滴定管（装碱）、锥形瓶、铁架台。</p>
+  <p>② <strong>操作：</strong>从滴定管向锥形瓶中逐滴加入酸（或碱），边滴边<strong>摇匀</strong>。</p>
+  <p>③ <strong>终点判断：</strong>以酚酞为例——溶液由红色刚好变为<strong>无色</strong>（且半分钟内不变回红色），即为滴定终点。</p>
+  <p>④ <strong>重复：</strong>至少做<strong>2次平行实验</strong>，取平均值减少误差。</p>
 </div>
 
 <!-- ====== 模块4: 化学方程式 ====== -->
@@ -201,6 +209,15 @@
   <p><strong>操作要点：</strong>pH 试纸不可润湿，不可伸入待测液中；用干净玻璃棒蘸取，与比色卡在自然光下对比。</p>
 </section>
 
+<!-- ====== NaOH变质探究 ====== -->
+<section class="experiment-design" style="margin-top:16px;">
+  <h3>🔬 实验探究：氢氧化钠是否变质？是否完全变质？</h3>
+  <p style="margin:8px 0;"><strong>变质原理：</strong>NaOH 与空气中 CO₂ 反应：2NaOH + CO₂ → Na₂CO₃ + H₂O。检验 NaOH 是否变质 = 检验是否存在 Na₂CO₃。</p>
+  <p style="margin:6px 0;"><strong>方案一（检验是否变质）：</strong>取少量样品溶于水，滴加足量稀盐酸——有<strong>气泡</strong>产生（CO₂），说明已变质（Na₂CO₃ 存在）。</p>
+  <p style="margin:6px 0;"><strong>方案二（检验是否完全变质）：</strong>① 取少量样品溶于水，加入<strong>过量 CaCl₂ 溶液</strong>（除去所有 Na₂CO₃），过滤；② 向滤液中滴加无色酚酞——若<strong>变红</strong>，说明仍有 NaOH（部分变质）；若<strong>不变红</strong>，说明 NaOH 已完全变质。</p>
+  <p style="margin:6px 0;color:var(--accent);"><strong>关键理解：</strong>不能直接用酚酞检验！因为 Na₂CO₃ 溶液也呈碱性（会使酚酞变红）。必须先用 CaCl₂/BaCl₂ 除去 CO₃²⁻，再检验 OH⁻。</p>
+</section>
+
 <!-- ====== 模块9: 自查清单 + 间隔复习 ====== -->
 <div class="checklist">
   <h3>✅ 本章自查清单</h3>
@@ -271,7 +288,7 @@ try { renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',displ
     var a=document.querySelectorAll('.exam-module,details'),o=true;
     for(var i=0;i<a.length;i++)if(!a[i].hasAttribute('open')){o=false;break}
     for(var i=0;i<a.length;i++){if(o)a[i].removeAttribute('open');else a[i].setAttribute('open','')}
-    b.textContent=o?'📂 展开全部章节':'📖 收起全部章节';
+    b.textContent=o?'📂 展开全部模块':'📖 收起全部模块';
   });
 })();
 
@@ -282,11 +299,15 @@ window.addEventListener('scroll',function(){var b=document.getElementById('backT
 document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution')})});
 
 // Titration chart
+function chartColors(){ return document.documentElement.getAttribute('data-theme')==='dark' ? {grid:'#334155',tick:'#94a3b8'} : {grid:'#e2e8f0',tick:'#64748b'}; }
 (function(){
   var c=document.getElementById('titrationChart');if(!c||typeof Chart==='undefined')return;
-  new Chart(c,{type:'line',data:{labels:['0','5','10','15','18','19','19.5','20','20.5','21','22','25','30'],datasets:[
+  var cc=chartColors();
+  var chart=new Chart(c,{type:'line',data:{labels:['0','5','10','15','18','19','19.5','20','20.5','21','22','25','30'],datasets:[
     {label:'pH',data:[1.0,1.2,1.5,2.0,2.5,3.0,3.5,7.0,10.5,11.0,11.5,12.0,12.5],borderColor:'#0891b2',tension:0.4,pointRadius:3,pointBackgroundColor:'#0891b2'}
-  ]},options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{title:{display:true,text:'NaOH体积/mL',color:'#94a3b8'},ticks:{color:'#94a3b8'}},y:{title:{display:true,text:'pH',color:'#94a3b8'},ticks:{color:'#94a3b8'},min:0,max:14}}}});
+  ]},options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{grid:{color:cc.grid},title:{display:true,text:'NaOH体积/mL',color:cc.tick},ticks:{color:cc.tick}},y:{grid:{color:cc.grid},title:{display:true,text:'pH',color:cc.tick},ticks:{color:cc.tick},min:0,max:14}}}});
+  var observer=new MutationObserver(function(){var nc=chartColors();chart.options.scales.x.grid.color=nc.grid;chart.options.scales.x.ticks.color=nc.tick;chart.options.scales.x.title.color=nc.tick;chart.options.scales.y.grid.color=nc.grid;chart.options.scales.y.ticks.color=nc.tick;chart.options.scales.y.title.color=nc.tick;chart.update()});
+  observer.observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
 })();
 </script>
 <script src="lib/3dmol-min.js"></script>
@@ -296,7 +317,7 @@ document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('c
   if (!GL || !GL.createViewer) return;
   var el = document.getElementById('viewer-ch10');
   if (!el) return;
-  var viewer = GL.createViewer(el, { backgroundColor: '0x1e293b' });
+  var viewer = GL.createViewer(el, { backgroundColor: document.documentElement.getAttribute('data-theme')==='dark'?'0x1e293b':'0xf1f5f9' });
   viewer.addSphere({ center: {x:-3,y:1,z:0}, radius: 0.35, color: '#dc2626' });
   viewer.addSphere({ center: {x:-3,y:-1,z:0}, radius: 0.35, color: '#dc2626' });
   viewer.addSphere({ center: {x:3,y:1,z:0}, radius: 0.5, color: '#4f46e5' });
@@ -305,6 +326,7 @@ document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('c
   viewer.addSphere({ center: {x:0.8,y:0.7,z:0}, radius: 0.3, color: '#e2e8f0' });
   viewer.addSphere({ center: {x:0.8,y:-0.7,z:0}, radius: 0.3, color: '#e2e8f0' });
   viewer.zoomTo(); viewer.render();
+  if(!window._3dV){window._3dV=[];new MutationObserver(function(){var _b=document.documentElement.getAttribute('data-theme')==='dark'?'0x1e293b':'0xf1f5f9';window._3dV.forEach(function(v){v.setBackgroundColor(_b);v.render()})}).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']})}window._3dV.push(viewer);
 })();
 </script>
 <script src="lib/chart.umd.min.js"></script>

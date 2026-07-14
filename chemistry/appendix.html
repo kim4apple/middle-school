@@ -33,7 +33,7 @@
     <a href="ch12.html">第12章 化学与生活</a>
     <a href="appendix.html" class="active">📚 附录</a>
   </nav>
-  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
   <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
   <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
 </nav>
@@ -73,7 +73,7 @@
     <tr><td style="padding:6px 8px;border:1px solid var(--border);">11</td><td style="padding:6px 8px;border:1px solid var(--border);">$CO_2 + C \xrightarrow{高温} 2CO$</td><td style="padding:6px 8px;border:1px solid var(--border);">碳还原CO₂（高炉中CO来源）</td></tr>
     <tr><td style="padding:6px 8px;border:1px solid var(--border);">12</td><td style="padding:6px 8px;border:1px solid var(--border);">$2Na + Cl_2 \xrightarrow{点燃} 2NaCl$</td><td style="padding:6px 8px;border:1px solid var(--border);">钠与氯气化合</td></tr>
     <tr><td style="padding:6px 8px;border:1px solid var(--border);">13</td><td style="padding:6px 8px;border:1px solid var(--border);">$2Al + 3O_2 \xrightarrow{点燃} 2Al_2O_3$</td><td style="padding:6px 8px;border:1px solid var(--border);">铝在氧气中燃烧</td></tr>
-    <tr><td style="padding:6px 8px;border:1px solid var(--border);">14</td><td style="padding:6px 8px;border:1px solid var(--border);">$Cu + O_2 \xrightarrow{\Delta} 2CuO$</td><td style="padding:6px 8px;border:1px solid var(--border);">铜在氧气中加热——红色变黑</td></tr>
+    <tr><td style="padding:6px 8px;border:1px solid var(--border);">14</td><td style="padding:6px 8px;border:1px solid var(--border);">$2Cu + O_2 \xrightarrow{\Delta} 2CuO$</td><td style="padding:6px 8px;border:1px solid var(--border);">铜在氧气中加热——红色变黑</td></tr>
     <tr><td style="padding:6px 8px;border:1px solid var(--border);">15</td><td style="padding:6px 8px;border:1px solid var(--border);">$N_2 + 3H_2 \xrightarrow{高温高压} 2NH_3$</td><td style="padding:6px 8px;border:1px solid var(--border);">合成氨</td></tr>
     <tr><td style="padding:6px 8px;border:1px solid var(--border);">16</td><td style="padding:6px 8px;border:1px solid var(--border);">$4Al + 3O_2 \rightarrow 2Al_2O_3$</td><td style="padding:6px 8px;border:1px solid var(--border);">铝在常温下氧化</td></tr>
     <tr><td style="padding:6px 8px;border:1px solid var(--border);">17</td><td style="padding:6px 8px;border:1px solid var(--border);">$2Cu + O_2 + H_2O + CO_2 \rightarrow Cu_2(OH)_2CO_3$</td><td style="padding:6px 8px;border:1px solid var(--border);">铜生锈——铜绿/碱式碳酸铜</td></tr>
@@ -381,7 +381,7 @@ try { renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',displ
     var a=document.querySelectorAll('.exam-module,details'),o=true;
     for(var i=0;i<a.length;i++)if(!a[i].hasAttribute('open')){o=false;break}
     for(var i=0;i<a.length;i++){if(o)a[i].removeAttribute('open');else a[i].setAttribute('open','')}
-    b.textContent=o?'📂 展开全部章节':'📖 收起全部章节';
+    b.textContent=o?'📂 展开全部模块':'📖 收起全部模块';
   });
 })();
 

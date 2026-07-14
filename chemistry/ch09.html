@@ -33,7 +33,7 @@
     <a href="ch12.html">第12章 化学与生活</a>
     <a href="appendix.html">📚 附录</a>
   </nav>
-  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
   <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
   <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
 </nav>
@@ -255,7 +255,7 @@ try { renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',displ
     var a=document.querySelectorAll('.exam-module,details'),o=true;
     for(var i=0;i<a.length;i++)if(!a[i].hasAttribute('open')){o=false;break}
     for(var i=0;i<a.length;i++){if(o)a[i].removeAttribute('open');else a[i].setAttribute('open','')}
-    b.textContent=o?'📂 展开全部章节':'📖 收起全部章节';
+    b.textContent=o?'📂 展开全部模块':'📖 收起全部模块';
   });
 })();
 
@@ -266,13 +266,17 @@ window.addEventListener('scroll',function(){var b=document.getElementById('backT
 document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution')})});
 
 // Solubility chart
+function chartColors(){ return document.documentElement.getAttribute('data-theme')==='dark' ? {grid:'#334155',tick:'#94a3b8'} : {grid:'#e2e8f0',tick:'#64748b'}; }
 (function(){
   var c=document.getElementById('solubilityChart');if(!c||typeof Chart==='undefined')return;
-  new Chart(c,{type:'line',data:{labels:['0','10','20','30','40','50','60','70','80','90','100'],datasets:[
+  var cc=chartColors();
+  var chart=new Chart(c,{type:'line',data:{labels:['0','10','20','30','40','50','60','70','80','90','100'],datasets:[
     {label:'NaCl',data:[35.7,35.8,36.0,36.3,36.6,37.0,37.3,37.8,38.4,39.0,39.8],borderColor:'#4f46e5',tension:0.3,pointRadius:2},
     {label:'KNO₃',data:[13.3,20.9,31.6,45.8,63.9,85.5,110,138,169,202,246],borderColor:'#dc2626',tension:0.3,pointRadius:2},
     {label:'Ca(OH)₂',data:[0.185,0.176,0.165,0.153,0.141,0.128,0.116,0.106,0.094,0.085,0.077],borderColor:'#f59e0b',tension:0.3,pointRadius:2}
-  ]},options:{responsive:true,plugins:{legend:{labels:{color:'#94a3b8',font:{size:11}}}},scales:{x:{title:{display:true,text:'温度/℃',color:'#94a3b8'},ticks:{color:'#94a3b8'}},y:{title:{display:true,text:'溶解度/g',color:'#94a3b8'},ticks:{color:'#94a3b8'},min:0}}}});
+  ]},options:{responsive:true,plugins:{legend:{labels:{color:cc.tick,font:{size:11}}}},scales:{x:{grid:{color:cc.grid},title:{display:true,text:'温度/℃',color:cc.tick},ticks:{color:cc.tick}},y:{grid:{color:cc.grid},title:{display:true,text:'溶解度/g',color:cc.tick},ticks:{color:cc.tick},min:0}}}});
+  var observer=new MutationObserver(function(){var nc=chartColors();chart.options.scales.x.grid.color=nc.grid;chart.options.scales.x.ticks.color=nc.tick;chart.options.scales.x.title.color=nc.tick;chart.options.scales.y.grid.color=nc.grid;chart.options.scales.y.ticks.color=nc.tick;chart.options.scales.y.title.color=nc.tick;chart.options.plugins.legend.labels.color=nc.tick;chart.update()});
+  observer.observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
 })();
 </script>
 <script src="lib/chart.umd.min.js"></script>

@@ -33,7 +33,7 @@
     <a href="ch12.html">第12章 化学与生活</a>
     <a href="appendix.html">📚 附录</a>
   </nav>
-  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
   <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
   <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
 </nav>
@@ -110,6 +110,7 @@
   <div class="concept-card"><div class="name">过滤</div><p>分离<strong>不溶性固体</strong>与液体的操作。仪器：铁架台、漏斗、烧杯、玻璃棒。操作要点"一贴二低三靠"：滤纸紧贴漏斗内壁、滤纸边缘低于漏斗边缘、液面低于滤纸边缘、烧杯口紧靠玻璃棒、玻璃棒轻靠三层滤纸一边、漏斗下端管口紧靠烧杯内壁。过滤后滤液仍浑浊→滤纸破损或液面高于滤纸边缘。</p></div>
   <div class="concept-card"><div class="name">蒸馏</div><p>利用液体混合物中各组分<strong>沸点不同</strong>进行分离。蒸馏水中含<strong>极少量</strong>可溶性杂质。蒸馏是净水程度<strong>最高</strong>的方法。自来水厂不采用蒸馏（成本高），而用沉淀→过滤→吸附→消毒。</p></div>
   <div class="concept-card"><div class="name">硬水 vs 软水</div><p><strong>硬水：</strong>含较多<strong>可溶性钙镁化合物</strong>的水。肥皂水检验：搅拌后泡沫少、浮渣多的是硬水；泡沫多的是软水。<strong>硬水软化：</strong>①煮沸（生活中，可除去暂时硬水中的Ca(HCO₃)₂、Mg(HCO₃)₂）②蒸馏（实验室，最彻底）。硬水浪费肥皂，锅炉结垢可能引发爆炸。</p></div>
+  <div class="concept-card"><div class="name">根据化合价书写化学式</div><p><strong>原则：</strong>化合物中正负化合价<strong>代数和为0</strong>。<br><strong>步骤：</strong>①写符号（正价左、负价右）→ ②标化合价 → ③求最小公倍数 → ④确定原子个数 → ⑤验算代数和=0。<br><strong>例：</strong>Al³⁺ 与 O²⁻ → Al₂O₃。验证：(+3)×2 + (-2)×3 = 0。✓<br><strong>口诀：</strong>一价钾钠氯氢银，二价氧钙钡镁锌，三铝四硅五价磷，二三铁二四碳，铜汞一二价。</p></div>
 </div>
 
 <!-- ====== 模块4: 化学方程式 ====== -->
@@ -263,7 +264,7 @@ try { renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',displ
     var a=document.querySelectorAll('.exam-module,details'),o=true;
     for(var i=0;i<a.length;i++)if(!a[i].hasAttribute('open')){o=false;break}
     for(var i=0;i<a.length;i++){if(o)a[i].removeAttribute('open');else a[i].setAttribute('open','')}
-    b.textContent=o?'📂 展开全部章节':'📖 收起全部章节';
+    b.textContent=o?'📂 展开全部模块':'📖 收起全部模块';
   });
 })();
 
@@ -280,7 +281,7 @@ document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('c
   if (!GL || !GL.createViewer) return;
   var el = document.getElementById('viewer-ch04');
   if (!el) return;
-  var viewer = GL.createViewer(el, { backgroundColor: '0x1e293b' });
+  var viewer = GL.createViewer(el, { backgroundColor: document.documentElement.getAttribute('data-theme')==='dark'?'0x1e293b':'0xf1f5f9' });
   viewer.addSphere({ center: {x:0,y:0,z:0}, radius: 0.6, color: '#dc2626' });
   var angle = 104.5 * Math.PI / 180;
   viewer.addSphere({ center: {x: Math.sin(angle/2)*1.5, y: Math.cos(angle/2)*1.5, z: 0}, radius: 0.4, color: '#e2e8f0' });
@@ -289,6 +290,7 @@ document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('c
   viewer.addCylinder({ start: {x:0,y:0,z:0}, end: {x: -Math.sin(angle/2)*1.5, y: Math.cos(angle/2)*1.5, z: 0}, radius: 0.15, color: '#94a3b8' });
   viewer.zoomTo();
   viewer.render();
+  if(!window._3dV){window._3dV=[];new MutationObserver(function(){var _b=document.documentElement.getAttribute('data-theme')==='dark'?'0x1e293b':'0xf1f5f9';window._3dV.forEach(function(v){v.setBackgroundColor(_b);v.render()})}).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']})}window._3dV.push(viewer);
 })();
 </script>
 </body>

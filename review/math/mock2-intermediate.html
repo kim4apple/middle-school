@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>5年真题3年模拟 · 广东中考数学专项突破</title>
-  <link rel="stylesheet" href="../katex/katex.min.css">
+  <link rel="stylesheet" href="../../katex/katex.min.css">
   <style>
 :root {
   --bg: #ffffff;
@@ -437,17 +437,18 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
     <div class="sidebar-group">
       <div class="sidebar-group-title">导航</div>
       <nav>
-        <a href="junior_math_5y3m.html">📖 专题总览</a>
-        <a href="5y3m_mock1.html">模拟卷1 · 基础</a>
-        <a href="5y3m_mock2.html" style="font-weight:700;color:var(--accent);">模拟卷2 · 中等</a>
-        <a href="5y3m_mock3.html">模拟卷3 · 强化</a>
-        <a href="5y3m_mock4.html">模拟卷4 · 冲刺</a>
-        <a href="5y3m_mock5.html">模拟卷5 · 拔高</a>
-        <a href="../index.html" style="margin-top:8px;border-top:1px solid var(--border);padding-top:8px;">🏠 返回首页</a>
+        <a href="strategy.html">📖 专题总览</a>
+        <a href="mock1-basic.html">模拟卷1 · 基础</a>
+        <a href="mock2-intermediate.html" style="font-weight:700;color:var(--accent);">模拟卷2 · 中等</a>
+        <a href="mock3-intensive.html">模拟卷3 · 强化</a>
+        <a href="mock4-sprint.html">模拟卷4 · 冲刺</a>
+        <a href="mock5-advanced.html">模拟卷5 · 拔高</a>
+        <a href="../../index.html" style="margin-top:8px;border-top:1px solid var(--border);padding-top:8px;">🏠 返回首页</a>
+        <a href="../index.html">📚 复习总览</a>
       </nav>
     </div>
     <div class="sidebar-actions">
-      <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
       <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
       <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
     </div>
@@ -457,7 +458,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
     <div class="cover">
       <h1>📝 广东中考数学模拟试卷2</h1>
       <p>中等卷 · 适合7-8年级强化训练 · 考试时间：90分钟 · 满分：120分</p>
-      <p style="margin-top:6px;"><a href="junior_math_5y3m.html" style="color:var(--accent);font-size:13px;">← 返回专题总览</a> | <a href="5y3m_mock1.html" style="color:var(--accent);font-size:13px;">← 上一套</a> | <a href="5y3m_mock3.html" style="color:var(--accent);font-size:13px;">下一套 →</a></p>
+      <p style="margin-top:6px;"><a href="strategy.html" style="color:var(--accent);font-size:13px;">← 返回专题总览</a> | <a href="mock1-basic.html" style="color:var(--accent);font-size:13px;">← 上一套</a> | <a href="mock3-intensive.html" style="color:var(--accent);font-size:13px;">下一套 →</a></p>
     </div>
 
     <!-- 模拟试卷二：中等卷 -->
@@ -889,8 +890,8 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
     </section>
   </main>
 
-  <script defer src="../katex/katex.min.js"></script>
-  <script defer src="../katex/auto-render.min.js"></script>
+  <script defer src="../../katex/katex.min.js"></script>
+  <script defer src="../../katex/auto-render.min.js"></script>
   <script>
     window.addEventListener('scroll', function() {
       document.getElementById('backToTop').style.display = window.scrollY > 400 ? 'block' : 'none';
@@ -946,7 +947,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
             if (allOpen) allDetails[i].removeAttribute('open');
             else allDetails[i].setAttribute('open', '');
           }
-          btn.textContent = allOpen ? '📂 展开全部章节' : '📖 收起全部章节';
+          btn.textContent = allOpen ? '📂 展开全部模块' : '📖 收起全部模块';
         });
       })();
     });

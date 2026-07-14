@@ -53,7 +53,7 @@ katex/                     ← 共享 KaTeX 本地文件
     <nav>
       <a href="#ch01">第1章 · 标题</a>
     </nav>
-    <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+    <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
     <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
   </nav>
 
@@ -339,7 +339,7 @@ katex/                     ← 共享 KaTeX 本地文件
     <a href="ch02.html">第2章 XXX</a>
     <!-- 当前页面的链接加 class="active" -->
   </nav>
-  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
   <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
 </nav>
 ```
@@ -449,7 +449,7 @@ showBtn.addEventListener('click', function() {
       if (allOpen) all[i].removeAttribute('open');
       else all[i].setAttribute('open', '');
     }
-    btn.textContent = allOpen ? '📂 展开全部章节' : '📖 收起全部章节';
+    btn.textContent = allOpen ? '📂 展开全部模块' : '📖 收起全部模块';
   });
 })();
 ```
@@ -643,7 +643,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn{display:flex}
     <a href="index.html">🏠 首页</a>
     <!-- chapter links -->
   </nav>
-  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
   <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
 </nav>
 
@@ -685,7 +685,7 @@ renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:tru
     var a=document.querySelectorAll('.module,.exam-module,details'),o=true;
     for(var i=0;i<a.length;i++)if(!a[i].hasAttribute('open')){o=false;break}
     for(var i=0;i<a.length;i++){if(o)a[i].removeAttribute('open');else a[i].setAttribute('open','')}
-    b.textContent=o?'📂 展开全部章节':'📖 收起全部章节';
+    b.textContent=o?'📂 展开全部模块':'📖 收起全部模块';
   });
 })();
 

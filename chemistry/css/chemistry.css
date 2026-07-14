@@ -26,6 +26,33 @@
   --border: #334155;
 }
 
+/* ====== 暗色模式 — 组件适配 ====== */
+[data-theme="dark"] .experiment-observation { background: linear-gradient(135deg, #3b1111 0%, #0f2c1a 100%); }
+[data-theme="dark"] .safety-pitfall { background: #2d1f00; }
+[data-theme="dark"] .micro-explanation { background: #0f2c2c; border-color: #164e63; }
+[data-theme="dark"] .experiment-design { background: #1e293b; border-color: #334155; }
+[data-theme="dark"] .equation-card { border-left-color: #2dd4bf; }
+[data-theme="dark"] .eq-combine { background: #1e3a5f; color: #93c5fd; }
+[data-theme="dark"] .eq-decomp { background: #3b1111; color: #fca5a5; }
+[data-theme="dark"] .eq-replace { background: #3b2f00; color: #fcd34d; }
+[data-theme="dark"] .eq-exchange { background: #2d1b4e; color: #c4b5fd; }
+[data-theme="dark"] .periodic-element { background: #1e293b; border-color: #334155; }
+[data-theme="dark"] .periodic-element .num { color: #94a3b8; }
+[data-theme="dark"] .periodic-element .name { color: #94a3b8; }
+[data-theme="dark"] table tr:nth-child(even) { background: #1e293b; }
+[data-theme="dark"] table th { background: #1e3a5f; color: #93c5fd; }
+[data-theme="dark"] td { border-color: #334155; }
+[data-theme="dark"] .calc-card { border-left-color: #a78bfa; background: #1e293b; }
+[data-theme="dark"] .exam-q .q-solution { background: #0f2c1a; }
+[data-theme="dark"] .review-dot { background: #1e3a5f; }
+[data-theme="dark"] .next-stop { background: linear-gradient(135deg, #1e1b4b 0%, #0f2c1a 100%); }
+[data-theme="dark"] .cover { border-bottom-color: #334155; }
+[data-theme="dark"] .exam-q { background: #1e293b; border-color: #334155; }
+[data-theme="dark"] .q-body { color: #e2e8f0; }
+[data-theme="dark"] .checklist { background: #1e293b; }
+[data-theme="dark"] .concept-card { background: #1e293b; border-color: #334155; }
+[data-theme="dark"] .formula-card, [data-theme="dark"] .equation-card { background: #1e293b; }
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -207,4 +234,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
   .experiment-observation, .micro-explanation, .safety-pitfall { border: 1px solid #ccc; box-shadow: none; }
   .exam-q { page-break-inside: avoid; }
   .q-solution { display: block !important; }
+  .model-viewer { display: block !important; max-height: 200px; }
+  .model-viewer canvas { display: block !important; }
+  .model-viewer [style*="position:absolute"] { display: none !important; }
 }

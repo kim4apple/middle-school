@@ -33,7 +33,7 @@
     <a href="ch12.html">第12章 化学与生活</a>
     <a href="appendix.html">📚 附录</a>
   </nav>
-  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
   <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
   <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
 </nav>
@@ -83,28 +83,33 @@
 <div style="background:var(--bg-secondary);border-radius:8px;padding:16px;margin:16px 0;">
   <h4 style="margin-bottom:10px;">🗂️ 前20号元素</h4>
   <div style="display:grid;grid-template-columns:repeat(10,1fr);gap:2px;font-size:10px;">
-    <div class="periodic-element nonmetal" style="grid-column:1;grid-row:1;"><span class="num">1</span><span class="sym">H</span><span class="name">氢</span></div>
-    <div class="periodic-element nonmetal" style="grid-column:18;grid-row:1;"><span class="num">2</span><span class="sym">He</span><span class="name">氦</span></div>
-    <div class="periodic-element metal" style="grid-column:1;grid-row:2;"><span class="num">3</span><span class="sym">Li</span><span class="name">锂</span></div>
-    <div class="periodic-element metal" style="grid-column:2;grid-row:2;"><span class="num">4</span><span class="sym">Be</span><span class="name">铍</span></div>
-    <div class="periodic-element nonmetal" style="grid-column:13;grid-row:2;"><span class="num">5</span><span class="sym">B</span><span class="name">硼</span></div>
-    <div class="periodic-element nonmetal" style="grid-column:14;grid-row:2;"><span class="num">6</span><span class="sym">C</span><span class="name">碳</span></div>
-    <div class="periodic-element nonmetal" style="grid-column:15;grid-row:2;"><span class="num">7</span><span class="sym">N</span><span class="name">氮</span></div>
-    <div class="periodic-element nonmetal" style="grid-column:16;grid-row:2;"><span class="num">8</span><span class="sym">O</span><span class="name">氧</span></div>
-    <div class="periodic-element nonmetal" style="grid-column:17;grid-row:2;"><span class="num">9</span><span class="sym">F</span><span class="name">氟</span></div>
-    <div class="periodic-element nonmetal" style="grid-column:18;grid-row:2;"><span class="num">10</span><span class="sym">Ne</span><span class="name">氖</span></div>
-    <div class="periodic-element metal" style="grid-column:1;grid-row:3;"><span class="num">11</span><span class="sym">Na</span><span class="name">钠</span></div>
-    <div class="periodic-element metal" style="grid-column:2;grid-row:3;"><span class="num">12</span><span class="sym">Mg</span><span class="name">镁</span></div>
-    <div class="periodic-element metal" style="grid-column:13;grid-row:3;"><span class="num">13</span><span class="sym">Al</span><span class="name">铝</span></div>
-    <div class="periodic-element nonmetal" style="grid-column:14;grid-row:3;"><span class="num">14</span><span class="sym">Si</span><span class="name">硅</span></div>
-    <div class="periodic-element nonmetal" style="grid-column:15;grid-row:3;"><span class="num">15</span><span class="sym">P</span><span class="name">磷</span></div>
-    <div class="periodic-element nonmetal" style="grid-column:16;grid-row:3;"><span class="num">16</span><span class="sym">S</span><span class="name">硫</span></div>
-    <div class="periodic-element nonmetal" style="grid-column:17;grid-row:3;"><span class="num">17</span><span class="sym">Cl</span><span class="name">氯</span></div>
-    <div class="periodic-element nonmetal" style="grid-column:18;grid-row:3;"><span class="num">18</span><span class="sym">Ar</span><span class="name">氩</span></div>
-    <div class="periodic-element metal" style="grid-column:1;grid-row:4;"><span class="num">19</span><span class="sym">K</span><span class="name">钾</span></div>
-    <div class="periodic-element metal" style="grid-column:2;grid-row:4;"><span class="num">20</span><span class="sym">Ca</span><span class="name">钙</span></div>
+    <div class="periodic-element nonmetal" data-num="1" style="grid-column:1;grid-row:1;"><span class="num">1</span><span class="sym">H</span><span class="name">氢</span></div>
+    <div class="periodic-element nonmetal" data-num="2" style="grid-column:18;grid-row:1;"><span class="num">2</span><span class="sym">He</span><span class="name">氦</span></div>
+    <div class="periodic-element metal" data-num="3" style="grid-column:1;grid-row:2;"><span class="num">3</span><span class="sym">Li</span><span class="name">锂</span></div>
+    <div class="periodic-element metal" data-num="4" style="grid-column:2;grid-row:2;"><span class="num">4</span><span class="sym">Be</span><span class="name">铍</span></div>
+    <div class="periodic-element nonmetal" data-num="5" style="grid-column:13;grid-row:2;"><span class="num">5</span><span class="sym">B</span><span class="name">硼</span></div>
+    <div class="periodic-element nonmetal" data-num="6" style="grid-column:14;grid-row:2;"><span class="num">6</span><span class="sym">C</span><span class="name">碳</span></div>
+    <div class="periodic-element nonmetal" data-num="7" style="grid-column:15;grid-row:2;"><span class="num">7</span><span class="sym">N</span><span class="name">氮</span></div>
+    <div class="periodic-element nonmetal" data-num="8" style="grid-column:16;grid-row:2;"><span class="num">8</span><span class="sym">O</span><span class="name">氧</span></div>
+    <div class="periodic-element nonmetal" data-num="9" style="grid-column:17;grid-row:2;"><span class="num">9</span><span class="sym">F</span><span class="name">氟</span></div>
+    <div class="periodic-element nonmetal" data-num="10" style="grid-column:18;grid-row:2;"><span class="num">10</span><span class="sym">Ne</span><span class="name">氖</span></div>
+    <div class="periodic-element metal" data-num="11" style="grid-column:1;grid-row:3;"><span class="num">11</span><span class="sym">Na</span><span class="name">钠</span></div>
+    <div class="periodic-element metal" data-num="12" style="grid-column:2;grid-row:3;"><span class="num">12</span><span class="sym">Mg</span><span class="name">镁</span></div>
+    <div class="periodic-element metal" data-num="13" style="grid-column:13;grid-row:3;"><span class="num">13</span><span class="sym">Al</span><span class="name">铝</span></div>
+    <div class="periodic-element nonmetal" data-num="14" style="grid-column:14;grid-row:3;"><span class="num">14</span><span class="sym">Si</span><span class="name">硅</span></div>
+    <div class="periodic-element nonmetal" data-num="15" style="grid-column:15;grid-row:3;"><span class="num">15</span><span class="sym">P</span><span class="name">磷</span></div>
+    <div class="periodic-element nonmetal" data-num="16" style="grid-column:16;grid-row:3;"><span class="num">16</span><span class="sym">S</span><span class="name">硫</span></div>
+    <div class="periodic-element nonmetal" data-num="17" style="grid-column:17;grid-row:3;"><span class="num">17</span><span class="sym">Cl</span><span class="name">氯</span></div>
+    <div class="periodic-element nonmetal" data-num="18" style="grid-column:18;grid-row:3;"><span class="num">18</span><span class="sym">Ar</span><span class="name">氩</span></div>
+    <div class="periodic-element metal" data-num="19" style="grid-column:1;grid-row:4;"><span class="num">19</span><span class="sym">K</span><span class="name">钾</span></div>
+    <div class="periodic-element metal" data-num="20" style="grid-column:2;grid-row:4;"><span class="num">20</span><span class="sym">Ca</span><span class="name">钙</span></div>
   </div>
   <p style="font-size:11px;color:var(--text-secondary);margin-top:8px;">🟡金属元素 · 🟢非金属元素 · 排列遵循周期表位置（横向=周期，纵向=族）</p>
+</div>
+
+<div id="elementDetail" style="display:none;background:var(--bg-secondary);border-radius:8px;padding:16px;margin:12px 0;border:1px solid var(--accent);">
+  <h4 id="elDetailName" style="margin-bottom:6px;">元素详情</h4>
+  <p id="elDetailInfo" style="font-size:14px;line-height:1.8;"></p>
 </div>
 
 <!-- ====== 模块4: 化学方程式 ====== -->
@@ -259,7 +264,7 @@ try { renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',displ
     var a=document.querySelectorAll('.exam-module,details'),o=true;
     for(var i=0;i<a.length;i++)if(!a[i].hasAttribute('open')){o=false;break}
     for(var i=0;i<a.length;i++){if(o)a[i].removeAttribute('open');else a[i].setAttribute('open','')}
-    b.textContent=o?'📂 展开全部章节':'📖 收起全部章节';
+    b.textContent=o?'📂 展开全部模块':'📖 收起全部模块';
   });
 })();
 
@@ -268,6 +273,30 @@ window.addEventListener('scroll',function(){var b=document.getElementById('backT
 
 // Solution toggle
 document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution')})});
+
+// Periodic table interactivity
+var elementData={1:{sym:'H',name:'氢',group:'非金属',desc:'最轻的元素。宇宙中最丰富的元素。'},2:{sym:'He',name:'氦',group:'稀有气体',desc:'惰性气体，密度比空气小。'},6:{sym:'C',name:'碳',group:'非金属',desc:'形成最多化合物的元素。同素异形体：金刚石、石墨、C₆₀。'},7:{sym:'N',name:'氮',group:'非金属',desc:'空气中含量最多的元素（约78%）。'},8:{sym:'O',name:'氧',group:'非金属',desc:'地壳中含量最多的元素。空气中约占21%。'},10:{sym:'Ne',name:'氖',group:'稀有气体',desc:'惰性气体，用于霓虹灯。'},11:{sym:'Na',name:'钠',group:'金属',desc:'非常活泼的碱金属。与水剧烈反应。'},12:{sym:'Mg',name:'镁',group:'金属',desc:'轻质金属，燃烧发出耀眼白光。'},13:{sym:'Al',name:'铝',group:'金属',desc:'地壳中含量最多的金属元素。'},14:{sym:'Si',name:'硅',group:'非金属',desc:'地壳中含量第二多的元素。重要的半导体材料。'},16:{sym:'S',name:'硫',group:'非金属',desc:'淡黄色固体。在氧气中燃烧发出蓝紫色火焰。'},17:{sym:'Cl',name:'氯',group:'非金属',desc:'黄绿色气体，有刺激性气味。'},18:{sym:'Ar',name:'氩',group:'稀有气体',desc:'惰性气体，空气中含量约0.93%。'},19:{sym:'K',name:'钾',group:'金属',desc:'非常活泼的碱金属。'},20:{sym:'Ca',name:'钙',group:'金属',desc:'人体骨骼和牙齿的重要组成元素。'},26:{sym:'Fe',name:'铁',group:'金属',desc:'使用最广泛的金属。人体必需的微量元素。'},29:{sym:'Cu',name:'铜',group:'金属',desc:'紫红色金属，良好的导电导热体。'},30:{sym:'Zn',name:'锌',group:'金属',desc:'用于镀锌防锈。人体必需的微量元素。'},47:{sym:'Ag',name:'银',group:'金属',desc:'导电性最好的金属。'},79:{sym:'Au',name:'金',group:'金属',desc:'非常稳定的贵金属。'}};
+
+(function(){
+  var el = document.getElementById('elementDetail');
+  if (!el) return;
+  document.querySelectorAll('.periodic-element').forEach(function(e){
+    e.style.cursor = 'pointer';
+    e.addEventListener('click', function(){
+      var num = this.getAttribute('data-num');
+      var data = elementData[num];
+      if (!data) return;
+      document.getElementById('elDetailName').textContent = data.sym + ' - ' + data.name + '（' + data.group + '）';
+      document.getElementById('elDetailInfo').textContent = data.desc;
+      el.style.display = 'block';
+    });
+  });
+  var closeBtn = document.createElement('span');
+  closeBtn.innerHTML = '&times;';
+  closeBtn.style.cssText = 'float:right;cursor:pointer;font-size:20px;color:var(--text-secondary);';
+  closeBtn.onclick = function(){ el.style.display = 'none'; };
+  el.insertBefore(closeBtn, el.firstChild);
+})();
 </script>
 <script src="lib/3dmol-min.js"></script>
 <script>
@@ -276,7 +305,7 @@ document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('c
   if (!GL || !GL.createViewer) return;
   var el = document.getElementById('viewer-ch03');
   if (!el) return;
-  var viewer = GL.createViewer(el, { backgroundColor: '0x1e293b' });
+  var viewer = GL.createViewer(el, { backgroundColor: document.documentElement.getAttribute('data-theme')==='dark'?'0x1e293b':'0xf1f5f9' });
   viewer.addSphere({ center: {x:0,y:0,z:0}, radius: 0.8, color: '#dc2626' });
   var ringColors = ['#4f46e5', '#0891b2', '#f59e0b'];
   for (var s = 0; s < 3; s++) {
@@ -288,6 +317,7 @@ document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('c
   }
   viewer.zoomTo();
   viewer.render();
+  if(!window._3dV){window._3dV=[];new MutationObserver(function(){var _b=document.documentElement.getAttribute('data-theme')==='dark'?'0x1e293b':'0xf1f5f9';window._3dV.forEach(function(v){v.setBackgroundColor(_b);v.render()})}).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']})}window._3dV.push(viewer);
 })();
 </script>
 </body>

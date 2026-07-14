@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>初中数学 · 知识点完全总结</title>
-  <link rel="stylesheet" href="../katex/katex.min.css">
+  <link rel="stylesheet" href="../../katex/katex.min.css">
   <style>
 :root {
   --bg: #ffffff;
@@ -366,7 +366,8 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
     <div class="sidebar-group">
       <div class="sidebar-group-title">七年级</div>
       <nav>
-        <a href="../index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../../index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../index.html" style="font-weight:600;">📚 复习总览</a>
         <a href="#ch1">1. 有理数</a>
         <a href="#ch2">2. 整式的加减</a>
         <a href="#ch3">3. 一元一次方程</a>
@@ -409,7 +410,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
       </nav>
     </div>
     <div class="sidebar-actions">
-      <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
       <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
       <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
     </div>
@@ -2083,8 +2084,8 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
     </section>
   </main>
 
-  <script defer src="../katex/katex.min.js"></script>
-  <script defer src="../katex/auto-render.min.js"></script>
+  <script defer src="../../katex/katex.min.js"></script>
+  <script defer src="../../katex/auto-render.min.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       renderMathInElement(document.body, {
@@ -2158,7 +2159,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
             if (allOpen) allDetails[i].removeAttribute('open');
             else allDetails[i].setAttribute('open', '');
           }
-          btn.textContent = allOpen ? '📂 展开全部章节' : '📖 收起全部章节';
+          btn.textContent = allOpen ? '📂 展开全部模块' : '📖 收起全部模块';
         });
       })();
   </script>

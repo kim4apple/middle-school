@@ -32,7 +32,7 @@
       <a href="ch12.html">第12章 简单机械</a>
       <a href="appendix.html">附录</a>
     </nav>
-    <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+    <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
     <button id="theme-toggle" class="theme-toggle" style="margin-top:10px;">🌙 暗色模式</button>
     <button class="print-btn" onclick="window.print()" style="margin-top:8px;padding:8px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px;width:100%;">🖨️ 打印 / 存 PDF</button>
   </nav>
@@ -416,7 +416,7 @@
           if (allOpen) allDetails[i].removeAttribute('open');
           else allDetails[i].setAttribute('open', '');
         }
-        btn.textContent = allOpen ? '📂 展开全部章节' : '📖 收起全部章节';
+        btn.textContent = allOpen ? '📂 展开全部模块' : '📖 收起全部模块';
       });
     })();
   })();

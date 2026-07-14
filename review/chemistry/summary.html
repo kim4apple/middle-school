@@ -79,9 +79,11 @@ h1 { font-size: 26px; margin-bottom: 6px; }
 .chk .box { display:inline-block;width:14px;height:14px;border:1.5px solid var(--text-secondary);border-radius:3px;text-align:center;line-height:12px;font-size:10px;color:transparent;vertical-align:middle;margin-right:2px;transition:.15s; }
 .chk input:checked + .box { background:var(--accent);border-color:var(--accent);color:#fff; }
 
-/* trap list */
-.trap-item { display:block;padding:3px 0 3px 16px;font-size:12px;position:relative; }
-.trap-item::before { content:"✗";position:absolute;left:0;color:var(--chem-red);font-weight:700; }
+/* trap list — 自测格式：□ 待判断 ✗ 答案 */
+.trap-item {display:block;padding:3px 0 3px 20px;font-size:12px;position:relative;}
+.trap-item::before { content:"□";position:absolute;left:0;color:var(--text-secondary);font-weight:700;font-size:13px; }
+.trap-item::after { content:" ✗";color:var(--chem-red);font-weight:700; }
+.trap-header { font-size:11px;color:var(--text-secondary);margin-bottom:3px; }
 
 /* comparison cards */
 .comp-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:8px; }
@@ -121,6 +123,15 @@ h1 { font-size: 26px; margin-bottom: 6px; }
 }
 .problem-card .title { font-weight: 600; color: var(--accent); margin-bottom: 4px; }
 .problem-card .desc { color: var(--text-secondary); font-size: 12px; }
+
+/* print */
+@media print {
+  body { max-width:none; padding:12mm; }
+  .theme-toggle, .theme-toggle:hover { display:none!important; }
+  a[href^="../../"]::after { content:" (" attr(href) ")"; font-size:9px; color:var(--text-secondary); }
+  .chk .box { border-color:#333!important; color:transparent!important; }
+  .chk input:checked + .box { background:#ccc!important; border-color:#333!important; color:#000!important; }
+}
   </style>
 </head>
 <body>
@@ -136,6 +147,7 @@ h1 { font-size: 26px; margin-bottom: 6px; }
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-method">必记</span></td><td>物理变化 vs 化学变化——有无新物质生成。物理性质（色味态密度熔沸点硬度导电导热溶解性） vs 化学性质（可燃性、氧化性、还原性、酸碱性、稳定性）。</td></tr>
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-exp">实验</span></td><td><strong>蜡烛燃烧</strong>：火焰分三层（外焰最亮→温度最高，焰心最暗）。熄灭白烟可复燃（白烟=石蜡蒸气凝固的固体小颗粒）。<strong>吸入/呼出气体</strong>：O₂含量呼出<吸入，CO₂呼出>吸入，水蒸气呼出>吸入。</td></tr>
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-trap">易错</span></td><td>
+          <div class="trap-header">【自测】判断下列说法是否正确：</div>
           <span class="trap-item">有发光放热的变化一定是化学变化——不一定（电灯泡发光是物理变化）。</span>
           <span class="trap-item">爆炸都是化学变化——不一定（锅炉爆炸是物理变化，火药爆炸是化学变化）。</span>
           <span class="trap-item">"变化"和"性质"混淆——描述性质用"能""可以""会"。</span>
@@ -155,6 +167,7 @@ h1 { font-size: 26px; margin-bottom: 6px; }
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-exp">实验</span></td><td><strong>KMnO₄制O₂</strong>：2KMnO₄→K₂MnO₄+MnO₂+O₂↑。固固加热型，试管口略向下倾斜，管口放棉花（防粉末进入导管），先撤导管再熄灯（防水倒吸）。排水法收集——O₂不易溶于水。验满：带火星木条放瓶口复燃。</td></tr>
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-method">必记</span></td><td><strong>两套制O₂方案对比</strong>：KMnO₄（固固加热，需棉花） vs H₂O₂+MnO₂（固液不加热，长颈漏斗需液封）。催化剂"一变两不变"——改变反应速率，自身质量和化学性质不变。</td></tr>
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-trap">易错</span></td><td>
+          <div class="trap-header">【自测】判断下列说法是否正确：</div>
           <span class="trap-item">红磷实验集气瓶内水面上升小于1/5最可能原因——红磷不足或装置漏气。</span>
           <span class="trap-item">排水法收集时导管口刚冒气泡就收集——错！要等气泡连续均匀冒出再收集（开始是空气）。</span>
         </td></tr>
@@ -190,6 +203,7 @@ h1 { font-size: 26px; margin-bottom: 6px; }
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-method">必记</span></td><td><strong>分子</strong>：保持物质化学性质的最小粒子（化学变化中可分）。<strong>原子</strong>：化学变化中的最小粒子。原子=质子（+1，质量≈1）+ 中子（0，质量≈1）+ 电子（-1，质量≈1/1836）。<strong>核电荷数=质子数=核外电子数=原子序数</strong>。</td></tr>
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-method">必记</span></td><td><strong>相对原子质量</strong>=质子数+中子数（≈）。<strong>元素</strong>：质子数相同的一类原子的总称——"宏观"概念，只讲种类不讲个数。</td></tr>
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-trap">易错</span></td><td>
+          <div class="trap-header">【自测】判断下列说法是否正确：</div>
           <span class="trap-item">"分子比原子大"——不一定，分子由原子构成，但分子不一定比原子大（如H₂分子比Hg原子小）。</span>
           <span class="trap-item">"原子是不能再分的最小粒子"——化学变化中不可分，但物理中原子核可再分。</span>
           <span class="trap-item">混淆"元素"和"原子"——描述物质组成用元素（如"水由H、O元素组成"），描述分子构成用原子（如"水分子由2H和1O构成"）。</span>
@@ -207,6 +221,7 @@ h1 { font-size: 26px; margin-bottom: 6px; }
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-exp">实验</span></td><td><strong>电解水</strong>：2H₂O→2H₂↑+O₂↑。正极产生O₂（能使带火星木条复燃），负极产生H₂（可点燃，淡蓝色火焰），体积比H₂:O₂=2:1，质量比1:8。实验证明水由H、O元素组成。</td></tr>
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-method">必记</span></td><td><strong>化合价口诀</strong>：一价K Na Cl H Ag，二价O Ca Ba Mg Zn，三价Al，四价Si，五价P。变价元素：Fe(+2,+3)、Cu(+1,+2)、Mn(+2,+4,+6,+7)、Cl(-1,+1,+5,+7)、N(-3,+2,+4,+5)、S(-2,+4,+6)。<br><strong>化学式书写</strong>：正价左负价右，交叉约简。如+3 Fe和-2 O→Fe₂O₃。</td></tr>
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-trap">易错</span></td><td>
+          <div class="trap-header">【自测】判断下列说法是否正确：</div>
           <span class="trap-item">电解水实验中H₂:O₂体积比大于2:1——因为O₂溶解度比H₂大，导致O₂略少。</span>
           <span class="trap-item">混淆"电解"和"蒸馏"——电解是化学变化（分解），蒸馏是物理变化（利用沸点不同分离混合物）。</span>
         </td></tr>
@@ -224,6 +239,7 @@ h1 { font-size: 26px; margin-bottom: 6px; }
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-method">必记</span></td><td><strong>配平方法</strong>：最小公倍数法（基础）、奇数配偶法（O₂相关常用）、观察法。书写四步：①写（反应物→生成物）②配（化学计量数）③注（↑↓条件）④查（质量守恒）。</td></tr>
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-method">必记</span></td><td><strong>计算格式</strong>（五步法）：①设未知数x（不带单位）②写方程式③写相关物质质量比④列比例式⑤写答。<br>常见错误：设未知数带单位、式量算错、忘了乘化学计量数、比例式颠倒。</td></tr>
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-trap">易错</span></td><td>
+          <div class="trap-header">【自测】判断下列说法是否正确：</div>
           <span class="trap-item">"质量守恒定律中质量守恒，所以化学反应前后分子个数也守恒"——错！分子个数可能变。</span>
           <span class="trap-item">"有气体参加的反应，质量守恒定律不适用"——错！气体质量应计入总质量。</span>
           <span class="trap-item">设x不带单位，但已知量和所求量列比例时，单位要统一且写在数字后。</span>
@@ -241,6 +257,7 @@ h1 { font-size: 26px; margin-bottom: 6px; }
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-method">必记</span></td><td><strong>碳的同素异形体</strong>：金刚石（正八面体，最硬，裁玻璃/钻头）、石墨（层状结构，软，可导电，铅笔芯/润滑剂/电极）、C₆₀（足球状分子）。结构不同→物理性质不同，但化学性质相似。</td></tr>
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-exp">实验</span></td><td><strong>实验室制CO₂</strong>：CaCO₃+2HCl→CaCl₂+H₂O+CO₂↑。固液不加热型，长颈漏斗需液封，向上排空气法（密度比空气大），不能用排水法（CO₂溶于水）。验满：燃着的木条放瓶口熄灭。检验：通入澄清石灰水变浑浊。</td></tr>
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-trap">易错</span></td><td>
+          <div class="trap-header">【自测】判断下列说法是否正确：</div>
           <span class="trap-item">CO₂能使紫色石蕊变红——错！CO₂+H₂O→H₂CO₃，是H₂CO₃使石蕊变红。</span>
           <span class="trap-item">不能用稀硫酸代替稀盐酸制CO₂——生成微溶CaSO₄覆盖大理石表面阻止反应。</span>
           <span class="trap-item">鉴别CO和CO₂不能用点燃法区分——应该用澄清石灰水（CO₂可使变浑浊）。</span>
@@ -273,6 +290,7 @@ h1 { font-size: 26px; margin-bottom: 6px; }
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-method">必记</span></td><td><strong>灭火三原理</strong>（破坏任一条件）：①清除可燃物（森林隔离带）②隔绝氧气（锅盖盖油锅、灯帽盖酒精灯）③降温至着火点以下（水灭火）。鉴别：隔离带=清除可燃物，不是隔绝氧气！</td></tr>
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-method">必记</span></td><td><strong>三大化石燃料</strong>：煤（工业的粮食，主要含C）、石油（工业的血液，各种烃的混合物）、天然气（主要成分CH₄）。均为不可再生。<strong>清洁能源</strong>：H₂（产物只有水，最清洁）、乙醇C₂H₅OH（可再生）、太阳能/风能等。</td></tr>
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-trap">易错</span></td><td>
+          <div class="trap-header">【自测】判断下列说法是否正确：</div>
           <span class="trap-item">煤气泄漏→立即打电话报警——错！应开窗通风关闭阀门，开电器或打电话会产生电火花引爆。</span>
           <span class="trap-item">用水灭火是因为隔绝氧气——错！主要是降温，水蒸气也有隔绝作用。</span>
           <span class="trap-item">着火点可以降低——错！着火点是物质固有属性，不能改变。</span>
@@ -290,6 +308,7 @@ h1 { font-size: 26px; margin-bottom: 6px; }
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-exp">实验</span></td><td><strong>CO还原Fe₂O₃</strong>：Fe₂O₃+3CO→2Fe+3CO₂（红棕色→黑色）。先通CO排尽空气，再点燃酒精灯；尾气点燃处理（CO有毒）。<strong>铁生锈条件</strong>：Fe+O₂+H₂O（与氧气和水同时接触），缺一不可。防锈：保持干燥+隔绝空气（涂油/刷漆/镀层/制成不锈钢合金）。</td></tr>
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-method">必记</span></td><td><strong>金属与酸反应</strong>：Mg剧烈（大量气泡）、Zn较剧烈、Fe缓慢（少量气泡、溶液变浅绿）、Cu不反应。<strong>溶液颜色</strong>：Fe²⁺浅绿，Fe³⁺黄，Cu²⁺蓝。<strong>合金</strong>：生铁和钢都是铁碳合金（含碳量不同：生铁2-4.3%，钢0.03-2%）。合金比纯金属硬度更大、熔点更低。</td></tr>
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-trap">易错</span></td><td>
+          <div class="trap-header">【自测】判断下列说法是否正确：</div>
           <span class="trap-item">铁与酸反应生成Fe³⁺盐——错！铁和稀酸反应生成Fe²⁺（浅绿色），Fe³⁺是黄色。</span>
           <span class="trap-item">"铝不活泼所以不易生锈"——错！铝很活泼，但表面形成致密Al₂O₃氧化膜保护内部。</span>
           <span class="trap-item">"Cu与AgNO₃反应→Cu(NO₃)₂+Ag"——同时观察到银白色固体析出、溶液由无色变蓝色。</span>
@@ -307,6 +326,7 @@ h1 { font-size: 26px; margin-bottom: 6px; }
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-method">必记</span></td><td><strong>溶解度</strong>：一定温度下，100g溶剂中达到饱和时所溶解的溶质质量（单位g）。影响因素：温度（大多数随温度升高而增大，Ca(OH)₂反常——随温度升高而减小）。气体溶解度：随温度升高而减小，随压强增大而增大。</td></tr>
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-method">必记</span></td><td><strong>溶质质量分数</strong> = (溶质质量÷溶液质量)×100%。稀释定律：m₁×ω₁ = m₂×ω₂（稀释前后溶质质量不变）。<br><strong>配制一定质量分数溶液步骤</strong>：计算→称量（固体用天平、液体用量筒）→溶解（搅拌加速）→装瓶贴标签。</td></tr>
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-trap">易错</span></td><td>
+          <div class="trap-header">【自测】判断下列说法是否正确：</div>
           <span class="trap-item">"溶液一定是无色的"——错！Cu²⁺蓝、Fe²⁺浅绿、Fe³⁺黄、KMnO₄紫。</span>
           <span class="trap-item">溶解度=饱和溶液中溶质质量÷溶剂质量×100g（不是除以溶液质量）。</span>
           <span class="trap-item">溶液质量=溶质质量+溶剂质量——当溶质与溶剂发生反应时注意（如CaO溶于水，生成的Ca(OH)₂才是溶质）。</span>
@@ -324,6 +344,7 @@ h1 { font-size: 26px; margin-bottom: 6px; }
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-exp">实验</span></td><td><strong>酸碱中和反应</strong>（HCl+NaOH）：先在NaOH中加酚酞（溶液变红），逐滴滴入HCl至恰好完全反应（红色刚好褪去）。现象：红色消失。实质：H⁺+OH⁻→H₂O。此时pH=7。<strong>pH试纸</strong>：用玻璃棒蘸取待测液滴在试纸上，与标准比色卡对比。不能将试纸浸入溶液中！</td></tr>
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-method">必记</span></td><td><strong>酸碱指示剂显色</strong>：紫色石蕊遇酸变红、遇碱变蓝；无色酚酞遇酸不变色、遇碱变红。注意：酚酞遇酸和中性和酸中都不变（无色）。</td></tr>
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-trap">易错</span></td><td>
+          <div class="trap-header">【自测】判断下列说法是否正确：</div>
           <span class="trap-item">浓硫酸稀释——将水倒入浓硫酸！错！会沸腾飞溅。必须酸入水！</span>
           <span class="trap-item">pH=0是中性——错！pH=7才是中性，pH=0强酸性。</span>
           <span class="trap-item">测pH时将试纸浸入溶液中——会污染试剂。</span>
@@ -383,6 +404,7 @@ h1 { font-size: 26px; margin-bottom: 6px; }
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-exp">实验</span></td><td><strong>粗盐提纯</strong>：溶解→过滤→蒸发→结晶（转移固体）。玻璃棒四用：搅拌加速溶解、引流防溅、搅拌防局部过热、转移固体。<strong>Cl⁻检验</strong>：加AgNO₃和稀硝酸→白色沉淀。SO₄²⁻检验：加Ba(NO₃)₂和稀硝酸→白色沉淀。CO₃²⁻检验：加稀盐酸→气体通入澄清石灰水变浑浊。</td></tr>
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-method">必记</span></td><td><strong>化肥</strong>：氮肥（N→叶肥，缺氮叶片发黄）、磷肥（P→果肥，促开花结果）、钾肥（K→根肥，抗倒伏抗虫害）。复合肥含两种以上元素（如KNO₃、NH₄H₂PO₄）。铵态氮肥（NH₄⁺）不能与碱性物质（草木灰、熟石灰）混用——会释放NH₃降低肥效。</td></tr>
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-trap">易错</span></td><td>
+          <div class="trap-header">【自测】判断下列说法是否正确：</div>
           <span class="trap-item">Na₂CO₃是盐不是碱（水溶液显碱性是因为CO₃²⁻水解）。</span>
           <span class="trap-item">复分解反应中元素化合价不变（区别于置换反应——单质化合价变为0）。</span>
           <span class="trap-item">盐溶液不一定中性（Na₂CO₃碱性、NH₄Cl酸性——谁强显谁性）。</span>
@@ -401,6 +423,7 @@ h1 { font-size: 26px; margin-bottom: 6px; }
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-exp">实验</span></td><td><strong>淀粉检验</strong>：滴加碘水→变蓝（淀粉与碘的特征反应）。<strong>纤维鉴别</strong>（燃烧法）：棉花（植物纤维）→烧纸味，灰烬灰色；羊毛（蛋白质）→烧焦羽毛味，黑色易碎；合成纤维（涤纶/尼龙）→熔化收缩，冷后成硬块。</td></tr>
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-method">必记</span></td><td><strong>三大合成材料</strong>：塑料（聚乙烯PE、聚氯乙烯PVC）、合成纤维（涤纶/锦纶/腈纶）、合成橡胶。白色污染→难降解→防治：减少使用+回收+可降解塑料。<br><strong>有机物定义</strong>：含碳化合物（CO、CO₂、碳酸盐虽含碳但属无机物）。最简单的有机物：CH₄。</td></tr>
     <tr><td style="width:20px;padding:4px;text-align:center;border:1px solid var(--border);vertical-align:middle;"><label class="chk"><input type="checkbox"><span class="box">✓</span></label></td><td><span class="tag-trap">易错</span></td><td>
+          <div class="trap-header">【自测】判断下列说法是否正确：</div>
           <span class="trap-item">"含碳的就是有机物"——错！CO、CO₂、碳酸盐是无机物。</span>
           <span class="trap-item">甲醛可用于食物保鲜——错！甲醛有毒，只能浸制标本。</span>
           <span class="trap-item">塑料有毒造成白色污染——塑料本身一般无毒，污染在难降解。</span>

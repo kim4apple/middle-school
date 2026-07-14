@@ -264,7 +264,9 @@ window.addEventListener('scroll',function(){var b=document.getElementById('backT
 
 // Solution toggle
 document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution')})});
-
+</script>
+<script src="lib/chart.umd.min.js"></script>
+<script>
 // Solubility chart
 function chartColors(){ return document.documentElement.getAttribute('data-theme')==='dark' ? {grid:'#334155',tick:'#94a3b8'} : {grid:'#e2e8f0',tick:'#64748b'}; }
 (function(){
@@ -279,6 +281,5 @@ function chartColors(){ return document.documentElement.getAttribute('data-theme
   observer.observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
 })();
 </script>
-<script src="lib/chart.umd.min.js"></script>
 </body>
 </html>

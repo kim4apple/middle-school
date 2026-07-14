@@ -10,7 +10,7 @@
   /* 化学专用色 */
   --chem-blue: #0891b2;    /* 溶液/沉淀蓝色 */
   --chem-green: #16a34a;   /* 气体/反应 */
-  --chem-red: #dc2626;     /* 警示/氧气 */
+  --chem-red: #991b1b;
   --chem-purple: #7c3aed;  /* 催化剂 */
   --chem-yellow: #f59e0b;  /* 硫/沉淀 */
   --chem-pink: #db2777;    /* 指示剂 */
@@ -27,7 +27,6 @@
 }
 
 /* ====== 暗色模式 — 组件适配 ====== */
-[data-theme="dark"] .experiment-observation { background: linear-gradient(135deg, #3b1111 0%, #0f2c1a 100%); }
 [data-theme="dark"] .safety-pitfall { background: #2d1f00; }
 [data-theme="dark"] .micro-explanation { background: #0f2c2c; border-color: #164e63; }
 [data-theme="dark"] .experiment-design { background: #1e293b; border-color: #334155; }
@@ -91,18 +90,16 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 /* ====== 化学 10 模块 ====== */
 /* 1. 实验观察 */
 .experiment-observation {
-  background: linear-gradient(135deg, #fef2f2 0%, #f0fdf4 100%);
-  border: 2px solid var(--chem-red); border-radius: var(--radius);
-  padding: 18px 22px; margin-bottom: 24px;
+  background: var(--accent-light); border: 1px solid var(--accent);
+  border-radius: var(--radius); padding: 18px 22px; margin-bottom: 24px;
 }
-.experiment-observation .exp-title { font-size: 18px; font-weight: 700; color: var(--chem-red); margin-bottom: 10px; }
+.experiment-observation .exp-title { font-size: 18px; font-weight: 700; color: var(--accent); margin-bottom: 10px; }
 .experiment-observation .exp-step { display: flex; align-items: flex-start; gap: 10px; margin: 8px 0; font-size: 14px; }
 .experiment-observation .exp-step-num {
-  background: var(--chem-red); color: #fff; border-radius: 50%;
-  width: 24px; height: 24px; display: flex; align-items: center;
-  justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0;
+  background: var(--accent); color: #fff; border-radius: 50%;
+  width: 22px; height: 22px; display: flex; align-items: center;
+  justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0;
 }
-[data-theme="dark"] .experiment-observation { background: linear-gradient(135deg, #3b1111 0%, #0f2c1a 100%); }
 
 /* 2. 微观解释 */
 .micro-explanation {

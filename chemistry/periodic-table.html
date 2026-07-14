@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>元素周期表 · 初中化学</title>
+<link rel="stylesheet" href="css/chemistry.css">
+<style>
+/* ====== 页面布局 ====== */
+body { flex-direction: column; min-height: 100vh; }
+#content { max-width: 1100px; margin: 0 auto; padding: 24px 28px; width: 100%; }
+
+/* ====== 顶栏 ====== */
+.top-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 0 12px 0; border-bottom: 1px solid var(--border); margin-bottom: 20px;
+}
+.top-bar h1 { font-size: 22px; font-weight: 800; }
+.top-bar h1 span { color: var(--accent); }
+.top-bar .nav-link { font-size: 13px; color: var(--text-secondary); text-decoration: none; }
+.top-bar .nav-link:hover { color: var(--accent); }
+.top-actions { display: flex; gap: 8px; align-items: center; }
+
+/* ====== 过滤器 ====== */
+.filter-bar {
+  background: var(--bg-secondary); border-radius: var(--radius);
+  padding: 14px 18px; margin-bottom: 18px;
+}
+.filter-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.filter-row + .filter-row { margin-top: 10px; }
+.filter-label { font-size: 11px; font-weight: 700; color: var(--text-secondary); min-width: 36px; }
+
+#search {
+  flex: 1; min-width: 160px; padding: 7px 12px; border: 1px solid var(--border);
+  border-radius: 6px; font-size: 13px; background: var(--bg); color: var(--text);
+  outline: none; transition: border-color .15s;
+}
+#search:focus { border-color: var(--accent); }
+
+.cat-pill {
+  padding: 4px 12px; border-radius: 20px; border: none; cursor: pointer;
+  font-size: 11px; font-weight: 600; transition: opacity .15s, transform .15s;
+  color: #333;
+}
+.cat-pill:hover { opacity: .85; transform: scale(1.04); }
+.cat-pill.active { box-shadow: 0 0 0 2px var(--accent), 0 0 0 4px rgba(8,145,178,.25); }
+[data-theme="dark"] .cat-pill { color: #e2e8f0; }
+[data-theme="dark"] .cat-pill[data-cat="all"] { background: #334155 !important; }
+[data-theme="dark"] .cat-pill[data-cat="alkali"] { background: #5c2a2a !important; }
+[data-theme="dark"] .cat-pill[data-cat="alkaline"] { background: #5c3d2a !important; }
+[data-theme="dark"] .cat-pill[data-cat="transition"] { background: #4a3d33 !important; }
+[data-theme="dark"] .cat-pill[data-cat="post-transition"] { background: #2a3350 !important; }
+[data-theme="dark"] .cat-pill[data-cat="metalloid"] { background: #2a402a !important; }
+[data-theme="dark"] .cat-pill[data-cat="nonmetal"] { background: #1e3d45 !important; }
+[data-theme="dark"] .cat-pill[data-cat="halogen"] { background: #2a402a !important; }
+[data-theme="dark"] .cat-pill[data-cat="noble"] { background: #3a2d4a !important; }
+[data-theme="dark"] .cat-pill[data-cat="lanthanide"] { background: #3a2a55 !important; }
+[data-theme="dark"] .cat-pill[data-cat="actinide"] { background: #552a3a !important; }
+
+.mode-btn {
+  padding: 4px 14px; border-radius: 20px; border: 1px solid var(--border);
+  cursor: pointer; font-size: 12px; font-weight: 600; background: var(--bg);
+  color: var(--text-secondary); transition: all .15s;
+}
+.mode-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* ====== 周期表网格 ====== */
+.ptable-grid {
+  display: grid; grid-template-columns: repeat(18, 1fr); gap: 2px;
+}
+#ptable { margin-bottom: 8px; }
+#ptable-f1, #ptable-f2 { }
+
+/* ====== 元素单元格 ====== */
+.e-cell {
+  border-radius: 4px; padding: 4px 2px; text-align: center; cursor: pointer;
+  transition: opacity .2s, transform .15s, box-shadow .15s;
+  position: relative; user-select: none;
+}
+.e-cell:hover { transform: scale(1.08); z-index: 2; }
+.e-cell .z { font-size: 6px; display: block; line-height: 1; color: var(--text-secondary); }
+.e-cell .sym { font-size: 12px; font-weight: 700; display: block; line-height: 1.3; }
+.e-cell .cn { font-size: 6px; display: block; line-height: 1; color: var(--text-secondary); }
+
+/* 暗色模式 分类背景色 — 低饱和度配深色背景 */
+[data-theme="dark"] .e-cell[data-cat="alkali"] { background: #5c2a2a !important; }
+[data-theme="dark"] .e-cell[data-cat="alkaline"] { background: #5c3d2a !important; }
+[data-theme="dark"] .e-cell[data-cat="transition"] { background: #4a3d33 !important; }
+[data-theme="dark"] .e-cell[data-cat="post-transition"] { background: #2a3350 !important; }
+[data-theme="dark"] .e-cell[data-cat="metalloid"] { background: #2a402a !important; }
+[data-theme="dark"] .e-cell[data-cat="nonmetal"] { background: #1e3d45 !important; }
+[data-theme="dark"] .e-cell[data-cat="halogen"] { background: #2a3d2a !important; }
+[data-theme="dark"] .e-cell[data-cat="noble"] { background: #3a2d4a !important; }
+[data-theme="dark"] .e-cell[data-cat="lanthanide"] { background: #3a2a55 !important; }
+[data-theme="dark"] .e-cell[data-cat="actinide"] { background: #552a3a !important; }
+[data-theme="dark"] .e-cell .sym { color: #e8e8e8; }
+
+/* 初中重点高亮 */
+.e-cell.focus::after {
+  content: ''; position: absolute; inset: -2px; border: 2px solid #f59e0b;
+  border-radius: 6px; pointer-events: none; z-index: 1;
+}
+[data-theme="dark"] .e-cell.focus::after { border-color: #fbbf24; }
+
+/* 选中的元素 */
+.e-cell.selected { box-shadow: 0 0 0 2px var(--accent), 0 0 4px rgba(8,145,178,.4); z-index: 3; }
+
+/* 过滤状态: 隐藏 vs 淡化 */
+.e-cell.hidden-cell { opacity: 0; pointer-events: none; }
+.e-cell.muted { opacity: .15; }
+
+/* ====== 镧系/锕系区域 ====== */
+#fblock-section { margin-top: 8px; }
+#fblock-section.hidden { display: none; }
+
+/* ====== 筛选计数器 ====== */
+#filter-count {
+  font-size: 12px; color: var(--text-secondary); margin-bottom: 10px;
+}
+
+/* ====== 详情悬浮卡片 ====== */
+#detail-overlay {
+  display: none; position: fixed; inset: 0; z-index: 998;
+  background: rgba(0,0,0,.35); backdrop-filter: blur(2px);
+}
+#detail-overlay.show { display: block; }
+
+#detail-wrap {
+  display: none; position: fixed; inset: 0; z-index: 999;
+  align-items: center; justify-content: center;
+  pointer-events: none;
+}
+#detail-wrap.open { display: flex; }
+
+#detail {
+  width: 380px; max-height: 82vh;
+  background: var(--bg); border-radius: 18px;
+  box-shadow: 0 12px 48px rgba(0,0,0,.2);
+  overflow-y: auto; padding: 28px 26px; pointer-events: auto;
+  position: relative;
+  animation: cardIn .25s cubic-bezier(.22,1,.36,1);
+}
+@keyframes cardIn {
+  from { opacity: 0; transform: scale(.92) translateY(8px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+[data-theme="dark"] #detail {
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 48px rgba(0,0,0,.5), 0 0 40px rgba(45,212,191,.05);
+}
+#detail .close-btn {
+  position: absolute; top: 14px; right: 16px; background: none; border: none;
+  font-size: 20px; cursor: pointer; color: var(--text-secondary); line-height: 1;
+  padding: 6px 8px; border-radius: 8px; transition: all .15s;
+}
+#detail .close-btn:hover { background: var(--accent-light); color: var(--accent); }
+#detail .d-cat-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 5px 14px; border-radius: 20px;
+  font-size: 12px; font-weight: 700; color: #1e293b; margin-bottom: 6px;
+  letter-spacing: .3px;
+}
+[data-theme="dark"] #detail .d-cat-badge {
+  color: #e2e8f0;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.08);
+}
+[data-theme="dark"] #detail .d-cat-badge[data-cat="alkali"] { background: #7f1d1d !important; }
+[data-theme="dark"] #detail .d-cat-badge[data-cat="alkaline"] { background: #7c2d12 !important; }
+[data-theme="dark"] #detail .d-cat-badge[data-cat="transition"] { background: #451a03 !important; }
+[data-theme="dark"] #detail .d-cat-badge[data-cat="post-transition"] { background: #1e3a5f !important; }
+[data-theme="dark"] #detail .d-cat-badge[data-cat="metalloid"] { background: #14532d !important; }
+[data-theme="dark"] #detail .d-cat-badge[data-cat="nonmetal"] { background: #164e63 !important; }
+[data-theme="dark"] #detail .d-cat-badge[data-cat="halogen"] { background: #14532d !important; }
+[data-theme="dark"] #detail .d-cat-badge[data-cat="noble"] { background: #3b0764 !important; }
+[data-theme="dark"] #detail .d-cat-badge[data-cat="lanthanide"] { background: #2e1065 !important; }
+[data-theme="dark"] #detail .d-cat-badge[data-cat="actinide"] { background: #701a75 !important; }
+#detail .d-z {
+  font-size: 12px; font-weight: 700; color: var(--text-secondary);
+  margin-bottom: 2px; letter-spacing: .5px;
+}
+#detail .d-sym {
+  font-size: 54px; font-weight: 800; display: block; line-height: 1; letter-spacing: -2px;
+}
+#detail .d-cn {
+  font-size: 24px; font-weight: 600; display: block; color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+#detail .d-info { border-top: 1px solid var(--border); padding-top: 14px; }
+#detail .d-info-row {
+  display: flex; justify-content: space-between; padding: 8px 0;
+  font-size: 13px; border-bottom: 1px solid var(--border);
+}
+#detail .d-info-row:last-child { border-bottom: none; }
+#detail .d-info-row .d-label { color: var(--text-secondary); font-size: 12px; }
+#detail .d-info-row .d-value { font-weight: 700; text-align: right; }
+
+#detail .d-exam {
+  margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border);
+}
+#detail .d-exam-title {
+  font-size: 13px; font-weight: 700; color: var(--accent);
+  margin-bottom: 8px; display: flex; align-items: center; gap: 6px;
+}
+#detail .d-exam-items { list-style: none; padding: 0; margin: 0; }
+#detail .d-exam-items li {
+  position: relative; padding: 5px 0 5px 14px;
+  font-size: 13px; line-height: 1.6; color: var(--text);
+}
+#detail .d-exam-items li::before {
+  content: '•'; position: absolute; left: 0; color: var(--accent); font-weight: 700;
+}
+#detail .d-exam-items li.exam-warn {
+  background: #fef2f2; padding: 6px 10px 6px 28px; border-radius: 6px;
+  margin-top: 4px; font-weight: 600; color: #b91c1c;
+}
+[data-theme="dark"] #detail .d-exam-items li.exam-warn {
+  background: #450a0a; color: #fca5a5;
+}
+#detail .d-exam-items li.exam-warn::before { content: '⚠️'; left: 6px; }
+
+#detail .d-shell-diagram {
+  margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border);
+}
+#detail .d-shell-diagram strong { font-size: 12px; color: var(--text-secondary); }
+#detail .shell-dots {
+  display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap;
+}
+#detail .shell-dot {
+  width: 42px; height: 42px; border-radius: 50%; border: 2px solid var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 800; background: var(--accent-light);
+}
+
+@media (max-width: 480px) {
+  #detail { width: 90vw; padding: 22px 18px; }
+  #detail .d-sym { font-size: 40px; }
+}
+
+/* 响应式 — 整体布局 */
+@media (max-width: 768px) {
+  #content { padding: 14px 10px; }
+  .top-bar h1 { font-size: 17px; }
+  .filter-bar { padding: 10px 12px; }
+  .filter-row { gap: 6px; }
+  #search { min-width: 100px; font-size: 12px; padding: 5px 8px; }
+  .cat-pill { font-size: 10px; padding: 3px 8px; }
+  #ptable { gap: 1px; }
+  .e-cell { padding: 3px 1px; }
+  .e-cell .sym { font-size: 10px; }
+}
+
+@media (max-width: 480px) {
+  #ptable { gap: 1px; }
+  .e-cell { padding: 2px 1px; }
+  .e-cell .sym { font-size: 8px; }
+  .e-cell .z, .e-cell .cn { font-size: 5px; }
+}
+
+/* 打印 */
+@media print {
+  .top-bar, .filter-bar, #detail, #detail-overlay, .theme-toggle, .back-to-top { display: none !important; }
+  body { flex-direction: column; }
+  .e-cell.hidden-cell { opacity: 0.08 !important; display: block !important; }
+  .e-cell.muted { opacity: .08 !important; }
+}
+</style>
+</head>
+<body>
+
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<div id="content">
+
+<!-- 顶栏 -->
+<div class="top-bar">
+  <a href="appendix.html#s18" class="nav-link">← 返回附录</a>
+  <h1>🧪 <span>元素周期表</span></h1>
+  <div class="top-actions">
+    <button id="theme-toggle" class="theme-toggle" style="width:auto;margin:0;">🌙 暗色</button>
+  </div>
+</div>
+
+<!-- 过滤器 -->
+<div class="filter-bar">
+  <div class="filter-row">
+    <span class="filter-label">搜索</span>
+    <input type="text" id="search" placeholder="名称或符号…">
+  </div>
+  <div class="filter-row">
+    <span class="filter-label">分类</span>
+    <button class="cat-pill active" data-cat="all" style="background:#e2e8f0;">全部</button>
+    <button class="cat-pill" data-cat="alkali" style="background:#ffb3b3;">碱金属</button>
+    <button class="cat-pill" data-cat="alkaline" style="background:#ffd9b3;">碱土</button>
+    <button class="cat-pill" data-cat="transition" style="background:#ffebcc;">过渡金属</button>
+    <button class="cat-pill" data-cat="post-transition" style="background:#cce5ff;">贫金属</button>
+    <button class="cat-pill" data-cat="metalloid" style="background:#b3d9b3;">类金属</button>
+    <button class="cat-pill" data-cat="nonmetal" style="background:#a8d8ea;">非金属</button>
+    <button class="cat-pill" data-cat="halogen" style="background:#d4e2d4;">卤素</button>
+    <button class="cat-pill" data-cat="noble" style="background:#c3aed6;">稀有气体</button>
+    <button class="cat-pill" data-cat="lanthanide" style="background:#e6ccff;">镧系</button>
+    <button class="cat-pill" data-cat="actinide" style="background:#ffcce6;">锕系</button>
+  </div>
+  <div class="filter-row">
+    <span class="filter-label">模式</span>
+    <button class="mode-btn" data-mode="all">全部元素</button>
+    <button class="mode-btn active" data-mode="focus">★ 初中必须掌握</button>
+  </div>
+</div>
+
+<div id="filter-count"></div>
+
+<!-- 周期表容器 -->
+<div id="ptable" class="ptable-grid"></div>
+
+<!-- 镧系/锕系 区域 -->
+<div id="fblock-section">
+  <div class="ptable-grid" style="margin-bottom:2px;font-size:10px;font-weight:700;color:var(--text-secondary);">
+    <div style="grid-column:1/4;text-align:right;padding-right:6px;">镧系</div>
+  </div>
+  <div id="ptable-f1" class="ptable-grid"></div>
+  <div class="ptable-grid" style="margin-top:4px;font-size:10px;font-weight:700;color:var(--text-secondary);">
+    <div style="grid-column:1/4;text-align:right;padding-right:6px;">锕系</div>
+  </div>
+  <div id="ptable-f2" class="ptable-grid"></div>
+</div>
+
+</div>
+
+<!-- 详情遮罩 -->
+<div id="detail-overlay"></div>
+
+<!-- 详情面板 -->
+<div id="detail-wrap">
+  <div id="detail">
+    <button class="close-btn" id="detail-close">✕</button>
+    <span class="d-cat-badge"></span>
+    <div class="d-z"></div>
+    <div class="d-sym"></div>
+    <div class="d-cn"></div>
+    <div class="d-info"></div>
+    <div class="d-exam"></div>
+  </div>
+</div>
+
+<script>
+// ====== 数据 ======
+const CAT_COLORS = {
+  alkali:'#ffb3b3', alkaline:'#ffd9b3', transition:'#ffebcc', 'post-transition':'#cce5ff',
+  metalloid:'#b3d9b3', nonmetal:'#a8d8ea', halogen:'#d4e2d4', noble:'#c3aed6',
+  lanthanide:'#e6ccff', actinide:'#ffcce6'
+};
+const CAT_CN = {
+  alkali:'碱金属', alkaline:'碱土金属', transition:'过渡金属', 'post-transition':'贫金属',
+  metalloid:'类金属', nonmetal:'非金属', halogen:'卤素', noble:'稀有气体',
+  lanthanide:'镧系元素', actinide:'锕系元素'
+};
+const CAT_ICON = {
+  alkali:'⚡', alkaline:'🧱', transition:'🔩', 'post-transition':'⚙️',
+  metalloid:'💻', nonmetal:'💨', halogen:'🧪', noble:'✨',
+  lanthanide:'🧲', actinide:'☢️'
+};
+const CAT_DESC = {
+  alkali:'最活泼金属族 · 遇水剧烈反应',
+  alkaline:'较活泼金属 · 常见于矿物',
+  transition:'合金/催化剂核心 · 多有颜色 · 变价元素',
+  'post-transition':'熔点较低 · 常用作合金',
+  metalloid:'性质介于金属和非金属之间 · 半导体材料',
+  nonmetal:'气体或固体 · 非金属性较强',
+  halogen:'最活泼非金属族 · 化合价-1 · 有毒',
+  noble:'几乎¬反应 · 单原子气体 · 通电发光',
+  lanthanide:'稀土元素 · 性质相似 · 永磁/荧光材料',
+  actinide:'放射性元素 · 核燃料 · 人造元素'
+};
+
+// 初中重点元素 (1-20 + Fe/Cu/Zn/Ag/Au/Hg/Ba/Pb)
+var FOCUS = {}; [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,25,26,29,30,35,47,50,53,56,78,79,80,82].forEach(function(n){FOCUS[n]=true});
+
+var ELEMENTS = [
+  [1,'H','氢','nonmetal',1,1,'1.008','1','最轻气体(密度0.0899g/L) · H₂可燃(淡蓝色火焰)+还原性(CuO→Cu) · 清洁能源(产物H₂O) · ⚠️ H₂与空气混合遇火爆炸(验纯!)'],
+  [2,'He','氦','noble',18,1,'4.003','2','稀有气体·¬反应 · 密度比空气小→填充气球/飞艇(安全>H₂) · 通电发粉红光 · "懒"到不参与化学反应'],
+  [3,'Li','锂','alkali',1,2,'6.941','2,1','最轻金属(密度0.534) · Li/Na/K同族活动性递增 · Li-ion电池(新能源) · ⚠️ 遇水反应剧烈(H₂↑)'],
+  [4,'Be','铍','alkaline',2,2,'9.012','2,2','航天合金轻而强 · 有毒 · 中学仅作识记'],
+  [5,'B','硼','metalloid',13,2,'10.81','2,3','硼酸H₃BO₃(消毒/防腐) · 硼砂Na₂B₄O₇ · 作物缺B→"花而不实"'],
+  [6,'C','碳','nonmetal',14,2,'12.011','2,4','有机物骨架(糖/脂肪/蛋白质) · 同素异形体:金刚石(最硬)/石墨(软导电)/C₆₀(足球烯) · 还原性:C+CuO→Cu+CO₂ · CO+CO₂相互转化'],
+  [7,'N','氮','nonmetal',15,2,'14.007','2,5','空气中78%(最多) · N₂稳定→保护气/食品充氮 · 氮肥(尿素/硝铵/碳铵) · 蛋白质必含N · ⚠️ NH₄⁺不与碱性物质混用(释放NH₃↓肥效)'],
+  [8,'O','氧','nonmetal',16,2,'16.00','2,6','生命必需·支持燃烧+供给呼吸 · 空气中21% · 实验室3种制O₂法(KMnO₄/H₂O₂/KClO₃) · 氧化物核心·中考必考 · ⚠️ 区分:"燃烧需氧气"≠"氧气支持燃烧"'],
+  [9,'F','氟','halogen',17,2,'19.00','2,7','最活泼非金属·化合价-1 · 牙膏含氟防蛀(CaF₂/NaF) · 与H₂反应黑暗即爆炸(→HF)'],
+  [10,'Ne','氖','noble',18,2,'20.180','2,8','霓虹灯(橙红光) · 稳定8电子·¬反应 · Ne=NE-on(灯亮)'],
+  [11,'Na','钠','alkali',1,3,'22.990','2,8,1','NaCl(食盐)->NaOH(烧碱)->Na₂CO₃(纯碱)->NaHCO₃(小苏打) · 焰色反应→黄色 · 2Na+2H₂O→2NaOH+H₂↑ · ⚠️ Na常温与O₂反应表面变暗(银白→灰)'],
+  [12,'Mg','镁','alkaline',2,3,'24.305','2,8,2','燃烧耀眼白光→MgO · 与酸剧烈:Mg+2HCl→MgCl₂+H₂↑ · Mg(OH)₂治疗胃酸 · 活动性强(>Al>Zn>Fe) · ⚠️ 镁条燃烧用坩埚钳夹持,石棉网承接'],
+  [13,'Al','铝','post-transition',13,3,'26.982','2,8,3','地壳中最多金属 · 表面致密Al₂O₃膜→耐腐蚀(≠铁锈疏松) · 两性氧化物:Al₂O₃+HCl和Al₂O₃+NaOH均反应 · ⚠️ Al与酸生成Al³⁺(无色)不是Al⁺!'],
+  [14,'Si','硅','metalloid',14,3,'28.086','2,8,4','地壳第二多(26.3%) · 半导体→芯片核心 · SiO₂(沙/石英/水晶) · 光导纤维(全反射) · 记忆:Si+O₂→SiO₂地壳两大元素结合'],
+  [15,'P','磷','nonmetal',15,3,'30.974','2,8,5','红磷(安全着火点240℃) vs 白磷(自燃着火点40℃) · 经典实验:红磷测空气中O₂含量(4P+5O₂→2P₂O₅白烟) · ⚠️ 白磷保存在水中(隔离空气+降温)'],
+  [16,'S','硫','nonmetal',16,3,'32.065','2,8,6','黄色固体 · O₂中燃烧蓝紫色火焰(S+O₂→SO₂) · SO₂→酸雨 · 化合价-2(H₂S), +4(SO₂), +6(H₂SO₄) · ⚠️ S在O₂中≠在空气中燃烧(空气中淡蓝色火焰)'],
+  [17,'Cl','氯','halogen',17,3,'35.453','2,8,7','黄绿有毒气体(密度>空气) · 自来水消毒(Cl₂+H₂O→HCl+HClO) · HCl(盐酸) · 化合价-1 · ⚠️ Cl₂有漂白性(次氯酸HClO)≠干Cl₂无漂白性'],
+  [18,'Ar','氩','noble',18,3,'39.948','2,8,8','空气中最多稀有气体(0.934%) · 焊接保护气(¬与金属反应) · ¬化学反应·¬燃烧·¬毒 · Ar→Air→空气中最多稀有'],
+  [19,'K','钾','alkali',1,4,'39.098','2,8,8,1','比Na更活泼(K>Na>···>Au) · 焰色紫色(透过蓝色钴玻璃) · KOH(强碱) · KNO₃(N+K复合肥) · ⚠️ K与O₂反应生成KO₂(超氧化钾)不是K₂O'],
+  [20,'Ca','钙','alkaline',2,4,'40.078','2,8,8,2','骨骼牙齿(Ca₁₀(PO₄)₆(OH)₂) · CaCO₃(大理石/石灰石/蛋壳) · CaO(生石灰)+H₂O→Ca(OH)₂大量放热 · Ca(OH)₂+CO₂→CaCO₃↓(检验CO₂) · ⚠️ CaO+H₂O放热是化学变化(生石灰→熟石灰)'],
+  [21,'Sc','钪','transition',3,4,'44.956','2,8,9,2','稀土元素'],
+  [22,'Ti','钛','transition',4,4,'47.867','2,8,10,2','航天材料，强度高耐腐蚀'],
+  [23,'V','钒','transition',5,4,'50.942','2,8,11,2','钢铁添加剂'],
+  [24,'Cr','铬','transition',6,4,'51.996','2,8,13,1','电镀防锈'],
+  [25,'Mn','锰','transition',7,4,'54.938','2,8,13,2','KMnO₄紫黑色→加热制O₂(试管口放棉花!先撤导管再熄灯) · 变价之王:+2(浅粉),+4(MnO₂黑),+6(K₂MnO₄绿),+7(KMnO₄紫) · MnO₂催化H₂O₂分解 · ⚠️ KMnO₄强氧化性(与还原性物质反应褪色)'],
+  [26,'Fe','铁','transition',8,4,'55.845','2,8,14,2','年产量最多金属 · Fe₂O₃(铁锈红棕)+CO→Fe(高炉炼铁) · Fe₃O₄(磁铁矿黑) · Fe+CuSO₄→FeSO₄+Cu(湿法冶金) · 变价+2(浅绿),+3(黄) · ⚠️ 铁与酸→Fe²⁺(浅绿)不是Fe³⁺(黄)!'],
+  [27,'Co','钴','transition',9,4,'58.933','2,8,15,2','维生素B₁₂成分'],
+  [28,'Ni','镍','transition',10,4,'58.693','2,8,16,2','不锈钢成分'],
+  [29,'Cu','铜','transition',11,4,'63.546','2,8,18,1','紫红色金属 · 导电性:Ag>Cu>Au>Al · CuO黑,CuSO₄蓝,Cu(OH)₂蓝↓ · Cu+AgNO₃→Cu(NO₃)₂+Ag(无色→蓝) · 变价+1(Cu₂O红),+2 · ⚠️ 铜绿Cu₂(OH)₂CO₃(碱式碳酸铜)→铜与O₂+H₂O+CO₂反应'],
+  [30,'Zn','锌','transition',12,4,'65.380','2,8,18,2','干电池外壳(负极) · Zn+H₂SO₄→ZnSO₄+H₂↑(实验室制H₂) · 金属活动性在Fe前H前 · ZnSO₄白色 · 镀锌铁(白铁皮)防锈 · ⚠️ Zn与酸反应速率适中(比Mg慢比Fe快)→最适合实验室制H₂'],
+  [31,'Ga','镓','post-transition',13,4,'69.723',null,'低熔点(29.8°C)手中熔化'],
+  [32,'Ge','锗','metalloid',14,4,'72.630',null,'半导体'],
+  [33,'As','砷','metalloid',15,4,'74.922',null,'剧毒·砒霜(As₂O₃)'],
+  [34,'Se','硒','nonmetal',16,4,'78.971',null,'人体必需微量元素(富硒食品)'],
+  [35,'Br','溴','halogen',17,4,'79.904',null,'常温唯一液态非金属(深红棕色) · Br₂挥发红棕色蒸气(有毒!) · AgBr见光分解(感光材料→摄影) · ⚠️ Br₂+H₂O→HBr+HBrO(与Cl₂类似)'],
+  [36,'Kr','氪','noble',18,4,'83.798',null,'稀有气体·氪灯'],
+  [37,'Rb','铷','alkali',1,5,'85.468',null,'遇水剧烈反应(比K还烈)'],
+  [38,'Sr','锶','alkaline',2,5,'87.620',null,'焰色反应红色'],
+  [39,'Y','钇','transition',3,5,'88.906',null,'稀土元素'],
+  [40,'Zr','锆','transition',4,5,'91.224',null,'核反应堆材料'],
+  [41,'Nb','铌','transition',5,5,'92.906',null,'超导材料'],
+  [42,'Mo','钼','transition',6,5,'95.950',null,'合金添加剂'],
+  [43,'Tc','锝','transition',7,5,'98.907',null,'人造放射性元素'],
+  [44,'Ru','钌','transition',8,5,'101.070',null,'铂族金属'],
+  [45,'Rh','铑','transition',9,5,'102.906',null,'催化转化器(汽车尾气)'],
+  [46,'Pd','钯','transition',10,5,'106.420',null,'催化加氢'],
+  [47,'Ag','银','transition',11,5,'107.868',null,'导电/导热性最好金属 · AgCl白色↓(不溶于稀HNO₃)→检验Cl⁻ · AgNO₃见光分解→棕色瓶保存 · ⚠️ Ag+稀H₂SO₄/HCl¬反应(活动性H后)'],
+  [48,'Cd','镉','transition',12,5,'112.414',null,'有毒·镉镍电池污染'],
+  [49,'In','铟','post-transition',13,5,'114.818',null,'触摸屏ITO透明导电膜'],
+  [50,'Sn','锡','post-transition',14,5,'118.710',null,'马口铁(镀Sn防锈) · 青铜=Cu+Sn(第一个合金) · 活动性在Pb前H后 · ⚠️ 锡纸≠铝箔(锡纸多为铝箔)'],
+  [51,'Sb','锑','metalloid',15,5,'121.760',null,'阻燃剂'],
+  [52,'Te','碲','metalloid',16,5,'127.600',null,'半导体'],
+  [53,'I','碘','halogen',17,5,'126.904',null,'紫黑色固体·加热升华紫色蒸气(无液态→直接气固间转化) · 碘酒(消毒) · I₂+淀粉→蓝色(特征反应!) · ⚠️ 是I₂使淀粉变蓝不是I⁻离子! · 化合价-1,+5,+7'],
+  [54,'Xe','氙','noble',18,5,'131.293',null,'稀有气体·氙灯(强光)'],
+  [55,'Cs','铯','alkali',1,6,'132.905',null,'最活泼金属(比K/Rb更烈)'],
+  [56,'Ba','钡','alkaline',2,6,'137.327',null,'BaSO₄(钡餐)¬溶水/酸→X光造影 · Ba²⁺有毒(可溶钡盐剧毒!) · BaCl₂+Na₂SO₄→BaSO₄↓(检验SO₄²⁻) · 焰色绿色 · ⚠️ 误服可溶钡盐→MgSO₄解毒(生成不溶BaSO₄)'],
+  [57,'La','镧','lanthanide',3,6,'138.905',null,'稀土之首'],
+  [72,'Hf','铪','transition',4,6,'178.490',null,'核控制棒'],
+  [73,'Ta','钽','transition',5,6,'180.948',null,'高温合金'],
+  [74,'W','钨','transition',6,6,'183.840',null,'熔点最高金属(3422°C)→灯泡灯丝'],
+  [75,'Re','铼','transition',7,6,'186.207',null,'高熔点'],
+  [76,'Os','锇','transition',8,6,'190.230',null,'密度最大金属(22.59g/cm³)'],
+  [77,'Ir','铱','transition',9,6,'192.217',null,'耐腐蚀·铂铱合金'],
+  [78,'Pt','铂','transition',10,6,'195.084',null,'白金(贵金属) · 催化加氢(工业催化剂) · ¬与酸反应(→王水可溶) · 活动性极弱(≈Au) · ⚠️ 铂金≠K白金(黄金合金)'],
+  [79,'Au','金','transition',11,6,'196.967',null,'最稳定金属 · 真金不怕火炼(¬与O₂反应) · ¬任何单一酸 · 延伸性最好(1g可拉3000m丝) · 活动性顺序最后 · ⚠️ 合金≠纯金(18K金=75%Au+其他金属)'],
+  [80,'Hg','汞','transition',12,6,'200.592',null,'常温唯一液态金属(银白色) · 温度计/气压计原理(热胀冷缩) · HgO→△→Hg+O₂ · 剧毒(累积性) · ⚠️ 汞洒落→硫粉覆盖(Hg+S→HgS)'],
+  [81,'Tl','铊','post-transition',13,6,'204.380',null,'剧毒(铊中毒)'],
+  [82,'Pb','铅','post-transition',14,6,'207.200',null,'铅蓄电池(Pb+PbO₂+H₂SO₄) · 重金属有毒(累积性) · PbSO₄白色↓不溶于水 · 活动性在H前Sn后 · ⚠️ 含铅汽油禁止(尾气含Pb污染)'],
+  [83,'Bi','铋','post-transition',15,6,'208.980',null,'低毒·替代铅(环保)'],
+  [84,'Po','钋','post-transition',16,6,'209.000',null,'放射性极强(居里夫人发现)'],
+  [85,'At','砹','halogen',17,6,'210.000',null,'最稀有的自然元素(<30g地壳)'],
+  [86,'Rn','氡','noble',18,6,'222.000',null,'放射性稀有气体·室内污染源'],
+  [87,'Fr','钫','alkali',1,7,'223.000',null,'最稀有的自然元素之一'],
+  [88,'Ra','镭','alkaline',2,7,'226.000',null,'居里夫人发现的放射性元素'],
+  [89,'Ac','锕','actinide',3,7,'227.000',null,'放射性·锕系之首'],
+  [104,'Rf','𬬻','transition',4,7,'267.000',null,'人工合成元素'],
+  [105,'Db','𬭊','transition',5,7,'268.000',null,'人工合成元素'],
+  [106,'Sg','𬭳','transition',6,7,'269.000',null,'人工合成元素'],
+  [107,'Bh','𬭛','transition',7,7,'270.000',null,'人工合成元素'],
+  [108,'Hs','𬭶','transition',8,7,'277.000',null,'人工合成元素'],
+  [109,'Mt','鿏','transition',9,7,'278.000',null,'人工合成元素'],
+  [110,'Ds','𫟼','transition',10,7,'281.000',null,'人工合成元素'],
+  [111,'Rg','𬬭','transition',11,7,'282.000',null,'人工合成元素'],
+  [112,'Cn','鿔','transition',12,7,'285.000',null,'人工合成元素'],
+  [113,'Nh','鿭','post-transition',13,7,'286.000',null,'人工合成元素'],
+  [114,'Fl','𫓧','post-transition',14,7,'289.000',null,'人工合成元素'],
+  [115,'Mc','镆','post-transition',15,7,'290.000',null,'人工合成元素'],
+  [116,'Lv','𫟷','post-transition',16,7,'293.000',null,'人工合成元素'],
+  [117,'Ts','鿬','halogen',17,7,'294.000',null,'人工合成元素'],
+  [118,'Og','鿫','noble',18,7,'294.000',null,'人工合成元素'],
+  // 镧系 (row 8)
+  [58,'Ce','铈','lanthanide',4,8,'140.116',null,'稀土·催化(汽车尾气)'],
+  [59,'Pr','镨','lanthanide',5,8,'140.908',null,'稀土·玻璃着色(黄)'],
+  [60,'Nd','钕','lanthanide',6,8,'144.243',null,'稀土·最强永磁(NdFeB)'],
+  [61,'Pm','钷','lanthanide',7,8,'145.000',null,'人造放射性元素'],
+  [62,'Sm','钐','lanthanide',8,8,'150.362',null,'稀土·永磁材料'],
+  [63,'Eu','铕','lanthanide',9,8,'151.964',null,'稀土·荧光粉(人民币防伪)'],
+  [64,'Gd','钆','lanthanide',10,8,'157.250',null,'稀土·医用造影剂'],
+  [65,'Tb','铽','lanthanide',11,8,'158.925',null,'稀土·荧光材料(绿)'],
+  [66,'Dy','镝','lanthanide',12,8,'162.500',null,'稀土·永磁添加剂'],
+  [67,'Ho','钬','lanthanide',13,8,'164.930',null,'稀土·激光器'],
+  [68,'Er','铒','lanthanide',14,8,'167.259',null,'稀土·光纤放大器'],
+  [69,'Tm','铥','lanthanide',15,8,'168.934',null,'稀土'],
+  [70,'Yb','镱','lanthanide',16,8,'173.045',null,'稀土'],
+  [71,'Lu','镥','lanthanide',17,8,'174.967',null,'稀土'],
+  // 锕系 (row 9)
+  [90,'Th','钍','actinide',4,9,'232.038',null,'放射性·核燃料'],
+  [91,'Pa','镤','actinide',5,9,'231.036',null,'放射性'],
+  [92,'U','铀','actinide',6,9,'238.029',null,'核燃料(核裂变·原子弹) · 放射性'],
+  [93,'Np','镎','actinide',7,9,'237.000',null,'人造元素'],
+  [94,'Pu','钚','actinide',8,9,'244.000',null,'核武器材料'],
+  [95,'Am','镅','actinide',9,9,'243.000',null,'烟雾报警器(电离室)'],
+  [96,'Cm','锔','actinide',10,9,'247.000',null,'人造元素'],
+  [97,'Bk','锫','actinide',11,9,'247.000',null,'人造元素'],
+  [98,'Cf','锎','actinide',12,9,'251.000',null,'人造元素'],
+  [99,'Es','锿','actinide',13,9,'252.000',null,'人造元素'],
+  [100,'Fm','镄','actinide',14,9,'257.000',null,'人造元素'],
+  [101,'Md','钔','actinide',15,9,'258.000',null,'人造元素'],
+  [102,'No','锘','actinide',16,9,'259.000',null,'人造元素'],
+  [103,'Lr','铹','actinide',17,9,'266.000',null,'人造元素'],
+];
+
+// ====== 构建查找表 ======
+var BY_Z = {}; for(var i=0;i<ELEMENTS.length;i++){var e=ELEMENTS[i];BY_Z[e[0]]=e;}
+
+// ====== 渲染函数 ======
+function renderGrid(containerId, rows, colStart){
+  var c = document.getElementById(containerId);
+  if(!c) return;
+  // Build row-col grid
+  var grid = Array(rows); for(var r=0;r<rows;r++){grid[r]=Array(18);for(var x=0;x<18;x++)grid[r][x]=null;}
+  for(var i=0;i<ELEMENTS.length;i++){
+    var e=ELEMENTS[i], row=e[5], col=e[4];
+    if(row>=colStart && row<colStart+rows){
+      grid[row-colStart][col-1] = e;
+    }
+  }
+  var html = '';
+  for(var r=0;r<rows;r++){
+    for(var c2=0;c2<18;c2++){
+      var e = grid[r][c2];
+      if(e){
+        var z=e[0],sym=e[1],cn=e[2],cat=e[3],bg=CAT_COLORS[cat]||'#ddd';
+        var isFocus = FOCUS[z] ? ' focus' : '';
+        html += '<div class="e-cell'+isFocus+'" data-z="'+z+'" data-cat="'+cat+'" data-sym="'+sym+'" data-cn="'+cn+'" style="background:'+bg+';">'+
+          '<span class="z">'+z+'</span>'+
+          '<span class="sym">'+sym+'</span>'+
+          '<span class="cn">'+cn+'</span></div>';
+      } else {
+        html += '<div></div>';
+      }
+    }
+  }
+  c.innerHTML = html;
+}
+
+renderGrid('ptable', 7, 1);
+renderGrid('ptable-f1', 1, 8);
+renderGrid('ptable-f2', 1, 9);
+
+// ====== 过滤逻辑 ======
+var searchEl = document.getElementById('search');
+var catBtns = document.querySelectorAll('.cat-pill');
+var modeBtns = document.querySelectorAll('.mode-btn');
+var cells = document.querySelectorAll('.e-cell');
+var countEl = document.getElementById('filter-count');
+
+var state = { search:'', cat:'all', mode:'focus' };
+
+function filter(){
+  for(var i=0;i<cells.length;i++){
+    var c = cells[i];
+    var z = parseInt(c.getAttribute('data-z'));
+    var cat = c.getAttribute('data-cat');
+    var sym = c.getAttribute('data-sym').toLowerCase();
+    var cn = c.getAttribute('data-cn');
+
+    var show = true;
+    // Mode: focus → only FOCUS elements visible
+    if(state.mode==='focus' && !FOCUS[z]) show=false;
+    // Search
+    if(show && state.search && sym.indexOf(state.search)===-1 && cn.indexOf(state.search)===-1) show=false;
+    // Category
+    if(show && state.cat!=='all' && cat!==state.cat) show=false;
+
+    if(show) {
+      c.classList.remove('hidden-cell','muted');
+    } else if(state.search) {
+      c.classList.add('muted');
+      c.classList.remove('hidden-cell');
+    } else {
+      c.classList.add('hidden-cell');
+      c.classList.remove('muted');
+    }
+  }
+
+  // 镧系/锕系区域 toggle
+  var fb = document.getElementById('fblock-section');
+  if(fb) fb.classList.toggle('hidden', state.mode==='focus');
+
+  var nFocus = 0; for(var k in FOCUS) nFocus++;
+  var total = state.mode==='focus' ? nFocus : 118;
+  var visible = document.querySelectorAll('.e-cell:not(.hidden-cell):not(.muted)').length;
+  countEl.textContent = '显示 ' + visible + ' 个' + (state.mode==='focus' ? '（初中必须掌握）' : '（共 118 个元素）');
+}
+
+// Search
+searchEl.addEventListener('input', function(){
+  state.search = this.value.trim().toLowerCase();
+  filter();
+});
+
+// Category pills
+for(var i=0;i<catBtns.length;i++){
+  catBtns[i].addEventListener('click', function(){
+    for(var j=0;j<catBtns.length;j++) catBtns[j].classList.remove('active');
+    this.classList.add('active');
+    state.cat = this.getAttribute('data-cat');
+    filter();
+  });
+}
+
+// Mode buttons
+for(var i=0;i<modeBtns.length;i++){
+  modeBtns[i].addEventListener('click', function(){
+    for(var j=0;j<modeBtns.length;j++) modeBtns[j].classList.remove('active');
+    this.classList.add('active');
+    state.mode = this.getAttribute('data-mode');
+    filter();
+  });
+}
+
+// ====== 点击查看详情（悬浮卡片） ======
+var detailWrap = document.getElementById('detail-wrap');
+var detail = document.getElementById('detail');
+var overlay = document.getElementById('detail-overlay');
+var closeBtn = document.getElementById('detail-close');
+var selectedCell = null;
+
+function showDetail(z){
+  var e = BY_Z[z];
+  if(!e) return;
+  var sym=e[1],cn=e[2],cat=e[3],group=e[4],period=e[5],mass=e[6]||'—',shell=e[7],desc=e[8];
+  var bg=CAT_COLORS[cat]||'#ddd';
+
+  detail.querySelector('.d-cat-badge').innerHTML = (CAT_ICON[cat]||'')+' '+CAT_CN[cat];
+  detail.querySelector('.d-cat-badge').style.background = bg;
+  detail.querySelector('.d-cat-badge').setAttribute('data-cat', cat);
+  detail.querySelector('.d-z').textContent = '原子序数 ' + z;
+  detail.querySelector('.d-sym').textContent = sym;
+  detail.querySelector('.d-cn').innerHTML = cn + (CAT_DESC[cat] ? '<span style="display:block;font-size:12px;font-weight:400;color:var(--text-secondary);margin-top:2px;">'+CAT_DESC[cat]+'</span>' : '');
+
+  var info = detail.querySelector('.d-info');
+  var html = '';
+  html += '<div class="d-info-row"><span class="d-label">相对原子质量</span><span class="d-value">'+mass+'</span></div>';
+  if(period<=7){
+    html += '<div class="d-info-row"><span class="d-label">周期 · 族</span><span class="d-value">第'+period+'周期 · '+group+'族</span></div>';
+  } else {
+    var realPeriod = (cat==='lanthanide') ? 6 : 7;
+    html += '<div class="d-info-row"><span class="d-label">周期 · 区</span><span class="d-value">第'+realPeriod+'周期 · f区</span></div>';
+  }
+  if(shell) html += '<div class="d-info-row"><span class="d-label">电子层排布</span><span class="d-value">'+shell+'</span></div>';
+  info.innerHTML = html;
+
+  // Exam section — split desc into structured points
+  var examEl = detail.querySelector('.d-exam');
+  if(desc && FOCUS[z]){
+    var items = desc.split(' · ');
+    var ehtml = '<div class="d-exam-title">📚 中考考点</div><ul class="d-exam-items">';
+    for(var i=0;i<items.length;i++){
+      var item = items[i].trim();
+      if(!item) continue;
+      if(item.indexOf('⚠️')===0){
+        ehtml += '<li class="exam-warn">'+item.replace('⚠️','')+'</li>';
+      } else {
+        ehtml += '<li>'+item+'</li>';
+      }
+    }
+    ehtml += '</ul>';
+    examEl.innerHTML = ehtml;
+    examEl.style.display = '';
+  } else if(desc){
+    examEl.innerHTML = '<div class="d-exam-items" style="padding:8px 0;font-size:13px;color:var(--text-secondary);line-height:1.7;">'+desc+'</div>';
+    examEl.style.display = '';
+  } else {
+    examEl.style.display = 'none';
+  }
+
+  // Shell diagram
+  if(shell){
+    var layers = shell.split(',');
+    var sh = '<div class="d-shell-diagram"><strong>电子层结构</strong><div class="shell-dots">';
+    for(var i=0;i<layers.length;i++){
+      sh += '<div class="shell-dot">'+layers[i]+'</div>';
+    }
+    sh += '<span style="font-size:11px;color:var(--text-secondary);align-self:center;margin-left:4px;">第'+layers.length+'周期</span></div></div>';
+    if(info.innerHTML.indexOf('d-shell-diagram')===-1) info.innerHTML += sh;
+  }
+
+  detailWrap.classList.add('open');
+  overlay.classList.add('show');
+
+  if(selectedCell) selectedCell.classList.remove('selected');
+  selectedCell = document.querySelector('.e-cell[data-z="'+z+'"]');
+  if(selectedCell) selectedCell.classList.add('selected');
+}
+
+// Delegate click on table
+document.getElementById('ptable').addEventListener('click', function(e){
+  var cell = e.target.closest('.e-cell');
+  if(cell) showDetail(parseInt(cell.getAttribute('data-z')));
+});
+document.getElementById('ptable-f1').addEventListener('click', function(e){
+  var cell = e.target.closest('.e-cell');
+  if(cell) showDetail(parseInt(cell.getAttribute('data-z')));
+});
+document.getElementById('ptable-f2').addEventListener('click', function(e){
+  var cell = e.target.closest('.e-cell');
+  if(cell) showDetail(parseInt(cell.getAttribute('data-z')));
+});
+
+closeBtn.addEventListener('click', function(){
+  detailWrap.classList.remove('open');
+  overlay.classList.remove('show');
+  if(selectedCell){selectedCell.classList.remove('selected');selectedCell=null;}
+});
+overlay.addEventListener('click', function(){
+  detailWrap.classList.remove('open');
+  overlay.classList.remove('show');
+  if(selectedCell){selectedCell.classList.remove('selected');selectedCell=null;}
+});
+
+// ====== 主题切换 ======
+(function(){
+  var k='chemistry-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+  document.documentElement.setAttribute('data-theme',t);
+  var b=document.getElementById('theme-toggle');
+  if(b){
+    b.textContent=t==='dark'?'☀️ 亮色':'🌙 暗色';
+    b.addEventListener('click',function(){
+      var c=document.documentElement.getAttribute('data-theme'),n=c==='dark'?'light':'dark';
+      document.documentElement.setAttribute('data-theme',n);localStorage.setItem(k,n);
+      b.textContent=n==='dark'?'☀️ 亮色':'🌙 暗色';
+    });
+  }
+})();
+
+// ====== Back to top ======
+window.addEventListener('scroll',function(){
+  var b=document.getElementById('backToTop');if(b)b.style.display=scrollY>400?'block':'none';
+});
+
+// ====== 初始渲染 ======
+filter();
+</script>
+</body>
+</html>

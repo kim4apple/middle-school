@@ -28,26 +28,24 @@ body {
 h1 { font-size: 28px; font-weight: 800; text-align: center; margin-bottom: 6px; letter-spacing: -0.5px; }
 .subtitle { text-align: center; color: var(--text-secondary); font-size: 14px; margin-bottom: 40px; }
 
-.section { margin-bottom: 36px; padding-left: 12px; border-left: 3px solid var(--border); }
-.section.math    { border-left-color: var(--math); }
-.section.physics { border-left-color: var(--physics); }
-.section.chem    { border-left-color: var(--chemistry); }
+.section { margin-bottom: 36px; }
+.section:last-of-type { margin-bottom: 0; }
 
 .section-title {
-  font-size: 16px; font-weight: 700; margin-bottom: 12px;
-  display: flex; align-items: center; gap: 8px;
+  font-size: 14px; font-weight: 600; color: var(--text-secondary);
+  margin-bottom: 14px; letter-spacing: 1px; text-transform: uppercase;
 }
-.section-title .badge-count { font-size: 11px; color: var(--text-secondary); font-weight: 400; }
+.section-title .badge-count { font-weight: 400; }
 
-.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 16px; }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
 
 .card {
-  display: block; padding: 24px; border-radius: var(--radius);
+  display: block; padding: 24px 24px 20px; border-radius: 18px;
   border: 1px solid var(--border); text-decoration: none; color: var(--text);
   background: var(--bg);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-  transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
-  position: relative; overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  transition: all 0.35s cubic-bezier(0.22,1,0.36,1);
+  position: relative; text-align: center; overflow: hidden;
 }
 .card::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0;
@@ -56,79 +54,61 @@ h1 { font-size: 28px; font-weight: 800; text-align: center; margin-bottom: 6px; 
 .card.math::before { background: var(--math); }
 .card.physics::before { background: var(--physics); }
 .card.chem::before { background: var(--chemistry); }
+
+.card .icon-deco {
+  position: absolute; top: -10px; right: -10px;
+  width: 80px; height: 80px; opacity: 0.07;
+  pointer-events: none;
+}
+.card .icon-deco svg { width: 100%; height: 100%; }
+.card.math .icon-deco { color: var(--math); }
+.card.physics .icon-deco { color: var(--physics); }
+.card.chem .icon-deco { color: var(--chemistry); }
+[data-theme="dark"] .card .icon-deco { opacity: 0.12; }
+
 .card:hover {
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  box-shadow: 0 12px 32px -10px rgba(0,0,0,0.1);
   transform: translateY(-3px);
   border-color: transparent;
 }
 [data-theme="dark"] .card:hover {
-  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  box-shadow: 0 12px 32px -10px rgba(0,0,0,0.5);
   border-color: var(--border);
 }
 
-.card .icon-wrap {
-  width: 48px; height: 48px; border-radius: 14px;
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 14px;
-  transition: transform 0.25s cubic-bezier(0.4,0,0.2,1);
-}
-.card .icon-wrap svg { width: 24px; height: 24px; }
-.card:hover .icon-wrap { transform: scale(1.08); }
-.card.math .icon-wrap { background: rgba(79,70,229,0.1); color: var(--math); }
-.card.physics .icon-wrap { background: rgba(8,145,178,0.1); color: var(--physics); }
-.card.chem .icon-wrap { background: rgba(5,150,105,0.1); color: var(--chemistry); }
-
-.card .name { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
-.card .desc { font-size: 12px; color: var(--text-secondary); line-height: 1.6; }
-.card .meta {
-  display: flex; align-items: center; gap: 6px; margin-top: 10px;
-  font-size: 11px; color: var(--text-secondary);
-}
-.card .meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--border); }
+.card .subject { font-size: 22px; font-weight: 900; letter-spacing: -0.5px; display: block; }
+.card .grade { font-size: 13px; color: var(--text-secondary); font-weight: 400; display: block; margin-top: 4px; }
+.card .meta { margin-top: 8px; font-size: 12px; color: var(--text-secondary); }
+.card .meta span + span { margin-left: 6px; padding-left: 6px; border-left: 1px solid var(--border); }
 
 .card .badge {
-  display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.5px;
-  padding: 2px 10px; border-radius: 10px; margin-bottom: 12px;
+  display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.3px;
+  padding: 3px 14px; border-radius: 20px; margin-top: 14px;
 }
 .card .badge.sync { background: var(--accent-light); color: var(--accent); }
 .card .badge.review { background: #fef3c7; color: #92400e; }
 [data-theme="dark"] .card .badge.review { background: #451a03; color: #fbbf24; }
 
-.card .card-arrow {
-  position: absolute; bottom: 20px; right: 20px;
-  font-size: 16px; color: var(--border);
-  transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
-}
-.card:hover .card-arrow { color: var(--accent); transform: translateX(3px); }
-
 /* 复习入口特化样式 */
 .card.review {
   background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
-  border-color: #fcd34d; text-align: center;
+  border-color: #fcd34d;
 }
 [data-theme="dark"] .card.review {
   background: linear-gradient(135deg, #1c1917 0%, #451a03 100%);
   border-color: #92400e;
 }
-.card.review::before { display: none; }
-.card.review .icon-wrap {
-  width: 56px; height: 56px; border-radius: 16px;
-  margin-left: auto; margin-right: auto;
-  background: rgba(217,119,6,0.12); color: #b45309;
-}
-[data-theme="dark"] .card.review .icon-wrap { color: #fbbf24; }
-.card.review .icon-wrap svg { width: 28px; height: 28px; }
-.card.review .name { font-size: 18px; }
-.card.review .desc { font-size: 13px; color: #92400e; }
-[data-theme="dark"] .card.review .desc { color: #fbbf24; }
+.card.review::before { background: var(--review); }
+.card.review .icon-deco { color: var(--review); }
 .card.review:hover {
-  box-shadow: 0 8px 24px rgba(217,119,6,0.2);
+  box-shadow: 0 12px 32px -10px rgba(217,119,6,0.2);
   border-color: var(--review);
 }
-.card.review .card-arrow { bottom: auto; top: 20px; right: 20px; font-size: 20px; color: #92400e; }
-[data-theme="dark"] .card.review .card-arrow { color: #fbbf24; }
+[data-theme="dark"] .card.review:hover {
+  box-shadow: 0 12px 32px -10px rgba(217,119,6,0.15);
+}
 
-.footer { text-align: center; margin-top: 48px; font-size: 12px; color: var(--text-secondary); }
+.footer { text-align: center; margin-top: 40px; font-size: 12px; color: var(--text-secondary); }
 .theme-btn {
   position: fixed; top: 16px; right: 16px;
   padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border);
@@ -153,28 +133,25 @@ h1 { font-size: 28px; font-weight: 800; text-align: center; margin-bottom: 6px; 
     <div class="section-title">🧮 数学</div>
     <div class="card-grid">
       <a href="math7/math7.html" class="card math">
-        <span class="card-arrow">→</span>
+        <div class="icon-deco"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></div>
+        <span class="subject">数学</span>
+        <span class="grade">七年级</span>
+        <div class="meta"><span>10 章</span><span>七上七下</span></div>
         <div class="badge sync">同步</div>
-        <div class="icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></div>
-        <div class="name">七年级数学</div>
-        <div class="desc">有理数 · 整式 · 方程 · 几何初步 · 平行线 · 实数 · 坐标 · 方程组 · 不等式 · 统计</div>
-        <div class="meta"><span>10 章</span><span class="meta-dot"></span><span>七上七下</span></div>
       </a>
       <a href="math8/math8.html" class="card math">
-        <span class="card-arrow">→</span>
+        <div class="icon-deco"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></div>
+        <span class="subject">数学</span>
+        <span class="grade">八年级</span>
+        <div class="meta"><span>10 章</span><span>八上八下</span></div>
         <div class="badge sync">同步</div>
-        <div class="icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></div>
-        <div class="name">八年级数学</div>
-        <div class="desc">三角形 · 全等 · 轴对称 · 因式分解 · 分式 · 根式 · 勾股 · 四边形 · 一次函数 · 统计</div>
-        <div class="meta"><span>10 章</span><span class="meta-dot"></span><span>八上八下</span></div>
       </a>
       <a href="review/index.html" class="card review">
-        <span class="card-arrow">→</span>
+        <div class="icon-deco"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+        <span class="subject">数学</span>
+        <span class="grade">考前复习</span>
+        <div class="meta"><span>6 大模块</span><span>跨年级综合</span></div>
         <div class="badge review">复习</div>
-        <div class="icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
-        <div class="name">考前复习</div>
-        <div class="desc">知识点总结 · 压轴题突破 · 广东中考 5+3（含 5 套模拟卷）</div>
-        <div class="meta" style="justify-content:center;"><span>6 大模块</span><span class="meta-dot"></span><span>跨年级综合</span></div>
       </a>
     </div>
   </div>
@@ -183,12 +160,11 @@ h1 { font-size: 28px; font-weight: 800; text-align: center; margin-bottom: 6px; 
     <div class="section-title">⚛️ 物理</div>
     <div class="card-grid">
       <a href="physics8/index.html" class="card physics">
-        <span class="card-arrow">→</span>
+        <div class="icon-deco"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><path d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9-4.54-4.52-9.87-6.54-11.9-4.5-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.52 9.87 6.54 11.9 4.5Z"/><path d="M15.7 15.7c4.52-4.54 6.54-9.87 4.5-11.9-2.03-2.04-7.36-.02-11.9 4.5-4.52 4.54-6.54 9.87-4.5 11.9 2.03 2.04 7.36.02 11.9-4.5Z"/></svg></div>
+        <span class="subject">物理</span>
+        <span class="grade">八年级</span>
+        <div class="meta"><span>12 章</span><span>八上八下</span></div>
         <div class="badge sync">同步</div>
-        <div class="icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><path d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9-4.54-4.52-9.87-6.54-11.9-4.5-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.52 9.87 6.54 11.9 4.5Z"/><path d="M15.7 15.7c4.52-4.54 6.54-9.87 4.5-11.9-2.03-2.04-7.36-.02-11.9 4.5-4.52 4.54-6.54 9.87-4.5 11.9 2.03 2.04 7.36.02 11.9-4.5Z"/></svg></div>
-        <div class="name">八年级物理</div>
-        <div class="desc">上册：运动 · 声 · 物态 · 光 · 透镜 · 密度<br>下册：力 · 运动 · 压强 · 浮力 · 功 · 简单机械</div>
-        <div class="meta"><span>12 章</span><span class="meta-dot"></span><span>八上八下</span></div>
       </a>
     </div>
   </div>
@@ -197,12 +173,11 @@ h1 { font-size: 28px; font-weight: 800; text-align: center; margin-bottom: 6px; 
     <div class="section-title">🧪 化学</div>
     <div class="card-grid">
       <a href="chemistry/index.html" class="card chem">
-        <span class="card-arrow">→</span>
+        <div class="icon-deco"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"/><path d="M6.453 15h11.094"/><path d="M8.5 2h7"/></svg></div>
+        <span class="subject">化学</span>
+        <span class="grade">九年级</span>
+        <div class="meta"><span>12 章</span><span>九上九下</span></div>
         <div class="badge sync">同步</div>
-        <div class="icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"/><path d="M6.453 15h11.094"/><path d="M8.5 2h7"/></svg></div>
-        <div class="name">九年级化学</div>
-        <div class="desc">上册：走进化学 · 空气 · 物质构成 · 水 · 方程式 · 碳 · 燃料<br>下册：金属 · 溶液 · 酸碱 · 盐化肥 · 化学与生活</div>
-        <div class="meta"><span>12 章</span><span class="meta-dot"></span><span>九上九下</span></div>
       </a>
     </div>
   </div>

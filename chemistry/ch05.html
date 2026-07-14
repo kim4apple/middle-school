@@ -281,6 +281,7 @@ window.addEventListener('scroll',function(){var b=document.getElementById('backT
 // Solution toggle
 document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution')})});
 </script>
+<script src="lib/gsap.min.js"></script>
 <script>
 var _gsapReady = false;
 document.addEventListener('DOMContentLoaded', function() {
@@ -314,6 +315,5 @@ function resetBalance() { if (!_gsapReady) return;
   document.getElementById('balance-steps').innerHTML = '';
 }
 </script>
-<script src="lib/gsap.min.js"></script>
 </body>
 </html>

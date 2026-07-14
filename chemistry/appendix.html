@@ -32,6 +32,7 @@
     <a href="ch11.html">第11章 盐·化肥</a>
     <a href="ch12.html">第12章 化学与生活</a>
     <a href="appendix.html" class="active">📚 附录</a>
+    <a href="periodic-table.html" style="font-weight:600;">🧪 元素周期表</a>
   </nav>
   <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
   <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
@@ -39,11 +40,34 @@
 </nav>
 
 <main id="content">
-<div class="cover"><h1>📚 化学附录</h1><p>全书速查 · 考前口袋书 | 化学方程式总表 · 俗名对照 · 颜色速查 · 中考规范</p></div>
+<div class="cover"><h1>📚 化学附录</h1><p>全书速查 · 考前口袋书 | 18 大板块覆盖方程·俗名·颜色·实验·计算·鉴别·陷阱·规范</p></div>
+
+<!-- ====== 目录导航 ====== -->
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:16px 20px;margin:20px 0;font-size:13px;line-height:2;">
+  <strong style="display:block;margin-bottom:6px;font-size:14px;">📑 本附录目录（18板块）</strong>
+  <a href="#s1" style="display:block;color:var(--accent);text-decoration:none;">一、基础知识体系（12章脉络）</a>
+  <a href="#s2" style="display:block;color:var(--accent);text-decoration:none;">二、物质分类框架图</a>
+  <a href="#s3" style="display:block;color:var(--accent);text-decoration:none;">三、化学方程式总表</a>
+  <a href="#s4" style="display:block;color:var(--accent);text-decoration:none;">四、化学反应类型判断指南</a>
+  <a href="#s5" style="display:block;color:var(--accent);text-decoration:none;">五、常见物质颜色/状态速查表</a>
+  <a href="#s6" style="display:block;color:var(--accent);text-decoration:none;">六、物质俗名对照表</a>
+  <a href="#s7" style="display:block;color:var(--accent);text-decoration:none;">七、金属活动性顺序完整表格</a>
+  <a href="#s8" style="display:block;color:var(--accent);text-decoration:none;">八、酸碱盐溶解性速查表</a>
+  <a href="#s9" style="display:block;color:var(--accent);text-decoration:none;">九、溶液配制与稀释计算</a>
+  <a href="#s10" style="display:block;color:var(--accent);text-decoration:none;">十、常见原子团及化合价</a>
+  <a href="#s11" style="display:block;color:var(--accent);text-decoration:none;">十一、常见元素化合价总表</a>
+  <a href="#s12" style="display:block;color:var(--accent);text-decoration:none;">十二、实验方法汇总</a>
+  <a href="#s13" style="display:block;color:var(--accent);text-decoration:none;">十三、常见物质鉴别流程图</a>
+  <a href="#s14" style="display:block;color:var(--accent);text-decoration:none;">十四、高频易错陷阱总览</a>
+  <a href="#s15" style="display:block;color:var(--accent);text-decoration:none;">十五、CO₂与NaOH反应专题</a>
+  <a href="#s16" style="display:block;color:var(--accent);text-decoration:none;">十六、中考化学答题规范</a>
+  <a href="#s17" style="display:block;color:var(--accent);text-decoration:none;">十七、考前30分钟速查表</a>
+  <a href="#s18" style="display:block;color:var(--accent);text-decoration:none;">十八、元素周期表（初中适用）</a>
+</div>
 
 <!-- ====== 1. 基础知识体系思维导图 ====== -->
 <section style="margin:24px 0;">
-  <h3 style="color:var(--accent);">🧭 一、基础知识体系（12章脉络）</h3>
+  <h3 id="s1" style="color:var(--accent);">🧭 一、基础知识体系（12章脉络）</h3>
   <div style="background:var(--bg-secondary);padding:16px;border-radius:8px;margin-top:10px;font-size:13px;line-height:2;">
     <strong>九上（基础篇）</strong><br>
     第1章 走进化学世界 → 第2章 空气·氧气 → 第3章 物质构成的奥秘 → 第4章 自然界的水 → 第5章 化学方程式 → 第6章 碳和碳的氧化物 → 第7章 燃料及其利用<br><br>
@@ -53,9 +77,107 @@
   </div>
 </section>
 
-<!-- ====== 2. 化学方程式总表 ====== -->
+<!-- ====== 2. 物质分类框架图 ====== -->
 <section style="margin:24px 0;">
-  <h3 style="color:var(--accent);">⚗️ 二、化学方程式总表（按反应类型分类）</h3>
+  <h3 id="s2" style="color:var(--accent);">📊 二、物质分类框架图</h3>
+  <div style="background:var(--bg-secondary);padding:14px 0;border-radius:8px;margin-top:10px;font-size:13px;line-height:2;overflow:hidden;">
+
+    <!-- 根：物质 -->
+    <div style="padding:6px 20px;background:var(--accent);color:#fff;font-weight:800;font-size:16px;letter-spacing:1px;">
+      📦 物质
+    </div>
+
+    <!-- 第1层：纯净物 -->
+    <div style="border-left:3px solid #0891b2;margin:4px 14px 0 14px;padding:4px 0 4px 18px;">
+      <span style="font-weight:700;font-size:14px;">🧊 纯净物</span>
+      <span style="color:var(--text-secondary);font-size:12px;">—— 只含一种成分</span>
+
+      <!-- 第2层：单质 -->
+      <div style="border-left:2px solid #16a34a;margin:2px 0 2px 16px;padding:4px 0 4px 16px;">
+        <span style="font-weight:700;">♦ 单质</span>
+        <span style="color:var(--text-secondary);">—— 同种元素组成</span>
+        <div style="display:flex;flex-wrap:wrap;gap:4px 8px;padding:2px 0 2px 20px;font-size:12px;">
+          <span style="background:var(--bg);padding:1px 10px;border-radius:12px;">Fe Cu Al Mg Zn Au Ag</span>
+          <span style="color:var(--text-secondary);">金属单质</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px 8px;padding:2px 0 2px 20px;font-size:12px;">
+          <span style="background:var(--bg);padding:1px 10px;border-radius:12px;">C S P H₂ O₂ N₂ Cl₂</span>
+          <span style="color:var(--text-secondary);">非金属单质</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px 8px;padding:2px 0 2px 20px;font-size:12px;">
+          <span style="background:var(--bg);padding:1px 10px;border-radius:12px;">He Ne Ar</span>
+          <span style="color:var(--text-secondary);">稀有气体</span>
+        </div>
+      </div>
+
+      <!-- 第2层：化合物 -->
+      <div style="border-left:2px solid #7c3aed;margin:2px 0 2px 16px;padding:4px 0 4px 16px;">
+        <span style="font-weight:700;">⬡ 化合物</span>
+        <span style="color:var(--text-secondary);">—— 不同种元素组成</span>
+
+        <div style="padding:2px 0 2px 20px;font-size:12px;">
+          <span style="font-weight:600;color:#ea580c;">▶ 氧化物</span>
+          <span style="color:var(--text-secondary);">（两种元素含O）</span>
+          <span style="background:var(--bg);padding:1px 10px;border-radius:12px;display:inline-block;margin:2px 0;">CO₂ CO H₂O Fe₂O₃ CuO CaO SO₂</span>
+          <div style="padding:2px 0 0 24px;font-size:11px;color:var(--text-secondary);">
+            <span>金属氧化物：CaO Fe₂O₃ CuO</span>
+            <span style="margin-left:10px;">|</span>
+            <span style="margin-left:10px;">非金属氧化物：CO₂ SO₂ H₂O</span>
+          </div>
+        </div>
+
+        <div style="padding:2px 0 2px 20px;font-size:12px;">
+          <span style="font-weight:600;color:#dc2626;">▶ 酸</span>
+          <span style="color:var(--text-secondary);">（H⁺ + 酸根）</span>
+          <span style="background:var(--bg);padding:1px 10px;border-radius:12px;display:inline-block;margin:2px 0;">HCl H₂SO₄ HNO₃ H₂CO₃ H₃PO₄</span>
+        </div>
+
+        <div style="padding:2px 0 2px 20px;font-size:12px;">
+          <span style="font-weight:600;color:#0891b2;">▶ 碱</span>
+          <span style="color:var(--text-secondary);">（OH⁻ + 金属离子）</span>
+          <span style="background:var(--bg);padding:1px 10px;border-radius:12px;display:inline-block;margin:2px 0;">NaOH Ca(OH)₂ KOH Fe(OH)₃ Cu(OH)₂</span>
+        </div>
+
+        <div style="padding:2px 0 2px 20px;font-size:12px;">
+          <span style="font-weight:600;color:#ca8a04;">▶ 盐</span>
+          <span style="color:var(--text-secondary);">（金属 + 酸根）</span>
+          <span style="background:var(--bg);padding:1px 10px;border-radius:12px;display:inline-block;margin:2px 0;">NaCl Na₂CO₃ CaCO₃ CuSO₄ AgNO₃ KMnO₄</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 第1层：混合物 -->
+    <div style="border-left:3px solid #16a34a;margin:4px 14px 0 14px;padding:4px 0 4px 18px;">
+      <span style="font-weight:700;font-size:14px;">🥣 混合物</span>
+      <span style="color:var(--text-secondary);font-size:12px;">—— 多种成分混合</span>
+
+      <div style="display:flex;flex-wrap:wrap;gap:4px 8px;padding:4px 0 2px 20px;font-size:12px;">
+        <span style="background:var(--bg);padding:1px 10px;border-radius:12px;">空气</span>
+        <span style="background:var(--bg);padding:1px 10px;border-radius:12px;">溶液</span>
+        <span style="background:var(--bg);padding:1px 10px;border-radius:12px;">合金（钢/生铁/黄铜）</span>
+        <span style="background:var(--bg);padding:1px 10px;border-radius:12px;">石油</span>
+        <span style="background:var(--bg);padding:1px 10px;border-radius:12px;">煤</span>
+        <span style="background:var(--bg);padding:1px 10px;border-radius:12px;">天然气</span>
+        <span style="background:var(--bg);padding:1px 10px;border-radius:12px;">悬浊液 / 乳浊液 / 胶体</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 易错提示（独立于树之外） -->
+  <div style="margin-top:10px;padding:10px 14px;background:var(--bg);border-radius:6px;border-left:4px solid var(--chem-yellow);font-size:12px;">
+    <strong>⚠️ 中考高频考点：</strong>
+    • 混合物没有化学式（空气不能写"化学式"）
+    • 由同种元素组成的物质不一定是纯净物（O₂和O₃混合是混合物）
+    • 纯碱 Na₂CO₃ 是<strong>盐</strong>，不是碱——虽然水溶液显碱性
+    • 冰水共存物是<strong>纯净物</strong>（都是H₂O分子）
+  </div>
+</section>
+
+<!-- ====== 3. 化学方程式总表 ====== -->
+<section style="margin:24px 0;">
+  <h3 id="s3" style="color:var(--accent);">⚗️ 三、化学方程式总表（按反应类型分类）</h3>
   
   <h4 style="margin:16px 0 8px;color:var(--chem-blue);">化合反应（20个）</h4>
   <table style="width:100%;border-collapse:collapse;font-size:12px;">
@@ -118,9 +240,54 @@
   </table>
 </section>
 
-<!-- ====== 3. 常见物质颜色/状态速查表 ====== -->
+<!-- ====== 4. 化学反应类型判断指南 ====== -->
 <section style="margin:24px 0;">
-  <h3 style="color:var(--accent);">🎨 三、常见物质颜色/状态速查表</h3>
+  <h3 id="s4" style="color:var(--accent);">🔄 四、化学反应类型判断指南</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:13px;margin-top:10px;">
+
+    <div style="background:var(--bg-secondary);padding:12px 16px;border-radius:6px;border-left:4px solid var(--chem-blue);">
+      <strong style="font-size:14px;">🧩 化合反应</strong><br>
+      <em>A + B + … → C</em>（多变一）<br>
+      例：$C + O_2 \xrightarrow{点燃} CO_2$<br>
+      <span style="color:var(--text-secondary);font-size:11px;">判断要点：反应物≥2种，生成物只有1种</span>
+    </div>
+
+    <div style="background:var(--bg-secondary);padding:12px 16px;border-radius:6px;border-left:4px solid var(--chem-red);">
+      <strong style="font-size:14px;">💥 分解反应</strong><br>
+      <em>A → B + C + …</em>（一变多）<br>
+      例：$2KMnO_4 \xrightarrow{\Delta} K_2MnO_4 + MnO_2 + O_2\uparrow$<br>
+      <span style="color:var(--text-secondary);font-size:11px;">判断要点：反应物只有1种，生成物≥2种</span>
+    </div>
+
+    <div style="background:var(--bg-secondary);padding:12px 16px;border-radius:6px;border-left:4px solid var(--chem-green);">
+      <strong style="font-size:14px;">⚡ 置换反应</strong><br>
+      <em>A + BC → AC + B</em>（单质→单质）<br>
+      例：$Fe + CuSO_4 \rightarrow FeSO_4 + Cu$<br>
+      <span style="color:var(--text-secondary);font-size:11px;">判断要点：一种单质 + 一种化合物 → 另一种单质 + 另一种化合物</span>
+    </div>
+
+    <div style="background:var(--bg-secondary);padding:12px 16px;border-radius:6px;border-left:4px solid var(--chem-purple);">
+      <strong style="font-size:14px;">🔁 复分解反应</strong><br>
+      <em>AB + CD → AD + CB</em>（交换成分）<br>
+      例：$HCl + NaOH \rightarrow NaCl + H_2O$<br>
+      <span style="color:var(--text-secondary);font-size:11px;">判断要点：两种化合物交换成分，价态不变</span>
+    </div>
+
+  </div>
+
+  <div style="margin-top:12px;padding:12px 16px;background:var(--bg);border-radius:6px;border:1px solid var(--border);font-size:13px;line-height:2;">
+    <strong style="font-size:14px;">🎯 常见误判</strong><br>
+    • <strong>CO + CuO → Cu + CO₂</strong> —— 不是置换！反应物都是化合物，没有单质参与<br>
+    • <strong>CH₄ + 2O₂ → CO₂ + 2H₂O</strong> —— 不属于四大基本类型（氧化反应）<br>
+    • <strong>中和反应</strong>（酸+碱→盐+水）—— 属于<strong>复分解反应</strong>的特殊形式<br>
+    • <strong>2CO + O₂ → 2CO₂</strong> —— 是化合反应（两种→一种），尽管反应物都是化合物<br>
+    • <strong>复分解反应的条件</strong>：生成物中必须有 <strong>气体↑ 或 沉淀↓ 或 水</strong>，三者至少具备其一
+  </div>
+</section>
+
+<!-- ====== 5. 常见物质颜色/状态速查表 ====== -->
+<section style="margin:24px 0;">
+  <h3 id="s5" style="color:var(--accent);">🎨 五、常见物质颜色/状态速查表</h3>
   
   <h4 style="margin:16px 0 8px;color:var(--chem-blue);">溶液颜色</h4>
   <table style="width:100%;border-collapse:collapse;font-size:12px;">
@@ -152,9 +319,9 @@
   </table>
 </section>
 
-<!-- ====== 4. 物质俗名对照表 ====== -->
+<!-- ====== 6. 物质俗名对照表 ====== -->
 <section style="margin:24px 0;">
-  <h3 style="color:var(--accent);">📛 四、物质俗名对照表</h3>
+  <h3 id="s6" style="color:var(--accent);">📛 六、物质俗名对照表</h3>
   <table style="width:100%;border-collapse:collapse;font-size:13px;">
     <tr style="background:var(--accent-light);"><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">俗名</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">化学式</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">化学名</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">备注</th></tr>
     <tr><td style="padding:6px 8px;border:1px solid var(--border);">烧碱/火碱/苛性钠</td><td style="padding:6px 8px;border:1px solid var(--border);">NaOH</td><td style="padding:6px 8px;border:1px solid var(--border);">氢氧化钠</td><td style="padding:6px 8px;border:1px solid var(--border);">强碱/强腐蚀性</td></tr>
@@ -176,9 +343,9 @@
   </table>
 </section>
 
-<!-- ====== 5. 金属活动性顺序 ====== -->
+<!-- ====== 7. 金属活动性顺序 ====== -->
 <section style="margin:24px 0;">
-  <h3 style="color:var(--accent);">🔩 五、金属活动性顺序完整表格</h3>
+  <h3 id="s7" style="color:var(--accent);">🔩 七、金属活动性顺序完整表格</h3>
   <div style="background:var(--bg-secondary);padding:16px;border-radius:8px;margin-top:10px;font-size:14px;text-align:center;letter-spacing:2px;">
     <strong style="font-size:16px;">K Ca Na Mg Al   Zn Fe Sn Pb (H)   Cu Hg Ag Pt Au</strong><br><br>
     <span style="font-size:13px;color:var(--text-secondary);">活动性由强到弱 →</span><br><br>
@@ -194,9 +361,92 @@
   </div>
 </section>
 
-<!-- ====== 6. 常见原子团及化合价 ====== -->
+<!-- ====== 8. 酸碱盐溶解性速查表 ====== -->
 <section style="margin:24px 0;">
-  <h3 style="color:var(--accent);">🔢 六、常见原子团及化合价</h3>
+  <h3 id="s8" style="color:var(--accent);">🧂 八、酸碱盐溶解性速查表</h3>
+
+  <div style="background:var(--bg-secondary);padding:14px 18px;border-radius:8px;margin-top:10px;font-size:13px;line-height:2.2;">
+    <strong style="font-size:15px;">📝 溶解性口诀</strong>
+    <div style="background:var(--bg);padding:10px 16px;border-radius:6px;margin:8px 0;font-size:14px;line-height:2;">
+      <strong>钾钠铵硝皆可溶</strong> —— K⁺ / Na⁺ / NH₄⁺ / NO₃⁻ 盐全溶<br>
+      <strong>盐酸盐不溶银亚汞</strong> —— AgCl / Hg₂Cl₂ 不溶，其余溶<br>
+      <strong>硫酸盐不溶钡和铅</strong> —— BaSO₄ / PbSO₄ 不溶，CaSO₄ / Ag₂SO₄ 微溶<br>
+      <strong>碳酸盐只溶钾钠铵</strong> —— K₂CO₃ / Na₂CO₃ / (NH₄)₂CO₃ 溶，MgCO₃ 微溶<br>
+      <strong>碱类只溶钾钠铵钡</strong> —— KOH / NaOH / NH₃·H₂O / Ba(OH)₂ 溶，Ca(OH)₂ 微溶
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:13px;margin-top:10px;">
+    <div style="background:var(--bg);padding:10px 14px;border-radius:6px;border:1px solid var(--border);">
+      <strong>🥇 必记"不溶"沉淀</strong><br>
+      • <strong>白色</strong>：AgCl、BaSO₄、CaCO₃、BaCO₃、Mg(OH)₂、Al(OH)₃<br>
+      • <strong>蓝色</strong>：Cu(OH)₂<br>
+      • <strong>红褐色</strong>：Fe(OH)₃<br>
+      • <span style="font-size:11px;color:var(--text-secondary);">AgCl和BaSO₄不溶于稀硝酸 —— 用于Cl⁻/SO₄²⁻检验</span>
+    </div>
+    <div style="background:var(--bg);padding:10px 14px;border-radius:6px;border:1px solid var(--border);">
+      <strong>🎯 复分解应用</strong><br>
+      • 判断反应能否发生：看生成物是否有 <strong>气体↑ / 沉淀↓ / 水</strong><br>
+      • 例：NaOH + CuSO₄ → Cu(OH)₂↓ + Na₂SO₄（生成蓝色沉淀）<br>
+      • 例：NaCl + KNO₃ → 不反应（无气体/沉淀/水生成）
+    </div>
+  </div>
+
+  <div style="margin-top:10px;padding:10px 14px;background:var(--bg);border-radius:6px;border-left:4px solid var(--chem-yellow);font-size:12px;">
+    <strong>⚠️ 中考易错：</strong>Ca(OH)₂ 微溶于水 —— 澄清石灰水浓度很低，属于<strong>饱和溶液但并不浓</strong>。Ag₂SO₄ / CaSO₄ 微溶，离子检验时注意干扰。
+  </div>
+</section>
+
+<!-- ====== 9. 溶液配制与稀释计算 ====== -->
+<section style="margin:24px 0;">
+  <h3 id="s9" style="color:var(--accent);">🧮 九、溶液配制与稀释计算</h3>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:13px;margin-top:10px;">
+    <div style="background:var(--bg-secondary);padding:12px 16px;border-radius:6px;">
+      <strong>📐 核心公式</strong><br>
+      <span style="font-size:18px;font-weight:700;color:var(--accent);">ω = m质 / m液 × 100%</span><br>
+      m液 = m质 + m剂<br>
+      变形：m质 = m液 × ω &nbsp;|&nbsp; m液 = m质 ÷ ω
+    </div>
+    <div style="background:var(--bg-secondary);padding:12px 16px;border-radius:6px;">
+      <strong>💧 稀释公式</strong><br>
+      <span style="font-size:18px;font-weight:700;color:var(--accent);">m₁ω₁ = m₂ω₂</span><br>
+      加水质量 = m₂ − m₁ (或 V₂ − V₁)<br>
+      <span style="font-size:11px;color:var(--text-secondary);">稀释前后溶质质量不变</span>
+    </div>
+  </div>
+
+  <div style="background:var(--bg);padding:12px 16px;border-radius:6px;border:1px solid var(--border);margin-top:10px;font-size:13px;line-height:2;">
+    <strong>🔬 配制步骤</strong><br>
+    <strong>① 计算</strong> → m质 = m液 × ω &nbsp; ② <strong>称量</strong>（固体用天平，液体用量筒） → ③ <strong>溶解</strong>（玻璃棒搅拌） → ④ <strong>装瓶贴标签</strong>（写上溶液名称和浓度）<br>
+    <span style="color:var(--text-secondary);font-size:12px;">若为液体稀释：计算所需浓溶液体积 → 量取 → 加水稀释 → 装瓶</span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:13px;margin-top:10px;">
+    <div style="background:var(--bg);padding:10px 14px;border-radius:6px;border:1px solid var(--border);">
+      <strong>📌 浓缩/增浓</strong><br>
+      加溶质：m质' = m质 + Δm, m液' = m液 + Δm<br>
+      蒸发溶剂：m剂' = m剂 − Δm, m液' = m液 − Δm<br>
+      <span style="font-size:11px;color:var(--text-secondary);">以上两种方法溶质质量均增大</span>
+    </div>
+    <div style="background:var(--bg);padding:10px 14px;border-radius:6px;border:1px solid var(--border);">
+      <strong>📊 混合计算</strong><br>
+      m₁ω₁ + m₂ω₂ = (m₁ + m₂)ω<br>
+      <span style="font-size:11px;color:var(--text-secondary);">已知任意三个量可求第四个</span>
+    </div>
+  </div>
+
+  <div style="margin-top:10px;padding:10px 14px;background:var(--bg);border-radius:6px;border-left:4px solid var(--chem-yellow);font-size:12px;">
+    <strong>⚠️ 中考易错：</strong><br>
+    • 溶质质量分数<strong>不是</strong>体积分数 —— 用体积×密度换算质量后再计算<br>
+    • 溶解度不是饱和溶液浓度 —— 可自主换算：ω = S / (100+S) × 100%<br>
+    • 气体溶质（如HCl气体）溶于水，计算时溶质质量 = HCl气体质量，不是HCl溶液质量
+  </div>
+</section>
+
+<!-- ====== 10. 常见原子团及化合价 ====== -->
+<section style="margin:24px 0;">
+  <h3 id="s10" style="color:var(--accent);">🔢 十、常见原子团及化合价</h3>
   <table style="width:100%;border-collapse:collapse;font-size:13px;">
     <tr style="background:var(--accent-light);"><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">原子团</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">名称</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">化合价</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);">常见物质</th></tr>
     <tr><td style="padding:6px 8px;border:1px solid var(--border);">OH⁻</td><td style="padding:6px 8px;border:1px solid var(--border);">氢氧根</td><td style="padding:6px 8px;border:1px solid var(--border);">−1</td><td style="padding:6px 8px;border:1px solid var(--border);">NaOH、Ca(OH)₂、Fe(OH)₃</td></tr>
@@ -212,9 +462,52 @@
   </table>
 </section>
 
-<!-- ====== 7. 实验方法汇总 ====== -->
+<!-- ====== 11. 常见元素化合价总表 ====== -->
 <section style="margin:24px 0;">
-  <h3 style="color:var(--accent);">🔬 七、实验方法汇总</h3>
+  <h3 id="s11" style="color:var(--accent);">💎 十一、常见元素化合价总表</h3>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:13px;margin-top:10px;">
+    <div style="background:var(--bg-secondary);padding:12px 16px;border-radius:6px;">
+      <strong>🥇 固定化合价</strong><br>
+      • <strong>+1 价</strong>：K、Na、Ag、H<br>
+      • <strong>+2 价</strong>：Ca、Mg、Ba、Zn<br>
+      • <strong>+3 价</strong>：Al<br>
+      • <strong>+4 价</strong>：Si<br>
+      • <strong>-1 价</strong>：F、Cl（在氯化物中）<br>
+      • <strong>-2 价</strong>：O（除过氧化物H₂O₂中为-1）
+    </div>
+    <div style="background:var(--bg-secondary);padding:12px 16px;border-radius:6px;">
+      <strong>🔄 常见变价</strong><br>
+      • <strong>Fe</strong>：+2（亚铁——浅绿色） / +3（铁——黄色）<br>
+      • <strong>Cu</strong>：+1（亚铜） / +2（铜——蓝色）<br>
+      • <strong>S</strong>：-2（H₂S）/ +4（SO₂）/ +6（H₂SO₄）<br>
+      • <strong>N</strong>：-3（NH₃）/ +2（NO）/ +4（NO₂）/ +5（HNO₃）<br>
+      • <strong>Cl</strong>：-1（HCl）/ +1（NaClO）/ +5（KClO₃）/ +7（KClO₄）<br>
+      • <strong>Mn</strong>：+2（Mn²⁺）/ +4（MnO₂）/ +6（K₂MnO₄）/ +7（KMnO₄）
+    </div>
+  </div>
+
+  <div style="background:var(--bg);padding:12px 16px;border-radius:6px;border:1px solid var(--border);margin-top:10px;font-size:14px;line-height:2.2;">
+    <strong>🎵 化合价口诀</strong>
+    <div style="margin-top:4px;padding:6px 12px;background:var(--bg-secondary);border-radius:6px;">
+      <strong>一价钾钠银氢</strong>，二价钙镁钡锌，<br>
+      <strong>三铝四硅五价磷</strong>，二三铁、二四碳，<br>
+      <strong>二四六硫都齐全</strong>，铜汞二价最常见，<br>
+      <strong>氧是-2 氯是-1</strong>，单质零价永不变。
+    </div>
+  </div>
+
+  <div style="margin-top:10px;padding:10px 14px;background:var(--bg);border-radius:6px;border-left:4px solid var(--chem-yellow);font-size:12px;">
+    <strong>⚠️ 中考易错：</strong><br>
+    • 化合价标在元素符号<strong>正上方</strong>（如 $\stackrel{+2}{Fe}$），离子电荷标在<strong>右上角</strong>（如 Fe²⁺），二者不同！<br>
+    • 原子团是一个整体，化合价为整团所带电荷数（如 SO₄²⁻ 整体 -2，不是每个原子）<br>
+    • 单质中元素化合价为 <strong>0</strong>（如 H₂、Fe、O₂ 中均为 0）
+  </div>
+</section>
+
+<!-- ====== 12. 实验方法汇总 ====== -->
+<section style="margin:24px 0;">
+  <h3 id="s12" style="color:var(--accent);">🔬 十二、实验方法汇总</h3>
   
   <h4 style="margin:16px 0 8px;">气体制取方法</h4>
   <table style="width:100%;border-collapse:collapse;font-size:12px;">
@@ -245,9 +538,74 @@
   </table>
 </section>
 
-<!-- ====== 8. 高频易错陷阱总览 ====== -->
+<!-- ====== 13. 常见物质鉴别流程图 ====== -->
 <section style="margin:24px 0;">
-  <h3 style="color:var(--accent);">⚠️ 八、高频易错陷阱总览</h3>
+  <h3 id="s13" style="color:var(--accent);">🔍 十三、常见物质鉴别流程图</h3>
+
+  <div style="background:var(--bg-secondary);padding:14px 18px;border-radius:8px;margin-top:10px;font-size:13px;line-height:2.2;">
+    <strong>🧪 鉴别的一般思路</strong>
+    <div style="display:flex;gap:6px;margin:6px 0;font-size:12px;color:var(--text-secondary);">
+      <span style="background:var(--accent);color:#fff;padding:2px 8px;border-radius:10px;">Step 1</span> 观察颜色/状态/气味 → 
+      <span style="background:var(--accent);color:#fff;padding:2px 8px;border-radius:10px;">Step 2</span> 加水观察溶解性 → 
+      <span style="background:var(--accent);color:#fff;padding:2px 8px;border-radius:10px;">Step 3</span> 加指示剂/酸/盐溶液 → 
+      <span style="background:var(--accent);color:#fff;padding:2px 8px;border-radius:10px;">Step 4</span> 根据现象下结论
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:13px;margin-top:10px;">
+    <div style="background:var(--bg);padding:12px 16px;border-radius:6px;border:1px solid var(--border);">
+      <strong>🧪 鉴别 O₂ / CO₂ / CO / H₂</strong>
+      <div style="margin-top:6px;line-height:2;">
+        <strong>O₂</strong>：带火星木条 → 复燃<br>
+        <strong>CO₂</strong>：燃着木条 → 熄灭；通入石灰水 → 变浑浊<br>
+        <strong>CO</strong>：点燃 → 蓝色火焰；燃烧产物使石灰水变浑浊<br>
+        <strong>H₂</strong>：点燃 → 淡蓝色火焰；燃烧产物只有水（干冷烧杯壁有水珠）<br>
+        <span style="font-size:11px;color:var(--text-secondary);">注：CO 和 H₂ 都燃烧呈蓝色，靠检验<strong>燃烧产物</strong>区分</span>
+      </div>
+    </div>
+    <div style="background:var(--bg);padding:12px 16px;border-radius:6px;border:1px solid var(--border);">
+      <strong>🧂 鉴别 酸 / 碱 / 盐</strong>
+      <div style="margin-top:6px;line-height:2;">
+        <strong>酸</strong>：石蕊→红 / pH&lt;7 / 加Zn有气泡(H₂)<br>
+        <strong>碱</strong>：石蕊→蓝 酚酞→红 / pH&gt;7<br>
+        <strong>盐</strong>：无统一特性，利用特定离子反应检验<br>
+        • Cl⁻：AgNO₃ + 稀HNO₃ → 白色沉淀<br>
+        • SO₄²⁻：BaCl₂ + 稀HNO₃ → 白色沉淀<br>
+        • CO₃²⁻：加稀HCl → 气体通入石灰水 → 变浑<br>
+        • NH₄⁺：加NaOH加热 → 湿润红色石蕊试纸→蓝
+      </div>
+    </div>
+    <div style="background:var(--bg);padding:12px 16px;border-radius:6px;border:1px solid var(--border);">
+      <strong>🌈 常见白色粉末鉴别</strong>
+      <div style="margin-top:6px;line-height:2;font-size:12px;">
+        ① 观察颜色：<strong>白色</strong> → 可能 NaCl / Na₂CO₃ / CaCO₃ / NaOH / NH₄Cl<br>
+        ② 加水：<strong>不溶</strong> → CaCO₃（白色沉淀）<br>
+        ③ <strong>溶解放热</strong> → NaOH（NaOH溶于水放热）<br>
+        ④ 加酚酞：<strong>变红</strong> → Na₂CO₃（碱性盐）/ NaOH（碱）<br>
+        ⑤ 加稀HCl：<strong>气泡</strong> → Na₂CO₃（CO₃²⁻）<br>
+        ⑥ 加NaOH加热 + 试纸：<strong>试纸变蓝</strong> → NH₄Cl（铵盐）
+      </div>
+    </div>
+    <div style="background:var(--bg);padding:12px 16px;border-radius:6px;border:1px solid var(--border);">
+      <strong>🎯 检验"三兄弟"</strong>
+      <div style="margin-top:6px;line-height:2;font-size:12px;">
+        <strong>鉴别盐酸、NaOH、NaCl：</strong><br>
+        取样 → 各滴入石蕊试液：<br>
+        • 变红 → 盐酸（酸）<br>
+        • 变蓝 → NaOH（碱）<br>
+        • 不变色 → NaCl（中性盐）<br><br>
+        <strong>鉴别Na₂CO₃、NaOH、NaCl：</strong><br>
+        取样 → 各滴入稀盐酸：<br>
+        • 有气泡 → Na₂CO₃<br>
+        • 无气泡 → 再滴酚酞：变红→NaOH，不变→NaCl
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 14. 高频易错陷阱总览 ====== -->
+<section style="margin:24px 0;">
+  <h3 id="s14" style="color:var(--accent);">⚠️ 十四、高频易错陷阱总览</h3>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px;margin-top:10px;">
     <div style="background:var(--bg-secondary);padding:10px 14px;border-radius:6px;border-left:4px solid var(--chem-red);">
       <strong>① 铁与酸/盐溶液 → 生成 Fe²⁺ 不是 Fe³⁺</strong><br>铁与盐酸：$Fe + 2HCl \rightarrow FeCl_2 + H_2\uparrow$（浅绿色）<br>铁与硫酸铜：$Fe + CuSO_4 \rightarrow FeSO_4 + Cu$（浅绿色）
@@ -288,9 +646,80 @@
   </div>
 </section>
 
-<!-- ====== 9. 中考化学答题规范 ====== -->
+<!-- ====== 15. CO₂与NaOH反应专题 ====== -->
 <section style="margin:24px 0;">
-  <h3 style="color:var(--accent);">✍️ 九、中考化学答题规范</h3>
+  <h3 id="s15" style="color:var(--accent);">🧴 十五、CO₂与NaOH反应专题</h3>
+
+  <div style="background:var(--bg-secondary);padding:14px 18px;border-radius:8px;margin-top:10px;font-size:13px;line-height:2.2;">
+    <strong>💡 为什么是专题？</strong> CO₂ + 2NaOH → Na₂CO₃ + H₂O <strong>无明显现象</strong>，如何证明反应发生？<span style="color:var(--text-secondary);">——中考实验探究最爱考，没有之一。</span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:12px;margin-top:10px;">
+    <div style="background:var(--bg);padding:12px 16px;border-radius:6px;border:1px solid var(--border);">
+      <strong>🔬 方法一：气压变化法（最经典）</strong>
+      <div style="line-height:2;margin-top:4px;">
+        <strong>实验：</strong>收集一瓶CO₂，倒入NaOH溶液，迅速盖紧瓶盖，振荡。<br>
+        <strong>现象：</strong>塑料瓶<strong>变瘪</strong> / 气球<strong>膨胀</strong> / U形管左高右低<br>
+        <strong>原理：</strong>CO₂被NaOH吸收 → 瓶内气压↓ → 大气压压瘪瓶子<br>
+        <span style="color:var(--text-secondary);">⚠️ 不足：CO₂也能溶于水，需 <strong>等量水做对照实验</strong> 证明是反应而非溶解</span>
+      </div>
+    </div>
+    <div style="background:var(--bg);padding:12px 16px;border-radius:6px;border:1px solid var(--border);">
+      <strong>🔬 方法二：生成物检验法（最严谨）</strong>
+      <div style="line-height:2;margin-top:4px;">
+        <strong>实验：</strong>反应后的溶液中滴加 <strong>CaCl₂ 溶液</strong>（或 BaCl₂、稀 HCl）<br>
+        <strong>现象：</strong>产生<strong>白色沉淀</strong>（CaCO₃）<br>
+        <strong>方程式：</strong>Na₂CO₃ + CaCl₂ → CaCO₃↓ + 2NaCl<br>
+        <span style="color:var(--text-secondary);">✅ 对照：NaOH + CaCl₂ → 不反应（无沉淀）—— 排除干扰</span>
+      </div>
+    </div>
+    <div style="background:var(--bg);padding:12px 16px;border-radius:6px;border:1px solid var(--border);">
+      <strong>🔬 方法三：pH变化法</strong>
+      <div style="line-height:2;margin-top:4px;">
+        <strong>实验：</strong>向NaOH溶液中通入CO₂，用pH计监测<br>
+        <strong>现象：</strong>pH由碱性（&gt;7）逐渐降低<br>
+        <strong>原理：</strong>NaOH（强碱）→ Na₂CO₃（碱性但弱于NaOH）→ 最终可能 H₂CO₃（酸性）
+      </div>
+    </div>
+    <div style="background:var(--bg);padding:12px 16px;border-radius:6px;border:1px solid var(--border);">
+      <strong>🔬 方法四：指示剂法</strong>
+      <div style="line-height:2;margin-top:4px;">
+        <strong>实验：</strong>向NaOH溶液（含酚酞）通入CO₂<br>
+        <strong>现象：</strong>红色逐渐<strong>变浅至无色</strong><br>
+        <span style="color:var(--text-secondary);">❌ 但不足：CO₂也能使碱的红色褪去（酸碱中和），无法单独证明 CO₂ 与 NaOH 发生了非中和反应以外的作用</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:10px;padding:12px 16px;background:var(--bg);border-radius:6px;border:1px solid var(--border);font-size:13px;line-height:2;">
+    <strong>⚖️ CO₂与Ca(OH)₂ vs CO₂与NaOH</strong>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px;font-size:12px;">
+      <div style="background:var(--bg-secondary);padding:8px 12px;border-radius:6px;">
+        <strong>CO₂ + Ca(OH)₂</strong><br>
+        现象：<strong>石灰水变浑浊</strong>（白色沉淀）<br>
+        产物：CaCO₃↓ + H₂O<br>
+        应用：<strong>CO₂ 的检验</strong>（唯一方法）
+      </div>
+      <div style="background:var(--bg-secondary);padding:8px 12px;border-radius:6px;">
+        <strong>CO₂ + NaOH</strong><br>
+        现象：<strong>无明显现象</strong><br>
+        产物：Na₂CO₃ + H₂O<br>
+        应用：<strong>CO₂ 的吸收/除杂</strong>（NaOH溶液吸收CO₂能力更强）
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:10px;padding:10px 14px;background:var(--bg);border-radius:6px;border-left:4px solid var(--chem-red);font-size:12px;">
+    <strong>⚠️ 中考必记：</strong><br>
+    • 没有明显现象 ≠ 没有发生反应<br>
+    • 气压变化类实验 <strong>必须设对照</strong>（等量水代替NaOH）才能排除CO₂溶于水的干扰<br>
+    • CO₂通入NaOH溶液后<strong>先无后有</strong>气泡：先 NaOH→Na₂CO₃，过量CO₂→Na₂CO₃+CO₂+H₂O→2NaHCO₃，此时加酸先无气体（NaOH+HCl），后有气体（NaHCO₃+HCl）—— 这是中考推断题"先后反应"逻辑
+  </div>
+</section>
+
+<!-- ====== 16. 中考化学答题规范 ====== -->
+<section style="margin:24px 0;">
+  <h3 id="s16" style="color:var(--accent);">✍️ 十六、中考化学答题规范</h3>
   <div style="font-size:13px;line-height:1.9;margin-top:10px;">
     <p><strong>1. 化学用语规范：</strong></p>
     <p>• 元素符号：首字母大写，第二个字母小写（如 Co 是钴，CO 是一氧化碳——大小写决定含义）</p>
@@ -319,9 +748,9 @@
   </div>
 </section>
 
-<!-- ====== 10. 考前30分钟速查表 ====== -->
+<!-- ====== 17. 考前30分钟速查表 ====== -->
 <section style="margin:24px 0;">
-  <h3 style="color:var(--accent);">⏱️ 十、考前30分钟速查表</h3>
+  <h3 id="s17" style="color:var(--accent);">⏱️ 十七、考前30分钟速查表</h3>
   <div style="font-size:12px;line-height:1.8;margin-top:10px;background:var(--bg-secondary);padding:16px;border-radius:8px;">
     <table style="width:100%;border-collapse:collapse;">
       <tr><td style="padding:4px 8px;border:1px solid var(--border);width:50%;"><strong>🔩 金属活动性：</strong>K Ca Na Mg Al Zn Fe Sn Pb (H) Cu Hg Ag Pt Au</td><td style="padding:4px 8px;border:1px solid var(--border);"><strong>🎨 溶液颜色：</strong>Cu²⁺蓝色 Fe²⁺浅绿 Fe³⁺黄色 MnO₄⁻紫红</td></tr>
@@ -333,6 +762,17 @@
       <tr><td style="padding:4px 8px;border:1px solid var(--border);"><strong>💧 浓硫酸稀释：</strong>酸入水！严禁水入酸</td><td style="padding:4px 8px;border:1px solid var(--border);"><strong>🍳 营养素供能：</strong>蛋白质18 糖类16 油脂39 (kJ/g)</td></tr>
       <tr><td style="padding:4px 8px;border:1px solid var(--border);"><strong>🔥 三大合成材料：</strong>塑料 合成纤维 合成橡胶</td><td style="padding:4px 8px;border:1px solid var(--border);"><strong>🔢 原子团化合价：</strong>OH⁻-1 NO₃⁻-1 CO₃²⁻-2 SO₄²⁻-2 NH₄⁺+1</td></tr>
     </table>
+  </div>
+</section>
+
+<!-- ====== 18. 元素周期表 ====== -->
+<section style="margin:24px 0;">
+  <h3 id="s18" style="color:var(--accent);">🧪 十八、元素周期表（初中适用）</h3>
+  <div style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px 24px;margin-top:10px;text-align:center;">
+    <p style="font-size:14px;margin-bottom:12px;">🔄 交互式周期表 — 支持过滤、搜索、点击查看详情</p>
+    <a href="periodic-table.html" style="display:inline-flex;align-items:center;gap:8px;padding:10px 28px;background:var(--accent);color:#fff;border-radius:var(--radius);text-decoration:none;font-weight:700;font-size:15px;transition:opacity .15s;" onmouseover="this.style.opacity=.85" onmouseout="this.style.opacity=1">
+      🧪 打开交互式周期表 →
+    </a>
   </div>
 </section>
 

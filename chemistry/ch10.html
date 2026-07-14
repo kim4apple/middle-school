@@ -79,7 +79,26 @@
   <div class="concept-card"><div class="name">常见碱</div><p><strong>氢氧化钠（NaOH）</strong>：白色固体、俗称<strong>烧碱/火碱/苛性钠</strong>。在空气中易吸收水分而<strong>潮解</strong>（可作干燥剂），也吸收 CO₂ 变质（$2NaOH + CO_2 \rightarrow Na_2CO_3 + H_2O$）→ 必须<strong>密封保存</strong>。<strong>氢氧化钙 Ca(OH)₂</strong>：俗称<strong>熟石灰/消石灰</strong>，微溶于水，其水溶液叫<strong>石灰水</strong>。</p></div>
   <div class="concept-card"><div class="name">pH——酸碱度的定量表示</div><p>pH 范围通常为 0~14。pH &lt; 7：<strong>酸性</strong>（pH 越小酸性越强）；pH = 7：<strong>中性</strong>；pH ＞ 7：<strong>碱性</strong>（pH 越大碱性越强）。<strong>pH 试纸使用方法</strong>：用<strong>干燥洁净的玻璃棒</strong>蘸取待测液滴到 pH 试纸上，与<strong>标准比色卡</strong>比较读数。不能将试纸直接伸入溶液！</p></div>
   <div class="concept-card"><div class="name">中和反应</div><p><strong>定义</strong>：酸与碱作用生成<strong>盐</strong>和<strong>水</strong>的反应。通式：酸 + 碱 → 盐 + 水。属于<strong>复分解反应</strong>。<strong>应用</strong>：① 改良酸性土壤——用<strong>熟石灰</strong>（Ca(OH)₂）；② 处理工业废水——酸性废水加碱中和，碱性废水加酸中和；③ 医药——含 Al(OH)₃ 或 NaHCO₃ 的药物中和过多胃酸。</p></div>
-  <div class="concept-card"><div class="name">酸溶液 ≠ 酸性溶液</div><p><strong>酸溶液</strong>：溶质是"酸"的溶液（如盐酸、稀硫酸），一定显酸性。<strong>酸性溶液</strong>：溶质不一定是酸，但溶液显酸性。如 NaHSO₄ 溶液显酸性，但 NaHSO₄ 是<strong>盐</strong>而不是酸。同样，<strong>碱溶液 ≠ 碱性溶液</strong>（如 Na₂CO₃ 溶液显碱性，但 Na₂CO₃ 是盐而非碱）。</p></div>
+   <div class="concept-card"><div class="name">酸溶液 ≠ 酸性溶液</div><p><strong>酸溶液</strong>：溶质是"酸"的溶液（如盐酸、稀硫酸），一定显酸性。<strong>酸性溶液</strong>：溶质不一定是酸，但溶液显酸性。如 NaHSO₄ 溶液显酸性，但 NaHSO₄ 是<strong>盐</strong>而不是酸。同样，<strong>碱溶液 ≠ 碱性溶液</strong>（如 Na₂CO₃ 溶液显碱性，但 Na₂CO₃ 是盐而非碱）。</p></div>
+</div>
+
+<div style="background:var(--bg-secondary);border-radius:8px;padding:14px 18px;margin:16px 0;text-align:center;">
+  <h4 style="margin-bottom:10px;">🎨 pH 试纸颜色对照</h4>
+  <div style="display:flex;height:32px;border-radius:6px;overflow:hidden;margin:6px 0;">
+    <div style="flex:1;background:#dc2626;" title="pH 1"></div><div style="flex:1;background:#f97316;" title="pH 3"></div>
+    <div style="flex:1;background:#f59e0b;" title="pH 5"></div><div style="flex:1;background:#16a34a;" title="pH 7"></div>
+    <div style="flex:1;background:#0891b2;" title="pH 9"></div><div style="flex:1;background:#4f46e5;" title="pH 11"></div>
+    <div style="flex:1;background:#7c3aed;" title="pH 13"></div>
+  </div>
+  <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--text-secondary);margin-top:2px;">
+    <span>pH 1 酸性最强</span><span>pH 7 中性</span><span>pH 14 碱性最强</span>
+  </div>
+</div>
+
+<div style="background:var(--bg-secondary);border-radius:8px;padding:16px;margin:16px 0;text-align:center;">
+  <h4 style="margin-bottom:8px;">📈 酸碱中和滴定曲线 (强酸+强碱)</h4>
+  <canvas id="titrationChart" style="max-height:300px;"></canvas>
+  <p style="font-size:11px;color:var(--text-secondary);margin-top:6px;">突跃范围：pH 4-10。指示剂选择：甲基橙(pH3.1-4.4)或酚酞(pH8.2-10.0)。</p>
 </div>
 
 <!-- ====== 模块4: 化学方程式 ====== -->
@@ -261,6 +280,14 @@ window.addEventListener('scroll',function(){var b=document.getElementById('backT
 
 // Solution toggle
 document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution')})});
+
+// Titration chart
+(function(){
+  var c=document.getElementById('titrationChart');if(!c||typeof Chart==='undefined')return;
+  new Chart(c,{type:'line',data:{labels:['0','5','10','15','18','19','19.5','20','20.5','21','22','25','30'],datasets:[
+    {label:'pH',data:[1.0,1.2,1.5,2.0,2.5,3.0,3.5,7.0,10.5,11.0,11.5,12.0,12.5],borderColor:'#0891b2',tension:0.4,pointRadius:3,pointBackgroundColor:'#0891b2'}
+  ]},options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{title:{display:true,text:'NaOH体积/mL',color:'#94a3b8'},ticks:{color:'#94a3b8'}},y:{title:{display:true,text:'pH',color:'#94a3b8'},ticks:{color:'#94a3b8'},min:0,max:14}}}});
+})();
 </script>
 <script src="lib/3dmol-min.js"></script>
 <script>
@@ -280,5 +307,6 @@ document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('c
   viewer.zoomTo(); viewer.render();
 })();
 </script>
+<script src="lib/chart.umd.min.js"></script>
 </body>
 </html>

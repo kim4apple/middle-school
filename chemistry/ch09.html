@@ -82,7 +82,13 @@
   <div class="concept-card"><div class="name">溶解度（四要素）</div><p><strong>定义</strong>：在一定<strong>温度</strong>下，某固态物质在<strong>100 g 溶剂</strong>中达到<strong>饱和状态</strong>时所溶解的<strong>质量</strong>（单位：<strong>克 g</strong>）。四要素缺一不可！如：20°C 时 NaCl 的溶解度为 36 g——表示 20°C 时 100 g 水中最多溶解 36 g NaCl。</p></div>
   <div class="concept-card"><div class="name">溶解度曲线</div><p>以温度为横坐标、溶解度为纵坐标的曲线。① 大多数固体物质的溶解度随温度升高而<strong>增大</strong>（如 KNO₃——陡升型）；② NaCl 随温度变化<strong>不大</strong>（平缓型）；③ <strong>Ca(OH)₂</strong> 的溶解度随温度升高反而<strong>减小</strong>（特例！）。气体溶解度随温度升高而<strong>减小</strong>，随压强增大而<strong>增大</strong>。</p></div>
   <div class="concept-card"><div class="name">结晶——从溶液中析出固体</div><p><strong>蒸发结晶（蒸发溶剂）</strong>：适用于溶解度受温度影响<strong>不大</strong>的物质，如 NaCl（海水晒盐）。<strong>降温结晶（冷却热饱和溶液）</strong>：适用于溶解度受温度影响<strong>较大</strong>的物质，如 KNO₃。混合溶液分离：先蒸发浓缩，再降温结晶，使 KNO₃ 先结晶析出，NaCl 留在母液中。</p></div>
-  <div class="concept-card"><div class="name">乳化</div><p>一种液体以<strong>微小液滴</strong>分散在另一种不相溶液体中形成的混合物叫<strong>乳浊液</strong>（不均一、不稳定）。加入<strong>乳化剂</strong>（如洗涤剂、洗衣液、肥皂）能使油分散成微小液滴均匀悬浮在水中，形成较稳定的乳浊液——此过程叫<strong>乳化</strong>。乳化 ≠ 溶解（乳化是物理分散，不形成均一溶液）。</p></div>
+   <div class="concept-card"><div class="name">乳化</div><p>一种液体以<strong>微小液滴</strong>分散在另一种不相溶液体中形成的混合物叫<strong>乳浊液</strong>（不均一、不稳定）。加入<strong>乳化剂</strong>（如洗涤剂、洗衣液、肥皂）能使油分散成微小液滴均匀悬浮在水中，形成较稳定的乳浊液——此过程叫<strong>乳化</strong>。乳化 ≠ 溶解（乳化是物理分散，不形成均一溶液）。</p></div>
+</div>
+
+<div style="background:var(--bg-secondary);border-radius:8px;padding:16px;margin:16px 0;text-align:center;">
+  <h4 style="margin-bottom:8px;">📈 溶解度曲线 — NaCl vs KNO₃ vs Ca(OH)₂</h4>
+  <canvas id="solubilityChart" style="max-height:300px;"></canvas>
+  <p style="font-size:11px;color:var(--text-secondary);margin-top:6px;">注意：NaCl 溶解度随温度变化不大（几乎水平），KNO₃ 随温度急剧上升，Ca(OH)₂ 随温度升高反而下降（反常）。</p>
 </div>
 
 <!-- ====== 模块4: 化学方程式 ====== -->
@@ -258,6 +264,17 @@ window.addEventListener('scroll',function(){var b=document.getElementById('backT
 
 // Solution toggle
 document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution')})});
+
+// Solubility chart
+(function(){
+  var c=document.getElementById('solubilityChart');if(!c||typeof Chart==='undefined')return;
+  new Chart(c,{type:'line',data:{labels:['0','10','20','30','40','50','60','70','80','90','100'],datasets:[
+    {label:'NaCl',data:[35.7,35.8,36.0,36.3,36.6,37.0,37.3,37.8,38.4,39.0,39.8],borderColor:'#4f46e5',tension:0.3,pointRadius:2},
+    {label:'KNO₃',data:[13.3,20.9,31.6,45.8,63.9,85.5,110,138,169,202,246],borderColor:'#dc2626',tension:0.3,pointRadius:2},
+    {label:'Ca(OH)₂',data:[0.185,0.176,0.165,0.153,0.141,0.128,0.116,0.106,0.094,0.085,0.077],borderColor:'#f59e0b',tension:0.3,pointRadius:2}
+  ]},options:{responsive:true,plugins:{legend:{labels:{color:'#94a3b8',font:{size:11}}}},scales:{x:{title:{display:true,text:'温度/℃',color:'#94a3b8'},ticks:{color:'#94a3b8'}},y:{title:{display:true,text:'溶解度/g',color:'#94a3b8'},ticks:{color:'#94a3b8'},min:0}}}});
+})();
 </script>
+<script src="lib/chart.umd.min.js"></script>
 </body>
 </html>

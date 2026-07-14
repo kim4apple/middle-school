@@ -61,7 +61,11 @@
 <section class="micro-explanation">
   <h3>🧠 原子结构 · 3D 电子排布模型</h3>
   <p style="margin-bottom:10px;">🖱️ 可旋转/缩放查看。原子核（质子+中子）位于中心，电子在核外分层排布。</p>
-  <div class="model-viewer" id="viewer-ch03" style="width:100%;height:350px;"></div>
+  <div class="model-viewer" id="viewer-ch03" style="width:100%;height:350px;position:relative;">
+    <div style="position:absolute;bottom:8px;left:10px;color:#94a3b8;font-size:11px;pointer-events:none;z-index:10;background:rgba(30,41,59,0.7);padding:2px 8px;border-radius:4px;">原子核 (11p+12n)</div>
+    <div style="position:absolute;bottom:28px;left:10px;color:#94a3b8;font-size:11px;pointer-events:none;z-index:10;background:rgba(30,41,59,0.7);padding:2px 8px;border-radius:4px;">第1层2e⁻ · 第2层8e⁻ · 第3层1e⁻</div>
+    <div style="position:absolute;top:8px;right:10px;color:#94a3b8;font-size:11px;pointer-events:none;z-index:10;background:rgba(30,41,59,0.7);padding:2px 8px;border-radius:4px;">🖱️ 旋转/缩放 · 切换暗色请刷新</div>
+  </div>
   <p style="margin-top:10px;"><strong>核外电子排布规则：</strong>① 第一层最多 2 个电子；② 第二层最多 8 个；③ 最外层最多 8 个（只有1层时最多2个）。<br>示例：Na（钠，原子序数11）→ 电子排布 2-8-1；Cl（氯，17）→ 2-8-7。</p>
 </section>
 
@@ -233,7 +237,7 @@ document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('c
   if (typeof $3Dmol === 'undefined') return;
   var el = document.getElementById('viewer-ch03');
   if (!el) return;
-  var viewer = $3Dmol.createViewer(el, { backgroundColor: 'var(--bg)' });
+  var viewer = $3Dmol.createViewer(el, { backgroundColor: '0x1e293b' });
   viewer.addSphere({ center: {x:0,y:0,z:0}, radius: 0.8, color: '#dc2626' });
   var ringColors = ['#4f46e5', '#0891b2', '#f59e0b'];
   for (var s = 0; s < 3; s++) {
@@ -243,10 +247,6 @@ document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('c
       viewer.addSphere({ center: {x: Math.cos(angle)*r, y: Math.sin(angle)*r, z: 0}, radius: 0.2, color: ringColors[s], opacity: 0.7 });
     }
   }
-  viewer.addLabel("原子核 (11p+12n)", { position: {x:0,y:-1.2,z:0}, fontSize:12, fontColor:'var(--text)', showBackground: false });
-  viewer.addLabel("第1层2e⁻", { position: {x:2.5,y:0,z:0}, fontSize:10, fontColor:'var(--text-secondary)', showBackground: false });
-  viewer.addLabel("第2层8e⁻", { position: {x:4,y:0,z:0}, fontSize:10, fontColor:'var(--text-secondary)', showBackground: false });
-  viewer.addLabel("第3层1e⁻", { position: {x:5.5,y:0,z:0}, fontSize:10, fontColor:'var(--text-secondary)', showBackground: false });
   viewer.zoomTo(); viewer.render();
 })();
 </script>

@@ -64,7 +64,10 @@
 <section class="micro-explanation">
   <h3>🧠 中和反应的本质 · H⁺ + OH⁻ → H₂O</h3>
   <p style="margin-bottom:10px;">🖱️ 旋转查看。酸溶液中的 H⁺ 和碱溶液中的 OH⁻ 结合生成水分子。</p>
-  <div class="model-viewer" id="viewer-ch10" style="width:100%;height:320px;"></div>
+  <div class="model-viewer" id="viewer-ch10" style="width:100%;height:320px;position:relative;">
+    <div style="position:absolute;bottom:8px;left:10px;color:#94a3b8;font-size:11px;pointer-events:none;z-index:10;background:rgba(30,41,59,0.7);padding:2px 8px;border-radius:4px;">H⁺ + OH⁻ → H₂O</div>
+    <div style="position:absolute;top:8px;right:10px;color:#94a3b8;font-size:11px;pointer-events:none;z-index:10;background:rgba(30,41,59,0.7);padding:2px 8px;border-radius:4px;">🖱️ 旋转/缩放 · 切换暗色请刷新</div>
+  </div>
   <p style="margin-top:10px;"><strong>中和反应的实质：</strong>H⁺ + OH⁻ → H₂O。<br>酸（如 HCl）在水中电离出 H⁺ 和 Cl⁻；碱（如 NaOH）在水中电离出 Na⁺ 和 OH⁻。H⁺ 和 OH⁻ 结合成水分子，Na⁺ 和 Cl⁻ 留在溶液中——蒸干后得到 NaCl 晶体。<br><strong>关键理解：</strong>酸的共同性质来自 H⁺，碱的共同性质来自 OH⁻。</p>
 </section>
 <script>
@@ -72,20 +75,16 @@
   if (typeof $3Dmol === 'undefined') return;
   var el = document.getElementById('viewer-ch10');
   if (!el) return;
-  var viewer = $3Dmol.createViewer(el, { backgroundColor: 'var(--bg)' });
+  var viewer = $3Dmol.createViewer(el, { backgroundColor: '0x1e293b' });
   viewer.addSphere({ center: {x:-3,y:1,z:0}, radius: 0.3, color: '#dc2626' });
   viewer.addSphere({ center: {x:-3,y:-1,z:0}, radius: 0.3, color: '#dc2626' });
-  viewer.addLabel("H⁺", { position: {x:-3.7,y:1.3,z:0}, fontSize:12, fontColor:'#dc2626', showBackground: false });
   viewer.addSphere({ center: {x:3,y:1,z:0}, radius: 0.45, color: '#4f46e5' });
   viewer.addSphere({ center: {x:3.5,y:1.3,z:0}, radius: 0.25, color: '#dc2626' });
   viewer.addSphere({ center: {x:3,y:-1,z:0}, radius: 0.45, color: '#4f46e5' });
   viewer.addSphere({ center: {x:3.5,y:-0.7,z:0}, radius: 0.25, color: '#dc2626' });
-  viewer.addLabel("OH⁻", { position: {x:3.7,y:1.3,z:0}, fontSize:12, fontColor:'#4f46e5', showBackground: false });
   viewer.addSphere({ center: {x:0,y:0,z:0}, radius: 0.5, color: '#dc2626' });
   viewer.addSphere({ center: {x:0.8,y:0.7,z:0}, radius: 0.3, color: '#e2e8f0' });
   viewer.addSphere({ center: {x:0.8,y:-0.7,z:0}, radius: 0.3, color: '#e2e8f0' });
-  viewer.addLabel("H₂O", { position: {x:0,y:-1.2,z:0}, fontSize:13, fontColor:'#16a34a', showBackground: false });
-  viewer.addLabel("→", { position: {x:0,y:1.5,z:0}, fontSize:18, fontColor:'var(--accent)', showBackground: false });
   viewer.zoomTo(); viewer.render();
 })();
 </script>

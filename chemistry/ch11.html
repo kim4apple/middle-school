@@ -55,7 +55,10 @@
 <section class="micro-explanation">
   <h3>🧠 NaCl 离子晶体 · 3D 结构</h3>
   <p style="margin-bottom:10px;">🖱️ 旋转查看。🟡 Na⁺ 和 🟢 Cl⁻ 交替排列，形成规则的立方晶体。</p>
-  <div class="model-viewer" id="viewer-ch11" style="width:100%;height:350px;"></div>
+  <div class="model-viewer" id="viewer-ch11" style="width:100%;height:350px;position:relative;">
+    <div style="position:absolute;bottom:8px;left:10px;color:#94a3b8;font-size:11px;pointer-events:none;z-index:10;background:rgba(30,41,59,0.7);padding:2px 8px;border-radius:4px;">🟡 Na⁺ · 🟢 Cl⁻</div>
+    <div style="position:absolute;top:8px;right:10px;color:#94a3b8;font-size:11px;pointer-events:none;z-index:10;background:rgba(30,41,59,0.7);padding:2px 8px;border-radius:4px;">🖱️ 旋转/缩放 · 切换暗色请刷新</div>
+  </div>
   <p style="margin-top:10px;">NaCl 晶体中，每个 Na⁺ 被 6 个 Cl⁻ 包围，每个 Cl⁻ 也被 6 个 Na⁺ 包围。Na⁺ 和 Cl⁻ 通过<strong>离子键</strong>（正负电荷吸引力）结合。离子晶体硬度大、熔点高，熔融状态或水溶液中能导电（离子可以自由移动）。</p>
 </section>
 <script>
@@ -63,7 +66,7 @@
   if (typeof $3Dmol === 'undefined') return;
   var el = document.getElementById('viewer-ch11');
   if (!el) return;
-  var viewer = $3Dmol.createViewer(el, { backgroundColor: 'var(--bg)' });
+  var viewer = $3Dmol.createViewer(el, { backgroundColor: '0x1e293b' });
   var s = 2.0;
   for (var x = 0; x < 3; x++)
     for (var y = 0; y < 3; y++)
@@ -76,8 +79,6 @@
           opacity: 0.9
         });
       }
-  viewer.addLabel("Na⁺", { position: {x:-s,y:-s,z:-s}, fontSize:12, fontColor:'var(--text)', showBackground: false });
-  viewer.addLabel("Cl⁻", { position: {x:s,y:-s,z:-s}, fontSize:12, fontColor:'var(--text)', showBackground: false });
   viewer.zoomTo(); viewer.render();
 })();
 </script>

@@ -62,7 +62,10 @@
 <section class="micro-explanation">
   <h3>🧠 C₆₀ 足球烯 · 3D 分子结构</h3>
   <p style="margin-bottom:10px;">🖱️ 旋转查看。60 个碳原子组成 12 个五边形 + 20 个六边形。</p>
-  <div class="model-viewer" id="viewer-ch12" style="width:100%;height:350px;"></div>
+  <div class="model-viewer" id="viewer-ch12" style="width:100%;height:350px;position:relative;">
+    <div style="position:absolute;bottom:8px;left:10px;color:#94a3b8;font-size:11px;pointer-events:none;z-index:10;background:rgba(30,41,59,0.7);padding:2px 8px;border-radius:4px;">C₆₀ 足球烯 · 60个碳原子</div>
+    <div style="position:absolute;top:8px;right:10px;color:#94a3b8;font-size:11px;pointer-events:none;z-index:10;background:rgba(30,41,59,0.7);padding:2px 8px;border-radius:4px;">🖱️ 旋转/缩放 · 切换暗色请刷新</div>
+  </div>
   <p style="margin-top:10px;">C₆₀ 是碳的第三种同素异形体（与金刚石、石墨并列）。其分子结构像一个微型足球，因此得名"足球烯"。C₆₀ 在超导、药物载体、纳米材料等领域有广泛应用前景。每个 C 原子形成 3 个 σ 键（sp² 杂化），剩下的 p 轨道形成离域 π 键。</p>
 </section>
 <script>
@@ -70,7 +73,7 @@
   if (typeof $3Dmol === 'undefined') return;
   var el = document.getElementById('viewer-ch12');
   if (!el) return;
-  var viewer = $3Dmol.createViewer(el, { backgroundColor: 'var(--bg)' });
+  var viewer = $3Dmol.createViewer(el, { backgroundColor: '0x1e293b' });
   var r = 5;
   var positions = [];
   for (var i = 0; i < 12; i++) {
@@ -88,7 +91,6 @@
   positions.forEach(function(p) {
     viewer.addSphere({ center: {x:p[0],y:p[1],z:p[2]}, radius: 0.35, color: '#f59e0b', opacity: 0.9 });
   });
-  viewer.addLabel("C₆₀", { position: {x:0,y:-6,z:0}, fontSize:14, fontColor:'var(--accent)', showBackground: false });
   viewer.zoomTo(); viewer.render();
 })();
 </script>

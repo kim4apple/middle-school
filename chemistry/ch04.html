@@ -68,7 +68,10 @@
 <section class="micro-explanation">
   <h3>🧠 水分子 H₂O · 3D 结构模型</h3>
   <p style="margin-bottom:10px;">🖱️ 旋转查看水分子的 V 形结构。红色=氧原子(O)，白色=氢原子(H)。键角约为 104.5°。</p>
-  <div class="model-viewer" id="viewer-ch04" style="width:100%;height:350px;"></div>
+  <div class="model-viewer" id="viewer-ch04" style="width:100%;height:350px;position:relative;">
+    <div style="position:absolute;bottom:8px;left:10px;color:#94a3b8;font-size:11px;pointer-events:none;z-index:10;background:rgba(30,41,59,0.7);padding:2px 8px;border-radius:4px;">O (氧) · H (氢) · 键角 104.5°</div>
+    <div style="position:absolute;top:8px;right:10px;color:#94a3b8;font-size:11px;pointer-events:none;z-index:10;background:rgba(30,41,59,0.7);padding:2px 8px;border-radius:4px;">🖱️ 旋转/缩放 · 切换暗色请刷新</div>
+  </div>
   <p style="margin-top:10px;">H₂O 分子中，两个 H 原子与 O 原子各共用<strong>一对电子</strong>（共价键），形成稳定的分子。O 原子还有两对<strong>孤对电子</strong>，它们排斥成键电子对，使 H-O-H 键角从正四面体的 109.5° 压缩到 104.5°，形成 V 形分子。</p>
 </section>
 
@@ -238,17 +241,13 @@ document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('c
   if (typeof $3Dmol === 'undefined') return;
   var el = document.getElementById('viewer-ch04');
   if (!el) return;
-  var viewer = $3Dmol.createViewer(el, { backgroundColor: 'var(--bg)' });
+  var viewer = $3Dmol.createViewer(el, { backgroundColor: '0x1e293b' });
   viewer.addSphere({ center: {x:0,y:0,z:0}, radius: 0.6, color: '#dc2626' });
   var angle = 104.5 * Math.PI / 180;
   viewer.addSphere({ center: {x: Math.sin(angle/2)*1.5, y: Math.cos(angle/2)*1.5, z: 0}, radius: 0.4, color: '#e2e8f0' });
   viewer.addSphere({ center: {x: -Math.sin(angle/2)*1.5, y: Math.cos(angle/2)*1.5, z: 0}, radius: 0.4, color: '#e2e8f0' });
   viewer.addCylinder({ start: {x:0,y:0,z:0}, end: {x: Math.sin(angle/2)*1.5, y: Math.cos(angle/2)*1.5, z: 0}, radius: 0.15, color: '#94a3b8' });
   viewer.addCylinder({ start: {x:0,y:0,z:0}, end: {x: -Math.sin(angle/2)*1.5, y: Math.cos(angle/2)*1.5, z: 0}, radius: 0.15, color: '#94a3b8' });
-  viewer.addLabel("O", { position: {x:0,y:-0.8,z:0}, fontSize:14, fontColor:'var(--text)', showBackground: false });
-  viewer.addLabel("H", { position: {x:1.8,y:1.8,z:0}, fontSize:12, fontColor:'var(--text-secondary)', showBackground: false });
-  viewer.addLabel("H", { position: {x:-1.8,y:1.8,z:0}, fontSize:12, fontColor:'var(--text-secondary)', showBackground: false });
-  viewer.addLabel("104.5°", { position: {x:0,y:0.8,z:0}, fontSize:11, fontColor:'var(--accent)', showBackground: false });
   viewer.zoomTo(); viewer.render();
 })();
 </script>

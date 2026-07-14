@@ -101,6 +101,9 @@ body {
 }
 .expand-btn:hover { background: var(--accent); color: white; }
 
+.print-btn { padding:8px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px;width:100%;margin-top:8px; }
+.print-btn:hover { background: var(--accent-light); }
+
 .chapter h1 {
   font-size: 28px;
   font-weight: 700;
@@ -364,6 +367,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
    #sidebar { display: none; }
    #sidebarShowBtn { display: none; }
    .expand-btn { display: none; }
+   .print-btn { display: none !important; }
    details .content { display: block !important; }
    details[open] .content { display: block !important; }
    .module { box-shadow: none; border: 1px solid #ccc; page-break-inside: avoid; }

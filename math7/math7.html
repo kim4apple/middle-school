@@ -386,6 +386,9 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 }
 .expand-btn:hover { background: var(--accent); color: white; }
 
+.print-btn { padding:8px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px;width:100%;margin-top:8px; }
+.print-btn:hover { background: var(--accent-light); }
+
 @media (max-width: 768px) {
   #sidebar { padding: 12px; }
   #sidebar.hidden { display: none; }
@@ -408,7 +411,8 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
   * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
   #sidebar { display: none; }
   #sidebarShowBtn { display: none; }
-  .expand-btn { display: none; }
+  .print-btn, .expand-btn { display: none !important; }
+  details, .module, .exam-module { display: block !important; }
   details .content { display: block !important; }
   details[open] .content { display: block !important; }
   body { display: block; }
@@ -488,6 +492,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
     </nav>
     <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
     <button id="theme-toggle" class="theme-toggle" style="margin-top:10px;">🌙 暗色模式</button>
+    <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
   </nav>
   <main id="content">
 <div class="chapter" id="chapter1">

@@ -70,32 +70,7 @@
   </div>
   <p style="margin-top:10px;">金属晶体中，<strong>金属阳离子</strong>按一定规律紧密堆积，<strong>自由电子</strong>在整个晶体中自由运动。这个模型解释了金属的导电性（电子定向移动）、导热性和延展性（原子层可以滑动而不破坏金属键）。</p>
 </section>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  try {
-    (function() {
-      var GL = window.$3Dmol || window['3Dmol'];
-      if (typeof GL === 'undefined' || !GL.createViewer) return;
-      var el = document.getElementById('viewer-ch08');
-      if (!el) return;
-      var viewer = GL.createViewer(el, { backgroundColor: '0x1e293b' });
-      var s = 2.5;
-      for (var x = -1; x <= 1; x++)
-        for (var y = -1; y <= 1; y++)
-          for (var z = -1; z <= 1; z++) {
-            viewer.addSphere({ center: {x:x*s,y:y*s,z:z*s}, radius: 0.5, color: '#f59e0b', opacity: 0.9 });
-            if (x < 1 && y < 1 && z < 1)
-              viewer.addSphere({ center: {x:x*s+s/2,y:y*s+s/2,z:z*s+s/2}, radius: 0.35, color: '#fbbf24', opacity: 0.5 });
-          }
-      for (var i = 0; i < 20; i++)
-        viewer.addSphere({ center: {x:(Math.random()-0.5)*6, y:(Math.random()-0.5)*6, z:(Math.random()-0.5)*6}, radius: 0.1, color: '#0891b2', opacity: 0.6 });
-      viewer.zoomTo(); viewer.render();
-    })();
-  } catch(e) {
-    console.warn('3Dmol:', e);
-  }
-});
-</script>
+
 
 <!-- ====== 模块3: 核心概念 ====== -->
 <h3 style="margin:20px 0 12px;color:var(--accent);">📖 核心概念</h3>
@@ -253,7 +228,6 @@ document.addEventListener('DOMContentLoaded', function() {
 <script src="../katex/auto-render.min.js"></script>
 <script>
 // KaTeX
-try { renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false}); } catch(e) { console.warn('KaTeX:',e); }
 
 // Theme toggle — with null check on addEventListener
 (function(){
@@ -264,7 +238,6 @@ try { renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',displ
     var c=document.documentElement.getAttribute('data-theme'),n=c==='dark'?'light':'dark';
     document.documentElement.setAttribute('data-theme',n);localStorage.setItem(k,n);
     b.textContent=n==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
-  });}
 })();
 
 // Sidebar toggle
@@ -272,8 +245,6 @@ try { renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',displ
   var s=document.getElementById('sidebar'),k='chemistry-sidebar'; if(!s)return;
   if(localStorage.getItem(k)==='hidden')s.classList.add('hidden');
   var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
-  if(h)h.addEventListener('click',function(){s.classList.add('hidden');localStorage.setItem(k,'hidden')});
-  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');localStorage.setItem(k,'')});
 })();
 
 // Expand all
@@ -284,15 +255,32 @@ try { renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',displ
     for(var i=0;i<a.length;i++)if(!a[i].hasAttribute('open')){o=false;break}
     for(var i=0;i<a.length;i++){if(o)a[i].removeAttribute('open');else a[i].setAttribute('open','')}
     b.textContent=o?'📂 展开全部章节':'📖 收起全部章节';
-  });
 })();
 
 // Back to top
-window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=scrollY>400?'block':'none'});
 
 // Solution toggle (for chapters with exam questions)
-document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution')})});
 </script>
 <script src="lib/3dmol-min.js"></script>
+<script>
+(function() {
+  var GL = window.$3Dmol || window['3Dmol'];
+  if (!GL || !GL.createViewer) return;
+  var el = document.getElementById('viewer-ch08');
+  if (!el) return;
+  var viewer = GL.createViewer(el, { backgroundColor: '0x1e293b' });
+  var s = 2.5;
+  for (var x = -1; x <= 1; x++)
+    for (var y = -1; y <= 1; y++)
+      for (var z = -1; z <= 1; z++) {
+        viewer.addSphere({ center: {x:x*s, y:y*s, z:z*s}, radius: 0.5, color: '#f59e0b', opacity: 0.9 });
+        if (x < 1 && y < 1 && z < 1)
+          viewer.addSphere({ center: {x:x*s+s/2, y:y*s+s/2, z:z*s+s/2}, radius: 0.35, color: '#fbbf24', opacity: 0.55 });
+      }
+  for (var i = 0; i < 20; i++)
+    viewer.addSphere({ center: {x:(Math.random()-0.5)*6, y:(Math.random()-0.5)*6, z:(Math.random()-0.5)*6}, radius: 0.13, color: '#0891b2', opacity: 0.7 });
+  viewer.zoomTo(); viewer.render();
+})();
+</script>
 </body>
 </html>

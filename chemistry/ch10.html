@@ -62,11 +62,33 @@
 
 <!-- ====== 模块2: 微观解释 ====== -->
 <section class="micro-explanation">
-  <h3>🧠 微观解释：酸和碱的通性</h3>
-  <p><strong>酸的通性来自 H⁺：</strong>酸在水溶液中都能解离出<strong>氢离子（H⁺）</strong>。如 HCl → H⁺ + Cl⁻，H₂SO₄ → 2H⁺ + SO₄²⁻。因此所有酸的溶液都表现出共同的化学性质：能使石蕊变红、能与活泼金属反应生成 H₂、能与碱发生中和反应。</p>
-  <p style="margin-top:10px;"><strong>碱的通性来自 OH⁻：</strong>碱在水溶液中都能解离出<strong>氢氧根离子（OH⁻）</strong>。如 NaOH → Na⁺ + OH⁻，Ca(OH)₂ → Ca²⁺ + 2OH⁻。因此所有碱的溶液都表现出共同的化学性质：能使石蕊变蓝、能使酚酞变红、能与酸发生中和反应。</p>
-  <p style="margin-top:10px;padding:10px 14px;background:var(--accent-light);border-radius:6px;border-left:4px solid var(--accent);"><strong>中和反应的实质（微观核心）：</strong>$H^+ + OH^- \rightarrow H_2O$<br>酸中的 H⁺ 和碱中的 OH⁻ 结合生成<strong>水分子</strong>，这是所有酸碱中和反应的共同本质。如 NaOH + HCl → NaCl + H₂O，从离子角度看就是：$Na^+ + OH^- + H^+ + Cl^- \rightarrow Na^+ + Cl^- + H_2O$，Na⁺ 和 Cl⁻ 实际没有参与反应（"旁观离子"）。</p>
+  <h3>🧠 中和反应的本质 · H⁺ + OH⁻ → H₂O</h3>
+  <p style="margin-bottom:10px;">🖱️ 旋转查看。酸溶液中的 H⁺ 和碱溶液中的 OH⁻ 结合生成水分子。</p>
+  <div class="model-viewer" id="viewer-ch10" style="width:100%;height:320px;"></div>
+  <p style="margin-top:10px;"><strong>中和反应的实质：</strong>H⁺ + OH⁻ → H₂O。<br>酸（如 HCl）在水中电离出 H⁺ 和 Cl⁻；碱（如 NaOH）在水中电离出 Na⁺ 和 OH⁻。H⁺ 和 OH⁻ 结合成水分子，Na⁺ 和 Cl⁻ 留在溶液中——蒸干后得到 NaCl 晶体。<br><strong>关键理解：</strong>酸的共同性质来自 H⁺，碱的共同性质来自 OH⁻。</p>
 </section>
+<script>
+(function() {
+  if (typeof $3Dmol === 'undefined') return;
+  var el = document.getElementById('viewer-ch10');
+  if (!el) return;
+  var viewer = $3Dmol.createViewer(el, { backgroundColor: 'var(--bg)' });
+  viewer.addSphere({ center: {x:-3,y:1,z:0}, radius: 0.3, color: '#dc2626' });
+  viewer.addSphere({ center: {x:-3,y:-1,z:0}, radius: 0.3, color: '#dc2626' });
+  viewer.addLabel("H⁺", { position: {x:-3.7,y:1.3,z:0}, fontSize:12, fontColor:'#dc2626', showBackground: false });
+  viewer.addSphere({ center: {x:3,y:1,z:0}, radius: 0.45, color: '#4f46e5' });
+  viewer.addSphere({ center: {x:3.5,y:1.3,z:0}, radius: 0.25, color: '#dc2626' });
+  viewer.addSphere({ center: {x:3,y:-1,z:0}, radius: 0.45, color: '#4f46e5' });
+  viewer.addSphere({ center: {x:3.5,y:-0.7,z:0}, radius: 0.25, color: '#dc2626' });
+  viewer.addLabel("OH⁻", { position: {x:3.7,y:1.3,z:0}, fontSize:12, fontColor:'#4f46e5', showBackground: false });
+  viewer.addSphere({ center: {x:0,y:0,z:0}, radius: 0.5, color: '#dc2626' });
+  viewer.addSphere({ center: {x:0.8,y:0.7,z:0}, radius: 0.3, color: '#e2e8f0' });
+  viewer.addSphere({ center: {x:0.8,y:-0.7,z:0}, radius: 0.3, color: '#e2e8f0' });
+  viewer.addLabel("H₂O", { position: {x:0,y:-1.2,z:0}, fontSize:13, fontColor:'#16a34a', showBackground: false });
+  viewer.addLabel("→", { position: {x:0,y:1.5,z:0}, fontSize:18, fontColor:'var(--accent)', showBackground: false });
+  viewer.zoomTo(); viewer.render();
+})();
+</script>
 
 <!-- ====== 模块3: 核心概念 ====== -->
 <h3 style="margin:20px 0 12px;color:var(--accent);">📖 核心概念</h3>
@@ -243,5 +265,6 @@ renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:tru
 window.addEventListener('scroll',function(){document.getElementById('backToTop').style.display=scrollY>400?'block':'none'});
 document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution')})});
 </script>
+<script src="lib/3dmol-min.js"></script>
 </body>
 </html>

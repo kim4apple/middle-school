@@ -59,17 +59,10 @@
 
 <!-- ====== 模块2: 微观解释 ====== -->
 <section class="micro-explanation">
-  <h3>🧠 原子结构——探索比分子更小的世界</h3>
-  <p>原子由位于<strong>原子中心</strong>的<strong>原子核</strong>和<strong>核外电子</strong>构成。原子核由<strong>质子</strong>和<strong>中子</strong>构成（H-1无中子）。</p>
-  <table style="width:100%;margin-top:10px;border-collapse:collapse;font-size:13px;">
-    <tr style="background:var(--accent-light);"><th style="padding:8px;text-align:left;border:1px solid var(--border);">粒子</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">符号</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">位置</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">带电量</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">相对质量</th></tr>
-    <tr><td style="padding:8px;border:1px solid var(--border);">质子</td><td style="padding:8px;border:1px solid var(--border);">p</td><td style="padding:8px;border:1px solid var(--border);">原子核内</td><td style="padding:8px;border:1px solid var(--border);">+1</td><td style="padding:8px;border:1px solid var(--border);">≈1</td></tr>
-    <tr><td style="padding:8px;border:1px solid var(--border);">中子</td><td style="padding:8px;border:1px solid var(--border);">n</td><td style="padding:8px;border:1px solid var(--border);">原子核内</td><td style="padding:8px;border:1px solid var(--border);">0（不带电）</td><td style="padding:8px;border:1px solid var(--border);">≈1</td></tr>
-    <tr><td style="padding:8px;border:1px solid var(--border);">电子</td><td style="padding:8px;border:1px solid var(--border);">e⁻</td><td style="padding:8px;border:1px solid var(--border);">原子核外</td><td style="padding:8px;border:1px solid var(--border);">-1</td><td style="padding:8px;border:1px solid var(--border);">≈1/1836（可忽略）</td></tr>
-  </table>
-  <p style="margin-top:8px;"><strong>核电荷数 = 质子数 = 核外电子数（在原子中）</strong></p>
-  <p><strong>核外电子排布规律：</strong>①分层排布（K、L、M、N…），能量低的在离核近的层；②最外层最多排8个（K层为2个）；③前20号元素的排布需要熟记——这是画原子结构示意图的基础。</p>
-  <p><strong>元素周期表简介：</strong>7个周期（横行）、16个族（纵行）。原子序数 = 质子数。同周期从左到右，元素从金属→非金属过渡；同族从上到下，元素化学性质相似（因为最外层电子数相同）。</p>
+  <h3>🧠 原子结构 · 3D 电子排布模型</h3>
+  <p style="margin-bottom:10px;">🖱️ 可旋转/缩放查看。原子核（质子+中子）位于中心，电子在核外分层排布。</p>
+  <div class="model-viewer" id="viewer-ch03" style="width:100%;height:350px;"></div>
+  <p style="margin-top:10px;"><strong>核外电子排布规则：</strong>① 第一层最多 2 个电子；② 第二层最多 8 个；③ 最外层最多 8 个（只有1层时最多2个）。<br>示例：Na（钠，原子序数11）→ 电子排布 2-8-1；Cl（氯，17）→ 2-8-7。</p>
 </section>
 
 <!-- ====== 模块3: 核心概念 ====== -->
@@ -234,6 +227,28 @@ renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:tru
 window.addEventListener('scroll',function(){document.getElementById('backToTop').style.display=scrollY>400?'block':'none'});
 
 document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution')})});
+<script src="lib/3dmol-min.js"></script>
+<script>
+(function() {
+  if (typeof $3Dmol === 'undefined') return;
+  var el = document.getElementById('viewer-ch03');
+  if (!el) return;
+  var viewer = $3Dmol.createViewer(el, { backgroundColor: 'var(--bg)' });
+  viewer.addSphere({ center: {x:0,y:0,z:0}, radius: 0.8, color: '#dc2626' });
+  var ringColors = ['#4f46e5', '#0891b2', '#f59e0b'];
+  for (var s = 0; s < 3; s++) {
+    var r = 2.0 + s * 1.5;
+    for (var i = 0; i < 12; i++) {
+      var angle = (i / 12) * Math.PI * 2;
+      viewer.addSphere({ center: {x: Math.cos(angle)*r, y: Math.sin(angle)*r, z: 0}, radius: 0.2, color: ringColors[s], opacity: 0.7 });
+    }
+  }
+  viewer.addLabel("原子核 (11p+12n)", { position: {x:0,y:-1.2,z:0}, fontSize:12, fontColor:'var(--text)', showBackground: false });
+  viewer.addLabel("第1层2e⁻", { position: {x:2.5,y:0,z:0}, fontSize:10, fontColor:'var(--text-secondary)', showBackground: false });
+  viewer.addLabel("第2层8e⁻", { position: {x:4,y:0,z:0}, fontSize:10, fontColor:'var(--text-secondary)', showBackground: false });
+  viewer.addLabel("第3层1e⁻", { position: {x:5.5,y:0,z:0}, fontSize:10, fontColor:'var(--text-secondary)', showBackground: false });
+  viewer.zoomTo(); viewer.render();
+})();
 </script>
 </body>
 </html>

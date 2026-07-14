@@ -60,17 +60,38 @@
 
 <!-- ====== 模块2: 微观解释 ====== -->
 <section class="micro-explanation">
-  <h3>🧠 微观解释：有机高分子——长链分子的世界</h3>
-  <p><strong>淀粉</strong>和<strong>蛋白质</strong>都是有机高分子化合物——由成千上万个<strong>小分子单元</strong>通过化学键连接而成的<strong>长链大分子</strong>。</p>
-  <table style="width:100%;margin-top:10px;border-collapse:collapse;font-size:13px;">
-    <tr style="background:var(--accent-light);"><th style="padding:8px;text-align:left;border:1px solid var(--border);">高分子</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">小分子单元</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">链的结构特点</th></tr>
-    <tr><td style="padding:8px;border:1px solid var(--border);">淀粉 (C₆H₁₀O₅)<sub>n</sub></td><td style="padding:8px;border:1px solid var(--border);">葡萄糖 C₆H₁₂O₆</td><td style="padding:8px;border:1px solid var(--border);">葡萄糖单元连成的<strong>直链或支链</strong></td></tr>
-    <tr><td style="padding:8px;border:1px solid var(--border);">纤维素 (C₆H₁₀O₅)<sub>n</sub></td><td style="padding:8px;border:1px solid var(--border);">葡萄糖 C₆H₁₂O₆</td><td style="padding:8px;border:1px solid var(--border);">与淀粉同分异构，但链的连接方式不同（人体不能消化纤维素）</td></tr>
-    <tr><td style="padding:8px;border:1px solid var(--border);">蛋白质</td><td style="padding:8px;border:1px solid var(--border);">氨基酸</td><td style="padding:8px;border:1px solid var(--border);">20种氨基酸按不同顺序排列，折叠成复杂的<strong>空间结构</strong></td></tr>
-    <tr><td style="padding:8px;border:1px solid var(--border);">塑料（聚乙烯）</td><td style="padding:8px;border:1px solid var(--border);">乙烯 C₂H₄</td><td style="padding:8px;border:1px solid var(--border);">乙烯分子打开双键互相连接形成长链—CH₂—CH₂—</td></tr>
-  </table>
-  <p style="margin-top:10px;">淀粉在人体中经过酶的催化，逐步<strong>水解</strong>为葡萄糖——这是消化过程的化学本质。蛋白质在体内水解为<strong>氨基酸</strong>后被吸收，再重新合成人体所需的各种蛋白质。</p>
+  <h3>🧠 C₆₀ 足球烯 · 3D 分子结构</h3>
+  <p style="margin-bottom:10px;">🖱️ 旋转查看。60 个碳原子组成 12 个五边形 + 20 个六边形。</p>
+  <div class="model-viewer" id="viewer-ch12" style="width:100%;height:350px;"></div>
+  <p style="margin-top:10px;">C₆₀ 是碳的第三种同素异形体（与金刚石、石墨并列）。其分子结构像一个微型足球，因此得名"足球烯"。C₆₀ 在超导、药物载体、纳米材料等领域有广泛应用前景。每个 C 原子形成 3 个 σ 键（sp² 杂化），剩下的 p 轨道形成离域 π 键。</p>
 </section>
+<script>
+(function() {
+  if (typeof $3Dmol === 'undefined') return;
+  var el = document.getElementById('viewer-ch12');
+  if (!el) return;
+  var viewer = $3Dmol.createViewer(el, { backgroundColor: 'var(--bg)' });
+  var r = 5;
+  var positions = [];
+  for (var i = 0; i < 12; i++) {
+    var phi = Math.acos(1 - 2*(i+0.5)/12);
+    var theta = i * Math.PI * (1+Math.sqrt(5));
+    positions.push([Math.sin(phi)*Math.cos(theta), Math.sin(phi)*Math.sin(theta), Math.cos(phi)]);
+  }
+  for (var i = 0; i < 8; i++) {
+    var lat = (i - 3.5) * Math.PI / 8;
+    for (var j = 0; j < 10; j++) {
+      var lon = j * 2 * Math.PI / 10;
+      positions.push([Math.cos(lat)*Math.cos(lon)*r*0.85, Math.cos(lat)*Math.sin(lon)*r*0.85, Math.sin(lat)*r]);
+    }
+  }
+  positions.forEach(function(p) {
+    viewer.addSphere({ center: {x:p[0],y:p[1],z:p[2]}, radius: 0.35, color: '#f59e0b', opacity: 0.9 });
+  });
+  viewer.addLabel("C₆₀", { position: {x:0,y:-6,z:0}, fontSize:14, fontColor:'var(--accent)', showBackground: false });
+  viewer.zoomTo(); viewer.render();
+})();
+</script>
 
 <!-- ====== 模块3: 核心概念 ====== -->
 <h3 style="margin:20px 0 12px;color:var(--accent);">📖 核心概念</h3>
@@ -241,5 +262,6 @@ renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:tru
 window.addEventListener('scroll',function(){document.getElementById('backToTop').style.display=scrollY>400?'block':'none'});
 document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution')})});
 </script>
+<script src="lib/3dmol-min.js"></script>
 </body>
 </html>

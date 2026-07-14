@@ -103,6 +103,20 @@
   <p style="margin:4px 0;">⑥ C₂H₄ + O₂ → CO₂ + H₂O &nbsp;（配平：C₂H₄ + 3O₂ → <strong>2CO₂ + 2H₂O</strong>）</p>
 </div>
 
+<div style="background:var(--bg-secondary);border-radius:8px;padding:16px;margin:14px 0;text-align:center;">
+  <h4 style="margin-bottom:10px;">🎬 配平演示：H₂ + O₂ → H₂O</h4>
+  <button onclick="playBalance()" style="padding:8px 20px;border-radius:8px;background:var(--accent);color:#fff;border:none;cursor:pointer;font-size:14px;font-weight:600;">▶ 逐步配平</button>
+  <button onclick="resetBalance()" style="padding:8px 16px;margin-left:8px;border-radius:8px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:13px;">↺ 重置</button>
+  <div id="balance-area" style="font-size:24px;margin:16px 0;letter-spacing:3px;">
+    <span id="b-h2" style="color:var(--accent);">H₂</span>
+    <span style="color:var(--text-secondary);"> + </span>
+    <span id="b-o2" style="color:var(--accent);">O₂</span>
+    <span style="color:var(--text-secondary);"> → </span>
+    <span id="b-h2o" style="color:var(--accent);">H₂O</span>
+  </div>
+  <div id="balance-steps" style="font-size:14px;line-height:2;text-align:left;max-width:400px;margin:0 auto;"></div>
+</div>
+
 <!-- ====== 模块5: 计算专题 ====== -->
 <section class="safety-pitfall">
   <h3>🔢 化学方程式计算——规范格式（三步法）</h3>
@@ -257,5 +271,33 @@ window.addEventListener('scroll',function(){document.getElementById('backToTop')
 
 document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution')})});
 </script>
+<script>
+function playBalance() {
+  var tl = gsap.timeline();
+  var steps = document.getElementById('balance-steps');
+  steps.innerHTML = '';
+  
+  tl.call(function() { steps.innerHTML = '<span style="color:#f59e0b;">① 原子种类：</span>左边 H=2, O=2；右边 H=2, O=1 — O 原子不相等！'; })
+  .to('#b-h2o', { scale: 1.3, duration: 0.3, color: '#dc2626' })
+  .call(function() { document.getElementById('b-h2o').innerHTML = '<span style="color:#dc2626;">2</span>H₂O'; })
+  .call(function() { steps.innerHTML += '<br><span style="color:#f59e0b;">② 配氧：</span>右边乘 2 → H=4, O=2 = 左边 O=2 ✓'; })
+  .to('#b-h2', { scale: 1.3, duration: 0.3 })
+  .call(function() { document.getElementById('b-h2').innerHTML = '<span style="color:#dc2626;">2</span>H₂'; })
+  .call(function() { steps.innerHTML += '<br><span style="color:#f59e0b;">③ 配氢：</span>左边乘 2 → H=4 = 右边 H=4 ✓'; })
+  .call(function() { steps.innerHTML += '<br><span style="color:#16a34a;">✅ 配平完成：</span><strong>2H₂ + O₂ → 2H₂O</strong>'; });
+  
+  tl.to('#b-h2', { color: '#16a34a', duration: 0.3 }, '-=0.3')
+    .to('#b-h2o', { color: '#16a34a', duration: 0.3 }, '-=0.3');
+}
+function resetBalance() {
+  document.getElementById('b-h2').innerHTML = 'H₂';
+  document.getElementById('b-h2').style.color = 'var(--accent)';
+  document.getElementById('b-o2').innerHTML = 'O₂';
+  document.getElementById('b-h2o').innerHTML = 'H₂O';
+  document.getElementById('b-h2o').style.color = 'var(--accent)';
+  document.getElementById('balance-steps').innerHTML = '';
+}
+</script>
+<script src="lib/gsap.min.js"></script>
 </body>
 </html>

@@ -53,17 +53,14 @@
 
 <!-- ====== 模块2: 微观解释 ====== -->
 <section class="micro-explanation">
-  <h3>🧠 碳单质的结构差异——同素异形体的微观本质</h3>
-  <p><strong>金刚石（钻石）：</strong>每个碳原子与周围<strong>4个碳原子</strong>以共价键结合，形成<strong>正四面体</strong>空间网状结构。所有价电子都参与成键，无自由电子→<strong>自然界最硬的物质</strong>、不导电、无色透明。</p>
-  <p><strong>石墨：</strong>碳原子排列成<strong>层状结构</strong>。同一层内每个C原子与3个C原子以共价键结合（六边形排列），层与层之间通过<strong>很弱的分子间作用力</strong>连接→质软滑腻（作润滑剂）、能导电（每个C原子有1个自由电子，可沿层间移动→作电极）、深灰色有金属光泽。</p>
-  <p><strong>C₆₀（足球烯）：</strong>60个碳原子构成60个顶点、32个面（12个正五边形+20个正六边形）的球形分子，结构类似足球。属于<strong>分子晶体</strong>。</p>
-  <table style="width:100%;margin-top:10px;border-collapse:collapse;font-size:13px;">
-    <tr style="background:var(--accent-light);"><th style="padding:8px;text-align:left;border:1px solid var(--border);">性质</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">金刚石</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">石墨</th><th style="padding:8px;text-align:left;border:1px solid var(--border);">C₆₀</th></tr>
-    <tr><td style="padding:8px;border:1px solid var(--border);">硬度</td><td style="padding:8px;border:1px solid var(--border);">最硬</td><td style="padding:8px;border:1px solid var(--border);">质软</td><td style="padding:8px;border:1px solid var(--border);">—</td></tr>
-    <tr><td style="padding:8px;border:1px solid var(--border);">导电性</td><td style="padding:8px;border:1px solid var(--border);">不导电</td><td style="padding:8px;border:1px solid var(--border);">导电</td><td style="padding:8px;border:1px solid var(--border);">不导电</td></tr>
-    <tr><td style="padding:8px;border:1px solid var(--border);">用途</td><td style="padding:8px;border:1px solid var(--border);">切割玻璃、钻头</td><td style="padding:8px;border:1px solid var(--border);">润滑剂、电极、铅笔芯</td><td style="padding:8px;border:1px solid var(--border);">新材料研究</td></tr>
-  </table>
-  <p style="margin-top:8px;">金刚石和石墨都是由<strong>碳元素</strong>组成的<strong>单质</strong>（同素异形体），性质差异的根本原因是<strong>碳原子的排列方式不同</strong>。这再次印证了"结构决定性质"的核心化学思想。</p>
+  <h3>🧠 碳的同素异形体 · 3D 晶体结构</h3>
+  <p style="margin-bottom:8px;">
+    <button onclick="showDiamond()" style="padding:6px 14px;margin:4px;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text);cursor:pointer;font-size:13px;">💎 金刚石</button>
+    <button onclick="showGraphite()" style="padding:6px 14px;margin:4px;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text);cursor:pointer;font-size:13px;">✏️ 石墨</button>
+    <button onclick="showC60()" style="padding:6px 14px;margin:4px;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text);cursor:pointer;font-size:13px;">⚽ C₆₀</button>
+  </p>
+  <div class="model-viewer" id="viewer-ch06" style="width:100%;height:350px;"></div>
+  <p style="margin-top:10px;" id="desc-ch06">💎 <strong>金刚石</strong>：每个碳原子与周围 4 个碳原子形成共价键，正四面体空间网状结构——自然界最硬的物质（用于切割玻璃、钻头）。</p>
 </section>
 
 <!-- ====== 模块3: 核心概念 ====== -->
@@ -244,6 +241,73 @@ renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:tru
 window.addEventListener('scroll',function(){document.getElementById('backToTop').style.display=scrollY>400?'block':'none'});
 
 document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution')})});
+<script src="lib/3dmol-min.js"></script>
+<script>
+(function() {
+  if (typeof $3Dmol === 'undefined') return;
+  var el = document.getElementById('viewer-ch06');
+  if (!el) return;
+  var viewer = $3Dmol.createViewer(el, { backgroundColor: 'var(--bg)' });
+  var desc = document.getElementById('desc-ch06');
+  
+  function buildDiamond() {
+    viewer.clear();
+    var spacing = 2.0;
+    for (var x = 0; x < 3; x++)
+      for (var y = 0; y < 3; y++)
+        for (var z = 0; z < 3; z++)
+          if ((x+y+z) % 2 === 0) {
+            var cx = (x - 1) * spacing, cy = (y - 1) * spacing, cz = (z - 1) * spacing;
+            viewer.addSphere({ center: {x:cx,y:cy,z:cz}, radius: 0.4, color: '#64748b' });
+            var neighbors = [[1,1,0],[1,-1,0],[-1,1,0],[-1,-1,0]];
+            neighbors.forEach(function(n) {
+              var nx = cx + n[0]*spacing/2, ny = cy + n[1]*spacing/2, nz = cz + n[2]*spacing/2;
+              if (Math.abs(nx) <= spacing && Math.abs(ny) <= spacing && Math.abs(nz) <= spacing) {
+                viewer.addCylinder({ start: {x:cx,y:cy,z:cz}, end: {x:nx,y:ny,z:nz}, radius: 0.08, color: '#94a3b8' });
+              }
+            });
+          }
+    desc.innerHTML = '💎 <strong>金刚石</strong>：每个碳原子与周围 4 个碳原子形成共价键，正四面体空间网状结构——自然界最硬的物质。';
+    viewer.zoomTo(); viewer.render();
+  }
+  
+  function buildGraphite() {
+    viewer.clear();
+    for (var layer = 0; layer < 3; layer++) {
+      var z = (layer - 1) * 3.5;
+      var hex = [[0,2],[1.73,1],[1.73,-1],[0,-2],[-1.73,-1],[-1.73,1]];
+      hex.forEach(function(p) {
+        viewer.addSphere({ center: {x:p[0],y:p[1],z:z}, radius: 0.35, color: '#64748b', opacity: 0.8 });
+      });
+    }
+    desc.innerHTML = '✏️ <strong>石墨</strong>：层状结构，每层碳原子呈六边形排列（sp²杂化）。层间作用力弱，容易滑动——用于铅笔芯和润滑剂。';
+    viewer.zoomTo(); viewer.render();
+  }
+  
+  function buildC60() {
+    viewer.clear();
+    var r = 4;
+    var positions = [
+      [0,0,r],[r,0,0],[0,r,0],[-r,0,0],[0,-r,0],[0,0,-r],
+      [r/1.4,r/1.4,r/1.4],[r/1.4,-r/1.4,r/1.4],[-r/1.4,r/1.4,r/1.4],[-r/1.4,-r/1.4,r/1.4],
+      [r/1.4,r/1.4,-r/1.4],[r/1.4,-r/1.4,-r/1.4],[-r/1.4,r/1.4,-r/1.4],[-r/1.4,-r/1.4,-r/1.4]
+    ];
+    for (var i = 0; i < 4; i++) {
+      var a = i * Math.PI / 2;
+      positions.push([r*Math.cos(a), r*Math.sin(a)/2, r/2], [r*Math.cos(a), r*Math.sin(a)/2, -r/2]);
+    }
+    positions.forEach(function(p) {
+      viewer.addSphere({ center: {x:p[0],y:p[1],z:p[2]}, radius: 0.3, color: '#f59e0b', opacity: 0.9 });
+    });
+    desc.innerHTML = '⚽ <strong>C₆₀（足球烯）</strong>：60 个碳原子组成 12 个五边形和 20 个六边形，形似足球。每个 C 原子 sp² 杂化，具有特殊的化学和物理性质。';
+    viewer.zoomTo(); viewer.render();
+  }
+  
+  window.showDiamond = buildDiamond;
+  window.showGraphite = buildGraphite;
+  window.showC60 = buildC60;
+  buildDiamond();
+})();
 </script>
 </body>
 </html>

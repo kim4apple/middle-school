@@ -74,10 +74,11 @@
 document.addEventListener('DOMContentLoaded', function() {
   try {
     (function() {
-      if (typeof $3Dmol === 'undefined') return;
+      var GL = window.$3Dmol || window['3Dmol'];
+      if (typeof GL === 'undefined' || !GL.createViewer) return;
       var el = document.getElementById('viewer-ch10');
       if (!el) return;
-      var viewer = $3Dmol.createViewer(el, { backgroundColor: '0x1e293b' });
+      var viewer = GL.createViewer(el, { backgroundColor: '0x1e293b' });
       viewer.addSphere({ center: {x:-3,y:1,z:0}, radius: 0.3, color: '#dc2626' });
       viewer.addSphere({ center: {x:-3,y:-1,z:0}, radius: 0.3, color: '#dc2626' });
       viewer.addSphere({ center: {x:3,y:1,z:0}, radius: 0.45, color: '#4f46e5' });

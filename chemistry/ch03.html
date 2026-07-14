@@ -243,10 +243,11 @@ document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('c
 document.addEventListener('DOMContentLoaded', function() {
   try {
     (function() {
-      if (typeof $3Dmol === 'undefined') return;
+      var GL = window.$3Dmol || window['3Dmol'];
+      if (typeof GL === 'undefined' || !GL.createViewer) return;
       var el = document.getElementById('viewer-ch03');
       if (!el) return;
-      var viewer = $3Dmol.createViewer(el, { backgroundColor: '0x1e293b' });
+      var viewer = GL.createViewer(el, { backgroundColor: '0x1e293b' });
       viewer.addSphere({ center: {x:0,y:0,z:0}, radius: 0.8, color: '#dc2626' });
       var ringColors = ['#4f46e5', '#0891b2', '#f59e0b'];
       for (var s = 0; s < 3; s++) {

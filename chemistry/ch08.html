@@ -74,10 +74,11 @@
 document.addEventListener('DOMContentLoaded', function() {
   try {
     (function() {
-      if (typeof $3Dmol === 'undefined') return;
+      var GL = window.$3Dmol || window['3Dmol'];
+      if (typeof GL === 'undefined' || !GL.createViewer) return;
       var el = document.getElementById('viewer-ch08');
       if (!el) return;
-      var viewer = $3Dmol.createViewer(el, { backgroundColor: '0x1e293b' });
+      var viewer = GL.createViewer(el, { backgroundColor: '0x1e293b' });
       var s = 2.5;
       for (var x = -1; x <= 1; x++)
         for (var y = -1; y <= 1; y++)

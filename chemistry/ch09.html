@@ -215,23 +215,31 @@
 <script src="../katex/katex.min.js"></script>
 <script src="../katex/auto-render.min.js"></script>
 <script>
-renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+// KaTeX
+try { renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false}); } catch(e) { console.warn('KaTeX:',e); }
+
+// Theme toggle — with null check on addEventListener
 (function(){
   var k='chemistry-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
   document.documentElement.setAttribute('data-theme',t);
-  var b=document.getElementById('theme-toggle');if(b)b.textContent=t==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
-  b.addEventListener('click',function(){
+  var b=document.getElementById('theme-toggle');
+  if(b){ b.textContent=t==='dark'?'☀️ 亮色模式':'🌙 暗色模式'; b.addEventListener('click',function(){
     var c=document.documentElement.getAttribute('data-theme'),n=c==='dark'?'light':'dark';
     document.documentElement.setAttribute('data-theme',n);localStorage.setItem(k,n);
     b.textContent=n==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
-  });
+  });}
 })();
+
+// Sidebar toggle
 (function(){
-  var s=document.getElementById('sidebar'),k='chemistry-sidebar';
+  var s=document.getElementById('sidebar'),k='chemistry-sidebar'; if(!s)return;
   if(localStorage.getItem(k)==='hidden')s.classList.add('hidden');
-  document.getElementById('sidebarHideBtn').addEventListener('click',function(){s.classList.add('hidden');localStorage.setItem(k,'hidden')});
-  document.getElementById('sidebarShowBtn').addEventListener('click',function(){s.classList.remove('hidden');localStorage.setItem(k,'')});
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');localStorage.setItem(k,'')});
 })();
+
+// Expand all
 (function(){
   var b=document.getElementById('expandAllBtn');if(!b)return;
   b.addEventListener('click',function(){
@@ -241,7 +249,11 @@ renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:tru
     b.textContent=o?'📂 展开全部章节':'📖 收起全部章节';
   });
 })();
-window.addEventListener('scroll',function(){document.getElementById('backToTop').style.display=scrollY>400?'block':'none'});
+
+// Back to top
+window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=scrollY>400?'block':'none'});
+
+// Solution toggle (for chapters with exam questions)
 document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution')})});
 </script>
 </body>

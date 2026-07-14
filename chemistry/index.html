@@ -135,11 +135,14 @@ h1 { font-size: 28px; font-weight: 800; text-align: center; margin-bottom: 8px; 
 <script>
 (function() {
   var btn = document.getElementById('theme-btn');
+  if (!btn) return;
   var html = document.documentElement;
   var saved = localStorage.getItem('chemistry-index-theme');
   if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     html.setAttribute('data-theme', 'dark');
     btn.textContent = '☀️ 亮色';
+  } else {
+    btn.textContent = '🌙 暗色';
   }
   btn.addEventListener('click', function() {
     if (html.getAttribute('data-theme') === 'dark') {

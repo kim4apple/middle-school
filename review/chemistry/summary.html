@@ -49,20 +49,51 @@ h1 { font-size: 26px; margin-bottom: 6px; }
 .chapter-block table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 8px 0; }
 .chapter-block th { background: var(--accent-light); padding: 6px 8px; text-align: left; border: 1px solid var(--border); }
 .chapter-block td { padding: 6px 8px; border: 1px solid var(--border); }
+.chapter-block tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
+[data-theme="dark"] .chapter-block tr:nth-child(even) td { background: rgba(255,255,255,0.03); }
 .eq { font-family: "Times New Roman", serif; }
-.tag-exp { display: inline-block; padding: 1px 6px; border-radius: 4px; font-size: 11px; font-weight: 600; margin-right: 4px; }
-.tag-exp { background: #dcfce7; color: #166534; }
+.tag-exp { display: inline-block; padding: 1px 6px; border-radius: 4px; font-size: 11px; font-weight: 600; margin-right: 4px; background: #dcfce7; color: #166534; }
 [data-theme="dark"] .tag-exp { background: #052e16; color: #86efac; }
-.tag-trap { display: inline-block; padding: 1px 6px; border-radius: 4px; font-size: 11px; font-weight: 600; margin-right: 4px; }
-.tag-trap { background: #fee2e2; color: #991b1b; }
+.tag-trap { display: inline-block; padding: 1px 6px; border-radius: 4px; font-size: 11px; font-weight: 600; margin-right: 4px; background: #fee2e2; color: #991b1b; }
 [data-theme="dark"] .tag-trap { background: #450a0a; color: #fca5a5; }
-.tag-method { display: inline-block; padding: 1px 6px; border-radius: 4px; font-size: 11px; font-weight: 600; margin-right: 4px; }
-.tag-method { background: #e0e7ff; color: #3730a3; }
+.tag-method { display: inline-block; padding: 1px 6px; border-radius: 4px; font-size: 11px; font-weight: 600; margin-right: 4px; background: #e0e7ff; color: #3730a3; }
 [data-theme="dark"] .tag-method { background: #1e1b4b; color: #a5b4fc; }
 .mnemo { display: inline-block; padding: 3px 10px; border-radius: 6px; font-size: 13px; font-weight: 600; background: var(--accent-light); margin: 4px 0; }
+
+/* dark toggle */
+.theme-toggle {
+  position: fixed; top: 14px; right: 20px;
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1px solid var(--border); background: var(--bg);
+  color: var(--text); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; z-index: 100;
+  transition: background .2s, transform .2s;
+}
+.theme-toggle:hover { transform: scale(1.1); }
+
+/* section cards */
+.section-card {
+  background: var(--bg-secondary);
+  border-radius: 12px; padding: 18px 20px;
+  margin-bottom: 18px; border: 1px solid var(--border);
+}
+.section-card h2 { font-size: 17px; margin-bottom: 12px; color: var(--accent); }
+.problem-grid {
+  display: grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+  gap: 10px; font-size: 13px;
+}
+.problem-card {
+  background: var(--bg); border-radius: 8px;
+  padding: 12px; border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+}
+.problem-card .title { font-weight: 600; color: var(--accent); margin-bottom: 4px; }
+.problem-card .desc { color: var(--text-secondary); font-size: 12px; }
   </style>
 </head>
 <body>
+<button class="theme-toggle" id="themeToggle" title="切换暗黑模式">🌙</button>
 <a href="../index.html" style="display:inline-block;margin-bottom:20px;color:var(--accent);text-decoration:none;font-size:14px;">← 返回总复习导航</a>
 <h1>⚗️ 初中化学 · 考前要点速查</h1>
 <p class="subtitle">按人教版九年级 12 章编排 · 核心方程式 · 必做实验 · 高频陷阱 · 记忆口诀</p>
@@ -163,7 +194,7 @@ h1 { font-size: 26px; margin-bottom: 6px; }
   <table>
     <tr><th style="width:80px;">考点</th><th>内容</th></tr>
     <tr><td><span class="tag-method">必记</span></td><td><strong>溶液三要素</strong>：均一、稳定、混合物。溶质（被溶解的物质）+ 溶剂（溶解作用，水是最常见溶剂）。<strong>饱和溶液</strong>：在一定温度下、一定量溶剂中不能再溶解某种溶质的溶液。不饱和→饱和：加溶质/蒸发溶剂/降温（多数物质）。</td></tr>
-    <tr><td><span class="tag-method">必记</span></td><td><strong>溶解度</strong>：一定温度下，100g溶剂中达到饱和时所溶解的溶质质量（单位g）。影响因素：温度（大多数随温度升高而增大，Ca(OH)₂反常——随温度升高而减小)。气体溶解度：随温度升高而减小，随压强增大而增大。</td></tr>
+    <tr><td><span class="tag-method">必记</span></td><td><strong>溶解度</strong>：一定温度下，100g溶剂中达到饱和时所溶解的溶质质量（单位g）。影响因素：温度（大多数随温度升高而增大，Ca(OH)₂反常——随温度升高而减小）。气体溶解度：随温度升高而减小，随压强增大而增大。</td></tr>
     <tr><td><span class="tag-method">必记</span></td><td><strong>溶质质量分数</strong> = (溶质质量÷溶液质量)×100%。稀释定律：m₁×ω₁ = m₂×ω₂（稀释前后溶质质量不变）。<br><strong>配制一定质量分数溶液步骤</strong>：计算→称量（固体用天平、液体用量筒）→溶解（搅拌加速）→装瓶贴标签。</td></tr>
     <tr><td><span class="tag-trap">易错</span></td><td>❌ "溶液一定是无色的"——错！Cu²⁺蓝、Fe²⁺浅绿、Fe³⁺黄、KMnO₄紫。❌ 溶解度=饱和溶液中溶质质量÷溶剂质量×100g（不是除以溶液质量）。❌ 溶液质量=溶质质量+溶剂质量——当溶质与溶剂发生反应时注意（如CaO溶于水，生成的Ca(OH)₂才是溶质）。</td></tr>
   </table>
@@ -178,6 +209,45 @@ h1 { font-size: 26px; margin-bottom: 6px; }
     <tr><td><span class="tag-method">必记</span></td><td><strong>酸碱指示剂显色</strong>：紫色石蕊遇酸变红、遇碱变蓝；无色酚酞遇酸不变色、遇碱变红。注意：酚酞遇酸和中性和酸中都不变（无色）。</td></tr>
     <tr><td><span class="tag-trap">易错</span></td><td>❌ 浓硫酸稀释——将水倒入浓硫酸！错！会沸腾飞溅。必须酸入水！❌ pH=0是中性——错！pH=7才是中性，pH=0强酸性。❌ 测pH时将试纸浸入溶液中——会污染试剂。❌ 中和反应生成盐和水，但生成盐和水的反应不一定是中和反应（如金属氧化物+酸）。</td></tr>
   </table>
+</div>
+
+<!-- pH 曲线 -->
+<div class="section-card">
+  <h2>📈 pH 曲线 · 中和反应滴定图像</h2>
+  <div style="display:flex;flex-wrap:wrap;gap:20px;">
+    <div>
+      <svg width="280" height="200" viewBox="0 0 280 200">
+        <rect x="0" y="0" width="280" height="200" fill="none"/>
+        <line x1="30" y1="170" x2="260" y2="170" stroke="var(--text-secondary)" stroke-width="1"/>
+        <line x1="30" y1="30" x2="30" y2="170" stroke="var(--text-secondary)" stroke-width="1"/>
+        <text x="130" y="192" font-size="11" fill="var(--text-secondary)" text-anchor="middle">V(HCl) / mL</text>
+        <text x="10" y="100" font-size="11" fill="var(--text-secondary)" text-anchor="middle" transform="rotate(-90,10,100)">pH</text>
+        <!-- pH=7 dotted line -->
+        <line x1="30" y1="100" x2="260" y2="100" stroke="var(--border)" stroke-width="1" stroke-dasharray="4,3"/>
+        <text x="18" y="104" font-size="10" fill="var(--text-secondary)">7</text>
+        <!-- y-axis labels -->
+        <text x="18" y="30" font-size="10" fill="var(--text-secondary)">14</text>
+        <!-- curve: NaOH(13) → drops slowly → sharp drop at eq → HCl(1) -->
+        <path d="M30,36 C60,36 80,36 100,38 Q120,40 140,42 S170,50 190,80 Q210,100 220,105 C240,145 250,162 260,168"
+              fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+        <!-- equivalence point marker -->
+        <circle cx="168" cy="99" r="4" fill="var(--chem-red)" stroke="#fff" stroke-width="1.5"/>
+        <text x="168" y="86" font-size="10" fill="var(--chem-red)" text-anchor="middle">中和点</text>
+        <!-- 2 regions -->
+        <text x="60" y="58" font-size="11" fill="var(--chem-blue)">碱性区域</text>
+        <text x="195" y="150" font-size="11" fill="var(--chem-red)">酸性区域</text>
+      </svg>
+    </div>
+    <div style="font-size:13px;flex:1;min-width:180px;">
+      <p style="font-weight:600;margin-bottom:6px;">HCl 滴定 NaOH 示意图</p>
+      <ul style="padding-left:18px;color:var(--text-secondary);">
+        <li>碱入酸（或酸入碱）— pH 由大变小</li>
+        <li>中和点 pH=7（酚酞刚好无色）</li>
+        <li>突变范围：pH 4~10 为酚酞变色区间</li>
+        <li>选指示剂原则：变色范围尽量接近 7</li>
+      </ul>
+    </div>
+  </div>
 </div>
 
 <div class="chapter-block">
@@ -202,17 +272,114 @@ h1 { font-size: 26px; margin-bottom: 6px; }
   </table>
 </div>
 
-<div style="margin-top:30px;padding:20px;background:var(--accent-light);border-radius:12px;">
-  <h3 style="font-size:16px;margin-bottom:10px;">📌 中考化学核心速记</h3>
-  <table style="width:100%;border-collapse:collapse;font-size:13px;">
-    <tr><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);background:var(--bg-secondary);">类别</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);background:var(--bg-secondary);">内容</th></tr>
+<!-- 核心题型 -->
+<div class="section-card">
+  <h2>🎯 核心题型 · 中考常见考查角度</h2>
+  <div class="problem-grid">
+    <div class="problem-card">
+      <div class="title">推断题</div>
+      <div class="desc">以特征现象（颜色、气体、沉淀）为突破口，顺推/逆推确定物质。常见：颜色→Cu²⁺蓝／Fe³⁺黄，气体→O₂／CO₂／H₂</div>
+    </div>
+    <div class="problem-card">
+      <div class="title">除杂题</div>
+      <div class="desc">原则：不增（不引入新杂质）、不减（不减少主成分）、易分离（生成沉淀/气体/水）。常用：酸/碱/盐溶液吸收法</div>
+    </div>
+    <div class="problem-card">
+      <div class="title">鉴别题</div>
+      <div class="desc">试剂选择+现象描述。酸碱→石蕊/酚酞，Cl⁻→AgNO₃+HNO₃，SO₄²⁻→Ba(NO₃)₂+HNO₃，CO₃²⁻→稀HCl+石灰水</div>
+    </div>
+    <div class="problem-card">
+      <div class="title">计算题</div>
+      <div class="desc">化学方程式计算+溶质质量分数。常见题型：含杂质不反应、反应后溶液质量（加总减逸出气体/沉淀）</div>
+    </div>
+    <div class="problem-card">
+      <div class="title">实验探究</div>
+      <div class="desc">提出猜想→设计实验→观察现象→得出结论。注意控制变量法、对照实验、排除干扰（如空气中的CO₂/H₂O）</div>
+    </div>
+    <div class="problem-card">
+      <div class="title">微观示意</div>
+      <div class="desc">粒子模型图→写化学方程式。先找到反应物/生成物的微粒（注意未反应剩余的微粒），配平后写化学方程式</div>
+    </div>
+  </div>
+</div>
+
+<!-- 必考方程式 + 核心速记 -->
+<div class="section-card">
+  <h2>📌 中考化学核心速记</h2>
+
+  <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;">
+    <tr><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);background:var(--accent-light);">类别</th><th style="padding:6px 8px;text-align:left;border:1px solid var(--border);background:var(--accent-light);">内容</th></tr>
     <tr><td style="padding:6px 8px;border:1px solid var(--border);">金属活动性</td><td style="padding:6px 8px;border:1px solid var(--border);"><span class="mnemo">K Ca Na Mg Al Zn Fe Sn Pb (H) Cu Hg Ag Pt Au</span><br>记忆：钾钙钠镁铝，锌铁锡铅氢，铜汞银铂金</td></tr>
     <tr><td style="padding:6px 8px;border:1px solid var(--border);">元素周期表前20</td><td style="padding:6px 8px;border:1px solid var(--border);"><span class="mnemo">H He Li Be B C N O F Ne Na Mg Al Si P S Cl Ar K Ca</span></td></tr>
     <tr><td style="padding:6px 8px;border:1px solid var(--border);">常见化合价</td><td style="padding:6px 8px;border:1px solid var(--border);">K⁺ Na⁺ H⁺ Ag⁺ Ca²⁺ Ba²⁺ Mg²⁺ Zn²⁺ Al³⁺ Fe²⁺ Fe³⁺ Cu²⁺<br>O²⁻ Cl⁻ F⁻ OH⁻ NO₃⁻ SO₄²⁻ CO₃²⁻ PO₄³⁻ NH₄⁺</td></tr>
     <tr><td style="padding:6px 8px;border:1px solid var(--border);">溶液颜色</td><td style="padding:6px 8px;border:1px solid var(--border);">Cu²⁺蓝 | Fe²⁺浅绿 | Fe³⁺黄 | MnO₄⁻紫 | Cu(OH)₂蓝色沉淀 | Fe(OH)₃红褐沉淀</td></tr>
     <tr><td style="padding:6px 8px;border:1px solid var(--border);">气体检验/验满</td><td style="padding:6px 8px;border:1px solid var(--border);">O₂→带火星木条复燃 | CO₂→澄清石灰水变浑浊 | H₂→点燃淡蓝色火焰，罩干冷烧杯有水珠</td></tr>
-    <tr><td style="padding:6px 8px;border:1px solid var(--border);">必考8个方程式</td><td style="padding:6px 8px;border:1px solid var(--border);">①2KMnO₄→△→ ②2H₂O₂→MnO₂→ ③2KClO₃→MnO₂△→ ④Fe₂O₃+3CO→ ⑤CaCO₃+2HCl→ ⑥CO₂+Ca(OH)₂→ ⑦CH₄+2O₂→ ⑧2H₂+O₂→</td></tr>
   </table>
+
+  <h4 style="font-size:14px;margin-bottom:10px;color:var(--text);">📝 必考 10 个化学方程式（含完整产物）</h4>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:6px;font-size:12px;">
+
+    <div style="display:flex;align-items:center;gap:6px;padding:5px 10px;border-radius:6px;border-left:3px solid var(--chem-red);background:var(--bg);border:1px solid var(--border);">
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:var(--chem-red);color:#fff;font-size:10px;font-weight:700;flex-shrink:0;">①</span>
+      <span style="display:inline-block;padding:1px 5px;border-radius:3px;background:#fee2e2;color:#991b1b;font-size:9px;font-weight:600;flex-shrink:0;">分解</span>
+      <span>$2\text{KMnO}_4 \xrightarrow{\Delta} \text{K}_2\text{MnO}_4 + \text{MnO}_2 + \text{O}_2\uparrow$</span>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:6px;padding:5px 10px;border-radius:6px;border-left:3px solid var(--chem-red);background:var(--bg);border:1px solid var(--border);">
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:var(--chem-red);color:#fff;font-size:10px;font-weight:700;flex-shrink:0;">②</span>
+      <span style="display:inline-block;padding:1px 5px;border-radius:3px;background:#fee2e2;color:#991b1b;font-size:9px;font-weight:600;flex-shrink:0;">分解</span>
+      <span>$2\text{H}_2\text{O}_2 \xrightarrow{\text{MnO}_2} 2\text{H}_2\text{O} + \text{O}_2\uparrow$</span>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:6px;padding:5px 10px;border-radius:6px;border-left:3px solid var(--chem-red);background:var(--bg);border:1px solid var(--border);">
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:var(--chem-red);color:#fff;font-size:10px;font-weight:700;flex-shrink:0;">③</span>
+      <span style="display:inline-block;padding:1px 5px;border-radius:3px;background:#fee2e2;color:#991b1b;font-size:9px;font-weight:600;flex-shrink:0;">分解</span>
+      <span>$2\text{H}_2\text{O} \xrightarrow{\text{通电}} 2\text{H}_2\uparrow + \text{O}_2\uparrow$</span>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:6px;padding:5px 10px;border-radius:6px;border-left:3px solid #ea580c;background:var(--bg);border:1px solid var(--border);">
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:#ea580c;color:#fff;font-size:10px;font-weight:700;flex-shrink:0;">④</span>
+      <span style="display:inline-block;padding:1px 5px;border-radius:3px;background:#fff7ed;color:#9a3412;font-size:9px;font-weight:600;flex-shrink:0;">CO还</span>
+      <span>$\text{Fe}_2\text{O}_3 + 3\text{CO} \xrightarrow{\text{高温}} 2\text{Fe} + 3\text{CO}_2$</span>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:6px;padding:5px 10px;border-radius:6px;border-left:3px solid var(--chem-purple);background:var(--bg);border:1px solid var(--border);">
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:var(--chem-purple);color:#fff;font-size:10px;font-weight:700;flex-shrink:0;">⑤</span>
+      <span style="display:inline-block;padding:1px 5px;border-radius:3px;background:#f3e8ff;color:#6b21a8;font-size:9px;font-weight:600;flex-shrink:0;">复分解</span>
+      <span>$\text{CaCO}_3 + 2\text{HCl} \rightarrow \text{CaCl}_2 + \text{H}_2\text{O} + \text{CO}_2\uparrow$</span>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:6px;padding:5px 10px;border-radius:6px;border-left:3px solid #ea580c;background:var(--bg);border:1px solid var(--border);">
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:#ea580c;color:#fff;font-size:10px;font-weight:700;flex-shrink:0;">⑥</span>
+      <span style="display:inline-block;padding:1px 5px;border-radius:3px;background:#fff7ed;color:#9a3412;font-size:9px;font-weight:600;flex-shrink:0;">化合</span>
+      <span>$\text{CO}_2 + \text{Ca(OH)}_2 \rightarrow \text{CaCO}_3\downarrow + \text{H}_2\text{O}$</span>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:6px;padding:5px 10px;border-radius:6px;border-left:3px solid var(--chem-purple);background:var(--bg);border:1px solid var(--border);">
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:var(--chem-purple);color:#fff;font-size:10px;font-weight:700;flex-shrink:0;">⑦</span>
+      <span style="display:inline-block;padding:1px 5px;border-radius:3px;background:#f3e8ff;color:#6b21a8;font-size:9px;font-weight:600;flex-shrink:0;">复分解</span>
+      <span>$\text{HCl} + \text{NaOH} \rightarrow \text{NaCl} + \text{H}_2\text{O}$</span>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:6px;padding:5px 10px;border-radius:6px;border-left:3px solid var(--chem-green);background:var(--bg);border:1px solid var(--border);">
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:var(--chem-green);color:#fff;font-size:10px;font-weight:700;flex-shrink:0;">⑧</span>
+      <span style="display:inline-block;padding:1px 5px;border-radius:3px;background:#dcfce7;color:#166534;font-size:9px;font-weight:600;flex-shrink:0;">置换</span>
+      <span>$\text{Fe} + \text{CuSO}_4 \rightarrow \text{FeSO}_4 + \text{Cu}$</span>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:6px;padding:5px 10px;border-radius:6px;border-left:3px solid #ea580c;background:var(--bg);border:1px solid var(--border);">
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:#ea580c;color:#fff;font-size:10px;font-weight:700;flex-shrink:0;">⑨</span>
+      <span style="display:inline-block;padding:1px 5px;border-radius:3px;background:#fff7ed;color:#9a3412;font-size:9px;font-weight:600;flex-shrink:0;">氧化</span>
+      <span>$\text{CH}_4 + 2\text{O}_2 \xrightarrow{\text{点燃}} \text{CO}_2 + 2\text{H}_2\text{O}$</span>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:6px;padding:5px 10px;border-radius:6px;border-left:3px solid var(--chem-purple);background:var(--bg);border:1px solid var(--border);">
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:var(--chem-purple);color:#fff;font-size:10px;font-weight:700;flex-shrink:0;">⑩</span>
+      <span style="display:inline-block;padding:1px 5px;border-radius:3px;background:#f3e8ff;color:#6b21a8;font-size:9px;font-weight:600;flex-shrink:0;">复分解</span>
+      <span>$\text{Na}_2\text{CO}_3 + 2\text{HCl} \rightarrow 2\text{NaCl} + \text{H}_2\text{O} + \text{CO}_2\uparrow$</span>
+    </div>
+
+  </div>
 </div>
 
 <div style="text-align:center;margin:40px 0 20px;color:var(--text-secondary);font-size:13px;">
@@ -225,7 +392,25 @@ h1 { font-size: 26px; margin-bottom: 6px; }
 <script src="../../katex/auto-render.min.js"></script>
 <script>
 try { renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false}); } catch(e) {}
-(function(){var d=document.documentElement;var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){d.setAttribute('data-theme','dark')}else{d.setAttribute('data-theme','light')}})();
+
+(function(){
+  var d = document.documentElement;
+  var t = localStorage.getItem('chem-theme');
+  var btn = document.getElementById('themeToggle');
+  if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme:dark)').matches)) {
+    d.setAttribute('data-theme','dark');
+    btn.textContent = '☀️';
+  } else {
+    d.setAttribute('data-theme','light');
+    btn.textContent = '🌙';
+  }
+  btn.addEventListener('click', function(){
+    var isDark = d.getAttribute('data-theme') === 'dark';
+    d.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    localStorage.setItem('chem-theme', isDark ? 'light' : 'dark');
+    btn.textContent = isDark ? '🌙' : '☀️';
+  });
+})();
 </script>
 </body>
 </html>

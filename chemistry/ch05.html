@@ -238,18 +238,21 @@
 <script src="../katex/auto-render.min.js"></script>
 <script>
 // KaTeX
-try { renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false}); } catch(e) { console.warn('KaTeX:',e); }
+try { renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false}); } catch(e) {}
 
-// Theme toggle — with null check on addEventListener
+// Theme toggle
 (function(){
   var k='chemistry-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
   document.documentElement.setAttribute('data-theme',t);
   var b=document.getElementById('theme-toggle');
-  if(b){ b.textContent=t==='dark'?'☀️ 亮色模式':'🌙 暗色模式'; b.addEventListener('click',function(){
-    var c=document.documentElement.getAttribute('data-theme'),n=c==='dark'?'light':'dark';
-    document.documentElement.setAttribute('data-theme',n);localStorage.setItem(k,n);
-    b.textContent=n==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
-  });}
+  if(b){
+    b.textContent=t==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
+    b.addEventListener('click',function(){
+      var c=document.documentElement.getAttribute('data-theme'),n=c==='dark'?'light':'dark';
+      document.documentElement.setAttribute('data-theme',n);localStorage.setItem(k,n);
+      b.textContent=n==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
+    });
+  }
 })();
 
 // Sidebar toggle
@@ -275,7 +278,7 @@ try { renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',displ
 // Back to top
 window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=scrollY>400?'block':'none'});
 
-// Solution toggle (for chapters with exam questions)
+// Solution toggle
 document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution')})});
 </script>
 <script>

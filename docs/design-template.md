@@ -298,18 +298,93 @@ katex/                     ← 共享 KaTeX 本地文件
 
 ---
 
-## 六、JavaScript 功能清单
+## 六、导航与 UI 功能完整规范
 
-### 1. 暗色模式切换
+> **适用范围：所有学科 HTML 文件。每项标注"必选/可选"。**
 
+### 功能审计矩阵
+
+| 功能 | CSS | HTML | JS | localStorage | 必选 |
+|------|:---:|:---:|:---:|:---:|:---:|
+| 侧边栏章节导航 | ✅ | ✅ | — | — | ✅ |
+| 🏠 返回首页链接 | — | ✅ | — | — | ✅ |
+| 暗色模式切换 | ✅ | ✅ | ✅ | `{ns}-theme` | ✅ |
+| 侧边栏隐藏/显示 | ✅ | ✅ | ✅ | `{ns}-sidebar` | ✅ |
+| 一键展开/收起全部 | — | ✅ | ✅ | — | ✅ |
+| 打印 PDF 优化 | ✅ | — | — | — | ✅ |
+| 移动端响应式 | ✅ | — | — | — | ✅ |
+| 回到顶部按钮 | ✅ | ✅ | ✅ | — | 🟡 |
+| 侧边栏滚动高亮 | — | — | ✅ | — | 🟡 |
+| 快速导航目录(TOC) | ✅ | ✅ | — | — | 🟡 |
+| 题目解析折叠 | ✅ | ✅ | ✅ | — | 🟡 |
+| 章内上/下页导航 | — | ✅ | — | — | 🟡 |
+
+> `{ns}` = 命名空间，如 `math7`、`physics8`、`5y3m-mock1`，避免跨文件冲突。
+
+---
+
+### 1. 侧边栏结构 (✅ 必选)
+
+```html
+<button id="sidebarShowBtn">☰ 侧栏</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">学科名称</h2>
+    <button id="sidebarHideBtn" title="隐藏侧栏">✕</button>
+  </div>
+  <nav>
+    <a href="index.html">🏠 首页</a>              <!-- 必选：返回总导航 -->
+    <a href="ch01.html">第1章 XXX</a>
+    <a href="ch02.html">第2章 XXX</a>
+    <!-- 当前页面的链接加 class="active" -->
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
+</nav>
+```
+
+**🏠 返回首页规范：**
+- 侧边栏第一条链接必须是 `🏠 首页`，指向 `index.html`（或 `../index.html`）
+- 多文件目录（如 physics8/）指向本学科的 index.html
+- 内容区末尾可选添加 `<p><a href="index.html">← 返回首页</a></p>`
+
+**章内翻页（可选，适用于多文件目录）：**
+```html
+<div style="display:flex;justify-content:space-between;margin:24px 0;">
+  <a href="ch01.html">← 上一章</a>
+  <a href="index.html">🏠</a>
+  <a href="ch03.html">下一章 →</a>
+</div>
+```
+
+---
+
+### 2. 暗色模式 (✅ 必选)
+
+**CSS：**
+```css
+:root {
+  --bg: #ffffff; --bg-secondary: #f1f5f9; --text: #1a1a2e;
+  --text-secondary: #64748b; --accent: #4f46e5; --accent-light: #eef2ff;
+  --border: #e2e8f0;
+}
+[data-theme="dark"] {
+  --bg: #0f172a; --bg-secondary: #1e293b; --text: #e2e8f0;
+  --text-secondary: #94a3b8; --accent: #818cf8; --accent-light: #1e1b4b;
+  --border: #334155;
+}
+```
+
+**JS (localStorage key: `{ns}-theme`)：**
 ```javascript
 (function() {
-  var key = 'subject-theme';
+  var key = '{ns}-theme';
   function setTheme(t) {
     document.documentElement.setAttribute('data-theme', t);
     localStorage.setItem(key, t);
     var btn = document.getElementById('theme-toggle');
-    if (btn) btn.textContent = t === 'dark' ? '☀ 亮色模式' : '🌙 暗色模式';
+    if (btn) btn.textContent = t === 'dark' ? '☀️ 亮色模式' : '🌙 暗色模式';
   }
   setTheme(localStorage.getItem(key) ||
     (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
@@ -320,52 +395,52 @@ katex/                     ← 共享 KaTeX 本地文件
 })();
 ```
 
-### 2. 侧边栏滚动高亮
+---
 
-```javascript
-(function() {
-  var links = document.querySelectorAll('#sidebar nav a');
-  var chapters = document.querySelectorAll('.chapter');
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        links.forEach(function(l) { l.classList.remove('active'); });
-        var active = document.querySelector('#sidebar nav a[href="#' + entry.target.id + '"]');
-        if (active) active.classList.add('active');
-      }
-    });
-  }, { rootMargin: '-20% 0px -70% 0px' });
-  chapters.forEach(function(ch) { observer.observe(ch); });
-})();
+### 3. 侧边栏隐藏/显示 (✅ 必选)
+
+**CSS：**
+```css
+#sidebar.hidden { display: none; }
+
+#sidebarShowBtn {
+  display: none;
+  position: fixed; top: 12px; left: 12px; z-index: 1000;
+  background: var(--bg); color: var(--accent);
+  border: 1px solid var(--border); border-radius: 6px;
+  cursor: pointer; font-weight: 600; font-size: 14px;
+  padding: 6px 10px; box-shadow: var(--shadow);
+}
+body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 ```
 
-### 3. 侧边栏隐藏/显示
-
+**JS (localStorage key: `{ns}-sidebar`)：**
 ```javascript
-(function() {
-  var sidebar = document.getElementById('sidebar');
-  var hideBtn = document.getElementById('sidebarHideBtn');
-  var showBtn = document.getElementById('sidebarShowBtn');
-  var hidden = localStorage.getItem('subject-sidebar') === 'hidden';
-  if (hidden) sidebar.classList.add('hidden');
-  hideBtn.addEventListener('click', function() {
-    sidebar.classList.add('hidden');
-    localStorage.setItem('subject-sidebar', 'hidden');
-  });
-  showBtn.addEventListener('click', function() {
-    sidebar.classList.remove('hidden');
-    localStorage.setItem('subject-sidebar', '');
-  });
-})();
+var sidebar = document.getElementById('sidebar');
+var hideBtn = document.getElementById('sidebarHideBtn');
+var showBtn = document.getElementById('sidebarShowBtn');
+var sidebarHidden = localStorage.getItem('{ns}-sidebar') === 'hidden';
+if (sidebarHidden) sidebar.classList.add('hidden');
+hideBtn.addEventListener('click', function() {
+  sidebar.classList.add('hidden');
+  localStorage.setItem('{ns}-sidebar', 'hidden');
+});
+showBtn.addEventListener('click', function() {
+  sidebar.classList.remove('hidden');
+  localStorage.setItem('{ns}-sidebar', '');
+});
 ```
 
-### 4. 一键展开/收起全部
+---
+
+### 4. 一键展开/收起 (✅ 必选)
 
 ```javascript
 (function() {
   var btn = document.getElementById('expandAllBtn');
+  if (!btn) return;
   btn.addEventListener('click', function() {
-    var all = document.querySelectorAll('.module, .exam-module');
+    var all = document.querySelectorAll('.module, .exam-module, details');
     var allOpen = true;
     for (var i = 0; i < all.length; i++) {
       if (!all[i].hasAttribute('open')) { allOpen = false; break; }
@@ -379,23 +454,249 @@ katex/                     ← 共享 KaTeX 本地文件
 })();
 ```
 
-### 5. KaTeX 渲染
+---
+
+### 5. 打印 PDF 优化 (✅ 必选)
+
+```css
+@media print {
+  * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  #sidebar { display: none !important; }
+  #sidebarShowBtn { display: none !important; }
+  .back-to-top { display: none !important; }
+  .q-toggle { display: none !important; }
+  body { display: block; }
+  details, .module, .exam-module { display: block !important; }
+  details .content, details[open] .content { display: block !important; }
+  .module { box-shadow: none; border: 1px solid #ccc; page-break-inside: avoid; }
+  .exam-q { page-break-inside: avoid; }
+}
+```
+
+---
+
+### 6. 移动端响应式 (✅ 必选)
+
+```css
+@media (max-width: 768px) {
+  #sidebar { position: fixed; z-index: 900; box-shadow: var(--shadow-hover); }
+  #sidebar.hidden { display: none; }
+  #sidebarShowBtn { display: flex; font-size: 13px; padding: 5px 8px; top: 8px; left: 8px; }
+  #content { margin-left: 0 !important; padding: 20px 14px; }
+}
+@media (max-width: 480px) {
+  #content { padding: 14px 10px; }
+  .exam-q { padding: 12px; margin-bottom: 12px; }
+}
+```
+
+---
+
+### 7. 回到顶部按钮 (🟡 可选)
+
+**HTML：**
+```html
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="回到顶部">↑</button>
+```
+
+**CSS：**
+```css
+.back-to-top {
+  position: fixed; bottom: 24px; right: 24px;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--accent); color: #fff;
+  border: none; cursor: pointer; font-size: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none; z-index: 999;
+}
+```
+
+**JS：**
+```javascript
+window.addEventListener('scroll', function() {
+  document.getElementById('backToTop').style.display = window.scrollY > 400 ? 'block' : 'none';
+});
+```
+
+---
+
+### 8. 侧边栏滚动高亮 (🟡 可选，多章文件推荐)
 
 ```javascript
-document.addEventListener('DOMContentLoaded', function() {
-  renderMathInElement(document.body, {
-    delimiters: [
-      { left: '$$', right: '$$', display: true },
-      { left: '$', right: '$', display: false }
-    ],
-    throwOnError: false
+(function() {
+  var links = document.querySelectorAll('#sidebar nav a[href^="#"]');
+  var chapters = document.querySelectorAll('.chapter');
+  if (chapters.length === 0) return;
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        links.forEach(function(l) { l.classList.remove('active'); });
+        var a = document.querySelector('#sidebar nav a[href="#' + entry.target.id + '"]');
+        if (a) a.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  chapters.forEach(function(ch) { observer.observe(ch); });
+})();
+```
+
+---
+
+### 9. 快速导航 TOC (🟡 可选，长文件推荐)
+
+网格布局，每项链接到对应章节/试卷锚点。样式简洁，放在封面之后、内容之前。
+
+```html
+<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:32px;">
+  <strong>📑 快速导航</strong>
+  <div style="display:grid;grid-template-columns:1fr;gap:6px;margin-top:12px;">
+    <a href="#topic1" style="padding:7px 12px;border-radius:6px;background:var(--bg);...">专题一 · 数与式 · 8题</a>
+    ...
+  </div>
+</div>
+```
+
+---
+
+### 10. 题目解析折叠 (🟡 可选，真题/试卷推荐)
+
+```css
+.q-solution { display: none; }
+.exam-q.show-solution .q-solution { display: block; }
+.q-toggle { cursor: pointer; color: var(--accent); border: 1px solid var(--border); border-radius: 4px; padding: 3px 10px; display: inline-block; font-size: 11px; }
+```
+
+```javascript
+// 点击切换单个题目的解析显示
+document.querySelectorAll('.q-toggle').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    this.parentElement.classList.toggle('show-solution');
+  });
+});
+// 一键显示/隐藏全部解析（可选）
+document.getElementById('toggleAllSolutions')?.addEventListener('click', function() {
+  var all = document.querySelectorAll('.exam-q');
+  var anyHidden = false;
+  all.forEach(function(q) { if (!q.classList.contains('show-solution')) anyHidden = true; });
+  all.forEach(function(q) {
+    if (anyHidden) q.classList.add('show-solution');
+    else q.classList.remove('show-solution');
   });
 });
 ```
 
 ---
 
-## 七、SVG 示意图规范
+### 11. localStorage 命名空间约定
+
+| 文件 | theme key | sidebar key |
+|------|-----------|-------------|
+| math7.html | `math7-theme` | `math7-sidebar` |
+| math8.html | `math8-theme` | `math8-sidebar` |
+| physics8/ch*.html | `physics8-theme` | `physics8-sidebar` |
+| junior/junior_math_*.html | `math-{name}-theme` | `math-{name}-sidebar` |
+| junior/5y3m_mock1.html | `5y3m-mock1-theme` | `5y3m-mock1-sidebar` |
+| index.html | `math-index-theme` | — |
+
+---
+
+### 12. 完整文件模板 (新文件可复制此骨架)
+
+```html
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TITLE</title>
+<link rel="stylesheet" href="PATH/katex/katex.min.css">
+<style>
+:root { --bg:#fff; --bg-secondary:#f1f5f9; --text:#1a1a2e; --text-secondary:#64748b; --accent:#4f46e5; --accent-light:#eef2ff; --border:#e2e8f0; --shadow:0 1px 3px rgba(0,0,0,0.08); --radius:8px; --sidebar-width:270px; }
+[data-theme="dark"] { --bg:#0f172a; --bg-secondary:#1e293b; --text:#e2e8f0; --text-secondary:#94a3b8; --accent:#818cf8; --accent-light:#1e1b4b; --border:#334155; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;display:flex}
+#sidebar{width:var(--sidebar-width);height:100vh;position:sticky;top:0;background:var(--bg-secondary);border-right:1px solid var(--border);padding:20px 14px;overflow-y:auto;flex-shrink:0}
+#sidebar h2{font-size:17px;font-weight:700;margin-bottom:14px;color:var(--accent)}
+#sidebar nav a{display:block;padding:5px 10px;border-radius:6px;color:var(--text-secondary);text-decoration:none;font-size:13px;transition:background .15s,color .15s}
+#sidebar nav a:hover,#sidebar nav a.active{background:var(--accent-light);color:var(--accent);font-weight:600}
+.theme-toggle,.expand-btn{padding:8px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px;width:100%;margin-top:8px}
+#content{flex:1;max-width:1000px;padding:32px 40px}
+#sidebar.hidden{display:none}
+#sidebarShowBtn{display:none;position:fixed;top:12px;left:12px;z-index:1000;background:var(--bg);color:var(--accent);border:1px solid var(--border);border-radius:6px;cursor:pointer;font-weight:600;font-size:14px;padding:6px 10px;box-shadow:var(--shadow)}
+body:has(#sidebar.hidden) #sidebarShowBtn{display:flex}
+.back-to-top{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;border:none;cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.2);display:none;z-index:999}
+@media(max-width:768px){#sidebar{position:fixed;z-index:900}#sidebar.hidden{display:none}#sidebarShowBtn{display:flex;font-size:13px;padding:5px 8px;top:8px;left:8px}#content{margin-left:0!important;padding:20px 14px}}
+@media print{*{print-color-adjust:exact;-webkit-print-color-adjust:exact}#sidebar,#sidebarShowBtn,.back-to-top{display:none!important}body{display:block}details{display:block!important}details .content{display:block!important}}
+</style>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="回到顶部">↑</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">TITLE</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+  </div>
+  <nav>
+    <a href="index.html">🏠 首页</a>
+    <!-- chapter links -->
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部章节</button>
+  <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
+</nav>
+
+<main id="content">
+  <!-- CONTENT -->
+</main>
+
+<script src="PATH/katex/katex.min.js"></script>
+<script src="PATH/katex/auto-render.min.js"></script>
+<script>
+// KaTeX
+renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+
+// Theme
+(function(){
+  var k='{ns}-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+  document.documentElement.setAttribute('data-theme',t);
+  document.getElementById('theme-toggle').textContent=t==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
+  document.getElementById('theme-toggle').addEventListener('click',function(){
+    var c=document.documentElement.getAttribute('data-theme'),n=c==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',n);
+    localStorage.setItem(k,n);
+    document.getElementById('theme-toggle').textContent=n==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
+  });
+})();
+
+// Sidebar toggle
+(function(){
+  var s=document.getElementById('sidebar'),k='{ns}-sidebar';
+  if(localStorage.getItem(k)==='hidden')s.classList.add('hidden');
+  document.getElementById('sidebarHideBtn').addEventListener('click',function(){s.classList.add('hidden');localStorage.setItem(k,'hidden')});
+  document.getElementById('sidebarShowBtn').addEventListener('click',function(){s.classList.remove('hidden');localStorage.setItem(k,'')});
+})();
+
+// Expand all
+(function(){
+  var b=document.getElementById('expandAllBtn');if(!b)return;
+  b.addEventListener('click',function(){
+    var a=document.querySelectorAll('.module,.exam-module,details'),o=true;
+    for(var i=0;i<a.length;i++)if(!a[i].hasAttribute('open')){o=false;break}
+    for(var i=0;i<a.length;i++){if(o)a[i].removeAttribute('open');else a[i].setAttribute('open','')}
+    b.textContent=o?'📂 展开全部章节':'📖 收起全部章节';
+  });
+})();
+
+// Back to top
+window.addEventListener('scroll',function(){document.getElementById('backToTop').style.display=scrollY>400?'block':'none'});
+</script>
+</body>
+</html>
+```
+
+> **使用说明**：复制骨架 → 替换 `TITLE` 和 `{ns}` → 填入内容区 → 调整 sidebar 链接。
 
 ### 坐标与样式
 

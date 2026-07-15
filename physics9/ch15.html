@@ -755,7 +755,7 @@ D. 电冰箱内的压缩机与照明灯</div>
   window.addEventListener('scroll', function() {
     var btn = document.getElementById('backToTop');
     if (btn) btn.style.display = window.scrollY > 400 ? 'block' : 'none';
-  });
+  }, { passive: true });
 })();
 </script>
 

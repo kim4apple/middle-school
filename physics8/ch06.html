@@ -650,7 +650,7 @@
   window.addEventListener('scroll', function() {
     var btn = document.getElementById('backToTop');
     if (btn) btn.style.display = window.scrollY > 400 ? 'block' : 'none';
-  });
+  }, { passive: true });
 </script>
 
 </body>

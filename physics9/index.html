@@ -950,7 +950,7 @@ document.addEventListener('DOMContentLoaded',function(){
     });
     links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+current);});
   }
-  window.addEventListener('scroll',update);update();
+  window.addEventListener('scroll', update, { passive: true });update();
 })();
 
 // Expand all
@@ -961,11 +961,11 @@ document.addEventListener('DOMContentLoaded',function(){
     for(var i=0;i<a.length;i++)if(!a[i].hasAttribute('open')){o=false;break}
     for(var i=0;i<a.length;i++){if(o)a[i].removeAttribute('open');else a[i].setAttribute('open','')}
     b.textContent=o?'📂 展开全部模块':'📖 收起全部模块';
-  });
+  }, { passive: true });
 })();
 
 // Back to top
-window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=scrollY>400?'block':'none'});
+window.addEventListener('scroll', function(){var b=document.getElementById('backToTop');if(b)b.style.display=scrollY>400?'block':'none'}, { passive: true });
 </script>
 </body>
 </html>

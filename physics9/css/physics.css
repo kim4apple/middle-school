@@ -119,6 +119,8 @@ body {
   background: var(--bg);
   box-shadow: var(--shadow);
   overflow: hidden;
+  content-visibility: auto;
+  contain: content;
 }
 
 .module summary {
@@ -157,10 +159,10 @@ body {
   border-radius: var(--radius);
   padding: 16px;
   box-shadow: var(--shadow);
-  transition: box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.concept-card:hover { box-shadow: var(--shadow-hover); }
+.concept-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
 
 .concept-card .name {
   font-weight: 700;
@@ -184,6 +186,8 @@ body {
   padding: 20px;
   margin-bottom: 16px;
   box-shadow: var(--shadow);
+  content-visibility: auto;
+  contain: content;
 }
 
 .technique-card h3 {
@@ -390,6 +394,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
   margin-bottom: 20px;
   font-size: 14px;
   line-height: 1.8;
+  contain: content;
 }
 .thought-method strong { color: #b45309; }
 
@@ -405,6 +410,8 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
   margin-bottom: 20px;
   box-shadow: var(--shadow);
   border-left: 4px solid var(--experiment);
+  content-visibility: auto;
+  contain: content;
 }
 
 .experiment-card h3 {
@@ -464,6 +471,8 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
   background: var(--bg);
   box-shadow: var(--shadow);
   overflow: hidden;
+  content-visibility: auto;
+  contain: content;
 }
 .exam-module summary {
   padding: 16px 20px;
@@ -478,7 +487,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 .exam-module[open] summary::before { transform: rotate(90deg); }
 .exam-module .content { padding: 20px; }
 
-.exam-q { margin-bottom: 20px; padding: 16px; border: 1px solid var(--border); border-radius: 6px; background: #fffbeb; }
+.exam-q { margin-bottom: 20px; padding: 16px; border: 1px solid var(--border); border-radius: 6px; background: #fffbeb; content-visibility: auto; contain: content; }
 .exam-q .q-tag { font-size: 12px; background: #dc2626; color: #fff; padding: 2px 8px; border-radius: 4px; margin-right: 8px; }
 .exam-q .q-body { margin-top: 8px; font-size: 15px; }
 .exam-q .q-solution { margin-top: 10px; padding: 10px 14px; background: #f0fdf4; border-radius: 4px; font-size: 14px; color: #166534; }

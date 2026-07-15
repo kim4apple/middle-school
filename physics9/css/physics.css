@@ -116,7 +116,6 @@ body:has(#sidebar.hidden) #content { margin-left: 0; }
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--bg);
-  content-visibility: auto;
 }
 
 .module summary {
@@ -452,7 +451,6 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--bg);
-  content-visibility: auto;
 }
 .exam-module summary {
   padding: 16px 20px;

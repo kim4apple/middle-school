@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第18章 电功率 | 九年级物理</title>
+<link rel="stylesheet" href="css/physics.css">
+<link rel="stylesheet" href="../katex/katex.min.css">
+</head>
+<body>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="回到顶部">↑</button>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">九年级物理</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;" title="隐藏侧栏">✕</button>
+  </div>
+  <nav>
+    <a href="index.html">🏠 首页</a>
+    <a href="ch13.html">第13章 内能</a>
+    <a href="ch14.html">第14章 内能的利用</a>
+    <a href="ch15.html">第15章 电流和电路</a>
+    <a href="ch16.html">第16章 电压 电阻</a>
+    <a href="ch17.html">第17章 欧姆定律</a>
+    <a href="ch18.html" class="active">第18章 电功率</a>
+    <a href="ch19.html">第19章 生活用电</a>
+    <a href="ch20.html">第20章 电与磁</a>
+    <a href="ch21.html">第21章 信息的传递</a>
+    <a href="ch22.html">第22章 能源与可持续发展</a>
+    <a href="appendix.html">附录</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+  <button id="theme-toggle" class="theme-toggle" style="margin-top:10px;">🌙 暗色模式</button>
+  <button class="print-btn" onclick="window.print()" style="margin-top:8px;padding:8px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px;width:100%;">🖨️ 打印 / 存 PDF</button>
+</nav>
+
+<main id="content">
+
+<div class="chapter">
+  <h1>第18章 电功率</h1>
+
+  <!-- 学习目标 -->
+  <div class="learning-goals">
+    <strong>🎯 学习目标</strong>
+    <p>① 理解电功和电功率的概念，掌握 $W=UIt$ 和 $P=UI$ 及其变形公式，能进行简单计算</p>
+    <p>② 会读电能表，能用电能表测用电器消耗的电能，理解 $\text{kW}\cdot\text{h}$ 的物理意义</p>
+    <p>③ 理解额定功率和实际功率的区别，能利用 $R$ 不变进行额定与实际功率的换算</p>
+    <p>④ 掌握焦耳定律 $Q=I^2Rt$，能区分纯电阻电路和非纯电阻电路中 $W$ 与 $Q$ 的关系</p>
+    <p>⑤ 能设计并完成"测量小灯泡的电功率"实验，根据 $U_{\text{实}}$ 与 $U_{\text{额}}$ 的关系判断灯泡发光情况</p>
+  </div>
+
+  <!-- 前置知识关联 -->
+  <div class="knowledge-link">
+    <strong>📎 前置知识关联：</strong>
+    第15章·电流和电路（电流概念、串并联电路、电流表使用）；
+    第16章·电压 电阻（电压概念、电压表使用、欧姆定律的铺垫 $I=U/R$）；
+    第17章·欧姆定律（$I=U/R$，串并联电阻规律，动态电路分析）；
+    数学基础 · 比例运算、指数运算、方程求解。
+  </div>
+
+  <!-- 思维方法 -->
+  <div class="thought-method">
+    <strong>🔬 物理学思维方法：能量转化与守恒</strong>
+    电功率章节的核心思维是"能量"的视角——电流做功的本质是电能转化为其他形式的能。用电器将电能转化为光能、热能、机械能等。焦耳定律定量描述了电能向内能的转化。在纯电阻电路中，$W=Q$，电功全部转化为内能；在非纯电阻电路中（如电动机），$W>Q$，部分电能转化为机械能。抓住"能量守恒"这条主线，电功、电功率、焦耳定律就有了统一的理解框架。
+  </div>
+
+  <!-- 思维导图 -->
+  <details class="module" open>
+    <summary>🧠 思维导图</summary>
+    <div class="content">
+      <div class="mindmap">
+        <ul>
+          <li><span class="node-label">电功率</span></li>
+          <li>
+            <span class="node-label">电功 $W$</span>
+            <ul>
+              <li>定义：电流所做的功（电能转化为其他形式能）</li>
+              <li>公式：$W=UIt=Pt$（通用）</li>
+              <li>纯电阻：$W=I^2Rt=\dfrac{U^2}{R}t$</li>
+              <li>单位：J（焦耳），$\text{kW}\cdot\text{h}$（度）</li>
+              <li>$1\ \text{kW}\cdot\text{h}=3.6\times10^6\ \text{J}$</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">电能表</span>
+            <ul>
+              <li>测量用电器消耗的电能</li>
+              <li>读数：前后两次示数差（末−初）</li>
+              <li>参数：$N\ \text{r/(kW}\cdot\text{h)}$ 转盘转数</li>
+              <li>$W=\dfrac{n}{N}\ \text{kW}\cdot\text{h}$</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">电功率 $P$</span>
+            <ul>
+              <li>意义：电流做功快慢</li>
+              <li>定义式：$P=\dfrac{W}{t}=UI$</li>
+              <li>纯电阻：$P=I^2R=\dfrac{U^2}{R}$</li>
+              <li>额定功率：$U_{\text{额}}$ 下的功率</li>
+              <li>实际功率：$U_{\text{实}}$ 下的功率</li>
+              <li>$R$ 不变法：$\dfrac{P_{\text{实}}}{P_{\text{额}}}=\dfrac{U_{\text{实}}^2}{U_{\text{额}}^2}$</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">焦耳定律 $Q=I^2Rt$</span>
+            <ul>
+              <li>热量与 $I^2$、$R$、$t$ 成正比</li>
+              <li>纯电阻：$Q=W=UIt=\dfrac{U^2}{R}t$</li>
+              <li>非纯电阻：$Q<W$（如电动机）</li>
+              <li>电热器利用 $Q=I^2Rt$（电炉、电饭煲）</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">实验：测小灯泡功率</span>
+            <ul>
+              <li>原理：$P=UI$（伏安法）</li>
+              <li>电路：灯泡 + 电流表串联，电压表并联</li>
+              <li>滑动变阻器：调节 $U_{\text{实}}$</li>
+              <li>$U_{\text{实}}=U_{\text{额}}$ → 正常发光</li>
+              <li>$U_{\text{实}}<U_{\text{额}}$ → 偏暗</li>
+              <li>$U_{\text{实}}>U_{\text{额}}$ → 偏亮（易烧毁）</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <!-- 核心概念 -->
+  <details class="module" open>
+    <summary>📖 核心概念</summary>
+    <div class="content">
+      <div class="advance-organizer"><strong>🔍 先行组织者：</strong>交电费时，电表上的数字代表什么？为什么"220V 100W"的灯泡比"220V 25W"的更亮但费电更多？为什么电炉丝热得发红而导线却不怎么热？这些问题的答案都在本章——电功率描述了用电器"耗电的速度"，焦耳定律解释了"为什么有些地方热、有些不热"。学好本章，你就掌握了电学计算的最后一块拼图。</div>
+
+      <div class="card-grid">
+
+        <div class="concept-card">
+          <div class="name">电功 $W$</div>
+          <p><strong>定义：</strong>电流所做的功，实质是电能转化为其他形式的能。</p>
+          <p>公式：$W=UIt$（通用）— 电流在某段电路上做的功等于该段电路两端的电压、电路中的电流和通电时间的乘积。</p>
+          <p>单位：焦耳（J），常用单位 <strong>千瓦时（$\text{kW}\cdot\text{h}$）</strong>。</p>
+          <p>$1\ \text{kW}\cdot\text{h}=3.6\times10^6\ \text{J}$（俗称"1度电"）</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">电能表读数与计算</div>
+          <p><strong>电能表</strong>（电度表）：测量用电器在一段时间内消耗的电能。</p>
+          <p>读数方法：$W=W_{\text{末}}-W_{\text{初}}$（单位 $\text{kW}\cdot\text{h}$）。</p>
+          <p>参数含义：$3000\ \text{r/(kW}\cdot\text{h)}$ 表示用电器消耗 $1\ \text{kW}\cdot\text{h}$ 电能，转盘转 3000 圈。</p>
+          <p>转盘计算：$W=\dfrac{n}{N}\ \text{kW}\cdot\text{h}$，其中 $n$ 为实际转数，$N$ 为参数。</p>
+          <span class="level-silver">🥈 白银级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">电功率 $P$</div>
+          <p><strong>物理意义：</strong>表示电流做功快慢的物理量。</p>
+          <p><strong>定义式：</strong>$P=\dfrac{W}{t}=UI$（通用）</p>
+          <p>单位：瓦特（W），常用 $\text{kW}$（$1\ \text{kW}=10^3\ \text{W}$）</p>
+          <p><strong>额定功率：</strong>用电器在额定电压下正常工作时的功率。</p>
+          <p><strong>实际功率：</strong>用电器在实际电压下工作时的功率，随实际电压变化。</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">焦耳定律 $Q=I^2Rt$</div>
+          <p><strong>内容：</strong>电流通过导体产生的热量跟电流的平方成正比，跟导体的电阻成正比，跟通电时间成正比。</p>
+          <p>公式：$Q=I^2Rt$（普适，对所有电路都成立）</p>
+          <p><strong>纯电阻电路：</strong>$W=Q$，$Q=UIt=\dfrac{U^2}{R}t=I^2Rt$（所有电能转化为内能）</p>
+          <p><strong>非纯电阻电路：</strong>$W>Q$，部分电能转化为机械能等（如电动机）</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">额定功率与实际功率的换算</div>
+          <p><strong>核心方法：$R$ 不变法。</strong>同一用电器的电阻一般认为不变。</p>
+          <p>由 $P_{\text{额}}=\dfrac{U_{\text{额}}^2}{R}$ 和 $P_{\text{实}}=\dfrac{U_{\text{实}}^2}{R}$，得：</p>
+          <p>\[ R=\frac{U_{\text{额}}^2}{P_{\text{额}}}=\frac{U_{\text{实}}^2}{P_{\text{实}}} \quad\Rightarrow\quad \frac{P_{\text{实}}}{P_{\text{额}}}=\frac{U_{\text{实}}^2}{U_{\text{额}}^2} \]</p>
+          <p>例："220V 100W"灯泡接 110V，$P_{\text{实}}=100\times\left(\dfrac{110}{220}\right)^2=25\ \text{W}$。</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">串并联电路电功率特点</div>
+          <p><strong>串联：</strong>电流相等，$P$ 与 $R$ 成正比。</p>
+          <p>$P_1:P_2=R_1:R_2$（$P=I^2R$）</p>
+          <p><strong>并联：</strong>电压相等，$P$ 与 $R$ 成反比。</p>
+          <p>$P_1:P_2=R_2:R_1$（$P=U^2/R$）</p>
+          <p>无论串并联，电路总功率 $P_{\text{总}}=P_1+P_2+\cdots+P_n$。</p>
+          <span class="level-silver">🥈 白银级</span>
+        </div>
+
+      </div>
+    </div>
+  </details>
+
+  <!-- 公式速查 -->
+  <details class="module" open>
+    <summary>📐 公式速查</summary>
+    <div class="content">
+
+      <div class="formula-card">
+        <strong>电功（通用）</strong>
+        <p>\[ W = UIt \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          $W$ — 电功（J），$U$ — 电压（V），$I$ — 电流（A），$t$ — 时间（s）
+        </p>
+        <span class="level-gold">🥇 黄金级</span>
+      </div>
+
+      <div class="formula-card">
+        <strong>电功率（通用）</strong>
+        <p>\[ P = UI \qquad P = \frac{W}{t} \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          $P$ — 电功率（W），$U$ — 电压（V），$I$ — 电流（A），$W$ — 电功（J），$t$ — 时间（s）
+        </p>
+        <span class="level-gold">🥇 黄金级</span>
+      </div>
+
+      <div class="formula-card">
+        <strong>电功率（纯电阻）</strong>
+        <p>\[ P = I^2R = \frac{U^2}{R} \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          仅适用于纯电阻电路（电能全部转化为内能的电路）
+        </p>
+        <span class="level-gold">🥇 黄金级</span>
+      </div>
+
+      <div class="formula-card">
+        <strong>焦耳定律（普适）</strong>
+        <p>\[ Q = I^2Rt \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          $Q$ — 热量（J），$I$ — 电流（A），$R$ — 电阻（$\Omega$），$t$ — 时间（s）
+        </p>
+        <span class="level-gold">🥇 黄金级</span>
+      </div>
+
+      <div class="formula-card">
+        <strong>纯电阻电路中 $Q=W$</strong>
+        <p>\[ Q = UIt = \frac{U^2}{R}t = I^2Rt \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          在纯电阻电路中，电流做的功全部转化为内能，$W=Q$
+        </p>
+        <span class="level-silver">🥈 白银级</span>
+      </div>
+
+      <div class="formula-card">
+        <strong>额定/实际功率换算</strong>
+        <p>\[ \frac{P_{\text{实}}}{P_{\text{额}}} = \frac{U_{\text{实}}^2}{U_{\text{额}}^2} \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          前提：用电器的电阻 $R$ 保持不变（忽略温度对电阻的影响）
+        </p>
+        <span class="level-gold">🥇 黄金级</span>
+      </div>
+
+      <div class="formula-card">
+        <strong>电能表转盘计算</strong>
+        <p>\[ W = \frac{n}{N}\ \text{kW}\cdot\text{h} \qquad P = \frac{W}{t} \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          $n$ — 实际转动的圈数，$N$ — 电能表参数（$\text{r/(kW}\cdot\text{h)}$），$t$ — 时间（h）
+        </p>
+        <span class="level-silver">🥈 白银级</span>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 实验探究 -->
+  <details class="module" open>
+    <summary>🔬 实验探究：测量小灯泡的电功率</summary>
+    <div class="content">
+      <div class="experiment-card">
+        <h3>实验：伏安法测小灯泡的电功率</h3>
+
+        <div class="exp-step">
+          <span class="exp-step-num">1</span>
+          <div><strong>实验原理：</strong>$P=UI$。用电压表测小灯泡两端的电压 $U$，用电流表测通过小灯泡的电流 $I$，计算 $P=UI$。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">2</span>
+          <div><strong>设计电路：</strong>小灯泡与滑动变阻器串联，电流表串联在电路中，电压表并联在小灯泡两端。开关应断开，滑动变阻器滑片置于阻值最大端。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">3</span>
+          <div><strong>测量额定功率：</strong>调节滑动变阻器，使电压表示数等于小灯泡的额定电压 $U_{\text{额}}$，记录此时电流表示数 $I$，计算 $P_{\text{额}}=U_{\text{额}}I$。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">4</span>
+          <div><strong>测量实际功率：</strong>调节滑动变阻器，使电压表示数略低于 $U_{\text{额}}$（如 $0.8U_{\text{额}}$），记录 $U$、$I$，计算实际功率。再使电压表示数略高于 $U_{\text{额}}$（如 $1.2U_{\text{额}}$），再次测量。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">5</span>
+          <div><strong>观察发光情况：</strong>$U_{\text{实}}=U_{\text{额}}$ → 正常发光；$U_{\text{实}}<U_{\text{额}}$ → 灯泡偏暗；$U_{\text{实}}>U_{\text{额}}$ → 灯泡很亮（超过额定电压容易烧坏灯泡）。</div>
+        </div>
+
+        <div class="exp-principle">
+          <strong>⚙ 实验原理：</strong>$P=UI$。该实验体现了"伏安法"的核心思想——同时测量电压和电流，通过乘积得到电功率。
+        </div>
+
+        <div class="exp-tip">
+          <strong>💡 易错提示：</strong>① 连接电路时开关必须断开，滑动变阻器滑片置于阻值最大端；② 电压表量程选择要大于额定电压，电流表量程根据 $I=P/U$ 估算；③ 不能用多次测量求平均值的方法求小灯泡的额定功率，因为不同电压下小灯泡的功率不同；④ 温度对灯丝电阻有影响，$U$-$I$ 图像不是直线。
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- 解题技巧 -->
+  <details class="module" open>
+    <summary>✍️ 解题技巧</summary>
+    <div class="content">
+
+      <div class="technique-card">
+        <h3><span class="step-num">1</span> 额定功率与实际功率换算（$R$ 不变法）</h3>
+        <div class="method">📌 方法：首先用 $R=\dfrac{U_{\text{额}}^2}{P_{\text{额}}}$ 求出电阻，再用 $P_{\text{实}}=\dfrac{U_{\text{实}}^2}{R}$ 求实际功率</div>
+        <div class="example">
+          <strong>例题：</strong>一个标有"6V 3W"的小灯泡，接入电压为 4V 的电路中，求实际功率。<br>
+          <strong>解：</strong>$R=\dfrac{U_{\text{额}}^2}{P_{\text{额}}}=\dfrac{6^2}{3}=12\ \Omega$，$P_{\text{实}}=\dfrac{U_{\text{实}}^2}{R}=\dfrac{4^2}{12}\approx 1.33\ \text{W}$。<br>
+          也可直接由比例：$\dfrac{P_{\text{实}}}{P_{\text{额}}}=\dfrac{U_{\text{实}}^2}{U_{\text{额}}^2}$，$P_{\text{实}}=3\times\left(\dfrac{4}{6}\right)^2\approx 1.33\ \text{W}$。
+        </div>
+        <div class="pitfall">
+          ⚠️ 易错点：不能直接用 $\dfrac{P_{\text{实}}}{P_{\text{额}}}=\dfrac{U_{\text{实}}}{U_{\text{额}}}$ ！功率与电压的平方成正比，不是一次正比。"220V 100W"的灯泡接 110V，实际功率是 25W，不是 50W。
+        </div>
+        <div class="error-diagnosis"><div class="wrong">❌ 错误：$P_{\text{实}}=100\times\frac{110}{220}=50\ \text{W}$</div><div class="analysis">🔍 诊断：电功率 $P=U^2/R$，当 $R$ 不变时，$P\propto U^2$，所以 $P_{\text{实}}$ 与 $U_{\text{实}}^2$ 成正比，而非与 $U_{\text{实}}$ 成正比。正确结果：$P_{\text{实}}=100\times(110/220)^2=25\ \text{W}$。</div></div>
+        <div class="principle">
+          <strong>📐 原理依据：</strong>对同一用电器，电阻 $R$ 视为定值（忽略温度影响）。由 $P=U^2/R$ 可知 $P\propto U^2$。先求 $R$ 再求 $P_{\text{实}}$ 是最稳妥的方法。
+        </div>
+        <div class="variant"><strong>🌱 基础变式：</strong>两个灯泡"6V 3W"和"6V 6W"串联在 6V 电路中，谁更亮？答：$R_1=12\Omega$，$R_2=6\Omega$，$I=6/(12+6)=1/3\ \text{A}$，$P_1=I^2R_1=(1/9)\times12\approx 1.33\ \text{W}$，$P_2=(1/9)\times6\approx 0.67\ \text{W}$，所以 3W 的灯泡更亮（串联时电阻大的功率大）。</div>
+        <div class="exam-hint">
+          🏆 考场提示：中考必考！记住"串联看电流，并联看电压"——串联时 $P\propto R$（电阻大的功率大），并联时 $P\propto 1/R$（电阻小的功率大）。
+        </div>
+      </div>
+
+      <div class="technique-card">
+        <h3><span class="step-num">2</span> 电热综合计算（纯电阻电路 $W=Q$）</h3>
+        <div class="method">📌 方法：区分纯电阻与非纯电阻电路，选择正确的公式</div>
+        <div class="example">
+          <strong>例题：</strong>一只电热水壶的铭牌标有"220V 1000W"，正常工作 10 分钟，求：（1）消耗的电能；（2）产生的热量；（3）通过电热丝的电流。<br>
+          <strong>解：</strong>（1）$W=Pt=1000\times600=6\times10^5\ \text{J}$（或 $W=1\ \text{kW}\times\frac{1}{6}\ \text{h}=\frac{1}{6}\ \text{kW}\cdot\text{h}$）。<br>
+          （2）电热水壶是纯电阻用电器，$Q=W=6\times10^5\ \text{J}$。<br>
+          （3）$P=UI \Rightarrow I=\dfrac{P}{U}=\dfrac{1000}{220}\approx 4.55\ \text{A}$。
+        </div>
+        <div class="pitfall">
+          ⚠️ 易错点：电动机不是纯电阻！电动机工作时，电能大部分转化为机械能，$W=UIt$ 是总电功，$Q=I^2Rt$ 是线圈发热损耗，$W_{\text{机}}=W-Q$。不能将 $W=UIt$ 和 $Q=I^2Rt$ 混为一谈。
+        </div>
+        <div class="error-diagnosis"><div class="wrong">❌ 错误：电动机两端电压 220V，电流 5A，电阻 2Ω，工作 10s，直接算 $Q=UIt=220\times5\times10=11000\ \text{J}$ 作为产生的热量</div><div class="analysis">🔍 诊断：$Q=I^2Rt$ 才是计算发热的普适公式。$UIt$ 计算的是电动机消耗的总电能，其中大部分转化为机械能。$Q=5^2\times2\times10=500\ \text{J}$ 才是线圈产生的热量。$W_{\text{机}}=UIt-Q=11000-500=10500\ \text{J}$。</div></div>
+        <div class="principle">
+          <strong>📐 原理依据：</strong>能量守恒定律。总电功 $W=UIt$，产生的热量 $Q=I^2Rt$。纯电阻电路 $W=Q$；非纯电阻电路 $W=Q+E_{\text{其他}}$（$E_{\text{其他}}$ 多为机械能）。
+        </div>
+        <div class="variant"><strong>🌱 基础变式：</strong>某电动机线圈电阻 1Ω，接 12V 电压，通过的电流为 2A。求：① 电功率 $P_{\text{电}}=UI=24\ \text{W}$；② 发热功率 $P_{\text{热}}=I^2R=4\ \text{W}$；③ 机械功率 $P_{\text{机}}=P_{\text{电}}-P_{\text{热}}=20\ \text{W}$；④ 效率 $\eta=P_{\text{机}}/P_{\text{电}}\approx 83.3\%$。</div>
+        <div class="exam-hint">
+          🏆 考场提示：看到"电热器"（电炉、电饭煲、电热水壶）默认纯电阻；看到"电动机"必须区分 $W$ 和 $Q$。中考压轴题常将 $W=UIt$ 与 $Q=I^2Rt$ 结合考查。
+        </div>
+      </div>
+
+      <div class="technique-card">
+        <h3><span class="step-num">3</span> 电能表转盘计算</h3>
+        <div class="method">📌 方法：转数→电能→功率，注意单位统一</div>
+        <div class="example">
+          <strong>例题：</strong>电能表标有"3000 r/(kW·h)"，某用电器工作时转盘 2 分钟转了 150 圈，求用电器的功率。<br>
+          <strong>解：</strong>$W=\dfrac{n}{N}=\dfrac{150}{3000}=0.05\ \text{kW}\cdot\text{h}$；$t=2\ \text{min}=\dfrac{1}{30}\ \text{h}$；$P=\dfrac{W}{t}=\dfrac{0.05}{1/30}=1.5\ \text{kW}=1500\ \text{W}$。
+        </div>
+        <div class="pitfall">
+          ⚠️ 易错点：时间单位要统一！电能表的 $W$ 单位是 $\text{kW}\cdot\text{h}$，时间 $t$ 要用 $\boxed{\text{小时}}$，得到的 $P$ 单位才是 $\text{kW}$。如果 $t$ 用秒，需要先将 $W$ 换算为焦耳（$1\ \text{kW}\cdot\text{h}=3.6\times10^6\ \text{J}$）。
+        </div>
+        <div class="principle">
+          <strong>📐 原理依据：</strong>电能表参数 $N\ \text{r/(kW}\cdot\text{h)}$ 表示每消耗 $1\ \text{kW}\cdot\text{h}$ 电能转盘转 $N$ 圈。所以转了 $n$ 圈消耗的电能为 $W=n/N\ \text{kW}\cdot\text{h}$。
+        </div>
+        <div class="variant"><strong>🌱 基础变式：</strong>家里只有电视机工作时，电能表（600 r/(kW·h)）在 5 分钟内转了 30 圈，求电视机的功率。（$W=30/600=0.05\ \text{kW}\cdot\text{h}$，$t=5/60=1/12\ \text{h}$，$P=0.05/(1/12)=0.6\ \text{kW}=600\ \text{W}$）</div>
+        <div class="exam-hint">
+          🏆 考场提示：中考常以"电能表 + 转盘 + 时间 → 求功率"或"已知功率和时间 → 求转数"的形式出题。审题注意：是"转了"还是"转了 n 圈后变为..."，注意区分 $\Delta W = W_2-W_1$。
+        </div>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 中考真题 -->
+  <details class="exam-module" open>
+    <summary>📝 中考真题</summary>
+    <div class="content">
+
+      <div class="exam-q">
+        <span class="q-tag">2023 深圳</span>
+        <div class="q-diff hard">★★★</div>
+        <strong>题 1</strong>
+        <div class="q-body">
+          一个标有"220V 100W"的白炽灯泡，正常工作时通过灯丝的电流为多少 A？若将该灯泡接入电压为 110V 的电路中，其实际电功率为多少 W？（假设灯丝电阻不变）
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong><br>
+          （1）灯泡正常工作时，$U=U_{\text{额}}=220\ \text{V}$，$P=P_{\text{额}}=100\ \text{W}$。<br>
+          $P=UI \Rightarrow I=\dfrac{P}{U}=\dfrac{100}{220}\approx 0.455\ \text{A}$。<br>
+          （2）$R=\dfrac{U_{\text{额}}^2}{P_{\text{额}}}=\dfrac{220^2}{100}=484\ \Omega$。<br>
+          $P_{\text{实}}=\dfrac{U_{\text{实}}^2}{R}=\dfrac{110^2}{484}=25\ \text{W}$。<br>
+          或直接用比例：$\dfrac{P_{\text{实}}}{P_{\text{额}}}=\dfrac{U_{\text{实}}^2}{U_{\text{额}}^2} \Rightarrow P_{\text{实}}=100\times\left(\dfrac{110}{220}\right)^2=25\ \text{W}$。<br>
+          <strong>答案：</strong>$0.455\ \text{A}$；$25\ \text{W}$
+        </div>
+      </div>
+
+      <div class="exam-q">
+        <span class="q-tag">2022 北京</span>
+        <div class="q-diff hard">★★★</div>
+        <strong>题 2</strong>
+        <div class="q-body">
+          如图所示的电饭煲有加热和保温两种工作状态，其内部简化电路由两个发热电阻 $R_1$、$R_2$ 和开关 $S_1$、$S_2$ 组成。已知 $R_1=60.5\ \Omega$，$R_2=242\ \Omega$，电源电压为 220V 恒定。
+          <br>（1）当 $S_1$ 闭合、$S_2$ 断开时，电饭煲处于加热还是保温状态？此时电路中的电流是多少？
+          <br>（2）当 $S_1$、$S_2$ 均闭合时，电饭煲的总功率是多少？
+          <br>（3）在加热状态下，电饭煲正常工作 10 分钟消耗的电能是多少 $\text{kW}\cdot\text{h}$？产生的热量是多少焦耳？
+        </div>
+        <div class="diagram">
+          <svg viewBox="0 0 360 160" xmlns="http://www.w3.org/2000/svg">
+            <!-- 电源 -->
+            <line x1="20" y1="120" x2="50" y2="120" stroke="#333" stroke-width="1.5"/>
+            <line x1="50" y1="120" x2="50" y2="70" stroke="#333" stroke-width="1.5"/>
+            <!-- 开关 S1 -->
+            <circle cx="50" cy="65" r="3" fill="#fff" stroke="#333" stroke-width="1.2"/>
+            <line x1="50" y1="68" x2="50" y2="50" stroke="#333" stroke-width="1.5"/>
+            <text x="40" y="48" font-size="11" font-weight="bold" fill="#dc2626">S₁</text>
+            <!-- 导线到 R1 -->
+            <line x1="50" y1="50" x2="100" y2="50" stroke="#333" stroke-width="1.5"/>
+            <!-- R1 -->
+            <rect x="100" y="42" width="40" height="16" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1.2"/>
+            <text x="120" y="42" font-size="10" text-anchor="middle" fill="#92400e">R₁</text>
+            <!-- 导线到节点 -->
+            <line x1="140" y1="50" x2="200" y2="50" stroke="#333" stroke-width="1.5"/>
+            <!-- 节点 -->
+            <circle cx="200" cy="50" r="3" fill="#333"/>
+            <!-- 向下到 R2 -->
+            <line x1="200" y1="50" x2="200" y2="100" stroke="#333" stroke-width="1.5"/>
+            <!-- S2 与 R2 支路 -->
+            <circle cx="200" cy="105" r="3" fill="#fff" stroke="#333" stroke-width="1.2"/>
+            <line x1="200" y1="108" x2="200" y2="120" stroke="#333" stroke-width="1.5"/>
+            <text x="192" y="132" font-size="11" font-weight="bold" fill="#dc2626">S₂</text>
+            <!-- R2 -->
+            <line x1="200" y1="120" x2="240" y2="120" stroke="#333" stroke-width="1.5"/>
+            <rect x="240" y="112" width="40" height="16" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1.2"/>
+            <text x="260" y="112" font-size="10" text-anchor="middle" fill="#92400e">R₂</text>
+            <line x1="280" y1="120" x2="310" y2="120" stroke="#333" stroke-width="1.5"/>
+            <!-- 回到电源 -->
+            <line x1="310" y1="120" x2="330" y2="120" stroke="#333" stroke-width="1.5"/>
+            <line x1="330" y1="120" x2="330" y2="70" stroke="#333" stroke-width="1.5"/>
+            <!-- 电源符号 -->
+            <line x1="20" y1="115" x2="20" y2="70" stroke="#333" stroke-width="1.5"/>
+            <line x1="15" y1="105" x2="25" y2="105" stroke="#333" stroke-width="2"/>
+            <line x1="15" y1="95" x2="25" y2="95" stroke="#333" stroke-width="2"/>
+            <line x1="10" y1="85" x2="30" y2="85" stroke="#333" stroke-width="2"/>
+            <text x="10" y="140" font-size="12" font-weight="bold" fill="#2563eb">~ 220V</text>
+          </svg>
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong><br>
+          （1）$S_1$ 闭合、$S_2$ 断开时，只有 $R_2$ 接入电路。<br>
+          $I=\dfrac{U}{R_2}=\dfrac{220}{242}\approx 0.909\ \text{A}$。<br>
+          此时总电阻较大 → 功率较小 → 处于<strong>保温</strong>状态。<br><br>
+          （2）$S_1$、$S_2$ 均闭合时，$R_1$ 与 $R_2$ 并联。<br>
+          $I_1=\dfrac{U}{R_1}=\dfrac{220}{60.5}\approx 3.636\ \text{A}$，$I_2=\dfrac{U}{R_2}=\dfrac{220}{242}\approx 0.909\ \text{A}$。<br>
+          $I_{\text{总}}=I_1+I_2\approx 4.545\ \text{A}$。<br>
+          $P_{\text{总}}=UI_{\text{总}}=220\times4.545=1000\ \text{W}$（或 $P_1=\dfrac{U^2}{R_1}=800\ \text{W}$，$P_2=\dfrac{U^2}{R_2}=200\ \text{W}$，$P_{\text{总}}=1000\ \text{W}$）。<br><br>
+          （3）加热状态时 $P=1000\ \text{W}=1\ \text{kW}$，$t=10\ \text{min}=\dfrac{1}{6}\ \text{h}$。<br>
+          $W=Pt=1\times\dfrac{1}{6}\approx 0.167\ \text{kW}\cdot\text{h}$。<br>
+          电饭煲是纯电阻用电器，$Q=W=Pt=1000\times600=6\times10^5\ \text{J}$。<br>
+          <strong>答案：</strong>（1）保温，$0.909\ \text{A}$（2）$1000\ \text{W}$（3）$0.167\ \text{kW}\cdot\text{h}$，$6\times10^5\ \text{J}$
+        </div>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 自查清单 -->
+  <div class="checklist">
+    <h3>✅ 章节自查清单</h3>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能区分电功 $W$ 和电功率 $P$ 的物理意义及单位</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能正确使用 $W=UIt$、$P=UI$ 及变形公式解题</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我会电能表读数，能用转盘法测用电器的功率</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我理解额定功率与实际功率的区别，能用 $R$ 不变法换算</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能区分纯电阻与非纯电阻电路中的 $W$ 与 $Q$ 关系</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能复述"测量小灯泡电功率"的实验原理和步骤</label>
+    <p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;">
+      <strong>🧑‍🏫 费曼挑战：</strong>请用大白话解释"为什么电炉丝热得发红，而连接它的导线却不怎么热"——从电功率和焦耳定律的角度。
+    </p>
+  </div>
+
+  <div class="review-schedule">
+    <strong>📅 间隔复习</strong>
+    <span class="review-dot">🔵 1天后：默写所有电功率公式</span>
+    <span class="review-dot">🟢 3天后：做额定/实际功率换算题</span>
+    <span class="review-dot">🟡 1周后：讲纯电阻与非纯电阻区别</span>
+    <span class="review-dot">🔴 1月后：做本章中考真题</span>
+  </div>
+
+  <div class="next-stop"><strong>➡️ 下一站：第19章 生活用电</strong><br>学完电功率，你已经掌握了电学的核心计算。第19章将电学知识应用到家庭电路中——保险丝为什么能保护电路？开关为什么接在火线上？安全用电的原则是什么？这些都是将理论知识转化为生活常识的桥梁。</div>
+
+</div>
+
+</main>
+
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/auto-render.min.js"></script>
+<script>
+(function() {
+  // Theme toggle
+  const toggle = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+  const saved = localStorage.getItem('site-theme');
+  if (saved === 'dark') {
+    html.setAttribute('data-theme', 'dark');
+    toggle.textContent = '☀️ 亮色模式';
+  }
+  toggle.addEventListener('click', function() {
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    toggle.textContent = isDark ? '🌙 暗色模式' : '☀️ 亮色模式';
+    localStorage.setItem('site-theme', isDark ? 'light' : 'dark');
+  });
+
+  // KaTeX auto-render
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof renderMathInElement === 'function') {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ],
+        throwOnError: false
+      });
+    }
+  });
+
+  // IntersectionObserver for sidebar active
+  document.addEventListener('DOMContentLoaded', function() {
+    const sidebarLinks = document.querySelectorAll('#sidebar nav a');
+    const modules = document.querySelectorAll('.module, .exam-module, .learning-goals');
+    if (modules.length === 0) return;
+    const observer = new IntersectionObserver(function(entries) {
+      let best = null;
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) best = entry.target;
+      });
+      if (best) {
+        sidebarLinks.forEach(function(link) { link.classList.remove('active'); });
+      }
+    }, { rootMargin: '-20% 0px -60% 0px' });
+    modules.forEach(function(m) { observer.observe(m); });
+  });
+  var sidebar = document.getElementById('sidebar');
+  var hideBtn = document.getElementById('sidebarHideBtn');
+  var sidebarHidden = localStorage.getItem('physics9-sidebar') === 'hidden';
+  if (sidebarHidden) sidebar.classList.add('hidden');
+  var showBtn = document.getElementById('sidebarShowBtn');
+  hideBtn.addEventListener('click', function() {
+    sidebar.classList.add('hidden');
+    localStorage.setItem('physics9-sidebar', 'hidden');
+  });
+  showBtn.addEventListener('click', function() {
+    sidebar.classList.remove('hidden');
+    localStorage.setItem('physics9-sidebar', '');
+  });
+  (function() {
+    var btn = document.getElementById('expandAllBtn');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      var allDetails = document.querySelectorAll('.module, .exam-module');
+      var allOpen = true;
+      for (var i = 0; i < allDetails.length; i++) {
+        if (!allDetails[i].hasAttribute('open')) { allOpen = false; break; }
+      }
+      for (var i = 0; i < allDetails.length; i++) {
+        if (allOpen) allDetails[i].removeAttribute('open');
+        else allDetails[i].setAttribute('open', '');
+      }
+      btn.textContent = allOpen ? '📂 展开全部模块' : '📖 收起全部模块';
+    });
+  })();
+  })();
+  window.addEventListener('scroll', function() {
+    var btn = document.getElementById('backToTop');
+    if (btn) btn.style.display = window.scrollY > 400 ? 'block' : 'none';
+  });
+</script>
+
+</body>
+</html>

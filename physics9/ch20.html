@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第20章 电与磁 | 九年级物理</title>
+<link rel="stylesheet" href="css/physics.css">
+<link rel="stylesheet" href="../katex/katex.min.css">
+</head>
+<body>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="回到顶部">↑</button>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">九年级物理</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;" title="隐藏侧栏">✕</button>
+  </div>
+  <nav>
+    <a href="index.html">🏠 首页</a>
+    <a href="ch13.html">第13章 内能</a>
+    <a href="ch14.html">第14章 内能的利用</a>
+    <a href="ch15.html">第15章 电流和电路</a>
+    <a href="ch16.html">第16章 电压 电阻</a>
+    <a href="ch17.html">第17章 欧姆定律</a>
+    <a href="ch18.html">第18章 电功率</a>
+    <a href="ch19.html">第19章 生活用电</a>
+    <a href="ch20.html" class="active">第20章 电与磁</a>
+    <a href="ch21.html">第21章 信息的传递</a>
+    <a href="ch22.html">第22章 能源与可持续发展</a>
+    <a href="appendix.html">附录</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+  <button id="theme-toggle" class="theme-toggle" style="margin-top:10px;">🌙 暗色模式</button>
+  <button class="print-btn" onclick="window.print()" style="margin-top:8px;padding:8px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px;width:100%;">🖨️ 打印 / 存 PDF</button>
+</nav>
+
+<main id="content">
+
+<div class="chapter">
+  <h1>第20章 电与磁</h1>
+
+  <!-- 学习目标 -->
+  <div class="learning-goals">
+    <strong>🎯 学习目标</strong>
+    <p>① 了解磁体、磁极、磁场、磁感线等基本概念，知道地磁场的特点</p>
+    <p>② 理解电流的磁效应（奥斯特实验），会用安培定则判断通电螺线管的磁极</p>
+    <p>③ 掌握电磁铁磁性强弱的影响因素，了解电磁继电器的结构和工作原理</p>
+    <p>④ 区分磁场对电流的作用（电动机）和电磁感应（发电机），理解能量转化</p>
+  </div>
+
+  <!-- 前置知识关联 -->
+  <div class="knowledge-link">
+    <strong>📎 前置知识关联：</strong>
+    小学科学·磁铁具有吸铁性和指向性，同名磁极相斥、异名磁极相吸；
+    第15章·电流、电路与电流方向；
+    第16章·滑动变阻器改变电流大小；
+    第17章·欧姆定律 $I=U/R$ 用于分析电磁铁电流控制。
+  </div>
+
+  <!-- 思维方法 -->
+  <div class="thought-method">
+    <strong>🔬 物理学思维方法：模型法</strong>
+    磁场看不见、摸不着，但我们可以用<strong>磁感线</strong>模型来形象地描述它——从 N 极出发回到 S 极的闭合曲线，疏密程度表示磁场的强弱。初中物理大量运用模型法：光线模型（光现象）、电路图模型（电流）、磁感线模型（磁场）都是将抽象物理量具象化的核心方法。另一个重要方法是<strong>控制变量法</strong>——探究电磁铁磁性强弱时，需要分别研究电流大小和线圈匝数的影响。
+  </div>
+
+  <!-- 思维导图 -->
+  <details class="module" open>
+    <summary>🧠 思维导图</summary>
+    <div class="content">
+      <div class="mindmap">
+        <ul>
+          <li><span class="node-label">电与磁</span></li>
+          <li>
+            <span class="node-label">磁现象</span>
+            <ul>
+              <li>磁极：南极 S、北极 N（同名排斥，异名吸引）</li>
+              <li>磁化：使原来没有磁性的物体获得磁性的过程</li>
+              <li>磁场：磁体周围存在的一种特殊物质</li>
+              <li>磁感线：从 N 极出发→S 极（闭合、不交叉、疏密表强弱）</li>
+              <li>地磁场：地球周围存在磁场，地磁北极在地理南极附近</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">电生磁</span>
+            <ul>
+              <li>奥斯特实验：通电导线周围存在磁场（电流的磁效应）</li>
+              <li>通电螺线管：磁场与条形磁铁相似</li>
+              <li>安培定则（右手螺旋定则）：四指→电流，拇指→N 极</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">电磁铁</span>
+            <ul>
+              <li>结构：螺线管 + 铁芯（铁芯被磁化增强磁性）</li>
+              <li>磁性强弱：与电流大小、线圈匝数有关</li>
+              <li>应用：电磁起重机、电铃、电磁继电器</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">电磁继电器</span>
+            <ul>
+              <li>结构：电磁铁 + 衔铁 + 弹簧 + 触点</li>
+              <li>原理：通过低电压弱电流控制高电压强电流电路</li>
+              <li>实质：利用电磁铁控制工作电路通断的开关</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">磁场对电流的作用</span>
+            <ul>
+              <li>通电导体在磁场中受<strong>力</strong>的作用（安培力）</li>
+              <li>力的方向与电流方向、磁场方向有关（左手定则·高中）</li>
+              <li>应用：电动机（电能→机械能）</li>
+              <li>换向器：使线圈持续转动（每半圈改变一次电流方向）</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">电磁感应</span>
+            <ul>
+              <li>法拉第发现：闭合电路部分导体切割磁感线→感应电流</li>
+              <li>感应电流方向与磁场方向、导体运动方向有关</li>
+              <li>应用：发电机（机械能→电能）</li>
+              <li>交流电 50Hz（每秒方向改变 100 次）</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <!-- 核心概念 -->
+  <details class="module" open>
+    <summary>📖 核心概念</summary>
+    <div class="content">
+      <div class="advance-organizer"><strong>🔍 先行组织者：</strong>1820 年，丹麦物理学家奥斯特在课堂上偶然发现——通电导线旁边的小磁针发生了偏转！这一发现揭开了"电"与"磁"之间神秘联系的面纱。从此，人类不仅能用磁铁产生磁场，还能<strong>用电产生磁</strong>；11 年后，法拉第逆向思考——既然电能生磁，磁能否生电？于是发现了<strong>电磁感应</strong>。本章将沿着这两位科学巨匠的思路，探索电与磁相互转化的奥秘——它将驱动你家里的每一个马达和发电机。</div>
+
+      <div class="card-grid">
+
+        <div class="concept-card">
+          <div class="name">磁体与磁极</div>
+          <p>磁体具有<strong>磁性</strong>，两端磁性最强称为<strong>磁极</strong>（南极 S、北极 N）。</p>
+          <p>同名磁极相互<strong>排斥</strong>，异名磁极相互<strong>吸引</strong>。</p>
+          <p>磁体具有<strong>指向性</strong>——自由悬挂的磁体静止时指南北（指南针原理）。</p>
+          <span class="level-bronze">🥉 青铜级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">磁场与磁感线</div>
+          <p><strong>磁场</strong>是磁体周围存在的一种看不见、摸不着的特殊物质，对放入其中的磁体有力的作用。</p>
+          <p><strong>磁感线</strong>用来形象描述磁场——从 N 极出发回到 S 极，是<strong>闭合曲线</strong>，不相交。磁感线的疏密表示磁场强弱，切线方向表示磁场方向。</p>
+          <p>⚠️ 磁感线实际并不存在，是理想模型。</p>
+          <span class="level-silver">🥈 白银级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">地磁场</div>
+          <p>地球本身是一个巨大的<strong>磁体</strong>，地磁场的北极在<strong>地理南极</strong>附近，地磁场的南极在<strong>地理北极</strong>附近。</p>
+          <p>指南针（司南）能指南北就是受地磁场作用的缘故。</p>
+          <p>⚡ 易错：地磁北极 ≠ 地理北极！地磁 S 极在地理北极附近（所以指南针 N 指向地理北极）。</p>
+          <span class="level-bronze">🥉 青铜级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">奥斯特实验（电流的磁效应）</div>
+          <p>1820 年，<strong>奥斯特</strong>发现：通电导线下方的小磁针发生偏转，断电后恢复原状。</p>
+          <p><strong>结论：</strong>通电导线周围存在<strong>磁场</strong>，磁场方向与<strong>电流方向</strong>有关。</p>
+          <p>这是人类第一次揭示电与磁之间的联系，标志着电磁学的开端。</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">通电螺线管</div>
+          <p>将导线绕成螺线管并通电，其磁场与<strong>条形磁铁</strong>的磁场相似。</p>
+          <p>螺线管两端的极性由<strong>电流方向</strong>决定——用<strong>安培定则</strong>（右手螺旋定则）判断：</p>
+          <p>用右手握住螺线管，<strong>四指弯曲指向电流方向</strong>，<strong>大拇指所指的一端即为 N 极</strong>。</p>
+          <span class="level-gold">🥇 黄金级</span>
+          <div class="diagram" style="margin-top:8px;">
+            <svg viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg">
+              <!-- coil -->
+              <ellipse cx="40" cy="70" rx="12" ry="40" fill="none" stroke="#2563eb" stroke-width="2"/>
+              <ellipse cx="75" cy="70" rx="12" ry="40" fill="none" stroke="#2563eb" stroke-width="2"/>
+              <ellipse cx="110" cy="70" rx="12" ry="40" fill="none" stroke="#2563eb" stroke-width="2"/>
+              <ellipse cx="145" cy="70" rx="12" ry="40" fill="none" stroke="#2563eb" stroke-width="2"/>
+              <ellipse cx="180" cy="70" rx="12" ry="40" fill="none" stroke="#2563eb" stroke-width="2"/>
+              <ellipse cx="215" cy="70" rx="12" ry="40" fill="none" stroke="#2563eb" stroke-width="2"/>
+              <!-- arrows on top of coil showing current direction -->
+              <polygon points="50,28 46,18 54,18" fill="#2563eb"/>
+              <polygon points="85,28 81,18 89,18" fill="#2563eb"/>
+              <polygon points="120,28 116,18 124,18" fill="#2563eb"/>
+              <polygon points="155,28 151,18 159,18" fill="#2563eb"/>
+              <polygon points="190,28 186,18 194,18" fill="#2563eb"/>
+              <text x="130" y="12" font-size="9" text-anchor="middle" fill="#2563eb">电流方向↑</text>
+              <!-- N / S labels -->
+              <text x="7" y="75" font-size="18" font-weight="bold" fill="#dc2626">N</text>
+              <text x="245" y="75" font-size="18" font-weight="bold" fill="#2563eb">S</text>
+              <!-- hand approximation -->
+              <text x="140" y="130" font-size="9" text-anchor="middle" fill="#64748b">右手握住螺线管，拇指→N极</text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">电磁铁</div>
+          <p>在通电螺线管中插入一根<strong>铁芯</strong>，就构成了电磁铁！铁芯被磁化后使磁场大大增强。</p>
+          <p><strong>磁性强弱因素：</strong></p>
+          <p>① <strong>电流大小</strong>：电流越大，磁性越强（用滑动变阻器控制）</p>
+          <p>② <strong>线圈匝数</strong>：匝数越多，磁性越强</p>
+          <p><strong>优点：</strong>通断电控制磁性有无，电流大小控制磁性强弱，电流方向控制磁极极性。</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">电磁继电器</div>
+          <p>由<strong>电磁铁、衔铁、弹簧、触点</strong>组成，利用电磁铁控制工作电路通断。</p>
+          <p><strong>实质：</strong>用低电压、弱电流电路（控制电路）的通断，来控制高电压、强电流电路（工作电路）的通断。</p>
+          <p>应用：自动控制电路（如水位自动报警器、温度自动控制）。</p>
+          <span class="level-silver">🥈 白银级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">磁场对电流的作用</div>
+          <p>通电导体在磁场中会受到<strong>力</strong>的作用（安培力），力的方向与<strong>磁场方向</strong>和<strong>电流方向</strong>有关。</p>
+          <p><strong>应用——电动机：</strong>将<strong>电能转化为机械能</strong>。线圈在磁场中受力转动，带动外部设备。</p>
+          <p><strong>换向器：</strong>由两个彼此绝缘的半圆铜环组成，在线圈刚转过平衡位置时改变电流方向，使线圈<strong>持续转动</strong>。</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">电磁感应（法拉第发现）</div>
+          <p>1831 年，<strong>法拉第</strong>发现：<strong>闭合电路</strong>的一部分导体在磁场中做<strong>切割磁感线</strong>运动时，导体中就会产生电流——叫<strong>感应电流</strong>。</p>
+          <p><strong>条件：</strong>① 闭合电路；② 部分导体；③ 做切割磁感线运动（三个条件缺一不可！）。</p>
+          <p><strong>应用——发电机：</strong>将<strong>机械能转化为电能</strong>。</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">交流电与频率</div>
+          <p>发电机产生<strong>交变电流</strong>——电流的大小和方向随时间做周期性变化。</p>
+          <p>我国电网交流电的<strong>频率为 50 Hz</strong>，意思是每秒电流方向改变 <strong>100</strong> 次（每个周期方向改变 2 次）。</p>
+          <p>$T = 1/f = 1/50 = 0.02\ \text{s}$（周期为 0.02 秒）。</p>
+          <span class="level-silver">🥈 白银级</span>
+        </div>
+
+      </div>
+    </div>
+  </details>
+
+  <!-- 公式速查 -->
+  <details class="module" open>
+    <summary>📐 公式速查</summary>
+    <div class="content">
+
+      <div class="formula-card">
+        <strong>频率与周期</strong>
+        <p>\[ f = \frac{1}{T} \quad \text{或} \quad T = \frac{1}{f} \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          $f$ — 频率（Hz），$T$ — 周期（s）。我国交流电标准：$f = 50\ \text{Hz}$，$T = 0.02\ \text{s}$。
+        </p>
+        <span class="level-bronze">🥉 青铜级</span>
+      </div>
+
+      <div class="formula-card">
+        <strong>电磁铁磁性强弱</strong>
+        <p>\[ \text{磁性} \propto I \cdot N \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          $I$ — 电流大小，$N$ — 线圈匝数。电磁铁磁性与二者成正比关系（定性，非精确公式）。
+        </p>
+        <span class="level-silver">🥈 白银级</span>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 实验探究 -->
+  <details class="module" open>
+    <summary>🔬 实验探究</summary>
+    <div class="content">
+
+      <div class="experiment-card">
+        <h3>实验一：探究电磁感应的条件</h3>
+
+        <div class="exp-step">
+          <span class="exp-step-num">1</span>
+          <div><strong>组装器材：</strong>将导体 $AB$、灵敏电流计（检流计）、开关串联成闭合电路，导体置于蹄形磁铁的磁场中。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">2</span>
+          <div><strong>探究情况一：</strong>导体 $AB$ <strong>静止</strong>在磁场中——电流计指针<strong>不偏转</strong>（无感应电流）。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">3</span>
+          <div><strong>探究情况二：</strong>导体 $AB$ <strong>沿磁场方向（上下）运动</strong>——电流计指针<strong>不偏转</strong>（不切割磁感线，无感应电流）。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">4</span>
+          <div><strong>探究情况三：</strong>导体 $AB$ <strong>垂直于磁场方向（左右）运动</strong>——电流计指针<strong>偏转</strong>（切割磁感线，产生感应电流）。改变运动方向或磁场方向，感应电流方向随之改变。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">5</span>
+          <div><strong>探究情况四：</strong>断开开关（电路不闭合），导体 $AB$ 左右切割磁感线——电流计指针<strong>不偏转</strong>（电路不闭合，无持续感应电流）。</div>
+        </div>
+
+        <div class="exp-principle">
+          <strong>⚙ 实验结论：</strong>产生感应电流的三个必要条件——① <strong>闭合电路</strong>；② <strong>部分导体</strong>；③ 在磁场中做<strong>切割磁感线</strong>运动。三者缺一不可。
+        </div>
+
+        <div class="exp-tip">
+          <strong>💡 易错提示：</strong>① "切割"是指导体的运动方向与磁场方向不平行（有一定夹角）；② 电路必须闭合才有持续电流；③ 灵敏电流计可以判断有无感应电流及感应电流的方向。
+        </div>
+      </div>
+
+      <div class="experiment-card">
+        <h3>实验二：探究通电螺线管的磁场</h3>
+
+        <div class="exp-step">
+          <span class="exp-step-num">1</span>
+          <div><strong>组装螺线管：</strong>将导线按一定方向绕在硬纸筒上，两端连接到电源和开关上。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">2</span>
+          <div><strong>探究磁场分布：</strong>在螺线管周围撒上铁屑，通电后轻敲纸板，观察铁屑的排列形状——分布与<strong>条形磁铁</strong>的磁场相似。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">3</span>
+          <div><strong>判断磁极：</strong>在螺线管两端各放一个小磁针，通电后观察小磁针 N 极的指向，确定螺线管的 N、S 极。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">4</span>
+          <div><strong>改变电流方向：</strong>对调电源正负极，发现小磁针指向反转——说明螺线管的磁极与<strong>电流方向</strong>有关。</div>
+        </div>
+
+        <div class="exp-principle">
+          <strong>⚙ 实验结论：</strong>通电螺线管外部的磁场与条形磁铁的磁场相似，两端的磁极性质与<strong>电流方向</strong>有关，可用<strong>安培定则</strong>判断。
+        </div>
+
+        <div class="exp-tip">
+          <strong>💡 易错提示：</strong>不要将螺线管上的导线绕向弄错——安培定则中"四指弯曲指向电流方向"是从电源正极出发沿导线行进的方向。
+        </div>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 解题技巧 -->
+  <details class="module" open>
+    <summary>✍️ 解题技巧</summary>
+    <div class="content">
+
+      <div class="technique-card">
+        <h3><span class="step-num">1</span> 安培定则的应用</h3>
+        <div class="method">📌 方法：已知电源正负极 / 电流方向 → 判断螺线管 N、S 极（或相反）。</div>
+        <div class="example">
+          <strong>例题：</strong>如右图所示，已知电源正极在右侧，请判断通电螺线管的 N、S 极。<br>
+          <strong>解：</strong>电流从电源正极流出→从螺线管右端流入（从螺线管正面看，电流方向向下）→用右手握住螺线管，四指弯曲方向与电流方向一致→拇指指向左端→左端为 N 极，右端为 S 极。
+        </div>
+        <div class="pitfall">
+          ⚠️ 易错点：① 看清螺线管上导线是"正面绕"还是"反面绕"；② 电流方向必须沿着导线的实际路径，而不是想象的方向；③ 一定要使用右手，不是左手！
+        </div>
+        <div class="error-diagnosis"><div class="wrong">❌ 错误：将手伸开直接对着螺线管比划，拇指指向混乱</div><div class="analysis">🔍 诊断：安培定则的正确用法——右手握住螺线管（四指环绕），使四指弯曲方向与电流方向一致，大拇指所指即为 N 极。关键在于四指方向要与螺线管上的电流路径一致。</div></div>
+        <div class="principle">
+          <strong>📐 原理依据：</strong>安培定则基于电流的磁效应——直线电流的磁场方向由右手握住导线、拇指指向电流方向、四指弯曲方向为磁感线方向来判断。螺线管是多个环形电流的叠加。
+        </div>
+        <div class="variant"><strong>🌱 基础变式：</strong>已知螺线管的 N、S 极，判断电源正负极——思路：安培定则反过来用（已知 N 极→拇指指向→四指弯曲方向→电流方向→电源正负极）。</div>
+        <div class="exam-hint">
+          🏆 考场提示：中考安培定则题一定注意电流从电源正极出发！图中常省略电源，只标电流方向箭头。有时结合磁极间的相互作用（吸引/排斥）一起考查。
+        </div>
+      </div>
+
+      <div class="technique-card">
+        <h3><span class="step-num">2</span> 电动机 vs 发电机对比辨析</h3>
+        <div class="method">📌 核心对比：原理、能量转化、实验装置、实际应用四维度</div>
+
+        <div style="overflow-x:auto;margin:12px 0;">
+          <table style="width:100%;border-collapse:collapse;font-size:14px;">
+            <thead>
+              <tr style="background:var(--accent-light);">
+                <th style="padding:10px;border:1px solid var(--border);text-align:left;">对比项</th>
+                <th style="padding:10px;border:1px solid var(--border);text-align:left;">电动机</th>
+                <th style="padding:10px;border:1px solid var(--border);text-align:left;">发电机</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">原理</td>
+                <td style="padding:8px 10px;border:1px solid var(--border);">通电导体在磁场中<strong>受力</strong></td>
+                <td style="padding:8px 10px;border:1px solid var(--border);"><strong>电磁感应</strong>（导体切割磁感线产生电流）</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">能量转化</td>
+                <td style="padding:8px 10px;border:1px solid var(--border);">电能 → 机械能</td>
+                <td style="padding:8px 10px;border:1px solid var(--border);">机械能 → 电能</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">关键部件</td>
+                <td style="padding:8px 10px;border:1px solid var(--border);"><strong>换向器</strong>（使线圈持续转动）</td>
+                <td style="padding:8px 10px;border:1px solid var(--border);"><strong>滑环</strong>（交流）或<strong>换向器</strong>（直流）</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">用电器需求</td>
+                <td style="padding:8px 10px;border:1px solid var(--border);">必须有<strong>电源</strong></td>
+                <td style="padding:8px 10px;border:1px solid var(--border);">必须有<strong>外力</strong>驱动</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">实验装置</td>
+                <td style="padding:8px 10px;border:1px solid var(--border);">通电导体放在磁场中→运动</td>
+                <td style="padding:8px 10px;border:1px solid var(--border);">导体在磁场中运动→检流计偏转</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">实际应用</td>
+                <td style="padding:8px 10px;border:1px solid var(--border);">电风扇、电动车、洗衣机</td>
+                <td style="padding:8px 10px;border:1px solid var(--border);">水力发电、风力发电、火力发电</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="example">
+          <strong>记忆口诀：</strong>"电动通电能动（通电→运动→电→机械），发电机动生电（运动→生电→机械→电）"。
+        </div>
+        <div class="pitfall">
+          ⚠️ 易错点：不要混淆能量转化方向！电动机需要电源（消耗电能），发电机产生电流（输出电能）。考试中常给一个实验装置图问是电动机还是发电机——看是否有<strong>电源</strong>：有电源的是电动机，有<strong>检流计/灯泡</strong>的是发电机。
+        </div>
+        <div class="error-diagnosis"><div class="wrong">❌ 错误：看到"线圈在磁场中转动"就认为是电动机</div><div class="analysis">🔍 诊断：线圈在磁场中转动可以是电动机（通电→受力转动），也可以是发电机（外力→转动→发电）。关键区别在于电路中是否有电源。有电源外接（电池）→电动机；无电源但接有电流表/灯泡→发电机。</div></div>
+        <div class="principle">
+          <strong>📐 原理依据：</strong>电动机原理——通电导体在磁场中受安培力 $F = BIL$（高中公式），力方向用左手定则判断。发电机原理——法拉第电磁感应定律，感应电动势大小与磁通量变化率有关。
+        </div>
+        <div class="variant"><strong>🌱 变式训练：</strong>如图，将一个手摇发电机模型与小灯泡连接，快速摇动手柄，小灯泡发光。请问：该过程中能量转化是怎样的？如果不摇动手柄而用电池给这个装置通电，会发生什么？——前者机械能→电能（发电机），后者电能→机械能（电动机）。同一个装置既可以做发电机也可以做电动机！</div>
+        <div class="exam-hint">
+          🏆 考场提示：此题为中考高频辨析题，常以实验装置图形式出现。三步判断法：看有无电源→有电源是电动机→无电源是发电机。近年还常结合"电磁感应"和"磁场对电流的作用"的区分一起考。
+        </div>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 中考真题 -->
+  <details class="exam-module" open>
+    <summary>📝 中考真题</summary>
+    <div class="content">
+
+      <div class="exam-q">
+        <span class="q-tag">2023 长沙</span>
+        <div class="q-diff mid">★★☆</div>
+        <strong>题 1</strong>
+        <div class="q-body">
+          如图所示的装置可以用来研究电磁感应现象。导体 $ab$ 置于蹄形磁铁的磁场中，则：
+          <br>（1）闭合开关后，让导体 $ab$ 在磁场中沿着 _________ 方向运动，灵敏电流计的指针会发生偏转；
+          <br>（2）若保持导体 $ab$ 不动，将磁铁左右移动，灵敏电流计的指针 _________（选填"会"或"不会"）偏转；
+          <br>（3）如果将灵敏电流计换成 ________，可以用来研究磁场对通电导体的作用。
+        </div>
+        <div class="diagram">
+          <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg">
+            <!-- magnet -->
+            <rect x="20" y="30" width="50" height="65" fill="#dc2626" rx="3"/>
+            <text x="45" y="70" font-size="12" text-anchor="middle" fill="white" font-weight="bold">N</text>
+            <rect x="20" y="95" width="50" height="65" fill="#2563eb" rx="3"/>
+            <text x="45" y="135" font-size="12" text-anchor="middle" fill="white" font-weight="bold">S</text>
+            <!-- guide rail -->
+            <line x1="70" y1="60" x2="230" y2="60" stroke="#94a3b8" stroke-width="1.5"/>
+            <line x1="70" y1="130" x2="230" y2="130" stroke="#94a3b8" stroke-width="1.5"/>
+            <!-- conductor ab -->
+            <rect x="120" y="55" width="60" height="80" fill="none" stroke="#f59e0b" stroke-width="2" rx="2"/>
+            <text x="150" y="102" font-size="13" text-anchor="middle" fill="#f59e0b" font-weight="bold">ab</text>
+            <!-- wire -->
+            <line x1="230" y1="60" x2="270" y2="50" stroke="#64748b" stroke-width="1.5"/>
+            <line x1="230" y1="130" x2="270" y2="160" stroke="#64748b" stroke-width="1.5"/>
+            <!-- galvanometer -->
+            <circle cx="280" cy="105" r="25" fill="#f1f5f9" stroke="#64748b" stroke-width="1.5"/>
+            <text x="280" y="102" font-size="8" text-anchor="middle">G</text>
+            <line x1="280" y1="105" x2="280" y2="88" stroke="#dc2626" stroke-width="1.8"/>
+            <line x1="270" y1="50" x2="270" y2="160" stroke="#64748b" stroke-width="1.5"/>
+            <!-- switch -->
+            <line x1="260" y1="50" x2="280" y2="50" stroke="#64748b" stroke-width="1.5"/>
+            <circle cx="280" cy="50" r="4" fill="#64748b"/>
+            <circle cx="295" cy="50" r="4" fill="#64748b"/>
+            <line x1="295" y1="50" x2="270" y2="50" stroke="#64748b" stroke-width="1.5"/>
+            <text x="288" y="42" font-size="8" text-anchor="middle">S</text>
+            <!-- motion arrow -->
+            <line x1="140" y1="20" x2="200" y2="20" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrow)"/>
+            <text x="170" y="14" font-size="9" text-anchor="middle" fill="#16a34a">运动</text>
+            <defs>
+              <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><polygon points="0,0 6,3 0,6" fill="#16a34a"/></marker>
+            </defs>
+          </svg>
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong><br>
+          （1）导体 $ab$ 必须做<strong>切割磁感线</strong>运动（左右水平运动或斜向运动），才能产生感应电流。沿磁感线方向（上下运动）不切割，无感应电流。<br>
+          （2）磁铁左右移动，相当于导体 $ab$ 相对于磁铁做切割磁感线运动，所以指针<strong>会</strong>偏转——运动的<strong>相对性</strong>在此适用。<br>
+          （3）将灵敏电流计换成<strong>电源（电池）</strong>，装置就成为通电导体在磁场中受力的实验装置（电动机原理）。<br>
+          <strong>答案：</strong>（1）切割磁感线（或水平、左右）；（2）会；（3）电源（电池）
+        </div>
+      </div>
+
+      <div class="exam-q">
+        <span class="q-tag">2022 广州</span>
+        <div class="q-diff mid">★★☆</div>
+        <strong>题 2</strong>
+        <div class="q-body">
+          关于电磁现象，下列说法正确的是（  ）
+          <br>A. 磁场是由磁感线组成的
+          <br>B. 发电机是利用电磁感应现象制成的
+          <br>C. 导体在磁场中运动，就会产生感应电流
+          <br>D. 通电螺线管的磁极与电流大小有关
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong><br>
+          A ❌：磁感线是<strong>模型</strong>，不是真实存在的；磁场是真实存在的物质。说"磁场由磁感线组成"本末倒置。<br>
+          B ✅：发电机利用<strong>电磁感应</strong>——闭合电路的部分导体切割磁感线，产生感应电流（机械能→电能）。<br>
+          C ❌：忽略了两大条件——① 电路必须<strong>闭合</strong>；② 导体必须做<strong>切割磁感线</strong>运动。如果电路不闭合或导体沿磁感线方向运动（上下运动）都不产生感应电流。<br>
+          D ❌：通电螺线管的磁极由<strong>电流方向</strong>决定（安培定则），与电流大小无关。电流大小影响的是<strong>磁性强弱</strong>。<br>
+          <strong>答案：</strong>B
+        </div>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 自查清单 -->
+  <div class="checklist">
+    <h3>✅ 章节自查清单</h3>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能说出磁感线的特点（方向、疏密、闭合性）及其与磁场的区别</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我会用安培定则判断通电螺线管的 N、S 极和电流方向</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能说出影响电磁铁磁性强弱的两个因素，并能解释电磁继电器的原理</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我清楚地知道电动机（通电受力）和发电机（电磁感应）的区别</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能准确复述产生感应电流的三个必要条件</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我会辨析交流电 50Hz 的含义（每秒方向改变 100 次）</label>
+    <p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;">
+      <strong>🧑‍🏫 费曼挑战：</strong>请用大白话向同桌解释"为什么同一个装置既可以当电动机也可以当发电机"？提示：能量转化的逆过程。
+    </p>
+  </div>
+
+  <div class="review-schedule">
+    <strong>📅 间隔复习</strong>
+    <span class="review-dot">🔵 1天后：默写安培定则并画图</span>
+    <span class="review-dot">🟢 3天后：对比电动机与发电机表格</span>
+    <span class="review-dot">🟡 1周后：讲电磁感应条件给别人听</span>
+    <span class="review-dot">🔴 1月后：做本章中考真题</span>
+  </div>
+
+  <div class="next-stop"><strong>➡️ 下一站：第21章 信息的传递</strong><br>你已经掌握了电与磁的相互转化——电话和电磁波正是利用电磁感应原理将声音信号转化为电信号，再以电磁波的形式在空间中传播。$c = \lambda f$ 将连接起信息的发射与接收。</div>
+
+</div>
+
+</main>
+
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/auto-render.min.js"></script>
+<script>
+(function() {
+  // Theme toggle
+  const toggle = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+  const saved = localStorage.getItem('site-theme');
+  if (saved === 'dark') {
+    html.setAttribute('data-theme', 'dark');
+    toggle.textContent = '☀️ 亮色模式';
+  }
+  toggle.addEventListener('click', function() {
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    toggle.textContent = isDark ? '🌙 暗色模式' : '☀️ 亮色模式';
+    localStorage.setItem('site-theme', isDark ? 'light' : 'dark');
+  });
+
+  // KaTeX auto-render
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof renderMathInElement === 'function') {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ],
+        throwOnError: false
+      });
+    }
+  });
+
+  // IntersectionObserver for sidebar active
+  document.addEventListener('DOMContentLoaded', function() {
+    const sidebarLinks = document.querySelectorAll('#sidebar nav a');
+    const modules = document.querySelectorAll('.module, .exam-module, .learning-goals');
+    if (modules.length === 0) return;
+    const observer = new IntersectionObserver(function(entries) {
+      let best = null;
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) best = entry.target;
+      });
+      if (best) {
+        sidebarLinks.forEach(function(link) { link.classList.remove('active'); });
+      }
+    }, { rootMargin: '-20% 0px -60% 0px' });
+    modules.forEach(function(m) { observer.observe(m); });
+  });
+  var sidebar = document.getElementById('sidebar');
+  var hideBtn = document.getElementById('sidebarHideBtn');
+  var sidebarHidden = localStorage.getItem('physics9-sidebar') === 'hidden';
+  if (sidebarHidden) sidebar.classList.add('hidden');
+  var showBtn = document.getElementById('sidebarShowBtn');
+  hideBtn.addEventListener('click', function() {
+    sidebar.classList.add('hidden');
+    localStorage.setItem('physics9-sidebar', 'hidden');
+  });
+  showBtn.addEventListener('click', function() {
+    sidebar.classList.remove('hidden');
+    localStorage.setItem('physics9-sidebar', '');
+  });
+  (function() {
+    var btn = document.getElementById('expandAllBtn');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      var allDetails = document.querySelectorAll('.module, .exam-module');
+      var allOpen = true;
+      for (var i = 0; i < allDetails.length; i++) {
+        if (!allDetails[i].hasAttribute('open')) { allOpen = false; break; }
+      }
+      for (var i = 0; i < allDetails.length; i++) {
+        if (allOpen) allDetails[i].removeAttribute('open');
+        else allDetails[i].setAttribute('open', '');
+      }
+      btn.textContent = allOpen ? '📂 展开全部模块' : '📖 收起全部模块';
+    });
+  })();
+  })();
+  window.addEventListener('scroll', function() {
+    var btn = document.getElementById('backToTop');
+    if (btn) btn.style.display = window.scrollY > 400 ? 'block' : 'none';
+  });
+</script>
+
+</body>
+</html>

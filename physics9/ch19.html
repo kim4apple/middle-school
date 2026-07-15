@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第19章 生活用电 | 九年级物理</title>
+<link rel="stylesheet" href="css/physics.css">
+<link rel="stylesheet" href="../katex/katex.min.css">
+<style>
+#sidebar { position:fixed;top:0;left:0;width:240px;height:100vh;background:var(--bg);border-right:1px solid var(--border);overflow-y:auto;padding:20px 16px;z-index:1000;transition:transform .2s;}
+#sidebar.hidden { transform:translateX(-260px); }
+#sidebar h2 { font-size:16px;margin-bottom:16px; }
+#sidebar nav a { display:flex;padding:5px 8px;border-radius:6px;color:var(--text);text-decoration:none;font-size:13px;margin-bottom:2px;transition:background .1s;}
+#sidebar nav a:hover,#sidebar nav a.active { background:var(--accent-light);color:var(--accent);}
+#sidebarShowBtn { position:fixed;top:16px;left:16px;z-index:999;padding:6px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:13px;display:none;}
+body:has(#sidebar.hidden) #sidebarShowBtn { display:block; }
+#content { max-width:800px;margin:0 auto;padding:24px 24px 80px;margin-left:240px;}
+#sidebar.hidden ~ #content { margin-left:0; }
+@media (max-width:768px){#sidebar{width:200px;}#content{margin-left:0;padding:16px 12px 80px;}#sidebarShowBtn{display:block;}}
+@media print {#sidebar,#sidebarShowBtn,.back-to-top,.expand-btn,.print-btn{display:none!important;}#content{max-width:100%;padding:0;margin-left:0;}}
+</style>
+</head>
+<body>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="回到顶部">↑</button>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">九年级物理</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;" title="隐藏侧栏">✕</button>
+  </div>
+  <nav>
+    <a href="../index.html">🏠 返回总首页</a>
+    <a href="index.html">📘 九年级主页</a>
+    <a href="ch13.html">第13章 内能</a>
+    <a href="ch14.html">第14章 内能的利用</a>
+    <a href="ch15.html">第15章 电流和电路</a>
+    <a href="ch16.html">第16章 电压 电阻</a>
+    <a href="ch17.html">第17章 欧姆定律</a>
+    <a href="ch18.html">第18章 电功率</a>
+    <a href="ch19.html" class="active">第19章 生活用电</a>
+    <a href="ch20.html">第20章 电与磁</a>
+    <a href="ch21.html">第21章 信息的传递</a>
+    <a href="ch22.html">第22章 能源与可持续发展</a>
+    <a href="appendix.html" style="margin-top:12px;border-top:1px solid var(--border);padding-top:12px;">附录</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+  <button id="theme-toggle" class="theme-toggle" style="margin-top:10px;">🌙 暗色模式</button>
+  <button class="print-btn" onclick="window.print()" style="margin-top:8px;padding:8px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px;width:100%;">🖨️ 打印 / 存 PDF</button>
+</nav>
+
+<main id="content">
+
+<div class="chapter">
+  <h1>第19章 生活用电</h1>
+
+  <!-- 学习目标 -->
+  <div class="learning-goals">
+    <strong>🎯 学习目标</strong>
+    <p>① 了解家庭电路的组成及各部分的作用，能画简单家庭电路图</p>
+    <p>② 理解火线、零线的概念，会用试电笔辨别火线和零线</p>
+    <p>③ 掌握三线插头的接线规则（左零右火上接地），理解接地的作用</p>
+    <p>④ 理解保险丝和空气开关的工作原�，能区分过载和短路</p>
+    <p>⑤ 掌握安全用电的基本原则，能分析简单的家庭电路故障</p>
+  </div>
+
+  <!-- 前置知识关联 -->
+  <div class="knowledge-link">
+    <strong>📎 前置知识关联：</strong>
+    第15章·电流和电路 —— 电流的形成与方向、串并联电路的识别；
+    第16章·电压 电阻 —— 电压的概念、滑动变阻器改变电阻；
+    第17章·欧姆定律 —— $I=U/R$ 是分析短路和过载的理论基础；
+    第18章·电功率 —— $P=UI$、焦耳定律 $Q=I^2Rt$ 解释保险丝熔断和发热原因；
+    生活经验 · 家用电器上的铭牌（额定电压、额定功率）、用电常识。
+  </div>
+
+  <!-- 思维方法 -->
+  <div class="thought-method">
+    <strong>🔬 物理学思维方法：系统分析法</strong>
+    将家庭电路视为一个完整的系统，从"进户 → 计量 → 控制 → 保护 → 用电器"的层次化结构入手，逐层理解每个元件的作用和衔接关系。当电路发生故障（如灯不亮、保险丝熔断、漏电保护器跳闸）时，运用系统分析法逐级排查：先从最末端的用电器倒推，再到控制保护装置，最后检查进户线路，将复杂问题分解为有序的排查步骤。这种系统思维方法不仅在电路分析中至关重要，也适用于一切复杂工程问题的诊断。
+  </div>
+
+  <!-- 思维导图 -->
+  <details class="module" open>
+    <summary>🧠 思维导图</summary>
+    <div class="content">
+      <div class="mindmap">
+        <ul>
+          <li><span class="node-label">生活用电</span></li>
+          <li>
+            <span class="node-label">家庭电路组成</span>
+            <ul>
+              <li>进户线：火线(L) + 零线(N) + 地线(PE)</li>
+              <li>电能表：测量消耗的电能（kW·h）</li>
+              <li>总开关：控制整个电路的通断</li>
+              <li>保险装置：保险丝(熔断) / 空气开关(跳闸)</li>
+              <li>用电器：各用电器并联接入，开关接在火线上</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">火线与零线</span>
+            <ul>
+              <li>火线($L$)：与地之间有 $220\ \text{V}$ 电压</li>
+              <li>零线($N$)：与地之间电压为 $0$</li>
+              <li>试电笔：氖管发光 → 火线；不发光 → 零线</li>
+              <li>使用：手接触笔尾金属体，笔尖接触导线</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">三线插头</span>
+            <ul>
+              <li>左零($N$) 右火($L$) 上接地($PE$)</li>
+              <li>接地：将金属外壳与大地相连，防止漏电触电</li>
+              <li>两孔插座：一零一火，适用于外壳绝缘的电器</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">过载与短路</span>
+            <ul>
+              <li>过载：同时使用大功率电器，总电流过大</li>
+              <li>短路：火线和零线直接接触，电流极大</li>
+              <li>后果：保险丝熔断 / 空气开关跳闸，严重时引发火灾</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">安全用电原则</span>
+            <ul>
+              <li>不接触低压带电体，不靠近高压带电体</li>
+              <li>开关接火线，螺口灯头螺旋套接零线</li>
+              <li>金属外壳接地，三脚插头配三孔插座</li>
+              <li>不用湿手碰开关，不�电线上晾衣服</li>
+              <li>触电时先切断电源，或用干燥木棒挑开电线</li>
+              <li>安全电压：$\leq 36\ \text{V}$（潮湿环境 $\leq 12\ \text{V}$）</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">家庭电路故障</span>
+            <ul>
+              <li>断路：灯不亮，用电器不工作</li>
+              <li>短路：保险丝熔断，全屋断电</li>
+              <li>漏电：漏电保护器跳闸，外壳带电</li>
+              <li>过载：跳闸或保险丝熔断（逐渐发热 vs 瞬间熔断）</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <!-- 核心概念 -->
+  <details class="module" open>
+    <summary>📖 核心概念</summary>
+    <div class="content">
+      <div class="advance-organizer"><strong>🔍 先行组织者：</strong>每天你插上充电器、按下开关、打开冰箱——这套"看不见"的电路系统就是家庭电路。它从户外的进户线开始，经过电能表计量你用了多少电，总开关控制整体通断，保险装置在电流过大时自动切断保护你家的安全，最终并联到每个用电器。为什么冰箱外壳要接地？为什么不能用铜丝代替保险丝？为什么灯不亮了螺丝刀碰一下插座氖管就亮？本章将电线里的"秘密"一一揭开——从这条路径的起点到终点。</div>
+
+      <div class="card-grid">
+
+        <div class="concept-card">
+          <div class="name">家庭电路组成</div>
+          <p>进户线（火线 $L$、零线 $N$）→ <strong>电能表</strong> → <strong>总开关</strong> → <strong>保险装置</strong> → <strong>用电器</strong></p>
+          <p style="margin-top:6px;font-size:14px;">各用电器之间<strong>并联</strong>，开关与它所控制的用电器<strong>串联</strong>且接在<strong>火线</strong>上。插座也并联在电路中。</p>
+          <span class="level-silver">🥈 白银级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">火线与零线</div>
+          <p><strong>火线（$L$）</strong>：与大地之间的电压为 $220\ \text{V}$。</p>
+          <p><strong>零线（$N$）</strong>：与大地之间的电压为 $0$。</p>
+          <p style="margin-top:6px;font-size:14px;">火线和零线之间的电压为 $\boxed{220\ \text{V}}$，是家庭电路的供电电压。</p>
+          <span class="level-bronze">🥉 青铜级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">试电笔</div>
+          <p><strong>作用：</strong>辨别火线和零线。</p>
+          <p><strong>使用方法：</strong>手接触笔尾的<strong>金属体</strong>，笔尖接触导线。</p>
+          <p style="margin-top:6px;font-size:14px;">如果氖管<strong>发光</strong>，说明接触的是火线；不发光则是零线。</p>
+          <p style="font-size:13px;color:var(--text-secondary);">原理：火线与大地间有 $220\ \text{V}$ 电压，电流通过氖管→弹簧→人体→大地，形成微弱电流使氖管发光。</p>
+          <span class="level-silver">🥈 白银级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">三线插头与插座</div>
+          <p><strong>接线规则：</strong><span style="color:#2563eb;font-weight:600;">左零右火上接地</span></p>
+          <p style="margin-top:6px;font-size:14px;">左侧插孔接<strong>零线（$N$）</strong>，右侧插孔接<strong>火线（$L$）</strong>，上方插孔接<strong>地线（$PE$）</strong>。</p>
+          <p>有金属外壳的用电器必须使用三线插头，将外壳<strong>接地</strong>，防止外壳漏电时人体触电。</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">保险丝</div>
+          <p><strong>材料：</strong>电阻率<strong>大</strong>、熔点<strong>低</strong>的<strong>铅锑合金</strong>。</p>
+          <p><strong>原理：</strong>电流过大时，根据 $Q=I^2Rt$，保险丝产生的热量多、温度迅速升高而熔断，<strong>自动切断电路</strong>，起到保护作用。</p>
+          <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);"><strong>注意：</strong>保险丝越粗，额定电流越大。绝不能用<strong>铜丝或铁丝</strong>代替保险丝！</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">空气开关</div>
+          <p>当电流过大（过载或短路）时，空气开关内部的电磁铁或双金属片动作，使开关<strong>自动跳闸</strong>，切断电路。</p>
+          <p style="margin-top:6px;font-size:14px;">与保险丝相比，空气开关可以<strong>重复使用</strong>——排除故障后重新闭合即可。现代家庭大多采用空气开关。</p>
+          <span class="level-silver">🥈 白银级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">漏电保护器</div>
+          <p>当发生<strong>漏电</strong>（部分电流经人体或外壳流入大地）时，火线和零线的电流不一样大，漏电保护器检测到差值后 <strong>$0.1\ \text{s}$ 内自动切断电路</strong>，防止人体触电。</p>
+          <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">空气开关 ≠ 漏电保护器！前者保护<strong>线路和设备</strong>，后者保护<strong>人身安全</strong>。</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">安全电压</div>
+          <p>人体安全电压 <strong>$\leq 36\ \text{V}$</strong>。</p>
+          <p style="margin-top:6px;font-size:14px;"><strong>潮湿环境</strong>（如浴室）安全电压 <strong>$\leq 12\ \text{V}$</strong>。</p>
+          <p>人体的电阻不是定值——皮肤干燥时约 $2000\ \Omega$，潮湿时可能降到 $200\ \Omega$ 以下，大大增加触电风险。</p>
+          <span class="level-silver">🥈 白银级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">安全用电原则</div>
+          <p>① <strong>不接触</strong>低压带电体，<strong>不靠近</strong>高压带电体</p>
+          <p>② 开关接在<strong>火线</strong>上，螺口灯泡的螺旋套接<strong>零线</strong></p>
+          <p>③ 有金属外壳的用电器要<strong>接地</strong></p>
+          <p>④ 不用<strong>湿手</strong>碰开关、插座，不在电线上<strong>晾晒衣物</strong></p>
+          <p>⑤ 发生触电时，先<strong>切断电源</strong>或用干燥木棒挑开电线</p>
+          <p>⑥ 不<strong>同时使用</strong>过多大功率电器，防止过载</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+      </div>
+    </div>
+  </details>
+
+  <!-- 公式速查 -->
+  <details class="module" open>
+    <summary>📐 公式速查</summary>
+    <div class="content">
+
+      <div class="formula-card">
+        <strong>焦耳定律（保险丝发热原理）</strong>
+        <p>\[ Q = I^2Rt \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          $Q$ — 热量（J），$I$ — 电流（A），$R$ — 电阻（$\Omega$），$t$ — 时间（s）<br>
+          保险丝电阻率大 $\Rightarrow$ 相同电流下发热更多 $\Rightarrow$ 达到熔点熔断
+        </p>
+        <span class="level-gold">🥇 黄金级</span>
+      </div>
+
+      <div class="formula-card">
+        <strong>过载判断</strong>
+        <p>\[ I_{\text{总}} = \frac{P_{\text{总}}}{U} \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          $P_{\text{总}}$ — 同时使用的用电器总功率（W），$U$ — 家庭电路电压 $220\ \text{V}$<br>
+          当 $I_{\text{总}} >$ 保险丝或空气开关的额定电流时，就会跳闸或熔断
+        </p>
+        <span class="level-silver">🥈 白银级</span>
+      </div>
+
+      <div class="formula-card">
+        <strong>短路电流估算</strong>
+        <p>\[ I_{\text{短}} = \frac{U}{R_{\text{线}}} \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          $U = 220\ \text{V}$，$R_{\text{线}}$ 为导线电阻（很小）。<br>
+          短路时电流极大（可达几百安培），瞬间产生巨量热，极易引发火灾。
+        </p>
+        <span class="level-silver">🥈 白银级</span>
+      </div>
+
+      <div class="formula-card">
+        <strong>电功率（估算额定电流）</strong>
+        <p>\[ I_{\text{额}} = \frac{P_{\text{额}}}{U_{\text{额}}} \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          家用电器铭牌上标有额定电压和额定功率，据此计算正常工作电流。<br>
+          例："220V 1100W" 的电暖器，$I = 1100/220 = 5\ \text{A}$。
+        </p>
+        <span class="level-bronze">🥉 青铜级</span>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 解题技巧 -->
+  <details class="module" open>
+    <summary>✍️ 解题技巧</summary>
+    <div class="content">
+
+      <div class="technique-card">
+        <h3><span class="step-num">1</span> 家庭电路故障分析</h3>
+        <div class="method">📌 方法：根据故障现象推测故障类型和位置</div>
+        <div class="principle">
+          <strong>📐 故障类型辨析：</strong>
+        </div>
+        <div class="example" style="margin-top:8px;">
+          <strong>断路</strong>（开路）：电路中某处断开，电流无法流通。<br>
+          → 现象：部分用电器不工作，其他正常。保险丝不熔断，试电笔在断点之后测不到火线。
+        </div>
+        <div class="example">
+          <strong>短路</strong>：火线和零线直接接触。<br>
+          → 现象：<strong>保险丝立即熔断</strong>或<strong>空气开关跳闸</strong>，<strong>全部用电器停止工作</strong>。短路点通常在插座、灯头等接线处。
+        </div>
+        <div class="example">
+          <strong>过载</strong>：总功率过大导致总电流超过额定值。<br>
+          → 现象：保险丝<strong>逐渐发热后熔断</strong>（区别于短路的瞬间熔断），多发生在同时使用空调、电暖器、电磁炉等大功率电器时。
+        </div>
+        <div class="example">
+          <strong>漏电</strong>：电流通过绝缘破损处流入大地。<br>
+          → 现象：<strong>漏电保护器跳闸</strong>，用电器外壳带电（手触碰有麻电感）。
+        </div>
+        <div class="pitfall">
+          ⚠️ 易错点：短路时<strong>不是</strong>所有用电器都被烧毁——保险丝熔断后电路已切断，用电器两端电压变为零。但短路瞬间的大电流可能损坏线路。
+        </div>
+        <div class="variant"><strong>🌱 基础变式：</strong>闭合开关后灯泡不亮，试电笔测插座两孔氖管都发光，则故障可能是____？（答案：零线断路。因为零线断后，电流经灯泡→火线→人体→大地构成回路，但电流极小，灯不亮而氖管发光。）</div>
+        <div class="exam-hint">
+          🏆 考场提示：故障分析题常用"试电笔检测法"——记住：氖管亮→该点与火线连通。全屋灯都不亮且氖管不亮→进户线火线断；某灯不亮且该灯两端测不到火线→该支路断路。
+        </div>
+      </div>
+
+      <div class="technique-card">
+        <h3><span class="step-num">2</span> 过载与短路的区别</h3>
+        <div class="method">📌 方法：从原因、电流大小、保护器响应时间三个维度区分</div>
+        <div style="overflow-x:auto;margin:10px 0;">
+          <table style="width:100%;border-collapse:collapse;font-size:14px;">
+            <thead>
+              <tr style="background:var(--accent-light);">
+                <th style="padding:8px 10px;border:1px solid var(--border);text-align:left;">对比项</th>
+                <th style="padding:8px 10px;border:1px solid var(--border);text-align:left;">过载</th>
+                <th style="padding:8px 10px;border:1px solid var(--border);text-align:left;">短路</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td style="padding:6px 10px;border:1px solid var(--border);font-weight:600;">原因</td><td style="padding:6px 10px;border:1px solid var(--border);">同时使用电器总功率过大</td><td style="padding:6px 10px;border:1px solid var(--border);">火线与零线直接接触</td></tr>
+              <tr><td style="padding:6px 10px;border:1px solid var(--border);font-weight:600;">电流大小</td><td style="padding:6px 10px;border:1px solid var(--border);">超过额定值但不会无穷大</td><td style="padding:6px 10px;border:1px solid var(--border);">极大，仅受导线电阻限制</td></tr>
+              <tr><td style="padding:6px 10px;border:1px solid var(--border);font-weight:600;">保险丝响应</td><td style="padding:6px 10px;border:1px solid var(--border);">逐渐发热→熔断（延迟）</td><td style="padding:6px 10px;border:1px solid var(--border);">瞬间熔断</td></tr>
+              <tr><td style="padding:6px 10px;border:1px solid var(--border);font-weight:600;">空气开关</td><td style="padding:6px 10px;border:1px solid var(--border);">双金属片热效应→跳闸</td><td style="padding:6px 10px;border:1px solid var(--border);">电磁铁瞬时动作→跳闸</td></tr>
+              <tr><td style="padding:6px 10px;border:1px solid var(--border);font-weight:600;">危害</td><td style="padding:6px 10px;border:1px solid var(--border);">线路过热→绝缘老化→火灾</td><td style="padding:6px 10px;border:1px solid var(--border);">瞬间高温→火灾、设备损坏</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="error-diagnosis"><div class="wrong">❌ 错误：认为过载和短路都是保险丝熔断，所以是一回事</div><div class="analysis">🔍 诊断：区别在于——过载是电流"太大了"（超过设计值但仍是正常回路），短路是电流"走了捷径"（火零线直接相连）。就好比水管：过载是水流太大致使管道发热；短路是管道直接破裂喷水——原因和破坏方式完全不同。</div></div>
+        <div class="principle">
+          <strong>📐 原理依据：</strong>根据欧姆定律 $I=U/R$，短路时总电阻极小（只有导线电阻），所以电流极大；过载时总电阻仍然存在（各用电器正常并联），只是并联总电阻较小导致干路电流增大。
+        </div>
+      </div>
+
+      <div class="technique-card">
+        <h3><span class="step-num">3</span> 电路连接正误判断</h3>
+        <div class="method">📌 方法：三步检查法</div>
+        <div class="example">
+          <strong>① 查开关：</strong>开关必须接在<strong>火线</strong>和用电器之间。<br>
+          <strong>② 查灯泡：</strong>螺口灯泡的<strong>螺旋套</strong>接零线，尾部的金属触点接火线（经开关）。<br>
+          <strong>③ 查插座：</strong>"左零右火上接地"——左孔零线，右孔火线，上孔接地线。
+        </div>
+        <div class="pitfall">
+          ⚠️ 易错点：如果开关接在零线上，断开开关后灯泡虽然不亮，但灯泡仍与火线连通，更换灯泡时容易触电！
+        </div>
+        <div class="variant"><strong>🌱 基础变式：</strong>安装螺口灯泡时，为什么螺旋套要接零线？——因为螺旋套是裸露金属部分，若接火线，更换灯泡时手指不小心碰到螺旋套就会触电；接零线则无此风险。</div>
+        <div class="exam-hint">
+          🏆 考场提示：中考常以"连接电路图"或"判断正误选择题"形式出现，三步检查法可确保万无一失。尤其注意：开关→火线→灯泡顶部金属点（不是螺旋套）。
+        </div>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 中考真题 -->
+  <details class="exam-module" open>
+    <summary>📝 中考真题</summary>
+    <div class="content">
+
+      <div class="exam-q">
+        <span class="q-tag">2023 武汉</span>
+        <div class="q-diff easy">★☆☆</div>
+        <strong>题 1</strong>
+        <div class="q-body">
+          关于家庭电路和安全用电，下列说法正确的是（  ）
+          <br>A. 空气开关跳闸一定是用电器总功率过大引起的
+          <br>B. 可以用铜丝代替保险丝
+          <br>C. 有金属外壳的用电器，其外壳必须接地
+          <br>D. 使用试电笔时，手不能接触笔尾的金属体
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong>A 错误——空气开关跳闸可能是过载，也可能是短路。B 错误——铜丝熔点高、电阻率小，电流过大时不会熔断，起不到保护作用。C 正确——金属外壳接地后，若外壳带电，电流会经地线流入大地，避免人体触电。D 错误——使用试电笔时，手必须接触笔尾金属体，形成电流回路氖管才会发光。<br>
+          <strong>答案：</strong>C
+        </div>
+      </div>
+
+      <div class="exam-q">
+        <span class="q-tag">2023 长沙</span>
+        <div class="q-diff mid">★★☆</div>
+        <strong>题 2</strong>
+        <div class="q-body">
+          小明家的空气开关突然跳闸，他立即闭合开关恢复正常。但不久后又跳闸，如此反复。小明检查发现，跳闸时家中正在使用以下电器：空调（220V 1500W）、电热水器（220V 2000W）、电磁炉（220V 1800W）和几盏灯泡（总功率约 200W）。已知该户空气开关的额定电流为 20A。下列说法正确的是（  ）
+          <br>A. 跳闸原因是发生了短路
+          <br>B. 此时总电流约为 $I = \frac{1500+2000+1800+200}{220} \approx 25\ \text{A} > 20\ \text{A}$，属于过载
+          <br>C. 应换用额定电流更大的空气开关（如 40A）解决此问题
+          <br>D. 跳闸后应立即重新闭合空气开关
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong>同时使用空调、电热水器、电磁炉等大功率电器，总功率约 $5500\ \text{W}$，总电流 $I = P/U \approx 5500/220 = 25\ \text{A} > 20\ \text{A}$，属于<strong>过载</strong>而非短路（A错）。B 正确。C 错误——换用更大额定电流的空气开关虽然不跳闸了，但线路（导线）的载流量有限，可能引起线路过热起火！正确的做法是<strong>减少同时使用的大功率电器</strong>。D 错误——跳闸后应先排除故障（减少大功率电器），再重新闭合开关。<br>
+          <strong>答案：</strong>B
+        </div>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 自查清单 -->
+  <div class="checklist">
+    <h3>✅ 章节自查清单</h3>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能画出家庭电路组成示意图（进户线→电能表→总开关→保险装置→用电器）</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我会使用试电笔辨别火线和零线，知道使用要领</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能说明三线插头"左零右火上接地"的规则，解释接地的必要性</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能区分保险丝和空气开关的工作原理，知道不能用铜丝代替保险丝</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能区分过载和短路的原因、现象及危害</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能分析简单的家庭电路故障（断路/短路/漏电）</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能说出安全用电的 5 条以上原则</label>
+    <p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;">
+      <strong>🧑‍🏫 费曼挑战：</strong>请用大白话向奶奶解释"为什么不能用铜丝代替保险丝"和"为什么同时开空调、电磁炉、电热水器会跳闸"。
+    </p>
+  </div>
+
+  <div class="review-schedule">
+    <strong>📅 间隔复习</strong>
+    <span class="review-dot">🔵 1天后：回忆家庭电路组成结构与顺序</span>
+    <span class="review-dot">🟢 3天后：区分过载与短路 + 故障分析</span>
+    <span class="review-dot">🟡 1周后：讲安全用电原则给别人听</span>
+    <span class="review-dot">🔴 1月后：做本章中考真题</span>
+  </div>
+
+  <div class="next-stop"><strong>➡️ 下一站：第20章 电与磁</strong><br>家庭电路是电学的"应用篇"——你已经知道电是怎么送到家里的（第19章）。下一章将揭示电与磁这对孪生兄弟的关系：电流产生磁场（电磁铁），磁场产生电流（发电机）。电动机、话筒、电磁继电器——一切电与磁互相转换的奥秘即将展开。</div>
+
+</div>
+
+</main>
+
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/auto-render.min.js"></script>
+<script>
+(function() {
+  // Theme toggle
+  const toggle = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+  const saved = localStorage.getItem('site-theme');
+  if (saved === 'dark') {
+    html.setAttribute('data-theme', 'dark');
+    toggle.textContent = '☀️ 亮色模式';
+  }
+  toggle.addEventListener('click', function() {
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    toggle.textContent = isDark ? '🌙 暗色模式' : '☀️ 亮色模式';
+    localStorage.setItem('site-theme', isDark ? 'light' : 'dark');
+  });
+
+  // KaTeX auto-render
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof renderMathInElement === 'function') {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ],
+        throwOnError: false
+      });
+    }
+  });
+
+  // Sidebar persistence
+  var sidebar = document.getElementById('sidebar');
+  var hideBtn = document.getElementById('sidebarHideBtn');
+  var sidebarHidden = localStorage.getItem('physics9-sidebar') === 'hidden';
+  if (sidebarHidden) sidebar.classList.add('hidden');
+  var showBtn = document.getElementById('sidebarShowBtn');
+  hideBtn.addEventListener('click', function() {
+    sidebar.classList.add('hidden');
+    localStorage.setItem('physics9-sidebar', 'hidden');
+  });
+  showBtn.addEventListener('click', function() {
+    sidebar.classList.remove('hidden');
+    localStorage.setItem('physics9-sidebar', '');
+  });
+
+  // Expand all button
+  (function() {
+    var btn = document.getElementById('expandAllBtn');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      var allDetails = document.querySelectorAll('.module, .exam-module');
+      var allOpen = true;
+      for (var i = 0; i < allDetails.length; i++) {
+        if (!allDetails[i].hasAttribute('open')) { allOpen = false; break; }
+      }
+      for (var i = 0; i < allDetails.length; i++) {
+        if (allOpen) allDetails[i].removeAttribute('open');
+        else allDetails[i].setAttribute('open', '');
+      }
+      btn.textContent = allOpen ? '📂 展开全部模块' : '📖 收起全部模块';
+    });
+  })();
+
+  // Back to top
+  window.addEventListener('scroll', function() {
+    var btn = document.getElementById('backToTop');
+    if (btn) btn.style.display = window.scrollY > 400 ? 'block' : 'none';
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第22章 能源与可持续发展 | 九年级物理</title>
+<link rel="stylesheet" href="css/physics.css">
+<link rel="stylesheet" href="../katex/katex.min.css">
+</head>
+<body>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="回到顶部">↑</button>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">九年级物理</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;" title="隐藏侧栏">✕</button>
+  </div>
+  <nav>
+    <a href="index.html">🏠 首页</a>
+    <a href="ch13.html">第13章 内能</a>
+    <a href="ch14.html">第14章 内能的利用</a>
+    <a href="ch15.html">第15章 电流和电路</a>
+    <a href="ch16.html">第16章 电压 电阻</a>
+    <a href="ch17.html">第17章 欧姆定律</a>
+    <a href="ch18.html">第18章 电功率</a>
+    <a href="ch19.html">第19章 生活用电</a>
+    <a href="ch20.html">第20章 电与磁</a>
+    <a href="ch21.html">第21章 信息的传递</a>
+    <a href="ch22.html" class="active">第22章 能源与可持续发展</a>
+    <a href="appendix.html">附录</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+  <button id="theme-toggle" class="theme-toggle" style="margin-top:10px;">🌙 暗色模式</button>
+  <button class="print-btn" onclick="window.print()" style="margin-top:8px;padding:8px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px;width:100%;">🖨️ 打印 / 存 PDF</button>
+</nav>
+
+<main id="content">
+
+<div class="chapter">
+  <h1>第22章 能源与可持续发展</h1>
+
+  <!-- 学习目标 -->
+  <div class="learning-goals">
+    <strong>🎯 学习目标</strong>
+    <p>① 理解能源的分类标准，能准确区分不可再生能源（煤、石油、天然气、核能）与可再生能源（太阳能、风能、水能、地热能、潮汐能）</p>
+    <p>② 掌握核能的两种获取方式——核裂变（核电站、原子弹）与核聚变（氢弹、太阳），理解核电站的能量转化过程（核能→内能→机械能→电能）</p>
+    <p>③ 树立可持续发展的能源观，了解新能源开发的必要性和主要方向</p>
+  </div>
+
+  <!-- 前置知识关联 -->
+  <div class="knowledge-link">
+    <strong>📎 前置知识关联：</strong>
+    八年级·第11章功和机械能（能量概念、能量转化与守恒定律）；
+    九年级·第13章内能（内能、热传递、热量计算）；
+    九年级·第14章内能的利用（热值、热机效率）；
+    生活常识 · 对煤炭、石油、天然气、太阳能、风力发电等能源形式的日常认知。
+  </div>
+
+  <!-- 思维方法 -->
+  <div class="thought-method">
+    <strong>🔬 物理学思维方法：分类法</strong>
+    将纷繁复杂的能源按照一定标准（能否再生、是否来自太阳、开发时间等）进行分类比较，有助于认识各类能源的本质特征和利用价值。分类法是科学研究中整理信息、发现规律的常用方法。本章学习中，还贯穿了<strong>能量转化与守恒</strong>的思想——任何能源利用的本质都是能量从一种形式转化为另一种形式，总量保持不变。
+  </div>
+
+  <!-- 思维导图 -->
+  <details class="module" open>
+    <summary>🧠 思维导图</summary>
+    <div class="content">
+      <div class="mindmap">
+        <ul>
+          <li><span class="node-label">能源与可持续发展</span></li>
+          <li>
+            <span class="node-label">能源分类</span>
+            <ul>
+              <li>不可再生能源（短期内无法再生）</li>
+              <li>化石能源：煤、石油、天然气</li>
+              <li>核能：核燃料（铀、钚）</li>
+              <li>可再生能源（可循环利用）</li>
+              <li>太阳能、风能、水能</li>
+              <li>地热能、潮汐能、生物质能</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">核能</span>
+            <ul>
+              <li>核裂变：重核分裂为轻核 + 能量</li>
+              <li>链式反应：可控（核电站）、不可控（原子弹）</li>
+              <li>核聚变：轻核聚合为重核 + 巨大能量</li>
+              <li>条件：超高温、高压（氢弹、太阳内部）</li>
+              <li>核电站：核能→内能→机械能→电能</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">太阳能</span>
+            <ul>
+              <li>来源：太阳内部的氢核聚变</li>
+              <li>利用方式：光热转化（太阳能热水器）</li>
+              <li>光电转化（光伏电池）</li>
+              <li>光化转化（光合作用→生物质能）</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">能源可持续发展</span>
+            <ul>
+              <li>能源危机：化石燃料有限、不可再生</li>
+              <li>环境问题：温室效应、酸雨、雾霾</li>
+              <li>对策：开发新能源、提高能源利用率</li>
+              <li>节能措施：推广节能技术、低碳生活</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <!-- 核心概念 -->
+  <details class="module" open>
+    <summary>📖 核心概念</summary>
+    <div class="content">
+      <div class="advance-organizer"><strong>🔍 先行组织者：</strong>你每天用的电从哪来？家里烧的天然气是什么？为什么全世界都在发展太阳能、风能？——能源是现代社会的"血液"。第22章站在九年级物理的终点，回望整个初中物理学习的能量主线——从机械能到内能、电能，最终追问这些能量从何而来、如何持续。本章以<strong>分类</strong>为主线，梳理能源家族谱系，聚焦核能这一最具争议的能源形式，最终指向可持续发展的未来图景。</div>
+
+      <div class="card-grid">
+
+        <div class="concept-card">
+          <div class="name">能源</div>
+          <p><strong>能源</strong>是能够提供能量的自然资源。按<strong>是否可再生</strong>分为不可再生能源和可再生能源。</p>
+          <p style="margin-top:6px;">按<strong>来源</strong>分：①来自太阳（煤、石油、天然气、风能、水能等绝大数能源）；②来自地球内部（地热能、核能）；③来自天体引力（潮汐能）。</p>
+          <p>按<strong>开发时间</strong>分：常规能源（煤、石油等已大规模使用）和新能源（太阳能、核能等正在开发和推广）。</p>
+          <span class="level-bronze">🥉 青铜级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">不可再生能源</div>
+          <p>在<strong>短期内无法从自然界得到补充</strong>的能源。</p>
+          <p style="margin-top:6px;"><strong>化石能源：</strong>煤、石油、天然气——亿万年前生物遗骸经地质变迁形成，燃烧会排放大量 $\text{CO}_2$、$\text{SO}_2$ 等。</p>
+          <p><strong>核能：</strong>铀、钚等核燃料——通过核反应释放能量，储量有限。</p>
+          <p style="font-size:13px;color:var(--text-secondary);">煤、石油、天然气也是"古代太阳能"的储存形式，但形成周期长达数百万年，对人类而言不可再生。</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">可再生能源</div>
+          <p>可以从自然界<strong>源源不断</strong>地得到的能源。</p>
+          <p style="margin-top:6px;"><strong>太阳能：</strong>太阳内部氢核聚变释放的辐射能——取之不尽、用之不竭。</p>
+          <p><strong>风能：</strong>空气流动的动能。风力发电将风能→机械能→电能。</p>
+          <p><strong>水能：</strong>水流的动能和重力势能。水力发电将水的机械能→电能。</p>
+          <p><strong>地热能：</strong>地球内部放射性物质衰变释放的热能，可用于地热发电和供暖。</p>
+          <p><strong>潮汐能：</strong>月球和太阳引力引起海水周期性涨落所蕴含的能量。</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">核裂变与链式反应</div>
+          <p><strong>核裂变：</strong>质量较大的原子核（如铀-235、钚-239）在<strong>中子轰击</strong>下分裂为两个质量较小的原子核，同时释放出巨大的能量，并产生新的中子。</p>
+          <p><strong>链式反应：</strong>新产生的中子继续轰击其他铀核，使裂变反应持续进行下去。</p>
+          <p>如果链式反应不加控制——瞬间释放巨大能量（<strong>原子弹</strong>）。</p>
+          <p>如果通过控制棒（吸收中子）控制反应速率——核电站的核反应堆（<strong>可控链式反应</strong>）。</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">核聚变</div>
+          <p><strong>核聚变：</strong>两个质量较小的原子核（如氘、氚）在超高温和高压下结合成较重的原子核（如氦），同时释放比裂变更大的能量。</p>
+          <p>核聚变需要极高的温度（数百万摄氏度以上），所以又称<strong>热核反应</strong>。</p>
+          <p><strong>应用：</strong>氢弹（不可控聚变）、太阳内部（持续聚变释放光和热）。</p>
+          <p style="font-size:13px;color:var(--text-secondary);">目前人类尚未实现可控核聚变——一旦成功，将获得近乎无限的清洁能源（"人造太阳"）。</p>
+          <span class="level-diamond">💎 钻石级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">核电站</div>
+          <p><strong>核心设备：</strong>核反应堆（发生可控链式裂变反应）。</p>
+          <p><strong>能量转化链：</strong>$$\text{核能}\xrightarrow{\text{反应堆}}\text{内能}\xrightarrow{\text{蒸汽轮机}}\text{机械能}\xrightarrow{\text{发电机}}\text{电能}$$</p>
+          <p><strong>安全屏障：</strong>核反应堆有多层防护壳，防止放射性物质外泄。</p>
+          <p><strong>优缺点：</strong>核燃料能量密度极高（$1\ \text{kg}$ 铀释放的能量 ≈ $2700\ \text{t}$ 标准煤），但核废料处理困难、存在核泄漏风险。</p>
+          <span class="level-diamond">💎 钻石级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">能源与可持续发展</div>
+          <p><strong>能源危机：</strong>全球已探明的煤炭、石油、天然气储量有限，按目前开采速度，石油和天然气将在几十到一百年内耗竭。</p>
+          <p><strong>环境挑战：</strong>化石燃料燃烧排放 $\text{CO}_2$（温室效应）、$\text{SO}_2$（酸雨）、粉尘（雾霾），核泄漏和核废料的安全隐患。</p>
+          <p><strong>可持续发展方向：</strong></p>
+          <p>① 开发新能源（太阳能、风能、核能、氢能等）</p>
+          <p>② 提高能源利用率（节能技术、超导输电、高效热机）</p>
+          <p>③ 推广低碳生活方式（节约用电、绿色出行、垃圾分类）</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">能量转化与守恒</div>
+          <p><strong>能量守恒定律：</strong>能量既不会凭空消失，也不会凭空产生，它只会从一种形式转化为其他形式，或者从一个物体转移到其他物体，而在转化和转移的过程中，能量的总量保持不变。</p>
+          <p style="margin-top:6px;">能源利用的实质就是<strong>能量的转化和转移</strong>。虽然能量总量守恒，但能量转化具有<strong>方向性</strong>——内能等低品质能量难以自动转化为其它形式。因此我们必须节约能源。</p>
+          <span class="level-silver">🥈 白银级</span>
+        </div>
+
+      </div>
+    </div>
+  </details>
+
+  <!-- 公式速查 -->
+  <details class="module" open>
+    <summary>📐 知识对比</summary>
+    <div class="content">
+
+      <div class="card-grid">
+        <div class="formula-card">
+          <strong>不可再生 vs 可再生能源</strong>
+          <table style="width:100%;border-collapse:collapse;font-size:13px;margin-top:6px;">
+            <tr style="border-bottom:1px solid var(--border);"><th style="text-align:left;padding:4px;">类别</th><th style="text-align:left;padding:4px;">特点</th><th style="text-align:left;padding:4px;">举例</th></tr>
+            <tr style="border-bottom:1px solid var(--border);"><td style="padding:4px;">不可再生</td><td style="padding:4px;">短期内无法再生</td><td style="padding:4px;">煤、石油、天然气、核燃料</td></tr>
+            <tr><td style="padding:4px;">可再生</td><td style="padding:4px;">源源不断</td><td style="padding:4px;">太阳能、风能、水能、地热能</td></tr>
+          </table>
+          <span class="level-silver">🥈 白银级</span>
+        </div>
+
+        <div class="formula-card">
+          <strong>核裂变 vs 核聚变</strong>
+          <table style="width:100%;border-collapse:collapse;font-size:13px;margin-top:6px;">
+            <tr style="border-bottom:1px solid var(--border);"><th style="text-align:left;padding:4px;">项目</th><th style="text-align:left;padding:4px;">核裂变</th><th style="text-align:left;padding:4px;">核聚变</th></tr>
+            <tr style="border-bottom:1px solid var(--border);"><td style="padding:4px;">定义</td><td style="padding:4px;">重核分裂为轻核</td><td style="padding:4px;">轻核聚合为重核</td></tr>
+            <tr style="border-bottom:1px solid var(--border);"><td style="padding:4px;">条件</td><td style="padding:4px;">中子轰击</td><td style="padding:4px;">超高温、高压</td></tr>
+            <tr style="border-bottom:1px solid var(--border);"><td style="padding:4px;">能量</td><td style="padding:4px;">较大</td><td style="padding:4px;">巨大（约裂变的 4 倍）</td></tr>
+            <tr style="border-bottom:1px solid var(--border);"><td style="padding:4px;">可控性</td><td style="padding:4px;">已实现可控</td><td style="padding:4px;">尚未实现可控</td></tr>
+            <tr><td style="padding:4px;">应用</td><td style="padding:4px;">核电站、原子弹</td><td style="padding:4px;">氢弹、太阳</td></tr>
+          </table>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="formula-card">
+          <strong>核电站能量转化</strong>
+          <p>\[ \text{核能} \xrightarrow{\text{反应堆}} \text{内能} \xrightarrow{\text{蒸汽轮机}} \text{机械能} \xrightarrow{\text{发电机}} \text{电能} \]</p>
+          <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+            核反应堆→一回路（水被加热）→蒸汽发生器→二回路（蒸汽推动汽轮机）→发电机
+          </p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="formula-card">
+          <strong>常见能源分类速查</strong>
+          <table style="width:100%;border-collapse:collapse;font-size:13px;margin-top:6px;">
+            <tr style="border-bottom:1px solid var(--border);"><th style="text-align:left;padding:4px;">能源</th><th style="text-align:left;padding:4px;">是否可再生</th><th style="text-align:left;padding:4px;">是否来自太阳</th></tr>
+            <tr style="border-bottom:1px solid var(--border);"><td style="padding:4px;">煤</td><td style="padding:4px;">❌ 不可再生</td><td style="padding:4px;">✅ 古代太阳能</td></tr>
+            <tr style="border-bottom:1px solid var(--border);"><td style="padding:4px;">石油/天然气</td><td style="padding:4px;">❌ 不可再生</td><td style="padding:4px;">✅ 古代太阳能</td></tr>
+            <tr style="border-bottom:1px solid var(--border);"><td style="padding:4px;">核能</td><td style="padding:4px;">❌ 不可再生</td><td style="padding:4px;">❌ 地球内部</td></tr>
+            <tr style="border-bottom:1px solid var(--border);"><td style="padding:4px;">太阳能</td><td style="padding:4px;">✅ 可再生</td><td style="padding:4px;">✅</td></tr>
+            <tr style="border-bottom:1px solid var(--border);"><td style="padding:4px;">风能</td><td style="padding:4px;">✅ 可再生</td><td style="padding:4px;">✅ 太阳驱动大气</td></tr>
+            <tr style="border-bottom:1px solid var(--border);"><td style="padding:4px;">水能</td><td style="padding:4px;">✅ 可再生</td><td style="padding:4px;">✅ 太阳驱动水循环</td></tr>
+            <tr><td style="padding:4px;">地热能</td><td style="padding:4px;">✅ 可再生</td><td style="padding:4px;">❌ 地球内部</td></tr>
+          </table>
+          <span class="level-bronze">🥉 青铜级</span>
+        </div>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 解题技巧 -->
+  <details class="module" open>
+    <summary>✍️ 解题技巧</summary>
+    <div class="content">
+
+      <div class="technique-card">
+        <h3><span class="step-num">1</span> 能源分类辨析</h3>
+        <div class="method">📌 方法：抓住"能否在短期内从自然界得到补充"这一核心标准进行判断</div>
+        <div class="example">
+          <strong>例题：</strong>下列能源中，属于不可再生能源的是（  ）<br>
+          A. 风能　B. 水能　C. 核能　D. 太阳能<br>
+          <strong>解：</strong>C。核燃料（铀矿等）是在地质变迁中形成的，储量有限，短期内无法再生。风能、水能、太阳能都是源源不断的可再生能源。
+        </div>
+        <div class="pitfall">
+          ⚠️ 易错点：误以为核能是可再生能源——因为核反应"似乎可以持续"。核燃料的生成需要数百万年地质过程，对人类而言不可再生。
+        </div>
+        <div class="error-diagnosis"><div class="wrong">❌ 错误：认为"天然气是清洁能源，所以是可再生的"</div><div class="analysis">🔍 诊断：清洁能源不等于可再生能源。天然气燃烧产物确实比煤干净，但天然气仍然是在古地质时期形成的化石燃料，不可再生。"清洁"描述的是环境影响，"可再生"描述的是能否持续补充——两个不同的分类维度。</div></div>
+        <div class="variant"><strong>🌱 基础变式：</strong>判断"生物质能"属于哪一类？（可再生——植物通过光合作用不断生长，属于可再生能源，也是太阳能的一种转化形式）</div>
+        <div class="exam-hint">
+          🏆 考场提示：中考必考能源分类选择题！记住"煤汽油核"不可再生，"风水太阳地"可再生。注意"核能"是不可再生能源的常考迷惑选项。
+        </div>
+      </div>
+
+      <div class="technique-card">
+        <h3><span class="step-num">2</span> 核裂变与核聚变的区分</h3>
+        <div class="method">📌 方法：记住"重裂轻聚"——重核分裂为轻核（裂变），轻核聚合为重核（聚变）</div>
+        <div class="example">
+          <strong>例题：</strong>关于核能，下列说法正确的是（  ）<br>
+          A. 核裂变是轻核聚合为重核并释放能量<br>
+          B. 核电站利用核聚变发电<br>
+          C. 原子弹利用不可控核裂变<br>
+          D. 太阳内部发生的是核裂变<br>
+          <strong>解：</strong>C。A错误：核裂变是重核分裂为轻核；B错误：核电站利用核裂变（可控链式反应）；D错误：太阳内部发生核聚变。
+        </div>
+        <div class="principle">
+          <strong>📐 原理依据：</strong>核能释放的本质——原子核在变化过程中质量亏损，根据爱因斯坦质能方程 $E=mc^2$，亏损的质量转化为巨大的能量。$\text{c}=3\times10^8\ \text{m/s}$，所以即使很小的质量亏损也能放出惊人能量。
+        </div>
+        <div class="variant"><strong>🌱 基础变式：</strong>目前人类已经实现"可控"的核反应是哪一种？（核裂变——通过控制棒控制链式反应速率；核聚变尚未实现可控）</div>
+        <div class="exam-hint">
+          🏆 考场提示：区分"核电站（裂变·可控）"与"原子弹（裂变·不可控）"与"氢弹（聚变·不可控）"与"太阳（聚变·自然）"。四个经典模型，中考辨析题常见。
+        </div>
+      </div>
+
+      <div class="technique-card">
+        <h3><span class="step-num">3</span> 能量转化过程分析</h3>
+        <div class="method">📌 方法："追踪能量路径"——从原始能源形式开始，依次写出每一步转化了什么能、通过什么装置</div>
+        <div class="example">
+          <strong>例题：</strong>请写出核电站从核能到电能的完整能量转化过程，并指出关键设备。<br>
+          <strong>解：</strong><br>
+          $\text{核能} \xrightarrow{\text{核反应堆}} \text{内能（热能）} \xrightarrow{\text{蒸汽发生器}} \text{蒸汽内能} \xrightarrow{\text{汽轮机}} \text{机械能（叶轮转动）} \xrightarrow{\text{发电机}} \text{电能}$<br>
+          关键设备：核反应堆（核→内）、蒸汽发生器（传递热量）、汽轮机（内→机械）、发电机（机械→电）。
+        </div>
+        <div class="pitfall">
+          ⚠️ 易错点：漏写中间环节（直接"核能→电能"），或弄错设备对应关系（如说"发电机将内能转化为电能"）。
+        </div>
+        <div class="error-diagnosis"><div class="wrong">❌ 错误：核电站的能量转化是"核能→机械能→电能"</div><div class="analysis">🔍 诊断：漏掉了"内能"这个至关重要的中间环节！核反应堆产生的热量先加热水（转化为蒸汽的内能），蒸汽推动汽轮机（内能→机械能），汽轮机带动发电机（机械能→电能）。核能→内能→机械能→电能，四步缺一不可。</div></div>
+        <div class="variant"><strong>🌱 基础变式：</strong>分析火力发电站的能量转化（化学能→内能→机械能→电能——与核电站的区别仅在于第一步：化石燃料燃烧释放化学能 vs 核燃料裂变释放核能）。</div>
+        <div class="exam-hint">
+          🏆 考场提示：能量转化分析在中考中通常以填空或简答题出现。记住三步法：①起点能源形式 → ②中间转化形式 → ③最终利用形式。中间环节要写完整！
+        </div>
+      </div>
+
+      <div class="technique-card">
+        <h3><span class="step-num">4</span> 能量转化与可持续发展</h3>
+        <div class="method">📌 方法：理解"能量转化具有方向性"是可持续发展的物理基础</div>
+        <div class="example">
+          <strong>例题：</strong>既然能量守恒，为什么我们还要节约能源？<br>
+          <strong>解：</strong>能量守恒定律告诉我们能量总量不变，但能量转化具有<strong>方向性</strong>——内能等低品质能量难以自动转化为其他形式（如热能散失到空气中后无法自动回收）。化石燃料燃烧后，化学能转化为内能，内能散失到环境中无法再利用。因此可用的"高品质能源"是有限的，必须节约。
+        </div>
+        <div class="principle">
+          <strong>📐 原理依据：</strong>能量守恒定律 + 能量转化的方向性。前者保证总量不变，后者决定可用能源的有限性。可持续发展的物理本质就是：尽量减少"高品质能源→低品质能源（散失内能）"的不可逆转化。
+        </div>
+        <div class="variant"><strong>🌱 基础变式：</strong>举一个生活中能量转化方向性的例子（例：电流通过电炉丝转化为内能加热水，但热水自动冷却后散失的热量不会自动变回电能）。</div>
+        <div class="exam-hint">
+          🏆 考场提示：近年来中考开始出现"为什么能量守恒却还要节能减排"的简答题。核心要点：①能量守恒是总量不变；②能量转化有方向性；③化石能源不可再生；④环境污染。
+        </div>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 中考真题 -->
+  <details class="exam-module" open>
+    <summary>📝 中考真题</summary>
+    <div class="content">
+
+      <div class="exam-q">
+        <span class="q-tag">2024 南京</span>
+        <div class="q-diff easy">★☆☆</div>
+        <strong>题 1</strong>
+        <div class="q-body">
+          下列能源中，属于不可再生能源的是（  ）
+          <br>A. 风能　B. 水能　C. 核能　D. 太阳能
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong>核燃料（铀、钚等）是地质变迁中形成的，储量有限，短期内无法从自然界得到补充，属于不可再生能源。风能、水能、太阳能均可源源不断地从自然界获得，属于可再生能源。<br>
+          <strong>答案：</strong>C
+        </div>
+      </div>
+
+      <div class="exam-q">
+        <span class="q-tag">2023 广州</span>
+        <div class="q-diff mid">★★☆</div>
+        <strong>题 2</strong>
+        <div class="q-body">
+          关于核电站和核能利用，下列说法正确的是（  ）
+          <br>A. 核电站利用核聚变释放的能量发电
+          <br>B. 核电站的反应堆中发生的是不可控的链式反应
+          <br>C. 核能发电的能量转化过程是：核能→机械能→内能→电能
+          <br>D. 核电站的发电原理与火力发电站相似，只是热源不同
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong><br>
+          A ❌ 核电站利用核<strong>裂变</strong>释放的能量，不是聚变。<br>
+          B ❌ 核电站的反应堆中发生的是<strong>可控</strong>的链式反应（通过控制棒吸收中子控制反应速率）。<br>
+          C ❌ 正确的能量转化顺序是：核能→内能→机械能→电能。<br>
+          D ✅ 核电站和火电站都是"热机"模式——用热源加热水产生蒸汽推动汽轮机发电，区别仅在于热源（核燃料 vs 化石燃料）。<br>
+          <strong>答案：</strong>D
+        </div>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 自查清单 -->
+  <div class="checklist">
+    <h3>✅ 章节自查清单</h3>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能准确区分可再生能源与不可再生能源，列举至少 3 个例子</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能解释核裂变与核聚变的区别，说出各自的应用</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能完整写出核电站的能量转化过程（核→内→机械→电）</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能说明为什么能量守恒但还要节约能源（能量转化的方向性）</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我了解太阳能利用的三种方式（光热、光电、光化转化）</label>
+    <p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;">
+      <strong>🧑‍🏫 费曼挑战：</strong>请用最通俗的语言向同学解释"为什么核电站用核裂变而不是核聚变发电？"，以及"既然能量守恒为何还要节约用电？"。
+    </p>
+  </div>
+
+  <div class="review-schedule">
+    <strong>📅 间隔复习</strong>
+    <span class="review-dot">🔵 1天后：默写能源分类表格</span>
+    <span class="review-dot">🟢 3天后：复述核电站能量转化链</span>
+    <span class="review-dot">🟡 1周后：向别人讲解裂变与聚变的区别</span>
+    <span class="review-dot">🔴 1月后：做全册综合题</span>
+  </div>
+
+  <div class="next-stop"><strong>➡️ 下一站：附录 · 全册回顾</strong><br>恭喜你走完了九年级物理的全部章节！从第13章的热学到第22章的能源，你经历了"能量"这条主线——内能、电能、电磁能、核能。回顾整个九年级：热学（ch13-14）→ 电学基础（ch15-16）→ 核心规律（ch17-18）→ 应用与拓展（ch19-22）。前往附录查看核心公式速查和高频易错陷阱，为中考做最后冲刺！</div>
+
+</div>
+
+</main>
+
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/auto-render.min.js"></script>
+<script>
+(function() {
+  // Theme toggle
+  const toggle = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+  const saved = localStorage.getItem('site-theme');
+  if (saved === 'dark') {
+    html.setAttribute('data-theme', 'dark');
+    toggle.textContent = '☀️ 亮色模式';
+  }
+  toggle.addEventListener('click', function() {
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    toggle.textContent = isDark ? '🌙 暗色模式' : '☀️ 亮色模式';
+    localStorage.setItem('site-theme', isDark ? 'light' : 'dark');
+  });
+
+  // KaTeX auto-render
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof renderMathInElement === 'function') {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ],
+        throwOnError: false
+      });
+    }
+  });
+
+  // IntersectionObserver for sidebar active
+  document.addEventListener('DOMContentLoaded', function() {
+    const sidebarLinks = document.querySelectorAll('#sidebar nav a');
+    const modules = document.querySelectorAll('.module, .exam-module, .learning-goals');
+    if (modules.length === 0) return;
+    const observer = new IntersectionObserver(function(entries) {
+      let best = null;
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) best = entry.target;
+      });
+      if (best) {
+        sidebarLinks.forEach(function(link) { link.classList.remove('active'); });
+      }
+    }, { rootMargin: '-20% 0px -60% 0px' });
+    modules.forEach(function(m) { observer.observe(m); });
+  });
+  var sidebar = document.getElementById('sidebar');
+  var hideBtn = document.getElementById('sidebarHideBtn');
+  var sidebarHidden = localStorage.getItem('physics9-sidebar') === 'hidden';
+  if (sidebarHidden) sidebar.classList.add('hidden');
+  var showBtn = document.getElementById('sidebarShowBtn');
+  hideBtn.addEventListener('click', function() {
+    sidebar.classList.add('hidden');
+    localStorage.setItem('physics9-sidebar', 'hidden');
+  });
+  showBtn.addEventListener('click', function() {
+    sidebar.classList.remove('hidden');
+    localStorage.setItem('physics9-sidebar', '');
+  });
+  (function() {
+    var btn = document.getElementById('expandAllBtn');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      var allDetails = document.querySelectorAll('.module, .exam-module');
+      var allOpen = true;
+      for (var i = 0; i < allDetails.length; i++) {
+        if (!allDetails[i].hasAttribute('open')) { allOpen = false; break; }
+      }
+      for (var i = 0; i < allDetails.length; i++) {
+        if (allOpen) allDetails[i].removeAttribute('open');
+        else allDetails[i].setAttribute('open', '');
+      }
+      btn.textContent = allOpen ? '📂 展开全部模块' : '📖 收起全部模块';
+    });
+  })();
+  })();
+  window.addEventListener('scroll', function() {
+    var btn = document.getElementById('backToTop');
+    if (btn) btn.style.display = window.scrollY > 400 ? 'block' : 'none';
+  });
+</script>
+
+</body>
+</html>

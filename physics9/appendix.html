@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>九年级物理 · 附录全览</title>
+<link rel="stylesheet" href="../katex/katex.min.css">
+<link rel="stylesheet" href="css/physics.css">
+</head>
+<body>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="回到顶部">↑</button>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+
+<div id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">📘 附录全览</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;" title="隐藏侧栏">✕</button>
+  </div>
+  <nav>
+    <a href="#mindmap">🧠 全年级知识体系</a>
+    <a href="#formulas">📏 核心公式速查表</a>
+    <a href="#methods">🔬 实验方法汇总</a>
+    <a href="#pitfalls">⚠️ 高频易错陷阱</a>
+    <a href="#pedagogy">🎯 科学教学法</a>
+    <a href="#selfstudy">🚀 自学提升技巧</a>
+    <a href="#timeline">📅 九年级自学路径</a>
+    <a href="index.html" style="margin-top:12px;border-top:1px solid var(--border);padding-top:12px;font-weight:600;">← 返回首页</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+  <button class="theme-toggle" id="themeToggle" style="margin-top:10px;">🌓 切换深色模式</button>
+  <button class="print-btn" onclick="window.print()" style="margin-top:8px;padding:8px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px;width:100%;">🖨️ 打印 / 存 PDF</button>
+</div>
+
+<div id="content" style="max-width:960px;">
+
+<h1 style="font-size:32px;font-weight:800;margin-bottom:8px;color:var(--accent);">九年级物理 · 附录全览</h1>
+<p style="font-size:16px;color:var(--text-secondary);margin-bottom:32px;">知识体系 · 公式 · 实验 · 易错点 · 教学法 · 自学提升</p>
+
+<!-- ============================================================ -->
+<!-- A1: 全年级知识体系思维导图 -->
+<!-- ============================================================ -->
+<section id="mindmap" style="margin-bottom:64px;">
+<h2 style="font-size:26px;font-weight:700;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--accent);">
+  🧠 全年级知识体系思维导图
+</h2>
+
+<div class="mindmap">
+<ul>
+  <li><span class="node-label">🌡️ 热学</span><span class="node-desc">（第13章 内能 + 第14章 内能的利用）</span>
+    <ul>
+      <li><span class="node-label">分子热运动</span><span class="node-desc">— 扩散、布朗运动、分子间作用力</span></li>
+      <li><span class="node-label">内能</span><span class="node-desc">— 定义、改变方式（做功/热传递）、与温度关系</span></li>
+      <li><span class="node-label">比热容</span><span class="node-desc">— $Q=cm\Delta t$、水的比热容大及应用</span></li>
+      <li><span class="node-label">热值</span><span class="node-desc">— $Q=mq$、燃料燃烧放热</span></li>
+      <li><span class="node-label">热机效率</span><span class="node-desc">— $\eta=W_{\text{有}}/Q_{\text{放}}$、四冲程工作循环</span></li>
+    </ul>
+  </li>
+
+  <li><span class="node-label">⚡ 电学基础</span><span class="node-desc">（第15章 电流和电路 + 第16章 电压 电阻）</span>
+    <ul>
+      <li><span class="node-label">电荷与电流</span><span class="node-desc">— 摩擦起电、电荷守恒、电流方向</span></li>
+      <li><span class="node-label">电路</span><span class="node-desc">— 基本组成、串联/并联识别、电路图</span></li>
+      <li><span class="node-label">电流与电压</span><span class="node-desc">— 电流表/电压表使用、串并联电流电压规律</span></li>
+      <li><span class="node-label">电阻</span><span class="node-desc">— 定义、影响因素、滑动变阻器</span></li>
+    </ul>
+  </li>
+
+  <li><span class="node-label">🔌 欧姆定律 · 电功率</span><span class="node-desc">（第17章 欧姆定律 + 第18章 电功率）</span>
+    <ul>
+      <li><span class="node-label">欧姆定律</span><span class="node-desc">— $I=U/R$、伏安法测电阻、串并联电阻</span></li>
+      <li><span class="node-label">电功率</span><span class="node-desc">— $P=UI$、$P=I^2R$、$P=U^2/R$、额定vs实际</span></li>
+      <li><span class="node-label">焦耳定律</span><span class="node-desc">— $Q=I^2Rt$、电热应用与控制</span></li>
+      <li><span class="node-label">电能</span><span class="node-desc">— $W=UIt$、电能表读数、电费计算</span></li>
+    </ul>
+  </li>
+
+  <li><span class="node-label">🧲 电磁学</span><span class="node-desc">（第19章 生活用电 + 第20章 电与磁）</span>
+    <ul>
+      <li><span class="node-label">家庭电路</span><span class="node-desc">— 火零地线、保险丝、漏电保护、三孔插座</span></li>
+      <li><span class="node-label">磁现象</span><span class="node-desc">— 磁极、磁场、磁感线、地磁场</span></li>
+      <li><span class="node-label">电生磁</span><span class="node-desc">— 奥斯特实验、安培定则、电磁铁</span></li>
+      <li><span class="node-label">磁生电</span><span class="node-desc">— 法拉第电磁感应、发电机、交流电</span></li>
+      <li><span class="node-label">电动机</span><span class="node-desc">— 通电导体在磁场中受力、换向器</span></li>
+    </ul>
+  </li>
+
+  <li><span class="node-label">📡 信息与能源</span><span class="node-desc">（第21章 信息的传递 + 第22章 能源与可持续发展）</span>
+    <ul>
+      <li><span class="node-label">电磁波</span><span class="node-desc">— 产生、传播、$c=\lambda f$、波速波长频率关系</span></li>
+      <li><span class="node-label">现代通信</span><span class="node-desc">— 卫星通信、光纤通信、互联网</span></li>
+      <li><span class="node-label">能源分类</span><span class="node-desc">— 可再生/不可再生、一次/二次能源</span></li>
+      <li><span class="node-label">核能</span><span class="node-desc">— 裂变(核电站) / 聚变(太阳)、链式反应</span></li>
+      <li><span class="node-label">可持续发展</span><span class="node-desc">— 能量守恒、能源危机、新能源开发</span></li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+<div class="knowledge-link" style="margin-top:20px;">
+  <strong>💡 体系说明：</strong> 九年级物理分为五大板块——<strong>热学</strong>→<strong>电学基础</strong>→<strong>欧姆定律·电功率</strong>→<strong>电磁学</strong>→<strong>信息与能源</strong>。电学（第15-20章）占全年级约65%的内容和70%的考试分值，是学习的重点和难点。热学为基础铺垫，信息与能源以记忆为主。
+</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- A2: 核心公式速查表 -->
+<!-- ============================================================ -->
+<section id="formulas" style="margin-bottom:64px;">
+<h2 style="font-size:26px;font-weight:700;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--accent);">
+  📏 核心公式速查表
+</h2>
+
+<div style="margin-bottom:12px;">
+
+<div class="formula-card">
+  <strong>🌡️ 热学（第13-14章）</strong><br>
+  比热容公式：$Q = cm\Delta t$（$c$ 为比热容，$\Delta t$ 为温度变化）<br>
+  热值公式：$Q = mq$（固体/液体）&nbsp;·&nbsp; $Q = Vq$（气体）<br>
+  热机效率：$\eta = \dfrac{W_{\text{有}}}{Q_{\text{放}}} \times 100\%$<br>
+  炉具效率：$\eta = \dfrac{Q_{\text{吸}}}{Q_{\text{放}}} \times 100\%$（烧水加热类）<br>
+  四冲程：一个工作循环 = 4冲程 = 曲轴转2圈 = 对外做功1次
+</div>
+
+<div class="formula-card">
+  <strong>⚡ 电路基础（第15-16章）</strong><br>
+  串联电流规律：$I = I_1 = I_2 = \cdots = I_n$<br>
+  并联电流规律：$I = I_1 + I_2 + \cdots + I_n$<br>
+  串联电压规律：$U = U_1 + U_2 + \cdots + U_n$<br>
+  并联电压规律：$U = U_1 = U_2 = \cdots = U_n$<br>
+  串联分压：$\dfrac{U_1}{U_2} = \dfrac{R_1}{R_2}$&nbsp;·&nbsp; 并联分流：$\dfrac{I_1}{I_2} = \dfrac{R_2}{R_1}$
+</div>
+
+<div class="formula-card">
+  <strong>🔌 欧姆定律（第17章）</strong><br>
+  欧姆定律：$I = \dfrac{U}{R}$&nbsp;·&nbsp; $U = IR$&nbsp;·&nbsp; $R = \dfrac{U}{I}$<br>
+  串联总电阻：$R = R_1 + R_2 + \cdots + R_n$（越串越大）<br>
+  并联总电阻：$\dfrac{1}{R} = \dfrac{1}{R_1} + \dfrac{1}{R_2} + \cdots + \dfrac{1}{R_n}$（越并越小）<br>
+  两个电阻并联：$R = \dfrac{R_1R_2}{R_1 + R_2}$
+</div>
+
+<div class="formula-card">
+  <strong>💡 电功率（第18章）</strong><br>
+  电功率：$P = UI$（普适公式）&nbsp;·&nbsp; $P = I^2R$（串联适用）&nbsp;·&nbsp; $P = \dfrac{U^2}{R}$（并联适用）<br>
+  电能（电功）：$W = UIt$&nbsp;·&nbsp; $W = Pt$（$1\;\text{kW}\cdot\text{h} = 3.6 \times 10^6\;\text{J}$）<br>
+  焦耳定律：$Q = I^2Rt$（纯电阻电路 $Q = W$；非纯电阻 $Q < W$）<br>
+  额定功率vs实际功率：$P_{\text{实}} = \left(\dfrac{U_{\text{实}}}{U_{\text{额}}}\right)^2 \times P_{\text{额}}$（灯泡电阻不变时）<br>
+  电能表转数：$n = N \cdot W$（$N$ 为 imp/kW·h，$W$ 单位为 kW·h）
+</div>
+
+<div class="formula-card">
+  <strong>📡 电磁波（第21章）</strong><br>
+  波速公式：$c = \lambda f$（$c = 3 \times 10^8\;\text{m/s}$ 真空中光速）<br>
+  $\lambda$ 为波长(m)，$f$ 为频率(Hz)&nbsp;·&nbsp; 频率越高波长越短<br>
+  电磁波速在空气中近似等于光速
+</div>
+
+</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- A3: 实验方法汇总 -->
+<!-- ============================================================ -->
+<section id="methods" style="margin-bottom:64px;">
+<h2 style="font-size:26px;font-weight:700;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--accent);">
+  🔬 实验方法汇总
+</h2>
+
+<div class="experiment-card">
+  <h3>🔹 1. 控制变量法</h3>
+  <div class="exp-principle"><strong>核心思想：</strong>当一个现象与多个因素有关时，每次只改变一个因素，控制其他因素相同，研究该因素的影响。</div>
+  <div style="margin:12px 0;font-size:14px;">
+    <p><strong>📖 九年级典型实验：</strong></p>
+    <ul style="padding-left:20px;">
+      <li>探究电流与电压的关系（控制电阻不变）</li>
+      <li>探究电流与电阻的关系（控制电压不变）</li>
+      <li>探究电热与电流、电阻、通电时间的关系（焦耳定律）</li>
+      <li>探究影响电磁铁磁性强弱的因素（电流大小、匝数多少）</li>
+      <li>探究影响导体电阻大小的因素（材料、长度、横截面积、温度）</li>
+    </ul>
+  </div>
+  <div class="exp-tip">💡 答题模板："保持 ×× 不变，改变 ××，观察 ×× 的变化，得出结论"。特别注意"探究电流与××关系"时滑动变阻器的作用不同。</div>
+</div>
+
+<div class="experiment-card">
+  <h3>🔹 2. 转换法</h3>
+  <div class="exp-principle"><strong>核心思想：</strong>将不易直接观察或测量的物理量，通过其产生的效果，转换为易观察易测量的物理量。</div>
+  <div style="margin:12px 0;font-size:14px;">
+    <p><strong>📖 典型应用：</strong></p>
+    <ul style="padding-left:20px;">
+      <li><strong>电流大小 → 灯泡亮度</strong>（串联电路中灯泡越亮则电流越大）</li>
+      <li><strong>电流大小 → 电流表指针偏转角度</strong></li>
+      <li><strong>磁场强弱 → 电磁铁吸引大头针数目</strong></li>
+      <li><strong>电热多少 → 温度计示数变化 / 液柱上升高度</strong></li>
+      <li><strong>是否有电流 → 小磁针是否偏转（奥斯特实验）</strong></li>
+      <li><strong>感应电流大小 → 灵敏电流计指针偏转角度</strong></li>
+    </ul>
+  </div>
+  <div class="exp-tip">💡 转换法在九年级电学实验中大量使用，尤其是通过"可观测的效应"判断"不可见的物理量"。</div>
+</div>
+
+<div class="experiment-card">
+  <h3>🔹 3. 等效替代法</h3>
+  <div class="exp-principle"><strong>核心思想：</strong>用一个效果相同的已知量来替代未知量，使复杂问题简化。</div>
+  <div style="margin:12px 0;font-size:14px;">
+    <p><strong>📖 典型应用：</strong></p>
+    <ul style="padding-left:20px;">
+      <li><strong>总电阻（等效电阻）：</strong>用一个电阻替代串联/并联电路中的所有电阻，效果相同</li>
+      <li><strong>测电阻的特殊方法：</strong>等效替代法测电阻（电阻箱替换待测电阻）</li>
+    </ul>
+  </div>
+  <div class="exp-tip">💡 关键：替代物与原来元件接入电路后必须产生完全相同的效果（电流表/电压表示数相同）。</div>
+</div>
+
+<div class="experiment-card">
+  <h3>🔹 4. 伏安法</h3>
+  <div class="exp-principle"><strong>核心思想：</strong>利用电压表测电压、电流表测电流，通过欧姆定律 $R=U/I$ 或 $P=UI$ 计算待测物理量。</div>
+  <div style="margin:12px 0;font-size:14px;">
+    <p><strong>📖 两种典型应用：</strong></p>
+    <ul style="padding-left:20px;">
+      <li><strong>伏安法测电阻：</strong>①原理 $R=U/I$ ②电路图 ③多次测量取平均值减小误差 ④外接法/内接法选择</li>
+      <li><strong>伏安法测小灯泡电功率：</strong>①原理 $P=UI$ ②调节滑片使电压等于/高于/低于额定电压 ③不能求平均值</li>
+    </ul>
+  </div>
+  <div class="exp-tip">💡 重要区别：测电阻需多次测量取平均值减小误差；测功率需在额定电压下测量，不同电压下功率不同，不能取平均。</div>
+</div>
+
+<div class="knowledge-link" style="margin-top:16px;">
+  <strong>📋 其他常用方法：</strong>
+  ① <strong>理想模型法：</strong>磁感线（假想的曲线描述磁场方向）、光线（带箭头的直线表示光的传播路径）<br>
+  ② <strong>类比法：</strong>水压类比电压、水流类比电流（帮助理解电路概念）<br>
+  ③ <strong>归纳法：</strong>通过多次实验总结一般规律（如串并联电路中电流/电压规律）<br>
+  ④ <strong>比值定义法：</strong>用两个物理量的比值定义新物理量（$I=U/R$ 是计算式，$R$ 由导体本身决定）
+</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- A4: 高频易错陷阱总览 -->
+<!-- ============================================================ -->
+<section id="pitfalls" style="margin-bottom:64px;">
+<h2 style="font-size:26px;font-weight:700;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--accent);">
+  ⚠️ 高频易错陷阱总览
+</h2>
+
+<div class="technique-card" style="border-left:4px solid #dc2626;">
+  <h3><span class="step-num">❶</span> 热学易混点</h3>
+  <div class="pitfall">❌ 温度升高内能一定增加 ✓ — 但内能增加温度不一定升高（如晶体熔化过程）</div>
+  <div class="pitfall">❌ 热量不能说"含有"或"具有"→ 正确表达"吸收"或"放出"热量</div>
+  <div class="pitfall">❌ 温度高的物体内能不一定大 — 内能还与质量、状态、种类有关</div>
+  <div class="pitfall">❌ 比热容是物质特性 — 与质量、温度变化、吸放热多少无关</div>
+  <div class="pitfall">❌ 热值 $q$ 与燃料质量、是否完全燃烧无关 — 只与燃料种类有关</div>
+  <div class="pitfall">❌ 热机效率 $\eta$ 永远 $<100\%$ — 废气带走大量热，摩擦散热不可避免</div>
+  <div class="pitfall">❌ $Q=cm\Delta t$ 中 $\Delta t$ 是温度变化量（末温−初温），不是温度</div>
+</div>
+
+<div class="technique-card" style="border-left:4px solid #9333ea;">
+  <h3><span class="step-num">❷</span> 电路与电阻</h3>
+  <div class="pitfall">❌ 电阻 $R$ 由导体本身决定（材料、长度、横截面积、温度）— <strong>与 $U$、$I$ 无关</strong></div>
+  <div class="pitfall">❌ $R=U/I$ 是计算式（测量式），不是决定式 — 不能说"$R$ 与 $U$ 成正比，与 $I$ 成反比"</div>
+  <div class="pitfall">❌ 并联电路中总电阻 < 任何一个分电阻 — 不是"中间值"！</div>
+  <div class="pitfall">❌ 滑动变阻器滑片移动方向判断错误 — 先确认"下接线柱在哪一端"</div>
+  <div class="pitfall">❌ 电压表不一定测谁 — 看并联在谁两端，注意电压表与用电器并联</div>
+  <div class="pitfall">❌ 电流表内阻极小（相当于导线），电压表内阻极大（相当于断路）</div>
+</div>
+
+<div class="technique-card" style="border-left:4px solid #0891b2;">
+  <h3><span class="step-num">❸</span> 额定与实际功率</h3>
+  <div class="pitfall">❌ 灯泡的亮暗取决于 <strong>实际功率</strong> 的大小，不是额定功率</div>
+  <div class="pitfall">❌ "220V 100W"含义：额定电压220V，额定功率100W — 实际电压≠220V时实际功率≠100W</div>
+  <div class="pitfall">❌ 两灯串联：电阻大的灯更亮（$P=I^2R$，$I$ 相同 $R$ 大者 $P$ 大）</div>
+  <div class="pitfall">❌ 两灯并联：电阻小的灯更亮（$P=U^2/R$，$U$ 相同 $R$ 小者 $P$ 大）</div>
+  <div class="pitfall">❌ 额定功率大的灯泡灯丝粗短（电阻小）；额定功率小的灯泡灯丝细长（电阻大）</div>
+  <div class="pitfall">❌ 用电能表测功率时忘记单位换算：$1\;\text{kW}\cdot\text{h} = 3.6 \times 10^6\;\text{J}$</div>
+</div>
+
+<div class="technique-card" style="border-left:4px solid #ca8a04;">
+  <h3><span class="step-num">❹</span> 电磁学混淆</h3>
+  <div class="pitfall">❌ <strong>电动机 vs 发电机</strong>：电动机"通电受力转动"（电能→机械能）；发电机"转动产生电流"（机械能→电能）</div>
+  <div class="pitfall">❌ <strong>左手定则 vs 右手定则</strong>：判断受力方向用左手（电动机），判断感应电流方向用右手（发电机）</div>
+  <div class="pitfall">❌ 磁场对通电导线有力的作用 — 前提是导线方向与磁场方向不平行</div>
+  <div class="pitfall">❌ 产生感应电流的条件：①闭合电路 ②部分导体 ③做切割磁感线运动 — 缺一不可</div>
+  <div class="pitfall">❌ 电磁铁磁性强弱与电流方向无关（方向只影响磁极）</div>
+  <div class="pitfall">❌ 实际交流电：频率50Hz，每秒方向改变100次（一个周期方向变2次）</div>
+  <div class="pitfall">❌ 磁感线是假想的 — 客观存在的是磁场，不是磁感线</div>
+</div>
+
+<div class="technique-card" style="border-left:4px solid #059669;">
+  <h3><span class="step-num">❺</span> 电路故障与安全</h3>
+  <div class="pitfall">❌ <strong>短路 vs 断路</strong>：断路=电流不通（电路断开）；短路=电流不经过用电器直接回负极</div>
+  <div class="pitfall">❌ 短路分为：①电源短路（危险，烧坏电源）②局部短路（用电器被短接）</div>
+  <div class="pitfall">❌ 家庭电路中：火线→用电器→零线 才是正确回路；开关必须接在火线上</div>
+  <div class="pitfall">❌ 保险丝（熔丝）用电阻率大、熔点低的铅锑合金 — 不能用铜丝代替</div>
+  <div class="pitfall">❌ 三孔插座左零右火上接地 — 地线的作用是把漏电导入大地防止触电</div>
+  <div class="pitfall">❌ 测电笔使用：手接触笔尾金属体，笔尖接触电线，氖管发光的是火线</div>
+  <div class="pitfall">❌ 计算功率时家用电器的 $P=UI$ 中 $U=220\;\text{V}$（我国家庭电路电压）</div>
+</div>
+
+<div class="technique-card" style="border-left:4px solid #d97706;">
+  <h3><span class="step-num">❻</span> 能源与信息</h3>
+  <div class="pitfall">❌ 电磁波传播不需要介质 — 在真空中也能传播（声波不行）</div>
+  <div class="pitfall">❌ $c = \lambda f$ — 波速 $c$ 不变（真空中），$f$ 越高 $\lambda$ 越短</div>
+  <div class="pitfall">❌ 核电站是核裂变（可控链式反应），原子弹是核裂变（不可控）；氢弹是核聚变</div>
+  <div class="pitfall">❌ 太阳能是可再生能源、一次能源 — 但太阳能在地球上的总量有限</div>
+  <div class="pitfall">❌ 能量守恒定律适用于所有情况 — 但能量转移和转化具有方向性</div>
+  <div class="pitfall">❌ 光纤通信利用光的全反射原理 — 不是利用电信号</div>
+</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- A5: 科学教学法 · 零基础到中考 -->
+<!-- ============================================================ -->
+<section id="pedagogy" style="margin-bottom:64px;">
+<h2 style="font-size:26px;font-weight:700;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--accent);">
+  🎯 科学教学法 · 零基础到中考
+</h2>
+
+<div class="learning-goals">
+  <strong>📌 核心理念：</strong> 九年级物理的核心是<strong>电学</strong>——从电路基础到欧姆定律再到电功率，层层递进。热学相对独立适合入门，信息与能源侧重记忆。
+  <p>以下教学路径基于认知心理学和一线教学经验，适合零基础学生在 10-12 周内达到中考水平。</p>
+</div>
+
+<div class="technique-card">
+  <h3><span class="step-num">1</span> 分阶段教学路径</h3>
+  <table style="width:100%;border-collapse:collapse;font-size:14px;">
+    <tr style="background:var(--accent-light);">
+      <td style="padding:10px;border:1px solid var(--border);font-weight:600;">阶段</td>
+      <td style="padding:10px;border:1px solid var(--border);font-weight:600;">内容</td>
+      <td style="padding:10px;border:1px solid var(--border);font-weight:600;">核心任务</td>
+      <td style="padding:10px;border:1px solid var(--border);font-weight:600;">评估标准</td>
+    </tr>
+    <tr>
+      <td style="padding:10px;border:1px solid var(--border);background:var(--bg-secondary);font-weight:600;">🌡️ 第1-2周<br>热学入门</td>
+      <td style="padding:10px;border:1px solid var(--border);">
+        ch13 内能<br>
+        ch14 内能的利用
+      </td>
+      <td style="padding:10px;border:1px solid var(--border);">
+        · 理解分子热运动与扩散<br>
+        · 掌握 $Q=cm\Delta t$ 计算<br>
+        · 区分做功vs热传递改变内能<br>
+        · 了解热机四冲程工作循环
+      </td>
+      <td style="padding:10px;border:1px solid var(--border);">
+        · 比热容计算不出单位错<br>
+        · 热机效率计算能列式<br>
+        · 能说出四冲程对应能量转化
+      </td>
+    </tr>
+    <tr>
+      <td style="padding:10px;border:1px solid var(--border);background:var(--bg-secondary);font-weight:600;">⚡ 第3-5周<br>电学奠基</td>
+      <td style="padding:10px;border:1px solid var(--border);">
+        ch15 电流和电路<br>
+        ch16 电压 电阻
+      </td>
+      <td style="padding:10px;border:1px solid var(--border);">
+        · 会画电路图、连接实物图<br>
+        · 识别串联/并联电路<br>
+        · 掌握串并联电流电压规律<br>
+        · 理解电阻及影响因素
+      </td>
+      <td style="padding:10px;border:1px solid var(--border);">
+        · 电路图实物图互画正确<br>
+        · 串并联判断不出错<br>
+        · 电压表电流表读数正确
+      </td>
+    </tr>
+    <tr>
+      <td style="padding:10px;border:1px solid var(--border);background:var(--bg-secondary);font-weight:600;">🔌 第6-8周<br>电学核心</td>
+      <td style="padding:10px;border:1px solid var(--border);">
+        ch17 欧姆定律<br>
+        ch18 电功率
+      </td>
+      <td style="padding:10px;border:1px solid var(--border);">
+        · 应用欧姆定律解题<br>
+        · 伏安法测电阻/测功率<br>
+        · 掌握串并联电阻计算<br>
+        · 区分额定vs实际功率
+      </td>
+      <td style="padding:10px;border:1px solid var(--border);">
+        · 欧姆定律动态电路分析正确<br>
+        · 电功率计算题规范书写<br>
+        · 能独立分析灯丝电阻变化
+      </td>
+    </tr>
+    <tr>
+      <td style="padding:10px;border:1px solid var(--border);background:var(--bg-secondary);font-weight:600;">🧲 第9-10周<br>电磁与生活</td>
+      <td style="padding:10px;border:1px solid var(--border);">
+        ch19 生活用电<br>
+        ch20 电与磁
+      </td>
+      <td style="padding:10px;border:1px solid var(--border);">
+        · 了解家庭电路安全规范<br>
+        · 区分电动机vs发电机原理<br>
+        · 会用安培定则判断磁极<br>
+        · 理解电磁感应现象
+      </td>
+      <td style="padding:10px;border:1px solid var(--border);">
+        · 能画出家庭电路示意图<br>
+        · 能解释电磁继电器工作原理<br>
+        · 电动机发电机辨析不错
+      </td>
+    </tr>
+    <tr>
+      <td style="padding:10px;border:1px solid var(--border);background:var(--bg-secondary);font-weight:600;">📡 第11-12周<br>冲刺综合</td>
+      <td style="padding:10px;border:1px solid var(--border);">
+        ch21 信息的传递<br>
+        ch22 能源与可持续发展<br>
+        专题复习 + 真题训练
+      </td>
+      <td style="padding:10px;border:1px solid var(--border);">
+        · 掌握 $c=\lambda f$ 计算<br>
+        · 熟记能源分类与核能特点<br>
+        · 跨章节电学综合训练<br>
+        · 近3年中考真题限时
+      </td>
+      <td style="padding:10px;border:1px solid var(--border);">
+        · 电磁波计算不出错<br>
+        · 能源分类概念清晰<br>
+        · 模拟卷 &ge; 85%
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div class="technique-card">
+  <h3><span class="step-num">2</span> 电学专项突破策略</h3>
+  <table style="width:100%;border-collapse:collapse;font-size:14px;">
+    <tr style="background:var(--accent-light);">
+      <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">卡点</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">具体表现</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">突破策略</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid var(--border);background:var(--bg-secondary);">动态电路</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">滑片移动→各电表示数变化判断不清</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">三步法：①判断串并联 ②看滑片→$R$ 变→$I$ 变 ③用 $U=IR$ 分析各元件</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid var(--border);background:var(--bg-secondary);">故障分析</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">灯泡不亮/电表无示数→判断故障位置</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">断路→电流表无示数，电压表有示数=断点处；短路→电流表有示数且变大</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid var(--border);background:var(--bg-secondary);">最值计算</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">滑动变阻器阻值范围确定</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">分别考虑：①电流表量程 ②电压表量程 ③灯泡安全电流 取交集</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid var(--border);background:var(--bg-secondary);">电功率综合</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">多档位用电器（加热/保温）分析</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">$P=U^2/R$ → 电压一定时，$R$ 小 $P$ 大（加热），$R$ 大 $P$ 小（保温）</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid var(--border);background:var(--bg-secondary);">非纯电阻</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">电动机等 $Q \neq W$ 混淆</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">牢记：$W=UIt$ 总功，$Q=I^2Rt$ 产热，$W-Q$ = 机械能</td>
+    </tr>
+  </table>
+</div>
+
+<div class="technique-card">
+  <h3><span class="step-num">3</span> 每节课教学模板（45分钟）</h3>
+  <div style="font-size:14px;">
+    <p><strong>📝 导入（5分钟）：</strong>用生活现象/趣味实验引入 → "为什么？"<br>
+    <strong>📖 新知讲解（15分钟）：</strong>概念 → 公式 → 条件 → 例题示范（注重逻辑推导）<br>
+    <strong>✏️ 互动练习（15分钟）：</strong>学生做题 → 板演 → 同伴互评 → 教师总结<br>
+    <strong>📋 小结+作业（5分钟）：</strong>知识框架图 + 3-5道针对练习</p>
+  </div>
+  <div class="exp-tip">💡 电学教学中多用 <strong>类比法</strong>：水流类比电流、水压类比电压、河道宽窄类比电阻，学生更容易理解抽象概念。</div>
+</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- A6: 自学提升技巧 -->
+<!-- ============================================================ -->
+<section id="selfstudy" style="margin-bottom:64px;">
+<h2 style="font-size:26px;font-weight:700;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--accent);">
+  🚀 自学提升技巧
+</h2>
+
+<div class="technique-card">
+  <h3><span class="step-num">1</span> 费曼学习法（Feynman Technique）</h3>
+  <div class="method">"The first principle is that you must not fool yourself — and you are the easiest person to fool." — Richard Feynman</div>
+  <div style="font-size:14px;margin-top:10px;">
+    <p><strong>四步实操：</strong></p>
+    <ol style="padding-left:20px;">
+      <li><strong>明确概念：</strong>在纸上写下你要学的物理概念/公式的名称</li>
+      <li><strong>教给别人：</strong>假装给一个零基础的人讲解——用<strong>最简单的语言</strong>，不用专业术语</li>
+      <li><strong>发现盲区：</strong>讲着讲着卡住的地方 → 就是你还没弄懂的地方 → 回去翻书</li>
+      <li><strong>简化类比：</strong>用自己的语言重新组织，用一个<strong>生活类比</strong>替代生硬的定义</li>
+    </ol>
+  </div>
+  <div class="example">📌 例：串联分压 → "串联电路中，电阻大的元件分到的电压多，就像排队时力气大的人分到的水压更大。"</div>
+</div>
+
+<div class="technique-card">
+  <h3><span class="step-num">2</span> 三遍练习法（3-Round Practice System）</h3>
+  <table style="width:100%;border-collapse:collapse;font-size:14px;">
+    <tr style="background:var(--accent-light);">
+      <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">轮次</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">核心任务</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">时间</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">目标</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid var(--border);background:var(--bg-secondary);font-weight:600;">R1 拆解</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">读题、画等效电路图、标已知/未知、写公式</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">不限时</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">理解题目结构</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid var(--border);background:var(--bg-secondary);font-weight:600;">R2 限时</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">在限定时间内完整写出解题过程</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">计时</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">训练速度和规范</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid var(--border);background:var(--bg-secondary);font-weight:600;">R3 复盘</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">对答案→标错→归类→整理错题本</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">5-10分钟</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">根治同类型错误</td>
+    </tr>
+  </table>
+  <div class="exp-tip" style="margin-top:10px;">💡 电学题尤其推荐R1画等效电路图——化简是电学解题的第一步，也是最关键的一步。</div>
+</div>
+
+<div class="technique-card">
+  <h3><span class="step-num">3</span> 错题本标准格式</h3>
+  <div class="principle">
+    <p>题目来源 | 日期 | 错误答案 | 正确答案 | 错误类型 | 防范措施</p>
+  </div>
+  <div style="font-size:14px;">
+    <p><strong>错误类型分类：</strong></p>
+    <ul style="padding-left:20px;">
+      <li><strong>类型A — 概念不清：</strong>没掌握相关知识点 → 回看课本，找3道同类题重做</li>
+      <li><strong>类型B — 公式误用：</strong>用错了公式或适用条件 → 整理公式对比表</li>
+      <li><strong>类型C — 审题粗心：</strong>看漏条件、看错单位 → 训练圈画关键词的习惯</li>
+      <li><strong>类型D — 计算错误：</strong>算错数、单位换算错 → 放慢计算速度，养成验算习惯</li>
+    </ul>
+  </div>
+  <div class="example">📌 格式示例：<br>
+  "2025-03-15 | 月考第15题 | 选了B (0.5A) | 正确答案C (0.3A) | B型—串并联判断错 | 先判断混联电路，逐级化简再计算"</div>
+</div>
+
+<div class="technique-card">
+  <h3><span class="step-num">4</span> 电学画图四步口诀</h3>
+  <div style="font-size:14px;">
+    <p><strong>看串并：</strong>电流从正极出发，看有几条路径回到负极<br>
+    <strong>标元件：</strong>在等效图上标出 $R$、$U$、$I$ 的已知值和未知量<br>
+    <strong>选公式：</strong>串联用 $I$ 相等（$P=I^2R$），并联用 $U$ 相等（$P=U^2/R$）<br>
+    <strong>代数据：</strong>所有量统一单位→代入公式→计算结果→检查合理性</p>
+  </div>
+  <div class="exp-tip" style="margin-top:10px;">💡 电学综合题中的"题眼"：看到"正常发光"→ $U_{\text{实}}=U_{\text{额}}$；看到"滑片移到某端"→ 阻值最大或最小。</div>
+</div>
+
+<div class="technique-card">
+  <h3><span class="step-num">5</span> 每日物理训练方案</h3>
+  <div style="font-size:14px;">
+    <table style="width:100%;border-collapse:collapse;">
+      <tr style="background:var(--accent-light);">
+        <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">时间</td>
+        <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">内容</td>
+        <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">耗时</td>
+      </tr>
+      <tr><td style="padding:8px 10px;border:1px solid var(--border);">周一</td><td style="padding:8px 10px;border:1px solid var(--border);">热学/电磁概念选择题 + 公式默写</td><td style="padding:8px 10px;border:1px solid var(--border);">15min</td></tr>
+      <tr><td style="padding:8px 10px;border:1px solid var(--border);">周二</td><td style="padding:8px 10px;border:1px solid var(--border);">1道电路识别/动态电路分析题</td><td style="padding:8px 10px;border:1px solid var(--border);">15min</td></tr>
+      <tr><td style="padding:8px 10px;border:1px solid var(--border);">周三</td><td style="padding:8px 10px;border:1px solid var(--border);">1道实验探究题（伏安法测电阻/测功率）</td><td style="padding:8px 10px;border:1px solid var(--border);">15min</td></tr>
+      <tr><td style="padding:8px 10px;border:1px solid var(--border);">周四</td><td style="padding:8px 10px;border:1px solid var(--border);">1道电功率计算题（规范书写全流程）</td><td style="padding:8px 10px;border:1px solid var(--border);">15min</td></tr>
+      <tr><td style="padding:8px 10px;border:1px solid var(--border);">周五</td><td style="padding:8px 10px;border:1px solid var(--border);">1道综合压轴题（等效电路+费曼讲解）</td><td style="padding:8px 10px;border:1px solid var(--border);">20min</td></tr>
+      <tr><td style="padding:8px 10px;border:1px solid var(--border);">周末</td><td style="padding:8px 10px;border:1px solid var(--border);">错题回顾 + 本章知识体系图绘制 + 真题模拟</td><td style="padding:8px 10px;border:1px solid var(--border);">30min</td></tr>
+    </table>
+  </div>
+  <div class="exp-tip" style="margin-top:10px;">💡 九年级物理学习的关键在于<strong>电学突破</strong>——电学占中考物理的40%以上，欧姆定律和电功率是拉开分数的核心板块。</div>
+</div>
+
+<div class="technique-card">
+  <h3><span class="step-num">6</span> 考场实战技巧</h3>
+  <div style="font-size:14px;">
+    <p><strong>⏱️ 时间分配（60分钟卷）：</strong><br>
+    选择题（12题）× 2min = 24min · 填空题（6题）× 2min = 12min · 实验题（2题）× 8min = 16min · 计算题（2题）× 10min = 20min</p>
+    <p><strong>📌 答题顺序：</strong>先做选择填空（保基础分）→ 再做实验题 → 最后做计算压轴题（有时间就做，没时间写公式拿步骤分）</p>
+    <p><strong>🧠 检查清单：</strong><br>
+    ☐ 单位是否统一（V、A、Ω、W、J……）<br>
+    ☐ 串并联是否判断正确（关键！）<br>
+    ☐ 有没有漏看条件（正常发光？滑片位置？安全电流？）<br>
+    ☐ 电功率题区分了额定vs实际？<br>
+    ☐ 公式是否写正确（字母公式+代入数据+结果+单位）</p>
+  </div>
+  <div class="example">📌 计算题即使不会做也要写公式！中考计算题<strong>公式分占60%</strong>，写出正确的 $I=U/R$、$P=UI$ 就能拿分。</div>
+</div>
+
+<div class="technique-card">
+  <h3><span class="step-num">7</span> 推荐资源清单</h3>
+  <div style="font-size:14px;">
+    <table style="width:100%;border-collapse:collapse;">
+      <tr style="background:var(--accent-light);">
+        <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">类别</td>
+        <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">推荐</td>
+        <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">用途</td>
+      </tr>
+      <tr><td style="padding:8px 10px;border:1px solid var(--border);">📚 教材</td><td style="padding:8px 10px;border:1px solid var(--border);">人教版九年级物理（全一册）</td><td style="padding:8px 10px;border:1px solid var(--border);">系统学习</td></tr>
+      <tr><td style="padding:8px 10px;border:1px solid var(--border);">📝 教辅</td><td style="padding:8px 10px;border:1px solid var(--border);">《5年中考3年模拟》《典中点》《试题研究》</td><td style="padding:8px 10px;border:1px solid var(--border);">刷题巩固</td></tr>
+      <tr><td style="padding:8px 10px;border:1px solid var(--border);">▶️ 视频</td><td style="padding:8px 10px;border:1px solid var(--border);">李永乐老师、于总CEO、物理大师</td><td style="padding:8px 10px;border:1px solid var(--border);">概念理解</td></tr>
+      <tr><td style="padding:8px 10px;border:1px solid var(--border);">📱 App</td><td style="padding:8px 10px;border:1px solid var(--border);">物理实验室、NB物理实验（电路仿真）</td><td style="padding:8px 10px;border:1px solid var(--border);">动手探究</td></tr>
+      <tr><td style="padding:8px 10px;border:1px solid var(--border);">🧠 工具</td><td style="padding:8px 10px;border:1px solid var(--border);">思维导图 + 公式卡 + 错题本 + 等效电路练习本</td><td style="padding:8px 10px;border:1px solid var(--border);">知识结构化</td></tr>
+    </table>
+  </div>
+</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- A7: 九年级自学路径时间轴 -->
+<!-- ============================================================ -->
+<section id="timeline" style="margin-bottom:64px;">
+<h2 style="font-size:26px;font-weight:700;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--accent);">
+  📅 九年级自学路径 · 12周冲刺中考
+</h2>
+
+<div class="learning-goals">
+  <strong>📌 总体时间分配：</strong> 热学（13-14章）→ 电学基础（15-16章）→ 电学核心（17-18章）→ 电磁（19-20章）→ 信息能源（21-22章）→ 综合冲刺
+</div>
+
+<div class="technique-card">
+  <h3><span class="step-num">📅</span> 12周冲刺计划总览</h3>
+  <table style="width:100%;border-collapse:collapse;font-size:14px;">
+    <tr style="background:var(--accent-light);">
+      <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">周次</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">章节</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">内容</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">每日投入</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);font-weight:600;">标志成果</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid var(--border);background:var(--bg-secondary);font-weight:600;">第1周</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">ch13 内能</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">分子热运动、内能、比热容</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">30min</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">$Q=cm\Delta t$ 计算全对</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid var(--border);background:var(--bg-secondary);font-weight:600;">第2周</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">ch14 内能的利用</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">热值、热机、效率</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">30min</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">热机效率计算掌握</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid var(--border);background:var(--bg-secondary);font-weight:600;">第3周</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">ch15 电流和电路</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">电荷、电路图、串并联、电流</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">30min</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">能独立画电路图</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid var(--border);background:var(--bg-secondary);font-weight:600;">第4周</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">ch16 电压 电阻</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">电压、电阻、变阻器</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">30min</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">串并联电压规律会用</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid var(--border);background:var(--bg-secondary);font-weight:600;">第5周</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">ch17 欧姆定律</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">$I=U/R$、伏安法测电阻、动态电路</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">40min</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">动态电路分析正确</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid var(--border);background:var(--bg-secondary);font-weight:600;">第6周</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">ch18 电功率（上）</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">$P=UI$、额定vs实际、电能计算</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">40min</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">电功率计算规范书写</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid var(--border);background:var(--bg-secondary);font-weight:600;">第7周</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">ch18 电功率（下）</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">焦耳定律、多档位、综合计算</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">40min</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">档位问题能独立分析</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid var(--border);background:var(--bg-secondary);font-weight:600;">第8周</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">ch19 生活用电</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">家庭电路、安全用电</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">20min</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">安全用电规则全记牢</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid var(--border);background:var(--bg-secondary);font-weight:600;">第9周</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">ch20 电与磁</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">磁现象、电生磁、磁生电、电动机发电机</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">30min</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">电动机vs发电机辨析无误</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid var(--border);background:var(--bg-secondary);font-weight:600;">第10周</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">ch21-22 信息+能源</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">电磁波 $c=\lambda f$、能源分类、核能</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">20min</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">概念选择题全对</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid var(--border);background:var(--bg-secondary);font-weight:600;">第11周</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">专题复习</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">热学计算+动态电路+电功率综合+实验</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">45min</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">专题限时训练达标</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid var(--border);background:var(--bg-secondary);font-weight:600;">第12周</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">真题冲刺</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">近3年中考真题限时 + 错题复盘</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">60min</td>
+      <td style="padding:8px 10px;border:1px solid var(--border);">模拟卷 &ge; 85%</td>
+    </tr>
+  </table>
+  <div class="exp-tip" style="margin-top:12px;">💡 <strong>黄金学习曲线：</strong>热学(2周)→电学基础(2周)→欧姆定律+电功率(3周)→电磁(2周)→信息能源(1周)→综合冲刺(2周)。电学核心（ch17-18）投入最大时间，这是中考区分度的关键所在。</div>
+</div>
+
+</section>
+
+<p style="text-align:center;padding:40px 0 20px;color:var(--text-secondary);font-size:14px;">
+  📚 九年级物理附录全览 ·  <a href="index.html" style="color:var(--accent);">← 返回首页</a>
+</p>
+
+  <div class="review-schedule" style="margin-top:30px;">
+    <strong>📅 附录复习计划</strong>
+    <span class="review-dot">🔵 每周末·重刷公式速查表</span>
+    <span class="review-dot">🟢 每次错题后·查对应陷阱</span>
+    <span class="review-dot">🟡 每月一次·按自学路径校准进度</span>
+    <span class="review-dot">🔴 考前2周·专攻实验方法+计算规范</span>
+  </div>
+
+</div><!-- /content -->
+
+<script defer src="../katex/katex.min.js"></script>
+<script defer src="../katex/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});"></script>
+
+<script>
+(function() {
+  var theme = localStorage.getItem('site-theme');
+  if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+
+  document.getElementById('themeToggle').addEventListener('click', function() {
+    var html = document.documentElement;
+    var isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? '' : 'dark');
+    localStorage.setItem('site-theme', isDark ? '' : 'dark');
+  });
+
+  var links = document.querySelectorAll('#sidebar nav a');
+  var sections = [];
+  links.forEach(function(link) {
+    var href = link.getAttribute('href');
+    if (href && href.startsWith('#') && !href.includes('index')) {
+      var el = document.getElementById(href.slice(1));
+      if (el) sections.push({ link: link, el: el });
+    }
+  });
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        sections.forEach(function(s) {
+          s.link.classList.toggle('active', s.el.id === entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-80px 0px -60% 0px' });
+
+  sections.forEach(function(s) { observer.observe(s.el); });
+
+  var sidebar = document.getElementById('sidebar');
+  var hideBtn = document.getElementById('sidebarHideBtn');
+  var sidebarHidden = localStorage.getItem('physics9-sidebar') === 'hidden';
+  if (sidebarHidden) sidebar.classList.add('hidden');
+  var showBtn = document.getElementById('sidebarShowBtn');
+  hideBtn.addEventListener('click', function() {
+    sidebar.classList.add('hidden');
+    localStorage.setItem('physics9-sidebar', 'hidden');
+  });
+  showBtn.addEventListener('click', function() {
+    sidebar.classList.remove('hidden');
+    localStorage.setItem('physics9-sidebar', '');
+  });
+  (function() {
+    var btn = document.getElementById('expandAllBtn');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      var allDetails = document.querySelectorAll('.module, .exam-module');
+      var allOpen = true;
+      for (var i = 0; i < allDetails.length; i++) {
+        if (!allDetails[i].hasAttribute('open')) { allOpen = false; break; }
+      }
+      for (var i = 0; i < allDetails.length; i++) {
+        if (allOpen) allDetails[i].removeAttribute('open');
+        else allDetails[i].setAttribute('open', '');
+      }
+      btn.textContent = allOpen ? '📂 展开全部模块' : '📖 收起全部模块';
+    });
+  })();
+  })();
+  window.addEventListener('scroll', function() {
+    var btn = document.getElementById('backToTop');
+    if (btn) btn.style.display = window.scrollY > 400 ? 'block' : 'none';
+  });
+</script>
+
+</body>
+</html>

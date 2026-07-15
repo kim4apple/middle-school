@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第14章 内能的利用 | 九年级物理</title>
+<link rel="stylesheet" href="css/physics.css">
+<link rel="stylesheet" href="../katex/katex.min.css">
+</head>
+<body>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="回到顶部">↑</button>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">📘 九年级物理</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;" title="隐藏侧栏">✕</button>
+  </div>
+  <nav>
+    <a href="index.html" style="font-weight:600;">🏠 返回导航首页</a>
+    <a href="ch13.html">第13章 内能</a>
+    <a href="ch14.html" class="active">第14章 内能的利用</a>
+    <a href="ch15.html">第15章 电流和电路</a>
+    <a href="ch16.html">第16章 电压 电阻</a>
+    <a href="ch17.html">第17章 欧姆定律</a>
+    <a href="ch18.html">第18章 电功率</a>
+    <a href="ch19.html">第19章 生活用电</a>
+    <a href="ch20.html">第20章 电与磁</a>
+    <a href="ch21.html">第21章 信息的传递</a>
+    <a href="ch22.html">第22章 能源与可持续发展</a>
+    <a href="appendix.html" style="margin-top:12px;border-top:1px solid var(--border);padding-top:12px;font-weight:600;">📎 附录</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+  <button id="theme-toggle" class="theme-toggle" style="margin-top:10px;">🌙 暗色模式</button>
+  <button class="print-btn" onclick="window.print()" style="margin-top:8px;padding:8px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px;width:100%;">🖨️ 打印 / 存 PDF</button>
+</nav>
+
+<main id="content">
+
+<div class="chapter">
+  <h1>第14章 内能的利用</h1>
+
+  <!-- 学习目标 -->
+  <div class="learning-goals">
+    <strong>🎯 学习目标</strong>
+    <p>① 理解热机的工作原理，能说出四冲程汽油机的四个冲程及能量转化</p>
+    <p>② 掌握热值的概念，能用 $Q = mq$ 计算燃料完全燃烧放出的热量</p>
+    <p>③ 理解热机效率的含义，会用 $\eta = \dfrac{W_{\text{有}}}{Q_{\text{放}}} \times 100\%$ 进行效率计算</p>
+    <p>④ 初步认识能量转化与守恒定律，能举例说明能量转化过程中的方向性</p>
+  </div>
+
+  <!-- 前置知识关联 -->
+  <div class="knowledge-link">
+    <strong>📎 前置知识关联：</strong>
+    第13章·内能——分子热运动、内能的概念、改变内能的两种方式（做功与热传递）、比热容 $Q = cm\Delta t$ 计算；
+    第11章·功——功的计算 $W = Fs$、功率 $P = W/t$；
+    生活经验——汽车发动机工作时的"轰隆"声与散热、燃料燃烧发热、生活中"热"字的多种含义。
+  </div>
+
+  <!-- 思维方法 -->
+  <div class="thought-method">
+    <strong>🔬 物理学思维方法：能量转化与守恒思想</strong>
+    能量既不会凭空产生，也不会凭空消灭，它只会从一种形式转化为其他形式，或者从一个物体转移到其他物体，而在转化和转移的过程中，能量的总量保持不变。本章中，热机将燃料的化学能→内能→机械能；燃料燃烧是化学能转化为内能的过程。理解"转化"与"转移"的区别——转化是形式改变，转移是形式不变但物体改变。能量转化与守恒是自然界最普遍、最重要的基本定律之一，贯穿整个物理学。
+  </div>
+
+  <!-- 思维导图 -->
+  <details class="module" open>
+    <summary>🧠 思维导图</summary>
+    <div class="content">
+      <div class="mindmap">
+        <ul>
+          <li><span class="node-label">内能的利用</span></li>
+          <li>
+            <span class="node-label">热机</span>
+            <ul>
+              <li>定义：将内能转化为机械能的装置</li>
+              <li>内燃机：燃料在汽缸内部燃烧</li>
+              <li>汽油机：吸气冲程吸入汽油+空气混合物（火花塞点火）</li>
+              <li>柴油机：吸气冲程只吸入空气（压燃式点火）</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">汽油机四冲程</span>
+            <ul>
+              <li>吸气冲程：进气门开，活塞下行，吸入混合气</li>
+              <li>压缩冲程：两门关，活塞上行，机械能→内能</li>
+              <li>做功冲程：火花塞点火，燃气膨胀，内能→机械能</li>
+              <li>排气冲程：排气门开，活塞上行，排出废气</li>
+              <li>一个工作循环：曲轴转 2 圈，活塞往复各 2 次，做功 1 次</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">热值 $q$</span>
+            <ul>
+              <li>定义：燃料完全燃烧放出的热量与质量之比</li>
+              <li>公式：$Q = mq$（固体/液体），$Q = Vq$（气体）</li>
+              <li>单位：$\text{J/kg}$ 或 $\text{J/m}^3$</li>
+              <li>热值是燃料的属性，与质量、是否燃烧无关</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">热机效率 $\eta$</span>
+            <ul>
+              <li>$\eta = \dfrac{W_{\text{有}}}{Q_{\text{放}}} \times 100\%$</li>
+              <li>$\eta$ 总小于 1（摩擦散热等损失不可避免）</li>
+              <li>提高效率：减少散热、润滑减少摩擦、充分燃烧</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">能量转化与守恒</span>
+            <ul>
+              <li>能量守恒定律：总量保持不变</li>
+              <li>能量转化具有方向性（内能自发从高温→低温）</li>
+              <li>例：化学能→内能→机械能→电能（火力发电站）</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <!-- 核心概念 -->
+  <details class="module" open>
+    <summary>📖 核心概念</summary>
+    <div class="content">
+      <div class="advance-organizer"><strong>🔍 先行组织者：</strong>汽车是怎么"动"起来的？你加进去的是汽油（化学能），发动机"燃烧"它，车轮就转了。这个过程叫做<strong>热机</strong>——把燃料燃烧产生的内能转化为机械能。汽油在汽缸里"爆炸"推动活塞运动，四个步骤周而复始：吸、压、做、排。每个冲程的能量转化是什么？一箱油能跑多远（热值）？效率有多高？这就是本章要回答的问题。</div>
+
+      <div class="card-grid">
+
+        <div class="concept-card">
+          <div class="name">热机与内燃机</div>
+          <p><strong>热机：</strong>将燃料燃烧产生的<strong>内能</strong>转化为<strong>机械能</strong>的装置。</p>
+          <p>分类：蒸汽机、内燃机（汽油机/柴油机）、汽轮机、喷气发动机。</p>
+          <p><strong>内燃机：</strong>燃料在汽缸<strong>内部</strong>燃烧，直接将内能转化为机械能。汽油机和柴油机是最常见的内燃机。</p>
+          <p>汽油机用<strong>火花塞</strong>点燃（点燃式），柴油机靠<strong>压燃</strong>（压缩式）。</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">四冲程工作循环</div>
+          <p>一个工作循环包括<strong>吸气、压缩、做功、排气</strong>四个冲程。</p>
+          <p>曲轴转 <strong>2 圈</strong>，活塞往复各 <strong>2 次</strong>，对外做功 <strong>1 次</strong>。</p>
+          <p><strong>压缩冲程：</strong>机械能 → 内能（活塞压缩气体做功，温度升高）</p>
+          <p><strong>做功冲程：</strong>内能 → 机械能（燃气膨胀推动活塞做功）</p>
+          <p>记忆口诀："一吸二压三做功，四排结束再循环"。</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">热值 $q$</div>
+          <p><strong>定义：</strong>单位质量（或体积）的燃料<strong>完全燃烧</strong>所放出的热量。</p>
+          <p>公式：固体/液体燃料 $Q = mq$，气体燃料 $Q = Vq$。</p>
+          <p>单位：$\text{J/kg}$ 或 $\text{J/m}^3$</p>
+          <p>常见热值：干木柴约 $1.2 \times 10^7\ \text{J/kg}$，标准煤 $2.9 \times 10^7\ \text{J/kg}$，汽油 $4.6 \times 10^7\ \text{J/kg}$，天然气约 $4.4 \times 10^7\ \text{J/m}^3$。</p>
+          <p><strong>注意：</strong>热值是燃料的<strong>属性</strong>，不随质量大小、是否燃烧、燃烧是否完全而改变。</p>
+          <span class="level-silver">🥈 白银级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">热机效率 $\eta$</div>
+          <p><strong>定义：</strong>热机用来做<strong>有用功</strong>的能量与燃料<strong>完全燃烧</strong>放出的能量之比。</p>
+          <p>\[\eta = \frac{W_{\text{有}}}{Q_{\text{放}}} \times 100\%\]</p>
+          <p>蒸汽机效率约 $6\%\text{–}15\%$，汽油机 $20\%\text{–}30\%$，柴油机 $30\%\text{–}45\%$。</p>
+          <p>损失途径：① 废气带走大部分热量（最大损失）；② 散热损失；③ 摩擦损失；④ 燃料不完全燃烧。</p>
+          <p>提高效率：充分燃烧、减少散热、加强润滑、利用废气余热。</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">能量转化与守恒定律</div>
+          <p>能量既不会凭空产生，也不会凭空消灭，它只会从一种形式转化为其他形式，或者从一个物体转移到其他物体，而在转化和转移的过程中，能量的总量<strong>保持不变</strong>。</p>
+          <p>永动机不可能实现，因为它违背了能量守恒定律。</p>
+          <p>能量转化具有<strong>方向性</strong>：内能总是自发地从高温物体传递到低温物体，不能自发地反向进行。因此虽然能量总量守恒，但可利用的能源是有限的。</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">汽油机与柴油机对比</div>
+          <p><strong>汽油机：</strong>火花塞点火（点燃式），吸入汽油+空气混合气，压缩比小，噪声小，多用于轿车。</p>
+          <p><strong>柴油机：</strong>压燃式（压缩空气温度达柴油燃点），只吸入空气，压缩比大，效率高，多用于卡车、拖拉机。</p>
+          <p>共同点：都是内燃机，都有四个冲程，一个工作循环曲轴转两圈。</p>
+          <span class="level-silver">🥈 白银级</span>
+        </div>
+
+      </div>
+    </div>
+  </details>
+
+  <!-- 公式速查 -->
+  <details class="module" open>
+    <summary>📐 公式速查</summary>
+    <div class="content">
+
+      <div class="formula-card">
+        <strong>燃料燃烧放热</strong>
+        <p>\[ Q = mq \quad (\text{固体/液体}) \qquad Q = Vq \quad (\text{气体}) \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          $Q$ — 放出的热量（$\text{J}$），$m$ — 质量（$\text{kg}$），$V$ — 体积（$\text{m}^3$），$q$ — 热值（$\text{J/kg}$ 或 $\text{J/m}^3$）
+        </p>
+        <span class="level-silver">🥈 白银级</span>
+      </div>
+
+      <div class="formula-card">
+        <strong>热机效率</strong>
+        <p>\[ \eta = \frac{W_{\text{有}}}{Q_{\text{放}}} \times 100\% \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          $W_{\text{有}}$ — 有用功（$\text{J}$），$Q_{\text{放}}$ — 燃料完全燃烧放出的总热量（$\text{J}$）<br>
+          通常 $W_{\text{有}} = Fs = Pt$（牵引力做功），$Q_{\text{放}} = mq$
+        </p>
+        <span class="level-gold">🥇 黄金级</span>
+      </div>
+
+      <div class="formula-card">
+        <strong>热机效率的变形式</strong>
+        <p>\[ W_{\text{有}} = \eta \cdot Q_{\text{放}} = \eta \cdot mq \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          已知其中两个量可求第三个。常用于"汽车行驶"类综合题——先算 $Q_{\text{放}} = mq$，再求 $W_{\text{有}} = \eta Q_{\text{放}}$，最后由 $W_{\text{有}} = Fs$ 求牵引力或路程。
+        </p>
+        <span class="level-gold">🥇 黄金级</span>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 实验探究 -->
+  <details class="module" open>
+    <summary>🔬 实验探究：热机工作过程模拟</summary>
+    <div class="content">
+      <div class="experiment-card">
+        <h3>模拟实验：酒精灯加热试管——"内能做功"</h3>
+
+        <div class="exp-step">
+          <span class="exp-step-num">1</span>
+          <div><strong>实验装置：</strong>将少量水注入试管中，用橡胶塞塞紧管口。将试管固定在铁架台上，用酒精灯加热试管底部。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">2</span>
+          <div><strong>观察现象：</strong>水沸腾后，水蒸气将橡胶塞<strong>冲出去</strong>，试管口附近出现"白雾"。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">3</span>
+          <div><strong>能量分析：</strong>酒精燃烧（化学能 → 内能）→ 水吸收热量变为水蒸气（内能增大）→ 水蒸气膨胀推动橡胶塞（内能 → 机械能）。这个过程模拟了热机的<strong>做功冲程</strong>。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">4</span>
+          <div><strong>"白雾"成因：</strong>水蒸气对外做功，自身内能减少、温度降低，液化为小水滴。</div>
+        </div>
+
+        <div class="exp-principle">
+          <strong>⚙ 实验原理：</strong>气体膨胀对外做功，内能转化为机械能。热机的做功冲程正是利用高温高压燃气膨胀推动活塞做功。
+        </div>
+
+        <div class="exp-tip">
+          <strong>💡 易错提示：</strong>① 橡胶塞飞出时不要对着人，注意安全；② "白雾"是<strong>小水滴</strong>而不是水蒸气（水蒸气是无色透明的）；③ 这个实验体现了"物体对外做功内能减少"——橡胶塞被冲出后，试管内气体的温度降低。
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- 解题技巧 -->
+  <details class="module" open>
+    <summary>✍️ 解题技巧</summary>
+    <div class="content">
+
+      <div class="technique-card">
+        <h3><span class="step-num">1</span> 热机效率计算</h3>
+        <div class="method">📌 方法：先算 $Q_{\text{放}} = mq$，再找 $W_{\text{有}}$，最后代入 $\eta = W_{\text{有}} / Q_{\text{放}}$</div>
+        <div class="example">
+          <strong>例题：</strong>一辆汽车消耗 $2\ \text{kg}$ 汽油，牵引力做功 $2.3 \times 10^7\ \text{J}$。已知汽油热值 $q = 4.6 \times 10^7\ \text{J/kg}$，求发动机的效率。<br>
+          <strong>解：</strong>$Q_{\text{放}} = mq = 2 \times 4.6 \times 10^7 = 9.2 \times 10^7\ \text{J}$<br>
+          $\eta = \dfrac{W_{\text{有}}}{Q_{\text{放}}} \times 100\% = \dfrac{2.3 \times 10^7}{9.2 \times 10^7} \times 100\% = 25\%$
+        </div>
+        <div class="pitfall">
+          ⚠️ 易错点：$W_{\text{有}}$ 和 $Q_{\text{放}}$ 的单位必须统一（都用 $\text{J}$）。注意 $W_{\text{有}}$ 是牵引力做的有用功，不是总功。不要混淆 $Q = cm\Delta t$（吸热）和 $Q = mq$（放热）。
+        </div>
+        <div class="error-diagnosis"><div class="wrong">❌ 错误："已知汽油热值 4.6×10⁷ J/kg，完全燃烧 2 kg 放出热量为 9.2×10⁷ J，汽车做了 2.3×10⁷ J 的功，所以效率为 (2.3×10⁷ × 100%) / (9.2×10⁷) = 25%"——结果正确，但如果题目给的是"牵引力 1000 N，行驶距离 23 km"，要先通过 W=Fs 算出有用功。</div><div class="analysis">🔍 诊断：焦耳定律 $Q=I^2Rt$ 与热机效率无关！热机效率公式中的 $Q_{\text{放}}$ 来自 $\color{red}{Q=mq}$，不是 $Q=I^2Rt$。两个"Q"含义不同，不要张冠李戴。</div></div>
+        <div class="principle">
+          <strong>📐 原理依据：</strong>效率的核心思想是"有用的部分占总部分的百分比"。热机效率揭示了燃料燃烧释放的能量中有多少被有效利用。损失的能量并没有消失（符合能量守恒），只是转化成了其他形式（废气内能、摩擦热等）。
+        </div>
+        <div class="variant"><strong>🌱 基础变式：</strong>一汽车发动机效率 25%，行驶 1 h 消耗汽油 8 kg（$q=4.6\times10^7\ \text{J/kg}$），求牵引力做功的功率。（$\eta = W_{\text{有}}/Q_{\text{放}}$ → $W_{\text{有}} = \eta mq = 0.25 \times 8 \times 4.6\times10^7 = 9.2\times10^7\ \text{J}$；$P = W_{\text{有}}/t = 9.2\times10^7 / 3600 \approx 2.56\times10^4\ \text{W} = 25.6\ \text{kW}$）</div>
+        <div class="exam-hint">
+          🏆 考场提示：中考中热机效率常与"汽车行驶"结合——先算 $Q_{\text{放}} = mq$，再利用 $\eta$ 求 $W_{\text{有}}$，最后用 $W_{\text{有}} = Fs$ 或 $P = W_{\text{有}}/t$ 求牵引力、路程或功率。
+        </div>
+      </div>
+
+      <div class="technique-card">
+        <h3><span class="step-num">2</span> 四冲程判断与能量转化</h3>
+        <div class="method">📌 方法：抓住"门"的状态和活塞运动方向，判断冲程；分析能量转化看冲程类型</div>
+        <div class="example">
+          <strong>例题：</strong>汽油机工作时，汽缸内温度最高的冲程是______，能量转化是______。<br>
+          <strong>解：</strong>做功冲程中燃气温度最高（可达 $2000^\circ\text{C}$ 以上）。能量转化：<strong>内能 → 机械能</strong>。<br>
+          （注意：压缩冲程结束时温度也很高，但最高温度出现在做功冲程初期——燃气剧烈燃烧时。）
+        </div>
+        <div class="method" style="margin-top:8px;">📌 快速判断表格：</div>
+        <div style="overflow-x:auto;margin:8px 0;">
+          <table style="width:100%;border-collapse:collapse;font-size:13px;">
+            <thead>
+              <tr style="background:var(--accent-light);">
+                <th style="padding:6px 8px;border:1px solid var(--border);text-align:center;">冲程</th>
+                <th style="padding:6px 8px;border:1px solid var(--border);text-align:center;">进气门</th>
+                <th style="padding:6px 8px;border:1px solid var(--border);text-align:center;">排气门</th>
+                <th style="padding:6px 8px;border:1px solid var(--border);text-align:center;">活塞</th>
+                <th style="padding:6px 8px;border:1px solid var(--border);text-align:center;">能量转化</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td style="padding:6px;border:1px solid var(--border);">吸气</td><td style="padding:6px;border:1px solid var(--border);text-align:center;">开</td><td style="padding:6px;border:1px solid var(--border);text-align:center;">关</td><td style="padding:6px;border:1px solid var(--border);text-align:center;">下行</td><td style="padding:6px;border:1px solid var(--border);">—</td></tr>
+              <tr><td style="padding:6px;border:1px solid var(--border);">压缩</td><td style="padding:6px;border:1px solid var(--border);text-align:center;">关</td><td style="padding:6px;border:1px solid var(--border);text-align:center;">关</td><td style="padding:6px;border:1px solid var(--border);text-align:center;">上行</td><td style="padding:6px;border:1px solid var(--border);"><strong>机械能 → 内能</strong></td></tr>
+              <tr><td style="padding:6px;border:1px solid var(--border);"><strong>做功</strong></td><td style="padding:6px;border:1px solid var(--border);text-align:center;">关</td><td style="padding:6px;border:1px solid var(--border);text-align:center;">关</td><td style="padding:6px;border:1px solid var(--border);text-align:center;">下行</td><td style="padding:6px;border:1px solid var(--border);"><strong>内能 → 机械能</strong></td></tr>
+              <tr><td style="padding:6px;border:1px solid var(--border);">排气</td><td style="padding:6px;border:1px solid var(--border);text-align:center;">关</td><td style="padding:6px;border:1px solid var(--border);text-align:center;">开</td><td style="padding:6px;border:1px solid var(--border);text-align:center;">上行</td><td style="padding:6px;border:1px solid var(--border);">—</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pitfall">
+          ⚠️ 易错点：① 做功冲程中不是"燃烧"产生能量转化，而是燃气<strong>膨胀对外做功</strong>将内能转化为机械能。② 一个工作循环曲轴转 <strong>2 圈</strong>，不是 1 圈！③ 压缩冲程和做功冲程都有能量转化，方向正好相反。
+        </div>
+        <div class="error-diagnosis"><div class="wrong">❌ 错误："压缩冲程是内能转化为机械能" / "做功冲程是机械能转化为内能"</div><div class="analysis">🔍 诊断：两个冲程的能量转化正好相反！<br>压缩冲程：活塞<strong>压缩</strong>气体 → 对气体做功 → 内能增加 → <strong>机械能→内能</strong><br>做功冲程：燃气<strong>膨胀</strong>推动活塞 → 对外做功 → 内能减少 → <strong>内能→机械能</strong><br>记忆方法："压缩"就是挤压，外力做功使内能增大；"做功"就是对外输出，内能减少转化为机械能。</div></div>
+        <div class="principle">
+          <strong>📐 原理依据：</strong>改变内能的两种方式——做功和热传递。压缩冲程是<strong>对气体做功</strong>使内能增大（机械能→内能）；做功冲程是<strong>气体对外做功</strong>使内能减少（内能→机械能）。前者是"压缩气体做功"，后者是"气体膨胀做功"。
+        </div>
+        <div class="variant"><strong>🌱 基础变式：</strong>一台四冲程汽油机飞轮转速为 3600 r/min，则它每秒完成____个冲程，对外做功____次。（3600 r/min = 60 r/s，曲轴每转 2 圈完成 1 个工作循环→4 个冲程→1 次做功，则 60 r/s 对应 30 个工作循环→120 个冲程→30 次做功）</div>
+        <div class="exam-hint">
+          🏆 考场提示：中考必考！四冲程判断常以选择题形式出现，关键是看"气门开闭 + 活塞方向"两个条件。转速题注意单位换算（r/min → r/s），一个循环 2 圈做功 1 次。
+        </div>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 中考真题 -->
+  <details class="exam-module" open>
+    <summary>📝 中考真题</summary>
+    <div class="content">
+
+      <div class="exam-q">
+        <span class="q-tag">2022 天津</span>
+        <div class="q-diff mid">★★☆</div>
+        <strong>题 1</strong>
+        <div class="q-body">
+          汽油机的压缩冲程中，汽缸内气体的内能如何变化？能量转化形式是什么？
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong>压缩冲程中，活塞向上运动，压缩汽缸内的混合气体，对气体<strong>做功</strong>。气体的内能<strong>增大</strong>，温度升高。能量转化形式为<strong>机械能转化为内能</strong>。<br>
+          <strong>变式提示：</strong>如果问"做功冲程"，则内能转化为机械能，内能减少。<br>
+          <strong>答案：</strong>内能增大；机械能转化为内能。
+        </div>
+      </div>
+
+      <div class="exam-q">
+        <span class="q-tag">2023 重庆</span>
+        <div class="q-diff mid">★★☆</div>
+        <strong>题 2</strong>
+        <div class="q-body">
+          一辆新能源汽车行驶 $100\ \text{km}$ 消耗 $8\ \text{kg}$ 氢气。已知氢气的热值 $q = 1.4 \times 10^8\ \text{J/kg}$，汽车发动机的效率为 $40\%$。<br>
+          （1）$8\ \text{kg}$ 氢气完全燃烧放出的热量是多少？<br>
+          （2）该过程中汽车做的有用功是多少？
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong><br>
+          （1）$Q_{\text{放}} = mq = 8 \times 1.4 \times 10^8 = 1.12 \times 10^9\ \text{J}$<br>
+          （2）$\eta = \dfrac{W_{\text{有}}}{Q_{\text{放}}} \times 100\% \;\Rightarrow\; W_{\text{有}} = \eta \cdot Q_{\text{放}} = 0.4 \times 1.12 \times 10^9 = 4.48 \times 10^8\ \text{J}$<br>
+          <strong>注意：</strong>新能源车使用氢气作为燃料，热值很高（约是汽油的 3 倍），完全燃烧放出的热量大，且产物是水，无污染。<br>
+          <strong>答案：</strong>（1）$1.12 \times 10^9\ \text{J}$（2）$4.48 \times 10^8\ \text{J}$
+        </div>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 自查清单 -->
+  <div class="checklist">
+    <h3>✅ 章节自查清单</h3>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能说出四冲程汽油机的工作顺序，判断每个冲程的能量转化</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我会用 $Q = mq$ 计算燃料完全燃烧放热，注意区分 $mq$ 和 $cm\Delta t$</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能用 $\eta = W_{\text{有}} / Q_{\text{放}}$ 计算热机效率，能说出提高效率的途径</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能区分汽油机和柴油机在结构、点火方式上的不同</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能复述能量守恒定律，举例说明能量转化具有方向性</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能解决"飞轮转速→冲程数/做功次数"类计算题</label>
+    <p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;">
+      <strong>🧑‍🏫 费曼挑战：</strong>请用大白话向同桌解释"为什么热机效率不能达到 100%"，并举一个生活中能量"损耗"但并未消失的例子。
+    </p>
+  </div>
+
+  <div class="review-schedule">
+    <strong>📅 间隔复习</strong>
+    <span class="review-dot">🔵 1天后：默画四冲程工作循环表</span>
+    <span class="review-dot">🟢 3天后：做热机效率计算题</span>
+    <span class="review-dot">🟡 1周后：讲能量守恒给别人听</span>
+    <span class="review-dot">🔴 1月后：做本章中考真题</span>
+  </div>
+
+  <div class="next-stop"><strong>➡️ 下一站：第15章 电流和电路</strong><br>热学部分到此结束，接下来你将进入一个全新的世界——电学。从电荷的发现开始，你将认识电流、电路图、串并联。第14章的能量转化思路会持续贯穿——在电学中，电能与其他形式能的转化同样遵循能量守恒定律。</div>
+
+</div>
+
+</main>
+
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/auto-render.min.js"></script>
+<script>
+(function() {
+  // Theme toggle
+  const toggle = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+  const saved = localStorage.getItem('site-theme');
+  if (saved === 'dark') {
+    html.setAttribute('data-theme', 'dark');
+    toggle.textContent = '☀️ 亮色模式';
+  }
+  toggle.addEventListener('click', function() {
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    toggle.textContent = isDark ? '🌙 暗色模式' : '☀️ 亮色模式';
+    localStorage.setItem('site-theme', isDark ? 'light' : 'dark');
+  });
+
+  // KaTeX auto-render
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof renderMathInElement === 'function') {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ],
+        throwOnError: false
+      });
+    }
+  });
+
+  // Sidebar
+  var sidebar = document.getElementById('sidebar');
+  var hideBtn = document.getElementById('sidebarHideBtn');
+  var sidebarHidden = localStorage.getItem('physics9-sidebar') === 'hidden';
+  if (sidebarHidden) sidebar.classList.add('hidden');
+  var showBtn = document.getElementById('sidebarShowBtn');
+  hideBtn.addEventListener('click', function() {
+    sidebar.classList.add('hidden');
+    localStorage.setItem('physics9-sidebar', 'hidden');
+  });
+  showBtn.addEventListener('click', function() {
+    sidebar.classList.remove('hidden');
+    localStorage.setItem('physics9-sidebar', '');
+  });
+
+  // Expand all
+  (function() {
+    var btn = document.getElementById('expandAllBtn');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      var allDetails = document.querySelectorAll('.module, .exam-module');
+      var allOpen = true;
+      for (var i = 0; i < allDetails.length; i++) {
+        if (!allDetails[i].hasAttribute('open')) { allOpen = false; break; }
+      }
+      for (var i = 0; i < allDetails.length; i++) {
+        if (allOpen) allDetails[i].removeAttribute('open');
+        else allDetails[i].setAttribute('open', '');
+      }
+      btn.textContent = allOpen ? '📂 展开全部模块' : '📖 收起全部模块';
+    });
+  })();
+})();
+window.addEventListener('scroll', function() {
+  var btn = document.getElementById('backToTop');
+  if (btn) btn.style.display = window.scrollY > 400 ? 'block' : 'none';
+});
+</script>
+
+</body>
+</html>

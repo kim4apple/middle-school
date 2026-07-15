@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第13章 内能 | 九年级物理</title>
+<link rel="stylesheet" href="css/physics.css">
+<link rel="stylesheet" href="../katex/katex.min.css">
+</head>
+<body>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="回到顶部">↑</button>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">九年级物理</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;" title="隐藏侧栏">✕</button>
+  </div>
+  <nav>
+    <a href="index.html">🏠 首页</a>
+    <a href="ch13.html" class="active">第13章 内能</a>
+    <a href="ch14.html">第14章 内能的利用</a>
+    <a href="ch15.html">第15章 电流和电路</a>
+    <a href="ch16.html">第16章 电压 电阻</a>
+    <a href="ch17.html">第17章 欧姆定律</a>
+    <a href="ch18.html">第18章 电功率</a>
+    <a href="ch19.html">第19章 生活用电</a>
+    <a href="ch20.html">第20章 电与磁</a>
+    <a href="ch21.html">第21章 信息的传递</a>
+    <a href="ch22.html">第22章 能源与可持续发展</a>
+    <a href="appendix.html">附录</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+  <button id="theme-toggle" class="theme-toggle" style="margin-top:10px;">🌙 暗色模式</button>
+  <button class="print-btn" onclick="window.print()" style="margin-top:8px;padding:8px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px;width:100%;">🖨️ 打印 / 存 PDF</button>
+</nav>
+
+<main id="content">
+
+<div class="chapter">
+  <h1>第13章 内能</h1>
+
+  <!-- 学习目标 -->
+  <div class="learning-goals">
+    <strong>🎯 学习目标</strong>
+    <p>① 理解分子热运动的基本概念，能解释扩散现象及其与温度的关系 <span style="color:var(--accent);font-size:12px;margin-left:6px;">权重：★★☆☆☆</span></p>
+    <p>② 掌握内能的物理意义，知道改变内能的两种方式（做功与热传递），能辨析温度、热量与内能三者的关系 <span style="color:var(--accent);font-size:12px;margin-left:6px;">权重：★★★☆☆</span></p>
+    <p>③ 理解比热容的概念及其物理含义，熟练运用 $Q=cm\Delta t$ 进行热量计算 <span style="color:var(--accent);font-size:12px;margin-left:6px;">权重：★★★★☆</span></p>
+    <p>④ 能设计并分析比热容测定实验，处理实验数据并分析误差 <span style="color:var(--accent);font-size:12px;margin-left:6px;">权重：★★★☆☆</span></p>
+    <p>⑤ 会用热平衡方程 $Q_{\text{吸}}=Q_{\text{放}}$ 解决混合物的温度计算问题 <span style="color:var(--accent);font-size:12px;margin-left:6px;">权重：★★★☆☆</span></p>
+  </div>
+
+  <!-- 前置知识关联 -->
+  <div class="knowledge-link">
+    <strong>📎 前置知识关联：</strong>
+    八年级·物态变化（温度概念、温度计的使用、熔化/凝固/汽化/液化／升华/凝华过程中的吸放热）；
+    八年级·质量与密度（质量的单位 kg、密度的概念 $\rho=m/V$，为比热容中质量参量铺垫）；
+    生活经验：烧水时水变热（热传递）、冬天搓手取暖（做功）、海边白天吹海风（水的比热容大）。
+  </div>
+
+  <!-- 思维方法 -->
+  <div class="thought-method">
+    <strong>🔬 物理学思维方法：微观模型法</strong>
+    用分子动理论的微观图像解释宏观热现象——物质由大量分子组成，分子在永不停息地做无规则运动，分子间存在引力和斥力。通过扩散现象推断分子的热运动，通过温度的高低判断分子热运动的剧烈程度，通过内能变化分析做功与热传递的宏观过程。这种"微观机制→宏观表现"的推理方法是热学乃至整个物理学的核心思维方式。
+  </div>
+
+  <!-- 思维导图 -->
+  <details class="module" open>
+    <summary>🧠 思维导图</summary>
+    <div class="content">
+      <div class="mindmap">
+        <ul>
+          <li><span class="node-label">内能</span></li>
+          <li>
+            <span class="node-label">分子热运动</span>
+            <ul>
+              <li>扩散现象：不同物质相互接触彼此进入对方（气体最快、液体次之、固体最慢）</li>
+              <li>影响因素：温度越高，分子热运动越剧烈，扩散越快</li>
+              <li>分子动理论内容：①物质由大量分子组成 ②分子永不停息做无规则运动 ③分子间存在引力和斥力</li>
+              <li>分子间作用力：$r=r_0$ 时合力为零，$r&lt;r_0$ 时表现为斥力，$r&gt;r_0$ 时表现为引力</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">内能</span>
+            <ul>
+              <li>定义：物体内部所有分子热运动的动能与分子势能的总和</li>
+              <li>单位：焦耳（J）</li>
+              <li>影响因素：温度、质量、体积、状态</li>
+              <li>任何物体在任何温度下都有内能（但 $0^\circ\text{C}$ 的物体内能不为零）</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">改变内能的方式</span>
+            <ul>
+              <li>做功：对物体做功内能增加（摩擦生热、压缩气体）；物体对外做功内能减少（气体膨胀）</li>
+              <li>热传递：条件——存在温度差；方向——高温→低温；实质——内能的转移</li>
+              <li>热量 $Q$：热传递过程中转移内能的多少（过程量，不能说"物体具有热量"）</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">比热容 $c$</span>
+            <ul>
+              <li>定义：单位质量的某种物质，温度升高（或降低）$1^\circ\text{C}$ 所吸收（或放出）的热量</li>
+              <li>特性：反映物质吸放热能力的物理量，是物质的一种属性</li>
+              <li>单位：$\text{J/(kg}\cdot^\circ\text{C)}$</li>
+              <li>水的比热容大：$c_{\text{水}}=4.2\times10^3\ \text{J/(kg}\cdot^\circ\text{C)}$</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">热量计算 $Q=cm\Delta t$</span>
+            <ul>
+              <li>$Q_{\text{吸}}=cm(t-t_0)$</li>
+              <li>$Q_{\text{放}}=cm(t_0-t)$</li>
+              <li>热平衡方程：$Q_{\text{吸}}=Q_{\text{放}}$</li>
+              <li>统一单位：$c$ 取 $\text{J/(kg}\cdot^\circ\text{C)}$，$m$ 取 $\text{kg}$，$\Delta t$ 取 $^\circ\text{C}$</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <!-- 核心概念 -->
+  <details class="module" open>
+    <summary>📖 核心概念</summary>
+    <div class="content">
+      <div class="advance-organizer"><strong>🔍 先行组织者：</strong>冬天你把手放在暖气片上——手变热了（热传递）；你使劲搓手——手也变热了（做功）。两种方式都能使手的内能增加。但为什么海水在太阳下晒得慢、沙子却烫脚？这和物质的"吸热本领"有关——比热容。本章我们从分子层面搞清楚：内能到底是什么？怎么让物体的内能发生变化？不同的物质升高相同的温度为什么需要的热量不同？掌握这些，你就打下了热学计算的全部基础。</div>
+
+      <div class="card-grid">
+
+        <div class="concept-card">
+          <div class="name">分子热运动与扩散</div>
+          <p><strong>扩散现象：</strong>不同物质在相互接触时彼此进入对方的现象。气体扩散最快（如打开香水瓶满屋飘香），液体次之（如蓝墨水滴入清水中扩散），固体也能扩散（如铅和金长时间接触后互相渗入）。</p>
+          <p><strong>分子热运动：</strong>一切物质的分子都在永不停息地做无规则运动。温度越高，分子热运动越剧烈，扩散越快——这就是为什么热水中的糖比冷水中的糖溶解得更快。</p>
+          <p><strong>分子间作用力：</strong>分子间既有引力也有斥力，二者同时存在。当分子间距等于平衡距离 $r_0$ 时，合力为 0；$r&lt;r_0$ 时主要表现为斥力（固体、液体难以压缩）；$r&gt;r_0$ 时主要表现为引力（拉伸物体需要力）；$r&gt;10r_0$ 时作用力几乎为零（气体分子间距大，可忽略分子力）。</p>
+          <span class="level-silver">🥈 白银级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">内能</div>
+          <p><strong>定义：</strong>物体内部所有分子热运动的<strong>动能</strong>与分子<strong>势能</strong>的总和，单位是焦耳（J）。</p>
+          <p><strong>理解关键：</strong>① 内能是微观量——对应物体内部大量分子的运动状态，不是单个分子的；② 一切物体在任何温度下都有内能（即使是 $0^\circ\text{C}$ 的冰，分子仍在做无规则运动，具有内能）；③ 内能的大小与物体的温度、质量、体积和状态都有关。</p>
+          <p><strong>温度、热量、内能的辨析：</strong>温度是一个状态量，表示物体的冷热程度；内能是一个状态量，表示物体内部分子热运动的总能量；热量是一个过程量，表示在热传递中转移的能量的多少——物体"具有"温度和内能，但只能"吸收"或"放出"热量，不能说"具有热量"。</p>
+          <p><strong>易错：</strong>物体温度升高，内能一定增大；但内能增大，温度不一定升高（如晶体熔化过程吸热内能增大，温度保持不变）。</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">比热容</div>
+          <p><strong>定义：</strong>单位质量的某种物质，温度升高（或降低）$1^\circ\text{C}$ 所吸收（或放出）的热量，用符号 $c$ 表示。</p>
+          <p><strong>公式：</strong>$c = \dfrac{Q}{m\Delta t}$（这是比热容的定义式，但 $c$ 本身由物质种类和状态决定，与 $Q$、$m$、$\Delta t$ 无关）。</p>
+          <p><strong>单位：</strong>$\text{J/(kg}\cdot^\circ\text{C)}$，读作"焦耳每千克摄氏度"。</p>
+          <p><strong>特性：</strong>比热容是物质的一种属性——不同物质比热容一般不同，同种物质在不同状态下比热容也不同（如水的比热容 $4.2\times10^3\ \text{J/(kg}\cdot^\circ\text{C)}$ 远大于冰的比热容 $2.1\times10^3\ \text{J/(kg}\cdot^\circ\text{C)}$）。</p>
+          <p><strong>水的比热容大的应用：</strong>① 冷却剂（汽车发动机用水循环冷却）；② 取暖（热水袋、暖气管道中通热水）；③ 调节气候（沿海地区昼夜温差小于内陆）。</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">改变内能的两种方式</div>
+          <p><strong>做功：</strong>对物体做功，物体的内能增加（机械能转化为内能）；物体对外做功，内能减少（内能转化为机械能）。</p>
+          <p style="margin-top:4px;">例：钻木取火（机械功→内能增加→温度升高→点燃）；压缩空气引火仪（压缩空气做功，空气内能增大，温度升高，棉花燃烧）；气体膨胀做功（装有水的塑料瓶，打气后瓶塞跳出，瓶口出现白雾——气体对外做功，内能减少，温度降低，水蒸气液化）。</p>
+          <p><strong>热传递：</strong>热量从高温物体传递到低温物体的过程。条件：存在温度差。方向：自发地从高温到低温。实质：内能从高温物体转移到低温物体。</p>
+          <p style="margin-top:4px;">热传递的三种方式：传导（固体中）、对流（液体和气体中）、辐射（不需要介质，如太阳的热量传递到地球）。</p>
+          <p><strong>二者的区别：</strong>做功是<strong>能量的转化</strong>（机械能与内能之间的转化）；热传递是<strong>内能的转移</strong>（内能从一个物体转移到另一个物体，能量形式不变）。</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+      </div>
+    </div>
+  </details>
+
+  <!-- 公式速查 -->
+  <details class="module" open>
+    <summary>📐 公式速查</summary>
+    <div class="content">
+
+      <div class="formula-card">
+        <strong>热量计算——吸热公式</strong>
+        <p>\[ Q_{\text{吸}} = cm(t - t_0) \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          $Q_{\text{吸}}$ — 吸收的热量（$\text{J}$）&nbsp; $c$ — 比热容（$\text{J/(kg}\cdot^\circ\text{C)}$）<br>
+          $m$ — 质量（$\text{kg}$）&nbsp; $t$ — 末温（$^\circ\text{C}$）&nbsp; $t_0$ — 初温（$^\circ\text{C}$）
+        </p>
+        <span class="level-gold">🥇 黄金级</span>
+      </div>
+
+      <div class="formula-card">
+        <strong>热量计算——放热公式</strong>
+        <p>\[ Q_{\text{放}} = cm(t_0 - t) \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          注意 $\Delta t$ 始终取 <strong>高温减低温</strong>，确保 $Q$ 为正。统一记作 $Q = cm\Delta t$，其中 $\Delta t = |t_{\text{末}} - t_{\text{初}}|$。
+        </p>
+        <span class="level-silver">🥈 白银级</span>
+      </div>
+
+      <div class="formula-card">
+        <strong>热平衡方程</strong>
+        <p>\[ Q_{\text{吸}} = Q_{\text{放}} \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          即 $c_1m_1(t - t_{01}) = c_2m_2(t_{02} - t)$，其中 $t$ 为混合后的共同温度。<br>
+          适用于：冷热水混合、金属块放入水中等"温度不同物体接触达到热平衡"的问题。<br>
+          <strong>隐含条件：</strong>在不计热量损失的前提下，高温物体放出的热量全部被低温物体吸收。
+        </p>
+        <span class="level-gold">🥇 黄金级</span>
+      </div>
+
+      <div class="formula-card">
+        <strong>比热容定义式</strong>
+        <p>\[ c = \frac{Q}{m\Delta t} \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          这是比热容的计算式。注意：$c$ 是物质的特性，<strong>不随 $Q$、$m$、$\Delta t$ 的变化而变化</strong>。同一个物体，用不同的 $\Delta t$ 算出的 $c$ 都相同（前提物质状态不变）。
+        </p>
+        <span class="level-bronze">🥉 青铜级</span>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 实验探究 -->
+  <details class="module" open>
+    <summary>🔬 实验探究：比热容的测定</summary>
+    <div class="content">
+      <div class="experiment-card">
+        <h3>实验：用比较法探究不同物质的吸热能力</h3>
+
+        <div class="exp-step">
+          <span class="exp-step-num">1</span>
+          <div><strong>实验猜想：</strong>不同的物质，在质量相等、升高的温度相同时，吸收的热量一般不同。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">2</span>
+          <div><strong>设计实验：</strong>取两个相同的烧杯，分别装入质量相等的<strong>水</strong>和<strong>食用油</strong>（或沙子），用两个相同的酒精灯（或电加热器）同时加热。用温度计分别测量两种液体的温度变化。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">3</span>
+          <div><strong>控制变量：</strong>① 质量相同（用天平称量等质量的水和食用油）；② 吸收的热量相同（用相同加热器加热相同的时间——通过加热时间的长短间接反映吸收热量的多少）；③ 比较升高的温度，或比较升高相同温度所需要的加热时间。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">4</span>
+          <div><strong>实验现象：</strong>加热相同的时间（吸收热量相同），食用油的温度升高得比水多；使水和食用油升高相同的温度，水的加热时间更长（水吸收的热量更多）——说明水的吸热能力更强，即水的比热容更大。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">5</span>
+          <div><strong>数据处理：</strong>将实验数据记录在表格中，以时间为横坐标、温度为纵坐标绘制温度—时间图像。图像的倾斜程度反映了物质吸热能力的强弱——倾斜度越大，吸热能力越弱（相同时间内升温快）。</div>
+        </div>
+
+        <div class="exp-principle">
+          <strong>⚙ 实验原理：</strong>采用"转换法"——用<strong>加热时间的长短</strong>间接表示物质<strong>吸收热量的多少</strong>（利用相同的加热器，单位时间内供给的热量基本相同）。利用 $Q=cm\Delta t$ 可知，在 $m$ 和 $\Delta t$ 相同时，$c$ 越大的物质吸收的热量越多；在 $m$ 和 $Q$ 相同时，$c$ 越大的物质温度变化 $\Delta t$ 越小。
+        </div>
+
+        <div class="exp-tip">
+          <strong>💡 易错提示：</strong>① 必须保证水和食用油的质量相同（用天平称量），而不是体积相同——密度不同的物质等体积时质量不等；② 必须使用相同的加热器，并确保加热过程中受热均匀（可以不断搅拌）；③ 实验中水或食用油容易向空气中散热导致误差，可以在烧杯上加盖以减少热量散失；④ 不能用酒精灯直接加热的时间精确反映吸收的热量——常用"电加热器"替代以实现更均匀的加热。
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- 解题技巧 -->
+  <details class="module" open>
+    <summary>✍️ 解题技巧</summary>
+    <div class="content">
+
+      <div class="technique-card">
+        <h3><span class="step-num">1</span> 热量计算三步法</h3>
+        <div class="method">📌 方法：① 确定对象和过程（吸热还是放热）；② 找出已知量（$c$、$m$、$t_0$、$t$）和待求量；③ 代入 $Q=cm\Delta t$ 计算，注意单位统一。</div>
+        <div class="example">
+          <strong>例题：</strong>将质量为 $2\ \text{kg}$、温度为 $20^\circ\text{C}$ 的水加热到 $100^\circ\text{C}$，需要吸收多少热量？（$c_{\text{水}}=4.2\times10^3\ \text{J/(kg}\cdot^\circ\text{C)}$）<br>
+          <strong>解：</strong>$Q_{\text{吸}}=cm(t-t_0)=4.2\times10^3\times2\times(100-20)=4.2\times10^3\times2\times80=6.72\times10^5\ \text{J}$。
+        </div>
+        <div class="pitfall">
+          ⚠️ 易错点：$\Delta t$ 是指<strong>温度的变化量</strong>（$|t_{\text{末}}-t_{\text{初}}|$），不是单纯的末温！注意区分"温度升高到"和"温度升高了"："温度升高到 $100^\circ\text{C}$"意味着 $t=100^\circ\text{C}$；"温度升高了 $100^\circ\text{C}$"意味着 $\Delta t=100^\circ\text{C}$。
+        </div>
+        <div class="error-diagnosis"><div class="wrong">❌ 错误：把"升高到"和"升高了"混为一谈——"将 20°C 的水温度升高到 100°C"，直接用 $\Delta t=100$ 代入公式计算</div><div class="analysis">🔍 诊断："升高到 100°C" 是末温 $t=100^\circ\text{C}$，$\Delta t = 100-20 = 80^\circ\text{C}$；"升高了 100°C" 才是 $\Delta t = 100^\circ\text{C}$。读题时务必圈出"到"和"了"来区分。</div></div>
+        <div class="principle">
+          <strong>📐 原理依据：</strong>热量计算公式 $Q=cm\Delta t$ 中的 $\Delta t$ 是温度变化量的绝对值，不是末温。$Q_{\text{吸}}=cm(t-t_0)$ 中 $t-t_0 &gt; 0$，$Q_{\text{放}}=cm(t_0-t)$ 中 $t_0-t &gt; 0$，二式本质上都是 $Q=cm|\Delta t|$。
+        </div>
+        <div class="variant"><strong>🌱 基础变式：</strong>质量为 $500\ \text{g}$ 的铝块，比热容为 $0.88\times10^3\ \text{J/(kg}\cdot^\circ\text{C)}$，温度从 $150^\circ\text{C}$ 降低到 $50^\circ\text{C}$，放出了多少热量？（注意 $500\ \text{g}=0.5\ \text{kg}$，$Q_{\text{放}}=0.88\times10^3\times0.5\times(150-50)=4.4\times10^4\ \text{J}$）</div>
+        <div class="exam-hint">
+          🏆 考场提示：中考必考！注意单位换算——$m$ 以 $\text{kg}$ 为单位代入，若题给 $g$ 需要先换算（$1\ \text{kg}=1000\ \text{g}$）。
+        </div>
+      </div>
+
+      <div class="technique-card">
+        <h3><span class="step-num">2</span> 温度变化与内能变化辨析</h3>
+        <div class="method">📌 方法：分清"温度升高→内能增大""内能增大→温度不一定升高"的双向关系。</div>
+        <div class="example">
+          <strong>例题：</strong>下列说法正确的是？<br>A. 物体温度升高，内能一定增大<br>B. 物体内能增大，温度一定升高<br>C. 物体吸收热量，内能一定增大<br>D. 物体内能增大，一定吸收了热量<br>
+          <strong>解：</strong>A 正确——同一物体温度升高，分子热运动加剧，分子动能增大，内能一定增大；B 错误——晶体熔化时吸热内能增大但温度不变；C 错误——物体在吸热的同时可能对外做功（如气体膨胀），内能可能不变或减小；D 错误——内能增大也可能通过做功实现（如摩擦生热）。<br>
+          <strong>答案：</strong>A
+        </div>
+        <div class="pitfall">
+          ⚠️ 易错点：错以为"温度高的物体内能一定大"——内能还与质量、状态有关。例如一桶 $80^\circ\text{C}$ 的水的内能比一滴 $90^\circ\text{C}$ 的水的内能大得多（质量因素占主导）。
+        </div>
+        <div class="error-diagnosis"><div class="wrong">❌ 错误：认为"0°C 的冰内能为零"——因为温度为零，所以内能为零</div><div class="analysis">🔍 诊断：这是最经典的中考陷阱！任何物体在任何温度下都有内能。$0^\circ\text{C}$ 的冰中分子仍然在做永不停息的无规则运动（分子动能不为零），分子间也有相互作用势能（分子势能不为零）。只能说同一物体在 $0^\circ\text{C}$ 时的内能比 $10^\circ\text{C}$ 时小。</div></div>
+        <div class="principle">
+          <strong>📐 原理依据：</strong>内能 = 分子动能 + 分子势能。温度只决定分子平均动能，而内能还取决于分子势能（与分子间距、物态有关）。因此内能的变化可以从两个维度分析：① 温度变化（动能力度）；② 状态变化（势能力度）。
+        </div>
+        <div class="variant"><strong>🌱 基础变式：</strong>关于热量、内能、温度的关系，请判断：物体吸收了热量，温度不一定升高（✓ 晶体熔化过程）；物体温度升高，不一定是吸收了热量（✓ 也可能是外界做了功）；物体放出热量，内能一定减小（✗ 物体在放热的同时还可能被压缩做功，内能可能增大）。</div>
+        <div class="exam-hint">
+          🏆 考场提示：温度—内能—热量三者关系辨析是中考选择题的"钉子户"考点。记住一个反例就能推翻一个绝对化结论——"晶体熔化"反例几乎可破所有"一定"型错误选项。
+        </div>
+      </div>
+
+      <div class="technique-card">
+        <h3><span class="step-num">3</span> 热平衡方程的应用</h3>
+        <div class="method">📌 方法：两个温度不同的物体接触，不计热量损失时，$Q_{\text{吸}}=Q_{\text{放}}$，列方程求解混合后的共同温度。</div>
+        <div class="example">
+          <strong>例题：</strong>将质量为 $0.5\ \text{kg}$、温度为 $95^\circ\text{C}$ 的铁块投入质量为 $2\ \text{kg}$、温度为 $15^\circ\text{C}$ 的水中。若不计热量损失，求达到热平衡时的共同温度。已知 $c_{\text{铁}}=0.46\times10^3\ \text{J/(kg}\cdot^\circ\text{C)}$，$c_{\text{水}}=4.2\times10^3\ \text{J/(kg}\cdot^\circ\text{C)}$。<br>
+          <strong>解：</strong>设共同温度为 $t$，则 $Q_{\text{放}}=c_{\text{铁}}m_{\text{铁}}(95-t)$，$Q_{\text{吸}}=c_{\text{水}}m_{\text{水}}(t-15)$。由 $Q_{\text{吸}}=Q_{\text{放}}$ 得：$0.46\times10^3\times0.5\times(95-t)=4.2\times10^3\times2\times(t-15)$，化简：$230(95-t)=8400(t-15)$，$21850-230t=8400t-126000$，$147850=8630t$，$t\approx 17.1^\circ\text{C}$。
+        </div>
+        <div class="pitfall">
+          ⚠️ 易错点：① 忘记乘以质量 $m$（只算了比热容的差值）；② 吸热方程和放热方程写反了（高温物体放热，低温物体吸热）；③ 忘记代入 $c$ 的数值时将 $\times10^3$ 遗漏；④ 未明确最终 $\Delta t$ 是否合理（如果混合后的温度超出两物体的初始温度范围，说明计算有误）。
+        </div>
+        <div class="error-diagnosis"><div class="wrong">❌ 错误：将铁块放入水中后，直接写 $0.46\times10^3\times(95-t)=4.2\times10^3\times(t-15)$，忘记了乘以各自的质量</div><div class="analysis">🔍 诊断：$Q=cm\Delta t$——热量由三个量共同决定。铁块质量仅为 $0.5\ \text{kg}$，水的质量为 $2\ \text{kg}$，质量相差 4 倍，不乘质量将导致巨大误差。热平衡方程的正确列法是 $c_1m_1\Delta t_1 = c_2m_2\Delta t_2$。</div></div>
+        <div class="principle">
+          <strong>📐 原理依据：</strong>能量守恒定律在热学中的具体体现——在隔热系统中（与外界无热交换），高温物体放出的热量全部被低温物体吸收，总内能保持不变。
+        </div>
+        <div class="variant"><strong>🌱 基础变式：</strong>$100\ \text{g}$ 的 $20^\circ\text{C}$ 冷水和 $200\ \text{g}$ 的 $80^\circ\text{C}$ 热水混合，不计热量损失，求混合后的温度。（设 $t$ 为共同温度：$c\cdot 0.1\cdot(t-20)=c\cdot 0.2\cdot(80-t)$，$0.1(t-20)=0.2(80-t)$，$0.1t-2=16-0.2t$，$0.3t=18$，$t=60^\circ\text{C}$）</div>
+        <div class="exam-hint">
+          🏆 考场提示：中考中热平衡方程通常不涉及太复杂的数学计算，重点在于能否正确列出平衡方程。注意题目中是否有"不计热量损失"或"热量散失忽略不计"的条件字样——若有，直接使用 $Q_{\text{吸}}=Q_{\text{放}}$；若无，需要考虑散热损失（$Q_{\text{放}}\times\eta=Q_{\text{吸}}$）。
+        </div>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 中考真题 -->
+  <details class="exam-module" open>
+    <summary>📝 中考真题</summary>
+    <div class="content">
+
+      <div class="exam-q">
+        <span class="q-tag">2023 北京</span>
+        <div class="q-diff mid">★★☆</div>
+        <strong>题 1</strong>
+        <div class="q-body">
+          用两个相同的电加热器分别给质量和初温都相同的甲、乙两种液体同时加热，两种液体的温度随时间变化的图像如图所示。根据图像回答：
+          <br>（1）加热相同时间，哪种液体吸收的热量更多？为什么？
+          <br>（2）哪种液体的比热容更大？说明判断依据。
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong><br>
+          （1）加热相同时间，两种液体吸收的热量<strong>相同</strong>。因为两个电加热器完全相同，在相同时间内放出的热量相等（不计热量损失），传递给两种液体的热量也相同。<br>
+          （2）乙液体的比热容更大。判断依据：由 $Q=cm\Delta t$ 可知，在 $Q$ 和 $m$ 相同时，$c$ 与 $\Delta t$ 成反比——升高温度越小的物质比热容越大。从图像看，加热相同时间（吸收相同热量），乙的温度升高更慢（$\Delta t_{\text{乙}} &lt; \Delta t_{\text{甲}}$），所以 $c_{\text{乙}} &gt; c_{\text{甲}}$。<br>
+          <strong>答案：</strong>（1）相同——加热器相同，加热时间相同放热相同；（2）乙——升高相同温度吸收热量多，或相同时间温度变化小。
+        </div>
+      </div>
+
+      <div class="exam-q">
+        <span class="q-tag">2022 上海</span>
+        <div class="q-diff mid">★★☆</div>
+        <strong>题 2</strong>
+        <div class="q-body">
+          质量为 $0.5\ \text{kg}$ 的水，温度从 $90^\circ\text{C}$ 降低到 $40^\circ\text{C}$，放出了多少热量？$[c_{\text{水}}=4.2\times10^3\ \text{J/(kg}\cdot^\circ\text{C)}]$。若这些热量全部被质量为 $1\ \text{kg}$ 的某种液体吸收，使其温度从 $20^\circ\text{C}$ 升高到 $45^\circ\text{C}$，求这种液体的比热容。
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong><br>
+          （1）水放出的热量：<br>
+          $Q_{\text{放}} = c_{\text{水}}m_{\text{水}}(t_0-t) = 4.2\times10^3\times0.5\times(90-40) = 4.2\times10^3\times0.5\times50 = 1.05\times10^5\ \text{J}$。<br>
+          （2）由 $Q_{\text{吸}} = Q_{\text{放}}$（不计热量损失）得：<br>
+          $c_{\text{液}} = \dfrac{Q_{\text{吸}}}{m_{\text{液}}\Delta t_{\text{液}}} = \dfrac{1.05\times10^5}{1\times(45-20)} = \dfrac{1.05\times10^5}{25} = 4.2\times10^3\ \text{J/(kg}\cdot^\circ\text{C)}$。<br>
+          <strong>答案：</strong>$1.05\times10^5\ \text{J}$；$4.2\times10^3\ \text{J/(kg}\cdot^\circ\text{C)}$（该液体是水）。
+        </div>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 自查清单 -->
+  <div class="checklist">
+    <h3>✅ 章节自查清单</h3>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能用分子动理论解释扩散现象及其与温度的关系</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我理解内能的含义，能准确辨析"温度、热量、内能"三者的区别</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能说出做功和热传递两种改变内能的方式，并举例说明</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我会用 $Q=cm\Delta t$ 进行吸放热计算，注意区分"升高到/升高了"</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能列热平衡方程 $Q_{\text{吸}}=Q_{\text{放}}$ 解决混合温度问题</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能完整叙述比热容测定实验的原理、步骤和注意事项</label>
+    <p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;">
+      <strong>🧑‍🏫 费曼挑战：</strong>请用大白话向同桌解释"为什么沿海地区昼夜温差比内陆小"，以及"夏天赤脚踩沙滩和踩海水的温度为什么不同"。
+    </p>
+  </div>
+
+  <div class="review-schedule">
+    <strong>📅 间隔复习</strong>
+    <span class="review-dot">🔵 1天后：默写 $Q=cm\Delta t$ 并做 3 道热量计算题</span>
+    <span class="review-dot">🟢 3天后：重做中考真题并复述分子动理论三条内容</span>
+    <span class="review-dot">🟡 1周后：给同学讲一遍"温度、热量、内能的区别"</span>
+    <span class="review-dot">🔴 1月后：做本章综合测试卷，重点攻克热平衡方程大题</span>
+  </div>
+
+  <div class="next-stop"><strong>➡️ 下一站：第14章 内能的利用</strong><br>你已经理解了内能是什么、如何改变、如何计算。下一章将学习如何利用内能做功——热机（汽油机、柴油机）的工作原理，燃料燃烧释放热量的计算，以及热机效率。从微观的分子运动到宏观的能量转化，热学的画卷正在铺开。</div>
+
+</div>
+
+</main>
+
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/auto-render.min.js"></script>
+<script>
+(function() {
+  // Theme toggle
+  const toggle = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+  const saved = localStorage.getItem('site-theme');
+  if (saved === 'dark') {
+    html.setAttribute('data-theme', 'dark');
+    toggle.textContent = '☀️ 亮色模式';
+  }
+  toggle.addEventListener('click', function() {
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    toggle.textContent = isDark ? '🌙 暗色模式' : '☀️ 亮色模式';
+    localStorage.setItem('site-theme', isDark ? 'light' : 'dark');
+  });
+
+  // KaTeX auto-render
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof renderMathInElement === 'function') {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ],
+        throwOnError: false
+      });
+    }
+  });
+
+  // IntersectionObserver for sidebar active
+  document.addEventListener('DOMContentLoaded', function() {
+    const sidebarLinks = document.querySelectorAll('#sidebar nav a');
+    const modules = document.querySelectorAll('.module, .exam-module, .learning-goals');
+    if (modules.length === 0) return;
+    const observer = new IntersectionObserver(function(entries) {
+      let best = null;
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) best = entry.target;
+      });
+      if (best) {
+        sidebarLinks.forEach(function(link) { link.classList.remove('active'); });
+      }
+    }, { rootMargin: '-20% 0px -60% 0px' });
+    modules.forEach(function(m) { observer.observe(m); });
+  });
+  var sidebar = document.getElementById('sidebar');
+  var hideBtn = document.getElementById('sidebarHideBtn');
+  var sidebarHidden = localStorage.getItem('physics9-sidebar') === 'hidden';
+  if (sidebarHidden) sidebar.classList.add('hidden');
+  var showBtn = document.getElementById('sidebarShowBtn');
+  hideBtn.addEventListener('click', function() {
+    sidebar.classList.add('hidden');
+    localStorage.setItem('physics9-sidebar', 'hidden');
+  });
+  showBtn.addEventListener('click', function() {
+    sidebar.classList.remove('hidden');
+    localStorage.setItem('physics9-sidebar', '');
+  });
+  (function() {
+    var btn = document.getElementById('expandAllBtn');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      var allDetails = document.querySelectorAll('.module, .exam-module');
+      var allOpen = true;
+      for (var i = 0; i < allDetails.length; i++) {
+        if (!allDetails[i].hasAttribute('open')) { allOpen = false; break; }
+      }
+      for (var i = 0; i < allDetails.length; i++) {
+        if (allOpen) allDetails[i].removeAttribute('open');
+        else allDetails[i].setAttribute('open', '');
+      }
+      btn.textContent = allOpen ? '📂 展开全部模块' : '📖 收起全部模块';
+    });
+  })();
+  })();
+  window.addEventListener('scroll', function() {
+    var btn = document.getElementById('backToTop');
+    if (btn) btn.style.display = window.scrollY > 400 ? 'block' : 'none';
+  });
+</script>
+
+</body>
+</html>

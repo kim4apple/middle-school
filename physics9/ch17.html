@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第17章 欧姆定律 | 九年级物理</title>
+<link rel="stylesheet" href="css/physics.css">
+<link rel="stylesheet" href="../katex/katex.min.css">
+</head>
+<body>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="回到顶部">↑</button>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">九年级物理</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;" title="隐藏侧栏">✕</button>
+  </div>
+  <nav>
+    <a href="index.html">🏠 返回首页</a>
+    <a href="ch13.html">第13章 内能</a>
+    <a href="ch14.html">第14章 内能的利用</a>
+    <a href="ch15.html">第15章 电流和电路</a>
+    <a href="ch16.html">第16章 电压 电阻</a>
+    <a href="ch17.html" class="active">第17章 欧姆定律</a>
+    <a href="ch18.html">第18章 电功率</a>
+    <a href="ch19.html">第19章 生活用电</a>
+    <a href="ch20.html">第20章 电与磁</a>
+    <a href="ch21.html">第21章 信息的传递</a>
+    <a href="ch22.html">第22章 能源与可持续发展</a>
+    <a href="appendix.html" style="margin-top:12px;border-top:1px solid var(--border);padding-top:12px;font-weight:600;">📎 附录</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+  <button id="theme-toggle" class="theme-toggle" style="margin-top:10px;">🌙 暗色模式</button>
+  <button class="print-btn" onclick="window.print()" style="margin-top:8px;padding:8px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px;width:100%;">🖨️ 打印 / 存 PDF</button>
+</nav>
+
+<main id="content">
+
+<div class="chapter">
+  <h1>第17章 欧姆定律</h1>
+
+  <!-- 学习目标 -->
+  <div class="learning-goals">
+    <strong>🎯 学习目标</strong>
+    <p>① 理解欧姆定律的内容、公式 $I=U/R$ 及其适用条件，能进行简单计算</p>
+    <p>② 掌握串联和并联电路的总电阻规律，$R=R_1+R_2$ 和 $\dfrac{1}{R}=\dfrac{1}{R_1}+\dfrac{1}{R_2}$</p>
+    <p>③ 会用伏安法测电阻，理解多次测量取平均值的意义，能分析动态电路和简单故障</p>
+  </div>
+
+  <!-- 前置知识关联 -->
+  <div class="knowledge-link">
+    <strong>📎 前置知识关联：</strong>
+    第15章 · 电流和电路（电流的概念、串并联电路识别、电流表使用）；
+    第16章 · 电压 电阻（电压表使用、串并联电压规律、电阻影响因素、滑动变阻器）；
+    数学 · 比例关系、一元一次方程求解。欧姆定律是电学的"牛顿第二定律"——第一次将电压、电流、电阻三个核心量统一在一个公式中。
+  </div>
+
+  <!-- 思维方法 -->
+  <div class="thought-method">
+    <strong>🔬 物理学思维方法：控制变量法</strong>
+    当物理量 $I$ 与 $U$、$R$ 两个因素均有关时，采用控制变量法分别探究：① 控制电阻 $R$ 不变，探究 $I$ 与 $U$ 的关系（正比）；② 控制电压 $U$ 不变，探究 $I$ 与 $R$ 的关系（反比）。将"多因素"拆解为"单因素"研究，这是物理实验最核心的方法论之一。
+  </div>
+
+  <!-- 思维导图 -->
+  <details class="module" open>
+    <summary>🧠 思维导图</summary>
+    <div class="content">
+      <div class="mindmap">
+        <ul>
+          <li><span class="node-label">欧姆定律</span></li>
+          <li>
+            <span class="node-label">电流与电压的关系</span>
+            <ul>
+              <li>控制电阻不变，$I \propto U$</li>
+              <li>$U$-$I$ 图像为过原点的直线</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">电流与电阻的关系</span>
+            <ul>
+              <li>控制电压不变，$I \propto \dfrac{1}{R}$</li>
+              <li>$I$-$R$ 图像为反比例曲线</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">欧姆定律 $I=\dfrac{U}{R}$</span>
+            <ul>
+              <li>内容：导体中的电流与电压成正比，与电阻成反比</li>
+              <li>变形：$U=IR$、$R=\dfrac{U}{I}$</li>
+              <li>适用条件：纯电阻电路（电解液导电、气体导电不适用）</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">电阻的串并联</span>
+            <ul>
+              <li>串联：$R=R_1+R_2$，越串越大（大于最大电阻）</li>
+              <li>并联：$\dfrac{1}{R}=\dfrac{1}{R_1}+\dfrac{1}{R_2}$，越并越小（小于最小电阻）</li>
+              <li>串联分压：$\dfrac{U_1}{U_2}=\dfrac{R_1}{R_2}$</li>
+              <li>并联分流：$\dfrac{I_1}{I_2}=\dfrac{R_2}{R_1}$</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">伏安法测电阻</span>
+            <ul>
+              <li>原理：$R=\dfrac{U}{I}$</li>
+              <li>电路：电流表串联 + 电压表并联 + 滑动变阻器</li>
+              <li>多次测量求平均值减小误差</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">动态电路分析</span>
+            <ul>
+              <li>滑片移动 → 电阻变化 → 电流变化 → 电压变化</li>
+              <li>开关通断 → 电路结构变化 → 重新分析</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <!-- 核心概念 -->
+  <details class="module" open>
+    <summary>📖 核心概念</summary>
+    <div class="content">
+      <div class="advance-organizer"><strong>🔍 先行组织者：</strong>水压驱动水流通过水管——水压越大水流越大，水管越细（阻力越大）水流越小。电压 $U$ 类比水压，电阻 $R$ 类比水管粗细对水流的阻碍，电流 $I$ 类比水流。欧姆定律 $I=\dfrac{U}{R}$ 就是"电流 = 电压 ÷ 电阻"，三个量知道任意两个就能求第三个。这是整个电学计算的基石。</div>
+
+      <div class="card-grid">
+
+        <div class="concept-card">
+          <div class="name">欧姆定律</div>
+          <p><strong>内容：</strong>导体中的电流，跟导体两端的电压成<strong>正比</strong>，跟导体的电阻成<strong>反比</strong>。</p>
+          <p><strong>公式：</strong>$I=\dfrac{U}{R}$</p>
+          <p>$U$—电压（V），$I$—电流（A），$R$—电阻（$\Omega$）</p>
+          <p style="margin-top:6px;font-size:13px;"><strong>适用条件：</strong>纯电阻电路（只含电阻、灯泡、电炉等，不含电动机等非纯电阻用电器）。</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">串联电阻规律</div>
+          <p><strong>内容：</strong>串联电路的总电阻等于各串联电阻之和。</p>
+          <p>\[ R = R_1 + R_2 \]</p>
+          <p><strong>理解：</strong>相当于增加了导体的<strong>长度</strong>，故总电阻比任何一个分电阻都大。</p>
+          <p style="margin-top:6px;font-size:13px;"><strong>串联分压：</strong>$\dfrac{U_1}{U_2}=\dfrac{R_1}{R_2}$，电阻大的分得电压大。</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">并联电阻规律</div>
+          <p><strong>内容：</strong>并联电路总电阻的倒数等于各并联电阻的倒数之和。</p>
+          <p>\[ \frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2} \]</p>
+          <p><strong>理解：</strong>相当于增加了导体的<strong>横截面积</strong>，故总电阻比任何一个分电阻都小。</p>
+          <p style="margin-top:6px;font-size:13px;"><strong>并联分流：</strong>$\dfrac{I_1}{I_2}=\dfrac{R_2}{R_1}$，电阻大的支路电流小。</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">伏安法测电阻</div>
+          <p><strong>原理：</strong>用电压表测导体两端的电压 $U$，用电流表测通过导体的电流 $I$，由 $R=\dfrac{U}{I}$ 计算电阻。</p>
+          <p><strong>电路连接：</strong>电流表<strong>串联</strong>在电路中，电压表<strong>并联</strong>在被测电阻两端，滑动变阻器<strong>串联</strong>（一上一下）。</p>
+          <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">为减小误差，应多次测量（改变滑片位置），分别计算 $R$ 后求<strong>平均值</strong>。</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">$U$-$I$ 图像</div>
+          <p>定值电阻的 $U$-$I$ 图像是一条过原点的<strong>倾斜直线</strong>，斜率 $k=R$（电阻值）。</p>
+          <p style="margin-top:6px;font-size:13px;">灯丝电阻的 $U$-$I$ 图像是<strong>曲线</strong>——温度升高导致电阻增大，曲线向 $I$ 轴方向弯曲。</p>
+          <span class="level-silver">🥈 白银级</span>
+          <div class="diagram" style="margin-top:8px;">
+            <svg viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg">
+              <line x1="30" y1="120" x2="220" y2="120" stroke="#333" stroke-width="1"/>
+              <line x1="30" y1="120" x2="30" y2="15" stroke="#333" stroke-width="1"/>
+              <text x="130" y="137" font-size="10" text-anchor="middle">$U$/V</text>
+              <text x="14" y="65" font-size="10" transform="rotate(-90,14,65)" text-anchor="middle">$I$/A</text>
+              <line x1="35" y1="110" x2="200" y2="30" stroke="#2563eb" stroke-width="2.5"/>
+              <text x="205" y="28" font-size="10" fill="#2563eb">定值电阻</text>
+              <!-- curved line for灯泡 -->
+              <path d="M35,115 Q100,100 160,55" stroke="#dc2626" stroke-width="2" stroke-dasharray="4,2" fill="none"/>
+              <text x="165" y="55" font-size="10" fill="#dc2626">灯泡</text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">电阻的测量方法</div>
+          <p><strong>伏安法：</strong>$R=U/I$，需电流表、电压表各一只。</p>
+          <p><strong>伏阻法：</strong>只有电压表，借助已知电阻 $R_0$ 通过串联测电压来算。</p>
+          <p><strong>安阻法：</strong>只有电流表，借助已知电阻 $R_0$ 通过并联测电流来算。</p>
+          <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">中考实验题常考察"缺少一种电表"时如何完成测量。</p>
+          <span class="level-silver">🥈 白银级</span>
+        </div>
+
+      </div>
+    </div>
+  </details>
+
+  <!-- 公式速查 -->
+  <details class="module" open>
+    <summary>📐 公式速查</summary>
+    <div class="content">
+
+      <div class="formula-card">
+        <strong>欧姆定律（核心）</strong>
+        <p>\[ I = \frac{U}{R} \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          $I$ — 电流（A），$U$ — 电压（V），$R$ — 电阻（$\Omega$）<br>
+          变形：$U=IR$ $R=\dfrac{U}{I}$
+        </p>
+        <span class="level-gold">🥇 黄金级</span>
+      </div>
+
+      <div class="formula-card">
+        <strong>串联电阻</strong>
+        <p>\[ R = R_1 + R_2 \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          串联总电阻等于各电阻之和。$n$ 个相同电阻 $R_0$ 串联：$R=nR_0$
+        </p>
+        <span class="level-gold">🥇 黄金级</span>
+      </div>
+
+      <div class="formula-card">
+        <strong>并联电阻</strong>
+        <p>\[ \frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2} \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          两个电阻并联：$R=\dfrac{R_1R_2}{R_1+R_2}$（积在和上飞）<br>
+          $n$ 个相同电阻 $R_0$ 并联：$R=\dfrac{R_0}{n}$
+        </p>
+        <span class="level-gold">🥇 黄金级</span>
+      </div>
+
+      <div class="formula-card">
+        <strong>串联分压</strong>
+        <p>\[ \frac{U_1}{U_2} = \frac{R_1}{R_2} \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          串联电路中，电压的分配与电阻成正比。电阻越大，分得的电压越多。
+        </p>
+        <span class="level-silver">🥈 白银级</span>
+      </div>
+
+      <div class="formula-card">
+        <strong>并联分流</strong>
+        <p>\[ \frac{I_1}{I_2} = \frac{R_2}{R_1} \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          并联电路中，电流的分配与电阻成反比。电阻越大，通过的电流越小。
+        </p>
+        <span class="level-silver">🥈 白银级</span>
+      </div>
+
+      <div class="formula-card">
+        <strong>伏安法测电阻</strong>
+        <p>\[ R = \frac{U}{I} \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          多次测量取平均值：$\bar{R} = \dfrac{R_1+R_2+\cdots+R_n}{n}$
+        </p>
+        <span class="level-silver">🥈 白银级</span>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 实验探究 -->
+  <details class="module" open>
+    <summary>🔬 实验探究</summary>
+    <div class="content">
+
+      <div class="experiment-card">
+        <h3>实验一：探究电流与电压的关系</h3>
+
+        <div class="exp-step">
+          <span class="exp-step-num">1</span>
+          <div><strong>设计电路：</strong>将定值电阻 $R$、电流表、滑动变阻器、电源、开关<strong>串联</strong>，电压表<strong>并联</strong>在 $R$ 两端。滑动变阻器的作用：改变 $R$ 两端的电压。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">2</span>
+          <div><strong>进行实验：</strong>闭合开关，调节滑片改变电压，读出对应的电流值，记录 $3$~$6$ 组 $U$、$I$ 数据。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">3</span>
+          <div><strong>分析数据：</strong>以 $U$ 为横坐标、$I$ 为纵坐标描点作图，得到一条过原点的<strong>倾斜直线</strong>。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">4</span>
+          <div><strong>实验结论：</strong>在电阻一定时，通过导体的电流与导体两端的电压成<strong>正比</strong>。</div>
+        </div>
+
+        <div class="exp-principle">
+          <strong>⚙ 实验方法：</strong>控制变量法——保持 $R$ 不变，改变 $U$ 观察 $I$ 的变化。滑动变阻器在这里的作用是<strong>改变电压</strong>。
+        </div>
+
+        <div class="exp-tip">
+          <strong>💡 易错提示：</strong>① 连接电路时开关要<strong>断开</strong>；② 闭合开关前滑动变阻器滑片要置于阻值<strong>最大</strong>端；③ 电流表串联、电压表并联，注意正负接线柱；④ 不能用小灯泡代替定值电阻——灯丝电阻随温度变化，不能保持电阻不变。
+        </div>
+      </div>
+
+      <div class="experiment-card">
+        <h3>实验二：探究电流与电阻的关系</h3>
+
+        <div class="exp-step">
+          <span class="exp-step-num">1</span>
+          <div><strong>设计电路：</strong>与实验一相同，但需要更换不同阻值的定值电阻。滑动变阻器的作用：保持 $R$ 两端电压<strong>不变</strong>。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">2</span>
+          <div><strong>进行实验：</strong>先用 $R=5\Omega$ 做一次，读取 $I$；断开开关换 $10\Omega$，调节滑片使电压表示数<strong>与前一次相同</strong>，再读数。依次换 $15\Omega$、$20\Omega$。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">3</span>
+          <div><strong>分析数据：</strong>以 $R$ 为横坐标、$I$ 为纵坐标描点，得到反比例曲线；或作 $I$—$\dfrac{1}{R}$ 图像得到一条直线。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">4</span>
+          <div><strong>实验结论：</strong>在电压一定时，通过导体的电流与导体的电阻成<strong>反比</strong>。</div>
+        </div>
+
+        <div class="exp-principle">
+          <strong>⚙ 实验方法：</strong>控制变量法——保持 $U$ 不变，改变 $R$ 观察 $I$ 的变化。滑动变阻器在这里的作用是<strong>控制电压恒定</strong>。
+        </div>
+
+        <div class="exp-tip">
+          <strong>💡 易错提示：</strong>① 换电阻后必须重新调节滑片使电压表示数不变；② 若换用大电阻后电压表示数始终调不到预设值，说明电源电压过大或滑动变阻器最大阻值太小，可适当降低预设电压值。
+        </div>
+      </div>
+
+      <div class="experiment-card">
+        <h3>实验三：伏安法测电阻</h3>
+
+        <div class="exp-step">
+          <span class="exp-step-num">1</span>
+          <div><strong>实验原理：</strong>$R=\dfrac{U}{I}$。用电压表测 $U$，用电流表测 $I$，通过计算得到电阻值。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">2</span>
+          <div><strong>连接电路：</strong>电流表与待测电阻串联，电压表与待测电阻并联，滑动变阻器串联（一上一下接法）。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">3</span>
+          <div><strong>进行测量：</strong>调节滑片在不同位置，测 $3$ 组 $U$、$I$ 值，分别计算 $R=\dfrac{U}{I}$，然后取平均值作为待测电阻的阻值。</div>
+        </div>
+
+        <div class="exp-step">
+          <span class="exp-step-num">4</span>
+          <div><strong>数据处理：</strong>$\bar{R}=\dfrac{R_1+R_2+R_3}{3}$，多次测量取平均值可<strong>减小误差</strong>（不能避免错误）。</div>
+        </div>
+
+        <div class="exp-principle">
+          <strong>⚙ 电路接法：</strong>滑动变阻器"一上一下"接入电路；闭合开关前滑片置于最大阻值处以保护电路。
+        </div>
+
+        <div class="exp-tip">
+          <strong>💡 易错提示：</strong>① 连接电路时开关断开；② 若测小灯泡电阻，灯丝电阻随温度升高而增大，不同电压下的 $R$ 值不同，不需要求平均值；③ 若电流表外接（电流表在电压表外侧），测量值偏小（$U$ 测量值偏大导致 $R$ 偏大），反之内接测量值偏大。
+        </div>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 解题技巧 -->
+  <details class="module" open>
+    <summary>✍️ 解题技巧</summary>
+    <div class="content">
+
+      <div class="technique-card">
+        <h3><span class="step-num">1</span> 动态电路分析（滑片移动型）</h3>
+        <div class="method">📌 方法：滑片移动 → 电阻变化 → 电流变化 → 电压变化（"一看串并、二看阻变、三推流压"）</div>
+        <div class="example">
+          <strong>例题：</strong>如图所示，$R_1=10\Omega$，$R_2=20\Omega$（滑动变阻器），电源电压 $6\ \text{V}$。当滑片 $P$ 向右移动时，电流表和电压表示数如何变化？<br>
+          <strong>解：</strong>① 判断电路：$R_1$ 与 $R_2$ 串联，电流表测总电流，电压表测 $R_1$ 两端电压。<br>
+          ② 滑片右移 → $R_2$ 变大 → $R_{\text{总}}=R_1+R_2$ 变大。<br>
+          ③ 由 $I=U/R_{\text{总}}$ 得 $I$ 减小（电流表示数减小）。<br>
+          ④ $U_1=IR_1$，$R_1$ 不变，$I$ 减小 → $U_1$ 减小（电压表示数减小）。<br>
+          <strong>结论：</strong>电流表、电压表示数均减小。
+        </div>
+        <div class="pitfall">
+          ⚠️ 易错点：并联电路中，电压表示数不变（始终等于电源电压）；变化的是各支路电流和干路电流。串联电路中，定值电阻两端电压与电流变化方向相同，变阻器两端电压与电流变化方向相反。
+        </div>
+        <div class="error-diagnosis"><div class="wrong">❌ 错误：并联电路中滑片移动导致电压表示数也变化</div><div class="analysis">🔍 诊断：在并联电路中，各支路两端电压均等于电源电压，且电源电压不变——无论滑片怎么移，电压表示数都不变。只有串联电路或混联电路中的部分电压才会变化。</div></div>
+        <div class="principle">
+          <strong>📐 原理依据：</strong>欧姆定律 $I=U/R$ 及其变形。串联电路电流处处相等，电压按电阻分配；并联电路各支路电压相等，电流按电阻反比分流。
+        </div>
+        <div class="variant"><strong>🌱 基础变式：</strong>若上题中电压表改测 $R_2$ 两端电压，当滑片右移时电压表示数如何变？（$R_2$ 变大，$U_2=IR_2$，$I$ 减小但 $R_2$ 增大，不能直接判断。应利用 $U_2=U-U_1$，$U$ 不变、$U_1$ 减小，故 $U_2$ 增大。）</div>
+        <div class="exam-hint">
+          🏆 考场提示：动态电路是中考必考题型！核心思路是"先定性分析阻值变化 → 整体电流变化 → 局部电压变化"。串联电路中，记住"谁阻增大，谁压增大，另一个压减小"。
+        </div>
+      </div>
+
+      <div class="technique-card">
+        <h3><span class="step-num">2</span> 动态电路分析（开关通断型）</h3>
+        <div class="method">📌 方法：分析开关闭合/断开前后电路结构的变化，重新计算总电阻</div>
+        <div class="example">
+          <strong>例题：</strong>电路中有 $R_1=6\Omega$、$R_2=3\Omega$，电源电压 $6\ \text{V}$。$S_1$ 闭合、$S_2$ 断开时，电流表示数 $0.5\ \text{A}$；当 $S_1$、$S_2$ 均闭合时，$R_1$ 与 $R_2$ 并联，电流表示数变为多少？<br>
+          <strong>解：</strong>$S_1$、$S_2$ 均闭合后，$R_1$ 与 $R_2$ 并联，总电阻 $R=\dfrac{R_1R_2}{R_1+R_2}=\dfrac{6\times3}{6+3}=2\Omega$。电流表示数 $I=\dfrac{U}{R}=\dfrac{6}{2}=3\ \text{A}$。
+        </div>
+        <div class="pitfall">
+          ⚠️ 易错点：开关闭合可能造成<strong>短路</strong>！判断开关闭合是否将某用电器或某部分电路短路。若用电器被短路，电流从导线直接通过，该用电器中无电流。
+        </div>
+        <div class="principle">
+          <strong>📐 原理依据：</strong>开关通断改变电路连接方式（串联变并联、或并联变串联），总电阻变化导致总电流变化。识别开关闭合后电流的路径是正确分析的关键。
+        </div>
+        <div class="variant"><strong>🌱 基础变式：</strong>在上题基础上，若 $S_2$ 闭合时 $S_1$ 断开，且 $R_1$ 被短路，电流表只测 $R_2$ 的电流。$I=U/R_2=6/3=2\ \text{A}$。</div>
+        <div class="exam-hint">
+          🏆 考场提示：开关通断型问题第一步——画出等效电路图，然后重新标注已知量。判断短路的方法是看电流是否有"捷径"不经过用电器。
+        </div>
+      </div>
+
+      <div class="technique-card">
+        <h3><span class="step-num">3</span> 电路故障判断</h3>
+        <div class="method">📌 方法：根据电表示数异常反推故障类型（短路 / 断路）和位置</div>
+        <div class="example">
+          <strong>判断口诀：</strong><br>
+          ① 电流表有示数 + 电压表无示数 → <strong>电压表所测部分短路</strong><br>
+          ② 电流表无示数 + 电压表有示数（接近电源电压） → <strong>电压表所测部分断路</strong><br>
+          ③ 电流表无示数 + 电压表无示数 → <strong>电压表所测部分之外的电路断路</strong><br>
+          ④ 灯泡不亮 + 电流表有示数 → <strong>灯被短路</strong>（或电压不足）<br>
+          <strong>例题：</strong>在串联电路中，闭合开关后两灯都不亮，电压表测 $L_1$ 两端电压时示数接近电源电压，则故障可能是 _____。<br>
+          <strong>答案：</strong>$L_1$ <strong>断路</strong>。$L_1$ 断路后，电压表相当于串联在电路中，其内阻极大，示数接近电源电压。
+        </div>
+        <div class="pitfall">
+          ⚠️ 易错点：不要混淆"被短路的用电器不工作"和"断路的用电器不工作"。短路时电流表仍可能有示数（但过大可能烧坏），断路时电流表一定无示数。
+        </div>
+        <div class="error-diagnosis"><div class="wrong">❌ 错误：看到"电流表无示数"就判断为断路的全集</div><div class="analysis">🔍 诊断：电流表无示数可能是断路，也可能是电流过小（如电压太低、电阻太大）。需要结合电压表示数综合判断。电压表有示数且接近电源电压 → 所测部分断路；电压表无示数 → 所测部分外断路。</div></div>
+        <div class="principle">
+          <strong>📐 原理依据：</strong>电压表内阻极大，在断路故障中相当于将电压表串入电路，此时电压表示数约等于电源电压（因为电路总电流极小，电源内压降可忽略）。电流表内阻极小，短路时电流过大可能损坏电源。
+        </div>
+        <div class="variant"><strong>🌱 基础变式：</strong>如果并联电路中一条支路断路，该支路电流为零，但干路电流减小，另一支路正常工作不受影响。</div>
+        <div class="exam-hint">
+          🏆 考场提示：故障判断是中考实验题的常见题型。记住"串断有压、短无压"的口诀——串联电路中某元件断路，测该元件的电压表有示数；某元件短路，测该元件的电压表无示数。
+        </div>
+      </div>
+
+      <div class="technique-card">
+        <h3><span class="step-num">4</span> 欧姆定律综合计算</h3>
+        <div class="method">📌 方法：分析电路 → 标注已知 → 选公式 → 计算（注意单位统一）</div>
+        <div class="example">
+          <strong>例题：</strong>如图所示，$R_1=20\Omega$，$R_2=30\Omega$，电源电压 $12\ \text{V}$ 保持不变。（1）当 $S$ 断开时电流表示数是多少？（2）当 $S$ 闭合时电流表示数是多少？<br>
+          <strong>解：</strong>（1）$S$ 断开时，$R_1$、$R_2$ 串联：$R=R_1+R_2=50\Omega$，$I=U/R=12/50=0.24\ \text{A}$。<br>
+          （2）$S$ 闭合时，$R_2$ 被短路，只有 $R_1$ 接入：$I'=U/R_1=12/20=0.6\ \text{A}$。
+        </div>
+        <div class="pitfall">
+          ⚠️ 易错点：代入公式前统一单位！$U$ 用 V、$I$ 用 A、$R$ 用 $\Omega$。若已知 $U$ 为 mV、$I$ 为 mA，需先换算（$1\ \text{V}=1000\ \text{mV}$）。
+        </div>
+        <div class="principle">
+          <strong>📐 原理依据：</strong>欧姆定律 $I=U/R$ 是电学计算的基础。无论电路多复杂，先判断串并联关系，再求总电阻，最后代入 $I=U/R$ 求解。
+        </div>
+        <div class="variant"><strong>🌱 基础变式：</strong>若上题中 $S$ 闭合后电压表测 $R_1$ 两端电压，示数为多少？（$S$ 闭合后 $R_2$ 被短路，$R_1$ 两端电压等于电源电压 12 V。）</div>
+        <div class="exam-hint">
+          🏆 考场提示：串联电路先算总电阻再求电流；并联电路先算总电阻（用积在和上飞）或先求各支路电流再求和。注意开关的短路效应！
+        </div>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 中考真题 -->
+  <details class="exam-module" open>
+    <summary>📝 中考真题</summary>
+    <div class="content">
+
+      <div class="exam-q">
+        <span class="q-tag">2023 武汉</span>
+        <div class="q-diff hard">★★★</div>
+        <strong>题 1</strong>
+        <div class="q-body">
+          在如图所示的电路中，电源电压保持不变。闭合开关 $S$，当滑动变阻器的滑片 $P$ 向右移动时，下列判断正确的是（  ）<br>
+          A. 电流表 $A$ 的示数减小，电压表 $V_1$ 的示数增大<br>
+          B. 电流表 $A$ 的示数增大，电压表 $V_2$ 的示数增大<br>
+          C. 电压表 $V_1$ 的示数与电流表 $A$ 的示数之比不变<br>
+          D. 电压表 $V_2$ 的示数与电流表 $A$ 的示数之比不变
+        </div>
+        <div class="diagram">
+          <svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg">
+            <!-- 电路：R1 与 R2(滑变)串联，A 测总电流，V1 测 R1，V2 测 R2 -->
+            <!-- top line -->
+            <line x1="50" y1="40" x2="310" y2="40" stroke="#333" stroke-width="1.5"/>
+            <!-- bottom line -->
+            <line x1="50" y1="160" x2="310" y2="160" stroke="#333" stroke-width="1.5"/>
+            <!-- left vertical -->
+            <line x1="50" y1="40" x2="50" y2="160" stroke="#333" stroke-width="1.5"/>
+            <!-- 电源 left side -->
+            <text x="15" y="105" font-size="14" font-weight="bold" fill="#2563eb">电源</text>
+            <line x1="50" y1="110" x2="60" y2="110" stroke="#2563eb" stroke-width="2"/>
+            <line x1="50" y1="135" x2="60" y2="135" stroke="#2563eb" stroke-width="2"/>
+            <circle cx="50" cy="110" r="3" fill="#2563eb"/>
+            <circle cx="50" cy="135" r="3" fill="#2563eb"/>
+            <!-- R1 -->
+            <rect x="100" y="28" width="40" height="24" fill="none" stroke="#333" stroke-width="1.2" rx="3"/>
+            <text x="120" y="44" font-size="13" text-anchor="middle" font-weight="bold">$R_1$</text>
+            <!-- R2 (滑动变阻器) -->
+            <rect x="230" y="28" width="40" height="24" fill="none" stroke="#333" stroke-width="1.2" rx="3"/>
+            <text x="250" y="44" font-size="13" text-anchor="middle" font-weight="bold">$R_2$</text>
+            <!-- 滑片箭头 -->
+            <line x1="250" y1="52" x2="250" y2="70" stroke="#dc2626" stroke-width="1.5"/>
+            <polygon points="250,70 245,62 255,62" fill="#dc2626"/>
+            <text x="275" y="74" font-size="11" fill="#dc2626">P→</text>
+            <!-- 电流表 A -->
+            <circle cx="180" cy="40" r="14" fill="none" stroke="#333" stroke-width="1.2"/>
+            <text x="180" y="45" font-size="12" text-anchor="middle" font-weight="bold">A</text>
+            <!-- V1 -->
+            <circle cx="120" cy="105" r="14" fill="none" stroke="#333" stroke-width="1.2"/>
+            <text x="120" y="110" font-size="11" text-anchor="middle" font-weight="bold">$V_1$</text>
+            <!-- V1 connections -->
+            <line x1="120" y1="52" x2="120" y2="91" stroke="#333" stroke-width="1" stroke-dasharray="3,2"/>
+            <line x1="120" y1="119" x2="120" y2="160" stroke="#333" stroke-width="1" stroke-dasharray="3,2"/>
+            <!-- V2 -->
+            <circle cx="250" cy="105" r="14" fill="none" stroke="#333" stroke-width="1.2"/>
+            <text x="250" y="110" font-size="11" text-anchor="middle" font-weight="bold">$V_2$</text>
+            <!-- V2 connections -->
+            <line x1="250" y1="52" x2="250" y2="91" stroke="#333" stroke-width="1" stroke-dasharray="3,2"/>
+            <line x1="250" y1="119" x2="250" y2="160" stroke="#333" stroke-width="1" stroke-dasharray="3,2"/>
+            <!-- 右垂直 -->
+            <line x1="310" y1="40" x2="310" y2="160" stroke="#333" stroke-width="1.5"/>
+            <!-- S 开关 -->
+            <line x1="310" y1="135" x2="330" y2="110" stroke="#333" stroke-width="1.5"/>
+            <circle cx="310" cy="135" r="3" fill="#333"/>
+          </svg>
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong>$R_1$ 与 $R_2$ 串联，电流表 $A$ 测串联电流，$V_1$ 测 $R_1$ 两端电压，$V_2$ 测 $R_2$ 两端电压。滑片 $P$ 右移 → $R_2$ 增大 → $R_{\text{总}}$ 增大 → 电流 $I$ 减小（$A$ 减小）。$U_1=IR_1$，$R_1$ 不变、$I$ 减小 → $U_1$ 减小（$V_1$ 减小）。$U_2=U-U_1$，$U$ 不变、$U_1$ 减小 → $U_2$ 增大（$V_2$ 增大）。A 错（$V_1$ 减小），B 错（$A$ 减小），C 对（$V_1/A=R_1$，定值电阻 $R_1$ 不变），D 错（$V_2/A=R_2$，$R_2$ 在增大）。<br>
+          <strong>答案：</strong>C
+        </div>
+      </div>
+
+      <div class="exam-q">
+        <span class="q-tag">2022 青岛</span>
+        <div class="q-diff hard">★★★</div>
+        <strong>题 2</strong>
+        <div class="q-body">
+          在如图所示的电路中，电源电压恒为 $6\ \text{V}$，$R_1=10\Omega$，$R_2=20\Omega$。闭合开关 $S$ 后：
+          <br>（1）求电流表 $A$ 的示数；
+          <br>（2）若用阻值未知的电阻 $R_x$ 替换 $R_1$，电流表示数为 $0.2\ \text{A}$，求 $R_x$ 的值。
+        </div>
+        <div class="diagram">
+          <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg">
+            <!-- 串联电路：R1 与 R2 串联，总开关 S，电流表 A -->
+            <!-- top wire -->
+            <line x1="50" y1="40" x2="290" y2="40" stroke="#333" stroke-width="1.5"/>
+            <!-- bottom wire -->
+            <line x1="50" y1="140" x2="290" y2="140" stroke="#333" stroke-width="1.5"/>
+            <!-- left vertical -->
+            <line x1="50" y1="40" x2="50" y2="140" stroke="#333" stroke-width="1.5"/>
+            <!-- 电源 -->
+            <line x1="50" y1="95" x2="62" y2="95" stroke="#2563eb" stroke-width="2"/>
+            <line x1="50" y1="115" x2="62" y2="115" stroke="#2563eb" stroke-width="2"/>
+            <circle cx="50" cy="95" r="3" fill="#2563eb"/>
+            <circle cx="50" cy="115" r="3" fill="#2563eb"/>
+            <text x="20" y="108" font-size="11" font-weight="bold" fill="#2563eb">6V</text>
+            <!-- R1 -->
+            <rect x="110" y="28" width="36" height="24" fill="none" stroke="#333" stroke-width="1.2" rx="3"/>
+            <text x="128" y="44" font-size="13" text-anchor="middle" font-weight="bold">$R_1$</text>
+            <!-- R2 -->
+            <rect x="200" y="28" width="36" height="24" fill="none" stroke="#333" stroke-width="1.2" rx="3"/>
+            <text x="218" y="44" font-size="13" text-anchor="middle" font-weight="bold">$R_2$</text>
+            <!-- 电流表 A -->
+            <circle cx="155" cy="140" r="13" fill="none" stroke="#333" stroke-width="1.2"/>
+            <text x="155" y="145" font-size="12" text-anchor="middle" font-weight="bold">A</text>
+            <!-- 电流表连接 -->
+            <line x1="128" y1="52" x2="128" y2="140" stroke="#333" stroke-width="1" stroke-dasharray="3,2"/>
+            <line x1="155" y1="127" x2="155" y2="52" stroke="#333" stroke-width="1" stroke-dasharray="3,2"/>
+            <line x1="155" y1="52" x2="200" y2="52" stroke="#333" stroke-width="1"/>
+            <!-- 开关 S -->
+            <circle cx="290" cy="95" r="3" fill="#333"/>
+            <line x1="290" y1="95" x2="310" y2="70" stroke="#333" stroke-width="1.5"/>
+            <text x="295" y="115" font-size="12" font-weight="bold">S</text>
+            <!-- 右垂直 -->
+            <line x1="290" y1="40" x2="290" y2="140" stroke="#333" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong><br>
+          （1）$R_1$ 与 $R_2$ 串联：$R_{\text{总}}=R_1+R_2=10+20=30\Omega$，电流表示数 $I=\dfrac{U}{R_{\text{总}}}=\dfrac{6}{30}=0.2\ \text{A}$。<br>
+          （2）$R_x$ 替换 $R_1$ 后，$I'=0.2\ \text{A}$，总电阻 $R_{\text{总}}'=\dfrac{U}{I'}=\dfrac{6}{0.2}=30\Omega$。$R_x+R_2=30$，$R_x=30-20=10\Omega$。<br>
+          <strong>答案：</strong>（1）$0.2\ \text{A}$（2）$10\Omega$
+        </div>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 自查清单 -->
+  <div class="checklist">
+    <h3>✅ 章节自查清单</h3>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能准确说出欧姆定律的内容、公式和适用条件</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我会计算串联和并联电路的总电阻，能用 $R=R_1+R_2$ 和 $\dfrac{1}{R}=\dfrac{1}{R_1}+\dfrac{1}{R_2}$</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能分析滑片移动引起的动态电路变化（电阻→电流→电压）</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能根据电表示数判断电路故障（短路/断路）的位置</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能说出伏安法测电阻的实验原理、步骤和注意事项</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能区分"电流与电压关系"和"电流与电阻关系"两个实验的控制变量法</label>
+    <p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;">
+      <strong>🧑‍🏫 费曼挑战：</strong>用"水压 — 水管 — 水流"的类比向同学解释欧姆定律，并说明为什么串联电路中两个电阻"越串越大"，并联中却"越并越小"。
+    </p>
+  </div>
+
+  <div class="review-schedule">
+    <strong>📅 间隔复习</strong>
+    <span class="review-dot">🔵 1天后：默写欧姆定律公式及变形</span>
+    <span class="review-dot">🟢 3天后：做串联并联电阻计算题</span>
+    <span class="review-dot">🟡 1周后：讲动态电路分析给别人听</span>
+    <span class="review-dot">🔴 1月后：做本章中考真题</span>
+  </div>
+
+  <div class="next-stop"><strong>➡️ 下一站：第18章 电功率</strong><br>
+  欧姆定律 $I=U/R$ 是电学的核心工具。第18章电功率将引入 $P=UI$，与欧姆定律结合可推导出 $P=I^2R=U^2/R$——这是中考计算压轴题的必杀组合。打好欧姆定律的基础，电功率才能势如破竹！</div>
+
+</div>
+
+</main>
+
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/auto-render.min.js"></script>
+<script>
+(function() {
+  // Theme toggle
+  const toggle = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+  const saved = localStorage.getItem('site-theme');
+  if (saved === 'dark') {
+    html.setAttribute('data-theme', 'dark');
+    toggle.textContent = '☀️ 亮色模式';
+  }
+  toggle.addEventListener('click', function() {
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    toggle.textContent = isDark ? '🌙 暗色模式' : '☀️ 亮色模式';
+    localStorage.setItem('site-theme', isDark ? 'light' : 'dark');
+  });
+
+  // KaTeX auto-render
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof renderMathInElement === 'function') {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ],
+        throwOnError: false
+      });
+    }
+  });
+
+  // IntersectionObserver for sidebar active
+  document.addEventListener('DOMContentLoaded', function() {
+    const sidebarLinks = document.querySelectorAll('#sidebar nav a');
+    const modules = document.querySelectorAll('.module, .exam-module, .learning-goals');
+    if (modules.length === 0) return;
+    const observer = new IntersectionObserver(function(entries) {
+      let best = null;
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) best = entry.target;
+      });
+      if (best) {
+        sidebarLinks.forEach(function(link) { link.classList.remove('active'); });
+      }
+    }, { rootMargin: '-20% 0px -60% 0px' });
+    modules.forEach(function(m) { observer.observe(m); });
+  });
+  var sidebar = document.getElementById('sidebar');
+  var hideBtn = document.getElementById('sidebarHideBtn');
+  var sidebarHidden = localStorage.getItem('physics9-sidebar') === 'hidden';
+  if (sidebarHidden) sidebar.classList.add('hidden');
+  var showBtn = document.getElementById('sidebarShowBtn');
+  hideBtn.addEventListener('click', function() {
+    sidebar.classList.add('hidden');
+    localStorage.setItem('physics9-sidebar', 'hidden');
+  });
+  showBtn.addEventListener('click', function() {
+    sidebar.classList.remove('hidden');
+    localStorage.setItem('physics9-sidebar', '');
+  });
+  (function() {
+    var btn = document.getElementById('expandAllBtn');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      var allDetails = document.querySelectorAll('.module, .exam-module');
+      var allOpen = true;
+      for (var i = 0; i < allDetails.length; i++) {
+        if (!allDetails[i].hasAttribute('open')) { allOpen = false; break; }
+      }
+      for (var i = 0; i < allDetails.length; i++) {
+        if (allOpen) allDetails[i].removeAttribute('open');
+        else allDetails[i].setAttribute('open', '');
+      }
+      btn.textContent = allOpen ? '📂 展开全部模块' : '📖 收起全部模块';
+    });
+  })();
+  })();
+  window.addEventListener('scroll', function() {
+    var btn = document.getElementById('backToTop');
+    if (btn) btn.style.display = window.scrollY > 400 ? 'block' : 'none';
+  });
+</script>
+
+</body>
+</html>

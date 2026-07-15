@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第21章 信息的传递 | 九年级物理</title>
+<link rel="stylesheet" href="css/physics.css">
+<link rel="stylesheet" href="../katex/katex.min.css">
+</head>
+<body>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="回到顶部">↑</button>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">九年级物理</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;" title="隐藏侧栏">✕</button>
+  </div>
+  <nav>
+    <a href="index.html">🏠 首页</a>
+    <a href="ch13.html">第13章 内能</a>
+    <a href="ch14.html">第14章 内能的利用</a>
+    <a href="ch15.html">第15章 电流和电路</a>
+    <a href="ch16.html">第16章 电压 电阻</a>
+    <a href="ch17.html">第17章 欧姆定律</a>
+    <a href="ch18.html">第18章 电功率</a>
+    <a href="ch19.html">第19章 生活用电</a>
+    <a href="ch20.html">第20章 电与磁</a>
+    <a href="ch21.html" class="active">第21章 信息的传递</a>
+    <a href="ch22.html">第22章 能源与可持续发展</a>
+    <a href="appendix.html">附录</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+  <button id="theme-toggle" class="theme-toggle" style="margin-top:10px;">🌙 暗色模式</button>
+  <button class="print-btn" onclick="window.print()" style="margin-top:8px;padding:8px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px;width:100%;">🖨️ 打印 / 存 PDF</button>
+</nav>
+
+<main id="content">
+
+<div class="chapter">
+  <h1>第21章 信息的传递</h1>
+
+  <!-- 学习目标 -->
+  <div class="learning-goals">
+    <strong>🎯 学习目标</strong>
+    <p>① 理解电话的工作原理——话筒将声信号变为电信号，听筒将电信号变为声信号</p>
+    <p>② 知道电磁波的产生条件（变化的电流），掌握波速公式 $c = \lambda f$ 并进行计算</p>
+    <p>③ 了解电磁波谱的分类及各种通信方式（无线电广播、电视、移动通信、光纤通信）的特点</p>
+  </div>
+
+  <!-- 前置知识关联 -->
+  <div class="knowledge-link">
+    <strong>📎 前置知识关联：</strong>
+    第20章·电与磁——电磁感应（变化的电流产生变化的磁场，变化的磁场产生电场，形成电磁波）；
+    八年级·声现象——波的基本概念（波长、频率、波速的关系），声波不能在真空中传播（对比电磁波）；
+    第15章·电流和电路——电流的磁效应，变化的电流是产生电磁波的根本原因；
+    生活经验·使用手机、Wi-Fi、蓝牙、收音机和电视的直观体验。
+  </div>
+
+  <!-- 思维方法 -->
+  <div class="thought-method">
+    <strong>🔬 物理学思维方法：类比法</strong>
+    将抽象的电磁波与直观的水波、声波进行类比，通过"波"的共同特征——波长、频率、波速——来理解电磁波的传播规律。水波振动的是水分子，声波振动的是空气分子，而电磁波不需要介质。这种"同中求异"的比较思维，既是本章的重要学习方法，也是物理学研究的基本思路。
+  </div>
+
+  <!-- 思维导图 -->
+  <details class="module" open>
+    <summary>🧠 思维导图</summary>
+    <div class="content">
+      <div class="mindmap">
+        <ul>
+          <li><span class="node-label">信息的传递</span></li>
+          <li>
+            <span class="node-label">电话</span>
+            <ul>
+              <li>话筒：声信号 → 变化的电流（电信号）</li>
+              <li>听筒：电信号 → 膜片振动 → 声信号</li>
+              <li>电话交换机：实现多用户间的通话转接</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">电磁波</span>
+            <ul>
+              <li>产生：变化的电流 → 变化的磁场 → 电磁波</li>
+              <li>传播：不需要介质，可在真空中传播</li>
+              <li>波速：$c = 3 \times 10^8\ \text{m/s}$（真空）</li>
+              <li>公式：$c = \lambda f$</li>
+              <li>波速在介质中变慢（$v = c/n$）</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">电磁波谱</span>
+            <ul>
+              <li>无线电波：通信、广播</li>
+              <li>微波：卫星通信、微波炉</li>
+              <li>红外线：遥控、热成像</li>
+              <li>可见光：人眼可见</li>
+              <li>紫外线：消毒、验钞</li>
+              <li>X 射线：医学成像</li>
+              <li>$\gamma$ 射线：医疗、探测</li>
+            </ul>
+          </li>
+          <li>
+            <span class="node-label">通信方式</span>
+            <ul>
+              <li>模拟通信：连续变化信号，易失真</li>
+              <li>数字通信：0/1 编码，抗干扰强</li>
+              <li>光纤通信：激光在光导纤维中传播</li>
+              <li>卫星通信：微波中继，覆盖全球</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <!-- 核心概念 -->
+  <details class="module" open>
+    <summary>📖 核心概念</summary>
+    <div class="content">
+      <div class="advance-organizer"><strong>🔍 先行组织者：</strong>你拿起手机拨打电话，声音瞬间传到千里之外——这是怎么做到的？声音本身传不远，但把它"编码"成电信号，加载到电磁波上，以光速传播，再"解码"还原出来。本章揭开通信的底层魔法：话筒如何把你的声音变成变化电流？电磁波如何"驮着"信息在真空中飞驰？为什么数字通信比模拟通信更清晰？信息之路从电话线走向光纤、卫星，越来越宽。</div>
+
+      <div class="card-grid">
+
+        <div class="concept-card">
+          <div class="name">电话的原理</div>
+          <p><strong>话筒：</strong>声音使膜片振动 → 压紧或放松碳粒 → 电阻变化 → 电流相应变化（声信号→电信号）。</p>
+          <p><strong>听筒：</strong>变化的电流通过电磁铁 → 磁性强弱变化 → 吸引膜片振动 → 还原声音（电信号→声信号）。</p>
+          <p><strong>电话交换机：</strong>将多部电话机连接成网络，通过交换设备实现任意两部电话之间的通话转接。</p>
+          <span class="level-silver">🥈 白银级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">电磁波的产生</div>
+          <p><strong>条件：</strong>变化的电流（振荡电流）在其周围空间产生<strong>变化的磁场</strong>，变化的磁场又产生<strong>变化的电场</strong>，交替向外传播形成电磁波。</p>
+          <p>即使只有一根导线中通过高频振荡电流，也能向空间发射电磁波。</p>
+          <p>理论和实验都证明：<strong>任何变化的电场或磁场都会在周围空间产生电磁波</strong>。</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">电磁波的传播</div>
+          <p><strong>不需要介质：</strong>电磁波在真空中也能传播——这是电磁波与声波最本质的区别。</p>
+          <p>真空中波速恒定：$c = 3 \times 10^8\ \text{m/s}$（光速）。</p>
+          <p>在介质中传播时速度小于真空中的速度：$v = \dfrac{c}{n}$（$n$ 为介质折射率）。</p>
+          <p>传播速度与频率无关（真空中），但不同频率的电磁波在介质中速度略有不同。</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">波长、频率与波速</div>
+          <p><strong>波长 $\lambda$：</strong>波在一个周期内传播的距离，单位 $\text{m}$。</p>
+          <p><strong>频率 $f$：</strong>每秒振动的次数，单位 $\text{Hz}$（赫兹）。</p>
+          <p><strong>波速 $c$：</strong>波在单位时间内传播的距离。</p>
+          <p>三者关系：$c = \lambda f$（波速恒定，波长与频率成反比）。</p>
+          <p>频率越高，波长越短。例如：中波广播 $f=1\ \text{MHz}$ → $\lambda = 300\ \text{m}$；Wi-Fi $f=2.4\ \text{GHz}$ → $\lambda \approx 0.125\ \text{m}$。</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">电磁波谱</div>
+          <p>按频率从低到高（波长从长到短）排列：</p>
+          <p><strong>无线电波</strong>（$10^3$–$10^{12}\ \text{Hz}$）→ 通信/广播</p>
+          <p><strong>微波</strong> → 卫星通信/微波炉（$3\times10^8$–$3\times10^{11}\ \text{Hz}$）</p>
+          <p><strong>红外线</strong> → 遥控/夜视（$10^{12}$–$4\times10^{14}\ \text{Hz}$）</p>
+          <p><strong>可见光</strong> → 人眼可见（$4\times10^{14}$–$8\times10^{14}\ \text{Hz}$）</p>
+          <p><strong>紫外线</strong> → 消毒/验钞（$8\times10^{14}$–$10^{16}\ \text{Hz}$）</p>
+          <p><strong>X 射线</strong> → 医学拍片（$10^{16}$–$10^{20}\ \text{Hz}$）</p>
+          <p><strong>$\gamma$ 射线</strong> → 医疗/探测（$>10^{20}\ \text{Hz}$）</p>
+          <span class="level-gold">🥇 黄金级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">模拟通信 vs 数字通信</div>
+          <p><strong>模拟通信：</strong>传输的信号在时间和幅度上都是<strong>连续变化</strong>的。例如普通电话将声音的振动波形直接转换为连续变化的电流波形。缺点是信号易受干扰，传输过程中会失真。</p>
+          <p><strong>数字通信：</strong>将信息编码成<strong>0 和 1</strong> 两个二进制数字进行传输。抗干扰能力强（只需判断 0/1，无需精确还原波形），信息加密方便，适合计算机处理。</p>
+          <p>现代通信以数字方式为主，但仍保留模拟电话线的兼容。</p>
+          <span class="level-silver">🥈 白银级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">光纤通信</div>
+          <p>利用<strong>激光</strong>在光导纤维中经过多次<strong>全反射</strong>来传递信息。</p>
+          <p>激光频率极高（$10^{14}\ \text{Hz}$ 级别），通信容量巨大——一根光纤可同时传输数百万路电话。</p>
+          <p>优点：传输容量大、损耗小、抗电磁干扰、保密性好。</p>
+          <span class="level-silver">🥈 白银级</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="name">移动通信与卫星通信</div>
+          <p><strong>移动通信：</strong>手机通过<strong>基站</strong>（基地台）转发信号。通话过程中，手机会自动切换到信号最强的邻近基站（越区切换）。</p>
+          <p><strong>卫星通信：</strong>利用通信卫星作为<strong>中继站</strong>，将地面站发来的微波信号转发到另一地面站。三颗同步卫星可基本实现全球通信。</p>
+          <span class="level-bronze">🥉 青铜级</span>
+        </div>
+
+      </div>
+    </div>
+  </details>
+
+  <!-- 公式速查 -->
+  <details class="module" open>
+    <summary>📐 公式速查</summary>
+    <div class="content">
+
+      <div class="formula-card">
+        <strong>波速公式</strong>
+        <p>\[ c = \lambda f \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          $c$ — 波速（$\text{m/s}$），$f$ — 频率（$\text{Hz}$），$\lambda$ — 波长（$\text{m}$）<br>
+          真空中 $c = 3 \times 10^8\ \text{m/s}$（恒定不变）<br>
+          变形：$\lambda = \dfrac{c}{f}$ $f = \dfrac{c}{\lambda}$
+        </p>
+        <span class="level-gold">🥇 黄金级</span>
+      </div>
+
+      <div class="formula-card">
+        <strong>电磁波在介质中的波速</strong>
+        <p>\[ v = \frac{c}{n} \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          $v$ — 介质中的波速，$c$ — 真空中的波速，$n$ — 介质的折射率（$n > 1$）<br>
+          因此电磁波在介质中传播速度小于真空中的速度。
+        </p>
+        <span class="level-silver">🥈 白银级</span>
+      </div>
+
+      <div class="formula-card">
+        <strong>频率与周期关系</strong>
+        <p>\[ f = \frac{1}{T} \]</p>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+          $T$ — 周期（$\text{s}$），$f$ — 频率（$\text{Hz}$）<br>
+          结合 $c = \lambda f$ 可得 $\lambda = cT$
+        </p>
+        <span class="level-bronze">🥉 青铜级</span>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 解题技巧 -->
+  <details class="module" open>
+    <summary>✍️ 解题技巧</summary>
+    <div class="content">
+
+      <div class="technique-card">
+        <h3><span class="step-num">1</span> 波长与频率的计算</h3>
+        <div class="method">📌 方法：已知其中两个量，用 $c = \lambda f$ 求第三个量。注意频率单位的数量级换算。</div>
+        <div class="example">
+          <strong>例题：</strong>某调频广播电台的频率为 $f = 100\ \text{MHz}$，求该电磁波在真空中的波长。<br>
+          <strong>解：</strong>已知 $c = 3 \times 10^8\ \text{m/s}$，$f = 100\ \text{MHz} = 10^8\ \text{Hz}$。<br>
+          $\lambda = \dfrac{c}{f} = \dfrac{3 \times 10^8}{10^8} = 3\ \text{m}$。
+        </div>
+        <div class="pitfall">
+          ⚠️ 易错点：频率单位换算！$1\ \text{MHz} = 10^6\ \text{Hz}$，$1\ \text{GHz} = 10^9\ \text{Hz}$。代入公式前必须统一为 $\text{Hz}$。
+        </div>
+        <div class="error-diagnosis"><div class="wrong">❌ 错误：看到 $100\ \text{MHz}$ 直接代入 $f=100$，得到 $\lambda = 3 \times 10^6\ \text{m}$</div><div class="analysis">🔍 诊断：$100\ \text{MHz} = 100 \times 10^6\ \text{Hz} = 10^8\ \text{Hz}$，正确的波长是 $3\ \text{m}$ 而不是 $3$ 百万米。注意处理 $\text{M}$（百万）、$\text{k}$（千）、$\text{G}$（十亿）等数量级前缀。</div></div>
+        <div class="principle">
+          <strong>📐 原理依据：</strong>对于电磁波，在真空中波速 $c$ 是常数。$c = \lambda f$ 表明波长和频率成反比——频率越高，波长越短。
+        </div>
+        <div class="variant"><strong>🌱 基础变式：</strong>一个手机 Wi-Fi 信号频率为 2.4 GHz，求其在真空中的波长。（$f=2.4 \times 10^9\ \text{Hz}$，$\lambda = 3\times10^8 / 2.4\times10^9 = 0.125\ \text{m} = 12.5\ \text{cm}$）</div>
+        <div class="exam-hint">
+          🏆 考场提示：中考中一般直接用 $c = \lambda f$ 进行简单计算，重点在于单位的数量级换算。偶尔会结合介质波速出对比题。
+        </div>
+      </div>
+
+      <div class="technique-card">
+        <h3><span class="step-num">2</span> 电磁波与声波的对比</h3>
+        <div class="method">📌 方法：抓住核心区别——是否需要介质。</div>
+        <div class="example">
+          <strong>例题：</strong>宇航员在月球上面对面交谈，能否直接听到对方的声音？为什么？他们如何实现通信？<br>
+          <strong>解：</strong>不能直接听到。月球表面是真空，声波需要介质传播，真空不能传声。宇航员通过无线电（电磁波）通信，因为电磁波可以在真空中传播。
+        </div>
+        <div class="pitfall">
+          ⚠️ 易错点：混淆电磁波和声波的速度。光（电磁波）在空气中速度约 $3\times10^8\ \text{m/s}$，而声波在空气中约 $340\ \text{m/s}$——相差近一百万倍。打雷时先看到闪电后听到雷声就是这个原因。
+        </div>
+        <div class="principle">
+          <strong>📐 原理依据：</strong>电磁波（包括光）是横波，本质是变化的电场和磁场，不依赖介质传播。声波是机械波（纵波），依靠介质中质点的振动传播。
+        </div>
+        <div class="variant"><strong>🌱 基础变式：</strong>一人在距山崖 680 m 处鸣枪，听到回声的时间为 4 s。若在山顶用无线电发射信号，信号到达 300 km 外接收站需要多长时间？（$t_{\text{声}} = 2s/v_{\text{声}} = 1360/340 = 4\ \text{s}$；$t_{\text{电}} = s/c = 3\times10^5 / 3\times10^8 = 0.001\ \text{s}$）</div>
+        <div class="exam-hint">
+          🏆 考场提示：中考常以"太空对话""深海通信"等情境考查电磁波与声波的传播条件对比，属于基本概念题。
+        </div>
+      </div>
+
+      <div class="technique-card">
+        <h3><span class="step-num">3</span> 电磁波谱排序与识别</h3>
+        <div class="method">📌 方法：按频率从低到高（波长从长到短）记忆：无→微→红→可→紫→X→γ</div>
+        <div class="example">
+          <strong>例题：</strong>下列电磁波中，频率最高的是（ ）<br>
+          A. 红外线　B. 紫外线　C. X 射线　D. 无线电波<br>
+          <strong>解：</strong>电磁波谱中频率从低到高为：无线电波 < 红外线 < 可见光 < 紫外线 < X 射线 < $\gamma$ 射线。四个选项中 X 射线频率最高。选 C。
+        </div>
+        <div class="pitfall">
+          ⚠️ 易错点：可见光只是电磁波谱中很窄的一段。红外线的频率低于可见光（红光外侧），紫外线的频率高于可见光（紫光外侧）。另外，所有电磁波在真空中传播速度相同！
+        </div>
+        <div class="principle">
+          <strong>📐 原理依据：</strong>整个电磁波谱按照频率/波长统一排列，不同波段的电磁波产生方式不同、性质不同、应用各异，但在真空中传播速度完全一样。
+        </div>
+        <div class="variant"><strong>🌱 基础变式：</strong>下列器件或应用中，利用红外线工作的是（ ）A. 验钞机　B. 遥控器　C. 消毒柜　D. 拍胸片。——选 B（遥控器利用红外线传递信号）。</div>
+        <div class="exam-hint">
+          🏆 考场提示：中考常以"下列应用中利用了××电磁波的是"的形式考查电磁波谱各波段的应用。属于记忆型题目。
+        </div>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 中考真题 -->
+  <details class="exam-module" open>
+    <summary>📝 中考真题</summary>
+    <div class="content">
+
+      <div class="exam-q">
+        <span class="q-tag">2023 北京</span>
+        <div class="q-diff easy">★☆☆</div>
+        <strong>题 1</strong>
+        <div class="q-body">
+          关于电磁波，下列说法正确的是（  ）
+          <br>A. 电磁波在真空中的传播速度比光速小
+          <br>B. 电磁波不能在真空中传播
+          <br>C. 电磁波的频率越高，波长越长
+          <br>D. 变化的电流会在周围空间产生电磁波
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong>光本身就是电磁波，电磁波在真空中的传播速度等于光速 $c=3\times10^8\ \text{m/s}$，A 错误。电磁波可以在真空中传播——这是它和声波的根本区别，B 错误。由 $c=\lambda f$ 可知，$c$ 恒定，$f$ 越高则 $\lambda$ 越短，C 错误。变化的电流产生变化的磁场，变化的磁场又产生变化的电场，交替向外传播形成电磁波，D 正确。<br>
+          <strong>答案：</strong>D
+        </div>
+      </div>
+
+      <div class="exam-q">
+        <span class="q-tag">2022 广州</span>
+        <div class="q-diff mid">★★☆</div>
+        <strong>题 2</strong>
+        <div class="q-body">
+          某电视台发射的电磁波频率为 $f = 5.0 \times 10^8\ \text{Hz}$。求：
+          <br>（1）该电磁波的波长；
+          <br>（2）若该电磁波从电视台传播到 30 km 外的接收站需要多长时间。
+          <br>（真空中电磁波速度 $c = 3.0 \times 10^8\ \text{m/s}$）
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong><br>
+          （1）由 $c = \lambda f$ 得 $\lambda = \dfrac{c}{f} = \dfrac{3.0 \times 10^8}{5.0 \times 10^8} = 0.6\ \text{m}$。<br>
+          （2）电磁波传播时间 $t = \dfrac{s}{c} = \dfrac{30 \times 10^3}{3.0 \times 10^8} = 1.0 \times 10^{-4}\ \text{s} = 0.1\ \text{ms}$。<br>
+          <strong>答案：</strong>（1）$0.6\ \text{m}$（2）$1.0 \times 10^{-4}\ \text{s}$
+        </div>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- 自查清单 -->
+  <div class="checklist">
+    <h3>✅ 章节自查清单</h3>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能说出电话话筒和听筒的工作原理</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能复述电磁波的产生条件，明白变化的电流产生电磁波</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我会用 $c=\lambda f$ 进行波长、频率、波速的相互换算</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能区分电磁波与声波（是否需要介质、传播速度差异）</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能在电磁波谱上正确排列各波段并说出典型应用</label>
+    <label><span class="self-score">🔴→🟡→🟢</span><input type="checkbox"> 我能区分模拟通信与数字通信的优缺点</label>
+    <p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;">
+      <strong>🧑‍🏫 费曼挑战：</strong>请用大白话向邻居解释：为什么手机和手机之间能通话？电磁波在其中扮演什么角色？
+    </p>
+  </div>
+
+  <div class="review-schedule">
+    <strong>📅 间隔复习</strong>
+    <span class="review-dot">🔵 1天后：复述电磁波产生条件</span>
+    <span class="review-dot">🟢 3天后：做 $c=\lambda f$ 计算练习</span>
+    <span class="review-dot">🟡 1周后：默写电磁波谱排序</span>
+    <span class="review-dot">🔴 1月后：做本章中考真题</span>
+  </div>
+
+  <div class="next-stop"><strong>➡️ 下一站：能源与可持续发展</strong><br>信息传递依赖各种能源。第22章从能源分类开始，了解核裂变、核聚变以及人类面临的能源挑战——这是初中物理的收尾篇章。</div>
+
+</div>
+
+</main>
+
+<script src="../katex/katex.min.js"></script>
+<script src="../katex/auto-render.min.js"></script>
+<script>
+(function() {
+  // Theme toggle
+  const toggle = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+  const saved = localStorage.getItem('site-theme');
+  if (saved === 'dark') {
+    html.setAttribute('data-theme', 'dark');
+    toggle.textContent = '☀️ 亮色模式';
+  }
+  toggle.addEventListener('click', function() {
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    toggle.textContent = isDark ? '🌙 暗色模式' : '☀️ 亮色模式';
+    localStorage.setItem('site-theme', isDark ? 'light' : 'dark');
+  });
+
+  // KaTeX auto-render
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof renderMathInElement === 'function') {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ],
+        throwOnError: false
+      });
+    }
+  });
+
+  // IntersectionObserver for sidebar active
+  document.addEventListener('DOMContentLoaded', function() {
+    const sidebarLinks = document.querySelectorAll('#sidebar nav a');
+    const modules = document.querySelectorAll('.module, .exam-module, .learning-goals');
+    if (modules.length === 0) return;
+    const observer = new IntersectionObserver(function(entries) {
+      let best = null;
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) best = entry.target;
+      });
+      if (best) {
+        sidebarLinks.forEach(function(link) { link.classList.remove('active'); });
+      }
+    }, { rootMargin: '-20% 0px -60% 0px' });
+    modules.forEach(function(m) { observer.observe(m); });
+  });
+  var sidebar = document.getElementById('sidebar');
+  var hideBtn = document.getElementById('sidebarHideBtn');
+  var sidebarHidden = localStorage.getItem('physics9-sidebar') === 'hidden';
+  if (sidebarHidden) sidebar.classList.add('hidden');
+  var showBtn = document.getElementById('sidebarShowBtn');
+  hideBtn.addEventListener('click', function() {
+    sidebar.classList.add('hidden');
+    localStorage.setItem('physics9-sidebar', 'hidden');
+  });
+  showBtn.addEventListener('click', function() {
+    sidebar.classList.remove('hidden');
+    localStorage.setItem('physics9-sidebar', '');
+  });
+  (function() {
+    var btn = document.getElementById('expandAllBtn');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      var allDetails = document.querySelectorAll('.module, .exam-module');
+      var allOpen = true;
+      for (var i = 0; i < allDetails.length; i++) {
+        if (!allDetails[i].hasAttribute('open')) { allOpen = false; break; }
+      }
+      for (var i = 0; i < allDetails.length; i++) {
+        if (allOpen) allDetails[i].removeAttribute('open');
+        else allDetails[i].setAttribute('open', '');
+      }
+      btn.textContent = allOpen ? '📂 展开全部模块' : '📖 收起全部模块';
+    });
+  })();
+  })();
+  window.addEventListener('scroll', function() {
+    var btn = document.getElementById('backToTop');
+    if (btn) btn.style.display = window.scrollY > 400 ? 'block' : 'none';
+  });
+</script>
+
+</body>
+</html>

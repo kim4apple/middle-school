@@ -52,6 +52,10 @@
         第7章 · 压力概念（弹力的一种） → 第6章 · 密度 $\rho$ → 本章 · 压强 $p$ 的定量计算
       </div>
 
+      <div class="knowledge-link" style="border-left:3px solid #f59e0b;padding:10px 14px;border-radius:6px;margin-bottom:16px;background:var(--bg-secondary);">
+        <strong>⛳ 零基础路线：</strong>如果对"压力"和"力的图示"不熟悉，请先复习第7章（力）。本章核心：① <strong>固体压强</strong>$p=F/S$——先学会计算压力和换算面积单位（cm²→m²）；② <strong>液体压强</strong>$p=\rho gh$——重点理解"深度 $h$"的含义（从液面竖直往下量），与容器形状无关；③ <strong>大气压强</strong>——记住托里拆利实验的结论（760 mmHg），学会分析吸盘、吸管等生活应用。建议按"固体→液体→气体"的顺序学习，不要跳读。
+      </div>
+
       <div class="thought-method">
         <strong>💡 物理思维方法：控制变量法</strong>
         —— 探究"压力作用效果的影响因素"时：① <strong>控制受力面积不变</strong>，改变压力大小，观察压强变化；② <strong>控制压力大小不变</strong>，改变受力面积，观察压强变化。控制变量法是初中物理最核心的实验方法，贯穿力、热、光、电各个模块。
@@ -156,6 +160,12 @@
             </div>
           </div>
         </div>
+
+          <div class="technique-card" style="border-left-color:#f59e0b;">
+            <h3>💡 生活类比：穿高跟鞋 vs 平底鞋踩雪地</h3>
+            <p>体重 50 kg 的人，穿高跟鞋时鞋跟面积只有约 $1\,\text{cm}^2$，对地面产生的压强约 $5\times10^6\,\text{Pa}$——相当于 50 个大气压！而穿平底鞋时脚掌面积约 $200\,\text{cm}^2$，压强仅为约 $2.5\times10^4\,\text{Pa}$。<strong>压力相同，受力面积越小，压强越大</strong>——这就是为什么穿高跟鞋在雪地上会陷得更深，而滑雪板（面积大）在雪地上不会陷下去。同理：刀要锋利（减小面积增大压强）、坦克用履带（增大面积减小压强）。</p>
+          </div>
+
       </details>
 
       <details class="module" open>
@@ -253,6 +263,57 @@
             <div class="pitfall">⚠️ <strong>易错：</strong>错误认为"吸盘吸在墙上是分子引力"——实际上是排出了吸盘内空气，外界大气压把吸盘压在墙上。分子引力作用距离极小（nm 级），远小于宏观尺度。</div>
             <div class="error-diagnosis"><div class="wrong">❌ 错误：把吸盘能吸在墙上解释为"分子引力"或"胶水粘住"——混淆了大气压和分子作用。</div><div class="analysis">🔍 诊断：吸盘挂钩的原理是——挤出吸盘内空气后，内部气压接近零，外部大气压（约 1.0×10⁵ Pa）把吸盘紧紧压在墙上。分子引力作用距离在纳米级，远小于吸盘的宏观尺度。类似地，用吸管喝饮料也不是"嘴吸上来的"，是大气压把饮料压上来的。</div></div>
             <div class="variant"><strong>拓展：</strong>高压锅原理——限制排气使锅内气压增大 → 液体沸点升高 → 更快煮熟食物。高原上气压低 → 沸点降低（约 $90^\circ\text{C}$）→ 食物不易煮熟，需要用高压锅。</div>
+          </div>
+
+          <div class="technique-card">
+            <h3>🎯 一题多解：固体压强 vs 液体压强</h3>
+            <div class="method">方法：<strong>固体压强先算 $F$ 后算 $p$，液体压强先算 $p$ 后算 $F$</strong>。</div>
+            <div class="example">
+              <strong>例题：</strong>一个底面积为 $200\,\text{cm}^2$ 的柱形容器放在水平桌面上，容器重 10 N，内装有 10 cm 深的水。求：（1）水对容器底的压强和压力；（2）容器对桌面的压强和压力。
+            </div>
+            <div class="principle">
+              <strong>思路对比：</strong><br>
+              <strong>液体（水对容器底）：</strong>先算压强 $p=\rho gh=1.0\times10^3\times10\times0.1=1000\,\text{Pa}$，再算压力 $F=pS=1000\times0.02=20\,\text{N}$。<br>
+              <strong>固体（容器对桌面）：</strong>先算压力 $F=G_\text{水}+G_\text{容}=20+10=30\,\text{N}$（$G_\text{水}=\rho gV=1000\times10\times0.02\times0.1=20\,\text{N}$），再算压强 $p=F/S=30/0.02=1500\,\text{Pa}$。
+            </div>
+            <div class="pitfall">⚠️ <strong>易错：</strong>绝对不要混用两个公式！$F=pS$ 在液体中算的是"压力"，这个 $F$ 不等于液体的重力（除非是柱形容器）。同样地，$p=F/S$ 用于固体的压强计算时，$F$ 是总压力（总重力）。</div>
+            <div class="error-diagnosis"><div class="wrong">❌ 错误：直接用 $p = F/S$ 算水对底的压强——$F$ 误用了水的重力（20 N），面积 0.02 m²，得 1000 Pa——巧合正确是因为柱形容器使水重=水对底压力。</div><div class="analysis">🔍 诊断：只有<strong>柱形容器</strong>（上下一样粗）时，$F_\text{水对底}=G_\text{水}$，用 $p=F/S$ 和 $p=\rho gh$ 结果相同。但如果是上宽下窄或上窄下宽的容器，$F_\text{水对底} \neq G_\text{水}$，必须用 $p=\rho gh$ 先算压强。这是中考选择题热门考点。</div></div>
+          </div>
+
+        </div>
+      </details>
+
+      <details class="module" open>
+        <summary>📝 助记口诀</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="technique-card">
+              <h3>📝 压强口诀</h3>
+              <div class="principle" style="font-size:16px;line-height:1.8;">
+                "压强等于力除面积，受力面积是关键；<br>
+                液体压强密度深度乘 $g$，大气压强托里拆利"
+              </div>
+              <div class="variant" style="margin-top:8px;">
+                <strong>拆解：</strong>
+                ① $p=F/S$——固体压强先找压力 $F$ 和受力面积 $S$；<br>
+                ② $p=\rho gh$——液体压强只与 $\rho$ 和 $h$ 有关，注意 $h$ 是液面到研究点的<strong>竖直深度</strong>；<br>
+                ③ 托里拆利实验测大气压——$p_0=760\,\text{mmHg}\approx1.013\times10^5\,\text{Pa}$。
+              </div>
+            </div>
+            <div class="technique-card">
+              <h3>📝 压强解题口诀</h3>
+              <div class="principle" style="font-size:16px;line-height:1.8;">
+                "固体压强先算力，液体压强先算深；<br>
+                大气压强找内外差，流速快时压强小"
+              </div>
+              <div class="variant" style="margin-top:8px;">
+                <strong>应用：</strong>
+                ① 固体：水平面 $F=G$，斜面 $F$ 不等于 $G$；<br>
+                ② 液体：$p=\rho gh$ 与容器形状无关，$F=pS$ 算压力；<br>
+                ③ 大气压：吸盘/吸管/抽水机都是"制造内外压差"；<br>
+                ④ 流体：火车安全线、飞机机翼——流速大压强小。
+              </div>
+            </div>
           </div>
         </div>
       </details>
@@ -383,6 +444,14 @@
     <span class="review-dot">🟡 1周后：讲给别人听</span>
     <span class="review-dot">🔴 1月后：做本章真题</span>
   </div>
+  <div class="knowledge-link" style="border-left:3px solid #8b5cf6;padding:10px 14px;border-radius:6px;margin-bottom:16px;background:var(--bg-secondary);">
+    <strong>🔗 衔接高中：</strong>高中物理将在流体力学中进一步讨论液体的连续性方程 $S_1v_1=S_2v_2$ 和 <strong>伯努利方程</strong> $p+\dfrac12\rho v^2+\rho gh=\text{常量}$，从压强角度解释流速快压强小的微观机制。此外，<strong>帕斯卡原理</strong>（加在密闭液体上的压强能被液体大小不变地传递）是液压机和液压刹车系统的理论基础。你已经掌握的 $p=\rho gh$ 是流体静力学的基础——到了高中，$h$ 不再是简单深度，而是<strong>高度差</strong>概念，为浮力、流体问题提供统一的压强框架。
+  </div>
+
+  <div class="knowledge-link" style="border-left:3px solid #f97316;padding:10px 14px;border-radius:6px;margin-bottom:16px;background:var(--bg-secondary);">
+    <strong>📖 科学故事：</strong><strong>托里拆利测量大气压</strong>——1643 年，意大利物理学家托里拆利将一根长约 1 m、一端封闭的玻璃管装满水银，用手指堵住管口倒立放入水银槽中，松开手指后水银柱下降到约 760 mm 高度不再下降。他由此得出大气压相当于 760 mm 水银柱产生的压强。这一实验<strong>第一次精确测量了大气压的值</strong>，推翻了亚里士多德学派"自然界厌恶真空"的旧观念。帕斯卡后来在山上重复此实验，发现山顶水银柱更低——证明了大气压随高度减小，首次将压强与海拔联系起来。
+  </div>
+
   <div class="next-stop"><strong>➡️ 下一站：浮力</strong><br>液体压强 $p=\rho gh$ 随深度线性增加——正是因为压强差，浸在液体中的物体才会受到向上的浮力。下一章浮力将深入探讨阿基米德原理——$F_{\text{浮}}=\rho_{\text{液}}gV_{\text{排}}$，压强是浮力推导的起点。</div>
     </div>
   </main>

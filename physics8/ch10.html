@@ -53,6 +53,10 @@
         第7章「力」——重力 $G=mg$ &nbsp;|&nbsp; 第9章「压强」——液体压强 $p=\rho gh$ &nbsp;|&nbsp; 第6章——密度 $\rho=m/V$
       </div>
 
+      <div class="knowledge-link" style="border-left:3px solid #f59e0b;padding:10px 14px;border-radius:6px;margin-bottom:16px;background:var(--bg-secondary);">
+        <strong>⛳ 零基础路线：</strong>浮力是压强的直接应用——如果对液体压强 $p=\rho gh$ 不熟，请先复习第9章。本章核心：① <strong>称重法</strong>$F_\text{浮}=G-F_\text{拉}$——最快上手的方法，有弹簧测力计就能测浮力；② <strong>阿基米德原理</strong>$F_\text{浮}=\rho_\text{液}gV_\text{排}$——核心公式，关键找 $V_\text{排}$（浸入体积）；③ <strong>浮沉条件</strong>——比较 $\rho_\text{物}$ 与 $\rho_\text{液}$ 的大小。建议先学会用称重法测量，再掌握阿基米德原理计算，最后用浮沉条件分析生活应用。
+      </div>
+
       <div class="thought-method">
         <strong>🧭 思维方法：称重法（二次称量法）</strong>
         <span>用弹簧测力计先后测出物体在空气中的重力 $G$ 和浸入液体后的示数 $F_\text{拉}$，则 $F_\text{浮}=G-F_\text{拉}$。差值即为浮力大小——这是测量浮力的基本方法。</span>
@@ -189,6 +193,12 @@
             </div>
           </div>
         </div>
+
+          <div class="technique-card" style="border-left-color:#f59e0b;">
+            <h3>💡 生活类比：游泳时感觉身体变轻</h3>
+            <p>在游泳池里，你会感觉身体变得轻飘飘的——水把你"托"起来了。这股向上的托力就是<strong>浮力</strong>。你越往深处走，身体浸入水中的体积越大，感觉就越轻（$V_\text{排}$ 越大，$F_\text{浮}$ 越大）。当你整个人漂浮在水面时，浮力等于你的重力——这就是为什么不会游泳的人套上救生圈就能浮起来：救生圈增大了排开水的体积，使浮力增大到足以支撑体重。同理：<strong>死海</strong>含盐量高（$\rho_\text{液}$ 大），即使不会游泳也能轻松漂浮。</p>
+          </div>
+
       </details>
 
       <details class="module" open>
@@ -300,6 +310,57 @@
               <strong>变式：</strong>潜水艇下潜时——水舱进水，$G$ 增大，$F_\text{浮}$ 不变（$V_\text{排}$ 不变），$G>F_\text{浮}$ 则下潜。
             </div>
           </div>
+
+          <div class="technique-card">
+            <h3>🎯 一题多解：浮力四种计算方法</h3>
+            <div class="method">方法：同一个浮力问题可以用不同方法求解，相互验证。</div>
+            <div class="example">
+              <strong>例题：</strong>一个体积为 $200\,\text{cm}^3$ 的实心金属块，在空气中测力计示数为 5.4 N，浸没在装满水的溢水杯中时测力计示数为 3.4 N，同时测得溢出水的重力为 2 N。求金属块所受浮力（用多种方法）。
+            </div>
+            <div class="principle">
+              <strong>解法一（称重法）：</strong>$F_\text{浮}=G-F_\text{拉}=5.4-3.4=2.0\,\text{N}$<br>
+              <strong>解法二（阿基米德原理法）：</strong>$F_\text{浮}=\rho_\text{水}gV_\text{排}=1.0\times10^3\times10\times200\times10^{-6}=2.0\,\text{N}$<br>
+              <strong>解法三（平衡法）：</strong>物体受力平衡：$F_\text{浮}+F_\text{拉}=G$，$F_\text{浮}=G-F_\text{拉}=2.0\,\text{N}$（实质同称重法）<br>
+              <strong>解法四（压力差法）：</strong>由题知 $G_\text{排}=2\,\text{N}$，阿基米德原理 $F_\text{浮}=G_\text{排}=2.0\,\text{N}$
+            </div>
+            <div class="pitfall">⚠️ <strong>易错：</strong>四种方法适用于不同情境——称重法（有弹簧测力计）、阿基米德法（已知 $\rho_\text{液}$ 和 $V_\text{排}$）、平衡法（漂浮/悬浮）、压力差法（已知上下表面压力差）。选择合适方法比盲目套公式更重要。</div>
+          </div>
+
+        </div>
+      </details>
+
+      <details class="module" open>
+        <summary>📝 助记口诀</summary>
+        <div class="content">
+          <div class="card-grid">
+            <div class="technique-card">
+              <h3>📝 浮力口诀</h3>
+              <div class="principle" style="font-size:16px;line-height:1.8;">
+                "浮力等于排开液重，阿基米德原理来算；<br>
+                下沉悬浮和漂浮，浮力重力来比较"
+              </div>
+              <div class="variant" style="margin-top:8px;">
+                <strong>拆解：</strong>
+                ① $F_\text{浮}=G_\text{排}=\rho_\text{液}gV_\text{排}$——排开液体重力等于浮力；<br>
+                ② 浮力只与 $\rho_\text{液}$ 和 $V_\text{排}$ 有关，与物体密度、形状、浸没深度无关；<br>
+                ③ 物体浮沉条件：$F_\text{浮}>G$ 上浮，$F_\text{浮}=G$ 悬浮/漂浮，$F_\text{浮}<G$ 下沉。
+              </div>
+            </div>
+            <div class="technique-card">
+              <h3>📝 浮沉条件口诀</h3>
+              <div class="principle" style="font-size:16px;line-height:1.8;">
+                "物密小于液密漂，等于液密可悬浮；<br>
+                大于液密必下沉，轮船空心浮水上"
+              </div>
+              <div class="variant" style="margin-top:8px;">
+                <strong>应用：</strong>
+                ① $\rho_\text{物}<\rho_\text{液}$ → 上浮→漂浮（如木块、冰块）；<br>
+                ② $\rho_\text{物}=\rho_\text{液}$ → 悬浮（如悬浮的潜水艇）；<br>
+                ③ $\rho_\text{物}>\rho_\text{液}$ → 下沉（如铁块沉底）；<br>
+                ④ 轮船：密度大于水但做成空心 → 增大 $V_\text{排}$ → 增大浮力。
+              </div>
+            </div>
+          </div>
         </div>
       </details>
 
@@ -388,6 +449,14 @@
     <span class="review-dot">🟡 1周后：讲给别人听</span>
     <span class="review-dot">🔴 1月后：做本章真题</span>
   </div>
+  <div class="knowledge-link" style="border-left:3px solid #8b5cf6;padding:10px 14px;border-radius:6px;margin-bottom:16px;background:var(--bg-secondary);">
+    <strong>🔗 衔接高中：</strong>高中物理将进一步讨论<strong>浮力与流体力学</strong>的深层联系。阿基米德原理 $F_\text{浮}=\rho_\text{液}gV_\text{排}$ 在高中将结合<strong>雷诺数</strong>（$Re$）来分析物体在流体中的运动状态——层流与湍流下的阻力差异。当 $Re$ 很小时（黏性主导），浮力公式精确成立；当 $Re$ 很大时（惯性主导），还需考虑流体阻力 $F_\text{阻}=\frac12C\rho Sv^2$。为大学流体力学中的<strong>纳维-斯托克斯方程</strong>奠定初步认知。
+  </div>
+
+  <div class="knowledge-link" style="border-left:3px solid #f97316;padding:10px 14px;border-radius:6px;margin-bottom:16px;background:var(--bg-secondary);">
+    <strong>📖 科学故事：</strong><strong>阿基米德发现浮力原理</strong>——公元前 3 世纪，叙拉古国王希伦二世怀疑金匠在制作王冠时掺入了白银，请阿基米德鉴定。阿基米德苦思多日无果，直到有一天洗澡时，他发现身体进入浴缸时水会溢出——<strong>身体浸入越多，溢出的水越多</strong>。他忽然领悟到：物体排开液体的体积与物体浸入部分的体积相等，浮力等于排开液体的重力！他兴奋得光着身子跑到大街上高喊"<strong>εὕρηκα! εὕρηκα!</strong>（我找到了！）"这就是阿基米德原理的起源。
+  </div>
+
   <div class="next-stop"><strong>➡️ 下一站：功和机械能</strong><br>浮力教给你"受力分析"的系统思维——重力、浮力、拉力之间的平衡关系。下一章功和机械能将把力的作用对象从"静止/匀速"扩展到"运动过程"——$W=Fs$ 描述力在空间上的累积效果。</div>
 
     </div>

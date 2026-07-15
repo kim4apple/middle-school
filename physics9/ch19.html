@@ -425,6 +425,119 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display:block; }
     </div>
   </details>
 
+  <!-- 三级闯关 -->
+  <details class="exam-module" open>
+    <summary>📝 三级闯关 · 课后练习</summary>
+    <div class="content">
+
+      <h3 style="color:var(--accent);margin:12px 0 8px;">🥉 基础关 · 概念识记</h3>
+
+      <div class="exam-q">
+        <span class="q-tag">基础</span>
+        <span class="q-diff easy">★☆☆</span>
+        <div class="q-body">
+          家庭电路的组成顺序是什么？各元件的作用是什么？
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong>进户线（火线 $L$、零线 $N$）→ <strong>电能表</strong>（测量消耗电能）→ <strong>总开关</strong>（控制整个电路通断）→ <strong>保险装置</strong>（电流过大时切断电路）→ <strong>用电器</strong>（并联接入）。各用电器之间并联，开关与所控制的用电器串联且接在火线上。<br>
+          <strong>🏆 得分点：</strong>顺序完整不遗漏；能说出每个元件的作用；指出各用电器并联。
+        </div>
+      </div>
+
+      <div class="exam-q">
+        <span class="q-tag">基础</span>
+        <span class="q-diff easy">★☆☆</span>
+        <div class="q-body">
+          三孔插座的接法口诀是什么？为什么要接地？
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong>口诀：<strong>"左零右火上接地"</strong>——左孔接零线（$N$），右孔接火线（$L$），上孔接地线（$PE$）。接地的作用：将用电器金属外壳与大地相连，当外壳因绝缘破损而带电时，电流经地线流入大地，避免人体触电。<br>
+          <strong>🏆 得分点：</strong>完整写出"左零右火上接地"并能对应三个插孔；说明接地的安全保护原理。
+        </div>
+      </div>
+
+      <div class="exam-q">
+        <span class="q-tag">基础</span>
+        <span class="q-diff easy">★☆☆</span>
+        <div class="q-body">
+          人体安全电压是多少？发生触电应首先做什么？
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong>人体安全电压为 <strong>$\leq 36\ \text{V}$</strong>（潮湿环境 $\leq 12\ \text{V}$）。发生触电时，应<strong>首先切断电源</strong>（断开总开关或拔下插头），若无法切断电源，用<strong>干燥的木棒、竹竿</strong>等绝缘物挑开电线，使触电者脱离带电体。切勿直接用手去拉触电者！<br>
+          <strong>🏆 得分点：</strong>答出安全电压值（含潮湿环境的特殊情况）；答出"先切断电源"这一关键步骤。
+        </div>
+      </div>
+
+      <h3 style="color:var(--accent);margin:20px 0 8px;">🥈 提升关 · 中考应用</h3>
+
+      <div class="exam-q">
+        <span class="q-tag">提升</span>
+        <span class="q-diff mid">★★☆</span>
+        <div class="q-body">
+          保险丝熔断的两种原因是什么？能否用铜丝代替保险丝？为什么？
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong>两种原因：① <strong>过载</strong>——同时使用的大功率电器过多，总电流超过保险丝额定电流，保险丝逐渐发热后熔断；② <strong>短路</strong>——火线和零线直接接触，电流极大，保险丝瞬间熔断。<strong>不能用铜丝代替保险丝</strong>，因为铜的电阻率小、熔点高，电流过大时铜丝不会熔断，电路得不到保护，可能引发火灾。<br>
+          <strong>🏆 得分点：</strong>区分过载和短路两种不同的熔断原因；从电阻率和熔点的角度说明不能用铜丝代替。
+        </div>
+      </div>
+
+      <div class="exam-q">
+        <span class="q-tag">提升</span>
+        <span class="q-diff mid">★★☆</span>
+        <div class="q-body">
+          某家庭总功率 $4400\ \text{W}$，应选额定电流多大的电能表？（$220\ \text{V}$ 电路）
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong>由 $P=UI$ 得 $I=\dfrac{P}{U}=\dfrac{4400}{220}=20\ \text{A}$。为了留有余量，电能表的额定电流应略大于正常工作电流，一般选择<strong>额定电流 $20\ \text{A}$ 或 $25\ \text{A}$</strong>的电能表。<br>
+          <strong>🏆 得分点：</strong>正确使用公式 $I=P/U$ 计算；考虑实际选用时应留有余量。
+        </div>
+      </div>
+
+      <div class="exam-q">
+        <span class="q-tag">提升</span>
+        <span class="q-diff mid">★★☆</span>
+        <div class="q-body">
+          判断：开关应接在火线还是零线上？为什么？
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong>开关应接在<strong>火线</strong>上。原因：当开关断开时，如果开关接在火线上，用电器与火线断开连接，用电器不带电，维修或更换时安全。如果开关接在零线上，断开开关后用电器虽然不工作，但用电器内部仍与火线连通，一旦接触用电器金属部分就可能触电。<br>
+          <strong>🏆 得分点：</strong>明确回答"接火线"；从安全角度解释原因（断开后用电器不带电）。
+        </div>
+      </div>
+
+      <h3 style="color:var(--accent);margin:20px 0 8px;">🥇 挑战关 · 综合拔高</h3>
+
+      <div class="exam-q">
+        <span class="q-tag">挑战</span>
+        <span class="q-diff hard">★★★</span>
+        <div class="q-body">
+          小明家电能表参数 $3000\ \text{r}/(\text{kW·h})$，只开空调时 $6$ 分钟转 $180$ 圈，求空调功率。若家中同时使用 $1000\ \text{W}$ 微波炉，总电流是否超过 $20\ \text{A}$ 空气开关额定值？
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong><br>
+          （1）电能表每转 $3000$ 圈消耗 $1\ \text{kW·h}$ 电能，$180$ 圈消耗的电能：$W = \dfrac{180}{3000} = 0.06\ \text{kW·h}$。<br>
+          $t = 6\ \text{min} = 0.1\ \text{h}$，空调功率：$P_{\text{空调}} = \dfrac{W}{t} = \dfrac{0.06}{0.1} = 0.6\ \text{kW} = 600\ \text{W}$。<br>
+          （2）同时使用空调和微波炉：$P_{\text{总}} = 600 + 1000 = 1600\ \text{W}$，总电流 $I_{\text{总}} = \dfrac{P_{\text{总}}}{U} = \dfrac{1600}{220} \approx 7.27\ \text{A} < 20\ \text{A}$，不会超过空气开关额定值。<br>
+          <strong>🏆 得分点：</strong>正确使用电能表参数计算电能；单位换算正确（$\text{min} \to \text{h}$）；用 $I=P/U$ 计算总电流并与额定值比较。
+        </div>
+      </div>
+
+      <div class="exam-q">
+        <span class="q-tag">挑战</span>
+        <span class="q-diff hard">★★★</span>
+        <div class="q-body">
+          家庭电路故障分析：一个灯不亮但其他灯正常、插座有电，可能的原因是什么？如何检修？
+        </div>
+        <div class="q-solution">
+          <strong>解析：</strong>可能原因：① 灯泡<strong>灯丝断了</strong>；② 该灯支路<strong>开关坏了</strong>；③ 该灯支路<strong>接线松动或导线断开</strong>；④ 灯座接触不良。因为其他灯正常、插座有电，说明干路和总开关、保险装置均正常，故障只在<strong>该支路内部</strong>。检修步骤：先用试电笔测该灯开关的进线端和出线端——进线端氖管发光、出线端不发光说明开关正常断开；再检查灯座接线是否牢固；若都正常则换一个新灯泡试试。<br>
+          <strong>🏆 得分点：</strong>能推理出故障只在故障支路内部而非干路；列举至少两种可能原因；提出合理的检修步骤。
+        </div>
+      </div>
+
+    </div>
+  </details>
+
   <!-- 自查清单 -->
   <div class="checklist">
     <h3>✅ 章节自查清单</h3>

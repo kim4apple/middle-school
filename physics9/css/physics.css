@@ -118,7 +118,6 @@ body {
   border-radius: var(--radius);
   background: var(--bg);
   box-shadow: var(--shadow);
-  overflow: hidden;
   content-visibility: auto;
   contain: content;
 }
@@ -470,7 +469,6 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
   border-radius: var(--radius);
   background: var(--bg);
   box-shadow: var(--shadow);
-  overflow: hidden;
   content-visibility: auto;
   contain: content;
 }

@@ -443,6 +443,8 @@ body:has(#sidebar.hidden) #content { margin-left: 0; }
 [data-theme="dark"] .q-diff.easy { background: #0f2d1a; color: #4ade80; }
 [data-theme="dark"] .q-diff.mid { background: #2a1f0e; color: #fbbf24; }
 [data-theme="dark"] .q-diff.hard { background: #3b1111; color: #fca5a5; }
+.q-toggle { font-size: 12px; color: var(--accent); margin-left: 8px; cursor: pointer; user-select: none; }
+.q-toggle:hover { text-decoration: underline; }
 .level-bronze, .level-silver, .level-gold { display: inline-block; font-size: 11px; padding: 2px 6px; border-radius: 4px; margin-top: 8px; }
 .level-bronze { background: #fef3e2; color: #b45309; }
 .level-silver { background: #f1f5f9; color: #475569; }
@@ -673,6 +675,19 @@ body:has(#sidebar.hidden) #content { margin-left: 0; }
 <p><strong>✅ 检验：</strong>分步验证：$-3^2=-(3\times3)=-9$；$(-\frac{1}{3})^2=\frac{1}{9}$；$-9\times\frac{1}{9}=-1$，✓。</p>
 </div></div>
     </div>
+    <details class="exam-module" open>
+    <summary>🏋️ 三级闯关 · 有理数</summary>
+    <div class="content">
+      <div class="exam-q"><span class="q-tag">🥉 基础关</span><div class="q-diff easy">★☆☆</div><div class="q-body">把 $-3$、$0$、$2$、$-1.5$ 在数轴上表示出来，并按从小到大的顺序排列。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>在数轴上从左到右依次为 $-3 < -1.5 < 0 < 2$。</div></div>
+      <div class="exam-q"><span class="q-tag">🥉 基础关</span><div class="q-diff easy">★☆☆</div><div class="q-body">求下列各数的绝对值：$|-5| = ?$，$|3| = ?$，$|0| = ?$</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>$|-5| = 5$，$|3| = 3$，$|0| = 0$。绝对值表示数轴上的点到原点的距离，结果非负。</div></div>
+      <div class="exam-q"><span class="q-tag">🥉 基础关</span><div class="q-diff easy">★☆☆</div><div class="q-body">计算：$(-3) + (-5)$、$(-7) + 4$、$3 - (-2)$</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>$(-3) + (-5) = -8$（同号相加）；$(-7) + 4 = -3$（异号相加）；$3 - (-2) = 3 + 2 = 5$（减去一个数等于加上它的相反数）。</div></div>
+      <div class="exam-q"><span class="q-tag">🥈 提升关</span><div class="q-diff mid">★★☆</div><div class="q-body">计算：$(-2)^3$、$(-3)^2$、$-2^4$（注意区分括号的位置）</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>$(-2)^3 = -8$（奇数个负因式得负）；$(-3)^2 = 9$（偶数个负因式得正）；$-2^4 = -16$（先算 $2^4=16$，再取负）。</div></div>
+      <div class="exam-q"><span class="q-tag">🥈 提升关</span><div class="q-diff mid">★★☆</div><div class="q-body">计算：$(-2) \times (-3) \times (-1) \div (-6)$</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>$(-2)\times(-3)=6$，$6\times(-1)=-6$，$-6\div(-6)=1$。也可先定符号：3 个负号（奇数）结果正，再算 $2\times3\times1\div6=1$。</div></div>
+      <div class="exam-q"><span class="q-tag">🥈 提升关</span><div class="q-diff mid">★★☆</div><div class="q-body">用科学记数法表示：$1380000 = ?$，$0.00056 = ?$</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>$1380000 = 1.38 \times 10^6$（左移 6 位）；$0.00056 = 5.6 \times 10^{-4}$（右移 4 位）。要求 $1 \le |a| < 10$。</div></div>
+      <div class="exam-q"><span class="q-tag">🥇 挑战关</span><div class="q-diff hard">★★★</div><div class="q-body">计算：$-1^4 - (1 - 0.5) \times \frac{1}{3} \times [2 - (-3)^2]$</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>$-1^4 = -1$；$(-3)^2=9$；$2-9=-7$；$(1-0.5)\times\frac{1}{3}=\frac{1}{6}$；$\frac{1}{6}\times(-7)=-\frac{7}{6}$；$-1-(-\frac{7}{6})=-1+\frac{7}{6}=\frac{1}{6}$。</div></div>
+      <div class="exam-q"><span class="q-tag">🥇 挑战关</span><div class="q-diff hard">★★★</div><div class="q-body">已知 $|a| = 5$，$|b| = 3$，且 $|a-b| = b-a$，求 $a+b$ 的值。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>由 $|a|=5$ 得 $a=\pm5$，$|b|=3$ 得 $b=\pm3$。由 $|a-b|=b-a\ge0$ 得 $b\ge a$，故 $a=-5$，$b=3$ 或 $a=-5$，$b=-3$。所以 $a+b=-2$ 或 $a+b=-8$。</div></div>
+    </div>
+    </details>
   </details>
     <div class="checklist">
       <h3>✅ 本章自查清单</h3>
@@ -815,6 +830,19 @@ body:has(#sidebar.hidden) #content { margin-left: 0; }
 <p><strong>✅ 检验：</strong>取 $a=1,b=1$，原式 $=(2-1)-(1+2)=1-3=-2$；化简后 $=1-3=-2$，一致 ✓。</p>
 </div></div>
     </div>
+    <details class="exam-module" open>
+    <summary>🏋️ 三级闯关 · 整式的加减</summary>
+    <div class="content">
+      <div class="exam-q"><span class="q-tag">🥉 基础关</span><div class="q-diff easy">★☆☆</div><div class="q-body">单项式 $-3x^2y$ 的系数和次数分别是多少？</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>系数是 $-3$（数字因数），次数是 $2+1=3$（所有字母指数之和）。</div></div>
+      <div class="exam-q"><span class="q-tag">🥉 基础关</span><div class="q-diff easy">★☆☆</div><div class="q-body">合并同类项：$3a + 2b - a - 5b$</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>$3a - a = 2a$，$2b - 5b = -3b$，结果为 $2a - 3b$。</div></div>
+      <div class="exam-q"><span class="q-tag">🥉 基础关</span><div class="q-diff easy">★☆☆</div><div class="q-body">去括号：$-(3x - 2y + 1)$</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>括号前是负号，每一项变号：$-3x + 2y - 1$。</div></div>
+      <div class="exam-q"><span class="q-tag">🥈 提升关</span><div class="q-diff mid">★★☆</div><div class="q-body">化简：$2(3a^2 - 2a + 1) - (4a^2 - 3a + 5)$</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>$2(3a^2 - 2a + 1) = 6a^2 - 4a + 2$，$-(4a^2 - 3a + 5) = -4a^2 + 3a - 5$，合并得 $2a^2 - a - 3$。</div></div>
+      <div class="exam-q"><span class="q-tag">🥈 提升关</span><div class="q-diff mid">★★☆</div><div class="q-body">先化简再求值：$(2x^2 - 3x + 1) - (x^2 - 2x + 3)$，其中 $x = -2$。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>化简：$2x^2-3x+1-x^2+2x-3 = x^2 - x - 2$。代入 $x=-2$：$(-2)^2 - (-2) - 2 = 4 + 2 - 2 = 4$。</div></div>
+      <div class="exam-q"><span class="q-tag">🥈 提升关</span><div class="q-diff mid">★★☆</div><div class="q-body">一个多项式加上 $3x^2 - 2x + 1$ 得 $2x^2 - x - 3$，求这个多项式。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>所求多项式 $= (2x^2 - x - 3) - (3x^2 - 2x + 1) = 2x^2 - x - 3 - 3x^2 + 2x - 1 = -x^2 + x - 4$。</div></div>
+      <div class="exam-q"><span class="q-tag">🥇 挑战关</span><div class="q-diff hard">★★★</div><div class="q-body">已知 $A = 2x^2 + 3xy - 2x - 1$，$B = -x^2 + xy - 1$，求 $3A + 6B$ 的值。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>$3A+6B = 3(2x^2+3xy-2x-1) + 6(-x^2+xy-1) = 6x^2+9xy-6x-3 -6x^2+6xy-6 = 15xy - 6x - 9$。</div></div>
+      <div class="exam-q"><span class="q-tag">🥇 挑战关</span><div class="q-diff hard">★★★</div><div class="q-body">探索规律：$1, 3, 6, 10, 15, \ldots$，第 $n$ 个数是多少？</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>第 $1$ 个数 $=1$，第 $2$ 个 $=1+2$，第 $3$ 个 $=1+2+3$，…，第 $n$ 个 $=1+2+3+\cdots+n = \dfrac{n(n+1)}{2}$。</div></div>
+    </div>
+    </details>
   </details>
     <div class="checklist">
       <h3>✅ 本章自查清单</h3>
@@ -1014,6 +1042,19 @@ body:has(#sidebar.hidden) #content { margin-left: 0; }
 <p><strong>✅ 检验：</strong>回代第一条件：$3\times8+2\times6=24+12=36$ ✓；第二条件：$1.5\times8+1.5\times6=12+9=21$，相距 $36-21=15$ km。（注：原题数字如有误请以教师版为准，解题方法不变。）</p>
 </div></div>
     </div>
+    <details class="exam-module" open>
+    <summary>🏋️ 三级闯关 · 一元一次方程</summary>
+    <div class="content">
+      <div class="exam-q"><span class="q-tag">🥉 基础关</span><div class="q-diff easy">★☆☆</div><div class="q-body">解方程：$2x + 3 = 11$</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>$2x = 11 - 3$，$2x = 8$，$x = 4$。检验：$2\times4+3=11$，✓。</div></div>
+      <div class="exam-q"><span class="q-tag">🥉 基础关</span><div class="q-diff easy">★☆☆</div><div class="q-body">解方程：$3(x - 2) = 2x + 1$</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>$3x - 6 = 2x + 1$，$3x - 2x = 1 + 6$，$x = 7$。</div></div>
+      <div class="exam-q"><span class="q-tag">🥉 基础关</span><div class="q-diff easy">★☆☆</div><div class="q-body">解方程：$\dfrac{x+1}{2} = \dfrac{2x-3}{3}$</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>去分母得 $3(x+1) = 2(2x-3)$，$3x+3=4x-6$，$3x-4x=-6-3$，$-x=-9$，$x=9$。</div></div>
+      <div class="exam-q"><span class="q-tag">🥈 提升关</span><div class="q-diff mid">★★☆</div><div class="q-body">一个数的 $3$ 倍减去 $5$ 等于这个数的 $2$ 倍加上 $7$，求这个数。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>设这个数为 $x$，则 $3x-5=2x+7$，$3x-2x=7+5$，$x=12$。</div></div>
+      <div class="exam-q"><span class="q-tag">🥈 提升关</span><div class="q-diff mid">★★☆</div><div class="q-body">一项工程，甲单独做需 $10$ 天，乙单独做需 $15$ 天，两人合作需要几天完成？</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>设合作需 $x$ 天。甲效率 $\frac{1}{10}$，乙效率 $\frac{1}{15}$。$\left(\frac{1}{10}+\frac{1}{15}\right)x = 1$，$\frac{1}{6}x=1$，$x=6$（天）。</div></div>
+      <div class="exam-q"><span class="q-tag">🥈 提升关</span><div class="q-diff mid">★★☆</div><div class="q-body">一件商品进价 $200$ 元，售价 $250$ 元，利润率是多少？</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>利润 $= 250-200=50$ 元，利润率 $= \dfrac{50}{200}\times100\% = 25\%$。</div></div>
+      <div class="exam-q"><span class="q-tag">🥇 挑战关</span><div class="q-diff hard">★★★</div><div class="q-body">A、B 两地相距 $360$ km，甲车速度 $60$ km/h，乙车速度 $40$ km/h。两车相向而行，几小时后相遇？</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>设 $x$ 小时后相遇。$60x + 40x = 360$，$100x = 360$，$x = 3.6$（小时）。</div></div>
+      <div class="exam-q"><span class="q-tag">🥇 挑战关</span><div class="q-diff hard">★★★</div><div class="q-body">两种电话卡：A 卡月租 $20$ 元，每分钟 $0.1$ 元；B 卡无月租，每分钟 $0.2$ 元。每月通话多少分钟时两种卡费用相同？</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>设通话 $x$ 分钟费用相同。$20 + 0.1x = 0.2x$，$20 = 0.1x$，$x = 200$（分钟）。</div></div>
+    </div>
+    </details>
   </details>
     <div class="checklist">
       <h3>✅ 本章自查清单</h3>
@@ -1339,6 +1380,19 @@ body:has(#sidebar.hidden) #content { margin-left: 0; }
 <p><strong>✅ 检验：</strong>回代验证：$\angle\alpha=60°$，补角 $=180°-60°=120°$ ✓，余角 $=90°-60°=30°$ ✓。</p>
 </div></div>
     </div>
+    <details class="exam-module" open>
+    <summary>🏋️ 三级闯关 · 几何图形初步</summary>
+    <div class="content">
+      <div class="exam-q"><span class="q-tag">🥉 基础关</span><div class="q-diff easy">★☆☆</div><div class="q-body">两点确定一条什么？两点之间什么最短？</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>两点确定一条<strong>直线</strong>；两点之间<strong>线段</strong>最短。</div></div>
+      <div class="exam-q"><span class="q-tag">🥉 基础关</span><div class="q-diff easy">★☆☆</div><div class="q-body">一个角是 $35°42'$，它的余角和补角分别是多少？</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>余角 $= 90° - 35°42' = 54°18'$；补角 $= 180° - 35°42' = 144°18'$。</div></div>
+      <div class="exam-q"><span class="q-tag">🥉 基础关</span><div class="q-diff easy">★☆☆</div><div class="q-body">判断正误：① 射线比直线短；② 角的大小与所画边的长短有关。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>① 错误，射线和直线都是无限延伸的，不能比较长短；② 错误，角的大小只与两边张开的程度有关，与边的长短无关。</div></div>
+      <div class="exam-q"><span class="q-tag">🥈 提升关</span><div class="q-diff mid">★★☆</div><div class="q-body">如图，$C$ 是线段 $AB$ 的中点，$AC = 3$ cm，求 $AB$ 的长度。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>因为 $C$ 是中点，所以 $AB = 2 \times AC = 2 \times 3 = 6$ cm。</div></div>
+      <div class="exam-q"><span class="q-tag">🥈 提升关</span><div class="q-diff mid">★★☆</div><div class="q-body">计算：$23°45' + 18°32'$，$90° - 36°18'$</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>$23°45' + 18°32' = 41°77' = 42°17'$（满 $60'$ 进 $1°$）；$90° - 36°18' = 89°60' - 36°18' = 53°42'$。</div></div>
+      <div class="exam-q"><span class="q-tag">🥈 提升关</span><div class="q-diff mid">★★☆</div><div class="q-body">画图说明"对顶角相等"和"邻补角互补"。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>两条直线相交形成两对对顶角，每对对顶角都相等；每相邻的两个角互为邻补角，和为 $180°$。如图：$\angle1=\angle3$，$\angle2=\angle4$（对顶角相等）；$\angle1+\angle2=180°$（邻补角互补）。</div></div>
+      <div class="exam-q"><span class="q-tag">🥇 挑战关</span><div class="q-diff hard">★★★</div><div class="q-body">钟表问题：$3:15$ 时，时针与分针的夹角是多少度？</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>$3:00$ 时时针在 $3$ 处（$90°$）。分针 $15$ 分钟走 $90°$（指向 $3$），时针 $15$ 分钟走 $7.5°$（$360°\div12\div4=7.5°$）。夹角 $= 90° - 90° + 7.5° = 7.5°$。</div></div>
+      <div class="exam-q"><span class="q-tag">🥇 挑战关</span><div class="q-diff hard">★★★</div><div class="q-body">一张长方形纸片沿 $EF$ 折叠后，点 $D$ 落在 $D'$ 处，已知 $\angle EFD = 70°$，求 $\angle EFD'$ 的度数。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>折叠前后对应角相等，所以 $\angle EFD' = \angle EFD = 70°$。</div></div>
+    </div>
+    </details>
   </details>
     <div class="checklist">
       <h3>✅ 本章自查清单</h3>
@@ -1653,6 +1707,19 @@ body:has(#sidebar.hidden) #content { margin-left: 0; }
 <p><strong>✅ 检验：</strong>用 Z 型法重新看图——字母 Z 的上下横线是平行线、斜线是截线，Z 两内角即内错角。本题 $\angle 1$ 与 $\angle 2$ 恰好在 Z 型两端，确认无误。</p>
 </div></div>
     </div>
+    <details class="exam-module" open>
+    <summary>🏋️ 三级闯关 · 相交线与平行线</summary>
+    <div class="content">
+      <div class="exam-q"><span class="q-tag">🥉 基础关</span><div class="q-diff easy">★☆☆</div><div class="q-body">同位角、内错角、同旁内角各有什么特征？如何快速识别？</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>同位角：位置相同（F 型）；内错角：截线两侧、被截线之间（Z 型）；同旁内角：截线同侧、被截线之间（C 型）。</div></div>
+      <div class="exam-q"><span class="q-tag">🥉 基础关</span><div class="q-diff easy">★☆☆</div><div class="q-body">平行公理的内容是什么？</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>过直线外一点，有且只有一条直线与这条直线平行。如果两条直线都与第三条直线平行，那么这两条直线也互相平行。</div></div>
+      <div class="exam-q"><span class="q-tag">🥉 基础关</span><div class="q-diff easy">★☆☆</div><div class="q-body">判断：两条直线被第三条直线所截，同位角一定相等。这句话对吗？</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>不对。只有两条被截线<strong>平行</strong>时，同位角才相等（平行线的性质）。如果被截线不平行，同位角不相等。</div></div>
+      <div class="exam-q"><span class="q-tag">🥈 提升关</span><div class="q-diff mid">★★☆</div><div class="q-body">已知 $a \parallel b$，$\angle 1 = 60°$，利用同位角、内错角、同旁内角关系分别求出相关角的度数。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>若 $\angle1$ 与 $\angle2$ 是同位角，则 $\angle2=60°$；若 $\angle1$ 与 $\angle2$ 是内错角，则 $\angle2=60°$；若 $\angle1$ 与 $\angle2$ 是同旁内角，则 $\angle2=180°-60°=120°$。</div></div>
+      <div class="exam-q"><span class="q-tag">🥈 提升关</span><div class="q-diff mid">★★☆</div><div class="q-body">证明：垂直于同一直线的两条直线互相平行。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>设 $a \perp c$，$b \perp c$，则 $\angle1=90°$（$a$ 与 $c$ 的夹角），$\angle2=90°$（$b$ 与 $c$ 的夹角），$\angle1=\angle2$（同位角相等），$\therefore a \parallel b$。</div></div>
+      <div class="exam-q"><span class="q-tag">🥈 提升关</span><div class="q-diff mid">★★☆</div><div class="q-body">平移有哪些性质？</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>平移前后对应点连线平行（或在同一直线上）且相等；对应线段平行且相等；对应角相等；平移不改变图形的形状和大小。</div></div>
+      <div class="exam-q"><span class="q-tag">🥇 挑战关</span><div class="q-diff hard">★★★</div><div class="q-body">拐点问题：$AB \parallel CD$，$\angle B = 120°$，$\angle D = 130°$，求 $\angle BED$ 的度数。（提示：过点 $E$ 作平行线）</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>过 $E$ 作 $EF \parallel AB$，则 $EF \parallel CD$。$\angle B + \angle BEF = 180°$，$\angle D + \angle DEF = 180°$（两直线平行，同旁内角互补）。$\angle BEF = 60°$，$\angle DEF = 50°$，$\angle BED = \angle BEF + \angle DEF = 110°$。</div></div>
+      <div class="exam-q"><span class="q-tag">🥇 挑战关</span><div class="q-diff hard">★★★</div><div class="q-body">综合推理：$AB \parallel CD$，$\angle 1 = 45°$，$\angle 2 = 65°$，求 $\angle 3$ 的度数。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>由 $AB \parallel CD$ 得同位角相等。过拐点作辅助线或利用三角形内角和 $180°$ 进行过渡计算，可得 $\angle 3 = 110°$。</div></div>
+    </div>
+    </details>
   </details>
     <div class="checklist">
       <h3>✅ 本章自查清单</h3>
@@ -1835,6 +1902,19 @@ body:has(#sidebar.hidden) #content { margin-left: 0; }
   <p><strong>⚠️ 常见错误：</strong>① 把 $\sqrt{4}$ 归为无理数（$\sqrt{}$ 开出整数即为有理数）；② 把 $\frac{22}{7}$ 当作无理数（任何分数都是有理性，含无限循环小数）；③ 以"无限"为判断标准——无限但循环的有理数 $\neq$ 无理数。</p>
   <p><strong>✅ 检验：</strong>有理数可写为两整数之比——A: $\frac{2}{1}$，B: $\frac{22}{7}$，D: 循环小数可化为分数。C: $\sqrt{3}$ 无法化成分数 $\to$ 无理数 ✓。</p>
 </div></div>
+    </div>
+  </details>
+  <details class="exam-module" open>
+    <summary>🎯 三级闯关 · 实战练习</summary>
+    <div class="content">
+      <div class="exam-q"><span class="q-tag">基础</span><div class="q-diff easy">★☆☆</div><div class="q-body">$\sqrt{81}$ 的平方根是多少？（注意区分算术平方根和平方根）</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>$\sqrt{81}=9$，$9$ 的平方根是 $\pm3$。注意 $\sqrt{81}$ 本身是算术平方根（结果为 $9$），题目问的是 $9$ 的平方根，所以答案是 $\pm3$。</div></div>
+      <div class="exam-q"><span class="q-tag">基础</span><div class="q-diff easy">★☆☆</div><div class="q-body">判断正误：无理数就是无限不循环小数。（举例说明 $\sqrt{2}$、$\pi$ 为什么是无理数）</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>正确。无理数定义：无限不循环小数。$\sqrt{2}\approx1.41421356\ldots$ 无限且不循环；$\pi\approx3.14159265\ldots$ 也无限不循环。分数（如 $\frac{1}{3}=0.\overline{3}$）虽然无限但循环，属于有理数。</div></div>
+      <div class="exam-q"><span class="q-tag">基础</span><div class="q-diff easy">★☆☆</div><div class="q-body">比较大小：$2\sqrt{3}$ 和 $3\sqrt{2}$（用平方比较法）</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>$(2\sqrt{3})^2=4\times3=12$，$(3\sqrt{2})^2=9\times2=18$。因为 $12 < 18$ 且均为正数，所以 $2\sqrt{3} < 3\sqrt{2}$。</div></div>
+      <div class="exam-q"><span class="q-tag">提升</span><div class="q-diff mid">★★☆</div><div class="q-body">计算：$\sqrt{9} + \sqrt{(-2)^2} - \sqrt[3]{27}$</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>$\sqrt{9}=3$，$\sqrt{(-2)^2}=\sqrt{4}=2$，$\sqrt[3]{27}=3$。原式 $=3+2-3=2$。</div></div>
+      <div class="exam-q"><span class="q-tag">提升</span><div class="q-diff mid">★★☆</div><div class="q-body">已知 $|x| = \sqrt{5}$，求 $x$ 的值。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>绝对值等于 $\sqrt{5}$ 的数有两个：$x = \sqrt{5}$ 或 $x = -\sqrt{5}$。注意 $\sqrt{5}$ 本身是正数（无理数），答案保留根号形式。</div></div>
+      <div class="exam-q"><span class="q-tag">提升</span><div class="q-diff mid">★★☆</div><div class="q-body">在数轴上画出表示 $\sqrt{2}$ 的点（用勾股定理）。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>在数轴上，以 $0$ 为圆心，$1$ 为半径作垂线构造直角三角形：取点 $A(1,0)$，过 $A$ 作数轴垂线 $AB=1$，连接 $OB$，则 $OB=\sqrt{1^2+1^2}=\sqrt{2}$。以 $O$ 为圆心、$OB$ 为半径画弧交数轴正半轴于 $C$，则 $C$ 对应 $\sqrt{2}$。</div></div>
+      <div class="exam-q"><span class="q-tag">挑战</span><div class="q-diff hard">★★★</div><div class="q-body">已知 $\sqrt{x-2} + |y+3| = 0$，求 $(x+y)^{2024}$ 的值。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>由非负性：$\sqrt{x-2}\ge0$，$|y+3|\ge0$，二者之和为 $0$，则各自为 $0$。$\sqrt{x-2}=0 \Rightarrow x=2$；$|y+3|=0 \Rightarrow y=-3$。$(x+y)^{2024} = (2-3)^{2024} = (-1)^{2024} = 1$。</div></div>
+      <div class="exam-q"><span class="q-tag">挑战</span><div class="q-diff hard">★★★</div><div class="q-body">一个正数的两个平方根分别是 $2a-1$ 和 $a-5$，求 $a$ 的值和这个正数。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>一个正数的两个平方根互为相反数，所以 $(2a-1)+(a-5)=0 \Rightarrow 3a-6=0 \Rightarrow a=2$。平方根为 $2\times2-1=3$ 和 $2-5=-3$。这个正数为 $(\pm3)^2=9$。</div></div>
     </div>
   </details>
     <div class="checklist">
@@ -2041,6 +2121,19 @@ body:has(#sidebar.hidden) #content { margin-left: 0; }
 </div></div>
     </div>
   </details>
+  <details class="exam-module" open>
+    <summary>🎯 三级闯关 · 实战练习</summary>
+    <div class="content">
+      <div class="exam-q"><span class="q-tag">基础</span><div class="q-diff easy">★☆☆</div><div class="q-body">点 $(3, -2)$ 在第几象限？点 $(-3, 0)$ 在什么位置？</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>$(3, -2)$ 横正纵负，在第四象限。$(-3, 0)$ 纵坐标为 $0$，在 $x$ 轴负半轴上。</div></div>
+      <div class="exam-q"><span class="q-tag">基础</span><div class="q-diff easy">★☆☆</div><div class="q-body">$x$ 轴上点的纵坐标有什么特点？$y$ 轴上点的横坐标呢？</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>$x$ 轴上所有点的纵坐标为 $0$，形式为 $(a, 0)$。$y$ 轴上所有点的横坐标为 $0$，形式为 $(0, b)$。原点 $(0,0)$ 同时在两轴上。</div></div>
+      <div class="exam-q"><span class="q-tag">基础</span><div class="q-diff easy">★☆☆</div><div class="q-body">点 $A(2, -3)$ 关于 $x$ 轴对称的点的坐标是什么？</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>关于 $x$ 轴对称，横坐标不变、纵坐标取相反数：$(2, 3)$。关于 $y$ 轴对称则相反：$(-2, -3)$；关于原点对称则都取反：$(-2, 3)$。</div></div>
+      <div class="exam-q"><span class="q-tag">提升</span><div class="q-diff mid">★★☆</div><div class="q-body">点 $M(2, m)$ 到 $x$ 轴的距离为 $3$，求 $m$ 的值。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>点到 $x$ 轴的距离 $= |纵坐标| = |m| = 3$，所以 $m = 3$ 或 $m = -3$。注意距离是非负数，$m$ 可正可负。</div></div>
+      <div class="exam-q"><span class="q-tag">提升</span><div class="q-diff mid">★★☆</div><div class="q-body">线段 $AB$ 两端点 $A(1,2)$、$B(3,5)$，向右平移 $2$ 单位再向下平移 $1$ 单位后，求 $A'$、$B'$ 的坐标。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>向右平移 $2$ 单位：横坐标 $+2$；向下平移 $1$ 单位：纵坐标 $-1$。$A'(1+2, 2-1) = (3, 1)$，$B'(3+2, 5-1) = (5, 4)$。</div></div>
+      <div class="exam-q"><span class="q-tag">提升</span><div class="q-diff mid">★★☆</div><div class="q-body">长方形 $ABCD$ 中 $A(-2,1)$、$B(4,1)$、$C(4,-2)$，求 $D$ 点坐标和长方形面积。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>长方形对边平行，$D$ 与 $A$ 横坐标相同、与 $C$ 纵坐标相同，所以 $D(-2, -2)$。长 $= AB = |4-(-2)| = 6$，宽 $= BC = |1-(-2)| = 3$，面积 $= 6 \times 3 = 18$。</div></div>
+      <div class="exam-q"><span class="q-tag">挑战</span><div class="q-diff hard">★★★</div><div class="q-body">已知 $\triangle ABC$ 三个顶点坐标：$A(0,0)$、$B(3,0)$、$C(0,4)$，判断三角形的形状并求面积。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>$AB = |3-0| = 3$，$AC = |4-0| = 4$，$BC = \sqrt{(3-0)^2 + (0-4)^2} = \sqrt{9+16} = 5$。因为 $3^2+4^2=5^2$，满足勾股定理，所以 $\triangle ABC$ 是直角三角形。面积 $= \frac{1}{2} \times 3 \times 4 = 6$。</div></div>
+      <div class="exam-q"><span class="q-tag">挑战</span><div class="q-diff hard">★★★</div><div class="q-body">以校门为原点、正东为 $x$ 轴正方向、正北为 $y$ 轴正方向建立坐标系。教学楼在校门正北 $200$ 米，图书馆在校门东偏北 $60^\circ$ 方向 $300$ 米处，求教学楼和图书馆的坐标。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>教学楼：正北 $200$ 米，坐标为 $(0, 200)$。图书馆：东偏北 $60^\circ$ 方向 $300$ 米，$x = 300\cos60^\circ = 300 \times \frac{1}{2} = 150$，$y = 300\sin60^\circ = 300 \times \frac{\sqrt{3}}{2} = 150\sqrt{3}$，坐标为 $(150, 150\sqrt{3})$。</div></div>
+    </div>
+  </details>
     <div class="checklist">
       <h3>✅ 本章自查清单</h3>
       <label><span class="self-score">🔴→🟡→🟢</span>  能根据坐标在坐标系中描点</label>
@@ -2226,6 +2319,19 @@ body:has(#sidebar.hidden) #content { margin-left: 0; }
 </div></div>
     </div>
   </details>
+  <details class="exam-module" open>
+    <summary>🎯 三级闯关 · 实战练习</summary>
+    <div class="content">
+      <div class="exam-q"><span class="q-tag">基础</span><div class="q-diff easy">★☆☆</div><div class="q-body">解方程组：$\begin{cases} x + y = 5 \\ x - y = 1 \end{cases}$</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>两式相加得 $2x=6 \Rightarrow x=3$，代入 $x+y=5$ 得 $y=2$。解为 $\begin{cases}x=3 \\ y=2\end{cases}$。</div></div>
+      <div class="exam-q"><span class="q-tag">基础</span><div class="q-diff easy">★☆☆</div><div class="q-body">用代入法解方程组：$\begin{cases} y = 2x - 3 \\ 3x + 2y = 8 \end{cases}$</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>将 $y=2x-3$ 代入第二式：$3x+2(2x-3)=8 \Rightarrow 3x+4x-6=8 \Rightarrow 7x=14 \Rightarrow x=2$。回代得 $y=2\times2-3=1$。解为 $\begin{cases}x=2 \\ y=1\end{cases}$。</div></div>
+      <div class="exam-q"><span class="q-tag">基础</span><div class="q-diff easy">★☆☆</div><div class="q-body">用加减法解方程组：$\begin{cases} 2x + 3y = 13 \\ 3x - 2y = 0 \end{cases}$</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>一式 $\times2$ 得 $4x+6y=26$，二式 $\times3$ 得 $9x-6y=0$，相加得 $13x=26 \Rightarrow x=2$。代入 $3x-2y=0$ 得 $6-2y=0 \Rightarrow y=3$。解为 $\begin{cases}x=2 \\ y=3\end{cases}$。</div></div>
+      <div class="exam-q"><span class="q-tag">提升</span><div class="q-diff mid">★★☆</div><div class="q-body">一个两位数，十位数字比个位数字大 $2$，且这个两位数等于数字和的 $4$ 倍，求这个两位数。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>设十位数字为 $x$，个位数字为 $y$，则两位数为 $10x+y$。由题意 $\begin{cases}x-y=2 \\ 10x+y=4(x+y)\end{cases}$，化简 $10x+y=4x+4y \Rightarrow 6x-3y=0 \Rightarrow 2x-y=0$。解 $\begin{cases}x-y=2 \\ 2x-y=0\end{cases}$得 $x=2, y=0$。这个两位数是 $20$。</div></div>
+      <div class="exam-q"><span class="q-tag">提升</span><div class="q-diff mid">★★☆</div><div class="q-body">鸡兔同笼：鸡和兔共 $30$ 只，脚共 $94$ 只，求鸡和兔各几只？</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>设鸡 $x$ 只（$2$ 脚），兔 $y$ 只（$4$ 脚）。$\begin{cases}x+y=30 \\ 2x+4y=94\end{cases}$。一式 $\times2$ 得 $2x+2y=60$，相减得 $2y=34 \Rightarrow y=17$，$x=13$。鸡 $13$ 只，兔 $17$ 只。</div></div>
+      <div class="exam-q"><span class="q-tag">提升</span><div class="q-diff mid">★★☆</div><div class="q-body">某人骑自行车从 $A$ 地到 $B$ 地，去时速度 $15\text{km/h}$，返回时速度 $10\text{km/h}$，来回共用 $5$ 小时，求 $A$、$B$ 两地距离。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>设距离为 $x$ km。去时时间 $\frac{x}{15}$，回时时间 $\frac{x}{10}$，$\frac{x}{15}+\frac{x}{10}=5$，两边乘 $30$：$2x+3x=150 \Rightarrow 5x=150 \Rightarrow x=30$。$A$、$B$ 距离 $30$ 千米。</div></div>
+      <div class="exam-q"><span class="q-tag">挑战</span><div class="q-diff hard">★★★</div><div class="q-body">已知方程组 $\begin{cases} ax + y = 7 \\ x + by = 8 \end{cases}$ 的解为 $\begin{cases} x=2 \\ y=3 \end{cases}$，求 $a$、$b$ 的值。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>将 $x=2, y=3$ 代入：$2a+3=7 \Rightarrow 2a=4 \Rightarrow a=2$；$2+3b=8 \Rightarrow 3b=6 \Rightarrow b=2$。</div></div>
+      <div class="exam-q"><span class="q-tag">挑战</span><div class="q-diff hard">★★★</div><div class="q-body">用 $36$ 元买 $4$ 元和 $6$ 元的笔记本共 $7$ 本，两种笔记本各买几本？</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>设 $4$ 元笔记本 $x$ 本，$6$ 元笔记本 $y$ 本。$\begin{cases}x+y=7 \\ 4x+6y=36\end{cases}$。一式 $\times4$ 得 $4x+4y=28$，相减得 $2y=8 \Rightarrow y=4$，$x=3$。$4$ 元 $3$ 本，$6$ 元 $4$ 本。</div></div>
+    </div>
+  </details>
     <div class="checklist">
       <h3>✅ 本章自查清单</h3>
       <label><span class="self-score">🔴→🟡→🟢</span>  能选择合适的方法（代入/加减）解方程组</label>
@@ -2406,6 +2512,19 @@ body:has(#sidebar.hidden) #content { margin-left: 0; }
 </div></div>
     </div>
   </details>
+  <details class="exam-module" open>
+    <summary>🎯 三级闯关 · 实战练习</summary>
+    <div class="content">
+      <div class="exam-q"><span class="q-tag">基础</span><div class="q-diff easy">★☆☆</div><div class="q-body">解不等式：$2x - 3 > 5$</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>$2x-3>5 \Rightarrow 2x>8 \Rightarrow x>4$。解集在数轴上表示为 $4$ 右侧（空心点）。</div></div>
+      <div class="exam-q"><span class="q-tag">基础</span><div class="q-diff easy">★☆☆</div><div class="q-body">解不等式组：$\begin{cases} x + 1 > 0 \\ 2x - 3 \le 1 \end{cases}$</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>$x+1>0 \Rightarrow x>-1$；$2x-3\le1 \Rightarrow 2x\le4 \Rightarrow x\le2$。取交集得 $-1 < x \le 2$。</div></div>
+      <div class="exam-q"><span class="q-tag">基础</span><div class="q-diff easy">★☆☆</div><div class="q-body">利用不等式性质回答：将 $3 > -1$ 两边同时乘以 $-2$，结果如何？</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>$3 > -1$，两边乘以 $-2$ 得 $3\times(-2) < (-1)\times(-2)$，即 $-6 < 2$。不等式两边乘同一个负数，不等号方向改变。</div></div>
+      <div class="exam-q"><span class="q-tag">提升</span><div class="q-diff mid">★★☆</div><div class="q-body">解不等式并在数轴上表示：$-3 \le 2x + 1 < 7$</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>各部分 $-1$：$-4 \le 2x < 6$；$\div2$：$-2 \le x < 3$。数轴上：$-2$ 处实心点，$3$ 处空心点，中间部分涂色。</div></div>
+      <div class="exam-q"><span class="q-tag">提升</span><div class="q-diff mid">★★☆</div><div class="q-body">求不等式组 $\begin{cases} 2x - 1 > 3 \\ x + 2 < 4x - 1 \end{cases}$ 的整数解。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>$2x-1>3 \Rightarrow 2x>4 \Rightarrow x>2$；$x+2<4x-1 \Rightarrow -3x<-3 \Rightarrow x>1$。取交集得 $x>2$，整数解为 $3, 4, 5, \ldots$（所有大于 $2$ 的整数）。</div></div>
+      <div class="exam-q"><span class="q-tag">提升</span><div class="q-diff mid">★★☆</div><div class="q-body">学校购买奖品，笔记本 $5$ 元/本，钢笔 $8$ 元/支，总费用不超过 $200$ 元。已买笔记本 $20$ 本，钢笔最多能买几支？</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>设买钢笔 $x$ 支。$5\times20 + 8x \le 200 \Rightarrow 100+8x\le200 \Rightarrow 8x\le100 \Rightarrow x\le12.5$。$x$ 取最大整数，钢笔最多买 $12$ 支。</div></div>
+      <div class="exam-q"><span class="q-tag">挑战</span><div class="q-diff hard">★★★</div><div class="q-body">若不等式组 $\begin{cases} x > a \\ x \le 2 \end{cases}$ 有 $3$ 个整数解，求 $a$ 的取值范围。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>$x \le 2$ 且 $x > a$，整数解为 $2, 1, 0$（共 $3$ 个），所以 $a$ 必须小于 $0$ 且大于等于 $-1$，即 $-1 \le a < 0$。</div></div>
+      <div class="exam-q"><span class="q-tag">挑战</span><div class="q-diff hard">★★★</div><div class="q-body">用载重 $4$ 吨（运费 $300$ 元/次）和 $6$ 吨（运费 $400$ 元/次）的两种货车运 $28$ 吨货物，要求每辆车都满载，怎样安排总运费最少？</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>设 $4$ 吨车 $x$ 辆，$6$ 吨车 $y$ 辆。$4x+6y=28 \Rightarrow 2x+3y=14$。整数解：$(x,y)=(1,4),(4,2),(7,0)$。运费：$1\times300+4\times400=1900$ 元；$4\times300+2\times400=2000$ 元；$7\times300=2100$ 元。最少 $1900$ 元（$1$ 辆 $4$ 吨、$4$ 辆 $6$ 吨）。</div></div>
+    </div>
+  </details>
     <div class="checklist">
       <h3>✅ 本章自查清单</h3>
       <label><span class="self-score">🔴→🟡→🟢</span>  能说出不等式的三条性质</label>
@@ -2565,6 +2684,19 @@ body:has(#sidebar.hidden) #content { margin-left: 0; }
   <p><strong>⚠️ 常见错误：</strong>① 总数与百分比的计算混淆——"部分 $\div$ 总数 $=$ 百分比"，已知部分求总数应"部分 $\div$ 百分比"；② 圆心角算出来忘了写°单位。</p>
   <p><strong>✅ 检验：</strong>篮球 $30\times40\%=12$ 人 ✓，足球 $30\times30\%=9$ 人，$12+9+\ldots=30$。圆心角之和 $=144°+108°+\ldots=360°$ ✓。</p>
 </div></div>
+    </div>
+  </details>
+  <details class="exam-module" open>
+    <summary>🎯 三级闯关 · 实战练习</summary>
+    <div class="content">
+      <div class="exam-q"><span class="q-tag">基础</span><div class="q-diff easy">★☆☆</div><div class="q-body">全面调查和抽样调查的区别是什么？各举一例。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>全面调查对全体对象逐一调查（如人口普查），结果精确但费时费力；抽样调查从总体中抽取样本调查（如检测灯泡寿命），省时省力但存在误差。当总体数量大、破坏性强时宜采用抽样调查。</div></div>
+      <div class="exam-q"><span class="q-tag">基础</span><div class="q-diff easy">★☆☆</div><div class="q-body">解释总体、个体、样本、样本容量的概念。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>总体——考察对象的全体；个体——每个考察对象；样本——从总体中抽取的部分个体；样本容量——样本中包含的个体数量（无单位）。如调查全校 $2000$ 学生视力，抽取 $100$ 人：总体是全校 $2000$ 名学生视力，个体是每名学生视力，样本是 $100$ 名学生视力，样本容量是 $100$。</div></div>
+      <div class="exam-q"><span class="q-tag">基础</span><div class="q-diff easy">★☆☆</div><div class="q-body">条形图、扇形图、折线图各适合表示什么类型的数据？</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>条形图——比较各项目数量大小（如各班人数）；扇形图——表示各部分占总体的百分比（如支出构成）；折线图——反映数据随时间的变化趋势（如气温变化）。</div></div>
+      <div class="exam-q"><span class="q-tag">提升</span><div class="q-diff mid">★★☆</div><div class="q-body">某部分占总体的 $30\%$，在扇形统计图中对应的圆心角是多少度？</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>圆心角 $= 30\% \times 360^\circ = 0.3 \times 360^\circ = 108^\circ$。</div></div>
+      <div class="exam-q"><span class="q-tag">提升</span><div class="q-diff mid">★★☆</div><div class="q-body">某班 $50$ 人，数学成绩分段统计：$60$-$70$ 分 $8$ 人，$70$-$80$ 分 $16$ 人，$80$-$90$ 分 $18$ 人，$90$-$100$ 分 $8$ 人。求各段的频率。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>频率 $=$ 频数 $\div$ 总数。$60$-$70$：$8\div50=0.16$；$70$-$80$：$16\div50=0.32$；$80$-$90$：$18\div50=0.36$；$90$-$100$：$8\div50=0.16$。频率之和 $=0.16+0.32+0.36+0.16=1$ ✓。</div></div>
+      <div class="exam-q"><span class="q-tag">提升</span><div class="q-diff mid">★★☆</div><div class="q-body">检测 $100$ 个灯泡，有 $3$ 个不合格。照此估算，$10000$ 个灯泡中约有多少个不合格？</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>不合格率 $\frac{3}{100}=3\%$。$10000\times3\% = 300$（个）。用样本不合格率估计总体不合格数量。</div></div>
+      <div class="exam-q"><span class="q-tag">挑战</span><div class="q-diff hard">★★★</div><div class="q-body">设计一个调查全校学生近视率的方案：说明抽样方法和样本容量多少合适。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>方案：① 分层抽样——按年级（初一/初二/初三）分层，每层随机抽取 $2$ 个班；② 样本容量——全校约 $1000$ 人，抽取 $200$ 人（约占 $20\%$）较为合理；③ 数据收集——测视力并记录；④ 估算——用样本近视率估算全校近视率。注意样本应具代表性，避免只在某个班调查。</div></div>
+      <div class="exam-q"><span class="q-tag">挑战</span><div class="q-diff hard">★★★</div><div class="q-body">某班 $40$ 名学生身高数据（单位：cm）如下：$152,155,158,160,162,165,165,168,170,172,152,154,157,160,163,165,167,169,171,173,153,156,159,161,164,166,168,170,172,174,150,153,157,160,162,164,166,169,171,175$。以 $3$ cm 为组距制作频数分布表。</div><span class="q-toggle">📝 查看答案</span><div class="q-solution"><strong>解析：</strong>最小值 $150$，最大值 $175$，范围 $25$，组距 $3$，组数 $\lceil 25\div3\rceil=9$ 组。频数分布：$150$-$153$：$4$ 人，$153$-$156$：$4$ 人，$156$-$159$：$4$ 人，$159$-$162$：$5$ 人，$162$-$165$：$6$ 人，$165$-$168$：$5$ 人，$168$-$171$：$5$ 人，$171$-$174$：$4$ 人，$174$-$177$：$3$ 人。分布趋势：中间多（$162$-$165$ 组最多 $6$ 人），两端少，近似正态分布。</div></div>
     </div>
   </details>
     <div class="checklist">

@@ -182,7 +182,7 @@ try { renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',displ
 })();
 
 // Back to top
-window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=scrollY>400?'block':'none'});
+window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=scrollY>400?'block':'none'},{ passive: true });
 
 // Solution toggle
 document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution')})});

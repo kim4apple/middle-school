@@ -41,6 +41,12 @@
 <main id="content">
 <div class="cover"><h1>第5章 · 化学方程式</h1><p>九年级上册 | 质量守恒 · 配平方法 | 初中化学最重要的计算工具</p></div>
 
+<div class="chapter-meta">
+  <span class="diff-badge diff-medium">★★★☆☆ 计算核心</span>
+  <span class="freq-badge freq-high">📊 中考高频</span>
+  <span style="color:var(--text-secondary);font-size:12px;">化学计算的基础，贯穿全卷</span>
+</div>
+
 <!-- ====== 模块1: 实验观察 ====== -->
 <section class="experiment-observation">
   <div class="exp-title">🧪 实验一：红磷燃烧验证质量守恒定律</div>
@@ -72,6 +78,44 @@
   </table>
   <p style="margin-top:10px;">质量守恒定律是<strong>一切化学反应</strong>都必须遵守的普遍规律，是配平化学方程式的<strong>根本依据</strong>。</p>
 </section>
+
+<div class="eq-section">
+  <div class="eq-title">📝 本节核心方程式（2个）</div>
+  <div class="eq-row"><span class="eq-num">1</span>$4P + 5O_2 \xrightarrow{点燃} 2P_2O_5$ <span style="color:var(--text-secondary);font-size:11px;">质量守恒验证实验</span></div>
+  <div class="eq-row"><span class="eq-num">2</span>$Fe + CuSO_4 \rightarrow FeSO_4 + Cu$ <span style="color:var(--text-secondary);font-size:11px;">前4章经典方程</span></div>
+</div>
+
+<div class="compare-card">
+  <div class="compare-title">🧩 易混对比：质量守恒定律的理解</div>
+  <div class="compare-grid">
+    <div class="compare-item"><strong>🔹 正确理解</strong>参加化学反应的各物质质量总和=生成的各物质质量总和<br>——原子种类/数目/质量都不变</div>
+    <div class="compare-item"><strong>🔸 常见错误</strong>"100g水+100g酒精=200g"→不是化学变化<br>"10gC+10gO₂→20gCO₂"→未考虑过量</div>
+  </div>
+</div>
+
+<div class="exam-q-card">
+  <div class="exam-q-title">📋 中考真题示例</div>
+  <div class="exam-q-body">
+    <strong>（2023 · 广州）</strong>在反应 2A + B = 3C + D 中，A和B的相对分子质量之比为5:1。已知20g A与一定量B恰好完全反应，生成5g D。则在此反应中B和C的质量比为______。<br>
+    A. 2:3 &nbsp; B. 3:2 &nbsp; C. 1:3 &nbsp; D. 3:1
+  </div>
+  <div class="exam-q-answer"><strong>答案：A</strong> 先求B质量（A:B=5:1→20:4），质量守恒→C=20+4-5=19，B:C=4:19……等下，计算更复杂</div>
+</div>
+
+<div class="calc-template">
+  <div class="calc-title">📐 中考计算题标准模板</div>
+  <div class="calc-steps">
+【解】设生成 xxx 的质量为 x<br>
+① 写方程式：  …………<br>
+② 标质量比：  ………… = …………<br>
+③ 列比例式：  ………… / ………… = ………… / x<br>
+④ 求解：      x = …………<br>
+⑤ 答：        …………
+  </div>
+  <div style="margin-top:8px;font-size:12px;color:var(--text-secondary);">
+  ⚠️ 中考扣分点：不设未知数扣1分、方程式未配平扣2分、不写"答"扣1分、单位不带扣0.5分
+  </div>
+</div>
 
 <!-- ====== 模块3: 核心概念 ====== -->
 <h3 style="margin:20px 0 12px;color:var(--accent);">📖 核心概念</h3>
@@ -226,6 +270,16 @@
   配平方法和化学方程式你的计算是你的新武器。第6章将用这些工具去研究碳家族的精彩世界——金刚石为什么最硬？石墨为什么能做电极？CO₂为什么能让石灰水变浑浊？CO为什么能杀人于无形？你会亲手在实验室制取CO₂，看澄清石灰水变浑浊的经典反应！
 </div>
 
+<div class="mindmap-section">
+  <div class="mm-title">🧭 本章知识脉络</div>
+  <div class="mindmap-flow">
+    <span class="mm-node">质量守恒(原子三不变)</span><span class="mm-arrow">→</span>
+    <span class="mm-node">化学方程式(含义/读法)</span><span class="mm-arrow">→</span>
+    <span class="mm-node">配平方法(最小公倍数/观察法)</span><span class="mm-arrow">→</span>
+    <span class="mm-node">方程式计算(设→式→比→解→答)</span>
+  </div>
+</div>
+
 <!-- 章内翻页 -->
 <div style="display:flex;justify-content:space-between;margin:30px 0;padding-top:16px;border-top:1px solid var(--border);font-size:13px;">
   <a href="ch04.html" style="color:var(--accent);">← 第4章</a>
@@ -242,7 +296,7 @@ try { renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',displ
 
 // Theme toggle
 (function(){
-  var k='chemistry-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+  var k='site-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
   document.documentElement.setAttribute('data-theme',t);
   var b=document.getElementById('theme-toggle');
   if(b){

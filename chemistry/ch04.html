@@ -41,6 +41,12 @@
 <main id="content">
 <div class="cover"><h1>第4章 · 自然界的水</h1><p>九年级上册 | 电解水实验 · 净水方法 | 必背方程式 + 质量分数计算</p></div>
 
+<div class="chapter-meta">
+  <span class="diff-badge diff-easy">★★☆☆☆ 基础</span>
+  <span class="freq-badge freq-mid">📊 中考中频</span>
+  <span style="color:var(--text-secondary);font-size:12px;">核心：水的组成与净化</span>
+</div>
+
 <!-- ====== 模块1: 实验观察 ====== -->
 <section class="experiment-observation">
   <div class="exp-title">🧪 电解水实验——把水分子"拆开"！</div>
@@ -101,6 +107,32 @@
   </div>
   <p style="margin-top:10px;">H₂O 分子中，两个 H 原子与 O 原子各共用<strong>一对电子</strong>（共价键），形成稳定的分子。O 原子还有两对<strong>孤对电子</strong>，它们排斥成键电子对，使 H-O-H 键角从正四面体的 109.5° 压缩到 104.5°，形成 V 形分子。</p>
 </section>
+
+<div class="exp-summary">
+  <div class="exp-summary-title">🔬 本节实验中考考点</div>
+  <ul style="margin:0;">
+    <li><strong>电解水</strong>：正极O₂（使带火星木条复燃）、负极H₂（可燃，淡蓝色火焰）；体积比H₂:O₂=2:1；加入NaOH/H₂SO₄增强导电性</li>
+    <li><strong>水的净化</strong>：静置沉淀→过滤（一贴二低三靠）→吸附（活性炭）→蒸馏（最高级）</li>
+    <li><strong>硬水软化</strong>：肥皂水区分（泡沫多=软水，浮渣多=硬水）；煮沸可降低硬度</li>
+  </ul>
+</div>
+
+<div class="eq-section">
+  <div class="eq-title">📝 本节必背方程式（1个）</div>
+  <div class="eq-row"><span class="eq-num">1</span>$2H_2O \xrightarrow{通电} 2H_2\uparrow + O_2\uparrow$ <span style="color:var(--text-secondary);font-size:11px;">电解水——正极O₂负极H₂（体积比1:2）</span></div>
+</div>
+
+<div class="compare-card">
+  <div class="compare-title">🧩 易混对比：纯净物 vs 混合物 / 单质 vs 化合物</div>
+  <div class="compare-grid">
+    <div class="compare-item"><strong>🔹 纯净物</strong>只含一种物质，有固定化学式<br>例：H₂O、O₂、NaCl</div>
+    <div class="compare-item"><strong>🔸 混合物</strong>由不同物质混合，无固定化学式<br>例：空气、海水、溶液</div>
+  </div>
+  <div style="grid-column:1/-1;margin-top:6px;padding:8px 12px;background:var(--bg-secondary);border-radius:6px;font-size:12px;">
+  <strong>单质</strong>（同种元素）：H₂、O₂、Fe ｜ <strong>化合物</strong>（不同种元素）：H₂O、CO₂、NaCl<br>
+  <span style="color:var(--chem-red);">⚠️ 冰水共存物是纯净物（都是H₂O分子），由同种元素组成的物质不一定是纯净物（O₂和O₃混合）</span>
+  </div>
+</div>
 
 <!-- ====== 模块3: 核心概念 ====== -->
 <h3 style="margin:20px 0 12px;color:var(--accent);">📖 核心概念</h3>
@@ -219,6 +251,16 @@
   电解水的方程式 2H₂O → 2H₂↑ + O₂↑ 你已经会读了。但你知道这个方程式是怎么"配平"出来的吗？为什么左边和右边的原子个数必须相等？第5章将为你揭开化学方程式的书写规则、配平方法，以及用它进行精确计算的完整方法——这是初中化学最重要的计算工具！
 </div>
 
+<div class="mindmap-section">
+  <div class="mm-title">🧭 本章知识脉络</div>
+  <div class="mindmap-flow">
+    <span class="mm-node">水的组成(电解水H₂+O₂)</span><span class="mm-arrow">→</span>
+    <span class="mm-node">水的净化(沉淀→过滤→吸附→蒸馏)</span><span class="mm-arrow">→</span>
+    <span class="mm-node">硬水vs软水(肥皂水区分)</span><span class="mm-arrow">→</span>
+    <span class="mm-node">化学式与化合价</span>
+  </div>
+</div>
+
 <!-- 章内翻页 -->
 <div style="display:flex;justify-content:space-between;margin:30px 0;padding-top:16px;border-top:1px solid var(--border);font-size:13px;">
   <a href="ch03.html" style="color:var(--accent);">← 第3章</a>
@@ -235,7 +277,7 @@ try { renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',displ
 
 // Theme toggle
 (function(){
-  var k='chemistry-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+  var k='site-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
   document.documentElement.setAttribute('data-theme',t);
   var b=document.getElementById('theme-toggle');
   if(b){

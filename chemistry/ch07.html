@@ -41,6 +41,12 @@
 <main id="content">
 <div class="cover"><h1>第7章 · 燃料及其利用</h1><p>九年级上册 | 燃烧条件 · 灭火原理 | 化石燃料 + 清洁能源 · 九上收尾章</p></div>
 
+<div class="chapter-meta">
+  <span class="diff-badge diff-easy">★★☆☆☆ 基础</span>
+  <span class="freq-badge freq-mid">📊 中考中频</span>
+  <span style="color:var(--text-secondary);font-size:12px;">燃烧条件 + 能源常识</span>
+</div>
+
 <!-- ====== 模块1: 实验观察 ====== -->
 <section class="experiment-observation">
   <div class="exp-title">🧪 实验：燃烧条件探究——铜片上的红磷和白磷</div>
@@ -63,6 +69,22 @@
   </table>
   <p style="margin-top:8px;">化石燃料是<strong>不可再生能源</strong>——形成需要上亿年，而人类消耗速度极快。燃烧产物：C+O₂→CO₂ 和 H+O→H₂O。含硫的化石燃料燃烧还会生成SO₂——导致<strong>酸雨</strong>（SO₂→H₂SO₃→H₂SO₄）。</p>
 </section>
+
+<div class="eq-section">
+  <div class="eq-title">📝 本节必背方程式（2个）</div>
+  <div class="eq-row"><span class="eq-num">1</span>$CH_4 + 2O_2 \xrightarrow{点燃} CO_2 + 2H_2O$ <span style="color:var(--text-secondary);font-size:11px;">甲烷燃烧——蓝色火焰</span></div>
+  <div class="eq-row"><span class="eq-num">2</span>$C_2H_5OH + 3O_2 \xrightarrow{点燃} 2CO_2 + 3H_2O$ <span style="color:var(--text-secondary);font-size:11px;">乙醇燃烧</span></div>
+</div>
+
+<div class="compare-card">
+  <div class="compare-title">🧩 易混对比：燃烧 vs 缓慢氧化 vs 自燃</div>
+  <div class="compare-grid">
+    <div class="compare-item"><strong>🔹 燃烧</strong>发光发热的剧烈氧化反应<br>条件：可燃物+O₂+温度达着火点</div>
+    <div class="compare-item"><strong>🔸 缓慢氧化</strong>缓慢进行的氧化，发光发热不明显<br>例：铁生锈、食物腐败、呼吸作用</div>
+    <div class="compare-item"><strong>🔹 爆炸</strong>有限空间内剧烈燃烧<br>例：H₂爆炸、粉尘爆炸</div>
+    <div class="compare-item"><strong>🔸 自燃</strong>缓慢氧化积热→自发燃烧<br>例：白磷自燃（着火点40℃）</div>
+  </div>
+</div>
 
 <!-- ====== 模块3: 核心概念 ====== -->
 <h3 style="margin:20px 0 12px;color:var(--accent);">📖 核心概念</h3>
@@ -194,6 +216,16 @@
   🎉 恭喜你完成了九年级上册7章的学习！你从"走进化学世界"一路走到"燃料及其利用"，掌握了化学实验基本操作→微观粒子→化学方程式计算→碳家族→燃烧的原理。下学期，我们会进入全新的领域——金属世界！铁如何变成钢？为什么铝比铁活泼却不生锈？什么是合金？敬请期待！
 </div>
 
+<div class="mindmap-section">
+  <div class="mm-title">🧭 本章知识脉络</div>
+  <div class="mindmap-flow">
+    <span class="mm-node">燃烧条件(可燃物/O₂/着火点)</span><span class="mm-arrow">→</span>
+    <span class="mm-node">灭火原理(隔绝O₂/降温/移走可燃物)</span><span class="mm-arrow">→</span>
+    <span class="mm-node">化石燃料(煤/石油/天然气)</span><span class="mm-arrow">→</span>
+    <span class="mm-node">新能源(H₂/乙醇/太阳能)</span>
+  </div>
+</div>
+
 <!-- 章内翻页 -->
 <div style="display:flex;justify-content:space-between;margin:30px 0;padding-top:16px;border-top:1px solid var(--border);font-size:13px;">
   <a href="ch06.html" style="color:var(--accent);">← 第6章</a>
@@ -210,7 +242,7 @@ try { renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',displ
 
 // Theme toggle
 (function(){
-  var k='chemistry-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+  var k='site-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
   document.documentElement.setAttribute('data-theme',t);
   var b=document.getElementById('theme-toggle');
   if(b){

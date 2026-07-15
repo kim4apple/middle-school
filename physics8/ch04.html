@@ -406,7 +406,7 @@
 (function() {
   var toggle = document.getElementById('theme-toggle');
   if (toggle) {
-    var saved = localStorage.getItem('physics-theme');
+    var saved = localStorage.getItem('site-theme');
     if (saved === 'dark') {
       document.documentElement.setAttribute('data-theme', 'dark');
       toggle.textContent = '☀️ 亮色模式';
@@ -415,7 +415,7 @@
       var html = document.documentElement;
       var isDark = html.getAttribute('data-theme') === 'dark';
       html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-      localStorage.setItem('physics-theme', isDark ? 'light' : 'dark');
+      localStorage.setItem('site-theme', isDark ? 'light' : 'dark');
       toggle.textContent = isDark ? '🌙 暗色模式' : '☀️ 亮色模式';
     });
   }

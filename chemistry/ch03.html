@@ -41,6 +41,12 @@
 <main id="content">
 <div class="cover"><h1>第3章 · 物质构成的奥秘</h1><p>九年级上册 | 微观粒子 · 三重表征基石 | 相对原子质量计算</p></div>
 
+<div class="chapter-meta">
+  <span class="diff-badge diff-hard">★★★★☆ 抽象理论</span>
+  <span class="freq-badge freq-mid">📊 中考中频</span>
+  <span style="color:var(--text-secondary);font-size:12px;">微观粒子概念是化学入门第一道坎</span>
+</div>
+
 <!-- ====== 模块1: 实验观察 ====== -->
 <section class="experiment-observation">
   <div class="exp-title">🧪 实验：酒精与水混合——证明分子间有间隔</div>
@@ -68,6 +74,26 @@
   </div>
   <p style="margin-top:10px;"><strong>核外电子排布规则：</strong>① 第一层最多 2 个电子；② 第二层最多 8 个；③ 最外层最多 8 个（只有1层时最多2个）。<br>示例：Na（钠，原子序数11）→ 电子排布 2-8-1；Cl（氯，17）→ 2-8-7。</p>
 </section>
+
+<div class="exp-summary">
+  <div class="exp-summary-title">🔬 本节实验中考考点</div>
+  <ul style="margin:0;">
+    <li><strong>分子运动实验</strong>：氨水使酚酞变红——证明分子在不断运动（浓氨水+酚酞溶液，大烧杯罩住）</li>
+    <li><strong>分子间间隔</strong>：酒精与水混合总体积变小（50mL水+50mL酒精&lt;100mL）</li>
+    <li><strong>原子结构发现史</strong>：道尔顿→阿伏伽德罗→汤姆孙(发现电子)→卢瑟福(α粒子散射→原子核)</li>
+  </ul>
+</div>
+
+<div class="compare-card">
+  <div class="compare-title">🧩 易混对比：原子 vs 分子 vs 离子</div>
+  <div class="compare-grid">
+    <div class="compare-item"><strong>🔹 原子</strong>化学变化中最小微粒<br>例：Fe、He、C（直接由原子构成）</div>
+    <div class="compare-item"><strong>🔸 分子</strong>保持物质化学性质的最小微粒<br>例：H₂O、CO₂、O₂（由分子构成）</div>
+  </div>
+  <div style="grid-column:1/-1;margin-top:6px;padding:8px 12px;background:var(--bg-secondary);border-radius:6px;font-size:12px;">
+  <strong>🔹 离子</strong>带电的原子或原子团，如 Na⁺、Cl⁻、SO₄²⁻（由离子构成的物质：NaCl、NaOH、CaCO₃）
+  </div>
+</div>
 
 <!-- ====== 模块3: 核心概念 ====== -->
 <h3 style="margin:20px 0 12px;color:var(--accent);">📖 核心概念</h3>
@@ -219,6 +245,17 @@
   你已经知道物质由分子、原子、离子构成。水——H₂O——这个最熟悉的分子，它到底由什么元素组成？我们将用电解水实验把水分子"拆开"来看：正极产生氧气，负极产生氢气，体积比恰好1:2。你会第一次亲眼"看到"水的元素组成！
 </div>
 
+<div class="mindmap-section">
+  <div class="mm-title">🧭 本章知识脉络</div>
+  <div class="mindmap-flow">
+    <span class="mm-node">分子(不断运动/间有间隔)</span><span class="mm-arrow">→</span>
+    <span class="mm-node">原子(核+核外电子)</span><span class="mm-arrow">→</span>
+    <span class="mm-node">离子(阳/阴离子)</span><span class="mm-arrow">→</span>
+    <span class="mm-node">元素(质子数相同)</span><span class="mm-arrow">→</span>
+    <span class="mm-node">元素周期表</span>
+  </div>
+</div>
+
 <!-- 章内翻页 -->
 <div style="display:flex;justify-content:space-between;margin:30px 0;padding-top:16px;border-top:1px solid var(--border);font-size:13px;">
   <a href="ch02.html" style="color:var(--accent);">← 第2章</a>
@@ -235,7 +272,7 @@ try { renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',displ
 
 // Theme toggle
 (function(){
-  var k='chemistry-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+  var k='site-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
   document.documentElement.setAttribute('data-theme',t);
   var b=document.getElementById('theme-toggle');
   if(b){

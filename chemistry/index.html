@@ -148,7 +148,7 @@ try { renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',displ
 
 // Theme toggle
 (function(){
-  var k='chemistry-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+  var k='site-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
   document.documentElement.setAttribute('data-theme',t);
   var b=document.getElementById('theme-btn');
   if(b){

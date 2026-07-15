@@ -41,6 +41,30 @@
 <main id="content">
 <div class="cover"><h1>第12章 · 化学与生活</h1><p>九年级下册 | 营养素 · 有机合成材料 · 白色污染 | 核心：化学在实际生活中的应用</p></div>
 
+<div class="chapter-meta">
+  <span class="diff-badge diff-easy">★☆☆☆☆ 了解性</span>
+  <span class="freq-badge freq-low">📊 中考低频</span>
+  <span style="color:var(--text-secondary);font-size:12px;">识记为主，重在营养与健康常识</span>
+</div>
+
+<div class="compare-card">
+  <div class="compare-title">🧩 易混对比：六大营养素功能</div>
+  <div class="compare-grid">
+    <div class="compare-item"><strong>🔹 供能</strong>蛋白质(18kJ/g)·糖类(16kJ/g)·油脂(39kJ/g)</div>
+    <div class="compare-item"><strong>🔸 不供能</strong>维生素·水·无机盐<br>（纤维素不供能但助消化）</div>
+  </div>
+</div>
+
+<div class="mindmap-section">
+  <div class="mm-title">🧭 本章知识脉络</div>
+  <div class="mindmap-flow">
+    <span class="mm-node">六大营养素(蛋/糖/油/维/水/矿)</span><span class="mm-arrow">→</span>
+    <span class="mm-node">化学元素与健康(Ca/Fe/I/Zn/Se)</span><span class="mm-arrow">→</span>
+    <span class="mm-node">有机合成材料(塑料/纤维/橡胶)</span><span class="mm-arrow">→</span>
+    <span class="mm-node">环境污染与防治</span>
+  </div>
+</div>
+
 <!-- ====== 模块1: 实验观察 ====== -->
 <section class="experiment-observation">
   <div class="exp-title">🧪 实验：检验食物中的淀粉</div>
@@ -211,7 +235,7 @@ try { renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',displ
 
 // Theme toggle
 (function(){
-  var k='chemistry-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+  var k='site-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
   document.documentElement.setAttribute('data-theme',t);
   var b=document.getElementById('theme-toggle');
   if(b){

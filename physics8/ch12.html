@@ -422,14 +422,14 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       var t = document.getElementById('theme-toggle');
-      var s = localStorage.getItem('physics-theme') || 'light';
+      var s = localStorage.getItem('site-theme') || 'light';
       document.documentElement.setAttribute('data-theme', s);
       t.textContent = s === 'dark' ? '\u2600\uFE0F \u4EAE\u8272\u6A21\u5F0F' : '\uD83C\uDF19 \u6697\u8272\u6A21\u5F0F';
       t.addEventListener('click', function() {
         var c = document.documentElement.getAttribute('data-theme');
         var n = c === 'dark' ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', n);
-        localStorage.setItem('physics-theme', n);
+        localStorage.setItem('site-theme', n);
         t.textContent = n === 'dark' ? '\u2600\uFE0F \u4EAE\u8272\u6A21\u5F0F' : '\uD83C\uDF19 \u6697\u8272\u6A21\u5F0F';
       });
       if (typeof renderMathInElement === 'function') {

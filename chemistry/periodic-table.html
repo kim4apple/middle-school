@@ -66,21 +66,29 @@ body { flex-direction: column; min-height: 100vh; }
 
 /* ====== 周期表网格 ====== */
 .ptable-grid {
-  display: grid; grid-template-columns: repeat(18, 1fr); gap: 2px;
+  display: grid; grid-template-columns: repeat(18, 1fr); gap: 5px;
 }
 #ptable { margin-bottom: 8px; }
 #ptable-f1, #ptable-f2 { }
 
 /* ====== 元素单元格 ====== */
 .e-cell {
-  border-radius: 4px; padding: 4px 2px; text-align: center; cursor: pointer;
+  border-radius: 6px; padding: 14px 2px 4px; cursor: pointer;
   transition: opacity .2s, transform .15s, box-shadow .15s;
-  position: relative; user-select: none;
+  position: relative; user-select: none; border: none;
+  display: flex; align-items: center; justify-content: center;
+  min-height: 50px;
 }
 .e-cell:hover { transform: scale(1.08); z-index: 2; }
-.e-cell .z { font-size: 6px; display: block; line-height: 1; color: var(--text-secondary); }
-.e-cell .sym { font-size: 12px; font-weight: 700; display: block; line-height: 1.3; }
-.e-cell .cn { font-size: 6px; display: block; line-height: 1; color: var(--text-secondary); }
+.e-cell .z {
+  position: absolute; top: 2px; left: 5px;
+  font-size: 13px; font-weight: 600; color: var(--text-secondary); line-height: 1;
+}
+.e-cell .sym { font-size: 22px; font-weight: 700; line-height: 1; color: var(--accent); }
+.e-cell .cn {
+  position: absolute; top: 2px; right: 5px;
+  font-size: 13px; font-weight: 600; line-height: 1;
+}
 
 /* 暗色模式 分类背景色 — 低饱和度配深色背景 */
 [data-theme="dark"] .e-cell[data-cat="alkali"] { background: #5c2a2a !important; }
@@ -93,7 +101,7 @@ body { flex-direction: column; min-height: 100vh; }
 [data-theme="dark"] .e-cell[data-cat="noble"] { background: #3a2d4a !important; }
 [data-theme="dark"] .e-cell[data-cat="lanthanide"] { background: #3a2a55 !important; }
 [data-theme="dark"] .e-cell[data-cat="actinide"] { background: #552a3a !important; }
-[data-theme="dark"] .e-cell .sym { color: #e8e8e8; }
+[data-theme="dark"] .e-cell .sym { color: #22d3ee; }
 
 /* 初中重点高亮 */
 .e-cell.focus::after {
@@ -244,16 +252,17 @@ body { flex-direction: column; min-height: 100vh; }
   .filter-row { gap: 6px; }
   #search { min-width: 100px; font-size: 12px; padding: 5px 8px; }
   .cat-pill { font-size: 10px; padding: 3px 8px; }
-  #ptable { gap: 1px; }
-  .e-cell { padding: 3px 1px; }
-  .e-cell .sym { font-size: 10px; }
+  #ptable { gap: 3px; }
+  .e-cell { padding: 14px 1px 3px; min-height: 44px; }
+  .e-cell .sym { font-size: 15px; }
+  .e-cell .z, .e-cell .cn { font-size: 11px; }
 }
 
 @media (max-width: 480px) {
-  #ptable { gap: 1px; }
-  .e-cell { padding: 2px 1px; }
-  .e-cell .sym { font-size: 8px; }
-  .e-cell .z, .e-cell .cn { font-size: 5px; }
+  #ptable { gap: 3px; }
+  .e-cell { padding: 12px 1px 2px; min-height: 38px; }
+  .e-cell .sym { font-size: 16px; }
+  .e-cell .z, .e-cell .cn { font-size: 10px; }
 }
 
 /* 打印 */
@@ -710,7 +719,7 @@ overlay.addEventListener('click', function(){
 
 // ====== 主题切换 ======
 (function(){
-  var k='chemistry-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+  var k='site-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
   document.documentElement.setAttribute('data-theme',t);
   var b=document.getElementById('theme-toggle');
   if(b){

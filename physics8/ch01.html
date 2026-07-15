@@ -571,7 +571,7 @@
   // Theme toggle
   const toggle = document.getElementById('theme-toggle');
   const html = document.documentElement;
-  const saved = localStorage.getItem('physics-theme');
+  const saved = localStorage.getItem('site-theme');
   if (saved === 'dark') {
     html.setAttribute('data-theme', 'dark');
     toggle.textContent = '☀️ 亮色模式';
@@ -580,7 +580,7 @@
     const isDark = html.getAttribute('data-theme') === 'dark';
     html.setAttribute('data-theme', isDark ? 'light' : 'dark');
     toggle.textContent = isDark ? '🌙 暗色模式' : '☀️ 亮色模式';
-    localStorage.setItem('physics-theme', isDark ? 'light' : 'dark');
+    localStorage.setItem('site-theme', isDark ? 'light' : 'dark');
   });
 
   // KaTeX auto-render

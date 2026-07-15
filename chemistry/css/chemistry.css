@@ -180,6 +180,172 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 .next-stop { background: linear-gradient(135deg, #eef2ff 0%, #f0fdf4 100%); border-radius: var(--radius); padding: 14px 18px; margin-top: 20px; font-size: 14px; line-height: 1.8; border: 1px dashed var(--border); }
 .next-stop strong { color: var(--accent); }
 
+/* ====== 难度 / 频度星级 ====== */
+.chapter-meta {
+  display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+  padding: 10px 16px; background: var(--bg); border: 1px solid var(--border);
+  border-radius: var(--radius); margin-bottom: 18px; font-size: 13px;
+}
+.diff-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 10px; border-radius: 12px; font-weight: 700; font-size: 12px;
+}
+.diff-easy { background: #d1fae5; color: #065f46; }
+.diff-medium { background: #fef3c7; color: #92400e; }
+.diff-hard { background: #fce7f3; color: #9d174d; }
+[data-theme="dark"] .diff-easy { background: #064e3b; color: #6ee7b7; }
+[data-theme="dark"] .diff-medium { background: #78350f; color: #fcd34d; }
+[data-theme="dark"] .diff-hard { background: #831843; color: #f9a8d4; }
+.freq-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 10px; border-radius: 12px; font-weight: 700; font-size: 12px;
+}
+.freq-high { background: #fee2e2; color: #991b1b; }
+.freq-mid { background: #ffedd5; color: #9a3412; }
+.freq-low { background: #e0e7ff; color: #3730a3; }
+[data-theme="dark"] .freq-high { background: #7f1d1d; color: #fca5a5; }
+[data-theme="dark"] .freq-mid { background: #7c2d12; color: #fdba74; }
+[data-theme="dark"] .freq-low { background: #312e81; color: #a5b4fc; }
+
+/* ====== 本节必背方程式 ====== */
+.eq-section {
+  background: var(--bg); border: 2px solid var(--accent); border-radius: var(--radius);
+  padding: 14px 18px; margin: 16px 0;
+}
+.eq-section .eq-title {
+  font-size: 14px; font-weight: 800; color: var(--accent); margin-bottom: 10px;
+  display: flex; align-items: center; gap: 8px;
+}
+.eq-section .eq-row {
+  display: flex; align-items: baseline; gap: 8px;
+  padding: 4px 0; font-size: 13px; line-height: 1.9;
+  border-bottom: 1px dashed var(--border);
+}
+.eq-section .eq-row:last-child { border-bottom: none; }
+.eq-section .eq-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 22px; height: 22px; border-radius: 50%;
+  background: var(--accent); color: #fff; font-size: 11px; font-weight: 700;
+}
+
+/* ====== 中考真题卡片 ====== */
+.exam-q-card {
+  background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 14px 18px; margin: 14px 0;
+  border-left: 4px solid #f59e0b;
+}
+.exam-q-card .exam-q-title {
+  font-size: 13px; font-weight: 700; color: #d97706; margin-bottom: 8px;
+  display: flex; align-items: center; gap: 6px;
+}
+.exam-q-card .exam-q-body { font-size: 13px; line-height: 1.8; }
+.exam-q-card .exam-q-answer {
+  margin-top: 8px; padding: 8px 12px; background: var(--bg-secondary);
+  border-radius: 6px; font-size: 12px; color: var(--text-secondary);
+  border-left: 3px solid var(--accent);
+}
+
+/* ====== 易混概念对比 ====== */
+.compare-card {
+  background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 12px 16px; margin: 14px 0;
+  border-left: 4px solid #8b5cf6;
+}
+.compare-card .compare-title {
+  font-size: 13px; font-weight: 700; color: #7c3aed; margin-bottom: 8px;
+  display: flex; align-items: center; gap: 6px;
+}
+.compare-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 12px;
+}
+.compare-item {
+  padding: 8px 12px; background: var(--bg-secondary); border-radius: 6px;
+  border: 1px solid var(--border);
+}
+.compare-item strong { display: block; margin-bottom: 3px; font-size: 13px; }
+
+/* ====== 计算模板 ====== */
+.calc-template {
+  background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 14px 18px; margin: 14px 0;
+  border-left: 4px solid #059669;
+}
+.calc-template .calc-title {
+  font-size: 13px; font-weight: 700; color: #059669; margin-bottom: 8px;
+}
+.calc-template .calc-steps {
+  font-size: 12px; line-height: 2; font-family: monospace;
+  background: var(--bg-secondary); padding: 10px 14px; border-radius: 6px;
+}
+
+/* ====== 实验考点总结 ====== */
+.exp-summary {
+  background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 12px 16px; margin: 14px 0;
+  border-left: 4px solid #dc2626;
+}
+.exp-summary .exp-summary-title {
+  font-size: 13px; font-weight: 700; color: #dc2626; margin-bottom: 8px;
+}
+.exp-summary li { font-size: 12px; line-height: 1.9; margin-left: 16px; }
+
+/* ====== 章节思维导图 ====== */
+.mindmap-section {
+  background: linear-gradient(135deg, var(--bg-secondary), var(--bg));
+  border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 16px 20px; margin: 18px 0;
+}
+.mindmap-section .mm-title {
+  font-size: 14px; font-weight: 800; color: var(--accent); margin-bottom: 10px;
+  text-align: center;
+}
+.mindmap-flow {
+  display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
+  align-items: center; font-size: 13px;
+}
+.mm-node {
+  padding: 4px 12px; border-radius: 12px; font-weight: 600;
+  background: var(--accent-light); color: var(--accent);
+}
+.mm-arrow { color: var(--text-secondary); font-size: 11px; }
+
+/* ====== 跨章节综合专题 ====== */
+.cross-chapter {
+  background: var(--bg); border: 2px solid #f59e0b; border-radius: var(--radius);
+  padding: 16px 20px; margin: 18px 0;
+}
+.cross-chapter .cross-title {
+  font-size: 14px; font-weight: 800; color: #d97706; margin-bottom: 10px;
+  display: flex; align-items: center; gap: 8px;
+}
+.cross-chapter .cross-body { font-size: 13px; line-height: 1.9; }
+
+/* ====== 附录响应式网格 ====== */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+h3[id] { scroll-margin-top: 80px; }
+
+/* 迷你周期表（附录第18节） */
+.pt-mini { overflow-x: auto; text-align: center; margin-bottom: 14px; }
+.pt-mini .periodic-element {
+  width: 50px; height: 50px; margin: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pt-mini .periodic-element .num {
+  position: absolute; top: 2px; left: 4px;
+  font-size: 11px; font-weight: 600; color: var(--text-secondary); line-height: 1;
+}
+.pt-mini .periodic-element .sym {
+  font-size: 22px; font-weight: 700; color: var(--accent);
+  line-height: 1;
+}
+.pt-mini .periodic-element .name {
+  position: absolute; top: 2px; right: 4px;
+  font-size: 11px; font-weight: 600; line-height: 1;
+}
+
 /* ====== 化学专用组件 ====== */
 .solution-color { display: inline-block; width: 16px; height: 16px; border-radius: 4px; vertical-align: middle; margin: 0 2px; }
 .sol-cu { background: var(--sol-cuso4); } .sol-fe3 { background: var(--sol-fecl3); }
@@ -234,4 +400,5 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
   .model-viewer { display: block !important; max-height: 200px; }
   .model-viewer canvas { display: block !important; }
   .model-viewer [style*="position:absolute"] { display: none !important; }
+  tr { page-break-inside: avoid; }
 }

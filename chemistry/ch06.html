@@ -41,6 +41,12 @@
 <main id="content">
 <div class="cover"><h1>第6章 · 碳和碳的氧化物</h1><p>九年级上册 | 同素异形体 · CO₂制取 | 金刚石→石墨→C₆₀→CO₂→CO全链路</p></div>
 
+<div class="chapter-meta">
+  <span class="diff-badge diff-medium">★★★☆☆</span>
+  <span class="freq-badge freq-high">📊 中考高频</span>
+  <span style="color:var(--text-secondary);font-size:12px;">碳三角（C→CO→CO₂→CaCO₃）是推断题核心</span>
+</div>
+
 <!-- ====== 模块1: 实验观察 ====== -->
 <section class="experiment-observation">
   <div class="exp-title">🧪 实验一：CO₂的实验室制取——最经典的初中化学制备实验</div>
@@ -64,6 +70,34 @@
   </div>
   <p style="margin-top:10px;" id="desc-ch06">💎 <strong>金刚石</strong>：每个碳原子与周围 4 个碳原子形成共价键，正四面体空间网状结构——自然界最硬的物质（用于切割玻璃、钻头）。</p>
 </section>
+
+<div class="exp-summary">
+  <div class="exp-summary-title">🔬 本节实验中考考点</div>
+  <ul style="margin:0;">
+    <li><strong>CO₂实验室制取</strong>：CaCO₃+HCl（不可用稀H₂SO₄→CaSO₄微溶覆盖表面阻止反应；不可用浓HCl→挥发HCl气体使CO₂不纯）</li>
+    <li><strong>CO₂验满</strong>：燃着木条放在集气瓶口（不是伸入瓶内！），若熄灭则已满</li>
+    <li><strong>CO还原CuO实验</strong>：先通CO后加热（防爆）、尾气点燃处理（CO有毒）</li>
+    <li><strong>碳还原CuO</strong>：黑色变红色（CuO→Cu），石灰水变浑浊（CO₂）</li>
+  </ul>
+</div>
+
+<div class="eq-section">
+  <div class="eq-title">📝 本节必背方程式（6个）</div>
+  <div class="eq-row"><span class="eq-num">1</span>$C + O_2 \xrightarrow{点燃} CO_2$</div>
+  <div class="eq-row"><span class="eq-num">2</span>$2C + O_2 \xrightarrow{点燃} 2CO$（氧气不足）</div>
+  <div class="eq-row"><span class="eq-num">3</span>$CO_2 + C \xrightarrow{高温} 2CO$</div>
+  <div class="eq-row"><span class="eq-num">4</span>$CO_2 + Ca(OH)_2 \rightarrow CaCO_3\downarrow + H_2O$</div>
+  <div class="eq-row"><span class="eq-num">5</span>$CaCO_3 + 2HCl \rightarrow CaCl_2 + H_2O + CO_2\uparrow$</div>
+  <div class="eq-row"><span class="eq-num">6</span>$2CO + O_2 \xrightarrow{点燃} 2CO_2$</div>
+</div>
+
+<div class="compare-card">
+  <div class="compare-title">🧩 易混对比：CO vs CO₂</div>
+  <div class="compare-grid">
+    <div class="compare-item"><strong>🔹 CO</strong>无色无味·有毒·可燃（蓝色火焰）·还原性（CuO→Cu）·不与碱反应·难溶于水</div>
+    <div class="compare-item"><strong>🔸 CO₂</strong>无色无味·无毒·不可燃（灭火）·氧化性弱·与碱反应·可溶于水（碳酸）</div>
+  </div>
+</div>
 
 <!-- ====== 模块3: 核心概念 ====== -->
 <h3 style="margin:20px 0 12px;color:var(--accent);">📖 核心概念</h3>
@@ -219,6 +253,16 @@
   碳燃烧生成CO₂，碳不充分燃烧生成有毒的CO——这些都是生活中常见的化学。第7章将走进"火"的世界：物质为什么会燃烧？怎样灭火？煤气（CH₄）、煤、石油——这些让现代文明运转的燃料，它们的化学原理是什么？你会发现"控制燃烧"是人类掌握的最重要的化学技能！
 </div>
 
+<div class="mindmap-section">
+  <div class="mm-title">🧭 本章知识脉络</div>
+  <div class="mindmap-flow">
+    <span class="mm-node">碳单质(金刚石/石墨/C₆₀)</span><span class="mm-arrow">→</span>
+    <span class="mm-node">CO₂(制取/性质/用途)</span><span class="mm-arrow">→</span>
+    <span class="mm-node">CO(可燃性/还原性/毒性)</span><span class="mm-arrow">→</span>
+    <span class="mm-node">碳三角转化</span>
+  </div>
+</div>
+
 <!-- 章内翻页 -->
 <div style="display:flex;justify-content:space-between;margin:30px 0;padding-top:16px;border-top:1px solid var(--border);font-size:13px;">
   <a href="ch05.html" style="color:var(--accent);">← 第5章</a>
@@ -235,7 +279,7 @@ try { renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',displ
 
 // Theme toggle
 (function(){
-  var k='chemistry-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+  var k='site-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
   document.documentElement.setAttribute('data-theme',t);
   var b=document.getElementById('theme-toggle');
   if(b){

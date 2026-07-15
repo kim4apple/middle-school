@@ -189,7 +189,7 @@ h1 { font-size: 28px; font-weight: 800; text-align: center; margin-bottom: 6px; 
 (function() {
   var btn = document.getElementById('theme-btn');
   var html = document.documentElement;
-  var saved = localStorage.getItem('math-index-theme');
+  var saved = localStorage.getItem('site-theme');
   if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     html.setAttribute('data-theme', 'dark');
     btn.textContent = '☀️ 亮色';
@@ -198,11 +198,11 @@ h1 { font-size: 28px; font-weight: 800; text-align: center; margin-bottom: 6px; 
     if (html.getAttribute('data-theme') === 'dark') {
       html.setAttribute('data-theme', 'light');
       btn.textContent = '🌙 暗色';
-      localStorage.setItem('math-index-theme', 'light');
+      localStorage.setItem('site-theme', 'light');
     } else {
       html.setAttribute('data-theme', 'dark');
       btn.textContent = '☀️ 亮色';
-      localStorage.setItem('math-index-theme', 'dark');
+      localStorage.setItem('site-theme', 'dark');
     }
   });
 })();

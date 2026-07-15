@@ -48,6 +48,15 @@
     <p>③ 会用伏安法测电阻，理解多次测量取平均值的意义，能分析动态电路和简单故障</p>
   </div>
 
+  <!-- 零基础路线 -->
+  <div class="technique-card" style="border-left:4px solid #8b5cf6;">
+    <h3>🌱 零基础路线</h3>
+    <div class="method"><strong>三步学会欧姆定律：</strong><br>
+    <strong>第一步·认识三个物理量：</strong>电压 $U$（推动电荷的"力"）、电流 $I$（电荷定向移动的"量"）、电阻 $R$（导体对电流的"阻碍"）。<br>
+    <strong>第二步·理解比例关系：</strong>电阻 $R$ 不变时，$I$ 越大 $U$ 越大（正比）；电压 $U$ 不变时，$R$ 越大 $I$ 越小（反比）。<br>
+    <strong>第三步·套公式计算：</strong>$I=U/R$，知二求一。串联求总电阻 $R=R_1+R_2$，并联用积在和上飞 $\dfrac{R_1R_2}{R_1+R_2}$。</div>
+  </div>
+
   <!-- 前置知识关联 -->
   <div class="knowledge-link">
     <strong>📎 前置知识关联：</strong>
@@ -190,6 +199,14 @@
           <p><strong>安阻法：</strong>只有电流表，借助已知电阻 $R_0$ 通过并联测电流来算。</p>
           <p style="margin-top:6px;font-size:13px;color:var(--text-secondary);">中考实验题常考察"缺少一种电表"时如何完成测量。</p>
           <span class="level-silver">🥈 白银级</span>
+        </div>
+
+        <div class="technique-card" style="grid-column:1/-1;">
+          <h3>💡 生活类比</h3>
+          <div class="method"><strong>欧姆定律就像"过安检"</strong>——<br>
+          电压 $U$ = 安检口人数（推动力），电阻 $R$ = 安检通道宽度（阻碍程度），电流 $I$ = 每分钟通过人数。<br>
+          通道越窄（$R\uparrow$），通过人数越少（$I\downarrow$）；排队人越多（$U\uparrow$），通过人数越多（$I\uparrow$）。<br>
+          串联加电阻=收窄通道，并联减电阻=增开新通道。</div>
         </div>
 
       </div>
@@ -457,8 +474,31 @@
         </div>
       </div>
 
+      <div class="technique-card">
+        <h3>🎯 一题多解——欧姆定律的三种解法</h3>
+        <div class="method"><strong>题目：</strong>$R_1=10\Omega$，$R_2=20\Omega$ 串联在 6V 电源上，求 $I$ 和 $U_1$、$U_2$。</div>
+        <div class="example">
+          <strong>解法一（整体法）：</strong>$R=R_1+R_2=30\Omega$，$I=U/R=6/30=0.2\text{A}$，$U_1=IR_1=2\text{V}$，$U_2=IR_2=4\text{V}$。<br>
+          <strong>解法二（比例法）：</strong>$U_1:U_2=R_1:R_2=1:2$，$U_1=6\times\frac{1}{3}=2\text{V}$，$U_2=6\times\frac{2}{3}=4\text{V}$，$I=U_1/R_1=0.2\text{A}$。<br>
+          <strong>解法三（方程法）：</strong>$I=U/(R_1+R_2)=6/30=0.2\text{A}$，$U_1=IR_1$，$U_2=IR_2$。<br>
+          🏆 <strong>考场策略：</strong>求电流用整体法最快，求电压比用比例法最简洁。
+        </div>
+      </div>
+
     </div>
   </details>
+
+  <!-- 助记口诀 -->
+  <div class="technique-card" style="border-left:4px solid #f59e0b;grid-column:1/-1;">
+    <h3>📝 助记口诀</h3>
+    <div class="method">
+      <strong>欧姆定律：</strong>"电压推，电阻挡，电流大小由它俩"<br>
+      <strong>串联电阻：</strong>"越串越大如长链，一个一个加起来"<br>
+      <strong>并联电阻：</strong>"越并越小如加宽，积在和上飞"<br>
+      <strong>串联分压：</strong>"电阻大，压降大"<br>
+      <strong>并联分流：</strong>"电阻大，电流小"
+    </div>
+  </div>
 
   <!-- 中考真题 -->
   <details class="exam-module" open>
@@ -609,6 +649,15 @@
 
   <div class="next-stop"><strong>➡️ 下一站：第18章 电功率</strong><br>
   欧姆定律 $I=U/R$ 是电学的核心工具。第18章电功率将引入 $P=UI$，与欧姆定律结合可推导出 $P=I^2R=U^2/R$——这是中考计算压轴题的必杀组合。打好欧姆定律的基础，电功率才能势如破竹！</div>
+
+<div class="technique-card" style="border-left:4px solid #8b5cf6;">
+  <h3>🔗 衔接高中</h3>
+  <div class="method">高中欧姆定律扩展到 <strong>闭合电路</strong>：$I=\dfrac{E}{R+r}$（$E$=电源电动势，$r$=内阻）。还会学习 <strong>伏安特性曲线</strong>（$U$-$I$ 图像的斜率代表电阻）、<strong>非线性元件</strong>（如二极管，$I$-$U$ 不是直线）。</div>
+</div>
+<div class="technique-card" style="border-left:4px solid #10b981;margin-top:12px;">
+  <h3>📖 科学故事</h3>
+  <div class="method"><strong>欧姆的坚持：</strong>德国物理学家欧姆（Georg Ohm）在1826年用简陋的实验装置——不同金属丝和自制的扭力电表——发现了电流与电压的正比关系。当时的科学界不接受他的理论，认为"太简单了不可能是对的"。欧姆被迫辞职，贫困潦倒了近10年，直到1841年才被英国皇家学会追认。今天，欧姆定律是每个中学生的必修课。</div>
+</div>
 
 </div>
 

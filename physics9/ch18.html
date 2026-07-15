@@ -50,6 +50,15 @@
     <p>⑤ 能设计并完成"测量小灯泡的电功率"实验，根据 $U_{\text{实}}$ 与 $U_{\text{额}}$ 的关系判断灯泡发光情况</p>
   </div>
 
+  <!-- 零基础路线 -->
+  <div class="technique-card" style="border-left:4px solid #8b5cf6;">
+    <h3>🌱 零基础路线</h3>
+    <div class="method"><strong>三步学会电功率：</strong><br>
+    <strong>第一步·区分"功"和"功率"：</strong>电功 $W=UIt$ 是"做了多少电功"，电功率 $P=UI$ 是"做功的快慢"。就像跑步——跑了多远是路程($W$)，跑得多快是速度($P$)。<br>
+    <strong>第二步·纯电阻公式推导：</strong>结合欧姆定律 $I=U/R$ 代入 $P=UI$ 得 $P=U^2/R=I^2R$。注意这三个公式各有妙用：已知 $U$、$I$ 用 $P=UI$；已知 $U$、$R$ 用 $P=U^2/R$；已知 $I$、$R$ 用 $P=I^2R$。<br>
+    <strong>第三步·掌握 $R$ 不变法：</strong>额定→实际功率换算的核心：先求 $R=\dfrac{U_{\text{额}}^2}{P_{\text{额}}}$，再用 $P_{\text{实}}=\dfrac{U_{\text{实}}^2}{R}$。</div>
+  </div>
+
   <!-- 前置知识关联 -->
   <div class="knowledge-link">
     <strong>📎 前置知识关联：</strong>
@@ -189,6 +198,15 @@
           <p>$P_1:P_2=R_2:R_1$（$P=U^2/R$）</p>
           <p>无论串并联，电路总功率 $P_{\text{总}}=P_1+P_2+\cdots+P_n$。</p>
           <span class="level-silver">🥈 白银级</span>
+        </div>
+
+        <div class="technique-card" style="grid-column:1/-1;">
+          <h3>💡 生活类比</h3>
+          <div class="method"><strong>电功率就像"水流做功的功率"</strong>——<br>
+          电压 $U$ = 水压（推动力），电流 $I$ = 水流（单位时间水量），电功率 $P=UI$ = 水流做功的功率。<br>
+          瀑布：水压大、水流大 → 功率巨大（如同高压输电）；<br>
+          水龙头滴水：水压小、水流小 → 功率很小（如同小功率用电器）。<br>
+          焦耳定律 $Q=I^2Rt$ = 水流与岩石摩擦生热——水流越大、摩擦路径越长，产生的热量越多。</div>
         </div>
 
       </div>
@@ -376,8 +394,31 @@
         </div>
       </div>
 
+      <div class="technique-card">
+        <h3>🎯 一题多解——电功率的三种解法</h3>
+        <div class="method"><strong>题目：</strong>"220V 100W"灯泡接 110V，求实际功率。</div>
+        <div class="example">
+          <strong>解法一（$R$ 不变法）：</strong>$R=U_{\text{额}}^2/P_{\text{额}}=220^2/100=484\Omega$，$P_{\text{实}}=U_{\text{实}}^2/R=110^2/484=25\text{W}$。<br>
+          <strong>解法二（比例法）：</strong>$P_{\text{实}}/P_{\text{额}}=(U_{\text{实}}/U_{\text{额}})^2$，$P_{\text{实}}=100\times(110/220)^2=25\text{W}$。<br>
+          <strong>解法三（先求电流法）：</strong>$I=U_{\text{实}}/R=110/484\approx0.227\text{A}$，$P_{\text{实}}=U_{\text{实}}I=110\times0.227\approx25\text{W}$。<br>
+          🏆 <strong>考场策略：</strong>比例法最快，$R$ 不变法最稳妥，先求电流法适合综合题。
+        </div>
+      </div>
+
     </div>
   </details>
+
+  <!-- 助记口诀 -->
+  <div class="technique-card" style="border-left:4px solid #f59e0b;grid-column:1/-1;">
+    <h3>📝 助记口诀</h3>
+    <div class="method">
+      <strong>电功电功率：</strong>"电功多少看 $UIt$，电功快慢看 $UI$"<br>
+      <strong>纯电阻公式：</strong>"$P$ 等 $UI$ 等 $I$ 方 $R$，还等 $U$ 方除以 $R$"<br>
+      <strong>额定实际换算：</strong>"先求 $R$ 后求 $P$，平方比例别忘记"<br>
+      <strong>焦耳定律：</strong>"$I$ 方 $Rt$ 生热多，电流电阻是元凶"<br>
+      <strong>串并联功率：</strong>"串联比电阻($P=I^2R$)，并联比倒数($P=U^2/R$)"
+    </div>
+  </div>
 
   <!-- 中考真题 -->
   <details class="exam-module" open>
@@ -471,6 +512,20 @@
     </div>
   </details>
 
+  <!-- 命题人说 -->
+  <div class="technique-card">
+    <h3>🎯 命题人说</h3>
+    <div class="method"><strong>假如你是出题人，你会怎么考电功率？</strong></div>
+    <div class="example">
+      ① 给"220V 100W"求 $R$ → $R=U^2/P$ (最简单)<br>
+      ② 接110V求实际功率 → 先算 $R$ 再用 $P=U^2/R$ (中等)<br>
+      ③ 串联电路中两个灯泡哪个更亮？→ $P=I^2R$，$R$ 大的更亮 (易错)<br>
+      ④ 并联电路中哪个更亮？→ $P=U^2/R$，$R$ 小的更亮 (对比)<br>
+      ⑤ 加热/保温双挡位 → 总功率=各挡位功率之和 (压轴)
+    </div>
+    <div class="exam-hint">🏆 命题规律：第③④是中考选择题"钉子户"——串联比电阻($P=I^2R$)，并联比电阻倒数($P=U^2/R$)。</div>
+  </div>
+
   <!-- 自查清单 -->
   <div class="checklist">
     <h3>✅ 章节自查清单</h3>
@@ -494,6 +549,15 @@
   </div>
 
   <div class="next-stop"><strong>➡️ 下一站：第19章 生活用电</strong><br>学完电功率，你已经掌握了电学的核心计算。第19章将电学知识应用到家庭电路中——保险丝为什么能保护电路？开关为什么接在火线上？安全用电的原则是什么？这些都是将理论知识转化为生活常识的桥梁。</div>
+
+<div class="technique-card" style="border-left:4px solid #8b5cf6;">
+  <h3>🔗 衔接高中</h3>
+  <div class="method">高中将进一步学习 <strong>闭合电路欧姆定律</strong>，电源有内阻 $r$，路端电压 $U=E-Ir$。电功率部分扩展到 <strong>电源的输出功率</strong>$P_{\text{出}}=UI$，当外电阻等于内阻时输出功率最大。还会学习 <strong>交流电</strong>中的有效值、最大值，以及 <strong>远距离输电</strong>（$P_{\text{损}}=I^2R_{\text{线}}$，用高压输电减小损耗）。</div>
+</div>
+<div class="technique-card" style="border-left:4px solid #10b981;margin-top:12px;">
+  <h3>📖 科学故事</h3>
+  <div class="method"><strong>焦耳的坚持：</strong>英国物理学家焦耳（James Joule）在19世纪40年代经过大量实验，精确测定了电流通过电阻产生的热量与电流平方、电阻、时间的关系——焦耳定律 $Q=I^2Rt$。他最大的贡献是 <strong>热功当量</strong>实验——用下降的重物带动搅拌器搅动水，测定机械能与热量的转换关系，为能量守恒定律奠定了实验基础。焦耳是个酿酒师出身，利用业余时间做实验，他的数据精确得让当时的顶尖科学家都惊叹不已。</div>
+</div>
 
 </div>
 

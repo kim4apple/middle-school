@@ -51,7 +51,7 @@
     <a href="#A5">📎 A5 自学提升技巧</a>
   </nav>
   <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
-  <button class="theme-toggle" id="themeToggle" style="margin-top:10px;">🌓 切换深色模式</button>
+  <button class="theme-toggle" id="theme-toggle" style="margin-top:10px;">🌓 切换深色模式</button>
   <button class="print-btn" onclick="window.print()" style="margin-top:8px;padding:8px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px;width:100%;">🖨️ 打印 / 存 PDF</button>
 </div>
 
@@ -884,7 +884,7 @@
 (function(){
   var k='site-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
   document.documentElement.setAttribute('data-theme',t);
-  var b=document.getElementById('themeToggle');
+  var b=document.getElementById('theme-toggle');
   if(b){
     b.textContent=t==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
     b.addEventListener('click',function(){

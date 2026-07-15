@@ -150,13 +150,13 @@ try { renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',displ
 (function(){
   var k='chemistry-theme',t=localStorage.getItem(k)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
   document.documentElement.setAttribute('data-theme',t);
-  var b=document.getElementById('theme-toggle');
+  var b=document.getElementById('theme-btn');
   if(b){
-    b.textContent=t==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
+    b.textContent=t==='dark'?'☀️ 亮色':'🌙 暗色';
     b.addEventListener('click',function(){
       var c=document.documentElement.getAttribute('data-theme'),n=c==='dark'?'light':'dark';
       document.documentElement.setAttribute('data-theme',n);localStorage.setItem(k,n);
-      b.textContent=n==='dark'?'☀️ 亮色模式':'🌙 暗色模式';
+      b.textContent=n==='dark'?'☀️ 亮色':'🌙 暗色';
     });
   }
 })();

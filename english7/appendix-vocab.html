@@ -535,8 +535,8 @@ function renderTable() {
 
     var isOpen = state.openUnits && state.openUnits[unit.label];
     var pct = total > 0 ? Math.round(done / total * 100) : 0;
-    var cardColor = pct >= 100 ? 'rgba(22,163,74,0.08)' : pct >= 60 ? 'rgba(99,102,241,0.08)' : 'rgba(251,191,36,0.07)';
-    var cardColorDark = pct >= 100 ? 'rgba(74,222,128,0.12)' : pct >= 60 ? 'rgba(129,140,248,0.12)' : 'rgba(251,191,36,0.1)';
+    var cardColor = pct >= 100 ? 'rgba(22,163,74,0.18)' : pct >= 60 ? 'rgba(99,102,241,0.16)' : 'rgba(251,191,36,0.13)';
+    var cardColorDark = pct >= 100 ? 'rgba(74,222,128,0.3)' : pct >= 60 ? 'rgba(129,140,248,0.28)' : 'rgba(251,191,36,0.22)';
     html += '<details class="vocab-unit"' + (isOpen ? ' open' : '') + ' style="--card-pct:' + pct + '%;--card-c:' + cardColor + ';--card-c-dark:' + cardColorDark + '">';
     html += '<summary><span class="sum-content"><span>' + shortUnitLabel(unit.label, unit.title) + '</span>';
     html += '<span class="unit-progress"><strong>' + done + '</strong>/' + total;
@@ -580,7 +580,7 @@ function renderTable() {
 
   container.querySelectorAll('.vocab-unit').forEach(function(d) {
     d.addEventListener('toggle', function() {
-      var label = this.querySelector('summary > span:first-child').textContent.trim().split(' ')[0];
+      var label = this.querySelector('summary .sum-content > span:first-child').textContent.trim().split(' ')[0];
       if (this.open) state.openUnits[label] = true;
       else delete state.openUnits[label];
     });

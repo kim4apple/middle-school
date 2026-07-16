@@ -3,7 +3,7 @@
 import os, re
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-FILES = sorted(f for f in os.listdir(BASE) if f.endswith('.html') and f not in ['index.html', 'appendix-grammar.html'])
+FILES = sorted(f for f in os.listdir(BASE) if f.endswith('.html') and f not in ['index.html', 'appendix-grammar.html', 'appendix-vocab.html'])
 
 REVIEW_PANEL_HTML = '''<div id="wrongReviewPanel"></div>
 '''

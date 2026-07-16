@@ -3,7 +3,7 @@
 import os, re
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-FILES = [f for f in os.listdir(BASE) if f.endswith('.html') and f not in ['index.html', 'appendix-grammar.html']]
+FILES = [f for f in os.listdir(BASE) if f.endswith('.html') and f not in ['index.html', 'appendix-grammar.html', 'appendix-vocab.html']]
 
 def add_after(content, marker, new_html):
     """Insert new_html after the first occurrence of marker."""

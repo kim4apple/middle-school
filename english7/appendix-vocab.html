@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>单词专项 · 初中英语七年级</title>
+<link rel="stylesheet" href="css/english.css">
+<style>
+body { display: block; min-height: 100vh; padding: 0; }
+.wrapper { max-width: 960px; margin: 0 auto; padding: 32px 24px 60px; }
+.hero { text-align: center; padding: 40px 0 32px; }
+.hero h1 { font-size: 28px; font-weight: 800; margin-bottom: 6px; }
+.hero .tagline { color: var(--text-secondary); font-size: 14px; }
+.hero .badge { display: inline-block; font-size: 11px; padding: 3px 12px; border-radius: 20px; background: var(--accent-light); color: var(--accent); font-weight: 600; margin-top: 8px; }
+.back-link { display: inline-block; margin-bottom: 24px; font-size: 13px; color: var(--accent); text-decoration: none; }
+.back-link:hover { text-decoration: underline; }
+
+/* === Top bar === */
+.top-bar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
+.view-toggle { display: flex; gap: 4px; background: var(--bg-secondary); border-radius: 8px; padding: 3px; }
+.view-toggle button { padding: 6px 16px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: transparent; color: var(--text-secondary); transition: 0.15s; }
+.view-toggle button.active { background: var(--bg); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.filter-bar { display: flex; gap: 6px; flex-wrap: wrap; }
+.filter-bar button { font-size: 12px; padding: 4px 14px; border-radius: 20px; border: 1px solid var(--border); background: var(--bg); color: var(--text); cursor: pointer; }
+.filter-bar button.active { border-color: var(--accent); background: var(--accent-light); color: var(--accent); font-weight: 600; }
+#unitFilter { font-size: 13px; padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border); background: var(--bg); color: var(--text); }
+
+/* === Table view === */
+.vocab-unit { margin-bottom: 20px; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.vocab-unit summary { padding: 14px 18px; cursor: pointer; font-size: 15px; font-weight: 600; background: var(--bg-secondary); user-select: none; list-style: none; display: flex; align-items: center; justify-content: space-between; }
+.vocab-unit summary::-webkit-details-marker { display: none; }
+.vocab-unit summary .unit-progress { font-size: 12px; font-weight: 400; color: var(--text-secondary); }
+.vocab-unit summary .unit-progress strong { color: var(--accent); }
+.vocab-unit[open] summary { border-bottom: 1px solid var(--border); }
+.vocab-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.vocab-table th { padding: 8px 12px; text-align: left; font-size: 11px; color: var(--text-secondary); font-weight: 600; border-bottom: 1px solid var(--border); }
+.vocab-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.vocab-table tr:last-child td { border-bottom: none; }
+.vocab-table tr:hover { background: var(--bg-secondary); }
+.vocab-table .cb-cell { width: 32px; text-align: center; }
+.vocab-table .cb-cell input { width: 16px; height: 16px; cursor: pointer; accent-color: var(--accent); }
+.vocab-table .word-cell { min-width: 100px; }
+.vocab-table .word-cell .headword { font-weight: 600; cursor: pointer; }
+.vocab-table .word-cell .headword:hover { color: var(--accent); }
+.vocab-table .word-cell .speak-indicator { font-size: 11px; margin-left: 4px; cursor: pointer; opacity: 0.5; }
+.vocab-table .word-cell .speak-indicator:hover { opacity: 1; }
+.vocab-table .ipa-cell { font-family: Menlo, "SF Mono", Consolas, monospace; font-size: 13px; color: var(--text-secondary); }
+.vocab-table .pos-cell { color: var(--text-secondary); font-size: 12px; }
+.vocab-table .def-cell { color: var(--text); }
+.vocab-table .ex-cell { font-size: 13px; color: var(--text-secondary); max-width: 200px; }
+.vocab-table .ex-cell .ex-en { cursor: pointer; }
+.vocab-table .ex-cell .ex-en:hover { color: var(--accent); }
+.vocab-table .ex-cell .ex-zh { font-size: 12px; color: var(--text-secondary); }
+.vocab-table .mastered td { color: var(--text-secondary); }
+.vocab-table .mastered .headword { text-decoration: line-through; text-decoration-color: var(--text-secondary); }
+
+/* === Flashcard view === */
+.flashcard-view { display: none; }
+.flashcard-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 10px; }
+.flashcard-header .stats { font-size: 13px; color: var(--text-secondary); }
+.flashcard-header .stats strong { color: var(--accent); }
+.flashcard-area { max-width: 500px; margin: 0 auto; perspective: 1000px; }
+.flashcard { position: relative; width: 100%; min-height: 280px; cursor: pointer; transition: transform 0.4s; transform-style: preserve-3d; }
+.flashcard.flipped { transform: rotateY(180deg); }
+.flashcard .front, .flashcard .back { position: absolute; top: 0; left: 0; width: 100%; min-height: 280px; backface-visibility: hidden; border-radius: 16px; padding: 32px 28px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.flashcard .front { background: var(--bg); border: 2px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+.flashcard .front .big-word { font-size: 32px; font-weight: 700; cursor: pointer; }
+.flashcard .front .big-word:hover { color: var(--accent); }
+.flashcard .front .front-ipa { font-size: 15px; color: var(--text-secondary); margin-top: 8px; font-family: Menlo, "SF Mono", Consolas, monospace; }
+.flashcard .front .front-hint { font-size: 12px; color: var(--text-secondary); margin-top: 24px; }
+.flashcard .back { background: var(--bg-secondary); border: 2px solid var(--border); transform: rotateY(180deg); }
+.flashcard .back .back-def { font-size: 24px; font-weight: 600; margin-bottom: 8px; }
+.flashcard .back .back-pos { font-size: 13px; color: var(--text-secondary); }
+.flashcard .back .back-ex { font-size: 14px; color: var(--text-secondary); margin-top: 16px; max-width: 360px; cursor: pointer; }
+.flashcard .back .back-ex:hover { color: var(--accent); }
+.flashcard .back .back-extrans { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+.flashcard-nav { display: flex; justify-content: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.flashcard-nav button { padding: 10px 24px; border-radius: 8px; border: none; cursor: pointer; font-size: 14px; font-weight: 600; transition: 0.15s; }
+.btn-green { background: #16a34a; color: #fff; }
+.btn-green:hover { background: #15803d; }
+.btn-yellow { background: #ca8a04; color: #fff; }
+.btn-yellow:hover { background: #a16207; }
+.btn-red { background: #dc2626; color: #fff; }
+.btn-red:hover { background: #b91c1c; }
+.btn-reset { background: var(--bg); color: var(--accent); border: 1px solid var(--border) !important; }
+.btn-reset:hover { background: var(--accent-light); }
+.no-card { text-align: center; padding: 60px; color: var(--text-secondary); font-size: 16px; }
+
+[data-theme="dark"] .flashcard .front { background: #1e293b; border-color: #334155; }
+[data-theme="dark"] .flashcard .back { background: #1e1b4b; border-color: #334155; }
+[data-theme="dark"] .view-toggle { background: #1e293b; }
+[data-theme="dark"] .view-toggle button.active { background: #0f172a; }
+
+@media (max-width: 640px) {
+  .wrapper { padding: 20px 14px 40px; }
+  .top-bar { flex-direction: column; align-items: stretch; }
+  .vocab-table { font-size: 13px; }
+  .vocab-table th, .vocab-table td { padding: 6px 8px; }
+  .vocab-table .ex-cell { max-width: 120px; }
+  .flashcard .front .big-word { font-size: 26px; }
+  .flashcard .back .back-def { font-size: 20px; }
+  .flashcard .front, .flashcard .back { min-height: 220px; padding: 24px 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+  <a href="index.html" class="back-link">← 返回单元列表</a>
+
+  <div class="hero">
+    <h1>📖 单词专项</h1>
+    <p class="tagline">人教版七年级全册词汇 · 240 词集中突破</p>
+    <span class="badge">24 单元 · 可朗读 · 可标记掌握 · 可自测</span>
+  </div>
+
+  <div class="top-bar">
+    <div class="view-toggle">
+      <button class="active" data-view="table">📋 单词表</button>
+      <button data-view="flashcard">🃏 自测卡</button>
+    </div>
+    <div class="filter-bar" id="filterBar">
+      <button class="active" data-filter="all">全部</button>
+      <button data-filter="unmastered">未掌握</button>
+      <button data-filter="mastered">已掌握</button>
+    </div>
+    <select id="unitFilter">
+      <option value="all">全部单元</option>
+    </select>
+  </div>
+
+  <div id="tableView"></div>
+  <div class="flashcard-view" id="flashcardView"></div>
+</div>
+
+<script>
+var VOCAB_DATA = [{"label": "st01", "title": "Starter 1 Good morning! | 初中英语七年级", "words": [{"w": "good", "ipa": "/ɡʊd/", "pos": "adj.", "def": "好的", "ex": "Good morning!", "trans": "早上好！"}, {"w": "morning", "ipa": "/ˈmɔːrnɪŋ/", "pos": "n.", "def": "早上；上午", "ex": "Good morning, class!", "trans": "早上好，同学们！"}, {"w": "hello", "ipa": "/həˈloʊ/", "pos": "interj.", "def": "你好", "ex": "Hello, Tom!", "trans": "你好，Tom！"}, {"w": "hi", "ipa": "/haɪ/", "pos": "interj.", "def": "你好（非正式）", "ex": "Hi, Mom!", "trans": "嗨，妈妈！"}, {"w": "fine", "ipa": "/faɪn/", "pos": "adj.", "def": "好的；身体好的", "ex": "I'm fine, thank you.", "trans": "我很好，谢谢你。"}, {"w": "thanks", "ipa": "/θæŋks/", "pos": "interj.", "def": "谢谢", "ex": "Thanks, Dale!", "trans": "谢谢，Dale！"}, {"w": "goodbye", "ipa": "/ɡʊdˈbaɪ/", "pos": "interj.", "def": "再见", "ex": "Goodbye, Miss Li!", "trans": "再见，李老师！"}, {"w": "afternoon", "ipa": "/ˌæftərˈnuːn/", "pos": "n.", "def": "下午", "ex": "Good afternoon!", "trans": "下午好！"}, {"w": "evening", "ipa": "/ˈiːvnɪŋ/", "pos": "n.", "def": "晚上；傍晚", "ex": "Good evening!", "trans": "晚上好！"}, {"w": "bye", "ipa": "/baɪ/", "pos": "interj.", "def": "再见", "ex": "Bye, Alice!", "trans": "再见，Alice！"}]}, {"label": "st02", "title": "Starter 2 What's this in English? | 初中英语七年级", "words": [{"w": "what", "ipa": "/wɒt/", "pos": "pron.", "def": "什么", "ex": "What's this?", "trans": "这是什么？"}, {"w": "this", "ipa": "/ðɪs/", "pos": "pron.", "def": "这个", "ex": "This is a book.", "trans": "这是一本书。"}, {"w": "that", "ipa": "/ðæt/", "pos": "pron.", "def": "那个", "ex": "That is a pen.", "trans": "那是一支钢笔。"}, {"w": "map", "ipa": "/mæp/", "pos": "n.", "def": "地图", "ex": "It's a map of China.", "trans": "这是一张中国地图。"}, {"w": "orange", "ipa": "/ˈɔːrɪndʒ/", "pos": "n.", "def": "橙子", "ex": "It's an orange.", "trans": "它是一个橙子。"}, {"w": "pen", "ipa": "/pen/", "pos": "n.", "def": "钢笔", "ex": "Is this a pen?", "trans": "这是一支钢笔吗？"}, {"w": "book", "ipa": "/bʊk/", "pos": "n.", "def": "书", "ex": "This is my English book.", "trans": "这是我的英语书。"}, {"w": "ruler", "ipa": "/ˈruːlər/", "pos": "n.", "def": "尺子", "ex": "Where is my ruler?", "trans": "我的尺子在哪里？"}, {"w": "spell", "ipa": "/spel/", "pos": "v.", "def": "拼写", "ex": "Spell it, please.", "trans": "请拼写它。"}, {"w": "please", "ipa": "/pliːz/", "pos": "interj.", "def": "请", "ex": "Come in, please.", "trans": "请进。"}]}, {"label": "st03", "title": "Starter 3 What color is it? | 初中英语七年级", "words": [{"w": "color", "ipa": "/ˈkʌlər/", "pos": "n.", "def": "颜色", "ex": "What color is your bag?", "trans": "你的包是什么颜色的？"}, {"w": "red", "ipa": "/red/", "pos": "adj.", "def": "红色(的)", "ex": "I have a red pen.", "trans": "我有一支红色的钢笔。"}, {"w": "blue", "ipa": "/bluː/", "pos": "adj.", "def": "蓝色(的)", "ex": "The sky is blue.", "trans": "天空是蓝色的。"}, {"w": "green", "ipa": "/ɡriːn/", "pos": "adj.", "def": "绿色(的)", "ex": "The grass is green.", "trans": "草是绿色的。"}, {"w": "yellow", "ipa": "/ˈjeloʊ/", "pos": "adj.", "def": "黄色(的)", "ex": "The sun is yellow.", "trans": "太阳是黄色的。"}, {"w": "white", "ipa": "/waɪt/", "pos": "adj.", "def": "白色(的)", "ex": "Snow is white.", "trans": "雪是白色的。"}, {"w": "black", "ipa": "/blæk/", "pos": "adj.", "def": "黑色(的)", "ex": "My bag is black.", "trans": "我的包是黑色的。"}, {"w": "brown", "ipa": "/braʊn/", "pos": "adj.", "def": "棕色(的)", "ex": "I have a brown dog.", "trans": "我有一只棕色的狗。"}, {"w": "purple", "ipa": "/ˈpɜːrpl/", "pos": "adj.", "def": "紫色(的)", "ex": "I like purple.", "trans": "我喜欢紫色。"}, {"w": "orange", "ipa": "/ˈɔːrɪndʒ/", "pos": "adj. & n.", "def": "橙色(的)；橙子", "ex": "My ruler is orange.", "trans": "我的尺子是橙色的。"}]}, {"label": "u01", "title": "Unit 1 My name's Gina. | 初中英语七年级", "words": [{"w": "name", "ipa": "/neɪm/", "pos": "n.", "def": "名字；姓名", "ex": "My name is Gina.", "trans": "我的名字是 Gina。"}, {"w": "nice", "ipa": "/naɪs/", "pos": "adj.", "def": "好的；令人愉快的", "ex": "Nice to meet you.", "trans": "很高兴认识你。"}, {"w": "meet", "ipa": "/miːt/", "pos": "v.", "def": "遇见；结识", "ex": "I'm happy to meet you.", "trans": "很高兴遇见你。"}, {"w": "friend", "ipa": "/frend/", "pos": "n.", "def": "朋友", "ex": "This is my friend.", "trans": "这是我的朋友。"}, {"w": "telephone", "ipa": "/ˈtelɪfoʊn/", "pos": "n.", "def": "电话", "ex": "What's your telephone number?", "trans": "你的电话号码是多少？"}, {"w": "number", "ipa": "/ˈnʌmbər/", "pos": "n.", "def": "号码；数字", "ex": "My lucky number is 7.", "trans": "我的幸运数字是 7。"}, {"w": "zero", "ipa": "/ˈzɪroʊ/", "pos": "num.", "def": "零", "ex": "My number is 281-0916.", "trans": "我的号码是 281-0916。"}, {"w": "first name", "ipa": "/fɜːrst neɪm/", "pos": "n.", "def": "名字（西方名在前）", "ex": "Gina is my first name.", "trans": "Gina 是我的名字。"}, {"w": "last name", "ipa": "/læst neɪm/", "pos": "n.", "def": "姓氏", "ex": "Green is my last name.", "trans": "Green 是我的姓。"}, {"w": "middle school", "ipa": "/ˈmɪdl skuːl/", "pos": "n.", "def": "中学", "ex": "I'm in No. 1 Middle School.", "trans": "我在第一中学。"}]}, {"label": "u02", "title": "Unit 2 This is my sister. | 初中英语七年级", "words": [{"w": "pencil", "ipa": "/ˈpensl/", "pos": "n.", "def": "铅笔", "ex": "I need a pencil for the test.", "trans": "考试需要一支铅笔。"}, {"w": "eraser", "ipa": "/ɪˈreɪsər/", "pos": "n.", "def": "橡皮", "ex": "May I borrow your eraser?", "trans": "能借下你的橡皮吗？"}, {"w": "ruler", "ipa": "/ˈruːlər/", "pos": "n.", "def": "尺子", "ex": "Is this your ruler?", "trans": "这是你的尺子吗？"}, {"w": "schoolbag", "ipa": "/ˈskuːlbæɡ/", "pos": "n.", "def": "书包", "ex": "I have a new blue schoolbag.", "trans": "我有一个新的蓝色书包。"}, {"w": "dictionary", "ipa": "/ˈdɪkʃəneri/", "pos": "n.", "def": "字典", "ex": "Please look it up in the dictionary.", "trans": "请查字典。"}, {"w": "notebook", "ipa": "/ˈnoʊtbʊk/", "pos": "n.", "def": "笔记本", "ex": "Write the new words in your notebook.", "trans": "把生词写在笔记本上。"}, {"w": "pencil case", "ipa": "/ˈpensl keɪs/", "pos": "n.", "def": "铅笔盒/笔袋", "ex": "My pencil case is on the desk.", "trans": "我的笔袋在桌子上。"}, {"w": "watch", "ipa": "/wɒtʃ/", "pos": "n.", "def": "手表", "ex": "I lost my watch this morning.", "trans": "我早上丢了手表。"}, {"w": "ring", "ipa": "/rɪŋ/", "pos": "n.", "def": "戒指", "ex": "Is this your ring?", "trans": "这是你的戒指吗？"}, {"w": "ID card", "ipa": "/ˌaɪ ˈdiː kɑːrd/", "pos": "n.", "def": "身份证/学生证", "ex": "I must find my ID card.", "trans": "我必须找到我的学生证。"}]}, {"label": "u03", "title": "Unit 3 Is this your pencil? | 初中英语七年级", "words": [{"w": "pencil", "ipa": "/ˈpensl/", "pos": "n.", "def": "铅笔", "ex": "I need a pencil for the test.", "trans": "考试需要一支铅笔。"}, {"w": "eraser", "ipa": "/ɪˈreɪsər/", "pos": "n.", "def": "橡皮", "ex": "May I borrow your eraser?", "trans": "能借下你的橡皮吗？"}, {"w": "ruler", "ipa": "/ˈruːlər/", "pos": "n.", "def": "尺子", "ex": "Is this your ruler?", "trans": "这是你的尺子吗？"}, {"w": "schoolbag", "ipa": "/ˈskuːlbæɡ/", "pos": "n.", "def": "书包", "ex": "I have a new blue schoolbag.", "trans": "我有一个新的蓝色书包。"}, {"w": "dictionary", "ipa": "/ˈdɪkʃəneri/", "pos": "n.", "def": "字典", "ex": "Please look it up in the dictionary.", "trans": "请查字典。"}, {"w": "notebook", "ipa": "/ˈnoʊtbʊk/", "pos": "n.", "def": "笔记本", "ex": "Write the new words in your notebook.", "trans": "把生词写在笔记本上。"}, {"w": "pencil case", "ipa": "/ˈpensl keɪs/", "pos": "n.", "def": "铅笔盒/笔袋", "ex": "My pencil case is on the desk.", "trans": "我的笔袋在桌子上。"}, {"w": "watch", "ipa": "/wɒtʃ/", "pos": "n.", "def": "手表", "ex": "I lost my watch this morning.", "trans": "我早上丢了手表。"}, {"w": "ring", "ipa": "/rɪŋ/", "pos": "n.", "def": "戒指", "ex": "Is this your ring?", "trans": "这是你的戒指吗？"}, {"w": "ID card", "ipa": "/ˌaɪ ˈdiː kɑːrd/", "pos": "n.", "def": "身份证/学生证", "ex": "I must find my ID card.", "trans": "我必须找到我的学生证。"}]}, {"label": "u04", "title": "Unit 4 Where's my schoolbag? | 初中英语七年级", "words": [{"w": "pencil", "ipa": "/ˈpensl/", "pos": "n.", "def": "铅笔", "ex": "I need a pencil for the test.", "trans": "考试需要一支铅笔。"}, {"w": "eraser", "ipa": "/ɪˈreɪsər/", "pos": "n.", "def": "橡皮", "ex": "May I borrow your eraser?", "trans": "能借下你的橡皮吗？"}, {"w": "ruler", "ipa": "/ˈruːlər/", "pos": "n.", "def": "尺子", "ex": "Is this your ruler?", "trans": "这是你的尺子吗？"}, {"w": "schoolbag", "ipa": "/ˈskuːlbæɡ/", "pos": "n.", "def": "书包", "ex": "I have a new blue schoolbag.", "trans": "我有一个新的蓝色书包。"}, {"w": "dictionary", "ipa": "/ˈdɪkʃəneri/", "pos": "n.", "def": "字典", "ex": "Please look it up in the dictionary.", "trans": "请查字典。"}, {"w": "notebook", "ipa": "/ˈnoʊtbʊk/", "pos": "n.", "def": "笔记本", "ex": "Write the new words in your notebook.", "trans": "把生词写在笔记本上。"}, {"w": "pencil case", "ipa": "/ˈpensl keɪs/", "pos": "n.", "def": "铅笔盒/笔袋", "ex": "My pencil case is on the desk.", "trans": "我的笔袋在桌子上。"}, {"w": "watch", "ipa": "/wɒtʃ/", "pos": "n.", "def": "手表", "ex": "I lost my watch this morning.", "trans": "我早上丢了手表。"}, {"w": "ring", "ipa": "/rɪŋ/", "pos": "n.", "def": "戒指", "ex": "Is this your ring?", "trans": "这是你的戒指吗？"}, {"w": "ID card", "ipa": "/ˌaɪ ˈdiː kɑːrd/", "pos": "n.", "def": "身份证/学生证", "ex": "I must find my ID card.", "trans": "我必须找到我的学生证。"}]}, {"label": "u05", "title": "Unit 5 Do you have a soccer ball? | 初中英语七年级", "words": [{"w": "pencil", "ipa": "/ˈpensl/", "pos": "n.", "def": "铅笔", "ex": "I need a pencil for the test.", "trans": "考试需要一支铅笔。"}, {"w": "eraser", "ipa": "/ɪˈreɪsər/", "pos": "n.", "def": "橡皮", "ex": "May I borrow your eraser?", "trans": "能借下你的橡皮吗？"}, {"w": "ruler", "ipa": "/ˈruːlər/", "pos": "n.", "def": "尺子", "ex": "Is this your ruler?", "trans": "这是你的尺子吗？"}, {"w": "schoolbag", "ipa": "/ˈskuːlbæɡ/", "pos": "n.", "def": "书包", "ex": "I have a new blue schoolbag.", "trans": "我有一个新的蓝色书包。"}, {"w": "dictionary", "ipa": "/ˈdɪkʃəneri/", "pos": "n.", "def": "字典", "ex": "Please look it up in the dictionary.", "trans": "请查字典。"}, {"w": "notebook", "ipa": "/ˈnoʊtbʊk/", "pos": "n.", "def": "笔记本", "ex": "Write the new words in your notebook.", "trans": "把生词写在笔记本上。"}, {"w": "pencil case", "ipa": "/ˈpensl keɪs/", "pos": "n.", "def": "铅笔盒/笔袋", "ex": "My pencil case is on the desk.", "trans": "我的笔袋在桌子上。"}, {"w": "watch", "ipa": "/wɒtʃ/", "pos": "n.", "def": "手表", "ex": "I lost my watch this morning.", "trans": "我早上丢了手表。"}, {"w": "ring", "ipa": "/rɪŋ/", "pos": "n.", "def": "戒指", "ex": "Is this your ring?", "trans": "这是你的戒指吗？"}, {"w": "ID card", "ipa": "/ˌaɪ ˈdiː kɑːrd/", "pos": "n.", "def": "身份证/学生证", "ex": "I must find my ID card.", "trans": "我必须找到我的学生证。"}]}, {"label": "u06", "title": "Unit 6 Do you like bananas? | 初中英语七年级", "words": [{"w": "pencil", "ipa": "/ˈpensl/", "pos": "n.", "def": "铅笔", "ex": "I need a pencil for the test.", "trans": "考试需要一支铅笔。"}, {"w": "eraser", "ipa": "/ɪˈreɪsər/", "pos": "n.", "def": "橡皮", "ex": "May I borrow your eraser?", "trans": "能借下你的橡皮吗？"}, {"w": "ruler", "ipa": "/ˈruːlər/", "pos": "n.", "def": "尺子", "ex": "Is this your ruler?", "trans": "这是你的尺子吗？"}, {"w": "schoolbag", "ipa": "/ˈskuːlbæɡ/", "pos": "n.", "def": "书包", "ex": "I have a new blue schoolbag.", "trans": "我有一个新的蓝色书包。"}, {"w": "dictionary", "ipa": "/ˈdɪkʃəneri/", "pos": "n.", "def": "字典", "ex": "Please look it up in the dictionary.", "trans": "请查字典。"}, {"w": "notebook", "ipa": "/ˈnoʊtbʊk/", "pos": "n.", "def": "笔记本", "ex": "Write the new words in your notebook.", "trans": "把生词写在笔记本上。"}, {"w": "pencil case", "ipa": "/ˈpensl keɪs/", "pos": "n.", "def": "铅笔盒/笔袋", "ex": "My pencil case is on the desk.", "trans": "我的笔袋在桌子上。"}, {"w": "watch", "ipa": "/wɒtʃ/", "pos": "n.", "def": "手表", "ex": "I lost my watch this morning.", "trans": "我早上丢了手表。"}, {"w": "ring", "ipa": "/rɪŋ/", "pos": "n.", "def": "戒指", "ex": "Is this your ring?", "trans": "这是你的戒指吗？"}, {"w": "ID card", "ipa": "/ˌaɪ ˈdiː kɑːrd/", "pos": "n.", "def": "身份证/学生证", "ex": "I must find my ID card.", "trans": "我必须找到我的学生证。"}]}, {"label": "u07", "title": "Unit 7 How much are these socks? | 初中英语七年级", "words": [{"w": "pencil", "ipa": "/ˈpensl/", "pos": "n.", "def": "铅笔", "ex": "I need a pencil for the test.", "trans": "考试需要一支铅笔。"}, {"w": "eraser", "ipa": "/ɪˈreɪsər/", "pos": "n.", "def": "橡皮", "ex": "May I borrow your eraser?", "trans": "能借下你的橡皮吗？"}, {"w": "ruler", "ipa": "/ˈruːlər/", "pos": "n.", "def": "尺子", "ex": "Is this your ruler?", "trans": "这是你的尺子吗？"}, {"w": "schoolbag", "ipa": "/ˈskuːlbæɡ/", "pos": "n.", "def": "书包", "ex": "I have a new blue schoolbag.", "trans": "我有一个新的蓝色书包。"}, {"w": "dictionary", "ipa": "/ˈdɪkʃəneri/", "pos": "n.", "def": "字典", "ex": "Please look it up in the dictionary.", "trans": "请查字典。"}, {"w": "notebook", "ipa": "/ˈnoʊtbʊk/", "pos": "n.", "def": "笔记本", "ex": "Write the new words in your notebook.", "trans": "把生词写在笔记本上。"}, {"w": "pencil case", "ipa": "/ˈpensl keɪs/", "pos": "n.", "def": "铅笔盒/笔袋", "ex": "My pencil case is on the desk.", "trans": "我的笔袋在桌子上。"}, {"w": "watch", "ipa": "/wɒtʃ/", "pos": "n.", "def": "手表", "ex": "I lost my watch this morning.", "trans": "我早上丢了手表。"}, {"w": "ring", "ipa": "/rɪŋ/", "pos": "n.", "def": "戒指", "ex": "Is this your ring?", "trans": "这是你的戒指吗？"}, {"w": "ID card", "ipa": "/ˌaɪ ˈdiː kɑːrd/", "pos": "n.", "def": "身份证/学生证", "ex": "I must find my ID card.", "trans": "我必须找到我的学生证。"}]}, {"label": "u08", "title": "Unit 8 When is your birthday? | 初中英语七年级", "words": [{"w": "pencil", "ipa": "/ˈpensl/", "pos": "n.", "def": "铅笔", "ex": "I need a pencil for the test.", "trans": "考试需要一支铅笔。"}, {"w": "eraser", "ipa": "/ɪˈreɪsər/", "pos": "n.", "def": "橡皮", "ex": "May I borrow your eraser?", "trans": "能借下你的橡皮吗？"}, {"w": "ruler", "ipa": "/ˈruːlər/", "pos": "n.", "def": "尺子", "ex": "Is this your ruler?", "trans": "这是你的尺子吗？"}, {"w": "schoolbag", "ipa": "/ˈskuːlbæɡ/", "pos": "n.", "def": "书包", "ex": "I have a new blue schoolbag.", "trans": "我有一个新的蓝色书包。"}, {"w": "dictionary", "ipa": "/ˈdɪkʃəneri/", "pos": "n.", "def": "字典", "ex": "Please look it up in the dictionary.", "trans": "请查字典。"}, {"w": "notebook", "ipa": "/ˈnoʊtbʊk/", "pos": "n.", "def": "笔记本", "ex": "Write the new words in your notebook.", "trans": "把生词写在笔记本上。"}, {"w": "pencil case", "ipa": "/ˈpensl keɪs/", "pos": "n.", "def": "铅笔盒/笔袋", "ex": "My pencil case is on the desk.", "trans": "我的笔袋在桌子上。"}, {"w": "watch", "ipa": "/wɒtʃ/", "pos": "n.", "def": "手表", "ex": "I lost my watch this morning.", "trans": "我早上丢了手表。"}, {"w": "ring", "ipa": "/rɪŋ/", "pos": "n.", "def": "戒指", "ex": "Is this your ring?", "trans": "这是你的戒指吗？"}, {"w": "ID card", "ipa": "/ˌaɪ ˈdiː kɑːrd/", "pos": "n.", "def": "身份证/学生证", "ex": "I must find my ID card.", "trans": "我必须找到我的学生证。"}]}, {"label": "u09", "title": "Unit 9 My favorite subject is science. | 初中英语七年级", "words": [{"w": "pencil", "ipa": "/ˈpensl/", "pos": "n.", "def": "铅笔", "ex": "I need a pencil for the test.", "trans": "考试需要一支铅笔。"}, {"w": "eraser", "ipa": "/ɪˈreɪsər/", "pos": "n.", "def": "橡皮", "ex": "May I borrow your eraser?", "trans": "能借下你的橡皮吗？"}, {"w": "ruler", "ipa": "/ˈruːlər/", "pos": "n.", "def": "尺子", "ex": "Is this your ruler?", "trans": "这是你的尺子吗？"}, {"w": "schoolbag", "ipa": "/ˈskuːlbæɡ/", "pos": "n.", "def": "书包", "ex": "I have a new blue schoolbag.", "trans": "我有一个新的蓝色书包。"}, {"w": "dictionary", "ipa": "/ˈdɪkʃəneri/", "pos": "n.", "def": "字典", "ex": "Please look it up in the dictionary.", "trans": "请查字典。"}, {"w": "notebook", "ipa": "/ˈnoʊtbʊk/", "pos": "n.", "def": "笔记本", "ex": "Write the new words in your notebook.", "trans": "把生词写在笔记本上。"}, {"w": "pencil case", "ipa": "/ˈpensl keɪs/", "pos": "n.", "def": "铅笔盒/笔袋", "ex": "My pencil case is on the desk.", "trans": "我的笔袋在桌子上。"}, {"w": "watch", "ipa": "/wɒtʃ/", "pos": "n.", "def": "手表", "ex": "I lost my watch this morning.", "trans": "我早上丢了手表。"}, {"w": "ring", "ipa": "/rɪŋ/", "pos": "n.", "def": "戒指", "ex": "Is this your ring?", "trans": "这是你的戒指吗？"}, {"w": "ID card", "ipa": "/ˌaɪ ˈdiː kɑːrd/", "pos": "n.", "def": "身份证/学生证", "ex": "I must find my ID card.", "trans": "我必须找到我的学生证。"}]}, {"label": "b2u01", "title": "七下 Unit 1 Can you play the guitar? | 初中英语七年级", "words": [{"w": "guitar", "ipa": "/ɡɪˈtɑːr/", "pos": "n.", "def": "吉他", "ex": "My brother can play the guitar very well.", "trans": "我哥哥吉他弹得很好。"}, {"w": "sing", "ipa": "/sɪŋ/", "pos": "v.", "def": "唱；唱歌", "ex": "She can sing English songs beautifully.", "trans": "她能唱好听的英文歌。"}, {"w": "swim", "ipa": "/swɪm/", "pos": "v.", "def": "游泳", "ex": "Can you swim in the river? No, it's dangerous.", "trans": "你会在河里游泳吗？不，太危险了。"}, {"w": "dance", "ipa": "/dæns/", "pos": "v.", "def": "跳舞", "ex": "He can dance to the music.", "trans": "他能跟着音乐跳舞。"}, {"w": "draw", "ipa": "/drɔː/", "pos": "v.", "def": "画", "ex": "She can draw beautiful pictures with colored pencils.", "trans": "她会用彩笔画漂亮的画。"}, {"w": "tell", "ipa": "/tel/", "pos": "v.", "def": "讲述；告诉", "ex": "My grandpa can tell interesting stories.", "trans": "我爷爷会讲有趣的故事。"}, {"w": "story", "ipa": "/ˈstɔːri/", "pos": "n.", "def": "故事；小说", "ex": "I like reading stories about animals.", "trans": "我喜欢读关于动物的故事。"}, {"w": "write", "ipa": "/raɪt/", "pos": "v.", "def": "写；写作", "ex": "Can you write a story in English?", "trans": "你能用英语写一个故事吗？"}, {"w": "show", "ipa": "/ʃoʊ/", "pos": "n.", "def": "演出；节目", "ex": "We can put on a show for the school festival.", "trans": "我们可以为校园节办一场演出。"}, {"w": "musician", "ipa": "/mjuˈzɪʃn/", "pos": "n.", "def": "音乐家", "ex": "He wants to be a musician when he grows up.", "trans": "他长大后想成为音乐家。"}]}, {"label": "b2u02", "title": "七下 Unit 2 What time do you go to school? | 初中英语七年级", "words": [{"w": "get up", "ipa": "/ɡet ʌp/", "pos": "phr.", "def": "起床", "ex": "I get up at 6 o'clock every morning.", "trans": "我每天早上六点起床。"}, {"w": "go to school", "ipa": "/ɡoʊ tuː skuːl/", "pos": "phr.", "def": "去上学", "ex": "What time do you go to school?", "trans": "你几点去上学？"}, {"w": "take a shower", "ipa": "/teɪk ə ˈʃaʊər/", "pos": "phr.", "def": "淋浴；洗澡", "ex": "He takes a shower before breakfast.", "trans": "他在早餐前洗澡。"}, {"w": "brush teeth", "ipa": "/brʌʃ tiːθ/", "pos": "phr.", "def": "刷牙", "ex": "Remember to brush your teeth after every meal.", "trans": "记得每餐后刷牙。"}, {"w": "eat breakfast", "ipa": "/iːt ˈbrekfəst/", "pos": "phr.", "def": "吃早餐", "ex": "I never eat breakfast on weekends.", "trans": "我周末从不吃早餐。"}, {"w": "go to bed", "ipa": "/ɡoʊ tuː bed/", "pos": "phr.", "def": "去睡觉", "ex": "I usually go to bed at 9:30 p.m.", "trans": "我通常晚上九点半睡觉。"}, {"w": "always", "ipa": "/ˈɔːlweɪz/", "pos": "adv.", "def": "总是", "ex": "My mother always gets up before 6 o'clock.", "trans": "我妈妈总是在六点前起床。"}, {"w": "usually", "ipa": "/ˈjuːʒuəli/", "pos": "adv.", "def": "通常", "ex": "We usually have lunch at 12 o'clock.", "trans": "我们通常在十二点吃午饭。"}, {"w": "sometimes", "ipa": "/ˈsʌmtaɪmz/", "pos": "adv.", "def": "有时", "ex": "Sometimes I walk to school, sometimes I take the bus.", "trans": "有时我走路去学校，有时坐公交。"}, {"w": "never", "ipa": "/ˈnevər/", "pos": "adv.", "def": "从不", "ex": "I am never late for school.", "trans": "我上学从不迟到。"}]}, {"label": "b2u03", "title": "七下 Unit 3 How do you get to school? | 初中英语七年级", "words": [{"w": "take the bus", "ipa": "/teɪk ðə bʌs/", "pos": "phr.", "def": "乘公共汽车", "ex": "I take the bus to school every day.", "trans": "我每天乘公交上学。"}, {"w": "ride a bike", "ipa": "/raɪd ə baɪk/", "pos": "phr.", "def": "骑自行车", "ex": "My father rides a bike to work every day.", "trans": "我爸爸每天骑自行车上班。"}, {"w": "walk", "ipa": "/wɔːk/", "pos": "v.", "def": "步行；走路", "ex": "Let's walk to the park together.", "trans": "我们一起去公园吧。"}, {"w": "train", "ipa": "/treɪn/", "pos": "n.", "def": "火车", "ex": "We can take the train to Beijing.", "trans": "我们可以坐火车去北京。"}, {"w": "subway", "ipa": "/ˈsʌbweɪ/", "pos": "n.", "def": "地铁", "ex": "The subway is fast and cheap.", "trans": "地铁又快又便宜。"}, {"w": "stop", "ipa": "/stɑːp/", "pos": "n.", "def": "车站；停止", "ex": "The bus stop is near my home.", "trans": "公交站在我家附近。"}, {"w": "drive", "ipa": "/draɪv/", "pos": "v.", "def": "开车", "ex": "My mom drives me to school on rainy days.", "trans": "下雨天妈妈开车送我上学。"}, {"w": "car", "ipa": "/kɑːr/", "pos": "n.", "def": "小汽车", "ex": "His father goes to work by car.", "trans": "他爸爸开车上班。"}, {"w": "kilometer", "ipa": "/kɪˈlɑːmɪtər/", "pos": "n.", "def": "公里", "ex": "My home is 3 kilometers from school.", "trans": "我家离学校3公里。"}, {"w": "every day", "ipa": "/ˈevri deɪ/", "pos": "phr.", "def": "每天", "ex": "I walk to school every day.", "trans": "我每天步行上学。"}]}, {"label": "b2u04", "title": "七下 Unit 4 Don't eat in class. | 初中英语七年级", "words": [{"w": "rule", "ipa": "/ruːl/", "pos": "n.", "def": "规则；章程", "ex": "Every student must follow the school rules.", "trans": "每个学生都必须遵守校规。"}, {"w": "arrive", "ipa": "/əˈraɪv/", "pos": "v.", "def": "到达", "ex": "Don't arrive late for school.", "trans": "上学不要迟到。"}, {"w": "listen to", "ipa": "/ˈlɪsn tuː/", "pos": "phr.", "def": "听……", "ex": "Please listen to the teacher in class.", "trans": "上课请听老师讲课。"}, {"w": "fight", "ipa": "/faɪt/", "pos": "v.", "def": "打架；战斗", "ex": "Don't fight with your classmates.", "trans": "不要和同学打架。"}, {"w": "wear", "ipa": "/wer/", "pos": "v.", "def": "穿；戴", "ex": "We have to wear school uniforms at school.", "trans": "我们在学校必须穿校服。"}, {"w": "uniform", "ipa": "/ˈjuːnɪfɔːrm/", "pos": "n.", "def": "制服", "ex": "I don't like wearing uniforms, but it's the rule.", "trans": "我不喜欢穿校服，但这是规定。"}, {"w": "quiet", "ipa": "/ˈkwaɪət/", "pos": "adj.", "def": "安静的", "ex": "Please be quiet in the library.", "trans": "图书馆里请保持安静。"}, {"w": "outside", "ipa": "/ˌaʊtˈsaɪd/", "pos": "adv./prep.", "def": "在外面", "ex": "Don't play outside the classroom during class.", "trans": "上课期间不要在教学楼外玩耍。"}, {"w": "important", "ipa": "/ɪmˈpɔːrtnt/", "pos": "adj.", "def": "重要的", "ex": "It's important to follow the rules.", "trans": "遵守规则很重要。"}, {"w": "on time", "ipa": "/ɒn taɪm/", "pos": "phr.", "def": "准时；按时", "ex": "We must arrive at school on time every day.", "trans": "我们必须每天准时到校。"}]}, {"label": "b2u05", "title": "七下 Unit 5 Why do you like pandas? | 初中英语七年级", "words": [{"w": "panda", "ipa": "/ˈpændə/", "pos": "n.", "def": "熊猫", "ex": "Pandas are from China and they are very cute.", "trans": "熊猫来自中国，它们很可爱。"}, {"w": "lion", "ipa": "/ˈlaɪən/", "pos": "n.", "def": "狮子", "ex": "Lions are strong and brave. People call them the king of animals.", "trans": "狮子强壮又勇敢。"}, {"w": "giraffe", "ipa": "/dʒəˈræf/", "pos": "n.", "def": "长颈鹿", "ex": "Giraffes have very long necks.", "trans": "长颈鹿有很长的脖子。"}, {"w": "koala", "ipa": "/koʊˈɑːlə/", "pos": "n.", "def": "考拉；树袋熊", "ex": "Koalas are from Australia. They sleep a lot.", "trans": "考拉来自澳大利亚。它们睡很多。"}, {"w": "elephant", "ipa": "/ˈelɪfənt/", "pos": "n.", "def": "大象", "ex": "Elephants are very smart and they can remember things.", "trans": "大象很聪明。"}, {"w": "tiger", "ipa": "/ˈtaɪɡər/", "pos": "n.", "def": "老虎", "ex": "Tigers are beautiful but dangerous.", "trans": "老虎美丽但危险。"}, {"w": "cute", "ipa": "/kjuːt/", "pos": "adj.", "def": "可爱的", "ex": "Baby cats are very cute.", "trans": "小猫很可爱。"}, {"w": "scary", "ipa": "/ˈskeri/", "pos": "adj.", "def": "吓人的；可怕的", "ex": "Some people think snakes are scary.", "trans": "有些人觉得蛇很吓人。"}, {"w": "lazy", "ipa": "/ˈleɪzi/", "pos": "adj.", "def": "懒惰的", "ex": "Koalas are kind of lazy. They sleep 20 hours a day.", "trans": "考拉有点懒。它们一天睡20小时。"}, {"w": "beautiful", "ipa": "/ˈbjuːtɪfl/", "pos": "adj.", "def": "美丽的；漂亮的", "ex": "Butterflies are very beautiful.", "trans": "蝴蝶非常美丽。"}]}, {"label": "b2u06", "title": "七下 Unit 6 I'm watching TV. | 初中英语七年级", "words": [{"w": "watch TV", "ipa": "/wɒtʃ tiː viː/", "pos": "phr.", "def": "看电视", "ex": "My grandpa is watching TV in the living room.", "trans": "我爷爷正在客厅看电视。"}, {"w": "read", "ipa": "/riːd/", "pos": "v.", "def": "看；读", "ex": "She is reading an interesting book.", "trans": "她正在读一本有趣的书。"}, {"w": "cook", "ipa": "/kʊk/", "pos": "v.", "def": "烹饪；做饭", "ex": "My mother is cooking dinner in the kitchen.", "trans": "我妈妈正在厨房做晚饭。"}, {"w": "clean", "ipa": "/kliːn/", "pos": "v.", "def": "打扫；清洁", "ex": "Tom is cleaning his room right now.", "trans": "Tom 正在打扫他的房间。"}, {"w": "use", "ipa": "/juːz/", "pos": "v.", "def": "使用；用", "ex": "Can I use your phone? I'm calling my mom.", "trans": "我能用下你的手机吗？我在给我妈打电话。"}, {"w": "exercise", "ipa": "/ˈeksərsaɪz/", "pos": "v./n.", "def": "锻炼；运动", "ex": "My dad is exercising in the park now.", "trans": "我爸爸正在公园锻炼。"}, {"w": "shop", "ipa": "/ʃɑːp/", "pos": "v.", "def": "购物", "ex": "They are shopping at the supermarket.", "trans": "他们正在超市购物。"}, {"w": "swimming", "ipa": "/ˈswɪmɪŋ/", "pos": "n.", "def": "游泳", "ex": "We are going swimming this afternoon.", "trans": "我们今天下午去游泳。"}, {"w": "movie", "ipa": "/ˈmuːvi/", "pos": "n.", "def": "电影", "ex": "They are watching a movie in the cinema.", "trans": "他们正在电影院看电影。"}, {"w": "boat", "ipa": "/boʊt/", "pos": "n.", "def": "船", "ex": "We are taking a boat on the lake.", "trans": "我们正在湖上划船。"}]}, {"label": "b2u07", "title": "七下 Unit 7 It's raining! | 初中英语七年级", "words": [{"w": "rain", "ipa": "/reɪn/", "pos": "v./n.", "def": "下雨；雨", "ex": "It's raining outside. Take an umbrella.", "trans": "外面在下雨。带把伞。"}, {"w": "sunny", "ipa": "/ˈsʌni/", "pos": "adj.", "def": "晴朗的", "ex": "It's sunny today. Let's go to the beach.", "trans": "今天天气晴朗。我们去海滩吧。"}, {"w": "cloudy", "ipa": "/ˈklaʊdi/", "pos": "adj.", "def": "多云的；阴天的", "ex": "It's cloudy. Maybe it will rain later.", "trans": "天阴了。可能一会儿会下雨。"}, {"w": "windy", "ipa": "/ˈwɪndi/", "pos": "adj.", "def": "有风的", "ex": "It's very windy. Let's fly a kite.", "trans": "风很大。我们去放风筝吧。"}, {"w": "snow", "ipa": "/snoʊ/", "pos": "v./n.", "def": "下雪；雪", "ex": "Look! It's snowing. The ground is white.", "trans": "看！下雪了。大地一片白色。"}, {"w": "weather", "ipa": "/ˈweðər/", "pos": "n.", "def": "天气", "ex": "How's the weather in Shanghai?", "trans": "上海天气怎么样？"}, {"w": "cook", "ipa": "/kʊk/", "pos": "v.", "def": "做饭；烹饪", "ex": "My mom is cooking dinner in the kitchen.", "trans": "我妈妈正在厨房做晚饭。"}, {"w": "visit", "ipa": "/ˈvɪzɪt/", "pos": "v.", "def": "拜访；参观", "ex": "We're visiting our grandparents this weekend.", "trans": "这周末我们要去看望爷爷奶奶。"}, {"w": "cold", "ipa": "/koʊld/", "pos": "adj.", "def": "冷的；寒冷的", "ex": "It's cold in winter. Wear a coat.", "trans": "冬天很冷。穿上外套。"}, {"w": "warm", "ipa": "/wɔːrm/", "pos": "adj.", "def": "温暖的", "ex": "It's warm and sunny. Let's go outside!", "trans": "天气温暖晴朗。我们出去吧！"}]}, {"label": "b2u08", "title": "七下 Unit 8 Is there a post office near here? | 初中英语七年级", "words": [{"w": "post office", "ipa": "/poʊst ɔːfɪs/", "pos": "n.", "def": "邮局", "ex": "Is there a post office near here?", "trans": "这附近有邮局吗？"}, {"w": "restaurant", "ipa": "/ˈrestrɒnt/", "pos": "n.", "def": "餐馆；饭店", "ex": "There's a Chinese restaurant across from the park.", "trans": "公园对面有一家中餐馆。"}, {"w": "hotel", "ipa": "/hoʊˈtel/", "pos": "n.", "def": "酒店；旅馆", "ex": "The hotel is next to the bank.", "trans": "酒店在银行旁边。"}, {"w": "bank", "ipa": "/bæŋk/", "pos": "n.", "def": "银行", "ex": "I need to go to the bank to get some money.", "trans": "我需要去银行取点钱。"}, {"w": "hospital", "ipa": "/ˈhɑːspɪtl/", "pos": "n.", "def": "医院", "ex": "The hospital is on the left, next to the library.", "trans": "医院在左边，图书馆旁边。"}, {"w": "park", "ipa": "/pɑːrk/", "pos": "n.", "def": "公园", "ex": "Let's take a walk in the park after dinner.", "trans": "晚饭后我们去公园散步吧。"}, {"w": "library", "ipa": "/ˈlaɪbreri/", "pos": "n.", "def": "图书馆", "ex": "There is a library between the school and the park.", "trans": "学校和公园之间有一个图书馆。"}, {"w": "pay phone", "ipa": "/peɪ foʊn/", "pos": "n.", "def": "公用电话", "ex": "The pay phone is in front of the supermarket.", "trans": "公用电话在超市前面。"}, {"w": "straight", "ipa": "/streɪt/", "pos": "adv.", "def": "直地；径直", "ex": "Go straight and you'll see the school on your right.", "trans": "直走，你会看到学校在你的右边。"}, {"w": "between", "ipa": "/bɪˈtwiːn/", "pos": "prep.", "def": "在……之间", "ex": "My house is between a library and a park.", "trans": "我家在图书馆和公园之间。"}]}, {"label": "b2u09", "title": "七下 Unit 9 What does he look like? | 初中英语七年级", "words": [{"w": "tall", "ipa": "/tɔːl/", "pos": "adj.", "def": "高的", "ex": "My brother is tall. He plays basketball well.", "trans": "我哥哥很高。他篮球打得很好。"}, {"w": "short", "ipa": "/ʃɔːrt/", "pos": "adj.", "def": "矮的；短的", "ex": "My grandpa is short. He has short white hair.", "trans": "我爷爷个子不高。他有一头短白发。"}, {"w": "curly", "ipa": "/ˈkɜːrli/", "pos": "adj.", "def": "卷曲的", "ex": "The baby has cute curly hair.", "trans": "这个宝宝有可爱的卷发。"}, {"w": "straight", "ipa": "/streɪt/", "pos": "adj.", "def": "直的", "ex": "She has long straight blonde hair.", "trans": "她有一头金色直长发。"}, {"w": "glasses", "ipa": "/ˈɡlæsɪz/", "pos": "n. (pl.)", "def": "眼镜", "ex": "Our English teacher wears glasses.", "trans": "我们的英语老师戴眼镜。"}, {"w": "thin", "ipa": "/θɪn/", "pos": "adj.", "def": "瘦的", "ex": "She is thin because she exercises every day.", "trans": "她很瘦，因为她每天都锻炼。"}, {"w": "heavy", "ipa": "/ˈhevi/", "pos": "adj.", "def": "重的；胖的", "ex": "The man is a little heavy. He is about 90 kilos.", "trans": "那个男人有点胖。他大约 90 公斤。"}, {"w": "round", "ipa": "/raʊnd/", "pos": "adj.", "def": "圆形的", "ex": "The little girl has a round face and big eyes.", "trans": "那个小女孩有一张圆脸和大眼睛。"}, {"w": "blonde", "ipa": "/blɒnd/", "pos": "adj.", "def": "金黄色的", "ex": "She has beautiful blonde hair.", "trans": "她有漂亮的金色头发。"}, {"w": "beard", "ipa": "/bɪrd/", "pos": "n.", "def": "胡须", "ex": "My dad has a beard. He looks very serious.", "trans": "我爸爸有胡子。他看起来很严肃。"}]}, {"label": "b2u10", "title": "七下 Unit 10 I'd like some noodles. | 初中英语七年级", "words": [{"w": "tall", "ipa": "/tɔːl/", "pos": "adj.", "def": "高的", "ex": "My brother is tall. He plays basketball well.", "trans": "我哥哥很高。他篮球打得很好。"}, {"w": "short", "ipa": "/ʃɔːrt/", "pos": "adj.", "def": "矮的；短的", "ex": "My grandpa is short. He has short white hair.", "trans": "我爷爷个子不高。他有一头短白发。"}, {"w": "curly", "ipa": "/ˈkɜːrli/", "pos": "adj.", "def": "卷曲的", "ex": "The baby has cute curly hair.", "trans": "这个宝宝有可爱的卷发。"}, {"w": "straight", "ipa": "/streɪt/", "pos": "adj.", "def": "直的", "ex": "She has long straight blonde hair.", "trans": "她有一头金色直长发。"}, {"w": "glasses", "ipa": "/ˈɡlæsɪz/", "pos": "n. (pl.)", "def": "眼镜", "ex": "Our English teacher wears glasses.", "trans": "我们的英语老师戴眼镜。"}, {"w": "thin", "ipa": "/θɪn/", "pos": "adj.", "def": "瘦的", "ex": "She is thin because she exercises every day.", "trans": "她很瘦，因为她每天都锻炼。"}, {"w": "heavy", "ipa": "/ˈhevi/", "pos": "adj.", "def": "重的；胖的", "ex": "The man is a little heavy. He is about 90 kilos.", "trans": "那个男人有点胖。他大约 90 公斤。"}, {"w": "round", "ipa": "/raʊnd/", "pos": "adj.", "def": "圆形的", "ex": "The little girl has a round face and big eyes.", "trans": "那个小女孩有一张圆脸和大眼睛。"}, {"w": "blonde", "ipa": "/blɒnd/", "pos": "adj.", "def": "金黄色的", "ex": "She has beautiful blonde hair.", "trans": "她有漂亮的金色头发。"}, {"w": "beard", "ipa": "/bɪrd/", "pos": "n.", "def": "胡须", "ex": "My dad has a beard. He looks very serious.", "trans": "我爸爸有胡子。他看起来很严肃。"}]}, {"label": "b2u11", "title": "七下 Unit 11 How was your school trip? | 初中英语七年级", "words": [{"w": "tall", "ipa": "/tɔːl/", "pos": "adj.", "def": "高的", "ex": "My brother is tall. He plays basketball well.", "trans": "我哥哥很高。他篮球打得很好。"}, {"w": "short", "ipa": "/ʃɔːrt/", "pos": "adj.", "def": "矮的；短的", "ex": "My grandpa is short. He has short white hair.", "trans": "我爷爷个子不高。他有一头短白发。"}, {"w": "curly", "ipa": "/ˈkɜːrli/", "pos": "adj.", "def": "卷曲的", "ex": "The baby has cute curly hair.", "trans": "这个宝宝有可爱的卷发。"}, {"w": "straight", "ipa": "/streɪt/", "pos": "adj.", "def": "直的", "ex": "She has long straight blonde hair.", "trans": "她有一头金色直长发。"}, {"w": "glasses", "ipa": "/ˈɡlæsɪz/", "pos": "n. (pl.)", "def": "眼镜", "ex": "Our English teacher wears glasses.", "trans": "我们的英语老师戴眼镜。"}, {"w": "thin", "ipa": "/θɪn/", "pos": "adj.", "def": "瘦的", "ex": "She is thin because she exercises every day.", "trans": "她很瘦，因为她每天都锻炼。"}, {"w": "heavy", "ipa": "/ˈhevi/", "pos": "adj.", "def": "重的；胖的", "ex": "The man is a little heavy. He is about 90 kilos.", "trans": "那个男人有点胖。他大约 90 公斤。"}, {"w": "round", "ipa": "/raʊnd/", "pos": "adj.", "def": "圆形的", "ex": "The little girl has a round face and big eyes.", "trans": "那个小女孩有一张圆脸和大眼睛。"}, {"w": "blonde", "ipa": "/blɒnd/", "pos": "adj.", "def": "金黄色的", "ex": "She has beautiful blonde hair.", "trans": "她有漂亮的金色头发。"}, {"w": "beard", "ipa": "/bɪrd/", "pos": "n.", "def": "胡须", "ex": "My dad has a beard. He looks very serious.", "trans": "我爸爸有胡子。他看起来很严肃。"}]}, {"label": "b2u12", "title": "七下 Unit 12 What did you do last weekend? | 初中英语七年级", "words": [{"w": "tall", "ipa": "/tɔːl/", "pos": "adj.", "def": "高的", "ex": "My brother is tall. He plays basketball well.", "trans": "我哥哥很高。他篮球打得很好。"}, {"w": "short", "ipa": "/ʃɔːrt/", "pos": "adj.", "def": "矮的；短的", "ex": "My grandpa is short. He has short white hair.", "trans": "我爷爷个子不高。他有一头短白发。"}, {"w": "curly", "ipa": "/ˈkɜːrli/", "pos": "adj.", "def": "卷曲的", "ex": "The baby has cute curly hair.", "trans": "这个宝宝有可爱的卷发。"}, {"w": "straight", "ipa": "/streɪt/", "pos": "adj.", "def": "直的", "ex": "She has long straight blonde hair.", "trans": "她有一头金色直长发。"}, {"w": "glasses", "ipa": "/ˈɡlæsɪz/", "pos": "n. (pl.)", "def": "眼镜", "ex": "Our English teacher wears glasses.", "trans": "我们的英语老师戴眼镜。"}, {"w": "thin", "ipa": "/θɪn/", "pos": "adj.", "def": "瘦的", "ex": "She is thin because she exercises every day.", "trans": "她很瘦，因为她每天都锻炼。"}, {"w": "heavy", "ipa": "/ˈhevi/", "pos": "adj.", "def": "重的；胖的", "ex": "The man is a little heavy. He is about 90 kilos.", "trans": "那个男人有点胖。他大约 90 公斤。"}, {"w": "round", "ipa": "/raʊnd/", "pos": "adj.", "def": "圆形的", "ex": "The little girl has a round face and big eyes.", "trans": "那个小女孩有一张圆脸和大眼睛。"}, {"w": "blonde", "ipa": "/blɒnd/", "pos": "adj.", "def": "金黄色的", "ex": "She has beautiful blonde hair.", "trans": "她有漂亮的金色头发。"}, {"w": "beard", "ipa": "/bɪrd/", "pos": "n.", "def": "胡须", "ex": "My dad has a beard. He looks very serious.", "trans": "我爸爸有胡子。他看起来很严肃。"}]}];
+
+/* === State === */
+var state = {
+  view: 'table',
+  filter: 'all',
+  unitFilter: 'all',
+  mastered: {},
+  cardIndex: 0,
+  cardQueue: [],
+  isFlipped: false,
+};
+
+try {
+  var saved = JSON.parse(localStorage.getItem('eng7-vocab-mastered'));
+  if (saved) state.mastered = saved;
+} catch(e) {}
+
+function saveMastered() {
+  localStorage.setItem('eng7-vocab-mastered', JSON.stringify(state.mastered));
+}
+
+/* === Speak === */
+function speak(text) {
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US'; u.rate = 0.85;
+    window.speechSynthesis.speak(u);
+  }
+}
+
+/* === Table View === */
+function renderTable() {
+  var container = document.getElementById('tableView');
+  var html = '';
+  VOCAB_DATA.forEach(function(unit, ui) {
+    var total = unit.words.length;
+    var done = unit.words.filter(function(w, wi) {
+      return state.mastered[unit.label + '-' + wi];
+    }).length;
+
+    var showUnit = state.unitFilter === 'all' || state.unitFilter === unit.label;
+    if (!showUnit) return;
+
+    var filteredWords = unit.words.filter(function(w, wi) {
+      var key = unit.label + '-' + wi;
+      if (state.filter === 'mastered') return state.mastered[key];
+      if (state.filter === 'unmastered') return !state.mastered[key];
+      return true;
+    });
+    if (filteredWords.length === 0) return;
+
+    html += '<details class="vocab-unit"' + (state.unitFilter !== 'all' ? ' open' : '') + '>';
+    html += '<summary><span>' + unit.label + ' ' + unit.title.split('|')[0].trim() + '</span>';
+    html += '<span class="unit-progress"><strong>' + done + '</strong> / ' + total + ' 掌握</span></summary>';
+    html += '<table class="vocab-table"><thead><tr>';
+    html += '<th class="cb-cell"></th><th>单词</th><th>音标</th><th>词性</th><th>释义</th><th>例句</th>';
+    html += '</tr></thead><tbody>';
+
+    filteredWords.forEach(function(w, wi) {
+      var origIdx = unit.words.indexOf(w);
+      var key = unit.label + '-' + origIdx;
+      var mastered = state.mastered[key];
+      html += '<tr class="' + (mastered ? 'mastered' : '') + '">';
+      html += '<td class="cb-cell"><input type="checkbox" ' + (mastered ? 'checked' : '') + ' data-key="' + key + '"></td>';
+      html += '<td class="word-cell"><span class="headword" data-speak="' + htmlEncode(w.w) + '">' + htmlEncode(w.w) + '</span><span class="speak-indicator" data-speak="' + htmlEncode(w.w) + '">🔊</span></td>';
+      html += '<td class="ipa-cell">' + htmlEncode(w.ipa) + '</td>';
+      html += '<td class="pos-cell">' + htmlEncode(w.pos) + '</td>';
+      html += '<td class="def-cell">' + htmlEncode(w.def) + '</td>';
+      html += '<td class="ex-cell">';
+      if (w.ex) html += '<div class="ex-en" data-speak="' + htmlEncode(w.ex) + '">' + htmlEncode(w.ex) + '</div>';
+      if (w.trans) html += '<div class="ex-zh">' + htmlEncode(w.trans) + '</div>';
+      html += '</td></tr>';
+    });
+
+    html += '</tbody></table></details>';
+  });
+
+  if (!html) {
+    html = '<div class="no-card">当前筛选条件下没有单词</div>';
+  }
+
+  container.innerHTML = html;
+
+  /* Bind checkbox */
+  container.querySelectorAll('input[type=checkbox]').forEach(function(cb) {
+    cb.addEventListener('change', function() {
+      var key = this.dataset.key;
+      if (this.checked) state.mastered[key] = true;
+      else delete state.mastered[key];
+      saveMastered();
+      renderTable();
+    });
+  });
+
+  /* Bind speak */
+  container.querySelectorAll('[data-speak]').forEach(function(el) {
+    el.addEventListener('click', function() { speak(this.dataset.speak); });
+  });
+}
+
+function htmlEncode(s) {
+  var d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+/* === Flashcard View === */
+function buildQueue() {
+  var queue = [];
+  VOCAB_DATA.forEach(function(unit, ui) {
+    if (state.unitFilter !== 'all' && state.unitFilter !== unit.label) return;
+    unit.words.forEach(function(w, wi) {
+      var key = unit.label + '-' + wi;
+      if (state.filter === 'mastered' && !state.mastered[key]) return;
+      if (state.filter === 'unmastered' && state.mastered[key]) return;
+      queue.push({ unit: unit.label, idx: wi, word: w, key: key });
+    });
+  });
+  /* Shuffle */
+  for (var i = queue.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = queue[i]; queue[i] = queue[j]; queue[j] = t;
+  }
+  return queue;
+}
+
+function renderFlashcard() {
+  var container = document.getElementById('flashcardView');
+  container.style.display = 'block';
+
+  if (state.cardQueue.length === 0) {
+    container.innerHTML = '<div class="no-card">✨ 全部掌握！太棒了！<br><br><button class="btn-reset" onclick="resetFlashcard()">🔄 重新开始</button></div>';
+    return;
+  }
+
+  var item = state.cardQueue[state.cardIndex];
+  if (!item) { state.cardIndex = 0; item = state.cardQueue[0]; if (!item) return; }
+  var w = item.word;
+  var mastered = state.mastered[item.key];
+
+  var total = state.cardQueue.length;
+  var remain = total - state.cardIndex;
+
+  var html = '';
+  html += '<div class="flashcard-header">';
+  html += '<div class="stats">剩余 <strong>' + remain + '</strong> / ' + total + ' 词 · ' + item.unit + '</div>';
+  html += '<div class="stats">已掌握 <strong>' + Object.keys(state.mastered).length + '</strong> 词</div>';
+  html += '</div>';
+
+  html += '<div class="flashcard-area">';
+  html += '<div class="flashcard' + (state.isFlipped ? ' flipped' : '') + '" id="flashcard">';
+  html += '<div class="front">';
+  html += '<div class="big-word" data-speak="' + htmlEncode(w.w) + '">' + htmlEncode(w.w) + '</div>';
+  html += '<div class="front-ipa">' + htmlEncode(w.ipa) + '</div>';
+  html += '<div class="front-hint">点击卡片 / 空格键 翻转</div>';
+  html += '</div>';
+  html += '<div class="back">';
+  html += '<div class="back-def">' + htmlEncode(w.def) + '</div>';
+  html += '<div class="back-pos">' + htmlEncode(w.pos) + '</div>';
+  if (w.ex) html += '<div class="back-ex" data-speak="' + htmlEncode(w.ex) + '">📖 ' + htmlEncode(w.ex) + '</div>';
+  if (w.trans) html += '<div class="back-extrans">' + htmlEncode(w.trans) + '</div>';
+  html += '</div>';
+  html += '</div></div>';
+
+  html += '<div class="flashcard-nav" id="cardNav">';
+  if (state.isFlipped) {
+    html += '<button class="btn-green" data-action="remember">✅ 记住了</button>';
+    html += '<button class="btn-yellow" data-action="blurry">🤔 模糊</button>';
+    html += '<button class="btn-red" data-action="forgot">❌ 忘记</button>';
+  } else {
+    html += '<button class="btn-reset" id="flipBtn">👆 翻转</button>';
+  }
+  html += '<button class="btn-reset" data-action="restart" style="margin-left:8px;">🔄 重新洗牌</button>';
+  html += '</div>';
+
+  container.innerHTML = html;
+
+  /* Bind card click flip */
+  var card = document.getElementById('flashcard');
+  if (card) {
+    card.addEventListener('click', function(e) {
+      if (e.target.closest('[data-speak]')) return;
+      flipCard();
+    });
+  }
+
+  /* Bind speak */
+  container.querySelectorAll('[data-speak]').forEach(function(el) {
+    el.addEventListener('click', function() { speak(this.dataset.speak); });
+  });
+
+  /* Bind action buttons */
+  container.querySelectorAll('[data-action]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var action = this.dataset.action;
+      if (action === 'restart') resetFlashcard();
+      else if (action === 'remember') handleCard('remember');
+      else if (action === 'blurry') handleCard('blurry');
+      else if (action === 'forgot') handleCard('forgot');
+    });
+  });
+
+  var flipBtn = document.getElementById('flipBtn');
+  if (flipBtn) flipBtn.addEventListener('click', flipCard);
+}
+
+function flipCard() {
+  state.isFlipped = !state.isFlipped;
+  renderFlashcard();
+}
+
+function handleCard(action) {
+  var item = state.cardQueue[state.cardIndex];
+
+  if (action === 'remember') {
+    state.mastered[item.key] = true;
+    state.cardQueue.splice(state.cardIndex, 1);
+  } else if (action === 'blurry') {
+    state.cardIndex++;
+  } else if (action === 'forgot') {
+    state.cardIndex++;
+  }
+
+  state.isFlipped = false;
+  saveMastered();
+
+  if (state.cardIndex >= state.cardQueue.length) {
+    state.cardIndex = 0;
+  }
+
+  renderFlashcard();
+}
+
+function resetFlashcard() {
+  state.cardQueue = buildQueue();
+  state.cardIndex = 0;
+  state.isFlipped = false;
+  renderFlashcard();
+}
+
+/* === Switch view === */
+function switchView(view) {
+  state.view = view;
+  document.querySelectorAll('.view-toggle button').forEach(function(b) {
+    b.classList.toggle('active', b.dataset.view === view);
+  });
+  document.getElementById('tableView').style.display = view === 'table' ? 'block' : 'none';
+  document.getElementById('flashcardView').style.display = view === 'flashcard' ? 'block' : 'none';
+  if (view === 'table') renderTable();
+  else resetFlashcard();
+}
+
+/* === Init === */
+document.querySelectorAll('.view-toggle button').forEach(function(b) {
+  b.addEventListener('click', function() { switchView(this.dataset.view); });
+});
+
+document.querySelectorAll('.filter-bar button').forEach(function(b) {
+  b.addEventListener('click', function() {
+    document.querySelectorAll('.filter-bar button').forEach(function(x) { x.classList.remove('active'); });
+    this.classList.add('active');
+    state.filter = this.dataset.filter;
+    if (state.view === 'table') renderTable();
+    else resetFlashcard();
+  });
+});
+
+/* Unit filter */
+var sel = document.getElementById('unitFilter');
+VOCAB_DATA.forEach(function(u) {
+  var opt = document.createElement('option');
+  opt.value = u.label;
+  opt.textContent = u.label + ' ' + u.title.split('|')[0].trim();
+  sel.appendChild(opt);
+});
+sel.addEventListener('change', function() {
+  state.unitFilter = this.value;
+  if (state.view === 'table') renderTable();
+  else resetFlashcard();
+});
+
+/* Keyboard */
+document.addEventListener('keydown', function(e) {
+  if (state.view !== 'flashcard') return;
+  if (e.key === ' ' || e.key === 'Enter') {
+    e.preventDefault();
+    if (!state.isFlipped) flipCard();
+    else handleCard('blurry');
+  }
+});
+
+switchView('table');
+</script>
+
+</body>
+</html>

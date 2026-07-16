@@ -47,6 +47,9 @@
 .en-text.speaking { background: var(--eng-amber-light); border-radius: 4px; padding: 2px 4px; transition: background 0.2s; }
 [data-theme="dark"] .speech-panel { box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
 [data-theme="dark"] .en-text.speaking { background: #452a08; }
+/* Lazy render below-the-fold sections */
+.detail-module { content-visibility: auto; contain-intrinsic-size: 300px; }
+.reading { content-visibility: auto; contain-intrinsic-size: 400px; }
 </style>
 </head>
 <body>
@@ -187,15 +190,15 @@
 
     <div style="display:flex;gap:8px;align-items:center;margin:20px 0 10px;">
       <h3 style="font-size:15px;color:var(--accent);margin:0;">📖 Reading: Lost &amp; Found Notice</h3>
-      <button class="speak-btn" data-target="#readingEnglish" title="朗读英文正文">🔊 朗读</button>
+      <button class="speak-btn" data-dialogue="readingEnglish" title="朗读英文正文（逐句连读）">🔊 朗读课文</button>
     </div>
 
     <div class="reading" id="readingText">
       <div id="readingEnglish">
       <div class="notice">
-        <div class="title">Found</div>
-        <p>Is this your schoolbag? It's blue and white. There are two notebooks, a pencil case and a dictionary in it.</p>
-        <p>Please call me at 358-7921. Ask for Mary.</p>
+        <div class="title en-text" data-speak="Found">Found</div>
+        <p class="en-text" data-speak="Is this your schoolbag? It's blue and white. There are two notebooks, a pencil case and a dictionary in it.">Is this your schoolbag? It's blue and white. There are two notebooks, a pencil case and a dictionary in it.</p>
+        <p class="en-text" data-speak="Please call me at 358-7921. Ask for Mary.">Please call me at 358-7921. Ask for Mary.</p>
       </div>
       <div class="notice">
         <div class="title">Lost</div>
@@ -362,16 +365,16 @@
 </details>
 
 <!-- ====== 语法聚焦 ====== -->
-<details class="module" open>
-  <summary>📚 语法聚焦 · Demonstratives &amp; Possessives</summary>
+<details class="module detail-module" open>
+  <summary>📚 语法聚焦 · Demonstratives &amp; Possessives <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary>
   <div class="content">
 
     <div class="grammar-module">
       <h3>1️⃣ 指示代词：this / that / these / those</h3>
       <table class="grammar-table">
         <tr><th></th><th>单数</th><th>复数</th></tr>
-        <tr><td><strong>近处</strong>（眼前/手里）</td><td><strong>this</strong> 这个</td><td><strong>these</strong> 这些</td></tr>
-        <tr><td><strong>远处</strong>（那边/远处）</td><td><strong>that</strong> 那个</td><td><strong>those</strong> 那些</td></tr>
+        <tr><td><strong>近处</strong>（眼前/手里）</td><td><span class="wotd-say" data-speak="this"><strong>this</strong> 这个</span></td><td><span class="wotd-say" data-speak="these"><strong>these</strong> 这些</span></td></tr>
+        <tr><td><strong>远处</strong>（那边/远处）</td><td><span class="wotd-say" data-speak="that"><strong>that</strong> 那个</span></td><td><span class="wotd-say" data-speak="those"><strong>those</strong> 那些</span></td></tr>
       </table>
       <p style="font-size:14px;margin-top:8px;">📌 <strong>顺口溜：</strong>this these 近，that those 远。this that 后跟单数，these those 后跟复数。</p>
     </div>
@@ -380,10 +383,10 @@
       <h3>2️⃣ 物主代词：形容词性 vs 名词性</h3>
       <table class="grammar-table">
         <tr><th>人称</th><th>形容词性物主代词<br><span style="font-weight:400;">(后面必须跟名词)</span></th><th>名词性物主代词<br><span style="font-weight:400;">(后面不能跟名词)</span></th></tr>
-        <tr><td>第一人称</td><td><strong>my</strong> 我的</td><td><strong>mine</strong> 我的（东西）</td></tr>
-        <tr><td>第二人称</td><td><strong>your</strong> 你的/你们的</td><td><strong>yours</strong> 你的/你们的（东西）</td></tr>
-        <tr><td>第三人称(男)</td><td><strong>his</strong> 他的</td><td><strong>his</strong> 他的（东西）</td></tr>
-        <tr><td>第三人称(女)</td><td><strong>her</strong> 她的</td><td><strong>hers</strong> 她的（东西）</td></tr>
+        <tr><td>第一人称</td><td><span class="wotd-say" data-speak="my"><strong>my</strong> 我的</span></td><td><span class="wotd-say" data-speak="mine"><strong>mine</strong> 我的（东西）</span></td></tr>
+        <tr><td>第二人称</td><td><span class="wotd-say" data-speak="your"><strong>your</strong> 你的/你们的</span></td><td><span class="wotd-say" data-speak="yours"><strong>yours</strong> 你的/你们的（东西）</span></td></tr>
+        <tr><td>第三人称(男)</td><td><span class="wotd-say" data-speak="his"><strong>his</strong> 他的</span></td><td><span class="wotd-say" data-speak="his"><strong>his</strong> 他的（东西）</span></td></tr>
+        <tr><td>第三人称(女)</td><td><span class="wotd-say" data-speak="her"><strong>her</strong> 她的</span></td><td><span class="wotd-say" data-speak="hers"><strong>hers</strong> 她的（东西）</span></td></tr>
       </table>
       <p style="font-size:14px;margin-top:8px;">📌 <strong>对比：</strong></p>
       <p style="font-size:14px;">This is <strong>my</strong> book. = This book is <strong>mine</strong>.<br>
@@ -392,12 +395,12 @@
 
       <div class="chinese-error">
         <strong>⚠️ 中式英语纠错：</strong><br>
-        ❌ <span class="wrong">This is mine book.</span>（mine 后面不能跟名词）<br>
-        ✅ <span class="correct">This is my book.</span> 或 <span class="correct">This book is mine.</span><br><br>
-        ❌ <span class="wrong">This is I pen.</span>（用 I 替代 my，人称错误）<br>
-        ✅ <span class="correct">This is my pen.</span><br><br>
-        ❌ <span class="wrong">She lost her pencil. This isn't her.</span>（her 不能单独作表语）<br>
-        ✅ <span class="correct">She lost her pencil. This isn't hers.</span>
+        ❌ <span class="wrong wotd-say" data-speak="This is mine book.">This is mine book.</span>（mine 后面不能跟名词）<br>
+        ✅ <span class="correct wotd-say" data-speak="This is my book.">This is my book.</span> 或 <span class="correct wotd-say" data-speak="This book is mine.">This book is mine.</span><br><br>
+        ❌ <span class="wrong wotd-say" data-speak="This is I pen.">This is I pen.</span>（用 I 替代 my，人称错误）<br>
+        ✅ <span class="correct wotd-say" data-speak="This is my pen.">This is my pen.</span><br><br>
+        ❌ <span class="wrong wotd-say" data-speak="She lost her pencil. This isn't her.">She lost her pencil. This isn't her.</span>（her 不能单独作表语）<br>
+        ✅ <span class="correct wotd-say" data-speak="She lost her pencil. This isn't hers.">She lost her pencil. This isn't hers.</span>
       </div>
     </div>
 
@@ -406,9 +409,9 @@
       <p>在英语中，表示"某人的"时，在名词后面加 <strong>'s</strong>。</p>
       <table class="grammar-table">
         <tr><th>规则</th><th>示例</th></tr>
-        <tr><td>单数名词 + 's</td><td>Mike's ruler（迈克的尺子） → the ruler <strong>is Mike's</strong></td></tr>
-        <tr><td>以 s 结尾的复数 + '</td><td>The teachers' office（老师们的办公室）</td></tr>
-        <tr><td>不规则复数 + 's</td><td>The children's books（孩子们的书）</td></tr>
+        <tr><td>单数名词 + 's</td><td><span class="wotd-say" data-speak="Mike's ruler">Mike's ruler（迈克的尺子） → the ruler <strong>is Mike's</strong></span></td></tr>
+        <tr><td>以 s 结尾的复数 + '</td><td><span class="wotd-say" data-speak="The teachers' office">The teachers' office（老师们的办公室）</span></td></tr>
+        <tr><td>不规则复数 + 's</td><td><span class="wotd-say" data-speak="The children's books">The children's books（孩子们的书）</span></td></tr>
       </table>
       <div class="grammar-tip">
         <strong>💡 对比：</strong><br>
@@ -459,58 +462,62 @@
       <div class="q-body"><span class="q-speak-wrap" id="q4">— Is that ____ eraser? (you)<br>— No, it isn't. ____ is white. (I)</span> <button class="speak-btn" data-target="q4" title="朗读题目">🔊</button></div>
       <span class="q-toggle">📝 查看答案</span>
       <div class="q-solution"><strong>答案：</strong>your; Mine<br><strong>解析：</strong>第一空后跟名词 eraser，用形容词性物主代词 your；第二空单独作主语（= my eraser），用名词性物主代词 Mine。</div>
-    </div>
-
-    <div class="exam-q">
+    </div    <div class="exam-q">
       <span class="q-tag">提升</span>
       <span class="q-diff mid">★★☆</span>
       <div class="q-body"><span class="q-speak-wrap" id="q2140">连词成句：these / are / your / notebooks / ?</span> <button class="speak-btn" data-target="q2140" title="朗读题目">🔊</button></div>
       <span class="q-toggle">📝 查看答案</span>
       <div class="q-solution"><strong>答案：</strong>Are these your notebooks?<br><strong>解析：</strong>一般疑问句以 be 动词开头，notebooks 是复数，用 Are。注意首字母大写和句末问号。</div>
-    </<div class="q-body"><span class="q-speak-wrap" id="q2524">— ____ ruler is this?<br>— It's ____. (Mike)</span> <button class="speak-btn" data-target="q2524" title="朗读题目">🔊</button></div>   <span class="q-diff mid">★★☆</span>
-      <div class="q-body">— ____ ruler is this?<br>— It's ____. (Mike)</div>
+    </div>
+
+    <div class="exam-q">
+      <span class="q-tag">提升</span>
+      <span class="q-diff mid">★★☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q2524">— ____ ruler is this?<br>— It's ____. (Mike)</span> <button class="speak-btn" data-target="q2524" title="朗读题目">🔊</button></div>
       <span class="q-toggle">📝 查看答案</span>
-      <div class="q-solution"><strong>答案：</strong>Whose; Mike's<br><strong>解析：</strong>问"谁的"用 Whose。回答用名词<div class="q-body"><span class="q-speak-wrap" id="q2973">改错：This pens are mine. Those one is yours.</span> <button class="speak-btn" data-target="q2973" title="朗读题目">🔊</button></div>r(--accent);margin:20px 0 10px;">🥇 挑战关 · 综合拔高</h3>
+      <div class="q-solution"><strong>答案：</strong>Whose; Mike's<br><strong>解析：</strong>问"谁的"用 Whose。回答用名词所有格 Mike's = Mike's ruler。</div>
+    </div>
 
     <div class="exam-q">
       <span class="q-tag">挑战</span>
       <span class="q-diff hard">★★★</span>
-      <div class="q-body">改错：This pens are mine. Those one is yours.</div>
-      <span class="q-toggle<div class="q-body"><span class="q-speak-wrap" id="q3414">根据上下文补全对话：<br>
-      A: Look! I found a watch on the playground.<br>
-      B: ____ watch is it?<br>
-      A: I don't know. ____ you know?<br>
-      B: Let me see. There's a name "Tom" on the back. Maybe it's ____.<br>
-      A: Let's go and ask him.</span> <button class="speak-btn" data-target="q3414" title="朗读题目">🔊</button></div>ass="q-tag">挑战</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q2973">改错：This pens are mine. Those one is yours.</span> <button class="speak-btn" data-target="q2973" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>These pens are mine. That one is yours.<br><strong>解析：</strong>pens 是复数，指示代词应该用复数 These；one 是单数，指示代词应该用单数 That。注意 this/that 后跟单数名词，these/those 后跟复数名词。</div>
+    </div>
+
+    <div class="exam-q">
+      <span class="q-tag">挑战</span>
       <span class="q-diff hard">★★★</span>
-      <div class="q-body">根据上下文补全对话：<br>
+      <div class="q-body"><span class="q-speak-wrap" id="q3414">根据上下文补全对话：<br>
       A: Look! I found a watch on the playground.<br>
       B: ____ watch is it?<br>
       A: I don't know. ____ you know?<br>
       B: Let me see. There's a name "Tom" on the back. Maybe it's ____.<br>
-      A: Let's go and ask him.</div>
+      A: Let's go and ask him.</span> <button class="speak-btn" data-target="q3414" title="朗读题目">🔊</button></div>
       <span class="q-toggle">📝 查看答案</span>
       <div class="q-solution"><strong>答案：</strong>Whose; Do; his<br><strong>解析：</strong>第一空问"谁的"用 Whose；第二空是问句，you 前需要助动词 Do；第三空表示"也许是他的"用名词性物主代词 his (= his watch)。</div>
     </div>
 
   </div>
+
 </details>
 
 <!-- ====== 微写作 ====== -->
-<div class="micro-writing">
+<div class="micro-writing detail-module">
   <h3>✍️ 微写作：Lost &amp; Found Notice</h3>
   <p>假设你丢失了学生证，请用英文写一则寻物启事。注意格式：标题 Lost，描述物品特征，留下联系方式。</p>
-  <div class="model">
-    <p class="en"><strong>Lost:</strong></p>
-    <p class="en">I lost my school ID card. It's blue and white. My name "Zhang Wei" is on it.</p>
-    <p class="en">I must find it. Please call me at 139-1234-5678.</p>
-    <p class="en">Thanks!</p>
+  <div class="model" id="microModel">
+    <p class="en"><span class="wotd-say" data-speak="Lost:"><strong>Lost:</strong></span></p>
+    <p class="en"><span class="wotd-say" data-speak="I lost my school ID card. It's blue and white. My name "Zhang Wei" is on it.">I lost my school ID card. It's blue and white. My name "Zhang Wei" is on it.</span></p>
+    <p class="en"><span class="wotd-say" data-speak="I must find it. Please call me at 139-1234-5678.">I must find it. Please call me at 139-1234-5678.</span></p>
+    <p class="en"><span class="wotd-say" data-speak="Thanks!">Thanks!</span></p>
     <span class="trans">我丢失了学生证。它是蓝白色的，上面有我的名字"张伟"。我必须找到它。请致电 139-1234-5678。谢谢！</span>
   </div>
 </div>
 
 <!-- ====== 自查清单 ====== -->
-<div class="checklist">
+<div class="checklist detail-module">
   <h3>✅ 章节自查清单</h3>
   <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能分清 this/that/these/those 的区别，并正确使用</label>
   <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我理解形容词性物主代词(my/your/his/her) 和名词性物主代词(mine/yours/his/hers) 的区别</label>

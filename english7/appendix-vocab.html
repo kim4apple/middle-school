@@ -489,9 +489,9 @@ function htmlEncode(s) {
 
 function shortUnitLabel(label, title) {
   var t = title.split('|')[0].trim();
-  if (label.indexOf('st') === 0) return 'S' + parseInt(label.slice(2)) + ' ' + t.replace(/^Starter \d+ /, '');
-  if (label.indexOf('b2u') === 0) return '7A-U' + parseInt(label.slice(3)) + ' ' + t.replace(/^七下 Unit \d+ /, '');
-  return 'U' + parseInt(label.slice(1)) + ' ' + t.replace(/^Unit \d+ /, '');
+  if (label.indexOf('st') === 0) return '7A-S' + parseInt(label.slice(2)) + ' ' + t.replace(/^Starter \d+ /, '');
+  if (label.indexOf('b2u') === 0) return '7B-U' + parseInt(label.slice(3)) + ' ' + t.replace(/^七下 Unit \d+ /, '');
+  return '7A-U' + parseInt(label.slice(1)) + ' ' + t.replace(/^Unit \d+ /, '');
 }
 
 function shuffle(arr) {

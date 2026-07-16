@@ -220,10 +220,10 @@
 
 <!-- ====== 重点词汇 ====== -->
 <details class="module" open>
-  <summary>📝 重点词汇 · School things</summary>
+   <summary>📝 重点词汇 · School things <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇（含例句）">🔊 朗读全部词汇</button></summary>
   <div class="content">
 
-    <div class="vocab-grid">
+    <div class="vocab-grid" id="vocabGrid">
 
       <div class="vocab-card">
         <span class="headword wotd-say" data-speak="pencil">pencil</span>
@@ -651,6 +651,44 @@
       speakNext();
     },
 
+    speakVocabSection: function(containerId, callback) {
+      var self = this;
+      var container = document.getElementById(containerId);
+      if (!container) return;
+      var cards = container.querySelectorAll('.vocab-card');
+      var index = 0;
+      this.stop();
+      function speakNext() {
+        if (index >= cards.length) { self.speaking = false; if (callback) callback(); return; }
+        var card = cards[index];
+        var headword = card.querySelector('.headword');
+        var def = card.querySelector('.definition');
+        var example = card.querySelector('.example .wotd-say');
+        var textParts = [];
+        if (headword) {
+          textParts.push(headword.getAttribute('data-speak') || headword.textContent);
+        }
+        if (example) {
+          textParts.push(example.getAttribute('data-speak') || example.textContent.replace(/<[^>]+>/g, '').trim());
+        }
+        var fullText = textParts.join('. ');
+        if (!fullText) { index++; speakNext(); return; }
+        headword.classList.add('speaking');
+        var utterance = new SpeechSynthesisUtterance(fullText);
+        utterance.lang = self.voiceURI;
+        utterance.rate = self.rate;
+        utterance.onend = function() {
+          headword.classList.remove('speaking');
+          index++;
+          setTimeout(speakNext, 600);
+        };
+        utterance.onerror = function() { headword.classList.remove('speaking'); index++; setTimeout(speakNext, 300); };
+        self.currentUtterance = utterance;
+        self.synthesis.speak(utterance);
+      }
+      speakNext();
+    },
+
     stop: function() {
       this.synthesis.cancel();
       this.speaking = false;
@@ -672,12 +710,15 @@
     btn.addEventListener('click', function(e) {
       e.stopPropagation();
       var dialogueId = this.getAttribute('data-dialogue');
+      var vocabId = this.getAttribute('data-vocab');
       var targetId = this.getAttribute('data-target');
       if (this.classList.contains('speaking')) { SpeechManager.stop(); this.classList.remove('speaking'); return; }
       this.classList.add('speaking');
       var done = function() { btn.classList.remove('speaking'); };
       if (dialogueId) {
         SpeechManager.speakDialogue(dialogueId, done);
+      } else if (vocabId) {
+        SpeechManager.speakVocabSection(vocabId, done);
       } else if (targetId) {
         var target = document.getElementById(targetId);
         if (!target) { btn.classList.remove('speaking'); return; }

@@ -15,6 +15,8 @@
 }
 .speak-btn:hover { background: var(--accent-light); }
 .speak-btn.speaking { background: var(--eng-amber-light); color: var(--eng-amber); border-color: var(--eng-amber); }
+.headword-speak-indicator { font-size: 11px; margin-left: 3px; opacity: 0.55; cursor: pointer; vertical-align: super; line-height: 1; }
+.headword-speak-indicator:hover { opacity: 1; }
 .wotd-say {
   cursor: pointer; transition: color 0.15s;
 }
@@ -736,6 +738,18 @@
     });
   });
 
+  
+  // Bind headword speaker indicator clicks
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var headword = this.previousElementSibling;
+      if (headword && headword.classList.contains('wotd-say')) {
+        var text = headword.getAttribute('data-speak') || headword.textContent;
+        SpeechManager.speak(text);
+      }
+    });
+  });
   // ===== Theme toggle =====
   var toggle = document.getElementById('theme-toggle');
   var html = document.documentElement;

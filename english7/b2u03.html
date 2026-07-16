@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme="light">
+<html lang="zh-CN" >
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,6 +52,7 @@
 .detail-module { content-visibility: auto; contain-intrinsic-size: 300px; }
 .reading { content-visibility: auto; contain-intrinsic-size: 400px; }
 </style>
+<script>(function(){var t=localStorage.getItem("eng7-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
 </head>
 <body>
 
@@ -95,7 +96,7 @@
     <a href="b2u12.html">U12 What did you do last weekend?</a>
   </nav>
   <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
-  <button id="theme-toggle" class="theme-toggle" style="margin-top:10px;">🌙 暗色模式</button>
+  <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
 </nav>
 
 <main id="content">
@@ -565,16 +566,6 @@
       var toggleBtn = document.getElementById('speechToggleBtn');
       var panel = document.getElementById('speechPanel');
 
-      var saved = localStorage.getItem('speech-rate');
-      if (saved) { this.rate = parseFloat(saved); rateInput.value = this.rate; rateLabel.textContent = this.rate; }
-      var savedVoice = localStorage.getItem('speech-voice');
-      if (savedVoice) { this.voiceURI = savedVoice; voiceSelect.value = savedVoice; }
-
-      rateInput.addEventListener('input', function() {
-        self.rate = parseFloat(this.value);
-        rateLabel.textContent = this.value;
-        localStorage.setItem('speech-rate', this.value);
-      });
       voiceSelect.addEventListener('change', function() {
         self.voiceURI = this.value;
         localStorage.setItem('speech-voice', this.value);
@@ -725,17 +716,6 @@
     });
   });
 
-  var toggle = document.getElementById('theme-toggle');
-  if (toggle) {
-    var html = document.documentElement;
-    var saved = localStorage.getItem('site-theme');
-    if (saved === 'dark') { html.setAttribute('data-theme', 'dark'); toggle.textContent = '☀️ 亮色模式'; }
-    toggle.addEventListener('click', function() {
-      var isDark = html.getAttribute('data-theme') === 'dark';
-      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-      toggle.textContent = isDark ? '🌙 暗色模式' : '☀️ 亮色模式';
-      localStorage.setItem('site-theme', isDark ? 'light' : 'dark');
-    });
   }
 
   (function() {
@@ -771,6 +751,10 @@
     b.addEventListener('click', function(e) { e.stopPropagation(); this.parentElement.classList.toggle('show-solution'); });
   });
 })();
+
+function setTheme(t) { document.documentElement.setAttribute("data-theme", t); localStorage.setItem("eng7-theme", t); var btn = document.getElementById("themeToggle"); if (btn) btn.textContent = t === "dark" ? "☀️" : "🌙"; }
+function toggleTheme() { setTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark"); }
+
 </script>
 
 </body>

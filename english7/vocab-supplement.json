@@ -1,0 +1,3512 @@
+{
+  "st01": [
+    {
+      "w": "I",
+      "ipa": "/aɪ/",
+      "pos": "pron.",
+      "def": "我"
+    },
+    {
+      "w": "am",
+      "ipa": "/æm/",
+      "pos": "v.",
+      "def": "是"
+    },
+    {
+      "w": "are",
+      "ipa": "/ɑːr/",
+      "pos": "v.",
+      "def": "是"
+    },
+    {
+      "w": "you",
+      "ipa": "/juː/",
+      "pos": "pron.",
+      "def": "你；你们"
+    },
+    {
+      "w": "Mrs.",
+      "ipa": "/ˈmɪsɪz/",
+      "pos": "n.",
+      "def": "夫人；太太"
+    },
+    {
+      "w": "Mr.",
+      "ipa": "/ˈmɪstər/",
+      "pos": "n.",
+      "def": "先生"
+    },
+    {
+      "w": "Ms.",
+      "ipa": "/mɪz/",
+      "pos": "n.",
+      "def": "女士"
+    },
+    {
+      "w": "Miss",
+      "ipa": "/mɪs/",
+      "pos": "n.",
+      "def": "小姐；老师"
+    },
+    {
+      "w": "how",
+      "ipa": "/haʊ/",
+      "pos": "adv.",
+      "def": "怎样；如何"
+    },
+    {
+      "w": "stand",
+      "ipa": "/stænd/",
+      "pos": "v.",
+      "def": "站；立"
+    },
+    {
+      "w": "up",
+      "ipa": "/ʌp/",
+      "pos": "adv.",
+      "def": "向上"
+    },
+    {
+      "w": "sit",
+      "ipa": "/sɪt/",
+      "pos": "v.",
+      "def": "坐"
+    },
+    {
+      "w": "down",
+      "ipa": "/daʊn/",
+      "pos": "adv.",
+      "def": "向下"
+    },
+    {
+      "w": "please",
+      "ipa": "/pliːz/",
+      "pos": "interj.",
+      "def": "请"
+    },
+    {
+      "w": "thank",
+      "ipa": "/θæŋk/",
+      "pos": "v.",
+      "def": "感谢"
+    },
+    {
+      "w": "see",
+      "ipa": "/siː/",
+      "pos": "v.",
+      "def": "看见；见到"
+    },
+    {
+      "w": "yes",
+      "ipa": "/jes/",
+      "pos": "adv.",
+      "def": "是的"
+    },
+    {
+      "w": "no",
+      "ipa": "/noʊ/",
+      "pos": "adv.",
+      "def": "不；不是"
+    },
+    {
+      "w": "sorry",
+      "ipa": "/ˈsɒri/",
+      "pos": "adj.",
+      "def": "抱歉的"
+    },
+    {
+      "w": "OK",
+      "ipa": "/oʊˈkeɪ/",
+      "pos": "adv.",
+      "def": "好；行"
+    }
+  ],
+  "st02": [
+    {
+      "w": "what",
+      "ipa": "/wɒt/",
+      "pos": "pron.",
+      "def": "什么"
+    },
+    {
+      "w": "this",
+      "ipa": "/ðɪs/",
+      "pos": "pron.",
+      "def": "这个"
+    },
+    {
+      "w": "in",
+      "ipa": "/ɪn/",
+      "pos": "prep.",
+      "def": "在……里；用"
+    },
+    {
+      "w": "English",
+      "ipa": "/ˈɪŋɡlɪʃ/",
+      "pos": "n.",
+      "def": "英语"
+    },
+    {
+      "w": "a",
+      "ipa": "/ə/",
+      "pos": "art.",
+      "def": "一个"
+    },
+    {
+      "w": "an",
+      "ipa": "/æn/",
+      "pos": "art.",
+      "def": "一个"
+    },
+    {
+      "w": "it",
+      "ipa": "/ɪt/",
+      "pos": "pron.",
+      "def": "它"
+    },
+    {
+      "w": "that",
+      "ipa": "/ðæt/",
+      "pos": "pron.",
+      "def": "那个"
+    },
+    {
+      "w": "spell",
+      "ipa": "/spel/",
+      "pos": "v.",
+      "def": "拼写"
+    },
+    {
+      "w": "please",
+      "ipa": "/pliːz/",
+      "pos": "interj.",
+      "def": "请"
+    },
+    {
+      "w": "map",
+      "ipa": "/mæp/",
+      "pos": "n.",
+      "def": "地图"
+    },
+    {
+      "w": "cup",
+      "ipa": "/kʌp/",
+      "pos": "n.",
+      "def": "杯子"
+    },
+    {
+      "w": "ruler",
+      "ipa": "/ˈruːlər/",
+      "pos": "n.",
+      "def": "尺子"
+    },
+    {
+      "w": "pen",
+      "ipa": "/pen/",
+      "pos": "n.",
+      "def": "钢笔"
+    },
+    {
+      "w": "orange",
+      "ipa": "/ˈɒrɪndʒ/",
+      "pos": "n.",
+      "def": "橙子"
+    },
+    {
+      "w": "jacket",
+      "ipa": "/ˈdʒækɪt/",
+      "pos": "n.",
+      "def": "夹克衫"
+    },
+    {
+      "w": "key",
+      "ipa": "/kiː/",
+      "pos": "n.",
+      "def": "钥匙"
+    },
+    {
+      "w": "quilt",
+      "ipa": "/kwɪlt/",
+      "pos": "n.",
+      "def": "被子"
+    }
+  ],
+  "st03": [
+    {
+      "w": "color",
+      "ipa": "/ˈkʌlər/",
+      "pos": "n.",
+      "def": "颜色"
+    },
+    {
+      "w": "red",
+      "ipa": "/red/",
+      "pos": "adj.",
+      "def": "红色的"
+    },
+    {
+      "w": "yellow",
+      "ipa": "/ˈjeloʊ/",
+      "pos": "adj.",
+      "def": "黄色的"
+    },
+    {
+      "w": "green",
+      "ipa": "/ɡriːn/",
+      "pos": "adj.",
+      "def": "绿色的"
+    },
+    {
+      "w": "blue",
+      "ipa": "/bluː/",
+      "pos": "adj.",
+      "def": "蓝色的"
+    },
+    {
+      "w": "black",
+      "ipa": "/blæk/",
+      "pos": "adj.",
+      "def": "黑色的"
+    },
+    {
+      "w": "white",
+      "ipa": "/waɪt/",
+      "pos": "adj.",
+      "def": "白色的"
+    },
+    {
+      "w": "purple",
+      "ipa": "/ˈpɜːrpl/",
+      "pos": "adj.",
+      "def": "紫色的"
+    },
+    {
+      "w": "brown",
+      "ipa": "/braʊn/",
+      "pos": "adj.",
+      "def": "棕色的"
+    },
+    {
+      "w": "pink",
+      "ipa": "/pɪŋk/",
+      "pos": "adj.",
+      "def": "粉色的"
+    },
+    {
+      "w": "now",
+      "ipa": "/naʊ/",
+      "pos": "adv.",
+      "def": "现在"
+    },
+    {
+      "w": "can",
+      "ipa": "/kæn/",
+      "pos": "modal v.",
+      "def": "能；可以"
+    },
+    {
+      "w": "say",
+      "ipa": "/seɪ/",
+      "pos": "v.",
+      "def": "说"
+    },
+    {
+      "w": "my",
+      "ipa": "/maɪ/",
+      "pos": "pron.",
+      "def": "我的"
+    },
+    {
+      "w": "your",
+      "ipa": "/jɔːr/",
+      "pos": "pron.",
+      "def": "你的；你们的"
+    }
+  ],
+  "u01": [
+    {
+      "w": "I'm",
+      "ipa": "/aɪm/",
+      "pos": "abbr.",
+      "def": "我是"
+    },
+    {
+      "w": "your",
+      "ipa": "/jɔːr/",
+      "pos": "pron.",
+      "def": "你的；你们的"
+    },
+    {
+      "w": "his",
+      "ipa": "/hɪz/",
+      "pos": "pron.",
+      "def": "他的"
+    },
+    {
+      "w": "her",
+      "ipa": "/hɜːr/",
+      "pos": "pron.",
+      "def": "她的"
+    },
+    {
+      "w": "yes",
+      "ipa": "/jes/",
+      "pos": "adv.",
+      "def": "是的"
+    },
+    {
+      "w": "she",
+      "ipa": "/ʃiː/",
+      "pos": "pron.",
+      "def": "她"
+    },
+    {
+      "w": "he",
+      "ipa": "/hiː/",
+      "pos": "pron.",
+      "def": "他"
+    },
+    {
+      "w": "not",
+      "ipa": "/nɒt/",
+      "pos": "adv.",
+      "def": "不"
+    },
+    {
+      "w": "aren't",
+      "ipa": "/ɑːrnt/",
+      "pos": "abbr.",
+      "def": "不是"
+    },
+    {
+      "w": "isn't",
+      "ipa": "/ˈɪznt/",
+      "pos": "abbr.",
+      "def": "不是"
+    },
+    {
+      "w": "aren't",
+      "ipa": "/ɑːrnt/",
+      "pos": "abbr.",
+      "def": "不是"
+    },
+    {
+      "w": "China",
+      "ipa": "/ˈtʃaɪnə/",
+      "pos": "n.",
+      "def": "中国"
+    },
+    {
+      "w": "English",
+      "ipa": "/ˈɪŋglɪʃ/",
+      "pos": "n.",
+      "def": "英语；英国人"
+    },
+    {
+      "w": "American",
+      "ipa": "/əˈmerɪkən/",
+      "pos": "adj.",
+      "def": "美国的"
+    },
+    {
+      "w": "too",
+      "ipa": "/tuː/",
+      "pos": "adv.",
+      "def": "也；太"
+    },
+    {
+      "w": "very",
+      "ipa": "/ˈveri/",
+      "pos": "adv.",
+      "def": "很；非常"
+    },
+    {
+      "w": "and",
+      "ipa": "/ænd/",
+      "pos": "conj.",
+      "def": "和；又"
+    },
+    {
+      "w": "but",
+      "ipa": "/bʌt/",
+      "pos": "conj.",
+      "def": "但是"
+    },
+    {
+      "w": "or",
+      "ipa": "/ɔːr/",
+      "pos": "conj.",
+      "def": "或者"
+    },
+    {
+      "w": "hi",
+      "ipa": "/haɪ/",
+      "pos": "interj.",
+      "def": "嗨"
+    },
+    {
+      "w": "hello",
+      "ipa": "/həˈloʊ/",
+      "pos": "interj.",
+      "def": "你好"
+    },
+    {
+      "w": "goodbye",
+      "ipa": "/ɡʊdˈbaɪ/",
+      "pos": "interj.",
+      "def": "再见"
+    },
+    {
+      "w": "bye",
+      "ipa": "/baɪ/",
+      "pos": "interj.",
+      "def": "再见"
+    }
+  ],
+  "u02": [
+    {
+      "w": "sister",
+      "ipa": "/ˈsɪstər/",
+      "pos": "n.",
+      "def": "姐妹"
+    },
+    {
+      "w": "brother",
+      "ipa": "/ˈbrʌðər/",
+      "pos": "n.",
+      "def": "兄弟"
+    },
+    {
+      "w": "mother",
+      "ipa": "/ˈmʌðər/",
+      "pos": "n.",
+      "def": "母亲"
+    },
+    {
+      "w": "father",
+      "ipa": "/ˈfɑːðər/",
+      "pos": "n.",
+      "def": "父亲"
+    },
+    {
+      "w": "parent",
+      "ipa": "/ˈperənt/",
+      "pos": "n.",
+      "def": "父（母）"
+    },
+    {
+      "w": "grandmother",
+      "ipa": "/ˈɡrænmʌðər/",
+      "pos": "n.",
+      "def": "祖母"
+    },
+    {
+      "w": "grandfather",
+      "ipa": "/ˈɡrænfɑːðər/",
+      "pos": "n.",
+      "def": "祖父"
+    },
+    {
+      "w": "family",
+      "ipa": "/ˈfæməli/",
+      "pos": "n.",
+      "def": "家庭"
+    },
+    {
+      "w": "those",
+      "ipa": "/ðoʊz/",
+      "pos": "pron.",
+      "def": "那些"
+    },
+    {
+      "w": "these",
+      "ipa": "/ðiːz/",
+      "pos": "pron.",
+      "def": "这些"
+    },
+    {
+      "w": "who",
+      "ipa": "/huː/",
+      "pos": "pron.",
+      "def": "谁"
+    },
+    {
+      "w": "they",
+      "ipa": "/ðeɪ/",
+      "pos": "pron.",
+      "def": "他（她/它）们"
+    },
+    {
+      "w": "well",
+      "ipa": "/wel/",
+      "pos": "interj.",
+      "def": "嗯；好吧"
+    },
+    {
+      "w": "have",
+      "ipa": "/hæv/",
+      "pos": "v.",
+      "def": "有"
+    },
+    {
+      "w": "day",
+      "ipa": "/deɪ/",
+      "pos": "n.",
+      "def": "一天；白天"
+    },
+    {
+      "w": "dear",
+      "ipa": "/dɪər/",
+      "pos": "adj.",
+      "def": "亲爱的"
+    },
+    {
+      "w": "photo",
+      "ipa": "/ˈfoʊtoʊ/",
+      "pos": "n.",
+      "def": "照片"
+    },
+    {
+      "w": "picture",
+      "ipa": "/ˈpɪktʃər/",
+      "pos": "n.",
+      "def": "图画；照片"
+    },
+    {
+      "w": "girl",
+      "ipa": "/ɡɜːrl/",
+      "pos": "n.",
+      "def": "女孩"
+    },
+    {
+      "w": "boy",
+      "ipa": "/bɔɪ/",
+      "pos": "n.",
+      "def": "男孩"
+    },
+    {
+      "w": "aunt",
+      "ipa": "/ænt/",
+      "pos": "n.",
+      "def": "阿姨；姑姑"
+    },
+    {
+      "w": "uncle",
+      "ipa": "/ˈʌŋkl/",
+      "pos": "n.",
+      "def": "叔叔；舅舅"
+    },
+    {
+      "w": "son",
+      "ipa": "/sʌn/",
+      "pos": "n.",
+      "def": "儿子"
+    },
+    {
+      "w": "daughter",
+      "ipa": "/ˈdɔːtər/",
+      "pos": "n.",
+      "def": "女儿"
+    },
+    {
+      "w": "cousin",
+      "ipa": "/ˈkʌzn/",
+      "pos": "n.",
+      "def": "堂（表）兄弟姐妹"
+    }
+  ],
+  "u03": [
+    {
+      "w": "pencil",
+      "ipa": "/ˈpensl/",
+      "pos": "n.",
+      "def": "铅笔"
+    },
+    {
+      "w": "book",
+      "ipa": "/bʊk/",
+      "pos": "n.",
+      "def": "书"
+    },
+    {
+      "w": "eraser",
+      "ipa": "/ɪˈreɪsər/",
+      "pos": "n.",
+      "def": "橡皮"
+    },
+    {
+      "w": "box",
+      "ipa": "/bɒks/",
+      "pos": "n.",
+      "def": "盒子"
+    },
+    {
+      "w": "schoolbag",
+      "ipa": "/ˈskuːlbæɡ/",
+      "pos": "n.",
+      "def": "书包"
+    },
+    {
+      "w": "dictionary",
+      "ipa": "/ˈdɪkʃəneri/",
+      "pos": "n.",
+      "def": "字典"
+    },
+    {
+      "w": "teacher",
+      "ipa": "/ˈtiːtʃər/",
+      "pos": "n.",
+      "def": "老师"
+    },
+    {
+      "w": "student",
+      "ipa": "/ˈstuːdnt/",
+      "pos": "n.",
+      "def": "学生"
+    },
+    {
+      "w": "classroom",
+      "ipa": "/ˈklæsruːm/",
+      "pos": "n.",
+      "def": "教室"
+    },
+    {
+      "w": "school",
+      "ipa": "/skuːl/",
+      "pos": "n.",
+      "def": "学校"
+    },
+    {
+      "w": "library",
+      "ipa": "/ˈlaɪbreri/",
+      "pos": "n.",
+      "def": "图书馆"
+    },
+    {
+      "w": "watch",
+      "ipa": "/wɒtʃ/",
+      "pos": "n.",
+      "def": "手表"
+    },
+    {
+      "w": "ring",
+      "ipa": "/rɪŋ/",
+      "pos": "n.",
+      "def": "戒指；环"
+    },
+    {
+      "w": "bag",
+      "ipa": "/bæɡ/",
+      "pos": "n.",
+      "def": "袋子；包"
+    },
+    {
+      "w": "baseball",
+      "ipa": "/ˈbeɪsbɔːl/",
+      "pos": "n.",
+      "def": "棒球"
+    },
+    {
+      "w": "some",
+      "ipa": "/sʌm/",
+      "pos": "adj.",
+      "def": "一些"
+    },
+    {
+      "w": "find",
+      "ipa": "/faɪnd/",
+      "pos": "v.",
+      "def": "找到；发现"
+    },
+    {
+      "w": "lost",
+      "ipa": "/lɒst/",
+      "pos": "adj.",
+      "def": "丢失的"
+    },
+    {
+      "w": "call",
+      "ipa": "/kɔːl/",
+      "pos": "v.",
+      "def": "打电话"
+    },
+    {
+      "w": "must",
+      "ipa": "/mʌst/",
+      "pos": "modal v.",
+      "def": "必须"
+    },
+    {
+      "w": "help",
+      "ipa": "/help/",
+      "pos": "v.",
+      "def": "帮助"
+    },
+    {
+      "w": "thank",
+      "ipa": "/θæŋk/",
+      "pos": "v.",
+      "def": "感谢"
+    },
+    {
+      "w": "excuse",
+      "ipa": "/ɪkˈskjuːz/",
+      "pos": "v.",
+      "def": "原谅"
+    },
+    {
+      "w": "me",
+      "ipa": "/miː/",
+      "pos": "pron.",
+      "def": "我（宾格）"
+    }
+  ],
+  "u04": [
+    {
+      "w": "where",
+      "ipa": "/wer/",
+      "pos": "adv.",
+      "def": "在哪里"
+    },
+    {
+      "w": "come",
+      "ipa": "/kʌm/",
+      "pos": "v.",
+      "def": "来"
+    },
+    {
+      "w": "go",
+      "ipa": "/ɡoʊ/",
+      "pos": "v.",
+      "def": "去"
+    },
+    {
+      "w": "desk",
+      "ipa": "/desk/",
+      "pos": "n.",
+      "def": "书桌"
+    },
+    {
+      "w": "chair",
+      "ipa": "/tʃeər/",
+      "pos": "n.",
+      "def": "椅子"
+    },
+    {
+      "w": "table",
+      "ipa": "/ˈteɪbl/",
+      "pos": "n.",
+      "def": "桌子"
+    },
+    {
+      "w": "bed",
+      "ipa": "/bed/",
+      "pos": "n.",
+      "def": "床"
+    },
+    {
+      "w": "bookcase",
+      "ipa": "/ˈbʊkkeɪs/",
+      "pos": "n.",
+      "def": "书架"
+    },
+    {
+      "w": "sofa",
+      "ipa": "/ˈsoʊfə/",
+      "pos": "n.",
+      "def": "沙发"
+    },
+    {
+      "w": "drawer",
+      "ipa": "/drɔːr/",
+      "pos": "n.",
+      "def": "抽屉"
+    },
+    {
+      "w": "plant",
+      "ipa": "/plænt/",
+      "pos": "n.",
+      "def": "植物"
+    },
+    {
+      "w": "tidy",
+      "ipa": "/ˈtaɪdi/",
+      "pos": "adj.",
+      "def": "整洁的"
+    },
+    {
+      "w": "but",
+      "ipa": "/bʌt/",
+      "pos": "conj.",
+      "def": "但是"
+    },
+    {
+      "w": "everywhere",
+      "ipa": "/ˈevriwer/",
+      "pos": "adv.",
+      "def": "到处"
+    },
+    {
+      "w": "always",
+      "ipa": "/ˈɔːlweɪz/",
+      "pos": "adv.",
+      "def": "总是"
+    },
+    {
+      "w": "room",
+      "ipa": "/ruːm/",
+      "pos": "n.",
+      "def": "房间"
+    },
+    {
+      "w": "hat",
+      "ipa": "/hæt/",
+      "pos": "n.",
+      "def": "帽子"
+    },
+    {
+      "w": "head",
+      "ipa": "/hed/",
+      "pos": "n.",
+      "def": "头"
+    },
+    {
+      "w": "know",
+      "ipa": "/noʊ/",
+      "pos": "v.",
+      "def": "知道"
+    },
+    {
+      "w": "think",
+      "ipa": "/θɪŋk/",
+      "pos": "v.",
+      "def": "认为；想"
+    },
+    {
+      "w": "radio",
+      "ipa": "/ˈreɪdioʊ/",
+      "pos": "n.",
+      "def": "收音机"
+    },
+    {
+      "w": "clock",
+      "ipa": "/klɒk/",
+      "pos": "n.",
+      "def": "钟"
+    },
+    {
+      "w": "tape",
+      "ipa": "/teɪp/",
+      "pos": "n.",
+      "def": "磁带"
+    },
+    {
+      "w": "player",
+      "ipa": "/ˈpleɪər/",
+      "pos": "n.",
+      "def": "播放机"
+    },
+    {
+      "w": "model",
+      "ipa": "/ˈmɒdl/",
+      "pos": "n.",
+      "def": "模型"
+    },
+    {
+      "w": "plane",
+      "ipa": "/pleɪn/",
+      "pos": "n.",
+      "def": "飞机"
+    }
+  ],
+  "u05": [
+    {
+      "w": "soccer",
+      "ipa": "/ˈsɒkər/",
+      "pos": "n.",
+      "def": "英式足球"
+    },
+    {
+      "w": "basketball",
+      "ipa": "/ˈbæskɪtbɔːl/",
+      "pos": "n.",
+      "def": "篮球"
+    },
+    {
+      "w": "tennis",
+      "ipa": "/ˈtenɪs/",
+      "pos": "n.",
+      "def": "网球"
+    },
+    {
+      "w": "volleyball",
+      "ipa": "/ˈvɒlibɔːl/",
+      "pos": "n.",
+      "def": "排球"
+    },
+    {
+      "w": "baseball",
+      "ipa": "/ˈbeɪsbɔːl/",
+      "pos": "n.",
+      "def": "棒球"
+    },
+    {
+      "w": "ping-pong",
+      "ipa": "/ˈpɪŋpɒŋ/",
+      "pos": "n.",
+      "def": "乒乓球"
+    },
+    {
+      "w": "ball",
+      "ipa": "/bɔːl/",
+      "pos": "n.",
+      "def": "球"
+    },
+    {
+      "w": "bat",
+      "ipa": "/bæt/",
+      "pos": "n.",
+      "def": "球拍"
+    },
+    {
+      "w": "interesting",
+      "ipa": "/ˈɪntrəstɪŋ/",
+      "pos": "adj.",
+      "def": "有趣的"
+    },
+    {
+      "w": "boring",
+      "ipa": "/ˈbɔːrɪŋ/",
+      "pos": "adj.",
+      "def": "无聊的"
+    },
+    {
+      "w": "difficult",
+      "ipa": "/ˈdɪfɪkəlt/",
+      "pos": "adj.",
+      "def": "困难的"
+    },
+    {
+      "w": "easy",
+      "ipa": "/ˈiːzi/",
+      "pos": "adj.",
+      "def": "容易的"
+    },
+    {
+      "w": "fun",
+      "ipa": "/fʌn/",
+      "pos": "adj.",
+      "def": "有趣的"
+    },
+    {
+      "w": "relaxing",
+      "ipa": "/rɪˈlæksɪŋ/",
+      "pos": "adj.",
+      "def": "放松的"
+    },
+    {
+      "w": "great",
+      "ipa": "/ɡreɪt/",
+      "pos": "adj.",
+      "def": "伟大的；好极了"
+    },
+    {
+      "w": "play",
+      "ipa": "/pleɪ/",
+      "pos": "v.",
+      "def": "玩；打（球）"
+    },
+    {
+      "w": "watch",
+      "ipa": "/wɒtʃ/",
+      "pos": "v.",
+      "def": "看"
+    },
+    {
+      "w": "let",
+      "ipa": "/let/",
+      "pos": "v.",
+      "def": "让"
+    },
+    {
+      "w": "us",
+      "ipa": "/ʌs/",
+      "pos": "pron.",
+      "def": "我们（宾格）"
+    },
+    {
+      "w": "late",
+      "ipa": "/leɪt/",
+      "pos": "adj.",
+      "def": "迟的"
+    },
+    {
+      "w": "classmate",
+      "ipa": "/ˈklæsmeɪt/",
+      "pos": "n.",
+      "def": "同班同学"
+    },
+    {
+      "w": "love",
+      "ipa": "/lʌv/",
+      "pos": "v.",
+      "def": "爱；喜欢"
+    },
+    {
+      "w": "sport",
+      "ipa": "/spɔːrt/",
+      "pos": "n.",
+      "def": "运动"
+    },
+    {
+      "w": "only",
+      "ipa": "/ˈoʊnli/",
+      "pos": "adv.",
+      "def": "只；仅仅"
+    },
+    {
+      "w": "like",
+      "ipa": "/laɪk/",
+      "pos": "v.",
+      "def": "喜欢"
+    },
+    {
+      "w": "don't",
+      "ipa": "/doʊnt/",
+      "pos": "abbr.",
+      "def": "不"
+    },
+    {
+      "w": "doesn't",
+      "ipa": "/ˈdʌznt/",
+      "pos": "abbr.",
+      "def": "不（第三人称）"
+    }
+  ],
+  "u06": [
+    {
+      "w": "banana",
+      "ipa": "/bəˈnænə/",
+      "pos": "n.",
+      "def": "香蕉"
+    },
+    {
+      "w": "hamburger",
+      "ipa": "/ˈhæmbɜːrɡər/",
+      "pos": "n.",
+      "def": "汉堡包"
+    },
+    {
+      "w": "chicken",
+      "ipa": "/ˈtʃɪkɪn/",
+      "pos": "n.",
+      "def": "鸡肉"
+    },
+    {
+      "w": "rice",
+      "ipa": "/raɪs/",
+      "pos": "n.",
+      "def": "大米"
+    },
+    {
+      "w": "carrot",
+      "ipa": "/ˈkærət/",
+      "pos": "n.",
+      "def": "胡萝卜"
+    },
+    {
+      "w": "tomato",
+      "ipa": "/təˈmeɪtoʊ/",
+      "pos": "n.",
+      "def": "番茄"
+    },
+    {
+      "w": "salad",
+      "ipa": "/ˈsæləd/",
+      "pos": "n.",
+      "def": "沙拉"
+    },
+    {
+      "w": "strawberry",
+      "ipa": "/ˈstrɔːberi/",
+      "pos": "n.",
+      "def": "草莓"
+    },
+    {
+      "w": "milk",
+      "ipa": "/mɪlk/",
+      "pos": "n.",
+      "def": "牛奶"
+    },
+    {
+      "w": "bread",
+      "ipa": "/bred/",
+      "pos": "n.",
+      "def": "面包"
+    },
+    {
+      "w": "egg",
+      "ipa": "/eɡ/",
+      "pos": "n.",
+      "def": "蛋"
+    },
+    {
+      "w": "apple",
+      "ipa": "/ˈæpl/",
+      "pos": "n.",
+      "def": "苹果"
+    },
+    {
+      "w": "pear",
+      "ipa": "/per/",
+      "pos": "n.",
+      "def": "梨"
+    },
+    {
+      "w": "food",
+      "ipa": "/fuːd/",
+      "pos": "n.",
+      "def": "食物"
+    },
+    {
+      "w": "fruit",
+      "ipa": "/fruːt/",
+      "pos": "n.",
+      "def": "水果"
+    },
+    {
+      "w": "vegetable",
+      "ipa": "/ˈvedʒtəbl/",
+      "pos": "n.",
+      "def": "蔬菜"
+    },
+    {
+      "w": "breakfast",
+      "ipa": "/ˈbrekfəst/",
+      "pos": "n.",
+      "def": "早餐"
+    },
+    {
+      "w": "lunch",
+      "ipa": "/lʌntʃ/",
+      "pos": "n.",
+      "def": "午餐"
+    },
+    {
+      "w": "dinner",
+      "ipa": "/ˈdɪnər/",
+      "pos": "n.",
+      "def": "晚餐"
+    },
+    {
+      "w": "eat",
+      "ipa": "/iːt/",
+      "pos": "v.",
+      "def": "吃"
+    },
+    {
+      "w": "really",
+      "ipa": "/ˈriːəli/",
+      "pos": "adv.",
+      "def": "真正地"
+    },
+    {
+      "w": "want",
+      "ipa": "/wɒnt/",
+      "pos": "v.",
+      "def": "要；想要"
+    },
+    {
+      "w": "question",
+      "ipa": "/ˈkwestʃən/",
+      "pos": "n.",
+      "def": "问题"
+    },
+    {
+      "w": "star",
+      "ipa": "/stɑːr/",
+      "pos": "n.",
+      "def": "明星"
+    },
+    {
+      "w": "healthy",
+      "ipa": "/ˈhelθi/",
+      "pos": "adj.",
+      "def": "健康的"
+    }
+  ],
+  "u07": [
+    {
+      "w": "much",
+      "ipa": "/mʌtʃ/",
+      "pos": "adj.",
+      "def": "许多的"
+    },
+    {
+      "w": "how much",
+      "ipa": "/haʊ mʌtʃ/",
+      "pos": "phrase",
+      "def": "多少钱"
+    },
+    {
+      "w": "sock",
+      "ipa": "/sɒk/",
+      "pos": "n.",
+      "def": "短袜"
+    },
+    {
+      "w": "shirt",
+      "ipa": "/ʃɜːrt/",
+      "pos": "n.",
+      "def": "衬衫"
+    },
+    {
+      "w": "T-shirt",
+      "ipa": "/ˈtiːʃɜːrt/",
+      "pos": "n.",
+      "def": "T恤衫"
+    },
+    {
+      "w": "shorts",
+      "ipa": "/ʃɔːrts/",
+      "pos": "n.",
+      "def": "短裤"
+    },
+    {
+      "w": "sweater",
+      "ipa": "/ˈswetər/",
+      "pos": "n.",
+      "def": "毛衣"
+    },
+    {
+      "w": "shoe",
+      "ipa": "/ʃuː/",
+      "pos": "n.",
+      "def": "鞋"
+    },
+    {
+      "w": "skirt",
+      "ipa": "/skɜːrt/",
+      "pos": "n.",
+      "def": "裙子"
+    },
+    {
+      "w": "dollar",
+      "ipa": "/ˈdɒlər/",
+      "pos": "n.",
+      "def": "美元"
+    },
+    {
+      "w": "big",
+      "ipa": "/bɪɡ/",
+      "pos": "adj.",
+      "def": "大的"
+    },
+    {
+      "w": "small",
+      "ipa": "/smɔːl/",
+      "pos": "adj.",
+      "def": "小的"
+    },
+    {
+      "w": "long",
+      "ipa": "/lɒŋɡ/",
+      "pos": "adj.",
+      "def": "长的"
+    },
+    {
+      "w": "short",
+      "ipa": "/ʃɔːrt/",
+      "pos": "adj.",
+      "def": "短的"
+    },
+    {
+      "w": "price",
+      "ipa": "/praɪs/",
+      "pos": "n.",
+      "def": "价格"
+    },
+    {
+      "w": "boy",
+      "ipa": "/bɔɪ/",
+      "pos": "n.",
+      "def": "男孩"
+    },
+    {
+      "w": "clothes",
+      "ipa": "/kloʊðz/",
+      "pos": "n.",
+      "def": "衣服"
+    },
+    {
+      "w": "store",
+      "ipa": "/stɔːr/",
+      "pos": "n.",
+      "def": "商店"
+    },
+    {
+      "w": "buy",
+      "ipa": "/baɪ/",
+      "pos": "v.",
+      "def": "买"
+    },
+    {
+      "w": "sell",
+      "ipa": "/sel/",
+      "pos": "v.",
+      "def": "卖"
+    },
+    {
+      "w": "all",
+      "ipa": "/ɔːl/",
+      "pos": "adj.",
+      "def": "所有的"
+    },
+    {
+      "w": "very",
+      "ipa": "/ˈveri/",
+      "pos": "adv.",
+      "def": "很；非常"
+    },
+    {
+      "w": "need",
+      "ipa": "/niːd/",
+      "pos": "v.",
+      "def": "需要"
+    },
+    {
+      "w": "look",
+      "ipa": "/lʊk/",
+      "pos": "v.",
+      "def": "看"
+    },
+    {
+      "w": "pair",
+      "ipa": "/per/",
+      "pos": "n.",
+      "def": "双；对"
+    },
+    {
+      "w": "take",
+      "ipa": "/teɪk/",
+      "pos": "v.",
+      "def": "买下；拿走"
+    }
+  ],
+  "u08": [
+    {
+      "w": "when",
+      "ipa": "/wen/",
+      "pos": "adv.",
+      "def": "什么时候"
+    },
+    {
+      "w": "birthday",
+      "ipa": "/ˈbɜːrθdeɪ/",
+      "pos": "n.",
+      "def": "生日"
+    },
+    {
+      "w": "month",
+      "ipa": "/mʌnθ/",
+      "pos": "n.",
+      "def": "月份"
+    },
+    {
+      "w": "January",
+      "ipa": "/ˈdʒænjueri/",
+      "pos": "n.",
+      "def": "一月"
+    },
+    {
+      "w": "February",
+      "ipa": "/ˈfebrueri/",
+      "pos": "n.",
+      "def": "二月"
+    },
+    {
+      "w": "March",
+      "ipa": "/mɑːrtʃ/",
+      "pos": "n.",
+      "def": "三月"
+    },
+    {
+      "w": "April",
+      "ipa": "/ˈeɪprəl/",
+      "pos": "n.",
+      "def": "四月"
+    },
+    {
+      "w": "May",
+      "ipa": "/meɪ/",
+      "pos": "n.",
+      "def": "五月"
+    },
+    {
+      "w": "June",
+      "ipa": "/dʒuːn/",
+      "pos": "n.",
+      "def": "六月"
+    },
+    {
+      "w": "July",
+      "ipa": "/dʒuˈlaɪ/",
+      "pos": "n.",
+      "def": "七月"
+    },
+    {
+      "w": "August",
+      "ipa": "/ɔːˈɡʌst/",
+      "pos": "n.",
+      "def": "八月"
+    },
+    {
+      "w": "September",
+      "ipa": "/sepˈtembər/",
+      "pos": "n.",
+      "def": "九月"
+    },
+    {
+      "w": "October",
+      "ipa": "/ɒkˈtoʊbər/",
+      "pos": "n.",
+      "def": "十月"
+    },
+    {
+      "w": "November",
+      "ipa": "/noʊˈvembər/",
+      "pos": "n.",
+      "def": "十一月"
+    },
+    {
+      "w": "December",
+      "ipa": "/dɪˈsembər/",
+      "pos": "n.",
+      "def": "十二月"
+    },
+    {
+      "w": "happy",
+      "ipa": "/ˈhæpi/",
+      "pos": "adj.",
+      "def": "快乐的"
+    },
+    {
+      "w": "old",
+      "ipa": "/oʊld/",
+      "pos": "adj.",
+      "def": "老的；旧的"
+    },
+    {
+      "w": "party",
+      "ipa": "/ˈpɑːrti/",
+      "pos": "n.",
+      "def": "聚会"
+    },
+    {
+      "w": "trip",
+      "ipa": "/trɪp/",
+      "pos": "n.",
+      "def": "旅行"
+    },
+    {
+      "w": "art",
+      "ipa": "/ɑːrt/",
+      "pos": "n.",
+      "def": "艺术；美术"
+    },
+    {
+      "w": "festival",
+      "ipa": "/ˈfestɪvl/",
+      "pos": "n.",
+      "def": "节日"
+    },
+    {
+      "w": "dear",
+      "ipa": "/dɪər/",
+      "pos": "adj.",
+      "def": "亲爱的"
+    },
+    {
+      "w": "test",
+      "ipa": "/test/",
+      "pos": "n.",
+      "def": "测试"
+    },
+    {
+      "w": "game",
+      "ipa": "/ɡeɪm/",
+      "pos": "n.",
+      "def": "比赛；游戏"
+    },
+    {
+      "w": "time",
+      "ipa": "/taɪm/",
+      "pos": "n.",
+      "def": "时间"
+    },
+    {
+      "w": "have a good time",
+      "ipa": "",
+      "pos": "phrase",
+      "def": "玩得开心"
+    }
+  ],
+  "u09": [
+    {
+      "w": "subject",
+      "ipa": "/ˈsʌbdʒɪkt/",
+      "pos": "n.",
+      "def": "学科"
+    },
+    {
+      "w": "science",
+      "ipa": "/ˈsaɪəns/",
+      "pos": "n.",
+      "def": "科学"
+    },
+    {
+      "w": "music",
+      "ipa": "/ˈmjuːzɪk/",
+      "pos": "n.",
+      "def": "音乐"
+    },
+    {
+      "w": "math",
+      "ipa": "/mæθ/",
+      "pos": "n.",
+      "def": "数学"
+    },
+    {
+      "w": "Chinese",
+      "ipa": "/ˌtʃaɪˈniːz/",
+      "pos": "n.",
+      "def": "语文；中文"
+    },
+    {
+      "w": "geography",
+      "ipa": "/dʒiˈɒɡrəfi/",
+      "pos": "n.",
+      "def": "地理"
+    },
+    {
+      "w": "history",
+      "ipa": "/ˈhɪstri/",
+      "pos": "n.",
+      "def": "历史"
+    },
+    {
+      "w": "P.E.",
+      "ipa": "/ˌpiː ˈiː/",
+      "pos": "n.",
+      "def": "体育"
+    },
+    {
+      "w": "because",
+      "ipa": "/bɪˈkɒz/",
+      "pos": "conj.",
+      "def": "因为"
+    },
+    {
+      "w": "Monday",
+      "ipa": "/ˈmʌndeɪ/",
+      "pos": "n.",
+      "def": "星期一"
+    },
+    {
+      "w": "Tuesday",
+      "ipa": "/ˈtuːzdeɪ/",
+      "pos": "n.",
+      "def": "星期二"
+    },
+    {
+      "w": "Wednesday",
+      "ipa": "/ˈwenzdeɪ/",
+      "pos": "n.",
+      "def": "星期三"
+    },
+    {
+      "w": "Thursday",
+      "ipa": "/ˈθɜːrzdeɪ/",
+      "pos": "n.",
+      "def": "星期四"
+    },
+    {
+      "w": "Friday",
+      "ipa": "/ˈfraɪdeɪ/",
+      "pos": "n.",
+      "def": "星期五"
+    },
+    {
+      "w": "Saturday",
+      "ipa": "/ˈsætərdeɪ/",
+      "pos": "n.",
+      "def": "星期六"
+    },
+    {
+      "w": "Sunday",
+      "ipa": "/ˈsʌndeɪ/",
+      "pos": "n.",
+      "def": "星期日"
+    },
+    {
+      "w": "useful",
+      "ipa": "/ˈjuːsfl/",
+      "pos": "adj.",
+      "def": "有用的"
+    },
+    {
+      "w": "free",
+      "ipa": "/friː/",
+      "pos": "adj.",
+      "def": "空闲的"
+    },
+    {
+      "w": "cool",
+      "ipa": "/kuːl/",
+      "pos": "adj.",
+      "def": "酷的；妙极的"
+    },
+    {
+      "w": "finish",
+      "ipa": "/ˈfɪnɪʃ/",
+      "pos": "v.",
+      "def": "完成"
+    },
+    {
+      "w": "lesson",
+      "ipa": "/ˈlesn/",
+      "pos": "n.",
+      "def": "课"
+    },
+    {
+      "w": "hour",
+      "ipa": "/ˈaʊər/",
+      "pos": "n.",
+      "def": "小时"
+    },
+    {
+      "w": "favorite",
+      "ipa": "/ˈfeɪvərɪt/",
+      "pos": "adj.",
+      "def": "最喜欢的"
+    },
+    {
+      "w": "teacher",
+      "ipa": "/ˈtiːtʃər/",
+      "pos": "n.",
+      "def": "老师"
+    },
+    {
+      "w": "why",
+      "ipa": "/waɪ/",
+      "pos": "adv.",
+      "def": "为什么"
+    }
+  ],
+  "b2u01": [
+    {
+      "w": "play",
+      "ipa": "/pleɪ/",
+      "pos": "v.",
+      "def": "弹奏；玩"
+    },
+    {
+      "w": "violin",
+      "ipa": "/ˌvaɪəˈlɪn/",
+      "pos": "n.",
+      "def": "小提琴"
+    },
+    {
+      "w": "drum",
+      "ipa": "/drʌm/",
+      "pos": "n.",
+      "def": "鼓"
+    },
+    {
+      "w": "piano",
+      "ipa": "/piˈænoʊ/",
+      "pos": "n.",
+      "def": "钢琴"
+    },
+    {
+      "w": "also",
+      "ipa": "/ˈɔːlsoʊ/",
+      "pos": "adv.",
+      "def": "也；而且"
+    },
+    {
+      "w": "people",
+      "ipa": "/ˈpiːpl/",
+      "pos": "n.",
+      "def": "人；人们"
+    },
+    {
+      "w": "center",
+      "ipa": "/ˈsentər/",
+      "pos": "n.",
+      "def": "中心"
+    },
+    {
+      "w": "home",
+      "ipa": "/hoʊm/",
+      "pos": "n.",
+      "def": "家"
+    },
+    {
+      "w": "make",
+      "ipa": "/meɪk/",
+      "pos": "v.",
+      "def": "使成为；制作"
+    },
+    {
+      "w": "today",
+      "ipa": "/təˈdeɪ/",
+      "pos": "adv.",
+      "def": "今天"
+    },
+    {
+      "w": "join",
+      "ipa": "/dʒɔɪn/",
+      "pos": "v.",
+      "def": "参加；加入"
+    },
+    {
+      "w": "club",
+      "ipa": "/klʌb/",
+      "pos": "n.",
+      "def": "俱乐部"
+    },
+    {
+      "w": "be good at",
+      "ipa": "",
+      "pos": "phrase",
+      "def": "擅长"
+    },
+    {
+      "w": "tell",
+      "ipa": "/tel/",
+      "pos": "v.",
+      "def": "告诉；讲述"
+    },
+    {
+      "w": "talk",
+      "ipa": "/tɔːk/",
+      "pos": "v.",
+      "def": "说话；谈话"
+    },
+    {
+      "w": "or",
+      "ipa": "/ɔːr/",
+      "pos": "conj.",
+      "def": "或者"
+    },
+    {
+      "w": "kid",
+      "ipa": "/kɪd/",
+      "pos": "n.",
+      "def": "小孩"
+    }
+  ],
+  "b2u02": [
+    {
+      "w": "up",
+      "ipa": "/ʌp/",
+      "pos": "adv.",
+      "def": "向上"
+    },
+    {
+      "w": "get up",
+      "ipa": "/ɡet ʌp/",
+      "pos": "phrase",
+      "def": "起床"
+    },
+    {
+      "w": "dress",
+      "ipa": "/dres/",
+      "pos": "v.",
+      "def": "穿衣服"
+    },
+    {
+      "w": "get dressed",
+      "ipa": "",
+      "pos": "phrase",
+      "def": "穿衣服"
+    },
+    {
+      "w": "brush",
+      "ipa": "/brʌʃ/",
+      "pos": "v.",
+      "def": "刷"
+    },
+    {
+      "w": "tooth",
+      "ipa": "/tuːθ/",
+      "pos": "n.",
+      "def": "牙齿"
+    },
+    {
+      "w": "shower",
+      "ipa": "/ˈʃaʊər/",
+      "pos": "n.",
+      "def": "淋浴"
+    },
+    {
+      "w": "take a shower",
+      "ipa": "",
+      "pos": "phrase",
+      "def": "淋浴"
+    },
+    {
+      "w": "usually",
+      "ipa": "/ˈjuːʒuəli/",
+      "pos": "adv.",
+      "def": "通常"
+    },
+    {
+      "w": "never",
+      "ipa": "/ˈnevər/",
+      "pos": "adv.",
+      "def": "从不"
+    },
+    {
+      "w": "early",
+      "ipa": "/ˈɜːrli/",
+      "pos": "adv.",
+      "def": "早地"
+    },
+    {
+      "w": "job",
+      "ipa": "/dʒɒb/",
+      "pos": "n.",
+      "def": "工作"
+    },
+    {
+      "w": "work",
+      "ipa": "/wɜːrk/",
+      "pos": "n.",
+      "def": "工作"
+    },
+    {
+      "w": "station",
+      "ipa": "/ˈsteɪʃn/",
+      "pos": "n.",
+      "def": "车站；电台"
+    },
+    {
+      "w": "night",
+      "ipa": "/naɪt/",
+      "pos": "n.",
+      "def": "晚上"
+    },
+    {
+      "w": "funny",
+      "ipa": "/ˈfʌni/",
+      "pos": "adj.",
+      "def": "有趣的；滑稽的"
+    },
+    {
+      "w": "exercise",
+      "ipa": "/ˈeksərsaɪz/",
+      "pos": "n./v.",
+      "def": "锻炼"
+    },
+    {
+      "w": "group",
+      "ipa": "/ɡruːp/",
+      "pos": "n.",
+      "def": "组；群"
+    },
+    {
+      "w": "half",
+      "ipa": "/hæf/",
+      "pos": "n.",
+      "def": "一半"
+    },
+    {
+      "w": "quarter",
+      "ipa": "/ˈkwɔːrtər/",
+      "pos": "n.",
+      "def": "一刻钟；四分之一"
+    }
+  ],
+  "b2u03": [
+    {
+      "w": "train",
+      "ipa": "/treɪn/",
+      "pos": "n.",
+      "def": "火车"
+    },
+    {
+      "w": "bus",
+      "ipa": "/bʌs/",
+      "pos": "n.",
+      "def": "公共汽车"
+    },
+    {
+      "w": "subway",
+      "ipa": "/ˈsʌbweɪ/",
+      "pos": "n.",
+      "def": "地铁"
+    },
+    {
+      "w": "ride",
+      "ipa": "/raɪd/",
+      "pos": "v.",
+      "def": "骑"
+    },
+    {
+      "w": "bike",
+      "ipa": "/baɪk/",
+      "pos": "n.",
+      "def": "自行车"
+    },
+    {
+      "w": "drive",
+      "ipa": "/draɪv/",
+      "pos": "v.",
+      "def": "开车"
+    },
+    {
+      "w": "car",
+      "ipa": "/kɑːr/",
+      "pos": "n.",
+      "def": "小汽车"
+    },
+    {
+      "w": "live",
+      "ipa": "/lɪv/",
+      "pos": "v.",
+      "def": "居住"
+    },
+    {
+      "w": "stop",
+      "ipa": "/stɒp/",
+      "pos": "n.",
+      "def": "车站；停止"
+    },
+    {
+      "w": "cross",
+      "ipa": "/krɒs/",
+      "pos": "v.",
+      "def": "穿过"
+    },
+    {
+      "w": "river",
+      "ipa": "/ˈrɪvər/",
+      "pos": "n.",
+      "def": "河"
+    },
+    {
+      "w": "many",
+      "ipa": "/ˈmeni/",
+      "pos": "adj.",
+      "def": "许多"
+    },
+    {
+      "w": "village",
+      "ipa": "/ˈvɪlɪdʒ/",
+      "pos": "n.",
+      "def": "村庄"
+    },
+    {
+      "w": "between",
+      "ipa": "/bɪˈtwiːn/",
+      "pos": "prep.",
+      "def": "在……之间"
+    },
+    {
+      "w": "bridge",
+      "ipa": "/brɪdʒ/",
+      "pos": "n.",
+      "def": "桥"
+    },
+    {
+      "w": "boat",
+      "ipa": "/boʊt/",
+      "pos": "n.",
+      "def": "小船"
+    },
+    {
+      "w": "year",
+      "ipa": "/jɪr/",
+      "pos": "n.",
+      "def": "年"
+    },
+    {
+      "w": "afraid",
+      "ipa": "/əˈfreɪd/",
+      "pos": "adj.",
+      "def": "害怕的"
+    },
+    {
+      "w": "like",
+      "ipa": "/laɪk/",
+      "pos": "prep.",
+      "def": "像"
+    },
+    {
+      "w": "leave",
+      "ipa": "/liːv/",
+      "pos": "v.",
+      "def": "离开"
+    },
+    {
+      "w": "dream",
+      "ipa": "/driːm/",
+      "pos": "n.",
+      "def": "梦想"
+    },
+    {
+      "w": "true",
+      "ipa": "/truː/",
+      "pos": "adj.",
+      "def": "真的；真实的"
+    },
+    {
+      "w": "come true",
+      "ipa": "",
+      "pos": "phrase",
+      "def": "实现"
+    },
+    {
+      "w": "kilometer",
+      "ipa": "/kɪˈlɒmɪtər/",
+      "pos": "n.",
+      "def": "千米"
+    },
+    {
+      "w": "new",
+      "ipa": "/njuː/",
+      "pos": "adj.",
+      "def": "新的"
+    },
+    {
+      "w": "every",
+      "ipa": "/ˈevri/",
+      "pos": "adj.",
+      "def": "每个"
+    }
+  ],
+  "b2u04": [
+    {
+      "w": "rule",
+      "ipa": "/ruːl/",
+      "pos": "n.",
+      "def": "规则"
+    },
+    {
+      "w": "arrive",
+      "ipa": "/əˈraɪv/",
+      "pos": "v.",
+      "def": "到达"
+    },
+    {
+      "w": "hallway",
+      "ipa": "/ˈhɔːlweɪ/",
+      "pos": "n.",
+      "def": "走廊"
+    },
+    {
+      "w": "listen",
+      "ipa": "/ˈlɪsn/",
+      "pos": "v.",
+      "def": "听"
+    },
+    {
+      "w": "fight",
+      "ipa": "/faɪt/",
+      "pos": "v.",
+      "def": "打架；战斗"
+    },
+    {
+      "w": "sorry",
+      "ipa": "/ˈsɒri/",
+      "pos": "adj.",
+      "def": "抱歉的"
+    },
+    {
+      "w": "outside",
+      "ipa": "/ˌaʊtˈsaɪd/",
+      "pos": "adv.",
+      "def": "在外面"
+    },
+    {
+      "w": "wear",
+      "ipa": "/wer/",
+      "pos": "v.",
+      "def": "穿；戴"
+    },
+    {
+      "w": "important",
+      "ipa": "/ɪmˈpɔːrtnt/",
+      "pos": "adj.",
+      "def": "重要的"
+    },
+    {
+      "w": "bring",
+      "ipa": "/brɪŋ/",
+      "pos": "v.",
+      "def": "带来"
+    },
+    {
+      "w": "have to",
+      "ipa": "/hæv tuː/",
+      "pos": "phrase",
+      "def": "不得不"
+    },
+    {
+      "w": "uniform",
+      "ipa": "/ˈjuːnɪfɔːrm/",
+      "pos": "n.",
+      "def": "校服"
+    },
+    {
+      "w": "quiet",
+      "ipa": "/ˈkwaɪət/",
+      "pos": "adj.",
+      "def": "安静的"
+    },
+    {
+      "w": "noisy",
+      "ipa": "/ˈnɔɪzi/",
+      "pos": "adj.",
+      "def": "吵闹的"
+    },
+    {
+      "w": "relax",
+      "ipa": "/rɪˈlæks/",
+      "pos": "v.",
+      "def": "放松"
+    },
+    {
+      "w": "read",
+      "ipa": "/riːd/",
+      "pos": "v.",
+      "def": "读"
+    },
+    {
+      "w": "dirty",
+      "ipa": "/ˈdɜːrti/",
+      "pos": "adj.",
+      "def": "脏的"
+    },
+    {
+      "w": "kitchen",
+      "ipa": "/ˈkɪtʃɪn/",
+      "pos": "n.",
+      "def": "厨房"
+    },
+    {
+      "w": "more",
+      "ipa": "/mɔːr/",
+      "pos": "adj.",
+      "def": "更多的"
+    },
+    {
+      "w": "feel",
+      "ipa": "/fiːl/",
+      "pos": "v.",
+      "def": "感觉"
+    },
+    {
+      "w": "strict",
+      "ipa": "/strɪkt/",
+      "pos": "adj.",
+      "def": "严格的"
+    },
+    {
+      "w": "remember",
+      "ipa": "/rɪˈmembər/",
+      "pos": "v.",
+      "def": "记住"
+    },
+    {
+      "w": "follow",
+      "ipa": "/ˈfɒloʊ/",
+      "pos": "v.",
+      "def": "遵守"
+    },
+    {
+      "w": "luck",
+      "ipa": "/lʌk/",
+      "pos": "n.",
+      "def": "运气"
+    },
+    {
+      "w": "keep",
+      "ipa": "/kiːp/",
+      "pos": "v.",
+      "def": "保持"
+    },
+    {
+      "w": "hair",
+      "ipa": "/her/",
+      "pos": "n.",
+      "def": "头发"
+    },
+    {
+      "w": "learn",
+      "ipa": "/lɜːrn/",
+      "pos": "v.",
+      "def": "学习"
+    }
+  ],
+  "b2u05": [
+    {
+      "w": "panda",
+      "ipa": "/ˈpændə/",
+      "pos": "n.",
+      "def": "熊猫"
+    },
+    {
+      "w": "zoo",
+      "ipa": "/zuː/",
+      "pos": "n.",
+      "def": "动物园"
+    },
+    {
+      "w": "tiger",
+      "ipa": "/ˈtaɪɡər/",
+      "pos": "n.",
+      "def": "老虎"
+    },
+    {
+      "w": "elephant",
+      "ipa": "/ˈelɪfənt/",
+      "pos": "n.",
+      "def": "大象"
+    },
+    {
+      "w": "koala",
+      "ipa": "/koʊˈɑːlə/",
+      "pos": "n.",
+      "def": "考拉"
+    },
+    {
+      "w": "lion",
+      "ipa": "/ˈlaɪən/",
+      "pos": "n.",
+      "def": "狮子"
+    },
+    {
+      "w": "giraffe",
+      "ipa": "/dʒəˈræf/",
+      "pos": "n.",
+      "def": "长颈鹿"
+    },
+    {
+      "w": "animal",
+      "ipa": "/ˈænɪml/",
+      "pos": "n.",
+      "def": "动物"
+    },
+    {
+      "w": "cute",
+      "ipa": "/kjuːt/",
+      "pos": "adj.",
+      "def": "可爱的"
+    },
+    {
+      "w": "lazy",
+      "ipa": "/ˈleɪzi/",
+      "pos": "adj.",
+      "def": "懒惰的"
+    },
+    {
+      "w": "smart",
+      "ipa": "/smɑːrt/",
+      "pos": "adj.",
+      "def": "聪明的"
+    },
+    {
+      "w": "beautiful",
+      "ipa": "/ˈbjuːtɪfl/",
+      "pos": "adj.",
+      "def": "美丽的"
+    },
+    {
+      "w": "scary",
+      "ipa": "/ˈskeri/",
+      "pos": "adj.",
+      "def": "吓人的"
+    },
+    {
+      "w": "kind",
+      "ipa": "/kaɪnd/",
+      "pos": "n.",
+      "def": "种类"
+    },
+    {
+      "w": "kind of",
+      "ipa": "",
+      "pos": "phrase",
+      "def": "稍微；有几分"
+    },
+    {
+      "w": "Australia",
+      "ipa": "/ɒˈstreɪliə/",
+      "pos": "n.",
+      "def": "澳大利亚"
+    },
+    {
+      "w": "south",
+      "ipa": "/saʊθ/",
+      "pos": "n.",
+      "def": "南方"
+    },
+    {
+      "w": "Africa",
+      "ipa": "/ˈæfrɪkə/",
+      "pos": "n.",
+      "def": "非洲"
+    },
+    {
+      "w": "pet",
+      "ipa": "/pet/",
+      "pos": "n.",
+      "def": "宠物"
+    },
+    {
+      "w": "leg",
+      "ipa": "/leɡ/",
+      "pos": "n.",
+      "def": "腿"
+    },
+    {
+      "w": "cat",
+      "ipa": "/kæt/",
+      "pos": "n.",
+      "def": "猫"
+    },
+    {
+      "w": "sleep",
+      "ipa": "/sliːp/",
+      "pos": "v.",
+      "def": "睡觉"
+    },
+    {
+      "w": "friendly",
+      "ipa": "/ˈfrendli/",
+      "pos": "adj.",
+      "def": "友好的"
+    },
+    {
+      "w": "shy",
+      "ipa": "/ʃaɪ/",
+      "pos": "adj.",
+      "def": "害羞的"
+    },
+    {
+      "w": "save",
+      "ipa": "/seɪv/",
+      "pos": "v.",
+      "def": "救；节省"
+    },
+    {
+      "w": "symbol",
+      "ipa": "/ˈsɪmbl/",
+      "pos": "n.",
+      "def": "象征"
+    },
+    {
+      "w": "flag",
+      "ipa": "/flæɡ/",
+      "pos": "n.",
+      "def": "旗"
+    },
+    {
+      "w": "forget",
+      "ipa": "/fərˈɡet/",
+      "pos": "v.",
+      "def": "忘记"
+    },
+    {
+      "w": "danger",
+      "ipa": "/ˈdeɪndʒər/",
+      "pos": "n.",
+      "def": "危险"
+    },
+    {
+      "w": "cut",
+      "ipa": "/kʌt/",
+      "pos": "v.",
+      "def": "砍；切"
+    },
+    {
+      "w": "kill",
+      "ipa": "/kɪl/",
+      "pos": "v.",
+      "def": "杀死"
+    }
+  ],
+  "b2u06": [
+    {
+      "w": "newspaper",
+      "ipa": "/ˈnuːzpeɪpər/",
+      "pos": "n.",
+      "def": "报纸"
+    },
+    {
+      "w": "use",
+      "ipa": "/juːz/",
+      "pos": "v.",
+      "def": "使用"
+    },
+    {
+      "w": "soup",
+      "ipa": "/suːp/",
+      "pos": "n.",
+      "def": "汤"
+    },
+    {
+      "w": "wash",
+      "ipa": "/wɒʃ/",
+      "pos": "v.",
+      "def": "洗"
+    },
+    {
+      "w": "movie",
+      "ipa": "/ˈmuːvi/",
+      "pos": "n.",
+      "def": "电影"
+    },
+    {
+      "w": "house",
+      "ipa": "/haʊs/",
+      "pos": "n.",
+      "def": "房子"
+    },
+    {
+      "w": "drink",
+      "ipa": "/drɪŋk/",
+      "pos": "v.",
+      "def": "喝"
+    },
+    {
+      "w": "tea",
+      "ipa": "/tiː/",
+      "pos": "n.",
+      "def": "茶"
+    },
+    {
+      "w": "tomorrow",
+      "ipa": "/təˈmɒroʊ/",
+      "pos": "adv.",
+      "def": "明天"
+    },
+    {
+      "w": "pool",
+      "ipa": "/puːl/",
+      "pos": "n.",
+      "def": "游泳池"
+    },
+    {
+      "w": "shop",
+      "ipa": "/ʃɒp/",
+      "pos": "v.",
+      "def": "购物"
+    },
+    {
+      "w": "man",
+      "ipa": "/mæn/",
+      "pos": "n.",
+      "def": "男人"
+    },
+    {
+      "w": "study",
+      "ipa": "/ˈstʌdi/",
+      "pos": "v.",
+      "def": "学习"
+    },
+    {
+      "w": "miss",
+      "ipa": "/mɪs/",
+      "pos": "v.",
+      "def": "想念；错过"
+    },
+    {
+      "w": "wish",
+      "ipa": "/wɪʃ/",
+      "pos": "v.",
+      "def": "希望"
+    },
+    {
+      "w": "delicious",
+      "ipa": "/dɪˈlɪʃəs/",
+      "pos": "adj.",
+      "def": "美味的"
+    },
+    {
+      "w": "child",
+      "ipa": "/tʃaɪld/",
+      "pos": "n.",
+      "def": "儿童"
+    },
+    {
+      "w": "race",
+      "ipa": "/reɪs/",
+      "pos": "n.",
+      "def": "比赛"
+    },
+    {
+      "w": "host",
+      "ipa": "/hoʊst/",
+      "pos": "n.",
+      "def": "主人"
+    },
+    {
+      "w": "young",
+      "ipa": "/jʌŋ/",
+      "pos": "adj.",
+      "def": "年轻的"
+    }
+  ],
+  "b2u07": [
+    {
+      "w": "rain",
+      "ipa": "/reɪn/",
+      "pos": "v.",
+      "def": "下雨"
+    },
+    {
+      "w": "windy",
+      "ipa": "/ˈwɪndi/",
+      "pos": "adj.",
+      "def": "多风的"
+    },
+    {
+      "w": "cloudy",
+      "ipa": "/ˈklaʊdi/",
+      "pos": "adj.",
+      "def": "多云的"
+    },
+    {
+      "w": "sunny",
+      "ipa": "/ˈsʌni/",
+      "pos": "adj.",
+      "def": "晴朗的"
+    },
+    {
+      "w": "snow",
+      "ipa": "/snoʊ/",
+      "pos": "v.",
+      "def": "下雪"
+    },
+    {
+      "w": "weather",
+      "ipa": "/ˈweðər/",
+      "pos": "n.",
+      "def": "天气"
+    },
+    {
+      "w": "cold",
+      "ipa": "/koʊld/",
+      "pos": "adj.",
+      "def": "冷的"
+    },
+    {
+      "w": "hot",
+      "ipa": "/hɒt/",
+      "pos": "adj.",
+      "def": "热的"
+    },
+    {
+      "w": "warm",
+      "ipa": "/wɔːrm/",
+      "pos": "adj.",
+      "def": "温暖的"
+    },
+    {
+      "w": "cool",
+      "ipa": "/kuːl/",
+      "pos": "adj.",
+      "def": "凉爽的"
+    },
+    {
+      "w": "dry",
+      "ipa": "/draɪ/",
+      "pos": "adj.",
+      "def": "干燥的"
+    },
+    {
+      "w": "summer",
+      "ipa": "/ˈsʌmər/",
+      "pos": "n.",
+      "def": "夏天"
+    },
+    {
+      "w": "winter",
+      "ipa": "/ˈwɪntər/",
+      "pos": "n.",
+      "def": "冬天"
+    },
+    {
+      "w": "spring",
+      "ipa": "/sprɪŋ/",
+      "pos": "n.",
+      "def": "春天"
+    },
+    {
+      "w": "autumn",
+      "ipa": "/ˈɔːtəm/",
+      "pos": "n.",
+      "def": "秋天"
+    },
+    {
+      "w": "season",
+      "ipa": "/ˈsiːzn/",
+      "pos": "n.",
+      "def": "季节"
+    },
+    {
+      "w": "vacation",
+      "ipa": "/veɪˈkeɪʃn/",
+      "pos": "n.",
+      "def": "假期"
+    },
+    {
+      "w": "visit",
+      "ipa": "/ˈvɪzɪt/",
+      "pos": "v.",
+      "def": "拜访"
+    },
+    {
+      "w": "Canada",
+      "ipa": "/ˈkænədə/",
+      "pos": "n.",
+      "def": "加拿大"
+    },
+    {
+      "w": "Europe",
+      "ipa": "/ˈjʊrəp/",
+      "pos": "n.",
+      "def": "欧洲"
+    },
+    {
+      "w": "mountain",
+      "ipa": "/ˈmaʊntɪn/",
+      "pos": "n.",
+      "def": "山"
+    },
+    {
+      "w": "ski",
+      "ipa": "/skiː/",
+      "pos": "v.",
+      "def": "滑雪"
+    },
+    {
+      "w": "country",
+      "ipa": "/ˈkʌntri/",
+      "pos": "n.",
+      "def": "国家"
+    }
+  ],
+  "b2u08": [
+    {
+      "w": "post",
+      "ipa": "/poʊst/",
+      "pos": "n.",
+      "def": "邮政"
+    },
+    {
+      "w": "post office",
+      "ipa": "",
+      "pos": "phrase",
+      "def": "邮局"
+    },
+    {
+      "w": "police",
+      "ipa": "/pəˈliːs/",
+      "pos": "n.",
+      "def": "警察"
+    },
+    {
+      "w": "hotel",
+      "ipa": "/hoʊˈtel/",
+      "pos": "n.",
+      "def": "旅馆"
+    },
+    {
+      "w": "restaurant",
+      "ipa": "/ˈrestrɒnt/",
+      "pos": "n.",
+      "def": "餐馆"
+    },
+    {
+      "w": "bank",
+      "ipa": "/bæŋk/",
+      "pos": "n.",
+      "def": "银行"
+    },
+    {
+      "w": "hospital",
+      "ipa": "/ˈhɒspɪtl/",
+      "pos": "n.",
+      "def": "医院"
+    },
+    {
+      "w": "street",
+      "ipa": "/striːt/",
+      "pos": "n.",
+      "def": "街道"
+    },
+    {
+      "w": "near",
+      "ipa": "/nɪr/",
+      "pos": "prep.",
+      "def": "在……附近"
+    },
+    {
+      "w": "across",
+      "ipa": "/əˈkrɒs/",
+      "pos": "adv.",
+      "def": "穿过"
+    },
+    {
+      "w": "across from",
+      "ipa": "",
+      "pos": "phrase",
+      "def": "在……对面"
+    },
+    {
+      "w": "front",
+      "ipa": "/frʌnt/",
+      "pos": "n.",
+      "def": "前面"
+    },
+    {
+      "w": "in front of",
+      "ipa": "",
+      "pos": "phrase",
+      "def": "在……前面"
+    },
+    {
+      "w": "behind",
+      "ipa": "/bɪˈhaɪnd/",
+      "pos": "prep.",
+      "def": "在……后面"
+    },
+    {
+      "w": "town",
+      "ipa": "/taʊn/",
+      "pos": "n.",
+      "def": "城镇"
+    },
+    {
+      "w": "around",
+      "ipa": "/əˈraʊnd/",
+      "pos": "prep.",
+      "def": "在……周围"
+    },
+    {
+      "w": "north",
+      "ipa": "/nɔːrθ/",
+      "pos": "n.",
+      "def": "北方"
+    },
+    {
+      "w": "along",
+      "ipa": "/əˈlɒŋ/",
+      "pos": "prep.",
+      "def": "沿着"
+    },
+    {
+      "w": "turn",
+      "ipa": "/tɜːrn/",
+      "pos": "v.",
+      "def": "转向；转弯"
+    },
+    {
+      "w": "right",
+      "ipa": "/raɪt/",
+      "pos": "adv.",
+      "def": "向右"
+    },
+    {
+      "w": "left",
+      "ipa": "/left/",
+      "pos": "adv.",
+      "def": "向左"
+    },
+    {
+      "w": "crossing",
+      "ipa": "/ˈkrɒsɪŋ/",
+      "pos": "n.",
+      "def": "十字路口"
+    },
+    {
+      "w": "neighborhood",
+      "ipa": "/ˈneɪbərhʊd/",
+      "pos": "n.",
+      "def": "街区；附近"
+    },
+    {
+      "w": "spend",
+      "ipa": "/spend/",
+      "pos": "v.",
+      "def": "花费"
+    },
+    {
+      "w": "climb",
+      "ipa": "/klaɪm/",
+      "pos": "v.",
+      "def": "爬"
+    },
+    {
+      "w": "free",
+      "ipa": "/friː/",
+      "pos": "adj.",
+      "def": "免费的"
+    },
+    {
+      "w": "enjoy",
+      "ipa": "/ɪnˈdʒɔɪ/",
+      "pos": "v.",
+      "def": "享受"
+    },
+    {
+      "w": "easy",
+      "ipa": "/ˈiːzi/",
+      "pos": "adj.",
+      "def": "容易的"
+    },
+    {
+      "w": "money",
+      "ipa": "/ˈmʌni/",
+      "pos": "n.",
+      "def": "钱"
+    }
+  ],
+  "b2u09": [
+    {
+      "w": "curly",
+      "ipa": "/ˈkɜːrli/",
+      "pos": "adj.",
+      "def": "卷曲的"
+    },
+    {
+      "w": "straight",
+      "ipa": "/streɪt/",
+      "pos": "adj.",
+      "def": "直的"
+    },
+    {
+      "w": "tall",
+      "ipa": "/tɔːl/",
+      "pos": "adj.",
+      "def": "高的"
+    },
+    {
+      "w": "medium",
+      "ipa": "/ˈmiːdiəm/",
+      "pos": "adj.",
+      "def": "中等的"
+    },
+    {
+      "w": "height",
+      "ipa": "/haɪt/",
+      "pos": "n.",
+      "def": "身高"
+    },
+    {
+      "w": "thin",
+      "ipa": "/θɪn/",
+      "pos": "adj.",
+      "def": "瘦的"
+    },
+    {
+      "w": "heavy",
+      "ipa": "/ˈhevi/",
+      "pos": "adj.",
+      "def": "重的；胖的"
+    },
+    {
+      "w": "build",
+      "ipa": "/bɪld/",
+      "pos": "n.",
+      "def": "体格"
+    },
+    {
+      "w": "glasses",
+      "ipa": "/ˈɡlæsɪz/",
+      "pos": "n.",
+      "def": "眼镜"
+    },
+    {
+      "w": "blonde",
+      "ipa": "/blɒnd/",
+      "pos": "adj.",
+      "def": "金黄色的"
+    },
+    {
+      "w": "mouth",
+      "ipa": "/maʊθ/",
+      "pos": "n.",
+      "def": "嘴巴"
+    },
+    {
+      "w": "face",
+      "ipa": "/feɪs/",
+      "pos": "n.",
+      "def": "脸"
+    },
+    {
+      "w": "eye",
+      "ipa": "/aɪ/",
+      "pos": "n.",
+      "def": "眼睛"
+    },
+    {
+      "w": "nose",
+      "ipa": "/noʊz/",
+      "pos": "n.",
+      "def": "鼻子"
+    },
+    {
+      "w": "ear",
+      "ipa": "/ɪr/",
+      "pos": "n.",
+      "def": "耳朵"
+    },
+    {
+      "w": "singer",
+      "ipa": "/ˈsɪŋər/",
+      "pos": "n.",
+      "def": "歌手"
+    },
+    {
+      "w": "artist",
+      "ipa": "/ˈɑːrtɪst/",
+      "pos": "n.",
+      "def": "艺术家"
+    },
+    {
+      "w": "person",
+      "ipa": "/ˈpɜːrsn/",
+      "pos": "n.",
+      "def": "人"
+    },
+    {
+      "w": "hand",
+      "ipa": "/hænd/",
+      "pos": "n.",
+      "def": "手"
+    },
+    {
+      "w": "arm",
+      "ipa": "/ɑːrm/",
+      "pos": "n.",
+      "def": "手臂"
+    },
+    {
+      "w": "end",
+      "ipa": "/end/",
+      "pos": "n.",
+      "def": "末端；终点"
+    },
+    {
+      "w": "real",
+      "ipa": "/ˈriːəl/",
+      "pos": "adj.",
+      "def": "真的"
+    },
+    {
+      "w": "each",
+      "ipa": "/iːtʃ/",
+      "pos": "adj.",
+      "def": "每个"
+    },
+    {
+      "w": "way",
+      "ipa": "/weɪ/",
+      "pos": "n.",
+      "def": "方式；路"
+    },
+    {
+      "w": "different",
+      "ipa": "/ˈdɪfərənt/",
+      "pos": "adj.",
+      "def": "不同的"
+    },
+    {
+      "w": "describe",
+      "ipa": "/dɪˈskraɪb/",
+      "pos": "v.",
+      "def": "描述"
+    }
+  ],
+  "b2u10": [
+    {
+      "w": "noodle",
+      "ipa": "/ˈnuːdl/",
+      "pos": "n.",
+      "def": "面条"
+    },
+    {
+      "w": "mutton",
+      "ipa": "/ˈmʌtn/",
+      "pos": "n.",
+      "def": "羊肉"
+    },
+    {
+      "w": "beef",
+      "ipa": "/biːf/",
+      "pos": "n.",
+      "def": "牛肉"
+    },
+    {
+      "w": "cabbage",
+      "ipa": "/ˈkæbɪdʒ/",
+      "pos": "n.",
+      "def": "卷心菜"
+    },
+    {
+      "w": "potato",
+      "ipa": "/pəˈteɪtoʊ/",
+      "pos": "n.",
+      "def": "土豆"
+    },
+    {
+      "w": "special",
+      "ipa": "/ˈspeʃl/",
+      "pos": "n.",
+      "def": "特色菜"
+    },
+    {
+      "w": "size",
+      "ipa": "/saɪz/",
+      "pos": "n.",
+      "def": "大小；尺码"
+    },
+    {
+      "w": "bowl",
+      "ipa": "/boʊl/",
+      "pos": "n.",
+      "def": "碗"
+    },
+    {
+      "w": "would",
+      "ipa": "/wʊd/",
+      "pos": "modal v.",
+      "def": "（表示意愿）要"
+    },
+    {
+      "w": "tofu",
+      "ipa": "/ˈtoʊfuː/",
+      "pos": "n.",
+      "def": "豆腐"
+    },
+    {
+      "w": "large",
+      "ipa": "/lɑːrdʒ/",
+      "pos": "adj.",
+      "def": "大的"
+    },
+    {
+      "w": "order",
+      "ipa": "/ˈɔːrdər/",
+      "pos": "v.",
+      "def": "点菜；订购"
+    },
+    {
+      "w": "answer",
+      "ipa": "/ˈænsər/",
+      "pos": "v.",
+      "def": "回答"
+    },
+    {
+      "w": "different",
+      "ipa": "/ˈdɪfərənt/",
+      "pos": "adj.",
+      "def": "不同的"
+    },
+    {
+      "w": "cake",
+      "ipa": "/keɪk/",
+      "pos": "n.",
+      "def": "蛋糕"
+    },
+    {
+      "w": "candle",
+      "ipa": "/ˈkændl/",
+      "pos": "n.",
+      "def": "蜡烛"
+    },
+    {
+      "w": "age",
+      "ipa": "/eɪdʒ/",
+      "pos": "n.",
+      "def": "年龄"
+    },
+    {
+      "w": "blow",
+      "ipa": "/bloʊ/",
+      "pos": "v.",
+      "def": "吹"
+    },
+    {
+      "w": "blow out",
+      "ipa": "",
+      "pos": "phrase",
+      "def": "吹灭"
+    },
+    {
+      "w": "if",
+      "ipa": "/ɪf/",
+      "pos": "conj.",
+      "def": "如果"
+    },
+    {
+      "w": "will",
+      "ipa": "/wɪl/",
+      "pos": "modal v.",
+      "def": "将；会"
+    },
+    {
+      "w": "idea",
+      "ipa": "/aɪˈdiːə/",
+      "pos": "n.",
+      "def": "想法；主意"
+    }
+  ],
+  "b2u11": [
+    {
+      "w": "milk",
+      "ipa": "/mɪlk/",
+      "pos": "v.",
+      "def": "挤奶"
+    },
+    {
+      "w": "cow",
+      "ipa": "/kaʊ/",
+      "pos": "n.",
+      "def": "奶牛"
+    },
+    {
+      "w": "horse",
+      "ipa": "/hɔːrs/",
+      "pos": "n.",
+      "def": "马"
+    },
+    {
+      "w": "chicken",
+      "ipa": "/ˈtʃɪkɪn/",
+      "pos": "n.",
+      "def": "鸡"
+    },
+    {
+      "w": "farm",
+      "ipa": "/fɑːrm/",
+      "pos": "n.",
+      "def": "农场"
+    },
+    {
+      "w": "visit",
+      "ipa": "/ˈvɪzɪt/",
+      "pos": "v.",
+      "def": "参观"
+    },
+    {
+      "w": "guide",
+      "ipa": "/ɡaɪd/",
+      "pos": "n.",
+      "def": "导游"
+    },
+    {
+      "w": "gift",
+      "ipa": "/ɡɪft/",
+      "pos": "n.",
+      "def": "礼物"
+    },
+    {
+      "w": "excellent",
+      "ipa": "/ˈeksələnt/",
+      "pos": "adj.",
+      "def": "出色的"
+    },
+    {
+      "w": "yesterday",
+      "ipa": "/ˈjestədeɪ/",
+      "pos": "adv.",
+      "def": "昨天"
+    },
+    {
+      "w": "flower",
+      "ipa": "/ˈflaʊər/",
+      "pos": "n.",
+      "def": "花"
+    },
+    {
+      "w": "worry",
+      "ipa": "/ˈwʌri/",
+      "pos": "v.",
+      "def": "担心"
+    },
+    {
+      "w": "museum",
+      "ipa": "/mjuˈziːəm/",
+      "pos": "n.",
+      "def": "博物馆"
+    },
+    {
+      "w": "fire",
+      "ipa": "/ˈfaɪər/",
+      "pos": "n.",
+      "def": "火"
+    },
+    {
+      "w": "fire station",
+      "ipa": "",
+      "pos": "n.",
+      "def": "消防站"
+    },
+    {
+      "w": "painting",
+      "ipa": "/ˈpeɪntɪŋ/",
+      "pos": "n.",
+      "def": "绘画"
+    },
+    {
+      "w": "sun",
+      "ipa": "/sʌn/",
+      "pos": "n.",
+      "def": "太阳"
+    },
+    {
+      "w": "pick",
+      "ipa": "/pɪk/",
+      "pos": "v.",
+      "def": "摘"
+    },
+    {
+      "w": "grow",
+      "ipa": "/ɡroʊ/",
+      "pos": "v.",
+      "def": "种植；生长"
+    },
+    {
+      "w": "quite",
+      "ipa": "/kwaɪt/",
+      "pos": "adv.",
+      "def": "相当；很"
+    },
+    {
+      "w": "lovely",
+      "ipa": "/ˈlʌvli/",
+      "pos": "adj.",
+      "def": "可爱的"
+    },
+    {
+      "w": "expensive",
+      "ipa": "/ɪkˈspensɪv/",
+      "pos": "adj.",
+      "def": "昂贵的"
+    },
+    {
+      "w": "cheap",
+      "ipa": "/tʃiːp/",
+      "pos": "adj.",
+      "def": "便宜的"
+    },
+    {
+      "w": "slow",
+      "ipa": "/sloʊ/",
+      "pos": "adj.",
+      "def": "慢的"
+    },
+    {
+      "w": "fast",
+      "ipa": "/fæst/",
+      "pos": "adj.",
+      "def": "快的"
+    },
+    {
+      "w": "sound",
+      "ipa": "/saʊnd/",
+      "pos": "v.",
+      "def": "听起来"
+    },
+    {
+      "w": "all in all",
+      "ipa": "",
+      "pos": "phrase",
+      "def": "总的来说"
+    }
+  ],
+  "b2u12": [
+    {
+      "w": "camp",
+      "ipa": "/kæmp/",
+      "pos": "v.",
+      "def": "扎营"
+    },
+    {
+      "w": "lake",
+      "ipa": "/leɪk/",
+      "pos": "n.",
+      "def": "湖"
+    },
+    {
+      "w": "beach",
+      "ipa": "/biːtʃ/",
+      "pos": "n.",
+      "def": "海滩"
+    },
+    {
+      "w": "sheep",
+      "ipa": "/ʃiːp/",
+      "pos": "n.",
+      "def": "绵羊"
+    },
+    {
+      "w": "natural",
+      "ipa": "/ˈnætʃrəl/",
+      "pos": "adj.",
+      "def": "自然的"
+    },
+    {
+      "w": "butterfly",
+      "ipa": "/ˈbʌtərflaɪ/",
+      "pos": "n.",
+      "def": "蝴蝶"
+    },
+    {
+      "w": "visitor",
+      "ipa": "/ˈvɪzɪtər/",
+      "pos": "n.",
+      "def": "游客"
+    },
+    {
+      "w": "tired",
+      "ipa": "/ˈtaɪərd/",
+      "pos": "adj.",
+      "def": "疲倦的"
+    },
+    {
+      "w": "stay",
+      "ipa": "/steɪ/",
+      "pos": "v.",
+      "def": "停留"
+    },
+    {
+      "w": "stay up late",
+      "ipa": "",
+      "pos": "phrase",
+      "def": "熬夜"
+    },
+    {
+      "w": "away",
+      "ipa": "/əˈweɪ/",
+      "pos": "adv.",
+      "def": "离开"
+    },
+    {
+      "w": "run away",
+      "ipa": "",
+      "pos": "phrase",
+      "def": "逃跑"
+    },
+    {
+      "w": "mouse",
+      "ipa": "/maʊs/",
+      "pos": "n.",
+      "def": "老鼠"
+    },
+    {
+      "w": "baby",
+      "ipa": "/ˈbeɪbi/",
+      "pos": "n.",
+      "def": "婴儿"
+    },
+    {
+      "w": "shout",
+      "ipa": "/ʃaʊt/",
+      "pos": "v.",
+      "def": "喊叫"
+    },
+    {
+      "w": "language",
+      "ipa": "/ˈlæŋɡwɪdʒ/",
+      "pos": "n.",
+      "def": "语言"
+    },
+    {
+      "w": "fly",
+      "ipa": "/flaɪ/",
+      "pos": "v.",
+      "def": "飞"
+    },
+    {
+      "w": "kite",
+      "ipa": "/kaɪt/",
+      "pos": "n.",
+      "def": "风筝"
+    },
+    {
+      "w": "high",
+      "ipa": "/haɪ/",
+      "pos": "adj.",
+      "def": "高的"
+    },
+    {
+      "w": "ago",
+      "ipa": "/əˈɡoʊ/",
+      "pos": "adv.",
+      "def": "以前"
+    },
+    {
+      "w": "India",
+      "ipa": "/ˈɪndiə/",
+      "pos": "n.",
+      "def": "印度"
+    },
+    {
+      "w": "move",
+      "ipa": "/muːv/",
+      "pos": "v.",
+      "def": "移动；搬家"
+    },
+    {
+      "w": "start",
+      "ipa": "/stɑːrt/",
+      "pos": "v.",
+      "def": "开始"
+    },
+    {
+      "w": "jump",
+      "ipa": "/dʒʌmp/",
+      "pos": "v.",
+      "def": "跳"
+    },
+    {
+      "w": "wake",
+      "ipa": "/weɪk/",
+      "pos": "v.",
+      "def": "醒来"
+    },
+    {
+      "w": "wake up",
+      "ipa": "",
+      "pos": "phrase",
+      "def": "醒来"
+    },
+    {
+      "w": "into",
+      "ipa": "/ˈɪntuː/",
+      "pos": "prep.",
+      "def": "到……里"
+    },
+    {
+      "w": "as",
+      "ipa": "/æz/",
+      "pos": "prep.",
+      "def": "作为"
+    },
+    {
+      "w": "scared",
+      "ipa": "/skerd/",
+      "pos": "adj.",
+      "def": "害怕的"
+    }
+  ]
+}

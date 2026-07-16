@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme="light">
+<html lang="zh-CN" >
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,6 +25,7 @@ h1{font-size:28px;}
 .back:hover{text-decoration:underline;}
 .card-empty{grid-column:1/-1;text-align:center;padding:40px;color:var(--text-secondary);font-size:14px;border:1px dashed var(--border);border-radius:var(--card-radius);}
 </style>
+<script>(function(){var t=localStorage.getItem("site-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
 </head>
 <body>
 <a href="../index.html" class="back">← 返回总导航</a>

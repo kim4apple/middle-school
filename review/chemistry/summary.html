@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme="light">
+<html lang="zh-CN" >
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -126,6 +126,7 @@ h1 { font-size: 26px; margin-bottom: 6px; }
   .chk input:checked + .box { background:#ccc!important; border-color:#333!important; color:#000!important; }
 }
   </style>
+<script>(function(){var t=localStorage.getItem("site-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
 </head>
 <body>
 <button class="theme-toggle" id="themeToggle" title="切换暗黑模式">🌙</button>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme="light">
+<html lang="zh-CN" >
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,10 +36,11 @@ body { display: block; min-height: 100vh; padding: 0; }
   .grammar-section th, .grammar-section td { padding: 6px 8px; }
 }
 </style>
+<script>(function(){var t=localStorage.getItem("eng7-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
 </head>
 <body>
 
-<button class="theme-toggle" id="themeToggle" style="position:fixed;top:16px;right:16px;z-index:100;padding:6px 14px;border-radius:20px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px;width:auto;">🌙 暗色</button>
+<button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
 
 <div class="wrapper">
 
@@ -280,17 +281,11 @@ body { display: block; min-height: 100vh; padding: 0; }
 
 <script>
 (function() {
-  var toggle = document.getElementById('themeToggle');
-  var html = document.documentElement;
-  var saved = localStorage.getItem('site-theme');
-  if (saved === 'dark') { html.setAttribute('data-theme', 'dark'); toggle.textContent = '☀️ 亮色'; }
-  toggle.addEventListener('click', function() {
-    var isDark = html.getAttribute('data-theme') === 'dark';
-    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-    toggle.textContent = isDark ? '🌙 暗色' : '☀️ 亮色';
-    localStorage.setItem('site-theme', isDark ? 'light' : 'dark');
-  });
 })();
+
+function setTheme(t) { document.documentElement.setAttribute("data-theme", t); localStorage.setItem("eng7-theme", t); var btn = document.getElementById("themeToggle"); if (btn) btn.textContent = t === "dark" ? "☀️" : "🌙"; }
+function toggleTheme() { setTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark"); }
+
 </script>
 
 </body>

@@ -44,7 +44,9 @@
   display: flex; align-items: center; justify-content: center;
 }
 .speech-toggle-btn:hover { background: var(--accent-light); }
+.en-text.speaking { background: var(--eng-amber-light); border-radius: 4px; padding: 2px 4px; transition: background 0.2s; }
 [data-theme="dark"] .speech-panel { box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background: #452a08; }
 </style>
 </head>
 <body>
@@ -60,6 +62,9 @@
   <nav>
     <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
     <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 七 上 ━━</a>
+    <a href="u00.html" style="opacity:0.6;">S1 Good morning!</a>
+    <a href="u00.html" style="opacity:0.6;">S2 What's this in English?</a>
+    <a href="u00.html" style="opacity:0.6;">S3 What color is it?</a>
     <a href="u01.html">U1 My name's Gina.</a>
     <a href="u02.html">U2 This is my sister.</a>
     <a href="u03.html" class="active">U3 Is this your pencil?</a>
@@ -118,41 +123,41 @@
 
     <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;">
       <span style="font-size:13px;color:var(--text-secondary);">场景：Ann 和 Tom 在教室捡到一些文具，正在寻找失主。</span>
-      <button class="speak-btn" data-target="#dialogueText" title="朗读整段对话">🔊 朗读对话</button>
+      <button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话（含间隔）">🔊 朗读对话</button>
     </div>
 
     <div class="dialogue" id="dialogueText">
       <div class="dialogue-line">
         <span class="speaker">Tom:</span>
-        <span class="en-text">Hey, Ann! Look! <em>Is this your ruler</em>?</span>
+        <span class="en-text wotd-say" data-speak="Hey, Ann! Look! Is this your ruler?">Hey, Ann! Look! <em>Is this your ruler</em>?</span>
       </div>
       <div class="dialogue-line">
         <span class="speaker">Ann:</span>
-        <span class="en-text">No, <em>it isn't</em>. My ruler is green. That one is blue.</span>
+        <span class="en-text wotd-say" data-speak="No, it isn't. My ruler is green. That one is blue.">No, <em>it isn't</em>. My ruler is green. That one is blue.</span>
       </div>
       <div class="dialogue-line">
         <span class="speaker">Tom:</span>
-        <span class="en-text">Oh, I see. <em>Whose</em> ruler is it?</span>
+        <span class="en-text wotd-say" data-speak="Oh, I see. Whose ruler is it?">Oh, I see. <em>Whose</em> ruler is it?</span>
       </div>
       <div class="dialogue-line">
         <span class="speaker">Ann:</span>
-        <span class="en-text">Maybe it's Mike's. He has a blue ruler.</span>
+        <span class="en-text wotd-say" data-speak="Maybe it's Mike's. He has a blue ruler.">Maybe it's Mike's. He has a blue ruler.</span>
       </div>
       <div class="dialogue-line">
         <span class="speaker">Tom:</span>
-        <span class="en-text">Mike, <em>is this your ruler</em>?</span>
+        <span class="en-text wotd-say" data-speak="Mike, is this your ruler?">Mike, <em>is this your ruler</em>?</span>
       </div>
       <div class="dialogue-line">
         <span class="speaker">Mike:</span>
-        <span class="en-text">Oh yes, it is! Thanks, Tom.</span>
+        <span class="en-text wotd-say" data-speak="Oh yes, it is! Thanks, Tom.">Oh yes, it is! Thanks, Tom.</span>
       </div>
       <div class="dialogue-line">
         <span class="speaker">Tom:</span>
-        <span class="en-text">You're welcome. And Ann, <em>are these your pencils</em>?</span>
+        <span class="en-text wotd-say" data-speak="You're welcome. And Ann, are these your pencils?">You're welcome. And Ann, <em>are these your pencils</em>?</span>
       </div>
       <div class="dialogue-line">
         <span class="speaker">Ann:</span>
-        <span class="en-text">No, they aren't. <em>Mine are yellow</em>. Those are red.</span>
+        <span class="en-text wotd-say" data-speak="No, they aren't. Mine are yellow. Those are red.">No, they aren't. <em>Mine are yellow</em>. Those are red.</span>
       </div>
     </div>
 
@@ -182,10 +187,11 @@
 
     <div style="display:flex;gap:8px;align-items:center;margin:20px 0 10px;">
       <h3 style="font-size:15px;color:var(--accent);margin:0;">📖 Reading: Lost &amp; Found Notice</h3>
-      <button class="speak-btn" data-target="#readingText" title="朗读全文">🔊 朗读</button>
+      <button class="speak-btn" data-target="#readingEnglish" title="朗读英文正文">🔊 朗读</button>
     </div>
 
     <div class="reading" id="readingText">
+      <div id="readingEnglish">
       <div class="notice">
         <div class="title">Found</div>
         <p>Is this your schoolbag? It's blue and white. There are two notebooks, a pencil case and a dictionary in it.</p>
@@ -200,11 +206,12 @@
         <div class="title">Found</div>
         <p>A set of keys. Are these yours? Ask the teacher for them.</p>
       </div>
+      </div>
       <div class="read-glossary">
-        <span class="gloss-item">📘 schoolbag /ˈskuːlbæɡ/ n. 书包</span>
-        <span class="gloss-item">📘 dictionary /ˈdɪkʃəneri/ n. 字典</span>
-        <span class="gloss-item">📘 missing /ˈmɪsɪŋ/ adj. 丢失的</span>
-        <span class="gloss-item">📘 a set of 一串 / 一套</span>
+        <span class="gloss-item wotd-say" data-speak="schoolbag">📘 schoolbag /ˈskuːlbæɡ/ n. 书包</span>
+        <span class="gloss-item wotd-say" data-speak="dictionary">📘 dictionary /ˈdɪkʃəneri/ n. 字典</span>
+        <span class="gloss-item wotd-say" data-speak="missing">📘 missing /ˈmɪsɪŋ/ adj. 丢失的</span>
+        <span class="gloss-item wotd-say" data-speak="a set of">📘 a set of 一串 / 一套</span>
       </div>
     </div>
 
@@ -625,7 +632,7 @@
       this.speak(text);
     },
 
-    speakDialogue: function(containerId) {
+    speakDialogue: function(containerId, callback) {
       var self = this;
       var container = document.getElementById(containerId);
       if (!container) return;
@@ -633,13 +640,20 @@
       var index = 0;
       this.stop();
       function speakNext() {
-        if (index >= lines.length) { self.speaking = false; return; }
-        var text = lines[index].textContent.replace(/<[^>]+>/g, '').trim();
+        if (index >= lines.length) { self.speaking = false; if (callback) callback(); return; }
+        var el = lines[index];
+        var text = el.getAttribute('data-speak') || el.textContent.replace(/<[^>]+>/g, '').trim();
         if (!text) { index++; speakNext(); return; }
+        el.classList.add('speaking');
         var utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = self.voiceURI;
         utterance.rate = self.rate;
-        utterance.onend = function() { index++; setTimeout(speakNext, 400); };
+        utterance.onend = function() {
+          el.classList.remove('speaking');
+          index++;
+          setTimeout(speakNext, 500);
+        };
+        utterance.onerror = function() { el.classList.remove('speaking'); index++; setTimeout(speakNext, 200); };
         self.currentUtterance = utterance;
         self.synthesis.speak(utterance);
       }
@@ -666,13 +680,20 @@
   document.querySelectorAll('.speak-btn').forEach(function(btn) {
     btn.addEventListener('click', function(e) {
       e.stopPropagation();
-      var target = document.querySelector(this.getAttribute('data-target'));
-      if (!target) return;
+      var dialogueId = this.getAttribute('data-dialogue');
+      var targetId = this.getAttribute('data-target');
       if (this.classList.contains('speaking')) { SpeechManager.stop(); this.classList.remove('speaking'); return; }
       this.classList.add('speaking');
-      SpeechManager.speak(target.textContent.replace(/<[^>]+>/g, ''), function() {
+      var done = function() { btn.classList.remove('speaking'); };
+      if (dialogueId) {
+        SpeechManager.speakDialogue(dialogueId, done);
+      } else if (targetId) {
+        var target = document.getElementById(targetId);
+        if (!target) { btn.classList.remove('speaking'); return; }
+        SpeechManager.speak(target.textContent.replace(/<[^>]+>/g, ''), done);
+      } else {
         btn.classList.remove('speaking');
-      });
+      }
     });
   });
 

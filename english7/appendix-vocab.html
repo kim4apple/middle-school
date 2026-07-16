@@ -38,47 +38,56 @@ body { display: block; min-height: 100vh; padding: 0; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
 
 /* === Table view === */
-.vocab-unit { margin-bottom: 20px; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
-.vocab-unit summary { padding: 14px 18px; cursor: pointer; font-size: 15px; font-weight: 600; user-select: none; list-style: none; display: flex; align-items: center; justify-content: space-between; position: relative; overflow: hidden; background: var(--bg-secondary); }
+.vocab-unit { margin-bottom: 14px; border: 1px solid var(--border); border-radius: var(--radius); overflow: clip; }
+.vocab-unit summary { padding: 10px 14px; cursor: pointer; font-size: 14px; font-weight: 600; user-select: none; list-style: none; display: flex; align-items: center; justify-content: space-between; position: relative; overflow: hidden; background: var(--bg-secondary); border-radius: var(--radius); }
+.vocab-unit[open] summary { border-radius: var(--radius) var(--radius) 0 0; border-bottom: 1px solid var(--border); }
 .vocab-unit summary::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: var(--card-pct); background: var(--card-c); pointer-events: none; }
 [data-theme="dark"] .vocab-unit summary::before { background: var(--card-c-dark); }
-.vocab-unit[open] summary { border-bottom: 1px solid var(--border); }
 .vocab-unit summary::-webkit-details-marker { display: none; }
-.vocab-unit summary .sum-content { display: flex; align-items: center; justify-content: space-between; width: 100%; position: relative; z-index: 1; }
-.vocab-unit summary .unit-progress { font-size: 12px; font-weight: 500; color: var(--text-secondary); display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.vocab-unit summary .sum-content { display: flex; align-items: center; justify-content: space-between; width: 100%; position: relative; z-index: 1; gap: 12px; }
+.vocab-unit summary .unit-progress { font-size: 11px; font-weight: 500; color: var(--text-secondary); display: flex; align-items: center; gap: 6px; flex-shrink: 0; white-space: nowrap; }
 .vocab-unit summary .unit-progress strong { color: var(--accent); }
-.vocab-unit summary .unit-progress .pct { font-size: 11px; font-weight: 700; color: var(--accent); min-width: 28px; text-align: right; }
+.vocab-unit summary .unit-progress .pct { font-size: 10px; font-weight: 700; color: var(--accent); min-width: 24px; text-align: right; }
 .vocab-unit summary .unit-progress .pct.done { color: #16a34a; }
 [data-theme="dark"] .vocab-unit summary .unit-progress .pct.done { color: #4ade80; }
-.vocab-unit summary .unit-progress .srs-due { font-size: 11px; padding: 2px 8px; border-radius: 10px; background: #fef3c7; color: #92400e; }
+.vocab-unit summary .unit-progress .srs-due { font-size: 10px; padding: 1px 6px; border-radius: 8px; background: #fef3c7; color: #92400e; }
 [data-theme="dark"] .vocab-unit summary .unit-progress .srs-due { background: #451a03; color: #fbbf24; }
 
-.vocab-table { width: 100%; border-collapse: collapse; font-size: 14px; }
-.vocab-table th { padding: 8px 12px; text-align: left; font-size: 11px; color: var(--text-secondary); font-weight: 600; border-bottom: 1px solid var(--border); }
-.vocab-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.vocab-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.vocab-table thead { position: sticky; top: 0; z-index: 2; }
+.vocab-table th { padding: 6px 10px; text-align: left; font-size: 10px; color: var(--text-secondary); font-weight: 600; border-bottom: 1px solid var(--border); background: var(--bg); white-space: nowrap; }
+.vocab-table td { padding: 6px 10px; border-bottom: 1px solid var(--border); vertical-align: middle; }
 .vocab-table tr:last-child td { border-bottom: none; }
 .vocab-table tr:hover { background: var(--bg-secondary); }
+.vocab-table .word-cell { cursor: pointer; font-weight: 500; }
+.vocab-table .word-cell .speak-indicator { font-size: 10px; vertical-align: middle; opacity: 0.5; margin-left: 2px; }
+.vocab-table .word-cell .wrong-tag { font-size: 10px; background: #fecaca; color: #991b1b; padding: 0 5px; border-radius: 4px; vertical-align: middle; margin-left: 4px; }
+[data-theme="dark"] .vocab-table .word-cell .wrong-tag { background: #7f1d1d; color: #fecaca; }
+.vocab-table .ipa-cell { font-family: Menlo, "SF Mono", Consolas, monospace; font-size: 12px; color: var(--text-secondary); max-width: 120px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.vocab-table .pos-cell { font-size: 11px; color: #7c3aed; white-space: nowrap; max-width: 50px; }
+[data-theme="dark"] .vocab-table .pos-cell { color: #a78bfa; }
+.vocab-table .def-cell { max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.vocab-table .ex-cell { max-width: 280px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: pointer; }
+.vocab-table .ex-cell:hover { white-space: normal; overflow: visible; background: var(--bg); position: relative; z-index: 1; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.vocab-table .ex-cell .ex-en { font-size: 12px; color: var(--text-secondary); }
+.vocab-table .ex-cell .ex-zh { font-size: 11px; color: var(--text-secondary); opacity: 0.7; margin-top: 1px; }
+.vocab-table .mastered td { opacity: 0.55; }
+.vocab-table .mastered .word-cell { text-decoration: line-through; }
+.vocab-table .wrong-row { background: #fef2f2; }
+[data-theme="dark"] .vocab-table .wrong-row { background: #2d0a0a; }
+.vocab-table .srs-due-row td { border-left: 2px solid #f59e0b; padding-left: 8px; }
+[data-theme="dark"] .vocab-table .srs-due-row td { border-left-color: #fbbf24; }
+
 .vocab-table .cb-cell { width: 32px; text-align: center; }
 .vocab-table .cb-cell input { width: 16px; height: 16px; cursor: pointer; accent-color: var(--accent); }
 .vocab-table .word-cell { min-width: 100px; }
-.vocab-table .word-cell .headword { font-weight: 600; cursor: pointer; }
-.vocab-table .word-cell .headword:hover { color: var(--accent); }
-.vocab-table .word-cell .speak-indicator { font-size: 11px; margin-left: 4px; cursor: pointer; opacity: 0.5; }
-.vocab-table .word-cell .speak-indicator:hover { opacity: 1; }
-.vocab-table .ipa-cell { font-family: Menlo, "SF Mono", Consolas, monospace; font-size: 13px; color: var(--text-secondary); }
-.vocab-table .pos-cell { color: var(--text-secondary); font-size: 12px; }
-.vocab-table .def-cell { color: var(--text); }
-.vocab-table .ex-cell { font-size: 13px; color: var(--text-secondary); max-width: 200px; }
-.vocab-table .ex-cell .ex-en { cursor: pointer; }
+.vocab-table .word-cell .headword { font-weight: 600; }
 .vocab-table .ex-cell .ex-en:hover { color: var(--accent); }
-.vocab-table .ex-cell .ex-zh { font-size: 12px; color: var(--text-secondary); }
-.vocab-table .mastered td { color: var(--text-secondary); }
-.vocab-table .mastered .headword { text-decoration: line-through; text-decoration-color: var(--text-secondary); }
-.vocab-table .srs-due-row td { border-left: 3px solid var(--accent); }
-.vocab-table .wrong-row td { border-left: 3px solid #dc2626; }
-.vocab-table .wrong-tag { display: inline-block; font-size: 10px; padding: 1px 6px; border-radius: 4px; background: #fef2f2; color: #dc2626; margin-left: 4px; font-weight: 600; }
-[data-theme="dark"] .vocab-table .wrong-tag { background: #451a1a; color: #f87171; }
 
+@media (max-width: 700px) {
+  .vocab-table .ipa-cell, .vocab-table .ex-cell { display: none; }
+  .vocab-table th:nth-child(3), .vocab-table th:nth-child(6) { display: none; }
+}
 /* === Flashcard view === */
 .flashcard-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 8px; }
 .flashcard-header .stats { font-size: 13px; color: var(--text-secondary); }
@@ -538,7 +547,7 @@ function renderTable() {
     var pct = total > 0 ? Math.round(done / total * 100) : 0;
     var cardColor = pct >= 100 ? '#f0fdf4' : pct >= 60 ? '#eef2ff' : '#fef3c7';
     var cardColorDark = pct >= 100 ? 'rgba(74,222,128,0.25)' : pct >= 60 ? 'rgba(129,140,248,0.22)' : 'rgba(251,191,36,0.2)';
-    html += '<details class="vocab-unit"' + (isOpen ? ' open' : '') + '>';
+    html += '<details class="vocab-unit" data-unit="' + unit.label + '"' + (isOpen ? ' open' : '') + '>';
     html += '<summary style="--card-pct:' + pct + '%;--card-c:' + cardColor + ';--card-c-dark:' + cardColorDark + '"><span class="sum-content"><span>' + shortUnitLabel(unit.label, unit.title) + '</span>';
     html += '<span class="unit-progress"><strong>' + done + '</strong>/' + total;
     html += '<span class="pct' + (pct >= 100 ? ' done' : '') + '">' + pct + '%</span>';
@@ -581,7 +590,7 @@ function renderTable() {
 
   container.querySelectorAll('.vocab-unit').forEach(function(d) {
     d.addEventListener('toggle', function() {
-      var label = this.querySelector('summary .sum-content > span:first-child').textContent.trim().split(' ')[0];
+      var label = this.dataset.unit;
       if (this.open) state.openUnits[label] = true;
       else delete state.openUnits[label];
     });

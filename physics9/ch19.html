@@ -6,19 +6,7 @@
 <title>第19章 生活用电 | 九年级物理</title>
 <link rel="stylesheet" href="css/physics.css">
 <link rel="stylesheet" href="../katex/katex.min.css">
-<style>
-#sidebar { position:fixed;top:0;left:0;width:240px;height:100vh;background:var(--bg);border-right:1px solid var(--border);overflow-y:auto;padding:20px 16px;z-index:1000;transition:transform .2s;}
-#sidebar.hidden { transform:translateX(-260px); }
-#sidebar h2 { font-size:16px;margin-bottom:16px; }
-#sidebar nav a { display:flex;padding:5px 8px;border-radius:6px;color:var(--text);text-decoration:none;font-size:13px;margin-bottom:2px;transition:background .1s;}
-#sidebar nav a:hover,#sidebar nav a.active { background:var(--accent-light);color:var(--accent);}
-#sidebarShowBtn { position:fixed;top:16px;left:16px;z-index:999;padding:6px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:13px;display:none;}
-body:has(#sidebar.hidden) #sidebarShowBtn { display:block; }
-#content { max-width:800px;margin:0 auto;padding:24px 24px 80px;margin-left:240px;}
-#sidebar.hidden ~ #content { margin-left:0; }
-@media (max-width:768px){#sidebar{width:200px;}#content{margin-left:0;padding:16px 12px 80px;}#sidebarShowBtn{display:block;}}
-@media print {#sidebar,#sidebarShowBtn,.back-to-top,.expand-btn,.print-btn{display:none!important;}#content{max-width:100%;padding:0;margin-left:0;}}
-</style>
+
 </head>
 <body>
 <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="回到顶部">↑</button>
@@ -30,8 +18,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display:block; }
     <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;" title="隐藏侧栏">✕</button>
   </div>
   <nav>
-    <a href="../index.html">🏠 返回总首页</a>
-    <a href="index.html">📘 九年级主页</a>
+    <a href="index.html">🏠 首页</a>
     <a href="ch13.html">第13章 内能</a>
     <a href="ch14.html">第14章 内能的利用</a>
     <a href="ch15.html">第15章 电流和电路</a>
@@ -42,11 +29,11 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display:block; }
     <a href="ch20.html">第20章 电与磁</a>
     <a href="ch21.html">第21章 信息的传递</a>
     <a href="ch22.html">第22章 能源与可持续发展</a>
-    <a href="appendix.html" style="margin-top:12px;border-top:1px solid var(--border);padding-top:12px;">附录</a>
+    <a href="appendix.html">附录</a>
   </nav>
   <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
-  <button id="theme-toggle" class="theme-toggle" style="margin-top:10px;">🌙 暗色模式</button>
-  <button class="print-btn" onclick="window.print()" style="margin-top:8px;padding:8px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px;width:100%;">🖨️ 打印 / 存 PDF</button>
+  <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
+  <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
 </nav>
 
 <main id="content">

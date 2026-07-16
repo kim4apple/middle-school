@@ -66,6 +66,10 @@ body {
   flex-shrink: 0;
   z-index: 10;
 }
+#sidebar::-webkit-scrollbar { width: 4px; }
+#sidebar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+#sidebar::-webkit-scrollbar-track { background: transparent; }
+[data-theme="dark"] #sidebar::-webkit-scrollbar-thumb { background: #475569; }
 
 #sidebar h2 {
   font-size: 18px;
@@ -789,10 +793,8 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
-  body { flex-direction: column; }
-  #sidebar { width: 100%; height: auto; position: fixed; left: -100%; top: 0; transition: left 0.3s; z-index: 50; }
-  #sidebar.open { left: 0; }
-  #sidebar.hidden { display: block; }
+  #sidebar { position: fixed; left: 0; top: 0; z-index: 900; }
+  #sidebar.hidden { display: none; }
   #sidebar h2 { font-size: 15px; margin-bottom: 8px; }
   #sidebar nav a { display: inline-block; padding: 4px 8px; font-size: 12px; margin: 1px; white-space: nowrap; }
   #sidebar nav br { display: none; }

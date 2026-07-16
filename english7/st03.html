@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Starter 3 What color is it? | 初中英语七年级</title>
+<link rel="stylesheet" href="css/english.css">
+<style>
+.speak-btn {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 12px; cursor: pointer; color: var(--accent);
+  border: 1px solid var(--border); border-radius: 4px;
+  padding: 2px 8px; background: var(--bg);
+  transition: background 0.15s;
+}
+.speak-btn:hover { background: var(--accent-light); }
+.speak-btn.speaking { background: var(--eng-amber-light); color: var(--eng-amber); border-color: var(--eng-amber); }
+.headword-speak-indicator { font-size: 11px; margin-left: 3px; opacity: 0.55; cursor: pointer; vertical-align: super; line-height: 1; }
+.headword-speak-indicator:hover { opacity: 1; }
+.wotd-say {
+  cursor: pointer; transition: color 0.15s;
+}
+.wotd-say:hover { color: var(--accent); }
+.wotd-say.speaking { color: var(--eng-pink); }
+.speech-panel {
+  position: fixed; bottom: 80px; right: 24px; z-index: 999;
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  padding: 14px 18px; display: none; min-width: 180px;
+}
+.speech-panel.open { display: block; }
+.speech-panel .row { display: flex; align-items: center; gap: 8px; margin: 4px 0; font-size: 13px; }
+.speech-panel .row label { color: var(--text-secondary); font-size: 12px; min-width: 36px; }
+.speech-panel select, .speech-panel input[type="range"] { flex: 1; }
+.speech-panel button {
+  padding: 4px 12px; border-radius: 6px; border: 1px solid var(--border);
+  background: var(--bg); color: var(--text); cursor: pointer; font-size: 12px;
+}
+.speech-panel button:hover { background: var(--accent-light); }
+.speech-toggle-btn {
+  position: fixed; bottom: 24px; right: 76px; z-index: 999;
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid var(--border); background: var(--bg);
+  color: var(--accent); cursor: pointer; font-size: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  display: flex; align-items: center; justify-content: center;
+}
+.speech-toggle-btn:hover { background: var(--accent-light); }
+.en-text.speaking { background: var(--eng-amber-light); border-radius: 4px; padding: 2px 4px; transition: background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background: #452a08; }
+.detail-module { content-visibility: auto; contain-intrinsic-size: 300px; }
+.reading { content-visibility: auto; contain-intrinsic-size: 400px; }
+.letter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+  margin: 16px 0;
+}
+.letter-card {
+  text-align: center;
+  padding: 14px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.letter-card:hover { background: var(--accent-light); }
+.letter-card .letter-upper { font-size: 28px; font-weight: 800; color: var(--accent); }
+.letter-card .letter-lower { font-size: 20px; color: var(--text-secondary); }
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+.color-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.color-card:hover { background: var(--accent-light); }
+.color-swatch {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.color-name { font-weight: 700; font-size: 16px; color: var(--accent); }
+</style>
+</head>
+<body>
+
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">英语七年级</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+  </div>
+  <nav>
+    <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+    <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 七 上 ━━</a>
+    <a href="st01.html">S1 Good morning!</a>
+    <a href="st02.html">S2 What's this in English?</a>
+    <a href="st03.html" class="active">S3 What color is it?</a>
+    <a href="u01.html">U1 My name's Gina.</a>
+    <a href="u02.html">U2 This is my sister.</a>
+    <a href="u03.html">U3 Is this your pencil?</a>
+    <a href="u04.html">U4 Where's my schoolbag?</a>
+    <a href="u05.html">U5 Do you have a soccer ball?</a>
+    <a href="u06.html">U6 Do you like bananas?</a>
+    <a href="u07.html">U7 How much are these socks?</a>
+    <a href="u08.html">U8 When is your birthday?</a>
+    <a href="u09.html">U9 My favorite subject is science.</a>
+    <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 七 下 ━━</a>
+    <a href="u13.html">U1 Can you play the guitar?</a>
+    <a href="u14.html">U2 What time...?</a>
+    <a href="u15.html">U3 How do you get to school?</a>
+    <a href="u16.html">U4 Don't eat in class.</a>
+    <a href="u17.html">U5 Why do you like pandas?</a>
+    <a href="u18.html">U6 I'm watching TV.</a>
+    <a href="u19.html">U7 It's raining!</a>
+    <a href="u20.html">U8 Is there a post office...</a>
+    <a href="u21.html">U9 What does he look like?</a>
+    <a href="u22.html">U10 I'd like some noodles.</a>
+    <a href="u23.html">U11 How was your school trip?</a>
+    <a href="u24.html">U12 What did you do last weekend?</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+  <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
+  <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
+</nav>
+
+<main id="content">
+
+<div class="cover">
+  <div class="sub-en">Starter Unit 3</div>
+  <h1>What color is it?</h1>
+  <p>字母 S–Z · 颜色 · 描述物品特征</p>
+</div>
+
+<div class="unit-meta">
+  <span>📖 话题：Colors</span>
+  <span>💬 功能：Describe colors</span>
+  <span>📚 语法：字母 S–Z · 颜色形容词</span>
+  <span>📝 写作：描述物品颜色</span>
+</div>
+
+<div class="can-do">
+  <h3>🎯 我能做到</h3>
+  <label><input type="checkbox"> I can ask "What color is it?" and answer "It's ..."</label>
+  <label><input type="checkbox"> I can name common colors in English.</label>
+  <label><input type="checkbox"> I can read and write letters S–Z.</label>
+  <label><input type="checkbox"> I can describe things using color + noun.</label>
+</div>
+
+<!-- ====== 课文精讲 ====== -->
+<details class="module" open>
+  <summary>📖 课文精讲 · What color is it?</summary>
+  <div class="content">
+
+    <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;">
+      <span style="font-size:13px;color:var(--text-secondary);">场景：两个同学在互相询问物品颜色。</span>
+      <button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话（含间隔）">🔊 朗读对话</button>
+    </div>
+
+    <div class="dialogue" id="dialogueText">
+      <div class="dialogue-line">
+        <span class="speaker">Anna:</span>
+        <span class="en-text wotd-say" data-speak="What color is your schoolbag?">What <em>color</em> is your schoolbag?</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Tom:</span>
+        <span class="en-text wotd-say" data-speak="It's blue.">It's <em>blue</em>.</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Anna:</span>
+        <span class="en-text wotd-say" data-speak="And what color is that pencil?">And what color is <em>that pencil</em>?</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Tom:</span>
+        <span class="en-text wotd-say" data-speak="It's red and yellow.">It's <em>red and yellow</em>.</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Anna:</span>
+        <span class="en-text wotd-say" data-speak="I see. Thanks!">I see. Thanks!</span>
+      </div>
+    </div>
+
+    <details style="margin-top:12px;">
+      <summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary>
+      <div class="dialogue-annotation">
+        <p><strong>逐句翻译：</strong></p>
+        <p>Anna: 你的书包是什么颜色的？</p>
+        <p>Tom: 它是蓝色的。</p>
+        <p>Anna: 那支铅笔是什么颜色的？</p>
+        <p>Tom: 它是红色和黄色的。</p>
+        <p>Anna: 我知道了。谢谢！</p>
+      </div>
+    </details>
+
+    <div class="dialogue-annotation">
+      <p><strong>🔑 重点讲解：</strong></p>
+      <p><strong>1.</strong> <em>What color is ...?</em> → "……是什么颜色的？" 用来询问颜色。</p>
+      <p><strong>2.</strong> 回答用 <strong>It's + 颜色</strong>。多种颜色用 and 连接，如 red and yellow。</p>
+      <p><strong>3.</strong> 颜色形容词放在名词前面：a blue pen, a red schoolbag。</p>
+      <p><strong>4.</strong> <em>I see.</em> → "我明白了。" 口语常用语。</p>
+    </div>
+
+    <div style="display:flex;gap:8px;align-items:center;margin:20px 0 10px;">
+      <h3 style="font-size:15px;color:var(--accent);margin:0;">📖 Colorful Things</h3>
+      <button class="speak-btn" data-dialogue="colorfulThings" title="朗读颜色描述">🔊 朗读</button>
+    </div>
+
+    <div class="reading" id="colorfulThings">
+      <p class="en-text" data-speak="The sky is blue.">The sky is <strong>blue</strong>.</p>
+      <p class="en-text" data-speak="The grass is green.">The grass is <strong>green</strong>.</p>
+      <p class="en-text" data-speak="The sun is yellow.">The sun is <strong>yellow</strong>.</p>
+      <p class="en-text" data-speak="The apple is red.">The apple is <strong>red</strong>.</p>
+      <p class="en-text" data-speak="The snow is white.">The snow is <strong>white</strong>.</p>
+    </div>
+
+  </div>
+</details>
+
+<!-- ====== 重点词汇 ====== -->
+<details class="module" open>
+  <summary>📝 重点词汇 · Colors <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇（含例句）">🔊 朗读全部词汇</button></summary>
+  <div class="content">
+
+    <div class="vocab-grid" id="vocabGrid">
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="color">color</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈkʌlər/</span>
+        <span class="pos">n.</span>
+        <div class="definition">颜色</div>
+        <div class="example"><span class="wotd-say" data-speak="What color is your bag?">What color is your bag?</span><span class="trans">你的包是什么颜色的？</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="red">red</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/red/</span>
+        <span class="pos">adj.</span>
+        <div class="definition">红色(的)</div>
+        <div class="example"><span class="wotd-say" data-speak="I have a red pen.">I have a red pen.</span><span class="trans">我有一支红色的钢笔。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="blue">blue</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/bluː/</span>
+        <span class="pos">adj.</span>
+        <div class="definition">蓝色(的)</div>
+        <div class="example"><span class="wotd-say" data-speak="The sky is blue.">The sky is blue.</span><span class="trans">天空是蓝色的。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="green">green</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɡriːn/</span>
+        <span class="pos">adj.</span>
+        <div class="definition">绿色(的)</div>
+        <div class="example"><span class="wotd-say" data-speak="The grass is green.">The grass is green.</span><span class="trans">草是绿色的。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="yellow">yellow</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈjeloʊ/</span>
+        <span class="pos">adj.</span>
+        <div class="definition">黄色(的)</div>
+        <div class="example"><span class="wotd-say" data-speak="The sun is yellow.">The sun is yellow.</span><span class="trans">太阳是黄色的。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="white">white</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/waɪt/</span>
+        <span class="pos">adj.</span>
+        <div class="definition">白色(的)</div>
+        <div class="example"><span class="wotd-say" data-speak="Snow is white.">Snow is white.</span><span class="trans">雪是白色的。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="black">black</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/blæk/</span>
+        <span class="pos">adj.</span>
+        <div class="definition">黑色(的)</div>
+        <div class="example"><span class="wotd-say" data-speak="My bag is black.">My bag is black.</span><span class="trans">我的包是黑色的。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="brown">brown</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/braʊn/</span>
+        <span class="pos">adj.</span>
+        <div class="definition">棕色(的)</div>
+        <div class="example"><span class="wotd-say" data-speak="I have a brown dog.">I have a brown dog.</span><span class="trans">我有一只棕色的狗。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="purple">purple</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈpɜːrpl/</span>
+        <span class="pos">adj.</span>
+        <div class="definition">紫色(的)</div>
+        <div class="example"><span class="wotd-say" data-speak="I like purple.">I like purple.</span><span class="trans">我喜欢紫色。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="orange">orange</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈɔːrɪndʒ/</span>
+        <span class="pos">adj. & n.</span>
+        <div class="definition">橙色(的)；橙子</div>
+        <div class="example"><span class="wotd-say" data-speak="My ruler is orange.">My ruler is orange.</span><span class="trans">我的尺子是橙色的。</span></div>
+      </div>
+
+    </div>
+
+  </div>
+</details>
+
+<!-- ====== 重点句型 ====== -->
+<details class="module" open>
+  <summary>🔤 重点句型 · Color Patterns</summary>
+  <div class="content">
+
+    <div class="pattern-grid">
+
+      <div class="pattern-card">
+        <div class="structure">What color is ...? — It's + 颜色.</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>询问和回答物品颜色。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1">
+          ✅ <strong>What color is</strong> <span class="slot">your pen</span>?<br>
+          ➡ It's <span class="slot">blue</span>.<br>
+          ✅ <strong>What color is</strong> <span class="slot">the apple</span>?<br>
+          ➡ It's <span class="slot">red</span>.</span></div>
+      </div>
+
+      <div class="pattern-card">
+        <div class="structure">颜色 + 名词</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>颜色形容词放在名词前作定语。</div>
+        <div class="substitution">
+          ✅ <span class="slot">a blue</span> pen<br>
+          ✅ <span class="slot">a red</span> schoolbag<br>
+          ✅ <span class="slot">a green</span> pencil<br>
+          ✅ <span class="slot">white</span> snow
+        </div>
+      </div>
+
+      <div class="pattern-card">
+        <div class="structure">主语 + be + 颜色.</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>描述事物的颜色特征。</div>
+        <div class="substitution">
+          ✅ The sky <strong>is</strong> <span class="slot">blue</span>.<br>
+          ✅ Leaves <strong>are</strong> <span class="slot">green</span>.<br>
+          ✅ My shoes <strong>are</strong> <span class="slot">black and white</span>.
+        </div>
+      </div>
+
+      <div class="pattern-card">
+        <div class="structure">颜色 1 and 颜色 2</div> <button class="speak-btn" data-target="sp4" title="朗读句型">🔊</button>
+        <div>用 and 连接两种颜色。</div>
+        <div class="substitution">
+          ✅ <span class="slot">red and yellow</span><br>
+          ✅ <span class="slot">blue and white</span><br>
+          ➡ 描述有两种以上颜色的物品。
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</details>
+
+<!-- ====== 语法聚焦 ====== -->
+<details class="module detail-module" open>
+  <summary>📚 语法聚焦 · Letters S–Z & Color Adjectives <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary>
+  <div class="content">
+
+    <div class="grammar-module">
+      <h3>1️⃣ 字母 S–Z 的大小写 — 26 个字母完整收尾</h3>
+
+      <div class="letter-grid">
+        <div class="letter-card wotd-say" data-speak="S">
+          <div class="letter-upper">S</div>
+          <div class="letter-lower">s</div>
+          <div style="font-size:11px;color:var(--text-secondary);margin-top:4px;">/es/</div>
+        </div>
+        <div class="letter-card wotd-say" data-speak="T">
+          <div class="letter-upper">T</div>
+          <div class="letter-lower">t</div>
+          <div style="font-size:11px;color:var(--text-secondary);margin-top:4px;">/tiː/</div>
+        </div>
+        <div class="letter-card wotd-say" data-speak="U">
+          <div class="letter-upper">U</div>
+          <div class="letter-lower">u</div>
+          <div style="font-size:11px;color:var(--text-secondary);margin-top:4px;">/juː/</div>
+        </div>
+        <div class="letter-card wotd-say" data-speak="V">
+          <div class="letter-upper">V</div>
+          <div class="letter-lower">v</div>
+          <div style="font-size:11px;color:var(--text-secondary);margin-top:4px;">/viː/</div>
+        </div>
+        <div class="letter-card wotd-say" data-speak="W">
+          <div class="letter-upper">W</div>
+          <div class="letter-lower">w</div>
+          <div style="font-size:11px;color:var(--text-secondary);margin-top:4px;">/ˈdʌbl juː/</div>
+        </div>
+        <div class="letter-card wotd-say" data-speak="X">
+          <div class="letter-upper">X</div>
+          <div class="letter-lower">x</div>
+          <div style="font-size:11px;color:var(--text-secondary);margin-top:4px;">/eks/</div>
+        </div>
+        <div class="letter-card wotd-say" data-speak="Y">
+          <div class="letter-upper">Y</div>
+          <div class="letter-lower">y</div>
+          <div style="font-size:11px;color:var(--text-secondary);margin-top:4px;">/waɪ/</div>
+        </div>
+        <div class="letter-card wotd-say" data-speak="Z">
+          <div class="letter-upper">Z</div>
+          <div class="letter-lower">z</div>
+          <div style="font-size:11px;color:var(--text-secondary);margin-top:4px;">/ziː/ /zed/</div>
+        </div>
+      </div>
+      <p style="font-size:14px;margin-top:8px;">📌 恭喜你学完了全部 26 个字母！现在可以用字母拼出任何单词了。</p>
+    </div>
+
+    <div class="grammar-module">
+      <h3>2️⃣ 颜色形容词的用法</h3>
+      <p>英语中，颜色词既是名词也是形容词。作形容词时放在名词前面：</p>
+      <table class="grammar-table">
+        <tr><th>用法</th><th>例句</th></tr>
+        <tr><td>adj. + n.（作定语）</td><td><span class="wotd-say" data-speak="a red apple">a <strong>red</strong> apple</span>（一个红苹果）</td></tr>
+        <tr><td>be + adj.（作表语）</td><td><span class="wotd-say" data-speak="The apple is red.">The apple is <strong>red</strong>.</span></td></tr>
+      </table>
+
+      <div class="grammar-tip">
+        <strong>💡 常见颜色组合：</strong><br>
+        red + yellow = orange（红色 + 黄色 = 橙色）<br>
+        blue + yellow = green（蓝色 + 黄色 = 绿色）<br>
+        white + black = gray（白色 + 黑色 = 灰色）
+      </div>
+    </div>
+
+    <div class="grammar-module">
+      <h3>3️⃣ What 引导的特殊疑问句</h3>
+      <p>What 用来问"什么"。</p>
+      <ul style="font-size:14px;line-height:1.8;margin-left:20px;">
+        <li><span class="wotd-say" data-speak="What's this?">What's this?</span> 这是什么？</li>
+        <li><span class="wotd-say" data-speak="What color is it?">What color is it?</span> 它是什么颜色的？</li>
+      </ul>
+      <p style="font-size:14px;margin-top:8px;">📌 结构：<strong>What + 名词 + be + 主语？</strong></p>
+    </div>
+
+  </div>
+</details>
+
+<!-- ====== 三级闯关 ====== -->
+<details class="exam-module" open>
+  <summary>📝 三级闯关 · 实战练习</summary>
+  <div class="content">
+
+    <h3 style="color:var(--accent);margin:0 0 10px;">🥉 基础关 · 概念识记</h3>
+
+    <div class="exam-q">
+      <span class="q-tag">基础</span>
+      <span class="q-diff easy">★☆☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q1">— What color is your ruler?<br>— ____ white.</span> <button class="speak-btn" data-target="q1" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>It's<br><strong>解析：</strong>回答 What color is ...? 用 It's + 颜色。It's = It is。</div>
+    </div>
+
+    <div class="exam-q">
+      <span class="q-tag">基础</span>
+      <span class="q-diff easy">★☆☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q2">— ____ color is the bag? — It's brown.</span> <button class="speak-btn" data-target="q2" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>What<br><strong>解析：</strong>询问颜色用 What color，注意 What 首字母大写。</div>
+    </div>
+
+    <div class="exam-q">
+      <span class="q-tag">基础</span>
+      <span class="q-diff easy">★☆☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q3">字母 Z 的小写是 ____，字母 W 的小写是 ____。</span> <button class="speak-btn" data-target="q3" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>z; w<br><strong>解析：</strong>Z → z，W → w。</div>
+    </div>
+
+    <h3 style="color:var(--accent);margin:20px 0 10px;">🥈 提升关 · 语境运用</h3>
+
+    <div class="exam-q">
+      <span class="q-tag">提升</span>
+      <span class="q-diff mid">★★☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q4">— What color is it?<br>— ____. (blue and white)</span> <button class="speak-btn" data-target="q4" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>It's blue and white.<br><strong>解析：</strong>两种颜色用 and 连接。注意首字母大写。</div>
+    </div>
+
+    <div class="exam-q">
+      <span class="q-tag">提升</span>
+      <span class="q-diff mid">★★☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q5">连词成句：color / what / is / pen / your / ?</span> <button class="speak-btn" data-target="q5" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>What color is your pen?<br><strong>解析：</strong>What color 开头，be 动词紧随其后，然后才是主语 your pen。</div>
+    </div>
+
+    <div class="exam-q">
+      <span class="q-tag">提升</span>
+      <span class="q-diff mid">★★☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q6">根据汉语完成句子：我的书包是蓝白色的。<br>____ schoolbag is ____ and ____.</span> <button class="speak-btn" data-target="q6" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>My; blue; white<br><strong>解析：</strong>"我的"用 My，两种颜色用 and 连接。</div>
+    </div>
+
+    <div class="exam-q">
+      <span class="q-tag">挑战</span>
+      <span class="q-diff hard">★★★</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q7">改错：The apple is red. (对画线部分提问)<br>____ ____ is the apple?</span> <button class="speak-btn" data-target="q7" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>What color<br><strong>解析：</strong>对颜色提问用 What color。注意 color 不需要加 s。</div>
+    </div>
+
+  </div>
+
+</details>
+
+<!-- ====== 微写作 ====== -->
+<div class="micro-writing detail-module">
+  <h3>✍️ 微写作：描述物品颜色</h3>
+  <p>用英语写出你书包里 3 件物品的颜色。用 color 名词和颜色形容词。</p>
+  <div class="model" id="microModel">
+    <p class="en"><span class="wotd-say" data-speak="What's in my schoolbag?">What's in my schoolbag?</span></p>
+    <p class="en"><span class="wotd-say" data-speak="I have a blue pencil case.">I have a <strong>blue</strong> pencil case.</span></p>
+    <p class="en"><span class="wotd-say" data-speak="I have a red notebook.">I have a <strong>red</strong> notebook.</span></p>
+    <p class="en"><span class="wotd-say" data-speak="My ruler is white.">My ruler is <strong>white</strong>.</span></p>
+    <span class="trans">我书包里有什么？我有一个蓝色的铅笔盒。我有一本红色的笔记本。我的尺子是白色的。</span>
+  </div>
+</div>
+
+<!-- ====== 自查清单 ====== -->
+<div class="checklist detail-module">
+  <h3>✅ 章节自查清单</h3>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 What color is ...? 询问颜色并回答</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能说出 8 种以上颜色的英文名称</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能认读并书写字母 S–Z 的大小写</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用颜色 + 名词描述物品</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我知道 26 个字母的完整顺序和大小写</label>
+  <p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;">
+    <strong>🧑‍🏫 费曼挑战：</strong>指着家里的 5 样物品，用英语说出它们的颜色。试试用 "The ... is ..." 来描述。
+  </p>
+</div>
+
+<div class="review-schedule">
+  <strong>📅 间隔复习</strong>
+  <span class="review-dot">🔵 1天后：默写字母 S–Z 和全部颜色词</span>
+  <span class="review-dot">🟢 3天后：用颜色描述身边的物品</span>
+  <span class="review-dot">🟡 1周后：写出 26 个字母的大小写</span>
+  <span class="review-dot">🔴 1月后：复习所有颜色词和描述句型</span>
+</div>
+
+<div class="next-stop">
+  <strong>➡️ 下一单元：Unit 1 My name's Gina.</strong><br>
+  下一单元你将学习如何用英语做 <strong>自我介绍</strong>，认识数字 0-9，并学习 <strong>be 动词</strong> 的完整用法。
+</div>
+
+</main>
+
+<div class="speech-panel" id="speechPanel">
+  <div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div>
+  <div class="row">
+    <label>语速</label>
+    <input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9">
+    <span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span>
+  </div>
+  <div class="row">
+    <label>口音</label>
+    <select id="speechVoice">
+      <option value="en-US">🇺🇸 美式</option>
+      <option value="en-GB">🇬🇧 英式</option>
+    </select>
+  </div>
+  <div class="row" style="justify-content:space-between;">
+    <button id="speechStopBtn" title="停止朗读">⏹ 停止</button>
+    <button id="speechCloseBtn" title="关闭面板">✕ 关闭</button>
+  </div>
+</div>
+<button class="speech-toggle-btn" id="speechToggleBtn" title="语音设置">🔊</button>
+
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis,
+    currentUtterance: null,
+    speaking: false,
+    rate: 0.9,
+    voiceURI: 'en-US',
+
+    init: function() {
+      var self = this;
+      var rateInput = document.getElementById('speechRate');
+      var rateLabel = document.getElementById('speechRateLabel');
+      var voiceSelect = document.getElementById('speechVoice');
+      var stopBtn = document.getElementById('speechStopBtn');
+      var closeBtn = document.getElementById('speechCloseBtn');
+      var toggleBtn = document.getElementById('speechToggleBtn');
+      var panel = document.getElementById('speechPanel');
+
+      var saved = localStorage.getItem('speech-rate');
+      if (saved) { this.rate = parseFloat(saved); rateInput.value = this.rate; rateLabel.textContent = this.rate; }
+      var savedVoice = localStorage.getItem('speech-voice');
+      if (savedVoice) { this.voiceURI = savedVoice; voiceSelect.value = savedVoice; }
+
+      rateInput.addEventListener('input', function() {
+        self.rate = parseFloat(this.value);
+        rateLabel.textContent = this.value;
+        localStorage.setItem('speech-rate', this.value);
+      });
+      voiceSelect.addEventListener('change', function() {
+        self.voiceURI = this.value;
+        localStorage.setItem('speech-voice', this.value);
+      });
+
+      stopBtn.addEventListener('click', function() { self.stop(); });
+      closeBtn.addEventListener('click', function() { panel.classList.remove('open'); });
+
+      toggleBtn.addEventListener('click', function() {
+        panel.classList.toggle('open');
+      });
+    },
+
+    speak: function(text, callback) {
+      var self = this;
+      if (!text) return;
+      this.stop();
+      var utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = this.voiceURI;
+      utterance.rate = this.rate;
+      utterance.onstart = function() { self.speaking = true; };
+      utterance.onend = function() {
+        self.speaking = false;
+        if (callback) callback();
+      };
+      utterance.onerror = function() { self.speaking = false; };
+      this.currentUtterance = utterance;
+      this.synthesis.speak(utterance);
+    },
+
+    speakText: function(el) {
+      var text = el.getAttribute('data-speak') || el.textContent;
+      this.speak(text);
+    },
+
+    speakDialogue: function(containerId, callback) {
+      var self = this;
+      var container = document.getElementById(containerId);
+      if (!container) return;
+      var lines = container.querySelectorAll('.en-text');
+      var index = 0;
+      this.stop();
+      function speakNext() {
+        if (index >= lines.length) { self.speaking = false; if (callback) callback(); return; }
+        var el = lines[index];
+        var text = el.getAttribute('data-speak') || el.textContent.replace(/<[^>]+>/g, '').trim();
+        if (!text) { index++; speakNext(); return; }
+        el.classList.add('speaking');
+        var utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = self.voiceURI;
+        utterance.rate = self.rate;
+        utterance.onend = function() {
+          el.classList.remove('speaking');
+          index++;
+          setTimeout(speakNext, 500);
+        };
+        utterance.onerror = function() { el.classList.remove('speaking'); index++; setTimeout(speakNext, 200); };
+        self.currentUtterance = utterance;
+        self.synthesis.speak(utterance);
+      }
+      speakNext();
+    },
+
+    speakVocabSection: function(containerId, callback) {
+      var self = this;
+      var container = document.getElementById(containerId);
+      if (!container) return;
+      var cards = container.querySelectorAll('.vocab-card');
+      var index = 0;
+      this.stop();
+      function speakNext() {
+        if (index >= cards.length) { self.speaking = false; if (callback) callback(); return; }
+        var card = cards[index];
+        var headword = card.querySelector('.headword');
+        var def = card.querySelector('.definition');
+        var example = card.querySelector('.example .wotd-say');
+        var textParts = [];
+        if (headword) {
+          textParts.push(headword.getAttribute('data-speak') || headword.textContent);
+        }
+        if (example) {
+          textParts.push(example.getAttribute('data-speak') || example.textContent.replace(/<[^>]+>/g, '').trim());
+        }
+        var fullText = textParts.join('. ');
+        if (!fullText) { index++; speakNext(); return; }
+        headword.classList.add('speaking');
+        var utterance = new SpeechSynthesisUtterance(fullText);
+        utterance.lang = self.voiceURI;
+        utterance.rate = self.rate;
+        utterance.onend = function() {
+          headword.classList.remove('speaking');
+          index++;
+          setTimeout(speakNext, 600);
+        };
+        utterance.onerror = function() { headword.classList.remove('speaking'); index++; setTimeout(speakNext, 300); };
+        self.currentUtterance = utterance;
+        self.synthesis.speak(utterance);
+      }
+      speakNext();
+    },
+
+    stop: function() {
+      this.synthesis.cancel();
+      this.speaking = false;
+    }
+  };
+
+  SpeechManager.init();
+
+  document.querySelectorAll('.wotd-say').forEach(function(el) {
+    el.addEventListener('click', function() {
+      var text = this.getAttribute('data-speak') || this.textContent;
+      SpeechManager.speak(text);
+    });
+  });
+
+  document.querySelectorAll('.speak-btn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var dialogueId = this.getAttribute('data-dialogue');
+      var vocabId = this.getAttribute('data-vocab');
+      var targetId = this.getAttribute('data-target');
+      if (this.classList.contains('speaking')) { SpeechManager.stop(); this.classList.remove('speaking'); return; }
+      this.classList.add('speaking');
+      var done = function() { btn.classList.remove('speaking'); };
+      if (dialogueId) {
+        SpeechManager.speakDialogue(dialogueId, done);
+      } else if (vocabId) {
+        SpeechManager.speakVocabSection(vocabId, done);
+      } else if (targetId) {
+        var target = document.getElementById(targetId);
+        if (!target) { btn.classList.remove('speaking'); return; }
+        SpeechManager.speak(target.textContent.replace(/<[^>]+>/g, ''), done);
+      } else {
+        btn.classList.remove('speaking');
+      }
+    });
+  });
+
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var headword = this.previousElementSibling;
+      if (headword && headword.classList.contains('wotd-say')) {
+        var text = headword.getAttribute('data-speak') || headword.textContent;
+        SpeechManager.speak(text);
+      }
+    });
+  });
+
+  var toggle = document.getElementById('theme-toggle');
+  var html = document.documentElement;
+  var saved = localStorage.getItem('site-theme');
+  if (saved === 'dark') { html.setAttribute('data-theme', 'dark'); toggle.textContent = '☀️ 亮色模式'; }
+  toggle.addEventListener('click', function() {
+    var isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    toggle.textContent = isDark ? '🌙 暗色模式' : '☀️ 亮色模式';
+    localStorage.setItem('site-theme', isDark ? 'light' : 'dark');
+  });
+
+  (function() {
+    var btn = document.getElementById('expandAllBtn');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      var allDetails = document.querySelectorAll('.module, .exam-module');
+      var allOpen = true;
+      for (var i = 0; i < allDetails.length; i++) {
+        if (!allDetails[i].hasAttribute('open')) { allOpen = false; break; }
+      }
+      for (var i = 0; i < allDetails.length; i++) {
+        if (allOpen) allDetails[i].removeAttribute('open');
+        else allDetails[i].setAttribute('open', '');
+      }
+      btn.textContent = allOpen ? '📂 展开全部模块' : '📖 收起全部模块';
+    });
+  })();
+
+  window.addEventListener('scroll', function() {
+    var btn = document.getElementById('backToTop');
+    if (btn) btn.style.display = window.scrollY > 400 ? 'flex' : 'none';
+  }, { passive: true });
+  document.getElementById('backToTop').addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  var sidebar = document.getElementById('sidebar');
+  document.getElementById('sidebarHideBtn').addEventListener('click', function() { sidebar.classList.add('hidden'); });
+  document.getElementById('sidebarShowBtn').addEventListener('click', function() { sidebar.classList.remove('hidden'); });
+
+  document.querySelectorAll('.q-toggle').forEach(function(b){
+    b.addEventListener('click', function(e) { e.stopPropagation(); this.parentElement.classList.toggle('show-solution'); });
+  });
+})();
+</script>
+
+</body>
+</html>

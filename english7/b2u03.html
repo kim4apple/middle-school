@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>七下 Unit 3 How do you get to school? | 初中英语七年级</title>
+<link rel="stylesheet" href="css/english.css">
+<style>
+.speak-btn {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 12px; cursor: pointer; color: var(--accent);
+  border: 1px solid var(--border); border-radius: 4px;
+  padding: 2px 8px; background: var(--bg);
+  transition: background 0.15s;
+}
+.speak-btn:hover { background: var(--accent-light); }
+.speak-btn.speaking { background: var(--eng-amber-light); color: var(--eng-amber); border-color: var(--eng-amber); }
+.headword-speak-indicator { font-size: 11px; margin-left: 3px; opacity: 0.55; cursor: pointer; vertical-align: super; line-height: 1; }
+.headword-speak-indicator:hover { opacity: 1; }
+.wotd-say {
+  cursor: pointer; transition: color 0.15s;
+}
+.wotd-say:hover { color: var(--accent); }
+.wotd-say.speaking { color: var(--eng-pink); }
+.speech-panel {
+  position: fixed; bottom: 80px; right: 24px; z-index: 999;
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  padding: 14px 18px; display: none; min-width: 180px;
+}
+.speech-panel.open { display: block; }
+.speech-panel .row { display: flex; align-items: center; gap: 8px; margin: 4px 0; font-size: 13px; }
+.speech-panel .row label { color: var(--text-secondary); font-size: 12px; min-width: 36px; }
+.speech-panel select, .speech-panel input[type="range"] { flex: 1; }
+.speech-panel button {
+  padding: 4px 12px; border-radius: 6px; border: 1px solid var(--border);
+  background: var(--bg); color: var(--text); cursor: pointer; font-size: 12px;
+}
+.speech-panel button:hover { background: var(--accent-light); }
+.speech-toggle-btn {
+  position: fixed; bottom: 24px; right: 76px; z-index: 999;
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid var(--border); background: var(--bg);
+  color: var(--accent); cursor: pointer; font-size: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  display: flex; align-items: center; justify-content: center;
+}
+.speech-toggle-btn:hover { background: var(--accent-light); }
+.en-text.speaking { background: var(--eng-amber-light); border-radius: 4px; padding: 2px 4px; transition: background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background: #452a08; }
+.detail-module { content-visibility: auto; contain-intrinsic-size: 300px; }
+.reading { content-visibility: auto; contain-intrinsic-size: 400px; }
+</style>
+</head>
+<body>
+
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">英语七年级</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+  </div>
+  <nav>
+    <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+    <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 七 上 ━━</a>
+    <a href="u00.html" style="opacity:0.6;">S1 Good morning!</a>
+    <a href="u00.html" style="opacity:0.6;">S2 What's this in English?</a>
+    <a href="u00.html" style="opacity:0.6;">S3 What color is it?</a>
+    <a href="u01.html">U1 My name's Gina.</a>
+    <a href="u02.html">U2 This is my sister.</a>
+    <a href="u03.html">U3 Is this your pencil?</a>
+    <a href="u04.html">U4 Where's my schoolbag?</a>
+    <a href="u05.html">U5 Do you have a soccer ball?</a>
+    <a href="u06.html">U6 Do you like bananas?</a>
+    <a href="u07.html">U7 How much are these socks?</a>
+    <a href="u08.html">U8 When is your birthday?</a>
+    <a href="u09.html">U9 My favorite subject is science.</a>
+    <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 七 下 ━━</a>
+    <a href="b2u01.html">U1 Can you play the guitar?</a>
+    <a href="b2u02.html">U2 What time...?</a>
+    <a href="b2u03.html" class="active">U3 How do you get to school?</a>
+    <a href="b2u04.html">U4 Don't eat in class.</a>
+    <a href="b2u05.html">U5 Why do you like pandas?</a>
+    <a href="b2u06.html">U6 I'm watching TV.</a>
+    <a href="u19.html">U7 It's raining!</a>
+    <a href="u20.html">U8 Is there a post office...</a>
+    <a href="u21.html">U9 What does he look like?</a>
+    <a href="u22.html">U10 I'd like some noodles.</a>
+    <a href="u23.html">U11 How was your school trip?</a>
+    <a href="u24.html">U12 What did you do last weekend?</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+  <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
+  <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
+</nav>
+
+<main id="content">
+
+<div class="cover">
+  <div class="sub-en">七下 · Unit 3</div>
+  <h1>How do you get to school?</h1>
+  <p>交通方式 · 距离与时间 · 跨文化出行</p>
+</div>
+
+<div class="unit-meta">
+  <span>📖 话题：Transportation</span>
+  <span>💬 功能：Talk about how to get to places · Ask about distance and time</span>
+  <span>📚 语法：How / How long / How far 疑问句 · 交通方式表达</span>
+  <span>📝 写作：描述上学的交通方式</span>
+</div>
+
+<div class="can-do">
+  <h3>🎯 我能做到</h3>
+  <label><input type="checkbox"> I can ask and answer "How do you get to school?"</label>
+  <label><input type="checkbox"> I can use "take the bus", "ride a bike", "walk" correctly.</label>
+  <label><input type="checkbox"> I can ask "How long" and "How far" questions.</label>
+  <label><input type="checkbox"> I can write about how I get to school.</label>
+</div>
+
+<!-- ====== 课文精讲 ====== -->
+<details class="module" open>
+  <summary>📖 课文精讲 · How Do You Get to School?</summary>
+  <div class="content">
+
+    <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;">
+      <span style="font-size:13px;color:var(--text-secondary);">场景：放学路上，同学们在聊各自怎么来上学的。</span>
+      <button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话（含间隔）">🔊 朗读对话</button>
+    </div>
+
+    <div class="dialogue" id="dialogueText">
+      <div class="dialogue-line">
+        <span class="speaker">Lisa:</span>
+        <span class="en-text wotd-say" data-speak="Hi Bob! How do you get to school every day?">Hi Bob! <em>How do you get to school</em> every day?</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Bob:</span>
+        <span class="en-text wotd-say" data-speak="I ride my bike to school. It's good exercise!">I <em>ride my bike</em> to school. It's good exercise!</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Lisa:</span>
+        <span class="en-text wotd-say" data-speak="Cool! How long does it take?">Cool! <em>How long does it take</em>?</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Bob:</span>
+        <span class="en-text wotd-say" data-speak="It takes about 15 minutes. How about you?">It takes about 15 minutes. How about you?</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Lisa:</span>
+        <span class="en-text wotd-say" data-speak="I take the bus. My home is far from school. It's about 8 kilometers.">I <em>take the bus</em>. My home is far from school. It's about 8 kilometers.</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Bob:</span>
+        <span class="en-text wotd-say" data-speak="How far is it from your home to school?"><em>How far is it</em> from your home to school?</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Lisa:</span>
+        <span class="en-text wotd-say" data-speak="It's about 8 kilometers. The bus ride takes 30 minutes.">It's about 8 kilometers. The bus ride takes 30 minutes.</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Bob:</span>
+        <span class="en-text wotd-say" data-speak="Wow, that's quite far! Do you want to ride with me tomorrow?">Wow, that's quite far! Do you want to ride with me tomorrow?</span>
+      </div>
+    </div>
+
+    <details style="margin-top:12px;">
+      <summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary>
+      <div class="dialogue-annotation">
+        <p><strong>逐句翻译：</strong></p>
+        <p>Lisa: 嗨 Bob！你<em>怎么去上学</em>？</p>
+        <p>Bob: 我<em>骑自行车</em>上学。这是很好的锻炼！</p>
+        <p>Lisa: 酷！<em>需要多长时间</em>？</p>
+        <p>Bob: 大约需要 15 分钟。你呢？</p>
+        <p>Lisa: 我<em>坐公交</em>。我家离学校很远。大约 8 公里。</p>
+        <p>Bob: 从你家到学校<em>有多远</em>？</p>
+        <p>Lisa: 大约 8 公里。坐公交需要 30 分钟。</p>
+        <p>Bob: 哇，挺远的！你明天想和我一起骑车吗？</p>
+      </div>
+    </details>
+
+    <div class="dialogue-annotation">
+      <p><strong>🔑 重点讲解：</strong></p>
+      <p><strong>1.</strong> <em>How do you get to school?</em> → 用 <strong>How</strong> 询问交通方式（how = 怎样）。</p>
+      <p><strong>2.</strong> <em>How long does it take?</em> → <strong>How long</strong> 问时间长度（多久）。回答：It takes + 时间。</p>
+      <p><strong>3.</strong> <em>How far is it from ... to ...?</em> → <strong>How far</strong> 问距离（多远）。</p>
+      <p><strong>4.</strong> <em>take the bus / ride a bike / walk</em> → 常见的交通方式表达。</p>
+    </div>
+
+    <div style="display:flex;gap:8px;align-items:center;margin:20px 0 10px;">
+      <h3 style="font-size:15px;color:var(--accent);margin:0;">📖 Reading: How Students Get to School</h3>
+      <button class="speak-btn" data-dialogue="readingEnglish" title="朗读英文正文（逐句连读）">🔊 朗读课文</button>
+    </div>
+
+    <div class="reading" id="readingText">
+      <div id="readingEnglish">
+      <p class="en-text" data-speak="In our school, students come from different places. They get to school in different ways.">In our school, students come from different places. They get to school in different ways.</p>
+      <p class="en-text" data-speak="Most students live near school. They usually walk or ride a bike to school.">Most students live near school. They usually walk or ride a bike to school.</p>
+      <p class="en-text" data-speak="Some students take the bus. The bus stop is in front of the supermarket.">Some students take the bus. The bus stop is in front of the supermarket.</p>
+      <p class="en-text" data-speak="A few students take the subway. It is fast, and the subway station is not far from school.">A few students take the subway. It is fast, and the subway station is not far from school.</p>
+      <p class="en-text" data-speak="For many students, the school trip is always fun because they go together.">For many students, the school trip is always fun because they go together.</p>
+      </div>
+      <div class="read-glossary">
+        <span class="gloss-item wotd-say" data-speak="kilometer">📘 kilometer /kɪˈlɑːmɪtər/ n. 公里</span>
+        <span class="gloss-item wotd-say" data-speak="minute">📘 minute /ˈmɪnɪt/ n. 分钟</span>
+        <span class="gloss-item wotd-say" data-speak="subway">📘 subway /ˈsʌbweɪ/ n. 地铁</span>
+        <span class="gloss-item wotd-say" data-speak="stop">📘 stop /stɑːp/ n. 车站</span>
+        <span class="gloss-item wotd-say" data-speak="bus">📘 bus /bʌs/ n. 公共汽车</span>
+      </div>
+    </div>
+
+  </div>
+</details>
+
+<!-- ====== 重点词汇 ====== -->
+<details class="module" open>
+   <summary>📝 重点词汇 · Transportation <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇（含例句）">🔊 朗读全部词汇</button></summary>
+  <div class="content">
+
+    <div class="vocab-grid" id="vocabGrid">
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="take the bus">take the bus</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/teɪk ðə bʌs/</span>
+        <span class="pos">phr.</span>
+        <div class="definition">乘公共汽车</div>
+        <div class="example"><span class="wotd-say" data-speak="I take the bus to school every day.">I <strong>take the bus</strong> to school every day.</span><span class="trans">我每天乘公交上学。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="ride a bike">ride a bike</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/raɪd ə baɪk/</span>
+        <span class="pos">phr.</span>
+        <div class="definition">骑自行车</div>
+        <div class="example"><span class="wotd-say" data-speak="My father rides a bike to work every day.">My father <strong>rides a bike</strong> to work every day.</span><span class="trans">我爸爸每天骑自行车上班。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="walk">walk</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/wɔːk/</span>
+        <span class="pos">v.</span>
+        <div class="definition">步行；走路</div>
+        <div class="example"><span class="wotd-say" data-speak="Let's walk to the park together.">Let's <strong>walk</strong> to the park together.</span><span class="trans">我们一起去公园吧。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="train">train</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/treɪn/</span>
+        <span class="pos">n.</span>
+        <div class="definition">火车</div>
+        <div class="example"><span class="wotd-say" data-speak="We can take the train to Beijing.">We can take the <strong>train</strong> to Beijing.</span><span class="trans">我们可以坐火车去北京。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="subway">subway</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈsʌbweɪ/</span>
+        <span class="pos">n.</span>
+        <div class="definition">地铁</div>
+        <div class="example"><span class="wotd-say" data-speak="The subway is fast and cheap.">The <strong>subway</strong> is fast and cheap.</span><span class="trans">地铁又快又便宜。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="stop">stop</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/stɑːp/</span>
+        <span class="pos">n.</span>
+        <div class="definition">车站；停止</div>
+        <div class="example"><span class="wotd-say" data-speak="The bus stop is near my home.">The bus <strong>stop</strong> is near my home.</span><span class="trans">公交站在我家附近。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="drive">drive</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/draɪv/</span>
+        <span class="pos">v.</span>
+        <div class="definition">开车</div>
+        <div class="example"><span class="wotd-say" data-speak="My mom drives me to school on rainy days.">My mom <strong>drives</strong> me to school on rainy days.</span><span class="trans">下雨天妈妈开车送我上学。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="car">car</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/kɑːr/</span>
+        <span class="pos">n.</span>
+        <div class="definition">小汽车</div>
+        <div class="example"><span class="wotd-say" data-speak="His father goes to work by car.">His father goes to work by <strong>car</strong>.</span><span class="trans">他爸爸开车上班。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="kilometer">kilometer</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/kɪˈlɑːmɪtər/</span>
+        <span class="pos">n.</span>
+        <div class="definition">公里</div>
+        <div class="example"><span class="wotd-say" data-speak="My home is 3 kilometers from school.">My home is 3 <strong>kilometers</strong> from school.</span><span class="trans">我家离学校3公里。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="every day">every day</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈevri deɪ/</span>
+        <span class="pos">phr.</span>
+        <div class="definition">每天</div>
+        <div class="example"><span class="wotd-say" data-speak="I walk to school every day.">I walk to school <strong>every day</strong>.</span><span class="trans">我每天步行上学。</span></div>
+      </div>
+
+    </div>
+
+  </div>
+</details>
+
+<!-- ====== 重点句型 ====== -->
+<details class="module" open>
+  <summary>🔤 重点句型 · Sentence Patterns</summary>
+  <div class="content">
+
+    <div class="pattern-grid">
+
+      <div class="pattern-card">
+        <div class="structure">How do you get to + 地点?</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>询问对方的交通方式。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1">✅ <strong>How do you get to</strong> <span class="slot">school</span>?<br>
+          ✅ <strong>How does she get to</strong> <span class="slot">work</span>?<br>
+          ➡ 回答：I + <strong>take the bus / ride my bike / walk</strong> + to school.</span></div>
+      </div>
+
+      <div class="pattern-card">
+        <div class="structure">How long does it take?</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>询问做某事需要多长时间。</div>
+        <div class="substitution">
+          ✅ <strong>How long does it take</strong> to get to school?<br>
+          ➡ It takes <span class="slot">20 minutes</span>.<br>
+          ✅ <strong>How long does it take</strong> to go to Beijing by train?<br>
+          ➡ It takes about <span class="slot">5 hours</span>.
+        </div>
+      </div>
+
+      <div class="pattern-card">
+        <div class="structure">How far is it from A to B?</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>询问两地间的距离。</div>
+        <div class="substitution">
+          ✅ <strong>How far is it from</strong> <span class="slot">your home</span> to <span class="slot">school</span>?<br>
+          ➡ It's about <span class="slot">5 kilometers</span>.<br>
+          ✅ <strong>How far is it from</strong> Beijing to Shanghai?<br>
+          ➡ It's about <span class="slot">1,200 kilometers</span>.
+        </div>
+      </div>
+
+      <div class="pattern-card">
+        <div class="structure">by + 交通工具 = 乘坐……</div> <button class="speak-btn" data-target="sp4" title="朗读句型">🔊</button>
+        <div>by 直接加交通工具名词，不加冠词。</div>
+        <div class="substitution">
+          ✅ go to school <strong>by bus</strong><br>
+          ✅ go to work <strong>by bike</strong><br>
+          ✅ go to Beijing <strong>by train</strong><br>
+          ➡ 注意：<strong>on foot</strong> = 步行（by walk ❌）
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</details>
+
+<!-- ====== 语法聚焦 ====== -->
+<details class="module detail-module" open>
+  <summary>📚 语法聚焦 · How Questions &amp; Transportation <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary>
+  <div class="content">
+
+    <div class="grammar-module" id="grammarContainer">
+      <h3>1️⃣ How 疑问句汇总</h3>
+      <table class="grammar-table">
+        <tr><th>疑问词</th><th>用法</th><th>例句</th><th>回答</th></tr>
+        <tr><td><strong>How</strong></td><td>问方式/方法</td><td><span class="wotd-say" data-speak="How do you go to school?">How do you go to school?</span></td><td><span class="wotd-say" data-speak="By bus.">By bus.</span></td></tr>
+        <tr><td><strong>How long</strong></td><td>问时间长度</td><td><span class="wotd-say" data-speak="How long does it take?">How long does it take?</span></td><td><span class="wotd-say" data-speak="About 20 minutes.">About 20 minutes.</span></td></tr>
+        <tr><td><strong>How far</strong></td><td>问距离</td><td><span class="wotd-say" data-speak="How far is it?">How far is it?</span></td><td><span class="wotd-say" data-speak="About 3 kilometers.">About 3 kilometers.</span></td></tr>
+      </table>
+    </div>
+
+    <div class="grammar-module">
+      <h3>2️⃣ 交通方式表达对比</h3>
+      <table class="grammar-table">
+        <tr><th>方式</th><th>动词短语 (谓语)</th><th>by + 名词 (状语)</th></tr>
+        <tr><td>公交车</td><td><span class="wotd-say" data-speak="take the bus">take the bus</span></td><td><span class="wotd-say" data-speak="by bus">by bus</span></td></tr>
+        <tr><td>自行车</td><td><span class="wotd-say" data-speak="ride a bike / ride a bicycle">ride a bike</span></td><td><span class="wotd-say" data-speak="by bike">by bike</span></td></tr>
+        <tr><td>步行</td><td><span class="wotd-say" data-speak="walk">walk</span></td><td><span class="wotd-say" data-speak="on foot">on foot</span></td></tr>
+        <tr><td>小汽车</td><td><span class="wotd-say" data-speak="drive / take the car">drive / take the car</span></td><td><span class="wotd-say" data-speak="by car">by car</span></td></tr>
+        <tr><td>地铁</td><td><span class="wotd-say" data-speak="take the subway">take the subway</span></td><td><span class="wotd-say" data-speak="by subway">by subway</span></td></tr>
+        <tr><td>火车</td><td><span class="wotd-say" data-speak="take the train">take the train</span></td><td><span class="wotd-say" data-speak="by train">by train</span></td></tr>
+      </table>
+
+      <div class="chinese-error">
+        <strong>⚠️ 中式英语纠错：</strong><br>
+        ❌ <span class="wrong wotd-say" data-speak="I by bus go to school.">I by bus go to school.</span>（方式状语不能放在主语和动词之间）<br>
+        ✅ <span class="correct wotd-say" data-speak="I go to school by bus.">I go to school by bus.</span><br><br>
+        ❌ <span class="wrong wotd-say" data-speak="I by walk to school.">I by walk to school.</span>（步行不用 by，用 on foot）<br>
+        ✅ <span class="correct wotd-say" data-speak="I walk to school. / I go to school on foot.">I walk to school. / I go to school on foot.</span><br><br>
+        ❌ <span class="wrong wotd-say" data-speak="I take bike to school.">I take bike to school.</span>（缺少冠词或物主代词）<br>
+        ✅ <span class="correct wotd-say" data-speak="I ride a bike / my bike to school.">I ride a bike / my bike to school.</span>
+      </div>
+    </div>
+
+    <div class="grammar-module">
+      <h3>3️⃣ It takes + 时间 + to do 结构</h3>
+      <p>表达"做某事需要花多长时间"。</p>
+      <table class="grammar-table">
+        <tr><th>主语</th><th>谓语</th><th>时间</th><th>不定式</th></tr>
+        <tr><td>It</td><td>takes</td><td>20 minutes</td><td><span class="wotd-say" data-speak="to get to school">to get to school</span></td></tr>
+        <tr><td>It</td><td>takes</td><td>half an hour</td><td><span class="wotd-say" data-speak="to finish homework">to finish homework</span></td></tr>
+      </table>
+    </div>
+
+  </div>
+</details>
+
+<!-- ====== 三级闯关 ====== -->
+<details class="exam-module" open>
+  <summary>📝 三级闯关 · 实战练习</summary>
+  <div class="content">
+
+    <h3 style="color:var(--accent);margin:0px 0 10px;">🥉 基础关 · 概念识记</h3>
+
+    <div class="exam-q">
+      <span class="q-tag">基础</span>
+      <span class="q-diff">★☆☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q1">____ do you get to school? (How / What / Where)</span> <button class="speak-btn" data-target="q1" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>How<br><strong>解析：</strong>问交通方式用 How。</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span>
+      <span class="q-diff">★☆☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q2">I ____ (步行) to school every day.</span> <button class="speak-btn" data-target="q2" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>walk<br><strong>解析：</strong>步行 = walk。</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span>
+      <span class="q-diff">★☆☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q3">She goes to school ____ bus.</span> <button class="speak-btn" data-target="q3" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>by<br><strong>解析：</strong>by + 交通工具，不用冠词。</div>
+    </div>
+
+    <h3 style="color:var(--accent);margin:20px 0 10px;">🥈 提升关 · 语境运用</h3>
+
+    <div class="exam-q">
+      <span class="q-tag">提升</span>
+      <span class="q-diff">★★☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q4">改错：He go to school by a bus.</span> <button class="speak-btn" data-target="q4" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>He goes to school by bus.<br><strong>解析：</strong>第三人称加 -s，by bus 不加冠词。</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span>
+      <span class="q-diff">★★☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q5">连词成句：get / school / you / how / do / to / ?</span> <button class="speak-btn" data-target="q5" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>How do you get to school?<br><strong>解析：</strong>特殊疑问句：How + do + 主语 + 动词原形 + 其他?</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span>
+      <span class="q-diff">★★☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q6">She takes the bus to school. (改为否定句)</span> <button class="speak-btn" data-target="q6" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>She doesn't take the bus to school.<br><strong>解析：</strong>第三人称用 doesn't + 动词原形。</div>
+    </div>
+
+    <h3 style="color:var(--accent);margin:20px 0 10px;">🥇 挑战关 · 综合运用</h3>
+
+    <div class="exam-q">
+      <span class="q-tag">挑战</span>
+      <span class="q-diff">★★★</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q7">汉译英：你从家到学校有多远？大约 5 公里。你骑自行车需要多长时间？20 分钟。</span> <button class="speak-btn" data-target="q7" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>How far is it from your home to school? About 5 kilometers. How long does it take by bike? 20 minutes.<br><strong>解析：</strong>How far 问距离，How long 问时间。</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span>
+      <span class="q-diff">★★★</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q8">补全对话：<br>A: ____ do you get to the library?<br>B: I ____ the subway. It's fast.<br>A: ____ long does it ____?<br>B: It ____ about 25 minutes.</span> <button class="speak-btn" data-target="q8" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>How; take; How; take; takes<br><strong>解析：</strong>How 问方式，take the subway；How long does it take；It takes + 时间。</div>
+    </div>
+
+  </div>
+</details>
+
+<!-- ====== 微写作 ====== -->
+<div class="micro-writing detail-module">
+  <h3>✍️ 微写作：How I Get to School</h3>
+  <p>用 How / How long / How far 描述你上学的交通方式（50-70词），包括距离、时间和感受。</p>
+  <div class="model" id="microModel">
+    <p class="en"><span class="wotd-say" data-speak="How I Get to School">How I Get to School</span></p>
+    <p class="en"><span class="wotd-say" data-speak="I live about 3 kilometers from my school. I usually ride my bike to school.">I live about 3 kilometers from my school. I usually ride my bike to school.</span></p>
+    <p class="en"><span class="wotd-say" data-speak="It takes about 15 minutes. I think riding a bike is fun and healthy.">It takes about 15 minutes. I think riding a bike is fun and healthy.</span></p>
+    <p class="en"><span class="wotd-say" data-speak="Sometimes it rains, and my father drives me to school by car. That takes only 10 minutes.">Sometimes it rains, and my father drives me to school by car. That takes only 10 minutes.</span></p>
+    <p class="en"><span class="wotd-say" data-speak="But I like riding my bike best because I can enjoy the fresh air on the way.">But I like riding my bike best because I can enjoy the fresh air on the way.</span></p>
+    <span class="trans">我家离学校大约 3 公里。我通常骑自行车上学，大约需要 15 分钟。我觉得骑自行车既有趣又健康。有时候下雨，爸爸开车送我，只需要 10 分钟。但我最喜欢骑自行车，因为路上可以享受新鲜空气。</span>
+  </div>
+</div>
+
+<!-- ====== 自查清单 ====== -->
+<div class="checklist detail-module">
+  <h3>✅ 章节自查清单</h3>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 How 问交通方式并回答</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 How long 问时间长短</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 How far 问距离</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能区分 take + 冠词 / by + 零冠词</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写一段关于出行方式的短文</label>
+  <p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;">
+    <strong>🧑‍🏫 费曼挑战：</strong>用英语介绍你从家到学校的交通方式。练习 How do you get to school? / It takes ... / It's about ... kilometers."I ride my bike to school. It takes 15 minutes. It's about 2 kilometers from my home to school."
+  </p>
+</div>
+
+<div class="review-schedule">
+  <strong>📅 间隔复习</strong>
+  <span class="review-dot">🔵 1天后：用 How / How long / How far 互相问答</span>
+  <span class="review-dot">🟢 3天后：写一段 50 词的交通方式介绍</span>
+  <span class="review-dot">🟡 1周后：默写 by + 交通工具短语</span>
+  <span class="review-dot">🔴 1月后：复习 It takes + 时间 + to do 句型</span>
+</div>
+
+<div class="next-stop">
+  <strong>➡️ 下一单元：Unit 4 Don't eat in class.</strong><br>
+  下一单元你将学习用祈使句表达校规，以及 can/can't 和 have to 的用法。
+</div>
+
+</main>
+
+<div class="speech-panel" id="speechPanel">
+  <div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div>
+  <div class="row">
+    <label>语速</label>
+    <input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9">
+    <span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span>
+  </div>
+  <div class="row">
+    <label>口音</label>
+    <select id="speechVoice">
+      <option value="en-US">🇺🇸 美式</option>
+      <option value="en-GB">🇬🇧 英式</option>
+    </select>
+  </div>
+  <div class="row" style="justify-content:space-between;">
+    <button id="speechStopBtn" title="停止朗读">⏹ 停止</button>
+    <button id="speechCloseBtn" title="关闭面板">✕ 关闭</button>
+  </div>
+</div>
+<button class="speech-toggle-btn" id="speechToggleBtn" title="语音设置">🔊</button>
+
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis,
+    currentUtterance: null,
+    speaking: false,
+    rate: 0.9,
+    voiceURI: 'en-US',
+
+    init: function() {
+      var self = this;
+      var rateInput = document.getElementById('speechRate');
+      var rateLabel = document.getElementById('speechRateLabel');
+      var voiceSelect = document.getElementById('speechVoice');
+      var stopBtn = document.getElementById('speechStopBtn');
+      var closeBtn = document.getElementById('speechCloseBtn');
+      var toggleBtn = document.getElementById('speechToggleBtn');
+      var panel = document.getElementById('speechPanel');
+
+      var saved = localStorage.getItem('speech-rate');
+      if (saved) { this.rate = parseFloat(saved); rateInput.value = this.rate; rateLabel.textContent = this.rate; }
+      var savedVoice = localStorage.getItem('speech-voice');
+      if (savedVoice) { this.voiceURI = savedVoice; voiceSelect.value = savedVoice; }
+
+      rateInput.addEventListener('input', function() {
+        self.rate = parseFloat(this.value);
+        rateLabel.textContent = this.value;
+        localStorage.setItem('speech-rate', this.value);
+      });
+      voiceSelect.addEventListener('change', function() {
+        self.voiceURI = this.value;
+        localStorage.setItem('speech-voice', this.value);
+      });
+
+      stopBtn.addEventListener('click', function() { self.stop(); });
+      closeBtn.addEventListener('click', function() { panel.classList.remove('open'); });
+
+      toggleBtn.addEventListener('click', function() {
+        panel.classList.toggle('open');
+      });
+    },
+
+    speak: function(text, callback) {
+      var self = this;
+      if (!text) return;
+      this.stop();
+      var utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = this.voiceURI;
+      utterance.rate = this.rate;
+      utterance.onstart = function() { self.speaking = true; };
+      utterance.onend = function() {
+        self.speaking = false;
+        if (callback) callback();
+      };
+      utterance.onerror = function() { self.speaking = false; };
+      this.currentUtterance = utterance;
+      this.synthesis.speak(utterance);
+    },
+
+    speakText: function(el) {
+      var text = el.getAttribute('data-speak') || el.textContent;
+      this.speak(text);
+    },
+
+    speakDialogue: function(containerId, callback) {
+      var self = this;
+      var container = document.getElementById(containerId);
+      if (!container) return;
+      var lines = container.querySelectorAll('.en-text');
+      var index = 0;
+      this.stop();
+      function speakNext() {
+        if (index >= lines.length) { self.speaking = false; if (callback) callback(); return; }
+        var el = lines[index];
+        var text = el.getAttribute('data-speak') || el.textContent.replace(/<[^>]+>/g, '').trim();
+        if (!text) { index++; speakNext(); return; }
+        el.classList.add('speaking');
+        var utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = self.voiceURI;
+        utterance.rate = self.rate;
+        utterance.onend = function() {
+          el.classList.remove('speaking');
+          index++;
+          setTimeout(speakNext, 500);
+        };
+        utterance.onerror = function() { el.classList.remove('speaking'); index++; setTimeout(speakNext, 200); };
+        self.currentUtterance = utterance;
+        self.synthesis.speak(utterance);
+      }
+      speakNext();
+    },
+
+    speakVocabSection: function(containerId, callback) {
+      var self = this;
+      var container = document.getElementById(containerId);
+      if (!container) return;
+      var cards = container.querySelectorAll('.vocab-card');
+      var index = 0;
+      this.stop();
+      function speakNext() {
+        if (index >= cards.length) { self.speaking = false; if (callback) callback(); return; }
+        var card = cards[index];
+        var headword = card.querySelector('.headword');
+        var def = card.querySelector('.definition');
+        var example = card.querySelector('.example .wotd-say');
+        var textParts = [];
+        if (headword) {
+          textParts.push(headword.getAttribute('data-speak') || headword.textContent);
+        }
+        if (example) {
+          textParts.push(example.getAttribute('data-speak') || example.textContent.replace(/<[^>]+>/g, '').trim());
+        }
+        var fullText = textParts.join('. ');
+        if (!fullText) { index++; speakNext(); return; }
+        headword.classList.add('speaking');
+        var utterance = new SpeechSynthesisUtterance(fullText);
+        utterance.lang = self.voiceURI;
+        utterance.rate = self.rate;
+        utterance.onend = function() {
+          headword.classList.remove('speaking');
+          index++;
+          setTimeout(speakNext, 600);
+        };
+        utterance.onerror = function() { headword.classList.remove('speaking'); index++; setTimeout(speakNext, 300); };
+        self.currentUtterance = utterance;
+        self.synthesis.speak(utterance);
+      }
+      speakNext();
+    },
+
+    stop: function() {
+      this.synthesis.cancel();
+      this.speaking = false;
+    }
+  };
+
+  SpeechManager.init();
+
+  document.querySelectorAll('.wotd-say').forEach(function(el) {
+    el.addEventListener('click', function() {
+      var text = this.getAttribute('data-speak') || this.textContent;
+      SpeechManager.speak(text);
+    });
+  });
+
+  document.querySelectorAll('.speak-btn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var dialogueId = this.getAttribute('data-dialogue');
+      var vocabId = this.getAttribute('data-vocab');
+      var targetId = this.getAttribute('data-target');
+      if (this.classList.contains('speaking')) { SpeechManager.stop(); this.classList.remove('speaking'); return; }
+      this.classList.add('speaking');
+      var done = function() { btn.classList.remove('speaking'); };
+      if (dialogueId) {
+        SpeechManager.speakDialogue(dialogueId, done);
+      } else if (vocabId) {
+        SpeechManager.speakVocabSection(vocabId, done);
+      } else if (targetId) {
+        var target = document.getElementById(targetId);
+        if (!target) { btn.classList.remove('speaking'); return; }
+        SpeechManager.speak(target.textContent.replace(/<[^>]+>/g, ''), done);
+      } else {
+        btn.classList.remove('speaking');
+      }
+    });
+  });
+
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var headword = this.previousElementSibling;
+      if (headword && headword.classList.contains('wotd-say')) {
+        var text = headword.getAttribute('data-speak') || headword.textContent;
+        SpeechManager.speak(text);
+      }
+    });
+  });
+
+  var toggle = document.getElementById('theme-toggle');
+  var html = document.documentElement;
+  var saved = localStorage.getItem('site-theme');
+  if (saved === 'dark') { html.setAttribute('data-theme', 'dark'); toggle.textContent = '☀️ 亮色模式'; }
+  toggle.addEventListener('click', function() {
+    var isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    toggle.textContent = isDark ? '🌙 暗色模式' : '☀️ 亮色模式';
+    localStorage.setItem('site-theme', isDark ? 'light' : 'dark');
+  });
+
+  (function() {
+    var btn = document.getElementById('expandAllBtn');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      var allDetails = document.querySelectorAll('.module, .exam-module');
+      var allOpen = true;
+      for (var i = 0; i < allDetails.length; i++) {
+        if (!allDetails[i].hasAttribute('open')) { allOpen = false; break; }
+      }
+      for (var i = 0; i < allDetails.length; i++) {
+        if (allOpen) allDetails[i].removeAttribute('open');
+        else allDetails[i].setAttribute('open', '');
+      }
+      btn.textContent = allOpen ? '📂 展开全部模块' : '📖 收起全部模块';
+    });
+  })();
+
+  window.addEventListener('scroll', function() {
+    var btn = document.getElementById('backToTop');
+    if (btn) btn.style.display = window.scrollY > 400 ? 'flex' : 'none';
+  }, { passive: true });
+  document.getElementById('backToTop').addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  var sidebar = document.getElementById('sidebar');
+  document.getElementById('sidebarHideBtn').addEventListener('click', function() { sidebar.classList.add('hidden'); });
+  document.getElementById('sidebarShowBtn').addEventListener('click', function() { sidebar.classList.remove('hidden'); });
+
+  document.querySelectorAll('.q-toggle').forEach(function(b){
+    b.addEventListener('click', function(e) { e.stopPropagation(); this.parentElement.classList.toggle('show-solution'); });
+  });
+})();
+</script>
+
+</body>
+</html>

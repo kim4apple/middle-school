@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>七下 Unit 4 Don't eat in class. | 初中英语七年级</title>
+<link rel="stylesheet" href="css/english.css">
+<style>
+.speak-btn {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 12px; cursor: pointer; color: var(--accent);
+  border: 1px solid var(--border); border-radius: 4px;
+  padding: 2px 8px; background: var(--bg);
+  transition: background 0.15s;
+}
+.speak-btn:hover { background: var(--accent-light); }
+.speak-btn.speaking { background: var(--eng-amber-light); color: var(--eng-amber); border-color: var(--eng-amber); }
+.headword-speak-indicator { font-size: 11px; margin-left: 3px; opacity: 0.55; cursor: pointer; vertical-align: super; line-height: 1; }
+.headword-speak-indicator:hover { opacity: 1; }
+.wotd-say {
+  cursor: pointer; transition: color 0.15s;
+}
+.wotd-say:hover { color: var(--accent); }
+.wotd-say.speaking { color: var(--eng-pink); }
+.speech-panel {
+  position: fixed; bottom: 80px; right: 24px; z-index: 999;
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  padding: 14px 18px; display: none; min-width: 180px;
+}
+.speech-panel.open { display: block; }
+.speech-panel .row { display: flex; align-items: center; gap: 8px; margin: 4px 0; font-size: 13px; }
+.speech-panel .row label { color: var(--text-secondary); font-size: 12px; min-width: 36px; }
+.speech-panel select, .speech-panel input[type="range"] { flex: 1; }
+.speech-panel button {
+  padding: 4px 12px; border-radius: 6px; border: 1px solid var(--border);
+  background: var(--bg); color: var(--text); cursor: pointer; font-size: 12px;
+}
+.speech-panel button:hover { background: var(--accent-light); }
+.speech-toggle-btn {
+  position: fixed; bottom: 24px; right: 76px; z-index: 999;
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid var(--border); background: var(--bg);
+  color: var(--accent); cursor: pointer; font-size: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  display: flex; align-items: center; justify-content: center;
+}
+.speech-toggle-btn:hover { background: var(--accent-light); }
+.en-text.speaking { background: var(--eng-amber-light); border-radius: 4px; padding: 2px 4px; transition: background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background: #452a08; }
+.detail-module { content-visibility: auto; contain-intrinsic-size: 300px; }
+.reading { content-visibility: auto; contain-intrinsic-size: 400px; }
+</style>
+</head>
+<body>
+
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">英语七年级</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+  </div>
+  <nav>
+    <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+    <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 七 上 ━━</a>
+    <a href="u00.html" style="opacity:0.6;">S1 Good morning!</a>
+    <a href="u00.html" style="opacity:0.6;">S2 What's this in English?</a>
+    <a href="u00.html" style="opacity:0.6;">S3 What color is it?</a>
+    <a href="u01.html">U1 My name's Gina.</a>
+    <a href="u02.html">U2 This is my sister.</a>
+    <a href="u03.html">U3 Is this your pencil?</a>
+    <a href="u04.html">U4 Where's my schoolbag?</a>
+    <a href="u05.html">U5 Do you have a soccer ball?</a>
+    <a href="u06.html">U6 Do you like bananas?</a>
+    <a href="u07.html">U7 How much are these socks?</a>
+    <a href="u08.html">U8 When is your birthday?</a>
+    <a href="u09.html">U9 My favorite subject is science.</a>
+    <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 七 下 ━━</a>
+    <a href="b2u01.html">U1 Can you play the guitar?</a>
+    <a href="b2u02.html">U2 What time...?</a>
+    <a href="b2u03.html">U3 How do you get to school?</a>
+    <a href="b2u04.html" class="active">U4 Don't eat in class.</a>
+    <a href="b2u05.html">U5 Why do you like pandas?</a>
+    <a href="b2u06.html">U6 I'm watching TV.</a>
+    <a href="u19.html">U7 It's raining!</a>
+    <a href="u20.html">U8 Is there a post office...</a>
+    <a href="u21.html">U9 What does he look like?</a>
+    <a href="u22.html">U10 I'd like some noodles.</a>
+    <a href="u23.html">U11 How was your school trip?</a>
+    <a href="u24.html">U12 What did you do last weekend?</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+  <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
+  <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
+</nav>
+
+<main id="content">
+
+<div class="cover">
+  <div class="sub-en">七下 · Unit 4</div>
+  <h1>Don't eat in class.</h1>
+  <p>校规班规 · 祈使句 · 情态动词 have to / must</p>
+</div>
+
+<div class="unit-meta">
+  <span>📖 话题：School rules</span>
+  <span>💬 功能：Talk about rules · Express what you must / have to do</span>
+  <span>📚 语法：祈使句 (Don't...) · 情态动词 can't / have to / must</span>
+  <span>📝 写作：制定班规或校规</span>
+</div>
+
+<div class="can-do">
+  <h3>🎯 我能做到</h3>
+  <label><input type="checkbox"> I can understand and use "Don't..." to talk about rules.</label>
+  <label><input type="checkbox"> I can use "We can't..." and "We have to..." correctly.</label>
+  <label><input type="checkbox"> I can use "must" to express strong obligations.</label>
+  <label><input type="checkbox"> I can write a list of school rules.</label>
+</div>
+
+<!-- ====== 课文精讲 ====== -->
+<details class="module" open>
+  <summary>📖 课文精讲 · School Rules</summary>
+  <div class="content">
+
+    <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;">
+      <span style="font-size:13px;color:var(--text-secondary);">场景：新学期班会，班长在给大家宣读校规。</span>
+      <button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话（含间隔）">🔊 朗读对话</button>
+    </div>
+
+    <div class="dialogue" id="dialogueText">
+      <div class="dialogue-line">
+        <span class="speaker">Monitor:</span>
+        <span class="en-text wotd-say" data-speak="Welcome back, everyone! Let's go over the school rules.">Welcome back, everyone! Let's go over the school rules.</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Monitor:</span>
+        <span class="en-text wotd-say" data-speak="First, don't eat or drink in the classroom. Please eat in the dining hall.">First, <em>don't eat or drink in the classroom</em>. Please eat in the dining hall.</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Tom:</span>
+        <span class="en-text wotd-say" data-speak="Can we eat in the hallways?">Can we eat in the hallways?</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Monitor:</span>
+        <span class="en-text wotd-say" data-speak="No, you can't. Don't eat in the hallways either.">No, you can't. <em>Don't eat in the hallways</em> either.</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Mary:</span>
+        <span class="en-text wotd-say" data-speak="What about wearing a hat in class?">What about wearing a hat in class?</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Monitor:</span>
+        <span class="en-text wotd-say" data-speak="Don't wear hats in class. Also, don't arrive late for class. You have to be on time."><em>Don't wear hats</em> in class. Also, don't arrive late for class. You <em>have to be on time</em>.</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Tom:</span>
+        <span class="en-text wotd-say" data-speak="Do we have to wear school uniforms every day?">Do we <em>have to wear school uniforms</em> every day?</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Monitor:</span>
+        <span class="en-text wotd-say" data-speak="Yes, you do. And you must keep the classroom clean.">Yes, you do. And you <em>must keep the classroom clean</em>.</span>
+      </div>
+    </div>
+
+    <details style="margin-top:12px;">
+      <summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary>
+      <div class="dialogue-annotation">
+        <p><strong>逐句翻译：</strong></p>
+        <p>班长：欢迎回来！我们来说说校规。</p>
+        <p>班长：首先，<em>不要在教室里吃东西或喝饮料</em>。请在食堂吃。</p>
+        <p>Tom：走廊里可以吃吗？</p>
+        <p>班长：不，不可以。<em>走廊里也不能吃</em>。</p>
+        <p>Mary：上课戴帽子呢？</p>
+        <p>班长：<em>上课不要戴帽子</em>。另外，<em>不要迟到</em>。你们<em>必须准时</em>。</p>
+        <p>Tom：我们<em>必须每天穿校服吗</em>？</p>
+        <p>班长：是的。而且你们<em>必须保持教室整洁</em>。</p>
+      </div>
+    </details>
+
+    <div class="dialogue-annotation">
+      <p><strong>🔑 重点讲解：</strong></p>
+      <p><strong>1.</strong> <em>Don't eat in class.</em> → 祈使句否定形式：<strong>Don't + 动词原形</strong>。</p>
+      <p><strong>2.</strong> <em>have to</em> → "必须、不得不"，强调客观要求。注意：第三人称用 <strong>has to</strong>。</p>
+      <p><strong>3.</strong> <em>must</em> → "必须"，强调主观义务，比 have to 语气更强。must 没有人称变化。</p>
+      <p><strong>4.</strong> <em>Can we eat in the hallways?</em> → 用 Can 询问是否允许做某事。</p>
+    </div>
+
+    <div style="display:flex;gap:8px;align-items:center;margin:20px 0 10px;">
+      <h3 style="font-size:15px;color:var(--accent);margin:0;">📖 Reading: Our Class Rules</h3>
+      <button class="speak-btn" data-dialogue="readingEnglish" title="朗读英文正文（逐句连读）">🔊 朗读课文</button>
+    </div>
+
+    <div class="reading" id="readingText">
+      <div id="readingEnglish">
+      <p class="en-text" data-speak="Hi, I'm Lucy. There are many rules in our school.">Hi, I'm Lucy. There are many rules in our school.</p>
+      <p class="en-text" data-speak="First, don't run in the hallways. It is dangerous.">First, don't run in the hallways. It is dangerous.</p>
+      <p class="en-text" data-speak="Second, don't listen to music in class. We must listen to the teacher carefully.">Second, don't listen to music in class. We must listen to the teacher carefully.</p>
+      <p class="en-text" data-speak="Third, don't fight with classmates. We have to be friendly to each other.">Third, don't fight with classmates. We have to be friendly to each other.</p>
+      <p class="en-text" data-speak="We also have to wear school uniforms from Monday to Friday.">We also have to wear school uniforms from Monday to Friday.</p>
+      <p class="en-text" data-speak="Rules help us learn better and keep safe!">Rules help us learn better and keep safe!</p>
+      </div>
+      <div class="read-glossary">
+        <span class="gloss-item wotd-say" data-speak="rule">📘 rule /ruːl/ n. 规则</span>
+        <span class="gloss-item wotd-say" data-speak="hallway">📘 hallway /ˈhɔːlweɪ/ n. 走廊</span>
+        <span class="gloss-item wotd-say" data-speak="uniform">📘 uniform /ˈjuːnɪfɔːrm/ n. 制服</span>
+        <span class="gloss-item wotd-say" data-speak="fight">📘 fight /faɪt/ v. 打架</span>
+        <span class="gloss-item wotd-say" data-speak="dining hall">📘 dining hall /ˈdaɪnɪŋ hɔːl/ n. 食堂</span>
+      </div>
+    </div>
+
+  </div>
+</details>
+
+<!-- ====== 重点词汇 ====== -->
+<details class="module" open>
+   <summary>📝 重点词汇 · School Rules <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇（含例句）">🔊 朗读全部词汇</button></summary>
+  <div class="content">
+
+    <div class="vocab-grid" id="vocabGrid">
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="rule">rule</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ruːl/</span>
+        <span class="pos">n.</span>
+        <div class="definition">规则；章程</div>
+        <div class="example"><span class="wotd-say" data-speak="Every student must follow the school rules.">Every student must follow the school <strong>rules</strong>.</span><span class="trans">每个学生都必须遵守校规。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="arrive">arrive</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/əˈraɪv/</span>
+        <span class="pos">v.</span>
+        <div class="definition">到达</div>
+        <div class="example"><span class="wotd-say" data-speak="Don't arrive late for school.">Don't <strong>arrive</strong> late for school.</span><span class="trans">上学不要迟到。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="listen to">listen to</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈlɪsn tuː/</span>
+        <span class="pos">phr.</span>
+        <div class="definition">听……</div>
+        <div class="example"><span class="wotd-say" data-speak="Please listen to the teacher in class.">Please <strong>listen to</strong> the teacher in class.</span><span class="trans">上课请听老师讲课。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="fight">fight</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/faɪt/</span>
+        <span class="pos">v.</span>
+        <div class="definition">打架；战斗</div>
+        <div class="example"><span class="wotd-say" data-speak="Don't fight with your classmates.">Don't <strong>fight</strong> with your classmates.</span><span class="trans">不要和同学打架。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="wear">wear</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/wer/</span>
+        <span class="pos">v.</span>
+        <div class="definition">穿；戴</div>
+        <div class="example"><span class="wotd-say" data-speak="We have to wear school uniforms at school.">We have to <strong>wear</strong> school uniforms at school.</span><span class="trans">我们在学校必须穿校服。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="uniform">uniform</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈjuːnɪfɔːrm/</span>
+        <span class="pos">n.</span>
+        <div class="definition">制服</div>
+        <div class="example"><span class="wotd-say" data-speak="I don't like wearing uniforms, but it's the rule.">I don't like wearing <strong>uniforms</strong>, but it's the rule.</span><span class="trans">我不喜欢穿校服，但这是规定。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="quiet">quiet</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈkwaɪət/</span>
+        <span class="pos">adj.</span>
+        <div class="definition">安静的</div>
+        <div class="example"><span class="wotd-say" data-speak="Please be quiet in the library.">Please be <strong>quiet</strong> in the library.</span><span class="trans">图书馆里请保持安静。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="outside">outside</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌaʊtˈsaɪd/</span>
+        <span class="pos">adv./prep.</span>
+        <div class="definition">在外面</div>
+        <div class="example"><span class="wotd-say" data-speak="Don't play outside the classroom during class.">Don't play <strong>outside</strong> the classroom during class.</span><span class="trans">上课期间不要在教学楼外玩耍。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="important">important</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɪmˈpɔːrtnt/</span>
+        <span class="pos">adj.</span>
+        <div class="definition">重要的</div>
+        <div class="example"><span class="wotd-say" data-speak="It's important to follow the rules.">It's <strong>important</strong> to follow the rules.</span><span class="trans">遵守规则很重要。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="on time">on time</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɒn taɪm/</span>
+        <span class="pos">phr.</span>
+        <div class="definition">准时；按时</div>
+        <div class="example"><span class="wotd-say" data-speak="We must arrive at school on time every day.">We must arrive at school <strong>on time</strong> every day.</span><span class="trans">我们必须每天准时到校。</span></div>
+      </div>
+
+    </div>
+
+  </div>
+</details>
+
+<!-- ====== 重点句型 ====== -->
+<details class="module" open>
+  <summary>🔤 重点句型 · Sentence Patterns</summary>
+  <div class="content">
+
+    <div class="pattern-grid">
+
+      <div class="pattern-card">
+        <div class="structure">Don't + 动词原形！</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>祈使句的否定形式，用来表示"不要做某事"。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1">✅ <strong>Don't</strong> <span class="slot">eat in class</span>.<br>
+          ✅ <strong>Don't</strong> <span class="slot">be late for school</span>.<br>
+          ✅ <strong>Don't</strong> <span class="slot">run in the hallways</span>.</span></div>
+      </div>
+
+      <div class="pattern-card">
+        <div class="structure">We can't + 动词原形</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>用 can't 表达"不允许、不能做某事"。</div>
+        <div class="substitution">
+          ✅ We <strong>can't</strong> <span class="slot">wear hats in class</span>.<br>
+          ✅ We <strong>can't</strong> <span class="slot">listen to music in class</span>.
+        </div>
+      </div>
+
+      <div class="pattern-card">
+        <div class="structure">We have to + 动词原形</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>have to 表示"必须、不得不"（客观要求）。</div>
+        <div class="substitution">
+          ✅ We <strong>have to</strong> <span class="slot">wear uniforms</span>.<br>
+          ✅ She <strong>has to</strong> <span class="slot">do homework first</span>.<br>
+          ➡ 否定：<strong>don't / doesn't have to</strong>（不必）
+        </div>
+      </div>
+
+      <div class="pattern-card">
+        <div class="structure">You must + 动词原形</div> <button class="speak-btn" data-target="sp4" title="朗读句型">🔊</button>
+        <div>must 表示"必须"（主观义务）。语气强于 have to。</div>
+        <div class="substitution">
+          ✅ You <strong>must</strong> <span class="slot">keep the classroom clean</span>.<br>
+          ✅ You <strong>must</strong> <span class="slot">be quiet in the library</span>.<br>
+          ➡ 否定：<strong>mustn't</strong>（禁止做某事）
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</details>
+
+<!-- ====== 语法聚焦 ====== -->
+<details class="module detail-module" open>
+  <summary>📚 语法聚焦 · Imperatives &amp; Modal Verbs <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary>
+  <div class="content">
+
+    <div class="grammar-module" id="grammarContainer">
+      <h3>1️⃣ 祈使句 (Imperatives)</h3>
+      <p>祈使句用来表达命令、请求、建议。主语通常省略，动词用原形。</p>
+      <table class="grammar-table">
+        <tr><th>句式</th><th>结构</th><th>示例</th></tr>
+        <tr><td><strong>肯定祈使句</strong></td><td>动词原形 + 其他</td><td><span class="wotd-say" data-speak="Sit down, please.">Sit down, please.</span></td></tr>
+        <tr><td><strong>否定祈使句</strong></td><td>Don't + 动词原形 + 其他</td><td><span class="wotd-say" data-speak="Don't run in the hallways.">Don't run in the hallways.</span></td></tr>
+        <tr><td><strong>Let's 祈使句</strong></td><td>Let's + 动词原形</td><td><span class="wotd-say" data-speak="Let's go to the library.">Let's go to the library.</span></td></tr>
+      </table>
+    </div>
+
+    <div class="grammar-module">
+      <h3>2️⃣ 情态动词对比：can't / have to / must</h3>
+      <table class="grammar-table">
+        <tr><th>情态动词</th><th>含义</th><th>特点</th><th>例句</th></tr>
+        <tr><td><strong>can't</strong></td><td>不可以（禁止）</td><td>表达不允许</td><td><span class="wotd-say" data-speak="You can't eat in class.">You can't eat in class.</span></td></tr>
+        <tr><td><strong>have to</strong></td><td>不得不（客观）</td><td>有人称变化 (has to)</td><td><span class="wotd-say" data-speak="He has to wear a uniform.">He has to wear a uniform.</span></td></tr>
+        <tr><td><strong>must</strong></td><td>必须（主观）</td><td>无人称变化</td><td><span class="wotd-say" data-speak="I must finish my homework.">I must finish my homework.</span></td></tr>
+      </table>
+
+      <div class="chinese-error">
+        <strong>⚠️ 中式英语纠错：</strong><br>
+        ❌ <span class="wrong wotd-say" data-speak="Not eat in class.">Not eat in class.</span>（祈使句否定不能用 Not 开头）<br>
+        ✅ <span class="correct wotd-say" data-speak="Don't eat in class.">Don't eat in class.</span><br><br>
+        ❌ <span class="wrong wotd-say" data-speak="He have to wear school uniform.">He have to wear school uniform.</span>（第三人称用 has to）<br>
+        ✅ <span class="correct wotd-say" data-speak="He has to wear a school uniform.">He has to wear a school uniform.</span><br><br>
+        ❌ <span class="wrong wotd-say" data-speak="We must to follow the rules.">We must to follow the rules.</span>（must 后直接跟动词原形，不加 to）<br>
+        ✅ <span class="correct wotd-say" data-speak="We must follow the rules.">We must follow the rules.</span>
+      </div>
+    </div>
+
+    <div class="grammar-module">
+      <h3>3️⃣ have to 的疑问句和否定句</h3>
+      <table class="grammar-table">
+        <tr><th>句式</th><th>结构</th><th>示例</th></tr>
+        <tr><td><strong>一般疑问句</strong></td><td>Do/Does + 主语 + have to + 动词原形?</td><td><span class="wotd-say" data-speak="Do we have to wear uniforms?">Do we have to wear uniforms?</span></td></tr>
+        <tr><td><strong>否定句</strong></td><td>主语 + don't/doesn't have to + 动词原形</td><td><span class="wotd-say" data-speak="You don't have to come on Sunday.">You don't have to come on Sunday.</span></td></tr>
+      </table>
+      <div class="grammar-tip">
+        <strong>💡 提示：</strong>don't have to = "不必"（≠ mustn't "禁止"）。mustn't 语气更强。
+      </div>
+    </div>
+
+  </div>
+</details>
+
+<!-- ====== 三级闯关 ====== -->
+<details class="exam-module" open>
+  <summary>📝 三级闯关 · 实战练习</summary>
+  <div class="content">
+
+    <h3 style="color:var(--accent);margin:0px 0 10px;">🥉 基础关 · 概念识记</h3>
+
+    <div class="exam-q">
+      <span class="q-tag">基础</span>
+      <span class="q-diff">★☆☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q1">____ eat in class! (Don't / Not / No)</span> <button class="speak-btn" data-target="q1" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Don't<br><strong>解析：</strong>祈使句否定用 Don't + 动词原形。</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span>
+      <span class="q-diff">★☆☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q2">We ____ (必须) clean the classroom every day.</span> <button class="speak-btn" data-target="q2" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>must<br><strong>解析：</strong>must + 动词原形，表达必须做某事。</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span>
+      <span class="q-diff">★☆☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q3">He ____ (have to) do his homework first.</span> <button class="speak-btn" data-target="q3" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>has to<br><strong>解析：</strong>第三人称单数用 has to。</div>
+    </div>
+
+    <h3 style="color:var(--accent);margin:20px 0 10px;">🥈 提升关 · 语境运用</h3>
+
+    <div class="exam-q">
+      <span class="q-tag">提升</span>
+      <span class="q-diff">★★☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q4">改错：Not arrive late for school.</span> <button class="speak-btn" data-target="q4" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Don't arrive late for school.<br><strong>解析：</strong>否定祈使句用 Don't，不是 Not。</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span>
+      <span class="q-diff">★★☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q5">连词成句：eat / in / don't / the / library / please / ,</span> <button class="speak-btn" data-target="q5" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Don't eat in the library, please.<br><strong>解析：</strong>祈使句否定：Don't + 动词 + 其他。</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span>
+      <span class="q-diff">★★☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q6">We have to wear uniforms. (改为否定句)</span> <button class="speak-btn" data-target="q6" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>We don't have to wear uniforms.<br><strong>解析：</strong>have to 的否定用 don't have to = "不必"。</div>
+    </div>
+
+    <h3 style="color:var(--accent);margin:20px 0 10px;">🥇 挑战关 · 综合运用</h3>
+
+    <div class="exam-q">
+      <span class="q-tag">挑战</span>
+      <span class="q-diff">★★★</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q7">汉译英：不要在教室里跑。我们必须保持安静。我们必须按时完成作业。</span> <button class="speak-btn" data-target="q7" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Don't run in the classroom. We must keep quiet. We must finish homework on time.<br><strong>解析：</strong>祈使句 Don't + 动词原形；must + 动词原形。</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span>
+      <span class="q-diff">★★★</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q8">补全短文：Our school has many ____. We ____ arrive late. We ____ listen to the teacher. We ____ wear uniforms.</span> <button class="speak-btn" data-target="q8" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>rules; can't / mustn't; must; have to<br><strong>解析：</strong>rules 规则；can't 不可以；must 必须；have to 不得不。</div>
+    </div>
+
+  </div>
+</details>
+
+<!-- ====== 微写作 ====== -->
+<div class="micro-writing detail-module">
+  <h3>✍️ 微写作：Our Class Rules</h3>
+  <p>用 Don't... / We can't... / We have to... / We must... 制定 5-6 条班规（50-70词）。</p>
+  <div class="model" id="microModel">
+    <p class="en"><span class="wotd-say" data-speak="Our Class Rules">Our Class Rules</span></p>
+    <p class="en"><span class="wotd-say" data-speak="Our class has some rules. First, don't eat or drink in the classroom.">Our class has some rules. First, don't eat or drink in the classroom.</span></p>
+    <p class="en"><span class="wotd-say" data-speak="Second, don't be late for class. We have to arrive on time.">Second, don't be late for class. We have to arrive on time.</span></p>
+    <p class="en"><span class="wotd-say" data-speak="Third, we can't listen to music in class. We must listen to the teacher carefully.">Third, we can't listen to music in class. We must listen to the teacher carefully.</span></p>
+    <p class="en"><span class="wotd-say" data-speak="We also have to keep the classroom clean and tidy. Rules make our class better!">We also have to keep the classroom clean and tidy. Rules make our class better!</span></p>
+    <span class="trans">我们班有一些规则。首先，不要在教室里吃东西或喝饮料。第二，上课不要迟到。我们必须准时到校。第三，我们不能在课堂上听音乐。必须认真听老师讲课。我们还要保持教室整洁。规则让我们的班级更好！</span>
+  </div>
+</div>
+
+<!-- ====== 自查清单 ====== -->
+<div class="checklist detail-module">
+  <h3>✅ 章节自查清单</h3>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 Don't + 动词原形表达禁止</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能区分 can't (不可以) / must (必须) / have to (不得不)</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我知道 has to 是第三人称单数形式</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 don't have to 表达"不必"</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写一段校规或班规</label>
+  <p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;">
+    <strong>🧑‍🏫 费曼挑战：</strong>用英语向新同学介绍我们学校的规则。练习 Don't... / We have to... / We must... 等表达。"Don't eat in class. We have to wear uniforms. We must keep the classroom clean."
+  </p>
+</div>
+
+<div class="review-schedule">
+  <strong>📅 间隔复习</strong>
+  <span class="review-dot">🔵 1天后：用祈使句互相发出指令</span>
+  <span class="review-dot">🟢 3天后：写 5 条班规（用 Don't / must / have to）</span>
+  <span class="review-dot">🟡 1周后：默写 have to 的否定句和疑问句结构</span>
+  <span class="review-dot">🔴 1月后：复习 must / have to / can't 的区别</span>
+</div>
+
+<div class="next-stop">
+  <strong>➡️ 下一单元：Unit 5 Why do you like pandas?</strong><br>
+  下一单元你将学习用 Why / Because 谈论喜好，以及描述动物的形容词。
+</div>
+
+</main>
+
+<div class="speech-panel" id="speechPanel">
+  <div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div>
+  <div class="row">
+    <label>语速</label>
+    <input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9">
+    <span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span>
+  </div>
+  <div class="row">
+    <label>口音</label>
+    <select id="speechVoice">
+      <option value="en-US">🇺🇸 美式</option>
+      <option value="en-GB">🇬🇧 英式</option>
+    </select>
+  </div>
+  <div class="row" style="justify-content:space-between;">
+    <button id="speechStopBtn" title="停止朗读">⏹ 停止</button>
+    <button id="speechCloseBtn" title="关闭面板">✕ 关闭</button>
+  </div>
+</div>
+<button class="speech-toggle-btn" id="speechToggleBtn" title="语音设置">🔊</button>
+
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis,
+    currentUtterance: null,
+    speaking: false,
+    rate: 0.9,
+    voiceURI: 'en-US',
+
+    init: function() {
+      var self = this;
+      var rateInput = document.getElementById('speechRate');
+      var rateLabel = document.getElementById('speechRateLabel');
+      var voiceSelect = document.getElementById('speechVoice');
+      var stopBtn = document.getElementById('speechStopBtn');
+      var closeBtn = document.getElementById('speechCloseBtn');
+      var toggleBtn = document.getElementById('speechToggleBtn');
+      var panel = document.getElementById('speechPanel');
+
+      var saved = localStorage.getItem('speech-rate');
+      if (saved) { this.rate = parseFloat(saved); rateInput.value = this.rate; rateLabel.textContent = this.rate; }
+      var savedVoice = localStorage.getItem('speech-voice');
+      if (savedVoice) { this.voiceURI = savedVoice; voiceSelect.value = savedVoice; }
+
+      rateInput.addEventListener('input', function() {
+        self.rate = parseFloat(this.value);
+        rateLabel.textContent = this.value;
+        localStorage.setItem('speech-rate', this.value);
+      });
+      voiceSelect.addEventListener('change', function() {
+        self.voiceURI = this.value;
+        localStorage.setItem('speech-voice', this.value);
+      });
+
+      stopBtn.addEventListener('click', function() { self.stop(); });
+      closeBtn.addEventListener('click', function() { panel.classList.remove('open'); });
+
+      toggleBtn.addEventListener('click', function() {
+        panel.classList.toggle('open');
+      });
+    },
+
+    speak: function(text, callback) {
+      var self = this;
+      if (!text) return;
+      this.stop();
+      var utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = this.voiceURI;
+      utterance.rate = this.rate;
+      utterance.onstart = function() { self.speaking = true; };
+      utterance.onend = function() {
+        self.speaking = false;
+        if (callback) callback();
+      };
+      utterance.onerror = function() { self.speaking = false; };
+      this.currentUtterance = utterance;
+      this.synthesis.speak(utterance);
+    },
+
+    speakText: function(el) {
+      var text = el.getAttribute('data-speak') || el.textContent;
+      this.speak(text);
+    },
+
+    speakDialogue: function(containerId, callback) {
+      var self = this;
+      var container = document.getElementById(containerId);
+      if (!container) return;
+      var lines = container.querySelectorAll('.en-text');
+      var index = 0;
+      this.stop();
+      function speakNext() {
+        if (index >= lines.length) { self.speaking = false; if (callback) callback(); return; }
+        var el = lines[index];
+        var text = el.getAttribute('data-speak') || el.textContent.replace(/<[^>]+>/g, '').trim();
+        if (!text) { index++; speakNext(); return; }
+        el.classList.add('speaking');
+        var utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = self.voiceURI;
+        utterance.rate = self.rate;
+        utterance.onend = function() {
+          el.classList.remove('speaking');
+          index++;
+          setTimeout(speakNext, 500);
+        };
+        utterance.onerror = function() { el.classList.remove('speaking'); index++; setTimeout(speakNext, 200); };
+        self.currentUtterance = utterance;
+        self.synthesis.speak(utterance);
+      }
+      speakNext();
+    },
+
+    speakVocabSection: function(containerId, callback) {
+      var self = this;
+      var container = document.getElementById(containerId);
+      if (!container) return;
+      var cards = container.querySelectorAll('.vocab-card');
+      var index = 0;
+      this.stop();
+      function speakNext() {
+        if (index >= cards.length) { self.speaking = false; if (callback) callback(); return; }
+        var card = cards[index];
+        var headword = card.querySelector('.headword');
+        var def = card.querySelector('.definition');
+        var example = card.querySelector('.example .wotd-say');
+        var textParts = [];
+        if (headword) {
+          textParts.push(headword.getAttribute('data-speak') || headword.textContent);
+        }
+        if (example) {
+          textParts.push(example.getAttribute('data-speak') || example.textContent.replace(/<[^>]+>/g, '').trim());
+        }
+        var fullText = textParts.join('. ');
+        if (!fullText) { index++; speakNext(); return; }
+        headword.classList.add('speaking');
+        var utterance = new SpeechSynthesisUtterance(fullText);
+        utterance.lang = self.voiceURI;
+        utterance.rate = self.rate;
+        utterance.onend = function() {
+          headword.classList.remove('speaking');
+          index++;
+          setTimeout(speakNext, 600);
+        };
+        utterance.onerror = function() { headword.classList.remove('speaking'); index++; setTimeout(speakNext, 300); };
+        self.currentUtterance = utterance;
+        self.synthesis.speak(utterance);
+      }
+      speakNext();
+    },
+
+    stop: function() {
+      this.synthesis.cancel();
+      this.speaking = false;
+    }
+  };
+
+  SpeechManager.init();
+
+  document.querySelectorAll('.wotd-say').forEach(function(el) {
+    el.addEventListener('click', function() {
+      var text = this.getAttribute('data-speak') || this.textContent;
+      SpeechManager.speak(text);
+    });
+  });
+
+  document.querySelectorAll('.speak-btn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var dialogueId = this.getAttribute('data-dialogue');
+      var vocabId = this.getAttribute('data-vocab');
+      var targetId = this.getAttribute('data-target');
+      if (this.classList.contains('speaking')) { SpeechManager.stop(); this.classList.remove('speaking'); return; }
+      this.classList.add('speaking');
+      var done = function() { btn.classList.remove('speaking'); };
+      if (dialogueId) {
+        SpeechManager.speakDialogue(dialogueId, done);
+      } else if (vocabId) {
+        SpeechManager.speakVocabSection(vocabId, done);
+      } else if (targetId) {
+        var target = document.getElementById(targetId);
+        if (!target) { btn.classList.remove('speaking'); return; }
+        SpeechManager.speak(target.textContent.replace(/<[^>]+>/g, ''), done);
+      } else {
+        btn.classList.remove('speaking');
+      }
+    });
+  });
+
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var headword = this.previousElementSibling;
+      if (headword && headword.classList.contains('wotd-say')) {
+        var text = headword.getAttribute('data-speak') || headword.textContent;
+        SpeechManager.speak(text);
+      }
+    });
+  });
+
+  var toggle = document.getElementById('theme-toggle');
+  var html = document.documentElement;
+  var saved = localStorage.getItem('site-theme');
+  if (saved === 'dark') { html.setAttribute('data-theme', 'dark'); toggle.textContent = '☀️ 亮色模式'; }
+  toggle.addEventListener('click', function() {
+    var isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    toggle.textContent = isDark ? '🌙 暗色模式' : '☀️ 亮色模式';
+    localStorage.setItem('site-theme', isDark ? 'light' : 'dark');
+  });
+
+  (function() {
+    var btn = document.getElementById('expandAllBtn');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      var allDetails = document.querySelectorAll('.module, .exam-module');
+      var allOpen = true;
+      for (var i = 0; i < allDetails.length; i++) {
+        if (!allDetails[i].hasAttribute('open')) { allOpen = false; break; }
+      }
+      for (var i = 0; i < allDetails.length; i++) {
+        if (allOpen) allDetails[i].removeAttribute('open');
+        else allDetails[i].setAttribute('open', '');
+      }
+      btn.textContent = allOpen ? '📂 展开全部模块' : '📖 收起全部模块';
+    });
+  })();
+
+  window.addEventListener('scroll', function() {
+    var btn = document.getElementById('backToTop');
+    if (btn) btn.style.display = window.scrollY > 400 ? 'flex' : 'none';
+  }, { passive: true });
+  document.getElementById('backToTop').addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  var sidebar = document.getElementById('sidebar');
+  document.getElementById('sidebarHideBtn').addEventListener('click', function() { sidebar.classList.add('hidden'); });
+  document.getElementById('sidebarShowBtn').addEventListener('click', function() { sidebar.classList.remove('hidden'); });
+
+  document.querySelectorAll('.q-toggle').forEach(function(b){
+    b.addEventListener('click', function(e) { e.stopPropagation(); this.parentElement.classList.toggle('show-solution'); });
+  });
+})();
+</script>
+
+</body>
+</html>

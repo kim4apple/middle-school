@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1 My name's Gina. | 初中英语七年级</title>
+<link rel="stylesheet" href="css/english.css">
+<style>
+.speak-btn {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 12px; cursor: pointer; color: var(--accent);
+  border: 1px solid var(--border); border-radius: 4px;
+  padding: 2px 8px; background: var(--bg);
+  transition: background 0.15s;
+}
+.speak-btn:hover { background: var(--accent-light); }
+.speak-btn.speaking { background: var(--eng-amber-light); color: var(--eng-amber); border-color: var(--eng-amber); }
+.headword-speak-indicator { font-size: 11px; margin-left: 3px; opacity: 0.55; cursor: pointer; vertical-align: super; line-height: 1; }
+.headword-speak-indicator:hover { opacity: 1; }
+.wotd-say {
+  cursor: pointer; transition: color 0.15s;
+}
+.wotd-say:hover { color: var(--accent); }
+.wotd-say.speaking { color: var(--eng-pink); }
+.speech-panel {
+  position: fixed; bottom: 80px; right: 24px; z-index: 999;
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  padding: 14px 18px; display: none; min-width: 180px;
+}
+.speech-panel.open { display: block; }
+.speech-panel .row { display: flex; align-items: center; gap: 8px; margin: 4px 0; font-size: 13px; }
+.speech-panel .row label { color: var(--text-secondary); font-size: 12px; min-width: 36px; }
+.speech-panel select, .speech-panel input[type="range"] { flex: 1; }
+.speech-panel button {
+  padding: 4px 12px; border-radius: 6px; border: 1px solid var(--border);
+  background: var(--bg); color: var(--text); cursor: pointer; font-size: 12px;
+}
+.speech-panel button:hover { background: var(--accent-light); }
+.speech-toggle-btn {
+  position: fixed; bottom: 24px; right: 76px; z-index: 999;
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid var(--border); background: var(--bg);
+  color: var(--accent); cursor: pointer; font-size: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  display: flex; align-items: center; justify-content: center;
+}
+.speech-toggle-btn:hover { background: var(--accent-light); }
+.en-text.speaking { background: var(--eng-amber-light); border-radius: 4px; padding: 2px 4px; transition: background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background: #452a08; }
+.detail-module { content-visibility: auto; contain-intrinsic-size: 300px; }
+.reading { content-visibility: auto; contain-intrinsic-size: 400px; }
+.num-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 8px;
+  margin: 16px 0;
+}
+.num-card {
+  text-align: center;
+  padding: 12px 6px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.num-card:hover { background: var(--accent-light); }
+.num-card .num-digit { font-size: 24px; font-weight: 800; color: var(--accent); }
+.num-card .num-word { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
+</style>
+</head>
+<body>
+
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">英语七年级</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+  </div>
+  <nav>
+    <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+    <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 七 上 ━━</a>
+    <a href="st01.html">S1 Good morning!</a>
+    <a href="st02.html">S2 What's this in English?</a>
+    <a href="st03.html">S3 What color is it?</a>
+    <a href="u01.html" class="active">U1 My name's Gina.</a>
+    <a href="u02.html">U2 This is my sister.</a>
+    <a href="u03.html">U3 Is this your pencil?</a>
+    <a href="u04.html">U4 Where's my schoolbag?</a>
+    <a href="u05.html">U5 Do you have a soccer ball?</a>
+    <a href="u06.html">U6 Do you like bananas?</a>
+    <a href="u07.html">U7 How much are these socks?</a>
+    <a href="u08.html">U8 When is your birthday?</a>
+    <a href="u09.html">U9 My favorite subject is science.</a>
+    <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 七 下 ━━</a>
+    <a href="u13.html">U1 Can you play the guitar?</a>
+    <a href="u14.html">U2 What time...?</a>
+    <a href="u15.html">U3 How do you get to school?</a>
+    <a href="u16.html">U4 Don't eat in class.</a>
+    <a href="u17.html">U5 Why do you like pandas?</a>
+    <a href="u18.html">U6 I'm watching TV.</a>
+    <a href="u19.html">U7 It's raining!</a>
+    <a href="u20.html">U8 Is there a post office...</a>
+    <a href="u21.html">U9 What does he look like?</a>
+    <a href="u22.html">U10 I'd like some noodles.</a>
+    <a href="u23.html">U11 How was your school trip?</a>
+    <a href="u24.html">U12 What did you do last weekend?</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+  <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
+  <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
+</nav>
+
+<main id="content">
+
+<div class="cover">
+  <div class="sub-en">Unit 1</div>
+  <h1>My name's Gina.</h1>
+  <p>自我介绍 · 询问姓名 · 数字 0–9 · be 动词</p>
+</div>
+
+<div class="unit-meta">
+  <span>📖 话题：Making friends</span>
+  <span>💬 功能：Introduce yourself & greet</span>
+  <span>📚 语法：be 动词 (am/is/are) · 形容词性物主代词</span>
+  <span>📝 写作：自我介绍段落</span>
+</div>
+
+<div class="can-do">
+  <h3>🎯 我能做到</h3>
+  <label><input type="checkbox"> I can introduce myself: "My name is ... / I'm ..."</label>
+  <label><input type="checkbox"> I can ask "What's your/his/her name?" and answer.</label>
+  <label><input type="checkbox"> I can use numbers 0–9 in conversations.</label>
+  <label><input type="checkbox"> I can use am, is, are correctly.</label>
+  <label><input type="checkbox"> I can use my, your, his, her correctly.</label>
+</div>
+
+<!-- ====== 课文精讲 ====== -->
+<details class="module" open>
+  <summary>📖 课文精讲 · Meeting New Friends</summary>
+  <div class="content">
+
+    <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;">
+      <span style="font-size:13px;color:var(--text-secondary);">场景：开学第一天，新同学互相认识。</span>
+      <button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话（含间隔）">🔊 朗读对话</button>
+    </div>
+
+    <div class="dialogue" id="dialogueText">
+      <div class="dialogue-line">
+        <span class="speaker">Gina:</span>
+        <span class="en-text wotd-say" data-speak="Hi! My name's Gina. What's your name?">Hi! <em>My name's Gina</em>. What's your name?</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Tony:</span>
+        <span class="en-text wotd-say" data-speak="My name is Tony. Nice to meet you, Gina!">My name is Tony. <em>Nice to meet you</em>, Gina!</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Gina:</span>
+        <span class="en-text wotd-say" data-speak="Nice to meet you too! Are you a new student?">Nice to meet you too! <em>Are you</em> a new student?</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Tony:</span>
+        <span class="en-text wotd-say" data-speak="Yes, I am. I'm in Class 2. What about you?">Yes, I am. I'm in Class 2. <em>What about you</em>?</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Gina:</span>
+        <span class="en-text wotd-say" data-speak="I'm in Class 5. My phone number is 281-9176.">I'm in Class 5. <em>My phone number</em> is 281-9176.</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Tony:</span>
+        <span class="en-text wotd-say" data-speak="Cool! My phone number is 358-6344. Let's be friends!">Cool! My phone number is 358-6344. <em>Let's be friends</em>!</span>
+      </div>
+    </div>
+
+    <details style="margin-top:12px;">
+      <summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary>
+      <div class="dialogue-annotation">
+        <p><strong>逐句翻译：</strong></p>
+        <p>Gina: 嗨！我的名字是 Gina。你叫什么名字？</p>
+        <p>Tony: 我叫 Tony。很高兴认识你，Gina！</p>
+        <p>Gina: 我也很高兴认识你！你是新生吗？</p>
+        <p>Tony: 是的，我是。我在 2 班。你呢？</p>
+        <p>Gina: 我在 5 班。我的电话号码是 281-9176。</p>
+        <p>Tony: 酷！我的电话号码是 358-6344。我们做朋友吧！</p>
+      </div>
+    </details>
+
+    <div class="dialogue-annotation">
+      <p><strong>🔑 重点讲解：</strong></p>
+      <p><strong>1.</strong> <em>My name's Gina.</em> → name's = name is。介绍姓名最常用的句型。</p>
+      <p><strong>2.</strong> <em>What's your name?</em> → "你叫什么名字？" 回答：My name is ... / I'm ...</p>
+      <p><strong>3.</strong> <em>Nice to meet you.</em> → "很高兴认识你。" 回答：Nice to meet you <strong>too</strong>.</p>
+      <p><strong>4.</strong> <em>What about you?</em> → "你呢？" 用于反问对方的情况。</p>
+      <p><strong>5.</strong> <em>Let's be friends!</em> → "我们做朋友吧！" Let's = Let us。</p>
+    </div>
+
+    <div style="display:flex;gap:8px;align-items:center;margin:20px 0 10px;">
+      <h3 style="font-size:15px;color:var(--accent);margin:0;">📖 More Introductions</h3>
+      <button class="speak-btn" data-dialogue="moreIntro" title="朗读更多自我介绍">🔊 朗读</button>
+    </div>
+
+    <div class="reading" id="moreIntro">
+      <p class="en-text" data-speak="Hello! I'm Zhang Wei. I'm twelve years old.">Hello! I'm Zhang Wei. I'm twelve years old.</p>
+      <p class="en-text" data-speak="This is my friend, Li Ming. He is thirteen.">This is my friend, Li Ming. He is thirteen.</p>
+      <p class="en-text" data-speak="She is Ms. Brown. She is our English teacher.">She is Ms. Brown. She is our English teacher.</p>
+      <p class="en-text" data-speak="What's your telephone number?">What's your telephone number?</p>
+    </div>
+
+  </div>
+</details>
+
+<!-- ====== 重点词汇 ====== -->
+<details class="module" open>
+  <summary>📝 重点词汇 · Names & Numbers <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇（含例句）">🔊 朗读全部词汇</button></summary>
+  <div class="content">
+
+    <div class="vocab-grid" id="vocabGrid">
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="name">name</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/neɪm/</span>
+        <span class="pos">n.</span>
+        <div class="definition">名字；姓名</div>
+        <div class="example"><span class="wotd-say" data-speak="My name is Gina.">My name is Gina.</span><span class="trans">我的名字是 Gina。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="nice">nice</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/naɪs/</span>
+        <span class="pos">adj.</span>
+        <div class="definition">好的；令人愉快的</div>
+        <div class="example"><span class="wotd-say" data-speak="Nice to meet you.">Nice to meet you.</span><span class="trans">很高兴认识你。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="meet">meet</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/miːt/</span>
+        <span class="pos">v.</span>
+        <div class="definition">遇见；结识</div>
+        <div class="example"><span class="wotd-say" data-speak="I'm happy to meet you.">I'm happy to meet you.</span><span class="trans">很高兴遇见你。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="friend">friend</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/frend/</span>
+        <span class="pos">n.</span>
+        <div class="definition">朋友</div>
+        <div class="example"><span class="wotd-say" data-speak="This is my friend.">This is my friend.</span><span class="trans">这是我的朋友。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="telephone">telephone</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈtelɪfoʊn/</span>
+        <span class="pos">n.</span>
+        <div class="definition">电话</div>
+        <div class="example"><span class="wotd-say" data-speak="What's your telephone number?">What's your telephone number?</span><span class="trans">你的电话号码是多少？</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="number">number</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈnʌmbər/</span>
+        <span class="pos">n.</span>
+        <div class="definition">号码；数字</div>
+        <div class="example"><span class="wotd-say" data-speak="My lucky number is 7.">My lucky number is 7.</span><span class="trans">我的幸运数字是 7。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="zero">zero</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈzɪroʊ/</span>
+        <span class="pos">num.</span>
+        <div class="definition">零</div>
+        <div class="example"><span class="wotd-say" data-speak="My number is 281-0916.">My number is 281-0916.</span><span class="trans">我的号码是 281-0916。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="first name">first name</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/fɜːrst neɪm/</span>
+        <span class="pos">n.</span>
+        <div class="definition">名字（西方名在前）</div>
+        <div class="example"><span class="wotd-say" data-speak="Gina is my first name.">Gina is my first name.</span><span class="trans">Gina 是我的名字。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="last name">last name</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/læst neɪm/</span>
+        <span class="pos">n.</span>
+        <div class="definition">姓氏</div>
+        <div class="example"><span class="wotd-say" data-speak="Green is my last name.">Green is my last name.</span><span class="trans">Green 是我的姓。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="middle school">middle school</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈmɪdl skuːl/</span>
+        <span class="pos">n.</span>
+        <div class="definition">中学</div>
+        <div class="example"><span class="wotd-say" data-speak="I'm in No. 1 Middle School.">I'm in No. 1 Middle School.</span><span class="trans">我在第一中学。</span></div>
+      </div>
+
+    </div>
+
+  </div>
+</details>
+
+<!-- ====== 重点句型 ====== -->
+<details class="module" open>
+  <summary>🔤 重点句型 · Introductions</summary>
+  <div class="content">
+
+    <div class="pattern-grid">
+
+      <div class="pattern-card">
+        <div class="structure">What's your name? — My name is ... / I'm ...</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>询问姓名和回答的两种方式。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1">
+          ✅ <strong>What's your name?</strong><br>
+          ➡ <strong>My name is</strong> <span class="slot">Gina</span>.<br>
+          ➡ <strong>I'm</strong> <span class="slot">Tony</span>.</span></div>
+      </div>
+
+      <div class="pattern-card">
+        <div class="structure">What's his / her name?</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>介绍第三方时询问别人的名字。</div>
+        <div class="substitution">
+          ✅ <strong>What's his name?</strong> — His name is <span class="slot">Mike</span>.<br>
+          ✅ <strong>What's her name?</strong> — Her name is <span class="slot">Alice</span>.<br>
+          ➡ his = 他的，her = 她的
+        </div>
+      </div>
+
+      <div class="pattern-card">
+        <div class="structure">What's your phone number?</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>询问电话号码。</div>
+        <div class="substitution">
+          ✅ <strong>What's your phone number?</strong><br>
+          ➡ My phone number is <span class="slot">281-9176</span>.<br>
+          ➡ It's <span class="slot">358-6344</span>.
+        </div>
+      </div>
+
+      <div class="pattern-card">
+        <div class="structure">Are you ...? — Yes, I am. / No, I'm not.</div> <button class="speak-btn" data-target="sp4" title="朗读句型">🔊</button>
+        <div>用 be 动词构成的一般疑问句。</div>
+        <div class="substitution">
+          ✅ <strong>Are you</strong> <span class="slot">a new student</span>?<br>
+          ➡ Yes, <strong>I am</strong>. / No, <strong>I'm not</strong>.<br>
+          ✅ <strong>Is he</strong> <span class="slot">your friend</span>?<br>
+          ➡ Yes, <strong>he is</strong>. / No, <strong>he isn't</strong>.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</details>
+
+<!-- ====== 语法聚焦 ====== -->
+<details class="module detail-module" open>
+  <summary>📚 语法聚焦 · Be-verb & Possessives <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary>
+  <div class="content">
+
+    <div class="grammar-module">
+      <h3>1️⃣ 数字 0–9</h3>
+
+      <div class="num-grid">
+        <div class="num-card wotd-say" data-speak="zero">
+          <div class="num-digit">0</div>
+          <div class="num-word">zero</div>
+          <div style="font-size:10px;color:var(--text-secondary);">/ˈzɪroʊ/</div>
+        </div>
+        <div class="num-card wotd-say" data-speak="one">
+          <div class="num-digit">1</div>
+          <div class="num-word">one</div>
+          <div style="font-size:10px;color:var(--text-secondary);">/wʌn/</div>
+        </div>
+        <div class="num-card wotd-say" data-speak="two">
+          <div class="num-digit">2</div>
+          <div class="num-word">two</div>
+          <div style="font-size:10px;color:var(--text-secondary);">/tuː/</div>
+        </div>
+        <div class="num-card wotd-say" data-speak="three">
+          <div class="num-digit">3</div>
+          <div class="num-word">three</div>
+          <div style="font-size:10px;color:var(--text-secondary);">/θriː/</div>
+        </div>
+        <div class="num-card wotd-say" data-speak="four">
+          <div class="num-digit">4</div>
+          <div class="num-word">four</div>
+          <div style="font-size:10px;color:var(--text-secondary);">/fɔːr/</div>
+        </div>
+        <div class="num-card wotd-say" data-speak="five">
+          <div class="num-digit">5</div>
+          <div class="num-word">five</div>
+          <div style="font-size:10px;color:var(--text-secondary);">/faɪv/</div>
+        </div>
+        <div class="num-card wotd-say" data-speak="six">
+          <div class="num-digit">6</div>
+          <div class="num-word">six</div>
+          <div style="font-size:10px;color:var(--text-secondary);">/sɪks/</div>
+        </div>
+        <div class="num-card wotd-say" data-speak="seven">
+          <div class="num-digit">7</div>
+          <div class="num-word">seven</div>
+          <div style="font-size:10px;color:var(--text-secondary);">/ˈsevn/</div>
+        </div>
+        <div class="num-card wotd-say" data-speak="eight">
+          <div class="num-digit">8</div>
+          <div class="num-word">eight</div>
+          <div style="font-size:10px;color:var(--text-secondary);">/eɪt/</div>
+        </div>
+        <div class="num-card wotd-say" data-speak="nine">
+          <div class="num-digit">9</div>
+          <div class="num-word">nine</div>
+          <div style="font-size:10px;color:var(--text-secondary);">/naɪn/</div>
+        </div>
+      </div>
+
+      <p style="font-size:14px;">📌 口播电话号码时，逐个数字朗读，如 281-9176 → two eight one, nine one seven six。</p>
+    </div>
+
+    <div class="grammar-module">
+      <h3>2️⃣ Be 动词：am / is / are</h3>
+      <table class="grammar-table">
+        <tr><th>人称</th><th>be 动词</th><th>缩写</th><th>例句</th></tr>
+        <tr><td>I（我）</td><td><span class="wotd-say" data-speak="am"><strong>am</strong></span></td><td>I'm</td><td><span class="wotd-say" data-speak="I am Gina.">I am Gina. → I'm Gina.</span></td></tr>
+        <tr><td>He / She / It（他/她/它）</td><td><span class="wotd-say" data-speak="is"><strong>is</strong></span></td><td>he's / she's / it's</td><td><span class="wotd-say" data-speak="He is Tony.">He is Tony.</span></td></tr>
+        <tr><td>You / We / They</td><td><span class="wotd-say" data-speak="are"><strong>are</strong></span></td><td>you're / we're / they're</td><td><span class="wotd-say" data-speak="You are a student.">You are a student.</span></td></tr>
+      </table>
+      <div class="grammar-tip">
+        <strong>💡 口诀：</strong>I 用 am，you 用 are，is 用于他她它。单数 is，复数 are。
+      </div>
+    </div>
+
+    <div class="grammar-module">
+      <h3>3️⃣ 形容词性物主代词：my / your / his / her</h3>
+      <table class="grammar-table">
+        <tr><th>人称</th><th>物主代词</th><th>例句</th></tr>
+        <tr><td>第一人称</td><td><strong>my</strong> 我的</td><td><span class="wotd-say" data-speak="My name is Gina.">My name is Gina.</span></td></tr>
+        <tr><td>第二人称</td><td><strong>your</strong> 你的</td><td><span class="wotd-say" data-speak="What's your name?">What's your name?</span></td></tr>
+        <tr><td>第三人称(男)</td><td><strong>his</strong> 他的</td><td><span class="wotd-say" data-speak="His name is Tony.">His name is Tony.</span></td></tr>
+        <tr><td>第三人称(女)</td><td><strong>her</strong> 她的</td><td><span class="wotd-say" data-speak="Her name is Alice.">Her name is Alice.</span></td></tr>
+      </table>
+      <p style="font-size:14px;margin-top:8px;">📌 形容词性物主代词 <strong>后面必须跟名词</strong>：my book, your pen, his ruler, her bag。</p>
+
+      <div class="chinese-error">
+        <strong>⚠️ 中式英语纠错：</strong><br>
+        ❌ <span class="wrong wotd-say" data-speak="I name is Gina.">I name is Gina.</span>（I 是主格，不能修饰名词）<br>
+        ✅ <span class="correct wotd-say" data-speak="My name is Gina.">My name is Gina.</span><br><br>
+        ❌ <span class="wrong wotd-say" data-speak="What's he name?">What's he name?</span>（he 是主格，要用 his）<br>
+        ✅ <span class="correct wotd-say" data-speak="What's his name?">What's his name?</span>
+      </div>
+    </div>
+
+    <div class="grammar-module">
+      <h3>4️⃣ 中英文姓名顺序对比</h3>
+      <table class="grammar-table">
+        <tr><th></th><th>顺序</th><th>例子</th></tr>
+        <tr><td>英文名</td><td>名字 (first name) + 姓氏 (last name)</td><td>Gina <strong>Green</strong> → first name: Gina, last name: Green</td></tr>
+        <tr><td>中文名</td><td>姓氏 + 名字</td><td><strong>Zhang</strong> Wei → last name: Zhang, first name: Wei</td></tr>
+      </table>
+    </div>
+
+  </div>
+</details>
+
+<!-- ====== 三级闯关 ====== -->
+<details class="exam-module" open>
+  <summary>📝 三级闯关 · 实战练习</summary>
+  <div class="content">
+
+    <h3 style="color:var(--accent);margin:0 0 10px;">🥉 基础关 · 概念识记</h3>
+
+    <div class="exam-q">
+      <span class="q-tag">基础</span>
+      <span class="q-diff easy">★☆☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q1">— ____ your name? — My name is Tony.</span> <button class="speak-btn" data-target="q1" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>What's<br><strong>解析：</strong>询问名字用 What's your name? What's = What is。</div>
+    </div>
+
+    <div class="exam-q">
+      <span class="q-tag">基础</span>
+      <span class="q-diff easy">★☆☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q2">I ____ a student. (am / is / are)</span> <button class="speak-btn" data-target="q2" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>am<br><strong>解析：</strong>I 后面用 am。I am = I'm。</div>
+    </div>
+
+    <div class="exam-q">
+      <span class="q-tag">基础</span>
+      <span class="q-diff easy">★☆☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q3">— Nice to meet you!<br>— Nice to meet you, ____!</span> <button class="speak-btn" data-target="q3" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>too<br><strong>解析：</strong>回应对方说 Nice to meet you 时，在句尾加 too，表示"也"。</div>
+    </div>
+
+    <h3 style="color:var(--accent);margin:20px 0 10px;">🥈 提升关 · 语境运用</h3>
+
+    <div class="exam-q">
+      <span class="q-tag">提升</span>
+      <span class="q-diff mid">★★☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q4">— What's ____ name? (he)<br>— ____ name is Mike.</span> <button class="speak-btn" data-target="q4" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>his; His<br><strong>解析：</strong>提问男性名字用 his（他的）；回答也用 His name ...，注意首字母大写。</div>
+    </div>
+
+    <div class="exam-q">
+      <span class="q-tag">提升</span>
+      <span class="q-diff mid">★★☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q5">连词成句：her / what's / name / ?</span> <button class="speak-btn" data-target="q5" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>What's her name?<br><strong>解析：</strong>What's 开头，注意 her 放在 name 前面作定语。</div>
+    </div>
+
+    <div class="exam-q">
+      <span class="q-tag">提升</span>
+      <span class="q-diff mid">★★☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q6">— Are you Ms. Brown?<br>— No, I ____. I ____ Ms. Smith.</span> <button class="speak-btn" data-target="q6" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>am not; am<br><strong>解析：</strong>否定回答用 I am not（缩写 I'm not）；肯定陈述用 I am。</div>
+    </div>
+
+    <div class="exam-q">
+      <span class="q-tag">挑战</span>
+      <span class="q-diff hard">★★★</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q7">根据中文完成句子：她的电话号码是 358-9176。<br>____ phone ____ ____ 358-9176.</span> <button class="speak-btn" data-target="q7" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Her; number; is<br><strong>解析：</strong>"她的"用 Her；"电话号码"是 phone number；第三人称单数用 is。</div>
+    </div>
+
+    <div class="exam-q">
+      <span class="q-tag">挑战</span>
+      <span class="q-diff hard">★★★</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q8">改错：She name is Lucy.</span> <button class="speak-btn" data-target="q8" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Her name is Lucy.<br><strong>解析：</strong>名词前需要形容词性物主代词，She 是主格（作主语），应该改为 Her。</div>
+    </div>
+
+  </div>
+
+</details>
+
+<!-- ====== 微写作 ====== -->
+<div class="micro-writing detail-module">
+  <h3>✍️ 微写作：自我介绍</h3>
+  <p>假设你是新同学，请用 4-5 句话向全班同学介绍自己。包括姓名、年龄、班级和电话号码。</p>
+  <div class="model" id="microModel">
+    <p class="en"><span class="wotd-say" data-speak="Good morning, everyone!">Good morning, everyone!</span></p>
+    <p class="en"><span class="wotd-say" data-speak="My name is Wang Fang.">My name is Wang Fang.</span></p>
+    <p class="en"><span class="wotd-say" data-speak="I'm twelve years old.">I'm twelve years old.</span></p>
+    <p class="en"><span class="wotd-say" data-speak="I'm in Class 3, Grade 7.">I'm in Class 3, Grade 7.</span></p>
+    <p class="en"><span class="wotd-say" data-speak="My phone number is 139-1234-5678.">My phone number is 139-1234-5678.</span></p>
+    <p class="en"><span class="wotd-say" data-speak="Nice to meet you all!">Nice to meet you all!</span></p>
+    <span class="trans">大家早上好！我叫王芳。我 12 岁。我在七年级三班。我的电话号码是 139-1234-5678。很高兴认识大家！</span>
+  </div>
+</div>
+
+<!-- ====== 自查清单 ====== -->
+<div class="checklist detail-module">
+  <h3>✅ 章节自查清单</h3>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 My name is ... / I'm ... 进行自我介绍</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我会询问别人的名字：What's your / his / her name?</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用英语说出数字 0–9 并报出电话号码</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我理解 be 动词 am/is/are 的区别和用法</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能区分并使用 my / your / his / her</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我知道中英文姓名顺序的不同</label>
+  <p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;">
+    <strong>🧑‍🏫 费曼挑战：</strong>假设你是 Gina，新同学是 Tony，口头演练一遍完整的自我介绍对话——包括打招呼、问姓名、问班级、交换电话号码。
+  </p>
+</div>
+
+<div class="review-schedule">
+  <strong>📅 间隔复习</strong>
+  <span class="review-dot">🔵 1天后：默写数字 0–9 和姓名句型</span>
+  <span class="review-dot">🟢 3天后：编写你的自我介绍（口述）</span>
+  <span class="review-dot">🟡 1周后：用 be 动词写 5 个句子</span>
+  <span class="review-dot">🔴 1月后：复习物主代词和 be 动词表格</span>
+</div>
+
+<div class="next-stop">
+  <strong>➡️ 下一单元：Unit 2 This is my sister.</strong><br>
+  下一单元你将学习如何介绍家人和朋友，掌握 <strong>this / that / these / those</strong> 指示代词的用法。
+</div>
+
+</main>
+
+<div class="speech-panel" id="speechPanel">
+  <div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div>
+  <div class="row">
+    <label>语速</label>
+    <input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9">
+    <span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span>
+  </div>
+  <div class="row">
+    <label>口音</label>
+    <select id="speechVoice">
+      <option value="en-US">🇺🇸 美式</option>
+      <option value="en-GB">🇬🇧 英式</option>
+    </select>
+  </div>
+  <div class="row" style="justify-content:space-between;">
+    <button id="speechStopBtn" title="停止朗读">⏹ 停止</button>
+    <button id="speechCloseBtn" title="关闭面板">✕ 关闭</button>
+  </div>
+</div>
+<button class="speech-toggle-btn" id="speechToggleBtn" title="语音设置">🔊</button>
+
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis,
+    currentUtterance: null,
+    speaking: false,
+    rate: 0.9,
+    voiceURI: 'en-US',
+
+    init: function() {
+      var self = this;
+      var rateInput = document.getElementById('speechRate');
+      var rateLabel = document.getElementById('speechRateLabel');
+      var voiceSelect = document.getElementById('speechVoice');
+      var stopBtn = document.getElementById('speechStopBtn');
+      var closeBtn = document.getElementById('speechCloseBtn');
+      var toggleBtn = document.getElementById('speechToggleBtn');
+      var panel = document.getElementById('speechPanel');
+
+      var saved = localStorage.getItem('speech-rate');
+      if (saved) { this.rate = parseFloat(saved); rateInput.value = this.rate; rateLabel.textContent = this.rate; }
+      var savedVoice = localStorage.getItem('speech-voice');
+      if (savedVoice) { this.voiceURI = savedVoice; voiceSelect.value = savedVoice; }
+
+      rateInput.addEventListener('input', function() {
+        self.rate = parseFloat(this.value);
+        rateLabel.textContent = this.value;
+        localStorage.setItem('speech-rate', this.value);
+      });
+      voiceSelect.addEventListener('change', function() {
+        self.voiceURI = this.value;
+        localStorage.setItem('speech-voice', this.value);
+      });
+
+      stopBtn.addEventListener('click', function() { self.stop(); });
+      closeBtn.addEventListener('click', function() { panel.classList.remove('open'); });
+
+      toggleBtn.addEventListener('click', function() {
+        panel.classList.toggle('open');
+      });
+    },
+
+    speak: function(text, callback) {
+      var self = this;
+      if (!text) return;
+      this.stop();
+      var utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = this.voiceURI;
+      utterance.rate = this.rate;
+      utterance.onstart = function() { self.speaking = true; };
+      utterance.onend = function() {
+        self.speaking = false;
+        if (callback) callback();
+      };
+      utterance.onerror = function() { self.speaking = false; };
+      this.currentUtterance = utterance;
+      this.synthesis.speak(utterance);
+    },
+
+    speakText: function(el) {
+      var text = el.getAttribute('data-speak') || el.textContent;
+      this.speak(text);
+    },
+
+    speakDialogue: function(containerId, callback) {
+      var self = this;
+      var container = document.getElementById(containerId);
+      if (!container) return;
+      var lines = container.querySelectorAll('.en-text');
+      var index = 0;
+      this.stop();
+      function speakNext() {
+        if (index >= lines.length) { self.speaking = false; if (callback) callback(); return; }
+        var el = lines[index];
+        var text = el.getAttribute('data-speak') || el.textContent.replace(/<[^>]+>/g, '').trim();
+        if (!text) { index++; speakNext(); return; }
+        el.classList.add('speaking');
+        var utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = self.voiceURI;
+        utterance.rate = self.rate;
+        utterance.onend = function() {
+          el.classList.remove('speaking');
+          index++;
+          setTimeout(speakNext, 500);
+        };
+        utterance.onerror = function() { el.classList.remove('speaking'); index++; setTimeout(speakNext, 200); };
+        self.currentUtterance = utterance;
+        self.synthesis.speak(utterance);
+      }
+      speakNext();
+    },
+
+    speakVocabSection: function(containerId, callback) {
+      var self = this;
+      var container = document.getElementById(containerId);
+      if (!container) return;
+      var cards = container.querySelectorAll('.vocab-card');
+      var index = 0;
+      this.stop();
+      function speakNext() {
+        if (index >= cards.length) { self.speaking = false; if (callback) callback(); return; }
+        var card = cards[index];
+        var headword = card.querySelector('.headword');
+        var def = card.querySelector('.definition');
+        var example = card.querySelector('.example .wotd-say');
+        var textParts = [];
+        if (headword) {
+          textParts.push(headword.getAttribute('data-speak') || headword.textContent);
+        }
+        if (example) {
+          textParts.push(example.getAttribute('data-speak') || example.textContent.replace(/<[^>]+>/g, '').trim());
+        }
+        var fullText = textParts.join('. ');
+        if (!fullText) { index++; speakNext(); return; }
+        headword.classList.add('speaking');
+        var utterance = new SpeechSynthesisUtterance(fullText);
+        utterance.lang = self.voiceURI;
+        utterance.rate = self.rate;
+        utterance.onend = function() {
+          headword.classList.remove('speaking');
+          index++;
+          setTimeout(speakNext, 600);
+        };
+        utterance.onerror = function() { headword.classList.remove('speaking'); index++; setTimeout(speakNext, 300); };
+        self.currentUtterance = utterance;
+        self.synthesis.speak(utterance);
+      }
+      speakNext();
+    },
+
+    stop: function() {
+      this.synthesis.cancel();
+      this.speaking = false;
+    }
+  };
+
+  SpeechManager.init();
+
+  document.querySelectorAll('.wotd-say').forEach(function(el) {
+    el.addEventListener('click', function() {
+      var text = this.getAttribute('data-speak') || this.textContent;
+      SpeechManager.speak(text);
+    });
+  });
+
+  document.querySelectorAll('.speak-btn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var dialogueId = this.getAttribute('data-dialogue');
+      var vocabId = this.getAttribute('data-vocab');
+      var targetId = this.getAttribute('data-target');
+      if (this.classList.contains('speaking')) { SpeechManager.stop(); this.classList.remove('speaking'); return; }
+      this.classList.add('speaking');
+      var done = function() { btn.classList.remove('speaking'); };
+      if (dialogueId) {
+        SpeechManager.speakDialogue(dialogueId, done);
+      } else if (vocabId) {
+        SpeechManager.speakVocabSection(vocabId, done);
+      } else if (targetId) {
+        var target = document.getElementById(targetId);
+        if (!target) { btn.classList.remove('speaking'); return; }
+        SpeechManager.speak(target.textContent.replace(/<[^>]+>/g, ''), done);
+      } else {
+        btn.classList.remove('speaking');
+      }
+    });
+  });
+
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var headword = this.previousElementSibling;
+      if (headword && headword.classList.contains('wotd-say')) {
+        var text = headword.getAttribute('data-speak') || headword.textContent;
+        SpeechManager.speak(text);
+      }
+    });
+  });
+
+  var toggle = document.getElementById('theme-toggle');
+  var html = document.documentElement;
+  var saved = localStorage.getItem('site-theme');
+  if (saved === 'dark') { html.setAttribute('data-theme', 'dark'); toggle.textContent = '☀️ 亮色模式'; }
+  toggle.addEventListener('click', function() {
+    var isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    toggle.textContent = isDark ? '🌙 暗色模式' : '☀️ 亮色模式';
+    localStorage.setItem('site-theme', isDark ? 'light' : 'dark');
+  });
+
+  (function() {
+    var btn = document.getElementById('expandAllBtn');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      var allDetails = document.querySelectorAll('.module, .exam-module');
+      var allOpen = true;
+      for (var i = 0; i < allDetails.length; i++) {
+        if (!allDetails[i].hasAttribute('open')) { allOpen = false; break; }
+      }
+      for (var i = 0; i < allDetails.length; i++) {
+        if (allOpen) allDetails[i].removeAttribute('open');
+        else allDetails[i].setAttribute('open', '');
+      }
+      btn.textContent = allOpen ? '📂 展开全部模块' : '📖 收起全部模块';
+    });
+  })();
+
+  window.addEventListener('scroll', function() {
+    var btn = document.getElementById('backToTop');
+    if (btn) btn.style.display = window.scrollY > 400 ? 'flex' : 'none';
+  }, { passive: true });
+  document.getElementById('backToTop').addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  var sidebar = document.getElementById('sidebar');
+  document.getElementById('sidebarHideBtn').addEventListener('click', function() { sidebar.classList.add('hidden'); });
+  document.getElementById('sidebarShowBtn').addEventListener('click', function() { sidebar.classList.remove('hidden'); });
+
+  document.querySelectorAll('.q-toggle').forEach(function(b){
+    b.addEventListener('click', function(e) { e.stopPropagation(); this.parentElement.classList.toggle('show-solution'); });
+  });
+})();
+</script>
+
+</body>
+</html>

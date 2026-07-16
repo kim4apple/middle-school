@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>七下 Unit 7 It's raining! | 初中英语七年级</title>
+<link rel="stylesheet" href="css/english.css">
+<style>
+.speak-btn {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 12px; cursor: pointer; color: var(--accent);
+  border: 1px solid var(--border); border-radius: 4px;
+  padding: 2px 8px; background: var(--bg);
+  transition: background 0.15s;
+}
+.speak-btn:hover { background: var(--accent-light); }
+.speak-btn.speaking { background: var(--eng-amber-light); color: var(--eng-amber); border-color: var(--eng-amber); }
+.headword-speak-indicator { font-size: 11px; margin-left: 3px; opacity: 0.55; cursor: pointer; vertical-align: super; line-height: 1; }
+.headword-speak-indicator:hover { opacity: 1; }
+.wotd-say {
+  cursor: pointer; transition: color 0.15s;
+}
+.wotd-say:hover { color: var(--accent); }
+.wotd-say.speaking { color: var(--eng-pink); }
+.speech-panel {
+  position: fixed; bottom: 80px; right: 24px; z-index: 999;
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  padding: 14px 18px; display: none; min-width: 180px;
+}
+.speech-panel.open { display: block; }
+.speech-panel .row { display: flex; align-items: center; gap: 8px; margin: 4px 0; font-size: 13px; }
+.speech-panel .row label { color: var(--text-secondary); font-size: 12px; min-width: 36px; }
+.speech-panel select, .speech-panel input[type="range"] { flex: 1; }
+.speech-panel button {
+  padding: 4px 12px; border-radius: 6px; border: 1px solid var(--border);
+  background: var(--bg); color: var(--text); cursor: pointer; font-size: 12px;
+}
+.speech-panel button:hover { background: var(--accent-light); }
+.speech-toggle-btn {
+  position: fixed; bottom: 24px; right: 76px; z-index: 999;
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid var(--border); background: var(--bg);
+  color: var(--accent); cursor: pointer; font-size: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  display: flex; align-items: center; justify-content: center;
+}
+.speech-toggle-btn:hover { background: var(--accent-light); }
+.en-text.speaking { background: var(--eng-amber-light); border-radius: 4px; padding: 2px 4px; transition: background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background: #452a08; }
+.detail-module { content-visibility: auto; contain-intrinsic-size: 300px; }
+.reading { content-visibility: auto; contain-intrinsic-size: 400px; }
+</style>
+</head>
+<body>
+
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">英语七年级</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+  </div>
+  <nav>
+    <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+    <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 七 上 ━━</a>
+    <a href="u00.html" style="opacity:0.6;">S1 Good morning!</a>
+    <a href="u00.html" style="opacity:0.6;">S2 What's this in English?</a>
+    <a href="u00.html" style="opacity:0.6;">S3 What color is it?</a>
+    <a href="u01.html">U1 My name's Gina.</a>
+    <a href="u02.html">U2 This is my sister.</a>
+    <a href="u03.html">U3 Is this your pencil?</a>
+    <a href="u04.html">U4 Where's my schoolbag?</a>
+    <a href="u05.html">U5 Do you have a soccer ball?</a>
+    <a href="u06.html">U6 Do you like bananas?</a>
+    <a href="u07.html">U7 How much are these socks?</a>
+    <a href="u08.html">U8 When is your birthday?</a>
+    <a href="u09.html">U9 My favorite subject is science.</a>
+    <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 七 下 ━━</a>
+    <a href="b2u01.html">U1 Can you play the guitar?</a>
+    <a href="b2u02.html">U2 What time...?</a>
+    <a href="b2u03.html">U3 How do you get to school?</a>
+    <a href="b2u04.html">U4 Don't eat in class.</a>
+    <a href="b2u05.html">U5 Why do you like pandas?</a>
+    <a href="b2u06.html">U6 I'm watching TV.</a>
+    <a href="b2u07.html" class="active">U7 It's raining!</a>
+    <a href="b2u08.html">U8 Is there a post office...</a>
+    <a href="b2u09.html">U9 What does he look like?</a>
+    <a href="b2u10.html">U10 I'd like some noodles.</a>
+    <a href="b2u11.html">U11 How was your school trip?</a>
+    <a href="b2u12.html">U12 What did you do last weekend?</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+  <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
+  <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
+</nav>
+
+<main id="content">
+
+<div class="cover">
+  <div class="sub-en">七下 · Unit 7</div>
+  <h1>It's raining!</h1>
+  <p>天气描述 · 正在进行的事 · 电话用语</p>
+</div>
+
+<div class="unit-meta">
+  <span>📖 话题：Weather</span>
+  <span>💬 功能：Describe weather · Talk about ongoing activities</span>
+  <span>📚 语法：现在进行时 (be + v-ing) · How's the weather?</span>
+  <span>📝 写作：描写天气的明信片</span>
+</div>
+
+<div class="can-do">
+  <h3>🎯 我能做到</h3>
+  <label><input type="checkbox"> I can ask and describe the weather.</label>
+  <label><input type="checkbox"> I can talk about what people are doing right now.</label>
+  <label><input type="checkbox"> I can use present continuous tense (am/is/are + v-ing).</label>
+  <label><input type="checkbox"> I can write a postcard about weather and activities.</label>
+</div>
+
+<!-- ====== 课文精讲 ====== -->
+<details class="module" open>
+  <summary>📖 课文精讲 · Talking about the weather</summary>
+  <div class="content">
+
+    <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;">
+      <span style="font-size:13px;color:var(--text-secondary);">场景：妈妈打电话给在外地的女儿，询问当地的天气和正在做的事。</span>
+      <button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话（含间隔）">🔊 朗读对话</button>
+    </div>
+
+    <div class="dialogue" id="dialogueText">
+      <div class="dialogue-line">
+        <span class="speaker">Mom:</span>
+        <span class="en-text wotd-say" data-speak="Hi, Mary! How's it going?">Hi, Mary! <em>How's it going</em>?</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Mary:</span>
+        <span class="en-text wotd-say" data-speak="Hi, Mom! Pretty good. I'm in Beijing now.">Hi, Mom! Pretty good. I'm in Beijing now.</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Mom:</span>
+        <span class="en-text wotd-say" data-speak="How's the weather in Beijing?">How's <em>the weather</em> in Beijing?</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Mary:</span>
+        <span class="en-text wotd-say" data-speak="It's raining! What are you doing, Mom?">It's <em>raining</em>! What are you doing, Mom?</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Mom:</span>
+        <span class="en-text wotd-say" data-speak="I'm cooking dinner. Is Dad at home?">I'm <em>cooking dinner</em>. Is Dad at home?</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Mary:</span>
+        <span class="en-text wotd-say" data-speak="No, he's working in the garden. It's sunny there.">No, he's <em>working in the garden</em>. It's sunny there.</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Mom:</span>
+        <span class="en-text wotd-say" data-speak="Sounds like you're having a nice time!">Sounds like you're having a nice time!</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Mary:</span>
+        <span class="en-text wotd-say" data-speak="Yeah. I'm visiting the Great Wall tomorrow. Talk to you later!">Yeah. I'm <em>visiting the Great Wall</em> tomorrow. Talk to you later!</span>
+      </div>
+    </div>
+
+    <details style="margin-top:12px;">
+      <summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary>
+      <div class="dialogue-annotation">
+        <p><strong>逐句翻译：</strong></p>
+        <p>妈妈: 嗨，Mary！最近怎么样？</p>
+        <p>Mary: 嗨，妈妈！挺好的。我现在在北京。</p>
+        <p>妈妈: 北京的天气怎么样？</p>
+        <p>Mary: 正在下雨！妈妈，你在做什么？</p>
+        <p>妈妈: 我在做饭。爸爸在家吗？</p>
+        <p>Mary: 不，他在花园里干活。那里天气晴朗。</p>
+        <p>妈妈: 听起来你玩得很开心！</p>
+        <p>Mary: 是的。我明天去参观长城。回头聊！</p>
+      </div>
+    </details>
+
+    <div class="dialogue-annotation">
+      <p><strong>🔑 重点讲解：</strong></p>
+      <p><strong>1.</strong> <em>How's it going?</em> → "最近怎么样？" 问候语，回答用 <strong>Pretty good!</strong> / Not bad. / Terrible.</p>
+      <p><strong>2.</strong> <em>How's the weather?</em> → 问天气，也可说 <strong>What's the weather like?</strong> 回答：It's raining/sunny/cloudy/windy.</p>
+      <p><strong>3.</strong> <em>I'm cooking dinner.</em> → 现在进行时 (am/is/are + v-ing)，表示正在进行的动作。</p>
+      <p><strong>4.</strong> <em>Sounds like...</em> → "听起来像……"，省略了 It，口语常用。</p>
+    </div>
+
+    <div style="display:flex;gap:8px;align-items:center;margin:20px 0 10px;">
+      <h3 style="font-size:15px;color:var(--accent);margin:0;">📖 Reading: Postcard about the weather</h3>
+      <button class="speak-btn" data-dialogue="readingEnglish" title="朗读英文正文（逐句连读）">🔊 朗读课文</button>
+    </div>
+
+    <div class="reading" id="readingText">
+      <div id="readingEnglish">
+      <p class="en-text" data-speak="Dear Mom and Dad, I'm writing this postcard from London.">Dear Mom and Dad, I'm writing this postcard from London.</p>
+      <p class="en-text" data-speak="The weather is cloudy and cold. It's going to rain, so I'm staying in my hotel room.">The weather is cloudy and cold. It's going to rain, so I'm staying in my hotel room.</p>
+      <p class="en-text" data-speak="Right now I'm drinking hot tea and looking out the window.">Right now I'm drinking hot tea and looking out the window.</p>
+      <p class="en-text" data-speak="I'm also reading a book about London's history.">I'm also reading a book about London's history.</p>
+      <p class="en-text" data-speak="I hope the weather gets better tomorrow! Yours, Lily">I hope the weather gets better tomorrow! Yours, Lily</p>
+      </div>
+      <div class="read-glossary">
+        <span class="gloss-item wotd-say" data-speak="postcard">📘 postcard /ˈpoʊstkɑːrd/ n. 明信片</span>
+        <span class="gloss-item wotd-say" data-speak="weather">📘 weather /ˈweðər/ n. 天气</span>
+        <span class="gloss-item wotd-say" data-speak="cloudy">📘 cloudy /ˈklaʊdi/ adj. 多云的</span>
+        <span class="gloss-item wotd-say" data-speak="stay">📘 stay /steɪ/ v. 停留；待</span>
+        <span class="gloss-item wotd-say" data-speak="hope">📘 hope /hoʊp/ v. 希望</span>
+      </div>
+    </div>
+
+  </div>
+</details>
+
+<!-- ====== 重点词汇 ====== -->
+<details class="module" open>
+  <summary>📝 重点词汇 · Weather &amp; Activities <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇（含例句）">🔊 朗读全部词汇</button></summary>
+  <div class="content">
+
+    <div class="vocab-grid" id="vocabGrid">
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="rain">rain</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/reɪn/</span>
+        <span class="pos">v./n.</span>
+        <div class="definition">下雨；雨</div>
+        <div class="example"><span class="wotd-say" data-speak="It's raining outside. Take an umbrella.">It's <strong>raining</strong> outside. Take an umbrella.</span><span class="trans">外面在下雨。带把伞。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="sunny">sunny</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈsʌni/</span>
+        <span class="pos">adj.</span>
+        <div class="definition">晴朗的</div>
+        <div class="example"><span class="wotd-say" data-speak="It's sunny today. Let's go to the beach.">It's <strong>sunny</strong> today. Let's go to the beach.</span><span class="trans">今天天气晴朗。我们去海滩吧。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="cloudy">cloudy</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈklaʊdi/</span>
+        <span class="pos">adj.</span>
+        <div class="definition">多云的；阴天的</div>
+        <div class="example"><span class="wotd-say" data-speak="It's cloudy. Maybe it will rain later.">It's <strong>cloudy</strong>. Maybe it will rain later.</span><span class="trans">天阴了。可能一会儿会下雨。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="windy">windy</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈwɪndi/</span>
+        <span class="pos">adj.</span>
+        <div class="definition">有风的</div>
+        <div class="example"><span class="wotd-say" data-speak="It's very windy. Let's fly a kite.">It's very <strong>windy</strong>. Let's fly a kite.</span><span class="trans">风很大。我们去放风筝吧。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="snow">snow</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/snoʊ/</span>
+        <span class="pos">v./n.</span>
+        <div class="definition">下雪；雪</div>
+        <div class="example"><span class="wotd-say" data-speak="Look! It's snowing. The ground is white.">Look! It's <strong>snowing</strong>. The ground is white.</span><span class="trans">看！下雪了。大地一片白色。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="weather">weather</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈweðər/</span>
+        <span class="pos">n.</span>
+        <div class="definition">天气</div>
+        <div class="example"><span class="wotd-say" data-speak="How's the weather in Shanghai?">How's the <strong>weather</strong> in Shanghai?</span><span class="trans">上海天气怎么样？</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="cook">cook</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/kʊk/</span>
+        <span class="pos">v.</span>
+        <div class="definition">做饭；烹饪</div>
+        <div class="example"><span class="wotd-say" data-speak="My mom is cooking dinner in the kitchen.">My mom is <strong>cooking</strong> dinner in the kitchen.</span><span class="trans">我妈妈正在厨房做晚饭。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="visit">visit</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈvɪzɪt/</span>
+        <span class="pos">v.</span>
+        <div class="definition">拜访；参观</div>
+        <div class="example"><span class="wotd-say" data-speak="We're visiting our grandparents this weekend.">We're <strong>visiting</strong> our grandparents this weekend.</span><span class="trans">这周末我们要去看望爷爷奶奶。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="cold">cold</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/koʊld/</span>
+        <span class="pos">adj.</span>
+        <div class="definition">冷的；寒冷的</div>
+        <div class="example"><span class="wotd-say" data-speak="It's cold in winter. Wear a coat.">It's <strong>cold</strong> in winter. Wear a coat.</span><span class="trans">冬天很冷。穿上外套。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="warm">warm</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/wɔːrm/</span>
+        <span class="pos">adj.</span>
+        <div class="definition">温暖的</div>
+        <div class="example"><span class="wotd-say" data-speak="It's warm and sunny. Let's go outside!">It's <strong>warm</strong> and sunny. Let's go outside!</span><span class="trans">天气温暖晴朗。我们出去吧！</span></div>
+      </div>
+
+    </div>
+
+  </div>
+</details>
+
+<!-- ====== 重点句型 ====== -->
+<details class="module" open>
+  <summary>🔤 重点句型 · Sentence Patterns</summary>
+  <div class="content">
+
+    <div class="pattern-grid">
+
+      <div class="pattern-card">
+        <div class="structure">How's the weather? / What's the weather like?</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>两个句型都用来询问天气情况。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1">✅ <strong>How's the weather</strong> in Beijing?<br>
+          ✅ <strong>What's the weather like</strong> in Shanghai?<br>
+          ➡ 回答：It's <span class="slot">sunny / cloudy / raining / windy</span>.</span></div>
+      </div>
+
+      <div class="pattern-card">
+        <div class="structure">What are you doing? (现在进行时)</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>问某人正在做什么，用现在进行时 am/is/are + v-ing。</div>
+        <div class="substitution">
+          ✅ What <strong>are you doing</strong>? — I'm <span class="slot">reading a book</span>.<br>
+          ✅ What <strong>is she doing</strong>? — She's <span class="slot">cooking dinner</span>.<br>
+          ✅ What <strong>are they doing</strong>? — They're <span class="slot">playing soccer</span>.
+        </div>
+      </div>
+
+      <div class="pattern-card">
+        <div class="structure">How's it going? 问候用语</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>打电话或见面时询问近况。</div>
+        <div class="substitution">
+          ✅ <strong>How's it going</strong>?<br>
+          ➡ <span class="slot">Pretty good!</span> / Not bad. / Terrible! / Just so-so.<br>
+          ✅ <strong>How's your study going</strong>?<br>
+          ➡ <span class="slot">It's going well.</span>
+        </div>
+      </div>
+
+      <div class="pattern-card">
+        <div class="structure">Sounds like + 从句</div> <button class="speak-btn" data-target="sp4" title="朗读句型">🔊</button>
+        <div>"听起来……"，省略 It，后跟从句或名词短语。</div>
+        <div class="substitution">
+          ✅ <strong>Sounds like</strong> <span class="slot">you're having fun</span>.<br>
+          ✅ <strong>Sounds like</strong> <span class="slot">a good idea</span>.<br>
+          ➡ 完整形式：<strong>It sounds like</strong>...
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</details>
+
+<!-- ====== 语法聚焦 ====== -->
+<details class="module detail-module" open>
+  <summary>📚 语法聚焦 · Present Continuous Tense <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary>
+  <div class="content">
+
+    <div class="grammar-module">
+      <h3>1️⃣ 现在进行时的构成：am/is/are + v-ing</h3>
+      <p>表示<strong>现在（说话的瞬间）正在进行的动作</strong>。</p>
+      <table class="grammar-table">
+        <tr><th>主语</th><th>be 动词</th><th>v-ing</th><th>例句</th></tr>
+        <tr><td>I</td><td><span class="wotd-say" data-speak="am"><strong>am</strong></span></td><td>reading</td><td><span class="wotd-say" data-speak="I am reading a book.">I am reading a book.</span></td></tr>
+        <tr><td>He / She / It</td><td><span class="wotd-say" data-speak="is"><strong>is</strong></span></td><td>cooking</td><td><span class="wotd-say" data-speak="She is cooking dinner.">She is cooking dinner.</span></td></tr>
+        <tr><td>You / We / They</td><td><span class="wotd-say" data-speak="are"><strong>are</strong></span></td><td>playing</td><td><span class="wotd-say" data-speak="They are playing soccer.">They are playing soccer.</span></td></tr>
+      </table>
+    </div>
+
+    <div class="grammar-module">
+      <h3>2️⃣ v-ing 变化规则</h3>
+      <table class="grammar-table">
+        <tr><th>规则</th><th>原形</th><th>v-ing 形式</th></tr>
+        <tr><td>大多数 + ing</td><td><span class="wotd-say" data-speak="play">play</span></td><td><span class="wotd-say" data-speak="playing">playing</span></td></tr>
+        <tr><td>以不发音 e 结尾，去 e + ing</td><td><span class="wotd-say" data-speak="take">take</span></td><td><span class="wotd-say" data-speak="taking">taking</span></td></tr>
+        <tr><td>重读闭音节(辅+元+辅)，双写末字母 + ing</td><td><span class="wotd-say" data-speak="run">run</span></td><td><span class="wotd-say" data-speak="running">running</span></td></tr>
+        <tr><td>以 ie 结尾，改 ie 为 y + ing</td><td><span class="wotd-say" data-speak="lie">lie</span></td><td><span class="wotd-say" data-speak="lying">lying</span></td></tr>
+      </table>
+    </div>
+
+    <div class="grammar-module">
+      <h3>3️⃣ 一般疑问句与回答</h3>
+      <p>将 <strong>be 动词</strong>提到主语前面：</p>
+      <table class="grammar-table">
+        <tr><th>陈述句</th><th>一般疑问句</th><th>肯定回答</th><th>否定回答</th></tr>
+        <tr><td><span class="wotd-say" data-speak="He is sleeping.">He is sleeping.</span></td><td><span class="wotd-say" data-speak="Is he sleeping?">Is he sleeping?</span></td><td>Yes, he is.</td><td>No, he isn't.</td></tr>
+        <tr><td><span class="wotd-say" data-speak="They are watching TV.">They are watching TV.</span></td><td><span class="wotd-say" data-speak="Are they watching TV?">Are they watching TV?</span></td><td>Yes, they are.</td><td>No, they aren't.</td></tr>
+      </table>
+
+      <div class="chinese-error">
+        <strong>⚠️ 中式英语纠错：</strong><br>
+        ❌ <span class="wrong wotd-say" data-speak="He is cook dinner.">He is cook dinner.</span>（be + 原形，缺少 ing）<br>
+        ✅ <span class="correct wotd-say" data-speak="He is cooking dinner.">He is cooking dinner.</span><br><br>
+        ❌ <span class="wrong wotd-say" data-speak="She is reading a book yesterday.">She is reading a book yesterday.</span>（现在进行时不能用于过去时间）<br>
+        ✅ <span class="correct wotd-say" data-speak="She read a book yesterday.">She read a book yesterday.</span>（用一般过去时）
+      </div>
+    </div>
+
+  </div>
+</details>
+
+<!-- ====== 三级闯关 ====== -->
+<details class="exam-module" open>
+  <summary>📝 三级闯关 · 实战练习</summary>
+  <div class="content">
+
+    <h3 style="color:var(--accent);margin:0px 0 10px;">🥉 基础关 · 概念识记</h3>
+
+    <div class="exam-q">
+      <span class="q-tag">基础</span>
+      <span class="q-diff">★☆☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q1">How's the ____ in Beijing? — It's sunny. (weather / weathers)</span> <button class="speak-btn" data-target="q1" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>weather<br><strong>解析：</strong>weather 是不可数名词，没有复数形式。</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span>
+      <span class="q-diff">★☆☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q2">My sister ____ (read) a book in her room now.</span> <button class="speak-btn" data-target="q2" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>is reading<br><strong>解析：</strong>now 提示用现在进行时，主语 My sister 是第三人称单数，用 is reading。</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span>
+      <span class="q-diff">★☆☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q3">It's ____ (snow) outside. Let's make a snowman.</span> <button class="speak-btn" data-target="q3" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>snowing<br><strong>解析：</strong>It's + v-ing 表示天气状况，snow → snowing。</div>
+    </div>
+
+    <h3 style="color:var(--accent);margin:20px 0 10px;">🥈 提升关 · 语境运用</h3>
+
+    <div class="exam-q">
+      <span class="q-tag">提升</span>
+      <span class="q-diff">★★☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q4">改错：What are you do now?</span> <button class="speak-btn" data-target="q4" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>What are you doing now?<br><strong>解析：</strong>现在进行时用 v-ing 形式，do → doing。</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span>
+      <span class="q-diff">★★☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q5">连词成句：weather / like / what's / the / today / ?</span> <button class="speak-btn" data-target="q5" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>What's the weather like today?<br><strong>解析：</strong>What's the weather like? 是询问天气的固定句型。</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span>
+      <span class="q-diff">★★☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q6">用现在进行时改写：She reads a magazine every night. (now)</span> <button class="speak-btn" data-target="q6" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>She is reading a magazine now.<br><strong>解析：</strong>将动词变为 be + v-ing，删除 every night 添加 now。</div>
+    </div>
+
+    <h3 style="color:var(--accent);margin:20px 0 10px;">🥇 挑战关 · 综合运用</h3>
+
+    <div class="exam-q">
+      <span class="q-tag">挑战</span>
+      <span class="q-diff">★★★</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q7">汉译英：北京的天气怎么样？正在下雪。孩子们在堆雪人。</span> <button class="speak-btn" data-target="q7" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>How's the weather in Beijing? It's snowing. The children are making a snowman.<br><strong>解析：</strong>天气用 It's snowing；孩子们正在做某事用 are making。</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span>
+      <span class="q-diff">★★★</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q8">补全对话：<br>A: Hello! ____ is Tom?<br>B: Sorry, he's not here. He ____ (swim) at the pool.<br>A: ____ the weather today?<br>B: It's sunny and hot.</span> <button class="speak-btn" data-target="q8" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>May I speak to; is swimming; What's the weather like / How's<br><strong>解析：</strong>电话用语 May I speak to...；现在进行时 is swimming；询问天气用 How's / What's...like。</div>
+    </div>
+
+  </div>
+
+</details>
+
+<!-- ====== 微写作 ====== -->
+<div class="micro-writing detail-module">
+  <h3>✍️ 微写作：Postcard about the weather</h3>
+  <p>用现在进行时和天气词汇写一张明信片，描述你所在城市此刻的天气和你正在做的事。</p>
+  <div class="model" id="microModel">
+    <p class="en"><span class="wotd-say" data-speak="Dear Grandma, Greetings from Shanghai!">Dear Grandma, Greetings from Shanghai!</span></p>
+    <p class="en"><span class="wotd-say" data-speak="It's cloudy and cool here. I'm sitting in a coffee shop near the Bund.">It's cloudy and cool here. I'm sitting in a coffee shop near the Bund.</span></p>
+    <p class="en"><span class="wotd-say" data-speak="I'm drinking hot chocolate and watching the boats on the river.">I'm drinking hot chocolate and watching the boats on the river.</span></p>
+    <p class="en"><span class="wotd-say" data-speak="Dad is taking photos outside. Mom is shopping nearby.">Dad is taking photos outside. Mom is shopping nearby.</span></p>
+    <p class="en"><span class="wotd-say" data-speak="We're having a great time! Love, Li Ming">We're having a great time! Love, Li Ming</span></p>
+    <span class="trans">亲爱的奶奶，来自上海的问候！这里阴天凉爽。我正坐在外滩附近的一家咖啡店里。我在喝热巧克力，看着河上的船只。爸爸在外面拍照。妈妈在附近购物。我们玩得很开心！爱您，李明。</span>
+  </div>
+</div>
+
+<!-- ====== 自查清单 ====== -->
+<div class="checklist detail-module">
+  <h3>✅ 章节自查清单</h3>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 How's the weather? 询问天气并回答</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用现在进行时描述正在进行的动作</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能正确变化 v-ing 形式（去 e、双写等）</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 How's it going? 在电话中问候</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写一张描写天气和活动的明信片</label>
+  <p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;">
+    <strong>🧑‍🏫 费曼挑战：</strong>假设你在外地旅游，给朋友打电话描述当地的天气和你正在做的事。用 How's the weather? What are you doing? 等句型来练习。"It's sunny here. I'm sitting in a park and eating ice cream."
+  </p>
+</div>
+
+<div class="review-schedule">
+  <strong>📅 间隔复习</strong>
+  <span class="review-dot">🔵 1天后：用英语描述今天的天气</span>
+  <span class="review-dot">🟢 3天后：用现在进行时写一段50词的日常活动</span>
+  <span class="review-dot">🟡 1周后：默写 v-ing 变化规则表</span>
+  <span class="review-dot">🔴 1月后：复习现在进行时与一般现在时的区别</span>
+</div>
+
+<div class="next-stop">
+  <strong>➡️ 下一单元：Unit 8 Is there a post office near here?</strong><br>
+  下一单元你将学习用 <strong>There be</strong> 句型描述地点位置，以及问路指路的表达方式。
+</div>
+
+</main>
+
+<div class="speech-panel" id="speechPanel">
+  <div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div>
+  <div class="row">
+    <label>语速</label>
+    <input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9">
+    <span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span>
+  </div>
+  <div class="row">
+    <label>口音</label>
+    <select id="speechVoice">
+      <option value="en-US">🇺🇸 美式</option>
+      <option value="en-GB">🇬🇧 英式</option>
+    </select>
+  </div>
+  <div class="row" style="justify-content:space-between;">
+    <button id="speechStopBtn" title="停止朗读">⏹ 停止</button>
+    <button id="speechCloseBtn" title="关闭面板">✕ 关闭</button>
+  </div>
+</div>
+<button class="speech-toggle-btn" id="speechToggleBtn" title="语音设置">🔊</button>
+
+<script>
+(function() {
+  // ===== SpeechManager =====
+  var SpeechManager = {
+    synthesis: window.speechSynthesis,
+    currentUtterance: null,
+    speaking: false,
+    rate: 0.9,
+    voiceURI: 'en-US',
+
+    init: function() {
+      var self = this;
+      var rateInput = document.getElementById('speechRate');
+      var rateLabel = document.getElementById('speechRateLabel');
+      var voiceSelect = document.getElementById('speechVoice');
+      var stopBtn = document.getElementById('speechStopBtn');
+      var closeBtn = document.getElementById('speechCloseBtn');
+      var toggleBtn = document.getElementById('speechToggleBtn');
+      var panel = document.getElementById('speechPanel');
+
+      var saved = localStorage.getItem('speech-rate');
+      if (saved) { this.rate = parseFloat(saved); rateInput.value = this.rate; rateLabel.textContent = this.rate; }
+      var savedVoice = localStorage.getItem('speech-voice');
+      if (savedVoice) { this.voiceURI = savedVoice; voiceSelect.value = savedVoice; }
+
+      rateInput.addEventListener('input', function() {
+        self.rate = parseFloat(this.value);
+        rateLabel.textContent = this.value;
+        localStorage.setItem('speech-rate', this.value);
+      });
+      voiceSelect.addEventListener('change', function() {
+        self.voiceURI = this.value;
+        localStorage.setItem('speech-voice', this.value);
+      });
+
+      stopBtn.addEventListener('click', function() { self.stop(); });
+      closeBtn.addEventListener('click', function() { panel.classList.remove('open'); });
+
+      toggleBtn.addEventListener('click', function() {
+        panel.classList.toggle('open');
+      });
+    },
+
+    speak: function(text, callback) {
+      var self = this;
+      if (!text) return;
+      this.stop();
+      var utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = this.voiceURI;
+      utterance.rate = this.rate;
+      utterance.onstart = function() { self.speaking = true; };
+      utterance.onend = function() {
+        self.speaking = false;
+        if (callback) callback();
+      };
+      utterance.onerror = function() { self.speaking = false; };
+      this.currentUtterance = utterance;
+      this.synthesis.speak(utterance);
+    },
+
+    speakText: function(el) {
+      var text = el.getAttribute('data-speak') || el.textContent;
+      this.speak(text);
+    },
+
+    speakDialogue: function(containerId, callback) {
+      var self = this;
+      var container = document.getElementById(containerId);
+      if (!container) return;
+      var lines = container.querySelectorAll('.en-text');
+      var index = 0;
+      this.stop();
+      function speakNext() {
+        if (index >= lines.length) { self.speaking = false; if (callback) callback(); return; }
+        var el = lines[index];
+        var text = el.getAttribute('data-speak') || el.textContent.replace(/<[^>]+>/g, '').trim();
+        if (!text) { index++; speakNext(); return; }
+        el.classList.add('speaking');
+        var utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = self.voiceURI;
+        utterance.rate = self.rate;
+        utterance.onend = function() {
+          el.classList.remove('speaking');
+          index++;
+          setTimeout(speakNext, 500);
+        };
+        utterance.onerror = function() { el.classList.remove('speaking'); index++; setTimeout(speakNext, 200); };
+        self.currentUtterance = utterance;
+        self.synthesis.speak(utterance);
+      }
+      speakNext();
+    },
+
+    speakVocabSection: function(containerId, callback) {
+      var self = this;
+      var container = document.getElementById(containerId);
+      if (!container) return;
+      var cards = container.querySelectorAll('.vocab-card');
+      var index = 0;
+      this.stop();
+      function speakNext() {
+        if (index >= cards.length) { self.speaking = false; if (callback) callback(); return; }
+        var card = cards[index];
+        var headword = card.querySelector('.headword');
+        var def = card.querySelector('.definition');
+        var example = card.querySelector('.example .wotd-say');
+        var textParts = [];
+        if (headword) {
+          textParts.push(headword.getAttribute('data-speak') || headword.textContent);
+        }
+        if (example) {
+          textParts.push(example.getAttribute('data-speak') || example.textContent.replace(/<[^>]+>/g, '').trim());
+        }
+        var fullText = textParts.join('. ');
+        if (!fullText) { index++; speakNext(); return; }
+        headword.classList.add('speaking');
+        var utterance = new SpeechSynthesisUtterance(fullText);
+        utterance.lang = self.voiceURI;
+        utterance.rate = self.rate;
+        utterance.onend = function() {
+          headword.classList.remove('speaking');
+          index++;
+          setTimeout(speakNext, 600);
+        };
+        utterance.onerror = function() { headword.classList.remove('speaking'); index++; setTimeout(speakNext, 300); };
+        self.currentUtterance = utterance;
+        self.synthesis.speak(utterance);
+      }
+      speakNext();
+    },
+
+    stop: function() {
+      this.synthesis.cancel();
+      this.speaking = false;
+    }
+  };
+
+  SpeechManager.init();
+
+  // Bind click-to-speak on .wotd-say
+  document.querySelectorAll('.wotd-say').forEach(function(el) {
+    el.addEventListener('click', function() {
+      var text = this.getAttribute('data-speak') || this.textContent;
+      SpeechManager.speak(text);
+    });
+  });
+
+  // Bind speak buttons
+  document.querySelectorAll('.speak-btn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var dialogueId = this.getAttribute('data-dialogue');
+      var vocabId = this.getAttribute('data-vocab');
+      var targetId = this.getAttribute('data-target');
+      if (this.classList.contains('speaking')) { SpeechManager.stop(); this.classList.remove('speaking'); return; }
+      this.classList.add('speaking');
+      var done = function() { btn.classList.remove('speaking'); };
+      if (dialogueId) {
+        SpeechManager.speakDialogue(dialogueId, done);
+      } else if (vocabId) {
+        SpeechManager.speakVocabSection(vocabId, done);
+      } else if (targetId) {
+        var target = document.getElementById(targetId);
+        if (!target) { btn.classList.remove('speaking'); return; }
+        SpeechManager.speak(target.textContent.replace(/<[^>]+>/g, ''), done);
+      } else {
+        btn.classList.remove('speaking');
+      }
+    });
+  });
+
+  // Bind headword speaker indicator clicks
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var headword = this.previousElementSibling;
+      if (headword && headword.classList.contains('wotd-say')) {
+        var text = headword.getAttribute('data-speak') || headword.textContent;
+        SpeechManager.speak(text);
+      }
+    });
+  });
+  // ===== Theme toggle =====
+  var toggle = document.getElementById('theme-toggle');
+  var html = document.documentElement;
+  var saved = localStorage.getItem('site-theme');
+  if (saved === 'dark') { html.setAttribute('data-theme', 'dark'); toggle.textContent = '☀️ 亮色模式'; }
+  toggle.addEventListener('click', function() {
+    var isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    toggle.textContent = isDark ? '🌙 暗色模式' : '☀️ 亮色模式';
+    localStorage.setItem('site-theme', isDark ? 'light' : 'dark');
+  });
+
+  // ===== Expand all / collapse all =====
+  (function() {
+    var btn = document.getElementById('expandAllBtn');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      var allDetails = document.querySelectorAll('.module, .exam-module');
+      var allOpen = true;
+      for (var i = 0; i < allDetails.length; i++) {
+        if (!allDetails[i].hasAttribute('open')) { allOpen = false; break; }
+      }
+      for (var i = 0; i < allDetails.length; i++) {
+        if (allOpen) allDetails[i].removeAttribute('open');
+        else allDetails[i].setAttribute('open', '');
+      }
+      btn.textContent = allOpen ? '📂 展开全部模块' : '📖 收起全部模块';
+    });
+  })();
+
+  // ===== Back to top =====
+  window.addEventListener('scroll', function() {
+    var btn = document.getElementById('backToTop');
+    if (btn) btn.style.display = window.scrollY > 400 ? 'flex' : 'none';
+  }, { passive: true });
+  document.getElementById('backToTop').addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // ===== Sidebar =====
+  var sidebar = document.getElementById('sidebar');
+  document.getElementById('sidebarHideBtn').addEventListener('click', function() { sidebar.classList.add('hidden'); });
+  document.getElementById('sidebarShowBtn').addEventListener('click', function() { sidebar.classList.remove('hidden'); });
+
+  // ===== Solution toggle =====
+  document.querySelectorAll('.q-toggle').forEach(function(b){
+    b.addEventListener('click', function(e) { e.stopPropagation(); this.parentElement.classList.toggle('show-solution'); });
+  });
+})();
+</script>
+
+</body>
+</html>

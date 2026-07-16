@@ -237,10 +237,7 @@ def run():
     print("Module loaded - use gen() function directly")
 
 if __name__ == "__main__":
-    # b2u10 - call gen("b2u10", 10, ...)
-    print("Run from separate scripts")
-
-        "I'd like some noodles.",
+    gen("b2u10", 10, "I'd like some noodles.",
         "\u70b9\u9910\u7528\u9910 \u00b7 \u98df\u7269\u79cd\u7c7b \u00b7 would like \u7528\u6cd5",
         [
             "\U0001f4d6 \u8bdd\u9898\uff1aFood &amp; Ordering",

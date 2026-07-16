@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>语法全景图 · 初中英语七年级</title>
+<link rel="stylesheet" href="css/english.css">
+<style>
+body { display: block; min-height: 100vh; padding: 0; }
+.wrapper { max-width: 900px; margin: 0 auto; padding: 32px 24px 60px; }
+.hero { text-align: center; padding: 40px 0 32px; }
+.hero h1 { font-size: 28px; font-weight: 800; margin-bottom: 6px; }
+.hero .tagline { color: var(--text-secondary); font-size: 14px; }
+.hero .badge { display: inline-block; font-size: 11px; padding: 3px 12px; border-radius: 20px; background: var(--accent-light); color: var(--accent); font-weight: 600; margin-top: 8px; }
+.grammar-section { margin: 32px 0; padding: 24px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg); }
+.grammar-section h2 { font-size: 18px; margin-bottom: 4px; color: var(--accent); }
+.grammar-section .unit-ref { font-size: 12px; color: var(--text-secondary); margin-bottom: 16px; }
+.grammar-section .unit-ref a { color: var(--accent); text-decoration: none; }
+.grammar-section .unit-ref a:hover { text-decoration: underline; }
+.grammar-section table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
+.grammar-section th, .grammar-section td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+.grammar-section th { background: var(--bg-secondary); color: var(--accent); font-weight: 700; font-size: 13px; }
+.grammar-section tr:hover { background: var(--bg-secondary); }
+.grammar-section .note { font-size: 13px; color: var(--text-secondary); padding: 8px 14px; background: var(--eng-amber-light); border-radius: 4px; margin: 8px 0; }
+.grammar-section .tip { font-size: 13px; color: var(--text-secondary); padding: 8px 14px; background: var(--eng-green-light); border-radius: 4px; margin: 8px 0; }
+.grammar-section .warn { font-size: 13px; color: var(--eng-red); padding: 8px 14px; background: var(--eng-red-light); border-radius: 4px; margin: 8px 0; }
+.back-link { display: inline-block; margin-bottom: 24px; font-size: 13px; color: var(--accent); text-decoration: none; }
+.back-link:hover { text-decoration: underline; }
+.section-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+.section-nav a { font-size: 12px; padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border); color: var(--text); text-decoration: none; background: var(--bg); }
+.section-nav a:hover { background: var(--accent-light); border-color: var(--accent); color: var(--accent); }
+@media (max-width: 640px) {
+  .wrapper { padding: 20px 14px 40px; }
+  .grammar-section { padding: 16px; }
+  .grammar-section table { font-size: 13px; }
+  .grammar-section th, .grammar-section td { padding: 6px 8px; }
+}
+</style>
+</head>
+<body>
+
+<button class="theme-toggle" id="themeToggle" style="position:fixed;top:16px;right:16px;z-index:100;padding:6px 14px;border-radius:20px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px;width:auto;">🌙 暗色</button>
+
+<div class="wrapper">
+
+  <a href="index.html" class="back-link">← 返回单元列表</a>
+
+  <div class="hero">
+    <h1>📌 语法全景图</h1>
+    <p class="tagline">人教版七年级全册语法体系 · 跨单元对照</p>
+    <span class="badge">24 单元语法汇总</span>
+  </div>
+
+  <div class="section-nav">
+    <a href="#be">be 动词</a>
+    <a href="#demonstratives">指示代词</a>
+    <a href="#possessives">物主代词</a>
+    <a href="#personal">人称代词</a>
+    <a href="#plurals">名词复数</a>
+    <a href="#prepositions">方位介词</a>
+    <a href="#modal">情态动词</a>
+    <a href="#tense">时态总览</a>
+    <a href="#imperative">祈使句</a>
+    <a href="#therebe">There be</a>
+    <a href="#questions">疑问句</a>
+    <a href="#comparison">比较级</a>
+  </div>
+
+  <!-- ====== be 动词 ====== -->
+  <div class="grammar-section" id="be">
+    <h2>1. be 动词 (am / is / are)</h2>
+    <div class="unit-ref">相关单元：<a href="st01.html">Starter 1</a> · <a href="u01.html">U1</a> · <a href="u03.html">U3</a></div>
+    <table>
+      <tr><th>人称</th><th>主语</th><th>be 动词</th><th>例句</th></tr>
+      <tr><td>第一人称单数</td><td>I</td><td>am</td><td>I am a student.</td></tr>
+      <tr><td>第二人称单数</td><td>You</td><td>are</td><td>You are my friend.</td></tr>
+      <tr><td>第三人称单数</td><td>He / She / It</td><td>is</td><td>He is tall. / It is a pen.</td></tr>
+      <tr><td>第一人称复数</td><td>We</td><td>are</td><td>We are in Class 1.</td></tr>
+      <tr><td>第二人称复数</td><td>You</td><td>are</td><td>You are all right.</td></tr>
+      <tr><td>第三人称复数</td><td>They</td><td>are</td><td>They are my parents.</td></tr>
+    </table>
+    <div class="note">💡 顺口溜：I 用 am，you 用 are，is 连着他/她/它。单数 is 复数 are。</div>
+    <div class="warn">⚠️ 常错：He <strong>am</strong> a teacher. → He <strong>is</strong> a teacher. （第三人称用 is）</div>
+  </div>
+
+  <!-- ====== 指示代词 ====== -->
+  <div class="grammar-section" id="demonstratives">
+    <h2>2. 指示代词 (this / that / these / those)</h2>
+    <div class="unit-ref">相关单元：<a href="st02.html">Starter 2</a> · <a href="u03.html">U3</a> · <a href="u04.html">U4</a></div>
+    <table>
+      <tr><th></th><th>单数</th><th>复数</th></tr>
+      <tr><td>近处（眼前）</td><td>this 这个</td><td>these 这些</td></tr>
+      <tr><td>远处（那边）</td><td>that 那个</td><td>those 那些</td></tr>
+    </table>
+    <div class="note">💡 this/that + 单数名词；these/those + 复数名词。<br>
+    Is <strong>this</strong> your pen? → <strong>Are these</strong> your pens?</div>
+  </div>
+
+  <!-- ====== 物主代词 ====== -->
+  <div class="grammar-section" id="possessives">
+    <h2>3. 物主代词（形容词性 vs 名词性）</h2>
+    <div class="unit-ref">相关单元：<a href="u03.html">U3</a> · <a href="u05.html">U5</a></div>
+    <table>
+      <tr><th>人称</th><th>形容词性（+名词）</th><th>名词性（单独使用）</th></tr>
+      <tr><td>第一人称单数</td><td>my 我的</td><td>mine 我的（东西）</td></tr>
+      <tr><td>第二人称</td><td>your 你的/你们的</td><td>yours 你的/你们的</td></tr>
+      <tr><td>第三人称(男)</td><td>his 他的</td><td>his 他的</td></tr>
+      <tr><td>第三人称(女)</td><td>her 她的</td><td>hers 她的</td></tr>
+      <tr><td>第一人称复数</td><td>our 我们的</td><td>ours 我们的</td></tr>
+      <tr><td>第三人称复数</td><td>their 他们的</td><td>theirs 他们的</td></tr>
+    </table>
+    <div class="warn">⚠️ 形容词性后面必须跟名词（my book）；名词性独立使用（This book is mine）。<br>
+    ❌ This is <strong>mine</strong> book. → ✅ This is <strong>my</strong> book.</div>
+  </div>
+
+  <!-- ====== 人称代词 ====== -->
+  <div class="grammar-section" id="personal">
+    <h2>4. 人称代词（主格 vs 宾格）</h2>
+    <div class="unit-ref">相关单元：<a href="u05.html">U5</a> · <a href="u06.html">U6</a></div>
+    <table>
+      <tr><th>人称</th><th>主格（作主语）</th><th>宾格（作宾语）</th></tr>
+      <tr><td>一单</td><td>I</td><td>me</td></tr>
+      <tr><td>二单</td><td>you</td><td>you</td></tr>
+      <tr><td>三单(男)</td><td>he</td><td>him</td></tr>
+      <tr><td>三单(女)</td><td>she</td><td>her</td></tr>
+      <tr><td>三单(物)</td><td>it</td><td>it</td></tr>
+      <tr><td>一复</td><td>we</td><td>us</td></tr>
+      <tr><td>二复</td><td>you</td><td>you</td></tr>
+      <tr><td>三复</td><td>they</td><td>them</td></tr>
+    </table>
+    <div class="note">💡 主格在动词前（<strong>I</strong> like it）；宾格在动词/介词后（Give it to <strong>me</strong>）。</div>
+  </div>
+
+  <!-- ====== 名词复数 ====== -->
+  <div class="grammar-section" id="plurals">
+    <h2>5. 名词复数规则</h2>
+    <div class="unit-ref">相关单元：<a href="st02.html">Starter 2</a> · <a href="u03.html">U3</a> · <a href="u06.html">U6</a></div>
+    <table>
+      <tr><th>规则</th><th>单数 → 复数</th></tr>
+      <tr><td>一般 + s</td><td>book → books, pen → pens</td></tr>
+      <tr><td>以 s/x/sh/ch + es</td><td>box → boxes, watch → watches</td></tr>
+      <tr><td>辅音+y → ies</td><td>family → families, dictionary → dictionaries</td></tr>
+      <tr><td>以 f/fe → ves</td><td>knife → knives, shelf → shelves</td></tr>
+      <tr><td>不规则</td><td>man → men, woman → women, child → children, foot → feet</td></tr>
+    </table>
+  </div>
+
+  <!-- ====== 方位介词 ====== -->
+  <div class="grammar-section" id="prepositions">
+    <h2>6. 方位介词</h2>
+    <div class="unit-ref">相关单元：<a href="u04.html">U4</a> · <a href="b2u08.html">七下 U8</a></div>
+    <table>
+      <tr><th>介词</th><th>含义</th><th>例句</th></tr>
+      <tr><td>in</td><td>在…里面</td><td>The pencil is <strong>in</strong> the pencil case.</td></tr>
+      <tr><td>on</td><td>在…上面</td><td>Your book is <strong>on</strong> the desk.</td></tr>
+      <tr><td>under</td><td>在…下面</td><td>The cat is <strong>under</strong> the table.</td></tr>
+      <tr><td>near</td><td>在…附近</td><td>The school is <strong>near</strong> the park.</td></tr>
+      <tr><td>behind</td><td>在…后面</td><td>The broom is <strong>behind</strong> the door.</td></tr>
+      <tr><td>next to</td><td>紧挨着</td><td>The library is <strong>next to</strong> the classroom.</td></tr>
+      <tr><td>across from</td><td>在…对面</td><td>The post office is <strong>across from</strong> the bank.</td></tr>
+      <tr><td>between</td><td>在…之间</td><td>The park is <strong>between</strong> the school and the hospital.</td></tr>
+    </table>
+  </div>
+
+  <!-- ====== 情态动词 ====== -->
+  <div class="grammar-section" id="modal">
+    <h2>7. 情态动词 (can / must / would)</h2>
+    <div class="unit-ref">相关单元：<a href="b2u01.html">七下 U1</a> · <a href="b2u04.html">七下 U4</a> · <a href="b2u10.html">七下 U10</a></div>
+    <table>
+      <tr><th>情态动词</th><th>含义</th><th>结构</th><th>例句</th></tr>
+      <tr><td>can</td><td>能，会，可以</td><td>can + 动词原形</td><td>I <strong>can</strong> swim. / <strong>Can</strong> you play the guitar?</td></tr>
+      <tr><td>must</td><td>必须</td><td>must + 动词原形</td><td>We <strong>must</strong> be on time.</td></tr>
+      <tr><td>would</td><td>想要（委婉）</td><td>would like + to do / n.</td><td>I <strong>would like</strong> some noodles.</td></tr>
+    </table>
+    <div class="note">💡 情态动词后永远跟动词原形，无人称和数的变化。</div>
+    <div class="warn">⚠️ ❌ He <strong>cans</strong> sing. → ✅ He <strong>can</strong> sing.</div>
+  </div>
+
+  <!-- ====== 时态总览 ====== -->
+  <div class="grammar-section" id="tense">
+    <h2>8. 时态总览</h2>
+    <div class="unit-ref">相关单元：<a href="u05.html">U5</a> · <a href="b2u02.html">七下U2</a> · <a href="b2u06.html">七下U6</a> · <a href="b2u11.html">七下U11</a> · <a href="b2u12.html">七下U12</a></div>
+
+    <h3 style="font-size:15px;margin:16px 0 8px;color:var(--accent);">一般现在时</h3>
+    <table>
+      <tr><th>用法</th><th>结构</th><th>例句</th></tr>
+      <tr><td>表示习惯/事实</td><td>主语 + do/does + ...</td><td>I <strong>get up</strong> at 7:00. / He <strong>plays</strong> soccer every day.</td></tr>
+      <tr><td>be 动词</td><td>主语 + am/is/are + ...</td><td>She <strong>is</strong> a teacher.</td></tr>
+      <tr><td>否定</td><td>don't / doesn't + 动词原形</td><td>I <strong>don't like</strong> bananas. / He <strong>doesn't have</strong> a soccer ball.</td></tr>
+      <tr><td>一般疑问</td><td>Do/Does + 主语 + 动词原形?</td><td><strong>Do</strong> you like apples? / <strong>Does</strong> he play basketball?</td></tr>
+    </table>
+
+    <h3 style="font-size:15px;margin:16px 0 8px;color:var(--accent);">现在进行时</h3>
+    <table>
+      <tr><th>用法</th><th>结构</th><th>例句</th></tr>
+      <tr><td>正在进行的动作</td><td>am/is/are + doing</td><td>I <strong>am watching</strong> TV. / They <strong>are playing</strong> soccer.</td></tr>
+      <tr><td>否定</td><td>am/is/are + not + doing</td><td>He <strong>is not sleeping</strong>.</td></tr>
+      <tr><td>一般疑问</td><td>Am/Is/Are + 主语 + doing?</td><td><strong>Is</strong> she <strong>reading</strong> a book?</td></tr>
+    </table>
+
+    <h3 style="font-size:15px;margin:16px 0 8px;color:var(--accent);">一般过去时</h3>
+    <table>
+      <tr><th>用法</th><th>结构</th><th>例句</th></tr>
+      <tr><td>过去发生的动作</td><td>主语 + 动词过去式</td><td>I <strong>visited</strong> the museum yesterday.</td></tr>
+      <tr><td>be 动词过去式</td><td>was / were</td><td>It <strong>was</strong> fun. / They <strong>were</strong> happy.</td></tr>
+      <tr><td>否定</td><td>didn't + 动词原形</td><td>I <strong>didn't go</strong> to school.</td></tr>
+      <tr><td>一般疑问</td><td>Did + 主语 + 动词原形?</td><td><strong>Did</strong> you <strong>see</strong> the movie?</td></tr>
+    </table>
+    <div class="tip">📌 一般过去时标志词：yesterday, last night/week, ... ago, in 2023</div>
+  </div>
+
+  <!-- ====== 祈使句 ====== -->
+  <div class="grammar-section" id="imperative">
+    <h2>9. 祈使句</h2>
+    <div class="unit-ref">相关单元：<a href="b2u04.html">七下 U4</a></div>
+    <table>
+      <tr><th>类型</th><th>结构</th><th>例句</th></tr>
+      <tr><td>肯定</td><td>动词原形 + ...</td><td><strong>Sit down</strong>, please. / <strong>Be quiet</strong>.</td></tr>
+      <tr><td>否定</td><td>Don't + 动词原形</td><td><strong>Don't run</strong> in the hallways.</td></tr>
+      <tr><td>Let's</td><td>Let's + 动词原形</td><td><strong>Let's go</strong> to the park.</td></tr>
+    </table>
+  </div>
+
+  <!-- ====== There be ====== -->
+  <div class="grammar-section" id="therebe">
+    <h2>10. There be 句型</h2>
+    <div class="unit-ref">相关单元：<a href="u04.html">U4</a> · <a href="b2u08.html">七下 U8</a></div>
+    <table>
+      <tr><th>结构</th><th>用法</th><th>例句</th></tr>
+      <tr><td>There is + 单数/不可数</td><td>存在（单数）</td><td><strong>There is</strong> a book on the desk.</td></tr>
+      <tr><td>There are + 复数</td><td>存在（复数）</td><td><strong>There are</strong> two pens in the bag.</td></tr>
+      <tr><td>否定</td><td>There is/are + not</td><td><strong>There isn't</strong> any milk.</td></tr>
+      <tr><td>一般疑问</td><td>Is/Are there + ...?</td><td><strong>Is there</strong> a post office near here?</td></tr>
+    </table>
+    <div class="note">💡 There be 表示"（某地）有某物"，have/has 表示"（某人）拥有"。</div>
+  </div>
+
+  <!-- ====== 疑问句 ====== -->
+  <div class="grammar-section" id="questions">
+    <h2>11. 疑问句总结</h2>
+    <div class="unit-ref">各单元均有涉及</div>
+    <table>
+      <tr><th>类型</th><th>结构</th><th>例句</th><th>回答</th></tr>
+      <tr><td>一般疑问句</td><td>be/Do/Can + 主语?</td><td>Is this your pen? / Do you like it?</td><td>Yes/No 回答</td></tr>
+      <tr><td>特殊疑问句</td><td>Wh- + 一般疑问句</td><td>What's your name? / Where is my bag?</td><td>具体信息</td></tr>
+      <tr><td>选择疑问句</td><td>…or…?</td><td>Is it a pen or a pencil?</td><td>选一个回答</td></tr>
+    </table>
+    <div style="margin-top:12px;">
+      <p style="font-size:14px;font-weight:600;margin-bottom:6px;">📌 常见 Wh- 词：</p>
+      <table>
+        <tr><th>疑问词</th><th>含义</th><th>例句</th></tr>
+        <tr><td>What</td><td>什么</td><td><strong>What</strong> is this? / <strong>What</strong> color is it?</td></tr>
+        <tr><td>Who</td><td>谁</td><td><strong>Who</strong> is she?</td></tr>
+        <tr><td>Whose</td><td>谁的</td><td><strong>Whose</strong> book is this?</td></tr>
+        <tr><td>Where</td><td>哪里</td><td><strong>Where</strong> is my schoolbag?</td></tr>
+        <tr><td>When</td><td>什么时候</td><td><strong>When</strong> is your birthday?</td></tr>
+        <tr><td>Why</td><td>为什么</td><td><strong>Why</strong> do you like pandas?</td></tr>
+        <tr><td>How</td><td>怎样 / 多少</td><td><strong>How</strong> do you get to school? / <strong>How much</strong> is it?</td></tr>
+        <tr><td>What time</td><td>几点</td><td><strong>What time</strong> do you get up?</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- ====== 形容词比较级 ====== -->
+  <div class="grammar-section" id="comparison">
+    <h2>12. 形容词比较级（拓展预览）</h2>
+    <div class="unit-ref">八年级内容 · 七年级了解即可</div>
+    <table>
+      <tr><th>规则</th><th>原级 → 比较级</th></tr>
+      <tr><td>单音节 + er</td><td>tall → taller, small → smaller</td></tr>
+      <tr><td>以 e 结尾 + r</td><td>large → larger, nice → nicer</td></tr>
+      <tr><td>辅音+y → ier</td><td>happy → happier, easy → easier</td></tr>
+      <tr><td>重读闭音节双写 + er</td><td>big → bigger, hot → hotter</td></tr>
+      <tr><td>多音节 more +</td><td>beautiful → more beautiful</td></tr>
+      <tr><td>不规则</td><td>good/well → better, bad → worse, many/much → more</td></tr>
+    </table>
+  </div>
+
+</div>
+
+<script>
+(function() {
+  var toggle = document.getElementById('themeToggle');
+  var html = document.documentElement;
+  var saved = localStorage.getItem('site-theme');
+  if (saved === 'dark') { html.setAttribute('data-theme', 'dark'); toggle.textContent = '☀️ 亮色'; }
+  toggle.addEventListener('click', function() {
+    var isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    toggle.textContent = isDark ? '🌙 暗色' : '☀️ 亮色';
+    localStorage.setItem('site-theme', isDark ? 'light' : 'dark');
+  });
+})();
+</script>
+
+</body>
+</html>

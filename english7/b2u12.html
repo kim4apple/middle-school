@@ -722,15 +722,17 @@
   });
   // ===== Theme toggle =====
   var toggle = document.getElementById('theme-toggle');
-  var html = document.documentElement;
-  var saved = localStorage.getItem('site-theme');
-  if (saved === 'dark') { html.setAttribute('data-theme', 'dark'); toggle.textContent = '☀️ 亮色模式'; }
-  toggle.addEventListener('click', function() {
-    var isDark = html.getAttribute('data-theme') === 'dark';
-    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-    toggle.textContent = isDark ? '🌙 暗色模式' : '☀️ 亮色模式';
-    localStorage.setItem('site-theme', isDark ? 'light' : 'dark');
-  });
+  if (toggle) {
+    var html = document.documentElement;
+    var saved = localStorage.getItem('site-theme');
+    if (saved === 'dark') { html.setAttribute('data-theme', 'dark'); toggle.textContent = '☀️ 亮色模式'; }
+    toggle.addEventListener('click', function() {
+      var isDark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      toggle.textContent = isDark ? '🌙 暗色模式' : '☀️ 亮色模式';
+      localStorage.setItem('site-theme', isDark ? 'light' : 'dark');
+    });
+  }
 
   // ===== Expand all / collapse all =====
   (function() {

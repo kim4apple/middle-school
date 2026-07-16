@@ -487,6 +487,13 @@ function htmlEncode(s) {
   return d.innerHTML;
 }
 
+function shortUnitLabel(label, title) {
+  var t = title.split('|')[0].trim();
+  if (label.indexOf('st') === 0) return 'S' + parseInt(label.slice(2)) + ' ' + t.replace(/^Starter \d+ /, '');
+  if (label.indexOf('b2u') === 0) return '七下 U' + parseInt(label.slice(3)) + ' ' + t.replace(/^七下 Unit \d+ /, '');
+  return 'U' + parseInt(label.slice(1)) + ' ' + t.replace(/^Unit \d+ /, '');
+}
+
 function shuffle(arr) {
   for (var i = arr.length - 1; i > 0; i--) {
     var j = Math.floor(Math.random() * (i + 1));
@@ -537,7 +544,7 @@ function renderTable() {
     html += '<details class="vocab-unit"' + (isOpen ? ' open' : '') + '>';
     var pct = total > 0 ? Math.round(done / total * 100) : 0;
     var barClass = pct >= 100 ? 'full' : pct >= 60 ? 'high' : '';
-    html += '<summary><span>' + unit.label + ' ' + unit.title.split('|')[0].trim() + '</span>';
+    html += '<summary><span>' + shortUnitLabel(unit.label, unit.title) + '</span>';
     html += '<span class="unit-progress-bar-spacer"></span>';
     html += '<span class="unit-progress"><strong>' + done + '</strong>/' + total + ' <span style="font-size:11px;">' + pct + '%</span>';
     if (dueCount > 0) html += '<span class="srs-due">📅 ' + dueCount + ' 待复习</span>';
@@ -1019,7 +1026,7 @@ function renderStats() {
     var done = 0;
     unit.words.forEach(function(w, wi) { if (state.mastered[unit.label + '-' + wi]) done++; });
     var pct = total > 0 ? Math.round(done / total * 100) : 0;
-    var label = unit.label + ' ' + unit.title.split('|')[0].trim();
+    var label = shortUnitLabel(unit.label, unit.title);
 
     var barClass = pct >= 100 ? 'full' : pct >= 60 ? 'high' : pct >= 30 ? 'mid' : 'low';
     var badge = '';

@@ -47,46 +47,44 @@ body.index-page { display: block; min-height: 100vh; }
 
 .unit-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 14px;
 }
 .unit-card {
-  display: block; position: relative; padding: 20px 18px 16px;
-  border-radius: 14px; border: 1px solid var(--border);
+  display: block; position: relative; padding: 18px 18px 14px;
+  border-radius: 12px; border: 1px solid var(--border);
   text-decoration: none; color: var(--text); background: var(--bg);
-  transition: transform 0.25s, box-shadow 0.25s;
-  text-align: center; overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: left; overflow: hidden;
 }
 .unit-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0;
-  height: 3px;
+  content: ''; position: absolute; left: 0; top: 8px; bottom: 8px;
+  width: 3px; border-radius: 2px;
 }
-.unit-card.demo::before { background: var(--accent); }
-.unit-card.pending::before { background: var(--border); }
+#s1 .unit-card::before { background: #3b82f6; }
+#s2 .unit-card::before { background: #14b8a6; }
+[data-theme="dark"] #s1 .unit-card::before { background: #60a5fa; }
+[data-theme="dark"] #s2 .unit-card::before { background: #2dd4bf; }
 .unit-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px -8px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px -6px rgba(59,130,246,0.12);
 }
 [data-theme="dark"] .unit-card:hover {
-  box-shadow: 0 8px 24px -8px rgba(0,0,0,0.4);
+  box-shadow: 0 6px 20px -6px rgba(96,165,250,0.2);
 }
-.unit-card .num-badge {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 34px; height: 34px; border-radius: 50%;
-  background: var(--accent-light); color: var(--accent);
-  font-size: 12px; font-weight: 800; margin-bottom: 8px;
+.unit-card .bg-label {
+  position: absolute; right: 8px; bottom: 4px;
+  font-size: 48px; font-weight: 800; line-height: 1;
+  letter-spacing: -2px; pointer-events: none; user-select: none;
+  color: #e2e8f0;
 }
-.unit-card.pending .num-badge { background: var(--bg-secondary); color: var(--text-secondary); }
-.unit-card .title { font-size: 15px; font-weight: 700; line-height: 1.3; }
-.unit-card .topic { font-size: 12px; color: var(--text-secondary); margin-top: 4px; }
-.unit-card .status-tag {
-  display: inline-block; font-size: 10px; font-weight: 700;
-  padding: 2px 12px; border-radius: 10px; margin-top: 10px;
-  letter-spacing: 0.3px;
+[data-theme="dark"] .unit-card .bg-label { color: #1e293b; }
+.unit-card .title {
+  font-size: 14px; font-weight: 600; line-height: 1.35;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+  overflow: hidden;
 }
-.unit-card.demo .status-tag { background: var(--eng-amber-light); color: var(--eng-amber); }
-.unit-card.pending .status-tag { background: var(--bg-secondary); color: var(--text-secondary); }
-
+.unit-card .topic { font-size: 12px; color: var(--text-secondary); margin-top: 3px; }
 .footer-info {
   text-align: center; margin-top: 48px; padding-top: 24px;
   border-top: 1px solid var(--border);
@@ -113,8 +111,8 @@ body.index-page { display: block; min-height: 100vh; }
   .semester-title { font-size: 14px; }
   .unit-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
   .unit-card { padding: 14px 12px; }
-  .unit-card .title { font-size: 13px; }
-  .unit-card .num-badge { width: 28px; height: 28px; font-size: 10px; }
+  .unit-card .title { font-size: 13px; line-height: 1.3; }
+  .unit-card .bg-label { font-size: 36px; }
   .nav-links { gap: 12px; font-size: 12px; }
 }
 </style>
@@ -154,76 +152,64 @@ body.index-page { display: block; min-height: 100vh; }
     </div>
     <div class="unit-grid">
       <a href="st01.html" class="unit-card done">
-        <div class="num-badge">S1</div>
+        <span class="bg-label">S1</span>
         <div class="title">Good morning!</div>
         <div class="topic">字母·问候</div>
-        <span class="status-tag">已建</span>
       </a>
       <a href="st02.html" class="unit-card done">
-        <div class="num-badge">S2</div>
+        <span class="bg-label">S2</span>
         <div class="title">What's this in English?</div>
         <div class="topic">物品·字母</div>
-        <span class="status-tag">已建</span>
       </a>
       <a href="st03.html" class="unit-card done">
-        <div class="num-badge">S3</div>
+        <span class="bg-label">S3</span>
         <div class="title">What color is it?</div>
         <div class="topic">颜色·字母</div>
-        <span class="status-tag">已建</span>
       </a>
       <a href="st01.html" class="unit-card done">
-        <div class="num-badge">U1</div>
+        <span class="bg-label">U1</span>
         <div class="title">My name's Gina.</div>
         <div class="topic">自我介绍</div>
-        <span class="status-tag">样板</span>
       </a>
       <a href="st02.html" class="unit-card done">
-        <div class="num-badge">U2</div>
+        <span class="bg-label">U2</span>
         <div class="title">This is my sister.</div>
         <div class="topic">家庭成员</div>
-        <span class="status-tag">已生成</span>
       </a>
       <a href="st03.html" class="unit-card done">
-        <div class="num-badge">U3</div>
+        <span class="bg-label">U3</span>
         <div class="title">Is this your pencil?</div>
         <div class="topic">学校物品</div>
-        <span class="status-tag">已生成</span>
       </a>
       <a href="u04.html" class="unit-card done">
-        <div class="num-badge">U4</div>
+        <span class="bg-label">U4</span>
         <div class="title">Where's my schoolbag?</div>
         <div class="topic">房间物品</div>
-        <span class="status-tag">已生成</span>
       </a>
       <a href="u05.html" class="unit-card done">
-        <div class="num-badge">U5</div>
+        <span class="bg-label">U5</span>
         <div class="title">Do you have a soccer ball?</div>
         <div class="topic">体育运动</div>
-        <span class="status-tag">已生成</span>
       </a>
       <a href="u06.html" class="unit-card done">
-        <div class="num-badge">U6</div>
+        <span class="bg-label">U6</span>
         <div class="title">Do you like bananas?</div>
         <div class="topic">饮食偏好</div>
-        <span class="status-tag">已生成</span>
       </a>
       <a href="u07.html" class="unit-card done">
-        <div class="num-badge">U7</div>
+        <span class="bg-label">U7</span>
         <div class="title">How much are these socks?</div>
         <div class="topic">购物</div>
-        <span class="status-tag">已生成</span>
       </a>
       <a href="u08.html" class="unit-card done">
-        <div class="num-badge">U8</div>
+        <span class="bg-label">U8</span>
         <div class="title">When is your birthday?</div>
         <div class="topic">日期</div>
-        <span class="status-tag">已生成</span>
       </a>
       <a href="u09.html" class="unit-card done">
-        <div class="num-badge">U9</div>
+        <span class="bg-label">U9</span>
         <div class="title">My favorite subject is science.</div>
         <div class="topic">学科喜好</div>
-        <span class="status-tag">已生成</span>
       </a>
     </div>
   </div>
@@ -235,76 +221,64 @@ body.index-page { display: block; min-height: 100vh; }
     </div>
     <div class="unit-grid">
       <a href="b2u01.html" class="unit-card done">
-        <div class="num-badge">U1</div>
+        <span class="bg-label">U1</span>
         <div class="title">Can you play the guitar?</div>
         <div class="topic">才能与俱乐部</div>
-        <span class="status-tag">已建</span>
       </a>
       <a href="b2u02.html" class="unit-card done">
-        <div class="num-badge">U2</div>
+        <span class="bg-label">U2</span>
         <div class="title">What time do you go to school?</div>
         <div class="topic">日常作息</div>
-        <span class="status-tag">已建</span>
       </a>
       <a href="b2u03.html" class="unit-card done">
-        <div class="num-badge">U3</div>
+        <span class="bg-label">U3</span>
         <div class="title">How do you get to school?</div>
         <div class="topic">交通方式</div>
-        <span class="status-tag">已建</span>
       </a>
       <a href="b2u04.html" class="unit-card done">
-        <div class="num-badge">U4</div>
+        <span class="bg-label">U4</span>
         <div class="title">Don't eat in class.</div>
         <div class="topic">校规</div>
-        <span class="status-tag">已建</span>
       </a>
       <a href="b2u05.html" class="unit-card done">
-        <div class="num-badge">U5</div>
+        <span class="bg-label">U5</span>
         <div class="title">Why do you like pandas?</div>
         <div class="topic">动物</div>
-        <span class="status-tag">已建</span>
       </a>
       <a href="b2u06.html" class="unit-card done">
-        <div class="num-badge">U6</div>
+        <span class="bg-label">U6</span>
         <div class="title">I'm watching TV.</div>
         <div class="topic">日常活动</div>
-        <span class="status-tag">已建</span>
       </a>
       <a href="b2u07.html" class="unit-card done">
-        <div class="num-badge">U7</div>
+        <span class="bg-label">U7</span>
         <div class="title">It's raining!</div>
         <div class="topic">天气</div>
-        <span class="status-tag">已建</span>
       </a>
       <a href="b2u08.html" class="unit-card done">
-        <div class="num-badge">U8</div>
+        <span class="bg-label">U8</span>
         <div class="title">Is there a post office near here?</div>
         <div class="topic">问路指路</div>
-        <span class="status-tag">已建</span>
       </a>
       <a href="b2u09.html" class="unit-card done">
-        <div class="num-badge">U9</div>
+        <span class="bg-label">U9</span>
         <div class="title">What does he look like?</div>
         <div class="topic">外貌描述</div>
-        <span class="status-tag">已建</span>
       </a>
       <a href="b2u10.html" class="unit-card done">
-        <div class="num-badge">U10</div>
+        <span class="bg-label">U10</span>
         <div class="title">I'd like some noodles.</div>
         <div class="topic">点餐</div>
-        <span class="status-tag">已建</span>
       </a>
       <a href="b2u11.html" class="unit-card done">
-        <div class="num-badge">U11</div>
+        <span class="bg-label">U11</span>
         <div class="title">How was your school trip?</div>
         <div class="topic">学校旅行</div>
-        <span class="status-tag">已建</span>
       </a>
       <a href="b2u12.html" class="unit-card done">
-        <div class="num-badge">U12</div>
+        <span class="bg-label">U12</span>
         <div class="title">What did you do last weekend?</div>
         <div class="topic">周末活动</div>
-        <span class="status-tag">已建</span>
       </a>
     </div>
   </div>

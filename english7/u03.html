@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 3 Is this your pencil? | 初中英语七年级</title>
+<link rel="stylesheet" href="css/english.css">
+<style>
+.speak-btn {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 12px; cursor: pointer; color: var(--accent);
+  border: 1px solid var(--border); border-radius: 4px;
+  padding: 2px 8px; background: var(--bg);
+  transition: background 0.15s;
+}
+.speak-btn:hover { background: var(--accent-light); }
+.speak-btn.speaking { background: var(--eng-amber-light); color: var(--eng-amber); border-color: var(--eng-amber); }
+.wotd-say {
+  cursor: pointer; transition: color 0.15s;
+}
+.wotd-say:hover { color: var(--accent); }
+.wotd-say.speaking { color: var(--eng-pink); }
+.speech-panel {
+  position: fixed; bottom: 80px; right: 24px; z-index: 999;
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  padding: 14px 18px; display: none; min-width: 180px;
+}
+.speech-panel.open { display: block; }
+.speech-panel .row { display: flex; align-items: center; gap: 8px; margin: 4px 0; font-size: 13px; }
+.speech-panel .row label { color: var(--text-secondary); font-size: 12px; min-width: 36px; }
+.speech-panel select, .speech-panel input[type="range"] { flex: 1; }
+.speech-panel button {
+  padding: 4px 12px; border-radius: 6px; border: 1px solid var(--border);
+  background: var(--bg); color: var(--text); cursor: pointer; font-size: 12px;
+}
+.speech-panel button:hover { background: var(--accent-light); }
+.speech-toggle-btn {
+  position: fixed; bottom: 24px; right: 76px; z-index: 999;
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid var(--border); background: var(--bg);
+  color: var(--accent); cursor: pointer; font-size: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  display: flex; align-items: center; justify-content: center;
+}
+.speech-toggle-btn:hover { background: var(--accent-light); }
+[data-theme="dark"] .speech-panel { box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+</style>
+</head>
+<body>
+
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">英语七年级</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+  </div>
+  <nav>
+    <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+    <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 七 上 ━━</a>
+    <a href="u01.html">U1 My name's Gina.</a>
+    <a href="u02.html">U2 This is my sister.</a>
+    <a href="u03.html" class="active">U3 Is this your pencil?</a>
+    <a href="u04.html">U4 Where's my schoolbag?</a>
+    <a href="u05.html">U5 Do you have a soccer ball?</a>
+    <a href="u06.html">U6 Do you like bananas?</a>
+    <a href="u07.html">U7 How much are these socks?</a>
+    <a href="u08.html">U8 When is your birthday?</a>
+    <a href="u09.html">U9 My favorite subject is science.</a>
+    <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 七 下 ━━</a>
+    <a href="u13.html">U1 Can you play the guitar?</a>
+    <a href="u14.html">U2 What time...?</a>
+    <a href="u15.html">U3 How do you get to school?</a>
+    <a href="u16.html">U4 Don't eat in class.</a>
+    <a href="u17.html">U5 Why do you like pandas?</a>
+    <a href="u18.html">U6 I'm watching TV.</a>
+    <a href="u19.html">U7 It's raining!</a>
+    <a href="u20.html">U8 Is there a post office...</a>
+    <a href="u21.html">U9 What does he look like?</a>
+    <a href="u22.html">U10 I'd like some noodles.</a>
+    <a href="u23.html">U11 How was your school trip?</a>
+    <a href="u24.html">U12 What did you do last weekend?</a>
+  </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+  <button id="theme-toggle" class="theme-toggle">🌙 暗色模式</button>
+  <button class="print-btn" onclick="window.print()">🖨️ 打印 / 存 PDF</button>
+</nav>
+
+<main id="content">
+
+<div class="cover">
+  <div class="sub-en">Unit 3</div>
+  <h1>Is this your pencil?</h1>
+  <p>确认物品归属 · 物主代词入门 · 失物招领</p>
+</div>
+
+<div class="unit-meta">
+  <span>📖 话题：School things</span>
+  <span>💬 功能：Identify ownership</span>
+  <span>📚 语法：指示代词 · 物主代词</span>
+  <span>📝 写作：Lost & Found</span>
+</div>
+
+<div class="can-do">
+  <h3>🎯 我能做到</h3>
+  <label><input type="checkbox"> I can ask "Is this/that your...?" and answer "Yes, it is." / "No, it isn't."</label>
+  <label><input type="checkbox"> I can use this / that / these / those correctly.</label>
+  <label><input type="checkbox"> I can use possessive adjectives (my, your, his, her) and possessive pronouns (mine, yours, his, hers).</label>
+  <label><input type="checkbox"> I can write a simple lost / found notice.</label>
+</div>
+
+<!-- ====== 课文精讲 ====== -->
+<details class="module" open>
+  <summary>📖 课文精讲 · In the classroom</summary>
+  <div class="content">
+
+    <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;">
+      <span style="font-size:13px;color:var(--text-secondary);">场景：Ann 和 Tom 在教室捡到一些文具，正在寻找失主。</span>
+      <button class="speak-btn" data-target="#dialogueText" title="朗读整段对话">🔊 朗读对话</button>
+    </div>
+
+    <div class="dialogue" id="dialogueText">
+      <div class="dialogue-line">
+        <span class="speaker">Tom:</span>
+        <span class="en-text">Hey, Ann! Look! <em>Is this your ruler</em>?</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Ann:</span>
+        <span class="en-text">No, <em>it isn't</em>. My ruler is green. That one is blue.</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Tom:</span>
+        <span class="en-text">Oh, I see. <em>Whose</em> ruler is it?</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Ann:</span>
+        <span class="en-text">Maybe it's Mike's. He has a blue ruler.</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Tom:</span>
+        <span class="en-text">Mike, <em>is this your ruler</em>?</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Mike:</span>
+        <span class="en-text">Oh yes, it is! Thanks, Tom.</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Tom:</span>
+        <span class="en-text">You're welcome. And Ann, <em>are these your pencils</em>?</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Ann:</span>
+        <span class="en-text">No, they aren't. <em>Mine are yellow</em>. Those are red.</span>
+      </div>
+    </div>
+
+    <details style="margin-top:12px;">
+      <summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary>
+      <div class="dialogue-annotation">
+        <p><strong>逐句翻译：</strong></p>
+        <p>Tom: 嘿 Ann！看！<em>这是你的尺子吗？</em></p>
+        <p>Ann: 不，<em>它不是</em>。我的尺子是绿色的。那把是蓝色的。</p>
+        <p>Tom: 哦，知道了。<em>这是谁的</em>尺子？</p>
+        <p>Ann: 可能是 Mike 的。他有一把蓝色尺子。</p>
+        <p>Tom: Mike，<em>这是你的尺子吗</em>？</p>
+        <p>Mike: 哦，是的，是我的！谢了 Tom。</p>
+        <p>Tom: 不客气。Ann，<em>这些是你的铅笔吗</em>？</p>
+        <p>Ann: 不，不是。<em>我的是黄色的</em>。那些是红色的。</p>
+      </div>
+    </details>
+
+    <div class="dialogue-annotation">
+      <p><strong>🔑 重点讲解：</strong></p>
+      <p><strong>1.</strong> <em>Is this your ruler?</em> → "这是你的尺子吗？" 一般疑问句，把 <strong>be 动词 (is/are)</strong> 提到句首。<br>
+      回答：肯定 <strong>Yes, it is.</strong> / 否定 <strong>No, it isn't.</strong></p>
+      <p><strong>2.</strong> <em>Whose</em> → "谁的"，提问所有格。回答用名词所有格（Mike's）或物主代词（mine）。</p>
+      <p><strong>3.</strong> <em>Mine are yellow.</em> → <strong>mine</strong> = my pencils，是名词性物主代词，后面不需要再跟名词。</p>
+      <p><strong>4.</strong> <em>You're welcome.</em> → "不客气" 固定搭配，回应 Thank you / Thanks。</p>
+    </div>
+
+    <div style="display:flex;gap:8px;align-items:center;margin:20px 0 10px;">
+      <h3 style="font-size:15px;color:var(--accent);margin:0;">📖 Reading: Lost &amp; Found Notice</h3>
+      <button class="speak-btn" data-target="#readingText" title="朗读全文">🔊 朗读</button>
+    </div>
+
+    <div class="reading" id="readingText">
+      <div class="notice">
+        <div class="title">Found</div>
+        <p>Is this your schoolbag? It's blue and white. There are two notebooks, a pencil case and a dictionary in it.</p>
+        <p>Please call me at 358-7921. Ask for Mary.</p>
+      </div>
+      <div class="notice">
+        <div class="title">Lost</div>
+        <p>My watch is missing. It's black. My name "Jack" is on the back.</p>
+        <p>I must find it. E-mail me at jack@email.com.</p>
+      </div>
+      <div class="notice">
+        <div class="title">Found</div>
+        <p>A set of keys. Are these yours? Ask the teacher for them.</p>
+      </div>
+      <div class="read-glossary">
+        <span class="gloss-item">📘 schoolbag /ˈskuːlbæɡ/ n. 书包</span>
+        <span class="gloss-item">📘 dictionary /ˈdɪkʃəneri/ n. 字典</span>
+        <span class="gloss-item">📘 missing /ˈmɪsɪŋ/ adj. 丢失的</span>
+        <span class="gloss-item">📘 a set of 一串 / 一套</span>
+      </div>
+    </div>
+
+  </div>
+</details>
+
+<!-- ====== 重点词汇 ====== -->
+<details class="module" open>
+  <summary>📝 重点词汇 · School things</summary>
+  <div class="content">
+
+    <div class="vocab-grid">
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="pencil">pencil</span>
+        <span class="ipa">/ˈpensl/</span>
+        <span class="pos">n.</span>
+        <div class="definition">铅笔</div>
+        <div class="example">I need a <strong>pencil</strong> for the test.<span class="trans">考试需要一支铅笔。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="eraser">eraser</span>
+        <span class="ipa">/ɪˈreɪsər/</span>
+        <span class="pos">n.</span>
+        <div class="definition">橡皮</div>
+        <div class="example">May I borrow your <strong>eraser</strong>?<span class="trans">能借下你的橡皮吗？</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="ruler">ruler</span>
+        <span class="ipa">/ˈruːlər/</span>
+        <span class="pos">n.</span>
+        <div class="definition">尺子</div>
+        <div class="example">Is this your <strong>ruler</strong>?<span class="trans">这是你的尺子吗？</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="schoolbag">schoolbag</span>
+        <span class="ipa">/ˈskuːlbæɡ/</span>
+        <span class="pos">n.</span>
+        <div class="definition">书包</div>
+        <div class="example">I have a new blue <strong>schoolbag</strong>.<span class="trans">我有一个新的蓝色书包。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="dictionary">dictionary</span>
+        <span class="ipa">/ˈdɪkʃəneri/</span>
+        <span class="pos">n.</span>
+        <div class="definition">字典</div>
+        <div class="example">Please look it up in the <strong>dictionary</strong>.<span class="trans">请查字典。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="notebook">notebook</span>
+        <span class="ipa">/ˈnoʊtbʊk/</span>
+        <span class="pos">n.</span>
+        <div class="definition">笔记本</div>
+        <div class="example">Write the new words in your <strong>notebook</strong>.<span class="trans">把生词写在笔记本上。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="pencil case">pencil case</span>
+        <span class="ipa">/ˈpensl keɪs/</span>
+        <span class="pos">n.</span>
+        <div class="definition">铅笔盒/笔袋</div>
+        <div class="example">My pencil case is on the desk.<span class="trans">我的笔袋在桌子上。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="watch">watch</span>
+        <span class="ipa">/wɒtʃ/</span>
+        <span class="pos">n.</span>
+        <div class="definition">手表</div>
+        <div class="example">I lost my <strong>watch</strong> this morning.<span class="trans">我早上丢了手表。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="ring">ring</span>
+        <span class="ipa">/rɪŋ/</span>
+        <span class="pos">n.</span>
+        <div class="definition">戒指</div>
+        <div class="example">Is this your <strong>ring</strong>?<span class="trans">这是你的戒指吗？</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="ID card">ID card</span>
+        <span class="ipa">/ˌaɪ ˈdiː kɑːrd/</span>
+        <span class="pos">n.</span>
+        <div class="definition">身份证/学生证</div>
+        <div class="example">I must find my <strong>ID card</strong>.<span class="trans">我必须找到我的学生证。</span></div>
+      </div>
+
+    </div>
+
+  </div>
+</details>
+
+<!-- ====== 重点句型 ====== -->
+<details class="module" open>
+  <summary>🔤 重点句型 · Sentence Patterns</summary>
+  <div class="content">
+
+    <div class="pattern-grid">
+
+      <div class="pattern-card">
+        <div class="structure">Is this / that + 物品?</div>
+        <div>用来确认近处 (this) 或远处 (that) 的物品归属。</div>
+        <div class="substitution">
+          ✅ <strong>Is this</strong> <span class="slot">your pen</span>?<br>
+          ✅ <strong>Is that</strong> <span class="slot">his book</span>?<br>
+          ➡ 回答：<strong>Yes, it is.</strong> / <strong>No, it isn't.</strong>
+        </div>
+      </div>
+
+      <div class="pattern-card">
+        <div class="structure">Are these / those + 复数物品?</div>
+        <div>复数形式，用来确认多个物品。</div>
+        <div class="substitution">
+          ✅ <strong>Are these</strong> <span class="slot">your pencils</span>?<br>
+          ✅ <strong>Are those</strong> <span class="slot">her keys</span>?<br>
+          ➡ 回答：<strong>Yes, they are.</strong> / <strong>No, they aren't.</strong>
+        </div>
+      </div>
+
+      <div class="pattern-card">
+        <div class="structure">Whose + 物品 + is this/that?</div>
+        <div>提问物品的主人。</div>
+        <div class="substitution">
+          ✅ <strong>Whose pencil</strong> is this?<br>
+          ➡ 回答：It's <span class="slot">Mike's</span>.（名词所有格）<br>
+          ➡ 回答：It's <span class="slot">mine</span>.（物主代词）
+        </div>
+      </div>
+
+      <div class="pattern-card">
+        <div class="structure">Please call / e-mail + 人 + at + 号码</div>
+        <div>失物招领中留下的联系方式。</div>
+        <div class="substitution">
+          ✅ Please <strong>call</strong> me <strong>at</strong> <span class="slot">358-7921</span>.<br>
+          ✅ Please <strong>e-mail</strong> me <strong>at</strong> <span class="slot">jack@email.com</span>.<br>
+          ➡ call + 人 + at + 电话号码<br>
+          ➡ e-mail + 人 + at + 邮箱地址
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</details>
+
+<!-- ====== 语法聚焦 ====== -->
+<details class="module" open>
+  <summary>📚 语法聚焦 · Demonstratives &amp; Possessives</summary>
+  <div class="content">
+
+    <div class="grammar-module">
+      <h3>1️⃣ 指示代词：this / that / these / those</h3>
+      <table class="grammar-table">
+        <tr><th></th><th>单数</th><th>复数</th></tr>
+        <tr><td><strong>近处</strong>（眼前/手里）</td><td><strong>this</strong> 这个</td><td><strong>these</strong> 这些</td></tr>
+        <tr><td><strong>远处</strong>（那边/远处）</td><td><strong>that</strong> 那个</td><td><strong>those</strong> 那些</td></tr>
+      </table>
+      <p style="font-size:14px;margin-top:8px;">📌 <strong>顺口溜：</strong>this these 近，that those 远。this that 后跟单数，these those 后跟复数。</p>
+    </div>
+
+    <div class="grammar-module">
+      <h3>2️⃣ 物主代词：形容词性 vs 名词性</h3>
+      <table class="grammar-table">
+        <tr><th>人称</th><th>形容词性物主代词<br><span style="font-weight:400;">(后面必须跟名词)</span></th><th>名词性物主代词<br><span style="font-weight:400;">(后面不能跟名词)</span></th></tr>
+        <tr><td>第一人称</td><td><strong>my</strong> 我的</td><td><strong>mine</strong> 我的（东西）</td></tr>
+        <tr><td>第二人称</td><td><strong>your</strong> 你的/你们的</td><td><strong>yours</strong> 你的/你们的（东西）</td></tr>
+        <tr><td>第三人称(男)</td><td><strong>his</strong> 他的</td><td><strong>his</strong> 他的（东西）</td></tr>
+        <tr><td>第三人称(女)</td><td><strong>her</strong> 她的</td><td><strong>hers</strong> 她的（东西）</td></tr>
+      </table>
+      <p style="font-size:14px;margin-top:8px;">📌 <strong>对比：</strong></p>
+      <p style="font-size:14px;">This is <strong>my</strong> book. = This book is <strong>mine</strong>.<br>
+      That is <strong>your</strong> pen. = That pen is <strong>yours</strong>.<br>
+      Those are <strong>her</strong> pencils. = Those pencils are <strong>hers</strong>.</p>
+
+      <div class="chinese-error">
+        <strong>⚠️ 中式英语纠错：</strong><br>
+        ❌ <span class="wrong">This is mine book.</span>（mine 后面不能跟名词）<br>
+        ✅ <span class="correct">This is my book.</span> 或 <span class="correct">This book is mine.</span><br><br>
+        ❌ <span class="wrong">This is I pen.</span>（用 I 替代 my，人称错误）<br>
+        ✅ <span class="correct">This is my pen.</span><br><br>
+        ❌ <span class="wrong">She lost her pencil. This isn't her.</span>（her 不能单独作表语）<br>
+        ✅ <span class="correct">She lost her pencil. This isn't hers.</span>
+      </div>
+    </div>
+
+    <div class="grammar-module">
+      <h3>3️⃣ 名词所有格：'s</h3>
+      <p>在英语中，表示"某人的"时，在名词后面加 <strong>'s</strong>。</p>
+      <table class="grammar-table">
+        <tr><th>规则</th><th>示例</th></tr>
+        <tr><td>单数名词 + 's</td><td>Mike's ruler（迈克的尺子） → the ruler <strong>is Mike's</strong></td></tr>
+        <tr><td>以 s 结尾的复数 + '</td><td>The teachers' office（老师们的办公室）</td></tr>
+        <tr><td>不规则复数 + 's</td><td>The children's books（孩子们的书）</td></tr>
+      </table>
+      <div class="grammar-tip">
+        <strong>💡 对比：</strong><br>
+        <strong>Whose</strong> bag is this? → It's <strong>Mary's</strong>.<br>
+        <strong>Whose</strong> keys are these? → They're <strong>my father's</strong>.
+      </div>
+    </div>
+
+  </div>
+</details>
+
+<!-- ====== 三级闯关 ====== -->
+<details class="exam-module" open>
+  <summary>📝 三级闯关 · 实战练习</summary>
+  <div class="content">
+
+    <h3 style="color:var(--accent);margin:0 0 10px;">🥉 基础关 · 概念识记</h3>
+
+    <div class="exam-q">
+      <span class="q-tag">基础</span>
+      <span class="q-diff easy">★☆☆</span>
+      <div class="q-body">This is ____ eraser. (my / mine / I)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>my<br><strong>解析：</strong>eraser 是名词，前面需要用形容词性物主代词 my。Mine 是名词性物主代词，不能修饰名词。</div>
+    </div>
+
+    <div class="exam-q">
+      <span class="q-tag">基础</span>
+      <span class="q-diff easy">★☆☆</span>
+      <div class="q-body">____ this your schoolbag? — Yes, ____ is.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Is; it<br><strong>解析：</strong>schoolbag 是单数名词，用 Is + this 提问；回答用 it 代替 this schoolbag。</div>
+    </div>
+
+    <div class="exam-q">
+      <span class="q-tag">基础</span>
+      <span class="q-diff easy">★☆☆</span>
+      <div class="q-body">Are ____ your pencils? (this / that / these)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>these<br><strong>解析：</strong>pencils 是复数名词，需要用复数指示代词 these 或 those。句中 Are 提示是复数，these 表示近处。</div>
+    </div>
+
+    <h3 style="color:var(--accent);margin:20px 0 10px;">🥈 提升关 · 语境运用</h3>
+
+    <div class="exam-q">
+      <span class="q-tag">提升</span>
+      <span class="q-diff mid">★★☆</span>
+      <div class="q-body">— Is that ____ eraser? (you)<br>— No, it isn't. ____ is white. (I)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>your; Mine<br><strong>解析：</strong>第一空后跟名词 eraser，用形容词性物主代词 your；第二空单独作主语（= my eraser），用名词性物主代词 Mine。</div>
+    </div>
+
+    <div class="exam-q">
+      <span class="q-tag">提升</span>
+      <span class="q-diff mid">★★☆</span>
+      <div class="q-body">连词成句：these / are / your / notebooks / ?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Are these your notebooks?<br><strong>解析：</strong>一般疑问句以 be 动词开头，notebooks 是复数，用 Are。注意首字母大写和句末问号。</div>
+    </div>
+
+    <div class="exam-q">
+      <span class="q-tag">提升</span>
+      <span class="q-diff mid">★★☆</span>
+      <div class="q-body">— ____ ruler is this?<br>— It's ____. (Mike)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Whose; Mike's<br><strong>解析：</strong>问"谁的"用 Whose。回答用名词所有格 Mike's = Mike's ruler。</div>
+    </div>
+
+    <h3 style="color:var(--accent);margin:20px 0 10px;">🥇 挑战关 · 综合拔高</h3>
+
+    <div class="exam-q">
+      <span class="q-tag">挑战</span>
+      <span class="q-diff hard">★★★</span>
+      <div class="q-body">改错：This pens are mine. Those one is yours.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>These pens are mine. That one is yours.<br><strong>解析：</strong>pens 是复数，指示代词应该用复数 These；one 是单数，指示代词应该用单数 That。注意 this/that 后跟单数名词，these/those 后跟复数名词。</div>
+    </div>
+
+    <div class="exam-q">
+      <span class="q-tag">挑战</span>
+      <span class="q-diff hard">★★★</span>
+      <div class="q-body">根据上下文补全对话：<br>
+      A: Look! I found a watch on the playground.<br>
+      B: ____ watch is it?<br>
+      A: I don't know. ____ you know?<br>
+      B: Let me see. There's a name "Tom" on the back. Maybe it's ____.<br>
+      A: Let's go and ask him.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Whose; Do; his<br><strong>解析：</strong>第一空问"谁的"用 Whose；第二空是问句，you 前需要助动词 Do；第三空表示"也许是他的"用名词性物主代词 his (= his watch)。</div>
+    </div>
+
+  </div>
+</details>
+
+<!-- ====== 微写作 ====== -->
+<div class="micro-writing">
+  <h3>✍️ 微写作：Lost &amp; Found Notice</h3>
+  <p>假设你丢失了学生证，请用英文写一则寻物启事。注意格式：标题 Lost，描述物品特征，留下联系方式。</p>
+  <div class="model">
+    <p class="en"><strong>Lost:</strong></p>
+    <p class="en">I lost my school ID card. It's blue and white. My name "Zhang Wei" is on it.</p>
+    <p class="en">I must find it. Please call me at 139-1234-5678.</p>
+    <p class="en">Thanks!</p>
+    <span class="trans">我丢失了学生证。它是蓝白色的，上面有我的名字"张伟"。我必须找到它。请致电 139-1234-5678。谢谢！</span>
+  </div>
+</div>
+
+<!-- ====== 自查清单 ====== -->
+<div class="checklist">
+  <h3>✅ 章节自查清单</h3>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能分清 this/that/these/those 的区别，并正确使用</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我理解形容词性物主代词(my/your/his/her) 和名词性物主代词(mine/yours/his/hers) 的区别</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 Is this/that…? 和 Are these/those…? 问句确认物品归属</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我会用 Whose…? 提问"谁的"，并用 's 名词所有格回答</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写一则英文失物招领启事</label>
+  <p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;">
+    <strong>🧑‍🏫 费曼挑战：</strong>用英语指着身边的物品，自问自答——"Is this my pen? No, it isn't. It's Tom's pen."
+  </p>
+</div>
+
+<div class="review-schedule">
+  <strong>📅 间隔复习</strong>
+  <span class="review-dot">🔵 1天后：重做错题</span>
+  <span class="review-dot">🟢 3天后：口头自问自答物主代词</span>
+  <span class="review-dot">🟡 1周后：写一则完整的失物招领</span>
+  <span class="review-dot">🔴 1月后：复习所有物主代词表格</span>
+</div>
+
+<div class="next-stop">
+  <strong>➡️ 下一单元：Unit 4 Where's my schoolbag?</strong><br>
+  下一单元你将学习用 <strong>Where</strong> 问物品的位置，使用介词 <strong>in / on / under</strong> 描述方位——这在失物招领场景中也会用到！
+</div>
+
+</main>
+
+<div class="speech-panel" id="speechPanel">
+  <div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div>
+  <div class="row">
+    <label>语速</label>
+    <input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9">
+    <span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span>
+  </div>
+  <div class="row">
+    <label>口音</label>
+    <select id="speechVoice">
+      <option value="en-US">🇺🇸 美式</option>
+      <option value="en-GB">🇬🇧 英式</option>
+    </select>
+  </div>
+  <div class="row" style="justify-content:space-between;">
+    <button id="speechStopBtn" title="停止朗读">⏹ 停止</button>
+    <button id="speechCloseBtn" title="关闭面板">✕ 关闭</button>
+  </div>
+</div>
+<button class="speech-toggle-btn" id="speechToggleBtn" title="语音设置">🔊</button>
+
+<script>
+(function() {
+  // ===== SpeechManager =====
+  var SpeechManager = {
+    synthesis: window.speechSynthesis,
+    currentUtterance: null,
+    speaking: false,
+    rate: 0.9,
+    voiceURI: 'en-US',
+
+    init: function() {
+      var self = this;
+      var rateInput = document.getElementById('speechRate');
+      var rateLabel = document.getElementById('speechRateLabel');
+      var voiceSelect = document.getElementById('speechVoice');
+      var stopBtn = document.getElementById('speechStopBtn');
+      var closeBtn = document.getElementById('speechCloseBtn');
+      var toggleBtn = document.getElementById('speechToggleBtn');
+      var panel = document.getElementById('speechPanel');
+
+      var saved = localStorage.getItem('speech-rate');
+      if (saved) { this.rate = parseFloat(saved); rateInput.value = this.rate; rateLabel.textContent = this.rate; }
+      var savedVoice = localStorage.getItem('speech-voice');
+      if (savedVoice) { this.voiceURI = savedVoice; voiceSelect.value = savedVoice; }
+
+      rateInput.addEventListener('input', function() {
+        self.rate = parseFloat(this.value);
+        rateLabel.textContent = this.value;
+        localStorage.setItem('speech-rate', this.value);
+      });
+      voiceSelect.addEventListener('change', function() {
+        self.voiceURI = this.value;
+        localStorage.setItem('speech-voice', this.value);
+      });
+
+      stopBtn.addEventListener('click', function() { self.stop(); });
+      closeBtn.addEventListener('click', function() { panel.classList.remove('open'); });
+
+      toggleBtn.addEventListener('click', function() {
+        panel.classList.toggle('open');
+      });
+    },
+
+    speak: function(text, callback) {
+      var self = this;
+      if (!text) return;
+      this.stop();
+      var utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = this.voiceURI;
+      utterance.rate = this.rate;
+      utterance.onstart = function() { self.speaking = true; };
+      utterance.onend = function() {
+        self.speaking = false;
+        if (callback) callback();
+      };
+      utterance.onerror = function() { self.speaking = false; };
+      this.currentUtterance = utterance;
+      this.synthesis.speak(utterance);
+    },
+
+    speakText: function(el) {
+      var text = el.getAttribute('data-speak') || el.textContent;
+      this.speak(text);
+    },
+
+    speakDialogue: function(containerId) {
+      var self = this;
+      var container = document.getElementById(containerId);
+      if (!container) return;
+      var lines = container.querySelectorAll('.en-text');
+      var index = 0;
+      this.stop();
+      function speakNext() {
+        if (index >= lines.length) { self.speaking = false; return; }
+        var text = lines[index].textContent.replace(/<[^>]+>/g, '').trim();
+        if (!text) { index++; speakNext(); return; }
+        var utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = self.voiceURI;
+        utterance.rate = self.rate;
+        utterance.onend = function() { index++; setTimeout(speakNext, 400); };
+        self.currentUtterance = utterance;
+        self.synthesis.speak(utterance);
+      }
+      speakNext();
+    },
+
+    stop: function() {
+      this.synthesis.cancel();
+      this.speaking = false;
+    }
+  };
+
+  SpeechManager.init();
+
+  // Bind click-to-speak on .wotd-say
+  document.querySelectorAll('.wotd-say').forEach(function(el) {
+    el.addEventListener('click', function() {
+      var text = this.getAttribute('data-speak') || this.textContent;
+      SpeechManager.speak(text);
+    });
+  });
+
+  // Bind speak buttons
+  document.querySelectorAll('.speak-btn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var target = document.querySelector(this.getAttribute('data-target'));
+      if (!target) return;
+      if (this.classList.contains('speaking')) { SpeechManager.stop(); this.classList.remove('speaking'); return; }
+      this.classList.add('speaking');
+      SpeechManager.speak(target.textContent.replace(/<[^>]+>/g, ''), function() {
+        btn.classList.remove('speaking');
+      });
+    });
+  });
+
+  // ===== Theme toggle =====
+  var toggle = document.getElementById('theme-toggle');
+  var html = document.documentElement;
+  var saved = localStorage.getItem('site-theme');
+  if (saved === 'dark') { html.setAttribute('data-theme', 'dark'); toggle.textContent = '☀️ 亮色模式'; }
+  toggle.addEventListener('click', function() {
+    var isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    toggle.textContent = isDark ? '🌙 暗色模式' : '☀️ 亮色模式';
+    localStorage.setItem('site-theme', isDark ? 'light' : 'dark');
+  });
+
+  // ===== Expand all / collapse all =====
+  (function() {
+    var btn = document.getElementById('expandAllBtn');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      var allDetails = document.querySelectorAll('.module, .exam-module');
+      var allOpen = true;
+      for (var i = 0; i < allDetails.length; i++) {
+        if (!allDetails[i].hasAttribute('open')) { allOpen = false; break; }
+      }
+      for (var i = 0; i < allDetails.length; i++) {
+        if (allOpen) allDetails[i].removeAttribute('open');
+        else allDetails[i].setAttribute('open', '');
+      }
+      btn.textContent = allOpen ? '📂 展开全部模块' : '📖 收起全部模块';
+    });
+  })();
+
+  // ===== Back to top =====
+  window.addEventListener('scroll', function() {
+    var btn = document.getElementById('backToTop');
+    if (btn) btn.style.display = window.scrollY > 400 ? 'flex' : 'none';
+  }, { passive: true });
+  document.getElementById('backToTop').addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // ===== Sidebar =====
+  var sidebar = document.getElementById('sidebar');
+  document.getElementById('sidebarHideBtn').addEventListener('click', function() { sidebar.classList.add('hidden'); });
+  document.getElementById('sidebarShowBtn').addEventListener('click', function() { sidebar.classList.remove('hidden'); });
+
+  // ===== Solution toggle =====
+  document.querySelectorAll('.q-toggle').forEach(function(b){
+    b.addEventListener('click', function(e) { e.stopPropagation(); this.parentElement.classList.toggle('show-solution'); });
+  });
+})();
+</script>
+
+</body>
+</html>

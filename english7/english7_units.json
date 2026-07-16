@@ -1,0 +1,415 @@
+{
+  "sidebar": [
+    {
+      "label": "七 上",
+      "units": [
+        {"id": "st01", "title": "S1 Good morning!", "status": "pending", "href": "u00.html"},
+        {"id": "st02", "title": "S2 What's this in English?", "status": "pending", "href": "u00.html"},
+        {"id": "st03", "title": "S3 What color is it?", "status": "pending", "href": "u00.html"},
+        {"id": "u01", "title": "U1 My name's Gina."},
+        {"id": "u02", "title": "U2 This is my sister."},
+        {"id": "u03", "title": "U3 Is this your pencil?"},
+        {"id": "u04", "title": "U4 Where's my schoolbag?"},
+        {"id": "u05", "title": "U5 Do you have a soccer ball?"},
+        {"id": "u06", "title": "U6 Do you like bananas?"},
+        {"id": "u07", "title": "U7 How much are these socks?"},
+        {"id": "u08", "title": "U8 When is your birthday?"},
+        {"id": "u09", "title": "U9 My favorite subject is science."}
+      ]
+    },
+    {
+      "label": "七 下",
+      "units": [
+        {"id": "b2u01", "title": "U1 Can you play the guitar?"},
+        {"id": "b2u02", "title": "U2 What time do you go to school?"},
+        {"id": "b2u03", "title": "U3 How do you get to school?"},
+        {"id": "b2u04", "title": "U4 Don't eat in class."},
+        {"id": "b2u05", "title": "U5 Why do you like pandas?"},
+        {"id": "b2u06", "title": "U6 I'm watching TV."},
+        {"id": "b2u07", "title": "U7 It's raining!"},
+        {"id": "b2u08", "title": "U8 Is there a post office near here?"},
+        {"id": "b2u09", "title": "U9 What does he look like?"},
+        {"id": "b2u10", "title": "U10 I'd like some noodles."},
+        {"id": "b2u11", "title": "U11 How was your school trip?"},
+        {"id": "b2u12", "title": "U12 What did you do last weekend?"}
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "u03",
+      "num": "3",
+      "title_en": "Is this your pencil?",
+      "title_sub": "确认物品归属 · 物主代词入门 · 失物招领",
+      "meta": {
+        "topic": "School things",
+        "function": "Identify ownership",
+        "grammar": "指示代词 · 物主代词",
+        "writing": "Lost &amp; Found"
+      },
+      "can_do": [
+        "I can ask &quot;Is this/that your...?&quot; and answer &quot;Yes, it is.&quot; / &quot;No, it isn't.&quot;",
+        "I can use this / that / these / those correctly.",
+        "I can use possessive adjectives (my, your, his, her) and possessive pronouns (mine, yours, his, hers).",
+        "I can write a simple lost / found notice."
+      ],
+      "dialogue": {
+        "scene": "Ann 和 Tom 在教室捡到一些文具，正在寻找失主。",
+        "speak_btn_id": "dialogueText",
+        "lines": [
+          {
+            "speaker": "Tom",
+            "en": "Hey, Ann! Look! <em>Is this your ruler</em>?",
+            "speak": "Hey, Ann! Look! Is this your ruler?",
+            "cn": "Tom: 嘿 Ann！看！<em>这是你的尺子吗？</em>"
+          },
+          {
+            "speaker": "Ann",
+            "en": "No, <em>it isn't</em>. My ruler is green. That one is blue.",
+            "speak": "No, it isn't. My ruler is green. That one is blue.",
+            "cn": "Ann: 不，<em>它不是</em>。我的尺子是绿色的。那把是蓝色的。"
+          },
+          {
+            "speaker": "Tom",
+            "en": "Oh, I see. <em>Whose</em> ruler is it?",
+            "speak": "Oh, I see. Whose ruler is it?",
+            "cn": "Tom: 哦，知道了。<em>这是谁的</em>尺子？"
+          },
+          {
+            "speaker": "Ann",
+            "en": "Maybe it's Mike's. He has a blue ruler.",
+            "speak": "Maybe it's Mike's. He has a blue ruler.",
+            "cn": "Ann: 可能是 Mike 的。他有一把蓝色尺子。"
+          },
+          {
+            "speaker": "Tom",
+            "en": "Mike, <em>is this your ruler</em>?",
+            "speak": "Mike, is this your ruler?",
+            "cn": "Tom: Mike，<em>这是你的尺子吗</em>？"
+          },
+          {
+            "speaker": "Mike",
+            "en": "Oh yes, it is! Thanks, Tom.",
+            "speak": "Oh yes, it is! Thanks, Tom.",
+            "cn": "Mike: 哦，是的，是我的！谢了 Tom。"
+          },
+          {
+            "speaker": "Tom",
+            "en": "You're welcome. And Ann, <em>are these your pencils</em>?",
+            "speak": "You're welcome. And Ann, are these your pencils?",
+            "cn": "Tom: 不客气。Ann，<em>这些是你的铅笔吗</em>？"
+          },
+          {
+            "speaker": "Ann",
+            "en": "No, they aren't. <em>Mine are yellow</em>. Those are red.",
+            "speak": "No, they aren't. Mine are yellow. Those are red.",
+            "cn": "Ann: 不，不是。<em>我的是黄色的</em>。那些是红色的。"
+          }
+        ],
+        "explanations": [
+          "<strong>1.</strong> <em>Is this your ruler?</em> → &quot;这是你的尺子吗？&quot; 一般疑问句，把 <strong>be 动词 (is/are)</strong> 提到句首。<br>回答：肯定 <strong>Yes, it is.</strong> / 否定 <strong>No, it isn't.</strong>",
+          "<strong>2.</strong> <em>Whose</em> → &quot;谁的&quot;，提问所有格。回答用名词所有格（Mike's）或物主代词（mine）。",
+          "<strong>3.</strong> <em>Mine are yellow.</em> → <strong>mine</strong> = my pencils，是名词性物主代词，后面不需要再跟名词。",
+          "<strong>4.</strong> <em>You're welcome.</em> → &quot;不客气&quot; 固定搭配，回应 Thank you / Thanks。"
+        ]
+      },
+      "reading": {
+        "title": "Lost &amp; Found Notice",
+        "speak_btn_id": "readingEnglish",
+        "sections": [
+          {
+            "type": "notice",
+            "title": "Found",
+            "speak_title": "Found",
+            "paragraphs": [
+              {"en": "Is this your schoolbag? It's blue and white. There are two notebooks, a pencil case and a dictionary in it.", "speak": "Is this your schoolbag? It's blue and white. There are two notebooks, a pencil case and a dictionary in it."},
+              {"en": "Please call me at 358-7921. Ask for Mary.", "speak": "Please call me at 358-7921. Ask for Mary."}
+            ]
+          },
+          {
+            "type": "lost",
+            "title": "Lost",
+            "paragraphs": [
+              {"en": "My watch is missing. It's black. My name &quot;Jack&quot; is on the back."},
+              {"en": "I must find it. E-mail me at jack@email.com."}
+            ]
+          },
+          {
+            "type": "lost",
+            "title": "Found",
+            "paragraphs": [
+              {"en": "A set of keys. Are these yours? Ask the teacher for them."}
+            ]
+          },
+          {
+            "type": "glossary",
+            "items": [
+              {"text": "📘 schoolbag /ˈskuːlbæɡ/ n. 书包", "speak": "schoolbag"},
+              {"text": "📘 dictionary /ˈdɪkʃəneri/ n. 字典", "speak": "dictionary"},
+              {"text": "📘 missing /ˈmɪsɪŋ/ adj. 丢失的", "speak": "missing"},
+              {"text": "📘 a set of 一串 / 一套", "speak": "a set of"}
+            ]
+          }
+        ]
+      },
+      "vocab": {
+        "title": "重点词汇",
+        "speak_btn_id": "vocabGrid",
+        "topic_label": "School things",
+        "items": [
+          {"headword": "pencil", "speak": "pencil", "ipa": "/ˈpensl/", "pos": "n.", "def": "铅笔", "example": "I need a <strong>pencil</strong> for the test.", "trans": "考试需要一支铅笔。"},
+          {"headword": "eraser", "speak": "eraser", "ipa": "/ɪˈreɪsər/", "pos": "n.", "def": "橡皮", "example": "May I borrow your <strong>eraser</strong>?", "trans": "能借下你的橡皮吗？"},
+          {"headword": "ruler", "speak": "ruler", "ipa": "/ˈruːlər/", "pos": "n.", "def": "尺子", "example": "Is this your <strong>ruler</strong>?", "trans": "这是你的尺子吗？"},
+          {"headword": "schoolbag", "speak": "schoolbag", "ipa": "/ˈskuːlbæɡ/", "pos": "n.", "def": "书包", "example": "I have a new blue <strong>schoolbag</strong>.", "trans": "我有一个新的蓝色书包。"},
+          {"headword": "dictionary", "speak": "dictionary", "ipa": "/ˈdɪkʃəneri/", "pos": "n.", "def": "字典", "example": "Please look it up in the <strong>dictionary</strong>.", "trans": "请查字典。"},
+          {"headword": "notebook", "speak": "notebook", "ipa": "/ˈnoʊtbʊk/", "pos": "n.", "def": "笔记本", "example": "Write the new words in your <strong>notebook</strong>.", "trans": "把生词写在笔记本上。"},
+          {"headword": "pencil case", "speak": "pencil case", "ipa": "/ˈpensl keɪs/", "pos": "n.", "def": "铅笔盒/笔袋", "example": "My pencil case is on the desk.", "trans": "我的笔袋在桌子上。"},
+          {"headword": "watch", "speak": "watch", "ipa": "/wɒtʃ/", "pos": "n.", "def": "手表", "example": "I lost my <strong>watch</strong> this morning.", "trans": "我早上丢了手表。"},
+          {"headword": "ring", "speak": "ring", "ipa": "/rɪŋ/", "pos": "n.", "def": "戒指", "example": "Is this your <strong>ring</strong>?", "trans": "这是你的戒指吗？"},
+          {"headword": "ID card", "speak": "ID card", "ipa": "/ˌaɪ ˈdiː kɑːrd/", "pos": "n.", "def": "身份证/学生证", "example": "I must find my <strong>ID card</strong>.", "trans": "我必须找到我的学生证。"}
+        ]
+      },
+      "patterns": [
+        {
+          "structure": "Is this / that + 物品?",
+          "speak_id": "sp1",
+          "description": "用来确认近处 (this) 或远处 (that) 的物品归属。",
+          "examples": [
+            "✅ <strong>Is this</strong> <span class=\"slot\">your pen</span>?",
+            "✅ <strong>Is that</strong> <span class=\"slot\">his book</span>?",
+            "➡ 回答：<strong>Yes, it is.</strong> / <strong>No, it isn't.</strong>"
+          ]
+        },
+        {
+          "structure": "Are these / those + 复数物品?",
+          "speak_id": "sp2",
+          "description": "复数形式，用来确认多个物品。",
+          "examples": [
+            "✅ <strong>Are these</strong> <span class=\"slot\">your pencils</span>?",
+            "✅ <strong>Are those</strong> <span class=\"slot\">her keys</span>?",
+            "➡ 回答：<strong>Yes, they are.</strong> / <strong>No, they aren't.</strong>"
+          ]
+        },
+        {
+          "structure": "Whose + 物品 + is this/that?",
+          "speak_id": "sp3",
+          "description": "提问物品的主人。",
+          "examples": [
+            "✅ <strong>Whose pencil</strong> is this?",
+            "➡ 回答：It's <span class=\"slot\">Mike's</span>.（名词所有格）",
+            "➡ 回答：It's <span class=\"slot\">mine</span>.（物主代词）"
+          ]
+        },
+        {
+          "structure": "Please call / e-mail + 人 + at + 号码",
+          "speak_id": "sp4",
+          "description": "失物招领中留下的联系方式。",
+          "examples": [
+            "✅ Please <strong>call</strong> me <strong>at</strong> <span class=\"slot\">358-7921</span>.",
+            "✅ Please <strong>e-mail</strong> me <strong>at</strong> <span class=\"slot\">jack@email.com</span>.",
+            "➡ call + 人 + at + 电话号码",
+            "➡ e-mail + 人 + at + 邮箱地址"
+          ]
+        }
+      ],
+      "grammar": [
+        {
+          "type": "table",
+          "title": "1️⃣ 指示代词：this / that / these / those",
+          "headers": ["", "单数", "复数"],
+          "rows": [
+            [
+              "<strong>近处</strong>（眼前/手里）",
+              {"text": "this 这个", "speak": "this", "tag": "strong"},
+              {"text": "these 这些", "speak": "these", "tag": "strong"}
+            ],
+            [
+              "<strong>远处</strong>（那边/远处）",
+              {"text": "that 那个", "speak": "that", "tag": "strong"},
+              {"text": "those 那些", "speak": "those", "tag": "strong"}
+            ]
+          ],
+          "tip": "顺口溜：this these 近，that those 远。this that 后跟单数，these those 后跟复数。"
+        },
+        {
+          "type": "possessive",
+          "title": "2️⃣ 物主代词：形容词性 vs 名词性",
+          "rows": [
+            [
+              "第一人称",
+              {"text": "my 我的", "speak": "my", "tag": "strong"},
+              {"text": "mine 我的（东西）", "speak": "mine", "tag": "strong"}
+            ],
+            [
+              "第二人称",
+              {"text": "your 你的/你们的", "speak": "your", "tag": "strong"},
+              {"text": "yours 你的/你们的（东西）", "speak": "yours", "tag": "strong"}
+            ],
+            [
+              "第三人称(男)",
+              {"text": "his 他的", "speak": "his", "tag": "strong"},
+              {"text": "his 他的（东西）", "speak": "his", "tag": "strong"}
+            ],
+            [
+              "第三人称(女)",
+              {"text": "her 她的", "speak": "her", "tag": "strong"},
+              {"text": "hers 她的（东西）", "speak": "hers", "tag": "strong"}
+            ]
+          ],
+          "comparisons": [
+            {"text": "This is <strong>my</strong> book. = This book is <strong>mine</strong>.", "en1": "This is <strong>my</strong> book.", "en2": "This book is <strong>mine</strong>."},
+            {"text": "That is <strong>your</strong> pen. = That pen is <strong>yours</strong>.", "en1": "That is <strong>your</strong> pen.", "en2": "That pen is <strong>yours</strong>."},
+            {"text": "Those are <strong>her</strong> pencils. = Those pencils are <strong>hers</strong>.", "en1": "Those are <strong>her</strong> pencils.", "en2": "Those pencils are <strong>hers</strong>."}
+          ],
+          "error_correction": [
+            {
+              "wrong": "This is mine book.",
+              "wrong_speak": "This is mine book.",
+              "correct1": "This is my book.",
+              "c1_speak": "This is my book.",
+              "correct2": "This book is mine.",
+              "c2_speak": "This book is mine."
+            },
+            {
+              "wrong": "This is I pen.",
+              "wrong_speak": "This is I pen.",
+              "correct1": "This is my pen.",
+              "c1_speak": "This is my pen."
+            },
+            {
+              "wrong": "She lost her pencil. This isn't her.",
+              "wrong_speak": "She lost her pencil. This isn't her.",
+              "correct1": "She lost her pencil. This isn't hers.",
+              "c1_speak": "She lost her pencil. This isn't hers."
+            }
+          ]
+        },
+        {
+          "type": "genitive",
+          "title": "3️⃣ 名词所有格：'s",
+          "tip": "",
+          "rows": [
+            {
+              "rule": "单数名词 + 's",
+              "example": {"text": "Mike's ruler（迈克的尺子） → the ruler <strong>is Mike's</strong>", "speak": "Mike's ruler"}
+            },
+            {
+              "rule": "以 s 结尾的复数 + '",
+              "example": {"text": "The teachers' office（老师们的办公室）", "speak": "The teachers' office"}
+            },
+            {
+              "rule": "不规则复数 + 's",
+              "example": {"text": "The children's books（孩子们的书）", "speak": "The children's books"}
+            }
+          ],
+          "comparison": "<strong>Whose</strong> bag is this? → It's <strong>Mary's</strong>.<br>\n        <strong>Whose</strong> keys are these? → They're <strong>my father's</strong>."
+        }
+      ],
+      "exercises": [
+        {
+          "tag": "基础",
+          "id": "q1",
+          "difficulty": "★☆☆",
+          "diff_class": "easy",
+          "body": "This is ____ eraser. (my / mine / I)",
+          "answer": "my",
+          "analysis": "eraser 是名词，前面需要用形容词性物主代词 my。Mine 是名词性物主代词，不能修饰名词。"
+        },
+        {
+          "tag": "基础",
+          "id": "q2",
+          "difficulty": "★☆☆",
+          "diff_class": "easy",
+          "body": "____ this your schoolbag? — Yes, ____ is.",
+          "answer": "Is; it",
+          "analysis": "schoolbag 是单数名词，用 Is + this 提问；回答用 it 代替 this schoolbag。"
+        },
+        {
+          "tag": "基础",
+          "id": "q3",
+          "difficulty": "★☆☆",
+          "diff_class": "easy",
+          "body": "Are ____ your pencils? (this / that / these)",
+          "answer": "these",
+          "analysis": "pencils 是复数名词，需要用复数指示代词 these 或 those。句中 Are 提示是复数，these 表示近处。"
+        },
+        {
+          "tag": "提升",
+          "id": "q4",
+          "difficulty": "★★☆",
+          "diff_class": "mid",
+          "body": "— Is that ____ eraser? (you)<br>— No, it isn't. ____ is white. (I)",
+          "answer": "your; Mine",
+          "analysis": "第一空后跟名词 eraser，用形容词性物主代词 your；第二空单独作主语（= my eraser），用名词性物主代词 Mine。"
+        },
+        {
+          "tag": "提升",
+          "id": "q2140",
+          "difficulty": "★★☆",
+          "diff_class": "mid",
+          "body": "连词成句：these / are / your / notebooks / ?",
+          "answer": "Are these your notebooks?",
+          "analysis": "一般疑问句以 be 动词开头，notebooks 是复数，用 Are。注意首字母大写和句末问号。"
+        },
+        {
+          "tag": "提升",
+          "id": "q2524",
+          "difficulty": "★★☆",
+          "diff_class": "mid",
+          "body": "— ____ ruler is this?<br>— It's ____. (Mike)",
+          "answer": "Whose; Mike's",
+          "analysis": "问&quot;谁的&quot;用 Whose。回答用名词所有格 Mike's = Mike's ruler。"
+        },
+        {
+          "tag": "挑战",
+          "id": "q2973",
+          "difficulty": "★★★",
+          "diff_class": "hard",
+          "body": "改错：This pens are mine. Those one is yours.",
+          "answer": "These pens are mine. That one is yours.",
+          "analysis": "pens 是复数，指示代词应该用复数 These；one 是单数，指示代词应该用单数 That。注意 this/that 后跟单数名词，these/those 后跟复数名词。"
+        },
+        {
+          "tag": "挑战",
+          "id": "q3414",
+          "difficulty": "★★★",
+          "diff_class": "hard",
+          "body": "根据上下文补全对话：<br>\n      A: Look! I found a watch on the playground.<br>\n      B: ____ watch is it?<br>\n      A: I don't know. ____ you know?<br>\n      B: Let me see. There's a name &quot;Tom&quot; on the back. Maybe it's ____.<br>\n      A: Let's go and ask him.",
+          "answer": "Whose; Do; his",
+          "analysis": "第一空问&quot;谁的&quot;用 Whose；第二空是问句，you 前需要助动词 Do；第三空表示&quot;也许是他的&quot;用名词性物主代词 his (= his watch)。"
+        }
+      ],
+      "writing": {
+        "task": "Lost &amp; Found Notice",
+        "speak_btn_id": "microModel",
+        "model_en": [
+          {"tag": "Lost", "speak": "Lost:"},
+          {"en": "I lost my school ID card. It's blue and white. My name &quot;Zhang Wei&quot; is on it.", "speak": "I lost my school ID card. It's blue and white. My name 'Zhang Wei' is on it."},
+          {"en": "I must find it. Please call me at 139-1234-5678.", "speak": "I must find it. Please call me at 139-1234-5678."},
+          {"en": "Thanks!", "speak": "Thanks!"}
+        ],
+        "translation": "我丢失了学生证。它是蓝白色的，上面有我的名字&quot;张伟&quot;。我必须找到它。请致电 139-1234-5678。谢谢！"
+      },
+      "checklist": [
+        "我能分清 this/that/these/those 的区别，并正确使用",
+        "我理解形容词性物主代词(my/your/his/her) 和名词性物主代词(mine/yours/his/hers) 的区别",
+        "我能用 Is this/that…? 和 Are these/those…? 问句确认物品归属",
+        "我会用 Whose…? 提问&quot;谁的&quot;，并用 's 名词所有格回答",
+        "我能写一则英文失物招领启事"
+      ],
+      "feynman_challenge": "用英语指着身边的物品，自问自答——&quot;Is this my pen? No, it isn't. It's Tom's pen.&quot;",
+      "review": [
+        {"icon": "🔵", "time": "1天后", "task": "重做错题"},
+        {"icon": "🟢", "time": "3天后", "task": "口头自问自答物主代词"},
+        {"icon": "🟡", "time": "1周后", "task": "写一则完整的失物招领"},
+        {"icon": "🔴", "time": "1月后", "task": "复习所有物主代词表格"}
+      ],
+      "next_stop": {
+        "id": "u04",
+        "label": "Unit 4",
+        "title": "Where's my schoolbag?",
+        "desc": "下一单元你将学习用 <strong>Where</strong> 问物品的位置，使用介词 <strong>in / on / under</strong> 描述方位——这在失物招领场景中也会用到！"
+      }
+    }
+  ]
+}

@@ -601,7 +601,9 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
   margin-top: 8px;
   font-size: 15px;
   line-height: 1.7;
+  display: flex; align-items: flex-start; gap: 6px;
 }
+.exam-q .q-body .q-speak-wrap { flex: 1; }
 
 .exam-q .q-solution {
   margin-top: 10px;

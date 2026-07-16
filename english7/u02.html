@@ -730,7 +730,6 @@
     });
   });
   // ===== Theme toggle =====
-  }
 
   // ===== Expand all / collapse all =====
   (function() {
@@ -748,7 +747,13 @@
       }
       btn.textContent = allOpen ? '📂 展开全部模块' : '📖 收起全部模块';
     });
-  })();
+})();
+
+var s=document.getElementById('sidebar'),k='eng7-sidebar'; if(!s)return;
+if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
 
   // ===== Back to top =====
   window.addEventListener('scroll', function() {
@@ -759,12 +764,7 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // ===== Sidebar =====
-  var s = document.getElementById('sidebar'), k = 'eng7-sidebar';
-  var h = document.getElementById('sidebarHideBtn'), w = document.getElementById('sidebarShowBtn');
-  if (localStorage.getItem(k) === 'hidden') s.classList.add('hidden');
-  h.addEventListener('click', function() { s.classList.add('hidden'); localStorage.setItem(k, 'hidden'); });
-  w.addEventListener('click', function() { s.classList.remove('hidden'); localStorage.setItem(k, ''); });
+
 
   // ===== Solution toggle =====
   document.querySelectorAll('.q-toggle').forEach(function(b){

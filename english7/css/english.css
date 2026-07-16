@@ -102,7 +102,7 @@ body {
 }
 
 #sidebar.hidden { display: none; }
-body:has(#sidebar.hidden) #content { margin-left: 0; }
+body.sidebar-hidden #content { margin-left: 0; }
 
 #sidebarShowBtn {
   position: fixed;
@@ -122,7 +122,7 @@ body:has(#sidebar.hidden) #content { margin-left: 0; }
   gap: 4px;
 }
 
-body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
+body.sidebar-hidden #sidebarShowBtn { display: flex; }
 
 .theme-toggle {
   margin-top: 24px;

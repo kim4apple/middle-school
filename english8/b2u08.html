@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U8 Making a Difference | 初中英语八年级</title>
+<link rel="stylesheet" href="css/english8.css">
+<style>
+.speak-btn { display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;color:var(--accent);border:1px solid var(--border);border-radius:4px;padding:2px 8px;background:var(--bg);transition:background 0.15s; }
+.speak-btn:hover { background:var(--accent-light); }
+.speak-btn.speaking { background:var(--eng-amber-light);color:var(--eng-amber);border-color:var(--eng-amber); }
+.headword-speak-indicator { font-size:11px;margin-left:3px;opacity:0.55;cursor:pointer;vertical-align:super;line-height:1; }
+.headword-speak-indicator:hover { opacity:1; }
+.wotd-say { cursor:pointer;transition:color 0.15s; }
+.wotd-say:hover { color:var(--accent); }
+.wotd-say.speaking { color:var(--eng-pink); }
+.speech-panel { position:fixed;bottom:80px;right:24px;z-index:999;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);padding:14px 18px;display:none;min-width:180px; }
+.speech-panel.open { display:block; }
+.speech-panel .row { display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px; }
+.speech-panel .row label { color:var(--text-secondary);font-size:12px;min-width:36px; }
+.speech-panel select,.speech-panel input[type="range"] { flex:1; }
+.speech-panel button { padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px; }
+.speech-panel button:hover { background:var(--accent-light); }
+.speech-toggle-btn { position:fixed;bottom:24px;right:76px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--accent);cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center; }
+.speech-toggle-btn:hover { background:var(--accent-light); }
+.en-text.speaking { background:var(--eng-amber-light);border-radius:4px;padding:2px 4px;transition:background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background:#452a08; }
+.detail-module { content-visibility:auto;contain-intrinsic-size:300px; }
+.reading { content-visibility:auto;contain-intrinsic-size:400px; }
+</style>
+<script>(function(){var t=localStorage.getItem("eng8-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+    <nav id="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="margin-bottom:0;">英语八年级</h2>
+        <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+      </div><nav>
+        <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../grammar.html" style="font-size:13px;">📌 语法全景图</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 八 上 ━━</a>
+        <a href="u01.html">U1 Happy Holiday!</a>
+        <a href="u02.html">U2 How often do you exercise?</a>
+        <a href="u03.html">U3 I'm more outgoing than my sister.</a>
+        <a href="u04.html">U4 What's the best movie theater?</a>
+        <a href="u05.html">U5 Do you want to watch a game show?</a>
+        <a href="u06.html">U6 I'm going to study computer science.</a>
+        <a href="u07.html">U7 Will people have robots?</a>
+        <a href="u08.html">U8 Let's Communicate!</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 八 下 ━━</a>
+        <a href="b2u01.html">U1 Time to Relax!</a>
+        <a href="b2u02.html">U2 Let's clean up!</a>
+        <a href="b2u03.html">U3 Could you please clean your room?</a>
+        <a href="b2u04.html">U4 Why don't you talk to your parents?</a>
+        <a href="b2u05.html">U5 What were you doing when the rainstorm came?</a>
+        <a href="b2u06.html">U6 An old man tried to move the mountains.</a>
+        <a href="b2u07.html">U7 What's the highest mountain in the world?</a>
+        <a href="b2u08.html" class="active">U8 Making a Difference</a>
+      </nav>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+    </nav>
+<main id="content">
+<div class="cover"><div class="sub-en">U8</div><h1>Making a Difference</h1><p>社会责任</p></div>
+<div class="unit-meta"><span>📖 话题：Social Responsibility & Volunteer Work</span><span>💬 功能：Talk about volunteer work and social issues</span><span>📚 语法：动词不定式作目的状语（to do / in order to）· make / let / help 使役动词</span><span>📝 写作：How I Can Make a Difference</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能用 to do / in order to 表达目的</label>
+  <label><input type="checkbox"> 能用 make / help / let 结构</label>
+  <label><input type="checkbox"> 能谈论志愿服务和社会责任</label>
+  <label><input type="checkbox"> 能写一篇关于社会贡献的短文</label></div>
+<details class="module" open><summary>📖 课文精讲 · Making a Difference</summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：学校举办"青年公益论坛"，几位同学分享自己做志愿者的经历。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
+<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Host:</span><span class="en-text wotd-say" data-speak="Welcome to our Youth Volunteer Forum. Let's hear from our speakers.">Welcome to our Youth Volunteer Forum. Let's hear from our speakers.</span></div>
+      <div class="dialogue-line"><span class="speaker">Chen Wei:</span><span class="en-text wotd-say" data-speak="I volunteer at an animal shelter to help stray dogs. I walk them every Saturday.">I volunteer at an animal shelter to help stray dogs. I walk them every Saturday.</span></div>
+      <div class="dialogue-line"><span class="speaker">Liu Na:</span><span class="en-text wotd-say" data-speak="I teach children in a village school to make a difference. I go there every summer.">I teach children in a village school to make a difference. I go there every summer.</span></div>
+      <div class="dialogue-line"><span class="speaker">Chen Wei:</span><span class="en-text wotd-say" data-speak="That's amazing! How does that make you feel?">That's amazing! How does that make you feel?</span></div>
+      <div class="dialogue-line"><span class="speaker">Liu Na:</span><span class="en-text wotd-say" data-speak="It makes me feel useful. I help them learn English, and they teach me to be patient.">It makes me feel useful. I help them learn English, and they teach me to be patient.</span></div>
+      <div class="dialogue-line"><span class="speaker">Host:</span><span class="en-text wotd-say" data-speak="Small actions can make a big difference. Let's all try to help others!">Small actions can make a big difference. Let's all try to help others!</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>Host:</strong> 欢迎来到青年志愿论坛。来听听大家的分享。</p>
+        <p><strong>Chen Wei:</strong> 我在动物收容所做志愿者，帮助流浪狗。每周六带它们散步。</p>
+        <p><strong>Liu Na:</strong> 我在一所乡村学校教书来改变现状。我每年暑假都去。</p>
+        <p><strong>Chen Wei:</strong> 太棒了！那让你感觉如何？</p>
+        <p><strong>Liu Na:</strong> 让我觉得自己很有用。我教他们英语，他们教我耐心。</p>
+        <p><strong>Host:</strong> 小行动能带来大改变。让我们一起帮助他人！</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p><strong>1.</strong> <em>I volunteer at an animal shelter to help stray dogs.</em> → <strong>to do</strong> 不定式表目的："为了……"。</p>
+      <p><strong>2.</strong> <em>I teach children in a village school to make a difference.</em> → <strong>make a difference</strong> "有所作为；带来改变"。</p>
+      <p><strong>3.</strong> <em>It makes me feel useful.</em> → <strong>make + 人 + 动词原形</strong> "让某人做/感到……"。</p>
+      <p><strong>4.</strong> <em>They teach me to be patient.</em> → <strong>teach + 人 + to do</strong> "教某人做……"。</p></div></div></details>
+<details class="module" open><summary>📝 重点词汇 · 社会责任 <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="volunteer">volunteer</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌvɑːlənˈtɪr/</span><span class="pos">v./n.</span>
+        <div class="definition">自愿；志愿者</div>
+        <div class="example"><span class="wotd-say" data-speak="I want to volunteer at the hospital.">I want to volunteer at the hospital.</span><span class="trans">我想在医院做志愿者。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="shelter">shelter</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈʃeltər/</span><span class="pos">n.</span>
+        <div class="definition">收容所；避难所</div>
+        <div class="example"><span class="wotd-say" data-speak="We donate food to the animal shelter.">We donate food to the animal shelter.</span><span class="trans">我们向动物收容所捐食物。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="stray">stray</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/streɪ/</span><span class="pos">adj.</span>
+        <div class="definition">流浪的</div>
+        <div class="example"><span class="wotd-say" data-speak="There are many stray cats in the city.">There are many stray cats in the city.</span><span class="trans">城市里有很多流浪猫。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="difference">difference</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈdɪfrəns/</span><span class="pos">n.</span>
+        <div class="definition">差异；不同</div>
+        <div class="example"><span class="wotd-say" data-speak="Small actions can make a big difference.">Small actions can make a big difference.</span><span class="trans">小行动能带来大不同。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="patient">patient</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈpeɪʃnt/</span><span class="pos">adj.</span>
+        <div class="definition">耐心的</div>
+        <div class="example"><span class="wotd-say" data-speak="A good teacher should be patient.">A good teacher should be patient.</span><span class="trans">好老师应该有耐心。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="action">action</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈækʃn/</span><span class="pos">n.</span>
+        <div class="definition">行动</div>
+        <div class="example"><span class="wotd-say" data-speak="Take action now! Don't wait.">Take action now! Don't wait.</span><span class="trans">现在就行动！不要等待。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="society">society</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/səˈsaɪəti/</span><span class="pos">n.</span>
+        <div class="definition">社会</div>
+        <div class="example"><span class="wotd-say" data-speak="Everyone should contribute to society.">Everyone should contribute to society.</span><span class="trans">每个人都应为社会做贡献。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="community">community</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/kəˈmjuːnəti/</span><span class="pos">n.</span>
+        <div class="definition">社区</div>
+        <div class="example"><span class="wotd-say" data-speak="We should help people in our community.">We should help people in our community.</span><span class="trans">我们应该帮助社区里的人。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="homeless">homeless</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈhoʊmləs/</span><span class="pos">adj.</span>
+        <div class="definition">无家可归的</div>
+        <div class="example"><span class="wotd-say" data-speak="We raised money for homeless people.">We raised money for homeless people.</span><span class="trans">我们为无家可归的人筹款。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="raise">raise</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/reɪz/</span><span class="pos">v.</span>
+        <div class="definition">筹集；提高</div>
+        <div class="example"><span class="wotd-say" data-speak="Let's raise money for the poor children.">Let's raise money for the poor children.</span><span class="trans">让我们为贫困儿童筹款。</span></div>
+      </div></div></div></details>
+<details class="module" open><summary>🔤 重点句型 · Sentence Patterns</summary><div class="content"><div class="pattern-grid">      <div class="pattern-card">
+        <div class="structure">…to do…（不定式表目的）</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>为了……</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1">I went there <span class="slot">to help</span> the children.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">make / let / help + 人 + 动词</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>使役动词</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp2">It <span class="slot">makes me feel</span> happy. / <span class="slot">Let me help</span> you.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">make a difference</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>有所作为；带来改变</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp3">Small things can <span class="slot">make a big difference</span>.</span></div>
+      </div></div></div></details>
+<details class="module detail-module" open><summary>📚 语法聚焦 · 不定式表目的 & 使役动词 <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module"><h3>不定式作目的状语</h3>
+<table class="grammar-table">
+<tr><th>结构</th><th>含义</th><th>示例</th></tr>
+<tr><td>to + 动词原形</td><td>为了……</td><td>I called to invite you.</td></tr>
+<tr><td>in order to + 动词</td><td>为了……（更正式）</td><td>He left early in order to catch the bus.</td></tr>
+</table>
+<h3>使役动词 make / let / help</h3>
+<table class="grammar-table">
+<tr><th>动词</th><th>结构</th><th>示例</th></tr>
+<tr><td>make</td><td>make + 人 + 动词原形</td><td>It makes me cry.</td></tr>
+<tr><td>let</td><td>let + 人 + 动词原形</td><td>Let me try.</td></tr>
+<tr><td>help</td><td>help + 人 + (to) 动词</td><td>She helped me (to) clean.</td></tr>
+</table>
+</div><div class="chinese-error">      <p>❌ <span class="wrong" data-speak="It makes me to feel happy.">It makes me to feel happy.</span>（make 后接动词原形，不加 to）</p>
+      <p>✅ <span class="correct" data-speak="It makes me feel happy.">It makes me feel happy.</span></p>
+      <p>❌ <span class="wrong" data-speak="I went there for help him.">I went there for help him.</span>（表目的用 to do，不用 for do）</p>
+      <p>✅ <span class="correct" data-speak="I went there to help him.">I went there to help him.</span></p></div></div></details>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[目的] I volunteer ____ (help) old people.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>to help</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[make] Helping others ____ me ____ (feel) good.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>makes; feel</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[let] ____ me carry the box for you.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Let</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[改错] She helped me to carried the heavy bag.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>She helped me carry the heavy bag.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[句型] I join the club. I want to make friends. (合并为带目的状语的句子)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>I join the club to make friends.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[填空] He studied hard ____ ____ ____ (为了) pass the exam.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>in order to</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">[汉译英] 这个孩子的话让我思考了很多。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>The child's words made me think a lot.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">[补全] A: Why do you volunteer at the shelter?<br>B: I want ____ ____ a difference.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>to make</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>📖 阅读专项 · Teens Who Make a Difference</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">Many young people around the world are making a difference. Here are two inspiring stories.</p>
+      <p class="en-text">Lin Tao, 14, noticed that many elderly people in his community lived alone. He started a "Weekend Companion" program. Every Saturday, he visits an elderly neighbor to chat and help with housework. "It makes me feel useful to bring them joy," he says.</p>
+      <p class="en-text">Megan, 13, from the UK, loves reading. She collected hundreds of books and sent them to children in poor areas. "I hope to open a window to the world for them," she said.</p>
+      <p class="en-text">These teens show us that age doesn't matter. You can make a difference starting today!</p><div class="gloss"><span>inspiring adj. 鼓舞人心的</span> <span>companion n. 同伴；伙伴</span> <span>elderly adj. 年老的</span> <span>joy n. 欢乐；快乐</span> <span>collect v. 收集</span> </div></div>    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">1. What does Lin Tao do to help elderly people?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>He visits them to chat and help with housework.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">2. What did Megan do to make a difference?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>She collected books and sent them to children in poor areas.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★★</span>
+      <div class="q-body">3. What message do these stories give us?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Age doesn't matter. Everyone can make a difference.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>🏆 中考题型专练 · 完形填空</summary><div class="content exam-section"><p style="font-size:13px;margin-bottom:8px;">阅读短文，选择最佳选项。</p><div class="reading-passage" style="background:var(--bg-secondary);">      <p>Last summer, I went to a village school (1)____ teach English. The children there made me (2)____ warm. They were so eager (3)____ learn. I taught them songs and games. They taught me (4)____ be strong. This experience made me (5)____ that small actions can make a big difference. I plan to go back next summer!</p></div><div style="margin:4px 0;font-size:13px;"><strong>1.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_1." disabled> A. to</span> <span style="margin-right:12px;"><input type="radio" name="exam_1." disabled> B. for</span> <span style="margin-right:12px;"><input type="radio" name="exam_1." disabled> C. at</span> <span style="margin-right:12px;"><input type="radio" name="exam_1." disabled> D. in</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>2.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_2." disabled> A. feels</span> <span style="margin-right:12px;"><input type="radio" name="exam_2." disabled> B. feel</span> <span style="margin-right:12px;"><input type="radio" name="exam_2." disabled> C. felt</span> <span style="margin-right:12px;"><input type="radio" name="exam_2." disabled> D. feeling</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>3.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_3." disabled> A. to</span> <span style="margin-right:12px;"><input type="radio" name="exam_3." disabled> B. for</span> <span style="margin-right:12px;"><input type="radio" name="exam_3." disabled> C. at</span> <span style="margin-right:12px;"><input type="radio" name="exam_3." disabled> D. in</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>4.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_4." disabled> A. to</span> <span style="margin-right:12px;"><input type="radio" name="exam_4." disabled> B. for</span> <span style="margin-right:12px;"><input type="radio" name="exam_4." disabled> C. at</span> <span style="margin-right:12px;"><input type="radio" name="exam_4." disabled> D. how</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>5.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_5." disabled> A. realize</span> <span style="margin-right:12px;"><input type="radio" name="exam_5." disabled> B. realized</span> <span style="margin-right:12px;"><input type="radio" name="exam_5." disabled> C. realizing</span> <span style="margin-right:12px;"><input type="radio" name="exam_5." disabled> D. to realize</span> </div>
+<div class="exam-q" style="border-left-color:#f59e0b;"><span class="q-tag" style="background:#f59e0b;color:#fff;">答案</span><div class="q-body">1. A (to)；2. B (feel)；3. A (to)；4. A (to)；5. A (realize)</div></div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · How I Can Make a Difference</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">请以"How I Can Make a Difference"为题，写 70 词短文说说你打算通过什么行动为社会做贡献。</div></div><div class="writing-framework">      <div class="fw-step">开头：我想在哪个领域做出改变。</div>
+      <div class="fw-step">主体：具体行动（用 to do 表达目的）。</div>
+      <div class="fw-step">结尾：呼吁大家一起行动。</div></div><div class="writing-model"><div class="en">I want to make a difference by helping stray animals. I plan to volunteer at an animal shelter every weekend to take care of cats and dogs. I will also raise money to buy food for them. I hope my actions can make more people care about animal welfare. Making a difference doesn't need to be big—start with small things!</div><div class="trans">我想通过帮助流浪动物来做出改变。我打算每周末在动物收容所做志愿者，照顾猫狗。我还会筹钱为它们买食物。我希望我的行动能让更多人关注动物福利。做出改变不需要做大事——从小事开始！</div></div></div></details>
+<details class="module detail-module" open><summary>🎯 Project · Community Action Plan</summary><div class="content project-module"><div class="project-brief"><div class="project-title">Community Action Plan</div><div class="project-desc">小组发现社区中存在一个问题（如环境差、老人孤独、流浪动物等），设计一份行动计划并用英语展示。</div></div><div class="project-steps">      <div class="step"><span class="step-num">1</span><span class="step-text">发现社区中的一个问题。</span></div>
+      <div class="step"><span class="step-num">2</span><span class="step-text">讨论解决方案（至少 3 条）。</span></div>
+      <div class="step"><span class="step-num">3</span><span class="step-text">用英语写出行动计划（用到 to do / make / help）。</span></div>
+      <div class="step"><span class="step-num">4</span><span class="step-text">在全班展示。</span></div></div><div class="project-rubric"><table><tr><th>#</th><th>评价标准</th></tr><tr><td>1.</td><td>问题真实</td></tr>
+<tr><td>2.</td><td>方案可行</td></tr>
+<tr><td>3.</td><td>正确使用不定式表目的和使役动词</td></tr>
+<tr><td>4.</td><td>展示有号召力</td></tr></table></div></div></details>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 to do 表达目的</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 make/let/help 使役结构</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能谈论志愿活动</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写做贡献的短文</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>假装你是公益组织创始人，用英语介绍你的公益项目，说明你为什么做这个项目以及它如何改变社会。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">用 to do 写 5 个目的状语</span>
+    <span class="review-dot">用 make/let/help 各写 2 句</span>
+    <span class="review-dot">写一段志愿者经历</span>
+    <span class="review-dot">复习不定式的各种用法</span></div>
+<div class="next-stop" style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;"><a href="b2u07.html" class="nav-arrow">← 上一单元</a><span></span></div>
+<div class="next-stop" style="margin-top:8px;"><strong>➡️ 下一单元：（八年级全部完成 🎉）</strong><br>恭喜你完成了八年级全部 16 个单元的学习！接下来可以进入九年级的学习。</div>
+</main>
+<div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
+<button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis, currentUtterance: null, speaking: false, rate: 0.9, voiceURI: 'en-US',
+    init: function(){var s=this;document.getElementById('speechRate').addEventListener('input',function(){s.rate=+this.value;document.getElementById('speechRateLabel').textContent=this.value;});document.getElementById('speechVoice').addEventListener('change',function(){s.voiceURI=this.value;localStorage.setItem('speech-voice',this.value);});document.getElementById('speechStopBtn').addEventListener('click',function(){s.stop();});document.getElementById('speechCloseBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.remove('open');});document.getElementById('speechToggleBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.toggle('open');});},
+    speak: function(t,c){if(!t)return;this.stop();var u=new SpeechSynthesisUtterance(t);u.lang=this.voiceURI;u.rate=this.rate;u.onend=function(){if(c)c();};this.currentUtterance=u;this.synthesis.speak(u);},
+    speakDialogue: function(id,c){var s=this,el=document.getElementById(id),ls=el?el.querySelectorAll('.en-text'):[],i=0;this.stop();(function n(){if(i>=ls.length){if(c)c();return;}var e=ls[i],t=e.getAttribute('data-speak')||e.textContent;if(!t){i++;n();return;}e.classList.add('speaking');var u=new SpeechSynthesisUtterance(t);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){e.classList.remove('speaking');i++;setTimeout(n,500);};u.onerror=function(){e.classList.remove('speaking');i++;setTimeout(n,200);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    speakVocabSection: function(id,c){var s=this,el=document.getElementById(id),cs=el?el.querySelectorAll('.vocab-card'):[],i=0;this.stop();(function n(){if(i>=cs.length){if(c)c();return;}var e=cs[i],hw=e.querySelector('.headword'),ex=e.querySelector('.example .wotd-say'),t=[];if(hw)t.push(hw.getAttribute('data-speak')||hw.textContent);if(ex)t.push(ex.getAttribute('data-speak')||ex.textContent.replace(/<[^>]+>/g,'').trim());var ft=t.join('. ');if(!ft){i++;n();return;}hw.classList.add('speaking');var u=new SpeechSynthesisUtterance(ft);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){hw.classList.remove('speaking');i++;setTimeout(n,600);};u.onerror=function(){hw.classList.remove('speaking');i++;setTimeout(n,300);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    stop: function(){this.synthesis.cancel();this.speaking=false;}
+  };SpeechManager.init();
+  document.querySelectorAll('.wotd-say').forEach(function(el){el.addEventListener('click',function(){SpeechManager.speak(this.getAttribute('data-speak')||this.textContent);});});
+  document.querySelectorAll('.speak-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var d=this.getAttribute('data-dialogue'),v=this.getAttribute('data-vocab'),t=this.getAttribute('data-target');if(this.classList.contains('speaking')){SpeechManager.stop();this.classList.remove('speaking');return;}this.classList.add('speaking');var done=function(){btn.classList.remove('speaking');};if(d){SpeechManager.speakDialogue(d,done);}else if(v){SpeechManager.speakVocabSection(v,done);}else if(t){var tg=document.getElementById(t);if(!tg){btn.classList.remove('speaking');return;}SpeechManager.speak(tg.textContent.replace(/<[^>]+>/g,''),done);}else{btn.classList.remove('speaking');}});});
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();var hw=this.previousElementSibling;if(hw&&hw.classList.contains('wotd-say')){var t=hw.getAttribute('data-speak')||hw.textContent;SpeechManager.speak(t);}});});
+  (function(){var btn=document.getElementById('expandAllBtn');if(!btn)return;btn.addEventListener('click',function(){var ad=document.querySelectorAll('.module,.exam-module');var ao=true;for(var i=0;i<ad.length;i++){if(!ad[i].hasAttribute('open')){ao=false;break;}};for(var i=0;i<ad.length;i++){if(ao)ad[i].removeAttribute('open');else ad[i].setAttribute('open','');};btn.textContent=ao?'📂 展开全部模块':'📖 收起全部模块';});})();
+  var s=document.getElementById('sidebar'),k='eng8-theme-sidebar';if(!s)return;
+  if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
+  window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=window.scrollY>400?'flex':'none';},{passive:true});
+  document.getElementById('backToTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution');});});
+})();
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);localStorage.setItem("eng8-theme",t);var btn=document.getElementById("themeToggle");if(btn)btn.textContent=t==="dark"?"☀️":"🌙";}
+function toggleTheme(){setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark");}
+</script></body></html>

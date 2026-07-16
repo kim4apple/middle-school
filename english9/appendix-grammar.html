@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>语法全景图 · 九年级全一册</title>
+<link rel="stylesheet" href="css/english9.css">
+<style>
+body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; margin: 0; padding: 0; }
+.wrapper { max-width: 900px; margin: 0 auto; padding: 32px 24px 60px; }
+.hero { text-align: center; padding: 28px 0; }
+.hero h1 { font-size: 28px; font-weight: 800; margin-bottom: 4px; letter-spacing: -0.5px; }
+.hero .sub { color: var(--text-secondary); font-size: 14px; margin-top: 4px; }
+.grammar-grid { display: flex; flex-direction: column; gap: 22px; margin-top: 24px; }
+.grammar-card { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: box-shadow 0.2s; background: var(--bg); }
+.grammar-card:hover { box-shadow: 0 4px 20px -8px rgba(0,0,0,0.1); }
+[data-theme="dark"] .grammar-card:hover { box-shadow: 0 4px 20px -8px rgba(255,255,255,0.04); }
+.card-header { padding: 14px 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; user-select: none; background: var(--bg-secondary); border-bottom: 1px solid var(--border); }
+.card-header .left { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.card-header .num { font-size: 11px; font-weight: 700; color: var(--accent); background: var(--accent-light); padding: 2px 10px; border-radius: 10px; white-space: nowrap; }
+.card-header .title { font-weight: 600; font-size: 15px; }
+.card-header .freq-tag { font-size: 11px; padding: 2px 8px; border-radius: 8px; font-weight: 600; white-space: nowrap; }
+.freq-high { background: #fef2f2; color: #dc2626; }
+.freq-mid { background: #fffbeb; color: #d97706; }
+.freq-low { background: #f0fdf4; color: #16a34a; }
+[data-theme="dark"] .freq-high { background: #450a0a; color: #fca5a5; }
+[data-theme="dark"] .freq-mid { background: #451a03; color: #fcd34d; }
+[data-theme="dark"] .freq-low { background: #052e16; color: #86efac; }
+.card-header .arrow { transition: transform 0.2s; font-size: 14px; flex-shrink: 0; margin-top: 2px; }
+.card-header.open .arrow { transform: rotate(180deg); }
+.card-body { padding: 20px 24px; display: none; }
+.card-body.open { display: block; }
+.g-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+.g-table th { background: var(--accent-light); color: var(--accent); text-align: left; padding: 8px 12px; font-weight: 700; font-size: 12px; }
+.g-table td { padding: 8px 12px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.5; }
+.g-table tr:last-child td { border-bottom: none; }
+.pit { background: #fef2f2; border-left: 3px solid #dc2626; padding: 12px 16px; border-radius: 6px; margin: 12px 0; font-size: 13px; }
+[data-theme="dark"] .pit { background: #1c1017; border-left-color: #dc2626; }
+.pit .wrong { color: #dc2626; }
+.pit .correct { color: #16a34a; }
+.compare { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; margin: 12px 0; font-size: 13px; }
+.compare-row { display: flex; gap: 16px; flex-wrap: wrap; }
+.compare-item { flex: 1; min-width: 160px; }
+.compare-item .label { font-weight: 700; color: var(--accent); display: block; margin-bottom: 4px; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; margin: 16px 0; font-size: 13px; color: var(--accent); text-decoration: none; }
+.back-link:hover { text-decoration: underline; }
+.theme-toggle { position: fixed; top: 16px; right: 16px; z-index: 999; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border); background: var(--bg); color: var(--text); cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; }
+.theme-toggle:hover { background: var(--accent-light); }
+.back-to-top { position: fixed; bottom: 24px; right: 24px; width: 44px; height: 44px; border-radius: 50%; background: var(--accent); color: #fff; border: none; cursor: pointer; font-size: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); display: none; z-index: 999; align-items: center; justify-content: center; }
+@media (max-width: 640px) { .wrapper { padding: 20px 14px 40px; } .hero h1 { font-size: 22px; } .card-header { padding: 12px 14px; } .card-body { padding: 14px 16px; } .g-table { font-size: 12px; } .g-table th,.g-table td { padding: 6px 8px; } .compare-item { min-width: 100%; } }
+</style>
+<script>(function(){var t=localStorage.getItem("eng9-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+
+<button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+<button class="back-to-top" id="backToTop">↑</button>
+
+<div class="wrapper">
+
+<a href="index.html" class="back-link">← 返回九年级首页</a>
+
+<div class="hero">
+  <h1>📚 语法全景图 · 九年级全一册</h1>
+  <p class="sub">特级教师｜14 单元中考核心语法 · 频度标注 · 易错辨析 · 对比矩阵</p>
+</div>
+
+<div class="grammar-grid">
+
+<!-- ========== U1 ========== -->
+<div class="grammar-card">
+  <div class="card-header" onclick="toggle(this)">
+    <div class="left">
+      <span class="num">U1</span>
+      <span class="title">How can we become good learners? — 学习方法</span>
+      <span class="freq-tag freq-high">🔥 中考高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <h4 style="margin:0 0 6px;">🎯 核心考点：by + 动名词 · 动名词作主语</h4>
+    <table class="g-table">
+      <tr><th>结构</th><th>用法</th><th>例句</th></tr>
+      <tr><td><b>by + doing</b></td><td>「通过……方式」（回答 How 问句）</td><td>I study <b>by making</b> flashcards.</td></tr>
+      <tr><td><b>Doing… + is/helps…</b></td><td>动名词短语作主语，谓语用三单</td><td><b>Reading aloud</b> helps a lot.</td></tr>
+      <tr><td>How 询问方式</td><td>How + 一般现在时/一般过去时</td><td><b>How do</b> you study for a test?</td></tr>
+    </table>
+
+    <div class="pit">
+      <strong>🚨 易错点 1：by + doing vs for + doing</strong><br>
+      <table class="g-table" style="margin:4px 0;">
+        <tr><th>介词</th><th>含义</th><th>例句</th></tr>
+        <tr><td><b>by</b> + doing</td><td>"通过……方式"（手段/方法）</td><td>I learn English <b>by listening</b> to English songs.</td></tr>
+        <tr><td><b>for</b> + doing</td><td>"为了……/用于……"（目的/用途）</td><td>This app is used <b>for learning</b> new words.</td></tr>
+      </table>
+      ❌ <span class="wrong">I study English <u>for listening</u> to English songs.</span>（手段用 by）<br>
+      ✅ <span class="correct">I study English <u>by listening</u> to English songs.</span>
+      <br><br>
+      <strong>🚨 易错点 2：动名词作主语的谓语用三单</strong><br>
+      ❌ <span class="wrong">Reading aloud <u>help</u> a lot.</span><br>
+      ✅ <span class="correct">Reading aloud <u>helps</u> a lot.</span>
+      <br><br>
+      <strong>📌 中考提示</strong>：by + 动名词是回答 How 问句的专用结构，中考写作必备——"I improve my English <u>by reading</u> English newspapers."。
+    </div>
+  </div>
+</div>
+
+<!-- ========== U2 ========== -->
+<div class="grammar-card">
+  <div class="card-header" onclick="toggle(this)">
+    <div class="left">
+      <span class="num">U2</span>
+      <span class="title">I think that mooncakes are delicious! — 节日与情感</span>
+      <span class="freq-tag freq-high">🔥🔥 中考必考</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <h4 style="margin:0 0 6px;">🎯 核心考点：宾语从句（that / if / whether）· 感叹句</h4>
+
+    <p style="font-size:13px;margin:8px 0 4px;"><b>宾语从句三要素</b></p>
+    <table class="g-table">
+      <tr><th>引导词</th><th>从句语序</th><th>主从句时态一致</th></tr>
+      <tr><td><b>that</b>（陈述句，可省略）</td><td>陈述语序</td><td>主句现→从句任意；主句过→从句过</td></tr>
+      <tr><td><b>if/whether</b>（一般疑问句 → "是否"）</td><td>陈述语序</td><td>同上</td></tr>
+    </table>
+    <p style="font-size:13px;margin:4px 0;">I think <b>that mooncakes are delicious</b>. / I wonder <b>if he likes the festival</b>.</p>
+
+    <p style="font-size:13px;margin:12px 0 4px;"><b>感叹句（中考单选/改错必考！）</b></p>
+    <table class="g-table">
+      <tr><th>句式</th><th>结构</th><th>例句</th></tr>
+      <tr><td><b>What + 名词短语!</b></td><td>What (a/an) + adj. + n. + (主 + 谓)!</td><td><b>What a bright</b> moon it is!</td></tr>
+      <tr><td><b>How + 形容词/副词!</b></td><td>How + adj./adv. + 主 + 谓!</td><td><b>How bright</b> the moon is!</td></tr>
+    </table>
+
+    <div class="pit">
+      <strong>🚨 易错点 1：What vs How 感叹句选择</strong><br>
+      ❌ <span class="wrong"><u>How</u> a beautiful day it is!</span> ← How 后不能接名词<br>
+      ✅ <span class="correct"><u>What</u> a beautiful day it is!</span>（What + 名词短语）<br>
+      ✅ <span class="correct"><u>How</u> beautiful the day is!</span>（How + 形容词）
+      <br><br>
+      <strong>🚨 易错点 2：宾语从句语序——疑问句变陈述语序</strong><br>
+      ❌ <span class="wrong">I wonder <u>where is the post office</u>.</span><br>
+      ✅ <span class="correct">I wonder <u>where the post office is</u>.</span>
+      <br><br>
+      <strong>📌 中考提示</strong>：宾语从句语序（主 + 谓，不倒装）是中考单选/语法填空必考题。口诀：<b>"疑问词后跟陈述，be 动词放主语后"</b>。
+    </div>
+
+    <div class="compare">
+      <strong>🔍 if vs whether 辨析</strong>
+      <div class="compare-row">
+        <div class="compare-item">
+          <span class="label">if 可以</span>
+          一般问句转化宾语从句：<br>I don't know <i>if</i> he will come.
+        </div>
+        <div class="compare-item">
+          <span class="label">必须用 whether 的情况</span>
+          ① 与 or not 连用：whether…or not<br>
+          ② 介词后：It depends on whether…<br>
+          ③ 不定式前：whether to go
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== U3 ========== -->
+<div class="grammar-card">
+  <div class="card-header" onclick="toggle(this)">
+    <div class="left">
+      <span class="num">U3</span>
+      <span class="title">Could you please tell me where the restrooms are? — 问路与求助</span>
+      <span class="freq-tag freq-high">🔥 中考高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <h4 style="margin:0 0 6px;">🎯 核心考点：宾语从句语序 · 礼貌请求分级</h4>
+
+    <p style="font-size:13px;margin:8px 0 4px;"><b>疑问句 → 宾语从句语序变化（中考必杀题）</b></p>
+    <table class="g-table">
+      <tr><th>原疑问句</th><th>变为宾语从句</th></tr>
+      <tr><td>Where <b>is</b> the library?</td><td>Could you tell me where the library <b>is</b>?</td></tr>
+      <tr><td>How <b>can</b> I get there?</td><td>I wonder how I <b>can</b> get there.</td></tr>
+      <tr><td>Is there a bank near here?</td><td>Do you know <b>if</b> there is a bank near here?</td></tr>
+    </table>
+
+    <p style="font-size:13px;margin:12px 0 4px;"><b>礼貌程度层级</b></p>
+    <table class="g-table">
+      <tr><th>句式</th><th>礼貌程度</th><th>使用场景</th></tr>
+      <tr><td>Where <b>is</b> the restroom?</td><td>直接（略显生硬）</td><td>熟悉的人之间</td></tr>
+      <tr><td><b>Can you tell me</b> where…</td><td>日常礼貌</td><td>日常对话</td></tr>
+      <tr><td><b>Could you please tell me</b>…</td><td>更礼貌</td><td>对陌生人</td></tr>
+      <tr><td><b>I wonder if</b> you could…</td><td>非常礼貌</td><td>正式场合</td></tr>
+    </table>
+
+    <div class="pit">
+      <strong>🚨 易错点：Could you tell me + 从句语序</strong><br>
+      ❌ <span class="wrong">Could you tell me <u>where is the restroom</u>?</span>（疑问句语序 ❌）<br>
+      ✅ <span class="correct">Could you tell me <u>where the restroom is</u>?</span>
+      <br><br>
+      <strong>📌 中考提示</strong>：U2 + U3 的宾语从句合并出题是常见套路。注意：主句是 Could you tell me… 时，could 表礼貌而非过去时。
+    </div>
+  </div>
+</div>
+
+<!-- ========== U4 ========== -->
+<div class="grammar-card">
+  <div class="card-header" onclick="toggle(this)">
+    <div class="left">
+      <span class="num">U4</span>
+      <span class="title">I used to be afraid of the dark. — 今昔对比</span>
+      <span class="freq-tag freq-high">🔥 中考高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <h4 style="margin:0 0 6px;">🎯 核心考点：used to 结构（过去常常 / 过去曾）</h4>
+
+    <table class="g-table">
+      <tr><th>句式</th><th>结构</th><th>例句</th></tr>
+      <tr><td>肯定句</td><td>主语 + <b>used to</b> + 动词原形</td><td>I <b>used to be</b> afraid of the dark.</td></tr>
+      <tr><td>否定句</td><td>主语 + <b>didn't use to</b> + 动词原形</td><td>He <b>didn't use to</b> like sports.</td></tr>
+      <tr><td>一般疑问句</td><td><b>Did</b> + 主语 + <b>use to</b> + 动词原形?</td><td><b>Did</b> you <b>use to</b> have long hair?</td></tr>
+      <tr><td>反意疑问句</td><td>…, <b>didn't</b> / <b>usedn't</b> + 主语?</td><td>You used to be quiet, <b>didn't you</b>?</td></tr>
+    </table>
+
+    <div class="compare">
+      <strong>🔍 used to / be used to / be used for / be used as 辨析（完形填空大杀器）</strong>
+      <div class="compare-row">
+        <div class="compare-item">
+          <span class="label">used to + do</span>
+          "过去常常做"（现在不做了）<br>
+          <i>I used to play soccer.</i>
+        </div>
+        <div class="compare-item">
+          <span class="label">be used to + doing</span>
+          "习惯做"（to 是介词）<br>
+          <i>I am used to getting up early.</i>
+        </div>
+        <div class="compare-item">
+          <span class="label">be used to + do</span>
+          "被用来做"（不定式表目的）<br>
+          <i>Wood is used to make paper.</i>
+        </div>
+        <div class="compare-item">
+          <span class="label">be used for + doing</span>
+          "被用来做"（for 表用途）<br>
+          <i>Wood is used for making paper.</i>
+        </div>
+      </div>
+    </div>
+
+    <div class="pit">
+      <strong>🚨 易错点 1：used to 的否定式和疑问式</strong><br>
+      ❌ <span class="wrong">I <u>usedn't to</u> be shy.</span>（较少用，但语法正确）<br>
+      ✅ <span class="correct">I <u>didn't use to</u> be shy.</span>（更常见）<br>
+      <small>注：used not to / usedn't to 也正确，但中考更倾向 didn't use to。</small>
+      <br><br>
+      <strong>🚨 易错点 2：used to 与 be used to 混淆</strong><br>
+      ❌ <span class="wrong">I <u>used to</u> getting up early now.</span>（"习惯"应用 be used to + doing）<br>
+      ✅ <span class="correct">I <u>am used to</u> getting up early.</span>
+      <br><br>
+      <strong>📌 中考提示</strong>：used to 四姐妹辨析（used to do / be used to doing / be used to do / be used for doing）是完形填空经典题。一个句中看到 used 先看后面动词形式：<b>do → 过去常常 / 被用来；doing → 习惯</b>。
+    </div>
+  </div>
+</div>
+
+<!-- ========== U5 ========== -->
+<div class="grammar-card">
+  <div class="card-header" onclick="toggle(this)">
+    <div class="left">
+      <span class="num">U5</span>
+      <span class="title">What are the shirts made of? — 产品与材料</span>
+      <span class="freq-tag freq-high">🔥 中考高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <h4 style="margin:0 0 6px;">🎯 核心考点：一般现在时被动语态 · be made of/from/in/by</h4>
+
+    <table class="g-table">
+      <tr><th>主动句</th><th>被动句</th><th>规则</th></tr>
+      <tr><td>People <b>grow</b> tea in China.</td><td>Tea <b>is grown</b> in China.</td><td>is/are + 过去分词</td></tr>
+      <tr><td>Workers <b>make</b> cars.</td><td>Cars <b>are made</b> by workers.</td><td>be + 过去分词 (± by)</td></tr>
+    </table>
+
+    <p style="font-size:13px;margin:12px 0 4px;"><b>be made + 介词 辨析</b></p>
+    <table class="g-table">
+      <tr><th>搭配</th><th>用法</th><th>例句</th></tr>
+      <tr><td><b>be made of</b></td><td>看得出原材料（物理变化）</td><td>The chair is made <b>of</b> wood.</td></tr>
+      <tr><td><b>be made from</b></td><td>看不出原材料（化学变化）</td><td>Paper is made <b>from</b> trees.</td></tr>
+      <tr><td><b>be made in</b></td><td>产地</td><td>It's made <b>in</b> China.</td></tr>
+      <tr><td><b>be made by</b></td><td>动作执行者</td><td>It's made <b>by</b> hand.</td></tr>
+      <tr><td><b>be made into</b></td><td>成品转化</td><td>Grapes are made <b>into</b> wine.</td></tr>
+    </table>
+
+    <div class="pit">
+      <strong>🚨 易错点 1：of vs from 的选择</strong><br>
+      ❌ <span class="wrong">Wine is made <u>of</u> grapes.</span>（看不出葡萄了，用 from）<br>
+      ✅ <span class="correct">Wine is made <u>from</u> grapes.</span>
+      <br><br>
+      <strong>🚨 易错点 2：被动语态中 be 动词的遗漏</strong><br>
+      ❌ <span class="wrong">This car <u>made</u> in Japan.</span><br>
+      ✅ <span class="correct">This car <u>is made</u> in Japan.</span>
+      <br><br>
+      <strong>📌 中考提示</strong>：一般现在时被动是中考语法填空常考，注意 be 动词随主语变化：单数 is / 复数 are。
+    </div>
+  </div>
+</div>
+
+<!-- ========== U6 ========== -->
+<div class="grammar-card">
+  <div class="card-header" onclick="toggle(this)">
+    <div class="left">
+      <span class="num">U6</span>
+      <span class="title">When was it invented? — 发明与历史</span>
+      <span class="freq-tag freq-high">🔥 中考高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <h4 style="margin:0 0 6px;">🎯 核心考点：一般过去时被动语态</h4>
+
+    <table class="g-table">
+      <tr><th>时态被动</th><th>结构</th><th>例句</th></tr>
+      <tr><td>一般现在时被动</td><td>am/is/are + 过去分词</td><td>Tea <b>is grown</b> in China.</td></tr>
+      <tr><td>一般过去时被动</td><td><b>was/were</b> + 过去分词</td><td>The car <b>was invented</b> in 1885.</td></tr>
+      <tr><td>被动 + by</td><td>was/were + 过去分词 + by</td><td>It <b>was invented by</b> Karl Benz.</td></tr>
+    </table>
+
+    <div class="compare">
+      <strong>🔍 被动语态时态对照表</strong>
+      <div class="compare-row">
+        <div class="compare-item">
+          <span class="label">一般现在时被动</span>
+          am/is/are + 过去分词<br>
+          Tea <i>is grown</i> in China.
+        </div>
+        <div class="compare-item">
+          <span class="label">一般过去时被动</span>
+          was/were + 过去分词<br>
+          Tea <i>was discovered</i> long ago.
+        </div>
+        <div class="compare-item">
+          <span class="label">情态动词被动</span>
+          can/must/should + be + 过去分词<br>
+          Tea <i>can be found</i> everywhere.
+        </div>
+      </div>
+    </div>
+
+    <div class="pit">
+      <strong>🚨 易错点 1：be 动词的时态选择</strong><br>
+      一般现在时：The shirt <u>is</u> made of cotton. ✓<br>
+      一般过去时：The shirt <u>was</u> made last year. ✓<br>
+      ❌ <span class="wrong">The car <u>is</u> invented in 1885.</span>（过去的时间用 was）<br>
+      ✅ <span class="correct">The car <u>was</u> invented in 1885.</span>
+      <br><br>
+      <strong>📌 中考提示</strong>：被动语态的中考考查方式是看语境中的时态来判断 be 动词的形式。注意时间状语：yesterday, last year → was/were；every day, usually → is/are。
+    </div>
+  </div>
+</div>
+
+<!-- ========== U7 ========== -->
+<div class="grammar-card">
+  <div class="card-header" onclick="toggle(this)">
+    <div class="left">
+      <span class="num">U7</span>
+      <span class="title">Teenagers should be allowed to choose their own clothes. — 规则与允许</span>
+      <span class="freq-tag freq-high">🔥🔥 中考必考</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <h4 style="margin:0 0 6px;">🎯 核心考点：含情态动词的被动语态 · allow 固定搭配</h4>
+
+    <table class="g-table">
+      <tr><th>句式</th><th>结构</th><th>例句</th></tr>
+      <tr><td>肯定句</td><td>情态动词 + <b>be</b> + 过去分词</td><td>Homework <b>should be done</b> on time.</td></tr>
+      <tr><td>否定句</td><td>情态动词 + not + <b>be</b> + 过去分词</td><td>Phones <b>shouldn't be used</b> in class.</td></tr>
+      <tr><td>一般疑问句</td><td>情态动词 + 主语 + <b>be</b> + 过去分词?</td><td><b>Should</b> tests <b>be made</b> easier?</td></tr>
+    </table>
+
+    <p style="font-size:13px;margin:12px 0 4px;"><b>allow 搭配链（中考完形/写作必考）</b></p>
+    <table class="g-table">
+      <tr><th>结构</th><th>含义</th><th>例句</th></tr>
+      <tr><td><b>allow</b> + sb. + <b>to do</b></td><td>允许某人做某事</td><td>Parents <b>allow</b> teenagers <b>to choose</b> clothes.</td></tr>
+      <tr><td><b>be allowed to do</b></td><td>被允许做某事</td><td>Teenagers <b>should be allowed to choose</b> clothes.</td></tr>
+      <tr><td><b>be allowed to do</b> + 情态<br></td><td>含情态动词的被动</td><td>They <b>should be allowed to choose</b> their own clothes.</td></tr>
+    </table>
+
+    <div class="pit">
+      <strong>🚨 易错点：情态动词被动中 be 的遗漏</strong><br>
+      ❌ <span class="wrong">This problem <u>must solved</u> immediately.</span>（漏了 be）<br>
+      ✅ <span class="correct">This problem <u>must be solved</u> immediately.</span>
+      <br><br>
+      <strong>📌 中考提示</strong>：本单元是把情态动词和被动语态结合，是中考语法填空的压轴级考点。关键公式：<b>情态动词 + be + 过去分词</b>，中间缺一不可。
+    </div>
+
+    <div class="compare">
+      <strong>🔍 allow / let / permit 区别</strong>
+      <div class="compare-row">
+        <div class="compare-item">
+          <span class="label">allow sb. to do</span>
+          最常用，中性<br>
+          Parents allow me to watch TV.
+        </div>
+        <div class="compare-item">
+          <span class="label">let sb. do</span>
+          较口语化，let 后无 to<br>
+          Let me help you.
+        </div>
+        <div class="compare-item">
+          <span class="label">permit sb. to do</span>
+          较正式，多用于规定<br>
+          The rules permit us to park here.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== U8 ========== -->
+<div class="grammar-card">
+  <div class="card-header" onclick="toggle(this)">
+    <div class="left">
+      <span class="num">U8</span>
+      <span class="title">It must belong to Carla. — 推断与归属</span>
+      <span class="freq-tag freq-high">🔥🔥 中考必考</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <h4 style="margin:0 0 6px;">🎯 核心考点：情态动词表推测 · belong to</h4>
+
+    <table class="g-table">
+      <tr><th>情态动词</th><th>推测程度</th><th>含义</th><th>例句</th></tr>
+      <tr><td><b>must</b></td><td>95% 肯定</td><td>"一定……"</td><td>It <b>must be</b> Carla's.</td></tr>
+      <tr><td><b>could</b></td><td>~70% 肯定</td><td>"可能……"</td><td>It <b>could be</b> Wang Fang's.</td></tr>
+      <tr><td><b>might</b></td><td>~50% 可能</td><td>"也许……"</td><td>It <b>might belong to</b> Li Ming.</td></tr>
+      <tr><td><b>can't</b></td><td>~99% 否定</td><td>"不可能……"</td><td>It <b>can't be</b> his.</td></tr>
+    </table>
+
+    <div style="margin:12px 0;font-size:13px;">
+      <b>belong to + 名词/代词宾格</b>（"属于"）<br>
+      <i>This book belongs <u>to her</u>.</i>  → 等于 <i>This book is <u>hers</u>.</i><br>
+      注意：belong to 无被动语态、无进行时：<span class="wrong">It is belonged to me</span> ❌
+    </div>
+
+    <div class="pit">
+      <strong>🚨 易错点 1：must/can't/could 表推测 vs 表能力</strong><br>
+      ❌ <span class="wrong">He <u>mustn't</u> be at home.</span>（mustn't 是"禁止"，不是"一定不"）<br>
+      ✅ <span class="correct">He <u>can't</u> be at home.</span>（"他不可能在家"）<br>
+      <small>口诀：肯定推测用 must，否定推测用 can't——mustn't 是"禁止"。</small>
+      <br><br>
+      <strong>🚨 易错点 2：belong to 后接宾格</strong><br>
+      ❌ <span class="wrong">It belongs to <u>I</u> / <u>she</u>.</span><br>
+      ✅ <span class="correct">It belongs to <u>me</u> / <u>her</u>.</span>
+      <br><br>
+      <strong>📌 中考提示</strong>：情态动词表推测是中考单选王牌题。侧重两点：① must / can't / could / might 的程度差异；② 对过去的推测（must have done / can't have done）。
+    </div>
+  </div>
+</div>
+
+<!-- ========== U9 ========== -->
+<div class="grammar-card">
+  <div class="card-header" onclick="toggle(this)">
+    <div class="left">
+      <span class="num">U9</span>
+      <span class="title">I like music that I can dance to. — 喜好与品味</span>
+      <span class="freq-tag freq-high">🔥🔥 中考必考（定语从句入门）</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <h4 style="margin:0 0 6px;">🎯 核心考点：定语从句（that / who / which）</h4>
+
+    <table class="g-table">
+      <tr><th>关系代词</th><th>指代</th><th>先行词</th><th>例句</th></tr>
+      <tr><td><b>that</b></td><td>人 / 物</td><td>人或物</td><td>I like music <b>that</b> makes me happy.</td></tr>
+      <tr><td><b>who</b></td><td>人</td><td>人（主格/宾格）</td><td>I like singers <b>who</b> sing well.</td></tr>
+      <tr><td><b>which</b></td><td>物</td><td>物（主格/宾格）</td><td>I like movies <b>which</b> are funny.</td></tr>
+      <tr><td><b>whom</b></td><td>人（宾格）</td><td>人（作宾语）</td><td>The person <b>whom</b> I met was kind.</td></tr>
+    </table>
+
+    <div class="pit">
+      <strong>🚨 易错点 1：that vs which 的选择</strong><br>
+      <table class="g-table" style="margin:4px 0;">
+        <tr><th>只能用 that 的情况</th><th>只能用 which 的情况</th></tr>
+        <tr><td>① 先行词含序数词/最高级<br><i>the first book that I read</i></td><td>① 非限制性定语从句（逗号后）<br><i>The book, which is new, is mine.</i></td></tr>
+        <tr><td>② 先行词是 all / everything / nothing<br><i>All that I want is peace.</i></td><td>② 介词 + which<br><i>The pen with which I wrote is lost.</i></td></tr>
+        <tr><td>③ 先行词同时含人和物<br><i>The people and things that I like</i></td><td></td></tr>
+      </table>
+      <br>
+      <strong>🚨 易错点 2：关系代词作宾语可省略</strong><br>
+      ✅ This is the movie <u>(that)</u> I watched last night.<br>
+      <small>that/which 在从句中作宾语时可省略，作主语不可省。</small>
+      <br><br>
+      <strong>📌 中考提示</strong>：定语从句是中考作文的加分神器。一个定语从句就能把简单句变为复合句：<br>
+      <i>I have a friend <u>who is good at English</u>.</i> ✓ 加分句
+    </div>
+  </div>
+</div>
+
+<!-- ========== U10 ========== -->
+<div class="grammar-card">
+  <div class="card-header" onclick="toggle(this)">
+    <div class="left">
+      <span class="num">U10</span>
+      <span class="title">You're supposed to shake hands. — 习俗与礼仪</span>
+      <span class="freq-tag freq-mid">📌 中考中频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <h4 style="margin:0 0 6px;">🎯 核心考点：be supposed to · be expected to · 文化差异表达</h4>
+
+    <table class="g-table">
+      <tr><th>句式</th><th>用法</th><th>语气强弱</th><th>例句</th></tr>
+      <tr><td><b>be supposed to</b> + do</td><td>基于规则/习俗的"应该"</td><td>较强（有约束力）</td><td>You <b>are supposed to</b> shake hands.</td></tr>
+      <tr><td><b>be not supposed to</b> + do</td><td>"不应该"</td><td>禁止性</td><td>You <b>are not supposed to</b> kiss on the cheek.</td></tr>
+      <tr><td><b>be expected to</b> + do</td><td>"被期望做"（较委婉）</td><td>中等（社会期望）</td><td>You <b>are expected to</b> arrive on time.</td></tr>
+      <tr><td><b>should</b> + do</td><td>"应该"（个人建议）</td><td>较弱（个人观点）</td><td>You <b>should</b> be polite.</td></tr>
+    </table>
+
+    <div class="pit">
+      <strong>🚨 易错点：suppose to → supposed to（d 不可漏）</strong><br>
+      ❌ <span class="wrong">You <u>are suppose to</u> shake hands.</span>（忘记 supposed 的 d）<br>
+      ✅ <span class="correct">You <u>are supposed to</u> shake hands.</span>
+      <br><br>
+      <strong>📌 中考提示</strong>：be supposed to 的否定式和疑问式都是通过 be 动词实现的：<br>
+      You <u>are</u> not supposed to… / <u>Are</u> we supposed to…?
+    </div>
+  </div>
+</div>
+
+<!-- ========== U11 ========== -->
+<div class="grammar-card">
+  <div class="card-header" onclick="toggle(this)">
+    <div class="left">
+      <span class="num">U11</span>
+      <span class="title">Sad movies make me cry. — 情感与感受</span>
+      <span class="freq-tag freq-mid">📌 中考中频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <h4 style="margin:0 0 6px;">🎯 核心考点：make + 宾语 + 宾补</h4>
+
+    <table class="g-table">
+      <tr><th>结构</th><th>例句</th><th>说明</th></tr>
+      <tr><td>make + sb. + <b>adj.</b></td><td>Sad movies make me <b>sad</b>.</td><td>形容词作宾补</td></tr>
+      <tr><td>make + sb. + <b>do</b></td><td>The joke made me <b>laugh</b>.</td><td>省略 to 的不定式</td></tr>
+      <tr><td>make + sb. + <b>want to do</b></td><td>It makes me <b>want to eat</b>.</td><td>want to do 作宾补</td></tr>
+      <tr><td>make + sb. + <b>feel + adj.</b></td><td>It makes me <b>feel relaxed</b>.</td><td>省略 to 的 feel</td></tr>
+    </table>
+
+    <div class="pit">
+      <strong>🚨 易错点：make sb. do（无 to）vs want sb. to do（有 to）</strong><br>
+      ❌ <span class="wrong">Sad movies make me <u>to cry</u>.</span><br>
+      ✅ <span class="correct">Sad movies make me <u>cry</u>.</span>（make 后省 to）<br>
+      对比：I want you <u>to help</u> me.（want 后保留 to）
+      <br><br>
+      <strong>📌 中考提示</strong>：使役动词（make / let / have）后接省略 to 的不定式，改为被动时 to 要还原：<br>
+      主动：The boss made him <u>work</u> all day. → 被动：He <u>was made to work</u> all day.
+    </div>
+  </div>
+</div>
+
+<!-- ========== U12 ========== -->
+<div class="grammar-card">
+  <div class="card-header" onclick="toggle(this)">
+    <div class="left">
+      <span class="num">U12</span>
+      <span class="title">Life is full of the unexpected. — 意外与经历</span>
+      <span class="freq-tag freq-high">🔥🔥 中考必考（与现在完成时联动）</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <h4 style="margin:0 0 6px;">🎯 核心考点：过去完成时（had + 过去分词）</h4>
+
+    <table class="g-table">
+      <tr><th>句式</th><th>结构</th><th>例句</th></tr>
+      <tr><td>肯定句</td><td>主语 + <b>had</b> + 过去分词</td><td>I <b>had finished</b> my homework.</td></tr>
+      <tr><td>否定句</td><td>主语 + <b>hadn't</b> + 过去分词</td><td>I <b>hadn't eaten</b> breakfast.</td></tr>
+      <tr><td>一般疑问句</td><td><b>Had</b> + 主语 + 过去分词?</td><td><b>Had</b> you ever been there before?</td></tr>
+    </table>
+
+    <p style="font-size:13px;margin:12px 0 4px;"><b>过去完成时的典型句型（必考）</b></p>
+    <table class="g-table">
+      <tr><th>句型</th><th>含义</th><th>例句</th></tr>
+      <tr><td><b>By the time</b> + 从句(过)，主句(had done)</td><td>"到……时已经……"</td><td><b>By the time</b> I got there, he <b>had left</b>.</td></tr>
+      <tr><td><b>When/Before</b> + 从句(过)，主句(had done)</td><td>"在……之前已经……"</td><td><b>When</b> I arrived, the bus <b>had already left</b>.</td></tr>
+    </table>
+
+    <div class="compare">
+      <strong>🔍 现在完成时 vs 过去完成时 vs 一般过去时（中考对比之王）</strong>
+      <div class="compare-row">
+        <div class="compare-item">
+          <span class="label">一般过去时</span>
+          "过去某时发生的动作"<br>
+          I <i>saw</i> the movie yesterday.<br>
+          <small>关注"发生的时间点"</small>
+        </div>
+        <div class="compare-item">
+          <span class="label">现在完成时</span>
+          "过去动作与现在有关"<br>
+          I <i>have seen</i> the movie.<br>
+          <small>关注"与现在的联系"</small>
+        </div>
+        <div class="compare-item">
+          <span class="label">过去完成时</span>
+          "过去的过去"<br>
+          I <i>had seen</i> the movie before she told me.<br>
+          <small>关注"两个过去的先后"</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="pit">
+      <strong>🚨 易错点：过去完成时必须有"过去的时间参照"</strong><br>
+      ❌ <span class="wrong">I <u>had finished</u> my homework.</span>（没有"过去参照"，不该用过去完成时）<br>
+      ✅ <span class="correct">I <u>had finished</u> my homework <u>before my mom came home</u>.</span><br>
+      <small>技巧：过去完成时一定不是孤立句子，要有另一个过去的动作或时间作为参照点。</small>
+      <br><br>
+      <strong>📌 中考提示</strong>：by the time / when / before + 一般过去时 → 主句用过去完成时。这是中考语法填空固定套路！
+    </div>
+  </div>
+</div>
+
+<!-- ========== U13 ========== -->
+<div class="grammar-card">
+  <div class="card-header" onclick="toggle(this)">
+    <div class="left">
+      <span class="num">U13</span>
+      <span class="title">We're trying to save the earth! — 环保与综合语法</span>
+      <span class="freq-tag freq-high">🔥 中考高频（综合复习）</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <h4 style="margin:0 0 6px;">🎯 核心考点：时态综合 · 被动语态 · 情态动词 · used to 综合复习</h4>
+
+    <table class="g-table">
+      <tr><th>结构</th><th>例句</th><th>语法点</th></tr>
+      <tr><td>We <b>are trying</b> to save the earth.</td><td>现在进行时</td><td>正在进行的努力</td></tr>
+      <tr><td>The air is badly <b>polluted</b>.</td><td>被动语态（一般现在时）</td><td>环境被破坏的现状</td></tr>
+      <tr><td>Rivers <b>are being polluted</b>.</td><td>现在进行时被动语态</td><td>正在被破坏（U13 新增）</td></tr>
+      <tr><td>We <b>should</b> recycle more.</td><td>情态动词 should</td><td>建议/责任</td></tr>
+      <tr><td>The river <b>used to be</b> clean.</td><td>used to + 被动态</td><td>今昔对比</td></tr>
+    </table>
+
+    <div class="pit">
+      <strong>🚨 易错点：进行时被动语态结构</strong><br>
+      ❌ <span class="wrong">The river <u>is polluting</u>.</span>（主动，含义变成"河流正在污染"）<br>
+      ✅ <span class="correct">The river <u>is being polluted</u>.</span>（被动，河流正在被污染）<br>
+      <small>结构：be + being + 过去分词</small>
+      <br><br>
+      <strong>📌 中考提示</strong>：U13 是九年级语法的大综合，环保话题是中考写作高频题材。<br>
+      背下这句：<i>The environment <u>is being destroyed</u>, so something <u>must be done</u> to protect it.</i>
+    </div>
+
+    <div class="compare">
+      <strong>🔍 现在进行时被动（U13新增）vs 一般现在时被动</strong>
+      <div class="compare-row">
+        <div class="compare-item">
+          <span class="label">一般现在时被动</span>
+          is/are + 过去分词<br>
+          The river <i>is polluted</i>.<br>
+          <small>强调状态/事实</small>
+        </div>
+        <div class="compare-item">
+          <span class="label">现在进行时被动</span>
+          is/are + being + 过去分词<br>
+          The river <i>is being polluted</i>.<br>
+          <small>强调正在进行的动作</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== U14 ========== -->
+<div class="grammar-card">
+  <div class="card-header" onclick="toggle(this)">
+    <div class="left">
+      <span class="num">U14</span>
+      <span class="title">I remember meeting all of you in Grade 7. — 回忆与毕业</span>
+      <span class="freq-tag freq-high">🔥 中考高频（毕业季写作素材）</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <h4 style="margin:0 0 6px;">🎯 核心考点：remember/forget/try/stop + doing vs to do · 综合复习</h4>
+
+    <table class="g-table">
+      <tr><th>动词</th><th>+ doing（做过/做过的事）</th><th>+ to do（还没做/目的）</th></tr>
+      <tr><td><b>remember</b></td><td>I remember <b>meeting</b> you in Grade 7.<br><small>我记得见过你</small></td><td>Remember <b>to call</b> me.<br><small>记得要打电话</small></td></tr>
+      <tr><td><b>forget</b></td><td>I forgot <b>locking</b> the door.<br><small>忘了已经锁了门</small></td><td>Don't forget <b>to write</b>.<br><small>别忘了要写信</small></td></tr>
+      <tr><td><b>try</b></td><td>Try <b>eating</b> healthy food.<br><small>试试吃健康食品</small></td><td>Try <b>to finish</b> on time.<br><small>尽力按时完成</small></td></tr>
+      <tr><td><b>stop</b></td><td>Stop <b>smoking</b>.<br><small>停止吸烟</small></td><td>Stop <b>to rest</b>.<br><small>停下来去休息</small></td></tr>
+      <tr><td><b>go on</b></td><td>Go on <b>reading</b>.<br><small>继续读同一件事</small></td><td>Go on <b>to read</b>.<br><small>接着读另一件事</small></td></tr>
+    </table>
+
+    <div class="pit">
+      <strong>🚨 易错点 1：remember doing vs to do 的意思完全不同</strong><br>
+      ❌ <span class="wrong">I remember <u>to meet</u> you before.</span>（想表达"记得见过"，却用了"记得要去见"）<br>
+      ✅ <span class="correct">I remember <u>meeting</u> you before.</span>
+      <br><br>
+      <strong>🚨 易错点 2：try doing vs try to do</strong><br>
+      ✅ Try <u>to study</u> harder. = 尽力更努力学<br>
+      ✅ Try <u>studying</u> with a partner. = 试试和伙伴一起学<br>
+      <small>一个是"尽力"，一个是"尝试"。</small>
+      <br><br>
+      <strong>📌 中考提示</strong>：U14 是九年级最后一个单元，语法本身不深，但 remember/forget 后接 doing vs to do 的辨析是中考的稳定考点。<br>
+      <b>口诀</b>：<u>doing 做过，to do 要做</u>。
+    </div>
+
+    <div style="margin-top:12px;padding:12px 0;border-top:1px solid var(--border);">
+      <p style="font-size:13px;margin:0;"><b>🎓 毕业寄语句型（中考写作素材）</b></p>
+      <table class="g-table">
+        <tr><th>句型</th><th>例句</th></tr>
+        <tr><td>I remember + doing</td><td>I <b>remember</b> working hard together.</td></tr>
+        <tr><td>used to + do</td><td>We <b>used to</b> be nervous before exams.</td></tr>
+        <tr><td>be about to + do</td><td>We <b>are about to</b> start a new journey.</td></tr>
+        <tr><td>I will never forget</td><td>I will <b>never forget</b> the days we spent together.</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+</div><!-- /.grammar-grid -->
+
+<div style="margin-top:40px;padding:20px;background:var(--bg-secondary);border-radius:12px;border:1px solid var(--border);">
+  <h3 style="margin:0 0 12px;">📊 中考语法频次总览 · 九年级全册</h3>
+  <table class="g-table">
+    <tr><th>频次</th><th>数量</th><th>包含单元</th></tr>
+    <tr><td style="color:#dc2626;font-weight:700;">🔥🔥 必考</td><td>5</td><td>U2（宾语从句/感叹句）、U7（情态动词被动）、U8（情态动词表推测）、U9（定语从句）、U12（过去完成时）</td></tr>
+    <tr><td style="color:#dc2626;font-weight:700;">🔥 高频</td><td>7</td><td>U1（by+doing）、U3（宾语从句语序）、U4（used to）、U5（被动语态入门）、U6（过去被动）、U13（综合复习）、U14（doing vs to do）</td></tr>
+    <tr><td style="color:#d97706;font-weight:700;">📌 中频</td><td>2</td><td>U10（be supposed to）、U11（make+宾补）</td></tr>
+  </table>
+  <p style="font-size:13px;margin:8px 0 0;">
+    💡 <b>备考建议</b>：九年级语法以 <b>三大从句</b>（宾语从句U2+U3、定语从句U9、状语从句在初二学过但持续使用） 和 <b>被动语态</b>（U5+U6+U7+U13）为主线，这两个板块占中考语法题的 50% 以上。<br>
+    ⚠️ <b>特别提醒</b>：情态动词表推测（U8）是区分 90 分和 105 分的关键——很多学生到中考还搞不清 must / can't / could 表推测和表能力/义务的区别。
+  </p>
+</div>
+
+</div><!-- /.wrapper -->
+
+<script>
+function toggle(el) {
+  el.classList.toggle('open');
+  el.nextElementSibling.classList.toggle('open');
+}
+window.addEventListener('scroll', function(){
+  var btn = document.getElementById('backToTop');
+  if(btn) btn.style.display = window.scrollY > 400 ? 'flex' : 'none';
+}, {passive:true});
+document.getElementById('backToTop').addEventListener('click', function(){
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+function setTheme(t) { document.documentElement.setAttribute("data-theme", t); localStorage.setItem("eng9-theme", t); var btn = document.getElementById("themeToggle"); if (btn) btn.textContent = t === "dark" ? "☀️" : "🌙"; }
+function toggleTheme() { setTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark"); }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U8 Let's Communicate! | 初中英语八年级</title>
+<link rel="stylesheet" href="css/english8.css">
+<style>
+.speak-btn { display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;color:var(--accent);border:1px solid var(--border);border-radius:4px;padding:2px 8px;background:var(--bg);transition:background 0.15s; }
+.speak-btn:hover { background:var(--accent-light); }
+.speak-btn.speaking { background:var(--eng-amber-light);color:var(--eng-amber);border-color:var(--eng-amber); }
+.headword-speak-indicator { font-size:11px;margin-left:3px;opacity:0.55;cursor:pointer;vertical-align:super;line-height:1; }
+.headword-speak-indicator:hover { opacity:1; }
+.wotd-say { cursor:pointer;transition:color 0.15s; }
+.wotd-say:hover { color:var(--accent); }
+.wotd-say.speaking { color:var(--eng-pink); }
+.speech-panel { position:fixed;bottom:80px;right:24px;z-index:999;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);padding:14px 18px;display:none;min-width:180px; }
+.speech-panel.open { display:block; }
+.speech-panel .row { display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px; }
+.speech-panel .row label { color:var(--text-secondary);font-size:12px;min-width:36px; }
+.speech-panel select,.speech-panel input[type="range"] { flex:1; }
+.speech-panel button { padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px; }
+.speech-panel button:hover { background:var(--accent-light); }
+.speech-toggle-btn { position:fixed;bottom:24px;right:76px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--accent);cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center; }
+.speech-toggle-btn:hover { background:var(--accent-light); }
+.en-text.speaking { background:var(--eng-amber-light);border-radius:4px;padding:2px 4px;transition:background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background:#452a08; }
+.detail-module { content-visibility:auto;contain-intrinsic-size:300px; }
+.reading { content-visibility:auto;contain-intrinsic-size:400px; }
+</style>
+<script>(function(){var t=localStorage.getItem("eng8-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+    <nav id="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="margin-bottom:0;">英语八年级</h2>
+        <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+      </div><nav>
+        <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../grammar.html" style="font-size:13px;">📌 语法全景图</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 八 上 ━━</a>
+        <a href="u01.html">U1 Happy Holiday!</a>
+        <a href="u02.html">U2 How often do you exercise?</a>
+        <a href="u03.html">U3 I'm more outgoing than my sister.</a>
+        <a href="u04.html">U4 What's the best movie theater?</a>
+        <a href="u05.html">U5 Do you want to watch a game show?</a>
+        <a href="u06.html">U6 I'm going to study computer science.</a>
+        <a href="u07.html">U7 Will people have robots?</a>
+        <a href="u08.html" class="active">U8 Let's Communicate!</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 八 下 ━━</a>
+        <a href="b2u01.html">U1 Time to Relax!</a>
+        <a href="b2u02.html">U2 Let's clean up!</a>
+        <a href="b2u03.html">U3 Could you please clean your room?</a>
+        <a href="b2u04.html">U4 Why don't you talk to your parents?</a>
+        <a href="b2u05.html">U5 What were you doing when the rainstorm came?</a>
+        <a href="b2u06.html">U6 An old man tried to move the mountains.</a>
+        <a href="b2u07.html">U7 What's the highest mountain in the world?</a>
+        <a href="b2u08.html">U8 Making a Difference</a>
+      </nav>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+    </nav>
+<main id="content">
+<div class="cover"><div class="sub-en">U8</div><h1>Let's Communicate!</h1><p>沟通表达</p></div>
+<div class="unit-meta"><span>📖 话题：Effective Communication</span><span>💬 功能：Give suggestions and respond politely</span><span>📚 语法：祈使句（肯定/否定）· Let's… · How about…? · 礼貌请求和回应</span><span>📝 写作：A Persuasive Letter</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能用祈使句发出指令</label>
+  <label><input type="checkbox"> 能用 Let's 提建议</label>
+  <label><input type="checkbox"> 能用 How about/What about 给出方案</label>
+  <label><input type="checkbox"> 能用英语礼貌地请求和回应</label></div>
+<details class="module" open><summary>📖 课文精讲 · Let's Communicate!</summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：班长组织同学讨论班级存在问题并提出改进建议。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
+<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Monitor:</span><span class="en-text wotd-say" data-speak="Class, let's talk about our problems. First, some students talk in class. Let's make some rules.">Class, let's talk about our problems. First, some students talk in class. Let's make some rules.</span></div>
+      <div class="dialogue-line"><span class="speaker">Li Ming:</span><span class="en-text wotd-say" data-speak="Don't talk when the teacher is speaking. It's not polite.">Don't talk when the teacher is speaking. It's not polite.</span></div>
+      <div class="dialogue-line"><span class="speaker">Wang Fang:</span><span class="en-text wotd-say" data-speak="How about having a "quiet signal"? When the teacher raises her hand, everyone stops talking.">How about having a "quiet signal"? When the teacher raises her hand, everyone stops talking.</span></div>
+      <div class="dialogue-line"><span class="speaker">Monitor:</span><span class="en-text wotd-say" data-speak="Great idea! Let's try it. Next, homework. Some students don't hand it in on time.">Great idea! Let's try it. Next, homework. Some students don't hand it in on time.</span></div>
+      <div class="dialogue-line"><span class="speaker">Zhang Lei:</span><span class="en-text wotd-say" data-speak="Let's set up a homework reminder group. We can help each other.">Let's set up a homework reminder group. We can help each other.</span></div>
+      <div class="dialogue-line"><span class="speaker">Monitor:</span><span class="en-text wotd-say" data-speak="OK, let's do that. Let's work together to make our class better!">OK, let's do that. Let's work together to make our class better!</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>Monitor:</strong> 同学们，我们来讨论问题。首先有同学上课说话。我们定些规则吧。</p>
+        <p><strong>Li Ming:</strong> 老师说话时不要讲话，这不礼貌。</p>
+        <p><strong>Wang Fang:</strong> 来个"安静信号"怎么样？老师一抬手，所有人停止说话。</p>
+        <p><strong>Monitor:</strong> 好主意！试试看。下一个问题，作业。有些同学不按时交。</p>
+        <p><strong>Zhang Lei:</strong> 建个作业提醒群吧。我们可以互相帮助。</p>
+        <p><strong>Monitor:</strong> 好的，就这么办。我们一起努力让班级更好！</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p><strong>1.</strong> <em>Let's make some rules.</em> → <strong>Let's + 动词原形</strong> "让我们做……"，表建议。</p>
+      <p><strong>2.</strong> <em>Don't talk when the teacher is speaking.</em> → <strong>Don't + 动词原形</strong> "不要做……"，否定祈使句。</p>
+      <p><strong>3.</strong> <em>How about having a "quiet signal"?</em> → <strong>How about / What about + doing</strong> "……怎么样？" 提建议。</p>
+      <p><strong>4.</strong> <em>Let's set up a homework reminder group.</em> → <strong>set up</strong> 建立，<strong>reminder</strong> 提醒物。</p></div></div></details>
+<details class="module" open><summary>📝 重点词汇 · 沟通表达 <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="communicate">communicate</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/kəˈmjuːnɪkeɪt/</span><span class="pos">v.</span>
+        <div class="definition">交流；沟通</div>
+        <div class="example"><span class="wotd-say" data-speak="We should communicate with our parents.">We should communicate with our parents.</span><span class="trans">我们应该和父母沟通。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="suggestion">suggestion</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/səˈdʒestʃən/</span><span class="pos">n.</span>
+        <div class="definition">建议</div>
+        <div class="example"><span class="wotd-say" data-speak="Do you have any suggestions?">Do you have any suggestions?</span><span class="trans">你有什么建议吗？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="polite">polite</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/pəˈlaɪt/</span><span class="pos">adj.</span>
+        <div class="definition">礼貌的</div>
+        <div class="example"><span class="wotd-say" data-speak="It's polite to say "thank you".">It's polite to say "thank you".</span><span class="trans">说"谢谢"是礼貌的。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="signal">signal</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈsɪɡnəl/</span><span class="pos">n.</span>
+        <div class="definition">信号；暗号</div>
+        <div class="example"><span class="wotd-say" data-speak="Let's agree on a signal.">Let's agree on a signal.</span><span class="trans">我们来约定一个信号。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="remind">remind</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/rɪˈmaɪnd/</span><span class="pos">v.</span>
+        <div class="definition">提醒</div>
+        <div class="example"><span class="wotd-say" data-speak="Please remind me to do my homework.">Please remind me to do my homework.</span><span class="trans">请提醒我做作业。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="organize">organize</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈɔːrɡənaɪz/</span><span class="pos">v.</span>
+        <div class="definition">组织</div>
+        <div class="example"><span class="wotd-say" data-speak="Let's organize a class meeting.">Let's organize a class meeting.</span><span class="trans">我们来组织一次班会。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="discuss">discuss</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/dɪˈskʌs/</span><span class="pos">v.</span>
+        <div class="definition">讨论</div>
+        <div class="example"><span class="wotd-say" data-speak="Let's discuss this problem.">Let's discuss this problem.</span><span class="trans">我们来讨论这个问题。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="solution">solution</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/səˈluːʃn/</span><span class="pos">n.</span>
+        <div class="definition">解决办法</div>
+        <div class="example"><span class="wotd-say" data-speak="We need to find a solution.">We need to find a solution.</span><span class="trans">我们需要找到解决办法。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="respect">respect</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/rɪˈspekt/</span><span class="pos">v./n.</span>
+        <div class="definition">尊重</div>
+        <div class="example"><span class="wotd-say" data-speak="We should respect each other.">We should respect each other.</span><span class="trans">我们应该互相尊重。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="support">support</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/səˈpɔːrt/</span><span class="pos">v./n.</span>
+        <div class="definition">支持</div>
+        <div class="example"><span class="wotd-say" data-speak="Thank you for your support.">Thank you for your support.</span><span class="trans">谢谢你的支持。</span></div>
+      </div></div></div></details>
+<details class="module" open><summary>🔤 重点句型 · Sentence Patterns</summary><div class="content"><div class="pattern-grid">      <div class="pattern-card">
+        <div class="structure">Let's + 动词原形</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>提出建议</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1"><strong>Let's</strong> <span class="slot">start the meeting</span>. / <strong>Let's</strong> <span class="slot">help each other</span>.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">Don't + 动词原形</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>否定祈使句（禁止）</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp2"><strong>Don't</strong> <span class="slot">be late</span>. / <strong>Don't</strong> <span class="slot">talk in class</span>.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">How about + doing?</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>委婉提建议</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp3"><strong>How about</strong> <span class="slot">making a plan</span>? / <strong>What about</strong> <span class="slot">asking the teacher</span>?</span></div>
+      </div></div></div></details>
+<details class="module detail-module" open><summary>📚 语法聚焦 · 祈使句 & 提建议的多种表达 <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module"><h3>祈使句</h3>
+<table class="grammar-table">
+<tr><th>类型</th><th>结构</th><th>示例</th></tr>
+<tr><td>肯定祈使句</td><td>动词原形开头</td><td>Sit down, please.</td></tr>
+<tr><td>否定祈使句</td><td>Don't + 动词原形</td><td>Don't run in the hallways.</td></tr>
+<tr><td>Let's 祈使句</td><td>Let's + 动词原形</td><td>Let's go home together.</td></tr>
+<tr><td>礼貌祈使句</td><td>Please + 动词原形</td><td>Please open the door.</td></tr>
+</table>
+<h3>提建议的多种方式</h3>
+<table class="grammar-table">
+<tr><th>表达</th><th>结构</th><th>示例</th></tr>
+<tr><td>Let's…</td><td>Let's + 动词</td><td>Let's clean the classroom.</td></tr>
+<tr><td>How about…</td><td>How about + doing</td><td>How about taking a walk?</td></tr>
+<tr><td>Why not…</td><td>Why not + 动词</td><td>Why not ask for help?</td></tr>
+<tr><td>Shall we…</td><td>Shall we + 动词</td><td>Shall we start now?</td></tr>
+</table>
+</div><div class="chinese-error">      <p>❌ <span class="wrong" data-speak="Don't to run in the hallways.">Don't to run in the hallways.</span>（Don't 后直接加动词原形）</p>
+      <p>✅ <span class="correct" data-speak="Don't run in the hallways.">Don't run in the hallways.</span></p>
+      <p>❌ <span class="wrong" data-speak="How about to go shopping?">How about to go shopping?</span>（How about 后跟 doing）</p>
+      <p>✅ <span class="correct" data-speak="How about going shopping?">How about going shopping?</span></p></div></div></details>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[祈使句] ____ (Don't / Not) be late for class.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Don't</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[Let's] ____ ____ have a meeting this afternoon.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Let's</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[选择] How about ____ (go / going) to the park?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>going</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[改写] You should not eat in class. (改为否定祈使句)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Don't eat in class.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[建议] We need to clean the room. (用 Let's 改写)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Let's clean the room.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[填空] ____ ____ (为什么不) ask your teacher for help?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Why not</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">[汉译英] 我们为什么不成立一个学习小组呢？</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Why don't we set up a study group? / Why not set up a study group?</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">[情景] 你的朋友上课总迟到，给出 2 条建议用不同句式。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>自由回答，如：Let's set an alarm. / How about going to bed earlier?</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>📖 阅读专项 · How to Communicate Better</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">Do you sometimes find it hard to talk to others? Good communication skills can help. Here are some tips.</p>
+      <p class="en-text">First, listen carefully. Don't interrupt when others are speaking. Let them finish first.</p>
+      <p class="en-text">Second, use polite words. Say "please" and "thank you". Don't shout.</p>
+      <p class="en-text">Third, use "I" sentences. Say "I feel sad when you ignore me" instead of "You always ignore me". This helps people understand your feelings.</p>
+      <p class="en-text">Let's practice good communication every day!</p><div class="gloss"><span>communication n. 沟通；交流</span> <span>skill n. 技能</span> <span>interrupt v. 打断</span> <span>ignore v. 忽视；不理睬</span> <span>instead of 而不是</span> </div></div>    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">1. How many tips does the passage give?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Three.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">2. Why should we say "I feel sad" instead of "You ignore me"?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>It helps people understand your feelings.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★★</span>
+      <div class="q-body">3. What is the first tip for good communication?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Listen carefully and don't interrupt.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>🏆 中考题型专练 · 任务型阅读</summary><div class="content exam-section"><p style="font-size:13px;margin-bottom:8px;">阅读短文，完成以下任务。</p><div class="reading-passage" style="background:var(--bg-secondary);">      <p>We had a class meeting last Friday. The topic was "How to make our class better". (A) Let's read the suggestions. First, some students said: "Don't leave trash in the classroom." (B) Second, "Let's help each other with homework." (C) Also, "How about planting some flowers on the windowsill?" We all agreed these are good ideas. Let's make our class a better place together!</p></div><div class="exam-q" style="border-left-color:#f59e0b;"><span class="q-tag" style="background:#f59e0b;color:#fff;">答案</span><div class="q-body">任务1：找出文中 3 个建议句式：<br>1. Don't leave trash (否定祈使句)<br>2. Let's help each other (Let's 建议)<br>3. How about planting... (How about 建议)<br>任务2：自由回答</div></div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · A Persuasive Letter</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">假设你是班长，发现班里存在一些问题（乱扔垃圾、上课说话、作业拖拉），请写一封建议信给全班同学。</div></div><div class="writing-framework">      <div class="fw-step">开头：指出写信目的。</div>
+      <div class="fw-step">主体：列出 3 个问题+对应的建议（用 Let's/How about/Why not）。</div>
+      <div class="fw-step">结尾：鼓励大家一起行动。</div></div><div class="writing-model"><div class="en">Dear classmates, Let's make our class better! First, don't leave trash in the classroom. Please put it in the bin. Second, let's help each other with homework. We can form study groups. Third, how about keeping quiet when the teacher is speaking? Respect others. Let's work together and be the best class!</div><div class="trans">亲爱的同学们：让我们把班级变得更好！第一，不要把垃圾留在教室，请扔进垃圾桶。第二，让我们互相帮助做作业，可以结成学习小组。第三，老师讲话时保持安静。尊重他人。我们一起努力，成为最好的班级！</div></div></div></details>
+<details class="module detail-module" open><summary>🎯 Project · Class Communication Campaign</summary><div class="content project-module"><div class="project-brief"><div class="project-title">Class Communication Campaign</div><div class="project-desc">和小组一起设计一份"班级沟通改进计划"，用英语列出 5 条沟通规则，并制作成海报。</div></div><div class="project-steps">      <div class="step"><span class="step-num">1</span><span class="step-text">讨论班级沟通中的问题。</span></div>
+      <div class="step"><span class="step-num">2</span><span class="step-text">针对每个问题提出改进规则。</span></div>
+      <div class="step"><span class="step-num">3</span><span class="step-text">用祈使句/Let's/How about 写出 5 条规则。</span></div>
+      <div class="step"><span class="step-num">4</span><span class="step-text">制作海报并在班里展示。</span></div></div><div class="project-rubric"><table><tr><th>#</th><th>评价标准</th></tr><tr><td>1.</td><td>问题识别准确</td></tr>
+<tr><td>2.</td><td>规则用不同句式表达</td></tr>
+<tr><td>3.</td><td>海报设计美观</td></tr>
+<tr><td>4.</td><td>团队合作</td></tr></table></div></div></details>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用祈使句发出指令</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 Let's/How about 提建议</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能礼貌请求和回应</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写建议信</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>假装你是沟通培训师，给同学们上一节 2 分钟的"如何有效沟通"微课。练习祈使句和建议句式。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">用祈使句写 5 条班规</span>
+    <span class="review-dot">用 Let's/How about/Why not 各写 1 个建议</span>
+    <span class="review-dot">写一段关于沟通建议的短文</span>
+    <span class="review-dot">复习 where/when/how 疑问词</span></div>
+<div class="next-stop" style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;"><a href="u07.html" class="nav-arrow">← 上一单元</a><span></span></div>
+<div class="next-stop" style="margin-top:8px;"><strong>➡️ 下一单元：Time to Relax!</strong><br>下一单元你将进入八年级下册，学习如何谈论休闲活动和放松方式。</div>
+</main>
+<div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
+<button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis, currentUtterance: null, speaking: false, rate: 0.9, voiceURI: 'en-US',
+    init: function(){var s=this;document.getElementById('speechRate').addEventListener('input',function(){s.rate=+this.value;document.getElementById('speechRateLabel').textContent=this.value;});document.getElementById('speechVoice').addEventListener('change',function(){s.voiceURI=this.value;localStorage.setItem('speech-voice',this.value);});document.getElementById('speechStopBtn').addEventListener('click',function(){s.stop();});document.getElementById('speechCloseBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.remove('open');});document.getElementById('speechToggleBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.toggle('open');});},
+    speak: function(t,c){if(!t)return;this.stop();var u=new SpeechSynthesisUtterance(t);u.lang=this.voiceURI;u.rate=this.rate;u.onend=function(){if(c)c();};this.currentUtterance=u;this.synthesis.speak(u);},
+    speakDialogue: function(id,c){var s=this,el=document.getElementById(id),ls=el?el.querySelectorAll('.en-text'):[],i=0;this.stop();(function n(){if(i>=ls.length){if(c)c();return;}var e=ls[i],t=e.getAttribute('data-speak')||e.textContent;if(!t){i++;n();return;}e.classList.add('speaking');var u=new SpeechSynthesisUtterance(t);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){e.classList.remove('speaking');i++;setTimeout(n,500);};u.onerror=function(){e.classList.remove('speaking');i++;setTimeout(n,200);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    speakVocabSection: function(id,c){var s=this,el=document.getElementById(id),cs=el?el.querySelectorAll('.vocab-card'):[],i=0;this.stop();(function n(){if(i>=cs.length){if(c)c();return;}var e=cs[i],hw=e.querySelector('.headword'),ex=e.querySelector('.example .wotd-say'),t=[];if(hw)t.push(hw.getAttribute('data-speak')||hw.textContent);if(ex)t.push(ex.getAttribute('data-speak')||ex.textContent.replace(/<[^>]+>/g,'').trim());var ft=t.join('. ');if(!ft){i++;n();return;}hw.classList.add('speaking');var u=new SpeechSynthesisUtterance(ft);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){hw.classList.remove('speaking');i++;setTimeout(n,600);};u.onerror=function(){hw.classList.remove('speaking');i++;setTimeout(n,300);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    stop: function(){this.synthesis.cancel();this.speaking=false;}
+  };SpeechManager.init();
+  document.querySelectorAll('.wotd-say').forEach(function(el){el.addEventListener('click',function(){SpeechManager.speak(this.getAttribute('data-speak')||this.textContent);});});
+  document.querySelectorAll('.speak-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var d=this.getAttribute('data-dialogue'),v=this.getAttribute('data-vocab'),t=this.getAttribute('data-target');if(this.classList.contains('speaking')){SpeechManager.stop();this.classList.remove('speaking');return;}this.classList.add('speaking');var done=function(){btn.classList.remove('speaking');};if(d){SpeechManager.speakDialogue(d,done);}else if(v){SpeechManager.speakVocabSection(v,done);}else if(t){var tg=document.getElementById(t);if(!tg){btn.classList.remove('speaking');return;}SpeechManager.speak(tg.textContent.replace(/<[^>]+>/g,''),done);}else{btn.classList.remove('speaking');}});});
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();var hw=this.previousElementSibling;if(hw&&hw.classList.contains('wotd-say')){var t=hw.getAttribute('data-speak')||hw.textContent;SpeechManager.speak(t);}});});
+  (function(){var btn=document.getElementById('expandAllBtn');if(!btn)return;btn.addEventListener('click',function(){var ad=document.querySelectorAll('.module,.exam-module');var ao=true;for(var i=0;i<ad.length;i++){if(!ad[i].hasAttribute('open')){ao=false;break;}};for(var i=0;i<ad.length;i++){if(ao)ad[i].removeAttribute('open');else ad[i].setAttribute('open','');};btn.textContent=ao?'📂 展开全部模块':'📖 收起全部模块';});})();
+  var s=document.getElementById('sidebar'),k='eng8-theme-sidebar';if(!s)return;
+  if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
+  window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=window.scrollY>400?'flex':'none';},{passive:true});
+  document.getElementById('backToTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution');});});
+})();
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);localStorage.setItem("eng8-theme",t);var btn=document.getElementById("themeToggle");if(btn)btn.textContent=t==="dark"?"☀️":"🌙";}
+function toggleTheme(){setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark");}
+</script></body></html>

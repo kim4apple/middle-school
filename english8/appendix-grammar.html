@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>语法全景图 · 八年级全册</title>
+<link rel="stylesheet" href="css/english8.css">
+<style>
+body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; margin: 0; padding: 0; }
+.wrapper { max-width: 900px; margin: 0 auto; padding: 32px 24px 60px; }
+.hero { text-align: center; padding: 28px 0; }
+.hero h1 { font-size: 28px; font-weight: 800; margin-bottom: 4px; letter-spacing: -0.5px; }
+.hero .sub { color: var(--text-secondary); font-size: 14px; margin-top: 4px; }
+.semester-label { font-size: 18px; font-weight: 700; margin: 32px 0 16px; padding-bottom: 10px; border-bottom: 3px solid var(--accent); color: var(--accent); display: flex; align-items: center; gap: 10px; }
+.semester-label .badge { font-size: 11px; font-weight: 600; background: var(--accent); color: #fff; padding: 2px 10px; border-radius: 10px; }
+.grammar-grid { display: flex; flex-direction: column; gap: 22px; }
+.grammar-card { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: box-shadow 0.2s; background: var(--bg); }
+.grammar-card:hover { box-shadow: 0 4px 20px -8px rgba(0,0,0,0.1); }
+[data-theme="dark"] .grammar-card:hover { box-shadow: 0 4px 20px -8px rgba(255,255,255,0.04); }
+.card-header { padding: 14px 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; user-select: none; background: var(--bg-secondary); border-bottom: 1px solid var(--border); }
+.card-header .left { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.card-header .num { font-size: 11px; font-weight: 700; color: var(--accent); background: var(--accent-light); padding: 2px 10px; border-radius: 10px; white-space: nowrap; }
+.card-header .title { font-weight: 600; font-size: 15px; }
+.card-header .freq-tag { font-size: 11px; padding: 2px 8px; border-radius: 8px; font-weight: 600; white-space: nowrap; }
+.freq-high { background: #fef2f2; color: #dc2626; }
+.freq-mid { background: #fffbeb; color: #d97706; }
+.freq-low { background: #f0fdf4; color: #16a34a; }
+[data-theme="dark"] .freq-high { background: #450a0a; color: #fca5a5; }
+[data-theme="dark"] .freq-mid { background: #451a03; color: #fcd34d; }
+[data-theme="dark"] .freq-low { background: #052e16; color: #86efac; }
+.card-header .arrow { transition: transform 0.2s; font-size: 14px; flex-shrink: 0; margin-top: 2px; }
+.card-header.open .arrow { transform: rotate(180deg); }
+.card-body { padding: 20px 24px; display: none; }
+.card-body.open { display: block; }
+.g-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+.g-table th { background: var(--accent-light); color: var(--accent); text-align: left; padding: 8px 12px; font-weight: 700; font-size: 12px; }
+.g-table td { padding: 8px 12px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.5; }
+.g-table tr:last-child td { border-bottom: none; }
+.pit { background: #fef2f2; border-left: 3px solid #dc2626; padding: 12px 16px; border-radius: 6px; margin: 12px 0; font-size: 13px; }
+[data-theme="dark"] .pit { background: #1c1017; border-left-color: #dc2626; }
+.pit .wrong { color: #dc2626; }
+.pit .correct { color: #16a34a; }
+.compare { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; margin: 12px 0; font-size: 13px; }
+.compare-row { display: flex; gap: 16px; flex-wrap: wrap; }
+.compare-item { flex: 1; min-width: 180px; }
+.compare-item .label { font-weight: 700; color: var(--accent); display: block; margin-bottom: 4px; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; margin: 16px 0; font-size: 13px; color: var(--accent); text-decoration: none; }
+.back-link:hover { text-decoration: underline; }
+.theme-toggle { position: fixed; top: 16px; right: 16px; z-index: 999; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border); background: var(--bg); color: var(--text); cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; }
+.theme-toggle:hover { background: var(--accent-light); }
+.back-to-top { position: fixed; bottom: 24px; right: 24px; width: 44px; height: 44px; border-radius: 50%; background: var(--accent); color: #fff; border: none; cursor: pointer; font-size: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); display: none; z-index: 999; align-items: center; justify-content: center; }
+@media (max-width: 640px) { .wrapper { padding: 20px 14px 40px; } .hero h1 { font-size: 22px; } .card-header { padding: 12px 14px; } .card-body { padding: 14px 16px; } .g-table { font-size: 12px; } .g-table th,.g-table td { padding: 6px 8px; } .compare-item { min-width: 100%; } }
+</style>
+<script>(function(){var t=localStorage.getItem("eng8-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+
+<button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+<button class="back-to-top" id="backToTop">↑</button>
+
+<div class="wrapper">
+
+<a href="index.html" class="back-link">← 返回八年级首页</a>
+
+<div class="hero">
+  <h1>📚 语法全景图 · 八年级全册</h1>
+  <p class="sub">特级教师｜逐单元语法解析 · 中考频度标注 · 易错对比 · 典型错题</p>
+</div>
+
+<h2 class="semester-label">
+  <span>📕 八年级上册</span>
+  <span class="badge">8 单元</span>
+</h2>
+
+<div class="grammar-grid">
+
+<!-- ========== 八上 U1 ========== -->
+<div class="grammar-card">
+  <div class="card-header" onclick="toggle(this)">
+    <div class="left">
+      <span class="num">U1</span>
+      <span class="title">Happy Holiday! — 假期经历与计划</span>
+      <span class="freq-tag freq-high">🔥 中考高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <h4 style="margin:0 0 6px;">🎯 核心考点：一般过去时 × be going to 将来时</h4>
+    <table class="g-table">
+      <tr><th style="width:22%">结构</th><th>规则</th><th>例句</th></tr>
+      <tr><td>规则动词过去式</td><td>动词 + ed<br>辅音+y → ied<br>重读闭音节双写+ed</td>
+        <td>visit<b>ed</b> / watch<b>ed</b><br>stud<b>ied</b> / carr<b>ied</b><br>stop<b>ped</b> / pla<b>nned</b></td></tr>
+      <tr><td>不规则动词过去式</td><td>特殊变化，需单独记忆</td>
+        <td>go—<b>went</b> / eat—<b>ate</b> / see—<b>saw</b> / buy—<b>bought</b> / take—<b>took</b> / have—<b>had</b></td></tr>
+      <tr><td>一般过去时否定</td><td>didn't + 动词原形</td>
+        <td>I <b>didn't go</b> to the beach.</td></tr>
+      <tr><td>一般过去时疑问</td><td>Did + 主语 + 动词原形?</td>
+        <td><b>Did</b> you <b>have</b> a good time?</td></tr>
+      <tr><td>be going to</td><td>am/is/are + going to + do</td>
+        <td>I <b>am going to visit</b> my grandparents.</td></tr>
+      <tr><td>be going to 否定</td><td>be + not + going to + do</td>
+        <td>I <b>am not going to stay</b> at home.</td></tr>
+    </table>
+
+    <div class="pit">
+      <strong>🚨 易错点 1：did 后动词忘还原</strong><br>
+      ❌ <span class="wrong">I didn't <u>went</u> to Beijing.</span><br>
+      ✅ <span class="correct">I didn't <u>go</u> to Beijing.</span>
+      <br><br>
+      <strong>🚨 易错点 2：be going to 的 be 易遗漏</strong><br>
+      ❌ <span class="wrong">I going to visit my grandparents.</span><br>
+      ✅ <span class="correct">I <u>am</u> going to visit my grandparents.</span>
+      <br><br>
+      <strong>📌 中考提示</strong>：不规则动词过去式是中考语法填空必考题。go/went/gone, eat/ate/eaten, see/saw/seen 是最高频三组。
+    </div>
+  </div>
+</div>
+
+<!-- ========== 八上 U2 ========== -->
+<div class="grammar-card">
+  <div class="card-header" onclick="toggle(this)">
+    <div class="left">
+      <span class="num">U2</span>
+      <span class="title">How often do you exercise? — 频率表达</span>
+      <span class="freq-tag freq-high">🔥 中考高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <h4 style="margin:0 0 6px;">🎯 核心考点：频率副词 · How often 问句 · 频度表达</h4>
+    <table class="g-table">
+      <tr><th>频率副词</th><th>含义</th><th>大致频率</th><th>在句中位置</th></tr>
+      <tr><td>always</td><td>总是</td><td>100%</td><td>be 之后 / 实义动词之前</td></tr>
+      <tr><td>usually</td><td>通常</td><td>80%</td><td>同上</td></tr>
+      <tr><td>often</td><td>经常</td><td>60%</td><td>同上</td></tr>
+      <tr><td>sometimes</td><td>有时</td><td>40%</td><td>句首/句中/句尾</td></tr>
+      <tr><td>hardly ever</td><td>几乎从不</td><td>~5%</td><td>同上副词位置</td></tr>
+      <tr><td>never</td><td>从不</td><td>0%</td><td>同上</td></tr>
+    </table>
+
+    <div style="margin:12px 0;">
+      <p style="font-size:13px;"><b>How often</b> do you exercise?<br>— <b>Three times a week.</b> / <b>Every day.</b> / <b>Once a month.</b></p>
+    </div>
+
+    <div class="pit">
+      <strong>🚨 易错点 1：How often vs How long vs How soon</strong><br>
+      <table class="g-table" style="margin:4px 0;">
+        <tr><th>疑问词</th><th>含义</th><th>答语特点</th><th>例句</th></tr>
+        <tr><td>How often</td><td>多久一次</td><td>频率（once/week/every day）</td><td><b>How often</b> do you swim? — Twice a week.</td></tr>
+        <tr><td>How long</td><td>多长时间</td><td>时长（for two hours）</td><td><b>How long</b> did you stay? — For a week.</td></tr>
+        <tr><td>How soon</td><td>多久以后</td><td>in + 时间段</td><td><b>How soon</b> will you come back? — In two days.</td></tr>
+      </table>
+      <br>
+      <strong>🚨 易错点 2：hardly ever ≠ hard ever</strong><br>
+      ❌ <span class="wrong">I hard ever exercise.</span> ← 不知道 hardly 是副词<br>
+      ✅ <span class="correct">I <u>hardly ever</u> exercise.</span>
+      <br><br>
+      <strong>📌 中考提示</strong>：频率副词辨析是完形填空常客。always > usually > often > sometimes > hardly ever > never 这个梯度和词义匹配必须记牢。
+    </div>
+  </div>
+</div>
+
+<!-- ========== 八上 U3 ========== -->
+<div class="grammar-card">
+  <div class="card-header" onclick="toggle(this)">
+    <div class="left">
+      <span class="num">U3</span>
+      <span class="title">I'm more outgoing than my sister. — 比较级</span>
+      <span class="freq-tag freq-high">🔥 中考高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <h4 style="margin:0 0 6px;">🎯 核心考点：形容词/副词比较级 + as…as 结构</h4>
+    <table class="g-table">
+      <tr><th>比较级构成</th><th>规则</th><th>例词</th></tr>
+      <tr><td>单音节 + er</td><td>直接加 -er</td><td>tall → <b>taller</b>, fast → <b>faster</b></td></tr>
+      <tr><td>辅音+y → ier</td><td>改 y 为 i + er</td><td>heavy → <b>heavier</b>, friendly → <b>friendlier</b></td></tr>
+      <tr><td>重读闭音节双写+er</td><td>双写尾字母 + er</td><td>big → <b>bigger</b>, hot → <b>hotter</b></td></tr>
+      <tr><td>多音节 + more</td><td>more + 原级</td><td>outgoing → <b>more outgoing</b>, beautiful → <b>more beautiful</b></td></tr>
+      <tr><td>特殊变化</td><td>单独记忆</td><td>good/well → <b>better</b>, bad/badly → <b>worse</b></td></tr>
+    </table>
+
+    <div style="margin:12px 0;font-size:13px;">
+      <b>as + 原级 + as</b> "和……一样"：Tom is <b>as tall as</b> Mike.<br>
+      <b>not as/so + 原级 + as</b> "不如……"：I'm <b>not as outgoing as</b> her.<br>
+      <b>than 标志词</b>：She runs <b>faster than</b> me.
+    </div>
+
+    <div class="pit">
+      <strong>🚨 易错点 1：more + 形容词 ≠ 形容词 + er 混用</strong><br>
+      ❌ <span class="wrong">She is <u>more taller</u> than me.</span>（more 与 -er 不共用）<br>
+      ✅ <span class="correct">She is <u>taller</u> than me.</span>
+      <br><br>
+      <strong>🚨 易错点 2：than 后的人称代词</strong><br>
+      ❌ <span class="wrong">He runs faster than <u>I</u>.</span>（语法正确但口语别扭）<br>
+      ✅ <span class="correct">He runs faster than <u>me</u>.</span>（口语自然，中考也接受）<br>
+      <small>注：正式语法认为 than 后跟主格(I)，但中考完形/写作中 than me 更常见。</small>
+      <br><br>
+      <strong>📌 中考提示</strong>：比较级常与 "than", "of the two", "much/even/a little + 比较级" 搭配。"much taller" ✓、"even better" ✓。
+    </div>
+
+    <div class="compare">
+      <strong>🔍 辨析：more + 多音节 &nbsp; vs &nbsp; -er 单音节</strong>
+      <div class="compare-row">
+        <div class="compare-item">
+          <span class="label">单音节 -er</span>
+          tall→taller, fast→faster, big→bigger, nice→nicer
+        </div>
+        <div class="compare-item">
+          <span class="label">双音节需区分</span>
+          easy→easier, happy→happier<br>
+          boring→more boring, tired→more tired
+        </div>
+        <div class="compare-item">
+          <span class="label">三音节+ more</span>
+          beautiful→more beautiful<br>
+          expensive→more expensive
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 八上 U4 ========== -->
+<div class="grammar-card">
+  <div class="card-header" onclick="toggle(this)">
+    <div class="left">
+      <span class="num">U4</span>
+      <span class="title">What's the best movie theater? — 最高级</span>
+      <span class="freq-tag freq-high">🔥 中考高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <h4 style="margin:0 0 6px;">🎯 核心考点：形容词/副词最高级</h4>
+    <table class="g-table">
+      <tr><th>最高级构成</th><th>规则</th><th>例词</th></tr>
+      <tr><td>单音节 + est</td><td>加 -est</td><td>cheap → <b>the cheapest</b></td></tr>
+      <tr><td>辅音+y → iest</td><td>改 y 为 i + est</td><td>happy → <b>the happiest</b></td></tr>
+      <tr><td>重读闭音节双写+est</td><td>双写尾字母 + est</td><td>big → <b>the biggest</b></td></tr>
+      <tr><td>多音节 + most</td><td>the most + 原级</td><td>popular → <b>the most popular</b></td></tr>
+      <tr><td>特殊变化</td><td>单独记忆</td><td>good → <b>the best</b>, bad → <b>the worst</b></td></tr>
+    </table>
+
+    <div style="margin:12px 0;font-size:13px;">
+      <b>最高级标志词</b>：<br>
+      in + 范围（单人/事物）：<b>the tallest boy in our class</b><br>
+      of + 范围（多人/事物）：<b>the best of all</b><br>
+      one of + 最高级 + 可数名词复数：<b>one of the best movies</b>
+    </div>
+
+    <div class="pit">
+      <strong>🚨 易错点 1：最高级前必须加 the</strong><br>
+      ❌ <span class="wrong">She is <u>most popular</u> girl in our class.</span><br>
+      ✅ <span class="correct">She is <u>the most popular</u> girl in our class.</span>
+      <br><br>
+      <strong>🚨 易错点 2：比较级和最高级的范围搞混</strong><br>
+      ✅ 两者比较用比较级：She is the taller of the two.<br>
+      ✅ 三者及以上用最高级：She is the tallest in our class.
+      <br><br>
+      <strong>📌 中考提示</strong>："one of the + 最高级 + 名词复数" 是写作句型模板，背下来就能用：<br>
+      <i>This is one of the most beautiful places I have ever visited.</i>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 八上 U5 ========== -->
+<div class="grammar-card">
+  <div class="card-header" onclick="toggle(this)">
+    <div class="left">
+      <span class="num">U5</span>
+      <span class="title">Do you want to watch a game show? — 表达喜好与看法</span>
+      <span class="freq-tag freq-mid">📌 中考中频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <h4 style="margin:0 0 6px;">🎯 核心考点：喜好表达（want/love/like/don't mind/can't stand）+ 动词形式</h4>
+    <table class="g-table">
+      <tr><th>表达</th><th>强度</th><th>搭配</th><th>例句</th></tr>
+      <tr><td>love</td><td>非常喜欢</td><td>love + (to do)/doing</td><td>I <b>love</b> watching talk shows.</td></tr>
+      <tr><td>like</td><td>喜欢</td><td>like + (to do)/doing</td><td>I <b>like</b> game shows.</td></tr>
+      <tr><td>don't mind</td><td>不介意</td><td>don't mind + doing</td><td>I <b>don't mind</b> watching the news.</td></tr>
+      <tr><td>don't like</td><td>不喜欢</td><td>don't like + (to do)/doing</td><td>I <b>don't like</b> soap operas.</td></tr>
+      <tr><td>can't stand</td><td>无法忍受</td><td>can't stand + doing</td><td>I <b>can't stand</b> watching them.</td></tr>
+      <tr><td>want</td><td>想要</td><td>want + to do</td><td>I <b>want to watch</b> a game show.</td></tr>
+      <tr><td>hopes/expects</td><td>希望/期望</td><td>hope/expect + to do</td><td>He <b>hopes to find</b> out what's going on.</td></tr>
+    </table>
+
+    <div style="margin:12px 0;font-size:13px;">
+      <b>询问喜好句式</b>：<br>
+      — Do you want to watch a game show?<br>
+      — What do you think of talk shows? / How do you like talk shows?<br>
+      — I don't mind them.
+    </div>
+
+    <div class="pit">
+      <strong>🚨 易错点 1：can't stand + to do vs + doing</strong><br>
+      ❌ <span class="wrong">I can't stand <u>watch</u> soap operas.</span><br>
+      ✅ <span class="correct">I can't stand <u>watching</u> soap operas.</span><br>
+      <small>注意：can't stand 后必须接 doing (或名词)，不接动词原形。</small>
+      <br><br>
+      <strong>🚨 易错点 2："What do you think of…?" 答语引导词</strong><br>
+      ❌ <span class="wrong">I think <u>it's</u> funny. / <u>I like it.</u></span><br>
+      ✅ <span class="correct">I think it's funny. / I like it.</span><br>
+      <small>注意：反问对方的表达 "I don't, either" 中的 either 表示"也不"。</small>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 八上 U6 ========== -->
+<div class="grammar-card">
+  <div class="card-header" onclick="toggle(this)">
+    <div class="left">
+      <span class="num">U6</span>
+      <span class="title">I'm going to study computer science. — 职业规划与计划</span>
+      <span class="freq-tag freq-high">🔥 中考高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <h4 style="margin:0 0 6px;">🎯 核心考点：be going to 结构（计划/意图用法）</h4>
+    <table class="g-table">
+      <tr><th>句式</th><th>结构</th><th>例句</th></tr>
+      <tr><td>肯定句</td><td>主语 + be + going to + do</td><td>I <b>am going to study</b> computer science.</td></tr>
+      <tr><td>否定句</td><td>主语 + be + not + going to + do</td><td>He <b>is not going to be</b> a teacher.</td></tr>
+      <tr><td>一般疑问句</td><td>Be + 主语 + going to + do?</td><td><b>Are you going to</b> find a job?</td></tr>
+      <tr><td>特殊疑问句</td><td>Wh- + be + 主语 + going to + do?</td><td><b>What are you going to be</b> when you grow up?</td></tr>
+    </table>
+
+    <div style="margin:12px 0;font-size:13px;">
+      <b>职业名词派生规律</b>：<br>
+      teach → teacher / write → writer / act → actor / art → artist / science → scientist<br>
+      注意：study → student（不规则）
+    </div>
+
+    <div class="pit">
+      <strong>🚨 易错点 1：be going to 和 will 混用</strong><br>
+      <div class="compare-row">
+        <div class="compare-item">
+          <span class="label">be going to（计划/意图）</span>
+          事先考虑好的打算：<br><i>I'm going to be a doctor.</i>（我早就想好了）
+        </div>
+        <div class="compare-item">
+          <span class="label">will（临时/意愿）</span>
+          当场决定的：<br><i>I'll help you.</i>（哦，我来帮你）
+        </div>
+      </div>
+      <br>
+      <strong>🚨 易错点 2：be 动词的省略</strong><br>
+      ❌ <span class="wrong">He going to be a pilot.</span><br>
+      ✅ <span class="correct">He <u>is</u> going to be a pilot.</span>
+      <br><br>
+      <strong>📌 中考提示</strong>：be going to 与 will 的区别是初三和中考单选题的常客。记住关键词：<b>打算 → be going to；临时 → will</b>。
+    </div>
+  </div>
+</div>
+
+<!-- ========== 八上 U7 ========== -->
+<div class="grammar-card">
+  <div class="card-header" onclick="toggle(this)">
+    <div class="left">
+      <span class="num">U7</span>
+      <span class="title">Will people have robots? — 对未来预测</span>
+      <span class="freq-tag freq-high">🔥 中考高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <h4 style="margin:0 0 6px;">🎯 核心考点：will 将来时 · more/less/fewer 数量区别</h4>
+    <table class="g-table">
+      <tr><th>句式</th><th>结构</th><th>例句</th></tr>
+      <tr><td>肯定句</td><td>will + 动词原形</td><td>People <b>will have</b> robots in their homes.</td></tr>
+      <tr><td>否定句</td><td>won't + 动词原形</td><td>Kids <b>won't go</b> to school in the future.</td></tr>
+      <tr><td>一般疑问句</td><td>Will + 主语 + 动词原形?</td><td><b>Will</b> there be more pollution?</td></tr>
+      <tr><td>There will be</td><td>There will be + 名词</td><td><b>There will be</b> more people.</td></tr>
+    </table>
+
+    <div class="compare">
+      <strong>🔍 more / less / fewer 区分（中考必考！）</strong>
+      <div class="compare-row">
+        <div class="compare-item">
+          <span class="label">more — 更多</span>
+          可数/不可数皆可：<br>more people, more pollution
+        </div>
+        <div class="compare-item">
+          <span class="label">less — 更少（不可数）</span>
+          less water, less time, less pollution
+        </div>
+        <div class="compare-item">
+          <span class="label">fewer — 更少（可数）</span>
+          fewer cars, fewer people, fewer trees
+        </div>
+      </div>
+    </div>
+
+    <div class="pit">
+      <strong>🚨 易错点 1：There will be → There will have ❌</strong><br>
+      ❌ <span class="wrong">There will <u>have</u> more robots.</span><br>
+      ✅ <span class="correct">There will <u>be</u> more robots.</span><br>
+      <small>注意：表示"有"用 there be，不要和 have 混用。</small>
+      <br><br>
+      <strong>🚨 易错点 2：less/fewer 混淆</strong><br>
+      ❌ <span class="wrong">There will be <u>less</u> cars.</span>（cars 可数）<br>
+      ✅ <span class="correct">There will be <u>fewer</u> cars.</span>
+      <br><br>
+      <strong>📌 中考提示</strong>：less/fewer 辨析是完形填空必考题。记口诀：<b>可数 fewer 不可数 less</b>。
+    </div>
+  </div>
+</div>
+
+<!-- ========== 八上 U8 ========== -->
+<div class="grammar-card">
+  <div class="card-header" onclick="toggle(this)">
+    <div class="left">
+      <span class="num">U8</span>
+      <span class="title">Let's Communicate! — 沟通与表达</span>
+      <span class="freq-tag freq-mid">📌 中考中频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <h4 style="margin:0 0 6px;">🎯 核心考点：祈使句 · 提建议 · 请求帮助</h4>
+    <table class="g-table">
+      <tr><th>功能</th><th>句式</th><th>例句</th></tr>
+      <tr><td>建议（共同行动）</td><td>Let's + 动词原形</td><td><b>Let's</b> communicate openly.</td></tr>
+      <tr><td>建议（询问对方）</td><td>How about / What about + doing?</td><td><b>How about</b> making a plan?</td></tr>
+      <tr><td>礼貌请求</td><td>Could you please + 动词原形?</td><td><b>Could you please</b> give me some advice?</td></tr>
+      <tr><td>祈使句（肯定）</td><td>动词原形开头</td><td><b>Talk</b> to him.</td></tr>
+      <tr><td>祈使句（否定）</td><td>Don't + 动词原形</td><td><b>Don't</b> shout.</td></tr>
+    </table>
+
+    <div class="pit">
+      <strong>🚨 易错点 1：Let's 的否定形式</strong><br>
+      ❌ <span class="wrong">Let's don't argue.</span><br>
+      ✅ <span class="correct">Let's <u>not</u> argue.</span> / Let's not be angry.
+      <br><br>
+      <strong>🚨 易错点 2：How about + 动词用 doing</strong><br>
+      ❌ <span class="wrong">How about <u>take</u> a break?</span><br>
+      ✅ <span class="correct">How about <u>taking</u> a break?</span>
+      <br><br>
+      <strong>📌 中考提示</strong>：祈使句 + and/or + 一般将来时的结构（Study hard, and you will pass the exam.）是中考写作加分句型。
+    </div>
+  </div>
+</div>
+
+</div><!-- 八上结束 -->
+
+<h2 class="semester-label">
+  <span>📗 八年级下册</span>
+  <span class="badge">8 单元</span>
+</h2>
+
+<div class="grammar-grid">
+
+<!-- ========== 八下 U1 ========== -->
+<div class="grammar-card">
+  <div class="card-header" onclick="toggle(this)">
+    <div class="left">
+      <span class="num">U1</span>
+      <span class="title">Time to Relax! — 放松与休息</span>
+      <span class="freq-tag freq-high">🔥 中考高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <h4 style="margin:0 0 6px;">🎯 核心考点：不定式用法 · 反身代词</h4>
+    <table class="g-table">
+      <tr><th>不定式结构</th><th>例句</th></tr>
+      <tr><td>It's + adj. + <b>to do</b></td><td><b>It's</b> important <b>to relax</b>.</td></tr>
+      <tr><td>want / hope / need <b>to do</b></td><td>I want <b>to take a break</b>.</td></tr>
+      <tr><td>It's + adj. + (for/of sb.) + to do</td><td>It's kind <b>of you to help</b>.</td></tr>
+    </table>
+
+    <div class="compare">
+      <strong>🔍 反身代词总表</strong>
+      <div class="compare-row">
+        <div class="compare-item">
+          <span class="label">第一人称</span>
+          myself / ourselves
+        </div>
+        <div class="compare-item">
+          <span class="label">第二人称</span>
+          yourself / yourselves
+        </div>
+        <div class="compare-item">
+          <span class="label">第三人称</span>
+          himself / herself / itself / themselves
+        </div>
+      </div>
+      <div style="margin-top:8px;font-size:12px;">
+        常用短语：<b>enjoy oneself</b>（玩得开心）、<b>by oneself</b>（独自）、<b>teach oneself</b>（自学）、<b>hurt oneself</b>（伤到自己）
+      </div>
+    </div>
+
+    <div class="pit">
+      <strong>🚨 易错点：反身代词与人称一致</strong><br>
+      ❌ <span class="wrong">He enjoyed <u>myself</u> at the party.</span>（反身代词需与主语一致）<br>
+      ✅ <span class="correct">He enjoyed <u>himself</u> at the party.</span>
+      <br><br>
+      <strong>📌 中考提示</strong>："It's + adj. + for/of sb. + to do" 中 for 和 of 的区别：<br>
+      <b>of</b> — 形容人的品质（kind, nice, smart, clever, foolish）<br>
+      <b>for</b> — 形容事物特性（important, necessary, easy, difficult）
+    </div>
+  </div>
+</div>
+
+<!-- ========== 八下 U2 ========== -->
+<div class="grammar-card">
+  <div class="card-header" onclick="toggle(this)">
+    <div class="left">
+      <span class="num">U2</span>
+      <span class="title">Let's clean up! — 志愿服务与社区</span>
+      <span class="freq-tag freq-mid">📌 中考中频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <h4 style="margin:0 0 6px;">🎯 核心考点：动词短语（短语动词）</h4>
+    <table class="g-table">
+      <tr><th>短语</th><th>含义</th><th>例句</th></tr>
+      <tr><td>clean <b>up</b></td><td>打扫干净</td><td>Let's clean <b>up</b> the park.</td></tr>
+      <tr><td>help <b>out</b></td><td>帮忙</td><td>I want to help <b>out</b>.</td></tr>
+      <tr><td>give <b>away</b></td><td>赠送</td><td>Let's give <b>away</b> old clothes.</td></tr>
+      <tr><td>put <b>up</b></td><td>张贴；搭建</td><td>Let's put <b>up</b> signs.</td></tr>
+      <tr><td>call <b>up</b></td><td>打电话</td><td>I'll call <b>up</b> my friends.</td></tr>
+      <tr><td>cheer <b>up</b></td><td>使振奋</td><td>Let's cheer <b>up</b> the sick kids.</td></tr>
+    </table>
+
+    <div class="pit">
+      <strong>🚨 易错点：代词作宾语时位置</strong><br>
+      ✅ 名词可放中间或后面：clean up the park = clean the park up<br>
+      ✅ <b>代词只能放中间</b>：clean <u>it</u> up ✓ / clean up it ❌<br>
+      ❌ <span class="wrong">Let's clean up <u>it</u>.</span><br>
+      ✅ <span class="correct">Let's clean <u>it</u> up.</span>
+      <br><br>
+      <strong>📌 中考提示</strong>：动词短语是中考完形填空的常客。注意区分可拆与不可拆短语——像 look after（照顾）不能拆成 look him after ❌。
+    </div>
+  </div>
+</div>
+
+<!-- ========== 八下 U3 ========== -->
+<div class="grammar-card">
+  <div class="card-header" onclick="toggle(this)">
+    <div class="left">
+      <span class="num">U3</span>
+      <span class="title">Could you please clean your room? — 家务与请求</span>
+      <span class="freq-tag freq-mid">📌 中考中频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <h4 style="margin:0 0 6px;">🎯 核心考点：礼貌请求 · Could you please / Could I</h4>
+    <table class="g-table">
+      <tr><th>句式</th><th>用法</th><th>例句</th></tr>
+      <tr><td><b>Could you please</b> + 动词原形?</td><td>请求对方做</td><td><b>Could you please</b> clean your room?</td></tr>
+      <tr><td><b>Could I</b> + 动词原形?</td><td>请求自己做</td><td><b>Could I</b> go out tonight?</td></tr>
+      <tr><td>肯定回答</td><td>同意</td><td>Sure. / Of course. / No problem.</td></tr>
+      <tr><td>否定回答</td><td>拒绝（需理由）</td><td>Sorry, I'm afraid I can't. I need to…</td></tr>
+    </table>
+
+    <div class="pit">
+      <strong>🚨 易错点：否定回答用 I'm afraid → 不用 I couldn't</strong><br>
+      ❌ <span class="wrong">Could I go out? — <u>No, you couldn't.</u></span>（语气太生硬）<br>
+      ✅ <span class="correct">Could I go out? — <u>Sorry, I'm afraid you can't.</u></span>
+      <br><br>
+      <strong>📌 中考提示</strong>：Could you please 中 could 不是过去时，而是礼貌语气。回答时用 can/can't，不用 could/couldn't。
+    </div>
+  </div>
+</div>
+
+<!-- ========== 八下 U4 ========== -->
+<div class="grammar-card">
+  <div class="card-header" onclick="toggle(this)">
+    <div class="left">
+      <span class="num">U4</span>
+      <span class="title">Why don't you talk to your parents? — 沟通与建议</span>
+      <span class="freq-tag freq-high">🔥 中考高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <h4 style="margin:0 0 6px;">🎯 核心考点：提建议句式 + until / although / so that 连词</h4>
+
+    <p style="font-size:13px;margin:8px 0;"><b>提建议句型</b></p>
+    <table class="g-table">
+      <tr><th>句式</th><th>例句</th></tr>
+      <tr><td><b>Why don't you</b> + 动词原形?</td><td><b>Why don't you</b> talk to him?</td></tr>
+      <tr><td><b>Why not</b> + 动词原形?</td><td><b>Why not</b> ask for help?</td></tr>
+      <tr><td><b>You should / could</b> + 动词原形</td><td><b>You could</b> write a letter.</td></tr>
+      <tr><td><b>What/How about</b> + doing?</td><td><b>How about</b> having a talk?</td></tr>
+    </table>
+
+    <p style="font-size:13px;margin:12px 0 6px;"><b>连词辨析（中考语法填空常考）</b></p>
+    <table class="g-table">
+      <tr><th>连词</th><th>含义</th><th>用法特点</th><th>例句</th></tr>
+      <tr><td>until</td><td>直到</td><td>主句动词通常为 延续性/瞬间否定</td><td>Wait <b>until</b> she calms down.</td></tr>
+      <tr><td>although</td><td>虽然</td><td>不与 but 连用</td><td><b>Although</b> he's angry, he cares.</td></tr>
+      <tr><td>so that</td><td>以便</td><td>引导目的状语从句</td><td>Talk nicely <b>so that</b> she can understand.</td></tr>
+    </table>
+
+    <div class="pit">
+      <strong>🚨 易错点：although 和 but 不连用</strong><br>
+      ❌ <span class="wrong"><u>Although</u> he was tired, <u>but</u> he kept working.</span><br>
+      ✅ <span class="correct"><u>Although</u> he was tired, he kept working.</span><br>
+      ✅ <span class="correct">He was tired, <u>but</u> he kept working.</span><br>
+      <small>though 同理——句中虽有"虽然/但是"的语义，英语不能同时使用 although/though 和 but。</small>
+      <br><br>
+      <strong>📌 中考提示</strong>：until 在否定句中的用法值得注意：<br>
+      <i>He didn't leave until his mom came back.</i>（直到妈妈回来他才离开）<br>
+      <b>not…until</b> = "直到……才……" 是必考句型。
+    </div>
+  </div>
+</div>
+
+<!-- ========== 八下 U5 ========== -->
+<div class="grammar-card">
+  <div class="card-header" onclick="toggle(this)">
+    <div class="left">
+      <span class="num">U5</span>
+      <span class="title">What were you doing when the rainstorm came? — 过去进行时</span>
+      <span class="freq-tag freq-high">🔥🔥 中考必考</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <h4 style="margin:0 0 6px;">🎯 核心考点：过去进行时 + when/while 区别</h4>
+    <table class="g-table">
+      <tr><th>语法点</th><th>结构</th><th>例句</th></tr>
+      <tr><td>过去进行时</td><td>was/were + doing</td><td>I <b>was watching</b> TV at 8 pm.</td></tr>
+      <tr><td>when + 从句</td><td>when + 一般过去时（打断）</td><td>I was sleeping <b>when the phone rang</b>.</td></tr>
+      <tr><td>while + 从句</td><td>while + 过去进行时（伴随）</td><td><b>While I was sleeping</b>, my mom came home.</td></tr>
+    </table>
+
+    <div class="compare">
+      <strong>🔍 when vs while 的本质区别（完形填空必杀题）</strong>
+      <div class="compare-row">
+        <div class="compare-item">
+          <span class="label">when</span>
+          "当……的时候"<br>
+          后接 <u>一般过去时</u>（短动作）<br>
+          也可接过去进行时<br>
+          <span style="font-size:12px;">I was reading <i>when</i> he came in.</span>
+        </div>
+        <div class="compare-item">
+          <span class="label">while</span>
+          "在……期间"<br>
+          后接 <u>过去进行时</u>（长动作）<br>
+          侧重两个动作同时持续<br>
+          <span style="font-size:12px;"><i>While</i> I was reading, he was watching TV.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pit">
+      <strong>🚨 易错点 1：过去进行时的否定和疑问</strong><br>
+      ❌ <span class="wrong">What <u>did you doing</u> at that time?</span><br>
+      ✅ <span class="correct">What <u>were you doing</u> at that time?</span>
+      <br><br>
+      <strong>📌 中考提示</strong>：过去进行时与一般过去时的对比是完形填空和写作高频考点：<br>
+      <i>I was taking a shower when the doorbell rang.</i><br>
+      （长动作 shower → 过去进行时，短动作 rang → 一般过去时）
+    </div>
+  </div>
+</div>
+
+<!-- ========== 八下 U6 ========== -->
+<div class="grammar-card">
+  <div class="card-header" onclick="toggle(this)">
+    <div class="left">
+      <span class="num">U6</span>
+      <span class="title">An old man tried to move the mountains. — 连词与故事</span>
+      <span class="freq-tag freq-high">🔥 中考高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <h4 style="margin:0 0 6px;">🎯 核心考点：unless · as soon as · so…that</h4>
+    <table class="g-table">
+      <tr><th>连词</th><th>含义</th><th>等价结构</th><th>例句</th></tr>
+      <tr><td>unless</td><td>除非</td><td>= if…not</td><td>You won't pass <b>unless</b> you study.</td></tr>
+      <tr><td>as soon as</td><td>一……就……</td><td>同义：the moment</td><td><b>As soon as</b> he saw her, he smiled.</td></tr>
+      <tr><td>so…that</td><td>如此……以至于</td><td>so + 形/副 + that</td><td>The mountain was <b>so</b> high <b>that</b> few could climb it.</td></tr>
+    </table>
+
+    <div class="pit">
+      <strong>🚨 易错点：so…that 与 such…that 区别</strong><br>
+      <div class="compare-row">
+        <div class="compare-item">
+          <span class="label">so + 形容词 + that</span>
+          <i>so <u>tall</u> that…</i><br>
+          so + 形/副
+        </div>
+        <div class="compare-item">
+          <span class="label">such + 名词短语 + that</span>
+          <i>such a <u>tall boy</u> that…</i><br>
+          such + (a/an) + 形 + 名
+        </div>
+      </div>
+      ❌ <span class="wrong">It was <u>so</u> a hot day that we didn't go out.</span><br>
+      ✅ <span class="correct">It was <u>such a</u> hot day that we didn't go out.</span><br>
+      ✅ <span class="correct">It was <u>so</u> hot that we didn't go out.</span>
+      <br><br>
+      <strong>📌 中考提示</strong>：unless 引导条件状语从句，遵循"主将从现"原则：<br>
+      <i>You won't pass the exam <u>unless you study hard</u>.</i>（从句用一般现在时表将来）
+    </div>
+  </div>
+</div>
+
+<!-- ========== 八下 U7 ========== -->
+<div class="grammar-card">
+  <div class="card-header" onclick="toggle(this)">
+    <div class="left">
+      <span class="num">U7</span>
+      <span class="title">What's the highest mountain in the world? — 地理比较</span>
+      <span class="freq-tag freq-high">🔥 中考高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <h4 style="margin:0 0 6px;">🎯 核心考点：数字+比较级/最高级（地理数据表达）</h4>
+    <table class="g-table">
+      <tr><th>结构</th><th>例句</th></tr>
+      <tr><td>最高级 + in/of 范围</td><td>Qomolangma is <b>the highest</b> mountain <b>in the world</b>.</td></tr>
+      <tr><td>比较级 + than any other + 单数</td><td>The Caspian Sea is <b>deeper than any other lake</b>.</td></tr>
+      <tr><td>数字 + 形容词</td><td>It's <b>8,844 meters high</b>.</td></tr>
+      <tr><td>数字 + 比较级</td><td>It's <b>much higher than</b> any other mountain.</td></tr>
+      <tr><td>one of + 最高级 + 复数名词</td><td>It's <b>one of the most dangerous</b> places.</td></tr>
+    </table>
+
+    <div style="margin:12px 0;font-size:13px;">
+      <b>数字 + 形容词的顺序</b>：数字 + 量词 + 形容词<br>
+      eight kilometers <u>long</u> / 8848 meters <u>high</u> / 100 square meters <u>wide</u>
+    </div>
+
+    <div class="pit">
+      <strong>🚨 易错点 1："any other + 单数"</strong><br>
+      ❌ <span class="wrong">It's bigger than any <u>others</u> mountain.</span><br>
+      ✅ <span class="correct">It's bigger than any <u>other</u> mountain.</span>
+      <br><br>
+      <strong>🚨 易错点 2："in the world" vs "of all"</strong><br>
+      ✅ the highest mountain <u>in the world</u>（用 in + 范围）<br>
+      ✅ the highest <u>of all</u> the mountains（用 of + 群体）<br>
+      ❌ <span class="wrong">in all the world</span>（少见）
+      <br><br>
+      <strong>📌 中考提示</strong>：本单元常以补全句子出现，关键要写出正确语序：<br>
+      "The Yangtze River is about 6,300 kilometers long." ✓
+    </div>
+  </div>
+</div>
+
+<!-- ========== 八下 U8 ========== -->
+<div class="grammar-card">
+  <div class="card-header" onclick="toggle(this)">
+    <div class="left">
+      <span class="num">U8</span>
+      <span class="title">Making a Difference — 改变与影响</span>
+      <span class="freq-tag freq-high">🔥🔥 中考必考（过渡到初三）</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <h4 style="margin:0 0 6px;">🎯 核心考点：现在完成时（基础入门）</h4>
+    <table class="g-table">
+      <tr><th>句式</th><th>结构</th><th>例句</th></tr>
+      <tr><td>肯定句</td><td>have/has + 过去分词</td><td>I <b>have visited</b> the museum.</td></tr>
+      <tr><td>否定句</td><td>haven't/hasn't + 过去分词</td><td>She <b>hasn't read</b> the book yet.</td></tr>
+      <tr><td>一般疑问句</td><td>Have/Has + 主语 + 过去分词?</td><td><b>Have</b> you ever <b>been</b> to Beijing?</td></tr>
+      <tr><td>ever / never</td><td>曾经 / 从未</td><td>I have <b>never</b> seen such a beautiful place.</td></tr>
+      <tr><td>already / yet</td><td>已经 / 还没有</td><td>I have <b>already</b> done it. / Have you done it <b>yet</b>?</td></tr>
+    </table>
+
+    <div class="compare">
+      <strong>🔍 一般过去时 vs 现在完成时（八年级最核心辨析！）</strong>
+      <div class="compare-row">
+        <div class="compare-item">
+          <span class="label">一般过去时 — 过去动作，现已结束</span>
+          I <u>visited</u> Beijing last year.<br>
+          <small>强调"去年"去的，现在不在北京。</small>
+          <br>
+          时间标志词：yesterday, last…, …ago, in 2022
+        </div>
+        <div class="compare-item">
+          <span class="label">现在完成时 — 过去动作，与现在有关</span>
+          I <u>have visited</u> Beijing.<br>
+          <small>强调"去过"，现在知道北京什么样。</small>
+          <br>
+          时间标志词：already, yet, ever, never, just, so far
+        </div>
+      </div>
+    </div>
+
+    <div class="pit">
+      <strong>🚨 易错点 1：have been to vs have gone to（必考！）</strong><br>
+      ✅ have been to Beijing = 去过北京（已回）<br>
+      ✅ have gone to Beijing = 去了北京（还没回来 / 在路上）<br>
+      ❌ <span class="wrong">He has <u>been</u> to Shanghai for two days.</span>（been to 是来往经历，不能接时间段）<br>
+      ✅ <span class="correct">He has <u>been in</u> Shanghai for two days.</span>（been in 表示"在某地待了多久"）
+      <br><br>
+      <strong>🚨 易错点 2：过去分词不规则变化</strong><br>
+      <table class="g-table" style="margin:4px 0;">
+        <tr><th>原形</th><th>过去式</th><th>过去分词</th></tr>
+        <tr><td>go</td><td>went</td><td><b>gone</b></td></tr>
+        <tr><td>eat</td><td>ate</td><td><b>eaten</b></td></tr>
+        <tr><td>see</td><td>saw</td><td><b>seen</b></td></tr>
+        <tr><td>write</td><td>wrote</td><td><b>written</b></td></tr>
+        <tr><td>read</td><td>read</td><td><b>read</b>（拼写相同，读音不同）</td></tr>
+      </table>
+      <br>
+      <strong>📌 中考提示</strong>：现在完成时是初三中考语法填空和写作的重中之重。八下只是入门，但"have been to / have gone to"辨析是中考单选题铁打的考点。
+    </div>
+  </div>
+</div>
+
+</div><!-- 八下结束 -->
+
+<div style="margin-top:40px;padding:20px;background:var(--bg-secondary);border-radius:12px;border:1px solid var(--border);">
+  <h3 style="margin:0 0 12px;">📊 中考语法频次总览</h3>
+  <table class="g-table">
+    <tr><th>频次</th><th>数量</th><th>包含单元</th></tr>
+    <tr><td style="color:#dc2626;font-weight:700;">🔥🔥 必考</td><td>2</td><td>八下 U5（过去进行时）、八下 U8（现在完成时）</td></tr>
+    <tr><td style="color:#dc2626;font-weight:700;">🔥 高频</td><td>9</td><td>八上 U1 U2 U3 U4 U6 U7 · 八下 U1 U4 U6 U7</td></tr>
+    <tr><td style="color:#d97706;font-weight:700;">📌 中频</td><td>5</td><td>八上 U5 U8 · 八下 U2 U3</td></tr>
+  </table>
+  <p style="font-size:13px;margin:8px 0 0;">
+    💡 <b>备考建议</b>：优先突破现在完成时（八下U8）和过去进行时（八下U5），合计占中考语法题约 35%。将比较级/最高级（八上U3+U4+八下U7）串联复习，三大连词板块（U4+U6）做对比训练。
+  </p>
+</div>
+
+</div><!-- /.wrapper -->
+
+<script>
+function toggle(el) {
+  el.classList.toggle('open');
+  el.nextElementSibling.classList.toggle('open');
+}
+window.addEventListener('scroll', function(){
+  var btn = document.getElementById('backToTop');
+  if(btn) btn.style.display = window.scrollY > 400 ? 'flex' : 'none';
+}, {passive:true});
+document.getElementById('backToTop').addEventListener('click', function(){
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+function setTheme(t) { document.documentElement.setAttribute("data-theme", t); localStorage.setItem("eng8-theme", t); var btn = document.getElementById("themeToggle"); if (btn) btn.textContent = t === "dark" ? "☀️" : "🌙"; }
+function toggleTheme() { setTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark"); }
+</script>
+
+</body>
+</html>

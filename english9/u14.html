@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U14 I remember meeting all of you in Grade 7. | 初中英语九年级</title>
+<link rel="stylesheet" href="css/english9.css">
+<style>
+.speak-btn { display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;color:var(--accent);border:1px solid var(--border);border-radius:4px;padding:2px 8px;background:var(--bg);transition:background 0.15s; }
+.speak-btn:hover { background:var(--accent-light); }
+.speak-btn.speaking { background:var(--eng-amber-light);color:var(--eng-amber);border-color:var(--eng-amber); }
+.headword-speak-indicator { font-size:11px;margin-left:3px;opacity:0.55;cursor:pointer;vertical-align:super;line-height:1; }
+.headword-speak-indicator:hover { opacity:1; }
+.wotd-say { cursor:pointer;transition:color 0.15s; }
+.wotd-say:hover { color:var(--accent); }
+.wotd-say.speaking { color:var(--eng-pink); }
+.speech-panel { position:fixed;bottom:80px;right:24px;z-index:999;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);padding:14px 18px;display:none;min-width:180px; }
+.speech-panel.open { display:block; }
+.speech-panel .row { display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px; }
+.speech-panel .row label { color:var(--text-secondary);font-size:12px;min-width:36px; }
+.speech-panel select,.speech-panel input[type="range"] { flex:1; }
+.speech-panel button { padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px; }
+.speech-panel button:hover { background:var(--accent-light); }
+.speech-toggle-btn { position:fixed;bottom:24px;right:76px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--accent);cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center; }
+.speech-toggle-btn:hover { background:var(--accent-light); }
+.en-text.speaking { background:var(--eng-amber-light);border-radius:4px;padding:2px 4px;transition:background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background:#452a08; }
+.detail-module { content-visibility:auto;contain-intrinsic-size:300px; }
+.reading { content-visibility:auto;contain-intrinsic-size:400px; }
+</style>
+<script>(function(){var t=localStorage.getItem("eng9-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+    <nav id="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="margin-bottom:0;">英语九年级</h2>
+        <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+      </div><nav>
+        <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../grammar.html" style="font-size:13px;">📌 语法全景图</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 九年级全一册 ━━</a>
+        <a href="u01.html">U1 How can we become good learners?</a>
+        <a href="u02.html">U2 I think that mooncakes are delicious!</a>
+        <a href="u03.html">U3 Could you please tell me where the restrooms are?</a>
+        <a href="u04.html">U4 I used to be afraid of the dark.</a>
+        <a href="u05.html">U5 What are the shirts made of?</a>
+        <a href="u06.html">U6 When was it invented?</a>
+        <a href="u07.html">U7 Teenagers should be allowed to choose their own clothes.</a>
+        <a href="u08.html">U8 It must belong to Carla.</a>
+        <a href="u09.html">U9 I like music that I can dance to.</a>
+        <a href="u10.html">U10 You're supposed to shake hands.</a>
+        <a href="u11.html">U11 Sad movies make me cry.</a>
+        <a href="u12.html">U12 Life is full of the unexpected.</a>
+        <a href="u13.html">U13 We're trying to save the earth!</a>
+        <a href="u14.html" class="active">U14 I remember meeting all of you in Grade 7.</a>
+      </nav>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+    </nav>
+<main id="content">
+<div class="cover"><div class="sub-en">U14</div><h1>I remember meeting all of you in Grade 7.</h1><p>回忆与毕业</p></div>
+<div class="unit-meta"><span>📖 话题：Memories and Graduation</span><span>💬 功能：Share memories and express feelings about the past</span><span>📚 语法：Review: remember + V-ing / to V; 综合复习</span><span>📝 写作：Write a graduation speech or a letter of thanks</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能用 remember + V-ing / to V 表达回忆</label>
+  <label><input type="checkbox"> 能回顾和总结初中生活的难忘经历</label>
+  <label><input type="checkbox"> 能表达感恩和对未来的展望</label>
+  <label><input type="checkbox"> 能写毕业演讲或感谢信</label></div>
+<details class="module" open><summary>📖 课文精讲 · I remember meeting all of you in Grade 7.</summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：Lily和Sam在毕业典礼后翻看毕业纪念册，回忆三年初中时光。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
+<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Lily:</span><span class="en-text wotd-say" data-speak="I can't believe we're graduating! It feels like just yesterday we were in Grade 7.">I can't believe we're graduating! It feels like just yesterday we were in Grade 7.</span></div>
+      <div class="dialogue-line"><span class="speaker">Sam:</span><span class="en-text wotd-say" data-speak="I know! I remember meeting all of you on the first day of school. We were all so shy!">I know! I remember meeting all of you on the first day of school. We were all so shy!</span></div>
+      <div class="dialogue-line"><span class="speaker">Lily:</span><span class="en-text wotd-say" data-speak="Do you remember our first English class? Ms. Wang asked us to introduce ourselves in English.">Do you remember our first English class? Ms. Wang asked us to introduce ourselves in English.</span></div>
+      <div class="dialogue-line"><span class="speaker">Sam:</span><span class="en-text wotd-say" data-speak="Ha, yes! I was so nervous that I forgot my own name! Everyone laughed.">Ha, yes! I was so nervous that I forgot my own name! Everyone laughed.</span></div>
+      <div class="dialogue-line"><span class="speaker">Lily:</span><span class="en-text wotd-say" data-speak="I remember scoring the winning goal in the basketball game. That was the best moment of Grade 8!">I remember scoring the winning goal in the basketball game. That was the best moment of Grade 8!</span></div>
+      <div class="dialogue-line"><span class="speaker">Sam:</span><span class="en-text wotd-say" data-speak="And I remember the science fair. Our volcano project won first prize! We stayed up all night working on it.">And I remember the science fair. Our volcano project won first prize! We stayed up all night working on it.</span></div>
+      <div class="dialogue-line"><span class="speaker">Lily:</span><span class="en-text wotd-say" data-speak="We've had so many great memories. I'll never forget these three years.">We've had so many great memories. I'll never forget these three years.</span></div>
+      <div class="dialogue-line"><span class="speaker">Sam:</span><span class="en-text wotd-say" data-speak="Me neither. But I'm also excited about the future! Remember to keep in touch!">Me neither. But I'm also excited about the future! Remember to keep in touch!</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>Lily:</strong> 真不敢相信我们要毕业了！感觉就像昨天我们还在七年级。</p>
+        <p><strong>Sam:</strong> 是啊！我记得第一天上学见到你们的情景。我们当时都好害羞！</p>
+        <p><strong>Lily:</strong> 你还记得我们的第一节英语课吗？王老师让我们用英语自我介绍。</p>
+        <p><strong>Sam:</strong> 哈，记得！我紧张得连自己的名字都忘了！大家都笑了。</p>
+        <p><strong>Lily:</strong> 我记得在篮球比赛中投进了制胜球。那是八年级最棒的时刻！</p>
+        <p><strong>Sam:</strong> 还有科学展。我们的火山项目赢得了一等奖！我们熬夜做那个。</p>
+        <p><strong>Lily:</strong> 我们有太多美好的回忆了。我永远不会忘记这三年。</p>
+        <p><strong>Sam:</strong> 我也是。但我也对未来充满期待！记得保持联系！</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p>remember + V-ing 表示「记得做过某事」— I remember <b>meeting</b> you in Grade 7.</p>
+      <p>remember + to V 表示「记得要做某事」— Remember <b>to keep</b> in touch!</p>
+      <p>forget + V-ing / to V 也有类似区别。</p>
+      <p>初中毕业话题常用表达：look back at, be thankful to, learn from, look forward to</p></div></div></details>
+<details class="module" open><summary>📝 重点词汇 · 回忆与毕业 <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="survey">survey</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈsɜːrveɪ/</span><span class="pos">n./v.</span>
+        <div class="definition">调查；测量</div>
+        <div class="example"><span class="wotd-say" data-speak="We did a survey about reading habits.">We did a survey about reading habits.</span><span class="trans">我们做了一个关于阅读习惯的调查。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="standard">standard</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈstændərd/</span><span class="pos">n./adj.</span>
+        <div class="definition">标准；标准的</div>
+        <div class="example"><span class="wotd-say" data-speak="She set high standards for herself.">She set high standards for herself.</span><span class="trans">她为自己设定了高标准。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="row">row</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/roʊ/</span><span class="pos">n.</span>
+        <div class="definition">排；行</div>
+        <div class="example"><span class="wotd-say" data-speak="We sat in the front row.">We sat in the front row.</span><span class="trans">我们坐在第一排。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="keyboard">keyboard</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈkiːbɔːrd/</span><span class="pos">n.</span>
+        <div class="definition">键盘</div>
+        <div class="example"><span class="wotd-say" data-speak="I practice the keyboard every day.">I practice the keyboard every day.</span><span class="trans">我每天练习键盘。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="instruction">instruction</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɪnˈstrʌkʃn/</span><span class="pos">n.</span>
+        <div class="definition">说明；指导</div>
+        <div class="example"><span class="wotd-say" data-speak="Follow the instructions carefully.">Follow the instructions carefully.</span><span class="trans">仔细按照说明操作。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="double">double</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈdʌbl/</span><span class="pos">adj./v.</span>
+        <div class="definition">双倍的；加倍</div>
+        <div class="example"><span class="wotd-say" data-speak="Double-check your answers.">Double-check your answers.</span><span class="trans">再检查一遍你的答案。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="shall">shall</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ʃæl/</span><span class="pos">modal v.</span>
+        <div class="definition">将要；……好吗？</div>
+        <div class="example"><span class="wotd-say" data-speak="Shall we go now?">Shall we go now?</span><span class="trans">我们现在走好吗？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="overcome">overcome</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌoʊvərˈkʌm/</span><span class="pos">v.</span>
+        <div class="definition">克服；战胜</div>
+        <div class="example"><span class="wotd-say" data-speak="I overcame my fear of speaking.">I overcame my fear of speaking.</span><span class="trans">我克服了说话的恐惧。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="separate">separate</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈseprət/</span><span class="pos">adj./v.</span>
+        <div class="definition">分开的；分离</div>
+        <div class="example"><span class="wotd-say" data-speak="We will go to separate high schools.">We will go to separate high schools.</span><span class="trans">我们将去不同的高中。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="wing">wing</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/wɪŋ/</span><span class="pos">n.</span>
+        <div class="definition">翅膀；翼</div>
+        <div class="example"><span class="wotd-say" data-speak="Birds fly with their wings.">Birds fly with their wings.</span><span class="trans">鸟用翅膀飞翔。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="caring">caring</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈkerɪŋ/</span><span class="pos">adj.</span>
+        <div class="definition">关心的；关爱他人的</div>
+        <div class="example"><span class="wotd-say" data-speak="She is a very caring person.">She is a very caring person.</span><span class="trans">她是一个非常关心他人的人。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="senior">senior</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈsiːniər/</span><span class="pos">adj./n.</span>
+        <div class="definition">高级的；高中</div>
+        <div class="example"><span class="wotd-say" data-speak="I will attend senior high school.">I will attend senior high school.</span><span class="trans">我将上高中。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="ours">ours</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈaʊərz/</span><span class="pos">pron.</span>
+        <div class="definition">我们的</div>
+        <div class="example"><span class="wotd-say" data-speak="This classroom is ours.">This classroom is ours.</span><span class="trans">这间教室是我们的。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="gentleman">gentleman</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈdʒentlmən/</span><span class="pos">n.</span>
+        <div class="definition">绅士；先生</div>
+        <div class="example"><span class="wotd-say" data-speak="He is a true gentleman.">He is a true gentleman.</span><span class="trans">他是一位真正的绅士。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="graduation">graduation</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌɡrædʒuˈeɪʃn/</span><span class="pos">n.</span>
+        <div class="definition">毕业</div>
+        <div class="example"><span class="wotd-say" data-speak="The graduation ceremony is next week.">The graduation ceremony is next week.</span><span class="trans">毕业典礼在下周。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="ceremony">ceremony</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈserəmoʊni/</span><span class="pos">n.</span>
+        <div class="definition">仪式；典礼</div>
+        <div class="example"><span class="wotd-say" data-speak="The opening ceremony was beautiful.">The opening ceremony was beautiful.</span><span class="trans">开幕式很美。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="congratulate">congratulate</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/kənˈɡrætʃuleɪt/</span><span class="pos">v.</span>
+        <div class="definition">祝贺</div>
+        <div class="example"><span class="wotd-say" data-speak="I congratulate you on your success.">I congratulate you on your success.</span><span class="trans">我祝贺你成功。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="thirsty">thirsty</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈθɜːrsti/</span><span class="pos">adj.</span>
+        <div class="definition">口渴的；渴望的</div>
+        <div class="example"><span class="wotd-say" data-speak="Be thirsty for knowledge.">Be thirsty for knowledge.</span><span class="trans">渴望知识。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="none">none</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/nʌn/</span><span class="pos">pron.</span>
+        <div class="definition">没有一个</div>
+        <div class="example"><span class="wotd-say" data-speak="None of us knew the answer.">None of us knew the answer.</span><span class="trans">我们没有一个人知道答案。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="task">task</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/tæsk/</span><span class="pos">n.</span>
+        <div class="definition">任务；作业</div>
+        <div class="example"><span class="wotd-say" data-speak="Finish the task before Friday.">Finish the task before Friday.</span><span class="trans">周五前完成任务。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="ahead">ahead</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/əˈhed/</span><span class="pos">adv.</span>
+        <div class="definition">在前面；向前</div>
+        <div class="example"><span class="wotd-say" data-speak="There is a bright future ahead.">There is a bright future ahead.</span><span class="trans">前面有光明的未来。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="responsible">responsible</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/rɪˈspɒnsəbl/</span><span class="pos">adj.</span>
+        <div class="definition">负责任的</div>
+        <div class="example"><span class="wotd-say" data-speak="Be responsible for your actions.">Be responsible for your actions.</span><span class="trans">对你的行为负责。</span></div>
+      </div></div></div></details>
+<details class="module" open><summary>🔤 重点句型 · Sentence Patterns</summary><div class="content"><div class="pattern-grid">      <div class="pattern-card">
+        <div class="structure">Remember + V-ing (记得做过某事)</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>表示记得过去曾经做过的事情。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1">I <b>remember meeting</b> all of you in Grade 7. / I <b>remember scoring</b> the winning goal.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">Remember + to V (记得要做某事)</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>表示记住要去做某事。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp2"><b>Remember to keep</b> in touch! / <b>Remember to bring</b> your camera.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">主语 + will never forget + V-ing / n</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>表示永远不会忘记。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp3">I <b>will never forget</b> these three years. / We <b>will never forget</b> our teachers.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">主语 + be thankful to + sb + for + n/V-ing</div> <button class="speak-btn" data-target="sp4" title="朗读句型">🔊</button>
+        <div>表示因某事感谢某人。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp4">I <b>am thankful to</b> my teachers <b>for</b> their help. / We <b>are thankful to</b> our parents <b>for</b> their support.</span></div>
+      </div></div></div></details>
+<details class="module detail-module" open><summary>📚 语法聚焦 · Remember + V-ing vs Remember + to V <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module"><h3>remember / forget 的两种用法</h3>
+<table class="grammar-table">
+<tr><th>动词</th><th>+ V-ing (做过)</th><th>+ to V (要做)</th></tr>
+<tr><td>remember</td><td>记得做过（已发生）</td><td>记得要做（未发生）</td></tr>
+<tr><td>forget</td><td>忘记做过（已发生）</td><td>忘记要做（未发生）</td></tr>
+<tr><td>例句</td><td>I remember meeting her before.</td><td>Remember to call me.</td></tr>
+<tr><td>例句</td><td>I forgot locking the door.</td><td>Don't forget to lock the door.</td></tr>
+</table>
+<h3>初中三年主要时态复习</h3>
+<table class="grammar-table">
+<tr><th>时态</th><th>结构</th><th>例句</th></tr>
+<tr><td>一般现在时</td><td>V / V-s</td><td>We are classmates.</td></tr>
+<tr><td>一般过去时</td><td>V-ed</td><td>I was shy in Grade 7.</td></tr>
+<tr><td>现在完成时</td><td>have/has + V-ed</td><td>I have learned a lot.</td></tr>
+<tr><td>一般将来时</td><td>will + V</td><td>I will go to senior high.</td></tr>
+</table>
+</div><div class="chinese-error">      <p>remember doing 和 remember to do 意思完全不同，注意区分。</p>
+      <p>stop doing (停止做) vs stop to do (停下来去做) 也有类似区别。</p>
+      <p>try doing (尝试做) vs try to do (努力做) 同理。</p>
+      <p><span class="wotd-say" data-speak="The future belongs to those who believe in the beauty of their dreams.">The future belongs to those who believe in the beauty of their dreams.</span> 未来属于那些相信自己梦想之美的人。</p></div></div></details>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">I remember ____ (meet) you on the first day of school.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>meeting</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">Remember ____ (lock) the door when you leave.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>to lock</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">I will never ____ (forget) these three years.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>forget</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">I am thankful ____ my teachers ____ their help.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>to ... for</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">I ____ (remember / forget) bringing my umbrella. It's in my bag.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>remember</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">选择：I remember ____ him somewhere before.<br>A. see B. seeing C. to see D. saw</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>B</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">Don't forget ____ (bring) your notebook tomorrow.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>to bring</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">She stopped ____ (talk) when the teacher came in.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>talking</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">翻译：我记得已经把钥匙给你了。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>I remember giving you the key. / I remember having given you the key.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">I ____ (learn) a lot in the past three years.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>have learned</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">选择：I remember ____ the door, but it's open now.<br>A. lock B. locking C. to lock D. locked</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>B</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">完成句子：She forgot ____ (tell) me about the meeting, so I missed it.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>to tell</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">用 remember / forget 的适当形式填空：When I left home this morning, I ____ (remember) to bring my lunch, but I ____ (forget) my keys.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>remembered ... forgot</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">写作：用 remember doing / forget doing 和一般过去时写一段关于初中三年难忘经历的短文。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>I remember joining the school basketball team in Grade 7. I was so nervous on my first day of practice. I remember scoring my first point — it was an amazing feeling! I will never forget the friendships I made. I also remember our class trip to the science museum. We had so much fun. I'll always treasure these memories.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>📖 阅读专项 · A Graduation Speech</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">Good morning, dear teachers, parents, and fellow students. Today is a special day. We are graduating from junior high school. I still remember the first day I walked into this school. I was so nervous that my hands were shaking. But you, my classmates, welcomed me with warm smiles. Thank you.</p>
+      <p class="en-text">I remember our English teacher, Ms. Wang, who always encouraged us to speak bravely. I remember our math teacher, Mr. Li, who taught us that there is always more than one way to solve a problem. I remember our class monitor, who organized so many fun activities. I remember all of you.</p>
+      <p class="en-text">These three years have been full of challenges and achievements. We have learned not only knowledge from textbooks, but also how to be better people. We have learned to work together, to help each other, and to never give up.</p>
+      <p class="en-text">Now we are going to different senior high schools. Some of us may not see each other for a long time. But the memories we share will always be with us. As we move on to the next chapter of our lives, let's remember to be brave, to be kind, and to always believe in ourselves. Congratulations, everyone! We did it!</p><div class="gloss"><span>fellow students 同学们</span> <span>junior high school 初中</span> <span>monitor 班长</span> <span>achievements 成就</span> <span>textbooks 课本</span> <span>chapter 篇章；章节</span> </div></div>    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">How did the speaker feel on the first day of school?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>She was very nervous — her hands were shaking.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">What did the English teacher encourage the students to do?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>To speak bravely.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">What did the students learn during the three years?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>They learned knowledge from textbooks and also how to be better people.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★★</span>
+      <div class="q-body">What is the main message of this graduation speech?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>To be thankful for the past, to cherish memories, and to be brave and kind for the future.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>🏆 中考题型专练 · 短文填空 — 毕业话题</summary><div class="content exam-section"><p style="font-size:13px;margin-bottom:8px;">用所给词的适当形式填空。</p><div class="reading-passage" style="background:var(--bg-secondary);">      <p>I 1 (remember) my first day in Grade 7 like it was yesterday. I 2 (be) so shy that I didn't talk to anyone. But my deskmate, Lisa, 3 (smile) at me and said, 「Hi!」 From that day on, we became best friends. We 4 (study) together, laughed together, and even cried together. Now we are 5 (graduate). I will never 6 (forget) the time we spent together. I know we 7 (go) to different high schools, but our friendship will last forever.</p></div><div style="margin:4px 0;font-size:13px;"><strong>1</strong> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> A. remember</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> B. remembered</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> C. will remember</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> D. am remembering</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>2</strong> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> A. am</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> B. was</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> C. were</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> D. be</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>3</strong> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> A. smile</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> B. smiled</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> C. smiling</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> D. smiles</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>4</strong> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> A. study</span> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> B. studied</span> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> C. will study</span> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> D. are studying</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>5</strong> <span style="margin-right:12px;"><input type="radio" name="exam_5" disabled> A. graduate</span> <span style="margin-right:12px;"><input type="radio" name="exam_5" disabled> B. graduating</span> <span style="margin-right:12px;"><input type="radio" name="exam_5" disabled> C. graduated</span> <span style="margin-right:12px;"><input type="radio" name="exam_5" disabled> D. graduates</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>6</strong> <span style="margin-right:12px;"><input type="radio" name="exam_6" disabled> A. forget</span> <span style="margin-right:12px;"><input type="radio" name="exam_6" disabled> B. forgot</span> <span style="margin-right:12px;"><input type="radio" name="exam_6" disabled> C. forgetting</span> <span style="margin-right:12px;"><input type="radio" name="exam_6" disabled> D. forgotten</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>7</strong> <span style="margin-right:12px;"><input type="radio" name="exam_7" disabled> A. go</span> <span style="margin-right:12px;"><input type="radio" name="exam_7" disabled> B. will go</span> <span style="margin-right:12px;"><input type="radio" name="exam_7" disabled> C. went</span> <span style="margin-right:12px;"><input type="radio" name="exam_7" disabled> D. have gone</span> </div>
+<div class="exam-q" style="border-left-color:#f59e0b;"><span class="q-tag" style="background:#f59e0b;color:#fff;">答案</span><div class="q-body">1. A；2. B；3. B；4. B；5. B；6. A；7. B</div></div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · Write a graduation speech or a letter of thanks</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">写一篇毕业演讲稿，回顾初中三年的难忘经历，感谢老师和同学，并展望未来的高中生活。</div></div><div class="writing-framework">      <div class="fw-step">开场问候：向老师、家长和同学问好</div>
+      <div class="fw-step">回顾初一：初入校园的感受</div>
+      <div class="fw-step">回顾初二：最难忘的经历</div>
+      <div class="fw-step">回顾初三：努力备考的时光</div>
+      <div class="fw-step">感恩：感谢老师和同学的帮助</div>
+      <div class="fw-step">展望：对未来的期待和祝福</div></div><div class="writing-model"><div class="en">Good morning, dear teachers and fellow students. It's a great honor to speak here today. I remember walking into this school for the first time three years ago. I was nervous, but the friendly faces of my classmates quickly made me feel at home.
+
+I remember our class trip to the mountain in Grade 8. We helped each other climb to the top. That day, I learned the meaning of teamwork. I remember the late nights we spent studying for exams in Grade 9. We encouraged each other and never gave up.
+
+I want to say thank you to our teachers. You have taught us knowledge and showed us how to be good people. Thank you to my classmates for the laughter and friendship. As we go to different high schools, let's remember to stay in touch. I believe our future will be bright. Congratulations, Class of 2025!</div><div class="trans">亲爱的老师、同学们，早上好。今天能站在这里发言，我感到无比荣幸。我记得三年前第一次走进这所学校的情景。当时我很紧张，但同学们友好的面孔很快让我感到自在。
+
+我记得八年级的班级登山活动。我们互相帮助，一起爬到了山顶。那一天，我懂得了团队合作的意义。我记得九年级我们一起熬夜备考的夜晚。我们互相鼓励，永不放弃。
+
+我想对我们的老师说声谢谢。你们不仅教给我们知识，还教会我们如何成为好人。谢谢我的同学们的欢声笑语和友谊。当我们走向不同的高中时，让我们记得保持联系。我相信我们的未来会一片光明。2025届的同学们，恭喜大家！</div></div></div></details>
+<details class="module detail-module" open><summary>🎯 Project · Our Memory Book</summary><div class="content project-module"><div class="project-brief"><div class="project-title">Our Memory Book</div><div class="project-desc">制作一本班级毕业纪念册，收录每位同学的留言、照片和难忘回忆。</div></div><div class="project-steps">      <div class="step"><span class="step-num">1</span><span class="step-text">收集每位同学的毕业留言和签名</span></div>
+      <div class="step"><span class="step-num">2</span><span class="step-text">收集三年来的班级照片</span></div>
+      <div class="step"><span class="step-num">3</span><span class="step-text">写一段个人感言（初中最难忘的3-5件事）</span></div>
+      <div class="step"><span class="step-num">4</span><span class="step-text">给老师写一封感谢信</span></div>
+      <div class="step"><span class="step-num">5</span><span class="step-text">设计纪念册的版面和封面</span></div>
+      <div class="step"><span class="step-num">6</span><span class="step-text">在毕业班会上展示并分享</span></div></div><div class="project-rubric"><table><tr><th>#</th><th>评价标准</th></tr><tr><td>1.</td><td>每位同学都有参与</td></tr>
+<tr><td>2.</td><td>回忆内容真实、感人</td></tr>
+<tr><td>3.</td><td>英语表达基本准确</td></tr>
+<tr><td>4.</td><td>设计用心、有创意</td></tr>
+<tr><td>5.</td><td>体现了班级的团结和友谊</td></tr></table></div></div></details>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能区分 remember doing 和 remember to do</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能回顾和描述初中的难忘经历</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能使用多种时态表达过去和未来</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能理解毕业演讲的内容</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写毕业演讲稿或感谢信</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>向同桌解释 remember + V-ing 和 remember + to V 的区别，并各举两个例子。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">🔵 1天后：复习 remember/forget + V-ing vs to V</span>
+    <span class="review-dot">🟢 3天后：复习毕业相关词汇和句型</span>
+    <span class="review-dot">🟡 1周后：复述毕业演讲稿</span>
+    <span class="review-dot">🔴 1月后：写一篇给未来自己的信</span></div>
+<div class="next-stop" style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;"><a href="u13.html" class="nav-arrow">← 上一单元</a><span></span></div>
+<div class="next-stop" style="margin-top:8px;"><strong>➡️ 下一单元：🎉 初中英语全部学完！</strong><br>恭喜你完成了全部14个单元的学习！建议回顾语法全景图，进行综合复习和中考模拟训练。</div>
+</main>
+<div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
+<button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis, currentUtterance: null, speaking: false, rate: 0.9, voiceURI: 'en-US',
+    init: function(){var s=this;document.getElementById('speechRate').addEventListener('input',function(){s.rate=+this.value;document.getElementById('speechRateLabel').textContent=this.value;});document.getElementById('speechVoice').addEventListener('change',function(){s.voiceURI=this.value;localStorage.setItem('speech-voice',this.value);});document.getElementById('speechStopBtn').addEventListener('click',function(){s.stop();});document.getElementById('speechCloseBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.remove('open');});document.getElementById('speechToggleBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.toggle('open');});},
+    speak: function(t,c){if(!t)return;this.stop();var u=new SpeechSynthesisUtterance(t);u.lang=this.voiceURI;u.rate=this.rate;u.onend=function(){if(c)c();};this.currentUtterance=u;this.synthesis.speak(u);},
+    speakDialogue: function(id,c){var s=this,el=document.getElementById(id),ls=el?el.querySelectorAll('.en-text'):[],i=0;this.stop();(function n(){if(i>=ls.length){if(c)c();return;}var e=ls[i],t=e.getAttribute('data-speak')||e.textContent;if(!t){i++;n();return;}e.classList.add('speaking');var u=new SpeechSynthesisUtterance(t);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){e.classList.remove('speaking');i++;setTimeout(n,500);};u.onerror=function(){e.classList.remove('speaking');i++;setTimeout(n,200);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    speakVocabSection: function(id,c){var s=this,el=document.getElementById(id),cs=el?el.querySelectorAll('.vocab-card'):[],i=0;this.stop();(function n(){if(i>=cs.length){if(c)c();return;}var e=cs[i],hw=e.querySelector('.headword'),ex=e.querySelector('.example .wotd-say'),t=[];if(hw)t.push(hw.getAttribute('data-speak')||hw.textContent);if(ex)t.push(ex.getAttribute('data-speak')||ex.textContent.replace(/<[^>]+>/g,'').trim());var ft=t.join('. ');if(!ft){i++;n();return;}hw.classList.add('speaking');var u=new SpeechSynthesisUtterance(ft);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){hw.classList.remove('speaking');i++;setTimeout(n,600);};u.onerror=function(){hw.classList.remove('speaking');i++;setTimeout(n,300);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    stop: function(){this.synthesis.cancel();this.speaking=false;}
+  };SpeechManager.init();
+  document.querySelectorAll('.wotd-say').forEach(function(el){el.addEventListener('click',function(){SpeechManager.speak(this.getAttribute('data-speak')||this.textContent);});});
+  document.querySelectorAll('.speak-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var d=this.getAttribute('data-dialogue'),v=this.getAttribute('data-vocab'),t=this.getAttribute('data-target');if(this.classList.contains('speaking')){SpeechManager.stop();this.classList.remove('speaking');return;}this.classList.add('speaking');var done=function(){btn.classList.remove('speaking');};if(d){SpeechManager.speakDialogue(d,done);}else if(v){SpeechManager.speakVocabSection(v,done);}else if(t){var tg=document.getElementById(t);if(!tg){btn.classList.remove('speaking');return;}SpeechManager.speak(tg.textContent.replace(/<[^>]+>/g,''),done);}else{btn.classList.remove('speaking');}});});
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();var hw=this.previousElementSibling;if(hw&&hw.classList.contains('wotd-say')){var t=hw.getAttribute('data-speak')||hw.textContent;SpeechManager.speak(t);}});});
+  (function(){var btn=document.getElementById('expandAllBtn');if(!btn)return;btn.addEventListener('click',function(){var ad=document.querySelectorAll('.module,.exam-module');var ao=true;for(var i=0;i<ad.length;i++){if(!ad[i].hasAttribute('open')){ao=false;break;}};for(var i=0;i<ad.length;i++){if(ao)ad[i].removeAttribute('open');else ad[i].setAttribute('open','');};btn.textContent=ao?'📂 展开全部模块':'📖 收起全部模块';});})();
+  var s=document.getElementById('sidebar'),k='eng9-theme-sidebar';if(!s)return;
+  if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
+  window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=window.scrollY>400?'flex':'none';},{passive:true});
+  document.getElementById('backToTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution');});});
+})();
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);localStorage.setItem("eng9-theme",t);var btn=document.getElementById("themeToggle");if(btn)btn.textContent=t==="dark"?"☀️":"🌙";}
+function toggleTheme(){setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark");}
+</script></body></html>

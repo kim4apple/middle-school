@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U7 What's the highest mountain in the world? | 初中英语八年级</title>
+<link rel="stylesheet" href="css/english8.css">
+<style>
+.speak-btn { display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;color:var(--accent);border:1px solid var(--border);border-radius:4px;padding:2px 8px;background:var(--bg);transition:background 0.15s; }
+.speak-btn:hover { background:var(--accent-light); }
+.speak-btn.speaking { background:var(--eng-amber-light);color:var(--eng-amber);border-color:var(--eng-amber); }
+.headword-speak-indicator { font-size:11px;margin-left:3px;opacity:0.55;cursor:pointer;vertical-align:super;line-height:1; }
+.headword-speak-indicator:hover { opacity:1; }
+.wotd-say { cursor:pointer;transition:color 0.15s; }
+.wotd-say:hover { color:var(--accent); }
+.wotd-say.speaking { color:var(--eng-pink); }
+.speech-panel { position:fixed;bottom:80px;right:24px;z-index:999;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);padding:14px 18px;display:none;min-width:180px; }
+.speech-panel.open { display:block; }
+.speech-panel .row { display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px; }
+.speech-panel .row label { color:var(--text-secondary);font-size:12px;min-width:36px; }
+.speech-panel select,.speech-panel input[type="range"] { flex:1; }
+.speech-panel button { padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px; }
+.speech-panel button:hover { background:var(--accent-light); }
+.speech-toggle-btn { position:fixed;bottom:24px;right:76px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--accent);cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center; }
+.speech-toggle-btn:hover { background:var(--accent-light); }
+.en-text.speaking { background:var(--eng-amber-light);border-radius:4px;padding:2px 4px;transition:background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background:#452a08; }
+.detail-module { content-visibility:auto;contain-intrinsic-size:300px; }
+.reading { content-visibility:auto;contain-intrinsic-size:400px; }
+</style>
+<script>(function(){var t=localStorage.getItem("eng8-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+    <nav id="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="margin-bottom:0;">英语八年级</h2>
+        <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+      </div><nav>
+        <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../grammar.html" style="font-size:13px;">📌 语法全景图</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 八 上 ━━</a>
+        <a href="u01.html">U1 Happy Holiday!</a>
+        <a href="u02.html">U2 How often do you exercise?</a>
+        <a href="u03.html">U3 I'm more outgoing than my sister.</a>
+        <a href="u04.html">U4 What's the best movie theater?</a>
+        <a href="u05.html">U5 Do you want to watch a game show?</a>
+        <a href="u06.html">U6 I'm going to study computer science.</a>
+        <a href="u07.html">U7 Will people have robots?</a>
+        <a href="u08.html">U8 Let's Communicate!</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 八 下 ━━</a>
+        <a href="b2u01.html">U1 Time to Relax!</a>
+        <a href="b2u02.html">U2 Let's clean up!</a>
+        <a href="b2u03.html">U3 Could you please clean your room?</a>
+        <a href="b2u04.html">U4 Why don't you talk to your parents?</a>
+        <a href="b2u05.html">U5 What were you doing when the rainstorm came?</a>
+        <a href="b2u06.html">U6 An old man tried to move the mountains.</a>
+        <a href="b2u07.html" class="active">U7 What's the highest mountain in the world?</a>
+        <a href="b2u08.html">U8 Making a Difference</a>
+      </nav>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+    </nav>
+<main id="content">
+<div class="cover"><div class="sub-en">U7</div><h1>What's the highest mountain in the world?</h1><p>世界之最</p></div>
+<div class="unit-meta"><span>📖 话题：Geographic Facts & Superlatives</span><span>💬 功能：Talk about geographic features using comparatives and superlatives</span><span>📚 语法：形容词/副词比较级与最高级的深入运用 · 数字表达（长/宽/高/深等）</span><span>📝 写作：Amazing Places in China</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能用最高级描述地理特征</label>
+  <label><input type="checkbox"> 能用数字表达长度/高度/深度</label>
+  <label><input type="checkbox"> 能比较不同地理特征</label>
+  <label><input type="checkbox"> 能介绍一处世界之最</label></div>
+<details class="module" open><summary>📖 课文精讲 · What's the highest mountain in the world?</summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：地理课上，老师在用英语介绍世界地理之最。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
+<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Teacher:</span><span class="en-text wotd-say" data-speak="What's the highest mountain in the world?">What's the highest mountain in the world?</span></div>
+      <div class="dialogue-line"><span class="speaker">Li Wei:</span><span class="en-text wotd-say" data-speak="Mount Qomolangma! It's 8,848.86 meters high.">Mount Qomolangma! It's 8,848.86 meters high.</span></div>
+      <div class="dialogue-line"><span class="speaker">Teacher:</span><span class="en-text wotd-say" data-speak="Correct! And what's the longest river in China?">Correct! And what's the longest river in China?</span></div>
+      <div class="dialogue-line"><span class="speaker">Wang Fang:</span><span class="en-text wotd-say" data-speak="The Yangtze River. It's about 6,300 kilometers long.">The Yangtze River. It's about 6,300 kilometers long.</span></div>
+      <div class="dialogue-line"><span class="speaker">Teacher:</span><span class="en-text wotd-say" data-speak="Very good. The Caspian Sea is the deepest lake in the world. It's 1,025 meters deep.">Very good. The Caspian Sea is the deepest lake in the world. It's 1,025 meters deep.</span></div>
+      <div class="dialogue-line"><span class="speaker">Zhang Wei:</span><span class="en-text wotd-say" data-speak="Is the Sahara the biggest desert?">Is the Sahara the biggest desert?</span></div>
+      <div class="dialogue-line"><span class="speaker">Teacher:</span><span class="en-text wotd-say" data-speak="The Sahara is the hottest desert. The largest desert in the world is Antarctica!">The Sahara is the hottest desert. The largest desert in the world is Antarctica!</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>Teacher:</strong> 世界上最高的山是什么？</p>
+        <p><strong>Li Wei:</strong> 珠穆朗玛峰！高 8848.86 米。</p>
+        <p><strong>Teacher:</strong> 正确！中国最长的河是什么？</p>
+        <p><strong>Wang Fang:</strong> 长江。长约 6300 公里。</p>
+        <p><strong>Teacher:</strong> 很好。里海是世界上最深的湖，深 1025 米。</p>
+        <p><strong>Zhang Wei:</strong> 撒哈拉是最大的沙漠吗？</p>
+        <p><strong>Teacher:</strong> 撒哈拉是最热的沙漠。世界上最大的沙漠是南极洲！</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p><strong>1.</strong> <em>It's 8,848.86 meters high.</em> → 数字 + 单位 + adj.：<strong>meters high / kilometers long / meters deep</strong>。</p>
+      <p><strong>2.</strong> <em>What's the longest river in China?</em> → <strong>the + 最高级 + 名词 + in + 范围</strong>。</p>
+      <p><strong>3.</strong> <em>The Caspian Sea is the deepest lake.</em> → <strong>deep → deepest</strong> 。</p>
+      <p><strong>4.</strong> 数字读法：8,848.86 → <strong>eight thousand eight hundred forty-eight point eight six</strong>。</p></div></div></details>
+<details class="module" open><summary>📝 重点词汇 · 世界之最 <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="mountain">mountain</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈmaʊntn/</span><span class="pos">n.</span>
+        <div class="definition">山；山脉</div>
+        <div class="example"><span class="wotd-say" data-speak="Mount Qomolangma is the highest mountain.">Mount Qomolangma is the highest mountain.</span><span class="trans">珠穆朗玛峰是最高峰。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="deep">deep</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/diːp/</span><span class="pos">adj.</span>
+        <div class="definition">深的</div>
+        <div class="example"><span class="wotd-say" data-speak="The Pacific Ocean is very deep.">The Pacific Ocean is very deep.</span><span class="trans">太平洋很深。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="desert">desert</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈdezərt/</span><span class="pos">n.</span>
+        <div class="definition">沙漠</div>
+        <div class="example"><span class="wotd-say" data-speak="The Sahara is the hottest desert.">The Sahara is the hottest desert.</span><span class="trans">撒哈拉是最热的沙漠。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="population">population</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌpɑːpjuˈleɪʃn/</span><span class="pos">n.</span>
+        <div class="definition">人口</div>
+        <div class="example"><span class="wotd-say" data-speak="China has the largest population.">China has the largest population.</span><span class="trans">中国人口最多。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="include">include</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɪnˈkluːd/</span><span class="pos">v.</span>
+        <div class="definition">包括</div>
+        <div class="example"><span class="wotd-say" data-speak="Wild animals include tigers and pandas.">Wild animals include tigers and pandas.</span><span class="trans">野生动物包括老虎和熊猫。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="protection">protection</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/prəˈtekʃn/</span><span class="pos">n.</span>
+        <div class="definition">保护</div>
+        <div class="example"><span class="wotd-say" data-speak="We need to take action for the protection of animals.">We need to take action for the protection of animals.</span><span class="trans">我们需要采取行动保护动物。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="inch">inch</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɪntʃ/</span><span class="pos">n.</span>
+        <div class="definition">英寸</div>
+        <div class="example"><span class="wotd-say" data-speak="The baby panda weighs about 0.1 kilos at birth.">The baby panda weighs about 0.1 kilos at birth.</span><span class="trans">熊猫宝宝出生时约 0.1 公斤。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="weigh">weigh</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/weɪ/</span><span class="pos">v.</span>
+        <div class="definition">重（多少）</div>
+        <div class="example"><span class="wotd-say" data-speak="An adult panda weighs about 100 kilos.">An adult panda weighs about 100 kilos.</span><span class="trans">成年熊猫约重 100 公斤。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="birth">birth</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/bɜːrθ/</span><span class="pos">n.</span>
+        <div class="definition">出生</div>
+        <div class="example"><span class="wotd-say" data-speak="At birth, a baby panda is very small.">At birth, a baby panda is very small.</span><span class="trans">出生时熊猫宝宝非常小。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="ocean">ocean</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈoʊʃn/</span><span class="pos">n.</span>
+        <div class="definition">海洋</div>
+        <div class="example"><span class="wotd-say" data-speak="The Pacific is the largest ocean.">The Pacific is the largest ocean.</span><span class="trans">太平洋是最大的海洋。</span></div>
+      </div></div></div></details>
+<details class="module" open><summary>🔤 重点句型 · Sentence Patterns</summary><div class="content"><div class="pattern-grid">      <div class="pattern-card">
+        <div class="structure">数字 + 单位 + 形容词</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>描述度量</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1">The mountain is <span class="slot">8,848 meters high</span>.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">the + 最高级 + in + 范围</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>在一定范围内最…</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp2">It's <span class="slot">the longest river in China</span>.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">比较级 + than any other…</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>比任何其他都…</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp3">It's <span class="slot">higher than any other</span> mountain.</span></div>
+      </div></div></div></details>
+<details class="module detail-module" open><summary>📚 语法聚焦 · 比较级与最高级深入运用 · 数字度量 <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module"><h3>度量描述</h3>
+<table class="grammar-table">
+<tr><th>度量维度</th><th>问句</th><th>回答</th></tr>
+<tr><td>高度</td><td>How high is…?</td><td>It's … meters high.</td></tr>
+<tr><td>长度</td><td>How long is…?</td><td>It's … kilometers long.</td></tr>
+<tr><td>深度</td><td>How deep is…?</td><td>It's … meters deep.</td></tr>
+<tr><td>宽度</td><td>How wide is…?</td><td>It's … meters wide.</td></tr>
+<tr><td>重量</td><td>How heavy is…?</td><td>It's … kilos.</td></tr>
+</table>
+<h3>最高级 + 范围</h3>
+<table class="grammar-table">
+<tr><th>结构</th><th>示例</th></tr>
+<tr><td>the + 最高级 + in + 地点</td><td>the tallest building in the world</td></tr>
+<tr><td>the + 最高级 + of + 群体</td><td>the tallest of the three boys</td></tr>
+<tr><td>one of the + 最高级 + 复数</td><td>one of the longest rivers</td></tr>
+</table>
+</div><div class="chinese-error">      <p>❌ <span class="wrong" data-speak="The river is 6,000 meters length.">The river is 6,000 meters length.</span>（用 long 而不是 length）</p>
+      <p>✅ <span class="correct" data-speak="The river is 6,000 meters long.">The river is 6,000 meters long.</span></p>
+      <p>❌ <span class="wrong" data-speak="It's the highest mountain of the world.">It's the highest mountain of the world.</span>（of 改为 in）</p>
+      <p>✅ <span class="correct" data-speak="It's the highest mountain in the world.">It's the highest mountain in the world.</span></p></div></div></details>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[最高级] The Nile is the ____ (long) river in the world.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>longest</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[度量] How ____ is the mountain? — About 5,000 meters high.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>high</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[范围] China has the largest population ____ the world.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>in</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[改错] The Amazon is wider than any river in the world.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>The Amazon is wider than any other river in the world.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[比较] The Caspian Sea is the deepest ____ all the lakes.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>of</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[数字] 8,848.86 的英文读法？</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>eight thousand eight hundred forty-eight point eight six</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">[汉译英] 长城有多长？它长约 21,196 公里。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>How long is the Great Wall? It's about 21,196 kilometers long.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">[补全] A: What's the biggest animal on land?<br>B: ____</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>The elephant. / Actually, the African elephant is the biggest land animal.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>📖 阅读专项 · Amazing Animals: Pandas</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">Pandas are one of the most famous animals in the world. They live in the forests of China.</p>
+      <p class="en-text">At birth, a baby panda is about 15 cm long and weighs only 0.1 kg. It's so small that you can hold it in one hand! An adult panda weighs about 100 kg and is 1.5 meters long.</p>
+      <p class="en-text">Pandas eat bamboo. An adult panda eats about 12 to 38 kilos of bamboo every day. That's a lot!</p>
+      <p class="en-text">The panda is one of the most endangered animals in the world. There are only about 1,800 pandas living in the wild. We should do more to protect them.</p><div class="gloss"><span>bamboo n. 竹子</span> <span>endangered adj. 濒危的</span> <span>wild n. 野生环境</span> <span>protect v. 保护</span> </div></div>    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">1. How much does a baby panda weigh at birth?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>About 0.1 kg.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">2. How much bamboo does an adult panda eat per day?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>12 to 38 kilos.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★★</span>
+      <div class="q-body">3. How many pandas are there in the wild?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>About 1,800.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>🏆 中考题型专练 · 语法填空</summary><div class="content exam-section"><p style="font-size:13px;margin-bottom:8px;">用括号内单词的适当形式填空。</p><div class="reading-passage" style="background:var(--bg-secondary);">      <p>The Great Wall is one of the (1)____ (great) wonders in the world. It's about 21,196 kilometers (2)____ (long). It's (3)____ (long) than any other wall in the world. The Great Wall is so (4)____ (famous) that millions of tourists visit it every year. It's the (5)____ (popular) tourist attraction in China.</p></div><div class="exam-q" style="border-left-color:#f59e0b;"><span class="q-tag" style="background:#f59e0b;color:#fff;">答案</span><div class="q-body">(1) greatest；(2) long；(3) longer；(4) famous；(5) most popular</div></div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · Amazing Places in China</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">请以"Amazing Places in China"为题，用最高级介绍中国的 3 个"世界之最"（自然或人文）。</div></div><div class="writing-framework">      <div class="fw-step">开头：中国有很多世界之最。</div>
+      <div class="fw-step">主体：介绍 3 个不同方面的高/长/大。</div>
+      <div class="fw-step">结尾：表达自豪感。</div></div><div class="writing-model"><div class="en">China is a country with many amazing places. First, Mount Qomolangma is the highest mountain in the world. It's 8,848.86 meters high. Second, the Yangtze River is the longest river in China. It's about 6,300 kilometers long. Third, the Great Wall is one of the greatest wonders. I'm proud that China has so many world records!</div><div class="trans">中国是一个有很多了不起地方的国家。第一，珠穆朗玛峰是世界最高峰，高 8848.86 米。第二，长江是中国最长的河流，长约 6300 公里。第三，长城是最伟大的奇迹之一。我为中国有这么多世界之最而自豪！</div></div></div></details>
+<details class="module detail-module" open><summary>🎯 Project · World Records Poster</summary><div class="content project-module"><div class="project-brief"><div class="project-title">World Records Poster</div><div class="project-desc">小组选择 5 个世界之最（自然或人造），用英语制作一张海报，包含数字和最高级描述。</div></div><div class="project-steps">      <div class="step"><span class="step-num">1</span><span class="step-text">每人选择一个世界之最。</span></div>
+      <div class="step"><span class="step-num">2</span><span class="step-text">查找数据和图片。</span></div>
+      <div class="step"><span class="step-num">3</span><span class="step-text">用英语写描述（含数字和最高级）。</span></div>
+      <div class="step"><span class="step-num">4</span><span class="step-text">制作海报并展示。</span></div></div><div class="project-rubric"><table><tr><th>#</th><th>评价标准</th></tr><tr><td>1.</td><td>数据准确</td></tr>
+<tr><td>2.</td><td>正确使用最高级和度量表达</td></tr>
+<tr><td>3.</td><td>设计美观</td></tr>
+<tr><td>4.</td><td>口语表达流利</td></tr></table></div></div></details>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用最高级描述最好的事物</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用数字+单位描述度量</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能比较不同事物</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写世界之最的短文</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>假装你在参加"世界之最"问答比赛，用英语回答主持人的提问。练习最高级和数字表达。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">默写 5 个表示度量的形容词（high/long/deep/wide/heavy）</span>
+    <span class="review-dot">用最高级写 5 个世界之最句子</span>
+    <span class="review-dot">用数字表达写 5 个度量句</span>
+    <span class="review-dot">写一段关于濒危动物的介绍</span></div>
+<div class="next-stop" style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;"><a href="b2u06.html" class="nav-arrow">← 上一单元</a><a href="b2u08.html" class="nav-arrow">下一单元 →</a></div>
+<div class="next-stop" style="margin-top:8px;"><strong>➡️ 下一单元：Making a Difference</strong><br>最后一单元你将学习如何描述公益活动和社会责任，用英语讨论如何让世界变得更美好。</div>
+</main>
+<div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
+<button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis, currentUtterance: null, speaking: false, rate: 0.9, voiceURI: 'en-US',
+    init: function(){var s=this;document.getElementById('speechRate').addEventListener('input',function(){s.rate=+this.value;document.getElementById('speechRateLabel').textContent=this.value;});document.getElementById('speechVoice').addEventListener('change',function(){s.voiceURI=this.value;localStorage.setItem('speech-voice',this.value);});document.getElementById('speechStopBtn').addEventListener('click',function(){s.stop();});document.getElementById('speechCloseBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.remove('open');});document.getElementById('speechToggleBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.toggle('open');});},
+    speak: function(t,c){if(!t)return;this.stop();var u=new SpeechSynthesisUtterance(t);u.lang=this.voiceURI;u.rate=this.rate;u.onend=function(){if(c)c();};this.currentUtterance=u;this.synthesis.speak(u);},
+    speakDialogue: function(id,c){var s=this,el=document.getElementById(id),ls=el?el.querySelectorAll('.en-text'):[],i=0;this.stop();(function n(){if(i>=ls.length){if(c)c();return;}var e=ls[i],t=e.getAttribute('data-speak')||e.textContent;if(!t){i++;n();return;}e.classList.add('speaking');var u=new SpeechSynthesisUtterance(t);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){e.classList.remove('speaking');i++;setTimeout(n,500);};u.onerror=function(){e.classList.remove('speaking');i++;setTimeout(n,200);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    speakVocabSection: function(id,c){var s=this,el=document.getElementById(id),cs=el?el.querySelectorAll('.vocab-card'):[],i=0;this.stop();(function n(){if(i>=cs.length){if(c)c();return;}var e=cs[i],hw=e.querySelector('.headword'),ex=e.querySelector('.example .wotd-say'),t=[];if(hw)t.push(hw.getAttribute('data-speak')||hw.textContent);if(ex)t.push(ex.getAttribute('data-speak')||ex.textContent.replace(/<[^>]+>/g,'').trim());var ft=t.join('. ');if(!ft){i++;n();return;}hw.classList.add('speaking');var u=new SpeechSynthesisUtterance(ft);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){hw.classList.remove('speaking');i++;setTimeout(n,600);};u.onerror=function(){hw.classList.remove('speaking');i++;setTimeout(n,300);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    stop: function(){this.synthesis.cancel();this.speaking=false;}
+  };SpeechManager.init();
+  document.querySelectorAll('.wotd-say').forEach(function(el){el.addEventListener('click',function(){SpeechManager.speak(this.getAttribute('data-speak')||this.textContent);});});
+  document.querySelectorAll('.speak-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var d=this.getAttribute('data-dialogue'),v=this.getAttribute('data-vocab'),t=this.getAttribute('data-target');if(this.classList.contains('speaking')){SpeechManager.stop();this.classList.remove('speaking');return;}this.classList.add('speaking');var done=function(){btn.classList.remove('speaking');};if(d){SpeechManager.speakDialogue(d,done);}else if(v){SpeechManager.speakVocabSection(v,done);}else if(t){var tg=document.getElementById(t);if(!tg){btn.classList.remove('speaking');return;}SpeechManager.speak(tg.textContent.replace(/<[^>]+>/g,''),done);}else{btn.classList.remove('speaking');}});});
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();var hw=this.previousElementSibling;if(hw&&hw.classList.contains('wotd-say')){var t=hw.getAttribute('data-speak')||hw.textContent;SpeechManager.speak(t);}});});
+  (function(){var btn=document.getElementById('expandAllBtn');if(!btn)return;btn.addEventListener('click',function(){var ad=document.querySelectorAll('.module,.exam-module');var ao=true;for(var i=0;i<ad.length;i++){if(!ad[i].hasAttribute('open')){ao=false;break;}};for(var i=0;i<ad.length;i++){if(ao)ad[i].removeAttribute('open');else ad[i].setAttribute('open','');};btn.textContent=ao?'📂 展开全部模块':'📖 收起全部模块';});})();
+  var s=document.getElementById('sidebar'),k='eng8-theme-sidebar';if(!s)return;
+  if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
+  window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=window.scrollY>400?'flex':'none';},{passive:true});
+  document.getElementById('backToTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution');});});
+})();
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);localStorage.setItem("eng8-theme",t);var btn=document.getElementById("themeToggle");if(btn)btn.textContent=t==="dark"?"☀️":"🌙";}
+function toggleTheme(){setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark");}
+</script></body></html>

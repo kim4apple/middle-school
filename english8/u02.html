@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U2 How often do you exercise? | 初中英语八年级</title>
+<link rel="stylesheet" href="css/english8.css">
+<style>
+.speak-btn { display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;color:var(--accent);border:1px solid var(--border);border-radius:4px;padding:2px 8px;background:var(--bg);transition:background 0.15s; }
+.speak-btn:hover { background:var(--accent-light); }
+.speak-btn.speaking { background:var(--eng-amber-light);color:var(--eng-amber);border-color:var(--eng-amber); }
+.headword-speak-indicator { font-size:11px;margin-left:3px;opacity:0.55;cursor:pointer;vertical-align:super;line-height:1; }
+.headword-speak-indicator:hover { opacity:1; }
+.wotd-say { cursor:pointer;transition:color 0.15s; }
+.wotd-say:hover { color:var(--accent); }
+.wotd-say.speaking { color:var(--eng-pink); }
+.speech-panel { position:fixed;bottom:80px;right:24px;z-index:999;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);padding:14px 18px;display:none;min-width:180px; }
+.speech-panel.open { display:block; }
+.speech-panel .row { display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px; }
+.speech-panel .row label { color:var(--text-secondary);font-size:12px;min-width:36px; }
+.speech-panel select,.speech-panel input[type="range"] { flex:1; }
+.speech-panel button { padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px; }
+.speech-panel button:hover { background:var(--accent-light); }
+.speech-toggle-btn { position:fixed;bottom:24px;right:76px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--accent);cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center; }
+.speech-toggle-btn:hover { background:var(--accent-light); }
+.en-text.speaking { background:var(--eng-amber-light);border-radius:4px;padding:2px 4px;transition:background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background:#452a08; }
+.detail-module { content-visibility:auto;contain-intrinsic-size:300px; }
+.reading { content-visibility:auto;contain-intrinsic-size:400px; }
+</style>
+<script>(function(){var t=localStorage.getItem("eng8-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+    <nav id="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="margin-bottom:0;">英语八年级</h2>
+        <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+      </div><nav>
+        <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../grammar.html" style="font-size:13px;">📌 语法全景图</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 八 上 ━━</a>
+        <a href="u01.html">U1 Happy Holiday!</a>
+        <a href="u02.html" class="active">U2 How often do you exercise?</a>
+        <a href="u03.html">U3 I'm more outgoing than my sister.</a>
+        <a href="u04.html">U4 What's the best movie theater?</a>
+        <a href="u05.html">U5 Do you want to watch a game show?</a>
+        <a href="u06.html">U6 I'm going to study computer science.</a>
+        <a href="u07.html">U7 Will people have robots?</a>
+        <a href="u08.html">U8 Let's Communicate!</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 八 下 ━━</a>
+        <a href="b2u01.html">U1 Time to Relax!</a>
+        <a href="b2u02.html">U2 Let's clean up!</a>
+        <a href="b2u03.html">U3 Could you please clean your room?</a>
+        <a href="b2u04.html">U4 Why don't you talk to your parents?</a>
+        <a href="b2u05.html">U5 What were you doing when the rainstorm came?</a>
+        <a href="b2u06.html">U6 An old man tried to move the mountains.</a>
+        <a href="b2u07.html">U7 What's the highest mountain in the world?</a>
+        <a href="b2u08.html">U8 Making a Difference</a>
+      </nav>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+    </nav>
+<main id="content">
+<div class="cover"><div class="sub-en">U2</div><h1>How often do you exercise?</h1><p>生活习惯</p></div>
+<div class="unit-meta"><span>📖 话题：Daily Habits & Free Time Activities</span><span>💬 功能：Talk about how often you do things</span><span>📚 语法：频率副词（always/usually/often/sometimes/never）· How often 疑问句</span><span>📝 写作：My Healthy Habit Report</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能用 How often 询问频率</label>
+  <label><input type="checkbox"> 能用频率副词描述日常习惯</label>
+  <label><input type="checkbox"> 能做简单的健康习惯调查并汇报</label>
+  <label><input type="checkbox"> 能用百分比表达频率</label></div>
+<details class="module" open><summary>📖 课文精讲 · How often do you exercise?</summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：老师让同学们互相采访各自的课外活动频率。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
+<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Claire:</span><span class="en-text wotd-say" data-speak="Hi, Tom! How often do you exercise?">Hi, Tom! How often do you exercise?</span></div>
+      <div class="dialogue-line"><span class="speaker">Tom:</span><span class="en-text wotd-say" data-speak="I exercise every day. I run for 30 minutes in the morning.">I exercise every day. I run for 30 minutes in the morning.</span></div>
+      <div class="dialogue-line"><span class="speaker">Claire:</span><span class="en-text wotd-say" data-speak="Great! How often do you watch TV?">Great! How often do you watch TV?</span></div>
+      <div class="dialogue-line"><span class="speaker">Tom:</span><span class="en-text wotd-say" data-speak="I hardly ever watch TV. I'm too busy with homework.">I hardly ever watch TV. I'm too busy with homework.</span></div>
+      <div class="dialogue-line"><span class="speaker">Claire:</span><span class="en-text wotd-say" data-speak="What about reading?">What about reading?</span></div>
+      <div class="dialogue-line"><span class="speaker">Tom:</span><span class="en-text wotd-say" data-speak="I often read books before bed. I read about two books a month.">I often read books before bed. I read about two books a month.</span></div>
+      <div class="dialogue-line"><span class="speaker">Claire:</span><span class="en-text wotd-say" data-speak="You have good habits! I always stay up late. I need to change.">You have good habits! I always stay up late. I need to change.</span></div>
+      <div class="dialogue-line"><span class="speaker">Tom:</span><span class="en-text wotd-say" data-speak="How often do you stay up late?">How often do you stay up late?</span></div>
+      <div class="dialogue-line"><span class="speaker">Claire:</span><span class="en-text wotd-say" data-speak="Almost every day. I'm going to go to bed earlier from next week.">Almost every day. I'm going to go to bed earlier from next week.</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>Claire:</strong> 嗨 Tom！你多久锻炼一次？</p>
+        <p><strong>Tom:</strong> 我每天锻炼。早上跑 30 分钟步。</p>
+        <p><strong>Claire:</strong> 很好！你看电视的频率呢？</p>
+        <p><strong>Tom:</strong> 我几乎不看电视，作业太忙了。</p>
+        <p><strong>Claire:</strong> 那阅读呢？</p>
+        <p><strong>Tom:</strong> 我经常睡前看书，一个月大概读两本。</p>
+        <p><strong>Claire:</strong> 你习惯真好！我总是熬夜，得改改。</p>
+        <p><strong>Tom:</strong> 你多久熬夜一次？</p>
+        <p><strong>Claire:</strong> 几乎每天都熬。我打算下周起早点睡。</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p><strong>1.</strong> <em>How often do you exercise?</em> → <strong>How often</strong> 问频率，回答用频率副词或次数表达。</p>
+      <p><strong>2.</strong> 频率副词顺序：<strong>always(100%) > usually(80%) > often(60%) > sometimes(40%) > hardly ever(5%) > never(0%)</strong></p>
+      <p><strong>3.</strong> <em>I hardly ever watch TV.</em> → <strong>hardly ever</strong> 表示"几乎不"，含否定意义。</p>
+      <p><strong>4.</strong> <em>I read about two books a month.</em> → <strong>次数 + a + 时间单位</strong>：once a week / twice a month / three times a year</p></div></div></details>
+<details class="module" open><summary>📝 重点词汇 · 生活习惯 <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="exercise">exercise</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈeksərsaɪz/</span><span class="pos">v./n.</span>
+        <div class="definition">锻炼；运动</div>
+        <div class="example"><span class="wotd-say" data-speak="How often do you exercise?">How often do you exercise?</span><span class="trans">你多久锻炼一次？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="hardly">hardly</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈhɑːrdli/</span><span class="pos">adv.</span>
+        <div class="definition">几乎不</div>
+        <div class="example"><span class="wotd-say" data-speak="I hardly ever go to the cinema.">I hardly ever go to the cinema.</span><span class="trans">我几乎不去电影院。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="ever">ever</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈevər/</span><span class="pos">adv.</span>
+        <div class="definition">曾经；在任何时候</div>
+        <div class="example"><span class="wotd-say" data-speak="Hardly ever means almost never.">Hardly ever means almost never.</span><span class="trans">Hardly ever 意为几乎从不。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="once">once</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/wʌns/</span><span class="pos">adv.</span>
+        <div class="definition">一次；曾经</div>
+        <div class="example"><span class="wotd-say" data-speak="I go to the library once a week.">I go to the library once a week.</span><span class="trans">我每周去一次图书馆。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="twice">twice</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/twaɪs/</span><span class="pos">adv.</span>
+        <div class="definition">两次；两倍</div>
+        <div class="example"><span class="wotd-say" data-speak="She reads English twice a day.">She reads English twice a day.</span><span class="trans">她每天读两次英语。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="program">program</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈproʊɡræm/</span><span class="pos">n.</span>
+        <div class="definition">节目；项目</div>
+        <div class="example"><span class="wotd-say" data-speak="What's your favorite TV program?">What's your favorite TV program?</span><span class="trans">你最喜欢的电视节目是什么？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="full">full</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/fʊl/</span><span class="pos">adj.</span>
+        <div class="definition">满的；充满的</div>
+        <div class="example"><span class="wotd-say" data-speak="My weekend is full of activities.">My weekend is full of activities.</span><span class="trans">我的周末排满了活动。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="maybe">maybe</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈmeɪbi/</span><span class="pos">adv.</span>
+        <div class="definition">也许；大概</div>
+        <div class="example"><span class="wotd-say" data-speak="Maybe I can join you tomorrow.">Maybe I can join you tomorrow.</span><span class="trans">也许我明天可以加入你。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="least">least</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/liːst/</span><span class="pos">adj./adv.</span>
+        <div class="definition">最少；最小</div>
+        <div class="example"><span class="wotd-say" data-speak="You should exercise at least three times a week.">You should exercise at least three times a week.</span><span class="trans">你应该至少每周锻炼三次。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="result">result</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/rɪˈzʌlt/</span><span class="pos">n.</span>
+        <div class="definition">结果；成绩</div>
+        <div class="example"><span class="wotd-say" data-speak="Here are the results of the survey.">Here are the results of the survey.</span><span class="trans">这是调查结果。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="percent">percent</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/pərˈsent/</span><span class="pos">n.</span>
+        <div class="definition">百分之…</div>
+        <div class="example"><span class="wotd-say" data-speak="Forty percent of students exercise every day.">Forty percent of students exercise every day.</span><span class="trans">40% 的学生每天锻炼。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="habit">habit</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈhæbɪt/</span><span class="pos">n.</span>
+        <div class="definition">习惯</div>
+        <div class="example"><span class="wotd-say" data-speak="Good habits help us stay healthy.">Good habits help us stay healthy.</span><span class="trans">好习惯帮助我们保持健康。</span></div>
+      </div></div></div></details>
+<details class="module" open><summary>🔤 重点句型 · Sentence Patterns</summary><div class="content"><div class="pattern-grid">      <div class="pattern-card">
+        <div class="structure">How often + 一般疑问句?</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>询问频率</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1">How often <span class="slot">do you exercise</span>? — <span class="slot">Every day</span>.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">频率副词 + 实义动词</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>频率副词放在行为动词前</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp2">I <span class="slot">always</span> get up early. / She <span class="slot">hardly ever</span> watches TV.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">次数 + a + 时间单位</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>表达频率数量</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp3"><span class="slot">Once</span> a week / <span class="slot">Three times</span> a month.</span></div>
+      </div></div></div></details>
+<details class="module detail-module" open><summary>📚 语法聚焦 · 频率副词 & How often 疑问句 <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module"><h3>频率副词用法</h3>
+<table class="grammar-table">
+<tr><th>副词</th><th>频率</th><th>示例</th></tr>
+<tr><td>always</td><td>100%</td><td>I always brush my teeth.</td></tr>
+<tr><td>usually</td><td>80%</td><td>I usually get up at 6:30.</td></tr>
+<tr><td>often</td><td>60%</td><td>I often go to the park.</td></tr>
+<tr><td>sometimes</td><td>40%</td><td>I sometimes watch TV.</td></tr>
+<tr><td>hardly ever</td><td>5%</td><td>I hardly ever eat junk food.</td></tr>
+<tr><td>never</td><td>0%</td><td>I never smoke.</td></tr>
+</table>
+<h3>How often 疑问句结构</h3>
+<table class="grammar-table">
+<tr><th>结构</th><th>示例</th></tr>
+<tr><td>How often + do/does + 主语 + 动词?</td><td>How often do you read books?</td></tr>
+<tr><td>How often + be + 主语 + 形容词?</td><td>How often are you late for school?</td></tr>
+</table>
+</div><div class="chinese-error">      <p>❌ <span class="wrong" data-speak="I every day exercise.">I every day exercise.</span>（频率词不放在句首/句末修饰动词）</p>
+      <p>✅ <span class="correct" data-speak="I exercise every day.">I exercise every day.</span></p>
+      <p>❌ <span class="wrong" data-speak="How often you go shopping?">How often you go shopping?</span>（疑问句需助动词 do/does）</p>
+      <p>✅ <span class="correct" data-speak="How often do you go shopping?">How often do you go shopping?</span></p></div></div></details>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[频率副词] She ____ (总是) gets up at 6 o'clock.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>always</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[How often] ____ ____ do you go to the library? — Twice a week.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>How often</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[选择] I have ____ (ever / never) been to Beijing. It's my first time.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>never</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[排序] every / I / exercise / day / .</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>I exercise every day.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[改错] How often does he goes to the gym?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>How often does he go to the gym?</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[填空] She ____ (几乎不) eats junk food, so she is very healthy.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>hardly ever</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">[汉译英] 你多久看一次电影？— 我一个月看两次。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>How often do you watch a movie? — I watch a movie twice a month.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">[调查汇报] 请你写一段话描述你的锻炼习惯，至少用到 3 个频率词。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>（自由发挥）</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">[完形] I ____ (usual/usually) get up at 7, but I ____ (hard/hardly) ever eat breakfast on weekdays.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>usually; hardly</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>📖 阅读专项 · Teen Health Report</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">We did a survey on teen health habits. Here are the results.</p>
+      <p class="en-text">Only 25% of teens exercise every day. Most teens exercise once or twice a week. 45% of teens spend more than two hours on screens every day.</p>
+      <p class="en-text">Teens who exercise more sleep better and feel happier. Experts say teens should exercise at least three times a week.</p>
+      <p class="en-text">Good habits start small. Try to walk for 20 minutes every day. Your body and mind will thank you!</p><div class="gloss"><span>survey n. 调查</span> <span>expert n. 专家</span> <span>screen n. 屏幕</span> <span>at least 至少</span> </div></div>    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">1. What percent of teens exercise every day?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>25%</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">2. How much screen time do 45% of teens have?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>More than two hours a day.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★★</span>
+      <div class="q-body">3. What advice do experts give?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Exercise at least three times a week and walk 20 minutes daily.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>🏆 中考题型专练 · 语法填空</summary><div class="content exam-section"><p style="font-size:13px;margin-bottom:8px;">用所给词的适当形式填空。</p><div class="reading-passage" style="background:var(--bg-secondary);">      <p>My aunt is a doctor. She works very hard. She (1)____ (usual) gets up at 6 a.m. and goes running. She (2)____ (exercise) for 30 minutes every morning. She (3)____ (hard) ever stays up late. She says good habits help her (4)____ (stay) healthy. I think I (5)____ (should) learn from her.</p></div><div class="exam-q" style="border-left-color:#f59e0b;"><span class="q-tag" style="background:#f59e0b;color:#fff;">答案</span><div class="q-body">(1) usually；(2) exercises；(3) hardly；(4) stay；(5) should</div></div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · My Healthy Habit Report</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">请写一份"My Healthy Habit Report"，描述你一周的健康习惯，至少用到 4 个频率副词。</div></div><div class="writing-framework">      <div class="fw-step">开头：引出话题——我的一周习惯。</div>
+      <div class="fw-step">主体：分饮食、运动、睡眠三方面描述。</div>
+      <div class="fw-step">结尾：总结哪些习惯好，哪些需要改进。</div></div><div class="writing-model"><div class="en">Let me report my healthy habits. I always get up at 6:30 and go to bed before 10 p.m. I usually eat three meals a day. I often eat fruit and vegetables. I exercise three times a week. But I hardly ever drink milk. I'm going to drink milk every day from now on.</div><div class="trans">我来汇报一下我的健康习惯。我总是 6:30 起床，晚上 10 点前睡觉。我通常一日三餐。我经常吃水果蔬菜，每周锻炼三次。但我几乎不喝牛奶。我打算从今以后每天喝牛奶。</div></div></div></details>
+<details class="module detail-module" open><summary>🎯 Project · Class Habit Survey</summary><div class="content project-module"><div class="project-brief"><div class="project-title">Class Habit Survey</div><div class="project-desc">在班里做一个小调查，收集 5 位同学的运动、阅读和屏幕时间数据，用英语写一份调查报告。</div></div><div class="project-steps">      <div class="step"><span class="step-num">1</span><span class="step-text">设计 3 个频率问题（运动/阅读/屏幕时间）。</span></div>
+      <div class="step"><span class="step-num">2</span><span class="step-text">采访 5 位同学，记录数据。</span></div>
+      <div class="step"><span class="step-num">3</span><span class="step-text">计算百分比并写报告。</span></div>
+      <div class="step"><span class="step-num">4</span><span class="step-text">在班里展示调查结果。</span></div></div><div class="project-rubric"><table><tr><th>#</th><th>评价标准</th></tr><tr><td>1.</td><td>问题设计合理</td></tr>
+<tr><td>2.</td><td>数据准确完整</td></tr>
+<tr><td>3.</td><td>报告使用了频率副词和百分比表达</td></tr>
+<tr><td>4.</td><td>展示清晰</td></tr></table></div></div></details>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 How often 提问</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用频率副词描述习惯</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用次数表达（once/twice/three times）</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写一篇健康习惯报告</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>假装你是健康杂志的记者，用英语采访一个同学的生活习惯。练习 How often 问句和频率副词。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">默写频率副词排序（always→never）</span>
+    <span class="review-dot">用 How often 写 3 个问句</span>
+    <span class="review-dot">写 5 句关于自己习惯的句子</span>
+    <span class="review-dot">复习 once/twice/three times 用法</span></div>
+<div class="next-stop" style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;"><a href="u01.html" class="nav-arrow">← 上一单元</a><a href="u03.html" class="nav-arrow">下一单元 →</a></div>
+<div class="next-stop" style="margin-top:8px;"><strong>➡️ 下一单元：I'm more outgoing than my sister.</strong><br>下一单元你将学习形容词比较级，学会用 than 比较人和事物的不同。</div>
+</main>
+<div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
+<button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis, currentUtterance: null, speaking: false, rate: 0.9, voiceURI: 'en-US',
+    init: function(){var s=this;document.getElementById('speechRate').addEventListener('input',function(){s.rate=+this.value;document.getElementById('speechRateLabel').textContent=this.value;});document.getElementById('speechVoice').addEventListener('change',function(){s.voiceURI=this.value;localStorage.setItem('speech-voice',this.value);});document.getElementById('speechStopBtn').addEventListener('click',function(){s.stop();});document.getElementById('speechCloseBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.remove('open');});document.getElementById('speechToggleBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.toggle('open');});},
+    speak: function(t,c){if(!t)return;this.stop();var u=new SpeechSynthesisUtterance(t);u.lang=this.voiceURI;u.rate=this.rate;u.onend=function(){if(c)c();};this.currentUtterance=u;this.synthesis.speak(u);},
+    speakDialogue: function(id,c){var s=this,el=document.getElementById(id),ls=el?el.querySelectorAll('.en-text'):[],i=0;this.stop();(function n(){if(i>=ls.length){if(c)c();return;}var e=ls[i],t=e.getAttribute('data-speak')||e.textContent;if(!t){i++;n();return;}e.classList.add('speaking');var u=new SpeechSynthesisUtterance(t);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){e.classList.remove('speaking');i++;setTimeout(n,500);};u.onerror=function(){e.classList.remove('speaking');i++;setTimeout(n,200);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    speakVocabSection: function(id,c){var s=this,el=document.getElementById(id),cs=el?el.querySelectorAll('.vocab-card'):[],i=0;this.stop();(function n(){if(i>=cs.length){if(c)c();return;}var e=cs[i],hw=e.querySelector('.headword'),ex=e.querySelector('.example .wotd-say'),t=[];if(hw)t.push(hw.getAttribute('data-speak')||hw.textContent);if(ex)t.push(ex.getAttribute('data-speak')||ex.textContent.replace(/<[^>]+>/g,'').trim());var ft=t.join('. ');if(!ft){i++;n();return;}hw.classList.add('speaking');var u=new SpeechSynthesisUtterance(ft);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){hw.classList.remove('speaking');i++;setTimeout(n,600);};u.onerror=function(){hw.classList.remove('speaking');i++;setTimeout(n,300);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    stop: function(){this.synthesis.cancel();this.speaking=false;}
+  };SpeechManager.init();
+  document.querySelectorAll('.wotd-say').forEach(function(el){el.addEventListener('click',function(){SpeechManager.speak(this.getAttribute('data-speak')||this.textContent);});});
+  document.querySelectorAll('.speak-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var d=this.getAttribute('data-dialogue'),v=this.getAttribute('data-vocab'),t=this.getAttribute('data-target');if(this.classList.contains('speaking')){SpeechManager.stop();this.classList.remove('speaking');return;}this.classList.add('speaking');var done=function(){btn.classList.remove('speaking');};if(d){SpeechManager.speakDialogue(d,done);}else if(v){SpeechManager.speakVocabSection(v,done);}else if(t){var tg=document.getElementById(t);if(!tg){btn.classList.remove('speaking');return;}SpeechManager.speak(tg.textContent.replace(/<[^>]+>/g,''),done);}else{btn.classList.remove('speaking');}});});
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();var hw=this.previousElementSibling;if(hw&&hw.classList.contains('wotd-say')){var t=hw.getAttribute('data-speak')||hw.textContent;SpeechManager.speak(t);}});});
+  (function(){var btn=document.getElementById('expandAllBtn');if(!btn)return;btn.addEventListener('click',function(){var ad=document.querySelectorAll('.module,.exam-module');var ao=true;for(var i=0;i<ad.length;i++){if(!ad[i].hasAttribute('open')){ao=false;break;}};for(var i=0;i<ad.length;i++){if(ao)ad[i].removeAttribute('open');else ad[i].setAttribute('open','');};btn.textContent=ao?'📂 展开全部模块':'📖 收起全部模块';});})();
+  var s=document.getElementById('sidebar'),k='eng8-theme-sidebar';if(!s)return;
+  if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
+  window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=window.scrollY>400?'flex':'none';},{passive:true});
+  document.getElementById('backToTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution');});});
+})();
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);localStorage.setItem("eng8-theme",t);var btn=document.getElementById("themeToggle");if(btn)btn.textContent=t==="dark"?"☀️":"🌙";}
+function toggleTheme(){setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark");}
+</script></body></html>

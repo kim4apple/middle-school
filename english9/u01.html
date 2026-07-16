@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U1 How can we become good learners? | 初中英语九年级</title>
+<link rel="stylesheet" href="css/english9.css">
+<style>
+.speak-btn { display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;color:var(--accent);border:1px solid var(--border);border-radius:4px;padding:2px 8px;background:var(--bg);transition:background 0.15s; }
+.speak-btn:hover { background:var(--accent-light); }
+.speak-btn.speaking { background:var(--eng-amber-light);color:var(--eng-amber);border-color:var(--eng-amber); }
+.headword-speak-indicator { font-size:11px;margin-left:3px;opacity:0.55;cursor:pointer;vertical-align:super;line-height:1; }
+.headword-speak-indicator:hover { opacity:1; }
+.wotd-say { cursor:pointer;transition:color 0.15s; }
+.wotd-say:hover { color:var(--accent); }
+.wotd-say.speaking { color:var(--eng-pink); }
+.speech-panel { position:fixed;bottom:80px;right:24px;z-index:999;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);padding:14px 18px;display:none;min-width:180px; }
+.speech-panel.open { display:block; }
+.speech-panel .row { display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px; }
+.speech-panel .row label { color:var(--text-secondary);font-size:12px;min-width:36px; }
+.speech-panel select,.speech-panel input[type="range"] { flex:1; }
+.speech-panel button { padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px; }
+.speech-panel button:hover { background:var(--accent-light); }
+.speech-toggle-btn { position:fixed;bottom:24px;right:76px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--accent);cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center; }
+.speech-toggle-btn:hover { background:var(--accent-light); }
+.en-text.speaking { background:var(--eng-amber-light);border-radius:4px;padding:2px 4px;transition:background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background:#452a08; }
+.detail-module { content-visibility:auto;contain-intrinsic-size:300px; }
+.reading { content-visibility:auto;contain-intrinsic-size:400px; }
+</style>
+<script>(function(){var t=localStorage.getItem("eng9-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+    <nav id="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="margin-bottom:0;">英语九年级</h2>
+        <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+      </div><nav>
+        <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../grammar.html" style="font-size:13px;">📌 语法全景图</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 九年级全一册 ━━</a>
+        <a href="u01.html" class="active">U1 How can we become good learners?</a>
+        <a href="u02.html">U2 I think that mooncakes are delicious!</a>
+        <a href="u03.html">U3 Could you please tell me where the restrooms are?</a>
+        <a href="u04.html">U4 I used to be afraid of the dark.</a>
+        <a href="u05.html">U5 What are the shirts made of?</a>
+        <a href="u06.html">U6 When was it invented?</a>
+        <a href="u07.html">U7 Teenagers should be allowed to choose their own clothes.</a>
+        <a href="u08.html">U8 It must belong to Carla.</a>
+        <a href="u09.html">U9 I like music that I can dance to.</a>
+        <a href="u10.html">U10 You're supposed to shake hands.</a>
+        <a href="u11.html">U11 Sad movies make me cry.</a>
+        <a href="u12.html">U12 Life is full of the unexpected.</a>
+        <a href="u13.html">U13 We're trying to save the earth!</a>
+        <a href="u14.html">U14 I remember meeting all of you in Grade 7.</a>
+      </nav>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+    </nav>
+<main id="content">
+<div class="cover"><div class="sub-en">U1</div><h1>How can we become good learners?</h1><p>学习方法</p></div>
+<div class="unit-meta"><span>📖 话题：Learning Methods</span><span>💬 功能：Talk about how to study and learn effectively</span><span>📚 语法：Verb + by + V-ing; 动名词作主语</span><span>📝 写作：Write about learning methods and strategies</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能用英语谈论学习方法</label>
+  <label><input type="checkbox"> 能用 by + V-ing 结构描述学习方式</label>
+  <label><input type="checkbox"> 能写关于学习策略的短文</label>
+  <label><input type="checkbox"> 能制定个人学习计划</label></div>
+<details class="module" open><summary>📖 课文精讲 · How can we become good learners?</summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：Mei和Peter在教室里讨论英语学习方法。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
+<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Mei:</span><span class="en-text wotd-say" data-speak="Hi Peter! You look worried. What's wrong?">Hi Peter! You look worried. What's wrong?</span></div>
+      <div class="dialogue-line"><span class="speaker">Peter:</span><span class="en-text wotd-say" data-speak="I'm having trouble learning English. I can't remember the new words.">I'm having trouble learning English. I can't remember the new words.</span></div>
+      <div class="dialogue-line"><span class="speaker">Mei:</span><span class="en-text wotd-say" data-speak="Don't worry! I can help you. How do you study vocabulary?">Don't worry! I can help you. How do you study vocabulary?</span></div>
+      <div class="dialogue-line"><span class="speaker">Peter:</span><span class="en-text wotd-say" data-speak="I just read the textbook again and again. But it doesn't seem to work.">I just read the textbook again and again. But it doesn't seem to work.</span></div>
+      <div class="dialogue-line"><span class="speaker">Mei:</span><span class="en-text wotd-say" data-speak="You should try making word cards. I study by making flashcards.">You should try making word cards. I study by making flashcards.</span></div>
+      <div class="dialogue-line"><span class="speaker">Peter:</span><span class="en-text wotd-say" data-speak="That sounds helpful! What about listening and speaking?">That sounds helpful! What about listening and speaking?</span></div>
+      <div class="dialogue-line"><span class="speaker">Mei:</span><span class="en-text wotd-say" data-speak="I improve my listening by watching English movies. And I practice speaking by talking with friends.">I improve my listening by watching English movies. And I practice speaking by talking with friends.</span></div>
+      <div class="dialogue-line"><span class="speaker">Peter:</span><span class="en-text wotd-say" data-speak="Great ideas! I'll try them. Thanks, Mei!">Great ideas! I'll try them. Thanks, Mei!</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>Mei:</strong> 嗨，彼得！你看起来有点担心。怎么了？</p>
+        <p><strong>Peter:</strong> 我学英语有困难。我记不住新单词。</p>
+        <p><strong>Mei:</strong> 别担心！我可以帮你。你怎么学词汇的？</p>
+        <p><strong>Peter:</strong> 我就一遍一遍地读课本。但似乎没什么用。</p>
+        <p><strong>Mei:</strong> 你应该试试做单词卡。我通过制作闪卡来学习。</p>
+        <p><strong>Peter:</strong> 听起来很有帮助！那听力和口语呢？</p>
+        <p><strong>Mei:</strong> 我通过看英文电影来提高听力。我通过和朋友交谈来练习口语。</p>
+        <p><strong>Peter:</strong> 好主意！我试试看。谢谢你，梅！</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p>have trouble doing sth 做某事有困难 — Peter said he was having trouble <b>learning</b> English.</p>
+      <p>by + V-ing 表示「通过……方式」 — I study <b>by making</b> flashcards.</p>
+      <p>What about...? 用来提建议 — <b>What about</b> listening to English songs?</p>
+      <p>It doesn't seem to work. 表示「似乎没什么用」 — 用于评价方法的有效性。</p></div></div></details>
+<details class="module" open><summary>📝 重点词汇 · 学习方法 <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="textbook">textbook</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈtekstbʊk/</span><span class="pos">n.</span>
+        <div class="definition">教科书；课本</div>
+        <div class="example"><span class="wotd-say" data-speak="Open your textbook to page 10.">Open your textbook to page 10.</span><span class="trans">打开课本到第10页。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="pronunciation">pronunciation</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/prəˌnʌnsiˈeɪʃn/</span><span class="pos">n.</span>
+        <div class="definition">发音；读音</div>
+        <div class="example"><span class="wotd-say" data-speak="Your pronunciation is getting better!">Your pronunciation is getting better!</span><span class="trans">你的发音越来越好了！</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="sentence">sentence</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈsentəns/</span><span class="pos">n.</span>
+        <div class="definition">句子</div>
+        <div class="example"><span class="wotd-say" data-speak="Can you make a sentence with this word?">Can you make a sentence with this word?</span><span class="trans">你能用这个词造个句子吗？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="patient">patient</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈpeɪʃnt/</span><span class="pos">adj.</span>
+        <div class="definition">有耐心的</div>
+        <div class="example"><span class="wotd-say" data-speak="Be patient! Learning takes time.">Be patient! Learning takes time.</span><span class="trans">耐心点！学习需要时间。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="expression">expression</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɪkˈspreʃn/</span><span class="pos">n.</span>
+        <div class="definition">表达；表情</div>
+        <div class="example"><span class="wotd-say" data-speak="This is a useful expression.">This is a useful expression.</span><span class="trans">这是一个有用的表达。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="discover">discover</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/dɪˈskʌvər/</span><span class="pos">v.</span>
+        <div class="definition">发现；发觉</div>
+        <div class="example"><span class="wotd-say" data-speak="I discovered a good way to learn grammar.">I discovered a good way to learn grammar.</span><span class="trans">我发现了一个学语法的好方法。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="secret">secret</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈsiːkrət/</span><span class="pos">n.</span>
+        <div class="definition">秘密；秘诀</div>
+        <div class="example"><span class="wotd-say" data-speak="The secret to learning is practice.">The secret to learning is practice.</span><span class="trans">学习的秘诀是练习。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="repeat">repeat</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/rɪˈpiːt/</span><span class="pos">v.</span>
+        <div class="definition">重复</div>
+        <div class="example"><span class="wotd-say" data-speak="Please repeat the sentence after me.">Please repeat the sentence after me.</span><span class="trans">请跟着我重复这个句子。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="note">note</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/noʊt/</span><span class="pos">n.</span>
+        <div class="definition">笔记；记录</div>
+        <div class="example"><span class="wotd-say" data-speak="I always take notes in class.">I always take notes in class.</span><span class="trans">我总是在课堂上做笔记。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="increase">increase</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɪnˈkriːs/</span><span class="pos">v.</span>
+        <div class="definition">增加；增长</div>
+        <div class="example"><span class="wotd-say" data-speak="Reading helps increase your vocabulary.">Reading helps increase your vocabulary.</span><span class="trans">阅读有助于增加词汇量。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="speed">speed</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/spiːd/</span><span class="pos">n.</span>
+        <div class="definition">速度</div>
+        <div class="example"><span class="wotd-say" data-speak="You need to improve your reading speed.">You need to improve your reading speed.</span><span class="trans">你需要提高阅读速度。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="partner">partner</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈpɑːrtnər/</span><span class="pos">n.</span>
+        <div class="definition">伙伴；搭档</div>
+        <div class="example"><span class="wotd-say" data-speak="Practice with a partner.">Practice with a partner.</span><span class="trans">和伙伴一起练习。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="born">born</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/bɔːrn/</span><span class="pos">v.</span>
+        <div class="definition">出生；天生</div>
+        <div class="example"><span class="wotd-say" data-speak="She was born with a talent for music.">She was born with a talent for music.</span><span class="trans">她天生有音乐天赋。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="ability">ability</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/əˈbɪləti/</span><span class="pos">n.</span>
+        <div class="definition">能力；才能</div>
+        <div class="example"><span class="wotd-say" data-speak="Everyone has the ability to learn.">Everyone has the ability to learn.</span><span class="trans">每个人都有学习的能力。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="create">create</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/kriˈeɪt/</span><span class="pos">v.</span>
+        <div class="definition">创造；创建</div>
+        <div class="example"><span class="wotd-say" data-speak="Create a study plan for yourself.">Create a study plan for yourself.</span><span class="trans">为自己创建一个学习计划。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="brain">brain</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/breɪn/</span><span class="pos">n.</span>
+        <div class="definition">大脑</div>
+        <div class="example"><span class="wotd-say" data-speak="The brain needs exercise too.">The brain needs exercise too.</span><span class="trans">大脑也需要锻炼。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="active">active</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈæktɪv/</span><span class="pos">adj.</span>
+        <div class="definition">活跃的；积极的</div>
+        <div class="example"><span class="wotd-say" data-speak="Stay active in class discussions.">Stay active in class discussions.</span><span class="trans">在课堂讨论中保持积极。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="attention">attention</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/əˈtenʃn/</span><span class="pos">n.</span>
+        <div class="definition">注意；关注</div>
+        <div class="example"><span class="wotd-say" data-speak="Pay attention to your pronunciation.">Pay attention to your pronunciation.</span><span class="trans">注意你的发音。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="connect">connect</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/kəˈnekt/</span><span class="pos">v.</span>
+        <div class="definition">连接；联系</div>
+        <div class="example"><span class="wotd-say" data-speak="Connect new words with what you already know.">Connect new words with what you already know.</span><span class="trans">把新词和你已知的联系起来。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="knowledge">knowledge</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈnɒlɪdʒ/</span><span class="pos">n.</span>
+        <div class="definition">知识；学问</div>
+        <div class="example"><span class="wotd-say" data-speak="Knowledge comes from practice.">Knowledge comes from practice.</span><span class="trans">知识来源于实践。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="review">review</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/rɪˈvjuː/</span><span class="pos">v./n.</span>
+        <div class="definition">复习；回顾</div>
+        <div class="example"><span class="wotd-say" data-speak="Review your notes after class.">Review your notes after class.</span><span class="trans">课后复习你的笔记。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="wise">wise</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/waɪz/</span><span class="pos">adj.</span>
+        <div class="definition">明智的；聪明的</div>
+        <div class="example"><span class="wotd-say" data-speak="It's wise to learn from mistakes.">It's wise to learn from mistakes.</span><span class="trans">从错误中学习是明智的。</span></div>
+      </div></div></div></details>
+<details class="module" open><summary>🔤 重点句型 · Sentence Patterns</summary><div class="content"><div class="pattern-grid">      <div class="pattern-card">
+        <div class="structure">Verb + by + V-ing</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>表示「通过做某事来……」，回答 how 引导的问句。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1">I learn English <b>by listening</b> to English songs. / She improved her speaking <b>by practicing</b> every day.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">What about + V-ing?</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>用来提出建议或询问看法。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp2"><b>What about</b> joining an English club? / <b>What about</b> reading English newspapers?</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">It + adj + to do sth</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>描述做某事是怎么样的。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp3"><b>It is important to</b> review after class. / <b>It is helpful to</b> read aloud every morning.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">The + 比较级, the + 比较级</div> <button class="speak-btn" data-target="sp4" title="朗读句型">🔊</button>
+        <div>表示「越……就越……」</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp4"><b>The more</b> you read, <b>the faster</b> you will become. / <b>The harder</b> you work, <b>the better</b> results you get.</span></div>
+      </div></div></div></details>
+<details class="module detail-module" open><summary>📚 语法聚焦 · Verb + by + V-ing 结构 <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module"><h3>基本结构</h3>
+<table class="grammar-table">
+<tr><th>结构</th><th>用法</th><th>例句</th></tr>
+<tr><td>by + 动名词</td><td>表示「通过做某事的方式」</td><td>I learn English by watching movies.</td></tr>
+<tr><td>by + 名词</td><td>表示「通过某种方式」</td><td>Please contact me by email.</td></tr>
+<tr><td>how 问句 + by 结构</td><td>问「如何做某事」</td><td>How do you study for a test? I study by working with a group.</td></tr>
+</table>
+<h3>动名词作主语</h3>
+<table class="grammar-table">
+<tr><th>功能</th><th>结构</th><th>例句</th></tr>
+<tr><td>作主语</td><td>V-ing + is/was + ...</td><td>Reading aloud is very important.</td></tr>
+<tr><td>形式主语</td><td>It is + adj + V-ing</td><td>It's no use crying over spilt milk.</td></tr>
+<tr><td>否定形式</td><td>not + V-ing</td><td>Not reviewing will lead to forgetting.</td></tr>
+</table>
+</div><div class="chinese-error">      <p>by 后面只能跟名词或动名词，不能跟动词原形。</p>
+      <p>动名词作主语时，谓语动词用第三人称单数。</p>
+      <p>区分 by 和 with：by 表示「通过某种方式」，with 表示「用某种工具」。</p>
+      <p><span class="wotd-say" data-speak="Practice makes perfect.">Practice makes perfect.</span> 熟能生巧。</p></div></div></details>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">How do you study for a test? I study ____ making flashcards.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>by</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">____ (read) aloud is a good way to practice pronunciation.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Reading</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">It's important ____ (review) notes after class.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>to review</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">She improves her listening ____ watching English TV shows.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>by</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">What ____ joining an English club? That sounds great!</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>about</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">____ carefully you listen, ____ you will understand.<br>A. The more; the better B. More; better C. Most; best D. The most; the best</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>A</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">I have trouble ____ (remember) new words. Can you help me?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>remembering</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">The secret ____ becoming a good learner is to practice every day.<br>A. to B. of C. for D. in</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>A</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">Rewrite: I study English. I listen to English songs. (Use by) →</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>I study English by listening to English songs.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">____ (watch) English movies is a fun way to learn.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Watching</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">阅读理解：Read the passage and answer: Why is it important to make mistakes when learning a language?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Mistakes help you learn what is correct and improve your skills.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">写作：Write a short paragraph about how you learn English, using at least three by + V-ing structures.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Sample: I learn English by reading English news. I practice speaking by talking with my friends. I also improve my writing by keeping a diary.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">完成句子：The more you practice your spoken English, ____ (你的英语就会说得越流利).</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>the more fluently you will speak English</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">改错：By practice every day, I improved my grades. (找出错误并改正)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>By practicing every day, I improved my grades.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>📖 阅读专项 · How I Learned to Learn English</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">Last year, I did not like my English class. Every class was like a bad dream. The teacher spoke too quickly. But I was afraid to ask questions because my pronunciation was very bad. So I just hid behind my textbook and never said anything.</p>
+      <p class="en-text">Then one day I watched an English movie called Toy Story. I fell in love with this exciting and funny movie! So I began to watch other English movies as well. My pronunciation improved as well by listening to the conversations in English movies.</p>
+      <p class="en-text">I discovered that listening to something interesting is the secret to language learning. I also learned useful sentences like «It's a piece of cake» or «It serves you right». I did not understand these sentences at first. But because I wanted to understand the story, I looked them up in a dictionary.</p>
+      <p class="en-text">Now I really enjoy my English class. I want to learn new words and more grammar. Then I can have a better understanding of English movies.</p><div class="gloss"><span>as well 也；同样</span> <span>at first 起初</span> <span>look up 查阅</span> <span>a piece of cake 小菜一碟；很容易</span> <span>It serves you right 你活该</span> </div></div>    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">Why did the writer hide behind the textbook?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Because she was afraid to ask questions and her pronunciation was very bad.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">How did the writer's listening improve?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>By listening to the conversations in English movies.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">What does «a piece of cake» mean?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>It means something is very easy.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★★</span>
+      <div class="q-body">What is the secret to language learning according to the passage?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Listening to something interesting.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>🏆 中考题型专练 · 阅读理解 — 推理判断</summary><div class="content exam-section"><p style="font-size:13px;margin-bottom:8px;">阅读短文，选择最佳答案。</p><div class="reading-passage" style="background:var(--bg-secondary);">      <p>Many students ask for advice about how to improve their English. There are three common questions. The first question is about real English. Watching English films and TV programs is a great way to learn English. The second question is about speaking. The best way to improve speaking is to speak as much as possible. The third question is about vocabulary. The best way to learn new words is to read English newspapers and magazines.</p></div><div style="margin:4px 0;font-size:13px;"><strong>1</strong> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> A. Watching films is a bad way to learn.</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> B. Watching English films helps learn English.</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> C. Only TV programs help.</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> D. Films are not real English.</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>2</strong> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> A. Read more books.</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> B. Speak as much as possible.</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> C. Write more sentences.</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> D. Listen to the teacher.</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>3</strong> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> A. By watching films.</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> B. By reading newspapers and magazines.</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> C. By asking teachers.</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> D. By writing diaries.</span> </div>
+<div class="exam-q" style="border-left-color:#f59e0b;"><span class="q-tag" style="background:#f59e0b;color:#fff;">答案</span><div class="q-body">1. B；2. B；3. B</div></div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · Write about learning methods and strategies</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">你的朋友李明在学习英语方面遇到了困难。请给他写一封信，提出至少三条学习英语的建议，并说明理由。</div></div><div class="writing-framework">      <div class="fw-step">开头：问候 + 表示理解对方的困难</div>
+      <div class="fw-step">主体1：第一条建议 + 理由和例子</div>
+      <div class="fw-step">主体2：第二条建议 + 如何实施</div>
+      <div class="fw-step">主体3：第三条建议 + 预期效果</div>
+      <div class="fw-step">结尾：鼓励 + 祝福</div></div><div class="writing-model"><div class="en">Dear Li Ming,
+
+I'm sorry to hear that you are having trouble learning English. Don't worry! I'd like to give you some advice.
+
+First, you can improve your English by listening to English songs. This will help you learn new words in a fun way. Second, try to speak English every day by talking with your classmates. Don't be afraid of making mistakes! Third, it's helpful to keep a diary in English. Writing every day can improve your writing skills.
+
+I hope these suggestions are helpful. Keep going and you will make progress!
+
+Yours,
+Mei</div><div class="trans">亲爱的李明：
+
+听说你在学英语方面遇到了困难，我很难过。别担心！我想给你一些建议。
+
+首先，你可以通过听英文歌来提高英语。这会帮助你以有趣的方式学习新单词。其次，试着每天通过和同学交谈来说英语。别害怕犯错误！第三，用英语写日记是很有帮助的。每天写作可以提高你的写作技能。
+
+希望这些建议有用。坚持下去，你会取得进步的！
+
+你的朋友，
+梅</div></div></div></details>
+<details class="module detail-module" open><summary>🎯 Project · My English Learning Plan</summary><div class="content project-module"><div class="project-brief"><div class="project-title">My English Learning Plan</div><div class="project-desc">制定一个为期一个月的英语学习计划，包括每日和每周的学习目标。</div></div><div class="project-steps">      <div class="step"><span class="step-num">1</span><span class="step-text">反思你目前的英语水平和薄弱环节</span></div>
+      <div class="step"><span class="step-num">2</span><span class="step-text">设定一个具体、可衡量的月目标</span></div>
+      <div class="step"><span class="step-num">3</span><span class="step-text">制定每日学习计划（10-15分钟可完成的小任务）</span></div>
+      <div class="step"><span class="step-num">4</span><span class="step-text">设计每周复习计划</span></div>
+      <div class="step"><span class="step-num">5</span><span class="step-text">和同伴分享并互相评价计划</span></div>
+      <div class="step"><span class="step-num">6</span><span class="step-text">开始执行并记录进展</span></div></div><div class="project-rubric"><table><tr><th>#</th><th>评价标准</th></tr><tr><td>1.</td><td>目标具体且可衡量</td></tr>
+<tr><td>2.</td><td>计划包含听、说、读、写四个方面</td></tr>
+<tr><td>3.</td><td>有明确的复习安排</td></tr>
+<tr><td>4.</td><td>计划切实可行、可持续</td></tr>
+<tr><td>5.</td><td>与同伴的互评有建设性</td></tr></table></div></div></details>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能理解 by + V-ing 的用法</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用英语描述学习方法</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能掌握本节课的核心词汇</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能理解阅读文章的主旨大意</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能制定并描述学习计划</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>用英语向同桌解释 how questions + by + V-ing 结构，并举例说明。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">🔵 1天后：复习 by + V-ing 结构</span>
+    <span class="review-dot">🟢 3天后：复习本单元词汇</span>
+    <span class="review-dot">🟡 1周后：阅读文章复述</span>
+    <span class="review-dot">🔴 1月后：写作练习 — 给朋友的学习建议</span></div>
+<div class="next-stop" style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;"><span></span><a href="u02.html" class="nav-arrow">下一单元 →</a></div>
+<div class="next-stop" style="margin-top:8px;"><strong>➡️ 下一单元：U2: I think that mooncakes are delicious!</strong><br>学习宾语从句，了解中外节日文化。</div>
+</main>
+<div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
+<button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis, currentUtterance: null, speaking: false, rate: 0.9, voiceURI: 'en-US',
+    init: function(){var s=this;document.getElementById('speechRate').addEventListener('input',function(){s.rate=+this.value;document.getElementById('speechRateLabel').textContent=this.value;});document.getElementById('speechVoice').addEventListener('change',function(){s.voiceURI=this.value;localStorage.setItem('speech-voice',this.value);});document.getElementById('speechStopBtn').addEventListener('click',function(){s.stop();});document.getElementById('speechCloseBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.remove('open');});document.getElementById('speechToggleBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.toggle('open');});},
+    speak: function(t,c){if(!t)return;this.stop();var u=new SpeechSynthesisUtterance(t);u.lang=this.voiceURI;u.rate=this.rate;u.onend=function(){if(c)c();};this.currentUtterance=u;this.synthesis.speak(u);},
+    speakDialogue: function(id,c){var s=this,el=document.getElementById(id),ls=el?el.querySelectorAll('.en-text'):[],i=0;this.stop();(function n(){if(i>=ls.length){if(c)c();return;}var e=ls[i],t=e.getAttribute('data-speak')||e.textContent;if(!t){i++;n();return;}e.classList.add('speaking');var u=new SpeechSynthesisUtterance(t);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){e.classList.remove('speaking');i++;setTimeout(n,500);};u.onerror=function(){e.classList.remove('speaking');i++;setTimeout(n,200);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    speakVocabSection: function(id,c){var s=this,el=document.getElementById(id),cs=el?el.querySelectorAll('.vocab-card'):[],i=0;this.stop();(function n(){if(i>=cs.length){if(c)c();return;}var e=cs[i],hw=e.querySelector('.headword'),ex=e.querySelector('.example .wotd-say'),t=[];if(hw)t.push(hw.getAttribute('data-speak')||hw.textContent);if(ex)t.push(ex.getAttribute('data-speak')||ex.textContent.replace(/<[^>]+>/g,'').trim());var ft=t.join('. ');if(!ft){i++;n();return;}hw.classList.add('speaking');var u=new SpeechSynthesisUtterance(ft);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){hw.classList.remove('speaking');i++;setTimeout(n,600);};u.onerror=function(){hw.classList.remove('speaking');i++;setTimeout(n,300);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    stop: function(){this.synthesis.cancel();this.speaking=false;}
+  };SpeechManager.init();
+  document.querySelectorAll('.wotd-say').forEach(function(el){el.addEventListener('click',function(){SpeechManager.speak(this.getAttribute('data-speak')||this.textContent);});});
+  document.querySelectorAll('.speak-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var d=this.getAttribute('data-dialogue'),v=this.getAttribute('data-vocab'),t=this.getAttribute('data-target');if(this.classList.contains('speaking')){SpeechManager.stop();this.classList.remove('speaking');return;}this.classList.add('speaking');var done=function(){btn.classList.remove('speaking');};if(d){SpeechManager.speakDialogue(d,done);}else if(v){SpeechManager.speakVocabSection(v,done);}else if(t){var tg=document.getElementById(t);if(!tg){btn.classList.remove('speaking');return;}SpeechManager.speak(tg.textContent.replace(/<[^>]+>/g,''),done);}else{btn.classList.remove('speaking');}});});
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();var hw=this.previousElementSibling;if(hw&&hw.classList.contains('wotd-say')){var t=hw.getAttribute('data-speak')||hw.textContent;SpeechManager.speak(t);}});});
+  (function(){var btn=document.getElementById('expandAllBtn');if(!btn)return;btn.addEventListener('click',function(){var ad=document.querySelectorAll('.module,.exam-module');var ao=true;for(var i=0;i<ad.length;i++){if(!ad[i].hasAttribute('open')){ao=false;break;}};for(var i=0;i<ad.length;i++){if(ao)ad[i].removeAttribute('open');else ad[i].setAttribute('open','');};btn.textContent=ao?'📂 展开全部模块':'📖 收起全部模块';});})();
+  var s=document.getElementById('sidebar'),k='eng9-theme-sidebar';if(!s)return;
+  if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
+  window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=window.scrollY>400?'flex':'none';},{passive:true});
+  document.getElementById('backToTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution');});});
+})();
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);localStorage.setItem("eng9-theme",t);var btn=document.getElementById("themeToggle");if(btn)btn.textContent=t==="dark"?"☀️":"🌙";}
+function toggleTheme(){setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark");}
+</script></body></html>

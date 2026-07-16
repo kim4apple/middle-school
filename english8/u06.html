@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U6 I'm going to study computer science. | 初中英语八年级</title>
+<link rel="stylesheet" href="css/english8.css">
+<style>
+.speak-btn { display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;color:var(--accent);border:1px solid var(--border);border-radius:4px;padding:2px 8px;background:var(--bg);transition:background 0.15s; }
+.speak-btn:hover { background:var(--accent-light); }
+.speak-btn.speaking { background:var(--eng-amber-light);color:var(--eng-amber);border-color:var(--eng-amber); }
+.headword-speak-indicator { font-size:11px;margin-left:3px;opacity:0.55;cursor:pointer;vertical-align:super;line-height:1; }
+.headword-speak-indicator:hover { opacity:1; }
+.wotd-say { cursor:pointer;transition:color 0.15s; }
+.wotd-say:hover { color:var(--accent); }
+.wotd-say.speaking { color:var(--eng-pink); }
+.speech-panel { position:fixed;bottom:80px;right:24px;z-index:999;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);padding:14px 18px;display:none;min-width:180px; }
+.speech-panel.open { display:block; }
+.speech-panel .row { display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px; }
+.speech-panel .row label { color:var(--text-secondary);font-size:12px;min-width:36px; }
+.speech-panel select,.speech-panel input[type="range"] { flex:1; }
+.speech-panel button { padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px; }
+.speech-panel button:hover { background:var(--accent-light); }
+.speech-toggle-btn { position:fixed;bottom:24px;right:76px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--accent);cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center; }
+.speech-toggle-btn:hover { background:var(--accent-light); }
+.en-text.speaking { background:var(--eng-amber-light);border-radius:4px;padding:2px 4px;transition:background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background:#452a08; }
+.detail-module { content-visibility:auto;contain-intrinsic-size:300px; }
+.reading { content-visibility:auto;contain-intrinsic-size:400px; }
+</style>
+<script>(function(){var t=localStorage.getItem("eng8-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+    <nav id="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="margin-bottom:0;">英语八年级</h2>
+        <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+      </div><nav>
+        <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../grammar.html" style="font-size:13px;">📌 语法全景图</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 八 上 ━━</a>
+        <a href="u01.html">U1 Happy Holiday!</a>
+        <a href="u02.html">U2 How often do you exercise?</a>
+        <a href="u03.html">U3 I'm more outgoing than my sister.</a>
+        <a href="u04.html">U4 What's the best movie theater?</a>
+        <a href="u05.html">U5 Do you want to watch a game show?</a>
+        <a href="u06.html" class="active">U6 I'm going to study computer science.</a>
+        <a href="u07.html">U7 Will people have robots?</a>
+        <a href="u08.html">U8 Let's Communicate!</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 八 下 ━━</a>
+        <a href="b2u01.html">U1 Time to Relax!</a>
+        <a href="b2u02.html">U2 Let's clean up!</a>
+        <a href="b2u03.html">U3 Could you please clean your room?</a>
+        <a href="b2u04.html">U4 Why don't you talk to your parents?</a>
+        <a href="b2u05.html">U5 What were you doing when the rainstorm came?</a>
+        <a href="b2u06.html">U6 An old man tried to move the mountains.</a>
+        <a href="b2u07.html">U7 What's the highest mountain in the world?</a>
+        <a href="b2u08.html">U8 Making a Difference</a>
+      </nav>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+    </nav>
+<main id="content">
+<div class="cover"><div class="sub-en">U6</div><h1>I'm going to study computer science.</h1><p>职业规划</p></div>
+<div class="unit-meta"><span>📖 话题：Future Plans & Dream Jobs</span><span>💬 功能：Talk about future plans and dream jobs</span><span>📚 语法：be going to 表示未来计划 · what/where/how 引导特殊疑问句</span><span>📝 写作：My Dream Job</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能用 be going to 谈论未来职业规划</label>
+  <label><input type="checkbox"> 能询问和回答职业相关的 wh- 问题</label>
+  <label><input type="checkbox"> 能描述实现梦想需要做的准备</label>
+  <label><input type="checkbox"> 能写一篇职业规划短文</label></div>
+<details class="module" open><summary>📖 课文精讲 · I'm going to study computer science.</summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：班会上，同学们在分享自己的职业梦想和实现计划。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
+<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Teacher:</span><span class="en-text wotd-say" data-speak="What do you want to be when you grow up?">What do you want to be when you grow up?</span></div>
+      <div class="dialogue-line"><span class="speaker">Wang Lin:</span><span class="en-text wotd-say" data-speak="I'm going to be a computer programmer. I'm going to study computer science.">I'm going to be a computer programmer. I'm going to study computer science.</span></div>
+      <div class="dialogue-line"><span class="speaker">Teacher:</span><span class="en-text wotd-say" data-speak="That sounds cool! What about you, Li Mei?">That sounds cool! What about you, Li Mei?</span></div>
+      <div class="dialogue-line"><span class="speaker">Li Mei:</span><span class="en-text wotd-say" data-speak="I'm going to be a doctor. I'm going to study medicine at a famous university.">I'm going to be a doctor. I'm going to study medicine at a famous university.</span></div>
+      <div class="dialogue-line"><span class="speaker">Teacher:</span><span class="en-text wotd-say" data-speak="Zhang Wei, what are you going to be?">Zhang Wei, what are you going to be?</span></div>
+      <div class="dialogue-line"><span class="speaker">Zhang Wei:</span><span class="en-text wotd-say" data-speak="I'm not sure yet. Maybe I'm going to be a teacher like you.">I'm not sure yet. Maybe I'm going to be a teacher like you.</span></div>
+      <div class="dialogue-line"><span class="speaker">Teacher:</span><span class="en-text wotd-say" data-speak="That's great! How are you going to do that?">That's great! How are you going to do that?</span></div>
+      <div class="dialogue-line"><span class="speaker">Zhang Wei:</span><span class="en-text wotd-say" data-speak="I'm going to study hard and learn teaching skills.">I'm going to study hard and learn teaching skills.</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>Teacher:</strong> 你们长大了想做什么？</p>
+        <p><strong>Wang Lin:</strong> 我想当程序员，准备学计算机科学。</p>
+        <p><strong>Teacher:</strong> 听起来很酷！你呢，李梅？</p>
+        <p><strong>Li Mei:</strong> 我想当医生，准备上一所名牌大学学医。</p>
+        <p><strong>Teacher:</strong> 张伟，你打算做什么？</p>
+        <p><strong>Zhang Wei:</strong> 还不确定。也许当老师，像您一样。</p>
+        <p><strong>Teacher:</strong> 很好！你打算怎么做？</p>
+        <p><strong>Zhang Wei:</strong> 我打算努力学习并学习教学技能。</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p><strong>1.</strong> <em>What do you want to be when you grow up?</em> → <strong>want to be</strong> "想成为" + 职业名词。<strong>when you grow up</strong> "当你长大"。</p>
+      <p><strong>2.</strong> <em>I'm going to be a computer programmer.</em> → <strong>be going to be + 职业</strong> 表示想成为什么。</p>
+      <p><strong>3.</strong> <em>How are you going to do that?</em> → 用 <strong>How</strong> 问方法：How + be + 主语 + going to + 动词?</p>
+      <p><strong>4.</strong> <em>I'm going to study computer science.</em> → 接具体行动：<strong>be going to + 动词原形</strong>。</p></div></div></details>
+<details class="module" open><summary>📝 重点词汇 · 职业规划 <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="programmer">programmer</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈproʊɡræmər/</span><span class="pos">n.</span>
+        <div class="definition">程序员</div>
+        <div class="example"><span class="wotd-say" data-speak="My uncle is a computer programmer.">My uncle is a computer programmer.</span><span class="trans">我叔叔是程序员。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="science">science</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈsaɪəns/</span><span class="pos">n.</span>
+        <div class="definition">科学；理科</div>
+        <div class="example"><span class="wotd-say" data-speak="Computer science is very useful.">Computer science is very useful.</span><span class="trans">计算机科学很有用。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="medicine">medicine</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈmedɪsn/</span><span class="pos">n.</span>
+        <div class="definition">医学；药</div>
+        <div class="example"><span class="wotd-say" data-speak="She wants to study medicine in college.">She wants to study medicine in college.</span><span class="trans">她想在大学学医。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="university">university</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌjuːnɪˈvɜːrsəti/</span><span class="pos">n.</span>
+        <div class="definition">大学</div>
+        <div class="example"><span class="wotd-say" data-speak="Which university do you want to go to?">Which university do you want to go to?</span><span class="trans">你想上哪所大学？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="engineer">engineer</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌendʒɪˈnɪr/</span><span class="pos">n.</span>
+        <div class="definition">工程师</div>
+        <div class="example"><span class="wotd-say" data-speak="He's going to be an engineer.">He's going to be an engineer.</span><span class="trans">他打算当工程师。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="pilot">pilot</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈpaɪlət/</span><span class="pos">n.</span>
+        <div class="definition">飞行员</div>
+        <div class="example"><span class="wotd-say" data-speak="It's my dream to be a pilot.">It's my dream to be a pilot.</span><span class="trans">当飞行员是我的梦想。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="cook">cook</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/kʊk/</span><span class="pos">n.</span>
+        <div class="definition">厨师</div>
+        <div class="example"><span class="wotd-say" data-speak="She is a great cook.">She is a great cook.</span><span class="trans">她是个好厨师。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="violinist">violinist</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌvaɪəˈlɪnɪst/</span><span class="pos">n.</span>
+        <div class="definition">小提琴手</div>
+        <div class="example"><span class="wotd-say" data-speak="The violinist plays beautifully.">The violinist plays beautifully.</span><span class="trans">这位小提琴手演奏得很美。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="college">college</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈkɑːlɪdʒ/</span><span class="pos">n.</span>
+        <div class="definition">学院；大学</div>
+        <div class="example"><span class="wotd-say" data-speak="I'm going to go to college after high school.">I'm going to go to college after high school.</span><span class="trans">高中毕业后我要上大学。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="education">education</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌedʒuˈkeɪʃn/</span><span class="pos">n.</span>
+        <div class="definition">教育</div>
+        <div class="example"><span class="wotd-say" data-speak="Education is important for everyone.">Education is important for everyone.</span><span class="trans">教育对每个人都很重要。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="artist">artist</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈɑːrtɪst/</span><span class="pos">n.</span>
+        <div class="definition">艺术家</div>
+        <div class="example"><span class="wotd-say" data-speak="She wants to become an artist.">She wants to become an artist.</span><span class="trans">她想成为艺术家。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="resolution">resolution</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌrezəˈluːʃn/</span><span class="pos">n.</span>
+        <div class="definition">决心；决定</div>
+        <div class="example"><span class="wotd-say" data-speak="I made a New Year's resolution to study harder.">I made a New Year's resolution to study harder.</span><span class="trans">我下了新年决心要更努力学习。</span></div>
+      </div></div></div></details>
+<details class="module" open><summary>🔤 重点句型 · Sentence Patterns</summary><div class="content"><div class="pattern-grid">      <div class="pattern-card">
+        <div class="structure">be going to be + 职业</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>表达未来职业</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1">I <span class="slot">am going to be</span> <span class="slot">a doctor</span>.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">How + be + going to + do?</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>询问实现方法</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp2"><strong>How</strong> <span class="slot">are you going to</span> become a singer?</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">What do you want to be?</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>询问职业梦想</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp3"><strong>What</strong> do you <span class="slot">want to be</span> when you grow up?</span></div>
+      </div></div></div></details>
+<details class="module detail-module" open><summary>📚 语法聚焦 · be going to 表示未来计划 <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module"><h3>be going to 表计划</h3>
+<table class="grammar-table">
+<tr><th>人称</th><th>肯定句</th><th>否定句</th><th>疑问句</th></tr>
+<tr><td>I</td><td>I'm going to + v.</td><td>I'm not going to + v.</td><td>Am I going to + v.?</td></tr>
+<tr><td>He/She/It</td><td>He's going to + v.</td><td>He isn't going to + v.</td><td>Is he going to + v.?</td></tr>
+<tr><td>We/You/They</td><td>They're going to + v.</td><td>They aren't going to + v.</td><td>Are they going to + v.?</td></tr>
+</table>
+<h3>Wh- 疑问句</h3>
+<table class="grammar-table">
+<tr><th>问词</th><th>含义</th><th>示例</th></tr>
+<tr><td>What</td><td>什么</td><td>What are you going to do?</td></tr>
+<tr><td>Where</td><td>哪里</td><td>Where are you going to study?</td></tr>
+<tr><td>When</td><td>何时</td><td>When are you going to start?</td></tr>
+<tr><td>How</td><td>怎样</td><td>How are you going to do it?</td></tr>
+<tr><td>Who</td><td>谁</td><td>Who is going to help you?</td></tr>
+</table>
+</div><div class="chinese-error">      <p>❌ <span class="wrong" data-speak="I going to be a doctor.">I going to be a doctor.</span>（遗漏 be 动词 am）</p>
+      <p>✅ <span class="correct" data-speak="I am going to be a doctor.">I am going to be a doctor.</span></p>
+      <p>❌ <span class="wrong" data-speak="What you are going to do?">What you are going to do?</span>（疑问句语序错误）</p>
+      <p>✅ <span class="correct" data-speak="What are you going to do?">What are you going to do?</span></p></div></div></details>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[be going to] I ____ ____ ____ be a pilot when I grow up.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>am going to</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[选择] What ____ she going to be? (is / are / am)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>is</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[职业] A person who writes computer programs is a ____.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>programmer</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[改错] He are going to study medicine.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>He is going to study medicine.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[问答] Q: ____ ____ you going to be? A: I'm going to be a teacher.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>What are</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[否定] I'm going to give up. (改为否定句)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>I'm not going to give up.</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">[汉译英] 你打算怎样实现你的梦想？</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>How are you going to make your dream come true?</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">[补全] A: ____ ____ you going to study?<br>B: I'm going to study at Peking University.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Where are</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>📖 阅读专项 · Dreams and Actions</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">Everyone has a dream. But how can we make our dreams come true?</p>
+      <p class="en-text">First, find out what you are good at. If you love drawing, maybe you are going to be an artist. If you enjoy helping others, maybe you are going to be a doctor.</p>
+      <p class="en-text">Second, make a plan. What are you going to do this year? What subjects are you going to study hard?</p>
+      <p class="en-text">Third, take action. A dream without action is just a wish. Start today!</p><div class="gloss"><span>come true 实现</span> <span>take action 采取行动</span> <span>without prep. 没有</span> </div></div>    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">1. What is the first step to make dreams come true?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Find out what you are good at.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">2. What is the second step?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Make a plan.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★★</span>
+      <div class="q-body">3. What does "A dream without action is just a wish" mean?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>只有梦想没有行动，那只是空想。</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>🏆 中考题型专练 · 语法填空</summary><div class="content exam-section"><p style="font-size:13px;margin-bottom:8px;">用括号内单词的适当形式填空。</p><div class="reading-passage" style="background:var(--bg-secondary);">      <p>My brother (1)____ (be) going to be a pilot. He (2)____ (study) hard to get into a good university. He (3)____ (practice) his English every day because pilots need good English. I (4)____ (be) going to be a scientist. We (5)____ (have) big dreams! What are you going to (6)____ (be)?</p></div><div class="exam-q" style="border-left-color:#f59e0b;"><span class="q-tag" style="background:#f59e0b;color:#fff;">答案</span><div class="q-body">(1) is；(2) studies；(3) practices；(4) am；(5) have；(6) be</div></div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · My Dream Job</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">请以"My Dream Job"为题，写 60-80 词短文，说说你梦想的职业和你打算如何实现它。</div></div><div class="writing-framework">      <div class="fw-step">开头：我梦想的职业是什么。</div>
+      <div class="fw-step">主体：为什么选择这个职业+我打算怎么做。</div>
+      <div class="fw-step">结尾：表达信心和期待。</div></div><div class="writing-model"><div class="en">When I grow up, I'm going to be a doctor. I want to help sick people. I'm going to study science and biology hard. I'm going to go to a good medical university. I know becoming a doctor is not easy, but I'm not going to give up. I'm going to work hard every day to make my dream come true.</div><div class="trans">等我长大了，我打算当一名医生。我想帮助病人。我打算学好科学和生物。我打算上一所好的医科大学。我知道当医生不容易，但我不会放弃。我打算每天努力，实现梦想。</div></div></div></details>
+<details class="module detail-module" open><summary>🎯 Project · Career Day Presentation</summary><div class="content project-module"><div class="project-brief"><div class="project-title">Career Day Presentation</div><div class="project-desc">选择一个你感兴趣的职业，做 2 分钟英语展示，介绍这个职业的特点和你打算如何进入这个行业。</div></div><div class="project-steps">      <div class="step"><span class="step-num">1</span><span class="step-text">选择一个职业进行调研。</span></div>
+      <div class="step"><span class="step-num">2</span><span class="step-text">写出该职业的 3 个特点。</span></div>
+      <div class="step"><span class="step-num">3</span><span class="step-text">用 be going to 写出你的规划。</span></div>
+      <div class="step"><span class="step-num">4</span><span class="step-text">做成展示卡片并演讲。</span></div></div><div class="project-rubric"><table><tr><th>#</th><th>评价标准</th></tr><tr><td>1.</td><td>信息准确</td></tr>
+<tr><td>2.</td><td>使用了 be going to</td></tr>
+<tr><td>3.</td><td>规划合理可行</td></tr>
+<tr><td>4.</td><td>表达流利自信</td></tr></table></div></div></details>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 be going to 谈论职业规划</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 wh- 提问职业相关话题</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能描述实现梦想的步骤</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写职业规划短文</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>假装你在参加职业日(Career Day)，用英语向同学介绍你梦想的职业和实现计划。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">用 be going to 写 5 个未来计划</span>
+    <span class="review-dot">列出 10 种职业的英文</span>
+    <span class="review-dot">写出实现梦想的 3 个步骤</span>
+    <span class="review-dot">复习 wh- + be going to 疑问句</span></div>
+<div class="next-stop" style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;"><a href="u05.html" class="nav-arrow">← 上一单元</a><a href="u07.html" class="nav-arrow">下一单元 →</a></div>
+<div class="next-stop" style="margin-top:8px;"><strong>➡️ 下一单元：Will people have robots?</strong><br>下一单元你将学习用 will 预测未来，讨论未来的科技和生活变化。</div>
+</main>
+<div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
+<button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis, currentUtterance: null, speaking: false, rate: 0.9, voiceURI: 'en-US',
+    init: function(){var s=this;document.getElementById('speechRate').addEventListener('input',function(){s.rate=+this.value;document.getElementById('speechRateLabel').textContent=this.value;});document.getElementById('speechVoice').addEventListener('change',function(){s.voiceURI=this.value;localStorage.setItem('speech-voice',this.value);});document.getElementById('speechStopBtn').addEventListener('click',function(){s.stop();});document.getElementById('speechCloseBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.remove('open');});document.getElementById('speechToggleBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.toggle('open');});},
+    speak: function(t,c){if(!t)return;this.stop();var u=new SpeechSynthesisUtterance(t);u.lang=this.voiceURI;u.rate=this.rate;u.onend=function(){if(c)c();};this.currentUtterance=u;this.synthesis.speak(u);},
+    speakDialogue: function(id,c){var s=this,el=document.getElementById(id),ls=el?el.querySelectorAll('.en-text'):[],i=0;this.stop();(function n(){if(i>=ls.length){if(c)c();return;}var e=ls[i],t=e.getAttribute('data-speak')||e.textContent;if(!t){i++;n();return;}e.classList.add('speaking');var u=new SpeechSynthesisUtterance(t);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){e.classList.remove('speaking');i++;setTimeout(n,500);};u.onerror=function(){e.classList.remove('speaking');i++;setTimeout(n,200);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    speakVocabSection: function(id,c){var s=this,el=document.getElementById(id),cs=el?el.querySelectorAll('.vocab-card'):[],i=0;this.stop();(function n(){if(i>=cs.length){if(c)c();return;}var e=cs[i],hw=e.querySelector('.headword'),ex=e.querySelector('.example .wotd-say'),t=[];if(hw)t.push(hw.getAttribute('data-speak')||hw.textContent);if(ex)t.push(ex.getAttribute('data-speak')||ex.textContent.replace(/<[^>]+>/g,'').trim());var ft=t.join('. ');if(!ft){i++;n();return;}hw.classList.add('speaking');var u=new SpeechSynthesisUtterance(ft);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){hw.classList.remove('speaking');i++;setTimeout(n,600);};u.onerror=function(){hw.classList.remove('speaking');i++;setTimeout(n,300);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    stop: function(){this.synthesis.cancel();this.speaking=false;}
+  };SpeechManager.init();
+  document.querySelectorAll('.wotd-say').forEach(function(el){el.addEventListener('click',function(){SpeechManager.speak(this.getAttribute('data-speak')||this.textContent);});});
+  document.querySelectorAll('.speak-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var d=this.getAttribute('data-dialogue'),v=this.getAttribute('data-vocab'),t=this.getAttribute('data-target');if(this.classList.contains('speaking')){SpeechManager.stop();this.classList.remove('speaking');return;}this.classList.add('speaking');var done=function(){btn.classList.remove('speaking');};if(d){SpeechManager.speakDialogue(d,done);}else if(v){SpeechManager.speakVocabSection(v,done);}else if(t){var tg=document.getElementById(t);if(!tg){btn.classList.remove('speaking');return;}SpeechManager.speak(tg.textContent.replace(/<[^>]+>/g,''),done);}else{btn.classList.remove('speaking');}});});
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();var hw=this.previousElementSibling;if(hw&&hw.classList.contains('wotd-say')){var t=hw.getAttribute('data-speak')||hw.textContent;SpeechManager.speak(t);}});});
+  (function(){var btn=document.getElementById('expandAllBtn');if(!btn)return;btn.addEventListener('click',function(){var ad=document.querySelectorAll('.module,.exam-module');var ao=true;for(var i=0;i<ad.length;i++){if(!ad[i].hasAttribute('open')){ao=false;break;}};for(var i=0;i<ad.length;i++){if(ao)ad[i].removeAttribute('open');else ad[i].setAttribute('open','');};btn.textContent=ao?'📂 展开全部模块':'📖 收起全部模块';});})();
+  var s=document.getElementById('sidebar'),k='eng8-theme-sidebar';if(!s)return;
+  if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
+  window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=window.scrollY>400?'flex':'none';},{passive:true});
+  document.getElementById('backToTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution');});});
+})();
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);localStorage.setItem("eng8-theme",t);var btn=document.getElementById("themeToggle");if(btn)btn.textContent=t==="dark"?"☀️":"🌙";}
+function toggleTheme(){setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark");}
+</script></body></html>

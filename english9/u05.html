@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U5 What are the shirts made of? | 初中英语九年级</title>
+<link rel="stylesheet" href="css/english9.css">
+<style>
+.speak-btn { display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;color:var(--accent);border:1px solid var(--border);border-radius:4px;padding:2px 8px;background:var(--bg);transition:background 0.15s; }
+.speak-btn:hover { background:var(--accent-light); }
+.speak-btn.speaking { background:var(--eng-amber-light);color:var(--eng-amber);border-color:var(--eng-amber); }
+.headword-speak-indicator { font-size:11px;margin-left:3px;opacity:0.55;cursor:pointer;vertical-align:super;line-height:1; }
+.headword-speak-indicator:hover { opacity:1; }
+.wotd-say { cursor:pointer;transition:color 0.15s; }
+.wotd-say:hover { color:var(--accent); }
+.wotd-say.speaking { color:var(--eng-pink); }
+.speech-panel { position:fixed;bottom:80px;right:24px;z-index:999;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);padding:14px 18px;display:none;min-width:180px; }
+.speech-panel.open { display:block; }
+.speech-panel .row { display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px; }
+.speech-panel .row label { color:var(--text-secondary);font-size:12px;min-width:36px; }
+.speech-panel select,.speech-panel input[type="range"] { flex:1; }
+.speech-panel button { padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px; }
+.speech-panel button:hover { background:var(--accent-light); }
+.speech-toggle-btn { position:fixed;bottom:24px;right:76px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--accent);cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center; }
+.speech-toggle-btn:hover { background:var(--accent-light); }
+.en-text.speaking { background:var(--eng-amber-light);border-radius:4px;padding:2px 4px;transition:background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background:#452a08; }
+.detail-module { content-visibility:auto;contain-intrinsic-size:300px; }
+.reading { content-visibility:auto;contain-intrinsic-size:400px; }
+</style>
+<script>(function(){var t=localStorage.getItem("eng9-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+    <nav id="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="margin-bottom:0;">英语九年级</h2>
+        <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+      </div><nav>
+        <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../grammar.html" style="font-size:13px;">📌 语法全景图</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 九年级全一册 ━━</a>
+        <a href="u01.html">U1 How can we become good learners?</a>
+        <a href="u02.html">U2 I think that mooncakes are delicious!</a>
+        <a href="u03.html">U3 Could you please tell me where the restrooms are?</a>
+        <a href="u04.html">U4 I used to be afraid of the dark.</a>
+        <a href="u05.html" class="active">U5 What are the shirts made of?</a>
+        <a href="u06.html">U6 When was it invented?</a>
+        <a href="u07.html">U7 Teenagers should be allowed to choose their own clothes.</a>
+        <a href="u08.html">U8 It must belong to Carla.</a>
+        <a href="u09.html">U9 I like music that I can dance to.</a>
+        <a href="u10.html">U10 You're supposed to shake hands.</a>
+        <a href="u11.html">U11 Sad movies make me cry.</a>
+        <a href="u12.html">U12 Life is full of the unexpected.</a>
+        <a href="u13.html">U13 We're trying to save the earth!</a>
+        <a href="u14.html">U14 I remember meeting all of you in Grade 7.</a>
+      </nav>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+    </nav>
+<main id="content">
+<div class="cover"><div class="sub-en">U5</div><h1>What are the shirts made of?</h1><p>产品与材料</p></div>
+<div class="unit-meta"><span>📖 话题：Products and Materials</span><span>💬 功能：Talk about what products are made of and where they are made</span><span>📚 语法：Passive voice (present tense) — is/are + past participle</span><span>📝 写作：Describe how products are made</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能用被动语态描述产品的材料和产地</label>
+  <label><input type="checkbox"> 能谈论日常物品的制造过程</label>
+  <label><input type="checkbox"> 能理解并描述中国传统工艺</label>
+  <label><input type="checkbox"> 能写关于产品介绍的文章</label></div>
+<details class="module" open><summary>📖 课文精讲 · What are the shirts made of?</summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：Susan在一家礼品店给朋友挑选礼物，和店员聊天。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
+<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Susan:</span><span class="en-text wotd-say" data-speak="Excuse me, I'd like to buy a gift for my friend. What are these shirts made of?">Excuse me, I'd like to buy a gift for my friend. What are these shirts made of?</span></div>
+      <div class="dialogue-line"><span class="speaker">Clerk:</span><span class="en-text wotd-say" data-speak="They are made of cotton. They are very soft and comfortable.">They are made of cotton. They are very soft and comfortable.</span></div>
+      <div class="dialogue-line"><span class="speaker">Susan:</span><span class="en-text wotd-say" data-speak="I see. Where are they made?">I see. Where are they made?</span></div>
+      <div class="dialogue-line"><span class="speaker">Clerk:</span><span class="en-text wotd-say" data-speak="They are made in China. The design is quite popular.">They are made in China. The design is quite popular.</span></div>
+      <div class="dialogue-line"><span class="speaker">Susan:</span><span class="en-text wotd-say" data-speak="And what about those beautiful chopsticks?">And what about those beautiful chopsticks?</span></div>
+      <div class="dialogue-line"><span class="speaker">Clerk:</span><span class="en-text wotd-say" data-speak="They are made of silver. They are produced in Yunnan.">They are made of silver. They are produced in Yunnan.</span></div>
+      <div class="dialogue-line"><span class="speaker">Susan:</span><span class="en-text wotd-say" data-speak="How about the paper cutting? It's so delicate!">How about the paper cutting? It's so delicate!</span></div>
+      <div class="dialogue-line"><span class="speaker">Clerk:</span><span class="en-text wotd-say" data-speak="The paper cutting is made by hand. It is a traditional art form.">The paper cutting is made by hand. It is a traditional art form.</span></div>
+      <div class="dialogue-line"><span class="speaker">Susan:</span><span class="en-text wotd-say" data-speak="Amazing! I'll buy the paper cutting as a gift.">Amazing! I'll buy the paper cutting as a gift.</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>Susan:</strong> 打扰一下，我想给朋友买个礼物。这些衬衫是什么做的？</p>
+        <p><strong>Clerk:</strong> 它们是棉质的。非常柔软舒适。</p>
+        <p><strong>Susan:</strong> 我明白了。它们是在哪里制造的？</p>
+        <p><strong>Clerk:</strong> 它们是中国制造的。这个设计很受欢迎。</p>
+        <p><strong>Susan:</strong> 那些漂亮的筷子呢？</p>
+        <p><strong>Clerk:</strong> 它们是银制的。是在云南生产的。</p>
+        <p><strong>Susan:</strong> 那剪纸呢？太精致了！</p>
+        <p><strong>Clerk:</strong> 剪纸是手工制作的。它是一种传统艺术形式。</p>
+        <p><strong>Susan:</strong> 太棒了！我买剪纸作为礼物吧。</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p>be made of + 材料（看得出原材料）— The shirt is made <b>of</b> cotton.</p>
+      <p>be made from + 材料（看不出原材料）— Paper is made <b>from</b> wood.</p>
+      <p>be made in + 地点 — It is made <b>in</b> China.</p>
+      <p>be made by + 人/方式 — It is made <b>by</b> hand.</p></div></div></details>
+<details class="module" open><summary>📝 重点词汇 · 产品与材料 <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="chopstick">chopstick</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈtʃɒpstɪk/</span><span class="pos">n.</span>
+        <div class="definition">筷子</div>
+        <div class="example"><span class="wotd-say" data-speak="We use chopsticks to eat noodles.">We use chopsticks to eat noodles.</span><span class="trans">我们用筷子吃面条。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="coin">coin</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/kɔɪn/</span><span class="pos">n.</span>
+        <div class="definition">硬币</div>
+        <div class="example"><span class="wotd-say" data-speak="I found a coin on the street.">I found a coin on the street.</span><span class="trans">我在街上发现了一枚硬币。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="fork">fork</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/fɔːrk/</span><span class="pos">n.</span>
+        <div class="definition">餐叉</div>
+        <div class="example"><span class="wotd-say" data-speak="Please put the fork on the left.">Please put the fork on the left.</span><span class="trans">请把叉子放在左边。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="blouse">blouse</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/blaʊz/</span><span class="pos">n.</span>
+        <div class="definition">女衬衫</div>
+        <div class="example"><span class="wotd-say" data-speak="She is wearing a silk blouse.">She is wearing a silk blouse.</span><span class="trans">她穿着一件丝绸衬衫。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="silver">silver</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈsɪlvər/</span><span class="pos">n.</span>
+        <div class="definition">银；银器</div>
+        <div class="example"><span class="wotd-say" data-speak="This ring is made of silver.">This ring is made of silver.</span><span class="trans">这枚戒指是银制的。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="glass">glass</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɡlæs/</span><span class="pos">n.</span>
+        <div class="definition">玻璃</div>
+        <div class="example"><span class="wotd-say" data-speak="The window is made of glass.">The window is made of glass.</span><span class="trans">窗户是玻璃做的。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="cotton">cotton</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈkɒtn/</span><span class="pos">n.</span>
+        <div class="definition">棉花</div>
+        <div class="example"><span class="wotd-say" data-speak="This T-shirt is 100% cotton.">This T-shirt is 100% cotton.</span><span class="trans">这件T恤是100%纯棉的。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="steel">steel</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/stiːl/</span><span class="pos">n.</span>
+        <div class="definition">钢；钢铁</div>
+        <div class="example"><span class="wotd-say" data-speak="The bridge is made of steel.">The bridge is made of steel.</span><span class="trans">这座桥是钢铁建的。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="grass">grass</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɡræs/</span><span class="pos">n.</span>
+        <div class="definition">草；草地</div>
+        <div class="example"><span class="wotd-say" data-speak="Keep off the grass.">Keep off the grass.</span><span class="trans">请勿践踏草坪。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="leaf">leaf</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/liːf/</span><span class="pos">n.</span>
+        <div class="definition">叶子</div>
+        <div class="example"><span class="wotd-say" data-speak="The leaves turn yellow in autumn.">The leaves turn yellow in autumn.</span><span class="trans">叶子在秋天变黄。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="produce">produce</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/prəˈdjuːs/</span><span class="pos">v.</span>
+        <div class="definition">生产；制造</div>
+        <div class="example"><span class="wotd-say" data-speak="This factory produces cars.">This factory produces cars.</span><span class="trans">这家工厂生产汽车。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="widely">widely</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈwaɪdli/</span><span class="pos">adv.</span>
+        <div class="definition">广泛地</div>
+        <div class="example"><span class="wotd-say" data-speak="English is widely used around the world.">English is widely used around the world.</span><span class="trans">英语在全世界被广泛使用。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="process">process</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈprəʊses/</span><span class="pos">n./v.</span>
+        <div class="definition">过程；加工</div>
+        <div class="example"><span class="wotd-say" data-speak="The production process is very efficient.">The production process is very efficient.</span><span class="trans">生产过程非常高效。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="pack">pack</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/pæk/</span><span class="pos">v.</span>
+        <div class="definition">包装</div>
+        <div class="example"><span class="wotd-say" data-speak="The gifts are packed in beautiful boxes.">The gifts are packed in beautiful boxes.</span><span class="trans">礼物被包装在漂亮的盒子里。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="product">product</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈprɒdʌkt/</span><span class="pos">n.</span>
+        <div class="definition">产品</div>
+        <div class="example"><span class="wotd-say" data-speak="This product is made in China.">This product is made in China.</span><span class="trans">这个产品是中国制造的。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="France">France</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/fræns/</span><span class="pos">n.</span>
+        <div class="definition">法国</div>
+        <div class="example"><span class="wotd-say" data-speak="This wine is from France.">This wine is from France.</span><span class="trans">这酒来自法国。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="Germany">Germany</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈdʒɜːrməni/</span><span class="pos">n.</span>
+        <div class="definition">德国</div>
+        <div class="example"><span class="wotd-say" data-speak="Cars are made in Germany.">Cars are made in Germany.</span><span class="trans">汽车在德国制造。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="material">material</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/məˈtɪriəl/</span><span class="pos">n.</span>
+        <div class="definition">材料；原料</div>
+        <div class="example"><span class="wotd-say" data-speak="What material is this made of?">What material is this made of?</span><span class="trans">这是什么材料做的？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="traffic">traffic</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈtræfɪk/</span><span class="pos">n.</span>
+        <div class="definition">交通</div>
+        <div class="example"><span class="wotd-say" data-speak="There is a lot of traffic in the city.">There is a lot of traffic in the city.</span><span class="trans">城市里交通繁忙。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="postman">postman</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈpoʊstmən/</span><span class="pos">n.</span>
+        <div class="definition">邮递员</div>
+        <div class="example"><span class="wotd-say" data-speak="The postman brings letters every day.">The postman brings letters every day.</span><span class="trans">邮递员每天送信。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="cap">cap</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/kæp/</span><span class="pos">n.</span>
+        <div class="definition">帽子</div>
+        <div class="example"><span class="wotd-say" data-speak="He wears a baseball cap.">He wears a baseball cap.</span><span class="trans">他戴着一顶棒球帽。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="glove">glove</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɡlʌv/</span><span class="pos">n.</span>
+        <div class="definition">手套</div>
+        <div class="example"><span class="wotd-say" data-speak="In winter, I wear gloves.">In winter, I wear gloves.</span><span class="trans">冬天我戴手套。</span></div>
+      </div></div></div></details>
+<details class="module" open><summary>🔤 重点句型 · Sentence Patterns</summary><div class="content"><div class="pattern-grid">      <div class="pattern-card">
+        <div class="structure">A + be made of + 材料 (看得出原材料)</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>表示「某物由……制成」。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1">The shirt <b>is made of</b> cotton. / This ring <b>is made of</b> silver.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">A + be made from + 材料 (看不出原材料)</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>表示「某物由……制成」。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp2">Paper <b>is made from</b> wood. / Wine <b>is made from</b> grapes.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">A + be made in + 地点</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>表示「某物在某地制造」。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp3">These cars <b>are made in</b> Japan. / This shirt <b>is made in</b> China.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">A + be made by + 人/方式</div> <button class="speak-btn" data-target="sp4" title="朗读句型">🔊</button>
+        <div>表示「某物由某人/用某种方式制造」。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp4">Paper cutting <b>is made by</b> hand. / The model <b>was made by</b> my brother.</span></div>
+      </div></div></div></details>
+<details class="module detail-module" open><summary>📚 语法聚焦 · 被动语态 — 一般现在时 <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module"><h3>被动语态的结构</h3>
+<table class="grammar-table">
+<tr><th>时态</th><th>结构</th><th>例句</th></tr>
+<tr><td>一般现在时</td><td>am/is/are + V-ed</td><td>The shirts are made of cotton.</td></tr>
+<tr><td>一般过去时</td><td>was/were + V-ed</td><td>The bridge was built in 1990.</td></tr>
+<tr><td>一般将来时</td><td>will be + V-ed</td><td>The meeting will be held next week.</td></tr>
+</table>
+<h3>主动变被动</h3>
+<table class="grammar-table">
+<tr><th>主动句</th><th>被动句</th><th>说明</th></tr>
+<tr><td>The factory produces cars.</td><td>Cars are produced by the factory.</td><td>宾语变为主语</td></tr>
+<tr><td>People grow tea in Hangzhou.</td><td>Tea is grown in Hangzhou.</td><td>by people 常省略</td></tr>
+<tr><td>They make this kind of watch in Switzerland.</td><td>This kind of watch is made in Switzerland.</td><td>原主语不明确时省略</td></tr>
+</table>
+</div><div class="chinese-error">      <p>只有及物动词（后接宾语）才能用于被动语态。</p>
+      <p>be 动词要根据主语的人称和数进行变化。</p>
+      <p>如果不想提及动作的执行者，可以省略 by 短语。</p>
+      <p><span class="wotd-say" data-speak="All that glitters is not gold.">All that glitters is not gold.</span> 闪光的未必都是金子。</p></div></div></details>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">The shirts ____ (make) of cotton.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>are made</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">Tea ____ (grow) in many parts of China.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>is grown</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">This ring is made ____ silver.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>of</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">Paper is made ____ wood.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>from</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">These products are made ____ China.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>in</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">The cake ____ (make) by my mother every birthday.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>is made</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">完成被动句：People speak English all over the world. → English ____.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>English is spoken all over the world.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">选择：This kind of watch ____ in Switzerland.<br>A. made B. is made C. makes D. making</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>B</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">改主动为被动：My grandmother makes the best dumplings. → ____.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>The best dumplings are made by my grandmother.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">翻译：剪纸是手工制作的。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Paper cutting is made by hand.</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">完成被动句：These flowers ____ (water) every day.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>are watered</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">改错：The book is wrote by a famous author.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>wrote → written</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">改写：People use bamboo to make many things. → Bamboo ____.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Bamboo is used to make many things.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">写作：用被动语态描述一张纸的制作过程（至少4个步骤）。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Trees are cut down. Then they are made into wood pulp. The pulp is pressed into sheets. Finally, the paper is cut and packed.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>📖 阅读专项 · Chinese Traditional Art Forms</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">China is famous for its traditional art forms. Many of them are made by hand and have a long history. One example is sky lanterns. They are made of bamboo and paper. Sky lanterns are used at festivals and other celebrations. They are seen as symbols of happiness and good wishes.</p>
+      <p class="en-text">Another traditional art form is paper cutting. Paper cutting has been around for over 1,500 years. It is made by cutting paper into different shapes. Red paper is usually used because red is a lucky color in China. Paper cuttings are put on windows, doors, and walls as decorations.</p>
+      <p class="en-text">Chinese clay art is also famous. The clay pieces are small and cute. They are about children, animals, or Chinese characters. They are made by hand. First, the clay is shaped. Then it is allowed to air-dry. After drying, it is fired at a very high heat. Finally, it is painted and polished.</p><div class="gloss"><span>sky lantern 孔明灯；天灯</span> <span>symbol 象征</span> <span>paper cutting 剪纸</span> <span>clay 黏土</span> <span>air-dry 风干</span> <span>fired 烧制</span> <span>polished 抛光</span> </div></div>    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">What are sky lanterns made of?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>They are made of bamboo and paper.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">Why is red paper usually used for paper cutting?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Because red is a lucky color in China.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">How many steps are there in making Chinese clay art?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Five steps: shaped, air-dried, fired, painted, and polished.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★★</span>
+      <div class="q-body">What do sky lanterns symbolize?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>They are symbols of happiness and good wishes.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>🏆 中考题型专练 · 阅读理解 — 判断正误</summary><div class="content exam-section"><p style="font-size:13px;margin-bottom:8px;">阅读短文，判断下列句子的正（T）误（F）。</p><div class="reading-passage" style="background:var(--bg-secondary);">      <p>Tea is a popular drink all over the world. It is produced in many countries, but China is the birthplace of tea. In China, tea is grown in many provinces. Fujian, Zhejiang, and Yunnan are famous for tea. Tea is picked by hand and then processed. There are different kinds of tea: green tea, black tea, oolong tea, and white tea. Tea is not only a drink but also a part of Chinese culture. It is often served when guests visit. Tea is also used in traditional Chinese medicine.</p></div><div style="margin:4px 0;font-size:13px;"><strong>1</strong> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> A. Tea is not produced in China.</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> B. China is the birthplace of tea.</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> C. Tea is only a drink.</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> D. Tea is not used in medicine.</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>2</strong> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> A. Tea is picked by machines.</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> B. Tea is picked by hand.</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> C. Tea is not processed.</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> D. Tea is only from Fujian.</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>3</strong> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> A. Tea is not part of Chinese culture.</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> B. Tea is served when guests visit.</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> C. Only green tea exists.</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> D. Tea has no health benefits.</span> </div>
+<div class="exam-q" style="border-left-color:#f59e0b;"><span class="q-tag" style="background:#f59e0b;color:#fff;">答案</span><div class="q-body">1. F；2. T；3. T</div></div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · Describe how products are made</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">写一篇短文介绍一种你熟悉的中国传统手工艺品。说明它的材料、产地、制作过程和文化意义。</div></div><div class="writing-framework">      <div class="fw-step">开头：介绍你要描述的手工艺品</div>
+      <div class="fw-step">材料：说明它由什么制成</div>
+      <div class="fw-step">产地：它在什么地方生产</div>
+      <div class="fw-step">制作过程：简要描述如何制作</div>
+      <div class="fw-step">文化意义：它象征什么，什么时候使用</div></div><div class="writing-model"><div class="en">Today I want to introduce Chinese paper cutting. It is a traditional art form that has a long history of over 1,500 years. Paper cutting is made of red paper. It is made by hand. The designs are cut into different shapes, such as flowers, animals, and Chinese characters. Paper cuttings are usually put on windows, doors, and walls during the Spring Festival. They are symbols of good luck and happiness. I think paper cutting is a beautiful and meaningful art form.</div><div class="trans">今天我想介绍中国的剪纸。它是一种有着1500多年历史的传统艺术形式。剪纸是用红纸做的，是手工制作的。图案被剪成不同的形状，如花、动物和汉字。剪纸通常在春节期间贴在窗户、门和墙上。它们是好运和幸福的象征。我认为剪纸是一种美丽而有意义的艺术形式。</div></div></div></details>
+<details class="module detail-module" open><summary>🎯 Project · Product Report — Made in My Hometown</summary><div class="content project-module"><div class="project-brief"><div class="project-title">Product Report — Made in My Hometown</div><div class="project-desc">调查你家乡的一种特产或知名产品，了解它的材料、制作工艺和文化意义，做一个报告。</div></div><div class="project-steps">      <div class="step"><span class="step-num">1</span><span class="step-text">选择你家乡的一种特产或知名产品</span></div>
+      <div class="step"><span class="step-num">2</span><span class="step-text">了解它的原材料和制作工艺</span></div>
+      <div class="step"><span class="step-num">3</span><span class="step-text">拍摄或收集产品的照片</span></div>
+      <div class="step"><span class="step-num">4</span><span class="step-text">用英语写一篇产品报告（含被动语态）</span></div>
+      <div class="step"><span class="step-num">5</span><span class="step-text">制作PPT或海报展示</span></div>
+      <div class="step"><span class="step-num">6</span><span class="step-text">向全班介绍你的发现</span></div></div><div class="project-rubric"><table><tr><th>#</th><th>评价标准</th></tr><tr><td>1.</td><td>产品选择有意义</td></tr>
+<tr><td>2.</td><td>信息准确、来源可靠</td></tr>
+<tr><td>3.</td><td>正确使用了被动语态</td></tr>
+<tr><td>4.</td><td>展示清晰、有吸引力</td></tr>
+<tr><td>5.</td><td>能回答同学提问</td></tr></table></div></div></details>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能理解被动语态（一般现在时）的结构</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能区分 be made of / from / in / by</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用被动语态描述产品</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能理解阅读中关于中国传统工艺的介绍</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写出产品介绍短文</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>向同桌解释被动语态和主动语态的区别，分别举例说明。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">🔵 1天后：复习被动语态结构</span>
+    <span class="review-dot">🟢 3天后：复习 be made of/from/in/by</span>
+    <span class="review-dot">🟡 1周后：复述中国传统工艺文章</span>
+    <span class="review-dot">🔴 1月后：介绍你家乡的一种产品</span></div>
+<div class="next-stop" style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;"><a href="u04.html" class="nav-arrow">← 上一单元</a><a href="u06.html" class="nav-arrow">下一单元 →</a></div>
+<div class="next-stop" style="margin-top:8px;"><strong>➡️ 下一单元：U6: When was it invented?</strong><br>学习一般过去时的被动语态，了解重要发明的历史。</div>
+</main>
+<div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
+<button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis, currentUtterance: null, speaking: false, rate: 0.9, voiceURI: 'en-US',
+    init: function(){var s=this;document.getElementById('speechRate').addEventListener('input',function(){s.rate=+this.value;document.getElementById('speechRateLabel').textContent=this.value;});document.getElementById('speechVoice').addEventListener('change',function(){s.voiceURI=this.value;localStorage.setItem('speech-voice',this.value);});document.getElementById('speechStopBtn').addEventListener('click',function(){s.stop();});document.getElementById('speechCloseBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.remove('open');});document.getElementById('speechToggleBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.toggle('open');});},
+    speak: function(t,c){if(!t)return;this.stop();var u=new SpeechSynthesisUtterance(t);u.lang=this.voiceURI;u.rate=this.rate;u.onend=function(){if(c)c();};this.currentUtterance=u;this.synthesis.speak(u);},
+    speakDialogue: function(id,c){var s=this,el=document.getElementById(id),ls=el?el.querySelectorAll('.en-text'):[],i=0;this.stop();(function n(){if(i>=ls.length){if(c)c();return;}var e=ls[i],t=e.getAttribute('data-speak')||e.textContent;if(!t){i++;n();return;}e.classList.add('speaking');var u=new SpeechSynthesisUtterance(t);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){e.classList.remove('speaking');i++;setTimeout(n,500);};u.onerror=function(){e.classList.remove('speaking');i++;setTimeout(n,200);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    speakVocabSection: function(id,c){var s=this,el=document.getElementById(id),cs=el?el.querySelectorAll('.vocab-card'):[],i=0;this.stop();(function n(){if(i>=cs.length){if(c)c();return;}var e=cs[i],hw=e.querySelector('.headword'),ex=e.querySelector('.example .wotd-say'),t=[];if(hw)t.push(hw.getAttribute('data-speak')||hw.textContent);if(ex)t.push(ex.getAttribute('data-speak')||ex.textContent.replace(/<[^>]+>/g,'').trim());var ft=t.join('. ');if(!ft){i++;n();return;}hw.classList.add('speaking');var u=new SpeechSynthesisUtterance(ft);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){hw.classList.remove('speaking');i++;setTimeout(n,600);};u.onerror=function(){hw.classList.remove('speaking');i++;setTimeout(n,300);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    stop: function(){this.synthesis.cancel();this.speaking=false;}
+  };SpeechManager.init();
+  document.querySelectorAll('.wotd-say').forEach(function(el){el.addEventListener('click',function(){SpeechManager.speak(this.getAttribute('data-speak')||this.textContent);});});
+  document.querySelectorAll('.speak-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var d=this.getAttribute('data-dialogue'),v=this.getAttribute('data-vocab'),t=this.getAttribute('data-target');if(this.classList.contains('speaking')){SpeechManager.stop();this.classList.remove('speaking');return;}this.classList.add('speaking');var done=function(){btn.classList.remove('speaking');};if(d){SpeechManager.speakDialogue(d,done);}else if(v){SpeechManager.speakVocabSection(v,done);}else if(t){var tg=document.getElementById(t);if(!tg){btn.classList.remove('speaking');return;}SpeechManager.speak(tg.textContent.replace(/<[^>]+>/g,''),done);}else{btn.classList.remove('speaking');}});});
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();var hw=this.previousElementSibling;if(hw&&hw.classList.contains('wotd-say')){var t=hw.getAttribute('data-speak')||hw.textContent;SpeechManager.speak(t);}});});
+  (function(){var btn=document.getElementById('expandAllBtn');if(!btn)return;btn.addEventListener('click',function(){var ad=document.querySelectorAll('.module,.exam-module');var ao=true;for(var i=0;i<ad.length;i++){if(!ad[i].hasAttribute('open')){ao=false;break;}};for(var i=0;i<ad.length;i++){if(ao)ad[i].removeAttribute('open');else ad[i].setAttribute('open','');};btn.textContent=ao?'📂 展开全部模块':'📖 收起全部模块';});})();
+  var s=document.getElementById('sidebar'),k='eng9-theme-sidebar';if(!s)return;
+  if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
+  window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=window.scrollY>400?'flex':'none';},{passive:true});
+  document.getElementById('backToTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution');});});
+})();
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);localStorage.setItem("eng9-theme",t);var btn=document.getElementById("themeToggle");if(btn)btn.textContent=t==="dark"?"☀️":"🌙";}
+function toggleTheme(){setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark");}
+</script></body></html>

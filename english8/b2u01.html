@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U1 Time to Relax! | 初中英语八年级</title>
+<link rel="stylesheet" href="css/english8.css">
+<style>
+.speak-btn { display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;color:var(--accent);border:1px solid var(--border);border-radius:4px;padding:2px 8px;background:var(--bg);transition:background 0.15s; }
+.speak-btn:hover { background:var(--accent-light); }
+.speak-btn.speaking { background:var(--eng-amber-light);color:var(--eng-amber);border-color:var(--eng-amber); }
+.headword-speak-indicator { font-size:11px;margin-left:3px;opacity:0.55;cursor:pointer;vertical-align:super;line-height:1; }
+.headword-speak-indicator:hover { opacity:1; }
+.wotd-say { cursor:pointer;transition:color 0.15s; }
+.wotd-say:hover { color:var(--accent); }
+.wotd-say.speaking { color:var(--eng-pink); }
+.speech-panel { position:fixed;bottom:80px;right:24px;z-index:999;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);padding:14px 18px;display:none;min-width:180px; }
+.speech-panel.open { display:block; }
+.speech-panel .row { display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px; }
+.speech-panel .row label { color:var(--text-secondary);font-size:12px;min-width:36px; }
+.speech-panel select,.speech-panel input[type="range"] { flex:1; }
+.speech-panel button { padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px; }
+.speech-panel button:hover { background:var(--accent-light); }
+.speech-toggle-btn { position:fixed;bottom:24px;right:76px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--accent);cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center; }
+.speech-toggle-btn:hover { background:var(--accent-light); }
+.en-text.speaking { background:var(--eng-amber-light);border-radius:4px;padding:2px 4px;transition:background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background:#452a08; }
+.detail-module { content-visibility:auto;contain-intrinsic-size:300px; }
+.reading { content-visibility:auto;contain-intrinsic-size:400px; }
+</style>
+<script>(function(){var t=localStorage.getItem("eng8-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+    <nav id="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="margin-bottom:0;">英语八年级</h2>
+        <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+      </div><nav>
+        <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../grammar.html" style="font-size:13px;">📌 语法全景图</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 八 上 ━━</a>
+        <a href="u01.html">U1 Happy Holiday!</a>
+        <a href="u02.html">U2 How often do you exercise?</a>
+        <a href="u03.html">U3 I'm more outgoing than my sister.</a>
+        <a href="u04.html">U4 What's the best movie theater?</a>
+        <a href="u05.html">U5 Do you want to watch a game show?</a>
+        <a href="u06.html">U6 I'm going to study computer science.</a>
+        <a href="u07.html">U7 Will people have robots?</a>
+        <a href="u08.html">U8 Let's Communicate!</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 八 下 ━━</a>
+        <a href="b2u01.html" class="active">U1 Time to Relax!</a>
+        <a href="b2u02.html">U2 Let's clean up!</a>
+        <a href="b2u03.html">U3 Could you please clean your room?</a>
+        <a href="b2u04.html">U4 Why don't you talk to your parents?</a>
+        <a href="b2u05.html">U5 What were you doing when the rainstorm came?</a>
+        <a href="b2u06.html">U6 An old man tried to move the mountains.</a>
+        <a href="b2u07.html">U7 What's the highest mountain in the world?</a>
+        <a href="b2u08.html">U8 Making a Difference</a>
+      </nav>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+    </nav>
+<main id="content">
+<div class="cover"><div class="sub-en">U1</div><h1>Time to Relax!</h1><p>放松与娱乐</p></div>
+<div class="unit-meta"><span>📖 话题：Leisure Activities & Hobbies</span><span>💬 功能：Talk about leisure activities and express preference</span><span>📚 语法：动词-ing 作主语和宾语 · enjoy/like/love/hate + doing</span><span>📝 写作：My Favorite Way to Relax</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能用 enjoy/like/love/hate + doing 表达喜好</label>
+  <label><input type="checkbox"> 能用动词-ing 作主语谈论活动</label>
+  <label><input type="checkbox"> 能描述自己的休闲方式并给出理由</label>
+  <label><input type="checkbox"> 能写一篇关于放松方式的短文</label></div>
+<details class="module" open><summary>📖 课文精讲 · Time to Relax!</summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：考试结束后，同学们讨论周末怎么放松。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
+<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Amy:</span><span class="en-text wotd-say" data-speak="Finally, the exams are over! What do you like to do in your free time?">Finally, the exams are over! What do you like to do in your free time?</span></div>
+      <div class="dialogue-line"><span class="speaker">Ben:</span><span class="en-text wotd-say" data-speak="I love listening to music. It helps me relax. What about you?">I love listening to music. It helps me relax. What about you?</span></div>
+      <div class="dialogue-line"><span class="speaker">Amy:</span><span class="en-text wotd-say" data-speak="I enjoy reading novels. Reading is a great way to escape from stress.">I enjoy reading novels. Reading is a great way to escape from stress.</span></div>
+      <div class="dialogue-line"><span class="speaker">Ben:</span><span class="en-text wotd-say" data-speak="My sister hates staying at home on weekends. She always goes out with friends.">My sister hates staying at home on weekends. She always goes out with friends.</span></div>
+      <div class="dialogue-line"><span class="speaker">Amy:</span><span class="en-text wotd-say" data-speak="Going out is fun, but staying home can be relaxing too. I like watching movies at home.">Going out is fun, but staying home can be relaxing too. I like watching movies at home.</span></div>
+      <div class="dialogue-line"><span class="speaker">Ben:</span><span class="en-text wotd-say" data-speak="That sounds nice. Maybe I'll try reading a book this weekend for a change!">That sounds nice. Maybe I'll try reading a book this weekend for a change!</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>Amy:</strong> 终于考完了！你空闲时间喜欢做什么？</p>
+        <p><strong>Ben:</strong> 我喜欢听音乐，能帮我放松。你呢？</p>
+        <p><strong>Amy:</strong> 我喜欢读小说。阅读是逃避压力的好方式。</p>
+        <p><strong>Ben:</strong> 我妹妹讨厌周末待在家，她总是和朋友出去玩。</p>
+        <p><strong>Amy:</strong> 出去玩很有趣，但待在家里也很放松。我喜欢在家看电影。</p>
+        <p><strong>Ben:</strong> 听起来不错。也许这周末我换换口味，读本书！</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p><strong>1.</strong> <em>I love listening to music.</em> → <strong>love / like / enjoy / hate + doing</strong> 表达喜好。</p>
+      <p><strong>2.</strong> <em>Reading is a great way to escape.</em> → 动词-ing 作主语，谓语动词用三单：<strong>Reading is…</strong></p>
+      <p><strong>3.</strong> <em>Going out is fun, but staying home can be relaxing too.</em> → 两个动词-ing 短语作主语对比。</p>
+      <p><strong>4.</strong> <em>I like watching movies at home.</em> → like doing (习惯性爱好) = like to do (偶尔想做)。</p></div></div></details>
+<details class="module" open><summary>📝 重点词汇 · 放松与娱乐 <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="relax">relax</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/rɪˈlæks/</span><span class="pos">v.</span>
+        <div class="definition">放松</div>
+        <div class="example"><span class="wotd-say" data-speak="Listening to music helps me relax.">Listening to music helps me relax.</span><span class="trans">听音乐帮我放松。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="enjoy">enjoy</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɪnˈdʒɔɪ/</span><span class="pos">v.</span>
+        <div class="definition">享受；喜爱</div>
+        <div class="example"><span class="wotd-say" data-speak="I enjoy spending time with my family.">I enjoy spending time with my family.</span><span class="trans">我喜欢和家人在一起。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="hate">hate</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/heɪt/</span><span class="pos">v.</span>
+        <div class="definition">讨厌</div>
+        <div class="example"><span class="wotd-say" data-speak="I hate getting up early on weekends.">I hate getting up early on weekends.</span><span class="trans">我讨厌周末早起。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="novel">novel</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈnɑːvl/</span><span class="pos">n.</span>
+        <div class="definition">小说</div>
+        <div class="example"><span class="wotd-say" data-speak="Reading novels is my hobby.">Reading novels is my hobby.</span><span class="trans">读小说是我的爱好。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="stress">stress</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/stres/</span><span class="pos">n.</span>
+        <div class="definition">压力</div>
+        <div class="example"><span class="wotd-say" data-speak="Too much stress is bad for health.">Too much stress is bad for health.</span><span class="trans">太多压力对健康不好。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="escape">escape</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɪˈskeɪp/</span><span class="pos">v.</span>
+        <div class="definition">逃避；摆脱</div>
+        <div class="example"><span class="wotd-say" data-speak="Reading helps me escape from stress.">Reading helps me escape from stress.</span><span class="trans">阅读帮我摆脱压力。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="hobby">hobby</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈhɑːbi/</span><span class="pos">n.</span>
+        <div class="definition">爱好</div>
+        <div class="example"><span class="wotd-say" data-speak="Everyone needs a hobby.">Everyone needs a hobby.</span><span class="trans">每个人都需要一个爱好。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="lazy">lazy</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈleɪzi/</span><span class="pos">adj.</span>
+        <div class="definition">懒惰的</div>
+        <div class="example"><span class="wotd-say" data-speak="Don't be so lazy! Go out and play!">Don't be so lazy! Go out and play!</span><span class="trans">别这么懒！出去玩玩！</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="active">active</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈæktɪv/</span><span class="pos">adj.</span>
+        <div class="definition">活跃的</div>
+        <div class="example"><span class="wotd-say" data-speak="My grandpa is still very active.">My grandpa is still very active.</span><span class="trans">我爷爷仍然很活跃。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="collect">collect</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/kəˈlekt/</span><span class="pos">v.</span>
+        <div class="definition">收集</div>
+        <div class="example"><span class="wotd-say" data-speak="I enjoy collecting stamps.">I enjoy collecting stamps.</span><span class="trans">我喜欢集邮。</span></div>
+      </div></div></div></details>
+<details class="module" open><summary>🔤 重点句型 · Sentence Patterns</summary><div class="content"><div class="pattern-grid">      <div class="pattern-card">
+        <div class="structure">like / love / enjoy + doing</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>表达喜好</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1">I <span class="slot">enjoy reading</span> books. / She <span class="slot">loves dancing</span>.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">动词-ing 作主语</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>把动作当话题</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp2"><span class="slot">Swimming</span> is good for health. / <span class="slot">Playing chess</span> is fun.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">hate / dislike + doing</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>表达厌恶</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp3">I <span class="slot">hate getting up</span> early. / He <span class="slot">dislikes watching</span> TV.</span></div>
+      </div></div></div></details>
+<details class="module detail-module" open><summary>📚 语法聚焦 · 动词-ing 形式作主语和宾语 <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module"><h3>动词-ing 作主语</h3>
+<table class="grammar-table">
+<tr><th>结构</th><th>示例</th><th>中文</th></tr>
+<tr><td>动词-ing + is/are…</td><td>Running is good exercise.</td><td>跑步是好的锻炼。</td></tr>
+<tr><td>It is + adj. + to do = Doing + is + adj.</td><td>It is fun to swim. = Swimming is fun.</td><td>游泳很有趣。</td></tr>
+</table>
+<h3>后接 doing 的常见动词</h3>
+<table class="grammar-table">
+<tr><th>动词</th><th>含义</th><th>示例</th></tr>
+<tr><td>enjoy</td><td>享受</td><td>I enjoy playing basketball.</td></tr>
+<tr><td>like</td><td>喜欢</td><td>She likes singing.</td></tr>
+<tr><td>love</td><td>热爱</td><td>He loves traveling.</td></tr>
+<tr><td>hate</td><td>讨厌</td><td>They hate waiting.</td></tr>
+<tr><td>finish</td><td>完成</td><td>I finished doing my homework.</td></tr>
+<tr><td>keep</td><td>持续</td><td>Keep trying! Don't give up!</td></tr>
+</table>
+</div><div class="chinese-error">      <p>❌ <span class="wrong" data-speak="I enjoy play basketball.">I enjoy play basketball.</span>（enjoy 后接 doing）</p>
+      <p>✅ <span class="correct" data-speak="I enjoy playing basketball.">I enjoy playing basketball.</span></p>
+      <p>❌ <span class="wrong" data-speak="Play chess is interesting.">Play chess is interesting.</span>（动词原形不能作主语）</p>
+      <p>✅ <span class="correct" data-speak="Playing chess is interesting.">Playing chess is interesting.</span></p></div></div></details>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[enjoy] I enjoy ____ (read) books in my free time.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>reading</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[hate] She hates ____ (get) up early on weekends.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>getting</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[主语] ____ (Swim) is good for your health.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Swimming</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[改错] He like play basketball after school.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>He likes playing basketball after school.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[句型] Playing computer games is fun. (改为同义句)<br>→ ____ is fun ____ play computer games.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>It; to</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[填空] My brother finished ____ (do) his homework at 9 p.m.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>doing</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">[汉译英] 跳舞和唱歌是她最喜欢做的事情。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Dancing and singing are her favorite things to do.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">[补全] A: What do you enjoy doing in your free time?<br>B: ____</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>自由回答</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>📖 阅读专项 · How Teens Relax Around the World</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">Different teens have different ways to relax. Here are some examples.</p>
+      <p class="en-text">In Japan, many teens enjoy reading manga. It's a popular hobby. Some like drawing anime characters in their free time.</p>
+      <p class="en-text">In the UK, playing sports is very common. Teens love playing football, tennis, or swimming. Going to the park with friends is also a favorite activity.</p>
+      <p class="en-text">In China, listening to music and playing video games are popular. Some teens enjoy practicing calligraphy. It helps them relax and focus.</p>
+      <p class="en-text">No matter how you relax, taking a break is important for everyone!</p><div class="gloss"><span>manga n. 漫画</span> <span>anime n. 动漫</span> <span>common adj. 常见的</span> <span>calligraphy n. 书法</span> <span>focus v. 集中注意力</span> </div></div>    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">1. What do Japanese teens enjoy reading?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Manga.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">2. What sports do UK teens like playing?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Football, tennis, or swimming.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★★</span>
+      <div class="q-body">3. Why do some Chinese teens practice calligraphy?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>It helps them relax and focus.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>🏆 中考题型专练 · 语法填空</summary><div class="content exam-section"><p style="font-size:13px;margin-bottom:8px;">用括号内单词的适当形式填空。</p><div class="reading-passage" style="background:var(--bg-secondary);">      <p>Everybody needs (1)____ (relax). In my family, we all have different ways. My father enjoys (2)____ (fish). My mother loves (3)____ (cook). (4)____ (Read) newspapers is her favorite. My sister likes (5)____ (draw). As for me, (6)____ (play) the guitar is the best way to relax.</p></div><div class="exam-q" style="border-left-color:#f59e0b;"><span class="q-tag" style="background:#f59e0b;color:#fff;">答案</span><div class="q-body">(1) to relax；(2) fishing；(3) cooking；(4) Reading；(5) drawing；(6) playing</div></div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · My Favorite Way to Relax</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">请以"My Favorite Way to Relax"为题，写 70 词短文介绍你最喜欢的放松方式及理由。</div></div><div class="writing-framework">      <div class="fw-step">开头：你最喜欢的放松方式是什么。</div>
+      <div class="fw-step">主体：为什么喜欢（2-3 个理由）。</div>
+      <div class="fw-step">结尾：鼓励大家也试试。</div></div><div class="writing-model"><div class="en">My favorite way to relax is listening to music. I enjoy listening to pop music after doing homework. It makes me feel calm and happy. Also, singing along to the songs helps me practice English. Sometimes I share music with my friends. It's a great way to connect with them. Listening to music is really good for both body and mind!</div><div class="trans">我最喜欢的放松方式是听音乐。做完作业后我喜欢听流行音乐，让我感到平静和快乐。而且跟唱歌曲还能帮我练英语。有时我和朋友分享音乐，是和他们交流的好方式。听音乐真的对身心都好！</div></div></div></details>
+<details class="module detail-module" open><summary>🎯 Project · Leisure Time Survey & Report</summary><div class="content project-module"><div class="project-brief"><div class="project-title">Leisure Time Survey & Report</div><div class="project-desc">调查身边5位同学的休闲方式，用英语写一份调查报告，列出最受欢迎的 3 种活动。</div></div><div class="project-steps">      <div class="step"><span class="step-num">1</span><span class="step-text">设计调查问卷（列出 8 种常见休闲活动）。</span></div>
+      <div class="step"><span class="step-num">2</span><span class="step-text">采访 5 位同学。</span></div>
+      <div class="step"><span class="step-num">3</span><span class="step-text">统计结果并排名。</span></div>
+      <div class="step"><span class="step-num">4</span><span class="step-text">用英语写报告并展示。</span></div></div><div class="project-rubric"><table><tr><th>#</th><th>评价标准</th></tr><tr><td>1.</td><td>数据真实</td></tr>
+<tr><td>2.</td><td>报告中正确使用动词-ing</td></tr>
+<tr><td>3.</td><td>排版清晰</td></tr>
+<tr><td>4.</td><td>展示流利</td></tr></table></div></div></details>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 enjoy/like/love/hate + doing</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用动词-ing 作主语</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能描述休闲方式及理由</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写调查报告</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>假装你在做一个关于"全世界青少年如何放松"的英语播客，介绍不同国家的休闲方式。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">用 enjoy/like/love/hate + doing 各写 1 句</span>
+    <span class="review-dot">用 3 个动词-ing 作主语的句子</span>
+    <span class="review-dot">写一段关于放松方式的话</span>
+    <span class="review-dot">复习动词-ing 的基本规则</span></div>
+<div class="next-stop" style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;"><span></span><a href="b2u02.html" class="nav-arrow">下一单元 →</a></div>
+<div class="next-stop" style="margin-top:8px;"><strong>➡️ 下一单元：Let's clean up!</strong><br>下一单元你将学习如何用英语讨论环保行动，学会使用情态动词 should。</div>
+</main>
+<div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
+<button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis, currentUtterance: null, speaking: false, rate: 0.9, voiceURI: 'en-US',
+    init: function(){var s=this;document.getElementById('speechRate').addEventListener('input',function(){s.rate=+this.value;document.getElementById('speechRateLabel').textContent=this.value;});document.getElementById('speechVoice').addEventListener('change',function(){s.voiceURI=this.value;localStorage.setItem('speech-voice',this.value);});document.getElementById('speechStopBtn').addEventListener('click',function(){s.stop();});document.getElementById('speechCloseBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.remove('open');});document.getElementById('speechToggleBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.toggle('open');});},
+    speak: function(t,c){if(!t)return;this.stop();var u=new SpeechSynthesisUtterance(t);u.lang=this.voiceURI;u.rate=this.rate;u.onend=function(){if(c)c();};this.currentUtterance=u;this.synthesis.speak(u);},
+    speakDialogue: function(id,c){var s=this,el=document.getElementById(id),ls=el?el.querySelectorAll('.en-text'):[],i=0;this.stop();(function n(){if(i>=ls.length){if(c)c();return;}var e=ls[i],t=e.getAttribute('data-speak')||e.textContent;if(!t){i++;n();return;}e.classList.add('speaking');var u=new SpeechSynthesisUtterance(t);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){e.classList.remove('speaking');i++;setTimeout(n,500);};u.onerror=function(){e.classList.remove('speaking');i++;setTimeout(n,200);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    speakVocabSection: function(id,c){var s=this,el=document.getElementById(id),cs=el?el.querySelectorAll('.vocab-card'):[],i=0;this.stop();(function n(){if(i>=cs.length){if(c)c();return;}var e=cs[i],hw=e.querySelector('.headword'),ex=e.querySelector('.example .wotd-say'),t=[];if(hw)t.push(hw.getAttribute('data-speak')||hw.textContent);if(ex)t.push(ex.getAttribute('data-speak')||ex.textContent.replace(/<[^>]+>/g,'').trim());var ft=t.join('. ');if(!ft){i++;n();return;}hw.classList.add('speaking');var u=new SpeechSynthesisUtterance(ft);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){hw.classList.remove('speaking');i++;setTimeout(n,600);};u.onerror=function(){hw.classList.remove('speaking');i++;setTimeout(n,300);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    stop: function(){this.synthesis.cancel();this.speaking=false;}
+  };SpeechManager.init();
+  document.querySelectorAll('.wotd-say').forEach(function(el){el.addEventListener('click',function(){SpeechManager.speak(this.getAttribute('data-speak')||this.textContent);});});
+  document.querySelectorAll('.speak-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var d=this.getAttribute('data-dialogue'),v=this.getAttribute('data-vocab'),t=this.getAttribute('data-target');if(this.classList.contains('speaking')){SpeechManager.stop();this.classList.remove('speaking');return;}this.classList.add('speaking');var done=function(){btn.classList.remove('speaking');};if(d){SpeechManager.speakDialogue(d,done);}else if(v){SpeechManager.speakVocabSection(v,done);}else if(t){var tg=document.getElementById(t);if(!tg){btn.classList.remove('speaking');return;}SpeechManager.speak(tg.textContent.replace(/<[^>]+>/g,''),done);}else{btn.classList.remove('speaking');}});});
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();var hw=this.previousElementSibling;if(hw&&hw.classList.contains('wotd-say')){var t=hw.getAttribute('data-speak')||hw.textContent;SpeechManager.speak(t);}});});
+  (function(){var btn=document.getElementById('expandAllBtn');if(!btn)return;btn.addEventListener('click',function(){var ad=document.querySelectorAll('.module,.exam-module');var ao=true;for(var i=0;i<ad.length;i++){if(!ad[i].hasAttribute('open')){ao=false;break;}};for(var i=0;i<ad.length;i++){if(ao)ad[i].removeAttribute('open');else ad[i].setAttribute('open','');};btn.textContent=ao?'📂 展开全部模块':'📖 收起全部模块';});})();
+  var s=document.getElementById('sidebar'),k='eng8-theme-sidebar';if(!s)return;
+  if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
+  window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=window.scrollY>400?'flex':'none';},{passive:true});
+  document.getElementById('backToTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution');});});
+})();
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);localStorage.setItem("eng8-theme",t);var btn=document.getElementById("themeToggle");if(btn)btn.textContent=t==="dark"?"☀️":"🌙";}
+function toggleTheme(){setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark");}
+</script></body></html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U3 Could you please tell me where the restrooms are? | 初中英语九年级</title>
+<link rel="stylesheet" href="css/english9.css">
+<style>
+.speak-btn { display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;color:var(--accent);border:1px solid var(--border);border-radius:4px;padding:2px 8px;background:var(--bg);transition:background 0.15s; }
+.speak-btn:hover { background:var(--accent-light); }
+.speak-btn.speaking { background:var(--eng-amber-light);color:var(--eng-amber);border-color:var(--eng-amber); }
+.headword-speak-indicator { font-size:11px;margin-left:3px;opacity:0.55;cursor:pointer;vertical-align:super;line-height:1; }
+.headword-speak-indicator:hover { opacity:1; }
+.wotd-say { cursor:pointer;transition:color 0.15s; }
+.wotd-say:hover { color:var(--accent); }
+.wotd-say.speaking { color:var(--eng-pink); }
+.speech-panel { position:fixed;bottom:80px;right:24px;z-index:999;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);padding:14px 18px;display:none;min-width:180px; }
+.speech-panel.open { display:block; }
+.speech-panel .row { display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px; }
+.speech-panel .row label { color:var(--text-secondary);font-size:12px;min-width:36px; }
+.speech-panel select,.speech-panel input[type="range"] { flex:1; }
+.speech-panel button { padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px; }
+.speech-panel button:hover { background:var(--accent-light); }
+.speech-toggle-btn { position:fixed;bottom:24px;right:76px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--accent);cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center; }
+.speech-toggle-btn:hover { background:var(--accent-light); }
+.en-text.speaking { background:var(--eng-amber-light);border-radius:4px;padding:2px 4px;transition:background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background:#452a08; }
+.detail-module { content-visibility:auto;contain-intrinsic-size:300px; }
+.reading { content-visibility:auto;contain-intrinsic-size:400px; }
+</style>
+<script>(function(){var t=localStorage.getItem("eng9-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+    <nav id="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="margin-bottom:0;">英语九年级</h2>
+        <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+      </div><nav>
+        <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../grammar.html" style="font-size:13px;">📌 语法全景图</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 九年级全一册 ━━</a>
+        <a href="u01.html">U1 How can we become good learners?</a>
+        <a href="u02.html">U2 I think that mooncakes are delicious!</a>
+        <a href="u03.html" class="active">U3 Could you please tell me where the restrooms are?</a>
+        <a href="u04.html">U4 I used to be afraid of the dark.</a>
+        <a href="u05.html">U5 What are the shirts made of?</a>
+        <a href="u06.html">U6 When was it invented?</a>
+        <a href="u07.html">U7 Teenagers should be allowed to choose their own clothes.</a>
+        <a href="u08.html">U8 It must belong to Carla.</a>
+        <a href="u09.html">U9 I like music that I can dance to.</a>
+        <a href="u10.html">U10 You're supposed to shake hands.</a>
+        <a href="u11.html">U11 Sad movies make me cry.</a>
+        <a href="u12.html">U12 Life is full of the unexpected.</a>
+        <a href="u13.html">U13 We're trying to save the earth!</a>
+        <a href="u14.html">U14 I remember meeting all of you in Grade 7.</a>
+      </nav>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+    </nav>
+<main id="content">
+<div class="cover"><div class="sub-en">U3</div><h1>Could you please tell me where the restrooms are?</h1><p>问路与请求</p></div>
+<div class="unit-meta"><span>📖 话题：Asking for Directions and Requests</span><span>💬 功能：Ask for information politely; give directions</span><span>📚 语法：Object clauses with wh-questions; polite requests</span><span>📝 写作：Write a polite request or ask for directions</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能用英语礼貌地问路</label>
+  <label><input type="checkbox"> 能听懂并给出方向指引</label>
+  <label><input type="checkbox"> 能用宾语从句转述疑问句</label>
+  <label><input type="checkbox"> 能在不同场合使用礼貌语言</label></div>
+<details class="module" open><summary>📖 课文精讲 · Could you please tell me where the restrooms are?</summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：一名游客在街上向警察询问如何到达最近的超市。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
+<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Tourist:</span><span class="en-text wotd-say" data-speak="Excuse me, could you please tell me where the nearest supermarket is?">Excuse me, could you please tell me where the nearest supermarket is?</span></div>
+      <div class="dialogue-line"><span class="speaker">Police:</span><span class="en-text wotd-say" data-speak="Sure! Go straight along this street. Then turn left at the second crossing.">Sure! Go straight along this street. Then turn left at the second crossing.</span></div>
+      <div class="dialogue-line"><span class="speaker">Tourist:</span><span class="en-text wotd-say" data-speak="Is it far from here? I wonder how long it takes to get there.">Is it far from here? I wonder how long it takes to get there.</span></div>
+      <div class="dialogue-line"><span class="speaker">Police:</span><span class="en-text wotd-say" data-speak="It's about a ten-minute walk. You can also take the bus.">It's about a ten-minute walk. You can also take the bus.</span></div>
+      <div class="dialogue-line"><span class="speaker">Tourist:</span><span class="en-text wotd-say" data-speak="Could you tell me which bus I should take?">Could you tell me which bus I should take?</span></div>
+      <div class="dialogue-line"><span class="speaker">Police:</span><span class="en-text wotd-say" data-speak="Bus No. 23 will take you right there. The bus stop is across the street.">Bus No. 23 will take you right there. The bus stop is across the street.</span></div>
+      <div class="dialogue-line"><span class="speaker">Tourist:</span><span class="en-text wotd-say" data-speak="Thank you very much! You're very helpful.">Thank you very much! You're very helpful.</span></div>
+      <div class="dialogue-line"><span class="speaker">Police:</span><span class="en-text wotd-say" data-speak="You're welcome. Enjoy your stay!">You're welcome. Enjoy your stay!</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>Tourist:</strong> 打扰一下，您能告诉我最近的超市在哪里吗？</p>
+        <p><strong>Police:</strong> 当然！沿着这条街直走，然后在第二个路口左转。</p>
+        <p><strong>Tourist:</strong> 离这里远吗？我想知道到那里要多长时间。</p>
+        <p><strong>Police:</strong> 大约步行10分钟。你也可以坐公交车。</p>
+        <p><strong>Tourist:</strong> 你能告诉我应该坐哪路公交车吗？</p>
+        <p><strong>Police:</strong> 23路公交车会带你去那里。公交车站就在街对面。</p>
+        <p><strong>Tourist:</strong> 非常感谢！你真是太好了。</p>
+        <p><strong>Police:</strong> 不客气。祝你玩得开心！</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p>Could you please tell me...? 是问路的最礼貌表达，后接疑问词引导的宾语从句。</p>
+      <p>宾语从句作及物动词的宾语时，wh-疑问词保留，但语序变为陈述语序。</p>
+      <p>指路常用表达：go straight, turn left/right, at the crossing, on the corner</p>
+      <p>区分：Could you tell me where the bank is? (礼貌) vs Where is the bank? (直接)</p></div></div></details>
+<details class="module" open><summary>📝 重点词汇 · 问路与请求 <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="restroom">restroom</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈrestrʊm/</span><span class="pos">n.</span>
+        <div class="definition">洗手间；厕所</div>
+        <div class="example"><span class="wotd-say" data-speak="Could you tell me where the restroom is?">Could you tell me where the restroom is?</span><span class="trans">你能告诉我洗手间在哪里吗？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="shampoo">shampoo</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ʃæmˈpuː/</span><span class="pos">n.</span>
+        <div class="definition">洗发水</div>
+        <div class="example"><span class="wotd-say" data-speak="I need to buy some shampoo.">I need to buy some shampoo.</span><span class="trans">我需要买些洗发水。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="stamp">stamp</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/stæmp/</span><span class="pos">n.</span>
+        <div class="definition">邮票</div>
+        <div class="example"><span class="wotd-say" data-speak="I want to buy some stamps.">I want to buy some stamps.</span><span class="trans">我想买一些邮票。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="department">department</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/dɪˈpɑːrtmənt/</span><span class="pos">n.</span>
+        <div class="definition">部门；百货商场</div>
+        <div class="example"><span class="wotd-say" data-speak="Let's go to the department store.">Let's go to the department store.</span><span class="trans">我们去百货商场吧。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="escalator">escalator</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈeskəleɪtər/</span><span class="pos">n.</span>
+        <div class="definition">自动扶梯</div>
+        <div class="example"><span class="wotd-say" data-speak="Take the escalator to the second floor.">Take the escalator to the second floor.</span><span class="trans">乘自动扶梯到二楼。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="fascinating">fascinating</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈfæsɪneɪtɪŋ/</span><span class="pos">adj.</span>
+        <div class="definition">迷人的；极好的</div>
+        <div class="example"><span class="wotd-say" data-speak="What a fascinating city!">What a fascinating city!</span><span class="trans">多么迷人的城市啊！</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="uncrowded">uncrowded</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ʌnˈkraʊdɪd/</span><span class="pos">adj.</span>
+        <div class="definition">不拥挤的</div>
+        <div class="example"><span class="wotd-say" data-speak="Let's find an uncrowded place.">Let's find an uncrowded place.</span><span class="trans">我们找个不拥挤的地方吧。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="convenient">convenient</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/kənˈviːniənt/</span><span class="pos">adj.</span>
+        <div class="definition">方便的</div>
+        <div class="example"><span class="wotd-say" data-speak="The subway is very convenient.">The subway is very convenient.</span><span class="trans">地铁非常方便。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="mall">mall</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/mɔːl/</span><span class="pos">n.</span>
+        <div class="definition">购物中心</div>
+        <div class="example"><span class="wotd-say" data-speak="There's a new mall downtown.">There's a new mall downtown.</span><span class="trans">市中心有一个新的购物中心。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="clerk">clerk</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/klɑːrk/</span><span class="pos">n.</span>
+        <div class="definition">职员；办事员</div>
+        <div class="example"><span class="wotd-say" data-speak="The clerk in the store was very helpful.">The clerk in the store was very helpful.</span><span class="trans">店里的职员非常帮忙。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="corner">corner</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈkɔːrnər/</span><span class="pos">n.</span>
+        <div class="definition">拐角；角落</div>
+        <div class="example"><span class="wotd-say" data-speak="The bank is on the corner of Main Street.">The bank is on the corner of Main Street.</span><span class="trans">银行在主街的拐角处。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="pass">pass</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/pæs/</span><span class="pos">v.</span>
+        <div class="definition">经过；传递</div>
+        <div class="example"><span class="wotd-say" data-speak="Pass the post office, then turn left.">Pass the post office, then turn left.</span><span class="trans">经过邮局，然后左转。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="crossing">crossing</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈkrɒsɪŋ/</span><span class="pos">n.</span>
+        <div class="definition">十字路口</div>
+        <div class="example"><span class="wotd-say" data-speak="Turn left at the first crossing.">Turn left at the first crossing.</span><span class="trans">在第一个十字路口左转。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="along">along</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/əˈlɒŋ/</span><span class="pos">prep.</span>
+        <div class="definition">沿着</div>
+        <div class="example"><span class="wotd-say" data-speak="Walk along this street.">Walk along this street.</span><span class="trans">沿着这条街走。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="block">block</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/blɒk/</span><span class="pos">n.</span>
+        <div class="definition">街区</div>
+        <div class="example"><span class="wotd-say" data-speak="It's three blocks away.">It's three blocks away.</span><span class="trans">它在三个街区外。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="address">address</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/əˈdres/</span><span class="pos">n.</span>
+        <div class="definition">地址</div>
+        <div class="example"><span class="wotd-say" data-speak="Could you write down your address?">Could you write down your address?</span><span class="trans">你能写下你的地址吗？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="direction">direction</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/dəˈrekʃn/</span><span class="pos">n.</span>
+        <div class="definition">方向</div>
+        <div class="example"><span class="wotd-say" data-speak="Excuse me, which direction is the museum?">Excuse me, which direction is the museum?</span><span class="trans">打扰一下，博物馆在哪个方向？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="request">request</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/rɪˈkwest/</span><span class="pos">n./v.</span>
+        <div class="definition">请求；要求</div>
+        <div class="example"><span class="wotd-say" data-speak="Make a polite request when asking for help.">Make a polite request when asking for help.</span><span class="trans">请求帮助时要有礼貌。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="polite">polite</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/pəˈlaɪt/</span><span class="pos">adj.</span>
+        <div class="definition">有礼貌的</div>
+        <div class="example"><span class="wotd-say" data-speak="It's polite to say please and thank you.">It's polite to say please and thank you.</span><span class="trans">说请和谢谢是有礼貌的。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="direct">direct</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/dəˈrekt/</span><span class="pos">adj./v.</span>
+        <div class="definition">直接的；给……指路</div>
+        <div class="example"><span class="wotd-say" data-speak="Can you direct me to the nearest hospital?">Can you direct me to the nearest hospital?</span><span class="trans">你能指给我去最近的医院的路吗？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="correct">correct</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/kəˈrekt/</span><span class="pos">adj.</span>
+        <div class="definition">正确的</div>
+        <div class="example"><span class="wotd-say" data-speak="Is this the correct bus stop?">Is this the correct bus stop?</span><span class="trans">这个公交车站对吗？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="nearby">nearby</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌnɪrˈbaɪ/</span><span class="pos">adj./adv.</span>
+        <div class="definition">附近的</div>
+        <div class="example"><span class="wotd-say" data-speak="Is there a post office nearby?">Is there a post office nearby?</span><span class="trans">附近有邮局吗？</span></div>
+      </div></div></div></details>
+<details class="module" open><summary>🔤 重点句型 · Sentence Patterns</summary><div class="content"><div class="pattern-grid">      <div class="pattern-card">
+        <div class="structure">Could you please tell me + wh- + 陈述语序</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>礼貌询问信息的句型。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1"><b>Could you please tell me where</b> the bank is? / <b>Could you please tell me how</b> to get to the station?</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">I wonder + if/wh- + 陈述语序</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>表达好奇或委婉提问。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp2"><b>I wonder if</b> there is a post office nearby. / <b>I wonder where</b> I can find a restroom.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">Go straight / Turn left / Turn right</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>指路的核心指令。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp3"><b>Go straight</b> for two blocks, then <b>turn right</b>. / <b>Turn left</b> at the traffic lights.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">It's + 时间 + walk/ride from here</div> <button class="speak-btn" data-target="sp4" title="朗读句型">🔊</button>
+        <div>描述距离的句型。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp4"><b>It's about ten minutes' walk from here.</b> / It's a short bus ride from here.</span></div>
+      </div></div></div></details>
+<details class="module detail-module" open><summary>📚 语法聚焦 · 疑问词引导的宾语从句 <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module"><h3>疑问词引导的宾语从句</h3>
+<table class="grammar-table">
+<tr><th>引导词</th><th>功能</th><th>例句</th></tr>
+<tr><td>where</td><td>询问地点</td><td>Could you tell me where the restroom is?</td></tr>
+<tr><td>how</td><td>询问方式</td><td>Can you tell me how to get there?</td></tr>
+<tr><td>when</td><td>询问时间</td><td>I wonder when the store opens.</td></tr>
+<tr><td>which</td><td>询问选择</td><td>Could you tell me which bus to take?</td></tr>
+</table>
+<h3>宾语从句语序</h3>
+<table class="grammar-table">
+<tr><th>原句</th><th>错误语序</th><th>正确语序</th></tr>
+<tr><td>Where is the bank?</td><td>Could you tell me where is the bank?</td><td>Could you tell me where the bank is?</td></tr>
+<tr><td>How can I get there?</td><td>I wonder how can I get there.</td><td>I wonder how I can get there.</td></tr>
+<tr><td>When does it open?</td><td>Do you know when does it open?</td><td>Do you know when it opens?</td></tr>
+</table>
+</div><div class="chinese-error">      <p>宾语从句必须用陈述句语序：连接词 + 主语 + 谓语。</p>
+      <p>在 Could you tell me...? 中，could 表示礼貌，不是过去式。</p>
+      <p>间接疑问句末尾用句号，不用问号。</p>
+      <p><span class="wotd-say" data-speak="When in Rome, do as the Romans do.">When in Rome, do as the Romans do.</span> 入乡随俗。</p></div></div></details>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">Could you tell me ____ the restroom is? (填入疑问词)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>where</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">I wonder ____ (how) I ____ (can) get to the airport. (改正语序)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>how I can</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">____ left at the second crossing, then go straight.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Turn</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">Is it far? → Could you tell me ____?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Could you tell me if/whether it is far?</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">Excuse me, ____ you tell me the way to the museum?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>could</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">Can you tell me ____?<br>A. where is the post office B. where the post office is C. the post office is where D. is where the post office</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>B</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">I wonder ____ (whether) he ____ (can) help me. (用括号内词完成句子)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>whether he can</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">改写为礼貌句：Where is the bank? → Could you tell me ____?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Could you tell me where the bank is?</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">It's about five ____ (minute) walk from here.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>minutes'</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">Would you mind ____ (tell) me the way to the library?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>telling</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">选择：Do you know ____?<br>A. when will the train arrive B. when the train will arrive C. when does the train arrive D. the train will arrive when</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>B</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">将直接引语转为间接引语：He asked, 「Where is the nearest hospital?」→</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>He asked where the nearest hospital was.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">改错：I wonder that he can come to the party. (找出并改正)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>将 that 改为 if/whether</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">完成对话：A: Excuse me, ____? B: Sure. Go straight and turn right at the traffic lights. You'll see it on your left.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Could you tell me how to get to the library?</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>📖 阅读专项 · Asking for Help Politely</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">When you visit a foreign country, it is important to know how to ask for help politely. Good speakers change the way they speak in different situations. The expressions they use might depend on whom they are speaking to or how well they know each other.</p>
+      <p class="en-text">For example, if you need to ask where the restrooms are, you could say «Where are the restrooms?» But this is not very polite. It might be better to say «Excuse me, could you please tell me where the restrooms are?»</p>
+      <p class="en-text">Sometimes we need to spend time leading in to a request. For example, we might first say to a stranger, «Excuse me, I wonder if you can help me.» This is a longer, more polite way of making a request. It is much more polite than saying «Give me some help!»</p>
+      <p class="en-text">Learning how to make requests politely is an important social skill. It shows respect for others and helps you communicate more effectively.</p><div class="gloss"><span>lead in to 引入</span> <span>request 请求</span> <span>stranger 陌生人</span> <span>social skill 社交技能</span> <span>effectively 有效地</span> </div></div>    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">Why is it important to ask for help politely?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Because it shows respect and helps you communicate effectively.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">What is the difference between «Where are the restrooms?» and «Could you please tell me where the restrooms are?»</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>The second one is more polite.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">What does «leading in to a request» mean?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>It means saying something first before making the actual request.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★★</span>
+      <div class="q-body">What does the way we speak depend on according to the passage?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>It depends on whom we are speaking to and how well we know each other.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>🏆 中考题型专练 · 阅读理解 — 细节理解</summary><div class="content exam-section"><p style="font-size:13px;margin-bottom:8px;">阅读短文，判断正误（T/F）。</p><div class="reading-passage" style="background:var(--bg-secondary);">      <p>In English, asking for information is not just about the right words. It is also about how you say them. When you ask a stranger for help, you should be polite. For example, «Excuse me» is a good way to start. Also, using «could» instead of «can» makes your request sound more polite. Remember to say «thank you» after someone helps you. Being polite helps people feel good and makes them want to help you.</p></div><div style="margin:4px 0;font-size:13px;"><strong>1</strong> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> A. Asking for information is only about the right words.</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> B. Asking for information is also about how you say the words.</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> C. Words don't matter.</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> D. Only grammar matters.</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>2</strong> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> A. Excuse me is not a polite way to start.</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> B. Excuse me is a good way to start a request.</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> C. You should never say excuse me.</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> D. Excuse me is only for friends.</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>3</strong> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> A. Can is more polite than could.</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> B. Could is more polite than can.</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> C. Both are the same.</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> D. Neither is polite.</span> </div>
+<div class="exam-q" style="border-left-color:#f59e0b;"><span class="q-tag" style="background:#f59e0b;color:#fff;">答案</span><div class="q-body">1. B；2. B；3. B</div></div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · Write a polite request or ask for directions</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">假设你是一名游客，来到一个陌生的城市。写一段话描述你如何向当地人询问去博物馆的路线。请使用至少三种不同的礼貌表达。</div></div><div class="writing-framework">      <div class="fw-step">开头：描述你在哪里，想做什么</div>
+      <div class="fw-step">主体1：描述第一次问路（向路人询问）</div>
+      <div class="fw-step">主体2：表示感谢并问第二个问题</div>
+      <div class="fw-step">主体3：确认路线或询问更多信息</div>
+      <div class="fw-step">结尾：总结礼貌问路的重要性</div></div><div class="writing-model"><div class="en">I am visiting a new city and want to visit the museum. I ask a local person for help politely. First, I say «Excuse me, could you please tell me how to get to the city museum?» The person tells me to go straight and turn left at the second crossing. Then I say «Thank you. I wonder how long it takes to get there.» He says it's about 15 minutes' walk. Finally, I ask «Could you tell me if there is a bus I can take?» He says Bus No. 5 can take me there. I thank him again. Being polite makes the conversation pleasant and helpful.</div><div class="trans">我正在参观一个新城市，想去博物馆参观。我礼貌地向一个当地人求助。首先，我说「打扰一下，您能告诉我怎样去市博物馆吗？」那个人告诉我直走，在第二个路口左转。然后我说「谢谢。我想知道到那里要多久。」他说大约步行15分钟。最后我问「您能告诉我有没有公交车可以坐吗？」他说5路公交车可以带我去那里。我再次感谢他。礼貌让对话愉快且有帮助。</div></div></div></details>
+<details class="module detail-module" open><summary>🎯 Project · Design a City Map and Guide</summary><div class="content project-module"><div class="project-brief"><div class="project-title">Design a City Map and Guide</div><div class="project-desc">设计一张虚构城市的地图，标注至少8个地点，并用英语写出从A点到B点的路线指南。</div></div><div class="project-steps">      <div class="step"><span class="step-num">1</span><span class="step-text">设计城市布局草图（街道、十字路口）</span></div>
+      <div class="step"><span class="step-num">2</span><span class="step-text">标注8个以上地点（银行、超市、医院、学校等）</span></div>
+      <div class="step"><span class="step-num">3</span><span class="step-text">编写从起点到终点的路线指南（使用本单元句型）</span></div>
+      <div class="step"><span class="step-num">4</span><span class="step-text">制作最终版本的地图和路线说明</span></div>
+      <div class="step"><span class="step-num">5</span><span class="step-text">与同伴交换地图，练习问路和指路</span></div>
+      <div class="step"><span class="step-num">6</span><span class="step-text">收集反馈并修改</span></div></div><div class="project-rubric"><table><tr><th>#</th><th>评价标准</th></tr><tr><td>1.</td><td>地图布局清晰、标注准确</td></tr>
+<tr><td>2.</td><td>包含8个以上的地点</td></tr>
+<tr><td>3.</td><td>路线指南使用了礼貌请求句型</td></tr>
+<tr><td>4.</td><td>实践环节能流利对话</td></tr>
+<tr><td>5.</td><td>设计有创意、美观</td></tr></table></div></div></details>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能礼貌地问路和指路</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能正确使用疑问词引导的宾语从句</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能区分直接和礼貌的表达方式</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用英语描述位置和方向</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我掌握了本单元的核心词汇</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>向同桌解释什么是宾语从句的陈述语序，并用问路句子举例说明。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">🔵 1天后：复习宾语从句语序规则</span>
+    <span class="review-dot">🟢 3天后：复习问路和指路表达</span>
+    <span class="review-dot">🟡 1周后：角色扮演练习问路对话</span>
+    <span class="review-dot">🔴 1月后：设计一张英文地图</span></div>
+<div class="next-stop" style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;"><a href="u02.html" class="nav-arrow">← 上一单元</a><a href="u04.html" class="nav-arrow">下一单元 →</a></div>
+<div class="next-stop" style="margin-top:8px;"><strong>➡️ 下一单元：U4: I used to be afraid of the dark.</strong><br>学习 used to 结构，描述过去和现在的变化。</div>
+</main>
+<div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
+<button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis, currentUtterance: null, speaking: false, rate: 0.9, voiceURI: 'en-US',
+    init: function(){var s=this;document.getElementById('speechRate').addEventListener('input',function(){s.rate=+this.value;document.getElementById('speechRateLabel').textContent=this.value;});document.getElementById('speechVoice').addEventListener('change',function(){s.voiceURI=this.value;localStorage.setItem('speech-voice',this.value);});document.getElementById('speechStopBtn').addEventListener('click',function(){s.stop();});document.getElementById('speechCloseBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.remove('open');});document.getElementById('speechToggleBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.toggle('open');});},
+    speak: function(t,c){if(!t)return;this.stop();var u=new SpeechSynthesisUtterance(t);u.lang=this.voiceURI;u.rate=this.rate;u.onend=function(){if(c)c();};this.currentUtterance=u;this.synthesis.speak(u);},
+    speakDialogue: function(id,c){var s=this,el=document.getElementById(id),ls=el?el.querySelectorAll('.en-text'):[],i=0;this.stop();(function n(){if(i>=ls.length){if(c)c();return;}var e=ls[i],t=e.getAttribute('data-speak')||e.textContent;if(!t){i++;n();return;}e.classList.add('speaking');var u=new SpeechSynthesisUtterance(t);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){e.classList.remove('speaking');i++;setTimeout(n,500);};u.onerror=function(){e.classList.remove('speaking');i++;setTimeout(n,200);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    speakVocabSection: function(id,c){var s=this,el=document.getElementById(id),cs=el?el.querySelectorAll('.vocab-card'):[],i=0;this.stop();(function n(){if(i>=cs.length){if(c)c();return;}var e=cs[i],hw=e.querySelector('.headword'),ex=e.querySelector('.example .wotd-say'),t=[];if(hw)t.push(hw.getAttribute('data-speak')||hw.textContent);if(ex)t.push(ex.getAttribute('data-speak')||ex.textContent.replace(/<[^>]+>/g,'').trim());var ft=t.join('. ');if(!ft){i++;n();return;}hw.classList.add('speaking');var u=new SpeechSynthesisUtterance(ft);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){hw.classList.remove('speaking');i++;setTimeout(n,600);};u.onerror=function(){hw.classList.remove('speaking');i++;setTimeout(n,300);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    stop: function(){this.synthesis.cancel();this.speaking=false;}
+  };SpeechManager.init();
+  document.querySelectorAll('.wotd-say').forEach(function(el){el.addEventListener('click',function(){SpeechManager.speak(this.getAttribute('data-speak')||this.textContent);});});
+  document.querySelectorAll('.speak-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var d=this.getAttribute('data-dialogue'),v=this.getAttribute('data-vocab'),t=this.getAttribute('data-target');if(this.classList.contains('speaking')){SpeechManager.stop();this.classList.remove('speaking');return;}this.classList.add('speaking');var done=function(){btn.classList.remove('speaking');};if(d){SpeechManager.speakDialogue(d,done);}else if(v){SpeechManager.speakVocabSection(v,done);}else if(t){var tg=document.getElementById(t);if(!tg){btn.classList.remove('speaking');return;}SpeechManager.speak(tg.textContent.replace(/<[^>]+>/g,''),done);}else{btn.classList.remove('speaking');}});});
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();var hw=this.previousElementSibling;if(hw&&hw.classList.contains('wotd-say')){var t=hw.getAttribute('data-speak')||hw.textContent;SpeechManager.speak(t);}});});
+  (function(){var btn=document.getElementById('expandAllBtn');if(!btn)return;btn.addEventListener('click',function(){var ad=document.querySelectorAll('.module,.exam-module');var ao=true;for(var i=0;i<ad.length;i++){if(!ad[i].hasAttribute('open')){ao=false;break;}};for(var i=0;i<ad.length;i++){if(ao)ad[i].removeAttribute('open');else ad[i].setAttribute('open','');};btn.textContent=ao?'📂 展开全部模块':'📖 收起全部模块';});})();
+  var s=document.getElementById('sidebar'),k='eng9-theme-sidebar';if(!s)return;
+  if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
+  window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=window.scrollY>400?'flex':'none';},{passive:true});
+  document.getElementById('backToTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution');});});
+})();
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);localStorage.setItem("eng9-theme",t);var btn=document.getElementById("themeToggle");if(btn)btn.textContent=t==="dark"?"☀️":"🌙";}
+function toggleTheme(){setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark");}
+</script></body></html>

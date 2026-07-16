@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U5 Do you want to watch a game show? | 初中英语八年级</title>
+<link rel="stylesheet" href="css/english8.css">
+<style>
+.speak-btn { display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;color:var(--accent);border:1px solid var(--border);border-radius:4px;padding:2px 8px;background:var(--bg);transition:background 0.15s; }
+.speak-btn:hover { background:var(--accent-light); }
+.speak-btn.speaking { background:var(--eng-amber-light);color:var(--eng-amber);border-color:var(--eng-amber); }
+.headword-speak-indicator { font-size:11px;margin-left:3px;opacity:0.55;cursor:pointer;vertical-align:super;line-height:1; }
+.headword-speak-indicator:hover { opacity:1; }
+.wotd-say { cursor:pointer;transition:color 0.15s; }
+.wotd-say:hover { color:var(--accent); }
+.wotd-say.speaking { color:var(--eng-pink); }
+.speech-panel { position:fixed;bottom:80px;right:24px;z-index:999;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);padding:14px 18px;display:none;min-width:180px; }
+.speech-panel.open { display:block; }
+.speech-panel .row { display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px; }
+.speech-panel .row label { color:var(--text-secondary);font-size:12px;min-width:36px; }
+.speech-panel select,.speech-panel input[type="range"] { flex:1; }
+.speech-panel button { padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px; }
+.speech-panel button:hover { background:var(--accent-light); }
+.speech-toggle-btn { position:fixed;bottom:24px;right:76px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--accent);cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center; }
+.speech-toggle-btn:hover { background:var(--accent-light); }
+.en-text.speaking { background:var(--eng-amber-light);border-radius:4px;padding:2px 4px;transition:background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background:#452a08; }
+.detail-module { content-visibility:auto;contain-intrinsic-size:300px; }
+.reading { content-visibility:auto;contain-intrinsic-size:400px; }
+</style>
+<script>(function(){var t=localStorage.getItem("eng8-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+    <nav id="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="margin-bottom:0;">英语八年级</h2>
+        <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+      </div><nav>
+        <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../grammar.html" style="font-size:13px;">📌 语法全景图</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 八 上 ━━</a>
+        <a href="u01.html">U1 Happy Holiday!</a>
+        <a href="u02.html">U2 How often do you exercise?</a>
+        <a href="u03.html">U3 I'm more outgoing than my sister.</a>
+        <a href="u04.html">U4 What's the best movie theater?</a>
+        <a href="u05.html" class="active">U5 Do you want to watch a game show?</a>
+        <a href="u06.html">U6 I'm going to study computer science.</a>
+        <a href="u07.html">U7 Will people have robots?</a>
+        <a href="u08.html">U8 Let's Communicate!</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 八 下 ━━</a>
+        <a href="b2u01.html">U1 Time to Relax!</a>
+        <a href="b2u02.html">U2 Let's clean up!</a>
+        <a href="b2u03.html">U3 Could you please clean your room?</a>
+        <a href="b2u04.html">U4 Why don't you talk to your parents?</a>
+        <a href="b2u05.html">U5 What were you doing when the rainstorm came?</a>
+        <a href="b2u06.html">U6 An old man tried to move the mountains.</a>
+        <a href="b2u07.html">U7 What's the highest mountain in the world?</a>
+        <a href="b2u08.html">U8 Making a Difference</a>
+      </nav>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+    </nav>
+<main id="content">
+<div class="cover"><div class="sub-en">U5</div><h1>Do you want to watch a game show?</h1><p>媒体偏好</p></div>
+<div class="unit-meta"><span>📖 话题：TV Shows & Movies</span><span>💬 功能：Express preferences and make plans</span><span>📚 语法：不定式作宾语（want/plan/hope to do）· 动词 + to do 结构</span><span>📝 写作：My Favorite TV Show</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能用 want/plan/hope to do 表达计划</label>
+  <label><input type="checkbox"> 能用 would like to 礼貌表达意愿</label>
+  <label><input type="checkbox"> 能谈论电视节目类型和喜好</label>
+  <label><input type="checkbox"> 能写一篇节目推荐短文</label></div>
+<details class="module" open><summary>📖 课文精讲 · Do you want to watch a game show?</summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：几个朋友在讨论今晚看什么电视节目。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
+<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Jenny:</span><span class="en-text wotd-say" data-speak="What do you want to watch tonight?">What do you want to watch tonight?</span></div>
+      <div class="dialogue-line"><span class="speaker">Mike:</span><span class="en-text wotd-say" data-speak="I plan to watch the game show. It's very exciting.">I plan to watch the game show. It's very exciting.</span></div>
+      <div class="dialogue-line"><span class="speaker">Jenny:</span><span class="en-text wotd-say" data-speak="I don't like game shows. I hope to watch a sitcom. They make me laugh.">I don't like game shows. I hope to watch a sitcom. They make me laugh.</span></div>
+      <div class="dialogue-line"><span class="speaker">Mike:</span><span class="en-text wotd-say" data-speak="But sitcoms are boring. How about a talk show?">But sitcoms are boring. How about a talk show?</span></div>
+      <div class="dialogue-line"><span class="speaker">Jenny:</span><span class="en-text wotd-say" data-speak="Talk shows are OK. But I would like to watch a talent show.">Talk shows are OK. But I would like to watch a talent show.</span></div>
+      <div class="dialogue-line"><span class="speaker">Mike:</span><span class="en-text wotd-say" data-speak="Good idea! I hope to see some great singers.">Good idea! I hope to see some great singers.</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>Jenny:</strong> 今晚你想看什么？</p>
+        <p><strong>Mike:</strong> 我打算看游戏类节目，特别刺激。</p>
+        <p><strong>Jenny:</strong> 我不喜欢游戏节目。我希望看情景喜剧，能让我笑。</p>
+        <p><strong>Mike:</strong> 但情景喜剧很无聊。脱口秀呢？</p>
+        <p><strong>Jenny:</strong> 脱口秀还行，但我想看才艺秀。</p>
+        <p><strong>Mike:</strong> 好主意！我希望能看到一些好歌手。</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p><strong>1.</strong> <em>What do you want to watch?</em> → <strong>want to do</strong>：想要做某事。to 后跟动词原形。</p>
+      <p><strong>2.</strong> <em>I plan to watch the game show.</em> → <strong>plan to do</strong>：计划做某事。</p>
+      <p><strong>3.</strong> <em>I hope to watch a sitcom.</em> → <strong>hope to do</strong>：希望做某事。</p>
+      <p><strong>4.</strong> <em>I would like to watch a talent show.</em> → <strong>would like to do</strong>：想要（礼貌表达）。</p>
+      <p><strong>5.</strong> 电视节目类型：<strong>game show</strong> 游戏类 / <strong>sitcom</strong> 情景喜剧 / <strong>talk show</strong> 脱口秀 / <strong>talent show</strong> 才艺秀 / <strong>sports show</strong> 体育节目 / <strong>news</strong> 新闻</p></div></div></details>
+<details class="module" open><summary>📝 重点词汇 · 媒体偏好 <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="sitcom">sitcom</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈsɪtkɑːm/</span><span class="pos">n.</span>
+        <div class="definition">情景喜剧</div>
+        <div class="example"><span class="wotd-say" data-speak="I like watching sitcoms.">I like watching sitcoms.</span><span class="trans">我喜欢看情景喜剧。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="talent">talent</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈtælənt/</span><span class="pos">n.</span>
+        <div class="definition">才能；天赋</div>
+        <div class="example"><span class="wotd-say" data-speak="She has a talent for singing.">She has a talent for singing.</span><span class="trans">她有唱歌天赋。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="plan">plan</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/plæn/</span><span class="pos">v.</span>
+        <div class="definition">计划</div>
+        <div class="example"><span class="wotd-say" data-speak="We plan to go hiking this weekend.">We plan to go hiking this weekend.</span><span class="trans">我们计划周末去远足。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="hope">hope</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/hoʊp/</span><span class="pos">v.</span>
+        <div class="definition">希望</div>
+        <div class="example"><span class="wotd-say" data-speak="I hope to visit Beijing one day.">I hope to visit Beijing one day.</span><span class="trans">我希望有一天去北京。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="educational">educational</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌedʒuˈkeɪʃənl/</span><span class="pos">adj.</span>
+        <div class="definition">教育的；有教育意义的</div>
+        <div class="example"><span class="wotd-say" data-speak="Documentaries are educational.">Documentaries are educational.</span><span class="trans">纪录片很有教育意义。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="meaningless">meaningless</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈmiːnɪŋləs/</span><span class="pos">adj.</span>
+        <div class="definition">毫无意义的</div>
+        <div class="example"><span class="wotd-say" data-speak="I think some ads are meaningless.">I think some ads are meaningless.</span><span class="trans">我觉得有些广告毫无意义。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="enjoyable">enjoyable</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɪnˈdʒɔɪəbl/</span><span class="pos">adj.</span>
+        <div class="definition">令人愉快的</div>
+        <div class="example"><span class="wotd-say" data-speak="The movie was very enjoyable.">The movie was very enjoyable.</span><span class="trans">这部电影非常好看。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="expect">expect</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɪkˈspekt/</span><span class="pos">v.</span>
+        <div class="definition">期待；预料</div>
+        <div class="example"><span class="wotd-say" data-speak="I expect to learn a lot from this show.">I expect to learn a lot from this show.</span><span class="trans">我期待从这个节目中学到很多。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="famous">famous</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈfeɪməs/</span><span class="pos">adj.</span>
+        <div class="definition">著名的</div>
+        <div class="example"><span class="wotd-say" data-speak="She wants to be a famous singer.">She wants to be a famous singer.</span><span class="trans">她想成为著名的歌手。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="appear">appear</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/əˈpɪr/</span><span class="pos">v.</span>
+        <div class="definition">出现；露面</div>
+        <div class="example"><span class="wotd-say" data-speak="Many stars appear on this show.">Many stars appear on this show.</span><span class="trans">很多明星在这个节目中出现。</span></div>
+      </div></div></div></details>
+<details class="module" open><summary>🔤 重点句型 · Sentence Patterns</summary><div class="content"><div class="pattern-grid">      <div class="pattern-card">
+        <div class="structure">want / plan / hope + to do</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>表达意愿和计划</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1">I <span class="slot">want to watch</span> a movie. / She <span class="slot">plans to visit</span> her grandma.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">would like + to do</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>礼貌表达意愿</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp2">I <span class="slot">would like to go</span> shopping. / <span class="slot">Would you like to</span> join us?</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">expect / decide + to do</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>其他接 to do 的动词</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp3">I <span class="slot">decided to learn</span> English. / I <span class="slot">expect to finish</span> it today.</span></div>
+      </div></div></div></details>
+<details class="module detail-module" open><summary>📚 语法聚焦 · 不定式作宾语（动词 + to do） <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module"><h3>常见后接 to do 的动词</h3>
+<table class="grammar-table">
+<tr><th>动词</th><th>含义</th><th>示例</th></tr>
+<tr><td>want</td><td>想要</td><td>I want to be a teacher.</td></tr>
+<tr><td>plan</td><td>计划</td><td>We plan to have a party.</td></tr>
+<tr><td>hope</td><td>希望</td><td>I hope to see you soon.</td></tr>
+<tr><td>would like</td><td>想要</td><td>I would like to drink coffee.</td></tr>
+<tr><td>decide</td><td>决定</td><td>She decided to join the club.</td></tr>
+<tr><td>expect</td><td>期待</td><td>I expect to pass the exam.</td></tr>
+<tr><td>learn</td><td>学习</td><td>He is learning to swim.</td></tr>
+</table>
+<h3>否定形式</h3>
+<table class="grammar-table">
+<tr><th>结构</th><th>示例</th></tr>
+<tr><td>动词 + not + to do</td><td>I decided <strong>not</strong> to go.</td></tr>
+<tr><td>would like + not + to do</td><td>I would like <strong>not</strong> to be late.</td></tr>
+</table>
+</div><div class="chinese-error">      <p>❌ <span class="wrong" data-speak="I want watch TV.">I want watch TV.</span>（动词 want 后需加 to）</p>
+      <p>✅ <span class="correct" data-speak="I want to watch TV.">I want to watch TV.</span></p>
+      <p>❌ <span class="wrong" data-speak="He doesn't want to eats.">He doesn't want to eats.</span>（to 后动词用原形）</p>
+      <p>✅ <span class="correct" data-speak="He doesn't want to eat.">He doesn't want to eat.</span></p></div></div></details>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[want] I ____ ____ watch a movie tonight.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>want to</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[plan] She ____ ____ study abroad next year.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>plans to</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[选择] I would like ____ (go / to go) shopping this weekend.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>to go</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[改错] He hopes watch the game show tonight.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>He hopes to watch the game show tonight.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[句型] I want to watch TV. (改为否定句)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>I don't want to watch TV.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[填空] They decided ____ (not / go) to the party.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>not to go</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">[汉译英] 你今晚打算做什么？——我计划在家看一部有趣的电影。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>What are you going to do tonight? — I plan to watch an interesting movie at home.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">[补全] A: Do you want to watch a talent show?<br>B: ____, I ____ ____ watch a sports show.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>No, I would like to watch a sports show.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>📖 阅读专项 · TV Habits of Chinese Teens</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">What do Chinese teenagers like to watch on TV? A survey gives us the answer.</p>
+      <p class="en-text">Game shows are the most popular. About 35% of teens choose to watch them. Next are talent shows. Many teens hope to see amazing performances.</p>
+      <p class="en-text">Sitcoms are also popular. Teens want to relax and laugh after a long day at school. Talk shows are less popular, but some teens find them educational.</p>
+      <p class="en-text">Interestingly, many teens also choose to watch the news. They want to know what is happening around the world.</p><div class="gloss"><span>teenager n. 青少年</span> <span>amazing adj. 令人惊叹的</span> <span>performance n. 表演</span> <span>interestingly adv. 有趣的是</span> </div></div>    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">1. What is the most popular TV show among teens?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Game shows.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">2. Why do teens watch sitcoms?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>To relax and laugh.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★★</span>
+      <div class="q-body">3. Why do some teens watch the news?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>To know what is happening around the world.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>🏆 中考题型专练 · 完形填空</summary><div class="content exam-section"><p style="font-size:13px;margin-bottom:8px;">阅读短文，选择最佳选项。</p><div class="reading-passage" style="background:var(--bg-secondary);">      <p>I (1)____ to be a TV reporter one day. That's why I like to watch different TV shows. I (2)____ to learn from them. I love news because it's educational. I also like game shows because they are exciting. I don't (3)____ to watch sitcoms. I think they are (4)____. Do you want (5)____ watch TV with me this weekend?</p></div><div style="margin:4px 0;font-size:13px;"><strong>1.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_1." disabled> A. want</span> <span style="margin-right:12px;"><input type="radio" name="exam_1." disabled> B. wants</span> <span style="margin-right:12px;"><input type="radio" name="exam_1." disabled> C. wanted</span> <span style="margin-right:12px;"><input type="radio" name="exam_1." disabled> D. wanting</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>2.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_2." disabled> A. hope</span> <span style="margin-right:12px;"><input type="radio" name="exam_2." disabled> B. hopes</span> <span style="margin-right:12px;"><input type="radio" name="exam_2." disabled> C. hoping</span> <span style="margin-right:12px;"><input type="radio" name="exam_2." disabled> D. to hope</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>3.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_3." disabled> A. likes</span> <span style="margin-right:12px;"><input type="radio" name="exam_3." disabled> B. like</span> <span style="margin-right:12px;"><input type="radio" name="exam_3." disabled> C. liked</span> <span style="margin-right:12px;"><input type="radio" name="exam_3." disabled> D. liking</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>4.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_4." disabled> A. educational</span> <span style="margin-right:12px;"><input type="radio" name="exam_4." disabled> B. enjoyable</span> <span style="margin-right:12px;"><input type="radio" name="exam_4." disabled> C. meaningless</span> <span style="margin-right:12px;"><input type="radio" name="exam_4." disabled> D. exciting</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>5.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_5." disabled> A. at</span> <span style="margin-right:12px;"><input type="radio" name="exam_5." disabled> B. in</span> <span style="margin-right:12px;"><input type="radio" name="exam_5." disabled> C. to</span> <span style="margin-right:12px;"><input type="radio" name="exam_5." disabled> D. for</span> </div>
+<div class="exam-q" style="border-left-color:#f59e0b;"><span class="q-tag" style="background:#f59e0b;color:#fff;">答案</span><div class="q-body">1. A (want)；2. A (hope)；3. B (like)；4. C (meaningless)；5. C (to)</div></div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · My Favorite TV Show</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">请以"My Favorite TV Show"为题，写 60-80 词介绍你最喜欢的电视节目，说明喜欢的原因。</div></div><div class="writing-framework">      <div class="fw-step">开头：我最喜欢的节目是什么。</div>
+      <div class="fw-step">主体：节目内容+喜欢理由（用到 want/hope/enjoy）。</div>
+      <div class="fw-step">结尾：推荐大家去看。</div></div><div class="writing-model"><div class="en">My favorite TV show is "China's Got Talent". I want to watch it every week. The performers are amazing. Some singers make me want to cry, and some dancers make me laugh. I hope to learn from them. This show also teaches me to follow my dreams. I think everyone should watch it!</div><div class="trans">我最喜欢的节目是《中国达人秀》。我每周都想看。表演者很精彩。有些歌手让我感动，有些舞者让我开心。我希望向他们学习。这个节目也教会我追梦。我觉得每个人都应该看看！</div></div></div></details>
+<details class="module detail-module" open><summary>🎯 Project · Our Class TV Guide</summary><div class="content project-module"><div class="project-brief"><div class="project-title">Our Class TV Guide</div><div class="project-desc">在班里做一个小调查，统计大家最喜欢的电视节目类型，制作一份"班级电视指南"(Class TV Guide)。</div></div><div class="project-steps">      <div class="step"><span class="step-num">1</span><span class="step-text">设计调查问卷（列出 6 种节目类型）。</span></div>
+      <div class="step"><span class="step-num">2</span><span class="step-text">采访至少 10 位同学。</span></div>
+      <div class="step"><span class="step-num">3</span><span class="step-text">统计结果，画出图表。</span></div>
+      <div class="step"><span class="step-num">4</span><span class="step-text">用英语写出调查报告并展示。</span></div></div><div class="project-rubric"><table><tr><th>#</th><th>评价标准</th></tr><tr><td>1.</td><td>问卷设计合理</td></tr>
+<tr><td>2.</td><td>数据真实完整</td></tr>
+<tr><td>3.</td><td>报告中用到了 want/hope/plan to do</td></tr>
+<tr><td>4.</td><td>图表清晰</td></tr></table></div></div></details>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 want/plan/hope to do 表达意愿</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 would like to 礼貌表达</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能区分不同的电视节目类型</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写节目推荐短文</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>假装你是电视台的节目策划人，用英语向同学推荐一档新节目。练习 want/hope/plan to do。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">默写 8 个接 to do 的动词</span>
+    <span class="review-dot">用 want/plan/hope 各写 2 个句子</span>
+    <span class="review-dot">写一段节目评价</span>
+    <span class="review-dot">复习 would like to 礼貌用法</span></div>
+<div class="next-stop" style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;"><a href="u04.html" class="nav-arrow">← 上一单元</a><a href="u06.html" class="nav-arrow">下一单元 →</a></div>
+<div class="next-stop" style="margin-top:8px;"><strong>➡️ 下一单元：I'm going to study computer science.</strong><br>下一单元你将学习谈论未来职业规划，用 be going to 表达志向和梦想。</div>
+</main>
+<div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
+<button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis, currentUtterance: null, speaking: false, rate: 0.9, voiceURI: 'en-US',
+    init: function(){var s=this;document.getElementById('speechRate').addEventListener('input',function(){s.rate=+this.value;document.getElementById('speechRateLabel').textContent=this.value;});document.getElementById('speechVoice').addEventListener('change',function(){s.voiceURI=this.value;localStorage.setItem('speech-voice',this.value);});document.getElementById('speechStopBtn').addEventListener('click',function(){s.stop();});document.getElementById('speechCloseBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.remove('open');});document.getElementById('speechToggleBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.toggle('open');});},
+    speak: function(t,c){if(!t)return;this.stop();var u=new SpeechSynthesisUtterance(t);u.lang=this.voiceURI;u.rate=this.rate;u.onend=function(){if(c)c();};this.currentUtterance=u;this.synthesis.speak(u);},
+    speakDialogue: function(id,c){var s=this,el=document.getElementById(id),ls=el?el.querySelectorAll('.en-text'):[],i=0;this.stop();(function n(){if(i>=ls.length){if(c)c();return;}var e=ls[i],t=e.getAttribute('data-speak')||e.textContent;if(!t){i++;n();return;}e.classList.add('speaking');var u=new SpeechSynthesisUtterance(t);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){e.classList.remove('speaking');i++;setTimeout(n,500);};u.onerror=function(){e.classList.remove('speaking');i++;setTimeout(n,200);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    speakVocabSection: function(id,c){var s=this,el=document.getElementById(id),cs=el?el.querySelectorAll('.vocab-card'):[],i=0;this.stop();(function n(){if(i>=cs.length){if(c)c();return;}var e=cs[i],hw=e.querySelector('.headword'),ex=e.querySelector('.example .wotd-say'),t=[];if(hw)t.push(hw.getAttribute('data-speak')||hw.textContent);if(ex)t.push(ex.getAttribute('data-speak')||ex.textContent.replace(/<[^>]+>/g,'').trim());var ft=t.join('. ');if(!ft){i++;n();return;}hw.classList.add('speaking');var u=new SpeechSynthesisUtterance(ft);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){hw.classList.remove('speaking');i++;setTimeout(n,600);};u.onerror=function(){hw.classList.remove('speaking');i++;setTimeout(n,300);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    stop: function(){this.synthesis.cancel();this.speaking=false;}
+  };SpeechManager.init();
+  document.querySelectorAll('.wotd-say').forEach(function(el){el.addEventListener('click',function(){SpeechManager.speak(this.getAttribute('data-speak')||this.textContent);});});
+  document.querySelectorAll('.speak-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var d=this.getAttribute('data-dialogue'),v=this.getAttribute('data-vocab'),t=this.getAttribute('data-target');if(this.classList.contains('speaking')){SpeechManager.stop();this.classList.remove('speaking');return;}this.classList.add('speaking');var done=function(){btn.classList.remove('speaking');};if(d){SpeechManager.speakDialogue(d,done);}else if(v){SpeechManager.speakVocabSection(v,done);}else if(t){var tg=document.getElementById(t);if(!tg){btn.classList.remove('speaking');return;}SpeechManager.speak(tg.textContent.replace(/<[^>]+>/g,''),done);}else{btn.classList.remove('speaking');}});});
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();var hw=this.previousElementSibling;if(hw&&hw.classList.contains('wotd-say')){var t=hw.getAttribute('data-speak')||hw.textContent;SpeechManager.speak(t);}});});
+  (function(){var btn=document.getElementById('expandAllBtn');if(!btn)return;btn.addEventListener('click',function(){var ad=document.querySelectorAll('.module,.exam-module');var ao=true;for(var i=0;i<ad.length;i++){if(!ad[i].hasAttribute('open')){ao=false;break;}};for(var i=0;i<ad.length;i++){if(ao)ad[i].removeAttribute('open');else ad[i].setAttribute('open','');};btn.textContent=ao?'📂 展开全部模块':'📖 收起全部模块';});})();
+  var s=document.getElementById('sidebar'),k='eng8-theme-sidebar';if(!s)return;
+  if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
+  window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=window.scrollY>400?'flex':'none';},{passive:true});
+  document.getElementById('backToTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution');});});
+})();
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);localStorage.setItem("eng8-theme",t);var btn=document.getElementById("themeToggle");if(btn)btn.textContent=t==="dark"?"☀️":"🌙";}
+function toggleTheme(){setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark");}
+</script></body></html>

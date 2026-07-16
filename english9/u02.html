@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U2 I think that mooncakes are delicious! | 初中英语九年级</title>
+<link rel="stylesheet" href="css/english9.css">
+<style>
+.speak-btn { display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;color:var(--accent);border:1px solid var(--border);border-radius:4px;padding:2px 8px;background:var(--bg);transition:background 0.15s; }
+.speak-btn:hover { background:var(--accent-light); }
+.speak-btn.speaking { background:var(--eng-amber-light);color:var(--eng-amber);border-color:var(--eng-amber); }
+.headword-speak-indicator { font-size:11px;margin-left:3px;opacity:0.55;cursor:pointer;vertical-align:super;line-height:1; }
+.headword-speak-indicator:hover { opacity:1; }
+.wotd-say { cursor:pointer;transition:color 0.15s; }
+.wotd-say:hover { color:var(--accent); }
+.wotd-say.speaking { color:var(--eng-pink); }
+.speech-panel { position:fixed;bottom:80px;right:24px;z-index:999;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);padding:14px 18px;display:none;min-width:180px; }
+.speech-panel.open { display:block; }
+.speech-panel .row { display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px; }
+.speech-panel .row label { color:var(--text-secondary);font-size:12px;min-width:36px; }
+.speech-panel select,.speech-panel input[type="range"] { flex:1; }
+.speech-panel button { padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px; }
+.speech-panel button:hover { background:var(--accent-light); }
+.speech-toggle-btn { position:fixed;bottom:24px;right:76px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--accent);cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center; }
+.speech-toggle-btn:hover { background:var(--accent-light); }
+.en-text.speaking { background:var(--eng-amber-light);border-radius:4px;padding:2px 4px;transition:background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background:#452a08; }
+.detail-module { content-visibility:auto;contain-intrinsic-size:300px; }
+.reading { content-visibility:auto;contain-intrinsic-size:400px; }
+</style>
+<script>(function(){var t=localStorage.getItem("eng9-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+    <nav id="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="margin-bottom:0;">英语九年级</h2>
+        <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+      </div><nav>
+        <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../grammar.html" style="font-size:13px;">📌 语法全景图</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 九年级全一册 ━━</a>
+        <a href="u01.html">U1 How can we become good learners?</a>
+        <a href="u02.html" class="active">U2 I think that mooncakes are delicious!</a>
+        <a href="u03.html">U3 Could you please tell me where the restrooms are?</a>
+        <a href="u04.html">U4 I used to be afraid of the dark.</a>
+        <a href="u05.html">U5 What are the shirts made of?</a>
+        <a href="u06.html">U6 When was it invented?</a>
+        <a href="u07.html">U7 Teenagers should be allowed to choose their own clothes.</a>
+        <a href="u08.html">U8 It must belong to Carla.</a>
+        <a href="u09.html">U9 I like music that I can dance to.</a>
+        <a href="u10.html">U10 You're supposed to shake hands.</a>
+        <a href="u11.html">U11 Sad movies make me cry.</a>
+        <a href="u12.html">U12 Life is full of the unexpected.</a>
+        <a href="u13.html">U13 We're trying to save the earth!</a>
+        <a href="u14.html">U14 I remember meeting all of you in Grade 7.</a>
+      </nav>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+    </nav>
+<main id="content">
+<div class="cover"><div class="sub-en">U2</div><h1>I think that mooncakes are delicious!</h1><p>节日与文化</p></div>
+<div class="unit-meta"><span>📖 话题：Festivals and Culture</span><span>💬 功能：Express opinions and talk about festivals</span><span>📚 语法：Object clauses with that/if/whether</span><span>📝 写作：Describe a festival and personal feelings</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能用宾语从句表达观点</label>
+  <label><input type="checkbox"> 能描述中外重要节日</label>
+  <label><input type="checkbox"> 能谈论节日的传统和习俗</label>
+  <label><input type="checkbox"> 能写一篇介绍节日的短文</label></div>
+<details class="module" open><summary>📖 课文精讲 · I think that mooncakes are delicious!</summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：Wu Ming和Harry在谈论中秋节的经历。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
+<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Harry:</span><span class="en-text wotd-say" data-speak="Hi Wu Ming! How was your trip to your hometown?">Hi Wu Ming! How was your trip to your hometown?</span></div>
+      <div class="dialogue-line"><span class="speaker">Wu Ming:</span><span class="en-text wotd-say" data-speak="It was great! I went back for the Mid-Autumn Festival.">It was great! I went back for the Mid-Autumn Festival.</span></div>
+      <div class="dialogue-line"><span class="speaker">Harry:</span><span class="en-text wotd-say" data-speak="I think that mooncakes are delicious! What did you do?">I think that mooncakes are delicious! What did you do?</span></div>
+      <div class="dialogue-line"><span class="speaker">Wu Ming:</span><span class="en-text wotd-say" data-speak="My family got together and had a big dinner. Then we watched the full moon.">My family got together and had a big dinner. Then we watched the full moon.</span></div>
+      <div class="dialogue-line"><span class="speaker">Harry:</span><span class="en-text wotd-say" data-speak="That sounds wonderful. I wonder if they have mooncakes in other countries.">That sounds wonderful. I wonder if they have mooncakes in other countries.</span></div>
+      <div class="dialogue-line"><span class="speaker">Wu Ming:</span><span class="en-text wotd-say" data-speak="I'm not sure if they do. But I know that many countries celebrate harvest festivals.">I'm not sure if they do. But I know that many countries celebrate harvest festivals.</span></div>
+      <div class="dialogue-line"><span class="speaker">Harry:</span><span class="en-text wotd-say" data-speak="I believe that festivals are a time for family and sharing.">I believe that festivals are a time for family and sharing.</span></div>
+      <div class="dialogue-line"><span class="speaker">Wu Ming:</span><span class="en-text wotd-say" data-speak="I agree. I think that the best part of a festival is being with family.">I agree. I think that the best part of a festival is being with family.</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>Harry:</strong> 嗨，吴明！你回老家的旅行怎么样？</p>
+        <p><strong>Wu Ming:</strong> 太棒了！我回去过中秋节了。</p>
+        <p><strong>Harry:</strong> 我觉得月饼很好吃！你们都做什么了？</p>
+        <p><strong>Wu Ming:</strong> 我们家人聚在一起吃了顿大餐。然后我们赏月了。</p>
+        <p><strong>Harry:</strong> 听起来很棒。我想知道其他国家有没有月饼。</p>
+        <p><strong>Wu Ming:</strong> 我不确定。但我知道很多国家都庆祝丰收节。</p>
+        <p><strong>Harry:</strong> 我相信节日是家人团聚和分享的时刻。</p>
+        <p><strong>Wu Ming:</strong> 我同意。我觉得节日最棒的部分就是和家人在一起。</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p>I think that... 引导宾语从句，表示「我认为……」 — <b>I think that</b> mooncakes are delicious.</p>
+      <p>I wonder if/whether... 表示「我想知道是否……」 — <b>I wonder if</b> they have mooncakes in other countries.</p>
+      <p>宾语从句的语序用陈述语序，不用疑问语序。</p>
+      <p>that 在口语中常可省略，if/whether 不可省略。</p></div></div></details>
+<details class="module" open><summary>📝 重点词汇 · 节日与文化 <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="mooncake">mooncake</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈmuːnkeɪk/</span><span class="pos">n.</span>
+        <div class="definition">月饼</div>
+        <div class="example"><span class="wotd-say" data-speak="We eat mooncakes on Mid-Autumn Festival.">We eat mooncakes on Mid-Autumn Festival.</span><span class="trans">我们中秋节吃月饼。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="lantern">lantern</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈlæntərn/</span><span class="pos">n.</span>
+        <div class="definition">灯笼</div>
+        <div class="example"><span class="wotd-say" data-speak="Children carry lanterns on Lantern Festival.">Children carry lanterns on Lantern Festival.</span><span class="trans">孩子们在元宵节提灯笼。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="stranger">stranger</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈstreɪndʒər/</span><span class="pos">n.</span>
+        <div class="definition">陌生人</div>
+        <div class="example"><span class="wotd-say" data-speak="Don't talk to strangers.">Don't talk to strangers.</span><span class="trans">不要和陌生人说话。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="relative">relative</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈrelətɪv/</span><span class="pos">n.</span>
+        <div class="definition">亲戚；亲属</div>
+        <div class="example"><span class="wotd-say" data-speak="We visit relatives during Spring Festival.">We visit relatives during Spring Festival.</span><span class="trans">我们春节期间走亲戚。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="steal">steal</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/stiːl/</span><span class="pos">v.</span>
+        <div class="definition">偷；窃取</div>
+        <div class="example"><span class="wotd-say" data-speak="Someone stole my wallet.">Someone stole my wallet.</span><span class="trans">有人偷了我的钱包。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="tie">tie</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/taɪ/</span><span class="pos">v.</span>
+        <div class="definition">捆；绑；系</div>
+        <div class="example"><span class="wotd-say" data-speak="Tie the ribbon onto the gift.">Tie the ribbon onto the gift.</span><span class="trans">把丝带系在礼物上。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="admire">admire</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ədˈmaɪər/</span><span class="pos">v.</span>
+        <div class="definition">欣赏；仰慕</div>
+        <div class="example"><span class="wotd-say" data-speak="We admire the full moon on Mid-Autumn Festival.">We admire the full moon on Mid-Autumn Festival.</span><span class="trans">我们中秋节赏月。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="goddess">goddess</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈɡɒdəs/</span><span class="pos">n.</span>
+        <div class="definition">女神</div>
+        <div class="example"><span class="wotd-say" data-speak="Chang'e is the goddess of the moon.">Chang'e is the goddess of the moon.</span><span class="trans">嫦娥是月亮女神。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="whoever">whoever</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/huːˈevər/</span><span class="pos">pron.</span>
+        <div class="definition">无论谁；不管什么人</div>
+        <div class="example"><span class="wotd-say" data-speak="Whoever steals the magic medicine will fly to the moon.">Whoever steals the magic medicine will fly to the moon.</span><span class="trans">无论是谁偷了仙药都会飞到月亮上。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="folk">folk</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/foʊk/</span><span class="pos">adj.</span>
+        <div class="definition">民间的</div>
+        <div class="example"><span class="wotd-say" data-speak="I love folk stories.">I love folk stories.</span><span class="trans">我喜欢民间故事。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="dessert">dessert</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/dɪˈzɜːrt/</span><span class="pos">n.</span>
+        <div class="definition">甜点；甜品</div>
+        <div class="example"><span class="wotd-say" data-speak="We had ice cream for dessert.">We had ice cream for dessert.</span><span class="trans">我们吃了冰淇淋当甜点。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="garden">garden</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈɡɑːrdn/</span><span class="pos">n.</span>
+        <div class="definition">花园</div>
+        <div class="example"><span class="wotd-say" data-speak="There is a beautiful garden behind the house.">There is a beautiful garden behind the house.</span><span class="trans">房子后面有一个漂亮的花园。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="tradition">tradition</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/trəˈdɪʃn/</span><span class="pos">n.</span>
+        <div class="definition">传统</div>
+        <div class="example"><span class="wotd-say" data-speak="It's a tradition to eat dumplings on New Year's Eve.">It's a tradition to eat dumplings on New Year's Eve.</span><span class="trans">除夕吃饺子是一个传统。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="celebrate">celebrate</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈselɪbreɪt/</span><span class="pos">v.</span>
+        <div class="definition">庆祝</div>
+        <div class="example"><span class="wotd-say" data-speak="How do you celebrate Christmas?">How do you celebrate Christmas?</span><span class="trans">你怎样庆祝圣诞节？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="treat">treat</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/triːt/</span><span class="pos">n./v.</span>
+        <div class="definition">款待；请客</div>
+        <div class="example"><span class="wotd-say" data-speak="The kids got treats on Halloween.">The kids got treats on Halloween.</span><span class="trans">孩子们在万圣节得到了款待。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="ghost">ghost</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɡoʊst/</span><span class="pos">n.</span>
+        <div class="definition">鬼；幽灵</div>
+        <div class="example"><span class="wotd-say" data-speak="Ghost stories are popular on Halloween.">Ghost stories are popular on Halloween.</span><span class="trans">鬼故事在万圣节很受欢迎。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="spider">spider</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈspaɪdər/</span><span class="pos">n.</span>
+        <div class="definition">蜘蛛</div>
+        <div class="example"><span class="wotd-say" data-speak="A spider is on the wall.">A spider is on the wall.</span><span class="trans">墙上有一只蜘蛛。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="Christmas">Christmas</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈkrɪsməs/</span><span class="pos">n.</span>
+        <div class="definition">圣诞节</div>
+        <div class="example"><span class="wotd-say" data-speak="We exchange gifts at Christmas.">We exchange gifts at Christmas.</span><span class="trans">我们在圣诞节交换礼物。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="novel">novel</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈnɒvl/</span><span class="pos">n.</span>
+        <div class="definition">小说</div>
+        <div class="example"><span class="wotd-say" data-speak="Have you read this novel?">Have you read this novel?</span><span class="trans">你读过这部小说吗？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="present">present</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈpreznt/</span><span class="pos">n.</span>
+        <div class="definition">礼物</div>
+        <div class="example"><span class="wotd-say" data-speak="I got a nice present from my parents.">I got a nice present from my parents.</span><span class="trans">我从父母那里收到了一份好礼物。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="warmth">warmth</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/wɔːrmθ/</span><span class="pos">n.</span>
+        <div class="definition">温暖；温情</div>
+        <div class="example"><span class="wotd-say" data-speak="The warmth of family makes me happy.">The warmth of family makes me happy.</span><span class="trans">家庭的温暖让我开心。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="spread">spread</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/spred/</span><span class="pos">v.</span>
+        <div class="definition">传播；展开</div>
+        <div class="example"><span class="wotd-say" data-speak="Spread joy and love this holiday season.">Spread joy and love this holiday season.</span><span class="trans">在这个节日季传播快乐和爱。</span></div>
+      </div></div></div></details>
+<details class="module" open><summary>🔤 重点句型 · Sentence Patterns</summary><div class="content"><div class="pattern-grid">      <div class="pattern-card">
+        <div class="structure">I think that...</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>表达个人观点，后跟宾语从句。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1"><b>I think that</b> mooncakes are delicious. / <b>I think that</b> festivals are important for families.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">I wonder if/whether...</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>礼貌地表达疑问或好奇。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp2"><b>I wonder if</b> he likes mooncakes. / <b>I wonder whether</b> they celebrate Christmas in China.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">I believe that...</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>表达信念或强烈看法。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp3"><b>I believe that</b> festivals bring people together. / <b>I believe that</b> kindness is the best gift.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">主语 + 动词 + that 从句</div> <button class="speak-btn" data-target="sp4" title="朗读句型">🔊</button>
+        <div>that 引导的宾语从句作动词的宾语。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp4">She <b>knows that</b> I love dumplings. / They <b>said that</b> the festival was amazing.</span></div>
+      </div></div></div></details>
+<details class="module detail-module" open><summary>📚 语法聚焦 · 宾语从句 (Object Clauses) <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module"><h3>that 引导的宾语从句</h3>
+<table class="grammar-table">
+<tr><th>引导词</th><th>用法</th><th>例句</th></tr>
+<tr><td>that</td><td>that 无实义，可省略</td><td>I think (that) mooncakes are delicious.</td></tr>
+<tr><td>that</td><td>用于陈述句作宾语</td><td>She knows (that) I like festivals.</td></tr>
+<tr><td>that</td><td>谓语动词 + that 从句</td><td>He said (that) he enjoyed the dinner.</td></tr>
+</table>
+<h3>if / whether 引导的宾语从句</h3>
+<table class="grammar-table">
+<tr><th>引导词</th><th>用法</th><th>例句</th></tr>
+<tr><td>if</td><td>表示「是否」，用于口语</td><td>I wonder if he likes mooncakes.</td></tr>
+<tr><td>whether</td><td>表示「是否」，正式用法</td><td>I wonder whether they celebrate it too.</td></tr>
+<tr><td>if/whether</td><td>从句用陈述语序</td><td>I'm not sure if she will come.</td></tr>
+</table>
+</div><div class="chinese-error">      <p>宾语从句的语序必须是陈述句语序：主语 + 谓语。</p>
+      <p>如果主句是一般现在时，从句可以用任何需要的时态。</p>
+      <p>如果主句是一般过去时，从句要用相应的过去时态。</p>
+      <p><span class="wotd-say" data-speak="It takes a village to raise a child.">It takes a village to raise a child.</span> 反映了集体主义文化。</p></div></div></details>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">I think ____ mooncakes are delicious. (填入引导词)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>that</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">I wonder ____ he likes mooncakes. (if/whether/that)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>if 或 whether</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">变换语序：Where does she live? → I don't know ____.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>I don't know where she lives.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">She said (that) ____ (she/be) happy.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>she was</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">____ (who) steals the medicine will fly to the moon.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Whoever</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">I'm not sure ____ he will come to the party.<br>A. that B. if C. what D. which</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>B</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">The teacher told us that the earth ____ (go) around the sun.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>goes</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">Do you know ____?<br>A. where does he live B. where he lives C. he lives where D. does he live where</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>B</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">She wondered ____ the story was true. (if/whether/that)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>if 或 whether</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">翻译：我认为家庭团聚是节日最重要的部分。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>I think that family reunion is the most important part of festivals.</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">改错：I wonder that he will come or not. (找出错误并改正)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>将 that 改为 whether</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">合并句子：a) He is a teacher. b) I think so. →</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>I think that he is a teacher.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">阅读理解：Why do people celebrate the Mid-Autumn Festival? (根据课文内容回答)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>People celebrate to admire the full moon and enjoy family reunion.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">写作：介绍一个你最喜欢的节日，使用至少两个宾语从句。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Sample: I think that Spring Festival is the most important holiday. I believe that family reunion is the best part of it.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>📖 阅读专项 · The Story of Chang'e</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">Chinese people have been celebrating the Mid-Autumn Festival and enjoying mooncakes for centuries. Mooncakes are in the shape of a full moon on the night of the Mid-Autumn Festival.</p>
+      <p class="en-text">There are many traditional folk stories about this festival. One of the most famous is the story of Chang'e. Hou Yi, a young man, shot down nine suns and saved the earth. As a reward, he was given a magic medicine. Anyone who took this medicine would live forever.</p>
+      <p class="en-text">Hou Yi did not want to take the medicine without his wife, Chang'e. So he asked her to keep it safe. A bad man tried to steal the medicine, but Chang'e refused to give it to him and drank it herself. She flew up to the moon and became the goddess of the moon.</p>
+      <p class="en-text">Hou Yi was sad. Every night, he looked at the moon and thought of his wife. The story shows the Chinese people's love for family and peace.</p><div class="gloss"><span>for centuries 几个世纪以来</span> <span>in the shape of 以……形状</span> <span>folk story 民间故事</span> <span>shot down 射下</span> <span>as a reward 作为奖赏</span> <span>forever 永远</span> </div></div>    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">What shape are mooncakes?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>They are in the shape of a full moon.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">Why did Hou Yi get the magic medicine?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Because he shot down nine suns and saved the earth.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">Why did Chang'e drink the medicine?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Because a bad man tried to steal it, and she refused to give it to him.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★★</span>
+      <div class="q-body">What does the story of Chang'e show about Chinese people?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>It shows Chinese people's love for family and peace.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>🏆 中考题型专练 · 完形填空 — 节日文化</summary><div class="content exam-section"><p style="font-size:13px;margin-bottom:8px;">阅读短文，选择最佳答案填入空白处。</p><div class="reading-passage" style="background:var(--bg-secondary);">      <p>The Mid-Autumn Festival is one of the most important 1 in China. It falls on the 15th day of the 8th lunar month. On this night, the moon is 2 and bright. People get together with their families and have a big dinner. After dinner, they 3 the full moon and eat mooncakes. The mooncake is a symbol of family reunion. Children love to hear the 4 of Chang'e flying to the moon.</p></div><div style="margin:4px 0;font-size:13px;"><strong>1</strong> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> A. festivals</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> B. festival</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> C. food</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> D. months</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>2</strong> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> A. small</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> B. round</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> C. long</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> D. thin</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>3</strong> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> A. admire</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> B. dislike</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> C. hate</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> D. forget</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>4</strong> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> A. song</span> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> B. story</span> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> C. book</span> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> D. news</span> </div>
+<div class="exam-q" style="border-left-color:#f59e0b;"><span class="q-tag" style="background:#f59e0b;color:#fff;">答案</span><div class="q-body">1. A；2. B；3. A；4. B</div></div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · Describe a festival and personal feelings</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">假设你是李华，你的美国笔友Tom想了解中国的春节。请给他写一封邮件，介绍春节的时间、习俗和庆祝活动。</div></div><div class="writing-framework">      <div class="fw-step">开头：问候 + 表达欣喜</div>
+      <div class="fw-step">介绍春节的时间和意义</div>
+      <div class="fw-step">描述春节前的准备工作（大扫除、贴春联等）</div>
+      <div class="fw-step">描述除夕的活动（年夜饭、守岁等）</div>
+      <div class="fw-step">描述春节期间的活动（拜年、红包等）</div>
+      <div class="fw-step">结尾：邀请对方来中国体验春节</div></div><div class="writing-model"><div class="en">Dear Tom,
+
+I'm glad to hear that you are interested in the Spring Festival. Let me tell you something about it.
+
+The Spring Festival is the most important festival in China. It usually comes in January or February. Before the festival, people clean their houses and put up couplets on the doors.
+
+On New Year's Eve, families get together for a big dinner. We eat dumplings and stay up late. Children love this festival because they can get red packets with money inside!
+
+During the festival, people visit relatives and friends. Everyone says «Happy New Year» to each other. I think that the Spring Festival is a time for joy and family reunion.
+
+I hope you can come to China and experience it yourself!
+
+Yours,
+Li Hua</div><div class="trans">亲爱的汤姆：
+
+很高兴听说你对春节感兴趣。让我给你介绍一下。
+
+春节是中国最重要的节日。它通常在一月或二月到来。节日前，人们打扫房子并在门上贴春联。
+
+在除夕夜，家人聚在一起吃大餐。我们吃饺子，熬夜。孩子们喜欢这个节日，因为他们能得到装着钱的红包！
+
+春节期间，人们走亲访友。大家互相说「新年快乐」。我认为春节是欢乐和家庭团聚的时刻。
+
+希望你能来中国亲自体验一下！
+
+你的朋友，
+李华</div></div></div></details>
+<details class="module detail-module" open><summary>🎯 Project · World Festivals Research Report</summary><div class="content project-module"><div class="project-brief"><div class="project-title">World Festivals Research Report</div><div class="project-desc">选择一个你感兴趣的外国节日，研究它的起源、习俗和意义，制作一份图文并茂的报告。</div></div><div class="project-steps">      <div class="step"><span class="step-num">1</span><span class="step-text">选择一个外国节日（如圣诞节、万圣节、感恩节等）</span></div>
+      <div class="step"><span class="step-num">2</span><span class="step-text">查阅资料，了解节日的起源和历史</span></div>
+      <div class="step"><span class="step-num">3</span><span class="step-text">整理节日的习俗、食物和活动</span></div>
+      <div class="step"><span class="step-num">4</span><span class="step-text">思考这个节日和哪个中国节日相似</span></div>
+      <div class="step"><span class="step-num">5</span><span class="step-text">制作报告（海报/PowerPoint/手抄报）</span></div>
+      <div class="step"><span class="step-num">6</span><span class="step-text">在班级中展示并回答同学的提问</span></div></div><div class="project-rubric"><table><tr><th>#</th><th>评价标准</th></tr><tr><td>1.</td><td>信息准确、来源可靠</td></tr>
+<tr><td>2.</td><td>内容包含节日的起源、习俗和意义</td></tr>
+<tr><td>3.</td><td>有中外节日的对比</td></tr>
+<tr><td>4.</td><td>排版美观、图文并茂</td></tr>
+<tr><td>5.</td><td>口头展示清晰、自信</td></tr></table></div></div></details>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能理解 that/if/whether 引导的宾语从句</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能准确使用宾语从句表达观点</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用英语介绍中秋节的故事</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写一篇介绍节日的作文</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我了解了嫦娥奔月的民间故事</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>向同桌讲述嫦娥奔月的故事，并说出故事中使用的宾语从句。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">🔵 1天后：复习宾语从句的引导词选择</span>
+    <span class="review-dot">🟢 3天后：复习节日相关词汇</span>
+    <span class="review-dot">🟡 1周后：复述嫦娥奔月的故事</span>
+    <span class="review-dot">🔴 1月后：写一篇关于春节的短文</span></div>
+<div class="next-stop" style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;"><a href="u01.html" class="nav-arrow">← 上一单元</a><a href="u03.html" class="nav-arrow">下一单元 →</a></div>
+<div class="next-stop" style="margin-top:8px;"><strong>➡️ 下一单元：U3: Could you please tell me where the restrooms are?</strong><br>学习礼貌请求和宾语从句的疑问词用法。</div>
+</main>
+<div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
+<button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis, currentUtterance: null, speaking: false, rate: 0.9, voiceURI: 'en-US',
+    init: function(){var s=this;document.getElementById('speechRate').addEventListener('input',function(){s.rate=+this.value;document.getElementById('speechRateLabel').textContent=this.value;});document.getElementById('speechVoice').addEventListener('change',function(){s.voiceURI=this.value;localStorage.setItem('speech-voice',this.value);});document.getElementById('speechStopBtn').addEventListener('click',function(){s.stop();});document.getElementById('speechCloseBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.remove('open');});document.getElementById('speechToggleBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.toggle('open');});},
+    speak: function(t,c){if(!t)return;this.stop();var u=new SpeechSynthesisUtterance(t);u.lang=this.voiceURI;u.rate=this.rate;u.onend=function(){if(c)c();};this.currentUtterance=u;this.synthesis.speak(u);},
+    speakDialogue: function(id,c){var s=this,el=document.getElementById(id),ls=el?el.querySelectorAll('.en-text'):[],i=0;this.stop();(function n(){if(i>=ls.length){if(c)c();return;}var e=ls[i],t=e.getAttribute('data-speak')||e.textContent;if(!t){i++;n();return;}e.classList.add('speaking');var u=new SpeechSynthesisUtterance(t);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){e.classList.remove('speaking');i++;setTimeout(n,500);};u.onerror=function(){e.classList.remove('speaking');i++;setTimeout(n,200);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    speakVocabSection: function(id,c){var s=this,el=document.getElementById(id),cs=el?el.querySelectorAll('.vocab-card'):[],i=0;this.stop();(function n(){if(i>=cs.length){if(c)c();return;}var e=cs[i],hw=e.querySelector('.headword'),ex=e.querySelector('.example .wotd-say'),t=[];if(hw)t.push(hw.getAttribute('data-speak')||hw.textContent);if(ex)t.push(ex.getAttribute('data-speak')||ex.textContent.replace(/<[^>]+>/g,'').trim());var ft=t.join('. ');if(!ft){i++;n();return;}hw.classList.add('speaking');var u=new SpeechSynthesisUtterance(ft);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){hw.classList.remove('speaking');i++;setTimeout(n,600);};u.onerror=function(){hw.classList.remove('speaking');i++;setTimeout(n,300);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    stop: function(){this.synthesis.cancel();this.speaking=false;}
+  };SpeechManager.init();
+  document.querySelectorAll('.wotd-say').forEach(function(el){el.addEventListener('click',function(){SpeechManager.speak(this.getAttribute('data-speak')||this.textContent);});});
+  document.querySelectorAll('.speak-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var d=this.getAttribute('data-dialogue'),v=this.getAttribute('data-vocab'),t=this.getAttribute('data-target');if(this.classList.contains('speaking')){SpeechManager.stop();this.classList.remove('speaking');return;}this.classList.add('speaking');var done=function(){btn.classList.remove('speaking');};if(d){SpeechManager.speakDialogue(d,done);}else if(v){SpeechManager.speakVocabSection(v,done);}else if(t){var tg=document.getElementById(t);if(!tg){btn.classList.remove('speaking');return;}SpeechManager.speak(tg.textContent.replace(/<[^>]+>/g,''),done);}else{btn.classList.remove('speaking');}});});
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();var hw=this.previousElementSibling;if(hw&&hw.classList.contains('wotd-say')){var t=hw.getAttribute('data-speak')||hw.textContent;SpeechManager.speak(t);}});});
+  (function(){var btn=document.getElementById('expandAllBtn');if(!btn)return;btn.addEventListener('click',function(){var ad=document.querySelectorAll('.module,.exam-module');var ao=true;for(var i=0;i<ad.length;i++){if(!ad[i].hasAttribute('open')){ao=false;break;}};for(var i=0;i<ad.length;i++){if(ao)ad[i].removeAttribute('open');else ad[i].setAttribute('open','');};btn.textContent=ao?'📂 展开全部模块':'📖 收起全部模块';});})();
+  var s=document.getElementById('sidebar'),k='eng9-theme-sidebar';if(!s)return;
+  if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
+  window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=window.scrollY>400?'flex':'none';},{passive:true});
+  document.getElementById('backToTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution');});});
+})();
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);localStorage.setItem("eng9-theme",t);var btn=document.getElementById("themeToggle");if(btn)btn.textContent=t==="dark"?"☀️":"🌙";}
+function toggleTheme(){setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark");}
+</script></body></html>

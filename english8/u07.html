@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U7 Will people have robots? | 初中英语八年级</title>
+<link rel="stylesheet" href="css/english8.css">
+<style>
+.speak-btn { display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;color:var(--accent);border:1px solid var(--border);border-radius:4px;padding:2px 8px;background:var(--bg);transition:background 0.15s; }
+.speak-btn:hover { background:var(--accent-light); }
+.speak-btn.speaking { background:var(--eng-amber-light);color:var(--eng-amber);border-color:var(--eng-amber); }
+.headword-speak-indicator { font-size:11px;margin-left:3px;opacity:0.55;cursor:pointer;vertical-align:super;line-height:1; }
+.headword-speak-indicator:hover { opacity:1; }
+.wotd-say { cursor:pointer;transition:color 0.15s; }
+.wotd-say:hover { color:var(--accent); }
+.wotd-say.speaking { color:var(--eng-pink); }
+.speech-panel { position:fixed;bottom:80px;right:24px;z-index:999;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);padding:14px 18px;display:none;min-width:180px; }
+.speech-panel.open { display:block; }
+.speech-panel .row { display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px; }
+.speech-panel .row label { color:var(--text-secondary);font-size:12px;min-width:36px; }
+.speech-panel select,.speech-panel input[type="range"] { flex:1; }
+.speech-panel button { padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px; }
+.speech-panel button:hover { background:var(--accent-light); }
+.speech-toggle-btn { position:fixed;bottom:24px;right:76px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--accent);cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center; }
+.speech-toggle-btn:hover { background:var(--accent-light); }
+.en-text.speaking { background:var(--eng-amber-light);border-radius:4px;padding:2px 4px;transition:background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background:#452a08; }
+.detail-module { content-visibility:auto;contain-intrinsic-size:300px; }
+.reading { content-visibility:auto;contain-intrinsic-size:400px; }
+</style>
+<script>(function(){var t=localStorage.getItem("eng8-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+    <nav id="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="margin-bottom:0;">英语八年级</h2>
+        <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+      </div><nav>
+        <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../grammar.html" style="font-size:13px;">📌 语法全景图</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 八 上 ━━</a>
+        <a href="u01.html">U1 Happy Holiday!</a>
+        <a href="u02.html">U2 How often do you exercise?</a>
+        <a href="u03.html">U3 I'm more outgoing than my sister.</a>
+        <a href="u04.html">U4 What's the best movie theater?</a>
+        <a href="u05.html">U5 Do you want to watch a game show?</a>
+        <a href="u06.html">U6 I'm going to study computer science.</a>
+        <a href="u07.html" class="active">U7 Will people have robots?</a>
+        <a href="u08.html">U8 Let's Communicate!</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 八 下 ━━</a>
+        <a href="b2u01.html">U1 Time to Relax!</a>
+        <a href="b2u02.html">U2 Let's clean up!</a>
+        <a href="b2u03.html">U3 Could you please clean your room?</a>
+        <a href="b2u04.html">U4 Why don't you talk to your parents?</a>
+        <a href="b2u05.html">U5 What were you doing when the rainstorm came?</a>
+        <a href="b2u06.html">U6 An old man tried to move the mountains.</a>
+        <a href="b2u07.html">U7 What's the highest mountain in the world?</a>
+        <a href="b2u08.html">U8 Making a Difference</a>
+      </nav>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+    </nav>
+<main id="content">
+<div class="cover"><div class="sub-en">U7</div><h1>Will people have robots?</h1><p>未来预测</p></div>
+<div class="unit-meta"><span>📖 话题：Future Life & Predictions</span><span>💬 功能：Make predictions about the future</span><span>📚 语法：will 将来时 · there will be · 一般将来时的各种句式</span><span>📝 写作：Life in 20 Years</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能用 will 预测未来</label>
+  <label><input type="checkbox"> 能用 there will be 描述存在</label>
+  <label><input type="checkbox"> 能区分 will 和 be going to</label>
+  <label><input type="checkbox"> 能写一篇未来生活预测短文</label></div>
+<details class="module" open><summary>📖 课文精讲 · Will people have robots?</summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：科技课上，同学们在讨论 50 年后世界会是什么样子。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
+<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Mr. Chen:</span><span class="en-text wotd-say" data-speak="Will people have robots in their homes in 50 years?">Will people have robots in their homes in 50 years?</span></div>
+      <div class="dialogue-line"><span class="speaker">Liu Wei:</span><span class="en-text wotd-say" data-speak="Yes, I think every family will have a robot. Robots will do housework.">Yes, I think every family will have a robot. Robots will do housework.</span></div>
+      <div class="dialogue-line"><span class="speaker">Lin Tao:</span><span class="en-text wotd-say" data-speak="Will kids still go to school?">Will kids still go to school?</span></div>
+      <div class="dialogue-line"><span class="speaker">Liu Wei:</span><span class="en-text wotd-say" data-speak="Maybe not. They will study at home on computers.">Maybe not. They will study at home on computers.</span></div>
+      <div class="dialogue-line"><span class="speaker">Anna:</span><span class="en-text wotd-say" data-speak="I think there will be more trees and less pollution.">I think there will be more trees and less pollution.</span></div>
+      <div class="dialogue-line"><span class="speaker">Mr. Chen:</span><span class="en-text wotd-say" data-speak="That sounds great! Will there be flying cars?">That sounds great! Will there be flying cars?</span></div>
+      <div class="dialogue-line"><span class="speaker">Anna:</span><span class="en-text wotd-say" data-speak="Yes, I think there will be. People will travel faster.">Yes, I think there will be. People will travel faster.</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>Mr. Chen:</strong> 50 年后人们家里会有机器人吗？</p>
+        <p><strong>Liu Wei:</strong> 我觉得每个家庭都会有机器人。机器人会做家务。</p>
+        <p><strong>Lin Tao:</strong> 孩子们还会去上学吗？</p>
+        <p><strong>Liu Wei:</strong> 也许不会了。他们会在家通过电脑学习。</p>
+        <p><strong>Anna:</strong> 我觉得会有更多树，更少污染。</p>
+        <p><strong>Mr. Chen:</strong> 听起来不错！会有飞行汽车吗？</p>
+        <p><strong>Anna:</strong> 我觉得会有。人们出行会更快。</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p><strong>1.</strong> <em>Will people have robots?</em> → <strong>will + 动词原形</strong> 表示未来预测。<strong>Will + 主语 + 动词?</strong> 一般疑问句。</p>
+      <p><strong>2.</strong> <em>There will be more trees.</em> → <strong>There will be + 名词</strong> "将有……"，be 不随后面名词变化。</p>
+      <p><strong>3.</strong> <em>Kids will study at home on computers.</em> → will 肯定句：<strong>主语 + will + 动词原形</strong>。</p>
+      <p><strong>4.</strong> <em>People will travel faster.</em> → will 后接比较级，表示未来会更快。</p></div></div></details>
+<details class="module" open><summary>📝 重点词汇 · 未来预测 <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="robot">robot</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈroʊbɑːt/</span><span class="pos">n.</span>
+        <div class="definition">机器人</div>
+        <div class="example"><span class="wotd-say" data-speak="Robots will help us do housework.">Robots will help us do housework.</span><span class="trans">机器人会帮我们做家务。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="pollution">pollution</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/pəˈluːʃn/</span><span class="pos">n.</span>
+        <div class="definition">污染</div>
+        <div class="example"><span class="wotd-say" data-speak="There will be less pollution in the future.">There will be less pollution in the future.</span><span class="trans">未来污染会更少。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="environment">environment</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɪnˈvaɪrənmənt/</span><span class="pos">n.</span>
+        <div class="definition">环境</div>
+        <div class="example"><span class="wotd-say" data-speak="We should protect the environment.">We should protect the environment.</span><span class="trans">我们应该保护环境。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="planet">planet</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈplænɪt/</span><span class="pos">n.</span>
+        <div class="definition">行星；星球</div>
+        <div class="example"><span class="wotd-say" data-speak="Earth is our home planet.">Earth is our home planet.</span><span class="trans">地球是我们的家园。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="peace">peace</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/piːs/</span><span class="pos">n.</span>
+        <div class="definition">和平</div>
+        <div class="example"><span class="wotd-say" data-speak="I hope there will be world peace.">I hope there will be world peace.</span><span class="trans">我希望世界和平。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="prediction">prediction</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/prɪˈdɪkʃn/</span><span class="pos">n.</span>
+        <div class="definition">预测</div>
+        <div class="example"><span class="wotd-say" data-speak="Do you have a prediction about the future?">Do you have a prediction about the future?</span><span class="trans">你对未来有预测吗？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="believe">believe</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/bɪˈliːv/</span><span class="pos">v.</span>
+        <div class="definition">相信</div>
+        <div class="example"><span class="wotd-say" data-speak="I believe there will be great changes.">I believe there will be great changes.</span><span class="trans">我相信会有巨大的变化。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="future">future</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈfjuːtʃər/</span><span class="pos">n.</span>
+        <div class="definition">未来</div>
+        <div class="example"><span class="wotd-say" data-speak="The future is in our hands.">The future is in our hands.</span><span class="trans">未来掌握在我们手中。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="danger">danger</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈdeɪndʒər/</span><span class="pos">n.</span>
+        <div class="definition">危险</div>
+        <div class="example"><span class="wotd-say" data-speak="Some animals are in danger.">Some animals are in danger.</span><span class="trans">一些动物处于危险中。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="possible">possible</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈpɑːsəbl/</span><span class="pos">adj.</span>
+        <div class="definition">可能的</div>
+        <div class="example"><span class="wotd-say" data-speak="Everything is possible.">Everything is possible.</span><span class="trans">一切皆有可能。</span></div>
+      </div></div></div></details>
+<details class="module" open><summary>🔤 重点句型 · Sentence Patterns</summary><div class="content"><div class="pattern-grid">      <div class="pattern-card">
+        <div class="structure">will + 动词原形</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>未来预测</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1">People <span class="slot">will have</span> robots. / I <span class="slot">will be</span> a doctor.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">Will + 主语 + 动词?</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>一般疑问句未来时</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp2"><strong>Will</strong> <span class="slot">there be</span> flying cars? / <strong>Will</strong> <span class="slot">kids go</span> to school?</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">There will be + 名词</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>描述未来的存在</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp3">There will be <span class="slot">more trees</span>. / There will be <span class="slot">less pollution</span>.</span></div>
+      </div></div></div></details>
+<details class="module detail-module" open><summary>📚 语法聚焦 · will 将来时 <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module"><h3>will 句式总结</h3>
+<table class="grammar-table">
+<tr><th>句式</th><th>结构</th><th>示例</th></tr>
+<tr><td>肯定句</td><td>主语 + will + 动词</td><td>I will travel to the moon.</td></tr>
+<tr><td>否定句</td><td>主语 + won't + 动词</td><td>People won't need cars.</td></tr>
+<tr><td>一般疑问句</td><td>Will + 主语 + 动词?</td><td>Will everyone have a robot?</td></tr>
+<tr><td>特殊疑问句</td><td>Wh- + will + 主语 + 动词?</td><td>Where will people live?</td></tr>
+</table>
+<h3>there will be</h3>
+<table class="grammar-table">
+<tr><th>句式</th><th>示例</th></tr>
+<tr><td>肯定</td><td>There will be more people.</td></tr>
+<tr><td>否定</td><td>There won't be any wars.</td></tr>
+<tr><td>疑问</td><td>Will there be flying cars?</td></tr>
+</table>
+</div><div class="chinese-error">      <p>❌ <span class="wrong" data-speak="People will has robots.">People will has robots.</span>（will 后动词用原形）</p>
+      <p>✅ <span class="correct" data-speak="People will have robots.">People will have robots.</span></p>
+      <p>❌ <span class="wrong" data-speak="There will have more trees.">There will have more trees.</span>（固定搭配 there will be）</p>
+      <p>✅ <span class="correct" data-speak="There will be more trees.">There will be more trees.</span></p></div></div></details>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[will] I think people ____ (will / are) live on the moon one day.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>will</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[否定] People ____ won't / don't) need to drive cars in the future.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>won't</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[there be] ____ ____ ____ more robots in 50 years? (Will there be)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Will there be</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[改错] There will have less pollution.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>There will be less pollution.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[问答] ____ will people live in the future? — On other planets.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Where</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[句型] Kids will go to school. (改为否定句)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Kids won't go to school.</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">[汉译英] 50 年后人们将活到 200 岁吗？</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Will people live to be 200 years old in 50 years?</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">[补全] A: What will schools be like in the future?<br>B: ____</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>自由回答，如 There will be no heavy schoolbags. Students will use tablets.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>📖 阅读专项 · Life in 2124</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">What will life be like in 100 years? Let's make some predictions!</p>
+      <p class="en-text">First, there will be huge changes in transportation. Flying cars will take people anywhere they want. There won't be traffic jams anymore.</p>
+      <p class="en-text">Second, robots will do most of the housework. People will have more free time to relax and enjoy life.</p>
+      <p class="en-text">Third, there will be great schools. Students will learn through VR (virtual reality). They will visit ancient Rome or the deep ocean without leaving their rooms!</p>
+      <p class="en-text">The future is full of possibilities. What's your prediction?</p><div class="gloss"><span>huge adj. 巨大的</span> <span>transportation n. 交通</span> <span>traffic jam 交通堵塞</span> <span>VR 虚拟现实</span> <span>ancient adj. 古老的</span> <span>possibility n. 可能性</span> </div></div>    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">1. How will people travel in the future?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>By flying cars.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">2. Why will people have more free time?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Because robots will do most of the housework.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★★</span>
+      <div class="q-body">3. How will students learn in future schools?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Through VR—they can visit ancient Rome or the deep ocean.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>🏆 中考题型专练 · 完形填空</summary><div class="content exam-section"><p style="font-size:13px;margin-bottom:8px;">阅读短文，选择最佳选项。</p><div class="reading-passage" style="background:var(--bg-secondary);">      <p>What (1)____ life be like in 50 years? I think there (2)____ be great changes. People (3)____ live longer. Many people (4)____ work from home. Robots will (5)____ us with housework. But there (6)____ be some problems too. What will you do to make the future better?</p></div><div style="margin:4px 0;font-size:13px;"><strong>1.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_1." disabled> A. will</span> <span style="margin-right:12px;"><input type="radio" name="exam_1." disabled> B. is</span> <span style="margin-right:12px;"><input type="radio" name="exam_1." disabled> C. are</span> <span style="margin-right:12px;"><input type="radio" name="exam_1." disabled> D. was</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>2.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_2." disabled> A. is</span> <span style="margin-right:12px;"><input type="radio" name="exam_2." disabled> B. are</span> <span style="margin-right:12px;"><input type="radio" name="exam_2." disabled> C. will</span> <span style="margin-right:12px;"><input type="radio" name="exam_2." disabled> D. was</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>3.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_3." disabled> A. is</span> <span style="margin-right:12px;"><input type="radio" name="exam_3." disabled> B. are</span> <span style="margin-right:12px;"><input type="radio" name="exam_3." disabled> C. will</span> <span style="margin-right:12px;"><input type="radio" name="exam_3." disabled> D. won't</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>4.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_4." disabled> A. will</span> <span style="margin-right:12px;"><input type="radio" name="exam_4." disabled> B. are</span> <span style="margin-right:12px;"><input type="radio" name="exam_4." disabled> C. is</span> <span style="margin-right:12px;"><input type="radio" name="exam_4." disabled> D. be</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>5.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_5." disabled> A. help</span> <span style="margin-right:12px;"><input type="radio" name="exam_5." disabled> B. helping</span> <span style="margin-right:12px;"><input type="radio" name="exam_5." disabled> C. helped</span> <span style="margin-right:12px;"><input type="radio" name="exam_5." disabled> D. helps</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>6.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_6." disabled> A. will</span> <span style="margin-right:12px;"><input type="radio" name="exam_6." disabled> B. won't</span> <span style="margin-right:12px;"><input type="radio" name="exam_6." disabled> C. is</span> <span style="margin-right:12px;"><input type="radio" name="exam_6." disabled> D. are</span> </div>
+<div class="exam-q" style="border-left-color:#f59e0b;"><span class="q-tag" style="background:#f59e0b;color:#fff;">答案</span><div class="q-body">1. A (will)；2. C (will)；3. C (will)；4. A (will)；5. A (help)；6. A (will)</div></div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · Life in 20 Years</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">请以"Life in 20 Years"为题，写 60-80 词短文预测 20 年后你的生活（工作、家庭、科技方面）。</div></div><div class="writing-framework">      <div class="fw-step">开头：20 年后的总体预测。</div>
+      <div class="fw-step">主体：工作+家庭+科技三方面。</div>
+      <div class="fw-step">结尾：表达对未来的期待。</div></div><div class="writing-model"><div class="en">What will my life be like in 20 years? I think I will be a doctor. I will work in a big hospital. There will be smart robots to help me. I will live in a clean and green city. There will be no pollution. I will have a happy family. I will travel to space with my family on vacation. I'm looking forward to the future!</div><div class="trans">20 年后我的生活会是什么样？我想我会是一名医生，在一家大医院工作。会有智能机器人帮我。我会住在一个干净绿色的城市，没有污染。我会有一个幸福的家庭。我会和家人去太空度假。我期待未来！</div></div></div></details>
+<details class="module detail-module" open><summary>🎯 Project · Future Predictions Debate</summary><div class="content project-module"><div class="project-brief"><div class="project-title">Future Predictions Debate</div><div class="project-desc">小组辩论：未来 50 年哪些预测会成真？每组选 3 个预测，用 will / won't 表达观点，并给出理由。</div></div><div class="project-steps">      <div class="step"><span class="step-num">1</span><span class="step-text">每个成员提出 2 个未来预测。</span></div>
+      <div class="step"><span class="step-num">2</span><span class="step-text">小组讨论，选出 3 个最可能和 3 个最不可能的。</span></div>
+      <div class="step"><span class="step-num">3</span><span class="step-text">准备辩论说辞。</span></div>
+      <div class="step"><span class="step-num">4</span><span class="step-text">进行班级辩论。</span></div></div><div class="project-rubric"><table><tr><th>#</th><th>评价标准</th></tr><tr><td>1.</td><td>预测有创意</td></tr>
+<tr><td>2.</td><td>理由充分有逻辑</td></tr>
+<tr><td>3.</td><td>正确使用 will/won't</td></tr>
+<tr><td>4.</td><td>团队合作好</td></tr></table></div></div></details>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 will 预测未来</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 there will be</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能区分 will 和 be going to</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写未来预测短文</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>假装你是一位未来学家，用英语对 100 年后的世界做 3 个预测。练习 will 和 there will be。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">用 will 写 5 个预测句子</span>
+    <span class="review-dot">用 there will be 写 3 个句子</span>
+    <span class="review-dot">比较 will 和 be going to 的区别</span>
+    <span class="review-dot">写一段 50 年后学校生活预测</span></div>
+<div class="next-stop" style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;"><a href="u06.html" class="nav-arrow">← 上一单元</a><a href="u08.html" class="nav-arrow">下一单元 →</a></div>
+<div class="next-stop" style="margin-top:8px;"><strong>➡️ 下一单元：Let's Communicate!</strong><br>下一单元你将学习祈使句和提建议的表达方式，学会用英语有效沟通。</div>
+</main>
+<div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
+<button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis, currentUtterance: null, speaking: false, rate: 0.9, voiceURI: 'en-US',
+    init: function(){var s=this;document.getElementById('speechRate').addEventListener('input',function(){s.rate=+this.value;document.getElementById('speechRateLabel').textContent=this.value;});document.getElementById('speechVoice').addEventListener('change',function(){s.voiceURI=this.value;localStorage.setItem('speech-voice',this.value);});document.getElementById('speechStopBtn').addEventListener('click',function(){s.stop();});document.getElementById('speechCloseBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.remove('open');});document.getElementById('speechToggleBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.toggle('open');});},
+    speak: function(t,c){if(!t)return;this.stop();var u=new SpeechSynthesisUtterance(t);u.lang=this.voiceURI;u.rate=this.rate;u.onend=function(){if(c)c();};this.currentUtterance=u;this.synthesis.speak(u);},
+    speakDialogue: function(id,c){var s=this,el=document.getElementById(id),ls=el?el.querySelectorAll('.en-text'):[],i=0;this.stop();(function n(){if(i>=ls.length){if(c)c();return;}var e=ls[i],t=e.getAttribute('data-speak')||e.textContent;if(!t){i++;n();return;}e.classList.add('speaking');var u=new SpeechSynthesisUtterance(t);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){e.classList.remove('speaking');i++;setTimeout(n,500);};u.onerror=function(){e.classList.remove('speaking');i++;setTimeout(n,200);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    speakVocabSection: function(id,c){var s=this,el=document.getElementById(id),cs=el?el.querySelectorAll('.vocab-card'):[],i=0;this.stop();(function n(){if(i>=cs.length){if(c)c();return;}var e=cs[i],hw=e.querySelector('.headword'),ex=e.querySelector('.example .wotd-say'),t=[];if(hw)t.push(hw.getAttribute('data-speak')||hw.textContent);if(ex)t.push(ex.getAttribute('data-speak')||ex.textContent.replace(/<[^>]+>/g,'').trim());var ft=t.join('. ');if(!ft){i++;n();return;}hw.classList.add('speaking');var u=new SpeechSynthesisUtterance(ft);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){hw.classList.remove('speaking');i++;setTimeout(n,600);};u.onerror=function(){hw.classList.remove('speaking');i++;setTimeout(n,300);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    stop: function(){this.synthesis.cancel();this.speaking=false;}
+  };SpeechManager.init();
+  document.querySelectorAll('.wotd-say').forEach(function(el){el.addEventListener('click',function(){SpeechManager.speak(this.getAttribute('data-speak')||this.textContent);});});
+  document.querySelectorAll('.speak-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var d=this.getAttribute('data-dialogue'),v=this.getAttribute('data-vocab'),t=this.getAttribute('data-target');if(this.classList.contains('speaking')){SpeechManager.stop();this.classList.remove('speaking');return;}this.classList.add('speaking');var done=function(){btn.classList.remove('speaking');};if(d){SpeechManager.speakDialogue(d,done);}else if(v){SpeechManager.speakVocabSection(v,done);}else if(t){var tg=document.getElementById(t);if(!tg){btn.classList.remove('speaking');return;}SpeechManager.speak(tg.textContent.replace(/<[^>]+>/g,''),done);}else{btn.classList.remove('speaking');}});});
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();var hw=this.previousElementSibling;if(hw&&hw.classList.contains('wotd-say')){var t=hw.getAttribute('data-speak')||hw.textContent;SpeechManager.speak(t);}});});
+  (function(){var btn=document.getElementById('expandAllBtn');if(!btn)return;btn.addEventListener('click',function(){var ad=document.querySelectorAll('.module,.exam-module');var ao=true;for(var i=0;i<ad.length;i++){if(!ad[i].hasAttribute('open')){ao=false;break;}};for(var i=0;i<ad.length;i++){if(ao)ad[i].removeAttribute('open');else ad[i].setAttribute('open','');};btn.textContent=ao?'📂 展开全部模块':'📖 收起全部模块';});})();
+  var s=document.getElementById('sidebar'),k='eng8-theme-sidebar';if(!s)return;
+  if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
+  window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=window.scrollY>400?'flex':'none';},{passive:true});
+  document.getElementById('backToTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution');});});
+})();
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);localStorage.setItem("eng8-theme",t);var btn=document.getElementById("themeToggle");if(btn)btn.textContent=t==="dark"?"☀️":"🌙";}
+function toggleTheme(){setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark");}
+</script></body></html>

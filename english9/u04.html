@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U4 I used to be afraid of the dark. | 初中英语九年级</title>
+<link rel="stylesheet" href="css/english9.css">
+<style>
+.speak-btn { display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;color:var(--accent);border:1px solid var(--border);border-radius:4px;padding:2px 8px;background:var(--bg);transition:background 0.15s; }
+.speak-btn:hover { background:var(--accent-light); }
+.speak-btn.speaking { background:var(--eng-amber-light);color:var(--eng-amber);border-color:var(--eng-amber); }
+.headword-speak-indicator { font-size:11px;margin-left:3px;opacity:0.55;cursor:pointer;vertical-align:super;line-height:1; }
+.headword-speak-indicator:hover { opacity:1; }
+.wotd-say { cursor:pointer;transition:color 0.15s; }
+.wotd-say:hover { color:var(--accent); }
+.wotd-say.speaking { color:var(--eng-pink); }
+.speech-panel { position:fixed;bottom:80px;right:24px;z-index:999;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);padding:14px 18px;display:none;min-width:180px; }
+.speech-panel.open { display:block; }
+.speech-panel .row { display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px; }
+.speech-panel .row label { color:var(--text-secondary);font-size:12px;min-width:36px; }
+.speech-panel select,.speech-panel input[type="range"] { flex:1; }
+.speech-panel button { padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px; }
+.speech-panel button:hover { background:var(--accent-light); }
+.speech-toggle-btn { position:fixed;bottom:24px;right:76px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--accent);cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center; }
+.speech-toggle-btn:hover { background:var(--accent-light); }
+.en-text.speaking { background:var(--eng-amber-light);border-radius:4px;padding:2px 4px;transition:background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background:#452a08; }
+.detail-module { content-visibility:auto;contain-intrinsic-size:300px; }
+.reading { content-visibility:auto;contain-intrinsic-size:400px; }
+</style>
+<script>(function(){var t=localStorage.getItem("eng9-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+    <nav id="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="margin-bottom:0;">英语九年级</h2>
+        <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+      </div><nav>
+        <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../grammar.html" style="font-size:13px;">📌 语法全景图</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 九年级全一册 ━━</a>
+        <a href="u01.html">U1 How can we become good learners?</a>
+        <a href="u02.html">U2 I think that mooncakes are delicious!</a>
+        <a href="u03.html">U3 Could you please tell me where the restrooms are?</a>
+        <a href="u04.html" class="active">U4 I used to be afraid of the dark.</a>
+        <a href="u05.html">U5 What are the shirts made of?</a>
+        <a href="u06.html">U6 When was it invented?</a>
+        <a href="u07.html">U7 Teenagers should be allowed to choose their own clothes.</a>
+        <a href="u08.html">U8 It must belong to Carla.</a>
+        <a href="u09.html">U9 I like music that I can dance to.</a>
+        <a href="u10.html">U10 You're supposed to shake hands.</a>
+        <a href="u11.html">U11 Sad movies make me cry.</a>
+        <a href="u12.html">U12 Life is full of the unexpected.</a>
+        <a href="u13.html">U13 We're trying to save the earth!</a>
+        <a href="u14.html">U14 I remember meeting all of you in Grade 7.</a>
+      </nav>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+    </nav>
+<main id="content">
+<div class="cover"><div class="sub-en">U4</div><h1>I used to be afraid of the dark.</h1><p>变化与成长</p></div>
+<div class="unit-meta"><span>📖 话题：Changes and Growth</span><span>💬 功能：Talk about what you used to be like</span><span>📚 语法：Used to + verb (过去常常)</span><span>📝 写作：Describe how you have changed over time</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能用 used to 描述过去的习惯和状态</label>
+  <label><input type="checkbox"> 能对比过去和现在的变化</label>
+  <label><input type="checkbox"> 能描述个人的成长经历</label>
+  <label><input type="checkbox"> 能理解并谈论外貌和性格的变化</label></div>
+<details class="module" open><summary>📖 课文精讲 · I used to be afraid of the dark.</summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：Paul和Alfred在旧照片前回忆过去看漫画书的时光。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
+<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Paul:</span><span class="en-text wotd-say" data-speak="Look at this old photo! Do you remember those comic books?">Look at this old photo! Do you remember those comic books?</span></div>
+      <div class="dialogue-line"><span class="speaker">Alfred:</span><span class="en-text wotd-say" data-speak="Of course! I used to read comic books every day after school.">Of course! I used to read comic books every day after school.</span></div>
+      <div class="dialogue-line"><span class="speaker">Paul:</span><span class="en-text wotd-say" data-speak="Me too. I used to spend all my pocket money on them.">Me too. I used to spend all my pocket money on them.</span></div>
+      <div class="dialogue-line"><span class="speaker">Alfred:</span><span class="en-text wotd-say" data-speak="You used to have a big collection. What happened to them?">You used to have a big collection. What happened to them?</span></div>
+      <div class="dialogue-line"><span class="speaker">Paul:</span><span class="en-text wotd-say" data-speak="I gave them away. I don't read comic books anymore. I used to love them, but now I prefer novels.">I gave them away. I don't read comic books anymore. I used to love them, but now I prefer novels.</span></div>
+      <div class="dialogue-line"><span class="speaker">Alfred:</span><span class="en-text wotd-say" data-speak="People change. I used to be shy, but now I'm more outgoing.">People change. I used to be shy, but now I'm more outgoing.</span></div>
+      <div class="dialogue-line"><span class="speaker">Paul:</span><span class="en-text wotd-say" data-speak="Really? I used to be outgoing, but now I enjoy quiet time more.">Really? I used to be outgoing, but now I enjoy quiet time more.</span></div>
+      <div class="dialogue-line"><span class="speaker">Alfred:</span><span class="en-text wotd-say" data-speak="It's interesting how we've changed over the years!">It's interesting how we've changed over the years!</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>Paul:</strong> 看这张老照片！你还记得那些漫画书吗？</p>
+        <p><strong>Alfred:</strong> 当然！我以前每天放学后都看漫画书。</p>
+        <p><strong>Paul:</strong> 我也是。我以前把所有零花钱都花在漫画书上。</p>
+        <p><strong>Alfred:</strong> 你以前有好多收藏。它们后来怎么了？</p>
+        <p><strong>Paul:</strong> 我送人了。我现在不看漫画书了。我以前很喜欢它们，但现在我更喜欢小说。</p>
+        <p><strong>Alfred:</strong> 人是会变的。我以前很害羞，但现在我更外向了。</p>
+        <p><strong>Paul:</strong> 真的吗？我以前很外向，但现在我更喜欢安静的时间。</p>
+        <p><strong>Alfred:</strong> 这些年来我们的变化真有趣！</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p>used to + 动词原形 表示「过去常常做某事」，强调过去的状态或习惯现在已经不再存在。</p>
+      <p>used to 的否定形式：didn't use to / used not to</p>
+      <p>used to 的疑问形式：Did + 主语 + use to...?</p>
+      <p>区分：used to do (过去常常), be/get used to doing (习惯于做), be used to do (被用来做)</p></div></div></details>
+<details class="module" open><summary>📝 重点词汇 · 变化与成长 <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="humorous">humorous</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈhjuːmərəs/</span><span class="pos">adj.</span>
+        <div class="definition">幽默的；诙谐的</div>
+        <div class="example"><span class="wotd-say" data-speak="He is a humorous person.">He is a humorous person.</span><span class="trans">他是一个幽默的人。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="silent">silent</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈsaɪlənt/</span><span class="pos">adj.</span>
+        <div class="definition">沉默的；安静的</div>
+        <div class="example"><span class="wotd-say" data-speak="She used to be silent in class.">She used to be silent in class.</span><span class="trans">她以前在课堂上很沉默。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="helpful">helpful</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈhelpfl/</span><span class="pos">adj.</span>
+        <div class="definition">有帮助的；有用的</div>
+        <div class="example"><span class="wotd-say" data-speak="My sister is very helpful.">My sister is very helpful.</span><span class="trans">我姐姐非常乐于助人。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="score">score</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/skɔːr/</span><span class="pos">n./v.</span>
+        <div class="definition">得分；分数</div>
+        <div class="example"><span class="wotd-say" data-speak="What's your score on the test?">What's your score on the test?</span><span class="trans">你考试得了多少分？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="background">background</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈbækɡraʊnd/</span><span class="pos">n.</span>
+        <div class="definition">背景</div>
+        <div class="example"><span class="wotd-say" data-speak="The photo has a beautiful background.">The photo has a beautiful background.</span><span class="trans">这张照片的背景很漂亮。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="interview">interview</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈɪntərvjuː/</span><span class="pos">n./v.</span>
+        <div class="definition">采访；面试</div>
+        <div class="example"><span class="wotd-say" data-speak="I have a job interview tomorrow.">I have a job interview tomorrow.</span><span class="trans">我明天有个工作面试。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="Asian">Asian</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈeɪʒn/</span><span class="pos">adj./n.</span>
+        <div class="definition">亚洲的；亚洲人</div>
+        <div class="example"><span class="wotd-say" data-speak="She is an Asian student.">She is an Asian student.</span><span class="trans">她是一个亚裔学生。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="deal">deal</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/diːl/</span><span class="pos">v.</span>
+        <div class="definition">处理；应付</div>
+        <div class="example"><span class="wotd-say" data-speak="How do you deal with stress?">How do you deal with stress?</span><span class="trans">你如何应对压力？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="shy">shy</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ʃaɪ/</span><span class="pos">adj.</span>
+        <div class="definition">害羞的</div>
+        <div class="example"><span class="wotd-say" data-speak="She used to be very shy.">She used to be very shy.</span><span class="trans">她以前非常害羞。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="dare">dare</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/der/</span><span class="pos">v.</span>
+        <div class="definition">敢；敢于</div>
+        <div class="example"><span class="wotd-say" data-speak="I dare to speak in public now.">I dare to speak in public now.</span><span class="trans">我现在敢在公共场合说话了。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="crowd">crowd</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/kraʊd/</span><span class="pos">n.</span>
+        <div class="definition">人群</div>
+        <div class="example"><span class="wotd-say" data-speak="I don't like large crowds.">I don't like large crowds.</span><span class="trans">我不喜欢大群人。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="ton">ton</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/tʌn/</span><span class="pos">n.</span>
+        <div class="definition">吨；大量</div>
+        <div class="example"><span class="wotd-say" data-speak="I have tons of homework.">I have tons of homework.</span><span class="trans">我有大量的作业。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="private">private</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈpraɪvət/</span><span class="pos">adj.</span>
+        <div class="definition">私人的；私密的</div>
+        <div class="example"><span class="wotd-say" data-speak="I need some private time.">I need some private time.</span><span class="trans">我需要一些私人时间。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="guard">guard</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɡɑːrd/</span><span class="pos">n./v.</span>
+        <div class="definition">警卫；守卫</div>
+        <div class="example"><span class="wotd-say" data-speak="The guard stood at the door.">The guard stood at the door.</span><span class="trans">警卫站在门口。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="require">require</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/rɪˈkwaɪər/</span><span class="pos">v.</span>
+        <div class="definition">需要；要求</div>
+        <div class="example"><span class="wotd-say" data-speak="This job requires patience.">This job requires patience.</span><span class="trans">这份工作需要耐心。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="European">European</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌjʊrəˈpiːən/</span><span class="pos">adj./n.</span>
+        <div class="definition">欧洲的；欧洲人</div>
+        <div class="example"><span class="wotd-say" data-speak="He is from a European country.">He is from a European country.</span><span class="trans">他来自一个欧洲国家。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="African">African</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈæfrɪkən/</span><span class="pos">adj./n.</span>
+        <div class="definition">非洲的；非洲人</div>
+        <div class="example"><span class="wotd-say" data-speak="She has African roots.">She has African roots.</span><span class="trans">她有非洲血统。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="British">British</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈbrɪtɪʃ/</span><span class="pos">adj.</span>
+        <div class="definition">英国的；英国人的</div>
+        <div class="example"><span class="wotd-say" data-speak="He speaks British English.">He speaks British English.</span><span class="trans">他说英式英语。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="speech">speech</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/spiːtʃ/</span><span class="pos">n.</span>
+        <div class="definition">演讲；发言</div>
+        <div class="example"><span class="wotd-say" data-speak="He gave a wonderful speech.">He gave a wonderful speech.</span><span class="trans">他做了一场精彩的演讲。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="ant">ant</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ænt/</span><span class="pos">n.</span>
+        <div class="definition">蚂蚁</div>
+        <div class="example"><span class="wotd-say" data-speak="There is an ant on the ground.">There is an ant on the ground.</span><span class="trans">地上有一只蚂蚁。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="insect">insect</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈɪnsekt/</span><span class="pos">n.</span>
+        <div class="definition">昆虫</div>
+        <div class="example"><span class="wotd-say" data-speak="I used to be afraid of insects.">I used to be afraid of insects.</span><span class="trans">我以前害怕昆虫。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="influence">influence</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈɪnfluəns/</span><span class="pos">n./v.</span>
+        <div class="definition">影响</div>
+        <div class="example"><span class="wotd-say" data-speak="My teacher had a big influence on me.">My teacher had a big influence on me.</span><span class="trans">我的老师对我有很大影响。</span></div>
+      </div></div></div></details>
+<details class="module" open><summary>🔤 重点句型 · Sentence Patterns</summary><div class="content"><div class="pattern-grid">      <div class="pattern-card">
+        <div class="structure">主语 + used to + 动词原形</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>表示过去常常做某事（现在不再做）。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1">I <b>used to</b> be afraid of the dark. / She <b>used to</b> wear glasses.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">主语 + didn't use to + 动词原形</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>used to 的否定形式。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp2">He <b>didn't use to</b> like vegetables. / I <b>didn't use to</b> exercise.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">Did + 主语 + use to + 动词原形?</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>used to 的疑问形式。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp3"><b>Did</b> you <b>use to</b> play the piano? / <b>Did</b> she <b>use to</b> live here?</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">主语 + be used to + V-ing / n.</div> <button class="speak-btn" data-target="sp4" title="朗读句型">🔊</button>
+        <div>表示习惯于做某事。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp4">I am <b>used to</b> getting up early. / She <b>is used to</b> the noise.</span></div>
+      </div></div></div></details>
+<details class="module detail-module" open><summary>📚 语法聚焦 · Used to 结构 <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module"><h3>used to 的用法</h3>
+<table class="grammar-table">
+<tr><th>形式</th><th>用法</th><th>例句</th></tr>
+<tr><td>肯定句</td><td>主语 + used to + V</td><td>I used to be short, but now I am tall.</td></tr>
+<tr><td>否定句</td><td>主语 + didn't use to + V</td><td>He didn't use to like reading.</td></tr>
+<tr><td>一般疑问句</td><td>Did + 主语 + use to + V?</td><td>Did you use to play the guitar?</td></tr>
+<tr><td>反意疑问句</td><td>主语 + used to + V, didn't + 主语?</td><td>She used to be shy, didn't she?</td></tr>
+</table>
+<h3>used to vs be used to</h3>
+<table class="grammar-table">
+<tr><th>结构</th><th>含义</th><th>例句</th></tr>
+<tr><td>used to do</td><td>过去常常（现在不）</td><td>I used to live in Beijing.</td></tr>
+<tr><td>be used to doing</td><td>习惯于</td><td>I am used to living here.</td></tr>
+<tr><td>be used to do</td><td>被用来</td><td>Wood is used to make paper.</td></tr>
+</table>
+</div><div class="chinese-error">      <p>used to 只用于过去时，不能用于现在时。</p>
+      <p>注意发音：used to 中的 d 和 t 连读为 /juːstə/。</p>
+      <p>be used to 中的 to 是介词，后接名词或动名词。</p>
+      <p><span class="wotd-say" data-speak="Old habits die hard.">Old habits die hard.</span> 江山易改，本性难移。</p></div></div></details>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">I ____ (use) to be afraid of the dark.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>used</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">She ____ (not use) to eat so much.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>didn't use</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">____ you ____ (use) to play soccer after school?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Did ... use</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">He used to wear glasses, ____ he?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>didn't</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">I am used to ____ (get) up early now.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>getting</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">I used to ____ (be) shy, but now I'm outgoing.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>be</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">My grandfather ____ (used to / is used to) taking a walk after dinner every day.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>is used to</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">She didn't use to like vegetables, ____?<br>A. did she B. didn't she C. used she D. wasn't she</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>A</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">Wood is ____ (use) to make furniture.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>used</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">翻译：我过去不习惯在众人面前讲话。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>I didn't use to be used to speaking in front of people.</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">改错：I use to play basketball after school when I was young.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>use → used</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">选择：He ____ get up late, but now he ____ getting up early.<br>A. used to; used to B. is used to; used to C. used to; is used to D. is used to; is used to</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>C</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">完成句子：我过去很胖，但现在瘦了。____</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>I used to be fat, but now I am thin.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">写作：描述你从七年级到现在发生的变化（外貌、性格、习惯等）。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Sample: I used to be short and shy. I didn't use to speak in class. But now I am taller and more outgoing. I used to hate sports, but now I love playing basketball.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>📖 阅读专项 · From Shy to Confident</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">Wang Mei is a 15-year-old girl. She used to be very shy and quiet. She didn't use to talk much in class. When the teacher asked her questions, she used to look down at her desk and speak very softly. Her classmates thought she was unfriendly, but she was just nervous.</p>
+      <p class="en-text">Things began to change when she joined the school's English club. At first, she was too shy to say anything. But her teacher, Ms. Li, encouraged her to try. «Don't be afraid,» Ms. Li said. «Everyone makes mistakes.»</p>
+      <p class="en-text">Wang Mei practiced speaking English every day. She used to be afraid of making mistakes, but now she knows that mistakes are part of learning. She made many friends in the club. She even won a prize in the school's English speech competition!</p>
+      <p class="en-text">Now Wang Mei is a confident girl. She is not shy anymore. She enjoys talking with people and sharing her ideas. She says, «The most important thing is to believe in yourself. If you try, you can change.»</p><div class="gloss"><span>softly 温柔地；轻声地</span> <span>nervous 紧张的</span> <span>encouraged 鼓励</span> <span>competition 比赛</span> <span>confident 自信的</span> <span>believe in yourself 相信自己</span> </div></div>    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">What was Wang Mei like before?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>She used to be very shy and quiet.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">What helped Wang Mei change?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Joining the school's English club helped her change.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">What did Ms. Li say to encourage her?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>「Don't be afraid. Everyone makes mistakes.」</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★★</span>
+      <div class="q-body">What does Wang Mei think is the most important thing?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>The most important thing is to believe in yourself.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>🏆 中考题型专练 · 语法填空 — used to 结构</summary><div class="content exam-section"><p style="font-size:13px;margin-bottom:8px;">根据上下文，用所给词的正确形式填空。</p><div class="reading-passage" style="background:var(--bg-secondary);">      <p>I 1 (use) to be very afraid of speaking in public. Whenever I had to give a speech, my heart 2 (beat) very fast. I 3 (try) to avoid any situation where I had to talk in front of people. But my teacher said, «You need to practice.» So I 4 (join) the speech club. At first, I 5 (be) still nervous, but gradually I got used to 6 (speak) in front of people. Now I enjoy giving speeches!</p></div><div style="margin:4px 0;font-size:13px;"><strong>1</strong> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> A. use</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> B. used</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> C. using</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> D. uses</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>2</strong> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> A. beats</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> B. beat</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> C. beaten</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> D. beating</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>3</strong> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> A. try</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> B. tried</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> C. trying</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> D. tries</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>4</strong> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> A. join</span> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> B. joined</span> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> C. joining</span> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> D. joins</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>5</strong> <span style="margin-right:12px;"><input type="radio" name="exam_5" disabled> A. am</span> <span style="margin-right:12px;"><input type="radio" name="exam_5" disabled> B. was</span> <span style="margin-right:12px;"><input type="radio" name="exam_5" disabled> C. were</span> <span style="margin-right:12px;"><input type="radio" name="exam_5" disabled> D. been</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>6</strong> <span style="margin-right:12px;"><input type="radio" name="exam_6" disabled> A. speak</span> <span style="margin-right:12px;"><input type="radio" name="exam_6" disabled> B. speaking</span> <span style="margin-right:12px;"><input type="radio" name="exam_6" disabled> C. spoke</span> <span style="margin-right:12px;"><input type="radio" name="exam_6" disabled> D. spoken</span> </div>
+<div class="exam-q" style="border-left-color:#f59e0b;"><span class="q-tag" style="background:#f59e0b;color:#fff;">答案</span><div class="q-body">1. B；2. B；3. B；4. B；5. B；6. B</div></div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · Describe how you have changed over time</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">描述你过去和现在的变化。可以包括外貌、性格、兴趣爱好、学习习惯等方面的变化。写一篇80-100词的短文。</div></div><div class="writing-framework">      <div class="fw-step">开头：总述自己的变化</div>
+      <div class="fw-step">描述过去的自己（外貌、性格、习惯等）</div>
+      <div class="fw-step">描述现在自己的状态</div>
+      <div class="fw-step">分析变化的可能原因</div>
+      <div class="fw-step">结尾：对变化的感受和展望</div></div><div class="writing-model"><div class="en">I have changed a lot over the past few years. I used to be short and thin, but now I am much taller. I used to be shy and didn't use to talk much in class. Now I am more outgoing and I have many friends. I used to hate reading, but now I love it. My English teacher encouraged me to read English stories. Now I read for half an hour every day. I believe change is a good thing. It helps us grow.</div><div class="trans">在过去的几年里，我变了很多。我以前又矮又瘦，但现在我高多了。我以前很害羞，在课堂上话不多。现在我更外向了，有很多朋友。我以前讨厌阅读，但现在我热爱阅读。我的英语老师鼓励我读英语故事。现在我每天阅读半小时。我相信变化是好事。它帮助我们成长。</div></div></div></details>
+<details class="module detail-module" open><summary>🎯 Project · Then and Now — A Personal Growth Poster</summary><div class="content project-module"><div class="project-brief"><div class="project-title">Then and Now — A Personal Growth Poster</div><div class="project-desc">制作一张「过去与现在」对比海报，展示你在外貌、性格、爱好和能力方面的变化。</div></div><div class="project-steps">      <div class="step"><span class="step-num">1</span><span class="step-text">找一张自己小时候的照片和现在的照片</span></div>
+      <div class="step"><span class="step-num">2</span><span class="step-text">列出你在外貌、性格、习惯等方面的变化</span></div>
+      <div class="step"><span class="step-num">3</span><span class="step-text">确定海报的布局：左侧「Then」右侧「Now」</span></div>
+      <div class="step"><span class="step-num">4</span><span class="step-text">写英文说明，使用 used to 结构</span></div>
+      <div class="step"><span class="step-num">5</span><span class="step-text">添加图画、贴纸等装饰</span></div>
+      <div class="step"><span class="step-num">6</span><span class="step-text">在班上展示你的成长故事</span></div></div><div class="project-rubric"><table><tr><th>#</th><th>评价标准</th></tr><tr><td>1.</td><td>对比清晰、内容完整</td></tr>
+<tr><td>2.</td><td>正确使用了 used to 结构</td></tr>
+<tr><td>3.</td><td>视觉设计有创意、美观</td></tr>
+<tr><td>4.</td><td>口头展示流利自信</td></tr>
+<tr><td>5.</td><td>能回答同学的问题</td></tr></table></div></div></details>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能正确使用 used to 描述过去</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能区分 used to do 和 be used to doing</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用英语描述自己和他人的变化</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能理解阅读中关于成长的故事</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写出自己的成长变化</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>向同桌解释 used to do 和 be used to doing 的区别，各举两个例子。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">🔵 1天后：复习 used to 的三种句式</span>
+    <span class="review-dot">🟢 3天后：复习变化描述相关词汇</span>
+    <span class="review-dot">🟡 1周后：复述王梅的变化故事</span>
+    <span class="review-dot">🔴 1月后：写自己的成长变化</span></div>
+<div class="next-stop" style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;"><a href="u03.html" class="nav-arrow">← 上一单元</a><a href="u05.html" class="nav-arrow">下一单元 →</a></div>
+<div class="next-stop" style="margin-top:8px;"><strong>➡️ 下一单元：U5: What are the shirts made of?</strong><br>学习被动语态（一般现在时），描述产品的材料和产地。</div>
+</main>
+<div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
+<button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis, currentUtterance: null, speaking: false, rate: 0.9, voiceURI: 'en-US',
+    init: function(){var s=this;document.getElementById('speechRate').addEventListener('input',function(){s.rate=+this.value;document.getElementById('speechRateLabel').textContent=this.value;});document.getElementById('speechVoice').addEventListener('change',function(){s.voiceURI=this.value;localStorage.setItem('speech-voice',this.value);});document.getElementById('speechStopBtn').addEventListener('click',function(){s.stop();});document.getElementById('speechCloseBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.remove('open');});document.getElementById('speechToggleBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.toggle('open');});},
+    speak: function(t,c){if(!t)return;this.stop();var u=new SpeechSynthesisUtterance(t);u.lang=this.voiceURI;u.rate=this.rate;u.onend=function(){if(c)c();};this.currentUtterance=u;this.synthesis.speak(u);},
+    speakDialogue: function(id,c){var s=this,el=document.getElementById(id),ls=el?el.querySelectorAll('.en-text'):[],i=0;this.stop();(function n(){if(i>=ls.length){if(c)c();return;}var e=ls[i],t=e.getAttribute('data-speak')||e.textContent;if(!t){i++;n();return;}e.classList.add('speaking');var u=new SpeechSynthesisUtterance(t);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){e.classList.remove('speaking');i++;setTimeout(n,500);};u.onerror=function(){e.classList.remove('speaking');i++;setTimeout(n,200);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    speakVocabSection: function(id,c){var s=this,el=document.getElementById(id),cs=el?el.querySelectorAll('.vocab-card'):[],i=0;this.stop();(function n(){if(i>=cs.length){if(c)c();return;}var e=cs[i],hw=e.querySelector('.headword'),ex=e.querySelector('.example .wotd-say'),t=[];if(hw)t.push(hw.getAttribute('data-speak')||hw.textContent);if(ex)t.push(ex.getAttribute('data-speak')||ex.textContent.replace(/<[^>]+>/g,'').trim());var ft=t.join('. ');if(!ft){i++;n();return;}hw.classList.add('speaking');var u=new SpeechSynthesisUtterance(ft);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){hw.classList.remove('speaking');i++;setTimeout(n,600);};u.onerror=function(){hw.classList.remove('speaking');i++;setTimeout(n,300);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    stop: function(){this.synthesis.cancel();this.speaking=false;}
+  };SpeechManager.init();
+  document.querySelectorAll('.wotd-say').forEach(function(el){el.addEventListener('click',function(){SpeechManager.speak(this.getAttribute('data-speak')||this.textContent);});});
+  document.querySelectorAll('.speak-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var d=this.getAttribute('data-dialogue'),v=this.getAttribute('data-vocab'),t=this.getAttribute('data-target');if(this.classList.contains('speaking')){SpeechManager.stop();this.classList.remove('speaking');return;}this.classList.add('speaking');var done=function(){btn.classList.remove('speaking');};if(d){SpeechManager.speakDialogue(d,done);}else if(v){SpeechManager.speakVocabSection(v,done);}else if(t){var tg=document.getElementById(t);if(!tg){btn.classList.remove('speaking');return;}SpeechManager.speak(tg.textContent.replace(/<[^>]+>/g,''),done);}else{btn.classList.remove('speaking');}});});
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();var hw=this.previousElementSibling;if(hw&&hw.classList.contains('wotd-say')){var t=hw.getAttribute('data-speak')||hw.textContent;SpeechManager.speak(t);}});});
+  (function(){var btn=document.getElementById('expandAllBtn');if(!btn)return;btn.addEventListener('click',function(){var ad=document.querySelectorAll('.module,.exam-module');var ao=true;for(var i=0;i<ad.length;i++){if(!ad[i].hasAttribute('open')){ao=false;break;}};for(var i=0;i<ad.length;i++){if(ao)ad[i].removeAttribute('open');else ad[i].setAttribute('open','');};btn.textContent=ao?'📂 展开全部模块':'📖 收起全部模块';});})();
+  var s=document.getElementById('sidebar'),k='eng9-theme-sidebar';if(!s)return;
+  if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
+  window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=window.scrollY>400?'flex':'none';},{passive:true});
+  document.getElementById('backToTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution');});});
+})();
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);localStorage.setItem("eng9-theme",t);var btn=document.getElementById("themeToggle");if(btn)btn.textContent=t==="dark"?"☀️":"🌙";}
+function toggleTheme(){setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark");}
+</script></body></html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U3 I'm more outgoing than my sister. | 初中英语八年级</title>
+<link rel="stylesheet" href="css/english8.css">
+<style>
+.speak-btn { display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;color:var(--accent);border:1px solid var(--border);border-radius:4px;padding:2px 8px;background:var(--bg);transition:background 0.15s; }
+.speak-btn:hover { background:var(--accent-light); }
+.speak-btn.speaking { background:var(--eng-amber-light);color:var(--eng-amber);border-color:var(--eng-amber); }
+.headword-speak-indicator { font-size:11px;margin-left:3px;opacity:0.55;cursor:pointer;vertical-align:super;line-height:1; }
+.headword-speak-indicator:hover { opacity:1; }
+.wotd-say { cursor:pointer;transition:color 0.15s; }
+.wotd-say:hover { color:var(--accent); }
+.wotd-say.speaking { color:var(--eng-pink); }
+.speech-panel { position:fixed;bottom:80px;right:24px;z-index:999;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);padding:14px 18px;display:none;min-width:180px; }
+.speech-panel.open { display:block; }
+.speech-panel .row { display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px; }
+.speech-panel .row label { color:var(--text-secondary);font-size:12px;min-width:36px; }
+.speech-panel select,.speech-panel input[type="range"] { flex:1; }
+.speech-panel button { padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px; }
+.speech-panel button:hover { background:var(--accent-light); }
+.speech-toggle-btn { position:fixed;bottom:24px;right:76px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--accent);cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center; }
+.speech-toggle-btn:hover { background:var(--accent-light); }
+.en-text.speaking { background:var(--eng-amber-light);border-radius:4px;padding:2px 4px;transition:background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background:#452a08; }
+.detail-module { content-visibility:auto;contain-intrinsic-size:300px; }
+.reading { content-visibility:auto;contain-intrinsic-size:400px; }
+</style>
+<script>(function(){var t=localStorage.getItem("eng8-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+    <nav id="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="margin-bottom:0;">英语八年级</h2>
+        <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+      </div><nav>
+        <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../grammar.html" style="font-size:13px;">📌 语法全景图</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 八 上 ━━</a>
+        <a href="u01.html">U1 Happy Holiday!</a>
+        <a href="u02.html">U2 How often do you exercise?</a>
+        <a href="u03.html" class="active">U3 I'm more outgoing than my sister.</a>
+        <a href="u04.html">U4 What's the best movie theater?</a>
+        <a href="u05.html">U5 Do you want to watch a game show?</a>
+        <a href="u06.html">U6 I'm going to study computer science.</a>
+        <a href="u07.html">U7 Will people have robots?</a>
+        <a href="u08.html">U8 Let's Communicate!</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 八 下 ━━</a>
+        <a href="b2u01.html">U1 Time to Relax!</a>
+        <a href="b2u02.html">U2 Let's clean up!</a>
+        <a href="b2u03.html">U3 Could you please clean your room?</a>
+        <a href="b2u04.html">U4 Why don't you talk to your parents?</a>
+        <a href="b2u05.html">U5 What were you doing when the rainstorm came?</a>
+        <a href="b2u06.html">U6 An old man tried to move the mountains.</a>
+        <a href="b2u07.html">U7 What's the highest mountain in the world?</a>
+        <a href="b2u08.html">U8 Making a Difference</a>
+      </nav>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+    </nav>
+<main id="content">
+<div class="cover"><div class="sub-en">U3</div><h1>I'm more outgoing than my sister.</h1><p>个人特质</p></div>
+<div class="unit-meta"><span>📖 话题：Personal Traits & Comparisons</span><span>💬 功能：Compare people using comparative adjectives</span><span>📚 语法：形容词比较级（-er / more）· than · as…as 同级比较</span><span>📝 写作：My Best Friend and I</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能用 -er 和 more 构成比较级</label>
+  <label><input type="checkbox"> 能用 than 比较两个人</label>
+  <label><input type="checkbox"> 能用 as…as 表示同级比较</label>
+  <label><input type="checkbox"> 能写一篇比较自己和朋友的短文</label></div>
+<details class="module" open><summary>📖 课文精讲 · I'm more outgoing than my sister.</summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：班会课上，同学们讨论自己和家人的性格差异。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
+<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Anna:</span><span class="en-text wotd-say" data-speak="Mom, am I more like you or Dad?">Mom, am I more like you or Dad?</span></div>
+      <div class="dialogue-line"><span class="speaker">Mom:</span><span class="en-text wotd-say" data-speak="You look like your father, but you're more outgoing than him.">You look like your father, but you're more outgoing than him.</span></div>
+      <div class="dialogue-line"><span class="speaker">Anna:</span><span class="en-text wotd-say" data-speak="Really? Dad seems pretty outgoing too.">Really? Dad seems pretty outgoing too.</span></div>
+      <div class="dialogue-line"><span class="speaker">Mom:</span><span class="en-text wotd-say" data-speak="Well, your dad is funnier than me. But I'm more serious than him.">Well, your dad is funnier than me. But I'm more serious than him.</span></div>
+      <div class="dialogue-line"><span class="speaker">Anna:</span><span class="en-text wotd-say" data-speak="What about my sister?">What about my sister?</span></div>
+      <div class="dialogue-line"><span class="speaker">Mom:</span><span class="en-text wotd-say" data-speak="She's quieter than you. But she's more hard-working. You two are very different.">She's quieter than you. But she's more hard-working. You two are very different.</span></div>
+      <div class="dialogue-line"><span class="speaker">Anna:</span><span class="en-text wotd-say" data-speak="I think we're both smart and kind. That's what matters!">I think we're both smart and kind. That's what matters!</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>Anna:</strong> 妈妈，我更像你还是爸爸？</p>
+        <p><strong>Mom:</strong> 你长得像你爸爸，但性格比他外向。</p>
+        <p><strong>Anna:</strong> 是吗？爸爸看起来也挺外向的。</p>
+        <p><strong>Mom:</strong> 嗯，你爸爸比我幽默。但我比他认真。</p>
+        <p><strong>Anna:</strong> 那姐姐呢？</p>
+        <p><strong>Mom:</strong> 她比你安静，但她更勤奋。你俩很不一样。</p>
+        <p><strong>Anna:</strong> 我觉得我俩都聪明善良，这才是重要的！</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p><strong>1.</strong> <em>You're more outgoing than him.</em> → 多音节形容词比较级：<strong>more + adj. + than</strong></p>
+      <p><strong>2.</strong> <em>Your dad is funnier than me.</em> → 辅音+y 结尾改 y 为 i + er：<strong>funny → funnier</strong></p>
+      <p><strong>3.</strong> <em>She's quieter than you.</em> → <strong>quiet → quieter</strong>（双音节以 e 结尾 +r）</p>
+      <p><strong>4.</strong> <em>We're both smart and kind.</em> → <strong>both</strong> 意为"两者都"，放在 be 动词后、实义动词前。</p></div></div></details>
+<details class="module" open><summary>📝 重点词汇 · 个人特质 <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="outgoing">outgoing</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌaʊtˈɡoʊɪŋ/</span><span class="pos">adj.</span>
+        <div class="definition">外向的</div>
+        <div class="example"><span class="wotd-say" data-speak="She is more outgoing than her brother.">She is more outgoing than her brother.</span><span class="trans">她比她弟弟外向。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="serious">serious</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈsɪriəs/</span><span class="pos">adj.</span>
+        <div class="definition">严肃的；认真的</div>
+        <div class="example"><span class="wotd-say" data-speak="He is a serious student.">He is a serious student.</span><span class="trans">他是个认真的学生。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="hard-working">hard-working</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/hɑːrd ˈwɜːrkɪŋ/</span><span class="pos">adj.</span>
+        <div class="definition">勤奋的</div>
+        <div class="example"><span class="wotd-say" data-speak="My sister is very hard-working.">My sister is very hard-working.</span><span class="trans">我姐姐非常勤奋。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="quiet">quiet</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈkwaɪət/</span><span class="pos">adj.</span>
+        <div class="definition">安静的；文静的</div>
+        <div class="example"><span class="wotd-say" data-speak="Lisa is quieter than her twin sister.">Lisa is quieter than her twin sister.</span><span class="trans">Lisa 比她的双胞胎妹妹安静。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="funny">funny</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈfʌni/</span><span class="pos">adj.</span>
+        <div class="definition">有趣的；好笑的</div>
+        <div class="example"><span class="wotd-say" data-speak="He tells funny stories.">He tells funny stories.</span><span class="trans">他讲很有趣的故事。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="smart">smart</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/smɑːrt/</span><span class="pos">adj.</span>
+        <div class="definition">聪明的；机灵的</div>
+        <div class="example"><span class="wotd-say" data-speak="Dogs are smart animals.">Dogs are smart animals.</span><span class="trans">狗是聪明的动物。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="kind">kind</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/kaɪnd/</span><span class="pos">adj.</span>
+        <div class="definition">善良的；友好的</div>
+        <div class="example"><span class="wotd-say" data-speak="A kind person always helps others.">A kind person always helps others.</span><span class="trans">善良的人总是帮助别人。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="lazy">lazy</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈleɪzi/</span><span class="pos">adj.</span>
+        <div class="definition">懒惰的</div>
+        <div class="example"><span class="wotd-say" data-speak="Don't be lazy. Do your homework now.">Don't be lazy. Do your homework now.</span><span class="trans">别偷懒，现在做作业。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="though">though</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ðoʊ/</span><span class="pos">conj.</span>
+        <div class="definition">虽然；尽管</div>
+        <div class="example"><span class="wotd-say" data-speak="He's quiet, though he has many friends.">He's quiet, though he has many friends.</span><span class="trans">他虽然安静，但朋友很多。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="both">both</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/boʊθ/</span><span class="pos">adj./pron.</span>
+        <div class="definition">两者都</div>
+        <div class="example"><span class="wotd-say" data-speak="Both of my parents are teachers.">Both of my parents are teachers.</span><span class="trans">我父母都是老师。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="better">better</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈbetər/</span><span class="pos">adj.</span>
+        <div class="definition">更好的(well 的比较级)</div>
+        <div class="example"><span class="wotd-say" data-speak="I am getting better at English.">I am getting better at English.</span><span class="trans">我的英语在进步。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="win">win</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/wɪn/</span><span class="pos">v.</span>
+        <div class="definition">赢；获胜</div>
+        <div class="example"><span class="wotd-say" data-speak="I hope our team can win.">I hope our team can win.</span><span class="trans">我希望我们队能赢。</span></div>
+      </div></div></div></details>
+<details class="module" open><summary>🔤 重点句型 · Sentence Patterns</summary><div class="content"><div class="pattern-grid">      <div class="pattern-card">
+        <div class="structure">形容词比较级 + than</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>比较两个人/物</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1"><span class="slot">She is taller</span> than <span class="slot">me</span>.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">more + 多音节形容词 + than</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>多音节词比较级</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp2">She is <span class="slot">more outgoing</span> than <span class="slot">her sister</span>.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">as + 原级 + as</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>同级比较</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp3">He is <span class="slot">as tall as</span> <span class="slot">his father</span>.</span></div>
+      </div></div></div></details>
+<details class="module detail-module" open><summary>📚 语法聚焦 · 形容词比较级 <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module"><h3>比较级构成规则</h3>
+<table class="grammar-table">
+<tr><th>规则</th><th>构成方法</th><th>示例</th></tr>
+<tr><td>单音节/部分双音节</td><td>+er</td><td>tall → taller; short → shorter</td></tr>
+<tr><td>以 e 结尾</td><td>+r</td><td>large → larger; nice → nicer</td></tr>
+<tr><td>辅音+y 结尾</td><td>变 y 为 i +er</td><td>funny → funnier; easy → easier</td></tr>
+<tr><td>重读闭音节</td><td>双写尾字母 +er</td><td>big → bigger; hot → hotter</td></tr>
+<tr><td>多音节/部分双音节</td><td>more + 原级</td><td>outgoing → more outgoing; beautiful → more beautiful</td></tr>
+</table>
+<h3>不规则比较级</h3>
+<table class="grammar-table">
+<tr><th>原级</th><th>比较级</th><th>中文</th></tr>
+<tr><td>good/well</td><td>better</td><td>更好的</td></tr>
+<tr><td>bad/badly</td><td>worse</td><td>更差的</td></tr>
+<tr><td>many/much</td><td>more</td><td>更多的</td></tr>
+<tr><td>little</td><td>less</td><td>更少的</td></tr>
+<tr><td>far</td><td>farther/further</td><td>更远的</td></tr>
+</table>
+</div><div class="chinese-error">      <p>❌ <span class="wrong" data-speak="She is more taller than me.">She is more taller than me.</span>（taller 已是比较级，不加 more）</p>
+      <p>✅ <span class="correct" data-speak="She is taller than me.">She is taller than me.</span></p>
+      <p>❌ <span class="wrong" data-speak="He is more smart than his brother.">He is more smart than his brother.</span>（smart 单音节用 smarter）</p>
+      <p>✅ <span class="correct" data-speak="He is smarter than his brother.">He is smarter than his brother.</span></p></div></div></details>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[比较级] Tom is ____ (tall) than his best friend.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>taller</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[比较级] She is ____ (outgoing) than me.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>more outgoing</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[选择] My sister is ____ (funny / funnier) than me.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>funnier</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[改错] He is more lazy than his brother.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>He is lazier than his brother.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[同义句] I am not as tall as Jim. = Jim ____ ____ than me.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Jim is taller than me.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[填空] Who is ____ (good) at English, Tom or Jerry?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>better</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">[汉译英] 这部电影比那部有趣得多。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>This movie is much funnier than that one.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">[补全] A: Who is more hard-working, you or your sister?<br>B: I think ____.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>自由回答，如"I think my sister is more hard-working than me."</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>📖 阅读专项 · Twin Brothers, Different Personalities</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">Leo and Sam are twin brothers. They look the same, but they are very different.</p>
+      <p class="en-text">Leo is more outgoing. He loves to talk and make friends. He is also more athletic and plays basketball every day. Sam is quieter and more serious. He enjoys reading and drawing.</p>
+      <p class="en-text">Although they are different, they get on well. Leo helps Sam practice basketball, and Sam helps Leo with math.</p>
+      <p class="en-text">Leo says, "Sam is smarter at school, but I'm better at sports. We learn from each other!"</p><div class="gloss"><span>twin n./adj. 双胞胎的</span> <span>athletic adj. 运动型的</span> <span>although conj. 虽然</span> <span>get on well 相处融洽</span> <span>learn from each other 互相学习</span> </div></div>    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">1. Who is more outgoing, Leo or Sam?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Leo.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">2. What does Sam enjoy doing?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Reading and drawing.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★★</span>
+      <div class="q-body">3. How do they help each other?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Leo helps Sam with basketball. Sam helps Leo with math.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>🏆 中考题型专练 · 完形填空</summary><div class="content exam-section"><p style="font-size:13px;margin-bottom:8px;">阅读短文，选择最佳选项。</p><div class="reading-passage" style="background:var(--bg-secondary);">      <p>My best friend Lucy is different from me. She is (1)____ (outgoing) than me, and she is (2)____ (funny) than anyone I know. I am (3)____ (quiet) and more serious. But we have one thing (4)____ common—we are both kind. A good friend (5)____ like a mirror. You can see yourself in your friend.</p></div><div style="margin:4px 0;font-size:13px;"><strong>1.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_1." disabled> A. outgoing</span> <span style="margin-right:12px;"><input type="radio" name="exam_1." disabled> B. more outgoing</span> <span style="margin-right:12px;"><input type="radio" name="exam_1." disabled> C. most outgoing</span> <span style="margin-right:12px;"><input type="radio" name="exam_1." disabled> D. outgoinger</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>2.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_2." disabled> A. funny</span> <span style="margin-right:12px;"><input type="radio" name="exam_2." disabled> B. funnier</span> <span style="margin-right:12px;"><input type="radio" name="exam_2." disabled> C. funniest</span> <span style="margin-right:12px;"><input type="radio" name="exam_2." disabled> D. more funny</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>3.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_3." disabled> A. quiet</span> <span style="margin-right:12px;"><input type="radio" name="exam_3." disabled> B. quieter</span> <span style="margin-right:12px;"><input type="radio" name="exam_3." disabled> C. quietest</span> <span style="margin-right:12px;"><input type="radio" name="exam_3." disabled> D. more quiet</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>4.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_4." disabled> A. in</span> <span style="margin-right:12px;"><input type="radio" name="exam_4." disabled> B. on</span> <span style="margin-right:12px;"><input type="radio" name="exam_4." disabled> C. at</span> <span style="margin-right:12px;"><input type="radio" name="exam_4." disabled> D. for</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>5.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_5." disabled> A. is</span> <span style="margin-right:12px;"><input type="radio" name="exam_5." disabled> B. are</span> <span style="margin-right:12px;"><input type="radio" name="exam_5." disabled> C. be</span> <span style="margin-right:12px;"><input type="radio" name="exam_5." disabled> D. am</span> </div>
+<div class="exam-q" style="border-left-color:#f59e0b;"><span class="q-tag" style="background:#f59e0b;color:#fff;">答案</span><div class="q-body">1. B (more outgoing)；2. B (funnier)；3. B (quieter)；4. A (in)；5. A (is)</div></div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · My Best Friend and I</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">请以"My Best Friend and I"为题，从外貌、性格、爱好三方面比较你和你的好朋友。</div></div><div class="writing-framework">      <div class="fw-step">开头：介绍你的好朋友是谁。</div>
+      <div class="fw-step">主体：从三方面比较（外貌/性格/爱好）。</div>
+      <div class="fw-step">结尾：总结虽然不同，但友情深厚。</div></div><div class="writing-model"><div class="en">My best friend is Li Ming. He is taller than me, but I am heavier than him. He is more outgoing. He likes to talk and play with others. I am quieter and I enjoy reading. However, we both like sports. He is better at basketball, and I am better at running. We learn from each other. Good friends don't need to be the same!</div><div class="trans">我最好的朋友是李明。他比我高，但我比他重。他更外向，喜欢和别人聊天玩耍。我比较安静，喜欢阅读。不过我们都喜欢运动。他篮球更好，我跑步更好。我们互相学习。好朋友不需要一模一样！</div></div></div></details>
+<details class="module detail-module" open><summary>🎯 Project · Find the Differences</summary><div class="content project-module"><div class="project-brief"><div class="project-title">Find the Differences</div><div class="project-desc">找一位同学或家人做搭档，用英语比较你们之间的 5 个相同点和 5 个不同点。做成一个对比海报。</div></div><div class="project-steps">      <div class="step"><span class="step-num">1</span><span class="step-text">和搭档讨论各自的性格、爱好、外貌。</span></div>
+      <div class="step"><span class="step-num">2</span><span class="step-text">列出 5 个相同点（用 both 和 as…as）。</span></div>
+      <div class="step"><span class="step-num">3</span><span class="step-text">列出 5 个不同点（用比较级）。</span></div>
+      <div class="step"><span class="step-num">4</span><span class="step-text">做成对比海报并展示。</span></div></div><div class="project-rubric"><table><tr><th>#</th><th>评价标准</th></tr><tr><td>1.</td><td>内容完整：5 same + 5 different</td></tr>
+<tr><td>2.</td><td>语法正确：比较级和同级比较</td></tr>
+<tr><td>3.</td><td>创意排版</td></tr>
+<tr><td>4.</td><td>展示流利度</td></tr></table></div></div></details>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 -er 和 more 构成比较级</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 than 进行比较</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 as…as 表示同级</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写比较自己和朋友的短文</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>假装你是电视主持人，用英语比较两个明星的性格和外貌。练习比较级和 as…as。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">默写 10 个形容词的比较级</span>
+    <span class="review-dot">写出 5 个比较句（than）</span>
+    <span class="review-dot">写出 3 个同级比较句（as…as）</span>
+    <span class="review-dot">写一段比较你自己和家人的短文</span></div>
+<div class="next-stop" style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;"><a href="u02.html" class="nav-arrow">← 上一单元</a><a href="u04.html" class="nav-arrow">下一单元 →</a></div>
+<div class="next-stop" style="margin-top:8px;"><strong>➡️ 下一单元：What's the best movie theater?</strong><br>下一单元你将学习形容词最高级，学会用 best / worst 等评价三个以上的人或物。</div>
+</main>
+<div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
+<button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis, currentUtterance: null, speaking: false, rate: 0.9, voiceURI: 'en-US',
+    init: function(){var s=this;document.getElementById('speechRate').addEventListener('input',function(){s.rate=+this.value;document.getElementById('speechRateLabel').textContent=this.value;});document.getElementById('speechVoice').addEventListener('change',function(){s.voiceURI=this.value;localStorage.setItem('speech-voice',this.value);});document.getElementById('speechStopBtn').addEventListener('click',function(){s.stop();});document.getElementById('speechCloseBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.remove('open');});document.getElementById('speechToggleBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.toggle('open');});},
+    speak: function(t,c){if(!t)return;this.stop();var u=new SpeechSynthesisUtterance(t);u.lang=this.voiceURI;u.rate=this.rate;u.onend=function(){if(c)c();};this.currentUtterance=u;this.synthesis.speak(u);},
+    speakDialogue: function(id,c){var s=this,el=document.getElementById(id),ls=el?el.querySelectorAll('.en-text'):[],i=0;this.stop();(function n(){if(i>=ls.length){if(c)c();return;}var e=ls[i],t=e.getAttribute('data-speak')||e.textContent;if(!t){i++;n();return;}e.classList.add('speaking');var u=new SpeechSynthesisUtterance(t);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){e.classList.remove('speaking');i++;setTimeout(n,500);};u.onerror=function(){e.classList.remove('speaking');i++;setTimeout(n,200);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    speakVocabSection: function(id,c){var s=this,el=document.getElementById(id),cs=el?el.querySelectorAll('.vocab-card'):[],i=0;this.stop();(function n(){if(i>=cs.length){if(c)c();return;}var e=cs[i],hw=e.querySelector('.headword'),ex=e.querySelector('.example .wotd-say'),t=[];if(hw)t.push(hw.getAttribute('data-speak')||hw.textContent);if(ex)t.push(ex.getAttribute('data-speak')||ex.textContent.replace(/<[^>]+>/g,'').trim());var ft=t.join('. ');if(!ft){i++;n();return;}hw.classList.add('speaking');var u=new SpeechSynthesisUtterance(ft);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){hw.classList.remove('speaking');i++;setTimeout(n,600);};u.onerror=function(){hw.classList.remove('speaking');i++;setTimeout(n,300);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    stop: function(){this.synthesis.cancel();this.speaking=false;}
+  };SpeechManager.init();
+  document.querySelectorAll('.wotd-say').forEach(function(el){el.addEventListener('click',function(){SpeechManager.speak(this.getAttribute('data-speak')||this.textContent);});});
+  document.querySelectorAll('.speak-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var d=this.getAttribute('data-dialogue'),v=this.getAttribute('data-vocab'),t=this.getAttribute('data-target');if(this.classList.contains('speaking')){SpeechManager.stop();this.classList.remove('speaking');return;}this.classList.add('speaking');var done=function(){btn.classList.remove('speaking');};if(d){SpeechManager.speakDialogue(d,done);}else if(v){SpeechManager.speakVocabSection(v,done);}else if(t){var tg=document.getElementById(t);if(!tg){btn.classList.remove('speaking');return;}SpeechManager.speak(tg.textContent.replace(/<[^>]+>/g,''),done);}else{btn.classList.remove('speaking');}});});
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();var hw=this.previousElementSibling;if(hw&&hw.classList.contains('wotd-say')){var t=hw.getAttribute('data-speak')||hw.textContent;SpeechManager.speak(t);}});});
+  (function(){var btn=document.getElementById('expandAllBtn');if(!btn)return;btn.addEventListener('click',function(){var ad=document.querySelectorAll('.module,.exam-module');var ao=true;for(var i=0;i<ad.length;i++){if(!ad[i].hasAttribute('open')){ao=false;break;}};for(var i=0;i<ad.length;i++){if(ao)ad[i].removeAttribute('open');else ad[i].setAttribute('open','');};btn.textContent=ao?'📂 展开全部模块':'📖 收起全部模块';});})();
+  var s=document.getElementById('sidebar'),k='eng8-theme-sidebar';if(!s)return;
+  if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
+  window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=window.scrollY>400?'flex':'none';},{passive:true});
+  document.getElementById('backToTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution');});});
+})();
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);localStorage.setItem("eng8-theme",t);var btn=document.getElementById("themeToggle");if(btn)btn.textContent=t==="dark"?"☀️":"🌙";}
+function toggleTheme(){setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark");}
+</script></body></html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U3 Could you please clean your room? | 初中英语八年级</title>
+<link rel="stylesheet" href="css/english8.css">
+<style>
+.speak-btn { display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;color:var(--accent);border:1px solid var(--border);border-radius:4px;padding:2px 8px;background:var(--bg);transition:background 0.15s; }
+.speak-btn:hover { background:var(--accent-light); }
+.speak-btn.speaking { background:var(--eng-amber-light);color:var(--eng-amber);border-color:var(--eng-amber); }
+.headword-speak-indicator { font-size:11px;margin-left:3px;opacity:0.55;cursor:pointer;vertical-align:super;line-height:1; }
+.headword-speak-indicator:hover { opacity:1; }
+.wotd-say { cursor:pointer;transition:color 0.15s; }
+.wotd-say:hover { color:var(--accent); }
+.wotd-say.speaking { color:var(--eng-pink); }
+.speech-panel { position:fixed;bottom:80px;right:24px;z-index:999;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);padding:14px 18px;display:none;min-width:180px; }
+.speech-panel.open { display:block; }
+.speech-panel .row { display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px; }
+.speech-panel .row label { color:var(--text-secondary);font-size:12px;min-width:36px; }
+.speech-panel select,.speech-panel input[type="range"] { flex:1; }
+.speech-panel button { padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px; }
+.speech-panel button:hover { background:var(--accent-light); }
+.speech-toggle-btn { position:fixed;bottom:24px;right:76px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--accent);cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center; }
+.speech-toggle-btn:hover { background:var(--accent-light); }
+.en-text.speaking { background:var(--eng-amber-light);border-radius:4px;padding:2px 4px;transition:background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background:#452a08; }
+.detail-module { content-visibility:auto;contain-intrinsic-size:300px; }
+.reading { content-visibility:auto;contain-intrinsic-size:400px; }
+</style>
+<script>(function(){var t=localStorage.getItem("eng8-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+    <nav id="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="margin-bottom:0;">英语八年级</h2>
+        <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+      </div><nav>
+        <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../grammar.html" style="font-size:13px;">📌 语法全景图</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 八 上 ━━</a>
+        <a href="u01.html">U1 Happy Holiday!</a>
+        <a href="u02.html">U2 How often do you exercise?</a>
+        <a href="u03.html">U3 I'm more outgoing than my sister.</a>
+        <a href="u04.html">U4 What's the best movie theater?</a>
+        <a href="u05.html">U5 Do you want to watch a game show?</a>
+        <a href="u06.html">U6 I'm going to study computer science.</a>
+        <a href="u07.html">U7 Will people have robots?</a>
+        <a href="u08.html">U8 Let's Communicate!</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 八 下 ━━</a>
+        <a href="b2u01.html">U1 Time to Relax!</a>
+        <a href="b2u02.html">U2 Let's clean up!</a>
+        <a href="b2u03.html" class="active">U3 Could you please clean your room?</a>
+        <a href="b2u04.html">U4 Why don't you talk to your parents?</a>
+        <a href="b2u05.html">U5 What were you doing when the rainstorm came?</a>
+        <a href="b2u06.html">U6 An old man tried to move the mountains.</a>
+        <a href="b2u07.html">U7 What's the highest mountain in the world?</a>
+        <a href="b2u08.html">U8 Making a Difference</a>
+      </nav>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+    </nav>
+<main id="content">
+<div class="cover"><div class="sub-en">U3</div><h1>Could you please clean your room?</h1><p>家务劳动</p></div>
+<div class="unit-meta"><span>📖 话题：Housework & Polite Requests</span><span>💬 功能：Make polite requests and ask for permission</span><span>📚 语法：Could you please…? 礼貌请求 · Could I…? 请求许可 · 祈使句 vs 请求句</span><span>📝 写作：A Note to a Family Member</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能用 Could you please… 礼貌请求</label>
+  <label><input type="checkbox"> 能用 Could I… 请求许可</label>
+  <label><input type="checkbox"> 能区分礼貌拒绝和接受</label>
+  <label><input type="checkbox"> 能写一张请求帮忙的便条</label></div>
+<details class="module" open><summary>📖 课文精讲 · Could you please clean your room?</summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：周末早上，妈妈和 Mike 之间的对话。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
+<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Mom:</span><span class="en-text wotd-say" data-speak="Mike, could you please clean your room? It's a mess!">Mike, could you please clean your room? It's a mess!</span></div>
+      <div class="dialogue-line"><span class="speaker">Mike:</span><span class="en-text wotd-say" data-speak="Sure, Mom. I'll do it after breakfast. Could I play computer games after I finish?">Sure, Mom. I'll do it after breakfast. Could I play computer games after I finish?</span></div>
+      <div class="dialogue-line"><span class="speaker">Mom:</span><span class="en-text wotd-say" data-speak="Yes, you can. But could you also take out the trash?">Yes, you can. But could you also take out the trash?</span></div>
+      <div class="dialogue-line"><span class="speaker">Mike:</span><span class="en-text wotd-say" data-speak="Of course. And could I invite Tom over this afternoon?">Of course. And could I invite Tom over this afternoon?</span></div>
+      <div class="dialogue-line"><span class="speaker">Mom:</span><span class="en-text wotd-say" data-speak="I'm sorry, but we're going out this afternoon. How about this weekend?">I'm sorry, but we're going out this afternoon. How about this weekend?</span></div>
+      <div class="dialogue-line"><span class="speaker">Mike:</span><span class="en-text wotd-say" data-speak="OK. Could you please help me with my math homework later?">OK. Could you please help me with my math homework later?</span></div>
+      <div class="dialogue-line"><span class="speaker">Mom:</span><span class="en-text wotd-say" data-speak="Sure, I'd be happy to. Let's finish the chores first!">Sure, I'd be happy to. Let's finish the chores first!</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>Mom:</strong> Mike，请打扫下你的房间好吗？太乱了！</p>
+        <p><strong>Mike:</strong> 好的妈妈。我吃完早饭就做。做完可以玩电脑游戏吗？</p>
+        <p><strong>Mom:</strong> 可以。但你能顺便倒个垃圾吗？</p>
+        <p><strong>Mike:</strong> 没问题。那我能邀请 Tom 下午来家里吗？</p>
+        <p><strong>Mom:</strong> 抱歉，我们下午要出门。这周末怎么样？</p>
+        <p><strong>Mike:</strong> 好吧。那一会儿你能帮我辅导数学作业吗？</p>
+        <p><strong>Mom:</strong> 好的，很乐意。我们先做完家务！</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p><strong>1.</strong> <em>Could you please clean your room?</em> → <strong>Could you please + 动词原形?</strong> 礼貌请求别人做某事。</p>
+      <p><strong>2.</strong> <em>Could I play computer games after I finish?</em> → <strong>Could I + 动词原形?</strong> 请求许可做某事。</p>
+      <p><strong>3.</strong> 肯定回答：<strong>Sure / Of course / Certainly.</strong> 否定回答：<strong>Sorry, but…</strong></p>
+      <p><strong>4.</strong> <em>Could I invite Tom over?</em> → <strong>invite…over</strong> "邀请……来家里"。</p></div></div></details>
+<details class="module" open><summary>📝 重点词汇 · 家务劳动 <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="mess">mess</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/mes/</span><span class="pos">n.</span>
+        <div class="definition">杂乱；混乱</div>
+        <div class="example"><span class="wotd-say" data-speak="Your room is a mess!">Your room is a mess!</span><span class="trans">你的房间一团糟！</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="trash">trash</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/træʃ/</span><span class="pos">n.</span>
+        <div class="definition">垃圾</div>
+        <div class="example"><span class="wotd-say" data-speak="Please take out the trash.">Please take out the trash.</span><span class="trans">请把垃圾拿出去。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="fold">fold</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/foʊld/</span><span class="pos">v.</span>
+        <div class="definition">折叠</div>
+        <div class="example"><span class="wotd-say" data-speak="Could you fold the clothes?">Could you fold the clothes?</span><span class="trans">你能叠衣服吗？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="sweep">sweep</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/swiːp/</span><span class="pos">v.</span>
+        <div class="definition">扫；打扫</div>
+        <div class="example"><span class="wotd-say" data-speak="I swept the floor this morning.">I swept the floor this morning.</span><span class="trans">我早上扫了地。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="chore">chore</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/tʃɔːr/</span><span class="pos">n.</span>
+        <div class="definition">家务杂事</div>
+        <div class="example"><span class="wotd-say" data-speak="I hate doing chores.">I hate doing chores.</span><span class="trans">我讨厌做家务。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="invite">invite</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɪnˈvaɪt/</span><span class="pos">v.</span>
+        <div class="definition">邀请</div>
+        <div class="example"><span class="wotd-say" data-speak="Can I invite my friend over?">Can I invite my friend over?</span><span class="trans">我能邀请朋友来吗？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="neither">neither</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈniːðər/</span><span class="pos">pron./adv.</span>
+        <div class="definition">两者都不</div>
+        <div class="example"><span class="wotd-say" data-speak="Neither of us likes washing dishes.">Neither of us likes washing dishes.</span><span class="trans">我俩都不喜欢洗碗。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="hate">hate</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/heɪt/</span><span class="pos">v.</span>
+        <div class="definition">讨厌</div>
+        <div class="example"><span class="wotd-say" data-speak="I hate doing the laundry.">I hate doing the laundry.</span><span class="trans">我讨厌洗衣服。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="fair">fair</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/fer/</span><span class="pos">adj.</span>
+        <div class="definition">公平的</div>
+        <div class="example"><span class="wotd-say" data-speak="It's not fair! I did all the work.">It's not fair! I did all the work.</span><span class="trans">不公平！活都是我干的。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="depend">depend</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/dɪˈpend/</span><span class="pos">v.</span>
+        <div class="definition">依靠；取决于</div>
+        <div class="example"><span class="wotd-say" data-speak="That depends on how busy I am.">That depends on how busy I am.</span><span class="trans">那取决于我有多忙。</span></div>
+      </div></div></div></details>
+<details class="module" open><summary>🔤 重点句型 · Sentence Patterns</summary><div class="content"><div class="pattern-grid">      <div class="pattern-card">
+        <div class="structure">Could you please + 动词?</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>礼貌请求别人做</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1"><strong>Could you please</strong> <span class="slot">clean the table</span>?</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">Could I + 动词?</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>请求许可</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp2"><strong>Could I</strong> <span class="slot">use your phone</span>?</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">Sure / Sorry, but…</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>肯定/否定回应</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp3"><span class="slot">Sure</span> / <span class="slot">Sorry, I'm busy</span>.</span></div>
+      </div></div></div></details>
+<details class="module detail-module" open><summary>📚 语法聚焦 · Could 礼貌请求与许可 <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module"><h3>Could 请求句式对比</h3>
+<table class="grammar-table">
+<tr><th>句式</th><th>用途</th><th>示例</th></tr>
+<tr><td>Could you please + v.?</td><td>请求对方做某事</td><td>Could you please open the window?</td></tr>
+<tr><td>Could I + v.?</td><td>请求许可自己做</td><td>Could I borrow your pen?</td></tr>
+<tr><td>Can I + v.?</td><td>非正式请求许可</td><td>Can I have a glass of water?</td></tr>
+</table>
+<h3>肯定/否定回应</h3>
+<table class="grammar-table">
+<tr><th>肯定回应</th><th>否定回应</th></tr>
+<tr><td>Sure. / Of course.</td><td>Sorry, I'm afraid I can't.</td></tr>
+<tr><td>Certainly.</td><td>I'm sorry, but I'm busy.</td></tr>
+<tr><td>No problem.</td><td>I'd love to, but I can't.</td></tr>
+</table>
+</div><div class="chinese-error">      <p>❌ <span class="wrong" data-speak="Could you please to help me?">Could you please to help me?</span>（Could you please 后直接加动词原形）</p>
+      <p>✅ <span class="correct" data-speak="Could you please help me?">Could you please help me?</span></p>
+      <p>❌ <span class="wrong" data-speak="Could I to go out?">Could I to go out?</span>（Could I 后直接加动词原形）</p>
+      <p>✅ <span class="correct" data-speak="Could I go out?">Could I go out?</span></p></div></div></details>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[请求] ____ you please pass me the salt?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Could</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[许可] ____ I use your dictionary? — Sure.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Could</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[词义] Please ____ (拿出) the trash.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>take out</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[改错] Could you please to sweep the floor?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Could you please sweep the floor?</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[回应] A: Could I borrow your bike?<br>B: ____ (肯定的两种表达)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Sure. / Of course. / No problem.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[填空] Could you ____ (帮忙) me with the dishes?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>help</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">[汉译英] 你能帮我叠一下衣服吗？——抱歉，我正忙着呢。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Could you please fold the clothes? — Sorry, I'm busy right now.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">[情景] 你想借朋友的相机用一下，请写 2 句礼貌请求。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>自由回答，如：Could I borrow your camera? I'll be very careful.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>📖 阅读专项 · Sharing Housework Makes a Happy Family</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">In many families, only parents do the housework. But sharing chores is important for everyone.</p>
+      <p class="en-text">Doing chores teaches children responsibility. When kids help with housework, they learn to take care of themselves and their home. It also makes parents feel less tired.</p>
+      <p class="en-text">In my family, everyone has a job. I sweep the floor and take out the trash. My brother does the dishes. My parents do the cooking and shopping.</p>
+      <p class="en-text">Sometimes I ask: "Could I help with dinner?" I enjoy learning to cook. Sharing housework is not just about cleaning—it's about caring for each other.</p><div class="gloss"><span>responsibility n. 责任</span> <span>take care of 照顾；负责</span> <span>share v. 分享；分担</span> <span>caring adj. 关爱的</span> </div></div>    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">1. What does the writer say about doing chores?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>It teaches children responsibility.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">2. What chores does the writer do?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Sweep the floor and take out the trash.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★★</span>
+      <div class="q-body">3. What does sharing housework mean according to the writer?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>It's about caring for each other.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>🏆 中考题型专练 · 补全对话</summary><div class="content exam-section"><p style="font-size:13px;margin-bottom:8px;">从方框中选择合适的句子补全对话。</p><div class="reading-passage" style="background:var(--bg-secondary);">      <p>A: Mom, (1)________?<br>B: Sure, what is it?<br>A: (2)________ My friends are waiting for me.<br>B: I'm sorry, but you need to finish your homework first.<br>A: (3)________ I'll do it right after I come back.<br>B: OK then. (4)________<br>A: Thanks, Mom! I promise I'll finish it.</p></div><div class="exam-q" style="border-left-color:#f59e0b;"><span class="q-tag" style="background:#f59e0b;color:#fff;">答案</span><div class="q-body">(1) Could I go out to play?；(2) Could you please let me go now?；(3) Could I finish it later?；(4) But don't be too late.</div></div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · A Note to a Family Member</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">请给家人写一张便条(Note)，礼貌地请求他们帮忙做一件事（打扫房间、买东西等），用 Could you please。</div></div><div class="writing-framework">      <div class="fw-step">开头：称呼+礼貌请求。</div>
+      <div class="fw-step">主体：说明需要帮忙的事及原因。</div>
+      <div class="fw-step">结尾：提前感谢。</div></div><div class="writing-model"><div class="en">Dear Mom, Could you please help me buy some art supplies? I need colored paper and glue for my school project. It's due on Friday. I have basketball practice after school, so I can't go myself. Thank you so much! I'll finish my homework before dinner. Love, Tom</div><div class="trans">亲爱的妈妈：能帮我买些美术用品吗？学校项目需要彩纸和胶水，周五要交。我放学后有篮球训练，自己去不了。非常感谢！我会在晚饭前写完作业。爱你的 Tom</div></div></div></details>
+<details class="module detail-module" open><summary>🎯 Project · Polite Request Role-Play</summary><div class="content project-module"><div class="project-brief"><div class="project-title">Polite Request Role-Play</div><div class="project-desc">和搭档编写一段 6-8 轮的对话，场景自选（家里/学校/商店），必须用到 Could you please 和 Could I。</div></div><div class="project-steps">      <div class="step"><span class="step-num">1</span><span class="step-text">选择一个场景。</span></div>
+      <div class="step"><span class="step-num">2</span><span class="step-text">编写对话脚本（6-8 个来回）。</span></div>
+      <div class="step"><span class="step-num">3</span><span class="step-text">用不同颜色的笔标出请求句。</span></div>
+      <div class="step"><span class="step-num">4</span><span class="step-text">和搭档排练并在班里表演。</span></div></div><div class="project-rubric"><table><tr><th>#</th><th>评价标准</th></tr><tr><td>1.</td><td>场景合理</td></tr>
+<tr><td>2.</td><td>包含 3 次以上 Could 请求</td></tr>
+<tr><td>3.</td><td>回应自然</td></tr>
+<tr><td>4.</td><td>表演流利有感情</td></tr></table></div></div></details>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 Could you please 请求</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 Could I 请求许可</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能礼貌回应请求</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写请求便条</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>假装你是英语导游，用 Could you please 和 Could I 各造 3 个句子，演示如何在餐厅、商店、图书馆礼貌交流。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">用 Could you please 写 3 个请求句</span>
+    <span class="review-dot">用 Could I 写 3 个许可句</span>
+    <span class="review-dot">写一段家人间的请求对话</span>
+    <span class="review-dot">复习礼貌回应的多种表达</span></div>
+<div class="next-stop" style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;"><a href="b2u02.html" class="nav-arrow">← 上一单元</a><a href="b2u04.html" class="nav-arrow">下一单元 →</a></div>
+<div class="next-stop" style="margin-top:8px;"><strong>➡️ 下一单元：Why don't you talk to your parents?</strong><br>下一单元你将学习如何用 Why don't you… 提出建议，谈论人际沟通中的问题。</div>
+</main>
+<div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
+<button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis, currentUtterance: null, speaking: false, rate: 0.9, voiceURI: 'en-US',
+    init: function(){var s=this;document.getElementById('speechRate').addEventListener('input',function(){s.rate=+this.value;document.getElementById('speechRateLabel').textContent=this.value;});document.getElementById('speechVoice').addEventListener('change',function(){s.voiceURI=this.value;localStorage.setItem('speech-voice',this.value);});document.getElementById('speechStopBtn').addEventListener('click',function(){s.stop();});document.getElementById('speechCloseBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.remove('open');});document.getElementById('speechToggleBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.toggle('open');});},
+    speak: function(t,c){if(!t)return;this.stop();var u=new SpeechSynthesisUtterance(t);u.lang=this.voiceURI;u.rate=this.rate;u.onend=function(){if(c)c();};this.currentUtterance=u;this.synthesis.speak(u);},
+    speakDialogue: function(id,c){var s=this,el=document.getElementById(id),ls=el?el.querySelectorAll('.en-text'):[],i=0;this.stop();(function n(){if(i>=ls.length){if(c)c();return;}var e=ls[i],t=e.getAttribute('data-speak')||e.textContent;if(!t){i++;n();return;}e.classList.add('speaking');var u=new SpeechSynthesisUtterance(t);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){e.classList.remove('speaking');i++;setTimeout(n,500);};u.onerror=function(){e.classList.remove('speaking');i++;setTimeout(n,200);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    speakVocabSection: function(id,c){var s=this,el=document.getElementById(id),cs=el?el.querySelectorAll('.vocab-card'):[],i=0;this.stop();(function n(){if(i>=cs.length){if(c)c();return;}var e=cs[i],hw=e.querySelector('.headword'),ex=e.querySelector('.example .wotd-say'),t=[];if(hw)t.push(hw.getAttribute('data-speak')||hw.textContent);if(ex)t.push(ex.getAttribute('data-speak')||ex.textContent.replace(/<[^>]+>/g,'').trim());var ft=t.join('. ');if(!ft){i++;n();return;}hw.classList.add('speaking');var u=new SpeechSynthesisUtterance(ft);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){hw.classList.remove('speaking');i++;setTimeout(n,600);};u.onerror=function(){hw.classList.remove('speaking');i++;setTimeout(n,300);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    stop: function(){this.synthesis.cancel();this.speaking=false;}
+  };SpeechManager.init();
+  document.querySelectorAll('.wotd-say').forEach(function(el){el.addEventListener('click',function(){SpeechManager.speak(this.getAttribute('data-speak')||this.textContent);});});
+  document.querySelectorAll('.speak-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var d=this.getAttribute('data-dialogue'),v=this.getAttribute('data-vocab'),t=this.getAttribute('data-target');if(this.classList.contains('speaking')){SpeechManager.stop();this.classList.remove('speaking');return;}this.classList.add('speaking');var done=function(){btn.classList.remove('speaking');};if(d){SpeechManager.speakDialogue(d,done);}else if(v){SpeechManager.speakVocabSection(v,done);}else if(t){var tg=document.getElementById(t);if(!tg){btn.classList.remove('speaking');return;}SpeechManager.speak(tg.textContent.replace(/<[^>]+>/g,''),done);}else{btn.classList.remove('speaking');}});});
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();var hw=this.previousElementSibling;if(hw&&hw.classList.contains('wotd-say')){var t=hw.getAttribute('data-speak')||hw.textContent;SpeechManager.speak(t);}});});
+  (function(){var btn=document.getElementById('expandAllBtn');if(!btn)return;btn.addEventListener('click',function(){var ad=document.querySelectorAll('.module,.exam-module');var ao=true;for(var i=0;i<ad.length;i++){if(!ad[i].hasAttribute('open')){ao=false;break;}};for(var i=0;i<ad.length;i++){if(ao)ad[i].removeAttribute('open');else ad[i].setAttribute('open','');};btn.textContent=ao?'📂 展开全部模块':'📖 收起全部模块';});})();
+  var s=document.getElementById('sidebar'),k='eng8-theme-sidebar';if(!s)return;
+  if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
+  window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=window.scrollY>400?'flex':'none';},{passive:true});
+  document.getElementById('backToTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution');});});
+})();
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);localStorage.setItem("eng8-theme",t);var btn=document.getElementById("themeToggle");if(btn)btn.textContent=t==="dark"?"☀️":"🌙";}
+function toggleTheme(){setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark");}
+</script></body></html>

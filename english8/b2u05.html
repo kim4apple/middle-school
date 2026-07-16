@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U5 What were you doing when the rainstorm came? | 初中英语八年级</title>
+<link rel="stylesheet" href="css/english8.css">
+<style>
+.speak-btn { display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;color:var(--accent);border:1px solid var(--border);border-radius:4px;padding:2px 8px;background:var(--bg);transition:background 0.15s; }
+.speak-btn:hover { background:var(--accent-light); }
+.speak-btn.speaking { background:var(--eng-amber-light);color:var(--eng-amber);border-color:var(--eng-amber); }
+.headword-speak-indicator { font-size:11px;margin-left:3px;opacity:0.55;cursor:pointer;vertical-align:super;line-height:1; }
+.headword-speak-indicator:hover { opacity:1; }
+.wotd-say { cursor:pointer;transition:color 0.15s; }
+.wotd-say:hover { color:var(--accent); }
+.wotd-say.speaking { color:var(--eng-pink); }
+.speech-panel { position:fixed;bottom:80px;right:24px;z-index:999;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);padding:14px 18px;display:none;min-width:180px; }
+.speech-panel.open { display:block; }
+.speech-panel .row { display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px; }
+.speech-panel .row label { color:var(--text-secondary);font-size:12px;min-width:36px; }
+.speech-panel select,.speech-panel input[type="range"] { flex:1; }
+.speech-panel button { padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px; }
+.speech-panel button:hover { background:var(--accent-light); }
+.speech-toggle-btn { position:fixed;bottom:24px;right:76px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--accent);cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center; }
+.speech-toggle-btn:hover { background:var(--accent-light); }
+.en-text.speaking { background:var(--eng-amber-light);border-radius:4px;padding:2px 4px;transition:background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background:#452a08; }
+.detail-module { content-visibility:auto;contain-intrinsic-size:300px; }
+.reading { content-visibility:auto;contain-intrinsic-size:400px; }
+</style>
+<script>(function(){var t=localStorage.getItem("eng8-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+    <nav id="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="margin-bottom:0;">英语八年级</h2>
+        <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+      </div><nav>
+        <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../grammar.html" style="font-size:13px;">📌 语法全景图</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 八 上 ━━</a>
+        <a href="u01.html">U1 Happy Holiday!</a>
+        <a href="u02.html">U2 How often do you exercise?</a>
+        <a href="u03.html">U3 I'm more outgoing than my sister.</a>
+        <a href="u04.html">U4 What's the best movie theater?</a>
+        <a href="u05.html">U5 Do you want to watch a game show?</a>
+        <a href="u06.html">U6 I'm going to study computer science.</a>
+        <a href="u07.html">U7 Will people have robots?</a>
+        <a href="u08.html">U8 Let's Communicate!</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 八 下 ━━</a>
+        <a href="b2u01.html">U1 Time to Relax!</a>
+        <a href="b2u02.html">U2 Let's clean up!</a>
+        <a href="b2u03.html">U3 Could you please clean your room?</a>
+        <a href="b2u04.html">U4 Why don't you talk to your parents?</a>
+        <a href="b2u05.html" class="active">U5 What were you doing when the rainstorm came?</a>
+        <a href="b2u06.html">U6 An old man tried to move the mountains.</a>
+        <a href="b2u07.html">U7 What's the highest mountain in the world?</a>
+        <a href="b2u08.html">U8 Making a Difference</a>
+      </nav>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+    </nav>
+<main id="content">
+<div class="cover"><div class="sub-en">U5</div><h1>What were you doing when the rainstorm came?</h1><p>过去进行</p></div>
+<div class="unit-meta"><span>📖 话题：Past Continuous Tense</span><span>💬 功能：Talk about what was happening at a specific past time</span><span>📚 语法：过去进行时（was/were + doing）· when / while 引导时间状语从句</span><span>📝 写作：An Unforgettable Moment</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能用 was/were doing 描述过去某刻正在做的事</label>
+  <label><input type="checkbox"> 能用 when 和 while 连接时间状语从句</label>
+  <label><input type="checkbox"> 能区分过去进行时和一般过去时</label>
+  <label><input type="checkbox"> 能写一段难忘时刻的短文</label></div>
+<details class="module" open><summary>📖 课文精讲 · What were you doing when the rainstorm came?</summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：暴风雨过后，同学们分享昨天下午暴风雨来临时他们在做什么。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
+<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Lisa:</span><span class="en-text wotd-say" data-speak="What were you doing when the rainstorm came yesterday?">What were you doing when the rainstorm came yesterday?</span></div>
+      <div class="dialogue-line"><span class="speaker">Tom:</span><span class="en-text wotd-say" data-speak="I was playing basketball in the gym. We stopped immediately when we heard the thunder.">I was playing basketball in the gym. We stopped immediately when we heard the thunder.</span></div>
+      <div class="dialogue-line"><span class="speaker">Lisa:</span><span class="en-text wotd-say" data-speak="I was doing my homework in my room. While I was writing, the lights went out!">I was doing my homework in my room. While I was writing, the lights went out!</span></div>
+      <div class="dialogue-line"><span class="speaker">Amy:</span><span class="en-text wotd-say" data-speak="I was walking home from school. I was carrying an umbrella, but it was no use!">I was walking home from school. I was carrying an umbrella, but it was no use!</span></div>
+      <div class="dialogue-line"><span class="speaker">Tom:</span><span class="en-text wotd-say" data-speak="Were you scared?">Were you scared?</span></div>
+      <div class="dialogue-line"><span class="speaker">Amy:</span><span class="en-text wotd-say" data-speak="Yes, I was. While I was running, I fell and got wet all over.">Yes, I was. While I was running, I fell and got wet all over.</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>Lisa:</strong> 昨天暴风雨来的时候你在做什么？</p>
+        <p><strong>Tom:</strong> 我在体育馆打篮球。听到雷声我们立刻停下了。</p>
+        <p><strong>Lisa:</strong> 我在房间写作业。正写着，灯灭了！</p>
+        <p><strong>Amy:</strong> 我正从学校走回家。我带了伞，但根本没用！</p>
+        <p><strong>Tom:</strong> 你害怕吗？</p>
+        <p><strong>Amy:</strong> 是的。我跑的时候摔倒了，全身都湿了。</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p><strong>1.</strong> <em>What were you doing when the rainstorm came?</em> → 过去进行时问句：<strong>What + was/were + 主语 + doing + when…?</strong></p>
+      <p><strong>2.</strong> <em>I was playing basketball when the rainstorm came.</em> → 长动作（was playing）被短动作（came）打断，用 when。</p>
+      <p><strong>3.</strong> <em>While I was writing, the lights went out.</em> → <strong>while + 过去进行时</strong> 表示"在做某事期间"。</p>
+      <p><strong>4.</strong> <em>While I was running, I fell.</em> → while 从句用过去进行时，主句用一般过去时。</p></div></div></details>
+<details class="module" open><summary>📝 重点词汇 · 过去进行 <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="rainstorm">rainstorm</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈreɪnstɔːrm/</span><span class="pos">n.</span>
+        <div class="definition">暴风雨</div>
+        <div class="example"><span class="wotd-say" data-speak="The rainstorm lasted for two hours.">The rainstorm lasted for two hours.</span><span class="trans">暴风雨持续了两小时。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="alarm">alarm</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/əˈlɑːrm/</span><span class="pos">n.</span>
+        <div class="definition">闹钟；警报</div>
+        <div class="example"><span class="wotd-say" data-speak="I didn't hear the alarm this morning.">I didn't hear the alarm this morning.</span><span class="trans">今早我没听到闹钟。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="begin">begin</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/bɪˈɡɪn/</span><span class="pos">v.</span>
+        <div class="definition">开始</div>
+        <div class="example"><span class="wotd-say" data-speak="The storm began at 4 p.m.">The storm began at 4 p.m.</span><span class="trans">暴风雨下午 4 点开始。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="heavily">heavily</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈhevɪli/</span><span class="pos">adv.</span>
+        <div class="definition">大量地；沉重地</div>
+        <div class="example"><span class="wotd-say" data-speak="It was raining heavily outside.">It was raining heavily outside.</span><span class="trans">外面下着大雨。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="suddenly">suddenly</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈsʌdənli/</span><span class="pos">adv.</span>
+        <div class="definition">突然</div>
+        <div class="example"><span class="wotd-say" data-speak="Suddenly, the lights went out.">Suddenly, the lights went out.</span><span class="trans">突然，灯灭了。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="strange">strange</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/streɪndʒ/</span><span class="pos">adj.</span>
+        <div class="definition">奇怪的</div>
+        <div class="example"><span class="wotd-say" data-speak="I heard a strange noise.">I heard a strange noise.</span><span class="trans">我听到一个奇怪的声音。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="report">report</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/rɪˈpɔːrt/</span><span class="pos">v./n.</span>
+        <div class="definition">报道；报告</div>
+        <div class="example"><span class="wotd-say" data-speak="The weather report said there would be a storm.">The weather report said there would be a storm.</span><span class="trans">天气预报说有暴风雨。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="area">area</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈeriə/</span><span class="pos">n.</span>
+        <div class="definition">地区；区域</div>
+        <div class="example"><span class="wotd-say" data-speak="Many areas were flooded.">Many areas were flooded.</span><span class="trans">很多地区被淹了。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="wind">wind</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/wɪnd/</span><span class="pos">n.</span>
+        <div class="definition">风</div>
+        <div class="example"><span class="wotd-say" data-speak="The wind was blowing strongly.">The wind was blowing strongly.</span><span class="trans">风很大。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="fallen">fallen</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈfɔːlən/</span><span class="pos">adj.</span>
+        <div class="definition">倒下的；落下的</div>
+        <div class="example"><span class="wotd-say" data-speak="There were fallen trees on the road.">There were fallen trees on the road.</span><span class="trans">路上有倒下的树。</span></div>
+      </div></div></div></details>
+<details class="module" open><summary>🔤 重点句型 · Sentence Patterns</summary><div class="content"><div class="pattern-grid">      <div class="pattern-card">
+        <div class="structure">was/were + doing</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>过去进行时基本结构</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1">I <span class="slot">was reading</span> at 8 p.m. / They <span class="slot">were playing</span> soccer then.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">…when…（when + 一般过去时）</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>长动作被短动作打断</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp2">I <span class="slot">was sleeping when</span> the phone rang.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">…while…（while + 过去进行时）</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>两个动作同时进行</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp3">She <span class="slot">was cooking while</span> he was watching TV.</span></div>
+      </div></div></div></details>
+<details class="module detail-module" open><summary>📚 语法聚焦 · 过去进行时（was/were + doing） <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module"><h3>过去进行时的构成</h3>
+<table class="grammar-table">
+<tr><th>人称</th><th>was/were</th><th>动词形式</th><th>示例</th></tr>
+<tr><td>I / He / She / It</td><td>was</td><td>doing</td><td>I was sleeping.</td></tr>
+<tr><td>We / You / They</td><td>were</td><td>doing</td><td>They were running.</td></tr>
+</table>
+<h3>when vs while</h3>
+<table class="grammar-table">
+<tr><th>连词</th><th>用法</th><th>示例</th></tr>
+<tr><td>when</td><td>+ 短暂性动词（一般过去时）</td><td>I was eating when he came.</td></tr>
+<tr><td>when</td><td>+ 延续性动词（过去进行时）</td><td>When I was sleeping, someone knocked.</td></tr>
+<tr><td>while</td><td>+ 延续性动词（过去进行时）</td><td>While I was walking, it started to rain.</td></tr>
+<tr><td>while</td><td>+ 两个同时进行的动作</td><td>He was singing while she was dancing.</td></tr>
+</table>
+</div><div class="chinese-error">      <p>❌ <span class="wrong" data-speak="I was play basketball when it rained.">I was play basketball when it rained.</span>（过去进行时要加 -ing）</p>
+      <p>✅ <span class="correct" data-speak="I was playing basketball when it rained.">I was playing basketball when it rained.</span></p>
+      <p>❌ <span class="wrong" data-speak="While I watched TV, my mom was cooking.">While I watched TV, my mom was cooking.</span>（while 后多用进行时）</p>
+      <p>✅ <span class="correct" data-speak="While I was watching TV, my mom was cooking.">While I was watching TV, my mom was cooking.</span></p></div></div></details>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[过去进行] I ____ (watch) TV at 8 p.m. last night.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>was watching</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[过去进行] They ____ (play) football when it started to rain.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>were playing</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[选择] ____ (When / While) I was reading, the phone rang.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>When / While (均可，注意用法)</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[改错] We was having dinner when the lights went out.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>We were having dinner when the lights went out.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[句型] I was sleeping. The doorbell rang. (合并)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>I was sleeping when the doorbell rang.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[填空] While I ____ (walk) home, I met an old friend.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>was walking</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">[汉译英] 昨天下午 3 点你在做什么？我正在图书馆看书。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>What were you doing at 3 p.m. yesterday? I was reading in the library.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">[补全] A: I called you at 7 p.m. but nobody answered.<br>B: Oh, I ____ ____ (take) a shower at that time.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>was taking</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>📖 阅读专项 · The Day the Storm Came</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">Last summer, a terrible storm hit our town. I will never forget that afternoon.</p>
+      <p class="en-text">I was doing my homework when dark clouds started to cover the sky. While I was looking out of the window, the wind began to blow heavily. Trees were swaying. Soon, the rain was pouring down.</p>
+      <p class="en-text">My mom was cooking in the kitchen. My dad was trying to close all the windows. I felt a little scared.</p>
+      <p class="en-text">After the storm, we went outside. There were fallen branches everywhere. But our neighbors were already helping each other clean up. Although the storm was strong, our community was stronger.</p><div class="gloss"><span>hit v. 袭击</span> <span>cloud n. 云</span> <span>cover v. 覆盖</span> <span>sway v. 摇摆</span> <span>pour v. 倾泻</span> <span>branch n. 树枝</span> <span>community n. 社区</span> </div></div>    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">1. What was the writer doing when dark clouds appeared?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Doing homework.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">2. What was the writer's mom doing during the storm?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Cooking in the kitchen.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★★</span>
+      <div class="q-body">3. What did the writer see after the storm?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Fallen branches everywhere and neighbors helping each other clean up.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>🏆 中考题型专练 · 完形填空</summary><div class="content exam-section"><p style="font-size:13px;margin-bottom:8px;">阅读短文，选择最佳选项。</p><div class="reading-passage" style="background:var(--bg-secondary);">      <p>Yesterday at 6 p.m., a fire alarm (1)____ in our building. I (2)____ my homework. My mom (3)____ dinner in the kitchen. We quickly went outside. While we (4)____ for the firefighters, I saw my neighbor helping an old lady down the stairs. Everyone was safe in the end. While the firefighters (5)____ the fire, we waited outside.</p></div><div style="margin:4px 0;font-size:13px;"><strong>1.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_1." disabled> A. go off</span> <span style="margin-right:12px;"><input type="radio" name="exam_1." disabled> B. went off</span> <span style="margin-right:12px;"><input type="radio" name="exam_1." disabled> C. going off</span> <span style="margin-right:12px;"><input type="radio" name="exam_1." disabled> D. goes off</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>2.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_2." disabled> A. do</span> <span style="margin-right:12px;"><input type="radio" name="exam_2." disabled> B. did</span> <span style="margin-right:12px;"><input type="radio" name="exam_2." disabled> C. was doing</span> <span style="margin-right:12px;"><input type="radio" name="exam_2." disabled> D. am doing</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>3.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_3." disabled> A. was cooking</span> <span style="margin-right:12px;"><input type="radio" name="exam_3." disabled> B. cooking</span> <span style="margin-right:12px;"><input type="radio" name="exam_3." disabled> C. cooks</span> <span style="margin-right:12px;"><input type="radio" name="exam_3." disabled> D. cooked</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>4.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_4." disabled> A. wait</span> <span style="margin-right:12px;"><input type="radio" name="exam_4." disabled> B. waited</span> <span style="margin-right:12px;"><input type="radio" name="exam_4." disabled> C. were waiting</span> <span style="margin-right:12px;"><input type="radio" name="exam_4." disabled> D. are waiting</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>5.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_5." disabled> A. puts out</span> <span style="margin-right:12px;"><input type="radio" name="exam_5." disabled> B. putting out</span> <span style="margin-right:12px;"><input type="radio" name="exam_5." disabled> C. were putting out</span> <span style="margin-right:12px;"><input type="radio" name="exam_5." disabled> D. are putting out</span> </div>
+<div class="exam-q" style="border-left-color:#f59e0b;"><span class="q-tag" style="background:#f59e0b;color:#fff;">答案</span><div class="q-body">1. B (went off)；2. C (was doing)；3. A (was cooking)；4. C (were waiting)；5. C (were putting out)</div></div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · An Unforgettable Moment</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">请以"An Unforgettable Moment"为题，写 70 词短文描述一个你难忘的时刻（用过去进行时）。</div></div><div class="writing-framework">      <div class="fw-step">开头：时间+地点+事件背景。</div>
+      <div class="fw-step">主体：当时你在做什么（过去进行时）。</div>
+      <div class="fw-step">结尾：你的感受和收获。</div></div><div class="writing-model"><div class="en">I will never forget the moment I won first prize in the English speech contest. When the host announced my name, I was sitting in my seat and my heart was beating fast. While I was walking to the stage, I could feel everyone's eyes on me. I took a deep breath and started my speech. When I finished, everyone was clapping. It was the best moment of my life!</div><div class="trans">我永远不会忘记英语演讲比赛得一等奖的那一刻。主持人宣布我的名字时，我正坐在座位上，心跳加速。上台时，我能感到所有人的目光。我深吸一口气开始了演讲。结束时，所有人都在鼓掌。那是我人生中最美好的一刻！</div></div></div></details>
+<details class="module detail-module" open><summary>🎯 Project · News Report: What Were People Doing?</summary><div class="content project-module"><div class="project-brief"><div class="project-title">News Report: What Were People Doing?</div><div class="project-desc">模拟一个新闻事件（火灾/地震/暴风雨），采访 3 位"目击者"（同学扮演），询问事件发生时他们在做什么。</div></div><div class="project-steps">      <div class="step"><span class="step-num">1</span><span class="step-text">小组选择一个"新闻事件"。</span></div>
+      <div class="step"><span class="step-num">2</span><span class="step-text">一人当记者，三人当目击者。</span></div>
+      <div class="step"><span class="step-num">3</span><span class="step-text">记者准备采访问题（用过去进行时）。</span></div>
+      <div class="step"><span class="step-num">4</span><span class="step-text">排练并在班里展示。</span></div></div><div class="project-rubric"><table><tr><th>#</th><th>评价标准</th></tr><tr><td>1.</td><td>事件设定合理</td></tr>
+<tr><td>2.</td><td>采访使用过去进行时</td></tr>
+<tr><td>3.</td><td>目击者回答详细</td></tr>
+<tr><td>4.</td><td>展示有新闻效果</td></tr></table></div></div></details>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 was/were doing 表达</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 when/while 连接句子</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能区分一般过去时和过去进行时</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能描述难忘时刻</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>假装你是新闻记者，用英语报道昨天下午 3 点发生的事件，采访 3 个"目击者"当时在做什么。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">用 was/were doing 写 5 个句子</span>
+    <span class="review-dot">用 when 和 while 各写 2 个从句</span>
+    <span class="review-dot">改写 5 个一般过去时为过去进行时</span>
+    <span class="review-dot">写一段你在做的事被打断的经历</span></div>
+<div class="next-stop" style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;"><a href="b2u04.html" class="nav-arrow">← 上一单元</a><a href="b2u06.html" class="nav-arrow">下一单元 →</a></div>
+<div class="next-stop" style="margin-top:8px;"><strong>➡️ 下一单元：An old man tried to move the mountains.</strong><br>下一单元你将学习如何用英语讲故事，包括连词 unless / as soon as / so…that。</div>
+</main>
+<div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
+<button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis, currentUtterance: null, speaking: false, rate: 0.9, voiceURI: 'en-US',
+    init: function(){var s=this;document.getElementById('speechRate').addEventListener('input',function(){s.rate=+this.value;document.getElementById('speechRateLabel').textContent=this.value;});document.getElementById('speechVoice').addEventListener('change',function(){s.voiceURI=this.value;localStorage.setItem('speech-voice',this.value);});document.getElementById('speechStopBtn').addEventListener('click',function(){s.stop();});document.getElementById('speechCloseBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.remove('open');});document.getElementById('speechToggleBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.toggle('open');});},
+    speak: function(t,c){if(!t)return;this.stop();var u=new SpeechSynthesisUtterance(t);u.lang=this.voiceURI;u.rate=this.rate;u.onend=function(){if(c)c();};this.currentUtterance=u;this.synthesis.speak(u);},
+    speakDialogue: function(id,c){var s=this,el=document.getElementById(id),ls=el?el.querySelectorAll('.en-text'):[],i=0;this.stop();(function n(){if(i>=ls.length){if(c)c();return;}var e=ls[i],t=e.getAttribute('data-speak')||e.textContent;if(!t){i++;n();return;}e.classList.add('speaking');var u=new SpeechSynthesisUtterance(t);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){e.classList.remove('speaking');i++;setTimeout(n,500);};u.onerror=function(){e.classList.remove('speaking');i++;setTimeout(n,200);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    speakVocabSection: function(id,c){var s=this,el=document.getElementById(id),cs=el?el.querySelectorAll('.vocab-card'):[],i=0;this.stop();(function n(){if(i>=cs.length){if(c)c();return;}var e=cs[i],hw=e.querySelector('.headword'),ex=e.querySelector('.example .wotd-say'),t=[];if(hw)t.push(hw.getAttribute('data-speak')||hw.textContent);if(ex)t.push(ex.getAttribute('data-speak')||ex.textContent.replace(/<[^>]+>/g,'').trim());var ft=t.join('. ');if(!ft){i++;n();return;}hw.classList.add('speaking');var u=new SpeechSynthesisUtterance(ft);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){hw.classList.remove('speaking');i++;setTimeout(n,600);};u.onerror=function(){hw.classList.remove('speaking');i++;setTimeout(n,300);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    stop: function(){this.synthesis.cancel();this.speaking=false;}
+  };SpeechManager.init();
+  document.querySelectorAll('.wotd-say').forEach(function(el){el.addEventListener('click',function(){SpeechManager.speak(this.getAttribute('data-speak')||this.textContent);});});
+  document.querySelectorAll('.speak-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var d=this.getAttribute('data-dialogue'),v=this.getAttribute('data-vocab'),t=this.getAttribute('data-target');if(this.classList.contains('speaking')){SpeechManager.stop();this.classList.remove('speaking');return;}this.classList.add('speaking');var done=function(){btn.classList.remove('speaking');};if(d){SpeechManager.speakDialogue(d,done);}else if(v){SpeechManager.speakVocabSection(v,done);}else if(t){var tg=document.getElementById(t);if(!tg){btn.classList.remove('speaking');return;}SpeechManager.speak(tg.textContent.replace(/<[^>]+>/g,''),done);}else{btn.classList.remove('speaking');}});});
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();var hw=this.previousElementSibling;if(hw&&hw.classList.contains('wotd-say')){var t=hw.getAttribute('data-speak')||hw.textContent;SpeechManager.speak(t);}});});
+  (function(){var btn=document.getElementById('expandAllBtn');if(!btn)return;btn.addEventListener('click',function(){var ad=document.querySelectorAll('.module,.exam-module');var ao=true;for(var i=0;i<ad.length;i++){if(!ad[i].hasAttribute('open')){ao=false;break;}};for(var i=0;i<ad.length;i++){if(ao)ad[i].removeAttribute('open');else ad[i].setAttribute('open','');};btn.textContent=ao?'📂 展开全部模块':'📖 收起全部模块';});})();
+  var s=document.getElementById('sidebar'),k='eng8-theme-sidebar';if(!s)return;
+  if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
+  window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=window.scrollY>400?'flex':'none';},{passive:true});
+  document.getElementById('backToTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution');});});
+})();
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);localStorage.setItem("eng8-theme",t);var btn=document.getElementById("themeToggle");if(btn)btn.textContent=t==="dark"?"☀️":"🌙";}
+function toggleTheme(){setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark");}
+</script></body></html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U4 Why don't you talk to your parents? | 初中英语八年级</title>
+<link rel="stylesheet" href="css/english8.css">
+<style>
+.speak-btn { display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;color:var(--accent);border:1px solid var(--border);border-radius:4px;padding:2px 8px;background:var(--bg);transition:background 0.15s; }
+.speak-btn:hover { background:var(--accent-light); }
+.speak-btn.speaking { background:var(--eng-amber-light);color:var(--eng-amber);border-color:var(--eng-amber); }
+.headword-speak-indicator { font-size:11px;margin-left:3px;opacity:0.55;cursor:pointer;vertical-align:super;line-height:1; }
+.headword-speak-indicator:hover { opacity:1; }
+.wotd-say { cursor:pointer;transition:color 0.15s; }
+.wotd-say:hover { color:var(--accent); }
+.wotd-say.speaking { color:var(--eng-pink); }
+.speech-panel { position:fixed;bottom:80px;right:24px;z-index:999;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);padding:14px 18px;display:none;min-width:180px; }
+.speech-panel.open { display:block; }
+.speech-panel .row { display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px; }
+.speech-panel .row label { color:var(--text-secondary);font-size:12px;min-width:36px; }
+.speech-panel select,.speech-panel input[type="range"] { flex:1; }
+.speech-panel button { padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px; }
+.speech-panel button:hover { background:var(--accent-light); }
+.speech-toggle-btn { position:fixed;bottom:24px;right:76px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--accent);cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center; }
+.speech-toggle-btn:hover { background:var(--accent-light); }
+.en-text.speaking { background:var(--eng-amber-light);border-radius:4px;padding:2px 4px;transition:background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background:#452a08; }
+.detail-module { content-visibility:auto;contain-intrinsic-size:300px; }
+.reading { content-visibility:auto;contain-intrinsic-size:400px; }
+</style>
+<script>(function(){var t=localStorage.getItem("eng8-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+    <nav id="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="margin-bottom:0;">英语八年级</h2>
+        <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+      </div><nav>
+        <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../grammar.html" style="font-size:13px;">📌 语法全景图</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 八 上 ━━</a>
+        <a href="u01.html">U1 Happy Holiday!</a>
+        <a href="u02.html">U2 How often do you exercise?</a>
+        <a href="u03.html">U3 I'm more outgoing than my sister.</a>
+        <a href="u04.html">U4 What's the best movie theater?</a>
+        <a href="u05.html">U5 Do you want to watch a game show?</a>
+        <a href="u06.html">U6 I'm going to study computer science.</a>
+        <a href="u07.html">U7 Will people have robots?</a>
+        <a href="u08.html">U8 Let's Communicate!</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 八 下 ━━</a>
+        <a href="b2u01.html">U1 Time to Relax!</a>
+        <a href="b2u02.html">U2 Let's clean up!</a>
+        <a href="b2u03.html">U3 Could you please clean your room?</a>
+        <a href="b2u04.html" class="active">U4 Why don't you talk to your parents?</a>
+        <a href="b2u05.html">U5 What were you doing when the rainstorm came?</a>
+        <a href="b2u06.html">U6 An old man tried to move the mountains.</a>
+        <a href="b2u07.html">U7 What's the highest mountain in the world?</a>
+        <a href="b2u08.html">U8 Making a Difference</a>
+      </nav>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+    </nav>
+<main id="content">
+<div class="cover"><div class="sub-en">U4</div><h1>Why don't you talk to your parents?</h1><p>人际沟通</p></div>
+<div class="unit-meta"><span>📖 话题：Interpersonal Communication</span><span>💬 功能：Give advice and talk about problems</span><span>📚 语法：Why don't you…? / Why not…? 提建议 · until / although / so that 连词</span><span>📝 写作：Letter to Give Advice</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能用 Why don't you / Why not 提建议</label>
+  <label><input type="checkbox"> 能用 until / although / so that 连接句子</label>
+  <label><input type="checkbox"> 能描述人际矛盾并给出建议</label>
+  <label><input type="checkbox"> 能写一封建议信</label></div>
+<details class="module" open><summary>📖 课文精讲 · Why don't you talk to your parents?</summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：Li Ming 最近和好朋友闹矛盾了，向心理辅导员求助。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
+<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Li Ming:</span><span class="en-text wotd-say" data-speak="I have a problem. My best friend is angry with me, but I don't know why.">I have a problem. My best friend is angry with me, but I don't know why.</span></div>
+      <div class="dialogue-line"><span class="speaker">Counselor:</span><span class="en-text wotd-say" data-speak="I'm sorry to hear that. Why don't you talk to him directly?">I'm sorry to hear that. Why don't you talk to him directly?</span></div>
+      <div class="dialogue-line"><span class="speaker">Li Ming:</span><span class="en-text wotd-say" data-speak="I tried, but he wouldn't listen. He didn't talk to me until yesterday.">I tried, but he wouldn't listen. He didn't talk to me until yesterday.</span></div>
+      <div class="dialogue-line"><span class="speaker">Counselor:</span><span class="en-text wotd-say" data-speak="Although he was angry, communication is important. Why don't you write him a letter?">Although he was angry, communication is important. Why don't you write him a letter?</span></div>
+      <div class="dialogue-line"><span class="speaker">Li Ming:</span><span class="en-text wotd-say" data-speak="That's a good idea. I'll try it so that we can make up.">That's a good idea. I'll try it so that we can make up.</span></div>
+      <div class="dialogue-line"><span class="speaker">Counselor:</span><span class="en-text wotd-say" data-speak="You could also invite him to play basketball. Sports can help you relax and reconnect.">You could also invite him to play basketball. Sports can help you relax and reconnect.</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>Li Ming:</strong> 我遇到一个问题。我最好的朋友生我的气了，但我不知道为什么。</p>
+        <p><strong>Counselor:</strong> 听到这个我很难过。你为什么不直接和他谈谈呢？</p>
+        <p><strong>Li Ming:</strong> 我试过，但他不听。他直到昨天才和我说话。</p>
+        <p><strong>Counselor:</strong> 虽然他在生气，但沟通很重要。你为什么不给他写封信呢？</p>
+        <p><strong>Li Ming:</strong> 好主意。我试试，这样我们能和好。</p>
+        <p><strong>Counselor:</strong> 你也可以邀请他打篮球。运动能帮助放松和重新联系。</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p><strong>1.</strong> <em>Why don't you talk to him directly?</em> → <strong>Why don't you + 动词原形?</strong> "你为什么不……？" 提建议。</p>
+      <p><strong>2.</strong> <em>He didn't talk to me until yesterday.</em> → <strong>not…until</strong> "直到……才"。</p>
+      <p><strong>3.</strong> <em>Although he was angry, communication is important.</em> → <strong>Although + 从句</strong> "虽然……但是"（不和 but 连用）。</p>
+      <p><strong>4.</strong> <em>I'll try it so that we can make up.</em> → <strong>so that</strong> "以便" 表目的。<strong>make up</strong> "和好"。</p></div></div></details>
+<details class="module" open><summary>📝 重点词汇 · 人际沟通 <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="communicate">communicate</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/kəˈmjuːnɪkeɪt/</span><span class="pos">v.</span>
+        <div class="definition">沟通；交流</div>
+        <div class="example"><span class="wotd-say" data-speak="We need to communicate with each other.">We need to communicate with each other.</span><span class="trans">我们需要互相沟通。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="directly">directly</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/dəˈrektli/</span><span class="pos">adv.</span>
+        <div class="definition">直接地</div>
+        <div class="example"><span class="wotd-say" data-speak="Talk to him directly.">Talk to him directly.</span><span class="trans">直接跟他谈谈。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="although">although</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɔːlˈðoʊ/</span><span class="pos">conj.</span>
+        <div class="definition">虽然；尽管</div>
+        <div class="example"><span class="wotd-say" data-speak="Although it's hard, you should try.">Although it's hard, you should try.</span><span class="trans">虽然很难，但你应尝试。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="until">until</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ənˈtɪl/</span><span class="pos">conj./prep.</span>
+        <div class="definition">直到</div>
+        <div class="example"><span class="wotd-say" data-speak="I will wait until you come back.">I will wait until you come back.</span><span class="trans">我会等到你回来。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="advice">advice</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ədˈvaɪs/</span><span class="pos">n.</span>
+        <div class="definition">建议</div>
+        <div class="example"><span class="wotd-say" data-speak="Can you give me some advice?">Can you give me some advice?</span><span class="trans">你能给我一些建议吗？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="argue">argue</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈɑːrɡjuː/</span><span class="pos">v.</span>
+        <div class="definition">争论；争吵</div>
+        <div class="example"><span class="wotd-say" data-speak="Don't argue with your parents.">Don't argue with your parents.</span><span class="trans">不要和父母争吵。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="proper">proper</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈprɑːpər/</span><span class="pos">adj.</span>
+        <div class="definition">合适的；恰当的</div>
+        <div class="example"><span class="wotd-say" data-speak="We should find a proper time to talk.">We should find a proper time to talk.</span><span class="trans">我们应该找个合适的时间谈谈。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="explain">explain</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɪkˈspleɪn/</span><span class="pos">v.</span>
+        <div class="definition">解释</div>
+        <div class="example"><span class="wotd-say" data-speak="Let me explain how I feel.">Let me explain how I feel.</span><span class="trans">让我解释我的感受。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="relation">relation</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/rɪˈleɪʃn/</span><span class="pos">n.</span>
+        <div class="definition">关系</div>
+        <div class="example"><span class="wotd-say" data-speak="Good relations need good communication.">Good relations need good communication.</span><span class="trans">好的关系需要好的沟通。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="offer">offer</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈɔːfər/</span><span class="pos">v.</span>
+        <div class="definition">提供；主动提出</div>
+        <div class="example"><span class="wotd-say" data-speak="He offered to help me.">He offered to help me.</span><span class="trans">他主动提出帮我。</span></div>
+      </div></div></div></details>
+<details class="module" open><summary>🔤 重点句型 · Sentence Patterns</summary><div class="content"><div class="pattern-grid">      <div class="pattern-card">
+        <div class="structure">Why don't you + 动词?</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>提建议</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1"><strong>Why don't you</strong> <span class="slot">talk to him</span>?</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">Why not + 动词?</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>提建议（省略式）</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp2"><strong>Why not</strong> <span class="slot">try again</span>?</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">not…until…</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>直到……才</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp3">He <strong>didn't</strong> come <strong>until</strong> <span class="slot">8 o'clock</span>.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">Although…, …</div> <button class="speak-btn" data-target="sp4" title="朗读句型">🔊</button>
+        <div>虽然……但是</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp4"><strong>Although</strong> <span class="slot">it's hard</span>, you should keep trying.</span></div>
+      </div></div></div></details>
+<details class="module detail-module" open><summary>📚 语法聚焦 · 提建议 & until/although/so that <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module"><h3>提建议的多种方式</h3>
+<table class="grammar-table">
+<tr><th>表达</th><th>结构</th><th>示例</th></tr>
+<tr><td>Why don't you…</td><td>Why don't you + v.</td><td>Why don't you ask your teacher?</td></tr>
+<tr><td>Why not…</td><td>Why not + v.</td><td>Why not have a rest?</td></tr>
+<tr><td>You should…</td><td>You should + v.</td><td>You should talk to your parents.</td></tr>
+<tr><td>You could…</td><td>You could + v.</td><td>You could write a letter.</td></tr>
+</table>
+<h3>连词 until/although/so that</h3>
+<table class="grammar-table">
+<tr><th>连词</th><th>含义</th><th>示例</th></tr>
+<tr><td>until</td><td>直到</td><td>Wait until I come back.</td></tr>
+<tr><td>not…until</td><td>直到……才</td><td>He didn't sleep until 11 p.m.</td></tr>
+<tr><td>although</td><td>虽然</td><td>Although he was tired, he kept working.</td></tr>
+<tr><td>so that</td><td>以便</td><td>I got up early so that I could catch the bus.</td></tr>
+</table>
+</div><div class="chinese-error">      <p>❌ <span class="wrong" data-speak="Although he is busy, but he helps me.">Although he is busy, but he helps me.</span>（although 和 but 不能连用）</p>
+      <p>✅ <span class="correct" data-speak="Although he is busy, he helps me.">Although he is busy, he helps me.</span></p>
+      <p>❌ <span class="wrong" data-speak="Why don't you to ask him?">Why don't you to ask him?</span>（Why don't you 后加动词原形）</p>
+      <p>✅ <span class="correct" data-speak="Why don't you ask him?">Why don't you ask him?</span></p></div></div></details>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[建议] ____ ____ you ask your teacher for help?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Why don't</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[until] I will wait ____ you come back.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>until</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[although] ____ it rained, we still went out.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Although</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[改错] Why not to go with us?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Why not go with us?</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[连词] I woke up early ____ ____ (以便) I could catch the first bus.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>so that</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[句型] He didn't sleep until midnight. (改为肯定句)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>He slept at midnight.</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">[汉译英] 虽然作业很难，但我一直坚持到了最后。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Although the homework was hard, I kept trying until the end.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">[补全] A: I argued with my best friend.<br>B: ____ ____ ____ call her and say sorry?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Why don't you</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>📖 阅读专项 · How to Deal with Friendship Problems</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">Friendship is important, but problems can happen. Here are some tips to handle them.</p>
+      <p class="en-text">First, stay calm. Don't argue when you're angry. Take a deep breath and wait until you feel better.</p>
+      <p class="en-text">Second, talk about your feelings. Use "I" sentences. Say "I felt sad when you ignored me" instead of "You always ignore me."</p>
+      <p class="en-text">Third, try to understand your friend's point of view. Although you may disagree, respect each other's feelings.</p>
+      <p class="en-text">Finally, why not do something fun together? Playing sports or watching a movie can help you reconnect.</p><div class="gloss"><span>deal with 处理；应对</span> <span>handle v. 处理</span> <span>calm adj. 冷静的</span> <span>point of view 观点；立场</span> <span>reconnect v. 重新建立联系</span> </div></div>    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">1. What shouldn't you do when you're angry?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Argue.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">2. What kind of sentences should you use to talk about feelings?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>"I" sentences.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★★</span>
+      <div class="q-body">3. Why should you try to understand your friend's point of view?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Because although you may disagree, you should respect each other's feelings.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>🏆 中考题型专练 · 语法填空</summary><div class="content exam-section"><p style="font-size:13px;margin-bottom:8px;">用括号内连词或所给词的适当形式填空。</p><div class="reading-passage" style="background:var(--bg-secondary);">      <p>(1)____ (Although / Because) my sister is younger, she often gives me good advice. Last week, I (2)____ (argue) with my best friend. My sister said, "Why (3)____ you call her?" I followed her advice. (4)____ (Although / Until) I was nervous, I made the call. My friend and I talked (5)____ (until / unless) we understood each other. We made up in the end.</p></div><div class="exam-q" style="border-left-color:#f59e0b;"><span class="q-tag" style="background:#f59e0b;color:#fff;">答案</span><div class="q-body">(1) Although；(2) argued；(3) don't；(4) Although；(5) until</div></div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · Letter to Give Advice</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">你的朋友和妈妈吵架了，很伤心。请给他/她写一封 70 词的建议信，用到 Why don't you 和 although。</div></div><div class="writing-framework">      <div class="fw-step">开头：表达理解和关心。</div>
+      <div class="fw-step">主体：给出 2 条具体建议（用 Why don't you）。</div>
+      <div class="fw-step">结尾：鼓励和祝福。</div></div><div class="writing-model"><div class="en">Dear friend, I'm sorry to hear about your problem. Although your mom was angry, I believe she loves you. Why don't you talk to her when she is calm? You could say sorry first. Why not help with some housework to show you care? Good communication can solve many problems. I hope you and your mom can make up soon!</div><div class="trans">亲爱的朋友：听说你的问题我很难过。虽然你妈妈在生气，但我相信她爱你。你为什么不趁她冷静的时候和她谈谈？你可以先道歉。为什么不帮她做些家务来表现你的关心？好的沟通能解决很多问题。希望你们能尽快和好！</div></div></div></details>
+<details class="module detail-module" open><summary>🎯 Project · Agony Aunt Role-Play</summary><div class="content project-module"><div class="project-brief"><div class="project-title">Agony Aunt Role-Play</div><div class="project-desc">小组扮演"知心姐姐"(Agony Aunt)和求助者，A 描述一个生活中的难题，B 用 Why don't you / Why not / You should 给出建议。</div></div><div class="project-steps">      <div class="step"><span class="step-num">1</span><span class="step-text">A 准备一个生活中的人际难题。</span></div>
+      <div class="step"><span class="step-num">2</span><span class="step-text">B 用至少 3 种不同句式给出建议。</span></div>
+      <div class="step"><span class="step-num">3</span><span class="step-text">写在展示卡上。</span></div>
+      <div class="step"><span class="step-num">4</span><span class="step-text">全班面前表演。</span></div></div><div class="project-rubric"><table><tr><th>#</th><th>评价标准</th></tr><tr><td>1.</td><td>问题真实可信</td></tr>
+<tr><td>2.</td><td>给出 3 条以上建议</td></tr>
+<tr><td>3.</td><td>用了 3 种不同建议句式</td></tr>
+<tr><td>4.</td><td>表演有表现力</td></tr></table></div></div></details>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 Why don't you 和 Why not 提建议</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 until/although/so that</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能描述人际问题并给建议</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写建议信</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>假装你是心理咨询师(Agony Aunt)，用英语回答听众来信中的问题，用 Why don't you 和 Why not 给出建议。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">用 Why don't you 写 3 个建议</span>
+    <span class="review-dot">用 Why not 写 3 个建议</span>
+    <span class="review-dot">用 until/although/so that 各写 1 句</span>
+    <span class="review-dot">写一段处理朋友矛盾的对话</span></div>
+<div class="next-stop" style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;"><a href="b2u03.html" class="nav-arrow">← 上一单元</a><a href="b2u05.html" class="nav-arrow">下一单元 →</a></div>
+<div class="next-stop" style="margin-top:8px;"><strong>➡️ 下一单元：What were you doing when the rainstorm came?</strong><br>下一单元你将学习过去进行时(was/were doing)，描述过去某个时刻正在发生的事情。</div>
+</main>
+<div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
+<button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis, currentUtterance: null, speaking: false, rate: 0.9, voiceURI: 'en-US',
+    init: function(){var s=this;document.getElementById('speechRate').addEventListener('input',function(){s.rate=+this.value;document.getElementById('speechRateLabel').textContent=this.value;});document.getElementById('speechVoice').addEventListener('change',function(){s.voiceURI=this.value;localStorage.setItem('speech-voice',this.value);});document.getElementById('speechStopBtn').addEventListener('click',function(){s.stop();});document.getElementById('speechCloseBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.remove('open');});document.getElementById('speechToggleBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.toggle('open');});},
+    speak: function(t,c){if(!t)return;this.stop();var u=new SpeechSynthesisUtterance(t);u.lang=this.voiceURI;u.rate=this.rate;u.onend=function(){if(c)c();};this.currentUtterance=u;this.synthesis.speak(u);},
+    speakDialogue: function(id,c){var s=this,el=document.getElementById(id),ls=el?el.querySelectorAll('.en-text'):[],i=0;this.stop();(function n(){if(i>=ls.length){if(c)c();return;}var e=ls[i],t=e.getAttribute('data-speak')||e.textContent;if(!t){i++;n();return;}e.classList.add('speaking');var u=new SpeechSynthesisUtterance(t);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){e.classList.remove('speaking');i++;setTimeout(n,500);};u.onerror=function(){e.classList.remove('speaking');i++;setTimeout(n,200);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    speakVocabSection: function(id,c){var s=this,el=document.getElementById(id),cs=el?el.querySelectorAll('.vocab-card'):[],i=0;this.stop();(function n(){if(i>=cs.length){if(c)c();return;}var e=cs[i],hw=e.querySelector('.headword'),ex=e.querySelector('.example .wotd-say'),t=[];if(hw)t.push(hw.getAttribute('data-speak')||hw.textContent);if(ex)t.push(ex.getAttribute('data-speak')||ex.textContent.replace(/<[^>]+>/g,'').trim());var ft=t.join('. ');if(!ft){i++;n();return;}hw.classList.add('speaking');var u=new SpeechSynthesisUtterance(ft);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){hw.classList.remove('speaking');i++;setTimeout(n,600);};u.onerror=function(){hw.classList.remove('speaking');i++;setTimeout(n,300);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    stop: function(){this.synthesis.cancel();this.speaking=false;}
+  };SpeechManager.init();
+  document.querySelectorAll('.wotd-say').forEach(function(el){el.addEventListener('click',function(){SpeechManager.speak(this.getAttribute('data-speak')||this.textContent);});});
+  document.querySelectorAll('.speak-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var d=this.getAttribute('data-dialogue'),v=this.getAttribute('data-vocab'),t=this.getAttribute('data-target');if(this.classList.contains('speaking')){SpeechManager.stop();this.classList.remove('speaking');return;}this.classList.add('speaking');var done=function(){btn.classList.remove('speaking');};if(d){SpeechManager.speakDialogue(d,done);}else if(v){SpeechManager.speakVocabSection(v,done);}else if(t){var tg=document.getElementById(t);if(!tg){btn.classList.remove('speaking');return;}SpeechManager.speak(tg.textContent.replace(/<[^>]+>/g,''),done);}else{btn.classList.remove('speaking');}});});
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();var hw=this.previousElementSibling;if(hw&&hw.classList.contains('wotd-say')){var t=hw.getAttribute('data-speak')||hw.textContent;SpeechManager.speak(t);}});});
+  (function(){var btn=document.getElementById('expandAllBtn');if(!btn)return;btn.addEventListener('click',function(){var ad=document.querySelectorAll('.module,.exam-module');var ao=true;for(var i=0;i<ad.length;i++){if(!ad[i].hasAttribute('open')){ao=false;break;}};for(var i=0;i<ad.length;i++){if(ao)ad[i].removeAttribute('open');else ad[i].setAttribute('open','');};btn.textContent=ao?'📂 展开全部模块':'📖 收起全部模块';});})();
+  var s=document.getElementById('sidebar'),k='eng8-theme-sidebar';if(!s)return;
+  if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
+  window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=window.scrollY>400?'flex':'none';},{passive:true});
+  document.getElementById('backToTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution');});});
+})();
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);localStorage.setItem("eng8-theme",t);var btn=document.getElementById("themeToggle");if(btn)btn.textContent=t==="dark"?"☀️":"🌙";}
+function toggleTheme(){setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark");}
+</script></body></html>

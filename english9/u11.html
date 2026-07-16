@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U11 Sad movies make me cry. | 初中英语九年级</title>
+<link rel="stylesheet" href="css/english9.css">
+<style>
+.speak-btn { display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;color:var(--accent);border:1px solid var(--border);border-radius:4px;padding:2px 8px;background:var(--bg);transition:background 0.15s; }
+.speak-btn:hover { background:var(--accent-light); }
+.speak-btn.speaking { background:var(--eng-amber-light);color:var(--eng-amber);border-color:var(--eng-amber); }
+.headword-speak-indicator { font-size:11px;margin-left:3px;opacity:0.55;cursor:pointer;vertical-align:super;line-height:1; }
+.headword-speak-indicator:hover { opacity:1; }
+.wotd-say { cursor:pointer;transition:color 0.15s; }
+.wotd-say:hover { color:var(--accent); }
+.wotd-say.speaking { color:var(--eng-pink); }
+.speech-panel { position:fixed;bottom:80px;right:24px;z-index:999;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);padding:14px 18px;display:none;min-width:180px; }
+.speech-panel.open { display:block; }
+.speech-panel .row { display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px; }
+.speech-panel .row label { color:var(--text-secondary);font-size:12px;min-width:36px; }
+.speech-panel select,.speech-panel input[type="range"] { flex:1; }
+.speech-panel button { padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px; }
+.speech-panel button:hover { background:var(--accent-light); }
+.speech-toggle-btn { position:fixed;bottom:24px;right:76px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--accent);cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center; }
+.speech-toggle-btn:hover { background:var(--accent-light); }
+.en-text.speaking { background:var(--eng-amber-light);border-radius:4px;padding:2px 4px;transition:background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background:#452a08; }
+.detail-module { content-visibility:auto;contain-intrinsic-size:300px; }
+.reading { content-visibility:auto;contain-intrinsic-size:400px; }
+</style>
+<script>(function(){var t=localStorage.getItem("eng9-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+    <nav id="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="margin-bottom:0;">英语九年级</h2>
+        <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+      </div><nav>
+        <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../grammar.html" style="font-size:13px;">📌 语法全景图</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 九年级全一册 ━━</a>
+        <a href="u01.html">U1 How can we become good learners?</a>
+        <a href="u02.html">U2 I think that mooncakes are delicious!</a>
+        <a href="u03.html">U3 Could you please tell me where the restrooms are?</a>
+        <a href="u04.html">U4 I used to be afraid of the dark.</a>
+        <a href="u05.html">U5 What are the shirts made of?</a>
+        <a href="u06.html">U6 When was it invented?</a>
+        <a href="u07.html">U7 Teenagers should be allowed to choose their own clothes.</a>
+        <a href="u08.html">U8 It must belong to Carla.</a>
+        <a href="u09.html">U9 I like music that I can dance to.</a>
+        <a href="u10.html">U10 You're supposed to shake hands.</a>
+        <a href="u11.html" class="active">U11 Sad movies make me cry.</a>
+        <a href="u12.html">U12 Life is full of the unexpected.</a>
+        <a href="u13.html">U13 We're trying to save the earth!</a>
+        <a href="u14.html">U14 I remember meeting all of you in Grade 7.</a>
+      </nav>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+    </nav>
+<main id="content">
+<div class="cover"><div class="sub-en">U11</div><h1>Sad movies make me cry.</h1><p>情感与感受</p></div>
+<div class="unit-meta"><span>📖 话题：Emotions and Feelings</span><span>💬 功能：Talk about how things affect you</span><span>📚 语法：Make + object + infinitive / adjective</span><span>📝 写作：Describe how something influences your feelings</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能用 make + 宾语 + 宾补表达影响</label>
+  <label><input type="checkbox"> 能描述事物对情感的影响</label>
+  <label><input type="checkbox"> 能谈论压力和情绪管理</label>
+  <label><input type="checkbox"> 能写关于情感体验的文章</label></div>
+<details class="module" open><summary>📖 课文精讲 · Sad movies make me cry.</summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：Amy和Bill看完一部悲伤的电影后在讨论他们的感受。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
+<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Amy:</span><span class="en-text wotd-say" data-speak="That movie was so sad! It made me cry.">That movie was so sad! It made me cry.</span></div>
+      <div class="dialogue-line"><span class="speaker">Bill:</span><span class="en-text wotd-say" data-speak="Me too. Sad movies always make me feel emotional.">Me too. Sad movies always make me feel emotional.</span></div>
+      <div class="dialogue-line"><span class="speaker">Amy:</span><span class="en-text wotd-say" data-speak="But I also liked it. The story was beautiful. It made me think about my family.">But I also liked it. The story was beautiful. It made me think about my family.</span></div>
+      <div class="dialogue-line"><span class="speaker">Bill:</span><span class="en-text wotd-say" data-speak="Yes, the ending was touching. Loud music sometimes makes me feel nervous, but the soundtrack in this movie made me feel peaceful.">Yes, the ending was touching. Loud music sometimes makes me feel nervous, but the soundtrack in this movie made me feel peaceful.</span></div>
+      <div class="dialogue-line"><span class="speaker">Amy:</span><span class="en-text wotd-say" data-speak="Really? Loud music makes me want to dance!">Really? Loud music makes me want to dance!</span></div>
+      <div class="dialogue-line"><span class="speaker">Bill:</span><span class="en-text wotd-say" data-speak="Haha, different things affect different people. The colors in the movie — the blue and gray — made me feel sad too.">Haha, different things affect different people. The colors in the movie — the blue and gray — made me feel sad too.</span></div>
+      <div class="dialogue-line"><span class="speaker">Amy:</span><span class="en-text wotd-say" data-speak="That's true. The gloomy weather in the movie also made me feel down.">That's true. The gloomy weather in the movie also made me feel down.</span></div>
+      <div class="dialogue-line"><span class="speaker">Bill:</span><span class="en-text wotd-say" data-speak="But the warm ending made me feel happy again. I think that's what makes a good movie — it takes you on an emotional journey.">But the warm ending made me feel happy again. I think that's what makes a good movie — it takes you on an emotional journey.</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>Amy:</strong> 那部电影太悲伤了！它让我哭了。</p>
+        <p><strong>Bill:</strong> 我也是。悲伤的电影总是让我情绪化。</p>
+        <p><strong>Amy:</strong> 但我也挺喜欢的。故事很美。它让我想到了我的家人。</p>
+        <p><strong>Bill:</strong> 是的，结局很感人。大声的音乐有时让我紧张，但这部电影的原声让我感到平静。</p>
+        <p><strong>Amy:</strong> 真的吗？大声的音乐让我想跳舞！</p>
+        <p><strong>Bill:</strong> 哈哈，不同的事物影响不同的人。电影中的颜色——蓝色和灰色——也让我感到悲伤。</p>
+        <p><strong>Amy:</strong> 没错。电影中阴沉的天气也让我心情低落。</p>
+        <p><strong>Bill:</strong> 但温暖的结局又让我开心起来。我认为这就是好电影的魅力——它带你踏上一段情感之旅。</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p>make + 宾语 + 形容词 表示「使某人感到……」— Sad movies make me <b>cry</b>.</p>
+      <p>make + 宾语 + 动词原形 表示「使某人做……」— The story made me <b>think</b> about my family.</p>
+      <p>make + 宾语 + 名词 表示「使某人成为……」— Hard work will make you <b>a success</b>.</p>
+      <p>其他使役动词还有 let, have, get（用法不同）。</p></div></div></details>
+<details class="module" open><summary>📝 重点词汇 · 情感与感受 <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="would rather">would rather</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈwʊd ˈræðər/</span><span class="pos">phrase</span>
+        <div class="definition">宁愿</div>
+        <div class="example"><span class="wotd-say" data-speak="I would rather stay at home.">I would rather stay at home.</span><span class="trans">我宁愿待在家里。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="drive">drive</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/draɪv/</span><span class="pos">v.</span>
+        <div class="definition">开车；迫使</div>
+        <div class="example"><span class="wotd-say" data-speak="His words drove me crazy.">His words drove me crazy.</span><span class="trans">他的话把我逼疯了。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="friendship">friendship</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈfrendʃɪp/</span><span class="pos">n.</span>
+        <div class="definition">友谊；友情</div>
+        <div class="example"><span class="wotd-say" data-speak="Friendship is very important.">Friendship is very important.</span><span class="trans">友谊非常重要。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="king">king</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/kɪŋ/</span><span class="pos">n.</span>
+        <div class="definition">国王</div>
+        <div class="example"><span class="wotd-say" data-speak="The king ruled the country wisely.">The king ruled the country wisely.</span><span class="trans">国王英明地统治着国家。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="prime">prime</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/praɪm/</span><span class="pos">adj.</span>
+        <div class="definition">主要的；首要的</div>
+        <div class="example"><span class="wotd-say" data-speak="The prime minister gave a speech.">The prime minister gave a speech.</span><span class="trans">首相发表了演讲。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="minister">minister</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈmɪnɪstər/</span><span class="pos">n.</span>
+        <div class="definition">部长；大臣</div>
+        <div class="example"><span class="wotd-say" data-speak="He is the minister of education.">He is the minister of education.</span><span class="trans">他是教育部长。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="wealth">wealth</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/welθ/</span><span class="pos">n.</span>
+        <div class="definition">财富</div>
+        <div class="example"><span class="wotd-say" data-speak="Health is more important than wealth.">Health is more important than wealth.</span><span class="trans">健康比财富更重要。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="fame">fame</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/feɪm/</span><span class="pos">n.</span>
+        <div class="definition">名声；声誉</div>
+        <div class="example"><span class="wotd-say" data-speak="He won fame as a writer.">He won fame as a writer.</span><span class="trans">他作为作家赢得了声誉。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="queen">queen</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/kwiːn/</span><span class="pos">n.</span>
+        <div class="definition">王后；女王</div>
+        <div class="example"><span class="wotd-say" data-speak="The queen was very kind.">The queen was very kind.</span><span class="trans">王后非常善良。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="pale">pale</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/peɪl/</span><span class="pos">adj.</span>
+        <div class="definition">苍白的</div>
+        <div class="example"><span class="wotd-say" data-speak="You look pale. Are you OK?">You look pale. Are you OK?</span><span class="trans">你看起来很苍白。你还好吗？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="examine">examine</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɪɡˈzæmɪn/</span><span class="pos">v.</span>
+        <div class="definition">检查；审查</div>
+        <div class="example"><span class="wotd-say" data-speak="The doctor examined the patient.">The doctor examined the patient.</span><span class="trans">医生检查了病人。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="nor">nor</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/nɔːr/</span><span class="pos">conj.</span>
+        <div class="definition">也不</div>
+        <div class="example"><span class="wotd-say" data-speak="He can neither read nor write.">He can neither read nor write.</span><span class="trans">他既不会读也不会写。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="neither">neither</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈnaɪðər/</span><span class="pos">pron./adv.</span>
+        <div class="definition">两者都不</div>
+        <div class="example"><span class="wotd-say" data-speak="Neither answer is correct.">Neither answer is correct.</span><span class="trans">两个答案都不对。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="banker">banker</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈbæŋkər/</span><span class="pos">n.</span>
+        <div class="definition">银行家</div>
+        <div class="example"><span class="wotd-say" data-speak="He works as a banker.">He works as a banker.</span><span class="trans">他是一名银行家。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="pale">pale</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/peɪl/</span><span class="pos">adj.</span>
+        <div class="definition">苍白的</div>
+        <div class="example"><span class="wotd-say" data-speak="His face turned pale.">His face turned pale.</span><span class="trans">他的脸色变苍白了。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="guilty">guilty</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈɡɪlti/</span><span class="pos">adj.</span>
+        <div class="definition">有罪的；内疚的</div>
+        <div class="example"><span class="wotd-say" data-speak="He felt guilty about lying.">He felt guilty about lying.</span><span class="trans">他为说谎感到内疚。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="truth">truth</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/truːθ/</span><span class="pos">n.</span>
+        <div class="definition">真相；事实</div>
+        <div class="example"><span class="wotd-say" data-speak="Tell me the truth.">Tell me the truth.</span><span class="trans">告诉我真相。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="general">general</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈdʒenrəl/</span><span class="pos">n./adj.</span>
+        <div class="definition">将军；一般的</div>
+        <div class="example"><span class="wotd-say" data-speak="The general led the army.">The general led the army.</span><span class="trans">将军领导军队。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="weight">weight</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/weɪt/</span><span class="pos">n.</span>
+        <div class="definition">重量；体重</div>
+        <div class="example"><span class="wotd-say" data-speak="My weight is 60 kilograms.">My weight is 60 kilograms.</span><span class="trans">我的体重是60公斤。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="goal">goal</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɡoʊl/</span><span class="pos">n.</span>
+        <div class="definition">目标；球门</div>
+        <div class="example"><span class="wotd-say" data-speak="Set a goal and work towards it.">Set a goal and work towards it.</span><span class="trans">设定一个目标并为之努力。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="coach">coach</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/koʊtʃ/</span><span class="pos">n.</span>
+        <div class="definition">教练</div>
+        <div class="example"><span class="wotd-say" data-speak="The coach taught us how to play.">The coach taught us how to play.</span><span class="trans">教练教我们怎么玩。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="agreement">agreement</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/əˈɡriːmənt/</span><span class="pos">n.</span>
+        <div class="definition">协议；同意</div>
+        <div class="example"><span class="wotd-say" data-speak="We reached an agreement.">We reached an agreement.</span><span class="trans">我们达成了协议。</span></div>
+      </div></div></div></details>
+<details class="module" open><summary>🔤 重点句型 · Sentence Patterns</summary><div class="content"><div class="pattern-grid">      <div class="pattern-card">
+        <div class="structure">主语 + make + 宾语 + 形容词</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>表示「使某人感到……」。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1">Sad movies <b>make me cry</b>. / The music <b>makes me happy</b>.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">主语 + make + 宾语 + 动词原形</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>表示「使某人做某事」。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp2">The story <b>made me think</b>. / Her words <b>made me laugh</b>.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">主语 + make + 宾语 + 名词</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>表示「使某人成为……」。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp3">Hard work will <b>make you a success</b>. / She <b>made him a better person</b>.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">Would rather + V (than V)</div> <button class="speak-btn" data-target="sp4" title="朗读句型">🔊</button>
+        <div>表示「宁愿做某事（而不愿做）」。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp4">I <b>would rather</b> stay at home (than go out). / She <b>would rather</b> read than watch TV.</span></div>
+      </div></div></div></details>
+<details class="module detail-module" open><summary>📚 语法聚焦 · Make + 宾语 + 宾语补足语 <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module"><h3>make 的使役用法</h3>
+<table class="grammar-table">
+<tr><th>结构</th><th>补足语类型</th><th>例句</th></tr>
+<tr><td>make + 宾语 + 形容词</td><td>形容词</td><td>The movie made me sad.</td></tr>
+<tr><td>make + 宾语 + 动词原形</td><td>省略 to 的不定式</td><td>Sad movies make me cry.</td></tr>
+<tr><td>make + 宾语 + 名词</td><td>名词</td><td>He made her his assistant.</td></tr>
+<tr><td>make + 宾语 + 过去分词</td><td>过去分词</td><td>Can you make yourself understood?</td></tr>
+</table>
+<h3>其他使役动词对比</h3>
+<table class="grammar-table">
+<tr><th>动词</th><th>结构</th><th>含义</th><th>例句</th></tr>
+<tr><td>make</td><td>make + O + V</td><td>迫使做</td><td>He made me wait.</td></tr>
+<tr><td>let</td><td>let + O + V</td><td>允许做</td><td>She let me go.</td></tr>
+<tr><td>have</td><td>have + O + V</td><td>让某人做</td><td>I had him fix the car.</td></tr>
+<tr><td>get</td><td>get + O + to V</td><td>让某人做</td><td>I got him to help me.</td></tr>
+</table>
+</div><div class="chinese-error">      <p>make 后接省略 to 的不定式（动词原形）。</p>
+      <p>被动语态中，make 后要加 to — I was made <b>to</b> wait.</p>
+      <p>区分 make sb do（迫使）和 let sb do（允许）。</p>
+      <p><span class="wotd-say" data-speak="Laughter is the best medicine.">Laughter is the best medicine.</span> 笑是最好的药。</p></div></div></details>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">Sad movies always make me ____ (cry).</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>cry</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">The loud music makes me ____ (feel) nervous.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>feel</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">Her story made us ____ (sad).</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>sad</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">I would rather ____ (stay) at home tonight.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>stay</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">The gift made her ____ (happy).</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>happy</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">选择：The news made him ____.<br>A. worry B. worried C. worrying D. to worry</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>B</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">The teacher made us ____ (clean) the classroom.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>clean</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">I was made ____ (wait) for an hour.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>to wait</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">翻译：这个好消息让我很兴奋。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>The good news made me excited.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">I would rather ____ than ____. (stay home / go out)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>stay home ... go out</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">改错：The movie made her to cry.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>去掉 to</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">选择：Nothing will make me ____ my mind.<br>A. change B. to change C. changing D. changed</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>A</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">完成句子：考试前的焦虑让我晚上睡不着。→ The anxiety before exams ____.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>The anxiety before exams makes me unable to sleep at night.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">写作：用 make + 宾语 + 宾补结构写一段话，描述什么让你开心/难过/紧张/平静。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Soft music makes me feel relaxed. Spending time with friends makes me happy. But exams make me nervous. My mom's cooking makes me feel at home.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>📖 阅读专项 · The Happy King and the Unhappy Life</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">Once upon a time, there was a king who had everything: wealth, fame, and power. But he was still unhappy. He often cried for no reason. The king's doctor examined him and said, «Nothing is wrong with your body. But your mind is sick. You need to find the shirt of a happy person and wear it.»</p>
+      <p class="en-text">The prime minister was called to help. He went to a rich banker. The banker had a lot of money. But he was worried about losing it. He was not happy. Then the minister went to a famous singer. The singer was worried about becoming less popular. She was not happy either.</p>
+      <p class="en-text">Finally, the minister met a poor man who was singing happily while working in his field. The minister asked the man, «Are you happy?» The man said, «Yes, I have everything I need.»</p>
+      <p class="en-text">The minister was very excited. «Give me your shirt!» he said. The man laughed. «I'm sorry,» he said, «but I don't own a shirt.»</p><div class="gloss"><span>once upon a time 从前</span> <span>power 权力</span> <span>for no reason 无缘无故地</span> <span>prime minister 首相</span> <span>field 田地；田野</span> <span>own 拥有</span> </div></div>    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">What did the king have?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>He had wealth, fame, and power.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">Why was the banker unhappy?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>He was worried about losing his money.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">Why was the poor man happy?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>He had everything he needed.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★★</span>
+      <div class="q-body">What is the moral of the story?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Happiness doesn't come from wealth or fame. It comes from being satisfied with what you have.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>🏆 中考题型专练 · 阅读理解 — 主旨大意</summary><div class="content exam-section"><p style="font-size:13px;margin-bottom:8px;">阅读短文，选择最佳答案。</p><div class="reading-passage" style="background:var(--bg-secondary);">      <p>Colors can affect our feelings. For example, blue can make us feel calm and peaceful. That's why many bedrooms are painted blue. Red, on the other hand, can make us feel excited or even angry. Restaurants often use red because it makes people eat faster. Green makes us feel relaxed because it reminds us of nature. Yellow makes us feel happy and warm. So when you choose colors for your room, think about how you want to feel.</p></div><div style="margin:4px 0;font-size:13px;"><strong>1</strong> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> A. How colors affect our feelings.</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> B. How to paint a room.</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> C. What is your favorite color?</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> D. Colors are not important.</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>2</strong> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> A. Excited.</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> B. Calm and peaceful.</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> C. Angry.</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> D. Happy.</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>3</strong> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> A. It makes people feel angry.</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> B. It makes people eat faster.</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> C. It makes people feel calm.</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> D. It makes people want to sleep.</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>4</strong> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> A. Blue.</span> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> B. Red.</span> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> C. Green.</span> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> D. Yellow.</span> </div>
+<div class="exam-q" style="border-left-color:#f59e0b;"><span class="q-tag" style="background:#f59e0b;color:#fff;">答案</span><div class="q-body">1. A；2. B；3. B；4. D</div></div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · Describe how something influences your feelings</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">写一篇短文描述颜色、天气或音乐对你的情绪的影响。请使用 make + 宾语 + 宾补结构。</div></div><div class="writing-framework">      <div class="fw-step">开头：引出话题（有些事物会影响我们的情绪）</div>
+      <div class="fw-step">描述一种影响你情绪的因素（如颜色/天气/音乐）</div>
+      <div class="fw-step">举例说明它如何影响你的感受</div>
+      <div class="fw-step">对比不同因素的不同影响</div>
+      <div class="fw-step">结尾：总结情绪管理的意义</div></div><div class="writing-model"><div class="en">Different things affect my feelings in different ways. Sunny weather always makes me happy and energetic. When the sun shines, I feel like going outside and doing fun things. But rainy days make me feel a little sad and sleepy. I would rather stay at home and read a book when it rains. Music also influences my mood. Pop music makes me want to dance, while soft music makes me feel calm. I think it's important to understand what affects our feelings so we can manage our emotions better.</div><div class="trans">不同的事物以不同的方式影响我的感受。晴朗的天气总是让我开心和有活力。当阳光明媚时，我想出去做有趣的事情。但雨天让我感到有点悲伤和困倦。下雨时我宁愿待在家里看书。音乐也影响我的情绪。流行音乐让我想跳舞，而柔和的音乐让我感到平静。我认为了解什么影响我们的情绪很重要，这样我们才能更好地管理情绪。</div></div></div></details>
+<details class="module detail-module" open><summary>🎯 Project · My Emotional Color Wheel</summary><div class="content project-module"><div class="project-brief"><div class="project-title">My Emotional Color Wheel</div><div class="project-desc">制作一个情感色轮图，用不同的颜色代表不同的情绪，并用英语写出每种颜色对你情绪的影响。</div></div><div class="project-steps">      <div class="step"><span class="step-num">1</span><span class="step-text">列出6-8种情绪（开心、悲伤、平静、愤怒等）</span></div>
+      <div class="step"><span class="step-num">2</span><span class="step-text">为每种情绪选一种代表色</span></div>
+      <div class="step"><span class="step-num">3</span><span class="step-text">用 make + 宾语 + 宾补写句子描述颜色如何影响情绪</span></div>
+      <div class="step"><span class="step-num">4</span><span class="step-text">设计色轮图（彩色圆盘分区标注）</span></div>
+      <div class="step"><span class="step-num">5</span><span class="step-text">为每种情绪配一句名言或歌词</span></div>
+      <div class="step"><span class="step-num">6</span><span class="step-text">在班级展示你的情感色轮</span></div></div><div class="project-rubric"><table><tr><th>#</th><th>评价标准</th></tr><tr><td>1.</td><td>包含6种以上的情绪</td></tr>
+<tr><td>2.</td><td>颜色和情绪的匹配合理</td></tr>
+<tr><td>3.</td><td>正确使用了 make + 宾语 + 宾补</td></tr>
+<tr><td>4.</td><td>设计美观、有创意</td></tr>
+<tr><td>5.</td><td>口头展示清晰流畅</td></tr></table></div></div></details>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能理解 make + 宾语 + 宾补结构</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 make 描述事物对情绪的影响</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能区分 make/let/have/get 的用法</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能理解阅读中关于快乐的故事</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写关于情感影响的短文</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>向同桌解释 make + 宾语 + 形容词 和 make + 宾语 + 动词原形的区别。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">🔵 1天后：复习 make + 宾语 + 宾补</span>
+    <span class="review-dot">🟢 3天后：复习情感相关词汇</span>
+    <span class="review-dot">🟡 1周后：复述快乐国王的故事</span>
+    <span class="review-dot">🔴 1月后：写颜色如何影响你的情绪</span></div>
+<div class="next-stop" style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;"><a href="u10.html" class="nav-arrow">← 上一单元</a><a href="u12.html" class="nav-arrow">下一单元 →</a></div>
+<div class="next-stop" style="margin-top:8px;"><strong>➡️ 下一单元：U12: Life is full of the unexpected.</strong><br>学习过去完成时，讲述意外经历。</div>
+</main>
+<div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
+<button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis, currentUtterance: null, speaking: false, rate: 0.9, voiceURI: 'en-US',
+    init: function(){var s=this;document.getElementById('speechRate').addEventListener('input',function(){s.rate=+this.value;document.getElementById('speechRateLabel').textContent=this.value;});document.getElementById('speechVoice').addEventListener('change',function(){s.voiceURI=this.value;localStorage.setItem('speech-voice',this.value);});document.getElementById('speechStopBtn').addEventListener('click',function(){s.stop();});document.getElementById('speechCloseBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.remove('open');});document.getElementById('speechToggleBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.toggle('open');});},
+    speak: function(t,c){if(!t)return;this.stop();var u=new SpeechSynthesisUtterance(t);u.lang=this.voiceURI;u.rate=this.rate;u.onend=function(){if(c)c();};this.currentUtterance=u;this.synthesis.speak(u);},
+    speakDialogue: function(id,c){var s=this,el=document.getElementById(id),ls=el?el.querySelectorAll('.en-text'):[],i=0;this.stop();(function n(){if(i>=ls.length){if(c)c();return;}var e=ls[i],t=e.getAttribute('data-speak')||e.textContent;if(!t){i++;n();return;}e.classList.add('speaking');var u=new SpeechSynthesisUtterance(t);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){e.classList.remove('speaking');i++;setTimeout(n,500);};u.onerror=function(){e.classList.remove('speaking');i++;setTimeout(n,200);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    speakVocabSection: function(id,c){var s=this,el=document.getElementById(id),cs=el?el.querySelectorAll('.vocab-card'):[],i=0;this.stop();(function n(){if(i>=cs.length){if(c)c();return;}var e=cs[i],hw=e.querySelector('.headword'),ex=e.querySelector('.example .wotd-say'),t=[];if(hw)t.push(hw.getAttribute('data-speak')||hw.textContent);if(ex)t.push(ex.getAttribute('data-speak')||ex.textContent.replace(/<[^>]+>/g,'').trim());var ft=t.join('. ');if(!ft){i++;n();return;}hw.classList.add('speaking');var u=new SpeechSynthesisUtterance(ft);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){hw.classList.remove('speaking');i++;setTimeout(n,600);};u.onerror=function(){hw.classList.remove('speaking');i++;setTimeout(n,300);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    stop: function(){this.synthesis.cancel();this.speaking=false;}
+  };SpeechManager.init();
+  document.querySelectorAll('.wotd-say').forEach(function(el){el.addEventListener('click',function(){SpeechManager.speak(this.getAttribute('data-speak')||this.textContent);});});
+  document.querySelectorAll('.speak-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var d=this.getAttribute('data-dialogue'),v=this.getAttribute('data-vocab'),t=this.getAttribute('data-target');if(this.classList.contains('speaking')){SpeechManager.stop();this.classList.remove('speaking');return;}this.classList.add('speaking');var done=function(){btn.classList.remove('speaking');};if(d){SpeechManager.speakDialogue(d,done);}else if(v){SpeechManager.speakVocabSection(v,done);}else if(t){var tg=document.getElementById(t);if(!tg){btn.classList.remove('speaking');return;}SpeechManager.speak(tg.textContent.replace(/<[^>]+>/g,''),done);}else{btn.classList.remove('speaking');}});});
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();var hw=this.previousElementSibling;if(hw&&hw.classList.contains('wotd-say')){var t=hw.getAttribute('data-speak')||hw.textContent;SpeechManager.speak(t);}});});
+  (function(){var btn=document.getElementById('expandAllBtn');if(!btn)return;btn.addEventListener('click',function(){var ad=document.querySelectorAll('.module,.exam-module');var ao=true;for(var i=0;i<ad.length;i++){if(!ad[i].hasAttribute('open')){ao=false;break;}};for(var i=0;i<ad.length;i++){if(ao)ad[i].removeAttribute('open');else ad[i].setAttribute('open','');};btn.textContent=ao?'📂 展开全部模块':'📖 收起全部模块';});})();
+  var s=document.getElementById('sidebar'),k='eng9-theme-sidebar';if(!s)return;
+  if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
+  window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=window.scrollY>400?'flex':'none';},{passive:true});
+  document.getElementById('backToTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution');});});
+})();
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);localStorage.setItem("eng9-theme",t);var btn=document.getElementById("themeToggle");if(btn)btn.textContent=t==="dark"?"☀️":"🌙";}
+function toggleTheme(){setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark");}
+</script></body></html>

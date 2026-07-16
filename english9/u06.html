@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U6 When was it invented? | 初中英语九年级</title>
+<link rel="stylesheet" href="css/english9.css">
+<style>
+.speak-btn { display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;color:var(--accent);border:1px solid var(--border);border-radius:4px;padding:2px 8px;background:var(--bg);transition:background 0.15s; }
+.speak-btn:hover { background:var(--accent-light); }
+.speak-btn.speaking { background:var(--eng-amber-light);color:var(--eng-amber);border-color:var(--eng-amber); }
+.headword-speak-indicator { font-size:11px;margin-left:3px;opacity:0.55;cursor:pointer;vertical-align:super;line-height:1; }
+.headword-speak-indicator:hover { opacity:1; }
+.wotd-say { cursor:pointer;transition:color 0.15s; }
+.wotd-say:hover { color:var(--accent); }
+.wotd-say.speaking { color:var(--eng-pink); }
+.speech-panel { position:fixed;bottom:80px;right:24px;z-index:999;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);padding:14px 18px;display:none;min-width:180px; }
+.speech-panel.open { display:block; }
+.speech-panel .row { display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px; }
+.speech-panel .row label { color:var(--text-secondary);font-size:12px;min-width:36px; }
+.speech-panel select,.speech-panel input[type="range"] { flex:1; }
+.speech-panel button { padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px; }
+.speech-panel button:hover { background:var(--accent-light); }
+.speech-toggle-btn { position:fixed;bottom:24px;right:76px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--accent);cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center; }
+.speech-toggle-btn:hover { background:var(--accent-light); }
+.en-text.speaking { background:var(--eng-amber-light);border-radius:4px;padding:2px 4px;transition:background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background:#452a08; }
+.detail-module { content-visibility:auto;contain-intrinsic-size:300px; }
+.reading { content-visibility:auto;contain-intrinsic-size:400px; }
+</style>
+<script>(function(){var t=localStorage.getItem("eng9-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+    <nav id="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="margin-bottom:0;">英语九年级</h2>
+        <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+      </div><nav>
+        <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../grammar.html" style="font-size:13px;">📌 语法全景图</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 九年级全一册 ━━</a>
+        <a href="u01.html">U1 How can we become good learners?</a>
+        <a href="u02.html">U2 I think that mooncakes are delicious!</a>
+        <a href="u03.html">U3 Could you please tell me where the restrooms are?</a>
+        <a href="u04.html">U4 I used to be afraid of the dark.</a>
+        <a href="u05.html">U5 What are the shirts made of?</a>
+        <a href="u06.html" class="active">U6 When was it invented?</a>
+        <a href="u07.html">U7 Teenagers should be allowed to choose their own clothes.</a>
+        <a href="u08.html">U8 It must belong to Carla.</a>
+        <a href="u09.html">U9 I like music that I can dance to.</a>
+        <a href="u10.html">U10 You're supposed to shake hands.</a>
+        <a href="u11.html">U11 Sad movies make me cry.</a>
+        <a href="u12.html">U12 Life is full of the unexpected.</a>
+        <a href="u13.html">U13 We're trying to save the earth!</a>
+        <a href="u14.html">U14 I remember meeting all of you in Grade 7.</a>
+      </nav>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+    </nav>
+<main id="content">
+<div class="cover"><div class="sub-en">U6</div><h1>When was it invented?</h1><p>发明历史</p></div>
+<div class="unit-meta"><span>📖 话题：Invention History</span><span>💬 功能：Talk about the history of inventions</span><span>📚 语法：Passive voice (past tense) — was/were + past participle</span><span>📝 写作：Write about an invention and its history</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能用过去时被动语态谈论发明历史</label>
+  <label><input type="checkbox"> 能描述发明的时间、用途和影响</label>
+  <label><input type="checkbox"> 能比较古代和现代发明</label>
+  <label><input type="checkbox"> 能写一篇关于发明的介绍文章</label></div>
+<details class="module" open><summary>📖 课文精讲 · When was it invented?</summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：Roy和Alice在科技博物馆参观发明展览。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
+<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Roy:</span><span class="en-text wotd-say" data-speak="Look at this! When was the telephone invented?">Look at this! When was the telephone invented?</span></div>
+      <div class="dialogue-line"><span class="speaker">Alice:</span><span class="en-text wotd-say" data-speak="It was invented in 1876 by Alexander Graham Bell.">It was invented in 1876 by Alexander Graham Bell.</span></div>
+      <div class="dialogue-line"><span class="speaker">Roy:</span><span class="en-text wotd-say" data-speak="That's amazing! What about the car? When was it invented?">That's amazing! What about the car? When was it invented?</span></div>
+      <div class="dialogue-line"><span class="speaker">Alice:</span><span class="en-text wotd-say" data-speak="The first car was invented in 1885 by Karl Benz.">The first car was invented in 1885 by Karl Benz.</span></div>
+      <div class="dialogue-line"><span class="speaker">Roy:</span><span class="en-text wotd-say" data-speak="I see. And what was the telephone used for at first?">I see. And what was the telephone used for at first?</span></div>
+      <div class="dialogue-line"><span class="speaker">Alice:</span><span class="en-text wotd-say" data-speak="It was used for communication, of course! It changed the way people talked to each other.">It was used for communication, of course! It changed the way people talked to each other.</span></div>
+      <div class="dialogue-line"><span class="speaker">Roy:</span><span class="en-text wotd-say" data-speak="What invention do you think is the most important?">What invention do you think is the most important?</span></div>
+      <div class="dialogue-line"><span class="speaker">Alice:</span><span class="en-text wotd-say" data-speak="I think the Internet is the most important. It was invented in the 1960s and it connects the whole world.">I think the Internet is the most important. It was invented in the 1960s and it connects the whole world.</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>Roy:</strong> 看这个！电话是什么时候发明的？</p>
+        <p><strong>Alice:</strong> 它是在1876年由亚历山大·格雷厄姆·贝尔发明的。</p>
+        <p><strong>Roy:</strong> 太神奇了！那汽车呢？它是什么时候发明的？</p>
+        <p><strong>Alice:</strong> 第一辆汽车是在1885年由卡尔·本茨发明的。</p>
+        <p><strong>Roy:</strong> 我明白了。电话最初是用来做什么的？</p>
+        <p><strong>Alice:</strong> 当然是用来通讯的！它改变了人们相互交流的方式。</p>
+        <p><strong>Roy:</strong> 你认为最重要的发明是什么？</p>
+        <p><strong>Alice:</strong> 我认为互联网是最重要的。它是在20世纪60年代发明的，它连接了整个世界。</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p>一般过去时被动语态：was/were + V-ed — The telephone <b>was invented</b> in 1876.</p>
+      <p>by + 发明者 — The telephone was invented <b>by Alexander Graham Bell</b>.</p>
+      <p>be used for + V-ing — 表示「被用来做……」 — It <b>was used for</b> communication.</p>
+      <p>be used to do — 也可以表示「被用来做」 — It was used <b>to communicate</b>.</p></div></div></details>
+<details class="module" open><summary>📝 重点词汇 · 发明历史 <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="invent">invent</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɪnˈvent/</span><span class="pos">v.</span>
+        <div class="definition">发明；创造</div>
+        <div class="example"><span class="wotd-say" data-speak="Who invented the light bulb?">Who invented the light bulb?</span><span class="trans">谁发明了电灯泡？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="invention">invention</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɪnˈvenʃn/</span><span class="pos">n.</span>
+        <div class="definition">发明</div>
+        <div class="example"><span class="wotd-say" data-speak="The telephone is a great invention.">The telephone is a great invention.</span><span class="trans">电话是一项伟大的发明。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="inventor">inventor</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɪnˈventər/</span><span class="pos">n.</span>
+        <div class="definition">发明家</div>
+        <div class="example"><span class="wotd-say" data-speak="Edison was a famous inventor.">Edison was a famous inventor.</span><span class="trans">爱迪生是一位著名的发明家。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="mention">mention</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈmenʃn/</span><span class="pos">v.</span>
+        <div class="definition">提到；说起</div>
+        <div class="example"><span class="wotd-say" data-speak="He mentioned the new project.">He mentioned the new project.</span><span class="trans">他提到了新项目。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="project">project</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈprɒdʒekt/</span><span class="pos">n.</span>
+        <div class="definition">项目；课题</div>
+        <div class="example"><span class="wotd-say" data-speak="We are working on a science project.">We are working on a science project.</span><span class="trans">我们正在做一个科学项目。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="sour">sour</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈsaʊər/</span><span class="pos">adj.</span>
+        <div class="definition">酸的</div>
+        <div class="example"><span class="wotd-say" data-speak="These lemons are sour.">These lemons are sour.</span><span class="trans">这些柠檬很酸。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="mistake">mistake</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/mɪˈsteɪk/</span><span class="pos">n.</span>
+        <div class="definition">错误；失误</div>
+        <div class="example"><span class="wotd-say" data-speak="Don't be afraid to make mistakes.">Don't be afraid to make mistakes.</span><span class="trans">不要害怕犯错。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="accidental">accidental</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌæksɪˈdentl/</span><span class="pos">adj.</span>
+        <div class="definition">意外的；偶然的</div>
+        <div class="example"><span class="wotd-say" data-speak="The discovery was accidental.">The discovery was accidental.</span><span class="trans">这个发现是偶然的。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="ruler">ruler</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈruːlər/</span><span class="pos">n.</span>
+        <div class="definition">尺子；统治者</div>
+        <div class="example"><span class="wotd-say" data-speak="Use a ruler to draw a straight line.">Use a ruler to draw a straight line.</span><span class="trans">用尺子画一条直线。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="boil">boil</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/bɔɪl/</span><span class="pos">v.</span>
+        <div class="definition">煮沸；烧开</div>
+        <div class="example"><span class="wotd-say" data-speak="Boil some water, please.">Boil some water, please.</span><span class="trans">请烧一些水。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="remain">remain</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/rɪˈmeɪn/</span><span class="pos">v.</span>
+        <div class="definition">保持；剩余</div>
+        <div class="example"><span class="wotd-say" data-speak="The door remained closed.">The door remained closed.</span><span class="trans">门一直关着。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="smell">smell</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/smel/</span><span class="pos">n./v.</span>
+        <div class="definition">气味；闻起来</div>
+        <div class="example"><span class="wotd-say" data-speak="The soup smells delicious.">The soup smells delicious.</span><span class="trans">汤闻起来很香。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="national">national</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈnæʃnəl/</span><span class="pos">adj.</span>
+        <div class="definition">国家的；全国的</div>
+        <div class="example"><span class="wotd-say" data-speak="This is a national holiday.">This is a national holiday.</span><span class="trans">这是一个全国性节日。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="trade">trade</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/treɪd/</span><span class="pos">n./v.</span>
+        <div class="definition">贸易；交易</div>
+        <div class="example"><span class="wotd-say" data-speak="China trades with many countries.">China trades with many countries.</span><span class="trans">中国与许多国家进行贸易。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="doubt">doubt</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/daʊt/</span><span class="pos">n./v.</span>
+        <div class="definition">怀疑；疑问</div>
+        <div class="example"><span class="wotd-say" data-speak="No doubt, it's a great invention.">No doubt, it's a great invention.</span><span class="trans">毫无疑问，这是一项伟大的发明。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="refrigerator">refrigerator</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/rɪˈfrɪdʒəreɪtər/</span><span class="pos">n.</span>
+        <div class="definition">冰箱</div>
+        <div class="example"><span class="wotd-say" data-speak="Keep the milk in the refrigerator.">Keep the milk in the refrigerator.</span><span class="trans">把牛奶放在冰箱里。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="sweet">sweet</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/swiːt/</span><span class="pos">adj./n.</span>
+        <div class="definition">甜的；糖果</div>
+        <div class="example"><span class="wotd-say" data-speak="The cake is very sweet.">The cake is very sweet.</span><span class="trans">蛋糕很甜。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="crispy">crispy</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈkrɪspi/</span><span class="pos">adj.</span>
+        <div class="definition">脆的；酥脆的</div>
+        <div class="example"><span class="wotd-say" data-speak="The fried chicken is crispy.">The fried chicken is crispy.</span><span class="trans">炸鸡很脆。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="salty">salty</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈsɔːlti/</span><span class="pos">adj.</span>
+        <div class="definition">咸的</div>
+        <div class="example"><span class="wotd-say" data-speak="The soup is a bit salty.">The soup is a bit salty.</span><span class="trans">汤有点咸。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="customer">customer</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈkʌstəmər/</span><span class="pos">n.</span>
+        <div class="definition">顾客；客户</div>
+        <div class="example"><span class="wotd-say" data-speak="The customer is always right.">The customer is always right.</span><span class="trans">顾客永远是对的。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="divide">divide</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/dɪˈvaɪd/</span><span class="pos">v.</span>
+        <div class="definition">分开；划分</div>
+        <div class="example"><span class="wotd-say" data-speak="Divide the cake into four pieces.">Divide the cake into four pieces.</span><span class="trans">把蛋糕分成四块。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="popularity">popularity</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌpɒpjuˈlærəti/</span><span class="pos">n.</span>
+        <div class="definition">普及；流行</div>
+        <div class="example"><span class="wotd-say" data-speak="The popularity of smartphones is growing.">The popularity of smartphones is growing.</span><span class="trans">智能手机的普及率在增长。</span></div>
+      </div></div></div></details>
+<details class="module" open><summary>🔤 重点句型 · Sentence Patterns</summary><div class="content"><div class="pattern-grid">      <div class="pattern-card">
+        <div class="structure">主语 + was/were + V-ed + (by + 施动者)</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>一般过去时被动语态，描述过去的动作。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1">The telephone <b>was invented</b> in 1876. / The car <b>was invented</b> by Karl Benz.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">When was + 主语 + V-ed?</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>询问发明的时间。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp2"><b>When was</b> the light bulb <b>invented</b>? / <b>When was</b> paper <b>invented</b>?</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">What was + 主语 + used for?</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>询问用途。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp3"><b>What was</b> the telephone <b>used for</b>? / <b>What was</b> it <b>used for</b> at first?</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">主语 + was/were + used for + V-ing / used to V</div> <button class="speak-btn" data-target="sp4" title="朗读句型">🔊</button>
+        <div>描述用途的两种方式。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp4">It <b>was used for</b> communication. / It <b>was used to</b> send messages.</span></div>
+      </div></div></div></details>
+<details class="module detail-module" open><summary>📚 语法聚焦 · 一般过去时的被动语态 <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module"><h3>结构对比</h3>
+<table class="grammar-table">
+<tr><th>时态</th><th>主动语态</th><th>被动语态</th></tr>
+<tr><td>一般现在时</td><td>People grow tea in China.</td><td>Tea is grown in China.</td></tr>
+<tr><td>一般过去时</td><td>Bell invented the telephone.</td><td>The telephone was invented by Bell.</td></tr>
+<tr><td>一般将来时</td><td>They will build a new school.</td><td>A new school will be built.</td></tr>
+</table>
+<h3>被动语态变化规则</h3>
+<table class="grammar-table">
+<tr><th>动词形式</th><th>过去式</th><th>过去分词</th></tr>
+<tr><td>regular: work</td><td>worked</td><td>worked</td></tr>
+<tr><td>regular: invent</td><td>invented</td><td>invented</td></tr>
+<tr><td>irregular: build</td><td>built</td><td>built</td></tr>
+<tr><td>irregular: write</td><td>wrote</td><td>written</td></tr>
+<tr><td>irregular: make</td><td>made</td><td>made</td></tr>
+<tr><td>irregular: grow</td><td>grew</td><td>grown</td></tr>
+</table>
+</div><div class="chinese-error">      <p>一般过去时被动语态由 was/were + 过去分词构成。</p>
+      <p>was 用于单数主语，were 用于复数主语。</p>
+      <p>注意不规则动词的过去分词形式。</p>
+      <p><span class="wotd-say" data-speak="Necessity is the mother of invention.">Necessity is the mother of invention.</span> 需要是发明之母。</p></div></div></details>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">The telephone ____ (invent) by Alexander Graham Bell.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>was invented</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">When ____ the car ____ (invent)?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>was ... invented</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">The light bulb ____ (invent) by Thomas Edison.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>was invented</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">Paper ____ (invent) in China.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>was invented</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">These computers ____ (make) in China last year.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>were made</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">Tea ____ (discover) by accident about 5,000 years ago.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>was discovered</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">选择：The first Olympic Games ____ in 776 BC.<br>A. held B. were held C. hold D. was held</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>B</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">改主动为被动：Edison invented the light bulb. → ____.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>The light bulb was invented by Edison.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">What was the abacus used ____? (for / to / in / by)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>for</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">翻译：风筝最初是用于军事目的的。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Kites were first used for military purposes.</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">改错：The museum was build in 1980.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>build → built</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">合并：The students designed the robot. It was for cleaning windows. → The robot ____.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>The robot was designed for cleaning windows by the students.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">被动转主动：The window was broken by Tom. → ____.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Tom broke the window.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">写作：用一般过去时被动语态写一段关于茶的历史（至少5句话）。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Tea was first discovered about 5,000 years ago. It was discovered by accident. The leaves fell into boiling water. A nice smell was produced. Since then, tea has been enjoyed by people all over the world.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>📖 阅读专项 · The Accidental Invention of Tea</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">Did you know that tea, the most popular drink in the world, was invented by accident? According to an old Chinese legend, the emperor Shen Nong discovered tea when he was boiling water over an open fire. Some leaves from a tea plant fell into the water and remained there for some time. The emperor noticed that the water had a pleasant smell. He decided to taste the water, and it was quite delicious. And in this way, one of the world's favorite drinks was invented.</p>
+      <p class="en-text">Tea was brought to Korea and Japan during the 6th and 7th centuries. In England, tea didn't appear until 1660. The tea trade from China to Western countries took place in the 19th century. Now tea is widely consumed all over the world. It is more than just a drink — it is a part of many cultures.</p>
+      <p class="en-text">In China, tea is often served when guests visit. It is also a symbol of respect and friendship. The Chinese tea ceremony is a traditional way of preparing and serving tea.</p><div class="gloss"><span>by accident 偶然地；意外地</span> <span>legend 传说</span> <span>emperor 皇帝</span> <span>shen nong 神农</span> <span>pleasant 令人愉快的</span> <span>consumed 消费；饮用</span> <span>ceremony 仪式</span> </div></div>    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">How was tea discovered according to the legend?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Some leaves from a tea plant fell into boiling water by accident.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">When did tea appear in England?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>In 1660.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">What does tea symbolize in Chinese culture?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>It is a symbol of respect and friendship.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★★</span>
+      <div class="q-body">Why is tea called an accidental invention?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Because it was discovered by accident when leaves fell into boiling water.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>🏆 中考题型专练 · 补全对话 — 发明历史</summary><div class="content exam-section"><p style="font-size:13px;margin-bottom:8px;">根据上下文，补全对话。</p><div class="reading-passage" style="background:var(--bg-secondary);">      <p>A: Look at this old thing. What is it?
+B: It's an abacus. It was used for calculating.
+A: When was it invented?
+B: It 1 (invent) in China about 2,000 years ago.
+A: That's so old! What 2 it made of?
+B: It was made 3 wood and beads.
+A: What was it used 4?
+B: It was used to add, subtract, multiply, and divide.
+A: It's amazing that such a simple tool 5 so useful!</p></div><div style="margin:4px 0;font-size:13px;"><strong>1</strong> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> A. invented</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> B. was invented</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> C. is invented</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> D. was invent</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>2</strong> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> A. was</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> B. is</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> C. were</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> D. are</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>3</strong> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> A. of</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> B. from</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> C. in</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> D. by</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>4</strong> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> A. to</span> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> B. for</span> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> C. in</span> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> D. by</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>5</strong> <span style="margin-right:12px;"><input type="radio" name="exam_5" disabled> A. is</span> <span style="margin-right:12px;"><input type="radio" name="exam_5" disabled> B. was</span> <span style="margin-right:12px;"><input type="radio" name="exam_5" disabled> C. were</span> <span style="margin-right:12px;"><input type="radio" name="exam_5" disabled> D. be</span> </div>
+<div class="exam-q" style="border-left-color:#f59e0b;"><span class="q-tag" style="background:#f59e0b;color:#fff;">答案</span><div class="q-body">1. B；2. A；3. A；4. B；5. B</div></div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · Write about an invention and its history</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">选择一项你感兴趣的发明（如电话、电灯、互联网、纸等），写一篇短文介绍它的发明时间、发明者、用途和影响。</div></div><div class="writing-framework">      <div class="fw-step">开头：引出你要介绍的发明</div>
+      <div class="fw-step">发明时间：说明它是什么时候发明的</div>
+      <div class="fw-step">发明者：介绍发明者</div>
+      <div class="fw-step">用途：描述它的用途和最初的功能</div>
+      <div class="fw-step">影响：说明它对世界的影响</div>
+      <div class="fw-step">结尾：你的感想</div></div><div class="writing-model"><div class="en">The light bulb is one of the most important inventions in history. It was invented by Thomas Edison in 1879. Before the light bulb was invented, people had to use candles or oil lamps to see in the dark. The light bulb was used for lighting homes and streets. It changed the way people live and work. Now people can work and study at night. I think the light bulb is a great invention because it made the world brighter and safer.</div><div class="trans">电灯泡是历史上最重要的发明之一。它是由托马斯·爱迪生在1879年发明的。在电灯泡发明之前，人们不得不在黑暗中用蜡烛或油灯照明。电灯泡被用来照亮家和街道。它改变了人们生活和工作的方式。现在人们可以在晚上工作和学习了。我认为电灯泡是一项伟大的发明，因为它让世界更明亮、更安全。</div></div></div></details>
+<details class="module detail-module" open><summary>🎯 Project · Great Inventions Timeline</summary><div class="content project-module"><div class="project-brief"><div class="project-title">Great Inventions Timeline</div><div class="project-desc">制作一张「伟大发明时间线」海报，展示至少10项重要发明及其发明时间、发明者和影响。</div></div><div class="project-steps">      <div class="step"><span class="step-num">1</span><span class="step-text">列出10项你认为最重要的发明</span></div>
+      <div class="step"><span class="step-num">2</span><span class="step-text">查找每项发明的发明时间、发明者和国家</span></div>
+      <div class="step"><span class="step-num">3</span><span class="step-text">按时间顺序排列在时间线上</span></div>
+      <div class="step"><span class="step-num">4</span><span class="step-text">每项发明配图并写英文介绍</span></div>
+      <div class="step"><span class="step-num">5</span><span class="step-text">标注哪些发明是中国的</span></div>
+      <div class="step"><span class="step-num">6</span><span class="step-text">在班级展示并投票选出最伟大的发明</span></div></div><div class="project-rubric"><table><tr><th>#</th><th>评价标准</th></tr><tr><td>1.</td><td>选择10项以上重要发明</td></tr>
+<tr><td>2.</td><td>信息准确、时间正确</td></tr>
+<tr><td>3.</td><td>使用了过去时被动语态</td></tr>
+<tr><td>4.</td><td>设计美观、时间线清晰</td></tr>
+<tr><td>5.</td><td>展示时发音清晰、表达流畅</td></tr></table></div></div></details>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能正确使用一般过去时被动语态</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能谈论重要发明的历史</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能区分主动语态和被动语态</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能理解阅读中关于茶的故事</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写一篇关于发明的短文</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>向同桌讲述茶叶是如何被偶然发现的，注意使用被动语态。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">🔵 1天后：复习过去时被动语态结构</span>
+    <span class="review-dot">🟢 3天后：复习发明相关词汇和动词过去分词</span>
+    <span class="review-dot">🟡 1周后：复述茶的发现故事</span>
+    <span class="review-dot">🔴 1月后：介绍一项你最喜欢的发明</span></div>
+<div class="next-stop" style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;"><a href="u05.html" class="nav-arrow">← 上一单元</a><a href="u07.html" class="nav-arrow">下一单元 →</a></div>
+<div class="next-stop" style="margin-top:8px;"><strong>➡️ 下一单元：U7: Teenagers should be allowed to choose their own clothes.</strong><br>学习情态动词的被动语态，讨论规则和许可。</div>
+</main>
+<div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
+<button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis, currentUtterance: null, speaking: false, rate: 0.9, voiceURI: 'en-US',
+    init: function(){var s=this;document.getElementById('speechRate').addEventListener('input',function(){s.rate=+this.value;document.getElementById('speechRateLabel').textContent=this.value;});document.getElementById('speechVoice').addEventListener('change',function(){s.voiceURI=this.value;localStorage.setItem('speech-voice',this.value);});document.getElementById('speechStopBtn').addEventListener('click',function(){s.stop();});document.getElementById('speechCloseBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.remove('open');});document.getElementById('speechToggleBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.toggle('open');});},
+    speak: function(t,c){if(!t)return;this.stop();var u=new SpeechSynthesisUtterance(t);u.lang=this.voiceURI;u.rate=this.rate;u.onend=function(){if(c)c();};this.currentUtterance=u;this.synthesis.speak(u);},
+    speakDialogue: function(id,c){var s=this,el=document.getElementById(id),ls=el?el.querySelectorAll('.en-text'):[],i=0;this.stop();(function n(){if(i>=ls.length){if(c)c();return;}var e=ls[i],t=e.getAttribute('data-speak')||e.textContent;if(!t){i++;n();return;}e.classList.add('speaking');var u=new SpeechSynthesisUtterance(t);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){e.classList.remove('speaking');i++;setTimeout(n,500);};u.onerror=function(){e.classList.remove('speaking');i++;setTimeout(n,200);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    speakVocabSection: function(id,c){var s=this,el=document.getElementById(id),cs=el?el.querySelectorAll('.vocab-card'):[],i=0;this.stop();(function n(){if(i>=cs.length){if(c)c();return;}var e=cs[i],hw=e.querySelector('.headword'),ex=e.querySelector('.example .wotd-say'),t=[];if(hw)t.push(hw.getAttribute('data-speak')||hw.textContent);if(ex)t.push(ex.getAttribute('data-speak')||ex.textContent.replace(/<[^>]+>/g,'').trim());var ft=t.join('. ');if(!ft){i++;n();return;}hw.classList.add('speaking');var u=new SpeechSynthesisUtterance(ft);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){hw.classList.remove('speaking');i++;setTimeout(n,600);};u.onerror=function(){hw.classList.remove('speaking');i++;setTimeout(n,300);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    stop: function(){this.synthesis.cancel();this.speaking=false;}
+  };SpeechManager.init();
+  document.querySelectorAll('.wotd-say').forEach(function(el){el.addEventListener('click',function(){SpeechManager.speak(this.getAttribute('data-speak')||this.textContent);});});
+  document.querySelectorAll('.speak-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var d=this.getAttribute('data-dialogue'),v=this.getAttribute('data-vocab'),t=this.getAttribute('data-target');if(this.classList.contains('speaking')){SpeechManager.stop();this.classList.remove('speaking');return;}this.classList.add('speaking');var done=function(){btn.classList.remove('speaking');};if(d){SpeechManager.speakDialogue(d,done);}else if(v){SpeechManager.speakVocabSection(v,done);}else if(t){var tg=document.getElementById(t);if(!tg){btn.classList.remove('speaking');return;}SpeechManager.speak(tg.textContent.replace(/<[^>]+>/g,''),done);}else{btn.classList.remove('speaking');}});});
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();var hw=this.previousElementSibling;if(hw&&hw.classList.contains('wotd-say')){var t=hw.getAttribute('data-speak')||hw.textContent;SpeechManager.speak(t);}});});
+  (function(){var btn=document.getElementById('expandAllBtn');if(!btn)return;btn.addEventListener('click',function(){var ad=document.querySelectorAll('.module,.exam-module');var ao=true;for(var i=0;i<ad.length;i++){if(!ad[i].hasAttribute('open')){ao=false;break;}};for(var i=0;i<ad.length;i++){if(ao)ad[i].removeAttribute('open');else ad[i].setAttribute('open','');};btn.textContent=ao?'📂 展开全部模块':'📖 收起全部模块';});})();
+  var s=document.getElementById('sidebar'),k='eng9-theme-sidebar';if(!s)return;
+  if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
+  window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=window.scrollY>400?'flex':'none';},{passive:true});
+  document.getElementById('backToTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution');});});
+})();
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);localStorage.setItem("eng9-theme",t);var btn=document.getElementById("themeToggle");if(btn)btn.textContent=t==="dark"?"☀️":"🌙";}
+function toggleTheme(){setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark");}
+</script></body></html>

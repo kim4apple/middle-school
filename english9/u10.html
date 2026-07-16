@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U10 You're supposed to shake hands. | 初中英语九年级</title>
+<link rel="stylesheet" href="css/english9.css">
+<style>
+.speak-btn { display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;color:var(--accent);border:1px solid var(--border);border-radius:4px;padding:2px 8px;background:var(--bg);transition:background 0.15s; }
+.speak-btn:hover { background:var(--accent-light); }
+.speak-btn.speaking { background:var(--eng-amber-light);color:var(--eng-amber);border-color:var(--eng-amber); }
+.headword-speak-indicator { font-size:11px;margin-left:3px;opacity:0.55;cursor:pointer;vertical-align:super;line-height:1; }
+.headword-speak-indicator:hover { opacity:1; }
+.wotd-say { cursor:pointer;transition:color 0.15s; }
+.wotd-say:hover { color:var(--accent); }
+.wotd-say.speaking { color:var(--eng-pink); }
+.speech-panel { position:fixed;bottom:80px;right:24px;z-index:999;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);padding:14px 18px;display:none;min-width:180px; }
+.speech-panel.open { display:block; }
+.speech-panel .row { display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px; }
+.speech-panel .row label { color:var(--text-secondary);font-size:12px;min-width:36px; }
+.speech-panel select,.speech-panel input[type="range"] { flex:1; }
+.speech-panel button { padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px; }
+.speech-panel button:hover { background:var(--accent-light); }
+.speech-toggle-btn { position:fixed;bottom:24px;right:76px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--accent);cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center; }
+.speech-toggle-btn:hover { background:var(--accent-light); }
+.en-text.speaking { background:var(--eng-amber-light);border-radius:4px;padding:2px 4px;transition:background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background:#452a08; }
+.detail-module { content-visibility:auto;contain-intrinsic-size:300px; }
+.reading { content-visibility:auto;contain-intrinsic-size:400px; }
+</style>
+<script>(function(){var t=localStorage.getItem("eng9-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+    <nav id="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="margin-bottom:0;">英语九年级</h2>
+        <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+      </div><nav>
+        <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../grammar.html" style="font-size:13px;">📌 语法全景图</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 九年级全一册 ━━</a>
+        <a href="u01.html">U1 How can we become good learners?</a>
+        <a href="u02.html">U2 I think that mooncakes are delicious!</a>
+        <a href="u03.html">U3 Could you please tell me where the restrooms are?</a>
+        <a href="u04.html">U4 I used to be afraid of the dark.</a>
+        <a href="u05.html">U5 What are the shirts made of?</a>
+        <a href="u06.html">U6 When was it invented?</a>
+        <a href="u07.html">U7 Teenagers should be allowed to choose their own clothes.</a>
+        <a href="u08.html">U8 It must belong to Carla.</a>
+        <a href="u09.html">U9 I like music that I can dance to.</a>
+        <a href="u10.html" class="active">U10 You're supposed to shake hands.</a>
+        <a href="u11.html">U11 Sad movies make me cry.</a>
+        <a href="u12.html">U12 Life is full of the unexpected.</a>
+        <a href="u13.html">U13 We're trying to save the earth!</a>
+        <a href="u14.html">U14 I remember meeting all of you in Grade 7.</a>
+      </nav>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+    </nav>
+<main id="content">
+<div class="cover"><div class="sub-en">U10</div><h1>You're supposed to shake hands.</h1><p>礼仪与文化</p></div>
+<div class="unit-meta"><span>📖 话题：Customs and Culture</span><span>💬 功能：Talk about customs and what you are supposed to do</span><span>📚 语法：Be supposed to + V (应该/被期望做某事)</span><span>📝 写作：Describe customs and etiquette in different countries</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能用 be supposed to 表达应该做什么</label>
+  <label><input type="checkbox"> 能比较不同国家的礼仪习惯</label>
+  <label><input type="checkbox"> 能礼貌地询问和说明文化差异</label>
+  <label><input type="checkbox"> 能写关于礼仪文化的文章</label></div>
+<details class="module" open><summary>📖 课文精讲 · You're supposed to shake hands.</summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：中国学生李华第一次去美国参加交换项目，向美国朋友Mike询问美国礼仪。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
+<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Li Hua:</span><span class="en-text wotd-say" data-speak="Mike, I'm a little nervous. What am I supposed to do when I meet someone for the first time?">Mike, I'm a little nervous. What am I supposed to do when I meet someone for the first time?</span></div>
+      <div class="dialogue-line"><span class="speaker">Mike:</span><span class="en-text wotd-say" data-speak="You're supposed to shake hands. It's the most common greeting in the US.">You're supposed to shake hands. It's the most common greeting in the US.</span></div>
+      <div class="dialogue-line"><span class="speaker">Li Hua:</span><span class="en-text wotd-say" data-speak="What about eye contact? In China, it's not always polite to look directly at someone.">What about eye contact? In China, it's not always polite to look directly at someone.</span></div>
+      <div class="dialogue-line"><span class="speaker">Mike:</span><span class="en-text wotd-say" data-speak="Oh, in the US, you're supposed to make eye contact. It shows you are confident and honest.">Oh, in the US, you're supposed to make eye contact. It shows you are confident and honest.</span></div>
+      <div class="dialogue-line"><span class="speaker">Li Hua:</span><span class="en-text wotd-say" data-speak="I see. And when I'm invited to dinner, am I supposed to arrive on time?">I see. And when I'm invited to dinner, am I supposed to arrive on time?</span></div>
+      <div class="dialogue-line"><span class="speaker">Mike:</span><span class="en-text wotd-say" data-speak="Yes, you're supposed to arrive on time. Being late is considered impolite.">Yes, you're supposed to arrive on time. Being late is considered impolite.</span></div>
+      <div class="dialogue-line"><span class="speaker">Li Hua:</span><span class="en-text wotd-say" data-speak="What should I do at the table? I'm not supposed to make noise while eating, am I?">What should I do at the table? I'm not supposed to make noise while eating, am I?</span></div>
+      <div class="dialogue-line"><span class="speaker">Mike:</span><span class="en-text wotd-say" data-speak="That's right. And you're supposed to say «excuse me» if you need to leave the table. Don't worry, you'll do great!">That's right. And you're supposed to say «excuse me» if you need to leave the table. Don't worry, you'll do great!</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>Li Hua:</strong> 迈克，我有点紧张。我第一次见到别人时应该做什么？</p>
+        <p><strong>Mike:</strong> 你应该握手。这是美国最常见的问候方式。</p>
+        <p><strong>Li Hua:</strong> 那眼神接触呢？在中国，直视别人不总是礼貌的。</p>
+        <p><strong>Mike:</strong> 哦，在美国，你应该有眼神交流。这显示你自信和诚实。</p>
+        <p><strong>Li Hua:</strong> 我明白了。那当我被邀请吃饭时，我应该准时到吗？</p>
+        <p><strong>Mike:</strong> 是的，你应该准时到。迟到被认为是不礼貌的。</p>
+        <p><strong>Li Hua:</strong> 吃饭时我应该怎么做？我不应该在吃饭时发出声音，对吗？</p>
+        <p><strong>Mike:</strong> 对。如果你需要离开餐桌，应该说「抱歉」。别担心，你会做得很好的！</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p>be supposed to do 表示「应该做某事；被期望做某事」— You <b>are supposed to</b> shake hands.</p>
+      <p>be not supposed to do 表示「不应该做某事」— You <b>are not supposed to</b> eat with your hands.</p>
+      <p>和 should 的区别：should 语气更强，be supposed to 语气较委婉。</p>
+      <p>不同国家礼仪不同：日本鞠躬、法国贴面、美国握手。</p></div></div></details>
+<details class="module" open><summary>📝 重点词汇 · 礼仪与文化 <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="shake">shake</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ʃeɪk/</span><span class="pos">v.</span>
+        <div class="definition">握着；摇动</div>
+        <div class="example"><span class="wotd-say" data-speak="We shake hands when we meet.">We shake hands when we meet.</span><span class="trans">我们见面时握手。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="kiss">kiss</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/kɪs/</span><span class="pos">v./n.</span>
+        <div class="definition">吻；亲吻</div>
+        <div class="example"><span class="wotd-say" data-speak="In some countries, people kiss on the cheek.">In some countries, people kiss on the cheek.</span><span class="trans">在一些国家，人们亲吻脸颊。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="custom">custom</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈkʌstəm/</span><span class="pos">n.</span>
+        <div class="definition">习俗；风俗</div>
+        <div class="example"><span class="wotd-say" data-speak="Each country has its own customs.">Each country has its own customs.</span><span class="trans">每个国家都有自己的习俗。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="greet">greet</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɡriːt/</span><span class="pos">v.</span>
+        <div class="definition">问候；打招呼</div>
+        <div class="example"><span class="wotd-say" data-speak="People greet each other in different ways.">People greet each other in different ways.</span><span class="trans">人们用不同的方式互相问候。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="relaxed">relaxed</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/rɪˈlækst/</span><span class="pos">adj.</span>
+        <div class="definition">放松的；随意的</div>
+        <div class="example"><span class="wotd-say" data-speak="The atmosphere was very relaxed.">The atmosphere was very relaxed.</span><span class="trans">氛围非常轻松。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="value">value</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈvæljuː/</span><span class="pos">n./v.</span>
+        <div class="definition">价值；重视</div>
+        <div class="example"><span class="wotd-say" data-speak="We value punctuality.">We value punctuality.</span><span class="trans">我们重视守时。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="drop">drop</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/drɒp/</span><span class="pos">v.</span>
+        <div class="definition">掉下；拜访</div>
+        <div class="example"><span class="wotd-say" data-speak="Drop by anytime if you're free.">Drop by anytime if you're free.</span><span class="trans">有空随时来坐坐。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="capital">capital</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈkæpɪtl/</span><span class="pos">n.</span>
+        <div class="definition">首都；资本</div>
+        <div class="example"><span class="wotd-say" data-speak="Paris is the capital of France.">Paris is the capital of France.</span><span class="trans">巴黎是法国的首都。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="noon">noon</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/nuːn/</span><span class="pos">n.</span>
+        <div class="definition">正午；中午</div>
+        <div class="example"><span class="wotd-say" data-speak="Let's meet at noon.">Let's meet at noon.</span><span class="trans">我们中午见。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="mad">mad</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/mæd/</span><span class="pos">adj.</span>
+        <div class="definition">生气的；疯狂的</div>
+        <div class="example"><span class="wotd-say" data-speak="Don't get mad at me.">Don't get mad at me.</span><span class="trans">别对我生气。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="effort">effort</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈefərt/</span><span class="pos">n.</span>
+        <div class="definition">努力</div>
+        <div class="example"><span class="wotd-say" data-speak="Make an effort to learn the local customs.">Make an effort to learn the local customs.</span><span class="trans">努力了解当地习俗。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="passport">passport</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈpæspɔːrt/</span><span class="pos">n.</span>
+        <div class="definition">护照</div>
+        <div class="example"><span class="wotd-say" data-speak="Don't forget your passport.">Don't forget your passport.</span><span class="trans">别忘了你的护照。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="chalk">chalk</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/tʃɔːk/</span><span class="pos">n.</span>
+        <div class="definition">粉笔</div>
+        <div class="example"><span class="wotd-say" data-speak="Write with chalk on the blackboard.">Write with chalk on the blackboard.</span><span class="trans">用粉笔在黑板上写。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="blackboard">blackboard</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈblækbɔːrd/</span><span class="pos">n.</span>
+        <div class="definition">黑板</div>
+        <div class="example"><span class="wotd-say" data-speak="The teacher is writing on the blackboard.">The teacher is writing on the blackboard.</span><span class="trans">老师在黑板上写字。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="northern">northern</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈnɔːrðərn/</span><span class="pos">adj.</span>
+        <div class="definition">北方的</div>
+        <div class="example"><span class="wotd-say" data-speak="It's cold in northern China.">It's cold in northern China.</span><span class="trans">中国北方很冷。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="coast">coast</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/koʊst/</span><span class="pos">n.</span>
+        <div class="definition">海岸</div>
+        <div class="example"><span class="wotd-say" data-speak="We drove along the coast.">We drove along the coast.</span><span class="trans">我们沿着海岸开车。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="season">season</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈsiːzn/</span><span class="pos">n.</span>
+        <div class="definition">季节</div>
+        <div class="example"><span class="wotd-say" data-speak="Which season do you like best?">Which season do you like best?</span><span class="trans">你最喜欢哪个季节？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="knock">knock</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/nɒk/</span><span class="pos">v.</span>
+        <div class="definition">敲</div>
+        <div class="example"><span class="wotd-say" data-speak="Knock on the door before entering.">Knock on the door before entering.</span><span class="trans">进入前先敲门。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="basic">basic</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈbeɪsɪk/</span><span class="pos">adj.</span>
+        <div class="definition">基本的</div>
+        <div class="example"><span class="wotd-say" data-speak="These are the basic rules.">These are the basic rules.</span><span class="trans">这些是基本规则。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="exchange">exchange</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɪksˈtʃeɪndʒ/</span><span class="pos">n./v.</span>
+        <div class="definition">交换；交流</div>
+        <div class="example"><span class="wotd-say" data-speak="I'm on an exchange program.">I'm on an exchange program.</span><span class="trans">我在参加一个交换项目。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="gradually">gradually</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈɡrædʒuəli/</span><span class="pos">adv.</span>
+        <div class="definition">逐渐地</div>
+        <div class="example"><span class="wotd-say" data-speak="I gradually got used to the culture.">I gradually got used to the culture.</span><span class="trans">我逐渐适应了这里的文化。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="polite">polite</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/pəˈlaɪt/</span><span class="pos">adj.</span>
+        <div class="definition">礼貌的</div>
+        <div class="example"><span class="wotd-say" data-speak="It's polite to say thank you.">It's polite to say thank you.</span><span class="trans">说谢谢是有礼貌的。</span></div>
+      </div></div></div></details>
+<details class="module" open><summary>🔤 重点句型 · Sentence Patterns</summary><div class="content"><div class="pattern-grid">      <div class="pattern-card">
+        <div class="structure">主语 + be supposed to + 动词原形</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>表示「应该做某事」。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1">You <b>are supposed to</b> shake hands. / You <b>are supposed to</b> arrive on time.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">主语 + be not supposed to + 动词原形</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>表示「不应该做某事」。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp2">You <b>are not supposed to</b> eat with your hands. / We <b>are not supposed to</b> be late.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">What + be + 主语 + supposed to do?</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>询问应该做什么。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp3"><b>What am I supposed to</b> do? / <b>What are we supposed to</b> wear?</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">You're supposed to... / You should...</div> <button class="speak-btn" data-target="sp4" title="朗读句型">🔊</button>
+        <div>be supposed to 比 should 语气更委婉。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp4"><b>You're supposed to</b> bow in Japan. / <b>You should</b> try the local food.</span></div>
+      </div></div></div></details>
+<details class="module detail-module" open><summary>📚 语法聚焦 · Be supposed to 结构 <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module"><h3>be supposed to 的用法</h3>
+<table class="grammar-table">
+<tr><th>形式</th><th>用法</th><th>含义</th><th>例句</th></tr>
+<tr><td>肯定句</td><td>be supposed to + V</td><td>应该</td><td>You are supposed to shake hands.</td></tr>
+<tr><td>否定句</td><td>be not supposed to + V</td><td>不应该</td><td>You are not supposed to be late.</td></tr>
+<tr><td>疑问句</td><td>Be + 主语 + supposed to + V?</td><td>应该……吗？</td><td>Am I supposed to bring a gift?</td></tr>
+</table>
+<h3>be supposed to vs should</h3>
+<table class="grammar-table">
+<tr><th>表达</th><th>语气</th><th>用法</th><th>例句</th></tr>
+<tr><td>be supposed to</td><td>较委婉</td><td>表示惯例或期望</td><td>You're supposed to bow in Japan.</td></tr>
+<tr><td>should</td><td>较强</td><td>表示义务或建议</td><td>You should study hard.</td></tr>
+</table>
+</div><div class="chinese-error">      <p>be supposed to 中的 be 动词要随主语变化（am/is/are）。</p>
+      <p>be supposed to 的否定式在 be 后加 not。</p>
+      <p>be supposed to 的疑问式把 be 动词提前。</p>
+      <p><span class="wotd-say" data-speak="When in Rome, do as the Romans do.">When in Rome, do as the Romans do.</span> 入乡随俗。</p></div></div></details>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">You ____ (应该) shake hands when you meet someone in the US.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>are supposed to</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">You ____ not ____ (不应该) eat with your hands at a formal dinner.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>are ... supposed</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">____ I ____ (应该) bring a gift when I visit someone?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Am ... supposed to</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">In Japan, you're supposed to ____ (鞠躬) when you meet someone.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>bow</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">翻译：你应该准时到达。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>You are supposed to arrive on time.</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">选择：You ____ make noise while eating in Western countries.<br>A. are supposed to B. are not supposed to C. supposed to D. not supposed to</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>B</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">What ____ I ____ (suppose) to do if I'm invited to dinner?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>am ... supposed</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">您在法国应该亲吻脸颊而不是握手。→ In France, you ____.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>In France, you are supposed to kiss on the cheek instead of shaking hands.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">改错：You are suppose to arrive on time.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>suppose → supposed</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">You ____ (should/are supposed to) try the local food when you travel.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>should / are supposed to</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">选择：You ____ to bring a gift, but it's a nice thing to do.<br>A. are supposed B. aren't supposed C. don't suppose D. didn't suppose</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>B</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">完成句子：In China, you're supposed to ____ (用筷子吃饭) while in Western countries, you're supposed to use a fork.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>eat with chopsticks</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">用 be supposed to 改写：People expect you to dress formally. → ____.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>You are supposed to dress formally.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">写作：比较中国和美国在餐桌礼仪上的不同（至少3点）。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>In China, you're supposed to use chopsticks, but in the US, you're supposed to use a fork and knife. In China, you're supposed to share dishes, but in the US, everyone has their own plate. In China, it's okay to make some noise while eating soup, but in the US, you're not supposed to.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>📖 阅读专项 · Customs Around the World</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">Different countries have different customs. What is polite in one country might be impolite in another. It's important to learn about these customs before you travel.</p>
+      <p class="en-text">In Japan, you are supposed to bow when you greet someone. Bowing shows respect. You are also supposed to remove your shoes before entering someone's home. In Japan, it's considered impolite to tip at restaurants.</p>
+      <p class="en-text">In France, you are supposed to kiss on the cheek when you greet friends. The number of kisses varies by region. In France, it's polite to say «bonjour» when you enter a store. You are supposed to keep your hands on the table during meals.</p>
+      <p class="en-text">In Korea, you are supposed to use both hands when giving something to an older person. It shows respect. You are also supposed to look away when drinking with someone older.</p>
+      <p class="en-text">Learning these customs can help you avoid misunderstandings and show respect for other cultures. Remember: when in Rome, do as the Romans do.</p><div class="gloss"><span>bow 鞠躬</span> <span>remove 脱掉</span> <span>tip 给小费</span> <span>region 地区</span> <span>misunderstanding 误解</span> </div></div>    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">What are you supposed to do when greeting someone in Japan?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>You are supposed to bow.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">Is it polite to tip at restaurants in Japan?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>No, it's considered impolite.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">What should you say when you enter a store in France?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>You should say «bonjour».</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★★</span>
+      <div class="q-body">Why is it important to learn about local customs before traveling?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>It can help you avoid misunderstandings and show respect for other cultures.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>🏆 中考题型专练 · 任务型阅读 — 文化差异</summary><div class="content exam-section"><p style="font-size:13px;margin-bottom:8px;">阅读短文，回答问题。</p><div class="reading-passage" style="background:var(--bg-secondary);">      <p>Table manners are different around the world. In China, you are supposed to wait for the oldest person to start eating. You are not supposed to stick your chopsticks into your food. In Western countries, you are supposed to keep your napkin on your lap. You are supposed to say «excuse me» if you need to leave the table. In some Middle Eastern countries, you are supposed to eat with your right hand. The left hand is considered unclean.</p></div><div style="margin:4px 0;font-size:13px;"><strong>1</strong> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> A. What are Chinese supposed to do before eating?</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> B. Why should you wait for the oldest person?</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> C. How to use chopsticks correctly?</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> D. What is the Chinese dining etiquette?</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>2</strong> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> A. Keep your napkin on your lap.</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> B. Keep your napkin on the table.</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> C. Don't use a napkin.</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> D. Fold the napkin.</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>3</strong> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> A. The right hand.</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> B. The left hand.</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> C. Both hands.</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> D. Chopsticks.</span> </div>
+<div class="exam-q" style="border-left-color:#f59e0b;"><span class="q-tag" style="background:#f59e0b;color:#fff;">答案</span><div class="q-body">1. Wait for the oldest person to start eating.；2. A；3. A</div></div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · Describe customs and etiquette in different countries</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">写一篇短文介绍中国的两个重要习俗或礼仪（如见面礼仪、餐桌礼仪、拜访礼仪等），使用 be supposed to 结构。</div></div><div class="writing-framework">      <div class="fw-step">开头：介绍中国的基本礼仪和你将提到的习俗</div>
+      <div class="fw-step">习俗1：见面礼仪或称呼方式</div>
+      <div class="fw-step">习俗2：餐桌礼仪或拜访礼仪</div>
+      <div class="fw-step">解释这些习俗背后的文化含义</div>
+      <div class="fw-step">结尾：总结中国礼仪文化的特点</div></div><div class="writing-model"><div class="en">China has many customs that visitors should know. When you meet someone for the first time in China, you are supposed to shake hands. A light handshake is polite. You are supposed to address people by their title and last name. For example, you should say «Teacher Wang» instead of just «Wang». At the dinner table, you are supposed to wait for the oldest person to start eating. You are not supposed to stick your chopsticks upright in your rice bowl, as it is a symbol of death. These customs show that Chinese culture values respect and harmony.</div><div class="trans">中国有许多游客应该了解的习俗。当你在中国第一次见到某人时，你应该握手。轻轻握手是礼貌的。你应该用头衔和姓氏称呼别人。例如，你应该说「王老师」而不是只叫「王」。在餐桌上，你应该等最年长的人先开始吃。你不应该把筷子直立在饭碗里，因为这象征死亡。这些习俗显示中国文化重视尊重与和谐。</div></div></div></details>
+<details class="module detail-module" open><summary>🎯 Project · Cultural Etiquette Guide</summary><div class="content project-module"><div class="project-brief"><div class="project-title">Cultural Etiquette Guide</div><div class="project-desc">制作一份「国际礼仪指南」手册，介绍3-5个不同国家的礼仪习俗，并比较它们与中国习俗的异同。</div></div><div class="project-steps">      <div class="step"><span class="step-num">1</span><span class="step-text">选择3-5个国家进行调研</span></div>
+      <div class="step"><span class="step-num">2</span><span class="step-text">查阅每个国家的见面礼仪、餐桌礼仪和送礼礼仪</span></div>
+      <div class="step"><span class="step-num">3</span><span class="step-text">用表格或图文对比各国习俗</span></div>
+      <div class="step"><span class="step-num">4</span><span class="step-text">用 be supposed to 句型写出礼仪指南</span></div>
+      <div class="step"><span class="step-num">5</span><span class="step-text">加入和中国习俗的对比</span></div>
+      <div class="step"><span class="step-num">6</span><span class="step-text">制作成精美的口袋手册/海报</span></div></div><div class="project-rubric"><table><tr><th>#</th><th>评价标准</th></tr><tr><td>1.</td><td>覆盖3个以上国家</td></tr>
+<tr><td>2.</td><td>信息准确可靠</td></tr>
+<tr><td>3.</td><td>正确使用了 be supposed to 结构</td></tr>
+<tr><td>4.</td><td>有中外礼仪对比</td></tr>
+<tr><td>5.</td><td>设计精美、适合展示</td></tr></table></div></div></details>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能理解 be supposed to 的用法</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用英语讨论礼仪和习俗</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能比较不同国家的文化差异</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能理解阅读中关于文化习俗的文章</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写关于礼仪的文章</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>向同桌解释 be supposed to 的三种句式（肯定、否定、疑问）并各举一例。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">🔵 1天后：复习 be supposed to 句型</span>
+    <span class="review-dot">🟢 3天后：复习礼仪和习俗相关词汇</span>
+    <span class="review-dot">🟡 1周后：复述世界各国习俗</span>
+    <span class="review-dot">🔴 1月后：写一篇中国餐桌礼仪介绍</span></div>
+<div class="next-stop" style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;"><a href="u09.html" class="nav-arrow">← 上一单元</a><a href="u11.html" class="nav-arrow">下一单元 →</a></div>
+<div class="next-stop" style="margin-top:8px;"><strong>➡️ 下一单元：U11: Sad movies make me cry.</strong><br>学习 make + 宾语 + 宾补结构，描述影响和情感。</div>
+</main>
+<div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
+<button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis, currentUtterance: null, speaking: false, rate: 0.9, voiceURI: 'en-US',
+    init: function(){var s=this;document.getElementById('speechRate').addEventListener('input',function(){s.rate=+this.value;document.getElementById('speechRateLabel').textContent=this.value;});document.getElementById('speechVoice').addEventListener('change',function(){s.voiceURI=this.value;localStorage.setItem('speech-voice',this.value);});document.getElementById('speechStopBtn').addEventListener('click',function(){s.stop();});document.getElementById('speechCloseBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.remove('open');});document.getElementById('speechToggleBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.toggle('open');});},
+    speak: function(t,c){if(!t)return;this.stop();var u=new SpeechSynthesisUtterance(t);u.lang=this.voiceURI;u.rate=this.rate;u.onend=function(){if(c)c();};this.currentUtterance=u;this.synthesis.speak(u);},
+    speakDialogue: function(id,c){var s=this,el=document.getElementById(id),ls=el?el.querySelectorAll('.en-text'):[],i=0;this.stop();(function n(){if(i>=ls.length){if(c)c();return;}var e=ls[i],t=e.getAttribute('data-speak')||e.textContent;if(!t){i++;n();return;}e.classList.add('speaking');var u=new SpeechSynthesisUtterance(t);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){e.classList.remove('speaking');i++;setTimeout(n,500);};u.onerror=function(){e.classList.remove('speaking');i++;setTimeout(n,200);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    speakVocabSection: function(id,c){var s=this,el=document.getElementById(id),cs=el?el.querySelectorAll('.vocab-card'):[],i=0;this.stop();(function n(){if(i>=cs.length){if(c)c();return;}var e=cs[i],hw=e.querySelector('.headword'),ex=e.querySelector('.example .wotd-say'),t=[];if(hw)t.push(hw.getAttribute('data-speak')||hw.textContent);if(ex)t.push(ex.getAttribute('data-speak')||ex.textContent.replace(/<[^>]+>/g,'').trim());var ft=t.join('. ');if(!ft){i++;n();return;}hw.classList.add('speaking');var u=new SpeechSynthesisUtterance(ft);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){hw.classList.remove('speaking');i++;setTimeout(n,600);};u.onerror=function(){hw.classList.remove('speaking');i++;setTimeout(n,300);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    stop: function(){this.synthesis.cancel();this.speaking=false;}
+  };SpeechManager.init();
+  document.querySelectorAll('.wotd-say').forEach(function(el){el.addEventListener('click',function(){SpeechManager.speak(this.getAttribute('data-speak')||this.textContent);});});
+  document.querySelectorAll('.speak-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var d=this.getAttribute('data-dialogue'),v=this.getAttribute('data-vocab'),t=this.getAttribute('data-target');if(this.classList.contains('speaking')){SpeechManager.stop();this.classList.remove('speaking');return;}this.classList.add('speaking');var done=function(){btn.classList.remove('speaking');};if(d){SpeechManager.speakDialogue(d,done);}else if(v){SpeechManager.speakVocabSection(v,done);}else if(t){var tg=document.getElementById(t);if(!tg){btn.classList.remove('speaking');return;}SpeechManager.speak(tg.textContent.replace(/<[^>]+>/g,''),done);}else{btn.classList.remove('speaking');}});});
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();var hw=this.previousElementSibling;if(hw&&hw.classList.contains('wotd-say')){var t=hw.getAttribute('data-speak')||hw.textContent;SpeechManager.speak(t);}});});
+  (function(){var btn=document.getElementById('expandAllBtn');if(!btn)return;btn.addEventListener('click',function(){var ad=document.querySelectorAll('.module,.exam-module');var ao=true;for(var i=0;i<ad.length;i++){if(!ad[i].hasAttribute('open')){ao=false;break;}};for(var i=0;i<ad.length;i++){if(ao)ad[i].removeAttribute('open');else ad[i].setAttribute('open','');};btn.textContent=ao?'📂 展开全部模块':'📖 收起全部模块';});})();
+  var s=document.getElementById('sidebar'),k='eng9-theme-sidebar';if(!s)return;
+  if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
+  window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=window.scrollY>400?'flex':'none';},{passive:true});
+  document.getElementById('backToTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution');});});
+})();
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);localStorage.setItem("eng9-theme",t);var btn=document.getElementById("themeToggle");if(btn)btn.textContent=t==="dark"?"☀️":"🌙";}
+function toggleTheme(){setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark");}
+</script></body></html>

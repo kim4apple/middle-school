@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U7 Teenagers should be allowed to choose their own clothes. | 初中英语九年级</title>
+<link rel="stylesheet" href="css/english9.css">
+<style>
+.speak-btn { display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;color:var(--accent);border:1px solid var(--border);border-radius:4px;padding:2px 8px;background:var(--bg);transition:background 0.15s; }
+.speak-btn:hover { background:var(--accent-light); }
+.speak-btn.speaking { background:var(--eng-amber-light);color:var(--eng-amber);border-color:var(--eng-amber); }
+.headword-speak-indicator { font-size:11px;margin-left:3px;opacity:0.55;cursor:pointer;vertical-align:super;line-height:1; }
+.headword-speak-indicator:hover { opacity:1; }
+.wotd-say { cursor:pointer;transition:color 0.15s; }
+.wotd-say:hover { color:var(--accent); }
+.wotd-say.speaking { color:var(--eng-pink); }
+.speech-panel { position:fixed;bottom:80px;right:24px;z-index:999;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);padding:14px 18px;display:none;min-width:180px; }
+.speech-panel.open { display:block; }
+.speech-panel .row { display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px; }
+.speech-panel .row label { color:var(--text-secondary);font-size:12px;min-width:36px; }
+.speech-panel select,.speech-panel input[type="range"] { flex:1; }
+.speech-panel button { padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px; }
+.speech-panel button:hover { background:var(--accent-light); }
+.speech-toggle-btn { position:fixed;bottom:24px;right:76px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--accent);cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center; }
+.speech-toggle-btn:hover { background:var(--accent-light); }
+.en-text.speaking { background:var(--eng-amber-light);border-radius:4px;padding:2px 4px;transition:background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background:#452a08; }
+.detail-module { content-visibility:auto;contain-intrinsic-size:300px; }
+.reading { content-visibility:auto;contain-intrinsic-size:400px; }
+</style>
+<script>(function(){var t=localStorage.getItem("eng9-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+    <nav id="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="margin-bottom:0;">英语九年级</h2>
+        <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+      </div><nav>
+        <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../grammar.html" style="font-size:13px;">📌 语法全景图</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 九年级全一册 ━━</a>
+        <a href="u01.html">U1 How can we become good learners?</a>
+        <a href="u02.html">U2 I think that mooncakes are delicious!</a>
+        <a href="u03.html">U3 Could you please tell me where the restrooms are?</a>
+        <a href="u04.html">U4 I used to be afraid of the dark.</a>
+        <a href="u05.html">U5 What are the shirts made of?</a>
+        <a href="u06.html">U6 When was it invented?</a>
+        <a href="u07.html" class="active">U7 Teenagers should be allowed to choose their own clothes.</a>
+        <a href="u08.html">U8 It must belong to Carla.</a>
+        <a href="u09.html">U9 I like music that I can dance to.</a>
+        <a href="u10.html">U10 You're supposed to shake hands.</a>
+        <a href="u11.html">U11 Sad movies make me cry.</a>
+        <a href="u12.html">U12 Life is full of the unexpected.</a>
+        <a href="u13.html">U13 We're trying to save the earth!</a>
+        <a href="u14.html">U14 I remember meeting all of you in Grade 7.</a>
+      </nav>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+    </nav>
+<main id="content">
+<div class="cover"><div class="sub-en">U7</div><h1>Teenagers should be allowed to choose their own clothes.</h1><p>规则与许可</p></div>
+<div class="unit-meta"><span>📖 话题：Rules and Permission</span><span>💬 功能：Talk about what you are allowed to do; agree and disagree</span><span>📚 语法：Modal verbs + passive voice: should be + V-ed</span><span>📝 写作：Write about rules and express opinions</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能用 should be allowed to 表达允许</label>
+  <label><input type="checkbox"> 能讨论青少年应被允许做什么</label>
+  <label><input type="checkbox"> 能表达同意和不同意的观点</label>
+  <label><input type="checkbox"> 能写关于规则的文章并表达看法</label></div>
+<details class="module" open><summary>📖 课文精讲 · Teenagers should be allowed to choose their own clothes.</summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：Anna和妈妈在讨论学校的着装规定和课外活动。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
+<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Anna:</span><span class="en-text wotd-say" data-speak="Mom, can I buy a new dress for the party?">Mom, can I buy a new dress for the party?</span></div>
+      <div class="dialogue-line"><span class="speaker">Mom:</span><span class="en-text wotd-say" data-speak="Sure, but I think teenagers should be allowed to choose their own clothes.">Sure, but I think teenagers should be allowed to choose their own clothes.</span></div>
+      <div class="dialogue-line"><span class="speaker">Anna:</span><span class="en-text wotd-say" data-speak="I agree! Some of the school rules are too strict. We should be allowed to wear our own clothes at school.">I agree! Some of the school rules are too strict. We should be allowed to wear our own clothes at school.</span></div>
+      <div class="dialogue-line"><span class="speaker">Mom:</span><span class="en-text wotd-say" data-speak="Well, I think students should be required to wear uniforms. It saves time and money.">Well, I think students should be required to wear uniforms. It saves time and money.</span></div>
+      <div class="dialogue-line"><span class="speaker">Anna:</span><span class="en-text wotd-say" data-speak="Maybe you're right. But I think we should be allowed to choose our hairstyles.">Maybe you're right. But I think we should be allowed to choose our hairstyles.</span></div>
+      <div class="dialogue-line"><span class="speaker">Mom:</span><span class="en-text wotd-say" data-speak="I can agree with that. Also, teenagers should be allowed to make their own decisions sometimes.">I can agree with that. Also, teenagers should be allowed to make their own decisions sometimes.</span></div>
+      <div class="dialogue-line"><span class="speaker">Anna:</span><span class="en-text wotd-say" data-speak="Thanks Mom. Oh, and I think I should be allowed to study with my friends this weekend.">Thanks Mom. Oh, and I think I should be allowed to study with my friends this weekend.</span></div>
+      <div class="dialogue-line"><span class="speaker">Mom:</span><span class="en-text wotd-say" data-speak="Fine, as long as you finish your homework first.">Fine, as long as you finish your homework first.</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>Anna:</strong> 妈妈，我能买一件新裙子参加派对吗？</p>
+        <p><strong>Mom:</strong> 当然，但我认为青少年应该被允许自己选择衣服。</p>
+        <p><strong>Anna:</strong> 我同意！有些校规太严格了。我们应该被允许在学校穿自己的衣服。</p>
+        <p><strong>Mom:</strong> 嗯，我认为学生应该被要求穿校服。这样省时省钱。</p>
+        <p><strong>Anna:</strong> 也许你是对的。但我认为我们应该被允许选择自己的发型。</p>
+        <p><strong>Mom:</strong> 这个我同意。而且，青少年有时候应该被允许自己做决定。</p>
+        <p><strong>Anna:</strong> 谢谢妈妈。哦，还有，我认为我这个周末应该被允许和朋友一起学习。</p>
+        <p><strong>Mom:</strong> 行，只要你先完成作业。</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p>should be allowed to do 表示「应该被允许做某事」— Teenagers <b>should be allowed to</b> choose their own clothes.</p>
+      <p>should not be allowed to do 表示「不应该被允许做某事」— Students <b>should not be allowed to</b> use phones in class.</p>
+      <p>情态动词 + be + V-ed 构成情态动词被动语态。</p>
+      <p>agree/disagree 表达同意或不同意的常用句型。</p></div></div></details>
+<details class="module" open><summary>📝 重点词汇 · 规则与许可 <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="allow">allow</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/əˈlaʊ/</span><span class="pos">v.</span>
+        <div class="definition">允许；准许</div>
+        <div class="example"><span class="wotd-say" data-speak="Smoking is not allowed here.">Smoking is not allowed here.</span><span class="trans">这里不允许吸烟。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="choose">choose</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/tʃuːz/</span><span class="pos">v.</span>
+        <div class="definition">选择</div>
+        <div class="example"><span class="wotd-say" data-speak="You can choose any book you like.">You can choose any book you like.</span><span class="trans">你可以选择任何你喜欢的书。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="choice">choice</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/tʃɔɪs/</span><span class="pos">n.</span>
+        <div class="definition">选择；抉择</div>
+        <div class="example"><span class="wotd-say" data-speak="It's your choice.">It's your choice.</span><span class="trans">这是你的选择。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="drive">drive</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/draɪv/</span><span class="pos">v.</span>
+        <div class="definition">驾驶</div>
+        <div class="example"><span class="wotd-say" data-speak="You are not allowed to drive until you are 18.">You are not allowed to drive until you are 18.</span><span class="trans">你18岁之前不允许开车。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="license">license</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈlaɪsns/</span><span class="pos">n.</span>
+        <div class="definition">执照；许可证</div>
+        <div class="example"><span class="wotd-say" data-speak="He got his driving license last week.">He got his driving license last week.</span><span class="trans">他上周拿到了驾照。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="teenager">teenager</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈtiːneɪdʒər/</span><span class="pos">n.</span>
+        <div class="definition">青少年</div>
+        <div class="example"><span class="wotd-say" data-speak="Teenagers should have more free time.">Teenagers should have more free time.</span><span class="trans">青少年应该有更多自由时间。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="pierce">pierce</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/pɪrs/</span><span class="pos">v.</span>
+        <div class="definition">刺穿；刺破</div>
+        <div class="example"><span class="wotd-say" data-speak="She wants to get her ears pierced.">She wants to get her ears pierced.</span><span class="trans">她想打耳洞。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="earring">earring</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈɪrɪŋ/</span><span class="pos">n.</span>
+        <div class="definition">耳环</div>
+        <div class="example"><span class="wotd-say" data-speak="She is wearing beautiful earrings.">She is wearing beautiful earrings.</span><span class="trans">她戴着漂亮的耳环。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="silly">silly</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈsɪli/</span><span class="pos">adj.</span>
+        <div class="definition">愚蠢的；傻的</div>
+        <div class="example"><span class="wotd-say" data-speak="That's a silly rule.">That's a silly rule.</span><span class="trans">那是一条愚蠢的规定。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="cry">cry</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/kraɪ/</span><span class="pos">v.</span>
+        <div class="definition">哭；哭泣</div>
+        <div class="example"><span class="wotd-say" data-speak="Don't cry. Everything will be fine.">Don't cry. Everything will be fine.</span><span class="trans">别哭了。一切都会好的。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="field">field</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/fiːld/</span><span class="pos">n.</span>
+        <div class="definition">田野；领域</div>
+        <div class="example"><span class="wotd-say" data-speak="The kids are playing in the field.">The kids are playing in the field.</span><span class="trans">孩子们在田野里玩。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="hug">hug</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/hʌɡ/</span><span class="pos">v./n.</span>
+        <div class="definition">拥抱</div>
+        <div class="example"><span class="wotd-say" data-speak="Give me a hug!">Give me a hug!</span><span class="trans">给我一个拥抱！</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="lift">lift</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/lɪft/</span><span class="pos">v.</span>
+        <div class="definition">举起；提升</div>
+        <div class="example"><span class="wotd-say" data-speak="Can you lift this box?">Can you lift this box?</span><span class="trans">你能举起这个箱子吗？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="achieve">achieve</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/əˈtʃiːv/</span><span class="pos">v.</span>
+        <div class="definition">实现；达到</div>
+        <div class="example"><span class="wotd-say" data-speak="Work hard to achieve your dreams.">Work hard to achieve your dreams.</span><span class="trans">努力去实现你的梦想。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="support">support</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/səˈpɔːrt/</span><span class="pos">v./n.</span>
+        <div class="definition">支持</div>
+        <div class="example"><span class="wotd-say" data-speak="My family supports me.">My family supports me.</span><span class="trans">我的家人支持我。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="manage">manage</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈmænɪdʒ/</span><span class="pos">v.</span>
+        <div class="definition">管理；应付</div>
+        <div class="example"><span class="wotd-say" data-speak="I can manage my time well.">I can manage my time well.</span><span class="trans">我能很好地管理时间。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="opportunity">opportunity</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌɒpərˈtjuːnəti/</span><span class="pos">n.</span>
+        <div class="definition">机会</div>
+        <div class="example"><span class="wotd-say" data-speak="This is a great opportunity.">This is a great opportunity.</span><span class="trans">这是一个很好的机会。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="safety">safety</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈseɪfti/</span><span class="pos">n.</span>
+        <div class="definition">安全</div>
+        <div class="example"><span class="wotd-say" data-speak="Safety comes first.">Safety comes first.</span><span class="trans">安全第一。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="educate">educate</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈedʒukeɪt/</span><span class="pos">v.</span>
+        <div class="definition">教育；培养</div>
+        <div class="example"><span class="wotd-say" data-speak="Parents should educate their children.">Parents should educate their children.</span><span class="trans">家长应该教育孩子。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="volunteer">volunteer</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌvɒlənˈtɪr/</span><span class="pos">v./n.</span>
+        <div class="definition">自愿；志愿者</div>
+        <div class="example"><span class="wotd-say" data-speak="I want to volunteer at the hospital.">I want to volunteer at the hospital.</span><span class="trans">我想在医院做志愿者。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="experience">experience</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɪkˈspɪriəns/</span><span class="pos">n./v.</span>
+        <div class="definition">经验；体验</div>
+        <div class="example"><span class="wotd-say" data-speak="This is a valuable experience.">This is a valuable experience.</span><span class="trans">这是一次宝贵的经历。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="decision">decision</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/dɪˈsɪʒn/</span><span class="pos">n.</span>
+        <div class="definition">决定</div>
+        <div class="example"><span class="wotd-say" data-speak="Think before you make a decision.">Think before you make a decision.</span><span class="trans">做决定之前要三思。</span></div>
+      </div></div></div></details>
+<details class="module" open><summary>🔤 重点句型 · Sentence Patterns</summary><div class="content"><div class="pattern-grid">      <div class="pattern-card">
+        <div class="structure">主语 + should (not) be allowed to + V</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>情态动词被动语态，表示应该（不应该）被允许做某事。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1">Teenagers <b>should be allowed to</b> choose their own clothes. / Students <b>should not be allowed to</b> use phones.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">主语 + can/may/must be + V-ed</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>其他情态动词的被动语态。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp2">This work <b>must be finished</b> today. / The problem <b>can be solved</b> easily.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">I agree / disagree with...</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>表达同意或不同意。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp3"><b>I agree with</b> you. / <b>I disagree with</b> that rule. / <b>I don't think</b> it's a good idea.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">主语 + should (not) be required to V</div> <button class="speak-btn" data-target="sp4" title="朗读句型">🔊</button>
+        <div>表示「应该/不应该被要求做某事」。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp4">Students <b>should be required to</b> wear uniforms. / We <b>should not be required to</b> attend extra classes.</span></div>
+      </div></div></div></details>
+<details class="module detail-module" open><summary>📚 语法聚焦 · 情态动词的被动语态 <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module"><h3>情态动词被动语态结构</h3>
+<table class="grammar-table">
+<tr><th>情态动词</th><th>主动语态</th><th>被动语态</th></tr>
+<tr><td>can</td><td>We can solve this problem.</td><td>This problem can be solved.</td></tr>
+<tr><td>must</td><td>We must finish the work.</td><td>The work must be finished.</td></tr>
+<tr><td>should</td><td>We should allow students to choose.</td><td>Students should be allowed to choose.</td></tr>
+<tr><td>may</td><td>We may hold the meeting.</td><td>The meeting may be held.</td></tr>
+</table>
+<h3>常见表达</h3>
+<table class="grammar-table">
+<tr><th>结构</th><th>含义</th><th>例句</th></tr>
+<tr><td>should be allowed to</td><td>应该被允许</td><td>Kids should be allowed to play.</td></tr>
+<tr><td>should not be allowed to</td><td>不应该被允许</td><td>Teens shouldn't be allowed to drive.</td></tr>
+<tr><td>must be + V-ed</td><td>必须被</td><td>Homework must be done.</td></tr>
+<tr><td>can be + V-ed</td><td>可以被</td><td>The problem can be solved.</td></tr>
+</table>
+</div><div class="chinese-error">      <p>情态动词 + be + 过去分词，注意 be 不能变为 am/is/are。</p>
+      <p>否定形式在情态动词后加 not：should not be allowed</p>
+      <p>疑问形式把情态动词提到主语前：Should teenagers be allowed to...?</p>
+      <p><span class="wotd-say" data-speak="Rules are made to be broken.">Rules are made to be broken.</span> 规矩是用来打破的。（谚语，常用于娱乐场景）</p></div></div></details>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">Teenagers should ____ (allow) to choose their own clothes.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>be allowed</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">Students ____ not ____ (allow) to run in the hallways.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>should ... be allowed</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">This work must ____ (finish) by Friday.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>be finished</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">____ teenagers ____ (allow) to have part-time jobs? (疑问句)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Should ... be allowed</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">I agree ____ you. (填入介词)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>with</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">选择：Homework should ____ on time.<br>A. be done B. is done C. was done D. done</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>A</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">The problem can ____ (solve) easily.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>be solved</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">改主动为被动：Parents should encourage their children. → ____.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Children should be encouraged by their parents.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">翻译：青少年不应该被允许每天看电视超过两小时。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Teenagers should not be allowed to watch TV for more than two hours a day.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">完成：I think sixteen-year-olds should ____ (allow) to drive.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>be allowed</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">选择：____ we be allowed to bring phones to school?<br>A. Do B. Are C. Should D. Have</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>C</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">改错：Teenagers should allowed to make their own decisions.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>should allowed → should be allowed</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">改写：We should not allow smoking in public places. → Smoking ____.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Smoking should not be allowed in public places.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">写作：用情态动词被动语态写一段关于学校规则的话（你是否同意？为什么？）。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>I think students should be allowed to bring phones to school, but phones must be turned off during class. Also, we should be allowed to choose our own after-school activities. However, homework must be finished before we can play.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>📖 阅读专项 · Should Teenagers Be Allowed to Make Their Own Decisions?</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">Many teenagers have hobbies. Sometimes these hobbies can get in the way of schoolwork. Some parents might worry about their children's success at school. They think that teenagers should not be allowed to spend too much time on hobbies.</p>
+      <p class="en-text">But teenagers believe that they should be allowed to practice their hobbies as much as they want. For example, Liu Yu, a fifteen-year-old boy from Shandong, wants to be a professional runner. He is a running star at his school. He wants to practice running every day.</p>
+      <p class="en-text">However, his parents won't allow him to train as much as he would like. They think he should spend more time on his schoolwork. They say, «He needs to think about what will happen if he doesn't become a professional runner.»</p>
+      <p class="en-text">Liu Yu disagrees. He says, «I think I should be allowed to make decisions for myself. My dream is to be a professional runner. I understand that my parents care about me, but I believe I can manage both running and schoolwork.»</p><div class="gloss"><span>get in the way of 妨碍</span> <span>professional 职业的；专业的</span> <span>train 训练</span> <span>care about 关心</span> <span>make decisions 做决定</span> </div></div>    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">What is Liu Yu's dream?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>To be a professional runner.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">Why won't Liu Yu's parents allow him to train as much as he wants?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Because they think he should spend more time on schoolwork.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">What does Liu Yu think about his parents' worry?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>He understands but believes he can manage both running and schoolwork.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★★</span>
+      <div class="q-body">What is the main argument in this passage?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Whether teenagers should be allowed to make their own decisions about their hobbies and dreams.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>🏆 中考题型专练 · 任务型阅读</summary><div class="content exam-section"><p style="font-size:13px;margin-bottom:8px;">阅读短文，回答问题。</p><div class="reading-passage" style="background:var(--bg-secondary);">      <p>In many countries, teenagers are not allowed to do certain things until they reach a certain age. For example, in the United States, you must be 16 to get a driver's license. You must be 18 to vote. And you must be 21 to buy alcohol. These laws are made to protect young people. Some people think the ages should be lower. Others think they should be higher. What do you think?</p></div><div style="margin:4px 0;font-size:13px;"><strong>1</strong> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> A. At what age can you get a driver's license in the US?</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> B. What is the voting age in the US?</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> C. Why are these laws made?</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> D. How old must you be to buy alcohol in the US?</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>2</strong> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> A. 16</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> B. 18</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> C. 21</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> D. 15</span> </div>
+<div class="exam-q" style="border-left-color:#f59e0b;"><span class="q-tag" style="background:#f59e0b;color:#fff;">答案</span><div class="q-body">1. To protect young people.；2. B - 18</div></div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · Write about rules and express opinions</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">写一篇短文讨论「青少年是否应该被允许自己选择衣服」。给出你的观点和理由。</div></div><div class="writing-framework">      <div class="fw-step">开头：引出话题，提出不同看法</div>
+      <div class="fw-step">正方观点：支持自己选衣服的理由</div>
+      <div class="fw-step">反方观点：穿校服的好处</div>
+      <div class="fw-step">你的立场：你认为应该如何</div>
+      <div class="fw-step">结尾：总结你的观点</div></div><div class="writing-model"><div class="en">Should teenagers be allowed to choose their own clothes? Different people have different opinions. Some people think teenagers should be allowed to choose their own clothes. They say it helps teens express themselves and build confidence. However, others think students should wear uniforms. They say uniforms save time and reduce comparison among students. In my opinion, teenagers should be allowed to choose their own clothes on weekends, but they should wear uniforms to school. This way, they can express themselves while keeping discipline at school.</div><div class="trans">青少年是否应该被允许自己选择衣服？不同的人有不同的看法。有些人认为青少年应该被允许自己选择衣服。他们说这有助于青少年表达自己和建立自信。然而，其他人认为学生应该穿校服。他们说校服节省时间，减少学生之间的比较。在我看来，青少年在周末应该被允许选择自己的衣服，但上学应该穿校服。这样，他们既可以表达自己，又能保持学校纪律。</div></div></div></details>
+<details class="module detail-module" open><summary>🎯 Project · Class Rules Debate</summary><div class="content project-module"><div class="project-brief"><div class="project-title">Class Rules Debate</div><div class="project-desc">组织一场班级辩论赛，讨论「我们应该被允许做什么」——讨论并制定你们自己的班级规则。</div></div><div class="project-steps">      <div class="step"><span class="step-num">1</span><span class="step-text">小组讨论：你们认为学校/班级中哪些规则需要改变</span></div>
+      <div class="step"><span class="step-num">2</span><span class="step-text">列出3-5条你认为应该改变的规定</span></div>
+      <div class="step"><span class="step-num">3</span><span class="step-text">用 should (not) be allowed to 写出你的观点</span></div>
+      <div class="step"><span class="step-num">4</span><span class="step-text">分组辩论（正方 vs 反方）</span></div>
+      <div class="step"><span class="step-num">5</span><span class="step-text">全班投票，制定最终版班级公约</span></div>
+      <div class="step"><span class="step-num">6</span><span class="step-text">将班级公约用英文展示在教室</span></div></div><div class="project-rubric"><table><tr><th>#</th><th>评价标准</th></tr><tr><td>1.</td><td>观点明确、论据充分</td></tr>
+<tr><td>2.</td><td>正确使用了 should be allowed to 结构</td></tr>
+<tr><td>3.</td><td>辩论中尊重对方观点</td></tr>
+<tr><td>4.</td><td>最终的班级公约合理可行</td></tr>
+<tr><td>5.</td><td>英文表达基本准确</td></tr></table></div></div></details>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能理解情态动词被动语态的结构</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 should be allowed to 表达允许和禁止</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能表达同意和不同意</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能理解阅读中关于决定权的讨论</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写关于规则的文章</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>向同桌解释情态动词被动语态的结构：情态动词 + be + 过去分词，并举例说明。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">🔵 1天后：复习情态动词被动语态</span>
+    <span class="review-dot">🟢 3天后：复习规则和许可相关词汇</span>
+    <span class="review-dot">🟡 1周后：复述刘宇的故事</span>
+    <span class="review-dot">🔴 1月后：写一篇关于学校规则的短文</span></div>
+<div class="next-stop" style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;"><a href="u06.html" class="nav-arrow">← 上一单元</a><a href="u08.html" class="nav-arrow">下一单元 →</a></div>
+<div class="next-stop" style="margin-top:8px;"><strong>➡️ 下一单元：U8: It must belong to Carla.</strong><br>学习情态动词表推测，学会推理和判断。</div>
+</main>
+<div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
+<button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis, currentUtterance: null, speaking: false, rate: 0.9, voiceURI: 'en-US',
+    init: function(){var s=this;document.getElementById('speechRate').addEventListener('input',function(){s.rate=+this.value;document.getElementById('speechRateLabel').textContent=this.value;});document.getElementById('speechVoice').addEventListener('change',function(){s.voiceURI=this.value;localStorage.setItem('speech-voice',this.value);});document.getElementById('speechStopBtn').addEventListener('click',function(){s.stop();});document.getElementById('speechCloseBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.remove('open');});document.getElementById('speechToggleBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.toggle('open');});},
+    speak: function(t,c){if(!t)return;this.stop();var u=new SpeechSynthesisUtterance(t);u.lang=this.voiceURI;u.rate=this.rate;u.onend=function(){if(c)c();};this.currentUtterance=u;this.synthesis.speak(u);},
+    speakDialogue: function(id,c){var s=this,el=document.getElementById(id),ls=el?el.querySelectorAll('.en-text'):[],i=0;this.stop();(function n(){if(i>=ls.length){if(c)c();return;}var e=ls[i],t=e.getAttribute('data-speak')||e.textContent;if(!t){i++;n();return;}e.classList.add('speaking');var u=new SpeechSynthesisUtterance(t);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){e.classList.remove('speaking');i++;setTimeout(n,500);};u.onerror=function(){e.classList.remove('speaking');i++;setTimeout(n,200);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    speakVocabSection: function(id,c){var s=this,el=document.getElementById(id),cs=el?el.querySelectorAll('.vocab-card'):[],i=0;this.stop();(function n(){if(i>=cs.length){if(c)c();return;}var e=cs[i],hw=e.querySelector('.headword'),ex=e.querySelector('.example .wotd-say'),t=[];if(hw)t.push(hw.getAttribute('data-speak')||hw.textContent);if(ex)t.push(ex.getAttribute('data-speak')||ex.textContent.replace(/<[^>]+>/g,'').trim());var ft=t.join('. ');if(!ft){i++;n();return;}hw.classList.add('speaking');var u=new SpeechSynthesisUtterance(ft);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){hw.classList.remove('speaking');i++;setTimeout(n,600);};u.onerror=function(){hw.classList.remove('speaking');i++;setTimeout(n,300);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    stop: function(){this.synthesis.cancel();this.speaking=false;}
+  };SpeechManager.init();
+  document.querySelectorAll('.wotd-say').forEach(function(el){el.addEventListener('click',function(){SpeechManager.speak(this.getAttribute('data-speak')||this.textContent);});});
+  document.querySelectorAll('.speak-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var d=this.getAttribute('data-dialogue'),v=this.getAttribute('data-vocab'),t=this.getAttribute('data-target');if(this.classList.contains('speaking')){SpeechManager.stop();this.classList.remove('speaking');return;}this.classList.add('speaking');var done=function(){btn.classList.remove('speaking');};if(d){SpeechManager.speakDialogue(d,done);}else if(v){SpeechManager.speakVocabSection(v,done);}else if(t){var tg=document.getElementById(t);if(!tg){btn.classList.remove('speaking');return;}SpeechManager.speak(tg.textContent.replace(/<[^>]+>/g,''),done);}else{btn.classList.remove('speaking');}});});
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();var hw=this.previousElementSibling;if(hw&&hw.classList.contains('wotd-say')){var t=hw.getAttribute('data-speak')||hw.textContent;SpeechManager.speak(t);}});});
+  (function(){var btn=document.getElementById('expandAllBtn');if(!btn)return;btn.addEventListener('click',function(){var ad=document.querySelectorAll('.module,.exam-module');var ao=true;for(var i=0;i<ad.length;i++){if(!ad[i].hasAttribute('open')){ao=false;break;}};for(var i=0;i<ad.length;i++){if(ao)ad[i].removeAttribute('open');else ad[i].setAttribute('open','');};btn.textContent=ao?'📂 展开全部模块':'📖 收起全部模块';});})();
+  var s=document.getElementById('sidebar'),k='eng9-theme-sidebar';if(!s)return;
+  if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
+  window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=window.scrollY>400?'flex':'none';},{passive:true});
+  document.getElementById('backToTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution');});});
+})();
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);localStorage.setItem("eng9-theme",t);var btn=document.getElementById("themeToggle");if(btn)btn.textContent=t==="dark"?"☀️":"🌙";}
+function toggleTheme(){setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark");}
+</script></body></html>

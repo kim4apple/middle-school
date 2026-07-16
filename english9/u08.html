@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U8 It must belong to Carla. | 初中英语九年级</title>
+<link rel="stylesheet" href="css/english9.css">
+<style>
+.speak-btn { display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;color:var(--accent);border:1px solid var(--border);border-radius:4px;padding:2px 8px;background:var(--bg);transition:background 0.15s; }
+.speak-btn:hover { background:var(--accent-light); }
+.speak-btn.speaking { background:var(--eng-amber-light);color:var(--eng-amber);border-color:var(--eng-amber); }
+.headword-speak-indicator { font-size:11px;margin-left:3px;opacity:0.55;cursor:pointer;vertical-align:super;line-height:1; }
+.headword-speak-indicator:hover { opacity:1; }
+.wotd-say { cursor:pointer;transition:color 0.15s; }
+.wotd-say:hover { color:var(--accent); }
+.wotd-say.speaking { color:var(--eng-pink); }
+.speech-panel { position:fixed;bottom:80px;right:24px;z-index:999;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);padding:14px 18px;display:none;min-width:180px; }
+.speech-panel.open { display:block; }
+.speech-panel .row { display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px; }
+.speech-panel .row label { color:var(--text-secondary);font-size:12px;min-width:36px; }
+.speech-panel select,.speech-panel input[type="range"] { flex:1; }
+.speech-panel button { padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px; }
+.speech-panel button:hover { background:var(--accent-light); }
+.speech-toggle-btn { position:fixed;bottom:24px;right:76px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--accent);cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center; }
+.speech-toggle-btn:hover { background:var(--accent-light); }
+.en-text.speaking { background:var(--eng-amber-light);border-radius:4px;padding:2px 4px;transition:background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background:#452a08; }
+.detail-module { content-visibility:auto;contain-intrinsic-size:300px; }
+.reading { content-visibility:auto;contain-intrinsic-size:400px; }
+</style>
+<script>(function(){var t=localStorage.getItem("eng9-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+    <nav id="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="margin-bottom:0;">英语九年级</h2>
+        <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+      </div><nav>
+        <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../grammar.html" style="font-size:13px;">📌 语法全景图</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 九年级全一册 ━━</a>
+        <a href="u01.html">U1 How can we become good learners?</a>
+        <a href="u02.html">U2 I think that mooncakes are delicious!</a>
+        <a href="u03.html">U3 Could you please tell me where the restrooms are?</a>
+        <a href="u04.html">U4 I used to be afraid of the dark.</a>
+        <a href="u05.html">U5 What are the shirts made of?</a>
+        <a href="u06.html">U6 When was it invented?</a>
+        <a href="u07.html">U7 Teenagers should be allowed to choose their own clothes.</a>
+        <a href="u08.html" class="active">U8 It must belong to Carla.</a>
+        <a href="u09.html">U9 I like music that I can dance to.</a>
+        <a href="u10.html">U10 You're supposed to shake hands.</a>
+        <a href="u11.html">U11 Sad movies make me cry.</a>
+        <a href="u12.html">U12 Life is full of the unexpected.</a>
+        <a href="u13.html">U13 We're trying to save the earth!</a>
+        <a href="u14.html">U14 I remember meeting all of you in Grade 7.</a>
+      </nav>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+    </nav>
+<main id="content">
+<div class="cover"><div class="sub-en">U8</div><h1>It must belong to Carla.</h1><p>推测与判断</p></div>
+<div class="unit-meta"><span>📖 话题：Speculation and Judgment</span><span>💬 功能：Make inferences and guesses about things and people</span><span>📚 语法：Modal verbs for deduction: must, might, could, can't</span><span>📝 写作：Write a story using reasoning and deduction</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能用情态动词表推测</label>
+  <label><input type="checkbox"> 能根据证据做出推理判断</label>
+  <label><input type="checkbox"> 能描述物品的所有者</label>
+  <label><input type="checkbox"> 能写推理性的小故事</label></div>
+<details class="module" open><summary>📖 课文精讲 · It must belong to Carla.</summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：Linda和Tom在教室里发现了一个无人认领的书包，在推测书包的主人。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
+<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Linda:</span><span class="en-text wotd-say" data-speak="Look! There's a schoolbag on the desk. Whose is it?">Look! There's a schoolbag on the desk. Whose is it?</span></div>
+      <div class="dialogue-line"><span class="speaker">Tom:</span><span class="en-text wotd-say" data-speak="I'm not sure. It could be Maria's. She has a pink schoolbag.">I'm not sure. It could be Maria's. She has a pink schoolbag.</span></div>
+      <div class="dialogue-line"><span class="speaker">Linda:</span><span class="en-text wotd-say" data-speak="No, it can't be hers. Her schoolbag is on her desk. I saw it just now.">No, it can't be hers. Her schoolbag is on her desk. I saw it just now.</span></div>
+      <div class="dialogue-line"><span class="speaker">Tom:</span><span class="en-text wotd-say" data-speak="Then it must belong to a girl. There's a hair band in it.">Then it must belong to a girl. There's a hair band in it.</span></div>
+      <div class="dialogue-line"><span class="speaker">Linda:</span><span class="en-text wotd-say" data-speak="It might be Lucy's. She has long hair and wears hair bands.">It might be Lucy's. She has long hair and wears hair bands.</span></div>
+      <div class="dialogue-line"><span class="speaker">Tom:</span><span class="en-text wotd-say" data-speak="But Lucy is absent today. Wait, there's a science magazine in it. It could be Bob's.">But Lucy is absent today. Wait, there's a science magazine in it. It could be Bob's.</span></div>
+      <div class="dialogue-line"><span class="speaker">Linda:</span><span class="en-text wotd-say" data-speak="It can't be Bob's. He doesn't like science. I think it must be Tony's. He loves science magazines.">It can't be Bob's. He doesn't like science. I think it must be Tony's. He loves science magazines.</span></div>
+      <div class="dialogue-line"><span class="speaker">Tom:</span><span class="en-text wotd-say" data-speak="You're right! And look, there's a name tag inside. It IS Tony's!">You're right! And look, there's a name tag inside. It IS Tony's!</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>Linda:</strong> 看！桌子上有一个书包。是谁的？</p>
+        <p><strong>Tom:</strong> 我不确定。可能是玛丽亚的。她有一个粉色的书包。</p>
+        <p><strong>Linda:</strong> 不，不可能是她的。她的书包在她桌子上。我刚才看到了。</p>
+        <p><strong>Tom:</strong> 那它一定是一个女生的。里面有一个发带。</p>
+        <p><strong>Linda:</strong> 可能是露西的。她留着长发，戴发带。</p>
+        <p><strong>Tom:</strong> 但露西今天缺席。等等，里面有一本科学杂志。可能是鲍勃的。</p>
+        <p><strong>Linda:</strong> 不可能是鲍勃的。他不喜欢科学。我认为一定是托尼的。他喜欢科学杂志。</p>
+        <p><strong>Tom:</strong> 你说得对！看，里面有一个名字标签。的确是托尼的！</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p>must + 动词原形 表示「一定……」（非常肯定的推测）— It <b>must</b> belong to Carla.</p>
+      <p>might/could + 动词原形 表示「可能是……」（不太肯定的推测）— It <b>could</b> be Maria's.</p>
+      <p>can't + 动词原形 表示「不可能是……」（否定推测）— It <b>can't</b> be hers.</p>
+      <p>belong to + 人 表示「属于某人」— It must belong <b>to</b> Carla.</p></div></div></details>
+<details class="module" open><summary>📝 重点词汇 · 推测与判断 <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="belong">belong</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/bɪˈlɒŋ/</span><span class="pos">v.</span>
+        <div class="definition">属于</div>
+        <div class="example"><span class="wotd-say" data-speak="This book belongs to me.">This book belongs to me.</span><span class="trans">这本书属于我。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="whose">whose</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/huːz/</span><span class="pos">pron.</span>
+        <div class="definition">谁的</div>
+        <div class="example"><span class="wotd-say" data-speak="Whose jacket is this?">Whose jacket is this?</span><span class="trans">这是谁的夹克？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="truck">truck</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/trʌk/</span><span class="pos">n.</span>
+        <div class="definition">卡车</div>
+        <div class="example"><span class="wotd-say" data-speak="A big truck drove past.">A big truck drove past.</span><span class="trans">一辆大卡车开过去了。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="picnic">picnic</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈpɪknɪk/</span><span class="pos">n.</span>
+        <div class="definition">野餐</div>
+        <div class="example"><span class="wotd-say" data-speak="We had a picnic in the park.">We had a picnic in the park.</span><span class="trans">我们在公园里野餐了。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="rabbit">rabbit</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈræbɪt/</span><span class="pos">n.</span>
+        <div class="definition">兔子</div>
+        <div class="example"><span class="wotd-say" data-speak="The rabbit is eating carrots.">The rabbit is eating carrots.</span><span class="trans">兔子在吃胡萝卜。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="attend">attend</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/əˈtend/</span><span class="pos">v.</span>
+        <div class="definition">参加；出席</div>
+        <div class="example"><span class="wotd-say" data-speak="I attended a concert last night.">I attended a concert last night.</span><span class="trans">我昨晚参加了一场音乐会。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="valuable">valuable</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈvæljuəbl/</span><span class="pos">adj.</span>
+        <div class="definition">有价值的；宝贵的</div>
+        <div class="example"><span class="wotd-say" data-speak="This is a valuable painting.">This is a valuable painting.</span><span class="trans">这是一幅有价值的画。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="pink">pink</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/pɪŋk/</span><span class="pos">adj./n.</span>
+        <div class="definition">粉色的</div>
+        <div class="example"><span class="wotd-say" data-speak="She wears a pink dress.">She wears a pink dress.</span><span class="trans">她穿着一条粉色裙子。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="anybody">anybody</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈenibɒdi/</span><span class="pos">pron.</span>
+        <div class="definition">任何人</div>
+        <div class="example"><span class="wotd-say" data-speak="Is there anybody in the room?">Is there anybody in the room?</span><span class="trans">房间里有人吗？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="noise">noise</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/nɔɪz/</span><span class="pos">n.</span>
+        <div class="definition">噪音；声音</div>
+        <div class="example"><span class="wotd-say" data-speak="I heard a strange noise.">I heard a strange noise.</span><span class="trans">我听到了一个奇怪的声音。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="happening">happening</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈhæpənɪŋ/</span><span class="pos">n.</span>
+        <div class="definition">事件；发生的事情</div>
+        <div class="example"><span class="wotd-say" data-speak="What's happening over there?">What's happening over there?</span><span class="trans">那边发生了什么事？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="neighbor">neighbor</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈneɪbər/</span><span class="pos">n.</span>
+        <div class="definition">邻居</div>
+        <div class="example"><span class="wotd-say" data-speak="My neighbor is very kind.">My neighbor is very kind.</span><span class="trans">我的邻居很友好。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="interview">interview</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈɪntərvjuː/</span><span class="pos">n./v.</span>
+        <div class="definition">采访；面试</div>
+        <div class="example"><span class="wotd-say" data-speak="The reporter interviewed the mayor.">The reporter interviewed the mayor.</span><span class="trans">记者采访了市长。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="wind">wind</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/wɪnd/</span><span class="pos">n.</span>
+        <div class="definition">风</div>
+        <div class="example"><span class="wotd-say" data-speak="The wind is blowing hard.">The wind is blowing hard.</span><span class="trans">风很大。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="sleepy">sleepy</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈsliːpi/</span><span class="pos">adj.</span>
+        <div class="definition">困倦的；瞌睡的</div>
+        <div class="example"><span class="wotd-say" data-speak="I feel sleepy after lunch.">I feel sleepy after lunch.</span><span class="trans">午饭后我感到困倦。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="laboratory">laboratory</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ləˈbɒrətri/</span><span class="pos">n.</span>
+        <div class="definition">实验室</div>
+        <div class="example"><span class="wotd-say" data-speak="The science lab is on the second floor.">The science lab is on the second floor.</span><span class="trans">科学实验室在二楼。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="receive">receive</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/rɪˈsiːv/</span><span class="pos">v.</span>
+        <div class="definition">收到；接受</div>
+        <div class="example"><span class="wotd-say" data-speak="I received a gift from my friend.">I received a gift from my friend.</span><span class="trans">我收到了朋友的一份礼物。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="alien">alien</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈeɪliən/</span><span class="pos">n.</span>
+        <div class="definition">外星人</div>
+        <div class="example"><span class="wotd-say" data-speak="Do you believe in aliens?">Do you believe in aliens?</span><span class="trans">你相信有外星人吗？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="suit">suit</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/suːt/</span><span class="pos">n./v.</span>
+        <div class="definition">套装；适合</div>
+        <div class="example"><span class="wotd-say" data-speak="This dress suits you very well.">This dress suits you very well.</span><span class="trans">这条裙子很适合你。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="express">express</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɪkˈspres/</span><span class="pos">v.</span>
+        <div class="definition">表达</div>
+        <div class="example"><span class="wotd-say" data-speak="I can't express how happy I am.">I can't express how happy I am.</span><span class="trans">我无法表达我有多开心。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="circle">circle</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈsɜːrkl/</span><span class="pos">n./v.</span>
+        <div class="definition">圆圈；环绕</div>
+        <div class="example"><span class="wotd-say" data-speak="Draw a circle on the paper.">Draw a circle on the paper.</span><span class="trans">在纸上画一个圈。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="purple">purple</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈpɜːrpl/</span><span class="pos">adj./n.</span>
+        <div class="definition">紫色的</div>
+        <div class="example"><span class="wotd-say" data-speak="She loves purple flowers.">She loves purple flowers.</span><span class="trans">她喜欢紫色的花。</span></div>
+      </div></div></div></details>
+<details class="module" open><summary>🔤 重点句型 · Sentence Patterns</summary><div class="content"><div class="pattern-grid">      <div class="pattern-card">
+        <div class="structure">主语 + must + 动词原形</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>表示非常肯定的推测（≈ 一定是）。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1">The schoolbag <b>must belong to</b> Carla. / She <b>must be</b> at home. I saw her car.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">主语 + could/might + 动词原形</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>表示可能性较小的推测（≈ 可能是）。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp2">It <b>could be</b> Maria's bag. / He <b>might be</b> in the library.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">主语 + can't + 动词原形</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>表示否定的推测（≈ 不可能是）。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp3">It <b>can't be</b> Bob's. He doesn't like science. / She <b>can't be</b> at school. She's sick.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">主语 + must/could/might + be + V-ing</div> <button class="speak-btn" data-target="sp4" title="朗读句型">🔊</button>
+        <div>推测正在进行的动作。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp4">They <b>must be</b> studying. The light is on. / He <b>might be</b> sleeping.</span></div>
+      </div></div></div></details>
+<details class="module detail-module" open><summary>📚 语法聚焦 · 情态动词表推测 <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module"><h3>推测的程度</h3>
+<table class="grammar-table">
+<tr><th>情态动词</th><th>可能性</th><th>含义</th></tr>
+<tr><td>must</td><td>100% (非常肯定)</td><td>一定是……</td></tr>
+<tr><td>can't</td><td>0% (非常肯定否定)</td><td>不可能是……</td></tr>
+<tr><td>could</td><td>约30-50%</td><td>可能是……</td></tr>
+<tr><td>might</td><td>约10-30%</td><td>也许是……</td></tr>
+</table>
+<h3>不同时态的推测</h3>
+<table class="grammar-table">
+<tr><th>时态</th><th>结构</th><th>例句</th></tr>
+<tr><td>对现在的推测</td><td>must/could/might/can't + V</td><td>He must be tired.</td></tr>
+<tr><td>对正在进行的推测</td><td>must/could/might + be V-ing</td><td>They must be sleeping.</td></tr>
+<tr><td>对过去的推测</td><td>must/could/might + have V-ed</td><td>She must have left.</td></tr>
+</table>
+</div><div class="chinese-error">      <p>must 表推测只用于肯定句，否定句只能用 can't。</p>
+      <p>can't be 和 must not be 的区别：can't be = 不可能是；must not be = 禁止是。</p>
+      <p>belong to 后接人称代词时要用宾格（me/him/her）。</p>
+      <p><span class="wotd-say" data-speak="Where there is smoke, there is fire.">Where there is smoke, there is fire.</span> 无风不起浪。</p></div></div></details>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">It ____ (一定是) be Carla's. She loves pink.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>must</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">It ____ (不可能是) be Tom's. He doesn't like science.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>can't</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">It ____ (可能是) be Maria's. I'm not sure.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>could / might</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">This book belongs ____ my sister.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>to</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">____ (谁的) schoolbag is this?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Whose</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">The baby is crying. She ____ (must/can't) be hungry.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>must</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">The light is off. They ____ (must/can't) be at home.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>can't</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">选择：Whose gloves are these? They ____ be Lucy's. She likes wearing gloves.<br>A. must B. could C. can't D. might</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>A</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">改写：Probably the book is his. → The book ____.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>The book must be his. / The book must belong to him.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">翻译：那个声音可能是风。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>That noise could be the wind.</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">选择：He ____ be at school. I saw him go into the building.<br>A. must B. could C. can't D. might</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>A</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">完成句子：Look at that man running. He ____ (must/can't) be late for the train.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>must</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">改错：This must be Tom's pen, doesn't it?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>doesn't → isn't</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">写作：你在教室里发现了一个水杯。用推测结构写出3-4句关于它可能是谁的推理过程。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>This water bottle must belong to a girl because it's pink. It could be Anna's, but it can't be Lucy's — she's absent today. I think it must be Anna's. I'll ask her.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>📖 阅读专项 · The Mystery of the Strange Noise</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">Our neighborhood used to be very quiet. But recently, strange things have been happening. People in the neighborhood hear noises in the night. They don't know what is happening.</p>
+      <p class="en-text">Some people think it must be teenagers having fun. They say, «Teens must be playing tricks.» But others disagree. They say, «It can't be teenagers. The noises are too loud.»</p>
+      <p class="en-text">One woman said she saw something running in the dark. She thought it could be a bear. But another neighbor said, «It can't be a bear. There are no bears near our town.»</p>
+      <p class="en-text">A group of neighbors decided to find out what it was. They stayed up one night. They heard the noise again and followed it. Guess what? It was just a big dog! The dog was looking for food. Everyone felt silly, but they were also relieved.</p><div class="gloss"><span>neighborhood 社区；街区</span> <span>strange 奇怪的</span> <span>playing tricks 搞恶作剧</span> <span>bear 熊</span> <span>relieved 如释重负的；放心的</span> </div></div>    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">What strange thing has been happening?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>People have been hearing noises at night.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">What did some people think the noise was?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>They thought it must be teenagers playing tricks.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">What did the noise turn out to be?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>It was just a big dog looking for food.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★★</span>
+      <div class="q-body">How did the neighbors feel after finding out the truth?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>They felt silly but relieved.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>🏆 中考题型专练 · 完形填空 — 推理故事</summary><div class="content exam-section"><p style="font-size:13px;margin-bottom:8px;">阅读短文，选择最佳答案。</p><div class="reading-passage" style="background:var(--bg-secondary);">      <p>I found a wallet on the ground. I opened it and saw some money and a photo. It 1 belong to someone in my school. The photo showed a girl with long hair. She 2 be a student. I asked around. 「I think it 3 be Lily's,」 said one friend. But Lily said her wallet was in her bag. Then I saw the initials on the wallet: J.L. It 4 be Julia's! There is a girl named Julia in my class. I found her and asked. 「Yes! It's mine!」 she said happily. The wallet 5 belongs to Julia.</p></div><div style="margin:4px 0;font-size:13px;"><strong>1</strong> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> A. can't</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> B. must</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> C. might</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> D. should</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>2</strong> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> A. must</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> B. can't</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> C. won't</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> D. shouldn't</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>3</strong> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> A. must</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> B. can't</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> C. could</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> D. will</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>4</strong> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> A. can't</span> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> B. must</span> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> C. couldn't</span> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> D. wouldn't</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>5</strong> <span style="margin-right:12px;"><input type="radio" name="exam_5" disabled> A. must</span> <span style="margin-right:12px;"><input type="radio" name="exam_5" disabled> B. can't</span> <span style="margin-right:12px;"><input type="radio" name="exam_5" disabled> C. could</span> <span style="margin-right:12px;"><input type="radio" name="exam_5" disabled> D. should</span> </div>
+<div class="exam-q" style="border-left-color:#f59e0b;"><span class="q-tag" style="background:#f59e0b;color:#fff;">答案</span><div class="q-body">1. B；2. A；3. C；4. B；5. A</div></div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · Write a story using reasoning and deduction</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">想象你在一个旧房间里发现了一个神秘的箱子。用推测结构（must/can't/might/could）描述它的主人可能是什么样的人。</div></div><div class="writing-framework">      <div class="fw-step">开头：描述你在哪里发现了什么</div>
+      <div class="fw-step">对物品的描述（颜色、材质、形状等）</div>
+      <div class="fw-step">对主人的推测（年龄、性别、职业等）</div>
+      <div class="fw-step">推理的依据（物品中的线索）</div>
+      <div class="fw-step">结尾：谜底揭晓或留下悬念</div></div><div class="writing-model"><div class="en">Yesterday, I found an old box in the attic. It was covered in dust. It must have been there for a long time. The box was blue and had a lock. It might belong to a child because there were stickers on it. Inside, I found some old letters and photos. The person in the photos could be my grandmother when she was young. The letters were written in English, so the owner must have studied English. I asked my grandmother, and she said the box was hers! She used it to keep her treasures when she was a girl.</div><div class="trans">昨天，我在阁楼上发现了一个旧箱子。上面布满了灰尘。它一定在那里很久了。箱子是蓝色的，有一把锁。它可能属于一个孩子，因为上面有贴纸。在里面，我找到了一些旧信和照片。照片中的人可能是我祖母年轻的时候。信是用英文写的，所以箱子的主人一定学过英语。我问了祖母，她说箱子是她的！她小时候用它来保存她的宝贝。</div></div></div></details>
+<details class="module detail-module" open><summary>🎯 Project · Whose Is It? — A Classroom Mystery Game</summary><div class="content project-module"><div class="project-brief"><div class="project-title">Whose Is It? — A Classroom Mystery Game</div><div class="project-desc">举办一场「失物招领」推理游戏。每位同学从家里带一件物品放到箱子里，大家轮流推测物品的主人。</div></div><div class="project-steps">      <div class="step"><span class="step-num">1</span><span class="step-text">每人带一件不常用的个人物品放进神秘箱</span></div>
+      <div class="step"><span class="step-num">2</span><span class="step-text">随机抽取一件物品，描述它</span></div>
+      <div class="step"><span class="step-num">3</span><span class="step-text">用 must/could/might/can't 推测它的主人</span></div>
+      <div class="step"><span class="step-num">4</span><span class="step-text">说出你的推理过程（物品的特征→可能的用途→主人）</span></div>
+      <div class="step"><span class="step-num">5</span><span class="step-text">猜测三次后揭晓答案</span></div>
+      <div class="step"><span class="step-num">6</span><span class="step-text">记录猜对的数量，评出最佳侦探</span></div></div><div class="project-rubric"><table><tr><th>#</th><th>评价标准</th></tr><tr><td>1.</td><td>描述物品清晰、准确</td></tr>
+<tr><td>2.</td><td>正确使用情态动词表推测</td></tr>
+<tr><td>3.</td><td>推理过程合理、有逻辑</td></tr>
+<tr><td>4.</td><td>积极参与、尊重他人</td></tr>
+<tr><td>5.</td><td>能分析自己猜对/错的原因</td></tr></table></div></div></details>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用情态动词表推测</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能区分 must/can't/could/might 的推测程度</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能根据线索推理和判断</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能理解阅读中的推理故事</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写推理性的短文</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>向同桌解释 must、can't、could、might 在表推测时的区别和用法。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">🔵 1天后：复习情态动词表推测的用法</span>
+    <span class="review-dot">🟢 3天后：复习推测相关词汇</span>
+    <span class="review-dot">🟡 1周后：复述神秘噪音的故事</span>
+    <span class="review-dot">🔴 1月后：写一个推理小故事</span></div>
+<div class="next-stop" style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;"><a href="u07.html" class="nav-arrow">← 上一单元</a><a href="u09.html" class="nav-arrow">下一单元 →</a></div>
+<div class="next-stop" style="margin-top:8px;"><strong>➡️ 下一单元：U9: I like music that I can dance to.</strong><br>学习定语从句，表达偏好和喜好。</div>
+</main>
+<div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
+<button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis, currentUtterance: null, speaking: false, rate: 0.9, voiceURI: 'en-US',
+    init: function(){var s=this;document.getElementById('speechRate').addEventListener('input',function(){s.rate=+this.value;document.getElementById('speechRateLabel').textContent=this.value;});document.getElementById('speechVoice').addEventListener('change',function(){s.voiceURI=this.value;localStorage.setItem('speech-voice',this.value);});document.getElementById('speechStopBtn').addEventListener('click',function(){s.stop();});document.getElementById('speechCloseBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.remove('open');});document.getElementById('speechToggleBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.toggle('open');});},
+    speak: function(t,c){if(!t)return;this.stop();var u=new SpeechSynthesisUtterance(t);u.lang=this.voiceURI;u.rate=this.rate;u.onend=function(){if(c)c();};this.currentUtterance=u;this.synthesis.speak(u);},
+    speakDialogue: function(id,c){var s=this,el=document.getElementById(id),ls=el?el.querySelectorAll('.en-text'):[],i=0;this.stop();(function n(){if(i>=ls.length){if(c)c();return;}var e=ls[i],t=e.getAttribute('data-speak')||e.textContent;if(!t){i++;n();return;}e.classList.add('speaking');var u=new SpeechSynthesisUtterance(t);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){e.classList.remove('speaking');i++;setTimeout(n,500);};u.onerror=function(){e.classList.remove('speaking');i++;setTimeout(n,200);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    speakVocabSection: function(id,c){var s=this,el=document.getElementById(id),cs=el?el.querySelectorAll('.vocab-card'):[],i=0;this.stop();(function n(){if(i>=cs.length){if(c)c();return;}var e=cs[i],hw=e.querySelector('.headword'),ex=e.querySelector('.example .wotd-say'),t=[];if(hw)t.push(hw.getAttribute('data-speak')||hw.textContent);if(ex)t.push(ex.getAttribute('data-speak')||ex.textContent.replace(/<[^>]+>/g,'').trim());var ft=t.join('. ');if(!ft){i++;n();return;}hw.classList.add('speaking');var u=new SpeechSynthesisUtterance(ft);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){hw.classList.remove('speaking');i++;setTimeout(n,600);};u.onerror=function(){hw.classList.remove('speaking');i++;setTimeout(n,300);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    stop: function(){this.synthesis.cancel();this.speaking=false;}
+  };SpeechManager.init();
+  document.querySelectorAll('.wotd-say').forEach(function(el){el.addEventListener('click',function(){SpeechManager.speak(this.getAttribute('data-speak')||this.textContent);});});
+  document.querySelectorAll('.speak-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var d=this.getAttribute('data-dialogue'),v=this.getAttribute('data-vocab'),t=this.getAttribute('data-target');if(this.classList.contains('speaking')){SpeechManager.stop();this.classList.remove('speaking');return;}this.classList.add('speaking');var done=function(){btn.classList.remove('speaking');};if(d){SpeechManager.speakDialogue(d,done);}else if(v){SpeechManager.speakVocabSection(v,done);}else if(t){var tg=document.getElementById(t);if(!tg){btn.classList.remove('speaking');return;}SpeechManager.speak(tg.textContent.replace(/<[^>]+>/g,''),done);}else{btn.classList.remove('speaking');}});});
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();var hw=this.previousElementSibling;if(hw&&hw.classList.contains('wotd-say')){var t=hw.getAttribute('data-speak')||hw.textContent;SpeechManager.speak(t);}});});
+  (function(){var btn=document.getElementById('expandAllBtn');if(!btn)return;btn.addEventListener('click',function(){var ad=document.querySelectorAll('.module,.exam-module');var ao=true;for(var i=0;i<ad.length;i++){if(!ad[i].hasAttribute('open')){ao=false;break;}};for(var i=0;i<ad.length;i++){if(ao)ad[i].removeAttribute('open');else ad[i].setAttribute('open','');};btn.textContent=ao?'📂 展开全部模块':'📖 收起全部模块';});})();
+  var s=document.getElementById('sidebar'),k='eng9-theme-sidebar';if(!s)return;
+  if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
+  window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=window.scrollY>400?'flex':'none';},{passive:true});
+  document.getElementById('backToTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution');});});
+})();
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);localStorage.setItem("eng9-theme",t);var btn=document.getElementById("themeToggle");if(btn)btn.textContent=t==="dark"?"☀️":"🌙";}
+function toggleTheme(){setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark");}
+</script></body></html>

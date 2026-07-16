@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>语法全景图 · 八年级 + 九年级 · 中考语法通览</title>
+<style>
+:root {
+  --bg: #ffffff; --bg-secondary: #f1f5f9; --text: #1a1a2e;
+  --text-secondary: #64748b; --accent: #4f46e5; --accent-light: #eef2ff;
+  --accent-bg: #eef2ff; --border: #e2e8f0; --pink-bg: #fef2f2;
+  --green: #16a34a; --red: #dc2626; --amber: #d97706;
+}
+[data-theme="dark"] {
+  --bg: #0f172a; --bg-secondary: #1e293b; --text: #e2e8f0;
+  --text-secondary: #94a3b8; --accent: #818cf8; --accent-light: #312e81;
+  --accent-bg: #1e1b4b; --border: #334155; --pink-bg: #1c1017;
+  --green: #86efac; --red: #fca5a5; --amber: #fcd34d;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 20px; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg); color: var(--text); line-height: 1.5;
+  display: flex; min-height: 100vh;
+}
+/* ── TOC sidebar ── */
+.toc { position: fixed; top: 0; left: 0; bottom: 0; width: 170px; overflow-y: auto;
+  background: var(--bg-secondary); border-right: 1px solid var(--border);
+  padding: 12px 0; z-index: 100; }
+.toc-inner { padding: 0 12px; }
+.toc h2 { font-size: 12px; font-weight: 800; margin-bottom: 10px; padding: 0 4px; color: var(--accent); }
+.toc a { display: block; font-size: 12px; padding: 3px 6px; border-radius: 5px; color: var(--text-secondary);
+  text-decoration: none; transition: 0.1s; margin-bottom: 1px; font-weight: 500; }
+.toc a:hover, .toc a.active { background: var(--accent-bg); color: var(--accent); }
+.toc .sub { padding-left: 16px; font-size: 11px; font-weight: 400; }
+.toc-toggle { display: none; position: fixed; top: 12px; left: 12px; z-index: 200;
+  width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--border);
+  background: var(--bg); color: var(--text); cursor: pointer; font-size: 18px; align-items: center; justify-content: center; }
+.toc-overlay { display: none; }
+/* ── main ── */
+.main { margin-left: 170px; flex: 1; max-width: 860px; padding: 20px 28px 60px; }
+.hero { margin-bottom: 20px; }
+.hero h1 { font-size: 22px; font-weight: 800; letter-spacing: -0.3px; }
+.hero .sub { color: var(--text-secondary); font-size: 13px; margin-top: 2px; }
+.back-link { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; color: var(--accent); text-decoration: none; margin-bottom: 12px; }
+.back-link:hover { text-decoration: underline; }
+/* ── section ── */
+.section { margin-bottom: 28px; }
+.section-title { font-size: 17px; font-weight: 800; padding-bottom: 6px; margin-bottom: 12px;
+  border-bottom: 3px solid var(--accent); color: var(--accent); display: flex; align-items: center; gap: 10px; }
+.section-title .id { font-size: 10px; font-weight: 600; background: var(--accent); color: #fff;
+  padding: 1px 6px; border-radius: 4px; }
+/* ── grammar card ── */
+.g-card { border: 1px solid var(--border); border-radius: 8px; margin-bottom: 10px; overflow: hidden; cursor: pointer; }
+.g-card-header { padding: 8px 14px; display: flex; justify-content: space-between; align-items: center;
+  background: var(--bg-secondary); border-bottom: 1px solid var(--border); user-select: none; }
+.g-card-header .left { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.g-card-header .name { font-weight: 600; font-size: 13px; }
+.g-card-header .unit { font-size: 10px; color: var(--accent); background: var(--accent-bg);
+  padding: 1px 6px; border-radius: 6px; font-weight: 600; }
+.g-card-header .freq { font-size: 10px; padding: 1px 6px; border-radius: 6px; font-weight: 600; }
+.freq-hh { background: #fef2f2; color: var(--red); }
+.freq-h { background: #fffbeb; color: var(--amber); }
+.freq-m { background: #f0fdf4; color: var(--green); }
+[data-theme="dark"] .freq-hh { background: #450a0a; color: #fca5a5; }
+[data-theme="dark"] .freq-h { background: #451a03; color: #fcd34d; }
+[data-theme="dark"] .freq-m { background: #052e16; color: #86efac; }
+.g-card-header .arrow { font-size: 12px; transition: 0.2s; }
+.g-card.open .g-card-header .arrow { transform: rotate(180deg); }
+.g-body { padding: 10px 14px; display: none; }
+.g-card.open .g-body { display: block; }
+/* ── elements ── */
+.g-table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 12px; }
+.g-table th { background: var(--accent-bg); color: var(--accent); text-align: left;
+  padding: 4px 8px; font-weight: 700; font-size: 11px; }
+.g-table td { padding: 4px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.g-table tr:last-child td { border-bottom: none; }
+.pit { background: var(--pink-bg); border-left: 3px solid var(--red); padding: 6px 10px;
+  border-radius: 5px; margin: 6px 0; font-size: 12px; }
+.pit .wrong { color: var(--red); }
+.pit .correct { color: var(--green); }
+.pit-title { font-weight: 700; display: block; margin-bottom: 2px; }
+.comp-box { background: var(--bg-secondary); border: 1px solid var(--border);
+  border-radius: 6px; padding: 8px 10px; margin: 6px 0; font-size: 12px; }
+.comp-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.comp-item { flex: 1; min-width: 140px; }
+.comp-label { font-weight: 700; color: var(--accent); display: block; margin-bottom: 1px; }
+.tag { display: inline-block; font-size: 10px; font-weight: 600; padding: 0 6px; border-radius: 6px; margin: 1px 2px 1px 0; }
+.tag-g8 { background: #e0e7ff; color: #4338ca; }
+.tag-g9 { background: #fce7f3; color: #be185d; }
+[data-theme="dark"] .tag-g8 { background: #1e1b4b; color: #818cf8; }
+[data-theme="dark"] .tag-g9 { background: #3b0764; color: #e879f9; }
+/* ── summary footer ── */
+.summary-box { margin-top: 20px; padding: 14px 16px; background: var(--bg-secondary);
+  border-radius: 8px; border: 1px solid var(--border); }
+.summary-box h3 { font-size: 14px; margin-bottom: 8px; }
+/* ── responsive ── */
+@media (max-width: 820px) {
+  .toc { transform: translateX(-100%); transition: 0.25s; width: 200px; }
+  .toc.open { transform: translateX(0); }
+  .toc-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 99; }
+  .toc-overlay.open { display: block; }
+  .toc-toggle { display: flex; }
+  .main { margin-left: 0; padding: 16px 12px 60px; }
+  .hero h1 { font-size: 20px; }
+}
+</style>
+<script>(function(){var t=localStorage.getItem("grm-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+
+<!-- TOC toggle (mobile) -->
+<button class="toc-toggle" id="tocToggle">☰</button>
+<div class="toc-overlay" id="tocOverlay"></div>
+
+<!-- TOC sidebar -->
+<nav class="toc" id="toc">
+  <div class="toc-inner">
+    <h2>📑 语法目录</h2>
+    <a href="#s1">⏱ 时态系统</a>
+    <a href="#s1" class="sub">八上U1U6U7 · 八下U5U8 · 九全U12</a>
+    <a href="#s2">🔒 被动语态</a>
+    <a href="#s2" class="sub">九全U5U6U7U13</a>
+    <a href="#s3">📎 三大从句</a>
+    <a href="#s3" class="sub">九全U2U3U9</a>
+    <a href="#s4">🎯 情态动词</a>
+    <a href="#s4" class="sub">八下U3 · 九全U7U8</a>
+    <a href="#s5">📊 比较与最高级</a>
+    <a href="#s5" class="sub">八上U3U4 · 八下U7</a>
+    <a href="#s6">🔗 连词专题</a>
+    <a href="#s6" class="sub">八下U4U6</a>
+    <a href="#s7">✨ 特殊句式</a>
+    <a href="#s7" class="sub">八上U8 · 九全U2U4U10U11</a>
+    <a href="#s8">📝 非谓语动词</a>
+    <a href="#s8" class="sub">八下U1 · 九全U1U14</a>
+    <a href="#s9">📖 词法与短语</a>
+    <a href="#s9" class="sub">八上U2 · 八下U2</a>
+    <hr style="margin:12px 0;border-color:var(--border);">
+    <a href="#summary">📊 中考频次总览</a>
+  </div>
+</nav>
+
+<!-- Main content -->
+<div class="main">
+
+<a href="index.html" class="back-link">← 返回首页</a>
+
+<div class="hero">
+  <h1>📚 语法全景图</h1>
+  <p class="sub">八年级 + 九年级 · 特级教师按语法板块编排 · 中考频度标注 · 易错对比</p>
+</div>
+
+<!-- ============================== S1: 时态系统 ============================== -->
+<div class="section" id="s1">
+<div class="section-title"><span class="id">S1</span> ⏱ 时态系统</div>
+
+<div class="g-card">
+  <div class="g-card-header">
+    <div class="left">
+      <span class="name">一般过去时</span>
+      <span class="unit">八上U1</span>
+      <span class="freq freq-h">🔥 高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="g-body">
+    <div class="comp-box">
+      <div class="comp-row">
+        <div class="comp-item"><span class="comp-label">规则动词</span>visit<b>ed</b> · watch<b>ed</b> · stud<b>ied</b> · stop<b>ped</b></div>
+        <div class="comp-item"><span class="comp-label">不规则必备</span>go→<b>went</b> · eat→<b>ate</b> · see→<b>saw</b> · take→<b>took</b> · buy→<b>bought</b> · have→<b>had</b></div>
+        <div class="comp-item"><span class="comp-label">否定/疑问</span>didn't + 动词原形 / Did + 主 + 动词原形?</div>
+      </div>
+    </div>
+    <div class="pit">
+      <span class="pit-title">🚨 didn't + 过去式</span>
+      ❌ <span class="wrong">I didn't <u>went</u> to Beijing.</span> → ✅ <span class="correct">I didn't <u>go</u> to Beijing.</span>
+    </div>
+  </div>
+</div>
+
+<div class="g-card">
+  <div class="g-card-header">
+    <div class="left">
+      <span class="name">be going to 将来时</span>
+      <span class="unit">八上U1 · U6</span>
+      <span class="freq freq-h">🔥 高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="g-body">
+    <table class="g-table">
+      <tr><th>句式</th><th>结构</th><th>例句</th></tr>
+      <tr><td>肯定</td><td>am/is/are + going to + do</td><td>I <b>am going to study</b> computer science.</td></tr>
+      <tr><td>否定</td><td>am/is/are + not + going to + do</td><td>He <b>is not going to be</b> a teacher.</td></tr>
+      <tr><td>疑问</td><td>Be + 主语 + going to + do?</td><td><b>Are you going to</b> find a job?</td></tr>
+    </table>
+    <div class="pit">
+      <span class="pit-title">🚨 be 不能丢</span>
+      ❌ <span class="wrong">He going to be a pilot.</span> → ✅ <span class="correct">He <u>is</u> going to be a pilot.</span>
+    </div>
+  </div>
+</div>
+
+<div class="g-card">
+  <div class="g-card-header">
+    <div class="left">
+      <span class="name">will 将来时</span>
+      <span class="unit">八上U7</span>
+      <span class="freq freq-h">🔥 高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="g-body">
+    <table class="g-table">
+      <tr><th>结构</th><th>例句</th></tr>
+      <tr><td>will + 动词原形</td><td>People <b>will have</b> robots.</td></tr>
+      <tr><td>won't + 动词原形</td><td>Kids <b>won't go</b> to school.</td></tr>
+      <tr><td>There will be</td><td><b>There will be</b> more pollution.</td></tr>
+    </table>
+    <div class="comp-box">
+      <strong>more / less / fewer</strong>
+      <div class="comp-row" style="margin-top:6px;">
+        <div class="comp-item"><span class="comp-label">more</span>更多（可数/不可数）</div>
+        <div class="comp-item"><span class="comp-label">less + 不可数</span>less water / time / pollution</div>
+        <div class="comp-item"><span class="comp-label">fewer + 可数复数</span>fewer cars / people / trees</div>
+      </div>
+    </div>
+    <div class="pit">
+      <span class="pit-title">🚨 There will have ❌</span>
+      ❌ <span class="wrong">There will <u>have</u> more robots.</span> → ✅ <span class="correct">There will <u>be</u> more robots.</span>
+    </div>
+  </div>
+</div>
+
+<div class="g-card">
+  <div class="g-card-header">
+    <div class="left">
+      <span class="name">过去进行时</span>
+      <span class="unit">八下U5</span>
+      <span class="freq freq-hh">🔥🔥 必考</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="g-body">
+    <table class="g-table">
+      <tr><th>结构</th><th>例句</th></tr>
+      <tr><td>was/were + doing</td><td>I <b>was watching</b> TV at 8 pm.</td></tr>
+      <tr><td>when + 一般过去时（短动作打断）</td><td>I was sleeping <b>when the phone rang</b>.</td></tr>
+      <tr><td>while + 过去进行时（两动作同时）</td><td><b>While I was sleeping</b>, my mom was cooking.</td></tr>
+    </table>
+    <div class="comp-box">
+      <strong>when vs while（完形填空中考必杀题）</strong>
+      <div class="comp-row">
+        <div class="comp-item"><span class="comp-label">when</span>后接一般过去时（短动作）<br><i>I was reading when he came in.</i></div>
+        <div class="comp-item"><span class="comp-label">while</span>后接过去进行时（长动作）<br><i>While I was reading, he was watching TV.</i></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="g-card">
+  <div class="g-card-header">
+    <div class="left">
+      <span class="name">现在完成时</span>
+      <span class="unit">八下U8 · 九全U12深化</span>
+      <span class="freq freq-hh">🔥🔥 必考</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="g-body">
+    <table class="g-table">
+      <tr><th>句式</th><th>结构</th><th>例句</th></tr>
+      <tr><td>肯定句</td><td>have/has + 过去分词</td><td>I <b>have visited</b> the museum.</td></tr>
+      <tr><td>否定句</td><td>haven't/hasn't + 过去分词</td><td>She <b>hasn't read</b> the book yet.</td></tr>
+      <tr><td>疑问句</td><td>Have/Has + 主语 + 过去分词?</td><td><b>Have</b> you ever <b>been</b> to Beijing?</td></tr>
+    </table>
+    <div class="comp-box">
+      <strong>been to / gone to / been in 辨析</strong>
+      <div class="comp-row">
+        <div class="comp-item"><span class="comp-label">have been to</span>去过（已回）<br><i>I have been to Beijing.</i></div>
+        <div class="comp-item"><span class="comp-label">have gone to</span>去了（未回）<br><i>He has gone to Shanghai.</i></div>
+        <div class="comp-item"><span class="comp-label">have been in</span>在某地待了多久<br><i>She has been in Beijing for 3 years.</i></div>
+      </div>
+    </div>
+    <div class="comp-box">
+      <strong>三大过去时间对比矩阵 ★</strong>
+      <div class="comp-row">
+        <div class="comp-item"><span class="comp-label">一般过去时</span>"过去某时发生的动作"<br><i>I saw the movie yesterday.</i><br><small>关注"时间点"</small></div>
+        <div class="comp-item"><span class="comp-label">现在完成时</span>"过去动作与现在有关"<br><i>I have seen the movie.</i><br><small>关注"对现在的影响"</small></div>
+        <div class="comp-item"><span class="comp-label">过去完成时</span>"过去的过去"<br><i>I had seen the movie before she told me.</i><br><small>需要过去参照点</small></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="g-card">
+  <div class="g-card-header">
+    <div class="left">
+      <span class="name">过去完成时</span>
+      <span class="unit">九全U12</span>
+      <span class="freq freq-hh">🔥🔥 必考</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="g-body">
+    <table class="g-table">
+      <tr><th>结构</th><th>例句</th></tr>
+      <tr><td>had + 过去分词</td><td>I <b>had finished</b> my homework.</td></tr>
+      <tr><td>By the time + 过, 主 had done</td><td><b>By the time</b> I got there, he <b>had left</b>.</td></tr>
+      <tr><td>Before + 过, 主 had done</td><td><b>When</b> I arrived, the bus <b>had already left</b>.</td></tr>
+    </table>
+    <div class="pit">
+      <span class="pit-title">🚨 必须有过去参照点</span>
+      ❌ <span class="wrong">I <u>had finished</u> my homework.</span>（无参照点，应用一般过去时）<br>
+      ✅ <span class="correct">I <u>had finished</u> my homework <u>before my mom came home</u>.</span>
+    </div>
+  </div>
+</div>
+
+</div><!-- /S1 -->
+
+<!-- ============================== S2: 被动语态 ============================== -->
+<div class="section" id="s2">
+<div class="section-title"><span class="id">S2</span> 🔒 被动语态</div>
+
+<div class="g-card">
+  <div class="g-card-header">
+    <div class="left">
+      <span class="name">一般现在时被动</span>
+      <span class="unit">九全U5</span>
+      <span class="freq freq-h">🔥 高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="g-body">
+    <table class="g-table">
+      <tr><th>结构</th><th>主动 → 被动</th></tr>
+      <tr><td>am/is/are + 过去分词 ± by</td><td>People grow tea. → Tea <b>is grown</b> in China.</td></tr>
+    </table>
+    <div class="comp-box">
+      <strong>be made + 介词辨析</strong>
+      <div class="comp-row">
+        <div class="comp-item"><span class="comp-label">be made of</span>看得出原材料<br><i>Chair is made of wood.</i></div>
+        <div class="comp-item"><span class="comp-label">be made from</span>看不出原材料<br><i>Paper is made from trees.</i></div>
+        <div class="comp-item"><span class="comp-label">be made in</span>产地</div>
+        <div class="comp-item"><span class="comp-label">be made by</span>执行者</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="g-card">
+  <div class="g-card-header">
+    <div class="left">
+      <span class="name">一般过去时被动</span>
+      <span class="unit">九全U6</span>
+      <span class="freq freq-h">🔥 高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="g-body">
+    <table class="g-table">
+      <tr><th>结构</th><th>例句</th></tr>
+      <tr><td>was/were + 过去分词</td><td>The car <b>was invented</b> in 1885.</td></tr>
+      <tr><td>was/were + 过去分词 + by</td><td>It <b>was invented by</b> Karl Benz.</td></tr>
+    </table>
+    <div class="pit">
+      <span class="pit-title">🚨 be 动词时态随语境变</span>
+      ❌ <span class="wrong">The car <u>is</u> invented in 1885.</span> → ✅ <span class="correct">The car <u>was</u> invented in 1885.</span>
+    </div>
+  </div>
+</div>
+
+<div class="g-card">
+  <div class="g-card-header">
+    <div class="left">
+      <span class="name">情态动词被动</span>
+      <span class="unit">九全U7</span>
+      <span class="freq freq-hh">🔥🔥 必考</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="g-body">
+    <table class="g-table">
+      <tr><th>结构</th><th>例句</th></tr>
+      <tr><td>情态动词 + <b>be</b> + 过去分词</td><td>Homework <b>should be done</b> on time.</td></tr>
+      <tr><td>情态动词 + not + be + 过去分词</td><td>Phones <b>shouldn't be used</b> in class.</td></tr>
+    </table>
+    <div class="comp-box">
+      <strong>allow 搭配链</strong><br>
+      allow sb. <b>to do</b> · be allowed <b>to do</b> · should be allowed <b>to do</b>
+    </div>
+    <div class="pit">
+      ❌ <span class="wrong">This problem <u>must solved</u>.</span> → ✅ <span class="correct">This problem <u>must be solved</u>.</span><br>
+      <small>关键公式：情态动词 + be + 过去分词，缺一不可。</small>
+    </div>
+  </div>
+</div>
+
+<div class="g-card">
+  <div class="g-card-header">
+    <div class="left">
+      <span class="name">进行时被动 · 综合复习</span>
+      <span class="unit">九全U13</span>
+      <span class="freq freq-h">🔥 高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="g-body">
+    <div class="comp-box">
+      <div class="comp-row">
+        <div class="comp-item"><span class="comp-label">一般现在时被动</span>is/are + 过去分词<br><i>The river is polluted.</i>（强调状态）</div>
+        <div class="comp-item"><span class="comp-label">进行时被动</span>is/are + <b>being</b> + 过去分词<br><i>The river is being polluted.</i>（强调正在被破坏）</div>
+      </div>
+    </div>
+    <table class="g-table">
+      <tr><th>U13 综合复习</th><th>例句</th></tr>
+      <tr><td>现在进行时</td><td>We <b>are trying</b> to save the earth.</td></tr>
+      <tr><td>used to</td><td>The river <b>used to be</b> clean.</td></tr>
+      <tr><td>should + 被动</td><td>Something <b>must be done</b>.</td></tr>
+    </table>
+  </div>
+</div>
+
+</div><!-- /S2 -->
+
+<!-- ============================== S3: 三大从句 ============================== -->
+<div class="section" id="s3">
+<div class="section-title"><span class="id">S3</span> 📎 三大从句</div>
+
+<div class="g-card">
+  <div class="g-card-header">
+    <div class="left">
+      <span class="name">宾语从句（that / if / whether）</span>
+      <span class="unit">九全U2</span>
+      <span class="freq freq-hh">🔥🔥 必考</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="g-body">
+    <table class="g-table">
+      <tr><th>引导词</th><th>来源</th><th>从句语序</th><th>例句</th></tr>
+      <tr><td>that</td><td>陈述句</td><td>陈述语序</td><td>I think <b>that</b> mooncakes are delicious.</td></tr>
+      <tr><td>if / whether</td><td>一般疑问句</td><td>陈述语序</td><td>I wonder <b>if</b> he likes the festival.</td></tr>
+      <tr><td>特殊疑问词</td><td>特殊疑问句</td><td>陈述语序</td><td>Can you tell me <b>where</b> the library <b>is</b>?</td></tr>
+    </table>
+    <div class="comp-box">
+      <strong>if vs whether（什么时候只能用 whether？）</strong>
+      <div class="comp-row">
+        <div class="comp-item"><span class="comp-label">if 可以</span>一般问句转化<br><i>I don't know if he will come.</i></div>
+        <div class="comp-item"><span class="comp-label">必须用 whether</span>① or not 连用 ② 介词后 ③ 不定式前<br><i>whether to go / depend on whether</i></div>
+      </div>
+    </div>
+    <div class="pit">
+      <span class="pit-title">🚨 从句语序：疑问词后接陈述句</span>
+      ❌ <span class="wrong">I wonder <u>where is the post office</u>.</span><br>
+      ✅ <span class="correct">I wonder <u>where the post office is</u>.</span><br>
+      <small>口诀：疑问词后跟陈述，be 动词放主语后。</small>
+    </div>
+  </div>
+</div>
+
+<div class="g-card">
+  <div class="g-card-header">
+    <div class="left">
+      <span class="name">宾语从句语序 · 礼貌请求</span>
+      <span class="unit">九全U3</span>
+      <span class="freq freq-h">🔥 高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="g-body">
+    <table class="g-table">
+      <tr><th>原问句</th><th>变为宾语从句</th></tr>
+      <tr><td>Where <b>is</b> the library?</td><td>Could you tell me where the library <b>is</b>?</td></tr>
+      <tr><td>How <b>can</b> I get there?</td><td>I wonder how I <b>can</b> get there.</td></tr>
+      <tr><td>Is there a bank?</td><td>Do you know <b>if</b> there is a bank?</td></tr>
+    </table>
+    <div class="pit">
+      <span class="pit-title">🚨 Could you tell me + 陈述语序</span>
+      ❌ <span class="wrong">Could you tell me <u>where is the restroom</u>?</span><br>
+      ✅ <span class="correct">Could you tell me <u>where the restroom is</u>?</span>
+    </div>
+  </div>
+</div>
+
+<div class="g-card">
+  <div class="g-card-header">
+    <div class="left">
+      <span class="name">定语从句（that / who / which）</span>
+      <span class="unit">九全U9</span>
+      <span class="freq freq-hh">🔥🔥 必考</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="g-body">
+    <table class="g-table">
+      <tr><th>关系代词</th><th>指代</th><th>例句</th></tr>
+      <tr><td><b>that</b></td><td>人 / 物</td><td>I like music <b>that</b> makes me happy.</td></tr>
+      <tr><td><b>who</b></td><td>人</td><td>I like singers <b>who</b> sing well.</td></tr>
+      <tr><td><b>which</b></td><td>物</td><td>I like movies <b>which</b> are funny.</td></tr>
+    </table>
+    <div class="comp-box">
+      <strong>只能用 that 的 3 种情况（中考单选杀手）</strong>
+      <div class="comp-row">
+        <div class="comp-item"><span class="comp-label">① 序数词/最高级后</span><i>the first book <u>that</u> I read</i></div>
+        <div class="comp-item"><span class="comp-label">② 先行词为 all/everything/nothing</span><i>All <u>that</u> I want is peace.</i></div>
+        <div class="comp-item"><span class="comp-label">③ 人和物混合先行词</span><i>the people and things <u>that</u> I like</i></div>
+      </div>
+    </div>
+    <div class="pit">
+      <span class="pit-title">🚨 关系代词作宾语可省略</span>
+      ✅ This is the movie <u>(that)</u> I watched last night.<br>
+      <small>that/which 在从句中作宾语时可省略，作主语不可省。</small>
+    </div>
+  </div>
+</div>
+
+</div><!-- /S3 -->
+
+<!-- ============================== S4: 情态动词 ============================== -->
+<div class="section" id="s4">
+<div class="section-title"><span class="id">S4</span> 🎯 情态动词</div>
+
+<div class="g-card">
+  <div class="g-card-header">
+    <div class="left">
+      <span class="name">情态动词表推测</span>
+      <span class="unit">九全U8</span>
+      <span class="freq freq-hh">🔥🔥 必考</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="g-body">
+    <table class="g-table">
+      <tr><th>情态动词</th><th>推测程度</th><th>含义</th><th>例句</th></tr>
+      <tr><td><b>must</b></td><td>~95%</td><td>一定</td><td>It <b>must be</b> Carla's.</td></tr>
+      <tr><td><b>could</b></td><td>~70%</td><td>可能</td><td>It <b>could be</b> Wang Fang's.</td></tr>
+      <tr><td><b>might</b></td><td>~50%</td><td>也许</td><td>It <b>might belong to</b> Li Ming.</td></tr>
+      <tr><td><b>can't</b></td><td>~99% 否定</td><td>不可能</td><td>It <b>can't be</b> his.</td></tr>
+    </table>
+    <div class="pit">
+      <span class="pit-title">🚨 mustn't ≠ "一定不"（它是"禁止"）</span>
+      ❌ <span class="wrong">He <u>mustn't</u> be at home.</span> → ✅ <span class="correct">He <u>can't</u> be at home.</span><br>
+      <small>口诀：肯定推测用 must，否定推测用 can't。mustn't 是 "禁止"。</small>
+    </div>
+  </div>
+</div>
+
+<div class="g-card">
+  <div class="g-card-header">
+    <div class="left">
+      <span class="name">could 表礼貌请求</span>
+      <span class="unit">八下U3</span>
+      <span class="freq freq-m">📌 中频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="g-body">
+    <table class="g-table">
+      <tr><th>句式</th><th>用法</th><th>回答</th></tr>
+      <tr><td>Could you please + do?</td><td>请求对方</td><td>Sure. / I'm afraid I can't.</td></tr>
+      <tr><td>Could I + do?</td><td>请求允许</td><td>Of course. / Sorry, you can't.</td></tr>
+    </table>
+    <div class="pit">
+      <span class="pit-title">🚨 否定回答不用 couldn't</span>
+      ❌ <span class="wrong">Could I go out? — No, you <u>couldn't</u>.</span><br>
+      ✅ <span class="correct">Could I go out? — Sorry, <u>you can't</u>.</span><br>
+      <small>could 在请求句中表礼貌，不是过去时，回答用 can/can't。</small>
+    </div>
+  </div>
+</div>
+
+</div><!-- /S4 -->
+
+<!-- ============================== S5: 比较与最高级 ============================== -->
+<div class="section" id="s5">
+<div class="section-title"><span class="id">S5</span> 📊 比较与最高级</div>
+
+<div class="g-card">
+  <div class="g-card-header">
+    <div class="left">
+      <span class="name">形容词比较级</span>
+      <span class="unit">八上U3</span>
+      <span class="freq freq-h">🔥 高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="g-body">
+    <table class="g-table">
+      <tr><th>构成</th><th>例词</th></tr>
+      <tr><td>单音节 + er</td><td>tall→taller, fast→faster</td></tr>
+      <tr><td>辅音+y → ier</td><td>heavy→heavier, happy→happier</td></tr>
+      <tr><td>重读闭音节双写+er</td><td>big→bigger, hot→hotter, thin→thinner</td></tr>
+      <tr><td>多音节 + more</td><td>outgoing→more outgoing</td></tr>
+      <tr><td>特殊变化</td><td>good/well→<b>better</b>, bad→<b>worse</b></td></tr>
+    </table>
+    <div class="comp-box">
+      <strong>同级比较</strong><br>
+      <b>as + 原级 + as</b> 和……一样 · <b>not as/so + 原级 + as</b> 不如……
+    </div>
+    <div class="pit">
+      <span class="pit-title">🚨 more 与 -er 不共用</span>
+      ❌ <span class="wrong">She is <u>more taller</u> than me.</span> → ✅ <span class="correct">She is <u>taller</u> than me.</span>
+    </div>
+  </div>
+</div>
+
+<div class="g-card">
+  <div class="g-card-header">
+    <div class="left">
+      <span class="name">形容词最高级</span>
+      <span class="unit">八上U4</span>
+      <span class="freq freq-h">🔥 高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="g-body">
+    <table class="g-table">
+      <tr><th>构成</th><th>例词</th></tr>
+      <tr><td>单音节 + est</td><td>cheap→the cheapest</td></tr>
+      <tr><td>最高级标志</td><td>in + 范围 / of + 群体</td></tr>
+    </table>
+    <div class="pit">
+      ❌ <span class="wrong">She is <u>most popular</u> girl.</span> → ✅ <span class="correct">She is <u>the most popular</u> girl.</span><br>
+      <small>最高级前必须加 the。</small>
+    </div>
+  </div>
+</div>
+
+<div class="g-card">
+  <div class="g-card-header">
+    <div class="left">
+      <span class="name">数字 + 比较/最高级</span>
+      <span class="unit">八下U7</span>
+      <span class="freq freq-h">🔥 高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="g-body">
+    <table class="g-table">
+      <tr><th>结构</th><th>例句</th></tr>
+      <tr><td>数字 + 形容词</td><td>It's <b>8,844 meters high</b>.</td></tr>
+      <tr><td>最高级 + in</td><td><b>The highest</b> mountain <b>in the world</b>.</td></tr>
+      <tr><td>any other + 单数名词</td><td>deeper <b>than any other lake</b></td></tr>
+    </table>
+    <div class="pit">
+      ❌ <span class="wrong">any other <u>lakes</u></span> → ✅ <span class="correct">any other <u>lake</u></span><br>
+      <small>any other 后接可数名词单数。</small>
+    </div>
+  </div>
+</div>
+
+</div><!-- /S5 -->
+
+<!-- ============================== S6: 连词专题 ============================== -->
+<div class="section" id="s6">
+<div class="section-title"><span class="id">S6</span> 🔗 连词专题</div>
+
+<div class="g-card">
+  <div class="g-card-header">
+    <div class="left">
+      <span class="name">until / although / so that</span>
+      <span class="unit">八下U4</span>
+      <span class="freq freq-h">🔥 高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="g-body">
+    <table class="g-table">
+      <tr><th>连词</th><th>含义</th><th>要点</th><th>例句</th></tr>
+      <tr><td>until</td><td>直到</td><td>not…until "直到……才"</td><td>He didn't leave <b>until</b> his mom came back.</td></tr>
+      <tr><td>although</td><td>虽然</td><td>❌ 不与 but 连用</td><td><b>Although</b> he's angry, he cares.</td></tr>
+      <tr><td>so that</td><td>以便</td><td>引导目的状语</td><td>Talk nicely <b>so that</b> she can understand.</td></tr>
+    </table>
+    <div class="pit">
+      <span class="pit-title">🚨 although 和 but 不连用</span>
+      ❌ <span class="wrong"><u>Although</u> he was tired, <u>but</u> he kept working.</span><br>
+      ✅ <span class="correct"><u>Although</u> he was tired, he kept working.</span><br>
+      ✅ <span class="correct">He was tired, <u>but</u> he kept working.</span>
+    </div>
+  </div>
+</div>
+
+<div class="g-card">
+  <div class="g-card-header">
+    <div class="left">
+      <span class="name">unless / as soon as / so…that</span>
+      <span class="unit">八下U6</span>
+      <span class="freq freq-h">🔥 高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="g-body">
+    <table class="g-table">
+      <tr><th>连词</th><th>含义</th><th>等价</th><th>例句</th></tr>
+      <tr><td>unless</td><td>除非</td><td>= if…not</td><td>You won't pass <b>unless</b> you study.</td></tr>
+      <tr><td>as soon as</td><td>一……就……</td><td>= the moment</td><td><b>As soon as</b> he saw her, he smiled.</td></tr>
+      <tr><td>so…that</td><td>如此……以至于</td><td>so + 形/副 + that</td><td><b>So</b> high <b>that</b> few could climb.</td></tr>
+    </table>
+    <div class="comp-box">
+      <strong>so…that vs such…that</strong>
+      <div class="comp-row">
+        <div class="comp-item"><span class="comp-label">so + 形容词 + that</span><i>so hot that we didn't go out.</i></div>
+        <div class="comp-item"><span class="comp-label">such (a/an) + 形 + 名 + that</span><i>such a hot day that we didn't go out.</i></div>
+      </div>
+    </div>
+    <div class="pit">
+      ❌ <span class="wrong">It was <u>so</u> a hot day that we didn't go out.</span><br>
+      ✅ <span class="correct">It was <u>such</u> a hot day that we didn't go out.</span>
+    </div>
+  </div>
+</div>
+
+</div><!-- /S6 -->
+
+<!-- ============================== S7: 特殊句式 ============================== -->
+<div class="section" id="s7">
+<div class="section-title"><span class="id">S7</span> ✨ 特殊句式</div>
+
+<div class="g-card">
+  <div class="g-card-header">
+    <div class="left">
+      <span class="name">感叹句（What / How）</span>
+      <span class="unit">九全U2</span>
+      <span class="freq freq-hh">🔥🔥 必考</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="g-body">
+    <table class="g-table">
+      <tr><th>句式</th><th>结构</th><th>例句</th></tr>
+      <tr><td>What + 名词短语</td><td>What (a/an) + adj. + n. + (主+谓)!</td><td><b>What a</b> bright moon!</td></tr>
+      <tr><td>How + 形容词/副词</td><td>How + adj./adv. + 主 + 谓!</td><td><b>How</b> bright the moon is!</td></tr>
+    </table>
+    <div class="pit">
+      ❌ <span class="wrong"><u>How</u> a beautiful day it is!</span><br>
+      ✅ <span class="correct"><u>What</u> a beautiful day it is!</span> 或 <span class="correct"><u>How</u> beautiful the day is!</span>
+    </div>
+  </div>
+</div>
+
+<div class="g-card">
+  <div class="g-card-header">
+    <div class="left">
+      <span class="name">used to / be used to 辨析</span>
+      <span class="unit">九全U4</span>
+      <span class="freq freq-h">🔥 高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="g-body">
+    <div class="comp-box">
+      <strong>"used 四姐妹"（完形填空经典题）</strong>
+      <div class="comp-row">
+        <div class="comp-item"><span class="comp-label">used to + do</span>过去常常（现在不做了）</div>
+        <div class="comp-item"><span class="comp-label">be used to + doing</span>习惯做（to 是介词）</div>
+        <div class="comp-item"><span class="comp-label">be used to + do</span>被用来做（不定式）</div>
+        <div class="comp-item"><span class="comp-label">be used for + doing</span>被用来做（for 表用途）</div>
+      </div>
+    </div>
+    <table class="g-table">
+      <tr><th>句式</th><th>结构</th></tr>
+      <tr><td>肯定</td><td>主语 + <b>used to</b> + do</td></tr>
+      <tr><td>否定</td><td>主语 + <b>didn't use to</b> + do</td></tr>
+      <tr><td>疑问</td><td><b>Did</b> + 主语 + <b>use to</b> + do?</td></tr>
+    </table>
+    <div class="pit">
+      ❌ <span class="wrong">I <u>used to</u> getting up early now.</span>（"习惯"应用 be used to + doing）<br>
+      ✅ <span class="correct">I <u>am used to</u> getting up early.</span>
+    </div>
+  </div>
+</div>
+
+<div class="g-card">
+  <div class="g-card-header">
+    <div class="left">
+      <span class="name">be supposed to</span>
+      <span class="unit">九全U10</span>
+      <span class="freq freq-m">📌 中频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="g-body">
+    <table class="g-table">
+      <tr><th>句式</th><th>例句</th></tr>
+      <tr><td><b>be supposed to</b> + do</td><td>You <b>are supposed to</b> shake hands.</td></tr>
+      <tr><td><b>be not supposed to</b> + do</td><td>You <b>are not supposed to</b> kiss on the cheek.</td></tr>
+      <tr><td><b>be expected to</b> + do</td><td>You <b>are expected to</b> arrive on time.</td></tr>
+    </table>
+    <div class="pit">
+      ❌ <span class="wrong">You <u>are suppose to</u> shake hands.</span> → ✅ <span class="correct">You <u>are supposed to</u> shake hands.</span><br>
+      <small>注意 supposed 的 d 不可漏。</small>
+    </div>
+  </div>
+</div>
+
+<div class="g-card">
+  <div class="g-card-header">
+    <div class="left">
+      <span class="name">make + 宾语 + 宾补</span>
+      <span class="unit">九全U11</span>
+      <span class="freq freq-m">📌 中频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="g-body">
+    <table class="g-table">
+      <tr><th>结构</th><th>例句</th></tr>
+      <tr><td>make + sb. + <b>adj.</b></td><td>Sad movies make me <b>sad</b>.</td></tr>
+      <tr><td>make + sb. + <b>do</b></td><td>The joke made me <b>laugh</b>.</td></tr>
+      <tr><td>make + sb. + <b>feel</b> + adj.</td><td>It makes me <b>feel relaxed</b>.</td></tr>
+    </table>
+    <div class="pit">
+      <span class="pit-title">🚨 make sb. do（无 to）→ 变被动要还原 to</span>
+      主动：The boss made him <u>work</u> all day.<br>
+      被动：He <u>was made to work</u> all day.
+    </div>
+  </div>
+</div>
+
+<div class="g-card">
+  <div class="g-card-header">
+    <div class="left">
+      <span class="name">祈使句 · 提建议</span>
+      <span class="unit">八上U8</span>
+      <span class="freq freq-m">📌 中频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="g-body">
+    <table class="g-table">
+      <tr><th>功能</th><th>句式</th><th>例句</th></tr>
+      <tr><td>共同行动</td><td>Let's + 动词原形</td><td><b>Let's</b> communicate.</td></tr>
+      <tr><td>建议</td><td>How about + doing?</td><td><b>How about</b> making a plan?</td></tr>
+      <tr><td>禁止</td><td>Don't + 动词原形</td><td><b>Don't</b> shout.</td></tr>
+    </table>
+    <div class="pit">
+      ❌ <span class="wrong">Let's <u>don't</u> argue.</span> → ✅ <span class="correct">Let's <u>not</u> argue.</span><br>
+      ❌ <span class="wrong">How about <u>take</u> a break?</span> → ✅ <span class="correct">How about <u>taking</u> a break?</span>
+    </div>
+  </div>
+</div>
+
+</div><!-- /S7 -->
+
+<!-- ============================== S8: 非谓语动词 ============================== -->
+<div class="section" id="s8">
+<div class="section-title"><span class="id">S8</span> 📝 非谓语动词</div>
+
+<div class="g-card">
+  <div class="g-card-header">
+    <div class="left">
+      <span class="name">by + doing · 动名词作主语</span>
+      <span class="unit">九全U1</span>
+      <span class="freq freq-h">🔥 高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="g-body">
+    <table class="g-table">
+      <tr><th>结构</th><th>例句</th></tr>
+      <tr><td><b>by + doing</b>（通过……方式）</td><td>I study <b>by making</b> flashcards.</td></tr>
+      <tr><td><b>Doing… + 三单谓语</b></td><td><b>Reading aloud</b> helps a lot.</td></tr>
+    </table>
+    <div class="pit">
+      <span class="pit-title">🚨 by + doing vs for + doing</span>
+      ❌ <span class="wrong">I study <u>for listening</u> to songs.</span>（手段用 by）<br>
+      ✅ <span class="correct">I study <u>by listening</u> to songs.</span><br>
+      <small>注意动名词作主语，谓语用三单：Reading <u>helps</u> ✓</small>
+    </div>
+  </div>
+</div>
+
+<div class="g-card">
+  <div class="g-card-header">
+    <div class="left">
+      <span class="name">不定式 · 反身代词</span>
+      <span class="unit">八下U1</span>
+      <span class="freq freq-h">🔥 高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="g-body">
+    <table class="g-table">
+      <tr><th>结构</th><th>例句</th></tr>
+      <tr><td>It's + adj. + <b>to do</b></td><td>It's important <b>to relax</b>.</td></tr>
+      <tr><td>want/hope/need <b>to do</b></td><td>I want <b>to take a break</b>.</td></tr>
+    </table>
+    <div class="comp-box">
+      <strong>反身代词</strong> myself / yourself / himself / herself / itself / ourselves / yourselves / themselves<br>
+      <small>常用：enjoy oneself · by oneself · teach oneself</small>
+    </div>
+    <div class="pit">
+      ❌ <span class="wrong">He enjoyed <u>myself</u> at the party.</span> → ✅ <span class="correct">He enjoyed <u>himself</u> at the party.</span>
+    </div>
+  </div>
+</div>
+
+<div class="g-card">
+  <div class="g-card-header">
+    <div class="left">
+      <span class="name">remember/forget + doing vs to do</span>
+      <span class="unit">九全U14</span>
+      <span class="freq freq-h">🔥 高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="g-body">
+    <table class="g-table">
+      <tr><th>动词</th><th>+ doing（做过）</th><th>+ to do（要做）</th></tr>
+      <tr><td>remember</td><td>I remember <b>meeting</b> you.</td><td>Remember <b>to call</b> me.</td></tr>
+      <tr><td>forget</td><td>I forgot <b>locking</b> the door.</td><td>Don't forget <b>to write</b>.</td></tr>
+      <tr><td>try</td><td>Try <b>eating</b> healthy food.</td><td>Try <b>to finish</b> on time.</td></tr>
+      <tr><td>stop</td><td>Stop <b>smoking</b>.</td><td>Stop <b>to rest</b>.</td></tr>
+    </table>
+    <div class="pit">
+      <span class="pit-title">🚨 意思完全不同</span>
+      ❌ <span class="wrong">I remember <u>to meet</u> you before.</span>（"记得去见面" ≠ "记得见过"）<br>
+      ✅ <span class="correct">I remember <u>meeting</u> you before.</span><br>
+      <small>口诀：doing 做过，to do 要做。</small>
+    </div>
+  </div>
+</div>
+
+</div><!-- /S8 -->
+
+<!-- ============================== S9: 词法与短语 ============================== -->
+<div class="section" id="s9">
+<div class="section-title"><span class="id">S9</span> 📖 词法与短语</div>
+
+<div class="g-card">
+  <div class="g-card-header">
+    <div class="left">
+      <span class="name">频率副词 · How often</span>
+      <span class="unit">八上U2</span>
+      <span class="freq freq-h">🔥 高频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="g-body">
+    <table class="g-table">
+      <tr><th>副词</th><th>含义</th><th>频率</th></tr>
+      <tr><td>always</td><td>总是</td><td>100%</td></tr>
+      <tr><td>usually</td><td>通常</td><td>80%</td></tr>
+      <tr><td>often</td><td>经常</td><td>60%</td></tr>
+      <tr><td>sometimes</td><td>有时</td><td>40%</td></tr>
+      <tr><td>hardly ever</td><td>几乎从不</td><td>~5%</td></tr>
+      <tr><td>never</td><td>从不</td><td>0%</td></tr>
+    </table>
+    <div class="comp-box">
+      <strong>How often / How long / How soon</strong>
+      <div class="comp-row">
+        <div class="comp-item"><span class="comp-label">How often</span>多久一次（频率）<br><i>— Twice a week.</i></div>
+        <div class="comp-item"><span class="comp-label">How long</span>多长时间（时长）<br><i>— For two hours.</i></div>
+        <div class="comp-item"><span class="comp-label">How soon</span>多久以后<br><i>— In two days.</i></div>
+      </div>
+    </div>
+    <div class="pit">
+      ❌ <span class="wrong">I <u>hard ever</u> exercise.</span> → ✅ <span class="correct">I <u>hardly ever</u> exercise.</span>
+    </div>
+  </div>
+</div>
+
+<div class="g-card">
+  <div class="g-card-header">
+    <div class="left">
+      <span class="name">动词短语（短语动词）</span>
+      <span class="unit">八下U2</span>
+      <span class="freq freq-m">📌 中频</span>
+    </div>
+    <span class="arrow">▾</span>
+  </div>
+  <div class="g-body">
+    <table class="g-table">
+      <tr><th>短语</th><th>含义</th><th>例句</th></tr>
+      <tr><td>clean <b>up</b></td><td>打扫干净</td><td>Let's clean <b>up</b> the park.</td></tr>
+      <tr><td>give <b>away</b></td><td>赠送</td><td>Let's give <b>away</b> old clothes.</td></tr>
+      <tr><td>put <b>up</b></td><td>张贴</td><td>Let's put <b>up</b> signs.</td></tr>
+      <tr><td>cheer <b>up</b></td><td>使振奋</td><td>Let's cheer <b>up</b> the sick kids.</td></tr>
+    </table>
+    <div class="pit">
+      <span class="pit-title">🚨 代词放中间</span>
+      ✅ clean up the park = clean the park up<br>
+      ✅ clean <u>it</u> up ✓ &nbsp; ❌ clean up <u>it</u> ✗
+    </div>
+  </div>
+</div>
+
+</div><!-- /S9 -->
+
+<!-- ============================== SUMMARY ============================== -->
+<div class="section" id="summary">
+<div class="summary-box">
+  <h3>📊 中考语法频次总览</h3>
+  <table class="g-table">
+    <tr><th>频次</th><th>数量</th><th>板块</th></tr>
+    <tr>
+      <td style="color:var(--red);font-weight:700;">🔥🔥 必考</td>
+      <td>5 个板块</td>
+      <td>过去进行时 · 现在完成时 · 过去完成时 · 被动（情态动词） · 宾语从句 · 定语从句 · 感叹句 · 情态动词表推测</td>
+    </tr>
+    <tr>
+      <td style="color:var(--amber);font-weight:700;">🔥 高频</td>
+      <td>8 个板块</td>
+      <td>一般过去时 · be going to · will · 比较级 · 最高级 · 频率副词 · 连词（until/unless） · used to · 非谓语</td>
+    </tr>
+    <tr>
+      <td style="color:var(--green);font-weight:700;">📌 中频</td>
+      <td>4 个板块</td>
+      <td>could 请求 · 祈使句 · be supposed to · make + 宾补 · 动词短语</td>
+    </tr>
+  </table>
+  <p style="font-size:13px;margin:10px 0 0;">
+    💡 <b>备考建议</b>：三大从句（宾语 + 定语）和被动语态占中考语法 50%+。过去进行时 vs 现在完成时 vs 过去完成时是区分 100+ 的关键。used to 四姐妹、so/such、when/while 是完形填空常客。
+  </p>
+</div>
+</div>
+
+</div><!-- /main -->
+
+<script>
+// TOC toggle
+document.getElementById('tocToggle').addEventListener('click', function(){ document.getElementById('toc').classList.toggle('open'); document.getElementById('tocOverlay').classList.toggle('open'); });
+document.getElementById('tocOverlay').addEventListener('click', function(){ document.getElementById('toc').classList.remove('open'); this.classList.remove('open'); });
+
+// Cards toggle
+document.querySelectorAll('.g-card-header').forEach(function(hdr){
+  hdr.addEventListener('click', function(){ this.parentElement.classList.toggle('open'); });
+});
+
+// Theme toggle
+(function(){
+  var btn = document.createElement('button');
+  btn.textContent = '🌙'; btn.style.cssText = 'position:fixed;top:12px;right:12px;z-index:200;width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;';
+  btn.onclick = function(){
+    var t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', t);
+    localStorage.setItem('grm-theme', t);
+    btn.textContent = t === 'dark' ? '☀️' : '🌙';
+  };
+  document.body.appendChild(btn);
+  if(document.documentElement.getAttribute('data-theme') === 'dark') btn.textContent = '☀️';
+})();
+</script>
+
+</body>
+</html>

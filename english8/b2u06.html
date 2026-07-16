@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U6 An old man tried to move the mountains. | 初中英语八年级</title>
+<link rel="stylesheet" href="css/english8.css">
+<style>
+.speak-btn { display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;color:var(--accent);border:1px solid var(--border);border-radius:4px;padding:2px 8px;background:var(--bg);transition:background 0.15s; }
+.speak-btn:hover { background:var(--accent-light); }
+.speak-btn.speaking { background:var(--eng-amber-light);color:var(--eng-amber);border-color:var(--eng-amber); }
+.headword-speak-indicator { font-size:11px;margin-left:3px;opacity:0.55;cursor:pointer;vertical-align:super;line-height:1; }
+.headword-speak-indicator:hover { opacity:1; }
+.wotd-say { cursor:pointer;transition:color 0.15s; }
+.wotd-say:hover { color:var(--accent); }
+.wotd-say.speaking { color:var(--eng-pink); }
+.speech-panel { position:fixed;bottom:80px;right:24px;z-index:999;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);padding:14px 18px;display:none;min-width:180px; }
+.speech-panel.open { display:block; }
+.speech-panel .row { display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px; }
+.speech-panel .row label { color:var(--text-secondary);font-size:12px;min-width:36px; }
+.speech-panel select,.speech-panel input[type="range"] { flex:1; }
+.speech-panel button { padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px; }
+.speech-panel button:hover { background:var(--accent-light); }
+.speech-toggle-btn { position:fixed;bottom:24px;right:76px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--accent);cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center; }
+.speech-toggle-btn:hover { background:var(--accent-light); }
+.en-text.speaking { background:var(--eng-amber-light);border-radius:4px;padding:2px 4px;transition:background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background:#452a08; }
+.detail-module { content-visibility:auto;contain-intrinsic-size:300px; }
+.reading { content-visibility:auto;contain-intrinsic-size:400px; }
+</style>
+<script>(function(){var t=localStorage.getItem("eng8-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+    <nav id="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="margin-bottom:0;">英语八年级</h2>
+        <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+      </div><nav>
+        <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../grammar.html" style="font-size:13px;">📌 语法全景图</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 八 上 ━━</a>
+        <a href="u01.html">U1 Happy Holiday!</a>
+        <a href="u02.html">U2 How often do you exercise?</a>
+        <a href="u03.html">U3 I'm more outgoing than my sister.</a>
+        <a href="u04.html">U4 What's the best movie theater?</a>
+        <a href="u05.html">U5 Do you want to watch a game show?</a>
+        <a href="u06.html">U6 I'm going to study computer science.</a>
+        <a href="u07.html">U7 Will people have robots?</a>
+        <a href="u08.html">U8 Let's Communicate!</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 八 下 ━━</a>
+        <a href="b2u01.html">U1 Time to Relax!</a>
+        <a href="b2u02.html">U2 Let's clean up!</a>
+        <a href="b2u03.html">U3 Could you please clean your room?</a>
+        <a href="b2u04.html">U4 Why don't you talk to your parents?</a>
+        <a href="b2u05.html">U5 What were you doing when the rainstorm came?</a>
+        <a href="b2u06.html" class="active">U6 An old man tried to move the mountains.</a>
+        <a href="b2u07.html">U7 What's the highest mountain in the world?</a>
+        <a href="b2u08.html">U8 Making a Difference</a>
+      </nav>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+    </nav>
+<main id="content">
+<div class="cover"><div class="sub-en">U6</div><h1>An old man tried to move the mountains.</h1><p>故事传说</p></div>
+<div class="unit-meta"><span>📖 话题：Stories & Legends</span><span>💬 功能：Tell stories using conjunctions</span><span>📚 语法：unless / as soon as / so…that 连词 · 一般过去时叙事</span><span>📝 写作：My Favorite Story</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能用 unless 表示条件</label>
+  <label><input type="checkbox"> 能用 as soon as 表示"一……就"</label>
+  <label><input type="checkbox"> 能用 so…that 表示结果</label>
+  <label><input type="checkbox"> 能用英语复述一个故事</label></div>
+<details class="module" open><summary>📖 课文精讲 · An old man tried to move the mountains.</summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：语文课上，同学们在讨论中国民间故事《愚公移山》。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
+<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Teacher:</span><span class="en-text wotd-say" data-speak="What do you think of the story "Yu Gong Moves a Mountain"?">What do you think of the story "Yu Gong Moves a Mountain"?</span></div>
+      <div class="dialogue-line"><span class="speaker">Wang Lin:</span><span class="en-text wotd-say" data-speak="I think it's amazing! The old man never gave up. He kept trying until the end.">I think it's amazing! The old man never gave up. He kept trying until the end.</span></div>
+      <div class="dialogue-line"><span class="speaker">Li Mei:</span><span class="en-text wotd-say" data-speak="I agree. The story tells us: Unless we try, we will never know what we can do.">I agree. The story tells us: Unless we try, we will never know what we can do.</span></div>
+      <div class="dialogue-line"><span class="speaker">Zhang Wei:</span><span class="en-text wotd-say" data-speak="But I think it's a bit silly. Why didn't he just move to a new place?">But I think it's a bit silly. Why didn't he just move to a new place?</span></div>
+      <div class="dialogue-line"><span class="speaker">Teacher:</span><span class="en-text wotd-say" data-speak="Good point! The story is not about moving mountains. It's about the spirit of never giving up.">Good point! The story is not about moving mountains. It's about the spirit of never giving up.</span></div>
+      <div class="dialogue-line"><span class="speaker">Wang Lin:</span><span class="en-text wotd-say" data-speak="As soon as I heard this story, I thought of my grandpa. He never gives up either.">As soon as I heard this story, I thought of my grandpa. He never gives up either.</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>Teacher:</strong> 你们觉得《愚公移山》这个故事怎么样？</p>
+        <p><strong>Wang Lin:</strong> 我觉得很了不起！老人从不放弃，一直坚持到底。</p>
+        <p><strong>Li Mei:</strong> 我同意。这个故事告诉我们：不去尝试就永远不会知道自己的能力。</p>
+        <p><strong>Zhang Wei:</strong> 但我觉得有点傻。他为什么不直接搬家呢？</p>
+        <p><strong>Teacher:</strong> 说得好！这个故事不是关于搬山，而是永不放弃的精神。</p>
+        <p><strong>Wang Lin:</strong> 我一听到这个故事就想起了我爷爷。他也从不放弃。</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p><strong>1.</strong> <em>Unless we try, we will never know what we can do.</em> → <strong>unless</strong> = if not "如果不"，引导条件状语从句。</p>
+      <p><strong>2.</strong> <em>As soon as I heard this story, I thought of my grandpa.</em> → <strong>as soon as</strong> "一……就"。</p>
+      <p><strong>3.</strong> <em>The old man never gave up.</em> → <strong>give up</strong> "放弃"，代词放中间：give it up。</p>
+      <p><strong>4.</strong> <em>He kept trying until the end.</em> → <strong>keep doing</strong> "持续做某事"。</p></div></div></details>
+<details class="module" open><summary>📝 重点词汇 · 故事传说 <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="move">move</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/muːv/</span><span class="pos">v.</span>
+        <div class="definition">移动；搬动</div>
+        <div class="example"><span class="wotd-say" data-speak="The old man tried to move the mountains.">The old man tried to move the mountains.</span><span class="trans">老人试图搬山。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="stone">stone</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/stoʊn/</span><span class="pos">n.</span>
+        <div class="definition">石头</div>
+        <div class="example"><span class="wotd-say" data-speak="There were big stones on the road.">There were big stones on the road.</span><span class="trans">路上有大石头。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="weak">weak</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/wiːk/</span><span class="pos">adj.</span>
+        <div class="definition">虚弱的；弱的</div>
+        <div class="example"><span class="wotd-say" data-speak="He was too weak to carry the box.">He was too weak to carry the box.</span><span class="trans">他太虚弱搬不动箱子。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="once">once</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/wʌns/</span><span class="pos">adv.</span>
+        <div class="definition">一旦；曾经</div>
+        <div class="example"><span class="wotd-say" data-speak="Once upon a time, there was an old man.">Once upon a time, there was an old man.</span><span class="trans">从前有一位老人。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="fit">fit</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/fɪt/</span><span class="pos">v./adj.</span>
+        <div class="definition">适合；健康的</div>
+        <div class="example"><span class="wotd-say" data-speak="Keep trying until you find a way that fits.">Keep trying until you find a way that fits.</span><span class="trans">不断尝试直到找到合适的方法。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="spirit">spirit</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈspɪrɪt/</span><span class="pos">n.</span>
+        <div class="definition">精神</div>
+        <div class="example"><span class="wotd-say" data-speak="The story shows the spirit of never giving up.">The story shows the spirit of never giving up.</span><span class="trans">这个故事展现了永不放弃的精神。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="object">object</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈɑːbdʒɪkt/</span><span class="pos">v.</span>
+        <div class="definition">反对</div>
+        <div class="example"><span class="wotd-say" data-speak="Nobody objected to his plan.">Nobody objected to his plan.</span><span class="trans">没人反对他的计划。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="clever">clever</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈklevər/</span><span class="pos">adj.</span>
+        <div class="definition">聪明的</div>
+        <div class="example"><span class="wotd-say" data-speak="The monkey is very clever.">The monkey is very clever.</span><span class="trans">猴子非常聪明。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="stupid">stupid</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈstuːpɪd/</span><span class="pos">adj.</span>
+        <div class="definition">愚蠢的</div>
+        <div class="example"><span class="wotd-say" data-speak="Some people thought he was stupid.">Some people thought he was stupid.</span><span class="trans">有些人觉得他很蠢。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="magic">magic</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈmædʒɪk/</span><span class="pos">adj./n.</span>
+        <div class="definition">魔法的；魔法</div>
+        <div class="example"><span class="wotd-say" data-speak="The magic stick could change size.">The magic stick could change size.</span><span class="trans">金箍棒能改变大小。</span></div>
+      </div></div></div></details>
+<details class="module" open><summary>🔤 重点句型 · Sentence Patterns</summary><div class="content"><div class="pattern-grid">      <div class="pattern-card">
+        <div class="structure">unless + 从句</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>如果不；除非</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1"><strong>Unless</strong> <span class="slot">you work hard</span>, you won't succeed.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">as soon as + 从句</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>一……就……</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp2"><strong>As soon as</strong> <span class="slot">I got home</span>, I started my homework.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">so + adj. + that + 从句</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>如此……以至于</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp3">The mountain was <strong>so</strong> <span class="slot">high</span> <strong>that</strong> <span class="slot">few people could climb it</span>.</span></div>
+      </div></div></div></details>
+<details class="module detail-module" open><summary>📚 语法聚焦 · unless / as soon as / so…that <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module"><h3>三个连词</h3>
+<table class="grammar-table">
+<tr><th>连词</th><th>含义</th><th>示例</th></tr>
+<tr><td>unless</td><td>如果不，除非</td><td>You'll be late unless you hurry.</td></tr>
+<tr><td>as soon as</td><td>一……就……</td><td>I'll call you as soon as I arrive.</td></tr>
+<tr><td>so…that…</td><td>如此……以致</td><td>The box was so heavy that I couldn't carry it.</td></tr>
+</table>
+<h3>unless = if not</h3>
+<table class="grammar-table">
+<tr><th>unless 句子</th><th>= if not 句子</th></tr>
+<tr><td>You won't pass unless you study.</td><td>= You won't pass if you don't study.</td></tr>
+<tr><td>I'll go unless it rains.</td><td>= I'll go if it doesn't rain.</td></tr>
+</table>
+</div><div class="chinese-error">      <p>❌ <span class="wrong" data-speak="Unless you will study, you will fail.">Unless you will study, you will fail.</span>（unless 从句用一般现在时表将来）</p>
+      <p>✅ <span class="correct" data-speak="Unless you study, you will fail.">Unless you study, you will fail.</span></p>
+      <p>❌ <span class="wrong" data-speak="As soon as I will get home, I will call you.">As soon as I will get home, I will call you.</span>（as soon as 从句用一般现在时表将来）</p>
+      <p>✅ <span class="correct" data-speak="As soon as I get home, I will call you.">As soon as I get home, I will call you.</span></p></div></div></details>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[unless] You won't succeed ____ you work hard.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>unless</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[as soon as] Call me ____ you arrive.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>as soon as</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[so…that] The story was ____ interesting ____ everyone loved it.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>so; that</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[同义句] Unless you start now, you will miss the bus.<br>= ____ you ____ start now, you will miss the bus.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>If; don't</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[改错] As soon as she will come, tell me.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>As soon as she comes, tell me.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[填空] The mountain was ____ high ____ nobody could climb it.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>so; that</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">[汉译英] 除非你不断尝试，否则你永远不会知道你能做什么。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Unless you keep trying, you will never know what you can do.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">[复述] 用英语简单复述《愚公移山》的故事（3-5 句）。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Once upon a time, an old man tried to move two big mountains. He kept digging every day. People laughed at him, but he didn't give up. Finally, the gods were moved and helped him.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>📖 阅读专项 · The Magic Paintbrush</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">Once upon a time, there was a poor boy named Ma Liang. He loved painting but had no brush.</p>
+      <p class="en-text">One night, an old man appeared in his dream and gave him a magic paintbrush. As soon as Ma Liang woke up, he found the brush beside his bed.</p>
+      <p class="en-text">He painted a bird and the bird came to life! He was so happy that he painted food for the poor people.</p>
+      <p class="en-text">A rich man heard about the brush. "Paint me a gold tree!" he ordered. "Unless you paint it, I will put you in jail."</p>
+      <p class="en-text">Ma Liang refused. As soon as the rich man tried to take the brush, Ma Liang painted a big river. The rich man was washed away and never came back.</p><div class="gloss"><span>paintbrush n. 画笔</span> <span>appear v. 出现</span> <span>come to life 活过来</span> <span>refuse v. 拒绝</span> <span>jail n. 监狱</span> <span>wash away 冲走</span> </div></div>    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">1. What did the old man give Ma Liang?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>A magic paintbrush.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">2. What did Ma Liang paint for the poor people?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Food.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★★</span>
+      <div class="q-body">3. How did Ma Liang escape from the rich man?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>He painted a big river that washed the rich man away.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>🏆 中考题型专练 · 语法填空</summary><div class="content exam-section"><p style="font-size:13px;margin-bottom:8px;">用括号内所给词或连词的适当形式填空。</p><div class="reading-passage" style="background:var(--bg-secondary);">      <p>Once upon a time, an old man (1)____ (try) to move the mountains. His family (2)____ (help) him every day. A clever man said, "You are (3)____ (silly) old man. (4)____ you stop, you will never finish." The old man replied, "(5)____ I die, my children will continue. (6)____ (unless / as soon as) we keep trying, the mountains will become smaller." Finally, the gods (7)____ (move) by his spirit and took the mountains away.</p></div><div class="exam-q" style="border-left-color:#f59e0b;"><span class="q-tag" style="background:#f59e0b;color:#fff;">答案</span><div class="q-body">(1) tried；(2) helped；(3) a silly；(4) Unless；(5) After / When；(6) As long as；(7) were moved</div></div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · My Favorite Story</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">请以"My Favorite Story"为题，写 70 词介绍你最喜欢的一个故事，用 unless / as soon as / so…that 中的至少两个。</div></div><div class="writing-framework">      <div class="fw-step">开头：故事名称和来源。</div>
+      <div class="fw-step">主体：故事大意（用 as soon as / unless 等）。</div>
+      <div class="fw-step">结尾：你喜欢的原因。</div></div><div class="writing-model"><div class="en">My favorite story is "The Fox and the Grapes." A fox was so hungry that he wanted to eat some grapes. But the grapes were so high that he couldn't reach them. He tried again and again. As soon as he jumped, the grapes moved away in the wind. Finally, he gave up and said, "The grapes are sour." I like this story because it teaches us not to make excuses when we fail.</div><div class="trans">我最喜欢的故事是《狐狸和葡萄》。一只狐狸很饿想吃葡萄，但葡萄太高够不着。他试了一次又一次，一跳葡萄就被风吹开。最后他放弃说"葡萄是酸的"。我喜欢这个故事因为它教我们失败时不要找借口。</div></div></div></details>
+<details class="module detail-module" open><summary>🎯 Project · Storytelling Show</summary><div class="content project-module"><div class="project-brief"><div class="project-title">Storytelling Show</div><div class="project-desc">小组选择一个中国或西方民间故事，用英语改编表演 3 分钟短剧，用到 unless / as soon as / so…that。</div></div><div class="project-steps">      <div class="step"><span class="step-num">1</span><span class="step-text">选一个故事。</span></div>
+      <div class="step"><span class="step-num">2</span><span class="step-text">分配角色和台词。</span></div>
+      <div class="step"><span class="step-num">3</span><span class="step-text">在台词中加入 unless / as soon as / so…that。</span></div>
+      <div class="step"><span class="step-num">4</span><span class="step-text">准备道具并在班里表演。</span></div></div><div class="project-rubric"><table><tr><th>#</th><th>评价标准</th></tr><tr><td>1.</td><td>故事完整</td></tr>
+<tr><td>2.</td><td>正确使用连词</td></tr>
+<tr><td>3.</td><td>角色表现力强</td></tr>
+<tr><td>4.</td><td>团队合作好</td></tr></table></div></div></details>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 unless 表示条件</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 as soon as 连接动作</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 so…that 表示结果</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用英语复述故事</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>假装你是"故事大王"，用英语给同学讲一个中国民间故事，用到 unless 和 as soon as。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">用 unless 写 3 个句子</span>
+    <span class="review-dot">用 as soon as 写 3 个句子</span>
+    <span class="review-dot">用 so…that 写 3 个句子</span>
+    <span class="review-dot">用英语写一个 50 词的小故事</span></div>
+<div class="next-stop" style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;"><a href="b2u05.html" class="nav-arrow">← 上一单元</a><a href="b2u07.html" class="nav-arrow">下一单元 →</a></div>
+<div class="next-stop" style="margin-top:8px;"><strong>➡️ 下一单元：What's the highest mountain in the world?</strong><br>下一单元你将学习形容词和副词的比较级、最高级在描述世界之最中的应用。</div>
+</main>
+<div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
+<button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis, currentUtterance: null, speaking: false, rate: 0.9, voiceURI: 'en-US',
+    init: function(){var s=this;document.getElementById('speechRate').addEventListener('input',function(){s.rate=+this.value;document.getElementById('speechRateLabel').textContent=this.value;});document.getElementById('speechVoice').addEventListener('change',function(){s.voiceURI=this.value;localStorage.setItem('speech-voice',this.value);});document.getElementById('speechStopBtn').addEventListener('click',function(){s.stop();});document.getElementById('speechCloseBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.remove('open');});document.getElementById('speechToggleBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.toggle('open');});},
+    speak: function(t,c){if(!t)return;this.stop();var u=new SpeechSynthesisUtterance(t);u.lang=this.voiceURI;u.rate=this.rate;u.onend=function(){if(c)c();};this.currentUtterance=u;this.synthesis.speak(u);},
+    speakDialogue: function(id,c){var s=this,el=document.getElementById(id),ls=el?el.querySelectorAll('.en-text'):[],i=0;this.stop();(function n(){if(i>=ls.length){if(c)c();return;}var e=ls[i],t=e.getAttribute('data-speak')||e.textContent;if(!t){i++;n();return;}e.classList.add('speaking');var u=new SpeechSynthesisUtterance(t);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){e.classList.remove('speaking');i++;setTimeout(n,500);};u.onerror=function(){e.classList.remove('speaking');i++;setTimeout(n,200);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    speakVocabSection: function(id,c){var s=this,el=document.getElementById(id),cs=el?el.querySelectorAll('.vocab-card'):[],i=0;this.stop();(function n(){if(i>=cs.length){if(c)c();return;}var e=cs[i],hw=e.querySelector('.headword'),ex=e.querySelector('.example .wotd-say'),t=[];if(hw)t.push(hw.getAttribute('data-speak')||hw.textContent);if(ex)t.push(ex.getAttribute('data-speak')||ex.textContent.replace(/<[^>]+>/g,'').trim());var ft=t.join('. ');if(!ft){i++;n();return;}hw.classList.add('speaking');var u=new SpeechSynthesisUtterance(ft);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){hw.classList.remove('speaking');i++;setTimeout(n,600);};u.onerror=function(){hw.classList.remove('speaking');i++;setTimeout(n,300);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    stop: function(){this.synthesis.cancel();this.speaking=false;}
+  };SpeechManager.init();
+  document.querySelectorAll('.wotd-say').forEach(function(el){el.addEventListener('click',function(){SpeechManager.speak(this.getAttribute('data-speak')||this.textContent);});});
+  document.querySelectorAll('.speak-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var d=this.getAttribute('data-dialogue'),v=this.getAttribute('data-vocab'),t=this.getAttribute('data-target');if(this.classList.contains('speaking')){SpeechManager.stop();this.classList.remove('speaking');return;}this.classList.add('speaking');var done=function(){btn.classList.remove('speaking');};if(d){SpeechManager.speakDialogue(d,done);}else if(v){SpeechManager.speakVocabSection(v,done);}else if(t){var tg=document.getElementById(t);if(!tg){btn.classList.remove('speaking');return;}SpeechManager.speak(tg.textContent.replace(/<[^>]+>/g,''),done);}else{btn.classList.remove('speaking');}});});
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();var hw=this.previousElementSibling;if(hw&&hw.classList.contains('wotd-say')){var t=hw.getAttribute('data-speak')||hw.textContent;SpeechManager.speak(t);}});});
+  (function(){var btn=document.getElementById('expandAllBtn');if(!btn)return;btn.addEventListener('click',function(){var ad=document.querySelectorAll('.module,.exam-module');var ao=true;for(var i=0;i<ad.length;i++){if(!ad[i].hasAttribute('open')){ao=false;break;}};for(var i=0;i<ad.length;i++){if(ao)ad[i].removeAttribute('open');else ad[i].setAttribute('open','');};btn.textContent=ao?'📂 展开全部模块':'📖 收起全部模块';});})();
+  var s=document.getElementById('sidebar'),k='eng8-theme-sidebar';if(!s)return;
+  if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
+  window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=window.scrollY>400?'flex':'none';},{passive:true});
+  document.getElementById('backToTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution');});});
+})();
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);localStorage.setItem("eng8-theme",t);var btn=document.getElementById("themeToggle");if(btn)btn.textContent=t==="dark"?"☀️":"🌙";}
+function toggleTheme(){setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark");}
+</script></body></html>

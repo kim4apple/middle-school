@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U9 I like music that I can dance to. | 初中英语九年级</title>
+<link rel="stylesheet" href="css/english9.css">
+<style>
+.speak-btn { display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;color:var(--accent);border:1px solid var(--border);border-radius:4px;padding:2px 8px;background:var(--bg);transition:background 0.15s; }
+.speak-btn:hover { background:var(--accent-light); }
+.speak-btn.speaking { background:var(--eng-amber-light);color:var(--eng-amber);border-color:var(--eng-amber); }
+.headword-speak-indicator { font-size:11px;margin-left:3px;opacity:0.55;cursor:pointer;vertical-align:super;line-height:1; }
+.headword-speak-indicator:hover { opacity:1; }
+.wotd-say { cursor:pointer;transition:color 0.15s; }
+.wotd-say:hover { color:var(--accent); }
+.wotd-say.speaking { color:var(--eng-pink); }
+.speech-panel { position:fixed;bottom:80px;right:24px;z-index:999;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);padding:14px 18px;display:none;min-width:180px; }
+.speech-panel.open { display:block; }
+.speech-panel .row { display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px; }
+.speech-panel .row label { color:var(--text-secondary);font-size:12px;min-width:36px; }
+.speech-panel select,.speech-panel input[type="range"] { flex:1; }
+.speech-panel button { padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px; }
+.speech-panel button:hover { background:var(--accent-light); }
+.speech-toggle-btn { position:fixed;bottom:24px;right:76px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--accent);cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center; }
+.speech-toggle-btn:hover { background:var(--accent-light); }
+.en-text.speaking { background:var(--eng-amber-light);border-radius:4px;padding:2px 4px;transition:background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background:#452a08; }
+.detail-module { content-visibility:auto;contain-intrinsic-size:300px; }
+.reading { content-visibility:auto;contain-intrinsic-size:400px; }
+</style>
+<script>(function(){var t=localStorage.getItem("eng9-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+    <nav id="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="margin-bottom:0;">英语九年级</h2>
+        <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+      </div><nav>
+        <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../grammar.html" style="font-size:13px;">📌 语法全景图</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 九年级全一册 ━━</a>
+        <a href="u01.html">U1 How can we become good learners?</a>
+        <a href="u02.html">U2 I think that mooncakes are delicious!</a>
+        <a href="u03.html">U3 Could you please tell me where the restrooms are?</a>
+        <a href="u04.html">U4 I used to be afraid of the dark.</a>
+        <a href="u05.html">U5 What are the shirts made of?</a>
+        <a href="u06.html">U6 When was it invented?</a>
+        <a href="u07.html">U7 Teenagers should be allowed to choose their own clothes.</a>
+        <a href="u08.html">U8 It must belong to Carla.</a>
+        <a href="u09.html" class="active">U9 I like music that I can dance to.</a>
+        <a href="u10.html">U10 You're supposed to shake hands.</a>
+        <a href="u11.html">U11 Sad movies make me cry.</a>
+        <a href="u12.html">U12 Life is full of the unexpected.</a>
+        <a href="u13.html">U13 We're trying to save the earth!</a>
+        <a href="u14.html">U14 I remember meeting all of you in Grade 7.</a>
+      </nav>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+    </nav>
+<main id="content">
+<div class="cover"><div class="sub-en">U9</div><h1>I like music that I can dance to.</h1><p>偏好与定从</p></div>
+<div class="unit-meta"><span>📖 话题：Preferences and Attributive Clauses</span><span>💬 功能：Express preferences and talk about music/movies</span><span>📚 语法：Attributive clauses with that/who/which</span><span>📝 写作：Write about your favorite music, movie, or book</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能用定语从句描述人和物</label>
+  <label><input type="checkbox"> 能表达个人喜好和偏好</label>
+  <label><input type="checkbox"> 能谈论音乐、电影、书籍等话题</label>
+  <label><input type="checkbox"> 能运用 that/who/which 引导定语从句</label></div>
+<details class="module" open><summary>📖 课文精讲 · I like music that I can dance to.</summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：Jenny和Mike在学校音乐节上讨论自己喜欢的音乐类型。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
+<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Jenny:</span><span class="en-text wotd-say" data-speak="What kind of music do you like, Mike?">What kind of music do you like, Mike?</span></div>
+      <div class="dialogue-line"><span class="speaker">Mike:</span><span class="en-text wotd-say" data-speak="I like music that I can dance to. It makes me feel happy.">I like music that I can dance to. It makes me feel happy.</span></div>
+      <div class="dialogue-line"><span class="speaker">Jenny:</span><span class="en-text wotd-say" data-speak="I prefer music that has great lyrics. Songs that tell a story are my favorite.">I prefer music that has great lyrics. Songs that tell a story are my favorite.</span></div>
+      <div class="dialogue-line"><span class="speaker">Mike:</span><span class="en-text wotd-say" data-speak="Do you like the band playing on stage right now?">Do you like the band playing on stage right now?</span></div>
+      <div class="dialogue-line"><span class="speaker">Jenny:</span><span class="en-text wotd-say" data-speak="Yes, I love them! They are a band that plays different styles of music.">Yes, I love them! They are a band that plays different styles of music.</span></div>
+      <div class="dialogue-line"><span class="speaker">Mike:</span><span class="en-text wotd-say" data-speak="Who is the singer that is wearing a red jacket?">Who is the singer that is wearing a red jacket?</span></div>
+      <div class="dialogue-line"><span class="speaker">Jenny:</span><span class="en-text wotd-say" data-speak="That's Amy. She is a singer who writes her own songs.">That's Amy. She is a singer who writes her own songs.</span></div>
+      <div class="dialogue-line"><span class="speaker">Mike:</span><span class="en-text wotd-say" data-speak="Wow, that's cool! I like musicians who are creative.">Wow, that's cool! I like musicians who are creative.</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>Jenny:</strong> 你喜欢什么类型的音乐，迈克？</p>
+        <p><strong>Mike:</strong> 我喜欢能跟着跳舞的音乐。它让我感到快乐。</p>
+        <p><strong>Jenny:</strong> 我更喜欢有好歌词的音乐。能讲故事的歌是我的最爱。</p>
+        <p><strong>Mike:</strong> 你喜欢现在在台上表演的乐队吗？</p>
+        <p><strong>Jenny:</strong> 是的，我很喜欢！他们是一个演奏不同风格音乐的乐队。</p>
+        <p><strong>Mike:</strong> 那个穿红色夹克的歌手是谁？</p>
+        <p><strong>Jenny:</strong> 那是艾米。她是一个自己写歌的歌手。</p>
+        <p><strong>Mike:</strong> 哇，太酷了！我喜欢有创造力的音乐人。</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p>定语从句修饰名词或代词，相当于形容词的作用。</p>
+      <p>that 可以指人或物 — I like music <b>that</b> I can dance to.</p>
+      <p>who 只指人 — She is a singer <b>who</b> writes her own songs.</p>
+      <p>which 只指物 — I prefer movies <b>which</b> are funny.</p></div></div></details>
+<details class="module" open><summary>📝 重点词汇 · 偏好与定从 <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="prefer">prefer</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/prɪˈfɜːr/</span><span class="pos">v.</span>
+        <div class="definition">更喜欢</div>
+        <div class="example"><span class="wotd-say" data-speak="I prefer tea to coffee.">I prefer tea to coffee.</span><span class="trans">比起咖啡我更喜欢茶。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="lyric">lyric</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈlɪrɪk/</span><span class="pos">n.</span>
+        <div class="definition">歌词</div>
+        <div class="example"><span class="wotd-say" data-speak="I love the lyrics of this song.">I love the lyrics of this song.</span><span class="trans">我喜欢这首歌的歌词。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="electronic">electronic</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɪˌlekˈtrɒnɪk/</span><span class="pos">adj.</span>
+        <div class="definition">电子的</div>
+        <div class="example"><span class="wotd-say" data-speak="He likes electronic music.">He likes electronic music.</span><span class="trans">他喜欢电子音乐。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="smooth">smooth</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/smuːð/</span><span class="pos">adj.</span>
+        <div class="definition">平滑的；流畅的</div>
+        <div class="example"><span class="wotd-say" data-speak="The music has a smooth rhythm.">The music has a smooth rhythm.</span><span class="trans">这段音乐有流畅的节奏。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="spare">spare</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/sper/</span><span class="pos">adj.</span>
+        <div class="definition">空闲的；多余的</div>
+        <div class="example"><span class="wotd-say" data-speak="I like to read in my spare time.">I like to read in my spare time.</span><span class="trans">我喜欢在空闲时间阅读。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="direction">direction</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/dəˈrekʃn/</span><span class="pos">n.</span>
+        <div class="definition">方向；指导</div>
+        <div class="example"><span class="wotd-say" data-speak="I have a good sense of direction.">I have a good sense of direction.</span><span class="trans">我有很好的方向感。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="suppose">suppose</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/səˈpoʊz/</span><span class="pos">v.</span>
+        <div class="definition">假设；认为</div>
+        <div class="example"><span class="wotd-say" data-speak="I suppose you're right.">I suppose you're right.</span><span class="trans">我想你是对的。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="case">case</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/keɪs/</span><span class="pos">n.</span>
+        <div class="definition">情况；案例</div>
+        <div class="example"><span class="wotd-say" data-speak="In that case, I'll come with you.">In that case, I'll come with you.</span><span class="trans">那样的话，我和你一起去。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="war">war</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/wɔːr/</span><span class="pos">n.</span>
+        <div class="definition">战争</div>
+        <div class="example"><span class="wotd-say" data-speak="War is terrible.">War is terrible.</span><span class="trans">战争是可怕的。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="reflect">reflect</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/rɪˈflekt/</span><span class="pos">v.</span>
+        <div class="definition">反映；反射</div>
+        <div class="example"><span class="wotd-say" data-speak="Music reflects our feelings.">Music reflects our feelings.</span><span class="trans">音乐反映我们的情感。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="master">master</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈmæstər/</span><span class="pos">n./v.</span>
+        <div class="definition">大师；掌握</div>
+        <div class="example"><span class="wotd-say" data-speak="He is a master of the piano.">He is a master of the piano.</span><span class="trans">他是钢琴大师。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="perform">perform</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/pərˈfɔːrm/</span><span class="pos">v.</span>
+        <div class="definition">表演；演奏</div>
+        <div class="example"><span class="wotd-say" data-speak="She performed a beautiful song.">She performed a beautiful song.</span><span class="trans">她演唱了一首美丽的歌。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="praise">praise</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/preɪz/</span><span class="pos">v./n.</span>
+        <div class="definition">赞扬；表扬</div>
+        <div class="example"><span class="wotd-say" data-speak="The teacher praised her for her hard work.">The teacher praised her for her hard work.</span><span class="trans">老师表扬她学习努力。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="pain">pain</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/peɪn/</span><span class="pos">n.</span>
+        <div class="definition">疼痛；痛苦</div>
+        <div class="example"><span class="wotd-say" data-speak="The pain in my leg is getting better.">The pain in my leg is getting better.</span><span class="trans">我腿上的疼痛正在好转。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="wound">wound</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/wuːnd/</span><span class="pos">n.</span>
+        <div class="definition">伤口；创伤</div>
+        <div class="example"><span class="wotd-say" data-speak="The wound healed quickly.">The wound healed quickly.</span><span class="trans">伤口愈合得很快。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="musician">musician</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/mjuˈzɪʃn/</span><span class="pos">n.</span>
+        <div class="definition">音乐人；音乐家</div>
+        <div class="example"><span class="wotd-say" data-speak="He is a talented musician.">He is a talented musician.</span><span class="trans">他是一位有天赋的音乐家。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="sense">sense</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/sens/</span><span class="pos">n./v.</span>
+        <div class="definition">感觉；意识</div>
+        <div class="example"><span class="wotd-say" data-speak="I have a sense of achievement.">I have a sense of achievement.</span><span class="trans">我有一种成就感。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="sadness">sadness</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈsædnəs/</span><span class="pos">n.</span>
+        <div class="definition">悲伤；忧愁</div>
+        <div class="example"><span class="wotd-say" data-speak="The song is full of sadness.">The song is full of sadness.</span><span class="trans">这首歌充满了悲伤。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="pity">pity</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈpɪti/</span><span class="pos">n.</span>
+        <div class="definition">遗憾；怜悯</div>
+        <div class="example"><span class="wotd-say" data-speak="What a pity!">What a pity!</span><span class="trans">真遗憾！</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="total">total</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈtoʊtl/</span><span class="pos">adj./n.</span>
+        <div class="definition">总共的；总数</div>
+        <div class="example"><span class="wotd-say" data-speak="The total cost is $50.">The total cost is $50.</span><span class="trans">总费用是50美元。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="drama">drama</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈdrɑːmə/</span><span class="pos">n.</span>
+        <div class="definition">戏剧</div>
+        <div class="example"><span class="wotd-say" data-speak="I like watching TV dramas.">I like watching TV dramas.</span><span class="trans">我喜欢看电视剧。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="documentary">documentary</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌdɒkjuˈmentri/</span><span class="pos">n.</span>
+        <div class="definition">纪录片</div>
+        <div class="example"><span class="wotd-say" data-speak="I enjoy watching nature documentaries.">I enjoy watching nature documentaries.</span><span class="trans">我喜欢看自然纪录片。</span></div>
+      </div></div></div></details>
+<details class="module" open><summary>🔤 重点句型 · Sentence Patterns</summary><div class="content"><div class="pattern-grid">      <div class="pattern-card">
+        <div class="structure">主语 + 谓语 + 名词 + that + 从句 (that 指人或物)</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>用 that 引导定语从句修饰名词。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1">I like music <b>that</b> I can dance to. / She likes movies <b>that</b> are funny.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">主语 + 谓语 + 名词 + who + 从句 (who 指人)</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>用 who 引导定语从句修饰人。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp2">I prefer singers <b>who</b> write their own songs. / He is a teacher <b>who</b> loves his job.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">主语 + 谓语 + 名词 + which + 从句 (which 指物)</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>用 which 引导定语从句修饰物。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp3">The book <b>which</b> I borrowed is interesting. / The song <b>which</b> she sang is beautiful.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">Prefer A to B / Prefer to do A rather than do B</div> <button class="speak-btn" data-target="sp4" title="朗读句型">🔊</button>
+        <div>表示偏好。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp4">I <b>prefer</b> pop music <b>to</b> rock. / She <b>prefers</b> to read at home.</span></div>
+      </div></div></div></details>
+<details class="module detail-module" open><summary>📚 语法聚焦 · 定语从句（Attributive Clauses） <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module"><h3>关系代词的用法</h3>
+<table class="grammar-table">
+<tr><th>关系代词</th><th>指代</th><th>在从句中的作用</th><th>例句</th></tr>
+<tr><td>that</td><td>人/物</td><td>主语/宾语</td><td>The music that I like is pop.</td></tr>
+<tr><td>who</td><td>人</td><td>主语/宾语</td><td>The girl who sings well is Amy.</td></tr>
+<tr><td>which</td><td>物</td><td>主语/宾语</td><td>The movie which I saw was great.</td></tr>
+</table>
+<h3>关系代词的省略</h3>
+<table class="grammar-table">
+<tr><th>情况</th><th>说明</th><th>例句</th></tr>
+<tr><td>作宾语时可省略</td><td>关系代词在从句中作宾语时可以省略</td><td>The song (that) she sang was beautiful.</td></tr>
+<tr><td>作主语不可省略</td><td>关系代词在从句中作主语时不可省略</td><td>The girl who is singing is my friend.</td></tr>
+</table>
+</div><div class="chinese-error">      <p>that 可以指人也可以指物，更口语化。</p>
+      <p>which 只能指物，不能指人。</p>
+      <p>who 只能指人，不能指物。</p>
+      <p>关系代词在从句中作宾语时可以省略（即从句中已有主语）。</p>
+      <p><span class="wotd-say" data-speak="Music is the medicine of the mind.">Music is the medicine of the mind.</span> 音乐是心灵的良药。</p></div></div></details>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">I like music ____ I can dance to. (填入关系代词)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>that</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">She is a singer ____ writes her own songs. (填入关系代词)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>who/that</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">The book ____ I read is very interesting. (填入关系代词, 可省略)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>that/which（可省略）</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">I ____ (更喜欢) tea to coffee.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>prefer</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">I like movies ____ are funny. (填入关系代词)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>that/which</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">The woman ____ is standing there is my teacher.<br>A. which B. who C. what D. when</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>B</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">This is the best song ____ I have ever heard.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>that</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">合并句子：I like the music. The music has a good beat. → ____.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>I like the music that has a good beat.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">翻译：我更喜欢能让我开心的电影。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>I prefer movies that make me happy.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">The boy ____ (who/which) is playing basketball is my brother.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>who</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">选择：He is the man ____ helped me yesterday.<br>A. which B. who C. what D. whom</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>B</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">改错：The book which I bought it yesterday is interesting.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>去掉 it（which 已经是宾语）</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">用定语从句改写：I have a friend. He can speak three languages. → ____.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>I have a friend who can speak three languages.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">写作：用定语从句写一段话（至少3句）介绍你最喜欢的音乐或音乐人。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>My favorite singer is Jay Chou. He is a singer who writes his own songs. I like music that has meaningful lyrics. His songs always make me feel relaxed.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>📖 阅读专项 · What Kind of Music Do You Like?</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">Music is an important part of our lives. Different people like different kinds of music. Some people like music that is loud and energetic. Others prefer music that is quiet and peaceful.</p>
+      <p class="en-text">I have a friend named Sarah. She likes music that she can dance to. She says dancing makes her feel free and happy. Her favorite band is one that plays upbeat pop music.</p>
+      <p class="en-text">My brother, on the other hand, prefers music that tells a story. He loves folk music and songs that have deep lyrics. He especially likes musicians who sing about life and nature.</p>
+      <p class="en-text">As for me, I like all kinds of music. I believe that every song has something special. Music that moves our hearts is always good music, no matter what style it is. After all, music is a language that everyone can understand.</p><div class="gloss"><span>energetic 充满活力的</span> <span>upbeat 欢快的；乐观的</span> <span>folk music 民谣</span> <span>deep lyrics 深刻的歌词</span> <span>moves our hearts 打动我们的心</span> <span>no matter 无论</span> </div></div>    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">What kind of music does Sarah like?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>She likes music that she can dance to.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">Why does the writer's brother like folk music?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Because he prefers music that tells a story.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">What does the writer think about music?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>She thinks every song has something special.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★★</span>
+      <div class="q-body">What does «Music is a language that everyone can understand» mean?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>It means music can communicate with anyone, regardless of language barriers.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>🏆 中考题型专练 · 短文填空 — 关系代词</summary><div class="content exam-section"><p style="font-size:13px;margin-bottom:8px;">用 that, who, which 填空。</p><div class="reading-passage" style="background:var(--bg-secondary);">      <p>I have a friend 1 loves movies. She only watches movies 2 make her laugh. She says comedies are the best. Her favorite actor is one 3 is very funny. Last week, she recommended a movie 4 I should watch. It was the funniest movie 5 I have ever seen! I now understand why she likes comedies.</p></div><div style="margin:4px 0;font-size:13px;"><strong>1</strong> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> A. who</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> B. which</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> C. what</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> D. when</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>2</strong> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> A. who</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> B. that</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> C. what</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> D. whose</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>3</strong> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> A. which</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> B. who</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> C. whom</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> D. what</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>4</strong> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> A. who</span> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> B. whom</span> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> C. that</span> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> D. what</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>5</strong> <span style="margin-right:12px;"><input type="radio" name="exam_5" disabled> A. that</span> <span style="margin-right:12px;"><input type="radio" name="exam_5" disabled> B. what</span> <span style="margin-right:12px;"><input type="radio" name="exam_5" disabled> C. who</span> <span style="margin-right:12px;"><input type="radio" name="exam_5" disabled> D. whom</span> </div>
+<div class="exam-q" style="border-left-color:#f59e0b;"><span class="q-tag" style="background:#f59e0b;color:#fff;">答案</span><div class="q-body">1. A；2. B；3. B；4. C；5. A</div></div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · Write about your favorite music, movie, or book</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">写一篇短文介绍你最喜欢的一部电影或一首歌曲，包括它的类型、内容和你喜欢它的原因。请使用至少三个定语从句。</div></div><div class="writing-framework">      <div class="fw-step">开头：引出你最喜欢的电影/歌曲</div>
+      <div class="fw-step">类型和风格：它是什么样的（使用定语从句）</div>
+      <div class="fw-step">内容简介：关于什么</div>
+      <div class="fw-step">喜欢的原因：为什么你喜欢它</div>
+      <div class="fw-step">结尾：它给你带来什么感受</div></div><div class="writing-model"><div class="en">My favorite movie is Zootopia. It is a cartoon that tells the story of a rabbit who wants to become a police officer. The movie shows a world where animals live together. I like movies that are both funny and meaningful. Zootopia is a film that makes people think about fairness and dreams. The main character, Judy Hopps, is a rabbit who never gives up. She teaches me that we should always follow our dreams.</div><div class="trans">我最喜欢的电影是《疯狂动物城》。这是一部讲述一只想成为警察的兔子的卡通电影。电影展示了一个动物们共同生活的世界。我喜欢既有趣又有意义的电影。《疯狂动物城》是一部让人们思考公平和梦想的电影。主角朱迪·霍普斯是一只永不放弃的兔子。她教会我们永远要追随自己的梦想。</div></div></div></details>
+<details class="module detail-module" open><summary>🎯 Project · My Music Playlist</summary><div class="content project-module"><div class="project-brief"><div class="project-title">My Music Playlist</div><div class="project-desc">创建一份你个人的「最爱歌单」播放列表，包含5首歌曲，每首歌用英语写出你喜欢的理由（使用定语从句）。</div></div><div class="project-steps">      <div class="step"><span class="step-num">1</span><span class="step-text">选择5首你最喜爱的歌曲</span></div>
+      <div class="step"><span class="step-num">2</span><span class="step-text">每首歌写出歌手名和歌名</span></div>
+      <div class="step"><span class="step-num">3</span><span class="step-text">用英语写出你喜欢每首歌的原因（使用定语从句）</span></div>
+      <div class="step"><span class="step-num">4</span><span class="step-text">列出歌词中你最喜欢的一句</span></div>
+      <div class="step"><span class="step-num">5</span><span class="step-text">制作一份精美的歌单海报</span></div>
+      <div class="step"><span class="step-num">6</span><span class="step-text">在班级中分享你的歌单，播放片段</span></div></div><div class="project-rubric"><table><tr><th>#</th><th>评价标准</th></tr><tr><td>1.</td><td>选择了5首有意义的歌曲</td></tr>
+<tr><td>2.</td><td>每个原因都使用了定语从句</td></tr>
+<tr><td>3.</td><td>关系代词使用正确（that/who/which）</td></tr>
+<tr><td>4.</td><td>海报设计精美</td></tr>
+<tr><td>5.</td><td>口头分享流利自信</td></tr></table></div></div></details>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能理解定语从句的结构</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能正确使用 that/who/which</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用定语从句表达喜好</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能理解阅读中关于音乐的讨论</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写关于喜好的短文</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>向同桌解释定语从句中 that、who、which 的区别和用法。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">🔵 1天后：复习关系代词的用法</span>
+    <span class="review-dot">🟢 3天后：复习喜好表达和音乐词汇</span>
+    <span class="review-dot">🟡 1周后：复述关于音乐的文章</span>
+    <span class="review-dot">🔴 1月后：写你最喜欢的电影评论</span></div>
+<div class="next-stop" style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;"><a href="u08.html" class="nav-arrow">← 上一单元</a><a href="u10.html" class="nav-arrow">下一单元 →</a></div>
+<div class="next-stop" style="margin-top:8px;"><strong>➡️ 下一单元：U10: You're supposed to shake hands.</strong><br>学习 be supposed to 结构，了解不同国家的礼仪文化。</div>
+</main>
+<div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
+<button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis, currentUtterance: null, speaking: false, rate: 0.9, voiceURI: 'en-US',
+    init: function(){var s=this;document.getElementById('speechRate').addEventListener('input',function(){s.rate=+this.value;document.getElementById('speechRateLabel').textContent=this.value;});document.getElementById('speechVoice').addEventListener('change',function(){s.voiceURI=this.value;localStorage.setItem('speech-voice',this.value);});document.getElementById('speechStopBtn').addEventListener('click',function(){s.stop();});document.getElementById('speechCloseBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.remove('open');});document.getElementById('speechToggleBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.toggle('open');});},
+    speak: function(t,c){if(!t)return;this.stop();var u=new SpeechSynthesisUtterance(t);u.lang=this.voiceURI;u.rate=this.rate;u.onend=function(){if(c)c();};this.currentUtterance=u;this.synthesis.speak(u);},
+    speakDialogue: function(id,c){var s=this,el=document.getElementById(id),ls=el?el.querySelectorAll('.en-text'):[],i=0;this.stop();(function n(){if(i>=ls.length){if(c)c();return;}var e=ls[i],t=e.getAttribute('data-speak')||e.textContent;if(!t){i++;n();return;}e.classList.add('speaking');var u=new SpeechSynthesisUtterance(t);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){e.classList.remove('speaking');i++;setTimeout(n,500);};u.onerror=function(){e.classList.remove('speaking');i++;setTimeout(n,200);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    speakVocabSection: function(id,c){var s=this,el=document.getElementById(id),cs=el?el.querySelectorAll('.vocab-card'):[],i=0;this.stop();(function n(){if(i>=cs.length){if(c)c();return;}var e=cs[i],hw=e.querySelector('.headword'),ex=e.querySelector('.example .wotd-say'),t=[];if(hw)t.push(hw.getAttribute('data-speak')||hw.textContent);if(ex)t.push(ex.getAttribute('data-speak')||ex.textContent.replace(/<[^>]+>/g,'').trim());var ft=t.join('. ');if(!ft){i++;n();return;}hw.classList.add('speaking');var u=new SpeechSynthesisUtterance(ft);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){hw.classList.remove('speaking');i++;setTimeout(n,600);};u.onerror=function(){hw.classList.remove('speaking');i++;setTimeout(n,300);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    stop: function(){this.synthesis.cancel();this.speaking=false;}
+  };SpeechManager.init();
+  document.querySelectorAll('.wotd-say').forEach(function(el){el.addEventListener('click',function(){SpeechManager.speak(this.getAttribute('data-speak')||this.textContent);});});
+  document.querySelectorAll('.speak-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var d=this.getAttribute('data-dialogue'),v=this.getAttribute('data-vocab'),t=this.getAttribute('data-target');if(this.classList.contains('speaking')){SpeechManager.stop();this.classList.remove('speaking');return;}this.classList.add('speaking');var done=function(){btn.classList.remove('speaking');};if(d){SpeechManager.speakDialogue(d,done);}else if(v){SpeechManager.speakVocabSection(v,done);}else if(t){var tg=document.getElementById(t);if(!tg){btn.classList.remove('speaking');return;}SpeechManager.speak(tg.textContent.replace(/<[^>]+>/g,''),done);}else{btn.classList.remove('speaking');}});});
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();var hw=this.previousElementSibling;if(hw&&hw.classList.contains('wotd-say')){var t=hw.getAttribute('data-speak')||hw.textContent;SpeechManager.speak(t);}});});
+  (function(){var btn=document.getElementById('expandAllBtn');if(!btn)return;btn.addEventListener('click',function(){var ad=document.querySelectorAll('.module,.exam-module');var ao=true;for(var i=0;i<ad.length;i++){if(!ad[i].hasAttribute('open')){ao=false;break;}};for(var i=0;i<ad.length;i++){if(ao)ad[i].removeAttribute('open');else ad[i].setAttribute('open','');};btn.textContent=ao?'📂 展开全部模块':'📖 收起全部模块';});})();
+  var s=document.getElementById('sidebar'),k='eng9-theme-sidebar';if(!s)return;
+  if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
+  window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=window.scrollY>400?'flex':'none';},{passive:true});
+  document.getElementById('backToTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution');});});
+})();
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);localStorage.setItem("eng9-theme",t);var btn=document.getElementById("themeToggle");if(btn)btn.textContent=t==="dark"?"☀️":"🌙";}
+function toggleTheme(){setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark");}
+</script></body></html>

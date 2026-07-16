@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U1 Happy Holiday! | 初中英语八年级</title>
+<link rel="stylesheet" href="css/english8.css">
+<style>
+.speak-btn { display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;color:var(--accent);border:1px solid var(--border);border-radius:4px;padding:2px 8px;background:var(--bg);transition:background 0.15s; }
+.speak-btn:hover { background:var(--accent-light); }
+.speak-btn.speaking { background:var(--eng-amber-light);color:var(--eng-amber);border-color:var(--eng-amber); }
+.headword-speak-indicator { font-size:11px;margin-left:3px;opacity:0.55;cursor:pointer;vertical-align:super;line-height:1; }
+.headword-speak-indicator:hover { opacity:1; }
+.wotd-say { cursor:pointer;transition:color 0.15s; }
+.wotd-say:hover { color:var(--accent); }
+.wotd-say.speaking { color:var(--eng-pink); }
+.speech-panel { position:fixed;bottom:80px;right:24px;z-index:999;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);padding:14px 18px;display:none;min-width:180px; }
+.speech-panel.open { display:block; }
+.speech-panel .row { display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px; }
+.speech-panel .row label { color:var(--text-secondary);font-size:12px;min-width:36px; }
+.speech-panel select,.speech-panel input[type="range"] { flex:1; }
+.speech-panel button { padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px; }
+.speech-panel button:hover { background:var(--accent-light); }
+.speech-toggle-btn { position:fixed;bottom:24px;right:76px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--accent);cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center; }
+.speech-toggle-btn:hover { background:var(--accent-light); }
+.en-text.speaking { background:var(--eng-amber-light);border-radius:4px;padding:2px 4px;transition:background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background:#452a08; }
+.detail-module { content-visibility:auto;contain-intrinsic-size:300px; }
+.reading { content-visibility:auto;contain-intrinsic-size:400px; }
+</style>
+<script>(function(){var t=localStorage.getItem("eng8-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+    <nav id="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="margin-bottom:0;">英语八年级</h2>
+        <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+      </div><nav>
+        <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../grammar.html" style="font-size:13px;">📌 语法全景图</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 八 上 ━━</a>
+        <a href="u01.html" class="active">U1 Happy Holiday!</a>
+        <a href="u02.html">U2 How often do you exercise?</a>
+        <a href="u03.html">U3 I'm more outgoing than my sister.</a>
+        <a href="u04.html">U4 What's the best movie theater?</a>
+        <a href="u05.html">U5 Do you want to watch a game show?</a>
+        <a href="u06.html">U6 I'm going to study computer science.</a>
+        <a href="u07.html">U7 Will people have robots?</a>
+        <a href="u08.html">U8 Let's Communicate!</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 八 下 ━━</a>
+        <a href="b2u01.html">U1 Time to Relax!</a>
+        <a href="b2u02.html">U2 Let's clean up!</a>
+        <a href="b2u03.html">U3 Could you please clean your room?</a>
+        <a href="b2u04.html">U4 Why don't you talk to your parents?</a>
+        <a href="b2u05.html">U5 What were you doing when the rainstorm came?</a>
+        <a href="b2u06.html">U6 An old man tried to move the mountains.</a>
+        <a href="b2u07.html">U7 What's the highest mountain in the world?</a>
+        <a href="b2u08.html">U8 Making a Difference</a>
+      </nav>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+    </nav>
+<main id="content">
+<div class="cover"><div class="sub-en">U1</div><h1>Happy Holiday!</h1><p>假期活动</p></div>
+<div class="unit-meta"><span>📖 话题：Holiday Plans & Experiences</span><span>💬 功能：Talk about holiday plans and past experiences</span><span>📚 语法：一般过去时复习 · be going to 将来时 · wh-疑问句</span><span>📝 写作：My Holiday Plan</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能用 be going to 谈论假期计划</label>
+  <label><input type="checkbox"> 能用一般过去时描述假期经历</label>
+  <label><input type="checkbox"> 能就 holiday 话题进行 wh- 问答</label>
+  <label><input type="checkbox"> 能写一篇假期计划短文</label></div>
+<details class="module" open><summary>📖 课文精讲 · Happy Holiday!</summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：开学后，同学们互相分享暑假经历并讨论即将到来的国庆假期计划。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
+<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Li Hua:</span><span class="en-text wotd-say" data-speak="Hi, Mike! How was your summer vacation?">Hi, Mike! How was your summer vacation?</span></div>
+      <div class="dialogue-line"><span class="speaker">Mike:</span><span class="en-text wotd-say" data-speak="It was wonderful! I went to Beijing with my family.">It was wonderful! I went to Beijing with my family.</span></div>
+      <div class="dialogue-line"><span class="speaker">Li Hua:</span><span class="en-text wotd-say" data-speak="Sounds great! What did you do there?">Sounds great! What did you do there?</span></div>
+      <div class="dialogue-line"><span class="speaker">Mike:</span><span class="en-text wotd-say" data-speak="We visited the Great Wall and ate Beijing duck. What about you?">We visited the Great Wall and ate Beijing duck. What about you?</span></div>
+      <div class="dialogue-line"><span class="speaker">Li Hua:</span><span class="en-text wotd-say" data-speak="I stayed at home and practiced English every day. I'm going to improve my speaking this term.">I stayed at home and practiced English every day. I'm going to improve my speaking this term.</span></div>
+      <div class="dialogue-line"><span class="speaker">Mike:</span><span class="en-text wotd-say" data-speak="That's a good plan! What are you going to do for National Day?">That's a good plan! What are you going to do for National Day?</span></div>
+      <div class="dialogue-line"><span class="speaker">Li Hua:</span><span class="en-text wotd-say" data-speak="I'm going to visit my grandparents in the countryside. I'm going to help them with the farm work.">I'm going to visit my grandparents in the countryside. I'm going to help them with the farm work.</span></div>
+      <div class="dialogue-line"><span class="speaker">Mike:</span><span class="en-text wotd-say" data-speak="That sounds meaningful. I'm going to take a short trip to Hangzhou with my cousins.">That sounds meaningful. I'm going to take a short trip to Hangzhou with my cousins.</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>Li Hua:</strong> 嗨，Mike！暑假过得怎么样？</p>
+        <p><strong>Mike:</strong> 棒极了！我和家人去了北京。</p>
+        <p><strong>Li Hua:</strong> 听起来不错！你们在那里做了什么？</p>
+        <p><strong>Mike:</strong> 我们参观了长城，还吃了北京烤鸭。你呢？</p>
+        <p><strong>Li Hua:</strong> 我待在家里每天练英语。这学期我打算提高口语。</p>
+        <p><strong>Mike:</strong> 好计划！你国庆节打算做什么？</p>
+        <p><strong>Li Hua:</strong> 我打算去乡下看望爷爷奶奶，帮他们干农活。</p>
+        <p><strong>Mike:</strong> 听起来很有意义。我打算和表弟表妹去杭州短途旅行。</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p><strong>1.</strong> <em>How was your summer vacation?</em> → 询问过去经历，用一般过去时。回答用 <strong>It was + adj.</strong></p>
+      <p><strong>2.</strong> <em>What did you do there?</em> → 一般过去时的特殊疑问句：<strong>What + did + 主语 + do?</strong></p>
+      <p><strong>3.</strong> <em>I'm going to improve my speaking.</em> → <strong>be going to + 动词原形</strong> 表示打算/计划做某事。</p>
+      <p><strong>4.</strong> <em>What are you going to do for National Day?</em> → be going to 的特殊疑问句：<strong>What + be + 主语 + going to do?</strong></p>
+      <p><strong>5.</strong> <em>That sounds meaningful.</em> → sound（听起来）+ adj.，类似的还有 look（看起来）、taste（尝起来）、feel（感觉）。</p></div></div></details>
+<details class="module" open><summary>📝 重点词汇 · 假期活动 <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="vacation">vacation</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/veɪˈkeɪʃn/</span><span class="pos">n.</span>
+        <div class="definition">假期</div>
+        <div class="example"><span class="wotd-say" data-speak="I had a wonderful vacation in Beijing.">I had a wonderful vacation in Beijing.</span><span class="trans">我在北京度过了一个愉快的假期。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="holiday">holiday</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈhɒlədeɪ/</span><span class="pos">n.</span>
+        <div class="definition">假日</div>
+        <div class="example"><span class="wotd-say" data-speak="What are you going to do for the holiday?">What are you going to do for the holiday?</span><span class="trans">你假期打算做什么？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="practice">practice</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈpræktɪs/</span><span class="pos">v.</span>
+        <div class="definition">练习</div>
+        <div class="example"><span class="wotd-say" data-speak="I practice English every morning.">I practice English every morning.</span><span class="trans">我每天早上练习英语。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="improve">improve</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɪmˈpruːv/</span><span class="pos">v.</span>
+        <div class="definition">提高</div>
+        <div class="example"><span class="wotd-say" data-speak="I want to improve my speaking skills.">I want to improve my speaking skills.</span><span class="trans">我想提高口语能力。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="meaningful">meaningful</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈmiːnɪŋfl/</span><span class="pos">adj.</span>
+        <div class="definition">有意义的</div>
+        <div class="example"><span class="wotd-say" data-speak="Helping others is meaningful.">Helping others is meaningful.</span><span class="trans">帮助别人很有意义。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="countryside">countryside</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈkʌntrisaɪd/</span><span class="pos">n.</span>
+        <div class="definition">乡下</div>
+        <div class="example"><span class="wotd-say" data-speak="My grandparents live in the countryside.">My grandparents live in the countryside.</span><span class="trans">我爷爷奶奶住在乡下。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="visit">visit</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈvɪzɪt/</span><span class="pos">v.</span>
+        <div class="definition">拜访；参观</div>
+        <div class="example"><span class="wotd-say" data-speak="We visited the Great Wall last week.">We visited the Great Wall last week.</span><span class="trans">我们上周参观了长城。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="plan">plan</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/plæn/</span><span class="pos">n./v.</span>
+        <div class="definition">计划</div>
+        <div class="example"><span class="wotd-say" data-speak="Do you have any plans for the weekend?">Do you have any plans for the weekend?</span><span class="trans">你周末有什么计划吗？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="trip">trip</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/trɪp/</span><span class="pos">n.</span>
+        <div class="definition">旅行</div>
+        <div class="example"><span class="wotd-say" data-speak="We're going to take a trip to Sanya.">We're going to take a trip to Sanya.</span><span class="trans">我们打算去三亚旅行。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="experience">experience</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɪkˈspɪriəns/</span><span class="pos">n./v.</span>
+        <div class="definition">经历</div>
+        <div class="example"><span class="wotd-say" data-speak="Traveling gives me new experiences.">Traveling gives me new experiences.</span><span class="trans">旅行带给我新的体验。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="improvement">improvement</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɪmˈpruːvmənt/</span><span class="pos">n.</span>
+        <div class="definition">提高；进步</div>
+        <div class="example"><span class="wotd-say" data-speak="I can see improvement in my English.">I can see improvement in my English.</span><span class="trans">我能看到英语的进步。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="relax">relax</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/rɪˈlæks/</span><span class="pos">v.</span>
+        <div class="definition">放松</div>
+        <div class="example"><span class="wotd-say" data-speak="I like to relax by listening to music.">I like to relax by listening to music.</span><span class="trans">我喜欢听音乐放松。</span></div>
+      </div></div></div></details>
+<details class="module" open><summary>🔤 重点句型 · Sentence Patterns</summary><div class="content"><div class="pattern-grid">      <div class="pattern-card">
+        <div class="structure">How was your…?</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>询问过去经历</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1">How was <span class="slot">your summer vacation</span>? — It was <span class="slot">wonderful</span>.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">be going to + do</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>表示计划打算</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp2">I <span class="slot">am going to</span> <span class="slot">visit my grandparents</span>.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">What did you do?</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>询问过去具体行为</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp3"><strong>What did</strong> you <strong>do</strong> <span class="slot">last weekend</span>? — I <span class="slot">visited the museum</span>.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">That sounds + adj.</div> <button class="speak-btn" data-target="sp4" title="朗读句型">🔊</button>
+        <div>表达对某事的评价</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp4">That sounds <span class="slot">great</span>! / That sounds <span class="slot">meaningful</span>.</span></div>
+      </div></div></div></details>
+<details class="module detail-module" open><summary>📚 语法聚焦 · 一般过去时 & be going to 将来时 <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module"><h3>一般过去时——规则动词变化</h3>
+<table class="grammar-table">
+<tr><th>构成规则</th><th>示例</th><th>变化</th></tr>
+<tr><td>一般情况 +ed</td><td>play → played</td><td>work → worked</td></tr>
+<tr><td>以 e 结尾 +d</td><td>like → liked</td><td>live → lived</td></tr>
+<tr><td>辅音+y 变 ied</td><td>study → studied</td><td>try → tried</td></tr>
+<tr><td>重读闭音节双写+ed</td><td>stop → stopped</td><td>plan → planned</td></tr>
+</table>
+<h3>be going to 结构</h3>
+<table class="grammar-table">
+<tr><th>人称</th><th>肯定句</th><th>疑问句</th></tr>
+<tr><td>I</td><td>I am going to + v.</td><td>Am I going to + v.?</td></tr>
+<tr><td>He/She/It</td><td>He is going to + v.</td><td>Is he going to + v.?</td></tr>
+<tr><td>We/You/They</td><td>They are going to + v.</td><td>Are they going to + v.?</td></tr>
+</table>
+</div><div class="chinese-error">      <p>❌ <span class="wrong wotd-say" data-speak="I go to Beijing last week.">I go to Beijing last week.</span>（一般过去时需用 went）</p>
+      <p>✅ <span class="correct wotd-say" data-speak="I went to Beijing last week.">I went to Beijing last week.</span></p>
+      <p>❌ <span class="wrong wotd-say" data-speak="I am go to visit my grandparents.">I am go to visit my grandparents.</span>（be going to 后动词用原形）</p>
+      <p>✅ <span class="correct wotd-say" data-speak="I am going to visit my grandparents.">I am going to visit my grandparents.</span></p></div></div></details>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[go] I ____ to the park yesterday.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>went</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[be] She ____ at home last Sunday.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>was</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[be going to] They ____ going to visit the museum tomorrow.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>are</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">改错：I am going to visited my uncle.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>I am going to visit my uncle.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">连词成句：what / do / you / last weekend / did / ?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>What did you do last weekend?</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">用所给词填空：How ____ (be) your trip? — It ____ (be) exciting.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>was; was</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">汉译英：你打算怎样提高你的英语？</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>How are you going to improve your English?</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">补全对话：<br>A: I had a great holiday!<br>B: Really? ____ ____ you ____?<br>A: I ____ (go) to the beach.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>What did do / went</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">用 5 句话描述你上个假期和下个假期的计划。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>（自由发挥）</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>📖 阅读专项 · Holidays Around the World</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">People around the world celebrate holidays in different ways.</p>
+      <p class="en-text">In China, the Spring Festival is the most important holiday. Families get together, eat dumplings, and watch the Spring Festival Gala. Many children get red packets from their elders.</p>
+      <p class="en-text">In the United States, Thanksgiving is a time for family reunions. People eat turkey, mashed potatoes, and pumpkin pie.</p>
+      <p class="en-text">No matter where you are, holidays are a time to relax, have fun, and be with the people you love.</p><div class="gloss"><span>gala n. 文艺晚会</span> <span>reunion n. 团聚</span> <span>turkey n. 火鸡</span> <span>mashed potatoes n. 土豆泥</span> <span>pumpkin pie n. 南瓜派</span> </div></div>    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">1. Which holiday is most important in China?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>The Spring Festival.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">2. What do Americans eat on Thanksgiving?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Turkey, mashed potatoes, and pumpkin pie.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★★</span>
+      <div class="q-body">3. What do all holidays have in common?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>A time to relax, have fun, and be with loved ones.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>🏆 中考题型专练 · 完形填空</summary><div class="content exam-section"><p style="font-size:13px;margin-bottom:8px;">阅读下面短文，选择最佳选项填入空白处。</p><div class="reading-passage" style="background:var(--bg-secondary);">      <p>Last summer, I (1)____ to Qingdao with my parents. We (2)____ there by train. The weather was sunny. We (3)____ on the beach and swam. We also (4)____ fresh seafood. Next year, I (5)____ going to visit again!</p></div><div style="margin:4px 0;font-size:13px;"><strong>1.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_1." disabled> A. go</span> <span style="margin-right:12px;"><input type="radio" name="exam_1." disabled> B. went</span> <span style="margin-right:12px;"><input type="radio" name="exam_1." disabled> C. going</span> <span style="margin-right:12px;"><input type="radio" name="exam_1." disabled> D. goes</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>2.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_2." disabled> A. get</span> <span style="margin-right:12px;"><input type="radio" name="exam_2." disabled> B. got</span> <span style="margin-right:12px;"><input type="radio" name="exam_2." disabled> C. gets</span> <span style="margin-right:12px;"><input type="radio" name="exam_2." disabled> D. getting</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>3.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_3." disabled> A. relax</span> <span style="margin-right:12px;"><input type="radio" name="exam_3." disabled> B. relaxed</span> <span style="margin-right:12px;"><input type="radio" name="exam_3." disabled> C. relaxing</span> <span style="margin-right:12px;"><input type="radio" name="exam_3." disabled> D. relaxes</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>4.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_4." disabled> A. eat</span> <span style="margin-right:12px;"><input type="radio" name="exam_4." disabled> B. eats</span> <span style="margin-right:12px;"><input type="radio" name="exam_4." disabled> C. ate</span> <span style="margin-right:12px;"><input type="radio" name="exam_4." disabled> D. eating</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>5.</strong> <span style="margin-right:12px;"><input type="radio" name="exam_5." disabled> A. am</span> <span style="margin-right:12px;"><input type="radio" name="exam_5." disabled> B. is</span> <span style="margin-right:12px;"><input type="radio" name="exam_5." disabled> C. are</span> <span style="margin-right:12px;"><input type="radio" name="exam_5." disabled> D. be</span> </div>
+<div class="exam-q" style="border-left-color:#f59e0b;"><span class="q-tag" style="background:#f59e0b;color:#fff;">答案</span><div class="q-body">B (went)；B (got)；B (relaxed)；C (ate)；A (am)</div></div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · My Holiday Plan</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">请以 "My Summer Holiday Plan" 为题，写一篇 60-80 词的短文。</div></div><div class="writing-framework">      <div class="fw-step">开头：引出话题——暑假即将到来。</div>
+      <div class="fw-step">主体：具体计划——去哪里？做什么？和谁一起？</div>
+      <div class="fw-step">结尾：表达期待和心情。</div></div><div class="writing-model"><div class="en">Summer holiday is coming. I'm going to visit my grandparents in the countryside. I'm going to help them with farm work every morning. In the afternoon, I'm going to read books and practice English. I think it will be a meaningful holiday. I'm looking forward to it!</div><div class="trans">暑假快到了。我打算去乡下看望爷爷奶奶，每天早上帮他们干农活，下午看书练英语。这将是一个有意义的假期。</div></div></div></details>
+<details class="module detail-module" open><summary>🎯 Project · My Holiday Dream Board</summary><div class="content project-module"><div class="project-brief"><div class="project-title">My Holiday Dream Board</div><div class="project-desc">设计一张"假期愿景板"(Dream Board)，用英语和图片展示你最想去的三个地方及理由。</div></div><div class="project-steps">      <div class="step"><span class="step-num">1</span><span class="step-text">选择一个梦想的目的地。</span></div>
+      <div class="step"><span class="step-num">2</span><span class="step-text">写出理由（至少 3 句话）。</span></div>
+      <div class="step"><span class="step-num">3</span><span class="step-text">用 be going to 写出计划。</span></div>
+      <div class="step"><span class="step-num">4</span><span class="step-text">配上图片做成 A4 展示板。</span></div>
+      <div class="step"><span class="step-num">5</span><span class="step-text">在班里做 1 分钟展示。</span></div></div><div class="project-rubric"><table><tr><th>#</th><th>评价标准</th></tr><tr><td>1.</td><td>内容丰富度</td></tr>
+<tr><td>2.</td><td>语言准确性：be going to 和一般过去时</td></tr>
+<tr><td>3.</td><td>创意与美观</td></tr>
+<tr><td>4.</td><td>口语表达</td></tr></table></div></div></details>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 be going to 谈论假期计划</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用一般过去时描述经历</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能区分 be going to 和 will</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写 60 词以上假期计划</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>假装你是旅游博主，用英语介绍上假期的经历和下次假期的计划。练习一般过去时和 be going to。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">用 be going to 写 5 个计划句</span>
+    <span class="review-dot">写出 10 个不规则动词过去式</span>
+    <span class="review-dot">写一段 80 词假期回忆</span>
+    <span class="review-dot">复习 be going to 疑问句结构</span></div>
+<div class="next-stop" style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;"><span></span><a href="u02.html" class="nav-arrow">下一单元 →</a></div>
+<div class="next-stop" style="margin-top:8px;"><strong>➡️ 下一单元：How often do you exercise?</strong><br>下一单元你将学习频率副词（always/usually/often/sometimes/never）谈论生活习惯。</div>
+</main>
+<div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
+<button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis, currentUtterance: null, speaking: false, rate: 0.9, voiceURI: 'en-US',
+    init: function(){var s=this;document.getElementById('speechRate').addEventListener('input',function(){s.rate=+this.value;document.getElementById('speechRateLabel').textContent=this.value;});document.getElementById('speechVoice').addEventListener('change',function(){s.voiceURI=this.value;localStorage.setItem('speech-voice',this.value);});document.getElementById('speechStopBtn').addEventListener('click',function(){s.stop();});document.getElementById('speechCloseBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.remove('open');});document.getElementById('speechToggleBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.toggle('open');});},
+    speak: function(t,c){if(!t)return;this.stop();var u=new SpeechSynthesisUtterance(t);u.lang=this.voiceURI;u.rate=this.rate;u.onend=function(){if(c)c();};this.currentUtterance=u;this.synthesis.speak(u);},
+    speakDialogue: function(id,c){var s=this,el=document.getElementById(id),ls=el?el.querySelectorAll('.en-text'):[],i=0;this.stop();(function n(){if(i>=ls.length){if(c)c();return;}var e=ls[i],t=e.getAttribute('data-speak')||e.textContent;if(!t){i++;n();return;}e.classList.add('speaking');var u=new SpeechSynthesisUtterance(t);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){e.classList.remove('speaking');i++;setTimeout(n,500);};u.onerror=function(){e.classList.remove('speaking');i++;setTimeout(n,200);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    speakVocabSection: function(id,c){var s=this,el=document.getElementById(id),cs=el?el.querySelectorAll('.vocab-card'):[],i=0;this.stop();(function n(){if(i>=cs.length){if(c)c();return;}var e=cs[i],hw=e.querySelector('.headword'),ex=e.querySelector('.example .wotd-say'),t=[];if(hw)t.push(hw.getAttribute('data-speak')||hw.textContent);if(ex)t.push(ex.getAttribute('data-speak')||ex.textContent.replace(/<[^>]+>/g,'').trim());var ft=t.join('. ');if(!ft){i++;n();return;}hw.classList.add('speaking');var u=new SpeechSynthesisUtterance(ft);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){hw.classList.remove('speaking');i++;setTimeout(n,600);};u.onerror=function(){hw.classList.remove('speaking');i++;setTimeout(n,300);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    stop: function(){this.synthesis.cancel();this.speaking=false;}
+  };SpeechManager.init();
+  document.querySelectorAll('.wotd-say').forEach(function(el){el.addEventListener('click',function(){SpeechManager.speak(this.getAttribute('data-speak')||this.textContent);});});
+  document.querySelectorAll('.speak-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var d=this.getAttribute('data-dialogue'),v=this.getAttribute('data-vocab'),t=this.getAttribute('data-target');if(this.classList.contains('speaking')){SpeechManager.stop();this.classList.remove('speaking');return;}this.classList.add('speaking');var done=function(){btn.classList.remove('speaking');};if(d){SpeechManager.speakDialogue(d,done);}else if(v){SpeechManager.speakVocabSection(v,done);}else if(t){var tg=document.getElementById(t);if(!tg){btn.classList.remove('speaking');return;}SpeechManager.speak(tg.textContent.replace(/<[^>]+>/g,''),done);}else{btn.classList.remove('speaking');}});});
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();var hw=this.previousElementSibling;if(hw&&hw.classList.contains('wotd-say')){var t=hw.getAttribute('data-speak')||hw.textContent;SpeechManager.speak(t);}});});
+  (function(){var btn=document.getElementById('expandAllBtn');if(!btn)return;btn.addEventListener('click',function(){var ad=document.querySelectorAll('.module,.exam-module');var ao=true;for(var i=0;i<ad.length;i++){if(!ad[i].hasAttribute('open')){ao=false;break;}};for(var i=0;i<ad.length;i++){if(ao)ad[i].removeAttribute('open');else ad[i].setAttribute('open','');};btn.textContent=ao?'📂 展开全部模块':'📖 收起全部模块';});})();
+  var s=document.getElementById('sidebar'),k='eng8-theme-sidebar';if(!s)return;
+  if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
+  window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=window.scrollY>400?'flex':'none';},{passive:true});
+  document.getElementById('backToTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution');});});
+})();
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);localStorage.setItem("eng8-theme",t);var btn=document.getElementById("themeToggle");if(btn)btn.textContent=t==="dark"?"☀️":"🌙";}
+function toggleTheme(){setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark");}
+</script></body></html>

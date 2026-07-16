@@ -744,9 +744,11 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  var sidebar = document.getElementById('sidebar');
-  document.getElementById('sidebarHideBtn').addEventListener('click', function() { sidebar.classList.add('hidden'); });
-  document.getElementById('sidebarShowBtn').addEventListener('click', function() { sidebar.classList.remove('hidden'); });
+  var s = document.getElementById('sidebar'), k = 'eng7-sidebar';
+  var h = document.getElementById('sidebarHideBtn'), w = document.getElementById('sidebarShowBtn');
+  if (localStorage.getItem(k) === 'hidden') s.classList.add('hidden');
+  h.addEventListener('click', function() { s.classList.add('hidden'); localStorage.setItem(k, 'hidden'); });
+  w.addEventListener('click', function() { s.classList.remove('hidden'); localStorage.setItem(k, ''); });
 
   document.querySelectorAll('.q-toggle').forEach(function(b){
     b.addEventListener('click', function(e) { e.stopPropagation(); this.parentElement.classList.toggle('show-solution'); });

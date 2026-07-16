@@ -4,121 +4,161 @@
       "w": "I",
       "ipa": "/aɪ/",
       "pos": "pron.",
-      "def": "我"
+      "def": "我",
+      "ex": "I am a student.",
+      "trans": "我是一名学生。"
     },
     {
       "w": "am",
       "ipa": "/æm/",
       "pos": "v.",
-      "def": "是"
+      "def": "是",
+      "ex": "I am twelve years old.",
+      "trans": "我十二岁。"
     },
     {
       "w": "are",
       "ipa": "/ɑːr/",
       "pos": "v.",
-      "def": "是"
+      "def": "是",
+      "ex": "You are my friend.",
+      "trans": "你是我的朋友。"
     },
     {
       "w": "you",
       "ipa": "/juː/",
       "pos": "pron.",
-      "def": "你；你们"
+      "def": "你；你们",
+      "ex": "You are nice.",
+      "trans": "你很好。"
     },
     {
       "w": "Mrs.",
       "ipa": "/ˈmɪsɪz/",
       "pos": "n.",
-      "def": "夫人；太太"
+      "def": "夫人；太太",
+      "ex": "Good morning, Mrs. Wang.",
+      "trans": "早上好，王老师。"
     },
     {
       "w": "Mr.",
       "ipa": "/ˈmɪstər/",
       "pos": "n.",
-      "def": "先生"
+      "def": "先生",
+      "ex": "Hello, Mr. Li.",
+      "trans": "你好，李老师。"
     },
     {
       "w": "Ms.",
       "ipa": "/mɪz/",
       "pos": "n.",
-      "def": "女士"
+      "def": "女士",
+      "ex": "Ms. Chen is our teacher.",
+      "trans": "陈老师是我们的老师。"
     },
     {
       "w": "Miss",
       "ipa": "/mɪs/",
       "pos": "n.",
-      "def": "小姐；老师"
+      "def": "小姐；老师",
+      "ex": "Miss Liu is very kind.",
+      "trans": "刘老师很和蔼。"
     },
     {
       "w": "how",
       "ipa": "/haʊ/",
       "pos": "adv.",
-      "def": "怎样；如何"
+      "def": "怎样；如何",
+      "ex": "How are you?",
+      "trans": "你好吗？"
     },
     {
       "w": "stand",
       "ipa": "/stænd/",
       "pos": "v.",
-      "def": "站；立"
+      "def": "站；立",
+      "ex": "Please stand up.",
+      "trans": "请起立。"
     },
     {
       "w": "up",
       "ipa": "/ʌp/",
       "pos": "adv.",
-      "def": "向上"
+      "def": "向上",
+      "ex": "Stand up, please.",
+      "trans": "请起立。"
     },
     {
       "w": "sit",
       "ipa": "/sɪt/",
       "pos": "v.",
-      "def": "坐"
+      "def": "坐",
+      "ex": "Sit down, please.",
+      "trans": "请坐下。"
     },
     {
       "w": "down",
       "ipa": "/daʊn/",
       "pos": "adv.",
-      "def": "向下"
+      "def": "向下",
+      "ex": "Please sit down.",
+      "trans": "请坐下。"
     },
     {
       "w": "please",
       "ipa": "/pliːz/",
       "pos": "interj.",
-      "def": "请"
+      "def": "请",
+      "ex": "Come in, please.",
+      "trans": "请进。"
     },
     {
       "w": "thank",
       "ipa": "/θæŋk/",
       "pos": "v.",
-      "def": "感谢"
+      "def": "感谢",
+      "ex": "Thank you very much.",
+      "trans": "非常感谢你。"
     },
     {
       "w": "see",
       "ipa": "/siː/",
       "pos": "v.",
-      "def": "看见；见到"
+      "def": "看见；见到",
+      "ex": "I see a cat.",
+      "trans": "我看见一只猫。"
     },
     {
       "w": "yes",
       "ipa": "/jes/",
       "pos": "adv.",
-      "def": "是的"
+      "def": "是的",
+      "ex": "Yes, I do.",
+      "trans": "是的，我做。"
     },
     {
       "w": "no",
       "ipa": "/noʊ/",
       "pos": "adv.",
-      "def": "不；不是"
+      "def": "不；不是",
+      "ex": "No, it isn't.",
+      "trans": "不，它不是。"
     },
     {
       "w": "sorry",
       "ipa": "/ˈsɒri/",
       "pos": "adj.",
-      "def": "抱歉的"
+      "def": "抱歉的",
+      "ex": "I am sorry.",
+      "trans": "对不起。"
     },
     {
       "w": "OK",
       "ipa": "/oʊˈkeɪ/",
       "pos": "adv.",
-      "def": "好；行"
+      "def": "好；行",
+      "ex": "OK, let's go.",
+      "trans": "好的，我们走吧。"
     }
   ],
   "st02": [
@@ -126,109 +166,145 @@
       "w": "what",
       "ipa": "/wɒt/",
       "pos": "pron.",
-      "def": "什么"
+      "def": "什么",
+      "ex": "What is this?",
+      "trans": "这是什么？"
     },
     {
       "w": "this",
       "ipa": "/ðɪs/",
       "pos": "pron.",
-      "def": "这个"
+      "def": "这个",
+      "ex": "This is a book.",
+      "trans": "这是一本书。"
     },
     {
       "w": "in",
       "ipa": "/ɪn/",
       "pos": "prep.",
-      "def": "在……里；用"
+      "def": "在……里；用",
+      "ex": "It is in my bag.",
+      "trans": "它在我的包里。"
     },
     {
       "w": "English",
       "ipa": "/ˈɪŋɡlɪʃ/",
       "pos": "n.",
-      "def": "英语"
+      "def": "英语",
+      "ex": "I like English.",
+      "trans": "我喜欢英语。"
     },
     {
       "w": "a",
       "ipa": "/ə/",
       "pos": "art.",
-      "def": "一个"
+      "def": "一个",
+      "ex": "I have a pen.",
+      "trans": "我有一支钢笔。"
     },
     {
       "w": "an",
       "ipa": "/æn/",
       "pos": "art.",
-      "def": "一个"
+      "def": "一个",
+      "ex": "It is an apple.",
+      "trans": "它是一个苹果。"
     },
     {
       "w": "it",
       "ipa": "/ɪt/",
       "pos": "pron.",
-      "def": "它"
+      "def": "它",
+      "ex": "It is big.",
+      "trans": "它很大。"
     },
     {
       "w": "that",
       "ipa": "/ðæt/",
       "pos": "pron.",
-      "def": "那个"
+      "def": "那个",
+      "ex": "That is a ruler.",
+      "trans": "那是一把尺子。"
     },
     {
       "w": "spell",
       "ipa": "/spel/",
       "pos": "v.",
-      "def": "拼写"
+      "def": "拼写",
+      "ex": "Can you spell it?",
+      "trans": "你能拼写它吗？"
     },
     {
       "w": "please",
       "ipa": "/pliːz/",
       "pos": "interj.",
-      "def": "请"
+      "def": "请",
+      "ex": "Come in, please.",
+      "trans": "请进。"
     },
     {
       "w": "map",
       "ipa": "/mæp/",
       "pos": "n.",
-      "def": "地图"
+      "def": "地图",
+      "ex": "This is a map.",
+      "trans": "这是一张地图。"
     },
     {
       "w": "cup",
       "ipa": "/kʌp/",
       "pos": "n.",
-      "def": "杯子"
+      "def": "杯子",
+      "ex": "The cup is on the desk.",
+      "trans": "杯子在桌子上。"
     },
     {
       "w": "ruler",
       "ipa": "/ˈruːlər/",
       "pos": "n.",
-      "def": "尺子"
+      "def": "尺子",
+      "ex": "This is my ruler.",
+      "trans": "这是我的尺子。"
     },
     {
       "w": "pen",
       "ipa": "/pen/",
       "pos": "n.",
-      "def": "钢笔"
+      "def": "钢笔",
+      "ex": "I have a blue pen.",
+      "trans": "我有一支蓝色钢笔。"
     },
     {
       "w": "orange",
       "ipa": "/ˈɒrɪndʒ/",
       "pos": "n.",
-      "def": "橙子"
+      "def": "橙子",
+      "ex": "The orange is sweet.",
+      "trans": "橙子很甜。"
     },
     {
       "w": "jacket",
       "ipa": "/ˈdʒækɪt/",
       "pos": "n.",
-      "def": "夹克衫"
+      "def": "夹克衫",
+      "ex": "My jacket is red.",
+      "trans": "我的夹克是红色的。"
     },
     {
       "w": "key",
       "ipa": "/kiː/",
       "pos": "n.",
-      "def": "钥匙"
+      "def": "钥匙",
+      "ex": "This is my key.",
+      "trans": "这是我的钥匙。"
     },
     {
       "w": "quilt",
       "ipa": "/kwɪlt/",
       "pos": "n.",
-      "def": "被子"
+      "def": "被子",
+      "ex": "The quilt is warm.",
+      "trans": "被子很暖和。"
     }
   ],
   "st03": [
@@ -236,91 +312,121 @@
       "w": "color",
       "ipa": "/ˈkʌlər/",
       "pos": "n.",
-      "def": "颜色"
+      "def": "颜色",
+      "ex": "What color is it?",
+      "trans": "它是什么颜色？"
     },
     {
       "w": "red",
       "ipa": "/red/",
       "pos": "adj.",
-      "def": "红色的"
+      "def": "红色的",
+      "ex": "The apple is red.",
+      "trans": "苹果是红色的。"
     },
     {
       "w": "yellow",
       "ipa": "/ˈjeloʊ/",
       "pos": "adj.",
-      "def": "黄色的"
+      "def": "黄色的",
+      "ex": "The banana is yellow.",
+      "trans": "香蕉是黄色的。"
     },
     {
       "w": "green",
       "ipa": "/ɡriːn/",
       "pos": "adj.",
-      "def": "绿色的"
+      "def": "绿色的",
+      "ex": "The grass is green.",
+      "trans": "草是绿色的。"
     },
     {
       "w": "blue",
       "ipa": "/bluː/",
       "pos": "adj.",
-      "def": "蓝色的"
+      "def": "蓝色的",
+      "ex": "The sky is blue.",
+      "trans": "天空是蓝色的。"
     },
     {
       "w": "black",
       "ipa": "/blæk/",
       "pos": "adj.",
-      "def": "黑色的"
+      "def": "黑色的",
+      "ex": "My bag is black.",
+      "trans": "我的包是黑色的。"
     },
     {
       "w": "white",
       "ipa": "/waɪt/",
       "pos": "adj.",
-      "def": "白色的"
+      "def": "白色的",
+      "ex": "Snow is white.",
+      "trans": "雪是白色的。"
     },
     {
       "w": "purple",
       "ipa": "/ˈpɜːrpl/",
       "pos": "adj.",
-      "def": "紫色的"
+      "def": "紫色的",
+      "ex": "I like purple flowers.",
+      "trans": "我喜欢紫色的花。"
     },
     {
       "w": "brown",
       "ipa": "/braʊn/",
       "pos": "adj.",
-      "def": "棕色的"
+      "def": "棕色的",
+      "ex": "The dog is brown.",
+      "trans": "狗是棕色的。"
     },
     {
       "w": "pink",
       "ipa": "/pɪŋk/",
       "pos": "adj.",
-      "def": "粉色的"
+      "def": "粉色的",
+      "ex": "Her dress is pink.",
+      "trans": "她的裙子是粉色的。"
     },
     {
       "w": "now",
       "ipa": "/naʊ/",
       "pos": "adv.",
-      "def": "现在"
+      "def": "现在",
+      "ex": "Let's go now.",
+      "trans": "我们现在走吧。"
     },
     {
       "w": "can",
       "ipa": "/kæn/",
       "pos": "modal v.",
-      "def": "能；可以"
+      "def": "能；可以",
+      "ex": "I can swim.",
+      "trans": "我会游泳。"
     },
     {
       "w": "say",
       "ipa": "/seɪ/",
       "pos": "v.",
-      "def": "说"
+      "def": "说",
+      "ex": "Please say it again.",
+      "trans": "请再说一遍。"
     },
     {
       "w": "my",
       "ipa": "/maɪ/",
       "pos": "pron.",
-      "def": "我的"
+      "def": "我的",
+      "ex": "This is my book.",
+      "trans": "这是我的书。"
     },
     {
       "w": "your",
       "ipa": "/jɔːr/",
       "pos": "pron.",
-      "def": "你的；你们的"
+      "def": "你的；你们的",
+      "ex": "Is this your pencil?",
+      "trans": "这是你的铅笔吗？"
     }
   ],
   "u01": [
@@ -328,139 +434,185 @@
       "w": "I'm",
       "ipa": "/aɪm/",
       "pos": "abbr.",
-      "def": "我是"
+      "def": "我是",
+      "ex": "I'm a student.",
+      "trans": "我是一名学生。"
     },
     {
       "w": "your",
       "ipa": "/jɔːr/",
       "pos": "pron.",
-      "def": "你的；你们的"
+      "def": "你的；你们的",
+      "ex": "Is this your pencil?",
+      "trans": "这是你的铅笔吗？"
     },
     {
       "w": "his",
       "ipa": "/hɪz/",
       "pos": "pron.",
-      "def": "他的"
+      "def": "他的",
+      "ex": "His name is Tom.",
+      "trans": "他的名字是汤姆。"
     },
     {
       "w": "her",
       "ipa": "/hɜːr/",
       "pos": "pron.",
-      "def": "她的"
+      "def": "她的",
+      "ex": "Her bag is blue.",
+      "trans": "她的包是蓝色的。"
     },
     {
       "w": "yes",
       "ipa": "/jes/",
       "pos": "adv.",
-      "def": "是的"
+      "def": "是的",
+      "ex": "Yes, I do.",
+      "trans": "是的，我做。"
     },
     {
       "w": "she",
       "ipa": "/ʃiː/",
       "pos": "pron.",
-      "def": "她"
+      "def": "她",
+      "ex": "She is my sister.",
+      "trans": "她是我的妹妹。"
     },
     {
       "w": "he",
       "ipa": "/hiː/",
       "pos": "pron.",
-      "def": "他"
+      "def": "他",
+      "ex": "He is tall.",
+      "trans": "他很高。"
     },
     {
       "w": "not",
       "ipa": "/nɒt/",
       "pos": "adv.",
-      "def": "不"
+      "def": "不",
+      "ex": "It is not my pen.",
+      "trans": "这不是我的钢笔。"
     },
     {
       "w": "aren't",
       "ipa": "/ɑːrnt/",
       "pos": "abbr.",
-      "def": "不是"
+      "def": "不是",
+      "ex": "You aren't late.",
+      "trans": "你没有迟到。"
     },
     {
       "w": "isn't",
       "ipa": "/ˈɪznt/",
       "pos": "abbr.",
-      "def": "不是"
+      "def": "不是",
+      "ex": "It isn't my book.",
+      "trans": "那不是我的书。"
     },
     {
       "w": "aren't",
       "ipa": "/ɑːrnt/",
       "pos": "abbr.",
-      "def": "不是"
+      "def": "不是",
+      "ex": "You aren't late.",
+      "trans": "你没有迟到。"
     },
     {
       "w": "China",
       "ipa": "/ˈtʃaɪnə/",
       "pos": "n.",
-      "def": "中国"
+      "def": "中国",
+      "ex": "China is a great country.",
+      "trans": "中国是一个伟大的国家。"
     },
     {
       "w": "English",
       "ipa": "/ˈɪŋglɪʃ/",
       "pos": "n.",
-      "def": "英语；英国人"
+      "def": "英语；英国人",
+      "ex": "I like English.",
+      "trans": "我喜欢英语。"
     },
     {
       "w": "American",
       "ipa": "/əˈmerɪkən/",
       "pos": "adj.",
-      "def": "美国的"
+      "def": "美国的",
+      "ex": "She is American.",
+      "trans": "她是美国人。"
     },
     {
       "w": "too",
       "ipa": "/tuː/",
       "pos": "adv.",
-      "def": "也；太"
+      "def": "也；太",
+      "ex": "I like it, too.",
+      "trans": "我也喜欢它。"
     },
     {
       "w": "very",
       "ipa": "/ˈveri/",
       "pos": "adv.",
-      "def": "很；非常"
+      "def": "很；非常",
+      "ex": "Thank you very much.",
+      "trans": "非常感谢你。"
     },
     {
       "w": "and",
       "ipa": "/ænd/",
       "pos": "conj.",
-      "def": "和；又"
+      "def": "和；又",
+      "ex": "I like apples and bananas.",
+      "trans": "我喜欢苹果和香蕉。"
     },
     {
       "w": "but",
       "ipa": "/bʌt/",
       "pos": "conj.",
-      "def": "但是"
+      "def": "但是",
+      "ex": "I like cats but not dogs.",
+      "trans": "我喜欢猫但不喜欢狗。"
     },
     {
       "w": "or",
       "ipa": "/ɔːr/",
       "pos": "conj.",
-      "def": "或者"
+      "def": "或者",
+      "ex": "Is it red or blue?",
+      "trans": "它是红色的还是蓝色的？"
     },
     {
       "w": "hi",
       "ipa": "/haɪ/",
       "pos": "interj.",
-      "def": "嗨"
+      "def": "嗨",
+      "ex": "Hi, how are you?",
+      "trans": "嗨，你好吗？"
     },
     {
       "w": "hello",
       "ipa": "/həˈloʊ/",
       "pos": "interj.",
-      "def": "你好"
+      "def": "你好",
+      "ex": "Hello, everyone!",
+      "trans": "大家好！"
     },
     {
       "w": "goodbye",
       "ipa": "/ɡʊdˈbaɪ/",
       "pos": "interj.",
-      "def": "再见"
+      "def": "再见",
+      "ex": "Goodbye, see you!",
+      "trans": "再见，回头见！"
     },
     {
       "w": "bye",
       "ipa": "/baɪ/",
       "pos": "interj.",
-      "def": "再见"
+      "def": "再见",
+      "ex": "Bye, Mom!",
+      "trans": "再见，妈妈！"
     }
   ],
   "u02": [
@@ -468,151 +620,201 @@
       "w": "sister",
       "ipa": "/ˈsɪstər/",
       "pos": "n.",
-      "def": "姐妹"
+      "def": "姐妹",
+      "ex": "My sister is ten.",
+      "trans": "我的妹妹十岁。"
     },
     {
       "w": "brother",
       "ipa": "/ˈbrʌðər/",
       "pos": "n.",
-      "def": "兄弟"
+      "def": "兄弟",
+      "ex": "My brother is tall.",
+      "trans": "我的哥哥很高。"
     },
     {
       "w": "mother",
       "ipa": "/ˈmʌðər/",
       "pos": "n.",
-      "def": "母亲"
+      "def": "母亲",
+      "ex": "My mother is a teacher.",
+      "trans": "我妈妈是一名老师。"
     },
     {
       "w": "father",
       "ipa": "/ˈfɑːðər/",
       "pos": "n.",
-      "def": "父亲"
+      "def": "父亲",
+      "ex": "My father is kind.",
+      "trans": "我爸爸很和蔼。"
     },
     {
       "w": "parent",
       "ipa": "/ˈperənt/",
       "pos": "n.",
-      "def": "父（母）"
+      "def": "父（母）",
+      "ex": "My parents love me.",
+      "trans": "我的父母爱我。"
     },
     {
       "w": "grandmother",
       "ipa": "/ˈɡrænmʌðər/",
       "pos": "n.",
-      "def": "祖母"
+      "def": "祖母",
+      "ex": "My grandmother is old.",
+      "trans": "我的奶奶年纪大了。"
     },
     {
       "w": "grandfather",
       "ipa": "/ˈɡrænfɑːðər/",
       "pos": "n.",
-      "def": "祖父"
+      "def": "祖父",
+      "ex": "My grandfather has white hair.",
+      "trans": "我的爷爷有白头发。"
     },
     {
       "w": "family",
       "ipa": "/ˈfæməli/",
       "pos": "n.",
-      "def": "家庭"
+      "def": "家庭",
+      "ex": "I have a happy family.",
+      "trans": "我有一个幸福的家庭。"
     },
     {
       "w": "those",
       "ipa": "/ðoʊz/",
       "pos": "pron.",
-      "def": "那些"
+      "def": "那些",
+      "ex": "Those are my books.",
+      "trans": "那些是我的书。"
     },
     {
       "w": "these",
       "ipa": "/ðiːz/",
       "pos": "pron.",
-      "def": "这些"
+      "def": "这些",
+      "ex": "These are pencils.",
+      "trans": "这些是铅笔。"
     },
     {
       "w": "who",
       "ipa": "/huː/",
       "pos": "pron.",
-      "def": "谁"
+      "def": "谁",
+      "ex": "Who is she?",
+      "trans": "她是谁？"
     },
     {
       "w": "they",
       "ipa": "/ðeɪ/",
       "pos": "pron.",
-      "def": "他（她/它）们"
+      "def": "他（她/它）们",
+      "ex": "They are my friends.",
+      "trans": "他们是我的朋友。"
     },
     {
       "w": "well",
       "ipa": "/wel/",
       "pos": "interj.",
-      "def": "嗯；好吧"
+      "def": "嗯；好吧",
+      "ex": "Well, let's go.",
+      "trans": "嗯，我们走吧。"
     },
     {
       "w": "have",
       "ipa": "/hæv/",
       "pos": "v.",
-      "def": "有"
+      "def": "有",
+      "ex": "I have a dog.",
+      "trans": "我有一只狗。"
     },
     {
       "w": "day",
       "ipa": "/deɪ/",
       "pos": "n.",
-      "def": "一天；白天"
+      "def": "一天；白天",
+      "ex": "Have a nice day!",
+      "trans": "祝你有美好的一天！"
     },
     {
       "w": "dear",
       "ipa": "/dɪər/",
       "pos": "adj.",
-      "def": "亲爱的"
+      "def": "亲爱的",
+      "ex": "Dear mom, I miss you.",
+      "trans": "亲爱的妈妈，我想你。"
     },
     {
       "w": "photo",
       "ipa": "/ˈfoʊtoʊ/",
       "pos": "n.",
-      "def": "照片"
+      "def": "照片",
+      "ex": "This is a family photo.",
+      "trans": "这是一张全家福。"
     },
     {
       "w": "picture",
       "ipa": "/ˈpɪktʃər/",
       "pos": "n.",
-      "def": "图画；照片"
+      "def": "图画；照片",
+      "ex": "I draw a picture.",
+      "trans": "我画了一幅画。"
     },
     {
       "w": "girl",
       "ipa": "/ɡɜːrl/",
       "pos": "n.",
-      "def": "女孩"
+      "def": "女孩",
+      "ex": "The girl is my classmate.",
+      "trans": "那个女孩是我的同学。"
     },
     {
       "w": "boy",
       "ipa": "/bɔɪ/",
       "pos": "n.",
-      "def": "男孩"
+      "def": "男孩",
+      "ex": "The boy is my friend.",
+      "trans": "那个男孩是我的朋友。"
     },
     {
       "w": "aunt",
       "ipa": "/ænt/",
       "pos": "n.",
-      "def": "阿姨；姑姑"
+      "def": "阿姨；姑姑",
+      "ex": "My aunt is a doctor.",
+      "trans": "我阿姨是医生。"
     },
     {
       "w": "uncle",
       "ipa": "/ˈʌŋkl/",
       "pos": "n.",
-      "def": "叔叔；舅舅"
+      "def": "叔叔；舅舅",
+      "ex": "My uncle is tall and strong.",
+      "trans": "我叔叔又高又壮。"
     },
     {
       "w": "son",
       "ipa": "/sʌn/",
       "pos": "n.",
-      "def": "儿子"
+      "def": "儿子",
+      "ex": "Her son is five.",
+      "trans": "她的儿子五岁。"
     },
     {
       "w": "daughter",
       "ipa": "/ˈdɔːtər/",
       "pos": "n.",
-      "def": "女儿"
+      "def": "女儿",
+      "ex": "His daughter is cute.",
+      "trans": "他的女儿很可爱。"
     },
     {
       "w": "cousin",
       "ipa": "/ˈkʌzn/",
       "pos": "n.",
-      "def": "堂（表）兄弟姐妹"
+      "def": "堂（表）兄弟姐妹",
+      "ex": "My cousin is my good friend.",
+      "trans": "我的表弟是我的好朋友。"
     }
   ],
   "u03": [
@@ -620,145 +822,193 @@
       "w": "pencil",
       "ipa": "/ˈpensl/",
       "pos": "n.",
-      "def": "铅笔"
+      "def": "铅笔",
+      "ex": "I have a new pencil.",
+      "trans": "我有一支新铅笔。"
     },
     {
       "w": "book",
       "ipa": "/bʊk/",
       "pos": "n.",
-      "def": "书"
+      "def": "书",
+      "ex": "I like reading books.",
+      "trans": "我喜欢读书。"
     },
     {
       "w": "eraser",
       "ipa": "/ɪˈreɪsər/",
       "pos": "n.",
-      "def": "橡皮"
+      "def": "橡皮",
+      "ex": "I use an eraser to clean my mistake.",
+      "trans": "我用橡皮擦掉错误。"
     },
     {
       "w": "box",
       "ipa": "/bɒks/",
       "pos": "n.",
-      "def": "盒子"
+      "def": "盒子",
+      "ex": "The box is on the desk.",
+      "trans": "盒子在桌子上。"
     },
     {
       "w": "schoolbag",
       "ipa": "/ˈskuːlbæɡ/",
       "pos": "n.",
-      "def": "书包"
+      "def": "书包",
+      "ex": "My schoolbag is heavy with books.",
+      "trans": "我的书包装满了书很重。"
     },
     {
       "w": "dictionary",
       "ipa": "/ˈdɪkʃəneri/",
       "pos": "n.",
-      "def": "字典"
+      "def": "字典",
+      "ex": "I look up new words in the dictionary.",
+      "trans": "我在字典里查生词。"
     },
     {
       "w": "teacher",
       "ipa": "/ˈtiːtʃər/",
       "pos": "n.",
-      "def": "老师"
+      "def": "老师",
+      "ex": "My teacher is nice.",
+      "trans": "我的老师很好。"
     },
     {
       "w": "student",
       "ipa": "/ˈstuːdnt/",
       "pos": "n.",
-      "def": "学生"
+      "def": "学生",
+      "ex": "I am a student.",
+      "trans": "我是一名学生。"
     },
     {
       "w": "classroom",
       "ipa": "/ˈklæsruːm/",
       "pos": "n.",
-      "def": "教室"
+      "def": "教室",
+      "ex": "Our classroom is big.",
+      "trans": "我们的教室很大。"
     },
     {
       "w": "school",
       "ipa": "/skuːl/",
       "pos": "n.",
-      "def": "学校"
+      "def": "学校",
+      "ex": "I go to school every day.",
+      "trans": "我每天都去上学。"
     },
     {
       "w": "library",
       "ipa": "/ˈlaɪbreri/",
       "pos": "n.",
-      "def": "图书馆"
+      "def": "图书馆",
+      "ex": "I read in the library.",
+      "trans": "我在图书馆看书。"
     },
     {
       "w": "watch",
       "ipa": "/wɒtʃ/",
       "pos": "n.",
-      "def": "手表"
+      "def": "手表",
+      "ex": "I watch TV in the evening.",
+      "trans": "我晚上看电视。"
     },
     {
       "w": "ring",
       "ipa": "/rɪŋ/",
       "pos": "n.",
-      "def": "戒指；环"
+      "def": "戒指；环",
+      "ex": "The ring is made of silver.",
+      "trans": "这枚戒指是银制的。"
     },
     {
       "w": "bag",
       "ipa": "/bæɡ/",
       "pos": "n.",
-      "def": "袋子；包"
+      "def": "袋子；包",
+      "ex": "My bag is heavy.",
+      "trans": "我的包很重。"
     },
     {
       "w": "baseball",
       "ipa": "/ˈbeɪsbɔːl/",
       "pos": "n.",
-      "def": "棒球"
+      "def": "棒球",
+      "ex": "I like playing baseball.",
+      "trans": "我喜欢打棒球。"
     },
     {
       "w": "some",
       "ipa": "/sʌm/",
       "pos": "adj.",
-      "def": "一些"
+      "def": "一些",
+      "ex": "I have some apples.",
+      "trans": "我有一些苹果。"
     },
     {
       "w": "find",
       "ipa": "/faɪnd/",
       "pos": "v.",
-      "def": "找到；发现"
+      "def": "找到；发现",
+      "ex": "I can't find my pen.",
+      "trans": "我找不到我的钢笔了。"
     },
     {
       "w": "lost",
       "ipa": "/lɒst/",
       "pos": "adj.",
-      "def": "丢失的"
+      "def": "丢失的",
+      "ex": "I lost my keys.",
+      "trans": "我丢了钥匙。"
     },
     {
       "w": "call",
       "ipa": "/kɔːl/",
       "pos": "v.",
-      "def": "打电话"
+      "def": "打电话",
+      "ex": "Please call me.",
+      "trans": "请给我打电话。"
     },
     {
       "w": "must",
       "ipa": "/mʌst/",
       "pos": "modal v.",
-      "def": "必须"
+      "def": "必须",
+      "ex": "I must go now.",
+      "trans": "我现在必须走了。"
     },
     {
       "w": "help",
       "ipa": "/help/",
       "pos": "v.",
-      "def": "帮助"
+      "def": "帮助",
+      "ex": "Can you help me?",
+      "trans": "你能帮我吗？"
     },
     {
       "w": "thank",
       "ipa": "/θæŋk/",
       "pos": "v.",
-      "def": "感谢"
+      "def": "感谢",
+      "ex": "Thank you very much.",
+      "trans": "非常感谢你。"
     },
     {
       "w": "excuse",
       "ipa": "/ɪkˈskjuːz/",
       "pos": "v.",
-      "def": "原谅"
+      "def": "原谅",
+      "ex": "Excuse me, where is the library?",
+      "trans": "打扰一下，图书馆在哪里？"
     },
     {
       "w": "me",
       "ipa": "/miː/",
       "pos": "pron.",
-      "def": "我（宾格）"
+      "def": "我（宾格）",
+      "ex": "Please give me the book.",
+      "trans": "请把书给我。"
     }
   ],
   "u04": [
@@ -766,157 +1016,209 @@
       "w": "where",
       "ipa": "/wer/",
       "pos": "adv.",
-      "def": "在哪里"
+      "def": "在哪里",
+      "ex": "Where is my bag?",
+      "trans": "我的包在哪里？"
     },
     {
       "w": "come",
       "ipa": "/kʌm/",
       "pos": "v.",
-      "def": "来"
+      "def": "来",
+      "ex": "Come here, please.",
+      "trans": "请过来。"
     },
     {
       "w": "go",
       "ipa": "/ɡoʊ/",
       "pos": "v.",
-      "def": "去"
+      "def": "去",
+      "ex": "Let's go home.",
+      "trans": "我们回家吧。"
     },
     {
       "w": "desk",
       "ipa": "/desk/",
       "pos": "n.",
-      "def": "书桌"
+      "def": "书桌",
+      "ex": "My desk is tidy.",
+      "trans": "我的书桌很整洁。"
     },
     {
       "w": "chair",
       "ipa": "/tʃeər/",
       "pos": "n.",
-      "def": "椅子"
+      "def": "椅子",
+      "ex": "The chair is under the desk.",
+      "trans": "椅子在书桌下面。"
     },
     {
       "w": "table",
       "ipa": "/ˈteɪbl/",
       "pos": "n.",
-      "def": "桌子"
+      "def": "桌子",
+      "ex": "The book is on the table.",
+      "trans": "书在桌子上。"
     },
     {
       "w": "bed",
       "ipa": "/bed/",
       "pos": "n.",
-      "def": "床"
+      "def": "床",
+      "ex": "I sleep on my bed.",
+      "trans": "我在床上睡觉。"
     },
     {
       "w": "bookcase",
       "ipa": "/ˈbʊkkeɪs/",
       "pos": "n.",
-      "def": "书架"
+      "def": "书架",
+      "ex": "The bookcase is full of books.",
+      "trans": "书架上全是书。"
     },
     {
       "w": "sofa",
       "ipa": "/ˈsoʊfə/",
       "pos": "n.",
-      "def": "沙发"
+      "def": "沙发",
+      "ex": "My cat sits on the sofa.",
+      "trans": "我的猫坐在沙发上。"
     },
     {
       "w": "drawer",
       "ipa": "/drɔːr/",
       "pos": "n.",
-      "def": "抽屉"
+      "def": "抽屉",
+      "ex": "I keep my pens in the drawer.",
+      "trans": "我把钢笔放在抽屉里。"
     },
     {
       "w": "plant",
       "ipa": "/plænt/",
       "pos": "n.",
-      "def": "植物"
+      "def": "植物",
+      "ex": "There is a plant in the room.",
+      "trans": "房间里有一盆植物。"
     },
     {
       "w": "tidy",
       "ipa": "/ˈtaɪdi/",
       "pos": "adj.",
-      "def": "整洁的"
+      "def": "整洁的",
+      "ex": "Please keep your room tidy.",
+      "trans": "请保持房间整洁。"
     },
     {
       "w": "but",
       "ipa": "/bʌt/",
       "pos": "conj.",
-      "def": "但是"
+      "def": "但是",
+      "ex": "I like cats but not dogs.",
+      "trans": "我喜欢猫但不喜欢狗。"
     },
     {
       "w": "everywhere",
       "ipa": "/ˈevriwer/",
       "pos": "adv.",
-      "def": "到处"
+      "def": "到处",
+      "ex": "My books are everywhere.",
+      "trans": "我的书到处都是。"
     },
     {
       "w": "always",
       "ipa": "/ˈɔːlweɪz/",
       "pos": "adv.",
-      "def": "总是"
+      "def": "总是",
+      "ex": "I always get up early.",
+      "trans": "我总是早起。"
     },
     {
       "w": "room",
       "ipa": "/ruːm/",
       "pos": "n.",
-      "def": "房间"
+      "def": "房间",
+      "ex": "This is my room.",
+      "trans": "这是我的房间。"
     },
     {
       "w": "hat",
       "ipa": "/hæt/",
       "pos": "n.",
-      "def": "帽子"
+      "def": "帽子",
+      "ex": "I wear a hat in summer.",
+      "trans": "夏天我戴帽子。"
     },
     {
       "w": "head",
       "ipa": "/hed/",
       "pos": "n.",
-      "def": "头"
+      "def": "头",
+      "ex": "My head hurts.",
+      "trans": "我头疼。"
     },
     {
       "w": "know",
       "ipa": "/noʊ/",
       "pos": "v.",
-      "def": "知道"
+      "def": "知道",
+      "ex": "I know the answer.",
+      "trans": "我知道答案。"
     },
     {
       "w": "think",
       "ipa": "/θɪŋk/",
       "pos": "v.",
-      "def": "认为；想"
+      "def": "认为；想",
+      "ex": "I think it is a good idea.",
+      "trans": "我认为这是个好主意。"
     },
     {
       "w": "radio",
       "ipa": "/ˈreɪdioʊ/",
       "pos": "n.",
-      "def": "收音机"
+      "def": "收音机",
+      "ex": "My grandpa listens to the radio.",
+      "trans": "我爷爷听收音机。"
     },
     {
       "w": "clock",
       "ipa": "/klɒk/",
       "pos": "n.",
-      "def": "钟"
+      "def": "钟",
+      "ex": "The clock on the wall is new.",
+      "trans": "墙上的钟是新的。"
     },
     {
       "w": "tape",
       "ipa": "/teɪp/",
       "pos": "n.",
-      "def": "磁带"
+      "def": "磁带",
+      "ex": "I have a tape player.",
+      "trans": "我有一个磁带播放器。"
     },
     {
       "w": "player",
       "ipa": "/ˈpleɪər/",
       "pos": "n.",
-      "def": "播放机"
+      "def": "播放机",
+      "ex": "My brother has a new player.",
+      "trans": "我哥哥有一个新播放器。"
     },
     {
       "w": "model",
       "ipa": "/ˈmɒdl/",
       "pos": "n.",
-      "def": "模型"
+      "def": "模型",
+      "ex": "I make a model plane.",
+      "trans": "我做了一个飞机模型。"
     },
     {
       "w": "plane",
       "ipa": "/pleɪn/",
       "pos": "n.",
-      "def": "飞机"
+      "def": "飞机",
+      "ex": "The plane is flying in the sky.",
+      "trans": "飞机正在天空中飞行。"
     }
   ],
   "u05": [
@@ -924,163 +1226,217 @@
       "w": "soccer",
       "ipa": "/ˈsɒkər/",
       "pos": "n.",
-      "def": "英式足球"
+      "def": "英式足球",
+      "ex": "I like playing soccer.",
+      "trans": "我喜欢踢足球。"
     },
     {
       "w": "basketball",
       "ipa": "/ˈbæskɪtbɔːl/",
       "pos": "n.",
-      "def": "篮球"
+      "def": "篮球",
+      "ex": "Basketball is fun.",
+      "trans": "篮球很有趣。"
     },
     {
       "w": "tennis",
       "ipa": "/ˈtenɪs/",
       "pos": "n.",
-      "def": "网球"
+      "def": "网球",
+      "ex": "I play tennis with my friend.",
+      "trans": "我和朋友打网球。"
     },
     {
       "w": "volleyball",
       "ipa": "/ˈvɒlibɔːl/",
       "pos": "n.",
-      "def": "排球"
+      "def": "排球",
+      "ex": "She is good at volleyball.",
+      "trans": "她擅长排球。"
     },
     {
       "w": "baseball",
       "ipa": "/ˈbeɪsbɔːl/",
       "pos": "n.",
-      "def": "棒球"
+      "def": "棒球",
+      "ex": "I like playing baseball.",
+      "trans": "我喜欢打棒球。"
     },
     {
       "w": "ping-pong",
       "ipa": "/ˈpɪŋpɒŋ/",
       "pos": "n.",
-      "def": "乒乓球"
+      "def": "乒乓球",
+      "ex": "We play ping-pong after school.",
+      "trans": "放学后我们打乒乓球。"
     },
     {
       "w": "ball",
       "ipa": "/bɔːl/",
       "pos": "n.",
-      "def": "球"
+      "def": "球",
+      "ex": "The ball is under the chair.",
+      "trans": "球在椅子下面。"
     },
     {
       "w": "bat",
       "ipa": "/bæt/",
       "pos": "n.",
-      "def": "球拍"
+      "def": "球拍",
+      "ex": "I need a bat to play baseball.",
+      "trans": "打棒球需要球棒。"
     },
     {
       "w": "interesting",
       "ipa": "/ˈɪntrəstɪŋ/",
       "pos": "adj.",
-      "def": "有趣的"
+      "def": "有趣的",
+      "ex": "This book is interesting.",
+      "trans": "这本书很有趣。"
     },
     {
       "w": "boring",
       "ipa": "/ˈbɔːrɪŋ/",
       "pos": "adj.",
-      "def": "无聊的"
+      "def": "无聊的",
+      "ex": "The movie is boring.",
+      "trans": "这部电影很无聊。"
     },
     {
       "w": "difficult",
       "ipa": "/ˈdɪfɪkəlt/",
       "pos": "adj.",
-      "def": "困难的"
+      "def": "困难的",
+      "ex": "Math is difficult for me.",
+      "trans": "数学对我来说很难。"
     },
     {
       "w": "easy",
       "ipa": "/ˈiːzi/",
       "pos": "adj.",
-      "def": "容易的"
+      "def": "容易的",
+      "ex": "This test is easy.",
+      "trans": "这次考试很容易。"
     },
     {
       "w": "fun",
       "ipa": "/fʌn/",
       "pos": "adj.",
-      "def": "有趣的"
+      "def": "有趣的",
+      "ex": "We have fun at the party.",
+      "trans": "我们在聚会上玩得很开心。"
     },
     {
       "w": "relaxing",
       "ipa": "/rɪˈlæksɪŋ/",
       "pos": "adj.",
-      "def": "放松的"
+      "def": "放松的",
+      "ex": "Listening to music is relaxing.",
+      "trans": "听音乐很放松。"
     },
     {
       "w": "great",
       "ipa": "/ɡreɪt/",
       "pos": "adj.",
-      "def": "伟大的；好极了"
+      "def": "伟大的；好极了",
+      "ex": "That sounds great!",
+      "trans": "听起来很棒！"
     },
     {
       "w": "play",
       "ipa": "/pleɪ/",
       "pos": "v.",
-      "def": "玩；打（球）"
+      "def": "玩；打（球）",
+      "ex": "I play basketball after school.",
+      "trans": "我放学后打篮球。"
     },
     {
       "w": "watch",
       "ipa": "/wɒtʃ/",
       "pos": "v.",
-      "def": "看"
+      "def": "看",
+      "ex": "I watch TV in the evening.",
+      "trans": "我晚上看电视。"
     },
     {
       "w": "let",
       "ipa": "/let/",
       "pos": "v.",
-      "def": "让"
+      "def": "让",
+      "ex": "Let me help you.",
+      "trans": "让我帮你。"
     },
     {
       "w": "us",
       "ipa": "/ʌs/",
       "pos": "pron.",
-      "def": "我们（宾格）"
+      "def": "我们（宾格）",
+      "ex": "Let us go to the park.",
+      "trans": "我们去公园吧。"
     },
     {
       "w": "late",
       "ipa": "/leɪt/",
       "pos": "adj.",
-      "def": "迟的"
+      "def": "迟的",
+      "ex": "Don't be late for class.",
+      "trans": "上课不要迟到。"
     },
     {
       "w": "classmate",
       "ipa": "/ˈklæsmeɪt/",
       "pos": "n.",
-      "def": "同班同学"
+      "def": "同班同学",
+      "ex": "My classmate is very kind.",
+      "trans": "我的同学很友善。"
     },
     {
       "w": "love",
       "ipa": "/lʌv/",
       "pos": "v.",
-      "def": "爱；喜欢"
+      "def": "爱；喜欢",
+      "ex": "I love my family.",
+      "trans": "我爱我的家人。"
     },
     {
       "w": "sport",
       "ipa": "/spɔːrt/",
       "pos": "n.",
-      "def": "运动"
+      "def": "运动",
+      "ex": "My favorite sport is swimming.",
+      "trans": "我最喜欢的运动是游泳。"
     },
     {
       "w": "only",
       "ipa": "/ˈoʊnli/",
       "pos": "adv.",
-      "def": "只；仅仅"
+      "def": "只；仅仅",
+      "ex": "I only have one pencil.",
+      "trans": "我只有一支铅笔。"
     },
     {
       "w": "like",
       "ipa": "/laɪk/",
       "pos": "v.",
-      "def": "喜欢"
+      "def": "喜欢",
+      "ex": "I like reading books.",
+      "trans": "我喜欢读书。"
     },
     {
       "w": "don't",
       "ipa": "/doʊnt/",
       "pos": "abbr.",
-      "def": "不"
+      "def": "不",
+      "ex": "I don't like coffee.",
+      "trans": "我不喜欢咖啡。"
     },
     {
       "w": "doesn't",
       "ipa": "/ˈdʌznt/",
       "pos": "abbr.",
-      "def": "不（第三人称）"
+      "def": "不（第三人称）",
+      "ex": "He doesn't like math.",
+      "trans": "他不喜欢数学。"
     }
   ],
   "u06": [
@@ -1088,151 +1444,201 @@
       "w": "banana",
       "ipa": "/bəˈnænə/",
       "pos": "n.",
-      "def": "香蕉"
+      "def": "香蕉",
+      "ex": "I eat a banana for breakfast.",
+      "trans": "我早餐吃一根香蕉。"
     },
     {
       "w": "hamburger",
       "ipa": "/ˈhæmbɜːrɡər/",
       "pos": "n.",
-      "def": "汉堡包"
+      "def": "汉堡包",
+      "ex": "Hamburgers are delicious.",
+      "trans": "汉堡包很好吃。"
     },
     {
       "w": "chicken",
       "ipa": "/ˈtʃɪkɪn/",
       "pos": "n.",
-      "def": "鸡肉"
+      "def": "鸡肉",
+      "ex": "I like fried chicken.",
+      "trans": "我喜欢炸鸡。"
     },
     {
       "w": "rice",
       "ipa": "/raɪs/",
       "pos": "n.",
-      "def": "大米"
+      "def": "大米",
+      "ex": "We eat rice for lunch.",
+      "trans": "我们午饭吃米饭。"
     },
     {
       "w": "carrot",
       "ipa": "/ˈkærət/",
       "pos": "n.",
-      "def": "胡萝卜"
+      "def": "胡萝卜",
+      "ex": "Carrots are good for your eyes.",
+      "trans": "胡萝卜对眼睛好。"
     },
     {
       "w": "tomato",
       "ipa": "/təˈmeɪtoʊ/",
       "pos": "n.",
-      "def": "番茄"
+      "def": "番茄",
+      "ex": "Tomatoes are red and round.",
+      "trans": "番茄又红又圆。"
     },
     {
       "w": "salad",
       "ipa": "/ˈsæləd/",
       "pos": "n.",
-      "def": "沙拉"
+      "def": "沙拉",
+      "ex": "I make a fruit salad.",
+      "trans": "我做了一个水果沙拉。"
     },
     {
       "w": "strawberry",
       "ipa": "/ˈstrɔːberi/",
       "pos": "n.",
-      "def": "草莓"
+      "def": "草莓",
+      "ex": "Strawberries are sweet.",
+      "trans": "草莓很甜。"
     },
     {
       "w": "milk",
       "ipa": "/mɪlk/",
       "pos": "n.",
-      "def": "牛奶"
+      "def": "牛奶",
+      "ex": "I drink milk every morning.",
+      "trans": "我每天早上喝牛奶。"
     },
     {
       "w": "bread",
       "ipa": "/bred/",
       "pos": "n.",
-      "def": "面包"
+      "def": "面包",
+      "ex": "I have bread for breakfast.",
+      "trans": "我早餐吃面包。"
     },
     {
       "w": "egg",
       "ipa": "/eɡ/",
       "pos": "n.",
-      "def": "蛋"
+      "def": "蛋",
+      "ex": "I eat an egg every day.",
+      "trans": "我每天吃一个鸡蛋。"
     },
     {
       "w": "apple",
       "ipa": "/ˈæpl/",
       "pos": "n.",
-      "def": "苹果"
+      "def": "苹果",
+      "ex": "An apple a day keeps the doctor away.",
+      "trans": "一天一苹果，医生远离我。"
     },
     {
       "w": "pear",
       "ipa": "/per/",
       "pos": "n.",
-      "def": "梨"
+      "def": "梨",
+      "ex": "The pear is yellow and sweet.",
+      "trans": "梨是黄色的，很甜。"
     },
     {
       "w": "food",
       "ipa": "/fuːd/",
       "pos": "n.",
-      "def": "食物"
+      "def": "食物",
+      "ex": "Chinese food is delicious.",
+      "trans": "中国菜很好吃。"
     },
     {
       "w": "fruit",
       "ipa": "/fruːt/",
       "pos": "n.",
-      "def": "水果"
+      "def": "水果",
+      "ex": "I like eating fruit.",
+      "trans": "我喜欢吃水果。"
     },
     {
       "w": "vegetable",
       "ipa": "/ˈvedʒtəbl/",
       "pos": "n.",
-      "def": "蔬菜"
+      "def": "蔬菜",
+      "ex": "Eating vegetables is healthy.",
+      "trans": "吃蔬菜很健康。"
     },
     {
       "w": "breakfast",
       "ipa": "/ˈbrekfəst/",
       "pos": "n.",
-      "def": "早餐"
+      "def": "早餐",
+      "ex": "I have breakfast at seven.",
+      "trans": "我七点吃早餐。"
     },
     {
       "w": "lunch",
       "ipa": "/lʌntʃ/",
       "pos": "n.",
-      "def": "午餐"
+      "def": "午餐",
+      "ex": "We have lunch at school.",
+      "trans": "我们在学校吃午餐。"
     },
     {
       "w": "dinner",
       "ipa": "/ˈdɪnər/",
       "pos": "n.",
-      "def": "晚餐"
+      "def": "晚餐",
+      "ex": "My family has dinner together.",
+      "trans": "我们一家人一起吃晚餐。"
     },
     {
       "w": "eat",
       "ipa": "/iːt/",
       "pos": "v.",
-      "def": "吃"
+      "def": "吃",
+      "ex": "Let's eat out today.",
+      "trans": "我们今天出去吃吧。"
     },
     {
       "w": "really",
       "ipa": "/ˈriːəli/",
       "pos": "adv.",
-      "def": "真正地"
+      "def": "真正地",
+      "ex": "I really like this song.",
+      "trans": "我真的很喜欢这首歌。"
     },
     {
       "w": "want",
       "ipa": "/wɒnt/",
       "pos": "v.",
-      "def": "要；想要"
+      "def": "要；想要",
+      "ex": "I want a new bike.",
+      "trans": "我想要一辆新自行车。"
     },
     {
       "w": "question",
       "ipa": "/ˈkwestʃən/",
       "pos": "n.",
-      "def": "问题"
+      "def": "问题",
+      "ex": "I have a question.",
+      "trans": "我有一个问题。"
     },
     {
       "w": "star",
       "ipa": "/stɑːr/",
       "pos": "n.",
-      "def": "明星"
+      "def": "明星",
+      "ex": "My sister is a movie star.",
+      "trans": "我姐姐是电影明星。"
     },
     {
       "w": "healthy",
       "ipa": "/ˈhelθi/",
       "pos": "adj.",
-      "def": "健康的"
+      "def": "健康的",
+      "ex": "Eating well keeps you healthy.",
+      "trans": "吃得好让你保持健康。"
     }
   ],
   "u07": [
@@ -1240,157 +1646,209 @@
       "w": "much",
       "ipa": "/mʌtʃ/",
       "pos": "adj.",
-      "def": "许多的"
+      "def": "许多的",
+      "ex": "How much is this T-shirt?",
+      "trans": "这件T恤多少钱？"
     },
     {
       "w": "how much",
       "ipa": "/haʊ mʌtʃ/",
       "pos": "phrase",
-      "def": "多少钱"
+      "def": "多少钱",
+      "ex": "How much are the shoes?",
+      "trans": "这双鞋多少钱？"
     },
     {
       "w": "sock",
       "ipa": "/sɒk/",
       "pos": "n.",
-      "def": "短袜"
+      "def": "短袜",
+      "ex": "I need a pair of socks.",
+      "trans": "我需要一双袜子。"
     },
     {
       "w": "shirt",
       "ipa": "/ʃɜːrt/",
       "pos": "n.",
-      "def": "衬衫"
+      "def": "衬衫",
+      "ex": "This shirt is too big.",
+      "trans": "这件衬衫太大了。"
     },
     {
       "w": "T-shirt",
       "ipa": "/ˈtiːʃɜːrt/",
       "pos": "n.",
-      "def": "T恤衫"
+      "def": "T恤衫",
+      "ex": "I like your blue T-shirt.",
+      "trans": "我喜欢你的蓝色T恤。"
     },
     {
       "w": "shorts",
       "ipa": "/ʃɔːrts/",
       "pos": "n.",
-      "def": "短裤"
+      "def": "短裤",
+      "ex": "He wears shorts in summer.",
+      "trans": "他夏天穿短裤。"
     },
     {
       "w": "sweater",
       "ipa": "/ˈswetər/",
       "pos": "n.",
-      "def": "毛衣"
+      "def": "毛衣",
+      "ex": "Put on your sweater, it's cold.",
+      "trans": "穿上毛衣，天气冷。"
     },
     {
       "w": "shoe",
       "ipa": "/ʃuː/",
       "pos": "n.",
-      "def": "鞋"
+      "def": "鞋",
+      "ex": "My shoes are new.",
+      "trans": "我的鞋子是新的。"
     },
     {
       "w": "skirt",
       "ipa": "/skɜːrt/",
       "pos": "n.",
-      "def": "裙子"
+      "def": "裙子",
+      "ex": "She has a beautiful skirt.",
+      "trans": "她有一条漂亮的裙子。"
     },
     {
       "w": "dollar",
       "ipa": "/ˈdɒlər/",
       "pos": "n.",
-      "def": "美元"
+      "def": "美元",
+      "ex": "This book is ten dollars.",
+      "trans": "这本书十美元。"
     },
     {
       "w": "big",
       "ipa": "/bɪɡ/",
       "pos": "adj.",
-      "def": "大的"
+      "def": "大的",
+      "ex": "The box is big.",
+      "trans": "这个盒子很大。"
     },
     {
       "w": "small",
       "ipa": "/smɔːl/",
       "pos": "adj.",
-      "def": "小的"
+      "def": "小的",
+      "ex": "The cat is small.",
+      "trans": "这只猫很小。"
     },
     {
       "w": "long",
       "ipa": "/lɒŋɡ/",
       "pos": "adj.",
-      "def": "长的"
+      "def": "长的",
+      "ex": "She has long hair.",
+      "trans": "她有长头发。"
     },
     {
       "w": "short",
       "ipa": "/ʃɔːrt/",
       "pos": "adj.",
-      "def": "短的"
+      "def": "短的",
+      "ex": "He has short hair.",
+      "trans": "他有短头发。"
     },
     {
       "w": "price",
       "ipa": "/praɪs/",
       "pos": "n.",
-      "def": "价格"
+      "def": "价格",
+      "ex": "The price is very good.",
+      "trans": "价格很好。"
     },
     {
       "w": "boy",
       "ipa": "/bɔɪ/",
       "pos": "n.",
-      "def": "男孩"
+      "def": "男孩",
+      "ex": "The boy is my friend.",
+      "trans": "那个男孩是我的朋友。"
     },
     {
       "w": "clothes",
       "ipa": "/kloʊðz/",
       "pos": "n.",
-      "def": "衣服"
+      "def": "衣服",
+      "ex": "I like buying new clothes.",
+      "trans": "我喜欢买新衣服。"
     },
     {
       "w": "store",
       "ipa": "/stɔːr/",
       "pos": "n.",
-      "def": "商店"
+      "def": "商店",
+      "ex": "The store sells many things.",
+      "trans": "这家商店卖很多东西。"
     },
     {
       "w": "buy",
       "ipa": "/baɪ/",
       "pos": "v.",
-      "def": "买"
+      "def": "买",
+      "ex": "I want to buy a gift.",
+      "trans": "我想买一份礼物。"
     },
     {
       "w": "sell",
       "ipa": "/sel/",
       "pos": "v.",
-      "def": "卖"
+      "def": "卖",
+      "ex": "The store sells fruits.",
+      "trans": "这家商店卖水果。"
     },
     {
       "w": "all",
       "ipa": "/ɔːl/",
       "pos": "adj.",
-      "def": "所有的"
+      "def": "所有的",
+      "ex": "All my friends are here.",
+      "trans": "我所有的朋友都在这里。"
     },
     {
       "w": "very",
       "ipa": "/ˈveri/",
       "pos": "adv.",
-      "def": "很；非常"
+      "def": "很；非常",
+      "ex": "Thank you very much.",
+      "trans": "非常感谢你。"
     },
     {
       "w": "need",
       "ipa": "/niːd/",
       "pos": "v.",
-      "def": "需要"
+      "def": "需要",
+      "ex": "I need a pen.",
+      "trans": "我需要一支钢笔。"
     },
     {
       "w": "look",
       "ipa": "/lʊk/",
       "pos": "v.",
-      "def": "看"
+      "def": "看",
+      "ex": "Look at the blackboard.",
+      "trans": "看黑板。"
     },
     {
       "w": "pair",
       "ipa": "/per/",
       "pos": "n.",
-      "def": "双；对"
+      "def": "双；对",
+      "ex": "I need a pair of shoes.",
+      "trans": "我需要一双鞋。"
     },
     {
       "w": "take",
       "ipa": "/teɪk/",
       "pos": "v.",
-      "def": "买下；拿走"
+      "def": "买下；拿走",
+      "ex": "I will take this one.",
+      "trans": "我要买这个。"
     }
   ],
   "u08": [
@@ -1398,157 +1856,209 @@
       "w": "when",
       "ipa": "/wen/",
       "pos": "adv.",
-      "def": "什么时候"
+      "def": "什么时候",
+      "ex": "When is your birthday?",
+      "trans": "你的生日是什么时候？"
     },
     {
       "w": "birthday",
       "ipa": "/ˈbɜːrθdeɪ/",
       "pos": "n.",
-      "def": "生日"
+      "def": "生日",
+      "ex": "Happy birthday to you!",
+      "trans": "祝你生日快乐！"
     },
     {
       "w": "month",
       "ipa": "/mʌnθ/",
       "pos": "n.",
-      "def": "月份"
+      "def": "月份",
+      "ex": "There are twelve months in a year.",
+      "trans": "一年有十二个月。"
     },
     {
       "w": "January",
       "ipa": "/ˈdʒænjueri/",
       "pos": "n.",
-      "def": "一月"
+      "def": "一月",
+      "ex": "January is the first month.",
+      "trans": "一月是第一个月。"
     },
     {
       "w": "February",
       "ipa": "/ˈfebrueri/",
       "pos": "n.",
-      "def": "二月"
+      "def": "二月",
+      "ex": "February is very cold.",
+      "trans": "二月很冷。"
     },
     {
       "w": "March",
       "ipa": "/mɑːrtʃ/",
       "pos": "n.",
-      "def": "三月"
+      "def": "三月",
+      "ex": "March comes after February.",
+      "trans": "三月在二月之后。"
     },
     {
       "w": "April",
       "ipa": "/ˈeɪprəl/",
       "pos": "n.",
-      "def": "四月"
+      "def": "四月",
+      "ex": "April is warm and nice.",
+      "trans": "四月温暖宜人。"
     },
     {
       "w": "May",
       "ipa": "/meɪ/",
       "pos": "n.",
-      "def": "五月"
+      "def": "五月",
+      "ex": "I like May because of the flowers.",
+      "trans": "我喜欢五月，因为花开。"
     },
     {
       "w": "June",
       "ipa": "/dʒuːn/",
       "pos": "n.",
-      "def": "六月"
+      "def": "六月",
+      "ex": "June is my favorite month.",
+      "trans": "六月是我最喜欢的月份。"
     },
     {
       "w": "July",
       "ipa": "/dʒuˈlaɪ/",
       "pos": "n.",
-      "def": "七月"
+      "def": "七月",
+      "ex": "We have summer vacation in July.",
+      "trans": "我们七月放暑假。"
     },
     {
       "w": "August",
       "ipa": "/ɔːˈɡʌst/",
       "pos": "n.",
-      "def": "八月"
+      "def": "八月",
+      "ex": "August is very hot.",
+      "trans": "八月很热。"
     },
     {
       "w": "September",
       "ipa": "/sepˈtembər/",
       "pos": "n.",
-      "def": "九月"
+      "def": "九月",
+      "ex": "School starts in September.",
+      "trans": "学校九月开学。"
     },
     {
       "w": "October",
       "ipa": "/ɒkˈtoʊbər/",
       "pos": "n.",
-      "def": "十月"
+      "def": "十月",
+      "ex": "October is a beautiful month.",
+      "trans": "十月是美丽的月份。"
     },
     {
       "w": "November",
       "ipa": "/noʊˈvembər/",
       "pos": "n.",
-      "def": "十一月"
+      "def": "十一月",
+      "ex": "November is cold.",
+      "trans": "十一月很冷。"
     },
     {
       "w": "December",
       "ipa": "/dɪˈsembər/",
       "pos": "n.",
-      "def": "十二月"
+      "def": "十二月",
+      "ex": "December is the last month.",
+      "trans": "十二月是最后一个月。"
     },
     {
       "w": "happy",
       "ipa": "/ˈhæpi/",
       "pos": "adj.",
-      "def": "快乐的"
+      "def": "快乐的",
+      "ex": "I am very happy today.",
+      "trans": "我今天很开心。"
     },
     {
       "w": "old",
       "ipa": "/oʊld/",
       "pos": "adj.",
-      "def": "老的；旧的"
+      "def": "老的；旧的",
+      "ex": "I am twelve years old.",
+      "trans": "我十二岁。"
     },
     {
       "w": "party",
       "ipa": "/ˈpɑːrti/",
       "pos": "n.",
-      "def": "聚会"
+      "def": "聚会",
+      "ex": "We have a birthday party.",
+      "trans": "我们有一个生日聚会。"
     },
     {
       "w": "trip",
       "ipa": "/trɪp/",
       "pos": "n.",
-      "def": "旅行"
+      "def": "旅行",
+      "ex": "We go on a school trip.",
+      "trans": "我们去学校旅行。"
     },
     {
       "w": "art",
       "ipa": "/ɑːrt/",
       "pos": "n.",
-      "def": "艺术；美术"
+      "def": "艺术；美术",
+      "ex": "I like art class.",
+      "trans": "我喜欢美术课。"
     },
     {
       "w": "festival",
       "ipa": "/ˈfestɪvl/",
       "pos": "n.",
-      "def": "节日"
+      "def": "节日",
+      "ex": "Spring Festival is in January or February.",
+      "trans": "春节在一月或二月。"
     },
     {
       "w": "dear",
       "ipa": "/dɪər/",
       "pos": "adj.",
-      "def": "亲爱的"
+      "def": "亲爱的",
+      "ex": "Dear mom, I miss you.",
+      "trans": "亲爱的妈妈，我想你。"
     },
     {
       "w": "test",
       "ipa": "/test/",
       "pos": "n.",
-      "def": "测试"
+      "def": "测试",
+      "ex": "We have a math test today.",
+      "trans": "我们今天有数学考试。"
     },
     {
       "w": "game",
       "ipa": "/ɡeɪm/",
       "pos": "n.",
-      "def": "比赛；游戏"
+      "def": "比赛；游戏",
+      "ex": "I like playing computer games.",
+      "trans": "我喜欢玩电脑游戏。"
     },
     {
       "w": "time",
       "ipa": "/taɪm/",
       "pos": "n.",
-      "def": "时间"
+      "def": "时间",
+      "ex": "What time is it?",
+      "trans": "几点了？"
     },
     {
       "w": "have a good time",
       "ipa": "",
       "pos": "phrase",
-      "def": "玩得开心"
+      "def": "玩得开心",
+      "ex": "Have a good time at the party!",
+      "trans": "在聚会上玩得开心！"
     }
   ],
   "u09": [
@@ -1556,151 +2066,201 @@
       "w": "subject",
       "ipa": "/ˈsʌbdʒɪkt/",
       "pos": "n.",
-      "def": "学科"
+      "def": "学科",
+      "ex": "My favorite subject is English.",
+      "trans": "我最喜欢的科目是英语。"
     },
     {
       "w": "science",
       "ipa": "/ˈsaɪəns/",
       "pos": "n.",
-      "def": "科学"
+      "def": "科学",
+      "ex": "I like science class.",
+      "trans": "我喜欢科学课。"
     },
     {
       "w": "music",
       "ipa": "/ˈmjuːzɪk/",
       "pos": "n.",
-      "def": "音乐"
+      "def": "音乐",
+      "ex": "Music makes me happy.",
+      "trans": "音乐让我开心。"
     },
     {
       "w": "math",
       "ipa": "/mæθ/",
       "pos": "n.",
-      "def": "数学"
+      "def": "数学",
+      "ex": "Math is very useful.",
+      "trans": "数学很有用。"
     },
     {
       "w": "Chinese",
       "ipa": "/ˌtʃaɪˈniːz/",
       "pos": "n.",
-      "def": "语文；中文"
+      "def": "语文；中文",
+      "ex": "We study Chinese every day.",
+      "trans": "我们每天学语文。"
     },
     {
       "w": "geography",
       "ipa": "/dʒiˈɒɡrəfi/",
       "pos": "n.",
-      "def": "地理"
+      "def": "地理",
+      "ex": "Geography is interesting.",
+      "trans": "地理很有趣。"
     },
     {
       "w": "history",
       "ipa": "/ˈhɪstri/",
       "pos": "n.",
-      "def": "历史"
+      "def": "历史",
+      "ex": "I like learning about history.",
+      "trans": "我喜欢学历史。"
     },
     {
       "w": "P.E.",
       "ipa": "/ˌpiː ˈiː/",
       "pos": "n.",
-      "def": "体育"
+      "def": "体育",
+      "ex": "P.E. class is fun.",
+      "trans": "体育课很有趣。"
     },
     {
       "w": "because",
       "ipa": "/bɪˈkɒz/",
       "pos": "conj.",
-      "def": "因为"
+      "def": "因为",
+      "ex": "I like it because it is fun.",
+      "trans": "我喜欢它因为它很有趣。"
     },
     {
       "w": "Monday",
       "ipa": "/ˈmʌndeɪ/",
       "pos": "n.",
-      "def": "星期一"
+      "def": "星期一",
+      "ex": "Monday is the first day of the week.",
+      "trans": "星期一是一周的第一天。"
     },
     {
       "w": "Tuesday",
       "ipa": "/ˈtuːzdeɪ/",
       "pos": "n.",
-      "def": "星期二"
+      "def": "星期二",
+      "ex": "I have music class on Tuesday.",
+      "trans": "我星期二有音乐课。"
     },
     {
       "w": "Wednesday",
       "ipa": "/ˈwenzdeɪ/",
       "pos": "n.",
-      "def": "星期三"
+      "def": "星期三",
+      "ex": "Wednesday is my busiest day.",
+      "trans": "星期三是我最忙的一天。"
     },
     {
       "w": "Thursday",
       "ipa": "/ˈθɜːrzdeɪ/",
       "pos": "n.",
-      "def": "星期四"
+      "def": "星期四",
+      "ex": "We have a test on Thursday.",
+      "trans": "我们星期四有考试。"
     },
     {
       "w": "Friday",
       "ipa": "/ˈfraɪdeɪ/",
       "pos": "n.",
-      "def": "星期五"
+      "def": "星期五",
+      "ex": "Friday is my favorite day.",
+      "trans": "星期五是我最喜欢的一天。"
     },
     {
       "w": "Saturday",
       "ipa": "/ˈsætərdeɪ/",
       "pos": "n.",
-      "def": "星期六"
+      "def": "星期六",
+      "ex": "I play sports on Saturday.",
+      "trans": "我星期六做运动。"
     },
     {
       "w": "Sunday",
       "ipa": "/ˈsʌndeɪ/",
       "pos": "n.",
-      "def": "星期日"
+      "def": "星期日",
+      "ex": "I visit my grandma on Sunday.",
+      "trans": "我星期天去看望奶奶。"
     },
     {
       "w": "useful",
       "ipa": "/ˈjuːsfl/",
       "pos": "adj.",
-      "def": "有用的"
+      "def": "有用的",
+      "ex": "English is very useful.",
+      "trans": "英语很有用。"
     },
     {
       "w": "free",
       "ipa": "/friː/",
       "pos": "adj.",
-      "def": "空闲的"
+      "def": "空闲的",
+      "ex": "I am free this weekend.",
+      "trans": "我这个周末有空。"
     },
     {
       "w": "cool",
       "ipa": "/kuːl/",
       "pos": "adj.",
-      "def": "酷的；妙极的"
+      "def": "酷的；妙极的",
+      "ex": "That's a cool car!",
+      "trans": "那是一辆酷车！"
     },
     {
       "w": "finish",
       "ipa": "/ˈfɪnɪʃ/",
       "pos": "v.",
-      "def": "完成"
+      "def": "完成",
+      "ex": "I finish my homework at eight.",
+      "trans": "我八点完成作业。"
     },
     {
       "w": "lesson",
       "ipa": "/ˈlesn/",
       "pos": "n.",
-      "def": "课"
+      "def": "课",
+      "ex": "I have four lessons in the morning.",
+      "trans": "我上午有四节课。"
     },
     {
       "w": "hour",
       "ipa": "/ˈaʊər/",
       "pos": "n.",
-      "def": "小时"
+      "def": "小时",
+      "ex": "I study for an hour every day.",
+      "trans": "我每天学习一小时。"
     },
     {
       "w": "favorite",
       "ipa": "/ˈfeɪvərɪt/",
       "pos": "adj.",
-      "def": "最喜欢的"
+      "def": "最喜欢的",
+      "ex": "My favorite color is blue.",
+      "trans": "我最喜欢的颜色是蓝色。"
     },
     {
       "w": "teacher",
       "ipa": "/ˈtiːtʃər/",
       "pos": "n.",
-      "def": "老师"
+      "def": "老师",
+      "ex": "My teacher is nice.",
+      "trans": "我的老师很好。"
     },
     {
       "w": "why",
       "ipa": "/waɪ/",
       "pos": "adv.",
-      "def": "为什么"
+      "def": "为什么",
+      "ex": "Why do you like English?",
+      "trans": "你为什么喜欢英语？"
     }
   ],
   "b2u01": [
@@ -1708,103 +2268,137 @@
       "w": "play",
       "ipa": "/pleɪ/",
       "pos": "v.",
-      "def": "弹奏；玩"
+      "def": "弹奏；玩",
+      "ex": "I play basketball after school.",
+      "trans": "我放学后打篮球。"
     },
     {
       "w": "violin",
       "ipa": "/ˌvaɪəˈlɪn/",
       "pos": "n.",
-      "def": "小提琴"
+      "def": "小提琴",
+      "ex": "She plays the violin very well.",
+      "trans": "她小提琴拉得很好。"
     },
     {
       "w": "drum",
       "ipa": "/drʌm/",
       "pos": "n.",
-      "def": "鼓"
+      "def": "鼓",
+      "ex": "He plays the drum in the band.",
+      "trans": "他在乐队里打鼓。"
     },
     {
       "w": "piano",
       "ipa": "/piˈænoʊ/",
       "pos": "n.",
-      "def": "钢琴"
+      "def": "钢琴",
+      "ex": "I practice the piano every day.",
+      "trans": "我每天练习钢琴。"
     },
     {
       "w": "also",
       "ipa": "/ˈɔːlsoʊ/",
       "pos": "adv.",
-      "def": "也；而且"
+      "def": "也；而且",
+      "ex": "I also like playing soccer.",
+      "trans": "我也喜欢踢足球。"
     },
     {
       "w": "people",
       "ipa": "/ˈpiːpl/",
       "pos": "n.",
-      "def": "人；人们"
+      "def": "人；人们",
+      "ex": "Many people like music.",
+      "trans": "很多人喜欢音乐。"
     },
     {
       "w": "center",
       "ipa": "/ˈsentər/",
       "pos": "n.",
-      "def": "中心"
+      "def": "中心",
+      "ex": "There is a sports center near my home.",
+      "trans": "我家附近有一个体育中心。"
     },
     {
       "w": "home",
       "ipa": "/hoʊm/",
       "pos": "n.",
-      "def": "家"
+      "def": "家",
+      "ex": "I go home at five.",
+      "trans": "我五点回家。"
     },
     {
       "w": "make",
       "ipa": "/meɪk/",
       "pos": "v.",
-      "def": "使成为；制作"
+      "def": "使成为；制作",
+      "ex": "I make a model plane.",
+      "trans": "我做了一个飞机模型。"
     },
     {
       "w": "today",
       "ipa": "/təˈdeɪ/",
       "pos": "adv.",
-      "def": "今天"
+      "def": "今天",
+      "ex": "What day is it today?",
+      "trans": "今天星期几？"
     },
     {
       "w": "join",
       "ipa": "/dʒɔɪn/",
       "pos": "v.",
-      "def": "参加；加入"
+      "def": "参加；加入",
+      "ex": "I want to join the music club.",
+      "trans": "我想加入音乐俱乐部。"
     },
     {
       "w": "club",
       "ipa": "/klʌb/",
       "pos": "n.",
-      "def": "俱乐部"
+      "def": "俱乐部",
+      "ex": "Our school has a chess club.",
+      "trans": "我们学校有国际象棋俱乐部。"
     },
     {
       "w": "be good at",
       "ipa": "",
       "pos": "phrase",
-      "def": "擅长"
+      "def": "擅长",
+      "ex": "She is good at dancing.",
+      "trans": "她擅长跳舞。"
     },
     {
       "w": "tell",
       "ipa": "/tel/",
       "pos": "v.",
-      "def": "告诉；讲述"
+      "def": "告诉；讲述",
+      "ex": "Please tell me a story.",
+      "trans": "请给我讲个故事。"
     },
     {
       "w": "talk",
       "ipa": "/tɔːk/",
       "pos": "v.",
-      "def": "说话；谈话"
+      "def": "说话；谈话",
+      "ex": "We talk about our day.",
+      "trans": "我们谈论一天的生活。"
     },
     {
       "w": "or",
       "ipa": "/ɔːr/",
       "pos": "conj.",
-      "def": "或者"
+      "def": "或者",
+      "ex": "Is it red or blue?",
+      "trans": "它是红色的还是蓝色的？"
     },
     {
       "w": "kid",
       "ipa": "/kɪd/",
       "pos": "n.",
-      "def": "小孩"
+      "def": "小孩",
+      "ex": "The kids are playing outside.",
+      "trans": "孩子们在外面玩。"
     }
   ],
   "b2u02": [
@@ -1812,121 +2406,161 @@
       "w": "up",
       "ipa": "/ʌp/",
       "pos": "adv.",
-      "def": "向上"
+      "def": "向上",
+      "ex": "Stand up, please.",
+      "trans": "请起立。"
     },
     {
       "w": "get up",
       "ipa": "/ɡet ʌp/",
       "pos": "phrase",
-      "def": "起床"
+      "def": "起床",
+      "ex": "I get up at six every morning.",
+      "trans": "我每天早上六点起床。"
     },
     {
       "w": "dress",
       "ipa": "/dres/",
       "pos": "v.",
-      "def": "穿衣服"
+      "def": "穿衣服",
+      "ex": "I dress myself every morning.",
+      "trans": "我每天早上自己穿衣服。"
     },
     {
       "w": "get dressed",
       "ipa": "",
       "pos": "phrase",
-      "def": "穿衣服"
+      "def": "穿衣服",
+      "ex": "Please get dressed quickly.",
+      "trans": "请快点穿好衣服。"
     },
     {
       "w": "brush",
       "ipa": "/brʌʃ/",
       "pos": "v.",
-      "def": "刷"
+      "def": "刷",
+      "ex": "I brush my teeth twice a day.",
+      "trans": "我每天刷牙两次。"
     },
     {
       "w": "tooth",
       "ipa": "/tuːθ/",
       "pos": "n.",
-      "def": "牙齿"
+      "def": "牙齿",
+      "ex": "I have a toothache.",
+      "trans": "我牙疼。"
     },
     {
       "w": "shower",
       "ipa": "/ˈʃaʊər/",
       "pos": "n.",
-      "def": "淋浴"
+      "def": "淋浴",
+      "ex": "I take a shower every morning.",
+      "trans": "我每天早上洗淋浴。"
     },
     {
       "w": "take a shower",
       "ipa": "",
       "pos": "phrase",
-      "def": "淋浴"
+      "def": "淋浴",
+      "ex": "He takes a shower after sports.",
+      "trans": "他运动后洗淋浴。"
     },
     {
       "w": "usually",
       "ipa": "/ˈjuːʒuəli/",
       "pos": "adv.",
-      "def": "通常"
+      "def": "通常",
+      "ex": "I usually walk to school.",
+      "trans": "我通常走路去学校。"
     },
     {
       "w": "never",
       "ipa": "/ˈnevər/",
       "pos": "adv.",
-      "def": "从不"
+      "def": "从不",
+      "ex": "I never eat junk food.",
+      "trans": "我从不吃垃圾食品。"
     },
     {
       "w": "early",
       "ipa": "/ˈɜːrli/",
       "pos": "adv.",
-      "def": "早地"
+      "def": "早地",
+      "ex": "I get up early every day.",
+      "trans": "我每天早起。"
     },
     {
       "w": "job",
       "ipa": "/dʒɒb/",
       "pos": "n.",
-      "def": "工作"
+      "def": "工作",
+      "ex": "My father has a good job.",
+      "trans": "我爸爸有一份好工作。"
     },
     {
       "w": "work",
       "ipa": "/wɜːrk/",
       "pos": "n.",
-      "def": "工作"
+      "def": "工作",
+      "ex": "My mom goes to work at eight.",
+      "trans": "我妈妈八点去上班。"
     },
     {
       "w": "station",
       "ipa": "/ˈsteɪʃn/",
       "pos": "n.",
-      "def": "车站；电台"
+      "def": "车站；电台",
+      "ex": "The bus station is near here.",
+      "trans": "公共汽车站在这附近。"
     },
     {
       "w": "night",
       "ipa": "/naɪt/",
       "pos": "n.",
-      "def": "晚上"
+      "def": "晚上",
+      "ex": "I do my homework at night.",
+      "trans": "我晚上做作业。"
     },
     {
       "w": "funny",
       "ipa": "/ˈfʌni/",
       "pos": "adj.",
-      "def": "有趣的；滑稽的"
+      "def": "有趣的；滑稽的",
+      "ex": "The story is very funny.",
+      "trans": "这个故事很有趣。"
     },
     {
       "w": "exercise",
       "ipa": "/ˈeksərsaɪz/",
       "pos": "n./v.",
-      "def": "锻炼"
+      "def": "锻炼",
+      "ex": "I exercise every morning.",
+      "trans": "我每天早上锻炼。"
     },
     {
       "w": "group",
       "ipa": "/ɡruːp/",
       "pos": "n.",
-      "def": "组；群"
+      "def": "组；群",
+      "ex": "We study in a group.",
+      "trans": "我们小组学习。"
     },
     {
       "w": "half",
       "ipa": "/hæf/",
       "pos": "n.",
-      "def": "一半"
+      "def": "一半",
+      "ex": "I get up at half past six.",
+      "trans": "我六点半起床。"
     },
     {
       "w": "quarter",
       "ipa": "/ˈkwɔːrtər/",
       "pos": "n.",
-      "def": "一刻钟；四分之一"
+      "def": "一刻钟；四分之一",
+      "ex": "It is a quarter to seven.",
+      "trans": "现在是七点差一刻。"
     }
   ],
   "b2u03": [
@@ -1934,157 +2568,209 @@
       "w": "train",
       "ipa": "/treɪn/",
       "pos": "n.",
-      "def": "火车"
+      "def": "火车",
+      "ex": "I go to school by train.",
+      "trans": "我坐火车去上学。"
     },
     {
       "w": "bus",
       "ipa": "/bʌs/",
       "pos": "n.",
-      "def": "公共汽车"
+      "def": "公共汽车",
+      "ex": "I take the bus to school.",
+      "trans": "我坐公共汽车去上学。"
     },
     {
       "w": "subway",
       "ipa": "/ˈsʌbweɪ/",
       "pos": "n.",
-      "def": "地铁"
+      "def": "地铁",
+      "ex": "He goes to work by subway.",
+      "trans": "他坐地铁去上班。"
     },
     {
       "w": "ride",
       "ipa": "/raɪd/",
       "pos": "v.",
-      "def": "骑"
+      "def": "骑",
+      "ex": "I ride my bike to school.",
+      "trans": "我骑自行车去学校。"
     },
     {
       "w": "bike",
       "ipa": "/baɪk/",
       "pos": "n.",
-      "def": "自行车"
+      "def": "自行车",
+      "ex": "My bike is blue.",
+      "trans": "我的自行车是蓝色的。"
     },
     {
       "w": "drive",
       "ipa": "/draɪv/",
       "pos": "v.",
-      "def": "开车"
+      "def": "开车",
+      "ex": "My dad drives me to school.",
+      "trans": "我爸爸开车送我去学校。"
     },
     {
       "w": "car",
       "ipa": "/kɑːr/",
       "pos": "n.",
-      "def": "小汽车"
+      "def": "小汽车",
+      "ex": "We go to the park by car.",
+      "trans": "我们开车去公园。"
     },
     {
       "w": "live",
       "ipa": "/lɪv/",
       "pos": "v.",
-      "def": "居住"
+      "def": "居住",
+      "ex": "I live near my school.",
+      "trans": "我住在学校附近。"
     },
     {
       "w": "stop",
       "ipa": "/stɒp/",
       "pos": "n.",
-      "def": "车站；停止"
+      "def": "车站；停止",
+      "ex": "The bus stop is over there.",
+      "trans": "公共汽车站在那边。"
     },
     {
       "w": "cross",
       "ipa": "/krɒs/",
       "pos": "v.",
-      "def": "穿过"
+      "def": "穿过",
+      "ex": "Please cross the road carefully.",
+      "trans": "请小心过马路。"
     },
     {
       "w": "river",
       "ipa": "/ˈrɪvər/",
       "pos": "n.",
-      "def": "河"
+      "def": "河",
+      "ex": "There is a river near my home.",
+      "trans": "我家附近有一条河。"
     },
     {
       "w": "many",
       "ipa": "/ˈmeni/",
       "pos": "adj.",
-      "def": "许多"
+      "def": "许多",
+      "ex": "There are many books in the library.",
+      "trans": "图书馆里有很多书。"
     },
     {
       "w": "village",
       "ipa": "/ˈvɪlɪdʒ/",
       "pos": "n.",
-      "def": "村庄"
+      "def": "村庄",
+      "ex": "My grandparents live in a small village.",
+      "trans": "我的祖父母住在一个小村庄。"
     },
     {
       "w": "between",
       "ipa": "/bɪˈtwiːn/",
       "pos": "prep.",
-      "def": "在……之间"
+      "def": "在……之间",
+      "ex": "The park is between the school and the hospital.",
+      "trans": "公园在学校和医院之间。"
     },
     {
       "w": "bridge",
       "ipa": "/brɪdʒ/",
       "pos": "n.",
-      "def": "桥"
+      "def": "桥",
+      "ex": "There is a bridge over the river.",
+      "trans": "河上有座桥。"
     },
     {
       "w": "boat",
       "ipa": "/boʊt/",
       "pos": "n.",
-      "def": "小船"
+      "def": "小船",
+      "ex": "We take a boat on the lake.",
+      "trans": "我们在湖上划船。"
     },
     {
       "w": "year",
       "ipa": "/jɪr/",
       "pos": "n.",
-      "def": "年"
+      "def": "年",
+      "ex": "I am thirteen years old.",
+      "trans": "我十三岁。"
     },
     {
       "w": "afraid",
       "ipa": "/əˈfreɪd/",
       "pos": "adj.",
-      "def": "害怕的"
+      "def": "害怕的",
+      "ex": "Don't be afraid. I am here.",
+      "trans": "别害怕，我在这里。"
     },
     {
       "w": "like",
       "ipa": "/laɪk/",
       "pos": "prep.",
-      "def": "像"
+      "def": "像",
+      "ex": "I like reading books.",
+      "trans": "我喜欢读书。"
     },
     {
       "w": "leave",
       "ipa": "/liːv/",
       "pos": "v.",
-      "def": "离开"
+      "def": "离开",
+      "ex": "I leave home at seven.",
+      "trans": "我七点离开家。"
     },
     {
       "w": "dream",
       "ipa": "/driːm/",
       "pos": "n.",
-      "def": "梦想"
+      "def": "梦想",
+      "ex": "I have a dream to be a teacher.",
+      "trans": "我有一个当老师的梦想。"
     },
     {
       "w": "true",
       "ipa": "/truː/",
       "pos": "adj.",
-      "def": "真的；真实的"
+      "def": "真的；真实的",
+      "ex": "I hope my dream comes true.",
+      "trans": "我希望我的梦想成真。"
     },
     {
       "w": "come true",
       "ipa": "",
       "pos": "phrase",
-      "def": "实现"
+      "def": "实现",
+      "ex": "My dream comes true.",
+      "trans": "我的梦想实现了。"
     },
     {
       "w": "kilometer",
       "ipa": "/kɪˈlɒmɪtər/",
       "pos": "n.",
-      "def": "千米"
+      "def": "千米",
+      "ex": "My school is two kilometers away.",
+      "trans": "我的学校在两公里外。"
     },
     {
       "w": "new",
       "ipa": "/njuː/",
       "pos": "adj.",
-      "def": "新的"
+      "def": "新的",
+      "ex": "I have a new schoolbag.",
+      "trans": "我有一个新书包。"
     },
     {
       "w": "every",
       "ipa": "/ˈevri/",
       "pos": "adj.",
-      "def": "每个"
+      "def": "每个",
+      "ex": "I go to school every day.",
+      "trans": "我每天都去上学。"
     }
   ],
   "b2u04": [
@@ -2092,163 +2778,217 @@
       "w": "rule",
       "ipa": "/ruːl/",
       "pos": "n.",
-      "def": "规则"
+      "def": "规则",
+      "ex": "We must follow the school rules.",
+      "trans": "我们必须遵守校规。"
     },
     {
       "w": "arrive",
       "ipa": "/əˈraɪv/",
       "pos": "v.",
-      "def": "到达"
+      "def": "到达",
+      "ex": "I arrive at school at eight.",
+      "trans": "我八点到校。"
     },
     {
       "w": "hallway",
       "ipa": "/ˈhɔːlweɪ/",
       "pos": "n.",
-      "def": "走廊"
+      "def": "走廊",
+      "ex": "Don't run in the hallway.",
+      "trans": "不要在走廊里跑。"
     },
     {
       "w": "listen",
       "ipa": "/ˈlɪsn/",
       "pos": "v.",
-      "def": "听"
+      "def": "听",
+      "ex": "Please listen to the teacher.",
+      "trans": "请听老师讲。"
     },
     {
       "w": "fight",
       "ipa": "/faɪt/",
       "pos": "v.",
-      "def": "打架；战斗"
+      "def": "打架；战斗",
+      "ex": "Don't fight with your classmates.",
+      "trans": "不要和同学打架。"
     },
     {
       "w": "sorry",
       "ipa": "/ˈsɒri/",
       "pos": "adj.",
-      "def": "抱歉的"
+      "def": "抱歉的",
+      "ex": "I am sorry.",
+      "trans": "对不起。"
     },
     {
       "w": "outside",
       "ipa": "/ˌaʊtˈsaɪd/",
       "pos": "adv.",
-      "def": "在外面"
+      "def": "在外面",
+      "ex": "Let's play outside.",
+      "trans": "我们去外面玩吧。"
     },
     {
       "w": "wear",
       "ipa": "/wer/",
       "pos": "v.",
-      "def": "穿；戴"
+      "def": "穿；戴",
+      "ex": "We must wear our school uniforms.",
+      "trans": "我们必须穿校服。"
     },
     {
       "w": "important",
       "ipa": "/ɪmˈpɔːrtnt/",
       "pos": "adj.",
-      "def": "重要的"
+      "def": "重要的",
+      "ex": "It is important to study hard.",
+      "trans": "努力学习很重要。"
     },
     {
       "w": "bring",
       "ipa": "/brɪŋ/",
       "pos": "v.",
-      "def": "带来"
+      "def": "带来",
+      "ex": "Please bring your book to class.",
+      "trans": "请把书带来上课。"
     },
     {
       "w": "have to",
       "ipa": "/hæv tuː/",
       "pos": "phrase",
-      "def": "不得不"
+      "def": "不得不",
+      "ex": "I have to finish my homework.",
+      "trans": "我必须完成作业。"
     },
     {
       "w": "uniform",
       "ipa": "/ˈjuːnɪfɔːrm/",
       "pos": "n.",
-      "def": "校服"
+      "def": "校服",
+      "ex": "Our school uniform is blue and white.",
+      "trans": "我们的校服是蓝白色的。"
     },
     {
       "w": "quiet",
       "ipa": "/ˈkwaɪət/",
       "pos": "adj.",
-      "def": "安静的"
+      "def": "安静的",
+      "ex": "Please be quiet in the library.",
+      "trans": "请在图书馆保持安静。"
     },
     {
       "w": "noisy",
       "ipa": "/ˈnɔɪzi/",
       "pos": "adj.",
-      "def": "吵闹的"
+      "def": "吵闹的",
+      "ex": "The classroom is too noisy.",
+      "trans": "教室太吵了。"
     },
     {
       "w": "relax",
       "ipa": "/rɪˈlæks/",
       "pos": "v.",
-      "def": "放松"
+      "def": "放松",
+      "ex": "I relax by listening to music.",
+      "trans": "我通过听音乐放松。"
     },
     {
       "w": "read",
       "ipa": "/riːd/",
       "pos": "v.",
-      "def": "读"
+      "def": "读",
+      "ex": "I like reading storybooks.",
+      "trans": "我喜欢读故事书。"
     },
     {
       "w": "dirty",
       "ipa": "/ˈdɜːrti/",
       "pos": "adj.",
-      "def": "脏的"
+      "def": "脏的",
+      "ex": "My shoes are dirty.",
+      "trans": "我的鞋子脏了。"
     },
     {
       "w": "kitchen",
       "ipa": "/ˈkɪtʃɪn/",
       "pos": "n.",
-      "def": "厨房"
+      "def": "厨房",
+      "ex": "Mom is cooking in the kitchen.",
+      "trans": "妈妈在厨房做饭。"
     },
     {
       "w": "more",
       "ipa": "/mɔːr/",
       "pos": "adj.",
-      "def": "更多的"
+      "def": "更多的",
+      "ex": "I want to learn more English.",
+      "trans": "我想学更多英语。"
     },
     {
       "w": "feel",
       "ipa": "/fiːl/",
       "pos": "v.",
-      "def": "感觉"
+      "def": "感觉",
+      "ex": "I feel happy today.",
+      "trans": "我今天感到开心。"
     },
     {
       "w": "strict",
       "ipa": "/strɪkt/",
       "pos": "adj.",
-      "def": "严格的"
+      "def": "严格的",
+      "ex": "Our teacher is strict but nice.",
+      "trans": "我们的老师严格但很好。"
     },
     {
       "w": "remember",
       "ipa": "/rɪˈmembər/",
       "pos": "v.",
-      "def": "记住"
+      "def": "记住",
+      "ex": "Please remember to bring your homework.",
+      "trans": "请记得带作业。"
     },
     {
       "w": "follow",
       "ipa": "/ˈfɒloʊ/",
       "pos": "v.",
-      "def": "遵守"
+      "def": "遵守",
+      "ex": "Please follow the rules.",
+      "trans": "请遵守规则。"
     },
     {
       "w": "luck",
       "ipa": "/lʌk/",
       "pos": "n.",
-      "def": "运气"
+      "def": "运气",
+      "ex": "Good luck to you!",
+      "trans": "祝你好运！"
     },
     {
       "w": "keep",
       "ipa": "/kiːp/",
       "pos": "v.",
-      "def": "保持"
+      "def": "保持",
+      "ex": "Please keep your room clean.",
+      "trans": "请保持房间干净。"
     },
     {
       "w": "hair",
       "ipa": "/her/",
       "pos": "n.",
-      "def": "头发"
+      "def": "头发",
+      "ex": "She has long black hair.",
+      "trans": "她有黑色长发。"
     },
     {
       "w": "learn",
       "ipa": "/lɜːrn/",
       "pos": "v.",
-      "def": "学习"
+      "def": "学习",
+      "ex": "I learn English at school.",
+      "trans": "我在学校学英语。"
     }
   ],
   "b2u05": [
@@ -2256,187 +2996,249 @@
       "w": "panda",
       "ipa": "/ˈpændə/",
       "pos": "n.",
-      "def": "熊猫"
+      "def": "熊猫",
+      "ex": "Pandas are black and white.",
+      "trans": "熊猫是黑白相间的。"
     },
     {
       "w": "zoo",
       "ipa": "/zuː/",
       "pos": "n.",
-      "def": "动物园"
+      "def": "动物园",
+      "ex": "We go to the zoo on Sunday.",
+      "trans": "我们星期天去动物园。"
     },
     {
       "w": "tiger",
       "ipa": "/ˈtaɪɡər/",
       "pos": "n.",
-      "def": "老虎"
+      "def": "老虎",
+      "ex": "Tigers are very strong.",
+      "trans": "老虎很强壮。"
     },
     {
       "w": "elephant",
       "ipa": "/ˈelɪfənt/",
       "pos": "n.",
-      "def": "大象"
+      "def": "大象",
+      "ex": "Elephants have big ears.",
+      "trans": "大象有大耳朵。"
     },
     {
       "w": "koala",
       "ipa": "/koʊˈɑːlə/",
       "pos": "n.",
-      "def": "考拉"
+      "def": "考拉",
+      "ex": "Koalas are very cute.",
+      "trans": "考拉很可爱。"
     },
     {
       "w": "lion",
       "ipa": "/ˈlaɪən/",
       "pos": "n.",
-      "def": "狮子"
+      "def": "狮子",
+      "ex": "The lion is the king of animals.",
+      "trans": "狮子是百兽之王。"
     },
     {
       "w": "giraffe",
       "ipa": "/dʒəˈræf/",
       "pos": "n.",
-      "def": "长颈鹿"
+      "def": "长颈鹿",
+      "ex": "Giraffes have long necks.",
+      "trans": "长颈鹿有长脖子。"
     },
     {
       "w": "animal",
       "ipa": "/ˈænɪml/",
       "pos": "n.",
-      "def": "动物"
+      "def": "动物",
+      "ex": "I like all kinds of animals.",
+      "trans": "我喜欢各种动物。"
     },
     {
       "w": "cute",
       "ipa": "/kjuːt/",
       "pos": "adj.",
-      "def": "可爱的"
+      "def": "可爱的",
+      "ex": "The baby panda is very cute.",
+      "trans": "熊猫宝宝很可爱。"
     },
     {
       "w": "lazy",
       "ipa": "/ˈleɪzi/",
       "pos": "adj.",
-      "def": "懒惰的"
+      "def": "懒惰的",
+      "ex": "My cat is very lazy.",
+      "trans": "我的猫很懒。"
     },
     {
       "w": "smart",
       "ipa": "/smɑːrt/",
       "pos": "adj.",
-      "def": "聪明的"
+      "def": "聪明的",
+      "ex": "Dolphins are very smart.",
+      "trans": "海豚很聪明。"
     },
     {
       "w": "beautiful",
       "ipa": "/ˈbjuːtɪfl/",
       "pos": "adj.",
-      "def": "美丽的"
+      "def": "美丽的",
+      "ex": "The flowers are beautiful.",
+      "trans": "花很漂亮。"
     },
     {
       "w": "scary",
       "ipa": "/ˈskeri/",
       "pos": "adj.",
-      "def": "吓人的"
+      "def": "吓人的",
+      "ex": "Lions look scary.",
+      "trans": "狮子看起来很吓人。"
     },
     {
       "w": "kind",
       "ipa": "/kaɪnd/",
       "pos": "n.",
-      "def": "种类"
+      "def": "种类",
+      "ex": "What kind of animal is this?",
+      "trans": "这是什么动物？"
     },
     {
       "w": "kind of",
       "ipa": "",
       "pos": "phrase",
-      "def": "稍微；有几分"
+      "def": "稍微；有几分",
+      "ex": "Koalas are kind of cute.",
+      "trans": "考拉有点可爱。"
     },
     {
       "w": "Australia",
       "ipa": "/ɒˈstreɪliə/",
       "pos": "n.",
-      "def": "澳大利亚"
+      "def": "澳大利亚",
+      "ex": "Koalas come from Australia.",
+      "trans": "考拉来自澳大利亚。"
     },
     {
       "w": "south",
       "ipa": "/saʊθ/",
       "pos": "n.",
-      "def": "南方"
+      "def": "南方",
+      "ex": "Guangzhou is in the south of China.",
+      "trans": "广州在中国南方。"
     },
     {
       "w": "Africa",
       "ipa": "/ˈæfrɪkə/",
       "pos": "n.",
-      "def": "非洲"
+      "def": "非洲",
+      "ex": "Elephants live in Africa.",
+      "trans": "大象生活在非洲。"
     },
     {
       "w": "pet",
       "ipa": "/pet/",
       "pos": "n.",
-      "def": "宠物"
+      "def": "宠物",
+      "ex": "I have a pet dog.",
+      "trans": "我有一只宠物狗。"
     },
     {
       "w": "leg",
       "ipa": "/leɡ/",
       "pos": "n.",
-      "def": "腿"
+      "def": "腿",
+      "ex": "The cat has four legs.",
+      "trans": "猫有四条腿。"
     },
     {
       "w": "cat",
       "ipa": "/kæt/",
       "pos": "n.",
-      "def": "猫"
+      "def": "猫",
+      "ex": "My cat likes to sleep.",
+      "trans": "我的猫喜欢睡觉。"
     },
     {
       "w": "sleep",
       "ipa": "/sliːp/",
       "pos": "v.",
-      "def": "睡觉"
+      "def": "睡觉",
+      "ex": "I sleep for eight hours every night.",
+      "trans": "我每晚睡八小时。"
     },
     {
       "w": "friendly",
       "ipa": "/ˈfrendli/",
       "pos": "adj.",
-      "def": "友好的"
+      "def": "友好的",
+      "ex": "My dog is very friendly.",
+      "trans": "我的狗很友善。"
     },
     {
       "w": "shy",
       "ipa": "/ʃaɪ/",
       "pos": "adj.",
-      "def": "害羞的"
+      "def": "害羞的",
+      "ex": "The girl is a little shy.",
+      "trans": "那个女孩有点害羞。"
     },
     {
       "w": "save",
       "ipa": "/seɪv/",
       "pos": "v.",
-      "def": "救；节省"
+      "def": "救；节省",
+      "ex": "We should save the animals.",
+      "trans": "我们应该拯救动物。"
     },
     {
       "w": "symbol",
       "ipa": "/ˈsɪmbl/",
       "pos": "n.",
-      "def": "象征"
+      "def": "象征",
+      "ex": "The dove is a symbol of peace.",
+      "trans": "鸽子是和平的象征。"
     },
     {
       "w": "flag",
       "ipa": "/flæɡ/",
       "pos": "n.",
-      "def": "旗"
+      "def": "旗",
+      "ex": "The flag of China is red.",
+      "trans": "中国的国旗是红色的。"
     },
     {
       "w": "forget",
       "ipa": "/fərˈɡet/",
       "pos": "v.",
-      "def": "忘记"
+      "def": "忘记",
+      "ex": "Don't forget your homework.",
+      "trans": "别忘了你的作业。"
     },
     {
       "w": "danger",
       "ipa": "/ˈdeɪndʒər/",
       "pos": "n.",
-      "def": "危险"
+      "def": "危险",
+      "ex": "Tigers are in danger.",
+      "trans": "老虎处于危险中。"
     },
     {
       "w": "cut",
       "ipa": "/kʌt/",
       "pos": "v.",
-      "def": "砍；切"
+      "def": "砍；切",
+      "ex": "Please cut the paper.",
+      "trans": "请剪纸。"
     },
     {
       "w": "kill",
       "ipa": "/kɪl/",
       "pos": "v.",
-      "def": "杀死"
+      "def": "杀死",
+      "ex": "Don't kill the animals.",
+      "trans": "不要杀害动物。"
     }
   ],
   "b2u06": [
@@ -2444,121 +3246,161 @@
       "w": "newspaper",
       "ipa": "/ˈnuːzpeɪpər/",
       "pos": "n.",
-      "def": "报纸"
+      "def": "报纸",
+      "ex": "My dad reads the newspaper every morning.",
+      "trans": "我爸爸每天早上看报纸。"
     },
     {
       "w": "use",
       "ipa": "/juːz/",
       "pos": "v.",
-      "def": "使用"
+      "def": "使用",
+      "ex": "Can I use your pen?",
+      "trans": "我可以用你的钢笔吗？"
     },
     {
       "w": "soup",
       "ipa": "/suːp/",
       "pos": "n.",
-      "def": "汤"
+      "def": "汤",
+      "ex": "I like drinking soup.",
+      "trans": "我喜欢喝汤。"
     },
     {
       "w": "wash",
       "ipa": "/wɒʃ/",
       "pos": "v.",
-      "def": "洗"
+      "def": "洗",
+      "ex": "I wash my hands before dinner.",
+      "trans": "我饭前洗手。"
     },
     {
       "w": "movie",
       "ipa": "/ˈmuːvi/",
       "pos": "n.",
-      "def": "电影"
+      "def": "电影",
+      "ex": "I watch a movie on weekends.",
+      "trans": "我周末看电影。"
     },
     {
       "w": "house",
       "ipa": "/haʊs/",
       "pos": "n.",
-      "def": "房子"
+      "def": "房子",
+      "ex": "Our house is big and clean.",
+      "trans": "我们的房子又大又干净。"
     },
     {
       "w": "drink",
       "ipa": "/drɪŋk/",
       "pos": "v.",
-      "def": "喝"
+      "def": "喝",
+      "ex": "I drink milk every day.",
+      "trans": "我每天都喝牛奶。"
     },
     {
       "w": "tea",
       "ipa": "/tiː/",
       "pos": "n.",
-      "def": "茶"
+      "def": "茶",
+      "ex": "My grandpa likes green tea.",
+      "trans": "我爷爷喜欢绿茶。"
     },
     {
       "w": "tomorrow",
       "ipa": "/təˈmɒroʊ/",
       "pos": "adv.",
-      "def": "明天"
+      "def": "明天",
+      "ex": "Tomorrow is Saturday.",
+      "trans": "明天是星期六。"
     },
     {
       "w": "pool",
       "ipa": "/puːl/",
       "pos": "n.",
-      "def": "游泳池"
+      "def": "游泳池",
+      "ex": "We swim in the pool.",
+      "trans": "我们在游泳池游泳。"
     },
     {
       "w": "shop",
       "ipa": "/ʃɒp/",
       "pos": "v.",
-      "def": "购物"
+      "def": "购物",
+      "ex": "I shop with my mom on weekends.",
+      "trans": "我周末和妈妈购物。"
     },
     {
       "w": "man",
       "ipa": "/mæn/",
       "pos": "n.",
-      "def": "男人"
+      "def": "男人",
+      "ex": "The man in blue is my uncle.",
+      "trans": "穿蓝衣服的男人是我叔叔。"
     },
     {
       "w": "study",
       "ipa": "/ˈstʌdi/",
       "pos": "v.",
-      "def": "学习"
+      "def": "学习",
+      "ex": "I study in my room.",
+      "trans": "我在房间学习。"
     },
     {
       "w": "miss",
       "ipa": "/mɪs/",
       "pos": "v.",
-      "def": "想念；错过"
+      "def": "想念；错过",
+      "ex": "I miss my family when I am at school.",
+      "trans": "我在学校时想念家人。"
     },
     {
       "w": "wish",
       "ipa": "/wɪʃ/",
       "pos": "v.",
-      "def": "希望"
+      "def": "希望",
+      "ex": "I wish you a happy birthday.",
+      "trans": "我祝你生日快乐。"
     },
     {
       "w": "delicious",
       "ipa": "/dɪˈlɪʃəs/",
       "pos": "adj.",
-      "def": "美味的"
+      "def": "美味的",
+      "ex": "The food is delicious.",
+      "trans": "食物很美味。"
     },
     {
       "w": "child",
       "ipa": "/tʃaɪld/",
       "pos": "n.",
-      "def": "儿童"
+      "def": "儿童",
+      "ex": "The children are playing outside.",
+      "trans": "孩子们在外面玩。"
     },
     {
       "w": "race",
       "ipa": "/reɪs/",
       "pos": "n.",
-      "def": "比赛"
+      "def": "比赛",
+      "ex": "He wins the running race.",
+      "trans": "他赢了赛跑。"
     },
     {
       "w": "host",
       "ipa": "/hoʊst/",
       "pos": "n.",
-      "def": "主人"
+      "def": "主人",
+      "ex": "The host welcomes us.",
+      "trans": "主人欢迎我们。"
     },
     {
       "w": "young",
       "ipa": "/jʌŋ/",
       "pos": "adj.",
-      "def": "年轻的"
+      "def": "年轻的",
+      "ex": "My teacher is young and beautiful.",
+      "trans": "我的老师年轻漂亮。"
     }
   ],
   "b2u07": [
@@ -2566,139 +3408,185 @@
       "w": "rain",
       "ipa": "/reɪn/",
       "pos": "v.",
-      "def": "下雨"
+      "def": "下雨",
+      "ex": "It often rains in spring.",
+      "trans": "春天经常下雨。"
     },
     {
       "w": "windy",
       "ipa": "/ˈwɪndi/",
       "pos": "adj.",
-      "def": "多风的"
+      "def": "多风的",
+      "ex": "It is very windy today.",
+      "trans": "今天风很大。"
     },
     {
       "w": "cloudy",
       "ipa": "/ˈklaʊdi/",
       "pos": "adj.",
-      "def": "多云的"
+      "def": "多云的",
+      "ex": "It is cloudy today.",
+      "trans": "今天是多云。"
     },
     {
       "w": "sunny",
       "ipa": "/ˈsʌni/",
       "pos": "adj.",
-      "def": "晴朗的"
+      "def": "晴朗的",
+      "ex": "It is sunny and warm.",
+      "trans": "天气晴朗温暖。"
     },
     {
       "w": "snow",
       "ipa": "/snoʊ/",
       "pos": "v.",
-      "def": "下雪"
+      "def": "下雪",
+      "ex": "It snows in winter.",
+      "trans": "冬天下雪。"
     },
     {
       "w": "weather",
       "ipa": "/ˈweðər/",
       "pos": "n.",
-      "def": "天气"
+      "def": "天气",
+      "ex": "The weather is nice today.",
+      "trans": "今天天气很好。"
     },
     {
       "w": "cold",
       "ipa": "/koʊld/",
       "pos": "adj.",
-      "def": "冷的"
+      "def": "冷的",
+      "ex": "It is cold outside. Put on your coat.",
+      "trans": "外面冷，穿上外套。"
     },
     {
       "w": "hot",
       "ipa": "/hɒt/",
       "pos": "adj.",
-      "def": "热的"
+      "def": "热的",
+      "ex": "It is very hot in summer.",
+      "trans": "夏天很热。"
     },
     {
       "w": "warm",
       "ipa": "/wɔːrm/",
       "pos": "adj.",
-      "def": "温暖的"
+      "def": "温暖的",
+      "ex": "Spring is warm.",
+      "trans": "春天很温暖。"
     },
     {
       "w": "cool",
       "ipa": "/kuːl/",
       "pos": "adj.",
-      "def": "凉爽的"
+      "def": "凉爽的",
+      "ex": "That's a cool car!",
+      "trans": "那是一辆酷车！"
     },
     {
       "w": "dry",
       "ipa": "/draɪ/",
       "pos": "adj.",
-      "def": "干燥的"
+      "def": "干燥的",
+      "ex": "The weather is dry in autumn.",
+      "trans": "秋天天气干燥。"
     },
     {
       "w": "summer",
       "ipa": "/ˈsʌmər/",
       "pos": "n.",
-      "def": "夏天"
+      "def": "夏天",
+      "ex": "I like swimming in summer.",
+      "trans": "我喜欢夏天游泳。"
     },
     {
       "w": "winter",
       "ipa": "/ˈwɪntər/",
       "pos": "n.",
-      "def": "冬天"
+      "def": "冬天",
+      "ex": "It is cold in winter.",
+      "trans": "冬天很冷。"
     },
     {
       "w": "spring",
       "ipa": "/sprɪŋ/",
       "pos": "n.",
-      "def": "春天"
+      "def": "春天",
+      "ex": "Spring is a beautiful season.",
+      "trans": "春天是一个美丽的季节。"
     },
     {
       "w": "autumn",
       "ipa": "/ˈɔːtəm/",
       "pos": "n.",
-      "def": "秋天"
+      "def": "秋天",
+      "ex": "Leaves turn yellow in autumn.",
+      "trans": "秋天叶子变黄。"
     },
     {
       "w": "season",
       "ipa": "/ˈsiːzn/",
       "pos": "n.",
-      "def": "季节"
+      "def": "季节",
+      "ex": "My favorite season is summer.",
+      "trans": "我最喜欢的季节是夏天。"
     },
     {
       "w": "vacation",
       "ipa": "/veɪˈkeɪʃn/",
       "pos": "n.",
-      "def": "假期"
+      "def": "假期",
+      "ex": "We go on vacation in July.",
+      "trans": "我们七月去度假。"
     },
     {
       "w": "visit",
       "ipa": "/ˈvɪzɪt/",
       "pos": "v.",
-      "def": "拜访"
+      "def": "拜访",
+      "ex": "I visit my grandparents on weekends.",
+      "trans": "我周末去看望祖父母。"
     },
     {
       "w": "Canada",
       "ipa": "/ˈkænədə/",
       "pos": "n.",
-      "def": "加拿大"
+      "def": "加拿大",
+      "ex": "My uncle lives in Canada.",
+      "trans": "我叔叔住在加拿大。"
     },
     {
       "w": "Europe",
       "ipa": "/ˈjʊrəp/",
       "pos": "n.",
-      "def": "欧洲"
+      "def": "欧洲",
+      "ex": "I want to travel to Europe.",
+      "trans": "我想去欧洲旅行。"
     },
     {
       "w": "mountain",
       "ipa": "/ˈmaʊntɪn/",
       "pos": "n.",
-      "def": "山"
+      "def": "山",
+      "ex": "We climb the mountain on Sunday.",
+      "trans": "我们星期天去爬山。"
     },
     {
       "w": "ski",
       "ipa": "/skiː/",
       "pos": "v.",
-      "def": "滑雪"
+      "def": "滑雪",
+      "ex": "I like skiing in winter.",
+      "trans": "我喜欢冬天滑雪。"
     },
     {
       "w": "country",
       "ipa": "/ˈkʌntri/",
       "pos": "n.",
-      "def": "国家"
+      "def": "国家",
+      "ex": "China is a big country.",
+      "trans": "中国是一个大国。"
     }
   ],
   "b2u08": [
@@ -2706,175 +3594,233 @@
       "w": "post",
       "ipa": "/poʊst/",
       "pos": "n.",
-      "def": "邮政"
+      "def": "邮政",
+      "ex": "I go to the post office to send a letter.",
+      "trans": "我去邮局寄信。"
     },
     {
       "w": "post office",
       "ipa": "",
       "pos": "phrase",
-      "def": "邮局"
+      "def": "邮局",
+      "ex": "The post office is on Green Street.",
+      "trans": "邮局在格林街。"
     },
     {
       "w": "police",
       "ipa": "/pəˈliːs/",
       "pos": "n.",
-      "def": "警察"
+      "def": "警察",
+      "ex": "The police officer helps us.",
+      "trans": "警察帮助我们。"
     },
     {
       "w": "hotel",
       "ipa": "/hoʊˈtel/",
       "pos": "n.",
-      "def": "旅馆"
+      "def": "旅馆",
+      "ex": "We stay in a hotel during the trip.",
+      "trans": "旅行期间我们住在酒店。"
     },
     {
       "w": "restaurant",
       "ipa": "/ˈrestrɒnt/",
       "pos": "n.",
-      "def": "餐馆"
+      "def": "餐馆",
+      "ex": "We eat dinner at a restaurant.",
+      "trans": "我们在餐馆吃晚餐。"
     },
     {
       "w": "bank",
       "ipa": "/bæŋk/",
       "pos": "n.",
-      "def": "银行"
+      "def": "银行",
+      "ex": "My mother works in a bank.",
+      "trans": "我妈妈在银行工作。"
     },
     {
       "w": "hospital",
       "ipa": "/ˈhɒspɪtl/",
       "pos": "n.",
-      "def": "医院"
+      "def": "医院",
+      "ex": "The hospital is near my home.",
+      "trans": "医院在我家附近。"
     },
     {
       "w": "street",
       "ipa": "/striːt/",
       "pos": "n.",
-      "def": "街道"
+      "def": "街道",
+      "ex": "The bookstore is on Main Street.",
+      "trans": "书店在主街上。"
     },
     {
       "w": "near",
       "ipa": "/nɪr/",
       "pos": "prep.",
-      "def": "在……附近"
+      "def": "在……附近",
+      "ex": "There is a park near my school.",
+      "trans": "我们学校附近有一个公园。"
     },
     {
       "w": "across",
       "ipa": "/əˈkrɒs/",
       "pos": "adv.",
-      "def": "穿过"
+      "def": "穿过",
+      "ex": "The bank is across the street.",
+      "trans": "银行在街对面。"
     },
     {
       "w": "across from",
       "ipa": "",
       "pos": "phrase",
-      "def": "在……对面"
+      "def": "在……对面",
+      "ex": "The library is across from the school.",
+      "trans": "图书馆在学校对面。"
     },
     {
       "w": "front",
       "ipa": "/frʌnt/",
       "pos": "n.",
-      "def": "前面"
+      "def": "前面",
+      "ex": "Please stand in front of the class.",
+      "trans": "请站在全班前面。"
     },
     {
       "w": "in front of",
       "ipa": "",
       "pos": "phrase",
-      "def": "在……前面"
+      "def": "在……前面",
+      "ex": "The teacher stands in front of the blackboard.",
+      "trans": "老师站在黑板前。"
     },
     {
       "w": "behind",
       "ipa": "/bɪˈhaɪnd/",
       "pos": "prep.",
-      "def": "在……后面"
+      "def": "在……后面",
+      "ex": "The cat is behind the door.",
+      "trans": "猫在门后面。"
     },
     {
       "w": "town",
       "ipa": "/taʊn/",
       "pos": "n.",
-      "def": "城镇"
+      "def": "城镇",
+      "ex": "I live in a small town.",
+      "trans": "我住在一个小镇上。"
     },
     {
       "w": "around",
       "ipa": "/əˈraʊnd/",
       "pos": "prep.",
-      "def": "在……周围"
+      "def": "在……周围",
+      "ex": "Let's walk around the park.",
+      "trans": "我们绕着公园走走吧。"
     },
     {
       "w": "north",
       "ipa": "/nɔːrθ/",
       "pos": "n.",
-      "def": "北方"
+      "def": "北方",
+      "ex": "Beijing is in the north of China.",
+      "trans": "北京在中国北方。"
     },
     {
       "w": "along",
       "ipa": "/əˈlɒŋ/",
       "pos": "prep.",
-      "def": "沿着"
+      "def": "沿着",
+      "ex": "Walk along this street, and you will see it.",
+      "trans": "沿着这条街走，你就会看到它。"
     },
     {
       "w": "turn",
       "ipa": "/tɜːrn/",
       "pos": "v.",
-      "def": "转向；转弯"
+      "def": "转向；转弯",
+      "ex": "Turn left at the corner.",
+      "trans": "在拐角处左转。"
     },
     {
       "w": "right",
       "ipa": "/raɪt/",
       "pos": "adv.",
-      "def": "向右"
+      "def": "向右",
+      "ex": "Turn right at the traffic lights.",
+      "trans": "在红绿灯处右转。"
     },
     {
       "w": "left",
       "ipa": "/left/",
       "pos": "adv.",
-      "def": "向左"
+      "def": "向左",
+      "ex": "The school is on your left.",
+      "trans": "学校在你的左边。"
     },
     {
       "w": "crossing",
       "ipa": "/ˈkrɒsɪŋ/",
       "pos": "n.",
-      "def": "十字路口"
+      "def": "十字路口",
+      "ex": "Turn left at the first crossing.",
+      "trans": "在第一个十字路口左转。"
     },
     {
       "w": "neighborhood",
       "ipa": "/ˈneɪbərhʊd/",
       "pos": "n.",
-      "def": "街区；附近"
+      "def": "街区；附近",
+      "ex": "There is a park in my neighborhood.",
+      "trans": "我家附近有一个公园。"
     },
     {
       "w": "spend",
       "ipa": "/spend/",
       "pos": "v.",
-      "def": "花费"
+      "def": "花费",
+      "ex": "I spend two hours on homework.",
+      "trans": "我花两个小时做作业。"
     },
     {
       "w": "climb",
       "ipa": "/klaɪm/",
       "pos": "v.",
-      "def": "爬"
+      "def": "爬",
+      "ex": "The cat climbs up the tree.",
+      "trans": "猫爬上了树。"
     },
     {
       "w": "free",
       "ipa": "/friː/",
       "pos": "adj.",
-      "def": "免费的"
+      "def": "免费的",
+      "ex": "I am free this weekend.",
+      "trans": "我这个周末有空。"
     },
     {
       "w": "enjoy",
       "ipa": "/ɪnˈdʒɔɪ/",
       "pos": "v.",
-      "def": "享受"
+      "def": "享受",
+      "ex": "I enjoy reading books.",
+      "trans": "我喜欢读书。"
     },
     {
       "w": "easy",
       "ipa": "/ˈiːzi/",
       "pos": "adj.",
-      "def": "容易的"
+      "def": "容易的",
+      "ex": "This test is easy.",
+      "trans": "这次考试很容易。"
     },
     {
       "w": "money",
       "ipa": "/ˈmʌni/",
       "pos": "n.",
-      "def": "钱"
+      "def": "钱",
+      "ex": "I save my money in a piggy bank.",
+      "trans": "我把钱存在存钱罐里。"
     }
   ],
   "b2u09": [
@@ -2882,157 +3828,209 @@
       "w": "curly",
       "ipa": "/ˈkɜːrli/",
       "pos": "adj.",
-      "def": "卷曲的"
+      "def": "卷曲的",
+      "ex": "She has short curly hair.",
+      "trans": "她有短卷发。"
     },
     {
       "w": "straight",
       "ipa": "/streɪt/",
       "pos": "adj.",
-      "def": "直的"
+      "def": "直的",
+      "ex": "He has straight brown hair.",
+      "trans": "他有棕色直发。"
     },
     {
       "w": "tall",
       "ipa": "/tɔːl/",
       "pos": "adj.",
-      "def": "高的"
+      "def": "高的",
+      "ex": "My brother is tall and thin.",
+      "trans": "我哥哥又高又瘦。"
     },
     {
       "w": "medium",
       "ipa": "/ˈmiːdiəm/",
       "pos": "adj.",
-      "def": "中等的"
+      "def": "中等的",
+      "ex": "She is of medium height.",
+      "trans": "她中等身高。"
     },
     {
       "w": "height",
       "ipa": "/haɪt/",
       "pos": "n.",
-      "def": "身高"
+      "def": "身高",
+      "ex": "What is your height?",
+      "trans": "你多高？"
     },
     {
       "w": "thin",
       "ipa": "/θɪn/",
       "pos": "adj.",
-      "def": "瘦的"
+      "def": "瘦的",
+      "ex": "She is thin and beautiful.",
+      "trans": "她又瘦又漂亮。"
     },
     {
       "w": "heavy",
       "ipa": "/ˈhevi/",
       "pos": "adj.",
-      "def": "重的；胖的"
+      "def": "重的；胖的",
+      "ex": "My uncle is a little heavy.",
+      "trans": "我叔叔有点胖。"
     },
     {
       "w": "build",
       "ipa": "/bɪld/",
       "pos": "n.",
-      "def": "体格"
+      "def": "体格",
+      "ex": "He has a strong build.",
+      "trans": "他体格强壮。"
     },
     {
       "w": "glasses",
       "ipa": "/ˈɡlæsɪz/",
       "pos": "n.",
-      "def": "眼镜"
+      "def": "眼镜",
+      "ex": "My teacher wears glasses.",
+      "trans": "我的老师戴眼镜。"
     },
     {
       "w": "blonde",
       "ipa": "/blɒnd/",
       "pos": "adj.",
-      "def": "金黄色的"
+      "def": "金黄色的",
+      "ex": "She has long blonde hair.",
+      "trans": "她有金色长发。"
     },
     {
       "w": "mouth",
       "ipa": "/maʊθ/",
       "pos": "n.",
-      "def": "嘴巴"
+      "def": "嘴巴",
+      "ex": "Open your mouth, please.",
+      "trans": "请张嘴。"
     },
     {
       "w": "face",
       "ipa": "/feɪs/",
       "pos": "n.",
-      "def": "脸"
+      "def": "脸",
+      "ex": "She has a round face.",
+      "trans": "她有一张圆脸。"
     },
     {
       "w": "eye",
       "ipa": "/aɪ/",
       "pos": "n.",
-      "def": "眼睛"
+      "def": "眼睛",
+      "ex": "She has big blue eyes.",
+      "trans": "她有大大的蓝眼睛。"
     },
     {
       "w": "nose",
       "ipa": "/noʊz/",
       "pos": "n.",
-      "def": "鼻子"
+      "def": "鼻子",
+      "ex": "The elephant has a long nose.",
+      "trans": "大象有长鼻子。"
     },
     {
       "w": "ear",
       "ipa": "/ɪr/",
       "pos": "n.",
-      "def": "耳朵"
+      "def": "耳朵",
+      "ex": "My ears are small.",
+      "trans": "我的耳朵很小。"
     },
     {
       "w": "singer",
       "ipa": "/ˈsɪŋər/",
       "pos": "n.",
-      "def": "歌手"
+      "def": "歌手",
+      "ex": "I want to be a singer.",
+      "trans": "我想成为歌手。"
     },
     {
       "w": "artist",
       "ipa": "/ˈɑːrtɪst/",
       "pos": "n.",
-      "def": "艺术家"
+      "def": "艺术家",
+      "ex": "The artist draws beautiful pictures.",
+      "trans": "艺术家画漂亮的画。"
     },
     {
       "w": "person",
       "ipa": "/ˈpɜːrsn/",
       "pos": "n.",
-      "def": "人"
+      "def": "人",
+      "ex": "She is a kind person.",
+      "trans": "她是一个善良的人。"
     },
     {
       "w": "hand",
       "ipa": "/hænd/",
       "pos": "n.",
-      "def": "手"
+      "def": "手",
+      "ex": "Please raise your hand.",
+      "trans": "请举手。"
     },
     {
       "w": "arm",
       "ipa": "/ɑːrm/",
       "pos": "n.",
-      "def": "手臂"
+      "def": "手臂",
+      "ex": "My mother has a baby in her arms.",
+      "trans": "妈妈怀里抱着婴儿。"
     },
     {
       "w": "end",
       "ipa": "/end/",
       "pos": "n.",
-      "def": "末端；终点"
+      "def": "末端；终点",
+      "ex": "The street ends here.",
+      "trans": "街道在这里结束。"
     },
     {
       "w": "real",
       "ipa": "/ˈriːəl/",
       "pos": "adj.",
-      "def": "真的"
+      "def": "真的",
+      "ex": "Is this a real story?",
+      "trans": "这是一个真实的故事吗？"
     },
     {
       "w": "each",
       "ipa": "/iːtʃ/",
       "pos": "adj.",
-      "def": "每个"
+      "def": "每个",
+      "ex": "Each student has a book.",
+      "trans": "每个学生都有一本书。"
     },
     {
       "w": "way",
       "ipa": "/weɪ/",
       "pos": "n.",
-      "def": "方式；路"
+      "def": "方式；路",
+      "ex": "This is the way to school.",
+      "trans": "这是去学校的路。"
     },
     {
       "w": "different",
       "ipa": "/ˈdɪfərənt/",
       "pos": "adj.",
-      "def": "不同的"
+      "def": "不同的",
+      "ex": "We are in different classes.",
+      "trans": "我们在不同的班级。"
     },
     {
       "w": "describe",
       "ipa": "/dɪˈskraɪb/",
       "pos": "v.",
-      "def": "描述"
+      "def": "描述",
+      "ex": "Can you describe your friend?",
+      "trans": "你能描述一下你的朋友吗？"
     }
   ],
   "b2u10": [
@@ -3040,133 +4038,177 @@
       "w": "noodle",
       "ipa": "/ˈnuːdl/",
       "pos": "n.",
-      "def": "面条"
+      "def": "面条",
+      "ex": "I like eating noodles for breakfast.",
+      "trans": "我喜欢早餐吃面条。"
     },
     {
       "w": "mutton",
       "ipa": "/ˈmʌtn/",
       "pos": "n.",
-      "def": "羊肉"
+      "def": "羊肉",
+      "ex": "I like mutton soup.",
+      "trans": "我喜欢羊肉汤。"
     },
     {
       "w": "beef",
       "ipa": "/biːf/",
       "pos": "n.",
-      "def": "牛肉"
+      "def": "牛肉",
+      "ex": "Beef noodles are delicious.",
+      "trans": "牛肉面很好吃。"
     },
     {
       "w": "cabbage",
       "ipa": "/ˈkæbɪdʒ/",
       "pos": "n.",
-      "def": "卷心菜"
+      "def": "卷心菜",
+      "ex": "Cabbage is good for your health.",
+      "trans": "卷心菜对健康有好处。"
     },
     {
       "w": "potato",
       "ipa": "/pəˈteɪtoʊ/",
       "pos": "n.",
-      "def": "土豆"
+      "def": "土豆",
+      "ex": "I like eating potatoes.",
+      "trans": "我喜欢吃土豆。"
     },
     {
       "w": "special",
       "ipa": "/ˈspeʃl/",
       "pos": "n.",
-      "def": "特色菜"
+      "def": "特色菜",
+      "ex": "Today's special is beef noodles.",
+      "trans": "今天的特色菜是牛肉面。"
     },
     {
       "w": "size",
       "ipa": "/saɪz/",
       "pos": "n.",
-      "def": "大小；尺码"
+      "def": "大小；尺码",
+      "ex": "What size do you want?",
+      "trans": "你想要什么尺寸？"
     },
     {
       "w": "bowl",
       "ipa": "/boʊl/",
       "pos": "n.",
-      "def": "碗"
+      "def": "碗",
+      "ex": "I have a bowl of rice.",
+      "trans": "我吃了一碗米饭。"
     },
     {
       "w": "would",
       "ipa": "/wʊd/",
       "pos": "modal v.",
-      "def": "（表示意愿）要"
+      "def": "（表示意愿）要",
+      "ex": "Would you like some tea?",
+      "trans": "你想喝点茶吗？"
     },
     {
       "w": "tofu",
       "ipa": "/ˈtoʊfuː/",
       "pos": "n.",
-      "def": "豆腐"
+      "def": "豆腐",
+      "ex": "Tofu is healthy and delicious.",
+      "trans": "豆腐又健康又好吃。"
     },
     {
       "w": "large",
       "ipa": "/lɑːrdʒ/",
       "pos": "adj.",
-      "def": "大的"
+      "def": "大的",
+      "ex": "I want a large bowl of noodles.",
+      "trans": "我要一大碗面。"
     },
     {
       "w": "order",
       "ipa": "/ˈɔːrdər/",
       "pos": "v.",
-      "def": "点菜；订购"
+      "def": "点菜；订购",
+      "ex": "May I order now?",
+      "trans": "我现在可以点餐吗？"
     },
     {
       "w": "answer",
       "ipa": "/ˈænsər/",
       "pos": "v.",
-      "def": "回答"
+      "def": "回答",
+      "ex": "Please answer the question.",
+      "trans": "请回答问题。"
     },
     {
       "w": "different",
       "ipa": "/ˈdɪfərənt/",
       "pos": "adj.",
-      "def": "不同的"
+      "def": "不同的",
+      "ex": "We are in different classes.",
+      "trans": "我们在不同的班级。"
     },
     {
       "w": "cake",
       "ipa": "/keɪk/",
       "pos": "n.",
-      "def": "蛋糕"
+      "def": "蛋糕",
+      "ex": "I like chocolate cake.",
+      "trans": "我喜欢巧克力蛋糕。"
     },
     {
       "w": "candle",
       "ipa": "/ˈkændl/",
       "pos": "n.",
-      "def": "蜡烛"
+      "def": "蜡烛",
+      "ex": "We light the candles on the birthday cake.",
+      "trans": "我们点燃生日蛋糕上的蜡烛。"
     },
     {
       "w": "age",
       "ipa": "/eɪdʒ/",
       "pos": "n.",
-      "def": "年龄"
+      "def": "年龄",
+      "ex": "My age is thirteen.",
+      "trans": "我十三岁。"
     },
     {
       "w": "blow",
       "ipa": "/bloʊ/",
       "pos": "v.",
-      "def": "吹"
+      "def": "吹",
+      "ex": "Please blow out the candles.",
+      "trans": "请吹灭蜡烛。"
     },
     {
       "w": "blow out",
       "ipa": "",
       "pos": "phrase",
-      "def": "吹灭"
+      "def": "吹灭",
+      "ex": "Make a wish and blow out the candles.",
+      "trans": "许个愿，吹灭蜡烛。"
     },
     {
       "w": "if",
       "ipa": "/ɪf/",
       "pos": "conj.",
-      "def": "如果"
+      "def": "如果",
+      "ex": "If you are tired, have a rest.",
+      "trans": "如果你累了，就休息一下。"
     },
     {
       "w": "will",
       "ipa": "/wɪl/",
       "pos": "modal v.",
-      "def": "将；会"
+      "def": "将；会",
+      "ex": "I will go to Beijing next week.",
+      "trans": "我下周要去北京。"
     },
     {
       "w": "idea",
       "ipa": "/aɪˈdiːə/",
       "pos": "n.",
-      "def": "想法；主意"
+      "def": "想法；主意",
+      "ex": "That's a good idea!",
+      "trans": "好主意！"
     }
   ],
   "b2u11": [
@@ -3174,163 +4216,217 @@
       "w": "milk",
       "ipa": "/mɪlk/",
       "pos": "v.",
-      "def": "挤奶"
+      "def": "挤奶",
+      "ex": "I drink milk every morning.",
+      "trans": "我每天早上喝牛奶。"
     },
     {
       "w": "cow",
       "ipa": "/kaʊ/",
       "pos": "n.",
-      "def": "奶牛"
+      "def": "奶牛",
+      "ex": "The cow gives us milk.",
+      "trans": "奶牛给我们提供牛奶。"
     },
     {
       "w": "horse",
       "ipa": "/hɔːrs/",
       "pos": "n.",
-      "def": "马"
+      "def": "马",
+      "ex": "I can ride a horse.",
+      "trans": "我会骑马。"
     },
     {
       "w": "chicken",
       "ipa": "/ˈtʃɪkɪn/",
       "pos": "n.",
-      "def": "鸡"
+      "def": "鸡",
+      "ex": "I like fried chicken.",
+      "trans": "我喜欢炸鸡。"
     },
     {
       "w": "farm",
       "ipa": "/fɑːrm/",
       "pos": "n.",
-      "def": "农场"
+      "def": "农场",
+      "ex": "We visit a farm on the weekend.",
+      "trans": "我们周末去参观农场。"
     },
     {
       "w": "visit",
       "ipa": "/ˈvɪzɪt/",
       "pos": "v.",
-      "def": "参观"
+      "def": "参观",
+      "ex": "I visit my grandparents on weekends.",
+      "trans": "我周末去看望祖父母。"
     },
     {
       "w": "guide",
       "ipa": "/ɡaɪd/",
       "pos": "n.",
-      "def": "导游"
+      "def": "导游",
+      "ex": "The guide shows us around.",
+      "trans": "导游带我们参观。"
     },
     {
       "w": "gift",
       "ipa": "/ɡɪft/",
       "pos": "n.",
-      "def": "礼物"
+      "def": "礼物",
+      "ex": "I buy a gift for my mother.",
+      "trans": "我给妈妈买了一件礼物。"
     },
     {
       "w": "excellent",
       "ipa": "/ˈeksələnt/",
       "pos": "adj.",
-      "def": "出色的"
+      "def": "出色的",
+      "ex": "Your English is excellent!",
+      "trans": "你的英语很棒！"
     },
     {
       "w": "yesterday",
       "ipa": "/ˈjestədeɪ/",
       "pos": "adv.",
-      "def": "昨天"
+      "def": "昨天",
+      "ex": "I went to the park yesterday.",
+      "trans": "我昨天去了公园。"
     },
     {
       "w": "flower",
       "ipa": "/ˈflaʊər/",
       "pos": "n.",
-      "def": "花"
+      "def": "花",
+      "ex": "The flowers are beautiful in spring.",
+      "trans": "春天的花很美。"
     },
     {
       "w": "worry",
       "ipa": "/ˈwʌri/",
       "pos": "v.",
-      "def": "担心"
+      "def": "担心",
+      "ex": "Don't worry, I can help you.",
+      "trans": "别担心，我能帮你。"
     },
     {
       "w": "museum",
       "ipa": "/mjuˈziːəm/",
       "pos": "n.",
-      "def": "博物馆"
+      "def": "博物馆",
+      "ex": "We visit the science museum.",
+      "trans": "我们参观科学博物馆。"
     },
     {
       "w": "fire",
       "ipa": "/ˈfaɪər/",
       "pos": "n.",
-      "def": "火"
+      "def": "火",
+      "ex": "Fire is very hot.",
+      "trans": "火很热。"
     },
     {
       "w": "fire station",
       "ipa": "",
       "pos": "n.",
-      "def": "消防站"
+      "def": "消防站",
+      "ex": "The fire station is on Green Street.",
+      "trans": "消防站在格林街。"
     },
     {
       "w": "painting",
       "ipa": "/ˈpeɪntɪŋ/",
       "pos": "n.",
-      "def": "绘画"
+      "def": "绘画",
+      "ex": "I like the painting on the wall.",
+      "trans": "我喜欢墙上的画。"
     },
     {
       "w": "sun",
       "ipa": "/sʌn/",
       "pos": "n.",
-      "def": "太阳"
+      "def": "太阳",
+      "ex": "The sun rises in the east.",
+      "trans": "太阳从东方升起。"
     },
     {
       "w": "pick",
       "ipa": "/pɪk/",
       "pos": "v.",
-      "def": "摘"
+      "def": "摘",
+      "ex": "We pick apples from the tree.",
+      "trans": "我们从树上摘苹果。"
     },
     {
       "w": "grow",
       "ipa": "/ɡroʊ/",
       "pos": "v.",
-      "def": "种植；生长"
+      "def": "种植；生长",
+      "ex": "The flowers grow in spring.",
+      "trans": "花在春天生长。"
     },
     {
       "w": "quite",
       "ipa": "/kwaɪt/",
       "pos": "adv.",
-      "def": "相当；很"
+      "def": "相当；很",
+      "ex": "This book is quite interesting.",
+      "trans": "这本书相当有趣。"
     },
     {
       "w": "lovely",
       "ipa": "/ˈlʌvli/",
       "pos": "adj.",
-      "def": "可爱的"
+      "def": "可爱的",
+      "ex": "What a lovely baby!",
+      "trans": "多可爱的宝宝！"
     },
     {
       "w": "expensive",
       "ipa": "/ɪkˈspensɪv/",
       "pos": "adj.",
-      "def": "昂贵的"
+      "def": "昂贵的",
+      "ex": "The car is too expensive.",
+      "trans": "这辆车太贵了。"
     },
     {
       "w": "cheap",
       "ipa": "/tʃiːp/",
       "pos": "adj.",
-      "def": "便宜的"
+      "def": "便宜的",
+      "ex": "This pen is very cheap.",
+      "trans": "这支钢笔很便宜。"
     },
     {
       "w": "slow",
       "ipa": "/sloʊ/",
       "pos": "adj.",
-      "def": "慢的"
+      "def": "慢的",
+      "ex": "The old man walks slow.",
+      "trans": "老人走得很慢。"
     },
     {
       "w": "fast",
       "ipa": "/fæst/",
       "pos": "adj.",
-      "def": "快的"
+      "def": "快的",
+      "ex": "The train is very fast.",
+      "trans": "火车很快。"
     },
     {
       "w": "sound",
       "ipa": "/saʊnd/",
       "pos": "v.",
-      "def": "听起来"
+      "def": "听起来",
+      "ex": "That sounds like a good idea.",
+      "trans": "那听起来是个好主意。"
     },
     {
       "w": "all in all",
       "ipa": "",
       "pos": "phrase",
-      "def": "总的来说"
+      "def": "总的来说",
+      "ex": "All in all, it was a great trip.",
+      "trans": "总的来说，这是一次很棒的旅行。"
     }
   ],
   "b2u12": [
@@ -3338,175 +4434,233 @@
       "w": "camp",
       "ipa": "/kæmp/",
       "pos": "v.",
-      "def": "扎营"
+      "def": "扎营",
+      "ex": "We go camping in the forest.",
+      "trans": "我们去森林里露营。"
     },
     {
       "w": "lake",
       "ipa": "/leɪk/",
       "pos": "n.",
-      "def": "湖"
+      "def": "湖",
+      "ex": "There is a lake in the park.",
+      "trans": "公园里有一个湖。"
     },
     {
       "w": "beach",
       "ipa": "/biːtʃ/",
       "pos": "n.",
-      "def": "海滩"
+      "def": "海滩",
+      "ex": "We play on the beach.",
+      "trans": "我们在海滩上玩。"
     },
     {
       "w": "sheep",
       "ipa": "/ʃiːp/",
       "pos": "n.",
-      "def": "绵羊"
+      "def": "绵羊",
+      "ex": "There are three sheep on the farm.",
+      "trans": "农场里有三只羊。"
     },
     {
       "w": "natural",
       "ipa": "/ˈnætʃrəl/",
       "pos": "adj.",
-      "def": "自然的"
+      "def": "自然的",
+      "ex": "This park has beautiful natural scenery.",
+      "trans": "这个公园有美丽的自然风光。"
     },
     {
       "w": "butterfly",
       "ipa": "/ˈbʌtərflaɪ/",
       "pos": "n.",
-      "def": "蝴蝶"
+      "def": "蝴蝶",
+      "ex": "Butterflies are colorful.",
+      "trans": "蝴蝶五颜六色。"
     },
     {
       "w": "visitor",
       "ipa": "/ˈvɪzɪtər/",
       "pos": "n.",
-      "def": "游客"
+      "def": "游客",
+      "ex": "Many visitors come to the museum.",
+      "trans": "许多游客来博物馆参观。"
     },
     {
       "w": "tired",
       "ipa": "/ˈtaɪərd/",
       "pos": "adj.",
-      "def": "疲倦的"
+      "def": "疲倦的",
+      "ex": "I am tired after the long walk.",
+      "trans": "走了一段长路后我累了。"
     },
     {
       "w": "stay",
       "ipa": "/steɪ/",
       "pos": "v.",
-      "def": "停留"
+      "def": "停留",
+      "ex": "I stay at home on rainy days.",
+      "trans": "下雨天我待在家里。"
     },
     {
       "w": "stay up late",
       "ipa": "",
       "pos": "phrase",
-      "def": "熬夜"
+      "def": "熬夜",
+      "ex": "Don't stay up late.",
+      "trans": "不要熬夜。"
     },
     {
       "w": "away",
       "ipa": "/əˈweɪ/",
       "pos": "adv.",
-      "def": "离开"
+      "def": "离开",
+      "ex": "He lives far away from school.",
+      "trans": "他住得离学校很远。"
     },
     {
       "w": "run away",
       "ipa": "",
       "pos": "phrase",
-      "def": "逃跑"
+      "def": "逃跑",
+      "ex": "The cat runs away from the dog.",
+      "trans": "猫从狗身边跑开了。"
     },
     {
       "w": "mouse",
       "ipa": "/maʊs/",
       "pos": "n.",
-      "def": "老鼠"
+      "def": "老鼠",
+      "ex": "The mouse is small and fast.",
+      "trans": "老鼠又小又快。"
     },
     {
       "w": "baby",
       "ipa": "/ˈbeɪbi/",
       "pos": "n.",
-      "def": "婴儿"
+      "def": "婴儿",
+      "ex": "The baby is sleeping.",
+      "trans": "宝宝在睡觉。"
     },
     {
       "w": "shout",
       "ipa": "/ʃaʊt/",
       "pos": "v.",
-      "def": "喊叫"
+      "def": "喊叫",
+      "ex": "Don't shout in the classroom.",
+      "trans": "不要在教室里大喊。"
     },
     {
       "w": "language",
       "ipa": "/ˈlæŋɡwɪdʒ/",
       "pos": "n.",
-      "def": "语言"
+      "def": "语言",
+      "ex": "I learn a new language.",
+      "trans": "我学一门新语言。"
     },
     {
       "w": "fly",
       "ipa": "/flaɪ/",
       "pos": "v.",
-      "def": "飞"
+      "def": "飞",
+      "ex": "The bird can fly high.",
+      "trans": "鸟可以飞得很高。"
     },
     {
       "w": "kite",
       "ipa": "/kaɪt/",
       "pos": "n.",
-      "def": "风筝"
+      "def": "风筝",
+      "ex": "We fly a kite in the park.",
+      "trans": "我们在公园放风筝。"
     },
     {
       "w": "high",
       "ipa": "/haɪ/",
       "pos": "adj.",
-      "def": "高的"
+      "def": "高的",
+      "ex": "The plane is flying high in the sky.",
+      "trans": "飞机在高空飞行。"
     },
     {
       "w": "ago",
       "ipa": "/əˈɡoʊ/",
       "pos": "adv.",
-      "def": "以前"
+      "def": "以前",
+      "ex": "I visited Beijing two years ago.",
+      "trans": "我两年前去过北京。"
     },
     {
       "w": "India",
       "ipa": "/ˈɪndiə/",
       "pos": "n.",
-      "def": "印度"
+      "def": "印度",
+      "ex": "India has many elephants.",
+      "trans": "印度有很多大象。"
     },
     {
       "w": "move",
       "ipa": "/muːv/",
       "pos": "v.",
-      "def": "移动；搬家"
+      "def": "移动；搬家",
+      "ex": "My family moves to a new house.",
+      "trans": "我家搬到了新房子。"
     },
     {
       "w": "start",
       "ipa": "/stɑːrt/",
       "pos": "v.",
-      "def": "开始"
+      "def": "开始",
+      "ex": "School starts at eight.",
+      "trans": "学校八点开始上课。"
     },
     {
       "w": "jump",
       "ipa": "/dʒʌmp/",
       "pos": "v.",
-      "def": "跳"
+      "def": "跳",
+      "ex": "The rabbit jumps very high.",
+      "trans": "兔子跳得很高。"
     },
     {
       "w": "wake",
       "ipa": "/weɪk/",
       "pos": "v.",
-      "def": "醒来"
+      "def": "醒来",
+      "ex": "I wake up at six every morning.",
+      "trans": "我每天早上六点醒来。"
     },
     {
       "w": "wake up",
       "ipa": "",
       "pos": "phrase",
-      "def": "醒来"
+      "def": "醒来",
+      "ex": "Please wake me up at seven.",
+      "trans": "请七点叫醒我。"
     },
     {
       "w": "into",
       "ipa": "/ˈɪntuː/",
       "pos": "prep.",
-      "def": "到……里"
+      "def": "到……里",
+      "ex": "The cat goes into the box.",
+      "trans": "猫进了盒子。"
     },
     {
       "w": "as",
       "ipa": "/æz/",
       "pos": "prep.",
-      "def": "作为"
+      "def": "作为",
+      "ex": "I work as a volunteer.",
+      "trans": "我作为一名志愿者工作。"
     },
     {
       "w": "scared",
       "ipa": "/skerd/",
       "pos": "adj.",
-      "def": "害怕的"
+      "def": "害怕的",
+      "ex": "I am scared of the dark.",
+      "trans": "我害怕黑暗。"
     }
   ]
 }

@@ -6,8 +6,11 @@
 <title>语法全景图 · 初中英语七年级</title>
 <link rel="stylesheet" href="css/english.css">
 <style>
-body { display: block; min-height: 100vh; padding: 0; }
-.wrapper { max-width: 900px; margin: 0 auto; padding: 32px 24px 60px; }
+body { display: flex; min-height: 100vh; padding: 0; }
+.wrapper { flex: 1; max-width: 960px; margin: 0 auto; padding: 32px 24px 60px; margin-left: var(--sidebar-width); }
+body:has(#sidebar.hidden) .wrapper { margin-left: 0; }
+#sidebarShowBtn { position: fixed; top: 12px; left: 12px; z-index: 99; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; cursor: pointer; font-size: 14px; color: var(--text); box-shadow: var(--shadow); display: none; align-items: center; gap: 4px; }
+body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 .hero { text-align: center; padding: 40px 0 32px; }
 .hero h1 { font-size: 28px; font-weight: 800; margin-bottom: 6px; }
 .hero .tagline { color: var(--text-secondary); font-size: 14px; }
@@ -40,7 +43,46 @@ body { display: block; min-height: 100vh; padding: 0; }
 </head>
 <body>
 
-<button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">英语七年级</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+  </div>
+  <nav>
+    <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+    <a href="appendix-grammar.html" class="active" style="font-size:13px;">📌 语法全景图</a>
+    <a href="appendix-vocab.html" style="font-size:13px;">📖 单词专项</a>
+    <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 七 上 ━━</a>
+    <a href="st01.html">S1 Good morning!</a>
+    <a href="st02.html">S2 What's this in English?</a>
+    <a href="st03.html">S3 What color is it?</a>
+    <a href="u01.html">U1 My name's Gina.</a>
+    <a href="u02.html">U2 This is my sister.</a>
+    <a href="u03.html">U3 Is this your pencil?</a>
+    <a href="u04.html">U4 Where's my schoolbag?</a>
+    <a href="u05.html">U5 Do you have a soccer ball?</a>
+    <a href="u06.html">U6 Do you like bananas?</a>
+    <a href="u07.html">U7 How much are these socks?</a>
+    <a href="u08.html">U8 When is your birthday?</a>
+    <a href="u09.html">U9 My favorite subject is science.</a>
+    <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 七 下 ━━</a>
+    <a href="b2u01.html">U1 Can you play the guitar?</a>
+    <a href="b2u02.html">U2 What time...?</a>
+    <a href="b2u03.html">U3 How do you get to school?</a>
+    <a href="b2u04.html">U4 Don't eat in class.</a>
+    <a href="b2u05.html">U5 Why do you like pandas?</a>
+    <a href="b2u06.html">U6 I'm watching TV.</a>
+    <a href="b2u07.html">U7 It's raining!</a>
+    <a href="b2u08.html">U8 Is there a post office...</a>
+    <a href="b2u09.html">U9 What does he look like?</a>
+    <a href="b2u10.html">U10 I'd like some noodles.</a>
+    <a href="b2u11.html">U11 How was your school trip?</a>
+    <a href="b2u12.html">U12 What did you do last weekend?</a>
+  </nav>
+  <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+</nav>
 
 <div class="wrapper">
 
@@ -281,6 +323,11 @@ body { display: block; min-height: 100vh; padding: 0; }
 
 <script>
 (function() {
+  var s = document.getElementById('sidebar'), k = 'eng7-sidebar';
+  var h = document.getElementById('sidebarHideBtn'), w = document.getElementById('sidebarShowBtn');
+  if (localStorage.getItem(k) === 'hidden') s.classList.add('hidden');
+  h.addEventListener('click', function() { s.classList.add('hidden'); localStorage.setItem(k, 'hidden'); });
+  w.addEventListener('click', function() { s.classList.remove('hidden'); localStorage.setItem(k, ''); });
 })();
 
 function setTheme(t) { document.documentElement.setAttribute("data-theme", t); localStorage.setItem("eng7-theme", t); var btn = document.getElementById("themeToggle"); if (btn) btn.textContent = t === "dark" ? "☀️" : "🌙"; }

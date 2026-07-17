@@ -303,6 +303,7 @@ body { display: flex; min-height: 100vh; padding: 0; }
 .quiz-result button:active { transform: scale(0.96); }
 
 /* === Stats === */
+#statsView { padding: 16px; }
 .stats-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; margin-bottom: 28px; }
 .stat-card { border: 1px solid var(--border); border-radius: 12px; padding: 22px 16px 18px; text-align: center; background: var(--bg); box-shadow: 0 1px 3px rgba(0,0,0,0.03); transition: box-shadow 0.2s; }
 .stat-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
@@ -463,6 +464,7 @@ body { display: flex; min-height: 100vh; padding: 0; }
   .home-content { padding: 12px 12px 24px; }
   .table-toolbar { padding: 6px 10px; }
   .learn-mode-grid { padding: 12px 12px 24px; }
+  #statsView { padding: 12px; }
   .search-bar { padding: 4px 10px 8px; }
   .search-input { padding: 12px 14px; font-size: 16px; }
   .back-link { font-size: 12px; margin-bottom: 12px; padding: 0 2px; }
@@ -564,7 +566,6 @@ body { display: flex; min-height: 100vh; padding: 0; }
 
   <main class="view-container">
     <div id="homeView" class="view-panel"></div>
-    </div>
     <div id="tableView" class="view-panel active">
 <div class="table-toolbar"><div style="display:flex;justify-content:space-between;align-items:center"><span class="toolbar-title">📋 单词表</span><button class="expand-btn-sm" id="expandAllBtn">📂 展开全部</button></div>
     <div class="filter-bar" id="filterBar">
@@ -579,6 +580,7 @@ body { display: flex; min-height: 100vh; padding: 0; }
       <button class="search-clear" id="searchClear" onclick="clearSearch()">✕</button>
     </div>
   <div id="tableContent"></div>
+    </div>
     </div>
     <div id="learnView" class="view-panel">
       <div id="learnHome" class="learn-mode-grid">
@@ -604,14 +606,14 @@ body { display: flex; min-height: 100vh; padding: 0; }
     </div>
     <div id="statsView" class="view-panel"></div>
   </main>
-  
-</div>
-<nav class="tab-bar" id="tabBar">
+  <nav class="tab-bar" id="tabBar">
     <button class="tab-item active" data-tab="home">🏠<span>主页</span></button>
     <button class="tab-item" data-tab="table">📋<span>单词</span></button>
     <button class="tab-item" data-tab="learn">🎯<span>学习</span></button>
     <button class="tab-item" data-tab="stats">📊<span>统计</span></button>
   </nav>
+
+</div>
 
 
 <script>

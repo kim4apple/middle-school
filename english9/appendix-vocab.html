@@ -17,6 +17,29 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 .hero .tagline { color: var(--text-secondary); font-size: 14px; }
 .hero .badge { display: inline-block; font-size: 11px; padding: 4px 14px; border-radius: 20px; background: var(--accent-light); color: var(--accent); font-weight: 600; margin-top: 8px; letter-spacing: 0.02em; }
 /* ── App Layout ── */
+/* ── Home View ── */
+.home-content { padding: 16px; display: flex; flex-direction: column; gap: 16px; }
+.home-greet { display: flex; align-items: center; gap: 12px; padding: 20px; border-radius: 14px; background: var(--accent-light); }
+.greet-emoji { font-size: 32px; }
+.greet-text { font-size: 20px; font-weight: 800; color: var(--accent); }
+.greet-sub { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
+.greet-sub strong { color: var(--accent); }
+.home-streak { padding: 12px 16px; border-radius: 10px; background: linear-gradient(135deg, #fef3c7, #fde68a); font-size: 14px; font-weight: 600; color: #92400e; text-align: center; }
+[data-theme="dark"] .home-streak { background: linear-gradient(135deg, #451a03, #78350f); color: #fbbf24; }
+.home-progress { padding: 14px 16px; border-radius: 10px; border: 1px solid var(--border); }
+.hp-header { display: flex; justify-content: space-between; font-size: 13px; color: var(--text-secondary); margin-bottom: 8px; }
+.hp-header strong { color: var(--accent); }
+.hp-bar { height: 8px; border-radius: 4px; background: var(--bg-secondary); overflow: hidden; }
+.hp-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--accent), #60a5fa); transition: width 0.5s; }
+.home-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.hs-card { padding: 16px; border-radius: 10px; border: 1px solid var(--border); text-align: center; }
+.hs-num { font-size: 24px; font-weight: 800; color: var(--accent); }
+.hs-label { font-size: 11px; color: var(--text-secondary); margin-top: 2px; }
+.home-actions { display: flex; flex-direction: column; gap: 8px; }
+.ha-label { font-size: 13px; font-weight: 700; color: var(--text-secondary); margin-bottom: 4px; }
+.ha-btn { padding: 14px; border-radius: 12px; border: 1px solid var(--border); background: var(--bg); cursor: pointer; font-size: 15px; font-weight: 600; text-align: center; transition: all 0.2s; min-height: 48px; }
+.ha-btn:active { transform: scale(0.98); border-color: var(--accent); background: var(--accent-light); }
+
 .app-header { display: flex; align-items: center; height: 48px; padding: 0 12px; 
   background: var(--bg); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 20; }
 .app-back { background: none; border: none; font-size: 20px; cursor: pointer; 
@@ -1291,6 +1314,71 @@ function resetAllData() {
 /* ================================================================
    VIEW SWITCH
    ================================================================ */
+/* ── Home Dashboard ── */
+function renderHome() {
+  var total = 0;
+  VOCAB_DATA.forEach(function(u) { total += u.words.length; });
+  var mastered = Object.keys(state.mastered).length;
+  var streak = getStudyStreak();
+  var today = getTodayStudy();
+  var pct = total > 0 ? Math.round(mastered / total * 100) : 0;
+  var hour = new Date().getHours();
+  var greet = hour < 6 ? '凌晨好' : hour < 9 ? '早上好' : hour < 12 ? '上午好' : hour < 14 ? '中午好' : hour < 18 ? '下午好' : '晚上好';
+
+  var html = '<div class="home-content">';
+  html += '<div class="home-greet"><span class="greet-emoji">👋</span><div><div class="greet-text">' + greet + '！</div><div class="greet-sub">今天已学 <strong>' + today + '</strong> 词</div></div></div>';
+  
+  if (streak > 1) html += '<div class="home-streak">🔥 连续学习 <strong>' + streak + '</strong> 天</div>';
+  
+  html += '<div class="home-progress"><div class="hp-header"><span>总进度</span><span><strong>' + mastered + '</strong>/' + total + '</span></div>';
+  html += '<div class="hp-bar"><div class="hp-fill" style="width:' + pct + '%"></div></div></div>';
+  
+  // Quick stats
+  var wrongCount = Object.keys(state.wrongWords || {}).filter(function(k) { return state.wrongWords[k] && state.wrongWords[k].count > 2; }).length;
+  html += '<div class="home-stats"><div class="hs-card"><div class="hs-num">' + total + '</div><div class="hs-label">总词汇</div></div>';
+  html += '<div class="hs-card"><div class="hs-num">' + mastered + '</div><div class="hs-label">已掌握</div></div>';
+  html += '<div class="hs-card"><div class="hs-num" style="color:' + (wrongCount>0?'#dc2626':'var(--accent)') + '">' + wrongCount + '</div><div class="hs-label">易错词</div></div>';
+  html += '<div class="hs-card"><div class="hs-num">' + pct + '%</div><div class="hs-label">掌握率</div></div></div>';
+  
+  // Quick actions
+  html += '<div class="home-actions"><div class="ha-label">快速开始</div>';
+  html += '<button class="ha-btn" onclick="switchView(\'table\')">📋 浏览单词表</button>';
+  html += '<button class="ha-btn" onclick="switchView(\'learn\')">🎯 开始学习</button>';
+  html += '</div></div>';
+  
+  document.getElementById('homeView').innerHTML = html;
+}
+
+function getStudyStreak() {
+  try {
+    var log = JSON.parse(localStorage.getItem(themeKey + '-log') || '{}');
+    var streak = 0;
+    var d = new Date();
+    while (true) {
+      var key = d.toDateString();
+      if (log[key]) { streak++; d.setDate(d.getDate() - 1); }
+      else break;
+    }
+    return streak;
+  } catch(e) { return 0; }
+}
+
+function getTodayStudy() {
+  try {
+    var log = JSON.parse(localStorage.getItem(themeKey + '-log') || '{}');
+    return log[new Date().toDateString()] || 0;
+  } catch(e) { return 0; }
+}
+
+function recordStudy(n) {
+  try {
+    var log = JSON.parse(localStorage.getItem(themeKey + '-log') || '{}');
+    var today = new Date().toDateString();
+    log[today] = (log[today] || 0) + n;
+    localStorage.setItem(themeKey + '-log', JSON.stringify(log));
+  } catch(e) {}
+}
+
 var TABS = ['home', 'table', 'learn', 'stats'];
 var TAB_TITLES = {home:'🏠 主页', table:'📋 单词表', learn:'🎯 学习', stats:'📊 统计'};
 var LEARN_MODES = ['flashcard', 'dictation', 'quiz'];

@@ -16,6 +16,40 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 .hero h1 { font-size: 28px; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.02em; }
 .hero .tagline { color: var(--text-secondary); font-size: 14px; }
 .hero .badge { display: inline-block; font-size: 11px; padding: 4px 14px; border-radius: 20px; background: var(--accent-light); color: var(--accent); font-weight: 600; margin-top: 8px; letter-spacing: 0.02em; }
+
+/* ── App Layout ── */
+.app-header { display: flex; align-items: center; height: 48px; padding: 0 12px; 
+  background: var(--bg); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 20; }
+.app-back { background: none; border: none; font-size: 20px; cursor: pointer; 
+  padding: 8px; color: var(--text); min-width: 44px; min-height: 44px; }
+.app-title { flex: 1; font-size: 17px; font-weight: 700; text-align: center; margin: 0 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.header-right { width: 44px; }
+.view-container { flex: 1; overflow: hidden; position: relative; }
+.view-panel { position: absolute; inset: 0; overflow-y: auto; display: none; }
+.view-panel.active { display: block; animation: fadeIn 0.2s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ── Tab Bar ── */
+.tab-bar { display: flex; background: var(--bg); border-top: 1px solid var(--border); 
+  padding-bottom: env(safe-area-inset-bottom, 0); height: calc(56px + env(safe-area-inset-bottom, 0)); }
+.tab-item { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 2px; background: none; border: none; cursor: pointer; font-size: 10px; color: var(--text-secondary);
+  padding: 6px 0; transition: color 0.2s; min-height: 44px; }
+.tab-item span { font-size: 10px; }
+.tab-item.active { color: var(--accent); position: relative; }
+.tab-item.active::after { content: ''; position: absolute; top: 0; left: 20%; right: 20%; height: 2px; 
+  background: var(--accent); border-radius: 0 0 2px 2px; }
+.tab-item:active { opacity: 0.6; }
+
+/* ── Learn Mode Select ── */
+.learn-mode-grid { display: flex; flex-direction: column; gap: 12px; padding: 16px; }
+.learn-card { display: flex; align-items: center; gap: 14px; padding: 16px; border-radius: 14px;
+  border: 1px solid var(--border); background: var(--bg); cursor: pointer; text-align: left;
+  transition: all 0.2s; min-height: 64px; }
+.learn-card:active { transform: scale(0.98); border-color: var(--accent); background: var(--accent-light); }
+.learn-icon { font-size: 28px; flex-shrink: 0; }
+.learn-title { font-size: 16px; font-weight: 700; color: var(--text); display: block; }
+.learn-desc { font-size: 12px; color: var(--text-secondary); display: block; margin-top: 2px; }
 .back-link { display: inline-flex; align-items: center; gap: 4px; margin-bottom: 24px; font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 500; }
 .back-link:hover { gap: 6px; }
 
@@ -454,38 +488,39 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 </nav>
 
 <div class="wrapper">
-  <a href="index.html" class="back-link">← 返回单元列表</a>
+  <header class="app-header">
+    <button class="app-back" onclick="location.href='index.html'">←</button>
+    <h1 class="app-title" id="appTitle">📋 单词表</h1>
+    <div class="header-right"></div>
+  </header>
 
-  <div class="hero">
-    <h1>📖 单词专项</h1>
-    <p class="tagline">人教版八年级全册词汇 · 738 词集中突破</p>
-    <span class="badge">24 单元 · SRS 间隔复习 · 听写 · 练习 · 统计</span>
-  </div>
-
-  <div class="top-bar">
-    <div class="view-toggle">
-      <button class="active" data-view="table">📋 单词表</button>
-      <button data-view="flashcard">🃏 自测卡</button>
-      <button data-view="dictation">✍️ 听写</button>
-      <button data-view="quiz">📝 练习</button>
-      <button data-view="stats">📊 统计</button>
+  <main class="view-container">
+    <div id="homeView" class="view-panel"></div>
+    <div id="tableView" class="view-panel active"></div>
+    <div id="learnView" class="view-panel">
+      <div id="learnHome" class="learn-mode-grid">
+        <button class="learn-card" onclick="switchLearnMode('flashcard')">
+          <span class="learn-icon">🃏</span>
+          <span class="learn-title">自测卡</span>
+          <span class="learn-desc">翻卡记忆，追踪掌握进度</span>
+        </button>
+        <button class="learn-card" onclick="switchLearnMode('dictation')">
+          <span class="learn-icon">✍️</span>
+          <span class="learn-title">听写</span>
+          <span class="learn-desc">听音拼写，检验拼写能力</span>
+        </button>
+        <button class="learn-card" onclick="switchLearnMode('quiz')">
+          <span class="learn-icon">📝</span>
+          <span class="learn-title">选择题</span>
+          <span class="learn-desc">四选一，巩固词义理解</span>
+        </button>
+      </div>
+      <div id="flashcardView" class="view-panel"></div>
+      <div id="dictationView" class="view-panel"></div>
+      <div id="quizView" class="view-panel"></div>
     </div>
-    <div class="filter-bar" id="filterBar">
-      <button class="active" data-filter="all">全部</button>
-      <button data-filter="unmastered">未掌握</button>
-      <button data-filter="mastered">已掌握</button>
-      <button data-filter="wrong" class="filter-wrong">❌ 错词</button>
-    </div>
-    <select id="unitFilter">
-      <option value="all">全部单元</option>
-    </select>
-  </div>
-
-  <div id="tableView" class="view-panel active"></div>
-  <div id="flashcardView" class="view-panel"></div>
-  <div id="dictationView" class="view-panel"></div>
-  <div id="quizView" class="view-panel"></div>
-  <div id="statsView" class="view-panel"></div>
+    <div id="statsView" class="view-panel"></div>
+  </main>
 </div>
 
 <script>
@@ -1263,28 +1298,68 @@ function resetAllData() {
 /* ================================================================
    VIEW SWITCH
    ================================================================ */
+var TABS = ['home', 'table', 'learn', 'stats'];
+var TAB_TITLES = {home:'🏠 主页', table:'📋 单词表', learn:'🎯 学习', stats:'📊 统计'};
+var LEARN_MODES = ['flashcard', 'dictation', 'quiz'];
+
 function switchView(view) {
   state.view = view;
-  document.querySelectorAll('.view-toggle button').forEach(function(b) {
-    b.classList.toggle('active', b.dataset.view === view);
+  document.getElementById('appTitle').textContent = TAB_TITLES[view] || '📋 单词表';
+  
+  document.querySelectorAll('.tab-item').forEach(function(b) {
+    b.classList.toggle('active', b.dataset.tab === view);
   });
 
-  ['tableView', 'flashcardView', 'dictationView', 'quizView', 'statsView'].forEach(function(id) {
-    document.getElementById(id).classList.toggle('active', id.replace('View', '') === view || id === view + 'View');
-  });
+  // Show/hide view panels
+  document.querySelectorAll('.view-panel').forEach(function(p) { p.classList.remove('active'); });
+  var panelMap = {home:'homeView', table:'tableView', learn:'learnView', stats:'statsView'};
+  var el = document.getElementById(panelMap[view]);
+  if (el) el.classList.add('active');
+  
+  // Hide learn mode sub-views when switching away from learn
+  if (view !== 'learn') {
+    document.getElementById('learnHome').style.display = '';
+    LEARN_MODES.forEach(function(m) {
+      var v = document.getElementById(m + 'View');
+      if (v) v.style.display = '';
+    });
+  }
 
-  if (view === 'table') renderTable();
-  else if (view === 'flashcard') resetFlashcard();
-  else if (view === 'dictation') startDictation();
-  else if (view === 'quiz') startQuiz();
+  if (view === 'home') renderHome();
+  else if (view === 'table') renderTable();
+  else if (view === 'learn') { showLearnHome(); }
   else if (view === 'stats') renderStats();
+}
+
+function switchLearnMode(mode) {
+  document.getElementById('learnHome').style.display = 'none';
+  document.getElementById('appTitle').textContent = TAB_TITLES['learn'] + ' · ' + 
+    ({flashcard:'自测卡', dictation:'听写', quiz:'选择题'})[mode];
+  
+  LEARN_MODES.forEach(function(m) {
+    var v = document.getElementById(m + 'View');
+    if (v) v.style.display = m === mode ? 'block' : 'none';
+  });
+  
+  if (mode === 'flashcard') resetFlashcard();
+  else if (mode === 'dictation') startDictation();
+  else if (mode === 'quiz') startQuiz();
+}
+
+function showLearnHome() {
+  document.getElementById('appTitle').textContent = TAB_TITLES['learn'];
+  document.getElementById('learnHome').style.display = '';
+  LEARN_MODES.forEach(function(m) {
+    var v = document.getElementById(m + 'View');
+    if (v) v.style.display = 'none';
+  });
 }
 
 /* ================================================================
    INIT
    ================================================================ */
-document.querySelectorAll('.view-toggle button').forEach(function(b) {
-  b.addEventListener('click', function() { switchView(this.dataset.view); });
+document.querySelectorAll('.tab-item').forEach(function(b) {
+  b.addEventListener('click', function() { switchView(this.dataset.tab); });
 });
 
 document.querySelectorAll('.filter-bar button').forEach(function(b) {
@@ -1328,6 +1403,25 @@ document.addEventListener('keydown', function(e) {
     e.preventDefault(); nextQuiz();
   }
 });
+
+
+/* ── Swipe gesture for tab switching ── */
+(function() {
+  var startX = 0, startY = 0;
+  document.addEventListener('touchstart', function(e) {
+    startX = e.changedTouches[0].screenX;
+    startY = e.changedTouches[0].screenY;
+  }, {passive: true});
+  document.addEventListener('touchend', function(e) {
+    var diffX = startX - e.changedTouches[0].screenX;
+    var diffY = startY - e.changedTouches[0].screenY;
+    if (Math.abs(diffX) < 50 || Math.abs(diffX) < Math.abs(diffY)) return;
+    var idx = TABS.indexOf(state.view);
+    if (idx < 0) return;
+    if (diffX > 0 && idx < TABS.length - 1) switchView(TABS[idx + 1]);
+    else if (diffX < 0 && idx > 0) switchView(TABS[idx - 1]);
+  }, {passive: true});
+})();
 
 /* ================================================================
    SIDEBAR TOGGLE

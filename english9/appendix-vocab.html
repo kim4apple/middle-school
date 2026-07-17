@@ -15,6 +15,12 @@ body { display: flex; min-height: 100vh; padding: 0; }
 .hero h1 { font-size: 28px; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.02em; }
 .hero .tagline { color: var(--text-secondary); font-size: 14px; }
 .hero .badge { display: inline-block; font-size: 11px; padding: 4px 14px; border-radius: 20px; background: var(--accent-light); color: var(--accent); font-weight: 600; margin-top: 8px; letter-spacing: 0.02em; }
+.theme-toggle-btn { background: none; border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; cursor: pointer; font-size: 16px; min-height: 36px; min-width: 36px; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+.theme-toggle-btn:hover { background: var(--accent-light); }
+.theme-toggle-btn:active { transform: scale(0.95); }
+.expand-btn-sm { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; padding: 6px 12px; cursor: pointer; font-size: 12px; font-weight: 600; color: var(--text-secondary); min-height: 36px; transition: all 0.2s; }
+.expand-btn-sm:hover { background: var(--accent-light); color: var(--accent); border-color: var(--accent); }
+.expand-btn-sm:active { transform: scale(0.95); }
 /* ── App Layout ── */
 /* ── Home View ── */
 .home-content { padding: 16px; display: flex; flex-direction: column; gap: 16px; }
@@ -541,20 +547,19 @@ body { display: flex; min-height: 100vh; padding: 0; }
 <body>
 
 
-  <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
-  <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
-</nav>
 
 <div class="wrapper">
   <header class="app-header">
     <button class="app-back" onclick="location.href='index.html'">←</button>
     <h1 class="app-title" id="appTitle">📋 单词表</h1>
-    <div class="header-right"></div>
+    <div class="header-right" style="display:flex;align-items:center;gap:4px;">
+    <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+  </div>
   </header>
 
   <main class="view-container">
     <div id="homeView" class="view-panel"></div>
-    <div class="table-toolbar">
+    <div class="table-toolbar"><div style="display:flex;justify-content:space-between;align-items:center"><span class="toolbar-title">📋 单词表</span><button class="expand-btn-sm" id="expandAllBtn">📂 展开全部</button></div>
     <div class="filter-bar" id="filterBar">
       <button class="active" data-filter="all">全部</button>
       <button data-filter="unmastered">未掌握</button>

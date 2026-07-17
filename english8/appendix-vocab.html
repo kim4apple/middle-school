@@ -563,7 +563,9 @@ body { display: flex; min-height: 100vh; padding: 0; }
 
   <main class="view-container">
     <div id="homeView" class="view-panel"></div>
-    <div class="table-toolbar"><div style="display:flex;justify-content:space-between;align-items:center"><span class="toolbar-title">📋 单词表</span><button class="expand-btn-sm" id="expandAllBtn">📂 展开全部</button></div>
+    </div>
+    <div id="tableView" class="view-panel active">
+<div class="table-toolbar"><div style="display:flex;justify-content:space-between;align-items:center"><span class="toolbar-title">📋 单词表</span><button class="expand-btn-sm" id="expandAllBtn">📂 展开全部</button></div>
     <div class="filter-bar" id="filterBar">
       <button class="active" data-filter="all">全部</button>
       <button data-filter="unmastered">未掌握</button>
@@ -575,8 +577,8 @@ body { display: flex; min-height: 100vh; padding: 0; }
       <input type="text" class="search-input" id="searchInput" placeholder="🔍 搜索单词或释义..." oninput="onSearch()">
       <button class="search-clear" id="searchClear" onclick="clearSearch()">✕</button>
     </div>
-  </div>
-    <div id="tableView" class="view-panel active"></div>
+  <div id="tableContent"></div>
+    </div>
     <div id="learnView" class="view-panel">
       <div id="learnHome" class="learn-mode-grid">
         <button class="learn-card" onclick="switchLearnMode('flashcard')">
@@ -753,7 +755,7 @@ function getFilteredWords() {
    TABLE VIEW
    ================================================================ */
 function renderTable() {
-  var container = document.getElementById('tableView');
+  var container = document.getElementById('tableContent');
   var html = '';
   VOCAB_DATA.forEach(function(unit) {
     var total = unit.words.length;

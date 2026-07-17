@@ -41,14 +41,14 @@ async function run() {
 
   // === 2. Tab 切换 ===
   for (const tab of ['table', 'learn', 'stats', 'home']) {
-    await page.click(`[data-tab="${tab}"]`, { force: true });
+    await page.evaluate(t => document.querySelector(`[data-tab="${t}"]`)?.click(), tab);
     await sleep(300);
     const active = await page.$eval('.tab-item.active', el => el.getAttribute('data-tab'));
     ok(`tab-${tab}`, active === tab, `切换到 ${tab}`);
   }
 
   // === 3. 主页 ===
-  await page.click('[data-tab="home"]', { force: true });
+  await page.evaluate(() => document.querySelector('[data-tab="home"]')?.click());
   await sleep(300);
   ok('home-greet', await page.$('.greet-text'), '问候语');
   ok('home-stats', await page.$('.home-stats'), '统计卡片');
@@ -65,17 +65,17 @@ async function run() {
     const at1 = await page.$eval('.tab-item.active', el => el.getAttribute('data-tab'));
     ok('ha-btn1-nav', at1 === 'table', '浏览单词表→单词Tab');
     // Back to home
-    await page.click('[data-tab="home"]', { force: true }); await sleep(300);
+    await page.evaluate(() => document.querySelector('[data-tab="home"]')?.click()); await sleep(300);
     // Click "🎯 开始学习" (3rd child: label + btn1 + btn2)
     await page.evaluate(() => { const b = document.querySelectorAll('.ha-btn'); if (b[1]) b[1].click(); });
     await sleep(300);
     const at2 = await page.$eval('.tab-item.active', el => el.getAttribute('data-tab'));
     ok('ha-btn2-nav', at2 === 'learn', '开始学习→学习Tab');
-    await page.click('[data-tab="home"]', { force: true }); await sleep(300);
+    await page.evaluate(() => document.querySelector('[data-tab="home"]')?.click()); await sleep(300);
   }
 
   // === 4. 单词表 ===
-  await page.click('[data-tab="table"]', { force: true });
+  await page.evaluate(() => document.querySelector('[data-tab="table"]')?.click());
   await sleep(300);
   ok('filter-btn', (await page.$$('.filter-bar button')).length >= 3, '筛选按钮');
   ok('search-input', await page.$('#searchInput'), '搜索框');
@@ -90,7 +90,7 @@ async function run() {
   }
 
   // === 5. 学习模式 ===
-  await page.click('[data-tab="learn"]', { force: true });
+  await page.evaluate(() => document.querySelector('[data-tab="learn"]')?.click());
   await sleep(300);
   ok('learn-cards', (await page.$$('.learn-card')).length === 3, '3种学习模式');
 
@@ -100,7 +100,7 @@ async function run() {
   ok('flashcard', await page.$('.flashcard-area, .flashcard'), '自测卡渲染');
 
   // 回到学习主页
-  await page.click('[data-tab="learn"]', { force: true }); await sleep(300);
+  await page.evaluate(() => document.querySelector('[data-tab="learn"]')?.click()); await sleep(300);
 
   // 听写
   await page.evaluate(() => { const cards = document.querySelectorAll('.learn-card'); if (cards[1]) cards[1].click(); });
@@ -108,7 +108,7 @@ async function run() {
   ok('dictation', await page.$('.dictation-card, #dictationView'), '听写渲染');
 
   // 回到学习主页
-  await page.click('[data-tab="learn"]', { force: true }); await sleep(300);
+  await page.evaluate(() => document.querySelector('[data-tab="learn"]')?.click()); await sleep(300);
 
   // 选择题
   await page.evaluate(() => { const cards = document.querySelectorAll('.learn-card'); if (cards[2]) cards[2].click(); });
@@ -116,7 +116,7 @@ async function run() {
   ok('quiz', await page.$('.quiz-header, .quiz-question, .quiz-options'), '选择题渲染');
 
   // === 6. 统计 ===
-  await page.click('[data-tab="stats"]', { force: true });
+  await page.evaluate(() => document.querySelector('[data-tab="stats"]')?.click());
   await sleep(500);
   ok('stats', await page.$('.stat-card, .stats-grid'), '统计渲染');
 

@@ -41,6 +41,16 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 .ha-label { font-size: 13px; font-weight: 700; color: var(--text-secondary); margin-bottom: 4px; }
 .ha-btn { padding: 14px; border-radius: 12px; border: 1px solid var(--border); background: var(--bg); cursor: pointer; font-size: 15px; font-weight: 600; text-align: center; transition: all 0.2s; min-height: 48px; }
 .ha-btn:active { transform: scale(0.98); border-color: var(--accent); background: var(--accent-light); }
+/* ── Search Bar ── */
+.search-bar { display: flex; align-items: center; gap: 8px; padding: 8px 12px; }
+@media (max-width: 768px) { .search-bar { padding: 6px 10px; } .search-input { font-size: 16px; } }
+.search-input { flex: 1; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border);
+  background: var(--bg-secondary); color: var(--text); font-size: 14px; outline: none; transition: border-color 0.2s; }
+.search-input:focus { border-color: var(--accent); background: var(--bg); }
+.search-clear { display: none; background: none; border: none; font-size: 16px; cursor: pointer;
+  color: var(--text-secondary); padding: 6px; min-width: 36px; min-height: 36px; border-radius: 50%; }
+.search-clear:hover { background: var(--bg-secondary); }
+.search-input:not(:placeholder-shown) ~ .search-clear { display: block; }
 .app-header { display: flex; align-items: center; height: 48px; padding: 0 12px; 
   background: var(--bg); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 20; }
 .app-back { background: none; border: none; font-size: 20px; cursor: pointer; 
@@ -671,6 +681,7 @@ function shuffle(arr) {
 
 function getFilteredWords() {
   var out = [];
+  var q = (document.getElementById('searchInput')?.value || '').trim().toLowerCase();
   VOCAB_DATA.forEach(function(unit) {
     if (state.unitFilter !== 'all' && state.unitFilter !== unit.label) return;
     unit.words.forEach(function(w, wi) {
@@ -678,6 +689,7 @@ function getFilteredWords() {
       if (state.filter === 'mastered' && !state.mastered[key]) return;
       if (state.filter === 'unmastered' && state.mastered[key]) return;
       if (state.filter === 'wrong' && !isWrong(key)) return;
+      if (q && !w.w.toLowerCase().includes(q) && !w.def.includes(q)) return;
       out.push({ unit: unit.label, idx: wi, word: w, key: key });
     });
   });
@@ -1322,6 +1334,20 @@ function resetAllData() {
    VIEW SWITCH
    ================================================================ */
 
+/* ── Search ── */
+var searchTimeout = null;
+function onSearch() {
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(renderTable, 200);
+  var val = document.getElementById('searchInput').value;
+  document.getElementById('searchClear').style.display = val ? 'block' : 'none';
+}
+function clearSearch() {
+  document.getElementById('searchInput').value = '';
+  document.getElementById('searchClear').style.display = 'none';
+  renderTable();
+}
+/* ── Search filter (applied via renderTable query check) ── */
 /* ── Home Dashboard ── */
 function renderHome() {
   var total = 0;

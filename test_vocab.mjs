@@ -19,6 +19,8 @@ async function run() {
   await sleep(1000);
 
   // 隐藏侧栏（移动端覆盖 Tab bar）
+  // Ensure light mode for consistent testing
+  await page.evaluate(() => document.documentElement.setAttribute('data-theme', 'light'));
   await page.evaluate(() => document.getElementById('sidebar')?.classList.add('hidden'));
   await sleep(300);
 
@@ -50,7 +52,27 @@ async function run() {
   await sleep(300);
   ok('home-greet', await page.$('.greet-text'), '问候语');
   ok('home-stats', await page.$('.home-stats'), '统计卡片');
-  ok('home-actions', await page.$('.ha-btn'), '快速开始按钮');
+  const haBtns = await page.$$('.ha-btn');
+  ok('ha-btn-count', haBtns.length === 2, `快速开始按钮数: ${haBtns.length}`);
+  if (haBtns.length >= 2) {
+    const btn1Text = await haBtns[0].textContent();
+    const btn2Text = await haBtns[1].textContent();
+    ok('ha-btn1-text', btn1Text.includes('浏览'), `按钮1: ${btn1Text.trim()}`);
+    ok('ha-btn2-text', btn2Text.includes('学习'), `按钮2: ${btn2Text.trim()}`);
+    // Click "📋 浏览单词表" via evaluate to avoid viewport issues
+    await page.evaluate(() => document.querySelector('.ha-btn').click());
+    await sleep(300);
+    const at1 = await page.$eval('.tab-item.active', el => el.getAttribute('data-tab'));
+    ok('ha-btn1-nav', at1 === 'table', '浏览单词表→单词Tab');
+    // Back to home
+    await page.click('[data-tab="home"]', { force: true }); await sleep(300);
+    // Click "🎯 开始学习" (3rd child: label + btn1 + btn2)
+    await page.evaluate(() => { const b = document.querySelectorAll('.ha-btn'); if (b[1]) b[1].click(); });
+    await sleep(300);
+    const at2 = await page.$eval('.tab-item.active', el => el.getAttribute('data-tab'));
+    ok('ha-btn2-nav', at2 === 'learn', '开始学习→学习Tab');
+    await page.click('[data-tab="home"]', { force: true }); await sleep(300);
+  }
 
   // === 4. 单词表 ===
   await page.click('[data-tab="table"]', { force: true });
@@ -98,19 +120,49 @@ async function run() {
   await sleep(500);
   ok('stats', await page.$('.stat-card, .stats-grid'), '统计渲染');
 
-  // === 7. 暗色模式 ===
-  await page.evaluate(() => {
-    const btn = document.querySelector('.theme-toggle, #themeToggle, #theme-btn');
-    if (btn) btn.click();
+  // === 7. 样式检查 — 亮色模式 ===
+  const lightStyles = await page.evaluate(() => {
+    const s = getComputedStyle(document.body);
+    return {
+      bg: s.getPropertyValue('--bg').trim(),
+      text: s.getPropertyValue('--text').trim(),
+      textSec: s.getPropertyValue('--text-secondary').trim(),
+      accent: s.getPropertyValue('--accent').trim(),
+    };
   });
+  ok('light-bg', lightStyles.bg === '#ffffff', `亮色背景: ${lightStyles.bg}`);
+  ok('light-text', lightStyles.text === '#1a1a2e', `亮色文字: ${lightStyles.text}`);
+  ok('light-accent', lightStyles.accent === '#7c3aed', `亮色强调色: ${lightStyles.accent}`);
+
+  // === 8. 暗色模式切换 + 样式检查 ===
+  await page.evaluate(() => document.documentElement.setAttribute('data-theme', 'dark'));
   await sleep(300);
-  const dark = await page.evaluate(() => document.documentElement.getAttribute('data-theme'));
-  ok('dark-mode', dark === 'dark', `暗色模式: ${dark}`);
-  // 恢复
-  await page.evaluate(() => {
-    const btn = document.querySelector('.theme-toggle, #themeToggle, #theme-btn');
-    if (btn) btn.click();
+  const darkAttr = await page.evaluate(() => document.documentElement.getAttribute('data-theme'));
+  ok('dark-attr', darkAttr === 'dark', 'data-theme=dark');
+
+  const darkStyles = await page.evaluate(() => {
+    const s = getComputedStyle(document.body);
+    return {
+      bg: s.getPropertyValue('--bg').trim(),
+      text: s.getPropertyValue('--text').trim(),
+      textSec: s.getPropertyValue('--text-secondary').trim(),
+      accent: s.getPropertyValue('--accent').trim(),
+    };
   });
+  ok('dark-bg', darkStyles.bg === '#0f172a', `暗色背景: ${darkStyles.bg}`);
+  ok('dark-text', darkStyles.text === '#e2e8f0', `暗色文字: ${darkStyles.text}`);
+  ok('dark-accent', darkStyles.accent === '#a78bfa', `暗色强调色: ${darkStyles.accent}`);
+
+  // === 9. 对比度检查（文字 ≠ 背景）===
+  ok('contrast-text-bg', lightStyles.text !== lightStyles.bg, '亮色：文字≠背景');
+  ok('contrast-textSec-bg', lightStyles.textSec !== lightStyles.bg, '亮色：辅助文字≠背景');
+  ok('contrast-accent-bg', lightStyles.accent !== lightStyles.bg, '亮色：强调色≠背景');
+  ok('dark-contrast-text-bg', darkStyles.text !== darkStyles.bg, '暗色：文字≠背景');
+  ok('dark-contrast-textSec-bg', darkStyles.textSec !== darkStyles.bg, '暗色：辅助文字≠背景');
+  ok('dark-contrast-accent-bg', darkStyles.accent !== darkStyles.bg, '暗色：强调色≠背景');
+
+  // 恢复到亮色
+  await page.evaluate(() => document.documentElement.setAttribute('data-theme', 'light'));
 
   // === 8. 控制台错误 ===
   ok('no-errors', errors.length === 0, `控制台错误: ${errors.length}`);

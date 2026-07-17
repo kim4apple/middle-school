@@ -73,7 +73,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 .app-title { flex: 1; font-size: 17px; font-weight: 700; text-align: center; margin: 0 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .header-right { width: 44px; }
 .view-container { flex: 1; overflow: hidden; position: relative; }
-.view-panel { position: absolute; inset: 0; overflow-y: auto; display: none; }
+.view-panel { position: absolute; inset: 0; overflow-y: auto; display: none; background: var(--bg); }
 .view-panel.active { display: block; animation: fadeIn 0.2s ease; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -118,8 +118,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 #unitFilter { font-size: 13px; padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border); background: var(--bg); color: var(--text); }
 
 /* === View panels === */
-.view-panel { display: none; }
-.view-panel.active { display: block; animation: fadeIn 0.2s ease; }
+.view-panel { display: none; background: var(--bg); }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
 
 /* === Table view === */

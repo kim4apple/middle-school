@@ -519,6 +519,21 @@ body { display: flex; min-height: 100vh; padding: 0; }
   .stats-units .su-row { padding: 6px 8px; }
   .stats-units .su-label { font-size: 11px; min-width: 0; }
 }
+/* ── Tablet (769-1024px) ── */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .tab-item { font-size: 12px; flex-direction: row; gap: 4px; padding: 0 16px; }
+  .tab-item span { font-size: 12px; }
+  .tab-item.active::after { top: auto; bottom: 0; left: 15%; right: 15%; height: 3px; border-radius: 3px 3px 0 0; }
+  .home-content { max-width: 700px; margin: 0 auto; padding: 20px; }
+  .home-stats { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid { grid-template-columns: repeat(3, 1fr); }
+  .stats-units .su-row { padding: 8px 12px; }
+  .learn-mode-grid { padding: 20px; max-width: 600px; margin: 0 auto; }
+  .table-toolbar { flex-direction: row; align-items: center; flex-wrap: wrap; }
+  .table-toolbar #unitFilter { width: auto; min-width: 180px; }
+  .table-toolbar .search-bar { flex: 1; min-width: 200px; }
+  .search-input { font-size: 16px; }
+}
 @media (max-width: 360px) {
   .hero h1 { font-size: 18px; }
   .view-toggle button { font-size: 9px; padding: 3px 6px; }

@@ -152,11 +152,13 @@ if __name__ == '__main__':
         html = html.replace(f'eng{grade}-' * 2, f'eng{grade}-')
         
         # 10. Replace mobile responsive CSS with enhanced version
-        # Find the 2nd 640px block and replace it with card layout version
+        # Use ≤768px to match sidebar overlay breakpoint in base.css
+        # Find the 2nd 640px block and replace with card layout + width fix
         second = html.find('@media (max-width: 640px) {', html.find('@media (max-width: 640px) {') + 10)
         if second >= 0:
             style_end = html.find('</style>', second)
-            mob_css = '''  .wrapper { padding: 16px 10px 40px; }
+            mob_css = '''  .wrapper { padding: 12px 10px 40px; margin-left: 0 !important; max-width: 100%; }
+  body:has(#sidebar.hidden) .wrapper { margin-left: 0 !important; }
   #sidebarShowBtn { z-index: 100; }
   .hero h1 { font-size: 22px; }
   .hero .tagline { font-size: 12px; }
@@ -213,7 +215,7 @@ if __name__ == '__main__':
   .stats-units .su-row { padding: 6px 8px; }
   .stats-units .su-label { font-size: 11px; min-width: 0; }
 }'''
-            html = html[:second] + '@media (max-width: 640px) {' + mob_css + html[style_end:]
+            html = html[:second] + '@media (max-width: 768px) {' + mob_css + html[style_end:]
         
         # Also replace the 700px block
         old_700 = '''@media (max-width: 700px) {

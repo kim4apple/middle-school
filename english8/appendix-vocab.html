@@ -323,7 +323,8 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 [data-theme="dark"] .vocab-table tr:hover { background: #1e293b; }
 
 /* === Responsive === */
-@media (max-width: 640px) {  .wrapper { padding: 16px 10px 40px; }
+@media (max-width: 768px) {  .wrapper { padding: 12px 10px 40px; margin-left: 0 !important; max-width: 100%; }
+  body:has(#sidebar.hidden) .wrapper { margin-left: 0 !important; }
   #sidebarShowBtn { z-index: 100; }
   .hero h1 { font-size: 22px; }
   .hero .tagline { font-size: 12px; }

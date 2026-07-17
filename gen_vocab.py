@@ -24,9 +24,9 @@ def extract_vocab(html_path):
         me = re.search(r'class="wotd-say"[^>]*data-speak="([^"]+)"', card_html)
         mt = re.search(r'class="trans"[^>]*>([^<]+)', card_html)
         if w:
-            cards.append(dict(w=w.strip(), ipa=mi.group(1) if mi else '',
-                pos=mp.group(1) if mp else '', defn=md.group(1) if md else '',
-                ex=me.group(1) if me else '', trans=mt.group(1) if mt else ''))
+            cards.append({'w': w.strip(), 'ipa': mi.group(1) if mi else '',
+                'pos': mp.group(1) if mp else '', 'def': md.group(1) if md else '',
+                'ex': me.group(1) if me else '', 'trans': mt.group(1) if mt else ''})
     return dict(label=fn, title=title, words=cards)
 
 def make_sidebar(prefix, units_a, units_b, grade_label):

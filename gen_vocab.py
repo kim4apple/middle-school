@@ -151,6 +151,120 @@ if __name__ == '__main__':
         # 9. Fix duplicate engX- that might have happened
         html = html.replace(f'eng{grade}-' * 2, f'eng{grade}-')
         
+        # 10. Replace mobile responsive CSS with enhanced version
+        # Find the 2nd 640px block and replace it with card layout version
+        second = html.find('@media (max-width: 640px) {', html.find('@media (max-width: 640px) {') + 10)
+        if second >= 0:
+            style_end = html.find('</style>', second)
+            mob_css = '''  .wrapper { padding: 16px 10px 40px; }
+  #sidebarShowBtn { z-index: 100; }
+  .hero h1 { font-size: 22px; }
+  .hero .tagline { font-size: 12px; }
+  .hero .badge { font-size: 10px; padding: 3px 10px; }
+  .top-bar { flex-direction: column; align-items: stretch; gap: 8px; }
+  .view-toggle { justify-content: center; }
+  .view-toggle button { font-size: 11px; padding: 5px 10px; }
+  #unitFilter { font-size: 12px; padding: 6px 10px; }
+  .back-link { font-size: 12px; margin-bottom: 16px; }
+
+  /* ── Vocab units ── */
+  .vocab-unit summary { font-size: 13px; padding: 8px 10px; }
+  .vocab-unit summary .unit-progress { font-size: 10px; white-space: nowrap; }
+  .vocab-unit summary .unit-progress .pct { min-width: 20px; }
+  .vocab-unit summary .unit-progress .srs-due { font-size: 9px; padding: 1px 5px; }
+  .vocab-unit summary .sum-content span { max-width: 55%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: inline-block; vertical-align: middle; }
+
+  /* ── Table → Card layout for mobile ── */
+  .vocab-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 14px; }
+  .vocab-table thead { display: none; }
+  .vocab-table tbody { display: block; }
+  .vocab-table tr { display: block; padding: 12px 14px; margin-bottom: 6px; border: 1px solid var(--border); border-radius: 10px; background: var(--bg); }
+  .vocab-table td { display: inline; padding: 0; border: none; white-space: normal; font-size: 14px; }
+  .vocab-table .cb-cell { display: inline-block; float: left; margin: 3px 10px 0 0; width: auto; }
+  .vocab-table .cb-cell input { width: 18px; height: 18px; }
+  .vocab-table .word-cell { display: inline; font-size: 16px; font-weight: 700; color: var(--accent); }
+  .vocab-table .word-cell .speak-indicator { font-size: 12px; }
+  .vocab-table .word-cell .wrong-tag { font-size: 10px; padding: 1px 6px; vertical-align: middle; }
+  .vocab-table .ipa-cell { display: inline; font-size: 12px; color: var(--text-secondary); margin-left: 6px; }
+  .vocab-table .pos-cell { display: inline; font-size: 11px; color: var(--accent); text-transform: uppercase; margin-left: 4px; }
+  .vocab-table .def-cell { display: block; font-size: 14px; color: var(--text); margin-top: 6px; padding-left: 0 !important; white-space: normal; }
+  .vocab-table .ex-cell { display: none; }
+  .vocab-table .mastered td { opacity: 0.55; }
+  .vocab-table .wrong-row { background: #fef2f2; border-color: #fecaca; }
+  [data-theme="dark"] .vocab-table .wrong-row { background: #2d0a0a; border-color: #7f1d1d; }
+
+  /* ── Other views ── */
+  .flashcard .front .big-word { font-size: 24px; }
+  .flashcard .back .back-def { font-size: 20px; }
+  .flashcard .front, .flashcard .back { padding: 24px 16px; min-height: 240px; }
+  .flashcard-nav button { padding: 8px 16px; font-size: 13px; min-height: 44px; }
+  .flashcard-header { flex-direction: column; align-items: flex-start; }
+  .dictation-card .dict-chinese { font-size: 22px; }
+  .dictation-input-wrap input { font-size: 16px; padding: 10px 12px; }
+  .dictation-input-wrap { max-width: 100%; }
+  .dictation-nav button { padding: 8px 16px; font-size: 13px; }
+  .quiz-question { font-size: 20px; }
+  .quiz-option { font-size: 14px; padding: 10px 12px; }
+  .quiz-header .q-progress { font-size: 12px; }
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .stat-card .stat-value { font-size: 22px; }
+  .stat-card { padding: 14px; }
+  .stats-wrong-list { max-height: 200px; }
+  .stats-units .su-row { padding: 6px 8px; }
+  .stats-units .su-label { font-size: 11px; min-width: 0; }
+}'''
+            html = html[:second] + '@media (max-width: 640px) {' + mob_css + html[style_end:]
+        
+        # Also replace the 700px block
+        old_700 = '''@media (max-width: 700px) {
+  .vocab-table .ipa-cell, .vocab-table .ex-cell { display: none; }
+  .vocab-table th:nth-child(3), .vocab-table th:nth-child(6) { display: none; }
+}'''
+        new_700 = '''@media (max-width: 700px) {
+  .vocab-table th:nth-child(3), .vocab-table th:nth-child(6) { display: none; }
+  .vocab-table .ipa-cell, .vocab-table .ex-cell { display: none; }
+  .vocab-unit summary .sum-content span { font-size: 13px; }
+}'''
+        html = html.replace(old_700, new_700)
+        
+        # Add 320px/360px blocks before </style>
+        extra_mob = '''
+@media (max-width: 360px) {
+  .hero h1 { font-size: 18px; }
+  .view-toggle button { font-size: 9px; padding: 3px 6px; }
+  .vocab-table tr { padding: 10px 8px; }
+  .vocab-table .word-cell { font-size: 15px; }
+  .vocab-table .ipa-cell { display: none; }
+  .vocab-table .pos-cell { font-size: 10px; }
+  .vocab-table .def-cell { font-size: 13px; }
+  .vocab-table .cb-cell input { width: 16px; height: 16px; }
+  .vocab-unit summary { font-size: 12px; padding: 6px 8px; }
+  .vocab-unit summary .sum-content span { max-width: 50%; font-size: 11px; }
+  .vocab-unit summary .unit-progress .srs-due { display: none; }
+}
+@media (max-width: 320px) {
+  .wrapper { padding: 12px 6px 30px; }
+  .hero h1 { font-size: 16px; }
+  .view-toggle button { font-size: 8px; padding: 3px 5px; }
+  .vocab-unit summary { font-size: 11px; padding: 6px; }
+  .vocab-unit summary .sum-content span { max-width: 45%; font-size: 10px; }
+  .vocab-table tr { padding: 8px 6px; }
+  .vocab-table .word-cell { font-size: 14px; }
+  .vocab-table .pos-cell { display: none; }
+  .vocab-table .def-cell { font-size: 12px; }
+  .vocab-table .cb-cell { float: none; display: inline-block; margin-right: 6px; }
+  .flashcard .front .big-word { font-size: 20px; }
+  .flashcard .back .back-def { font-size: 17px; }
+  .flashcard .front, .flashcard .back { padding: 16px 12px; min-height: 200px; }
+  .dictation-card .dict-chinese { font-size: 18px; }
+  .dictation-input-wrap input { font-size: 14px; padding: 8px 10px; }
+  .quiz-question { font-size: 17px; }
+  .quiz-option { font-size: 13px; padding: 8px 10px; }
+  .stat-card .stat-value { font-size: 18px; }
+  .stat-card { padding: 10px; }
+}'''
+        html = html.replace('</style>', extra_mob + '\n</style>')
+        
         # Write output
         output_path = os.path.join(prefix, 'appendix-vocab.html')
         with open(output_path, 'w') as f:

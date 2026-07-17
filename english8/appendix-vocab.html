@@ -73,7 +73,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 .app-title { flex: 1; font-size: 17px; font-weight: 700; text-align: center; margin: 0 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .header-right { width: 44px; }
 .view-container { flex: 1; overflow: hidden; position: relative; }
-.view-panel { position: absolute; inset: 0; overflow-y: auto; display: none; background: var(--bg); }
+.view-panel { position: absolute; inset: 0; overflow-y: auto; display: none; background: var(--bg); -webkit-overflow-scrolling: touch; }
 .view-panel.active { display: block; animation: fadeIn 0.2s ease; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -424,6 +424,13 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
   .view-toggle button { font-size: 11px; padding: 5px 10px; }
   #unitFilter { font-size: 12px; padding: 6px 10px; }
   .back-link { font-size: 12px; margin-bottom: 16px; }
+  /* ── Mobile spacing ── */
+  .home-content { padding: 12px 12px 24px; }
+  .table-toolbar { padding: 6px 10px; }
+  .learn-mode-grid { padding: 12px 12px 24px; }
+  .search-bar { padding: 4px 10px 8px; }
+  .search-input { padding: 12px 14px; font-size: 16px; }
+  .back-link { font-size: 12px; margin-bottom: 12px; padding: 0 2px; }
 
   /* ── Vocab units ── */
   .vocab-unit summary { font-size: 13px; padding: 8px 10px; }

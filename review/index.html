@@ -24,6 +24,9 @@ h1{font-size:28px;}
 .back{display:inline-block;margin-bottom:24px;color:var(--accent);text-decoration:none;font-size:14px;}
 .back:hover{text-decoration:underline;}
 .card-empty{grid-column:1/-1;text-align:center;padding:40px;color:var(--text-secondary);font-size:14px;border:1px dashed var(--border);border-radius:var(--card-radius);}
+*{-webkit-tap-highlight-color:transparent;}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important;}}
+@media(max-width:600px){body{padding:24px 14px}h1{font-size:22px}.card-grid{grid-template-columns:1fr}.section-title{font-size:20px}.card{padding:18px}.card .name{font-size:14px}}
 </style>
 <script>(function(){var t=localStorage.getItem("site-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
 </head>

@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>单词专项 · 初中英语八年级</title>
+<link rel="stylesheet" href="css/english8.css">
+<script>(function(){var t=localStorage.getItem('eng8-theme');if(!t)t=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);})();</script>
+<style>
+body { display: flex; min-height: 100vh; padding: 0; }
+.wrapper { flex: 1; max-width: 960px; margin: 0 auto; padding: 32px 24px 60px; margin-left: var(--sidebar-width); }
+body:has(#sidebar.hidden) .wrapper { margin-left: 0; }
+#sidebarShowBtn { position: fixed; top: 12px; left: 12px; z-index: 99; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; cursor: pointer; font-size: 14px; color: var(--text); box-shadow: var(--shadow); display: none; align-items: center; gap: 4px; }
+body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
+.hero { text-align: center; padding: 36px 0 28px; }
+.hero h1 { font-size: 28px; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.02em; }
+.hero .tagline { color: var(--text-secondary); font-size: 14px; }
+.hero .badge { display: inline-block; font-size: 11px; padding: 4px 14px; border-radius: 20px; background: var(--accent-light); color: var(--accent); font-weight: 600; margin-top: 8px; letter-spacing: 0.02em; }
+.back-link { display: inline-flex; align-items: center; gap: 4px; margin-bottom: 24px; font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 500; }
+.back-link:hover { gap: 6px; }
+
+/* === Top bar === */
+.top-bar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
+.view-toggle { display: flex; gap: 3px; background: var(--bg-secondary); border-radius: 10px; padding: 3px; flex-wrap: wrap; box-shadow: inset 0 1px 2px rgba(0,0,0,0.04); }
+.view-toggle button { padding: 7px 16px; border: none; border-radius: 7px; cursor: pointer; font-size: 12px; font-weight: 600; background: transparent; color: var(--text-secondary); transition: all 0.18s; white-space: nowrap; }
+.view-toggle button:hover { color: var(--text); }
+.view-toggle button.active { background: var(--bg); color: var(--accent); box-shadow: 0 1px 4px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04); }
+.filter-bar { display: flex; gap: 6px; flex-wrap: wrap; }
+.filter-bar button { font-size: 12px; padding: 5px 16px; border-radius: 20px; border: 1px solid var(--border); background: var(--bg); color: var(--text-secondary); cursor: pointer; transition: all 0.15s; font-weight: 500; }
+.filter-bar button:hover { border-color: var(--accent); color: var(--text); }
+.filter-bar button.active { border-color: var(--accent); background: var(--accent-light); color: var(--accent); font-weight: 600; }
+.filter-bar button.filter-wrong { border-color: #dc2626; color: #dc2626; }
+.filter-bar button.filter-wrong.active { background: #fef2f2; color: #dc2626; border-color: #dc2626; }
+[data-theme="dark"] .filter-bar button.filter-wrong { border-color: #f87171; color: #f87171; }
+[data-theme="dark"] .filter-bar button.filter-wrong.active { background: #451a1a; color: #f87171; border-color: #f87171; }
+#unitFilter { font-size: 13px; padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border); background: var(--bg); color: var(--text); }
+
+/* === View panels === */
+.view-panel { display: none; }
+.view-panel.active { display: block; animation: fadeIn 0.2s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+/* === Table view === */
+.vocab-unit { margin-bottom: 14px; border: 1px solid var(--border); border-radius: var(--radius); overflow: clip; }
+.vocab-unit summary { padding: 10px 14px; cursor: pointer; font-size: 14px; font-weight: 600; user-select: none; list-style: none; display: flex; align-items: center; justify-content: space-between; position: relative; overflow: hidden; background: var(--bg-secondary); border-radius: var(--radius); }
+.vocab-unit[open] summary { border-radius: var(--radius) var(--radius) 0 0; border-bottom: 1px solid var(--border); }
+.vocab-unit summary::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: var(--card-pct); background: var(--card-c); pointer-events: none; }
+[data-theme="dark"] .vocab-unit summary::before { background: var(--card-c-dark); }
+.vocab-unit summary::-webkit-details-marker { display: none; }
+.vocab-unit summary .sum-content { display: flex; align-items: center; justify-content: space-between; width: 100%; position: relative; z-index: 1; gap: 12px; }
+.vocab-unit summary .unit-progress { font-size: 11px; font-weight: 500; color: var(--text-secondary); display: flex; align-items: center; gap: 6px; flex-shrink: 0; white-space: nowrap; }
+.vocab-unit summary .unit-progress strong { color: var(--accent); }
+.vocab-unit summary .unit-progress .pct { font-size: 10px; font-weight: 700; color: var(--accent); min-width: 24px; text-align: right; }
+.vocab-unit summary .unit-progress .pct.done { color: #16a34a; }
+[data-theme="dark"] .vocab-unit summary .unit-progress .pct.done { color: #4ade80; }
+.vocab-unit summary .unit-progress .srs-due { font-size: 10px; padding: 1px 6px; border-radius: 8px; background: #fef3c7; color: #92400e; }
+[data-theme="dark"] .vocab-unit summary .unit-progress .srs-due { background: #451a03; color: #fbbf24; }
+
+.vocab-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.vocab-table thead { position: sticky; top: 0; z-index: 2; }
+.vocab-table th { padding: 6px 10px; text-align: left; font-size: 10px; color: var(--text-secondary); font-weight: 600; border-bottom: 1px solid var(--border); background: var(--bg); white-space: nowrap; }
+.vocab-table td { padding: 6px 10px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.vocab-table tr:last-child td { border-bottom: none; }
+.vocab-table tr:hover { background: var(--bg-secondary); }
+.vocab-table .word-cell { cursor: pointer; font-weight: 500; }
+.vocab-table .word-cell .speak-indicator { font-size: 10px; vertical-align: middle; opacity: 0.5; margin-left: 2px; }
+.vocab-table .word-cell .wrong-tag { font-size: 10px; background: #fecaca; color: #991b1b; padding: 0 5px; border-radius: 4px; vertical-align: middle; margin-left: 4px; }
+[data-theme="dark"] .vocab-table .word-cell .wrong-tag { background: #7f1d1d; color: #fecaca; }
+.vocab-table .ipa-cell { font-family: Menlo, "SF Mono", Consolas, monospace; font-size: 12px; color: var(--text-secondary); max-width: 120px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.vocab-table .pos-cell { font-size: 11px; color: #7c3aed; white-space: nowrap; max-width: 50px; }
+[data-theme="dark"] .vocab-table .pos-cell { color: #a78bfa; }
+.vocab-table .def-cell { max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.vocab-table .ex-cell { max-width: 280px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: pointer; }
+.vocab-table .ex-cell:hover { white-space: normal; overflow: visible; background: var(--bg); position: relative; z-index: 1; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.vocab-table .ex-cell .ex-en { font-size: 12px; color: var(--text-secondary); }
+.vocab-table .ex-cell .ex-zh { font-size: 11px; color: var(--text-secondary); opacity: 0.7; margin-top: 1px; }
+.vocab-table .mastered td { opacity: 0.55; }
+.vocab-table .mastered .word-cell { text-decoration: line-through; }
+.vocab-table .wrong-row { background: #fef2f2; }
+[data-theme="dark"] .vocab-table .wrong-row { background: #2d0a0a; }
+.vocab-table .srs-due-row td { border-left: 2px solid #f59e0b; padding-left: 8px; }
+[data-theme="dark"] .vocab-table .srs-due-row td { border-left-color: #fbbf24; }
+
+.vocab-table .cb-cell { width: 32px; text-align: center; }
+.vocab-table .cb-cell input { width: 16px; height: 16px; cursor: pointer; accent-color: var(--accent); }
+.vocab-table .word-cell { min-width: 100px; }
+.vocab-table .word-cell .headword { font-weight: 600; }
+.vocab-table .ex-cell .ex-en:hover { color: var(--accent); }
+
+@media (max-width: 700px) {
+  .vocab-table .ipa-cell, .vocab-table .ex-cell { display: none; }
+  .vocab-table th:nth-child(3), .vocab-table th:nth-child(6) { display: none; }
+}
+/* === Flashcard view === */
+.flashcard-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 8px; }
+.flashcard-header .stats { font-size: 13px; color: var(--text-secondary); }
+.flashcard-header .stats strong { color: var(--accent); }
+.flashcard-header .srs-info { font-size: 11px; color: var(--text-secondary); background: var(--bg-secondary); padding: 4px 12px; border-radius: 12px; }
+.flashcard-area { max-width: 500px; margin: 0 auto; perspective: 1000px; }
+.flashcard { position: relative; width: 100%; min-height: 280px; cursor: pointer; transition: transform 0.4s; transform-style: preserve-3d; }
+.flashcard.flipped { transform: rotateY(180deg); }
+.flashcard .front, .flashcard .back { position: absolute; top: 0; left: 0; width: 100%; min-height: 280px; backface-visibility: hidden; border-radius: 16px; padding: 32px 28px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; box-sizing: border-box; }
+.flashcard .front { background: var(--bg); border: 2px solid var(--border); box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+.flashcard .front .big-word { font-size: 32px; font-weight: 700; cursor: pointer; }
+.flashcard .front .big-word:hover { color: var(--accent); }
+.flashcard .front .front-ipa { font-size: 15px; color: var(--text-secondary); margin-top: 8px; font-family: Menlo, "SF Mono", Consolas, monospace; }
+.flashcard .front .front-extra { font-size: 11px; color: var(--text-secondary); margin-top: 4px; opacity: 0.6; }
+.flashcard .front .front-hint { font-size: 12px; color: var(--text-secondary); margin-top: 24px; }
+.flashcard .back { background: var(--bg-secondary); border: 2px solid var(--border); transform: rotateY(180deg); }
+.flashcard .back .back-def { font-size: 24px; font-weight: 600; margin-bottom: 8px; }
+.flashcard .back .back-pos { font-size: 13px; color: var(--text-secondary); }
+.flashcard .back .back-ex { font-size: 14px; color: var(--text-secondary); margin-top: 16px; max-width: 360px; cursor: pointer; }
+.flashcard .back .back-ex:hover { color: var(--accent); }
+.flashcard .back .back-extrans { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+.flashcard-nav { display: flex; justify-content: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.flashcard-nav button { padding: 10px 22px; border-radius: 10px; border: none; cursor: pointer; font-size: 14px; font-weight: 600; transition: all 0.15s; }
+.flashcard-nav button:active { transform: scale(0.96); }
+.btn-green { background: #16a34a; color: #fff; }
+.btn-green:hover { background: #15803d; }
+.btn-yellow { background: #ca8a04; color: #fff; }
+.btn-yellow:hover { background: #a16207; }
+.btn-red { background: #dc2626; color: #fff; }
+.btn-red:hover { background: #b91c1c; }
+.btn-reset { background: var(--bg); color: var(--accent); border: 1px solid var(--border) !important; }
+.btn-reset:hover { background: var(--accent-light); }
+.btn-outline { background: transparent; color: var(--text-secondary); border: 1px solid var(--border) !important; }
+.btn-outline:hover { background: var(--bg-secondary); }
+.no-card { text-align: center; padding: 60px; color: var(--text-secondary); font-size: 16px; }
+.wrong-badge { display: inline-block; font-size: 10px; padding: 1px 8px; border-radius: 4px; background: #fef2f2; color: #dc2626; font-weight: 700; margin-bottom: 12px; }
+[data-theme="dark"] .wrong-badge { background: #451a1a; color: #f87171; }
+
+[data-theme="dark"] .flashcard .front { background: #1e293b; border-color: #334155; }
+[data-theme="dark"] .flashcard .back { background: #1e1b4b; border-color: #334155; }
+[data-theme="dark"] .view-toggle { background: #1e293b; }
+[data-theme="dark"] .view-toggle button.active { background: #0f172a; }
+
+/* === Dictation === */
+.dictation-card { max-width: 500px; margin: 0 auto; text-align: center; }
+.dictation-card .dict-chinese { font-size: 28px; font-weight: 700; margin-bottom: 4px; }
+.dictation-card .dict-pos { font-size: 13px; color: var(--text-secondary); margin-bottom: 24px; }
+.dictation-card .dict-audio { display: inline-flex; align-items: center; gap: 6px; padding: 8px 20px; border-radius: 20px; border: 1px solid var(--border); background: var(--bg); cursor: pointer; font-size: 14px; color: var(--text); margin-bottom: 20px; transition: all 0.15s; }
+.dictation-card .dict-audio:hover { border-color: var(--accent); color: var(--accent); }
+.dictation-card .dict-audio:active { transform: scale(0.96); }
+.dictation-card .dict-audio.playing { background: var(--accent-light); border-color: var(--accent); color: var(--accent); }
+.dictation-input-wrap { display: flex; gap: 8px; max-width: 360px; margin: 0 auto; }
+.dictation-input-wrap input { flex: 1; padding: 12px 16px; border-radius: 10px; border: 2px solid var(--border); background: var(--bg); color: var(--text); font-size: 18px; text-align: center; outline: none; transition: border-color 0.2s; }
+.dictation-input-wrap input:focus { border-color: var(--accent); }
+.dictation-input-wrap input.correct { border-color: #16a34a; background: #f0fdf4; }
+.dictation-input-wrap input.incorrect { border-color: #dc2626; background: #fef2f2; }
+[data-theme="dark"] .dictation-input-wrap input.correct { background: #052e16; }
+[data-theme="dark"] .dictation-input-wrap input.incorrect { background: #450a0a; }
+.dictation-feedback { margin-top: 16px; min-height: 60px; }
+.dictation-feedback .fb-correct { color: #16a34a; font-weight: 600; font-size: 16px; }
+.dictation-feedback .fb-incorrect { color: #dc2626; font-weight: 600; font-size: 16px; }
+.dictation-feedback .fb-answer { font-size: 18px; font-weight: 700; margin-top: 4px; }
+.dictation-feedback .fb-ipa { font-size: 13px; color: var(--text-secondary); font-family: Menlo, "SF Mono", Consolas, monospace; }
+.dictation-nav { margin-top: 20px; }
+.dictation-nav button { padding: 10px 28px; border-radius: 10px; border: none; cursor: pointer; font-size: 14px; font-weight: 600; transition: all 0.15s; }
+.dictation-nav button:active { transform: scale(0.96); }
+.dict-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 8px; }
+.dict-header .stats { font-size: 13px; color: var(--text-secondary); }
+.dict-header .stats strong { color: var(--accent); }
+
+/* === Quiz === */
+.quiz-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 8px; }
+.quiz-header .stats { font-size: 13px; color: var(--text-secondary); }
+.quiz-header .stats strong { color: var(--accent); }
+.quiz-progress { height: 4px; background: var(--bg-secondary); border-radius: 4px; margin-bottom: 24px; overflow: hidden; }
+.quiz-progress .bar { height: 100%; background: var(--accent); border-radius: 4px; transition: width 0.3s; }
+.quiz-qtype { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary); margin-bottom: 8px; }
+.quiz-question { font-size: 28px; font-weight: 700; text-align: center; margin-bottom: 4px; }
+.quiz-question .q-speak { cursor: pointer; display: inline-block; }
+.quiz-question .q-speak:hover { color: var(--accent); }
+.quiz-sub { font-size: 13px; color: var(--text-secondary); text-align: center; margin-bottom: 24px; }
+.quiz-options { display: flex; flex-direction: column; gap: 10px; max-width: 480px; margin: 0 auto; }
+.quiz-option { padding: 14px 18px; border-radius: 12px; border: 2px solid var(--border); background: var(--bg); cursor: pointer; font-size: 16px; text-align: center; transition: all 0.2s; }
+.quiz-option:hover { border-color: var(--accent); background: var(--accent-light); }
+.quiz-option.selected { border-color: var(--accent); background: var(--accent-light); }
+.quiz-option.correct { border-color: #16a34a; background: #f0fdf4; color: #166534; font-weight: 600; }
+.quiz-option.incorrect { border-color: #dc2626; background: #fef2f2; color: #991b1b; font-weight: 600; }
+[data-theme="dark"] .quiz-option.correct { background: #052e16; color: #86efac; }
+[data-theme="dark"] .quiz-option.incorrect { background: #450a0a; color: #fca5a5; }
+.quiz-option.disabled { cursor: default; opacity: 0.7; }
+.quiz-option.disabled:hover { border-color: var(--border); background: var(--bg); }
+.quiz-result { text-align: center; padding: 32px; }
+.quiz-result .score { font-size: 48px; font-weight: 800; color: var(--accent); }
+.quiz-result .score-label { font-size: 14px; color: var(--text-secondary); margin-bottom: 20px; }
+.quiz-result .score-detail { font-size: 14px; color: var(--text-secondary); margin-bottom: 24px; }
+.quiz-result button { padding: 10px 28px; border-radius: 10px; border: none; cursor: pointer; font-size: 14px; font-weight: 600; margin: 4px; transition: all 0.15s; }
+.quiz-result button:active { transform: scale(0.96); }
+
+/* === Stats === */
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; margin-bottom: 28px; }
+.stat-card { border: 1px solid var(--border); border-radius: 12px; padding: 22px 16px 18px; text-align: center; background: var(--bg); box-shadow: 0 1px 3px rgba(0,0,0,0.03); transition: box-shadow 0.2s; }
+.stat-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.stat-card .stat-value { font-size: 32px; font-weight: 800; color: var(--accent); line-height: 1.1; letter-spacing: -0.02em; }
+.stat-card .stat-label { font-size: 12px; color: var(--text-secondary); margin-top: 6px; font-weight: 500; }
+.stat-card.stat-green .stat-value { color: #16a34a; }
+.stat-card.stat-amber .stat-value { color: #ca8a04; }
+.stat-card.stat-red .stat-value { color: #dc2626; }
+.stat-card.stat-streak { border-color: var(--accent); }
+.wrong-list { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.wrong-list-header { padding: 12px 18px; font-weight: 600; font-size: 15px; background: var(--bg-secondary); border-bottom: 1px solid var(--border); }
+.wrong-list-item { padding: 10px 18px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); }
+.wrong-list-item:last-child { border-bottom: none; }
+.wrong-list-item:hover { background: var(--bg-secondary); }
+.wrong-list-item .wl-word { font-weight: 600; cursor: pointer; }
+.wrong-list-item .wl-word:hover { color: var(--accent); }
+.wrong-list-item .wl-info { font-size: 12px; color: var(--text-secondary); }
+
+/* === Stats: 7-day chart === */
+.stats-chart { margin-bottom: 28px; }
+.stats-chart .chart-title { font-size: 14px; font-weight: 600; margin-bottom: 12px; color: var(--text); }
+.stats-chart .chart-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.stats-chart .chart-day { font-size: 11px; color: var(--text-secondary); min-width: 36px; text-align: right; }
+.stats-chart .chart-bar-wrap { flex: 1; height: 22px; background: var(--bg-secondary); border-radius: 6px; overflow: hidden; display: flex; }
+.stats-chart .chart-bar { height: 100%; border-radius: 6px; min-width: 2px; transition: width 0.4s; display: flex; align-items: center; justify-content: flex-end; padding-right: 4px; }
+.stats-chart .chart-bar.correct { background: linear-gradient(90deg, #6366f1, #8b5cf6); }
+.stats-chart .chart-bar.wrong { background: linear-gradient(90deg, #f87171, #dc2626); }
+.stats-chart .chart-bar .chart-val { font-size: 10px; color: #fff; font-weight: 700; padding: 0 3px; line-height: 22px; }
+[data-theme="dark"] .stats-chart .chart-bar-wrap { background: #1e293b; }
+
+/* === Stats: unit-level progress === */
+.stats-units { margin-bottom: 28px; }
+.stats-units .su-title { font-size: 14px; font-weight: 600; margin-bottom: 12px; color: var(--text); }
+.stats-units .su-row { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-bottom: 1px solid var(--border); transition: background 0.15s; }
+.stats-units .su-row:last-child { border-bottom: none; }
+.stats-units .su-row:hover { background: var(--bg-secondary); border-radius: 6px 6px 0 0; }
+.stats-units .su-label { font-size: 12px; font-weight: 600; color: var(--text); min-width: 60px; white-space: nowrap; }
+.stats-units .su-bar-wrap { flex: 1; height: 8px; background: var(--bg-secondary); border-radius: 5px; overflow: hidden; min-width: 60px; }
+.stats-units .su-bar { height: 100%; border-radius: 5px; transition: width 0.4s; }
+.stats-units .su-bar.low { background: linear-gradient(90deg, #f87171, #fb923c); }
+.stats-units .su-bar.mid { background: linear-gradient(90deg, #fbbf24, #a3e635); }
+.stats-units .su-bar.high { background: linear-gradient(90deg, #6366f1, #22c55e); }
+.stats-units .su-bar.full { background: linear-gradient(90deg, #16a34a, #6ee7b7); }
+[data-theme="dark"] .stats-units .su-bar-wrap { background: #1e293b; }
+.stats-units .su-count { font-size: 12px; color: var(--text-secondary); min-width: 44px; text-align: right; white-space: nowrap; }
+.stats-units .su-badge { font-size: 11px; padding: 2px 10px; border-radius: 12px; font-weight: 600; white-space: nowrap; min-width: 60px; text-align: center; }
+.stats-units .su-badge.done { background: #dcfce7; color: #166534; }
+.stats-units .su-badge.hot { background: #fef3c7; color: #92400e; }
+.stats-units .su-badge.go { background: #dbeafe; color: #1e40af; }
+.stats-units .su-badge.soon { background: #f3e8ff; color: #6b21a8; }
+.stats-units .su-badge.none { background: var(--bg-secondary); color: var(--text-secondary); }
+[data-theme="dark"] .stats-units .su-badge.done { background: #064e3b; color: #6ee7b7; }
+[data-theme="dark"] .stats-units .su-badge.hot { background: #451a03; color: #fbbf24; }
+[data-theme="dark"] .stats-units .su-badge.go { background: #1e1b4b; color: #93c5fd; }
+[data-theme="dark"] .stats-units .su-badge.soon { background: #2e1065; color: #d8b4fe; }
+[data-theme="dark"] .stats-units .su-badge.none { background: #1e293b; color: #64748b; }
+.stats-units .su-wrap { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+
+/* === Stats: overall progress bar === */
+.stats-total-bar { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; padding: 14px 18px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg); }
+.stats-total-bar .stb-label { font-size: 13px; font-weight: 600; color: var(--text); white-space: nowrap; }
+.stats-total-bar .stb-bar-wrap { flex: 1; height: 10px; background: var(--bg-secondary); border-radius: 6px; overflow: hidden; }
+.stats-total-bar .stb-bar { height: 100%; border-radius: 6px; background: linear-gradient(90deg, #6366f1, #8b5cf6); transition: width 0.4s; }
+.stats-total-bar .stb-pct { font-size: 12px; font-weight: 700; color: var(--accent); white-space: nowrap; }
+[data-theme="dark"] .stats-total-bar { background: #1e293b; border-color: #334155; }
+
+/* === Reset section === */
+.stats-actions { display: flex; justify-content: center; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+.btn-danger { padding: 10px 24px; border-radius: 10px; border: 1px solid #dc2626; background: transparent; color: #dc2626; cursor: pointer; font-size: 13px; font-weight: 600; transition: all 0.15s; }
+.btn-danger:hover { background: #fef2f2; }
+.btn-danger:active { transform: scale(0.96); }
+[data-theme="dark"] .btn-danger { border-color: #f87171; color: #f87171; }
+[data-theme="dark"] .btn-danger:hover { background: #450a0a; }
+
+/* === Theme Toggle === */
+.theme-toggle-btn {
+  position: fixed; top: 16px; right: 16px; z-index: 100;
+  width: 40px; height: 40px; border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 18px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: all 0.2s;
+}
+.theme-toggle-btn:hover {
+  border-color: var(--accent);
+  background: var(--accent-light);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+.theme-toggle-btn:active { transform: scale(0.92); }
+@media (max-width: 640px) {
+  .theme-toggle-btn { top: 12px; right: 12px; width: 36px; height: 36px; font-size: 15px; }
+}
+
+/* === Dark mode: all component overrides === */
+[data-theme="dark"] .theme-toggle-btn { background: #1e293b; border-color: #334155; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+[data-theme="dark"] .theme-toggle-btn:hover { border-color: var(--accent); background: #2e1065; }
+[data-theme="dark"] .stat-card { background: #1e293b; border-color: #334155; }
+[data-theme="dark"] .stat-card.stat-green .stat-value { color: #4ade80; }
+[data-theme="dark"] .stat-card.stat-amber .stat-value { color: #fbbf24; }
+[data-theme="dark"] .stat-card.stat-red .stat-value { color: #f87171; }
+[data-theme="dark"] .wrong-list { border-color: #334155; }
+[data-theme="dark"] .wrong-list-header { background: #1e293b; border-color: #334155; }
+[data-theme="dark"] .wrong-list-item { border-color: #334155; }
+[data-theme="dark"] .wrong-list-item:hover { background: #1e293b; }
+[data-theme="dark"] .quiz-option { background: #1e293b; border-color: #334155; }
+[data-theme="dark"] .quiz-option:hover { border-color: var(--accent); background: #2e1065; }
+[data-theme="dark"] .dictation-card .dict-audio { background: #1e293b; border-color: #334155; }
+[data-theme="dark"] .dictation-card .dict-audio:hover { border-color: var(--accent); }
+[data-theme="dark"] .dictation-input-wrap input { background: #1e293b; color: #e2e8f0; border-color: #334155; }
+[data-theme="dark"] .dictation-input-wrap input:focus { border-color: var(--accent); }
+[data-theme="dark"] .dictation-feedback .fb-correct { color: #4ade80; }
+[data-theme="dark"] .dictation-feedback .fb-incorrect { color: #f87171; }
+[data-theme="dark"] .quiz-result .score { color: var(--accent); }
+[data-theme="dark"] #unitFilter { background: #1e293b; color: #e2e8f0; border-color: #334155; }
+[data-theme="dark"] .filter-bar button { background: #1e293b; border-color: #334155; }
+[data-theme="dark"] .filter-bar button:hover { border-color: var(--accent); }
+[data-theme="dark"] .filter-bar button.active { background: #2e1065; border-color: var(--accent); color: var(--accent); }
+[data-theme="dark"] .flashcard-nav .btn-reset { background: #1e293b; border-color: #334155 !important; }
+[data-theme="dark"] .flashcard-nav .btn-reset:hover { background: #2e1065; }
+[data-theme="dark"] .flashcard-nav .btn-outline { border-color: #334155 !important; }
+[data-theme="dark"] .flashcard-nav .btn-outline:hover { background: #1e293b; }
+[data-theme="dark"] .no-card { color: #94a3b8; }
+[data-theme="dark"] .hero .badge { background: #2e1065; }
+[data-theme="dark"] .vocab-unit summary { background: #1e293b; }
+[data-theme="dark"] .vocab-unit summary .unit-progress .srs-due { background: #451a03; color: #fbbf24; }
+[data-theme="dark"] .vocab-table .mastered td { color: #64748b; }
+[data-theme="dark"] .vocab-table tr:hover { background: #1e293b; }
+
+/* === Responsive === */
+@media (max-width: 640px) {
+  .wrapper { padding: 20px 14px 40px; }
+  .top-bar { flex-direction: column; align-items: stretch; }
+  .view-toggle { justify-content: center; }
+  .view-toggle button { font-size: 11px; padding: 5px 10px; }
+  .vocab-table { font-size: 13px; }
+  .vocab-table th, .vocab-table td { padding: 6px 8px; }
+  .vocab-table .ex-cell { max-width: 120px; }
+  .flashcard .front .big-word { font-size: 26px; }
+  .flashcard .back .back-def { font-size: 20px; }
+  .flashcard .front, .flashcard .back { min-height: 220px; padding: 24px 20px; }
+  .dictation-card .dict-chinese { font-size: 22px; }
+  .dictation-input-wrap input { font-size: 16px; padding: 10px 12px; }
+  .quiz-question { font-size: 22px; }
+  .quiz-option { font-size: 14px; padding: 12px 14px; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .stat-card .stat-value { font-size: 24px; }
+  .stats-units .su-row { flex-wrap: wrap; gap: 6px; padding: 8px 10px; }
+  .stats-units .su-label { min-width: 0; width: 100%; font-size: 11px; }
+  .stats-units .su-bar-wrap { min-width: 40px; }
+  .stats-units .su-count { min-width: 36px; font-size: 11px; }
+  .stats-units .su-badge { font-size: 10px; padding: 1px 8px; min-width: 0; }
+</style>
+</head>
+<body>
+
+<button id="sidebarShowBtn">☰ 侧栏</button>
+
+<nav id="sidebar">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="margin-bottom:0;">英语八年级</h2>
+    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+  </div>
+  <nav>
+    <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+    <a href="appendix-grammar.html" style="font-size:13px;">📌 语法全景图</a>
+    <a href="appendix-vocab.html" style="font-size:13px;font-weight:600;color:var(--accent);">📖 单词专项</a>
+    <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 八 上 ━━</a>
+    <a href="u01.html">U1 Happy Holiday!</a>
+    <a href="u02.html">U2 How often do you exercise?</a>
+    <a href="u03.html">U3 I'm more outgoing than my sister.</a>
+    <a href="u04.html">U4 What's the best movie theater?</a>
+    <a href="u05.html">U5 Do you want to watch a game show?</a>
+    <a href="u06.html">U6 I'm going to study computer science.</a>
+    <a href="u07.html">U7 Will people have robots?</a>
+    <a href="u08.html">U8 Let's Communicate!</a>
+    <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 八 下 ━━</a>
+    <a href="b2u01.html">U1 Time to Relax!</a>
+    <a href="b2u02.html">U2 Let's clean up!</a>
+    <a href="b2u03.html">U3 Could you please clean your room?</a>
+    <a href="b2u04.html">U4 Why don't you talk to your parents?</a>
+    <a href="b2u05.html">U5 What were you doing when the rainstorm came?</a>
+    <a href="b2u06.html">U6 An old man tried to move the mountains.</a>
+    <a href="b2u07.html">U7 What's the highest mountain in the world?</a>
+    <a href="b2u08.html">U8 Making a Difference</a>
+      </nav>
+  <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+  <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+</nav>
+
+<div class="wrapper">
+  <a href="index.html" class="back-link">← 返回单元列表</a>
+
+  <div class="hero">
+    <h1>📖 单词专项</h1>
+    <p class="tagline">人教版八年级全册词汇 · 738 词集中突破</p>
+    <span class="badge">24 单元 · SRS 间隔复习 · 听写 · 练习 · 统计</span>
+  </div>
+
+  <div class="top-bar">
+    <div class="view-toggle">
+      <button class="active" data-view="table">📋 单词表</button>
+      <button data-view="flashcard">🃏 自测卡</button>
+      <button data-view="dictation">✍️ 听写</button>
+      <button data-view="quiz">📝 练习</button>
+      <button data-view="stats">📊 统计</button>
+    </div>
+    <div class="filter-bar" id="filterBar">
+      <button class="active" data-filter="all">全部</button>
+      <button data-filter="unmastered">未掌握</button>
+      <button data-filter="mastered">已掌握</button>
+      <button data-filter="wrong" class="filter-wrong">❌ 错词</button>
+    </div>
+    <select id="unitFilter">
+      <option value="all">全部单元</option>
+    </select>
+  </div>
+
+  <div id="tableView" class="view-panel active"></div>
+  <div id="flashcardView" class="view-panel"></div>
+  <div id="dictationView" class="view-panel"></div>
+  <div id="quizView" class="view-panel"></div>
+  <div id="statsView" class="view-panel"></div>
+</div>
+
+<script>
+var VOCAB_DATA = [{"label": "u01", "title": "U1 Happy Holiday! | 初中英语八年级", "words": [{"w": "vacation", "ipa": "/veɪˈkeɪʃn/", "pos": "n.", "defn": "假期", "ex": "I had a wonderful vacation in Beijing.", "trans": "我在北京度过了一个愉快的假期。"}, {"w": "holiday", "ipa": "/ˈhɒlədeɪ/", "pos": "n.", "defn": "假日", "ex": "What are you going to do for the holiday?", "trans": "你假期打算做什么？"}, {"w": "practice", "ipa": "/ˈpræktɪs/", "pos": "v.", "defn": "练习", "ex": "I practice English every morning.", "trans": "我每天早上练习英语。"}, {"w": "improve", "ipa": "/ɪmˈpruːv/", "pos": "v.", "defn": "提高", "ex": "I want to improve my speaking skills.", "trans": "我想提高口语能力。"}, {"w": "meaningful", "ipa": "/ˈmiːnɪŋfl/", "pos": "adj.", "defn": "有意义的", "ex": "Helping others is meaningful.", "trans": "帮助别人很有意义。"}, {"w": "countryside", "ipa": "/ˈkʌntrisaɪd/", "pos": "n.", "defn": "乡下", "ex": "My grandparents live in the countryside.", "trans": "我爷爷奶奶住在乡下。"}, {"w": "visit", "ipa": "/ˈvɪzɪt/", "pos": "v.", "defn": "拜访；参观", "ex": "We visited the Great Wall last week.", "trans": "我们上周参观了长城。"}, {"w": "plan", "ipa": "/plæn/", "pos": "n./v.", "defn": "计划", "ex": "Do you have any plans for the weekend?", "trans": "你周末有什么计划吗？"}, {"w": "trip", "ipa": "/trɪp/", "pos": "n.", "defn": "旅行", "ex": "We're going to take a trip to Sanya.", "trans": "我们打算去三亚旅行。"}, {"w": "experience", "ipa": "/ɪkˈspɪriəns/", "pos": "n./v.", "defn": "经历", "ex": "Traveling gives me new experiences.", "trans": "旅行带给我新的体验。"}, {"w": "improvement", "ipa": "/ɪmˈpruːvmənt/", "pos": "n.", "defn": "提高；进步", "ex": "I can see improvement in my English.", "trans": "我能看到英语的进步。"}, {"w": "relax", "ipa": "/rɪˈlæks/", "pos": "v.", "defn": "放松", "ex": "I like to relax by listening to music.", "trans": "我喜欢听音乐放松。"}, {"w": "attend", "ipa": "/əˈtend/", "pos": "v.", "defn": "参加；出席", "ex": "I will attend the summer camp.", "trans": "我将参加夏令营。"}, {"w": "cancel", "ipa": "/ˈkænsl/", "pos": "v.", "defn": "取消", "ex": "The trip was cancelled.", "trans": "旅行被取消了。"}, {"w": "arrange", "ipa": "/əˈreɪndʒ/", "pos": "v.", "defn": "安排", "ex": "We arranged a family trip.", "trans": "我们安排了一次家庭旅行。"}, {"w": "departure", "ipa": "/dɪˈpɑːrtʃər/", "pos": "n.", "defn": "出发；离开", "ex": "The departure was at 8 am.", "trans": "早上八点出发。"}, {"w": "transport", "ipa": "/ˈtrænspɔːrt/", "pos": "n.", "defn": "交通；运输", "ex": "Public transport is convenient.", "trans": "公共交通很方便。"}, {"w": "scenery", "ipa": "/ˈsiːnəri/", "pos": "n.", "defn": "风景；景色", "ex": "The scenery was beautiful.", "trans": "风景很美。"}, {"w": "souvenir", "ipa": "/ˌsuːvəˈnɪr/", "pos": "n.", "defn": "纪念品", "ex": "I bought a souvenir for you.", "trans": "我给你买了纪念品。"}, {"w": "cultural", "ipa": "/ˈkʌltʃərəl/", "pos": "adj.", "defn": "文化的", "ex": "We visited cultural sites.", "trans": "我们参观了文化遗址。"}, {"w": "local", "ipa": "/ˈloʊkl/", "pos": "adj.", "defn": "当地的；本地的", "ex": "We tried local food.", "trans": "我们尝了当地食物。"}, {"w": "abroad", "ipa": "/əˈbrɔːd/", "pos": "adv.", "defn": "到国外", "ex": "She went abroad for study.", "trans": "她出国学习了。"}, {"w": "memorable", "ipa": "/ˈmemərəbl/", "pos": "adj.", "defn": "难忘的", "ex": "It was a memorable journey.", "trans": "这是一次难忘的旅程。"}, {"w": "magnificent", "ipa": "/mæɡˈnɪfɪsnt/", "pos": "adj.", "defn": "壮丽的；宏伟的", "ex": "The view was magnificent.", "trans": "景色壮丽。"}, {"w": "extraordinary", "ipa": "/ɪkˈstrɔːrdəneri/", "pos": "adj.", "defn": "非凡的；特别的", "ex": "We had an extraordinary experience.", "trans": "我们有了一次非凡的经历。"}, {"w": "unforgettable", "ipa": "/ˌʌnfərˈɡetəbl/", "pos": "adj.", "defn": "难忘的；无法忘记的", "ex": "The trip was unforgettable.", "trans": "这次旅行令人难忘。"}, {"w": "destined", "ipa": "/ˈdestɪnd/", "pos": "adj.", "defn": "注定要……的", "ex": "This place is destined to be popular.", "trans": "这地方注定会受欢迎。"}, {"w": "delightful", "ipa": "/dɪˈlaɪtfl/", "pos": "adj.", "defn": "令人愉快的", "ex": "We had a delightful time.", "trans": "我们度过了愉快的时光。"}]}, {"label": "u02", "title": "U2 How often do you exercise? | 初中英语八年级", "words": [{"w": "exercise", "ipa": "/ˈeksərsaɪz/", "pos": "v./n.", "defn": "锻炼；运动", "ex": "How often do you exercise?", "trans": "你多久锻炼一次？"}, {"w": "hardly", "ipa": "/ˈhɑːrdli/", "pos": "adv.", "defn": "几乎不", "ex": "I hardly ever go to the cinema.", "trans": "我几乎不去电影院。"}, {"w": "ever", "ipa": "/ˈevər/", "pos": "adv.", "defn": "曾经；在任何时候", "ex": "Hardly ever means almost never.", "trans": "Hardly ever 意为几乎从不。"}, {"w": "once", "ipa": "/wʌns/", "pos": "adv.", "defn": "一次；曾经", "ex": "I go to the library once a week.", "trans": "我每周去一次图书馆。"}, {"w": "twice", "ipa": "/twaɪs/", "pos": "adv.", "defn": "两次；两倍", "ex": "She reads English twice a day.", "trans": "她每天读两次英语。"}, {"w": "program", "ipa": "/ˈproʊɡræm/", "pos": "n.", "defn": "节目；项目", "ex": "What's your favorite TV program?", "trans": "你最喜欢的电视节目是什么？"}, {"w": "full", "ipa": "/fʊl/", "pos": "adj.", "defn": "满的；充满的", "ex": "My weekend is full of activities.", "trans": "我的周末排满了活动。"}, {"w": "maybe", "ipa": "/ˈmeɪbi/", "pos": "adv.", "defn": "也许；大概", "ex": "Maybe I can join you tomorrow.", "trans": "也许我明天可以加入你。"}, {"w": "least", "ipa": "/liːst/", "pos": "adj./adv.", "defn": "最少；最小", "ex": "You should exercise at least three times a week.", "trans": "你应该至少每周锻炼三次。"}, {"w": "result", "ipa": "/rɪˈzʌlt/", "pos": "n.", "defn": "结果；成绩", "ex": "Here are the results of the survey.", "trans": "这是调查结果。"}, {"w": "percent", "ipa": "/pərˈsent/", "pos": "n.", "defn": "百分之…", "ex": "Forty percent of students exercise every day.", "trans": "40% 的学生每天锻炼。"}, {"w": "habit", "ipa": "/ˈhæbɪt/", "pos": "n.", "defn": "习惯", "ex": "Good habits help us stay healthy.", "trans": "好习惯帮助我们保持健康。"}, {"w": "habit", "ipa": "/ˈhæbɪt/", "pos": "n.", "defn": "习惯", "ex": "Develop good habits early.", "trans": "尽早养成好习惯。"}, {"w": "regular", "ipa": "/ˈreɡjələr/", "pos": "adj.", "defn": "有规律的", "ex": "Regular exercise is important.", "trans": "规律运动很重要。"}, {"w": "schedule", "ipa": "/ˈskedʒuːl/", "pos": "n.", "defn": "时间表；日程", "ex": "I have a busy schedule.", "trans": "我的日程很满。"}, {"w": "amount", "ipa": "/əˈmaʊnt/", "pos": "n.", "defn": "数量；总额", "ex": "Limit the amount of screen time.", "trans": "限制屏幕时间。"}, {"w": "screen", "ipa": "/skriːn/", "pos": "n.", "defn": "屏幕", "ex": "Staring at screens hurts eyes.", "trans": "长时间看屏幕伤眼睛。"}, {"w": "average", "ipa": "/ˈævərɪdʒ/", "pos": "n./adj.", "defn": "平均", "ex": "On average, I sleep 8 hours.", "trans": "我平均睡八小时。"}, {"w": "percent", "ipa": "/pərˈsent/", "pos": "n.", "defn": "百分之……", "ex": "90 percent of students have phones.", "trans": "百分之九十的学生有手机。"}, {"w": "result", "ipa": "/rɪˈzʌlt/", "pos": "n.", "defn": "结果；成果", "ex": "The survey result is surprising.", "trans": "调查结果令人惊讶。"}, {"w": "although", "ipa": "/ɔːlˈðoʊ/", "pos": "conj.", "defn": "虽然；尽管", "ex": "Although it's hard, I keep trying.", "trans": "虽然难，我仍坚持。"}, {"w": "dentist", "ipa": "/ˈdentɪst/", "pos": "n.", "defn": "牙医", "ex": "I go to the dentist twice a year.", "trans": "我每年看两次牙医。"}, {"w": "discipline", "ipa": "/ˈdɪsəplɪn/", "pos": "n.", "defn": "纪律；自律", "ex": "Self-discipline is the key.", "trans": "自律是关键。"}, {"w": "moderation", "ipa": "/ˌmɒdəˈreɪʃn/", "pos": "n.", "defn": "适度；节制", "ex": "Eat in moderation.", "trans": "饮食要适度。"}, {"w": "frequency", "ipa": "/ˈfriːkwənsi/", "pos": "n.", "defn": "频率；频次", "ex": "The frequency of exercise matters.", "trans": "运动频率很重要。"}, {"w": "nutrition", "ipa": "/njuˈtrɪʃn/", "pos": "n.", "defn": "营养", "ex": "Good nutrition keeps us healthy.", "trans": "好营养让我们健康。"}, {"w": "sufficient", "ipa": "/səˈfɪʃnt/", "pos": "adj.", "defn": "足够的；充足的", "ex": "Get sufficient sleep every night.", "trans": "每晚保证充足睡眠。"}, {"w": "lifestyle", "ipa": "/ˈlaɪfstaɪl/", "pos": "n.", "defn": "生活方式", "ex": "A healthy lifestyle is important.", "trans": "健康的生活方式很重要。"}]}, {"label": "u03", "title": "U3 I'm more outgoing than my sister. | 初中英语八年级", "words": [{"w": "outgoing", "ipa": "/ˌaʊtˈɡoʊɪŋ/", "pos": "adj.", "defn": "外向的", "ex": "She is more outgoing than her brother.", "trans": "她比她弟弟外向。"}, {"w": "serious", "ipa": "/ˈsɪriəs/", "pos": "adj.", "defn": "严肃的；认真的", "ex": "He is a serious student.", "trans": "他是个认真的学生。"}, {"w": "hard-working", "ipa": "/hɑːrd ˈwɜːrkɪŋ/", "pos": "adj.", "defn": "勤奋的", "ex": "My sister is very hard-working.", "trans": "我姐姐非常勤奋。"}, {"w": "quiet", "ipa": "/ˈkwaɪət/", "pos": "adj.", "defn": "安静的；文静的", "ex": "Lisa is quieter than her twin sister.", "trans": "Lisa 比她的双胞胎妹妹安静。"}, {"w": "funny", "ipa": "/ˈfʌni/", "pos": "adj.", "defn": "有趣的；好笑的", "ex": "He tells funny stories.", "trans": "他讲很有趣的故事。"}, {"w": "smart", "ipa": "/smɑːrt/", "pos": "adj.", "defn": "聪明的；机灵的", "ex": "Dogs are smart animals.", "trans": "狗是聪明的动物。"}, {"w": "kind", "ipa": "/kaɪnd/", "pos": "adj.", "defn": "善良的；友好的", "ex": "A kind person always helps others.", "trans": "善良的人总是帮助别人。"}, {"w": "lazy", "ipa": "/ˈleɪzi/", "pos": "adj.", "defn": "懒惰的", "ex": "Don't be lazy. Do your homework now.", "trans": "别偷懒，现在做作业。"}, {"w": "though", "ipa": "/ðoʊ/", "pos": "conj.", "defn": "虽然；尽管", "ex": "He's quiet, though he has many friends.", "trans": "他虽然安静，但朋友很多。"}, {"w": "both", "ipa": "/boʊθ/", "pos": "adj./pron.", "defn": "两者都", "ex": "Both of my parents are teachers.", "trans": "我父母都是老师。"}, {"w": "better", "ipa": "/ˈbetər/", "pos": "adj.", "defn": "更好的(well 的比较级)", "ex": "I am getting better at English.", "trans": "我的英语在进步。"}, {"w": "win", "ipa": "/wɪn/", "pos": "v.", "defn": "赢；获胜", "ex": "I hope our team can win.", "trans": "我希望我们队能赢。"}, {"w": "outgoing", "ipa": "/ˌaʊtˈɡoʊɪŋ/", "pos": "adj.", "defn": "外向的；友好的", "ex": "She is outgoing and popular.", "trans": "她外向又受欢迎。"}, {"w": "honest", "ipa": "/ˈɒnɪst/", "pos": "adj.", "defn": "诚实的；老实的", "ex": "An honest person is trusted.", "trans": "诚实的人被信任。"}, {"w": "brave", "ipa": "/breɪv/", "pos": "adj.", "defn": "勇敢的", "ex": "Be brave to try new things.", "trans": "勇敢尝试新事物。"}, {"w": "modest", "ipa": "/ˈmɒdɪst/", "pos": "adj.", "defn": "谦虚的", "ex": "Stay modest even when you win.", "trans": "赢了也要保持谦虚。"}, {"w": "patient", "ipa": "/ˈpeɪʃnt/", "pos": "adj.", "defn": "耐心的", "ex": "A good teacher is patient.", "trans": "好老师有耐心。"}, {"w": "clever", "ipa": "/ˈklevər/", "pos": "adj.", "defn": "聪明的；机灵的", "ex": "He is clever at solving problems.", "trans": "他擅长解决问题。"}, {"w": "helpful", "ipa": "/ˈhelpfl/", "pos": "adj.", "defn": "有帮助的；乐于助人的", "ex": "My friend is always helpful.", "trans": "我的朋友总是乐于助人。"}, {"w": "serious", "ipa": "/ˈsɪriəs/", "pos": "adj.", "defn": "严肃的；认真的", "ex": "She is serious about her work.", "trans": "她对工作很认真。"}, {"w": "necessary", "ipa": "/ˈnesəseri/", "pos": "adj.", "defn": "必要的；必需的", "ex": "Is it necessary to compare?", "trans": "有必要比较吗？"}, {"w": "though", "ipa": "/ðoʊ/", "pos": "conj.", "defn": "虽然；尽管", "ex": "Though she is young, she is wise.", "trans": "虽然年轻，但她很明智。"}, {"w": "personality", "ipa": "/ˌpɜːrsəˈnæləti/", "pos": "n.", "defn": "个性；人格", "ex": "Everyone has a unique personality.", "trans": "每个人都有独特个性。"}, {"w": "optimistic", "ipa": "/ˌɒptɪˈmɪstɪk/", "pos": "adj.", "defn": "乐观的", "ex": "Stay optimistic in difficulties.", "trans": "困难中保持乐观。"}, {"w": "considerate", "ipa": "/kənˈsɪdərət/", "pos": "adj.", "defn": "体贴的；考虑周到的", "ex": "He is considerate of others.", "trans": "他很体贴别人。"}, {"w": "diligent", "ipa": "/ˈdɪlɪdʒənt/", "pos": "adj.", "defn": "勤奋的；用功的", "ex": "A diligent student will succeed.", "trans": "勤奋的学生会成功。"}, {"w": "reliable", "ipa": "/rɪˈlaɪəbl/", "pos": "adj.", "defn": "可靠的；可信赖的", "ex": "She is a reliable friend.", "trans": "她是个可靠的朋友。"}, {"w": "adaptable", "ipa": "/əˈdæptəbl/", "pos": "adj.", "defn": "适应能力强的", "ex": "Children are adaptable to change.", "trans": "孩子适应变化的能力强。"}]}, {"label": "u04", "title": "U4 What's the best movie theater? | 初中英语八年级", "words": [{"w": "theater", "ipa": "/ˈθɪətər/", "pos": "n.", "defn": "剧院；电影院", "ex": "Which theater do you like best?", "trans": "你最喜欢哪家影院？"}, {"w": "comfortable", "ipa": "/ˈkʌmftəbl/", "pos": "adj.", "defn": "舒适的", "ex": "These seats are very comfortable.", "trans": "这些座位很舒服。"}, {"w": "screen", "ipa": "/skriːn/", "pos": "n.", "defn": "屏幕", "ex": "The screen is the biggest in town.", "trans": "这是镇上最大的屏幕。"}, {"w": "service", "ipa": "/ˈsɜːrvɪs/", "pos": "n.", "defn": "服务", "ex": "The service here is the best.", "trans": "这里的服务最好。"}, {"w": "popular", "ipa": "/ˈpɑːpjələr/", "pos": "adj.", "defn": "受欢迎的", "ex": "This is the most popular restaurant.", "trans": "这是最受欢迎的餐厅。"}, {"w": "cheap", "ipa": "/tʃiːp/", "pos": "adj.", "defn": "便宜的", "ex": "The tickets are the cheapest on Monday.", "trans": "周一票最便宜。"}, {"w": "expensive", "ipa": "/ɪkˈspensɪv/", "pos": "adj.", "defn": "贵的", "ex": "It's the most expensive theater.", "trans": "这是最贵的影院。"}, {"w": "close", "ipa": "/kloʊs/", "pos": "adj.", "defn": "近的", "ex": "The park is close to my home.", "trans": "公园离我家很近。"}, {"w": "quality", "ipa": "/ˈkwɑːləti/", "pos": "n.", "defn": "质量", "ex": "The food quality is the best here.", "trans": "这里的食物质量最好。"}, {"w": "choose", "ipa": "/tʃuːz/", "pos": "v.", "defn": "选择", "ex": "You can choose any seat you like.", "trans": "你可以选任何你喜欢的座位。"}, {"w": "quality", "ipa": "/ˈkwɒləti/", "pos": "n.", "defn": "质量", "ex": "Quality is more important than price.", "trans": "质量比价格更重要。"}, {"w": "service", "ipa": "/ˈsɜːrvɪs/", "pos": "n.", "defn": "服务", "ex": "The service was excellent.", "trans": "服务非常好。"}, {"w": "comfortable", "ipa": "/ˈkʌmftəbl/", "pos": "adj.", "defn": "舒适的", "ex": "This sofa is very comfortable.", "trans": "这个沙发很舒适。"}, {"w": "reasonable", "ipa": "/ˈriːznəbl/", "pos": "adj.", "defn": "合理的；公道的", "ex": "The price is reasonable.", "trans": "价格很合理。"}, {"w": "compare", "ipa": "/kəmˈpeər/", "pos": "v.", "defn": "比较", "ex": "Don't compare yourself to others.", "trans": "别拿自己和别人比较。"}, {"w": "popular", "ipa": "/ˈpɒpjələr/", "pos": "adj.", "defn": "流行的", "ex": "This restaurant is very popular.", "trans": "这家餐馆很受欢迎。"}, {"w": "review", "ipa": "/rɪˈvjuː/", "pos": "n./v.", "defn": "评论；复习", "ex": "Read online reviews before buying.", "trans": "买之前看看评论。"}, {"w": "customer", "ipa": "/ˈkʌstəmər/", "pos": "n.", "defn": "顾客", "ex": "The customer is always right.", "trans": "顾客永远是对的。"}, {"w": "perform", "ipa": "/pərˈfɔːrm/", "pos": "v.", "defn": "表演；表现", "ex": "The singer performed well.", "trans": "歌手表现很好。"}, {"w": "choose", "ipa": "/tʃuːz/", "pos": "v.", "defn": "选择", "ex": "You need to choose wisely.", "trans": "你需要明智地选择。"}, {"w": "preference", "ipa": "/ˈprefrəns/", "pos": "n.", "defn": "偏好；偏爱", "ex": "Everyone has their own preference.", "trans": "每个人都有自己的偏好。"}, {"w": "superior", "ipa": "/suːˈpɪriər/", "pos": "adj.", "defn": "更好的；优越的", "ex": "This product is superior in quality.", "trans": "这个产品质量更优。"}, {"w": "inferior", "ipa": "/ɪnˈfɪriər/", "pos": "adj.", "defn": "较差的", "ex": "Don't buy inferior goods.", "trans": "别买劣质商品。"}, {"w": "comparison", "ipa": "/kəmˈpærɪsn/", "pos": "n.", "defn": "比较；对比", "ex": "In comparison, this one is better.", "trans": "相比之下，这个更好。"}, {"w": "distinguish", "ipa": "/dɪˈstɪŋɡwɪʃ/", "pos": "v.", "defn": "区别；辨别", "ex": "Learn to distinguish good from bad.", "trans": "学会区分好与坏。"}, {"w": "advantage", "ipa": "/ədˈvæntɪdʒ/", "pos": "n.", "defn": "优势；优点", "ex": "Every method has its advantage.", "trans": "每种方法都有其优势。"}]}, {"label": "u05", "title": "U5 Do you want to watch a game show? | 初中英语八年级", "words": [{"w": "sitcom", "ipa": "/ˈsɪtkɑːm/", "pos": "n.", "defn": "情景喜剧", "ex": "I like watching sitcoms.", "trans": "我喜欢看情景喜剧。"}, {"w": "talent", "ipa": "/ˈtælənt/", "pos": "n.", "defn": "才能；天赋", "ex": "She has a talent for singing.", "trans": "她有唱歌天赋。"}, {"w": "plan", "ipa": "/plæn/", "pos": "v.", "defn": "计划", "ex": "We plan to go hiking this weekend.", "trans": "我们计划周末去远足。"}, {"w": "hope", "ipa": "/hoʊp/", "pos": "v.", "defn": "希望", "ex": "I hope to visit Beijing one day.", "trans": "我希望有一天去北京。"}, {"w": "educational", "ipa": "/ˌedʒuˈkeɪʃənl/", "pos": "adj.", "defn": "教育的；有教育意义的", "ex": "Documentaries are educational.", "trans": "纪录片很有教育意义。"}, {"w": "meaningless", "ipa": "/ˈmiːnɪŋləs/", "pos": "adj.", "defn": "毫无意义的", "ex": "I think some ads are meaningless.", "trans": "我觉得有些广告毫无意义。"}, {"w": "enjoyable", "ipa": "/ɪnˈdʒɔɪəbl/", "pos": "adj.", "defn": "令人愉快的", "ex": "The movie was very enjoyable.", "trans": "这部电影非常好看。"}, {"w": "expect", "ipa": "/ɪkˈspekt/", "pos": "v.", "defn": "期待；预料", "ex": "I expect to learn a lot from this show.", "trans": "我期待从这个节目中学到很多。"}, {"w": "famous", "ipa": "/ˈfeɪməs/", "pos": "adj.", "defn": "著名的", "ex": "She wants to be a famous singer.", "trans": "她想成为著名的歌手。"}, {"w": "appear", "ipa": "/əˈpɪr/", "pos": "v.", "defn": "出现；露面", "ex": "Many stars appear on this show.", "trans": "很多明星在这个节目中出现。"}, {"w": "channel", "ipa": "/ˈtʃænl/", "pos": "n.", "defn": "频道", "ex": "Which channel is your favorite?", "trans": "你最喜欢哪个频道？"}, {"w": "educational", "ipa": "/ˌedʒuˈkeɪʃənl/", "pos": "adj.", "defn": "教育的", "ex": "Watching educational programs helps.", "trans": "看教育节目有帮助。"}, {"w": "meaningless", "ipa": "/ˈmiːnɪŋləs/", "pos": "adj.", "defn": "无意义的", "ex": "Some shows are meaningless.", "trans": "有些节目毫无意义。"}, {"w": "entertaining", "ipa": "/ˌentərˈteɪnɪŋ/", "pos": "adj.", "defn": "有趣的；娱乐的", "ex": "The movie was very entertaining.", "trans": "电影很有趣。"}, {"w": "culture", "ipa": "/ˈkʌltʃər/", "pos": "n.", "defn": "文化", "ex": "Learn about different cultures.", "trans": "了解不同文化。"}, {"w": "influence", "ipa": "/ˈɪnfluəns/", "pos": "v./n.", "defn": "影响", "ex": "Media influences our opinions.", "trans": "媒体影响我们的观点。"}, {"w": "audience", "ipa": "/ˈɔːdiəns/", "pos": "n.", "defn": "观众", "ex": "The show attracted a large audience.", "trans": "节目吸引了大量观众。"}, {"w": "valuable", "ipa": "/ˈvæljuəbl/", "pos": "adj.", "defn": "有价值的", "ex": "This documentary is very valuable.", "trans": "这部纪录片很有价值。"}, {"w": "relaxing", "ipa": "/rɪˈlæksɪŋ/", "pos": "adj.", "defn": "令人放松的", "ex": "Listening to music is relaxing.", "trans": "听音乐很放松。"}, {"w": "opinion", "ipa": "/əˈpɪnjən/", "pos": "n.", "defn": "意见；看法", "ex": "In my opinion, it's a great show.", "trans": "在我看来，这是个好节目。"}, {"w": "addictive", "ipa": "/əˈdɪktɪv/", "pos": "adj.", "defn": "上瘾的", "ex": "Some games are addictive.", "trans": "有些游戏会上瘾。"}, {"w": "critical", "ipa": "/ˈkrɪtɪkl/", "pos": "adj.", "defn": "批判性的", "ex": "Think critically about what you watch.", "trans": "对看到的东西要有批判思维。"}, {"w": "perspective", "ipa": "/pərˈspektɪv/", "pos": "n.", "defn": "视角；观点", "ex": "Different people have different perspectives.", "trans": "不同人有不同视角。"}, {"w": "prejudice", "ipa": "/ˈpredʒudɪs/", "pos": "n.", "defn": "偏见", "ex": "Media can create prejudice.", "trans": "媒体可能制造偏见。"}, {"w": "diverse", "ipa": "/daɪˈvɜːrs/", "pos": "adj.", "defn": "多样化的", "ex": "We need diverse sources of news.", "trans": "我们需要多样化的新闻来源。"}, {"w": "analyze", "ipa": "/ˈænəlaɪz/", "pos": "v.", "defn": "分析", "ex": "Learn to analyze information.", "trans": "学会分析信息。"}]}, {"label": "u06", "title": "U6 I'm going to study computer science. | 初中英语八年级", "words": [{"w": "programmer", "ipa": "/ˈproʊɡræmər/", "pos": "n.", "defn": "程序员", "ex": "My uncle is a computer programmer.", "trans": "我叔叔是程序员。"}, {"w": "science", "ipa": "/ˈsaɪəns/", "pos": "n.", "defn": "科学；理科", "ex": "Computer science is very useful.", "trans": "计算机科学很有用。"}, {"w": "medicine", "ipa": "/ˈmedɪsn/", "pos": "n.", "defn": "医学；药", "ex": "She wants to study medicine in college.", "trans": "她想在大学学医。"}, {"w": "university", "ipa": "/ˌjuːnɪˈvɜːrsəti/", "pos": "n.", "defn": "大学", "ex": "Which university do you want to go to?", "trans": "你想上哪所大学？"}, {"w": "engineer", "ipa": "/ˌendʒɪˈnɪr/", "pos": "n.", "defn": "工程师", "ex": "He's going to be an engineer.", "trans": "他打算当工程师。"}, {"w": "pilot", "ipa": "/ˈpaɪlət/", "pos": "n.", "defn": "飞行员", "ex": "It's my dream to be a pilot.", "trans": "当飞行员是我的梦想。"}, {"w": "cook", "ipa": "/kʊk/", "pos": "n.", "defn": "厨师", "ex": "She is a great cook.", "trans": "她是个好厨师。"}, {"w": "violinist", "ipa": "/ˌvaɪəˈlɪnɪst/", "pos": "n.", "defn": "小提琴手", "ex": "The violinist plays beautifully.", "trans": "这位小提琴手演奏得很美。"}, {"w": "college", "ipa": "/ˈkɑːlɪdʒ/", "pos": "n.", "defn": "学院；大学", "ex": "I'm going to go to college after high school.", "trans": "高中毕业后我要上大学。"}, {"w": "education", "ipa": "/ˌedʒuˈkeɪʃn/", "pos": "n.", "defn": "教育", "ex": "Education is important for everyone.", "trans": "教育对每个人都很重要。"}, {"w": "artist", "ipa": "/ˈɑːrtɪst/", "pos": "n.", "defn": "艺术家", "ex": "She wants to become an artist.", "trans": "她想成为艺术家。"}, {"w": "resolution", "ipa": "/ˌrezəˈluːʃn/", "pos": "n.", "defn": "决心；决定", "ex": "I made a New Year's resolution to study harder.", "trans": "我下了新年决心要更努力学习。"}, {"w": "career", "ipa": "/kəˈrɪr/", "pos": "n.", "defn": "职业", "ex": "Choose a career you love.", "trans": "选择你喜欢的职业。"}, {"w": "engineer", "ipa": "/ˌendʒɪˈnɪr/", "pos": "n.", "defn": "工程师", "ex": "My uncle is an engineer.", "trans": "我叔叔是工程师。"}, {"w": "scientist", "ipa": "/ˈsaɪəntɪst/", "pos": "n.", "defn": "科学家", "ex": "She wants to become a scientist.", "trans": "她想成为科学家。"}, {"w": "programmer", "ipa": "/ˈproʊɡræmər/", "pos": "n.", "defn": "程序员", "ex": "He works as a programmer.", "trans": "他是程序员。"}, {"w": "education", "ipa": "/ˌedʒuˈkeɪʃn/", "pos": "n.", "defn": "教育", "ex": "Education is the key to success.", "trans": "教育是成功的关键。"}, {"w": "university", "ipa": "/ˌjuːnɪˈvɜːrsəti/", "pos": "n.", "defn": "大学", "ex": "She was accepted to a top university.", "trans": "她被一所顶尖大学录取了。"}, {"w": "medicine", "ipa": "/ˈmedɪsn/", "pos": "n.", "defn": "医学；药", "ex": "He studies medicine at college.", "trans": "他在大学学医。"}, {"w": "resolution", "ipa": "/ˌrezəˈluːʃn/", "pos": "n.", "defn": "决心；决定", "ex": "I made a resolution to study harder.", "trans": "我下决心更努力学习。"}, {"w": "promise", "ipa": "/ˈprɒmɪs/", "pos": "v./n.", "defn": "承诺；保证", "ex": "Keep your promises.", "trans": "遵守你的承诺。"}, {"w": "skill", "ipa": "/skɪl/", "pos": "n.", "defn": "技能；技巧", "ex": "Practice improves your skills.", "trans": "练习提升技能。"}, {"w": "ambition", "ipa": "/æmˈbɪʃn/", "pos": "n.", "defn": "雄心；志向", "ex": "Follow your ambition, not others' expectations.", "trans": "追随你的志向，而非他人期望。"}, {"w": "motivation", "ipa": "/ˌmoʊtɪˈveɪʃn/", "pos": "n.", "defn": "动力；积极性", "ex": "Find your inner motivation.", "trans": "找到你内心的动力。"}, {"w": "vocation", "ipa": "/voʊˈkeɪʃn/", "pos": "n.", "defn": "天职；使命", "ex": "Teaching is more than a job—it's a vocation.", "trans": "教学不止是工作，更是使命。"}, {"w": "dedication", "ipa": "/ˌdedɪˈkeɪʃn/", "pos": "n.", "defn": "奉献；专注", "ex": "Success requires dedication.", "trans": "成功需要奉献。"}, {"w": "potential", "ipa": "/pəˈtenʃl/", "pos": "n.", "defn": "潜力；潜能", "ex": "Everyone has great potential.", "trans": "每个人都有巨大潜力。"}, {"w": "profession", "ipa": "/prəˈfeʃn/", "pos": "n.", "defn": "职业；专业", "ex": "Choose a profession that suits you.", "trans": "选择适合你的职业。"}]}, {"label": "u07", "title": "U7 Will people have robots? | 初中英语八年级", "words": [{"w": "robot", "ipa": "/ˈroʊbɑːt/", "pos": "n.", "defn": "机器人", "ex": "Robots will help us do housework.", "trans": "机器人会帮我们做家务。"}, {"w": "pollution", "ipa": "/pəˈluːʃn/", "pos": "n.", "defn": "污染", "ex": "There will be less pollution in the future.", "trans": "未来污染会更少。"}, {"w": "environment", "ipa": "/ɪnˈvaɪrənmənt/", "pos": "n.", "defn": "环境", "ex": "We should protect the environment.", "trans": "我们应该保护环境。"}, {"w": "planet", "ipa": "/ˈplænɪt/", "pos": "n.", "defn": "行星；星球", "ex": "Earth is our home planet.", "trans": "地球是我们的家园。"}, {"w": "peace", "ipa": "/piːs/", "pos": "n.", "defn": "和平", "ex": "I hope there will be world peace.", "trans": "我希望世界和平。"}, {"w": "prediction", "ipa": "/prɪˈdɪkʃn/", "pos": "n.", "defn": "预测", "ex": "Do you have a prediction about the future?", "trans": "你对未来有预测吗？"}, {"w": "believe", "ipa": "/bɪˈliːv/", "pos": "v.", "defn": "相信", "ex": "I believe there will be great changes.", "trans": "我相信会有巨大的变化。"}, {"w": "future", "ipa": "/ˈfjuːtʃər/", "pos": "n.", "defn": "未来", "ex": "The future is in our hands.", "trans": "未来掌握在我们手中。"}, {"w": "danger", "ipa": "/ˈdeɪndʒər/", "pos": "n.", "defn": "危险", "ex": "Some animals are in danger.", "trans": "一些动物处于危险中。"}, {"w": "possible", "ipa": "/ˈpɑːsəbl/", "pos": "adj.", "defn": "可能的", "ex": "Everything is possible.", "trans": "一切皆有可能。"}, {"w": "environment", "ipa": "/ɪnˈvaɪrənmənt/", "pos": "n.", "defn": "环境", "ex": "Protect the environment now.", "trans": "现在就保护环境。"}, {"w": "pollution", "ipa": "/pəˈluːʃn/", "pos": "n.", "defn": "污染", "ex": "Air pollution is a serious problem.", "trans": "空气污染是个严重问题。"}, {"w": "technology", "ipa": "/tekˈnɒlədʒi/", "pos": "n.", "defn": "技术", "ex": "Technology changes fast.", "trans": "技术变化很快。"}, {"w": "robot", "ipa": "/ˈroʊbɒt/", "pos": "n.", "defn": "机器人", "ex": "Robots will do many jobs.", "trans": "机器人将做很多工作。"}, {"w": "future", "ipa": "/ˈfjuːtʃər/", "pos": "n.", "defn": "未来", "ex": "The future is full of possibilities.", "trans": "未来充满可能。"}, {"w": "prediction", "ipa": "/prɪˈdɪkʃn/", "pos": "n.", "defn": "预测", "ex": "Make a prediction about the future.", "trans": "预测一下未来。"}, {"w": "dangerous", "ipa": "/ˈdeɪndʒərəs/", "pos": "adj.", "defn": "危险的", "ex": "This could be dangerous.", "trans": "这可能很危险。"}, {"w": "peaceful", "ipa": "/ˈpiːsfl/", "pos": "adj.", "defn": "和平的；平静的", "ex": "I hope for a peaceful world.", "trans": "我希望世界和平。"}, {"w": "believe", "ipa": "/bɪˈliːv/", "pos": "v.", "defn": "相信", "ex": "I believe in a bright future.", "trans": "我相信光明的未来。"}, {"w": "agree", "ipa": "/əˈɡriː/", "pos": "v.", "defn": "同意", "ex": "Do you agree with this prediction?", "trans": "你同意这个预测吗？"}, {"w": "artificial", "ipa": "/ˌɑːrtɪˈfɪʃl/", "pos": "adj.", "defn": "人工的；人造的", "ex": "Artificial intelligence is advancing fast.", "trans": "人工智能发展很快。"}, {"w": "sustainable", "ipa": "/səˈsteɪnəbl/", "pos": "adj.", "defn": "可持续的", "ex": "We need sustainable development.", "trans": "我们需要可持续发展。"}, {"w": "inevitable", "ipa": "/ɪnˈevɪtəbl/", "pos": "adj.", "defn": "不可避免的", "ex": "Change is inevitable.", "trans": "变化是不可避免的。"}, {"w": "optimistic", "ipa": "/ˌɒptɪˈmɪstɪk/", "pos": "adj.", "defn": "乐观的", "ex": "Be optimistic about the future.", "trans": "对未来保持乐观。"}, {"w": "pessimistic", "ipa": "/ˌpesɪˈmɪstɪk/", "pos": "adj.", "defn": "悲观的", "ex": "Don't be too pessimistic.", "trans": "别太悲观。"}, {"w": "breakthrough", "ipa": "/ˈbreɪkθruː/", "pos": "n.", "defn": "突破", "ex": "This is a major breakthrough.", "trans": "这是一项重大突破。"}]}, {"label": "u08", "title": "U8 Let's Communicate! | 初中英语八年级", "words": [{"w": "communicate", "ipa": "/kəˈmjuːnɪkeɪt/", "pos": "v.", "defn": "交流；沟通", "ex": "We should communicate with our parents.", "trans": "我们应该和父母沟通。"}, {"w": "suggestion", "ipa": "/səˈdʒestʃən/", "pos": "n.", "defn": "建议", "ex": "Do you have any suggestions?", "trans": "你有什么建议吗？"}, {"w": "polite", "ipa": "/pəˈlaɪt/", "pos": "adj.", "defn": "礼貌的", "ex": "It's polite to say ", "trans": "说\"谢谢\"是礼貌的。"}, {"w": "signal", "ipa": "/ˈsɪɡnəl/", "pos": "n.", "defn": "信号；暗号", "ex": "Let's agree on a signal.", "trans": "我们来约定一个信号。"}, {"w": "remind", "ipa": "/rɪˈmaɪnd/", "pos": "v.", "defn": "提醒", "ex": "Please remind me to do my homework.", "trans": "请提醒我做作业。"}, {"w": "organize", "ipa": "/ˈɔːrɡənaɪz/", "pos": "v.", "defn": "组织", "ex": "Let's organize a class meeting.", "trans": "我们来组织一次班会。"}, {"w": "discuss", "ipa": "/dɪˈskʌs/", "pos": "v.", "defn": "讨论", "ex": "Let's discuss this problem.", "trans": "我们来讨论这个问题。"}, {"w": "solution", "ipa": "/səˈluːʃn/", "pos": "n.", "defn": "解决办法", "ex": "We need to find a solution.", "trans": "我们需要找到解决办法。"}, {"w": "respect", "ipa": "/rɪˈspekt/", "pos": "v./n.", "defn": "尊重", "ex": "We should respect each other.", "trans": "我们应该互相尊重。"}, {"w": "support", "ipa": "/səˈpɔːrt/", "pos": "v./n.", "defn": "支持", "ex": "Thank you for your support.", "trans": "谢谢你的支持。"}, {"w": "communicate", "ipa": "/kəˈmjuːnɪkeɪt/", "pos": "v.", "defn": "交流；沟通", "ex": "Learn to communicate clearly.", "trans": "学会清晰交流。"}, {"w": "expression", "ipa": "/ɪkˈspreʃn/", "pos": "n.", "defn": "表达；表情", "ex": "Facial expressions show feelings.", "trans": "面部表情表达感受。"}, {"w": "common", "ipa": "/ˈkɒmən/", "pos": "adj.", "defn": "共同的；常见的", "ex": "English is a common language.", "trans": "英语是通用语言。"}, {"w": "purpose", "ipa": "/ˈpɜːrpəs/", "pos": "n.", "defn": "目的", "ex": "What is the purpose of this message?", "trans": "这条信息的目的什么？"}, {"w": "conversation", "ipa": "/ˌkɒnvərˈseɪʃn/", "pos": "n.", "defn": "对话", "ex": "Start a conversation with a smile.", "trans": "用微笑开始对话。"}, {"w": "topic", "ipa": "/ˈtɒpɪk/", "pos": "n.", "defn": "话题", "ex": "Change the topic if needed.", "trans": "必要时换个话题。"}, {"w": "signal", "ipa": "/ˈsɪɡnəl/", "pos": "n.", "defn": "信号", "ex": "Body language sends signals.", "trans": "肢体语言传递信号。"}, {"w": "gesture", "ipa": "/ˈdʒestʃər/", "pos": "n.", "defn": "手势", "ex": "Use gestures to help explain.", "trans": "用手势帮助解释。"}, {"w": "proper", "ipa": "/ˈprɒpər/", "pos": "adj.", "defn": "恰当的；得体的", "ex": "Use proper language in formal situations.", "trans": "正式场合使用得体语言。"}, {"w": "confident", "ipa": "/ˈkɒnfɪdənt/", "pos": "adj.", "defn": "自信的", "ex": "Speak with confidence.", "trans": "自信地说话。"}, {"w": "articulate", "ipa": "/ɑːrˈtɪkjuleɪt/", "pos": "v./adj.", "defn": "清晰地表达；口才好的", "ex": "She is an articulate speaker.", "trans": "她是个口才好的演讲者。"}, {"w": "empathy", "ipa": "/ˈempəθi/", "pos": "n.", "defn": "共情；同理心", "ex": "Good communication needs empathy.", "trans": "好的沟通需要同理心。"}, {"w": "negotiate", "ipa": "/nɪˈɡoʊʃieɪt/", "pos": "v.", "defn": "谈判；协商", "ex": "Learn to negotiate politely.", "trans": "学会礼貌地协商。"}, {"w": "persuade", "ipa": "/pərˈsweɪd/", "pos": "v.", "defn": "说服", "ex": "She persuaded me to join the club.", "trans": "她说服我加入了俱乐部。"}, {"w": "interact", "ipa": "/ˌɪntərˈækt/", "pos": "v.", "defn": "互动；交流", "ex": "Children interact through play.", "trans": "孩子通过游戏互动。"}, {"w": "diplomatic", "ipa": "/ˌdɪpləˈmætɪk/", "pos": "adj.", "defn": "有外交手腕的；委婉的", "ex": "Be diplomatic when giving feedback.", "trans": "给反馈时要委婉。"}]}, {"label": "b2u01", "title": "U1 Time to Relax! | 初中英语八年级", "words": [{"w": "relax", "ipa": "/rɪˈlæks/", "pos": "v.", "defn": "放松", "ex": "Listening to music helps me relax.", "trans": "听音乐帮我放松。"}, {"w": "enjoy", "ipa": "/ɪnˈdʒɔɪ/", "pos": "v.", "defn": "享受；喜爱", "ex": "I enjoy spending time with my family.", "trans": "我喜欢和家人在一起。"}, {"w": "hate", "ipa": "/heɪt/", "pos": "v.", "defn": "讨厌", "ex": "I hate getting up early on weekends.", "trans": "我讨厌周末早起。"}, {"w": "novel", "ipa": "/ˈnɑːvl/", "pos": "n.", "defn": "小说", "ex": "Reading novels is my hobby.", "trans": "读小说是我的爱好。"}, {"w": "stress", "ipa": "/stres/", "pos": "n.", "defn": "压力", "ex": "Too much stress is bad for health.", "trans": "太多压力对健康不好。"}, {"w": "escape", "ipa": "/ɪˈskeɪp/", "pos": "v.", "defn": "逃避；摆脱", "ex": "Reading helps me escape from stress.", "trans": "阅读帮我摆脱压力。"}, {"w": "hobby", "ipa": "/ˈhɑːbi/", "pos": "n.", "defn": "爱好", "ex": "Everyone needs a hobby.", "trans": "每个人都需要一个爱好。"}, {"w": "lazy", "ipa": "/ˈleɪzi/", "pos": "adj.", "defn": "懒惰的", "ex": "Don't be so lazy! Go out and play!", "trans": "别这么懒！出去玩玩！"}, {"w": "active", "ipa": "/ˈæktɪv/", "pos": "adj.", "defn": "活跃的", "ex": "My grandpa is still very active.", "trans": "我爷爷仍然很活跃。"}, {"w": "collect", "ipa": "/kəˈlekt/", "pos": "v.", "defn": "收集", "ex": "I enjoy collecting stamps.", "trans": "我喜欢集邮。"}, {"w": "hobby", "ipa": "/ˈhɒbi/", "pos": "n.", "defn": "爱好", "ex": "Reading is my favorite hobby.", "trans": "读书是我最喜欢的爱好。"}, {"w": "leisure", "ipa": "/ˈleʒər/", "pos": "n.", "defn": "闲暇；空闲", "ex": "I enjoy my leisure time.", "trans": "我享受闲暇时光。"}, {"w": "activity", "ipa": "/ækˈtɪvəti/", "pos": "n.", "defn": "活动", "ex": "Outdoor activities keep us healthy.", "trans": "户外活动让我们健康。"}, {"w": "stress", "ipa": "/stres/", "pos": "n.", "defn": "压力", "ex": "Take a break to reduce stress.", "trans": "休息一下减轻压力。"}, {"w": "balance", "ipa": "/ˈbæləns/", "pos": "n./v.", "defn": "平衡", "ex": "Keep a balance between work and play.", "trans": "保持工作与娱乐的平衡。"}, {"w": "indoor", "ipa": "/ˈɪndɔːr/", "pos": "adj.", "defn": "室内的", "ex": "We played indoor games.", "trans": "我们玩了室内游戏。"}, {"w": "outdoor", "ipa": "/ˈaʊtdɔːr/", "pos": "adj.", "defn": "户外的", "ex": "Outdoor exercise is good for health.", "trans": "户外运动有益健康。"}, {"w": "entertainment", "ipa": "/ˌentərˈteɪnmənt/", "pos": "n.", "defn": "娱乐", "ex": "Movies are a form of entertainment.", "trans": "电影是一种娱乐形式。"}, {"w": "relaxation", "ipa": "/ˌriːlækˈseɪʃn/", "pos": "n.", "defn": "放松", "ex": "Listen to music for relaxation.", "trans": "听音乐放松。"}, {"w": "amusement", "ipa": "/əˈmjuːzmənt/", "pos": "n.", "defn": "消遣；娱乐", "ex": "The park offers various amusements.", "trans": "公园提供各种娱乐活动。"}, {"w": "recreation", "ipa": "/ˌrekriˈeɪʃn/", "pos": "n.", "defn": "娱乐；消遣", "ex": "Recreation is important for mental health.", "trans": "娱乐对心理健康很重要。"}, {"w": "refresh", "ipa": "/rɪˈfreʃ/", "pos": "v.", "defn": "使恢复精力", "ex": "A short nap refreshes the mind.", "trans": "小睡片刻恢复精力。"}, {"w": "pastime", "ipa": "/ˈpæstaɪm/", "pos": "n.", "defn": "消遣；娱乐", "ex": "Gardening is a popular pastime.", "trans": "园艺是一种流行的消遣。"}, {"w": "recharge", "ipa": "/ˌriːˈtʃɑːrdʒ/", "pos": "v.", "defn": "充电；恢复精力", "ex": "Take a day off to recharge.", "trans": "休息一天恢复精力。"}, {"w": "downtime", "ipa": "/ˈdaʊntaɪm/", "pos": "n.", "defn": "休息时间", "ex": "Everyone needs some downtime.", "trans": "每个人都需要休息时间。"}, {"w": "engage", "ipa": "/ɪnˈɡeɪdʒ/", "pos": "v.", "defn": "参与；从事", "ex": "Engage in activities you enjoy.", "trans": "参与你喜欢的活动。"}]}, {"label": "b2u02", "title": "U2 Let's clean up! | 初中英语八年级", "words": [{"w": "clean up", "ipa": "/kliːn ʌp/", "pos": "phr.", "defn": "打扫干净", "ex": "Let's clean up the classroom.", "trans": "让我们打扫教室。"}, {"w": "litter", "ipa": "/ˈlɪtər/", "pos": "v.", "defn": "乱扔垃圾", "ex": "Don't litter in public places.", "trans": "不要在公共场所乱扔垃圾。"}, {"w": "recycle", "ipa": "/ˌriːˈsaɪkl/", "pos": "v.", "defn": "回收利用", "ex": "We should recycle paper and plastic.", "trans": "我们应该回收纸张和塑料。"}, {"w": "plastic", "ipa": "/ˈplæstɪk/", "pos": "n./adj.", "defn": "塑料", "ex": "Plastic pollution is a big problem.", "trans": "塑料污染是个大问题。"}, {"w": "environment", "ipa": "/ɪnˈvaɪrənmənt/", "pos": "n.", "defn": "环境", "ex": "We should protect the environment.", "trans": "我们应该保护环境。"}, {"w": "volunteer", "ipa": "/ˌvɑːlənˈtɪr/", "pos": "n./v.", "defn": "志愿者；自愿", "ex": "I want to volunteer for clean-up activities.", "trans": "我想志愿参加清洁活动。"}, {"w": "leaflet", "ipa": "/ˈliːflət/", "pos": "n.", "defn": "传单", "ex": "We gave out leaflets about recycling.", "trans": "我们分发了关于回收的传单。"}, {"w": "sign", "ipa": "/saɪn/", "pos": "n.", "defn": "标志；标牌", "ex": "Please put up a ", "trans": "请张贴一个\"禁止乱扔垃圾\"的标志。"}, {"w": "pollute", "ipa": "/pəˈluːt/", "pos": "v.", "defn": "污染", "ex": "Factories should not pollute the river.", "trans": "工厂不应该污染河流。"}, {"w": "waste", "ipa": "/weɪst/", "pos": "n./v.", "defn": "浪费", "ex": "Don't waste water. Turn off the tap.", "trans": "不要浪费水。关掉水龙头。"}, {"w": "volunteer", "ipa": "/ˌvɒlənˈtɪr/", "pos": "n./v.", "defn": "志愿者；自愿", "ex": "I volunteer at the animal shelter.", "trans": "我在动物收容所做志愿者。"}, {"w": "recycle", "ipa": "/ˌriːˈsaɪkl/", "pos": "v.", "defn": "回收利用", "ex": "Please recycle paper and plastic.", "trans": "请回收纸张和塑料。"}, {"w": "rubbish", "ipa": "/ˈrʌbɪʃ/", "pos": "n.", "defn": "垃圾", "ex": "Don't throw rubbish on the ground.", "trans": "别把垃圾扔在地上。"}, {"w": "waste", "ipa": "/weɪst/", "pos": "n./v.", "defn": "浪费；废物", "ex": "Don't waste water.", "trans": "别浪费水。"}, {"w": "protect", "ipa": "/prəˈtekt/", "pos": "v.", "defn": "保护", "ex": "We should protect the environment.", "trans": "我们应该保护环境。"}, {"w": "donate", "ipa": "/ˈdoʊneɪt/", "pos": "v.", "defn": "捐赠", "ex": "Donate old clothes to charity.", "trans": "把旧衣服捐给慈善机构。"}, {"w": "project", "ipa": "/ˈprɒdʒekt/", "pos": "n.", "defn": "项目；计划", "ex": "Our class started a green project.", "trans": "我们班启动了一个绿色项目。"}, {"w": "community", "ipa": "/kəˈmjuːnəti/", "pos": "n.", "defn": "社区", "ex": "The community worked together.", "trans": "社区一起努力。"}, {"w": "organize", "ipa": "/ˈɔːrɡənaɪz/", "pos": "v.", "defn": "组织", "ex": "We organized a clean-up event.", "trans": "我们组织了一次清扫活动。"}, {"w": "affect", "ipa": "/əˈfekt/", "pos": "v.", "defn": "影响", "ex": "Pollution affects everyone.", "trans": "污染影响每个人。"}, {"w": "conservation", "ipa": "/ˌkɒnsərˈveɪʃn/", "pos": "n.", "defn": "保护；保存", "ex": "Wildlife conservation is urgent.", "trans": "野生动物保护刻不容缓。"}, {"w": "sustainable", "ipa": "/səˈsteɪnəbl/", "pos": "adj.", "defn": "可持续的", "ex": "We need sustainable energy sources.", "trans": "我们需要可持续能源。"}, {"w": "eco-friendly", "ipa": "/ˈiːkoʊ ˈfrendli/", "pos": "adj.", "defn": "环保的", "ex": "Use eco-friendly products.", "trans": "使用环保产品。"}, {"w": "environmentalist", "ipa": "/ɪnˌvaɪrənˈmentəlɪst/", "pos": "n.", "defn": "环保人士", "ex": "She is an active environmentalist.", "trans": "她是一位活跃的环保人士。"}, {"w": "campaign", "ipa": "/kæmˈpeɪn/", "pos": "n.", "defn": "运动；活动", "ex": "Join the environmental campaign.", "trans": "加入环保活动。"}, {"w": "awareness", "ipa": "/əˈwernəs/", "pos": "n.", "defn": "意识", "ex": "Raise awareness about pollution.", "trans": "提高对污染的意识。"}]}, {"label": "b2u03", "title": "U3 Could you please clean your room? | 初中英语八年级", "words": [{"w": "mess", "ipa": "/mes/", "pos": "n.", "defn": "杂乱；混乱", "ex": "Your room is a mess!", "trans": "你的房间一团糟！"}, {"w": "trash", "ipa": "/træʃ/", "pos": "n.", "defn": "垃圾", "ex": "Please take out the trash.", "trans": "请把垃圾拿出去。"}, {"w": "fold", "ipa": "/foʊld/", "pos": "v.", "defn": "折叠", "ex": "Could you fold the clothes?", "trans": "你能叠衣服吗？"}, {"w": "sweep", "ipa": "/swiːp/", "pos": "v.", "defn": "扫；打扫", "ex": "I swept the floor this morning.", "trans": "我早上扫了地。"}, {"w": "chore", "ipa": "/tʃɔːr/", "pos": "n.", "defn": "家务杂事", "ex": "I hate doing chores.", "trans": "我讨厌做家务。"}, {"w": "invite", "ipa": "/ɪnˈvaɪt/", "pos": "v.", "defn": "邀请", "ex": "Can I invite my friend over?", "trans": "我能邀请朋友来吗？"}, {"w": "neither", "ipa": "/ˈniːðər/", "pos": "pron./adv.", "defn": "两者都不", "ex": "Neither of us likes washing dishes.", "trans": "我俩都不喜欢洗碗。"}, {"w": "hate", "ipa": "/heɪt/", "pos": "v.", "defn": "讨厌", "ex": "I hate doing the laundry.", "trans": "我讨厌洗衣服。"}, {"w": "fair", "ipa": "/fer/", "pos": "adj.", "defn": "公平的", "ex": "It's not fair! I did all the work.", "trans": "不公平！活都是我干的。"}, {"w": "depend", "ipa": "/dɪˈpend/", "pos": "v.", "defn": "依靠；取决于", "ex": "That depends on how busy I am.", "trans": "那取决于我有多忙。"}, {"w": "chore", "ipa": "/tʃɔːr/", "pos": "n.", "defn": "家务杂事", "ex": "Doing chores teaches responsibility.", "trans": "做家务教会责任感。"}, {"w": "dish", "ipa": "/dɪʃ/", "pos": "n.", "defn": "餐具；盘子", "ex": "Wash the dishes after dinner.", "trans": "晚饭后洗碗。"}, {"w": "laundry", "ipa": "/ˈlɔːndri/", "pos": "n.", "defn": "要洗的衣物", "ex": "Do the laundry on weekends.", "trans": "周末洗衣服。"}, {"w": "sweep", "ipa": "/swiːp/", "pos": "v.", "defn": "打扫", "ex": "Sweep the floor every day.", "trans": "每天扫地。"}, {"w": "fold", "ipa": "/foʊld/", "pos": "v.", "defn": "折叠", "ex": "Fold your clothes neatly.", "trans": "把你的衣服叠整齐。"}, {"w": "neat", "ipa": "/niːt/", "pos": "adj.", "defn": "整洁的", "ex": "Keep your room neat.", "trans": "保持房间整洁。"}, {"w": "mess", "ipa": "/mes/", "pos": "n.", "defn": "杂乱", "ex": "Clean up the mess.", "trans": "把杂乱收拾干净。"}, {"w": "fairness", "ipa": "/ˈfernəs/", "pos": "n.", "defn": "公正；公平", "ex": "Fairness means sharing the work.", "trans": "公平意味着分担工作。"}, {"w": "neighbor", "ipa": "/ˈneɪbər/", "pos": "n.", "defn": "邻居", "ex": "Our neighbor is very kind.", "trans": "我们的邻居很善良。"}, {"w": "depend", "ipa": "/dɪˈpend/", "pos": "v.", "defn": "依赖；取决于", "ex": "It depends on the situation.", "trans": "这取决于情况。"}, {"w": "responsible", "ipa": "/rɪˈspɒnsəbl/", "pos": "adj.", "defn": "负责的", "ex": "Be responsible for your tasks.", "trans": "对自己的任务负责。"}, {"w": "obligation", "ipa": "/ˌɒblɪˈɡeɪʃn/", "pos": "n.", "defn": "义务；责任", "ex": "Doing chores is a family obligation.", "trans": "做家务是家庭义务。"}, {"w": "cooperation", "ipa": "/koʊˌɒpəˈreɪʃn/", "pos": "n.", "defn": "合作", "ex": "Housework needs cooperation.", "trans": "家务需要合作。"}, {"w": "appreciation", "ipa": "/əˌpriːʃiˈeɪʃn/", "pos": "n.", "defn": "感激；欣赏", "ex": "Show appreciation for help.", "trans": "对帮助表示感激。"}, {"w": "share", "ipa": "/ʃer/", "pos": "v.", "defn": "分享；分担", "ex": "Share the housework equally.", "trans": "平等分担家务。"}, {"w": "contribute", "ipa": "/kənˈtrɪbjuːt/", "pos": "v.", "defn": "贡献", "ex": "Everyone should contribute to the family.", "trans": "每个人都应为家庭做贡献。"}]}, {"label": "b2u04", "title": "U4 Why don't you talk to your parents? | 初中英语八年级", "words": [{"w": "communicate", "ipa": "/kəˈmjuːnɪkeɪt/", "pos": "v.", "defn": "沟通；交流", "ex": "We need to communicate with each other.", "trans": "我们需要互相沟通。"}, {"w": "directly", "ipa": "/dəˈrektli/", "pos": "adv.", "defn": "直接地", "ex": "Talk to him directly.", "trans": "直接跟他谈谈。"}, {"w": "although", "ipa": "/ɔːlˈðoʊ/", "pos": "conj.", "defn": "虽然；尽管", "ex": "Although it's hard, you should try.", "trans": "虽然很难，但你应尝试。"}, {"w": "until", "ipa": "/ənˈtɪl/", "pos": "conj./prep.", "defn": "直到", "ex": "I will wait until you come back.", "trans": "我会等到你回来。"}, {"w": "advice", "ipa": "/ədˈvaɪs/", "pos": "n.", "defn": "建议", "ex": "Can you give me some advice?", "trans": "你能给我一些建议吗？"}, {"w": "argue", "ipa": "/ˈɑːrɡjuː/", "pos": "v.", "defn": "争论；争吵", "ex": "Don't argue with your parents.", "trans": "不要和父母争吵。"}, {"w": "proper", "ipa": "/ˈprɑːpər/", "pos": "adj.", "defn": "合适的；恰当的", "ex": "We should find a proper time to talk.", "trans": "我们应该找个合适的时间谈谈。"}, {"w": "explain", "ipa": "/ɪkˈspleɪn/", "pos": "v.", "defn": "解释", "ex": "Let me explain how I feel.", "trans": "让我解释我的感受。"}, {"w": "relation", "ipa": "/rɪˈleɪʃn/", "pos": "n.", "defn": "关系", "ex": "Good relations need good communication.", "trans": "好的关系需要好的沟通。"}, {"w": "offer", "ipa": "/ˈɔːfər/", "pos": "v.", "defn": "提供；主动提出", "ex": "He offered to help me.", "trans": "他主动提出帮我。"}, {"w": "relation", "ipa": "/rɪˈleɪʃn/", "pos": "n.", "defn": "关系；联系", "ex": "Good family relations matter.", "trans": "良好的家庭关系很重要。"}, {"w": "communication", "ipa": "/kəˌmjuːnɪˈkeɪʃn/", "pos": "n.", "defn": "交流；沟通", "ex": "Open communication solves problems.", "trans": "开放的沟通解决问题。"}, {"w": "argument", "ipa": "/ˈɑːrɡjumənt/", "pos": "n.", "defn": "争论", "ex": "Avoid unnecessary arguments.", "trans": "避免不必要的争论。"}, {"w": "offer", "ipa": "/ˈɒfər/", "pos": "v.", "defn": "提供；提议", "ex": "She offered to help me.", "trans": "她主动提出帮我。"}, {"w": "explain", "ipa": "/ɪkˈspleɪn/", "pos": "v.", "defn": "解释", "ex": "Can you explain this to me?", "trans": "你能给我解释一下吗？"}, {"w": "pressure", "ipa": "/ˈpreʃər/", "pos": "n.", "defn": "压力", "ex": "Don't put too much pressure on kids.", "trans": "别给孩子太多压力。"}, {"w": "opinion", "ipa": "/əˈpɪnjən/", "pos": "n.", "defn": "意见；看法", "ex": "Everyone has their own opinion.", "trans": "每个人都有自己的看法。"}, {"w": "normal", "ipa": "/ˈnɔːrml/", "pos": "adj.", "defn": "正常的", "ex": "It's normal to have disagreements.", "trans": "有分歧是正常的。"}, {"w": "perhaps", "ipa": "/pərˈhæps/", "pos": "adv.", "defn": "也许；可能", "ex": "Perhaps you should talk to your parents.", "trans": "也许你该和父母谈谈。"}, {"w": "cause", "ipa": "/kɔːz/", "pos": "v./n.", "defn": "导致；原因", "ex": "What caused the problem?", "trans": "是什么导致了问题？"}, {"w": "compromise", "ipa": "/ˈkɒmprəmaɪz/", "pos": "v./n.", "defn": "妥协；折中", "ex": "Learn to compromise in relationships.", "trans": "学会在关系中妥协。"}, {"w": "conflict", "ipa": "/ˈkɒnflɪkt/", "pos": "n.", "defn": "冲突", "ex": "Avoid conflict with careful words.", "trans": "用谨慎的言语避免冲突。"}, {"w": "perspective", "ipa": "/pərˈspektɪv/", "pos": "n.", "defn": "视角", "ex": "See things from their perspective.", "trans": "从他们的角度看问题。"}, {"w": "respectful", "ipa": "/rɪˈspektfl/", "pos": "adj.", "defn": "尊重的", "ex": "Always be respectful in arguments.", "trans": "争论时始终尊重对方。"}, {"w": "emotional", "ipa": "/ɪˈmoʊʃənl/", "pos": "adj.", "defn": "情绪化的", "ex": "Stay calm and don't be emotional.", "trans": "保持冷静，不要情绪化。"}, {"w": "mature", "ipa": "/məˈtʃʊr/", "pos": "adj.", "defn": "成熟的", "ex": "Handle disagreements in a mature way.", "trans": "用成熟的方式处理分歧。"}]}, {"label": "b2u05", "title": "U5 What were you doing when the rainstorm came? | 初中英语八年级", "words": [{"w": "rainstorm", "ipa": "/ˈreɪnstɔːrm/", "pos": "n.", "defn": "暴风雨", "ex": "The rainstorm lasted for two hours.", "trans": "暴风雨持续了两小时。"}, {"w": "alarm", "ipa": "/əˈlɑːrm/", "pos": "n.", "defn": "闹钟；警报", "ex": "I didn't hear the alarm this morning.", "trans": "今早我没听到闹钟。"}, {"w": "begin", "ipa": "/bɪˈɡɪn/", "pos": "v.", "defn": "开始", "ex": "The storm began at 4 p.m.", "trans": "暴风雨下午 4 点开始。"}, {"w": "heavily", "ipa": "/ˈhevɪli/", "pos": "adv.", "defn": "大量地；沉重地", "ex": "It was raining heavily outside.", "trans": "外面下着大雨。"}, {"w": "suddenly", "ipa": "/ˈsʌdənli/", "pos": "adv.", "defn": "突然", "ex": "Suddenly, the lights went out.", "trans": "突然，灯灭了。"}, {"w": "strange", "ipa": "/streɪndʒ/", "pos": "adj.", "defn": "奇怪的", "ex": "I heard a strange noise.", "trans": "我听到一个奇怪的声音。"}, {"w": "report", "ipa": "/rɪˈpɔːrt/", "pos": "v./n.", "defn": "报道；报告", "ex": "The weather report said there would be a storm.", "trans": "天气预报说有暴风雨。"}, {"w": "area", "ipa": "/ˈeriə/", "pos": "n.", "defn": "地区；区域", "ex": "Many areas were flooded.", "trans": "很多地区被淹了。"}, {"w": "wind", "ipa": "/wɪnd/", "pos": "n.", "defn": "风", "ex": "The wind was blowing strongly.", "trans": "风很大。"}, {"w": "fallen", "ipa": "/ˈfɔːlən/", "pos": "adj.", "defn": "倒下的；落下的", "ex": "There were fallen trees on the road.", "trans": "路上有倒下的树。"}, {"w": "storm", "ipa": "/stɔːrm/", "pos": "n.", "defn": "暴风雨", "ex": "The storm hit the city last night.", "trans": "暴风雨昨晚袭击了城市。"}, {"w": "suddenly", "ipa": "/ˈsʌdənli/", "pos": "adv.", "defn": "突然地", "ex": "Suddenly, the lights went out.", "trans": "突然，灯灭了。"}, {"w": "strange", "ipa": "/streɪndʒ/", "pos": "adj.", "defn": "奇怪的；陌生的", "ex": "I heard a strange noise.", "trans": "我听到了奇怪的声音。"}, {"w": "silence", "ipa": "/ˈsaɪləns/", "pos": "n.", "defn": "沉默；寂静", "ex": "There was complete silence.", "trans": "一片寂静。"}, {"w": "area", "ipa": "/ˈeəriə/", "pos": "n.", "defn": "地区；区域", "ex": "The area was flooded.", "trans": "这个地区被淹了。"}, {"w": "wind", "ipa": "/wɪnd/", "pos": "n.", "defn": "风", "ex": "The wind blew strongly.", "trans": "风猛烈地吹着。"}, {"w": "flash", "ipa": "/flæʃ/", "pos": "n./v.", "defn": "闪电；闪烁", "ex": "Lightning flashed across the sky.", "trans": "闪电划过天空。"}, {"w": "asleep", "ipa": "/əˈsliːp/", "pos": "adj.", "defn": "睡着的", "ex": "He fell asleep quickly.", "trans": "他很快睡着了。"}, {"w": "beat", "ipa": "/biːt/", "pos": "v.", "defn": "击打；敲打", "ex": "The rain beat against the window.", "trans": "雨点敲打着窗户。"}, {"w": "against", "ipa": "/əˈɡenst/", "pos": "prep.", "defn": "倚靠；反对", "ex": "Lean against the wall.", "trans": "靠在墙上。"}, {"w": "emergency", "ipa": "/iˈmɜːrdʒənsi/", "pos": "n.", "defn": "紧急情况", "ex": "Stay calm in an emergency.", "trans": "紧急情况保持冷静。"}, {"w": "disaster", "ipa": "/dɪˈzæstər/", "pos": "n.", "defn": "灾难", "ex": "The flood was a natural disaster.", "trans": "洪水是自然灾害。"}, {"w": "panic", "ipa": "/ˈpænɪk/", "pos": "n./v.", "defn": "恐慌", "ex": "Don't panic in danger.", "trans": "危险中不要恐慌。"}, {"w": "temporary", "ipa": "/ˈtempəreri/", "pos": "adj.", "defn": "暂时的", "ex": "The damage was temporary.", "trans": "损坏是暂时的。"}, {"w": "survive", "ipa": "/sərˈvaɪv/", "pos": "v.", "defn": "幸存；生存", "ex": "We survived the storm safely.", "trans": "我们安全度过了暴风雨。"}, {"w": "witness", "ipa": "/ˈwɪtnəs/", "pos": "v./n.", "defn": "目击；见证人", "ex": "He witnessed the accident.", "trans": "他目击了事故。"}]}, {"label": "b2u06", "title": "U6 An old man tried to move the mountains. | 初中英语八年级", "words": [{"w": "move", "ipa": "/muːv/", "pos": "v.", "defn": "移动；搬动", "ex": "The old man tried to move the mountains.", "trans": "老人试图搬山。"}, {"w": "stone", "ipa": "/stoʊn/", "pos": "n.", "defn": "石头", "ex": "There were big stones on the road.", "trans": "路上有大石头。"}, {"w": "weak", "ipa": "/wiːk/", "pos": "adj.", "defn": "虚弱的；弱的", "ex": "He was too weak to carry the box.", "trans": "他太虚弱搬不动箱子。"}, {"w": "once", "ipa": "/wʌns/", "pos": "adv.", "defn": "一旦；曾经", "ex": "Once upon a time, there was an old man.", "trans": "从前有一位老人。"}, {"w": "fit", "ipa": "/fɪt/", "pos": "v./adj.", "defn": "适合；健康的", "ex": "Keep trying until you find a way that fits.", "trans": "不断尝试直到找到合适的方法。"}, {"w": "spirit", "ipa": "/ˈspɪrɪt/", "pos": "n.", "defn": "精神", "ex": "The story shows the spirit of never giving up.", "trans": "这个故事展现了永不放弃的精神。"}, {"w": "object", "ipa": "/ˈɑːbdʒɪkt/", "pos": "v.", "defn": "反对", "ex": "Nobody objected to his plan.", "trans": "没人反对他的计划。"}, {"w": "clever", "ipa": "/ˈklevər/", "pos": "adj.", "defn": "聪明的", "ex": "The monkey is very clever.", "trans": "猴子非常聪明。"}, {"w": "stupid", "ipa": "/ˈstuːpɪd/", "pos": "adj.", "defn": "愚蠢的", "ex": "Some people thought he was stupid.", "trans": "有些人觉得他很蠢。"}, {"w": "magic", "ipa": "/ˈmædʒɪk/", "pos": "adj./n.", "defn": "魔法的；魔法", "ex": "The magic stick could change size.", "trans": "金箍棒能改变大小。"}, {"w": "object", "ipa": "/ˈɒbdʒɪkt/", "pos": "n.", "defn": "物体；目标", "ex": "What is that object?", "trans": "那个物体是什么？"}, {"w": "magic", "ipa": "/ˈmædʒɪk/", "pos": "n./adj.", "defn": "魔法；神奇的", "ex": "The magic stick could change things.", "trans": "魔棒可以改变东西。"}, {"w": "tale", "ipa": "/teɪl/", "pos": "n.", "defn": "故事；传说", "ex": "I love reading folk tales.", "trans": "我喜欢读民间故事。"}, {"w": "stupid", "ipa": "/ˈstuːpɪd/", "pos": "adj.", "defn": "愚蠢的", "ex": "That was a stupid mistake.", "trans": "那是个愚蠢的错误。"}, {"w": "whole", "ipa": "/hoʊl/", "pos": "adj.", "defn": "全部的；整个的", "ex": "Tell me the whole story.", "trans": "把整个故事告诉我。"}, {"w": "stepmother", "ipa": "/ˈstepmʌðər/", "pos": "n.", "defn": "继母", "ex": "The stepmother was cruel.", "trans": "继母很残忍。"}, {"w": "marry", "ipa": "/ˈmæri/", "pos": "v.", "defn": "结婚", "ex": "They got married last year.", "trans": "他们去年结婚了。"}, {"w": "shine", "ipa": "/ʃaɪn/", "pos": "v.", "defn": "发光；照耀", "ex": "The sun shone brightly.", "trans": "阳光灿烂。"}, {"w": "hide", "ipa": "/haɪd/", "pos": "v.", "defn": "躲藏；隐藏", "ex": "The child hid behind the door.", "trans": "孩子躲在门后面。"}, {"w": "brave", "ipa": "/breɪv/", "pos": "adj.", "defn": "勇敢的", "ex": "The hero was brave and strong.", "trans": "英雄勇敢又强壮。"}, {"w": "moral", "ipa": "/ˈmɔːrəl/", "pos": "n./adj.", "defn": "寓意；道德的", "ex": "The moral of the story is clear.", "trans": "故事的寓意很清楚。"}, {"w": "legend", "ipa": "/ˈledʒənd/", "pos": "n.", "defn": "传说；传奇", "ex": "This is an ancient legend.", "trans": "这是一个古老的传说。"}, {"w": "heroic", "ipa": "/hɪˈroʊɪk/", "pos": "adj.", "defn": "英雄的", "ex": "The hero performed heroic deeds.", "trans": "英雄做出了英雄事迹。"}, {"w": "wisdom", "ipa": "/ˈwɪzdəm/", "pos": "n.", "defn": "智慧", "ex": "The old man shared his wisdom.", "trans": "老人分享了他的智慧。"}, {"w": "overcome", "ipa": "/ˌoʊvərˈkʌm/", "pos": "v.", "defn": "克服", "ex": "She overcame many difficulties.", "trans": "她克服了很多困难。"}, {"w": "transform", "ipa": "/trænsˈfɔːrm/", "pos": "v.", "defn": "转变；改变", "ex": "The frog transformed into a prince.", "trans": "青蛙变成了王子。"}]}, {"label": "b2u07", "title": "U7 What's the highest mountain in the world? | 初中英语八年级", "words": [{"w": "mountain", "ipa": "/ˈmaʊntn/", "pos": "n.", "defn": "山；山脉", "ex": "Mount Qomolangma is the highest mountain.", "trans": "珠穆朗玛峰是最高峰。"}, {"w": "deep", "ipa": "/diːp/", "pos": "adj.", "defn": "深的", "ex": "The Pacific Ocean is very deep.", "trans": "太平洋很深。"}, {"w": "desert", "ipa": "/ˈdezərt/", "pos": "n.", "defn": "沙漠", "ex": "The Sahara is the hottest desert.", "trans": "撒哈拉是最热的沙漠。"}, {"w": "population", "ipa": "/ˌpɑːpjuˈleɪʃn/", "pos": "n.", "defn": "人口", "ex": "China has the largest population.", "trans": "中国人口最多。"}, {"w": "include", "ipa": "/ɪnˈkluːd/", "pos": "v.", "defn": "包括", "ex": "Wild animals include tigers and pandas.", "trans": "野生动物包括老虎和熊猫。"}, {"w": "protection", "ipa": "/prəˈtekʃn/", "pos": "n.", "defn": "保护", "ex": "We need to take action for the protection of animals.", "trans": "我们需要采取行动保护动物。"}, {"w": "inch", "ipa": "/ɪntʃ/", "pos": "n.", "defn": "英寸", "ex": "The baby panda weighs about 0.1 kilos at birth.", "trans": "熊猫宝宝出生时约 0.1 公斤。"}, {"w": "weigh", "ipa": "/weɪ/", "pos": "v.", "defn": "重（多少）", "ex": "An adult panda weighs about 100 kilos.", "trans": "成年熊猫约重 100 公斤。"}, {"w": "birth", "ipa": "/bɜːrθ/", "pos": "n.", "defn": "出生", "ex": "At birth, a baby panda is very small.", "trans": "出生时熊猫宝宝非常小。"}, {"w": "ocean", "ipa": "/ˈoʊʃn/", "pos": "n.", "defn": "海洋", "ex": "The Pacific is the largest ocean.", "trans": "太平洋是最大的海洋。"}, {"w": "population", "ipa": "/ˌpɒpjuˈleɪʃn/", "pos": "n.", "defn": "人口", "ex": "China has a large population.", "trans": "中国人口众多。"}, {"w": "danger", "ipa": "/ˈdeɪndʒər/", "pos": "n.", "defn": "危险", "ex": "Some animals are in danger.", "trans": "有些动物处于危险中。"}, {"w": "include", "ipa": "/ɪnˈkluːd/", "pos": "v.", "defn": "包括", "ex": "The tour includes lunch.", "trans": "这次旅行包括午餐。"}, {"w": "condition", "ipa": "/kənˈdɪʃn/", "pos": "n.", "defn": "条件；状况", "ex": "The living conditions are improving.", "trans": "生活条件在改善。"}, {"w": "deep", "ipa": "/diːp/", "pos": "adj.", "defn": "深的", "ex": "The lake is very deep.", "trans": "湖很深。"}, {"w": "ocean", "ipa": "/ˈoʊʃn/", "pos": "n.", "defn": "海洋", "ex": "The Pacific Ocean is vast.", "trans": "太平洋很广阔。"}, {"w": "research", "ipa": "/rɪˈsɜːrtʃ/", "pos": "n./v.", "defn": "研究", "ex": "Scientists do research on climate.", "trans": "科学家研究气候。"}, {"w": "ancient", "ipa": "/ˈeɪnʃənt/", "pos": "adj.", "defn": "古代的", "ex": "The Great Wall is an ancient wonder.", "trans": "长城是古代奇迹。"}, {"w": "protect", "ipa": "/prəˈtekt/", "pos": "v.", "defn": "保护", "ex": "We must protect endangered species.", "trans": "我们必须保护濒危物种。"}, {"w": "achievement", "ipa": "/əˈtʃiːvmənt/", "pos": "n.", "defn": "成就", "ex": "Climbing the mountain was a great achievement.", "trans": "登山是一项伟大成就。"}, {"w": "record", "ipa": "/ˈrekɔːrd/", "pos": "n.", "defn": "纪录", "ex": "He broke the world record.", "trans": "他打破了世界纪录。"}, {"w": "challenge", "ipa": "/ˈtʃælɪndʒ/", "pos": "n./v.", "defn": "挑战", "ex": "It was a huge challenge.", "trans": "这是一个巨大的挑战。"}, {"w": "extreme", "ipa": "/ɪkˈstriːm/", "pos": "adj.", "defn": "极端的；极限的", "ex": "Mountain climbing is an extreme sport.", "trans": "登山是极限运动。"}, {"w": "amazing", "ipa": "/əˈmeɪzɪŋ/", "pos": "adj.", "defn": "令人惊叹的", "ex": "The view from the top was amazing.", "trans": "山顶的景色令人惊叹。"}, {"w": "unique", "ipa": "/juˈniːk/", "pos": "adj.", "defn": "独特的", "ex": "Every animal is unique.", "trans": "每种动物都是独特的。"}, {"w": "endangered", "ipa": "/ɪnˈdeɪndʒərd/", "pos": "adj.", "defn": "濒危的", "ex": "Pandas are an endangered species.", "trans": "熊猫是濒危物种。"}]}, {"label": "b2u08", "title": "U8 Making a Difference | 初中英语八年级", "words": [{"w": "volunteer", "ipa": "/ˌvɑːlənˈtɪr/", "pos": "v./n.", "defn": "自愿；志愿者", "ex": "I want to volunteer at the hospital.", "trans": "我想在医院做志愿者。"}, {"w": "shelter", "ipa": "/ˈʃeltər/", "pos": "n.", "defn": "收容所；避难所", "ex": "We donate food to the animal shelter.", "trans": "我们向动物收容所捐食物。"}, {"w": "stray", "ipa": "/streɪ/", "pos": "adj.", "defn": "流浪的", "ex": "There are many stray cats in the city.", "trans": "城市里有很多流浪猫。"}, {"w": "difference", "ipa": "/ˈdɪfrəns/", "pos": "n.", "defn": "差异；不同", "ex": "Small actions can make a big difference.", "trans": "小行动能带来大不同。"}, {"w": "patient", "ipa": "/ˈpeɪʃnt/", "pos": "adj.", "defn": "耐心的", "ex": "A good teacher should be patient.", "trans": "好老师应该有耐心。"}, {"w": "action", "ipa": "/ˈækʃn/", "pos": "n.", "defn": "行动", "ex": "Take action now! Don't wait.", "trans": "现在就行动！不要等待。"}, {"w": "society", "ipa": "/səˈsaɪəti/", "pos": "n.", "defn": "社会", "ex": "Everyone should contribute to society.", "trans": "每个人都应为社会做贡献。"}, {"w": "community", "ipa": "/kəˈmjuːnəti/", "pos": "n.", "defn": "社区", "ex": "We should help people in our community.", "trans": "我们应该帮助社区里的人。"}, {"w": "homeless", "ipa": "/ˈhoʊmləs/", "pos": "adj.", "defn": "无家可归的", "ex": "We raised money for homeless people.", "trans": "我们为无家可归的人筹款。"}, {"w": "raise", "ipa": "/reɪz/", "pos": "v.", "defn": "筹集；提高", "ex": "Let's raise money for the poor children.", "trans": "让我们为贫困儿童筹款。"}, {"w": "difference", "ipa": "/ˈdɪfrəns/", "pos": "n.", "defn": "差异；不同", "ex": "One person can make a difference.", "trans": "一个人也能带来改变。"}, {"w": "society", "ipa": "/səˈsaɪəti/", "pos": "n.", "defn": "社会", "ex": "We should contribute to society.", "trans": "我们应该为社会做贡献。"}, {"w": "support", "ipa": "/səˈpɔːrt/", "pos": "v./n.", "defn": "支持；帮助", "ex": "Support each other in difficulties.", "trans": "困难中互相支持。"}, {"w": "possible", "ipa": "/ˈpɒsəbl/", "pos": "adj.", "defn": "可能的", "ex": "Make the world a better place if possible.", "trans": "如果可能，让世界更美好。"}, {"w": "action", "ipa": "/ˈækʃn/", "pos": "n.", "defn": "行动；行为", "ex": "Take action to help others.", "trans": "采取行动帮助他人。"}, {"w": "raise", "ipa": "/reɪz/", "pos": "v.", "defn": "筹集；提高", "ex": "We raised money for the poor.", "trans": "我们为穷人筹集了资金。"}, {"w": "awareness", "ipa": "/əˈwernəs/", "pos": "n.", "defn": "意识；认识", "ex": "Raise awareness about social issues.", "trans": "提高对社会问题的意识。"}, {"w": "effort", "ipa": "/ˈefərt/", "pos": "n.", "defn": "努力", "ex": "Every effort counts.", "trans": "每一份努力都重要。"}, {"w": "value", "ipa": "/ˈvæljuː/", "pos": "n./v.", "defn": "价值；重视", "ex": "We value our volunteers.", "trans": "我们重视志愿者。"}, {"w": "encourage", "ipa": "/ɪnˈkɜːrɪdʒ/", "pos": "v.", "defn": "鼓励", "ex": "Encourage others to join.", "trans": "鼓励他人加入。"}, {"w": "responsible", "ipa": "/rɪˈspɒnsəbl/", "pos": "adj.", "defn": "有责任感的", "ex": "Be a responsible citizen.", "trans": "做一个有责任感的公民。"}, {"w": "initiative", "ipa": "/ɪˈnɪʃətɪv/", "pos": "n.", "defn": "主动性；倡议", "ex": "Take the initiative to help.", "trans": "主动提供帮助。"}, {"w": "impact", "ipa": "/ˈɪmpækt/", "pos": "n./v.", "defn": "影响；冲击", "ex": "Small actions can have a big impact.", "trans": "小行动也能有大影响。"}, {"w": "generous", "ipa": "/ˈdʒenərəs/", "pos": "adj.", "defn": "慷慨的", "ex": "She is generous with her time.", "trans": "她慷慨地付出时间。"}, {"w": "compassion", "ipa": "/kəmˈpæʃn/", "pos": "n.", "defn": "同情心；怜悯", "ex": "Show compassion for those in need.", "trans": "对有需要的人表示同情。"}, {"w": "dedicated", "ipa": "/ˈdedɪkeɪtɪd/", "pos": "adj.", "defn": "奉献的；投入的", "ex": "She is dedicated to helping others.", "trans": "她致力于帮助他人。"}]}];
+
+
+/* === State === */
+var state = {
+  view: 'table',
+  filter: 'all',
+  unitFilter: 'all',
+  mastered: {},
+  srs: {},
+  cardIndex: 0,
+  cardQueue: [],
+  isFlipped: false,
+  dictQueue: [],
+  dictIndex: 0,
+  dictRevealed: false,
+  openUnits: {},
+  quizQuestions: [],
+  quizIndex: 0,
+  quizCorrect: 0,
+  quizTotal: 0,
+  quizAnswered: false,
+  quizDone: false,
+};
+
+try { var sm = JSON.parse(localStorage.getItem('eng8-vocab-mastered')); if (sm) state.mastered = sm; } catch(e){}
+try { var ss = JSON.parse(localStorage.getItem('eng8-vocab-srs')); if (ss) state.srs = ss; } catch(e){}
+
+function saveMastered() { localStorage.setItem('eng8-vocab-mastered', JSON.stringify(state.mastered)); }
+function saveSrs() { localStorage.setItem('eng8-vocab-srs', JSON.stringify(state.srs)); }
+
+function getSrs(key) {
+  if (!state.srs[key]) state.srs[key] = { e: 2.5, i: 0, r: 0, n: null, w: 0 };
+  return state.srs[key];
+}
+
+/* === SM-2 SRS Algorithm === */
+function updateSrs(key, quality) {
+  var s = getSrs(key);
+  if (quality < 3) {
+    s.r = 0;
+    s.i = 1;
+  } else {
+    if (s.r === 0) s.i = 1;
+    else if (s.r === 1) s.i = 6;
+    else s.i = Math.round(s.i * s.e);
+    s.r++;
+  }
+  s.e = Math.max(1.3, s.e + (0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02)));
+  s.n = Date.now() + s.i * 86400000;
+  if (quality < 3) s.w = (s.w || 0) + 1;
+  saveSrs();
+}
+
+function isSrsDue(key) {
+  var s = state.srs[key];
+  if (!s || !s.n) return false;
+  return Date.now() >= s.n;
+}
+
+function getWrongWords() {
+  var w = {};
+  Object.keys(state.srs).forEach(function(k) {
+    if (state.srs[k].w > 0) w[k] = true;
+  });
+  return w;
+}
+
+function isWrong(key) { return state.srs[key] && state.srs[key].w > 0; }
+
+/* === Stats === */
+function getStats() {
+  try { var r = JSON.parse(localStorage.getItem('eng8-vocab-stats')); if (r) return r; } catch(e){}
+  return { d: {}, s: 0, l: '' };
+}
+function saveStats(st) { localStorage.setItem('eng8-vocab-stats', JSON.stringify(st)); }
+
+function recordStats(correct) {
+  var st = getStats();
+  var today = new Date().toISOString().split('T')[0];
+  if (!st.d[today]) st.d[today] = { c: 0, w: 0 };
+  if (correct) st.d[today].c++; else st.d[today].w++;
+  if (st.l !== today) {
+    var yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
+    st.s = (st.l === yesterday) ? st.s + 1 : 1;
+    st.l = today;
+  }
+  saveStats(st);
+}
+
+/* === Speak === */
+function speak(text) {
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US'; u.rate = 0.85;
+    window.speechSynthesis.speak(u);
+  }
+}
+
+/* === Helpers === */
+function htmlEncode(s) {
+  var d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+function shortUnitLabel(label, title) {
+  var t = title.split('|')[0].trim();
+  if (label.indexOf('st') === 0) return '7A-S' + parseInt(label.slice(2)) + ' ' + t.replace(/^Starter \d+ /, '');
+  if (label.indexOf('b2u') === 0) return '7B-U' + parseInt(label.slice(3)) + ' ' + t.replace(/^七下 Unit \d+ /, '');
+  return '7A-U' + parseInt(label.slice(1)) + ' ' + t.replace(/^Unit \d+ /, '');
+}
+
+function shuffle(arr) {
+  for (var i = arr.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = arr[i]; arr[i] = arr[j]; arr[j] = t;
+  }
+  return arr;
+}
+
+function getFilteredWords() {
+  var out = [];
+  VOCAB_DATA.forEach(function(unit) {
+    if (state.unitFilter !== 'all' && state.unitFilter !== unit.label) return;
+    unit.words.forEach(function(w, wi) {
+      var key = unit.label + '-' + wi;
+      if (state.filter === 'mastered' && !state.mastered[key]) return;
+      if (state.filter === 'unmastered' && state.mastered[key]) return;
+      if (state.filter === 'wrong' && !isWrong(key)) return;
+      out.push({ unit: unit.label, idx: wi, word: w, key: key });
+    });
+  });
+  return out;
+}
+
+/* ================================================================
+   TABLE VIEW
+   ================================================================ */
+function renderTable() {
+  var container = document.getElementById('tableView');
+  var html = '';
+  VOCAB_DATA.forEach(function(unit) {
+    var total = unit.words.length;
+    var done = unit.words.filter(function(w, wi) { return state.mastered[unit.label + '-' + wi]; }).length;
+    var dueCount = unit.words.filter(function(w, wi) { return isSrsDue(unit.label + '-' + wi); }).length;
+
+    if (state.unitFilter !== 'all' && state.unitFilter !== unit.label) return;
+
+    var wordEntries = [];
+    unit.words.forEach(function(w, wi) {
+      var key = unit.label + '-' + wi;
+      if (state.filter === 'mastered' && !state.mastered[key]) return;
+      if (state.filter === 'unmastered' && state.mastered[key]) return;
+      if (state.filter === 'wrong' && !isWrong(key)) return;
+      wordEntries.push({ w: w, wi: wi, key: key });
+    });
+    if (wordEntries.length === 0) return;
+
+    var isOpen = state.openUnits && state.openUnits[unit.label];
+    var pct = total > 0 ? Math.round(done / total * 100) : 0;
+    var cardColor = pct >= 100 ? '#f0fdf4' : pct >= 60 ? '#eef2ff' : '#fef3c7';
+    var cardColorDark = pct >= 100 ? 'rgba(74,222,128,0.25)' : pct >= 60 ? 'rgba(129,140,248,0.22)' : 'rgba(251,191,36,0.2)';
+    html += '<details class="vocab-unit" data-unit="' + unit.label + '"' + (isOpen ? ' open' : '') + '>';
+    html += '<summary style="--card-pct:' + pct + '%;--card-c:' + cardColor + ';--card-c-dark:' + cardColorDark + '"><span class="sum-content"><span>' + shortUnitLabel(unit.label, unit.title) + '</span>';
+    html += '<span class="unit-progress"><strong>' + done + '</strong>/' + total;
+    html += '<span class="pct' + (pct >= 100 ? ' done' : '') + '">' + pct + '%</span>';
+    if (dueCount > 0) html += '<span class="srs-due">📅 ' + dueCount + '</span>';
+    html += '</span></span>';
+    html += '</summary>';
+    html += '<table class="vocab-table"><thead><tr>';
+    html += '<th class="cb-cell"></th><th>单词</th><th>音标</th><th>词性</th><th>释义</th><th>例句</th>';
+    html += '</tr></thead><tbody>';
+
+    wordEntries.forEach(function(entry) {
+      var w = entry.w, key = entry.key;
+      var mastered = state.mastered[key];
+      var due = isSrsDue(key);
+      var wrong = isWrong(key);
+      var rowClass = '';
+      if (mastered) rowClass = 'mastered';
+      if (due && !mastered) rowClass = 'srs-due-row';
+      if (wrong) rowClass = 'wrong-row';
+
+      html += '<tr class="' + rowClass + '">';
+      html += '<td class="cb-cell"><input type="checkbox" ' + (mastered ? 'checked' : '') + ' data-key="' + key + '"></td>';
+      html += '<td class="word-cell"><span class="headword" data-speak="' + htmlEncode(w.w) + '">' + htmlEncode(w.w) + '</span><span class="speak-indicator" data-speak="' + htmlEncode(w.w) + '"> 🔊</span>';
+      if (wrong) html += '<span class="wrong-tag">错词</span>';
+      html += '</td>';
+      html += '<td class="ipa-cell">' + htmlEncode(w.ipa) + '</td>';
+      html += '<td class="pos-cell">' + htmlEncode(w.pos) + '</td>';
+      html += '<td class="def-cell">' + htmlEncode(w.def) + '</td>';
+      html += '<td class="ex-cell">';
+      if (w.ex) html += '<div class="ex-en" data-speak="' + htmlEncode(w.ex) + '">' + htmlEncode(w.ex) + '</div>';
+      if (w.trans) html += '<div class="ex-zh">' + htmlEncode(w.trans) + '</div>';
+      html += '</td></tr>';
+    });
+
+    html += '</tbody></table></details>';
+  });
+
+  if (!html) html = '<div class="no-card">当前筛选条件下没有单词</div>';
+  container.innerHTML = html;
+
+  container.querySelectorAll('.vocab-unit').forEach(function(d) {
+    d.addEventListener('toggle', function() {
+      var label = this.dataset.unit;
+      if (this.open) state.openUnits[label] = true;
+      else delete state.openUnits[label];
+    });
+  });
+  container.querySelectorAll('input[type=checkbox]').forEach(function(cb) {
+    cb.addEventListener('change', function() {
+      var key = this.dataset.key;
+      if (this.checked) state.mastered[key] = true;
+      else delete state.mastered[key];
+      saveMastered();
+      renderTable();
+    });
+  });
+  container.querySelectorAll('[data-speak]').forEach(function(el) {
+    el.addEventListener('click', function() { speak(this.dataset.speak); });
+  });
+}
+
+/* ================================================================
+   FLASHCARD VIEW
+   ================================================================ */
+function buildQueue() {
+  return shuffle(getFilteredWords());
+}
+
+function renderFlashcard() {
+  var container = document.getElementById('flashcardView');
+  if (state.cardQueue.length === 0) {
+    container.innerHTML = '<div class="no-card">✨ 全部掌握！太棒了！<br><br><button class="btn-reset" onclick="resetFlashcard()">🔄 重新开始</button></div>';
+    return;
+  }
+  if (state.cardIndex >= state.cardQueue.length) state.cardIndex = 0;
+  var item = state.cardQueue[state.cardIndex];
+  if (!item) { resetFlashcard(); return; }
+  var w = item.word;
+
+  var total = state.cardQueue.length;
+  var remain = total - state.cardIndex;
+  var wrong = isWrong(item.key);
+  var srs = getSrs(item.key);
+
+  var html = '<div class="flashcard-header">';
+  html += '<div class="stats">剩余 <strong>' + remain + '</strong>/' + total + ' · ' + item.unit + '</div>';
+  html += '<div class="stats">已掌握 <strong>' + Object.keys(state.mastered).length + '</strong> 词</div>';
+  html += '</div>';
+
+  if (wrong) html += '<div class="wrong-badge">❌ 该词曾记错，重点复习</div>';
+
+  html += '<div class="flashcard-area">';
+  html += '<div class="flashcard' + (state.isFlipped ? ' flipped' : '') + '" id="flashcard">';
+  html += '<div class="front">';
+  html += '<div class="big-word" data-speak="' + htmlEncode(w.w) + '">' + htmlEncode(w.w) + '</div>';
+  html += '<div class="front-ipa">' + htmlEncode(w.ipa) + '</div>';
+  if (srs.i > 0) html += '<div class="front-extra">SRS ' + srs.i + ' 天后复习</div>';
+  html += '<div class="front-hint">点击卡片 / 空格键 翻转</div>';
+  html += '</div>';
+  html += '<div class="back">';
+  html += '<div class="back-def">' + htmlEncode(w.def) + '</div>';
+  html += '<div class="back-pos">' + htmlEncode(w.pos) + '</div>';
+  if (w.ex) html += '<div class="back-ex" data-speak="' + htmlEncode(w.ex) + '">📖 ' + htmlEncode(w.ex) + '</div>';
+  if (w.trans) html += '<div class="back-extrans">' + htmlEncode(w.trans) + '</div>';
+  html += '</div></div></div>';
+
+  html += '<div class="flashcard-nav">';
+  if (state.isFlipped) {
+    html += '<button class="btn-green" data-action="remember">✅ 记住了</button>';
+    html += '<button class="btn-yellow" data-action="blurry">🤔 模糊</button>';
+    html += '<button class="btn-red" data-action="forgot">❌ 忘记</button>';
+  } else {
+    html += '<button class="btn-reset" id="flipBtn">👆 翻转</button>';
+  }
+  html += '<button class="btn-outline" data-action="restart" style="margin-left:4px;">🔄 重新洗牌</button>';
+  html += '</div>';
+
+  container.innerHTML = html;
+
+  var card = document.getElementById('flashcard');
+  if (card) card.addEventListener('click', function(e) { if (!e.target.closest('[data-speak]')) flipCard(); });
+  container.querySelectorAll('[data-speak]').forEach(function(el) {
+    el.addEventListener('click', function() { speak(this.dataset.speak); });
+  });
+  container.querySelectorAll('[data-action]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var a = this.dataset.action;
+      if (a === 'restart') resetFlashcard();
+      else if (a === 'remember') handleCard(5);
+      else if (a === 'blurry') handleCard(3);
+      else if (a === 'forgot') handleCard(0);
+    });
+  });
+  var flipBtn = document.getElementById('flipBtn');
+  if (flipBtn) flipBtn.addEventListener('click', flipCard);
+}
+
+function flipCard() {
+  state.isFlipped = !state.isFlipped;
+  renderFlashcard();
+}
+
+function handleCard(quality) {
+  var item = state.cardQueue[state.cardIndex];
+  updateSrs(item.key, quality);
+  recordStats(quality >= 3);
+
+  if (quality >= 3) {
+    state.cardQueue.splice(state.cardIndex, 1);
+  } else {
+    state.cardIndex++;
+  }
+  state.isFlipped = false;
+  saveMastered();
+  if (state.cardIndex >= state.cardQueue.length) state.cardIndex = 0;
+  renderFlashcard();
+}
+
+function resetFlashcard() {
+  state.cardQueue = buildQueue();
+  state.cardIndex = 0;
+  state.isFlipped = false;
+  renderFlashcard();
+}
+
+/* ================================================================
+   DICTATION VIEW
+   ================================================================ */
+function startDictation() {
+  var words = getFilteredWords();
+  if (words.length === 0) {
+    document.getElementById('dictationView').innerHTML = '<div class="no-card">当前筛选条件下没有单词</div>';
+    return;
+  }
+  state.dictQueue = shuffle(words);
+  state.dictIndex = 0;
+  state.dictRevealed = false;
+  renderDictation();
+}
+
+function renderDictation() {
+  var container = document.getElementById('dictationView');
+  if (state.dictIndex >= state.dictQueue.length) {
+    container.innerHTML = '<div class="no-card">听写完成！<br><br><button class="btn-reset" onclick="startDictation()">🔄 再来一轮</button></div>';
+    return;
+  }
+  var item = state.dictQueue[state.dictIndex];
+  var w = item.word;
+  var total = state.dictQueue.length;
+  var remain = total - state.dictIndex;
+
+  var html = '<div class="dict-header">';
+  html += '<div class="stats">剩余 <strong>' + remain + '</strong>/' + total + ' · ' + item.unit + '</div>';
+  html += '<div class="stats">已掌握 <strong>' + Object.keys(state.mastered).length + '</strong> 词</div>';
+  html += '</div>';
+
+  html += '<div class="dictation-card">';
+  html += '<div class="dict-chinese">' + htmlEncode(w.def) + '</div>';
+  html += '<div class="dict-pos">' + htmlEncode(w.pos) + '</div>';
+
+  html += '<div class="dict-audio" id="playAudioBtn" data-speak="' + htmlEncode(w.w) + '">🔊 播放读音</div>';
+
+  if (state.dictRevealed) {
+    html += '<div class="dictation-input-wrap">';
+    html += '<input type="text" id="dictInput" class="' + (state.dictCorrect ? 'correct' : 'incorrect') + '" value="' + htmlEncode(state.dictUserInput) + '" readonly>';
+    html += '</div>';
+    html += '<div class="dictation-feedback">';
+    if (state.dictCorrect) {
+      html += '<div class="fb-correct">✓ 正确！</div>';
+    } else {
+      html += '<div class="fb-incorrect">✗ 正确答案：</div>';
+      html += '<div class="fb-answer" data-speak="' + htmlEncode(w.w) + '">' + htmlEncode(w.w) + '</div>';
+      html += '<div class="fb-ipa">' + htmlEncode(w.ipa) + '</div>';
+    }
+    html += '</div>';
+    html += '<div class="dictation-nav"><button class="btn-reset" id="dictNextBtn" onclick="nextDictation()">下一词 → <span style="font-size:11px;opacity:0.6;">↵</span></button></div>';
+  } else {
+    html += '<div class="dictation-input-wrap">';
+    html += '<input type="text" id="dictInput" placeholder="输入英文单词…" autofocus>';
+    html += '</div>';
+    html += '<div class="dictation-nav" style="margin-top:12px;"><button class="btn-reset" id="dictSubmitBtn" onclick="checkDictation()">↵ 提交</button>';
+    html += '<button class="btn-outline" onclick="revealDictation()" style="margin-left:6px;">👁 显示答案</button></div>';
+    html += '<div id="dictFeedback"></div>';
+  }
+
+  html += '</div>';
+  container.innerHTML = html;
+
+  container.querySelectorAll('[data-speak]').forEach(function(el) {
+    el.addEventListener('click', function() { speak(this.dataset.speak); });
+  });
+  if (!state.dictRevealed) {
+    var inp = document.getElementById('dictInput');
+    if (inp) setTimeout(function() { inp.focus(); }, 50);
+  }
+}
+
+function checkDictation() {
+  var inp = document.getElementById('dictInput');
+  if (!inp) return;
+  var item = state.dictQueue[state.dictIndex];
+  var userVal = inp.value.trim().toLowerCase().replace(/[^a-z'-]/g, '');
+  var correctVal = item.word.w.toLowerCase().replace(/[^a-z'-]/g, '');
+  state.dictUserInput = inp.value.trim();
+  state.dictCorrect = (userVal === correctVal);
+  state.dictRevealed = true;
+
+  if (state.dictCorrect) {
+    state.mastered[item.key] = true;
+    saveMastered();
+  } else {
+    var s = getSrs(item.key);
+    s.w = (s.w || 0) + 1;
+    saveSrs();
+  }
+  recordStats(state.dictCorrect);
+  renderDictation();
+}
+
+function revealDictation() {
+  state.dictRevealed = true;
+  state.dictCorrect = false;
+  state.dictUserInput = document.getElementById('dictInput') ? document.getElementById('dictInput').value : '';
+  renderDictation();
+}
+
+function nextDictation() {
+  state.dictIndex++;
+  state.dictRevealed = false;
+  renderDictation();
+}
+
+/* ================================================================
+   QUIZ VIEW
+   ================================================================ */
+function startQuiz() {
+  var words = getFilteredWords();
+  if (words.length < 4) {
+    document.getElementById('quizView').innerHTML = '<div class="no-card">至少需要 4 个单词才能开始练习，请调整筛选条件</div>';
+    return;
+  }
+
+  var questions = [];
+  var allWords = [];
+  VOCAB_DATA.forEach(function(unit) {
+    unit.words.forEach(function(w, wi) {
+      allWords.push({ unit: unit.label, idx: wi, word: w, key: unit.label + '-' + wi });
+    });
+  });
+
+  words.forEach(function(item) {
+    var type = Math.random() < 0.5 ? 'en2cn' : 'cn2en';
+    var correct, options, distractors;
+
+    if (type === 'en2cn') {
+      correct = item.word.def;
+      distractors = pickDistractors(allWords, item, 3, 'def');
+    } else {
+      correct = item.word.w;
+      distractors = pickDistractors(allWords, item, 3, 'w');
+    }
+
+    options = shuffle(distractors.concat([correct]));
+    questions.push({
+      type: type,
+      word: item.word,
+      key: item.key,
+      correct: correct,
+      options: options,
+      unit: item.unit,
+    });
+  });
+
+  state.quizQuestions = shuffle(questions);
+  state.quizIndex = 0;
+  state.quizCorrect = 0;
+  state.quizTotal = questions.length;
+  state.quizAnswered = false;
+  state.quizDone = false;
+  renderQuiz();
+}
+
+function pickDistractors(pool, exclude, count, field) {
+  var candidates = pool.filter(function(p) {
+    if (p.unit === exclude.unit && p.idx === exclude.idx) return false;
+    if (field === 'def' && p.word.def === exclude.word.def) return false;
+    if (field === 'w' && p.word.w === exclude.word.w) return false;
+    return true;
+  });
+  shuffle(candidates);
+  var picked = [];
+  var seen = {};
+  candidates.forEach(function(c) {
+    var val = c.word[field];
+    if (picked.length >= count) return;
+    if (seen[val]) return;
+    seen[val] = true;
+    picked.push(val);
+  });
+  return picked;
+}
+
+function renderQuiz() {
+  var container = document.getElementById('quizView');
+  if (state.quizDone || state.quizIndex >= state.quizQuestions.length) {
+    showQuizResult(container);
+    return;
+  }
+
+  var q = state.quizQuestions[state.quizIndex];
+  var pct = Math.round((state.quizIndex / state.quizTotal) * 100);
+
+  var html = '<div class="quiz-progress"><div class="bar" style="width:' + pct + '%"></div></div>';
+  html += '<div class="quiz-header">';
+  html += '<div class="stats">第 <strong>' + (state.quizIndex + 1) + '</strong>/' + state.quizTotal + ' 题</div>';
+  html += '<div class="stats">正确 <strong>' + state.quizCorrect + '</strong></div>';
+  html += '</div>';
+
+  if (q.type === 'en2cn') {
+    html += '<div class="quiz-qtype">英译中</div>';
+    html += '<div class="quiz-question"><span class="q-speak" data-speak="' + htmlEncode(q.word.w) + '">' + htmlEncode(q.word.w) + '</span></div>';
+    html += '<div class="quiz-sub">' + htmlEncode(q.word.ipa) + ' · ' + htmlEncode(q.word.pos) + '</div>';
+  } else {
+    html += '<div class="quiz-qtype">中译英</div>';
+    html += '<div class="quiz-question">' + htmlEncode(q.word.def) + '</div>';
+    html += '<div class="quiz-sub">' + htmlEncode(q.word.pos) + '</div>';
+  }
+
+  html += '<div class="quiz-options">';
+  q.options.forEach(function(opt, oi) {
+    var cls = 'quiz-option';
+    if (state.quizAnswered) {
+      cls += ' disabled';
+      if (opt === q.correct) cls += ' correct';
+      else if (opt === state.quizSelected) cls += ' incorrect';
+    }
+    html += '<div class="' + cls + '" data-opt="' + htmlEncode(opt) + '" data-oi="' + oi + '">' + htmlEncode(opt) + '</div>';
+  });
+  html += '</div>';
+
+  if (state.quizAnswered) {
+    html += '<div style="text-align:center;margin-top:16px;"><button class="btn-reset" id="quizNextBtn" onclick="nextQuiz()">下一题 → <span style="font-size:11px;opacity:0.6;">↵</span></button></div>';
+  }
+
+  container.innerHTML = html;
+
+  container.querySelectorAll('[data-speak]').forEach(function(el) {
+    el.addEventListener('click', function() { speak(this.dataset.speak); });
+  });
+
+  if (!state.quizAnswered) {
+    container.querySelectorAll('.quiz-option').forEach(function(el) {
+      el.addEventListener('click', function() { answerQuiz(this.dataset.opt); });
+    });
+  }
+}
+
+function answerQuiz(selected) {
+  if (state.quizAnswered) return;
+  var q = state.quizQuestions[state.quizIndex];
+  state.quizAnswered = true;
+  state.quizSelected = selected;
+
+  var correct = (selected === q.correct);
+  if (correct) state.quizCorrect++;
+  else {
+    var s = getSrs(q.key);
+    s.w = (s.w || 0) + 1;
+    saveSrs();
+  }
+  recordStats(correct);
+  if (correct) { state.mastered[q.key] = true; saveMastered(); }
+
+  renderQuiz();
+}
+
+function nextQuiz() {
+  state.quizIndex++;
+  state.quizAnswered = false;
+  if (state.quizIndex >= state.quizTotal) state.quizDone = true;
+  renderQuiz();
+}
+
+function showQuizResult(container) {
+  var pct = state.quizTotal > 0 ? Math.round((state.quizCorrect / state.quizTotal) * 100) : 0;
+  var grade = pct >= 90 ? '🌟 太棒了！' : pct >= 70 ? '👍 不错！' : '💪 继续加油！';
+  container.innerHTML = '<div class="quiz-result">'
+    + '<div class="score">' + pct + '%</div>'
+    + '<div class="score-label">' + grade + '</div>'
+    + '<div class="score-detail">' + state.quizCorrect + '/' + state.quizTotal + ' 正确</div>'
+    + '<button class="btn-reset" onclick="startQuiz()">🔄 再来一轮</button>'
+    + '<button class="btn-outline" onclick="switchView(\'stats\')">📊 查看统计</button>'
+    + '</div>';
+}
+
+/* ================================================================
+   STATS VIEW
+   ================================================================ */
+function renderStats() {
+  var container = document.getElementById('statsView');
+  var st = getStats();
+  var today = new Date().toISOString().split('T')[0];
+  var td = st.d[today] || { c: 0, w: 0 };
+  var totalTd = td.c + td.w;
+  var accuracy = totalTd > 0 ? Math.round((td.c / totalTd) * 100) + '%' : '—';
+  var totalMastered = Object.keys(state.mastered).length;
+  var dueCount = 0;
+  Object.keys(state.srs).forEach(function(k) { if (isSrsDue(k)) dueCount++; });
+  var wrongCount = 0;
+  Object.keys(state.srs).forEach(function(k) { if (state.srs[k].w > 0) wrongCount++; });
+
+  /* overall vocab count */
+  var totalWords = 0;
+  VOCAB_DATA.forEach(function(u) { totalWords += u.words.length; });
+  var overallPct = totalWords > 0 ? Math.round(totalMastered / totalWords * 100) : 0;
+
+  var html = '<div class="stats-grid">';
+  html += '<div class="stat-card"><div class="stat-value">' + totalMastered + '</div><div class="stat-label">已掌握 / ' + totalWords + '</div></div>';
+  html += '<div class="stat-card"><div class="stat-value">' + totalTd + '</div><div class="stat-label">今日复习</div></div>';
+  html += '<div class="stat-card stat-green"><div class="stat-value">' + accuracy + '</div><div class="stat-label">今日正确率</div></div>';
+  html += '<div class="stat-card' + (st.s > 0 ? ' stat-streak' : '') + '"><div class="stat-value">' + st.s + ' 天</div><div class="stat-label">连续学习</div></div>';
+  html += '<div class="stat-card stat-amber"><div class="stat-value">' + dueCount + '</div><div class="stat-label">待复习</div></div>';
+  html += '<div class="stat-card stat-red"><div class="stat-value">' + wrongCount + '</div><div class="stat-label">错词数</div></div>';
+  html += '</div>';
+
+  /* Overall progress bar */
+  html += '<div class="stats-total-bar">';
+  html += '<span class="stb-label">总进度</span>';
+  html += '<div class="stb-bar-wrap"><div class="stb-bar" style="width:' + overallPct + '%"></div></div>';
+  html += '<span class="stb-pct">' + overallPct + '%</span>';
+  html += '</div>';
+
+  /* Unit-level progress */
+  html += '<div class="stats-units">';
+  html += '<div class="su-title">📚 单元进度</div>';
+  html += '<div class="su-wrap">';
+  VOCAB_DATA.forEach(function(unit) {
+    var total = unit.words.length;
+    var done = 0;
+    unit.words.forEach(function(w, wi) { if (state.mastered[unit.label + '-' + wi]) done++; });
+    var pct = total > 0 ? Math.round(done / total * 100) : 0;
+    var label = shortUnitLabel(unit.label, unit.title);
+
+    var barClass = pct >= 100 ? 'full' : pct >= 60 ? 'high' : pct >= 30 ? 'mid' : 'low';
+    var badge = '';
+    if (pct >= 100) badge = '<span class="su-badge done">🏆 全部掌握</span>';
+    else if (pct >= 80) badge = '<span class="su-badge hot">🔥 即将完成</span>';
+    else if (pct >= 50) badge = '<span class="su-badge go">💪 ' + pct + '%</span>';
+    else if (pct >= 20) badge = '<span class="su-badge soon">📖 加油</span>';
+    else badge = '<span class="su-badge none">⏳ 开始学</span>';
+
+    html += '<div class="su-row">';
+    html += '<span class="su-label">' + htmlEncode(label) + '</span>';
+    html += '<div class="su-bar-wrap"><div class="su-bar ' + barClass + '" style="width:' + pct + '%"></div></div>';
+    html += '<span class="su-count">' + done + '/' + total + '</span>';
+    html += badge;
+    html += '</div>';
+  });
+  html += '</div></div>';
+
+  /* 7-day chart */
+  html += '<div class="stats-chart">';
+  html += '<div class="chart-title">📊 近 7 日复习趋势</div>';
+  var days = [];
+  for (var di = 6; di >= 0; di--) {
+    var d = new Date(Date.now() - di * 86400000).toISOString().split('T')[0];
+    days.push(d);
+  }
+  var maxDay = 1;
+  days.forEach(function(d) {
+    var e = st.d[d];
+    var n = e ? e.c + e.w : 0;
+    if (n > maxDay) maxDay = n;
+  });
+  if (maxDay < 5) maxDay = 5;
+  days.forEach(function(d) {
+    var e = st.d[d];
+    var c = e ? e.c : 0;
+    var w = e ? e.w : 0;
+    var n = c + w;
+    var label = d.slice(5);
+    var isToday = (d === today);
+    var barW = Math.round(n / maxDay * 100);
+    html += '<div class="chart-row">';
+    html += '<span class="chart-day" style="font-weight:' + (isToday ? '700' : '400') + '">' + label + '</span>';
+    html += '<div class="chart-bar-wrap">';
+    if (n > 0) {
+      html += '<div class="chart-bar correct" style="width:' + Math.round(c / n * 100) + '%">';
+      if (c > 0 && barW > 10) html += '<span class="chart-val">' + c + '</span>';
+      html += '</div>';
+      html += '<div class="chart-bar wrong" style="width:' + Math.round(w / n * 100) + '%">';
+      if (w > 0 && barW > 10) html += '<span class="chart-val">' + w + '</span>';
+      html += '</div>';
+    }
+    html += '</div>';
+    html += '<span style="font-size:11px;color:var(--text-secondary);min-width:20px;text-align:right;">' + n + '</span>';
+    html += '</div>';
+  });
+  html += '<div style="display:flex;gap:16px;justify-content:flex-end;font-size:11px;color:var(--text-secondary);margin-top:4px;">';
+  html += '<span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#6366f1;margin-right:4px;"></span>正确</span>';
+  html += '<span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#f87171;margin-right:4px;"></span>错误</span>';
+  html += '</div></div>';
+
+  /* Wrong words list */
+  var wrongWords = [];
+  Object.keys(state.srs).forEach(function(k) {
+    if (state.srs[k].w > 0) {
+      var parts = k.split('-');
+      var label = parts[0];
+      var idx = parseInt(parts[1]);
+      VOCAB_DATA.forEach(function(unit) {
+        if (unit.label === label && unit.words[idx]) {
+          wrongWords.push({ key: k, word: unit.words[idx], unit: label });
+        }
+      });
+    }
+  });
+
+  if (wrongWords.length > 0) {
+    html += '<div class="wrong-list">';
+    html += '<div class="wrong-list-header">❌ 错词本 (' + wrongWords.length + ' 词)</div>';
+    wrongWords.forEach(function(item) {
+      html += '<div class="wrong-list-item">';
+      html += '<span class="wl-word" data-speak="' + htmlEncode(item.word.w) + '">' + htmlEncode(item.word.w) + '</span>';
+      html += '<span class="wl-info">' + htmlEncode(item.word.def) + ' · ' + item.unit + ' · 错 ' + state.srs[item.key].w + ' 次</span>';
+      html += '</div>';
+    });
+    html += '</div>';
+    html += '<div style="text-align:center;margin-top:16px;">';
+    html += '<button class="btn-reset" onclick="startWrongReview()">🔄 复习错词</button>';
+    html += '</div>';
+  } else {
+    html += '<div class="no-card">🎉 没有错词，继续保持！</div>';
+  }
+
+  /* Reset section */
+  html += '<div class="stats-actions">';
+  html += '<button class="btn-danger" onclick="resetAllData()">🗑 重置所有学习数据</button>';
+  html += '</div>';
+
+  container.innerHTML = html;
+
+  container.querySelectorAll('[data-speak]').forEach(function(el) {
+    el.addEventListener('click', function() { speak(this.dataset.speak); });
+  });
+}
+
+function startWrongReview() {
+  state.filter = 'wrong';
+  document.querySelectorAll('.filter-bar button').forEach(function(b) {
+    b.classList.toggle('active', b.dataset.filter === 'wrong');
+  });
+  switchView('flashcard');
+}
+
+function resetAllData() {
+  if (!confirm('确定要清除所有学习数据吗？\n\n将清除：\n• 已掌握标记\n• SRS 复习计划\n• 错词记录\n• 每日统计\n\n此操作不可撤销！')) return;
+  if (!confirm('再次确认：真的要全部重置吗？')) return;
+  localStorage.removeItem('eng8-vocab-mastered');
+  localStorage.removeItem('eng8-vocab-srs');
+  localStorage.removeItem('eng8-vocab-stats');
+  state.mastered = {};
+  state.srs = {};
+  switchView('stats');
+}
+
+/* ================================================================
+   VIEW SWITCH
+   ================================================================ */
+function switchView(view) {
+  state.view = view;
+  document.querySelectorAll('.view-toggle button').forEach(function(b) {
+    b.classList.toggle('active', b.dataset.view === view);
+  });
+
+  ['tableView', 'flashcardView', 'dictationView', 'quizView', 'statsView'].forEach(function(id) {
+    document.getElementById(id).classList.toggle('active', id.replace('View', '') === view || id === view + 'View');
+  });
+
+  if (view === 'table') renderTable();
+  else if (view === 'flashcard') resetFlashcard();
+  else if (view === 'dictation') startDictation();
+  else if (view === 'quiz') startQuiz();
+  else if (view === 'stats') renderStats();
+}
+
+/* ================================================================
+   INIT
+   ================================================================ */
+document.querySelectorAll('.view-toggle button').forEach(function(b) {
+  b.addEventListener('click', function() { switchView(this.dataset.view); });
+});
+
+document.querySelectorAll('.filter-bar button').forEach(function(b) {
+  b.addEventListener('click', function() {
+    document.querySelectorAll('.filter-bar button').forEach(function(x) { x.classList.remove('active'); });
+    this.classList.add('active');
+    state.filter = this.dataset.filter;
+    if (state.view === 'table') renderTable();
+    else if (state.view === 'flashcard') resetFlashcard();
+    else if (state.view === 'dictation') startDictation();
+    else if (state.view === 'quiz') startQuiz();
+  });
+});
+
+var sel = document.getElementById('unitFilter');
+VOCAB_DATA.forEach(function(u) {
+  var opt = document.createElement('option');
+  opt.value = u.label;
+  opt.textContent = u.label + ' ' + u.title.split('|')[0].trim();
+  sel.appendChild(opt);
+});
+sel.addEventListener('change', function() {
+  state.unitFilter = this.value;
+  if (state.view === 'table') renderTable();
+  else if (state.view === 'flashcard') resetFlashcard();
+  else if (state.view === 'dictation') startDictation();
+  else if (state.view === 'quiz') startQuiz();
+});
+
+document.addEventListener('keydown', function(e) {
+  if (state.view === 'flashcard' && (e.key === ' ' || e.key === 'Enter')) {
+    e.preventDefault();
+    if (!state.isFlipped) flipCard();
+    else handleCard(3);
+  }
+  if (state.view === 'dictation' && e.key === 'Enter') {
+    if (!state.dictRevealed) { e.preventDefault(); checkDictation(); }
+    else { e.preventDefault(); nextDictation(); }
+  }
+  if (state.view === 'quiz' && e.key === 'Enter' && state.quizAnswered) {
+    e.preventDefault(); nextQuiz();
+  }
+});
+
+/* ================================================================
+   SIDEBAR TOGGLE
+   ================================================================ */
+(function() {
+  var s = document.getElementById('sidebar'), k = 'eng8-sidebar';
+  var h = document.getElementById('sidebarHideBtn'), w = document.getElementById('sidebarShowBtn');
+  if (localStorage.getItem(k) === 'hidden') s.classList.add('hidden');
+  h.addEventListener('click', function() { s.classList.add('hidden'); localStorage.setItem(k, 'hidden'); });
+  w.addEventListener('click', function() { s.classList.remove('hidden'); localStorage.setItem(k, ''); });
+})();
+
+/* ================================================================
+   THEME TOGGLE
+   ================================================================ */
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('eng8-theme', theme);
+  var btn = document.getElementById('themeToggle');
+  if (btn) btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+}
+function toggleTheme() {
+  var current = document.documentElement.getAttribute('data-theme');
+  setTheme(current === 'dark' ? 'light' : 'dark');
+}
+function initTheme() {
+  var saved = localStorage.getItem('eng8-theme');
+  if (saved) { setTheme(saved); return; }
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) setTheme('dark');
+}
+initTheme();
+switchView('table');
+</script>
+
+</body>
+</html>

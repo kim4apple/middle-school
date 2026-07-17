@@ -125,6 +125,24 @@ h1 { font-size: 26px; margin-bottom: 6px; }
   .chk .box { border-color:#333!important; color:transparent!important; }
   .chk input:checked + .box { background:#ccc!important; border-color:#333!important; color:#000!important; }
 }
+/* mobile */
+* { -webkit-tap-highlight-color: transparent; }
+@media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+@media (max-width: 640px) {
+  body { padding: 16px 12px; }
+  h1 { font-size: 20px; }
+  .subtitle { font-size: 13px; margin-bottom: 20px; }
+  .chapter-block { padding: 12px 14px; }
+  .chapter-block h2 { font-size: 15px; }
+  .chapter-block table { font-size: 12px; display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .chapter-block th, .chapter-block td { padding: 4px 6px; }
+  .comp-grid { grid-template-columns: 1fr; }
+  .mem-anchor { font-size: 12px; padding: 6px 10px; flex-wrap: wrap; }
+  .trap-item { font-size: 12px; }
+  .section-card { padding: 12px 14px; }
+  .problem-grid { grid-template-columns: 1fr; }
+  .theme-toggle { top: 8px; right: 8px; padding: 6px 10px; }
+}
   </style>
 <script>(function(){var t=localStorage.getItem("site-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
 </head>

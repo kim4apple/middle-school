@@ -456,6 +456,72 @@ body:has(#sidebar.hidden) #content { margin-left: 0; }
   display: none; z-index: 999;
 }
 @media print { .back-to-top { display: none !important; } }
+
+/* ===== Mobile Base ===== */
+* { -webkit-tap-highlight-color: transparent; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+@supports (padding: env(safe-area-inset-top)) {
+  #sidebar { padding-top: calc(24px + env(safe-area-inset-top)); padding-bottom: env(safe-area-inset-bottom); }
+}
+#sidebarShowBtn { display: none; }
+body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
+#sidebarShowBtn, #sidebarHideBtn, .theme-toggle, .expand-btn { min-height: 44px; }
+#sidebar { overscroll-behavior: contain; }
+.katex { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+
+@media (max-width: 768px) {
+  #sidebar {
+    transform: translateX(0);
+    transition: transform 0.25s ease;
+  }
+  #sidebar.hidden { display: block; transform: translateX(-100%); }
+  body:has(#sidebar:not(.hidden))::after {
+    content: ''; position: fixed; inset: 0;
+    background: rgba(0,0,0,0.35); z-index: 89;
+  }
+  #sidebar h2 { font-size: 17px; margin-bottom: 10px; }
+  #sidebar nav a { display: block; padding: 10px 14px; font-size: 14px; margin: 2px 0; }
+  #sidebarShowBtn { display: flex; top: 8px; left: 8px; font-size: 14px; padding: 10px 12px; min-height: 44px; align-items: center; z-index: 50; }
+  #sidebarHideBtn { min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center; }
+  #content { margin-left: 0; padding: 56px 14px 24px; max-width: 100%; }
+  .chapter h1 { font-size: 22px; }
+  .module summary { font-size: 17px; padding: 14px 16px; }
+  .module .content { padding: 16px; }
+  .card-grid { grid-template-columns: 1fr; gap: 12px; }
+  .concept-card { padding: 14px; }
+  .concept-card .name { font-size: 16px; }
+  .concept-card p { font-size: 14px; }
+  .formula-card { padding: 14px; font-size: 15px; }
+  .exam-q { padding: 14px; }
+  .exam-q .q-body { font-size: 15px; }
+  .exam-q .diagram svg { max-width: 100%; }
+  .technique-card { padding: 14px; }
+  .technique-card h3 { font-size: 16px; }
+  .technique-card .principle { font-size: 14px; }
+  .technique-card .pitfall { font-size: 13px; padding: 8px 12px; }
+  .mindmap { font-size: 15px; }
+  .mindmap ul { padding-left: 20px; }
+  .checklist { padding: 14px; }
+  .checklist label { font-size: 14px; }
+  table { font-size: 14px; display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  table td, table th { padding: 6px 8px !important; white-space: nowrap; }
+  .back-to-top { bottom: 16px; right: 16px; width: 48px; height: 48px; font-size: 20px; }
+  .formula-card .katex { overflow-x: auto; max-width: 100%; display: block; }
+}
+@media (max-width: 480px) {
+  #content { padding: 48px 10px 20px; }
+  .chapter h1 { font-size: 20px; }
+  .module summary { font-size: 16px; padding: 12px 14px; }
+  .module .content { padding: 12px; }
+  .card-grid { gap: 8px; }
+  .exam-q .diagram svg { max-width: 100%; }
+  table { font-size: 13px; }
+}
 </style>
 <script>(function(){var t=localStorage.getItem("site-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
 </head>

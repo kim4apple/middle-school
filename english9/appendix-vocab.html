@@ -8,10 +8,9 @@
 <script>(function(){var t=localStorage.getItem('eng9-theme');if(!t)t=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);})();</script>
 <style>
 body { display: flex; min-height: 100vh; padding: 0; }
-.wrapper { flex: 1; max-width: 960px; margin: 0 auto; padding: 32px 24px 60px; margin-left: var(--sidebar-width); }
-body:has(#sidebar.hidden) .wrapper { margin-left: 0; }
-#sidebarShowBtn { position: fixed; top: 12px; left: 12px; z-index: 99; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; cursor: pointer; font-size: 14px; color: var(--text); box-shadow: var(--shadow); display: none; align-items: center; gap: 4px; }
-body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
+.wrapper { flex: 1; max-width: 1200px; margin: 0 auto; padding: 32px 24px 60px; }
+
+
 .hero { text-align: center; padding: 36px 0 28px; }
 .hero h1 { font-size: 28px; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.02em; }
 .hero .tagline { color: var(--text-secondary); font-size: 14px; }
@@ -40,6 +39,18 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 .ha-btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 20px; border-radius: 14px; border: none; background: var(--accent); color: #fff; cursor: pointer; font-size: 17px; font-weight: 700; text-align: center; transition: all 0.2s; min-height: 52px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); -webkit-tap-highlight-color: transparent; }
 .ha-btn:active { transform: scale(0.96); opacity: 0.85; }
 
+
+@media (min-width: 1025px) {
+  .wrapper { padding: 40px 48px 60px; }
+  .home-content { padding: 24px; max-width: 800px; margin: 0 auto; }
+  .table-toolbar { flex-direction: row; align-items: center; flex-wrap: wrap; padding: 12px 0; }
+  .table-toolbar #unitFilter { width: auto; min-width: 200px; }
+  .table-toolbar .search-bar { flex: 1; min-width: 250px; }
+  .tab-bar { height: 48px; }
+  .tab-item { font-size: 13px; flex-direction: row; gap: 6px; padding: 0 20px; }
+  .tab-item span { font-size: 13px; }
+  .tab-item.active::after { top: auto; bottom: 0; left: 10%; right: 10%; height: 3px; border-radius: 3px 3px 0 0; }
+}
 /* ── Search Bar ── */
 .search-bar { display: flex; align-items: center; gap: 8px; padding: 8px 12px; }
 @media (max-width: 768px) { .search-bar { padding: 6px 10px; } .search-input { font-size: 16px; } }
@@ -133,7 +144,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 .vocab-unit summary .unit-progress .srs-due { font-size: 10px; padding: 1px 6px; border-radius: 8px; background: #fef3c7; color: #92400e; }
 [data-theme="dark"] .vocab-unit summary .unit-progress .srs-due { background: #451a03; color: #fbbf24; }
 
-.vocab-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.vocab-table { width: 100%; border-collapse: collapse; font-size: 14px; }
 .vocab-table thead { position: sticky; top: 0; z-index: 2; }
 .vocab-table th { padding: 6px 10px; text-align: left; font-size: 10px; color: var(--text-secondary); font-weight: 600; border-bottom: 1px solid var(--border); background: var(--bg); white-space: nowrap; }
 .vocab-table td { padding: 6px 10px; border-bottom: 1px solid var(--border); vertical-align: middle; }
@@ -416,7 +427,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 @media (max-width: 768px) {  .wrapper { padding: 0; margin-left: 0 !important; max-width: 100%; display: flex; flex-direction: column; min-height: 100vh; }
   .view-container { flex: 1; overflow-y: auto; }
   body:has(#sidebar.hidden) .wrapper { margin-left: 0 !important; }
-  #sidebarShowBtn { z-index: 100; }
+
   .hero h1 { font-size: 22px; }
   .hero .tagline { font-size: 12px; }
   .hero .badge { font-size: 10px; padding: 3px 10px; }
@@ -529,34 +540,7 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 </head>
 <body>
 
-<button id="sidebarShowBtn">☰ 侧栏</button>
 
-<nav id="sidebar">
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
-    <h2 style="margin-bottom:0;">英语九年级</h2>
-    <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
-  </div>
-  <nav>
-    <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
-    <a href="appendix-grammar.html" style="font-size:13px;">📌 语法全景图</a>
-    <a href="appendix-vocab.html" style="font-size:13px;font-weight:600;color:var(--accent);">📖 单词专项</a>
-    <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 九 上 ━━</a>
-    <a href="u01.html">U1 How can we become good learners?</a>
-    <a href="u02.html">U2 I think that mooncakes are delicious!</a>
-    <a href="u03.html">U3 Could you please tell me where the restrooms are?</a>
-    <a href="u04.html">U4 I used to be afraid of the dark.</a>
-    <a href="u05.html">U5 What are the shirts made of?</a>
-    <a href="u06.html">U6 When was it invented?</a>
-    <a href="u07.html">U7 Teenagers should be allowed to choose their own clothes.</a>
-    <a href="u08.html">U8 It must belong to Carla.</a>
-    <a href="u09.html">U9 I like music that I can dance to.</a>
-    <a href="u10.html">U10 You're supposed to shake hands.</a>
-    <a href="u11.html">U11 Sad movies make me cry.</a>
-    <a href="u12.html">U12 Life is full of the unexpected.</a>
-    <a href="u13.html">U13 We're trying to save the earth!</a>
-    <a href="u14.html">U14 I remember meeting all of you in Grade 7.</a>
-    <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 九 下 ━━</a>
-      </nav>
   <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
   <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
 </nav>
@@ -1597,15 +1581,7 @@ document.addEventListener('keydown', function(e) {
 })();
 
 /* ================================================================
-   SIDEBAR TOGGLE
-   ================================================================ */
-(function() {
-  var s = document.getElementById('sidebar'), k = 'eng9-sidebar';
-  var h = document.getElementById('sidebarHideBtn'), w = document.getElementById('sidebarShowBtn');
-  if (localStorage.getItem(k) === 'hidden') s.classList.add('hidden');
-  h.addEventListener('click', function() { s.classList.add('hidden'); localStorage.setItem(k, 'hidden'); });
-  w.addEventListener('click', function() { s.classList.remove('hidden'); localStorage.setItem(k, ''); });
-})();
+   /* ── Sidebar removed ── */
 
 /* ================================================================
    THEME TOGGLE

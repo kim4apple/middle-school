@@ -50,6 +50,21 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
   color: var(--text-secondary); padding: 6px; min-width: 36px; min-height: 36px; border-radius: 50%; }
 .search-clear:hover { background: var(--bg-secondary); }
 .search-input:not(:placeholder-shown) ~ .search-clear { display: block; }
+.table-toolbar { padding: 8px 12px; display: flex; flex-direction: column; gap: 8px; }
+.table-toolbar .filter-bar { display: flex; gap: 6px; flex-wrap: wrap; }
+.table-toolbar .filter-bar button { font-size: 12px; padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border); background: var(--bg); color: var(--text-secondary); cursor: pointer; transition: all 0.15s; font-weight: 500; min-height: 36px; }
+.table-toolbar .filter-bar button:hover { border-color: var(--accent); color: var(--text); }
+.table-toolbar .filter-bar button.active { border-color: var(--accent); background: var(--accent-light); color: var(--accent); font-weight: 600; }
+.table-toolbar .filter-bar button.filter-wrong { border-color: #dc2626; color: #dc2626; }
+.table-toolbar .filter-bar button.filter-wrong.active { background: #fef2f2; color: #dc2626; border-color: #dc2626; }
+[data-theme="dark"] .table-toolbar .filter-bar button.filter-wrong { border-color: #f87171; color: #f87171; }
+[data-theme="dark"] .table-toolbar .filter-bar button.filter-wrong.active { background: #451a1a; color: #f87171; border-color: #f87171; }
+.table-toolbar #unitFilter { font-size: 13px; padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border); background: var(--bg); color: var(--text); width: 100%; }
+.table-toolbar .search-bar { display: flex; align-items: center; gap: 8px; }
+.table-toolbar .search-input { flex: 1; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg-secondary); color: var(--text); font-size: 14px; outline: none; }
+.table-toolbar .search-input:focus { border-color: var(--accent); background: var(--bg); }
+.table-toolbar .search-clear { display: none; background: none; border: none; font-size: 16px; cursor: pointer; color: var(--text-secondary); padding: 6px; min-width: 36px; min-height: 36px; }
+.table-toolbar .search-input:not(:placeholder-shown) ~ .search-clear { display: block; }
 .app-header { display: flex; align-items: center; height: 48px; padding: 0 12px; 
   background: var(--bg); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 20; }
 .app-back { background: none; border: none; font-size: 20px; cursor: pointer; 
@@ -523,7 +538,22 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 
   <main class="view-container">
     <div id="homeView" class="view-panel"></div>
-    <div id="tableView" class="view-panel active"></div>
+    <div id="tableView" class="view-panel active">
+  <div class="table-toolbar">
+    <div class="filter-bar" id="filterBar">
+      <button class="active" data-filter="all">全部</button>
+      <button data-filter="unmastered">未掌握</button>
+      <button data-filter="mastered">已掌握</button>
+      <button data-filter="wrong" class="filter-wrong">❌ 错词</button>
+    </div>
+    <select id="unitFilter">
+      <option value="all">全部单元</option>
+    </select>
+    <div class="search-bar">
+      <input type="text" class="search-input" id="searchInput" placeholder="🔍 搜索单词或释义..." oninput="onSearch()">
+      <button class="search-clear" id="searchClear" onclick="clearSearch()">✕</button>
+    </div>
+  </div>    </div>
     <div id="learnView" class="view-panel">
       <div id="learnHome" class="learn-mode-grid">
         <button class="learn-card" onclick="switchLearnMode('flashcard')">
@@ -548,6 +578,12 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
     </div>
     <div id="statsView" class="view-panel"></div>
   </main>
+  <nav class="tab-bar" id="tabBar">
+    <button class="tab-item active" data-tab="home">🏠<span>主页</span></button>
+    <button class="tab-item" data-tab="table">📋<span>单词</span></button>
+    <button class="tab-item" data-tab="learn">🎯<span>学习</span></button>
+    <button class="tab-item" data-tab="stats">📊<span>统计</span></button>
+  </nav>
 </div>
 
 <script>

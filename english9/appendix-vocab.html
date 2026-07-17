@@ -344,6 +344,24 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
   .stats-units .su-bar-wrap { min-width: 40px; }
   .stats-units .su-count { min-width: 36px; font-size: 11px; }
   .stats-units .su-badge { font-size: 10px; padding: 1px 8px; min-width: 0; }
+
+/* ===== Mobile Enhancements ===== */
+* { -webkit-tap-highlight-color: transparent; }
+@media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+@supports (padding: env(safe-area-inset-top)) {
+  .wrapper { padding-left: calc(24px + env(safe-area-inset-left)); padding-right: calc(24px + env(safe-area-inset-right)); padding-bottom: calc(60px + env(safe-area-inset-bottom)); }
+  #sidebarShowBtn { top: calc(12px + env(safe-area-inset-top)); left: calc(12px + env(safe-area-inset-left)); }
+}
+.view-toggle button, .filter-bar button, .flashcard-nav button, .dictation-nav button,
+.quiz-options button, .theme-toggle-btn { min-height: 44px; }
+@media (max-width: 360px) {
+  .hero h1 { font-size: 20px; }
+  .view-toggle button { font-size: 10px; padding: 4px 8px; }
+  .vocab-table { font-size: 11px; }
+  .vocab-table td, .vocab-table th { padding: 4px 6px; }
+  .vocab-table .word-cell { min-width: 70px; }
+}
+
 </style>
 </head>
 <body>

@@ -323,16 +323,33 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 
 /* === Responsive === */
 @media (max-width: 640px) {
-  .wrapper { padding: 20px 14px 40px; }
+  .wrapper { padding: 16px 10px 40px; }
   #sidebarShowBtn { z-index: 100; }
-  .hero h1 { font-size: 24px; }
-  .hero .tagline { font-size: 13px; }
-  .top-bar { flex-direction: column; align-items: stretch; }
+  .hero h1 { font-size: 22px; }
+  .hero .tagline { font-size: 12px; }
+  .hero .badge { font-size: 10px; padding: 3px 10px; }
+  .top-bar { flex-direction: column; align-items: stretch; gap: 8px; }
   .view-toggle { justify-content: center; }
   .view-toggle button { font-size: 11px; padding: 5px 10px; }
-  .vocab-table { font-size: 13px; display: block; overflow-x: auto; }
-  .vocab-table th, .vocab-table td { padding: 5px 8px; white-space: nowrap; }
-  .vocab-table .word-cell { min-width: 80px; }
+  #unitFilter { font-size: 12px; padding: 6px 10px; }
+  .vocab-unit summary { font-size: 12px; padding: 8px 10px; }
+  .vocab-unit summary .unit-progress { font-size: 10px; }
+  .vocab-unit summary .unit-progress .pct { min-width: 20px; }
+  .vocab-unit summary .unit-progress .srs-due { font-size: 9px; padding: 1px 5px; }
+  .vocab-table { font-size: 12px; display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; width: 100%; }
+  .vocab-table th, .vocab-table td { padding: 4px 5px; white-space: nowrap; }
+  .vocab-table .word-cell { min-width: 0; max-width: 100px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .vocab-table .cb-cell { width: 24px; min-width: 24px; }
+  .vocab-table .cb-cell input { width: 14px; height: 14px; }
+  .vocab-table .ipa-cell { max-width: 80px; font-size: 10px; }
+  .vocab-table .pos-cell { max-width: 35px; font-size: 10px; }
+  .vocab-table .def-cell { max-width: 110px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; }
+  .vocab-table .ex-cell { max-width: 120px; }
+  .vocab-table .ex-cell .ex-en { font-size: 11px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .vocab-table .ex-cell .ex-zh { font-size: 10px; }
+  .vocab-table .word-cell .speak-indicator { font-size: 9px; }
+  .vocab-table .word-cell .wrong-tag { font-size: 9px; padding: 0 4px; }
+  .back-link { font-size: 12px; margin-bottom: 16px; }
   .vocab-unit summary { font-size: 13px; padding: 8px 10px; }
   .vocab-unit summary .unit-progress { font-size: 10px; }
   .flashcard .front .big-word { font-size: 24px; }
@@ -381,11 +398,17 @@ body:has(#sidebar.hidden) #sidebarShowBtn { display: flex; }
 .view-toggle button, .filter-bar button, .flashcard-nav button, .dictation-nav button,
 .quiz-options button, .theme-toggle-btn { min-height: 44px; }
 @media (max-width: 360px) {
-  .hero h1 { font-size: 20px; }
-  .view-toggle button { font-size: 10px; padding: 4px 8px; }
+  .hero h1 { font-size: 18px; }
+  .view-toggle button { font-size: 9px; padding: 3px 6px; }
   .vocab-table { font-size: 11px; }
-  .vocab-table td, .vocab-table th { padding: 4px 6px; }
-  .vocab-table .word-cell { min-width: 70px; }
+  .vocab-table td, .vocab-table th { padding: 3px 4px; }
+  .vocab-table .word-cell { max-width: 70px; font-size: 11px; }
+  .vocab-table .ipa-cell { display: none; }
+  .vocab-table .pos-cell { max-width: 28px; font-size: 9px; }
+  .vocab-table .def-cell { max-width: 80px; font-size: 11px; }
+  .vocab-unit summary { font-size: 11px; }
+  .view-toggle button { font-size: 9px; padding: 4px 6px; }
+  .vocab-unit summary .unit-progress .srs-due { display: none; }
 }
 
 </style>

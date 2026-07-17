@@ -46,21 +46,6 @@ body { display: flex; min-height: 100vh; padding: 0; }
 .ha-btn:active { transform: scale(0.96); opacity: 0.85; }
 
 
-@media (min-width: 1025px) {
-  .wrapper { padding: 40px 48px 60px; }
-  .home-content { padding: 24px; max-width: 800px; margin: 0 auto; }
-  .table-toolbar { flex-direction: row; align-items: center; flex-wrap: wrap; padding: 12px 0; }
-  .table-toolbar #unitFilter { width: auto; min-width: 200px; }
-  .table-toolbar .search-bar { flex: 1; min-width: 250px; }
-  .tab-bar { height: 48px; }
-  
-@media (min-width: 1025px) {
-  .tab-bar { max-width: 1200px; left: 50%; transform: translateX(-50%); border-radius: 0; }
-}
-.tab-item { font-size: 13px; flex-direction: row; gap: 6px; padding: 0 20px; }
-  .tab-item span { font-size: 13px; }
-  .tab-item.active::after { top: auto; bottom: 0; left: 10%; right: 10%; height: 3px; border-radius: 3px 3px 0 0; }
-}
 /* ── Search Bar ── */
 .search-bar { display: flex; align-items: center; gap: 8px; padding: 8px 12px; }
 @media (max-width: 768px) { .search-bar { padding: 6px 10px; } .search-input { font-size: 16px; } }
@@ -529,6 +514,22 @@ body { display: flex; min-height: 100vh; padding: 0; }
   .table-toolbar #unitFilter { width: auto; min-width: 180px; }
   .table-toolbar .search-bar { flex: 1; min-width: 200px; }
   .search-input { font-size: 16px; }
+}
+/* ── Desktop (≥1025px) ── */
+@media (min-width: 1025px) {
+  .wrapper { padding: 40px 48px 60px; }
+  .home-content { padding: 24px; max-width: 800px; margin: 0 auto; }
+  .home-stats { grid-template-columns: repeat(4, 1fr); }
+  .table-toolbar { flex-direction: row; align-items: center; flex-wrap: wrap; padding: 12px 0; }
+  .table-toolbar #unitFilter { width: auto; min-width: 200px; }
+  .table-toolbar .search-bar { flex: 1; min-width: 250px; }
+  .tab-bar { height: 48px; max-width: 1200px; left: 50%; transform: translateX(-50%); border-radius: 0; }
+  .tab-item { font-size: 13px; flex-direction: row; gap: 6px; padding: 0 20px; }
+  .tab-item span { font-size: 13px; }
+  .tab-item.active::after { top: auto; bottom: 0; left: 10%; right: 10%; height: 3px; border-radius: 3px 3px 0 0; }
+  .stats-grid { grid-template-columns: repeat(4, 1fr); }
+  #statsView { padding: 24px; }
+  .learn-mode-grid { max-width: 700px; margin: 0 auto; padding: 24px; }
 }
 @media (max-width: 360px) {
   .hero h1 { font-size: 18px; }

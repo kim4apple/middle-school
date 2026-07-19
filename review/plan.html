@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6周复习计划 | 英语·数学·物理</title>
+<style>
+:root{--bg:#ffffff;--bg2:#f1f5f9;--text:#1a1a2e;--text2:#64748b;--accent:#4f46e5;--alight:#eef2ff;--border:#e2e8f0;--r:12px;--gold:#d97706;--gold-bg:#fffbeb;--english:#7c3aed;--math:#4f46e5;--physics:#0891b2;}
+[data-theme="dark"]{--bg:#0f172a;--bg2:#1e293b;--text:#e2e8f0;--text2:#94a3b8;--accent:#818cf8;--alight:#1e1b4b;--border:#334155;--gold-bg:#1c1917;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;max-width:900px;margin:0 auto;padding:32px 20px 80px;}
+a{color:var(--accent);text-decoration:none;}
+a:hover{text-decoration:underline;}
+header{text-align:center;margin-bottom:32px;}
+h1{font-size:28px;font-weight:800;letter-spacing:-0.5px;}
+h2{font-size:20px;font-weight:700;margin:40px 0 16px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+h3{font-size:16px;font-weight:700;margin:28px 0 12px;color:var(--accent);}
+h4{font-size:14px;font-weight:700;margin:20px 0 8px;}
+.sub{color:var(--text2);font-size:14px;margin-bottom:8px;}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:20px;margin-right:6px;}
+.badge.en{background:#ede9fe;color:#7c3aed;}
+.badge.math{background:#eef2ff;color:#4f46e5;}
+.badge.ph{background:#ecfeff;color:#0891b2;}
+[data-theme="dark"] .badge.en{background:#3b1f6e;color:#c4b5fd;}
+[data-theme="dark"] .badge.math{background:#1e1b4b;color:#a5b4fc;}
+[data-theme="dark"] .badge.ph{background:#164e63;color:#67e8f9;}
+.note{padding:14px 18px;background:var(--gold-bg);border-left:3px solid var(--gold);border-radius:0 var(--r) var(--r) 0;margin:16px 0;font-size:14px;}
+.toc{background:var(--bg2);border-radius:var(--r);padding:20px 24px;margin:24px 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px;}
+.toc a{font-size:14px;font-weight:600;padding:6px 0;display:block;}
+.toc a:hover{text-decoration:none;color:var(--accent);}
+details{margin:12px 0;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;}
+summary{padding:14px 18px;background:var(--bg2);font-weight:700;font-size:15px;cursor:pointer;user-select:none;list-style:none;display:flex;justify-content:space-between;align-items:center;}
+summary::-webkit-details-marker{display:none;}
+summary::after{content:'▸';font-size:12px;transition:transform .2s;color:var(--text2);}
+details[open] summary::after{transform:rotate(90deg);}
+.detail-body{padding:18px 20px;}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;}
+th,td{padding:8px 12px;border:1px solid var(--border);text-align:left;}
+th{background:var(--bg2);font-weight:700;font-size:13px;}
+td:first-child,th:first-child{white-space:nowrap;}
+ul,ol{padding-left:20px;margin:8px 0;}
+li{margin:4px 0;font-size:14px;}
+li ul{margin:2px 0 2px 16px;}
+.schedule-table{font-size:13px;}
+.schedule-table td:first-child{font-weight:600;color:var(--text2);width:100px;}
+.checklist li{list-style:none;position:relative;padding-left:22px;}
+.checklist li::before{content:'☐';position:absolute;left:0;color:var(--text2);}
+.cta{text-align:center;margin:40px 0 20px;padding:28px;background:var(--alight);border-radius:var(--r);}
+blockquote{padding:12px 18px;border-left:3px solid var(--accent);background:var(--bg2);border-radius:0 var(--r) var(--r) 0;margin:16px 0;font-size:14px;color:var(--text2);}
+.flex-col{display:flex;gap:24px;flex-wrap:wrap;}
+.flex-col>*{flex:1;min-width:260px;}
+@media(max-width:640px){body{padding:16px 12px 60px}h1{font-size:22px}h2{font-size:17px}.schedule-table td:first-child{width:auto;display:block;font-size:12px}.schedule-table td{display:block;padding:4px 6px;border:none}.schedule-table tr{border-bottom:1px solid var(--border);display:block;padding:8px 0}.toc{grid-template-columns:repeat(2,1fr)}}
+</style>
+<script>(function(){var t=localStorage.getItem("site-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+
+<header>
+  <p style="margin-bottom:4px;"><a href="index.html">← 复习导航</a></p>
+  <h1>📋 6周完整复习计划</h1>
+  <p class="sub">英语七八年级 · 数学七八年级 · 物理八年级　|　特级教师修订版</p>
+  <p class="sub" style="font-size:12px;margin-top:4px;">适用：已完成七八年级全部课程。每日 5-6 学习小时 + 早读/睡前仪式各 10-15 分钟。</p>
+</header>
+
+<div class="toc">
+  <a href="#p1">一、知识清单</a>
+  <a href="#p2">二、6周每日课表</a>
+  <a href="#p3">三、每日固定仪式</a>
+  <a href="#p4">四、错题管理规范</a>
+  <a href="#p5">五、每周日检查清单</a>
+  <a href="#p6">六、各科得分策略</a>
+  <a href="#p7">七、每周模拟卷要求</a>
+</div>
+
+<!-- ===== PART 1 ===== -->
+<h2 id="p1">第一部分：知识清单</h2>
+
+<details>
+<summary><span class="badge en">英语</span> 七八年级知识清单</summary>
+<div class="detail-body">
+
+<h4>七年级（上）词汇</h4>
+<ul class="checklist">
+  <li>Starter Units 1-3：问候、颜色、数字、日常物品</li>
+  <li>Unit 1-3：个人信息、家庭成员、学校物品</li>
+  <li>Unit 4-6：房间物品、食物、购物</li>
+  <li>Unit 7-9：日期、学科、电影类型</li>
+</ul>
+<h4>七年级（上）语法</h4>
+<ul class="checklist">
+  <li>be 动词（am/is/are）</li><li>人称代词（主格/宾格）、物主代词</li>
+  <li>名词单复数、可数与不可数</li><li>一般现在时（含第三人称单数）</li>
+  <li>介词 on/in/under/at</li><li>祈使句</li>
+  <li>特殊疑问句（what/where/when/why/who/how）</li>
+</ul>
+
+<h4>七年级（下）词汇</h4>
+<ul class="checklist">
+  <li>Unit 1-3：能力、日常作息、交通方式</li><li>Unit 4-6：校规、动物、日常活动</li>
+  <li>Unit 7-9：天气、街区、外貌</li><li>Unit 10-12：食物、学校旅行、周末活动</li>
+</ul>
+<h4>七年级（下）语法</h4>
+<ul class="checklist">
+  <li>情态动词 can/must/have to</li><li>现在进行时</li><li>There be 句型</li>
+  <li>一般过去时（规则/不规则动词）</li><li>would like 句型</li><li>how 引导的特殊疑问句</li>
+</ul>
+
+<h4>八年级（上）词汇</h4>
+<ul class="checklist">
+  <li>Unit 1-3：假期、频率、性格比较</li><li>Unit 4-6：交通/地点比较、娱乐、未来职业</li>
+  <li>Unit 7-8：未来生活预测、食物制作</li><li>Unit 9-10：邀请、问题与建议</li>
+</ul>
+<h4>八年级（上）语法</h4>
+<ul class="checklist">
+  <li>复合不定代词（someone/anything/nobody 等）</li><li>频率副词</li>
+  <li>形容词/副词比较级与最高级</li><li>be going to / will 表将来</li>
+  <li>条件状语从句（if）</li><li>情态动词 should/could</li><li>动词不定式作宾语</li>
+</ul>
+
+<h4>八年级（下）词汇</h4>
+<ul class="checklist">
+  <li>Unit 1-3：健康问题、志愿服务、家务</li><li>Unit 4-6：人际问题、过去进行时事件、传说故事</li>
+  <li>Unit 7-8：世界之最、文学音乐</li><li>Unit 9-10：有趣地点、旧物处理</li>
+</ul>
+<h4>八年级（下）语法</h4>
+<ul class="checklist">
+  <li>反身代词</li><li>动词不定式作宾语/状语/宾补</li><li>could/should 提建议</li>
+  <li>连词 until/so that/although</li><li>过去进行时</li><li>现在完成时</li>
+  <li>形容词/副词比较级与最高级（进阶）</li>
+  <li>宾语从句（时态+语序+连接词）</li>
+</ul>
+<div class="note"><strong>注意</strong>：定语从句在多数教材版本中为九年级内容。若尚未系统学习，仅需了解关系代词 that/which/who 的基本用法。</div>
+
+<h4>分题型目标</h4>
+<table>
+<tr><th>题型</th><th>目标</th><th>方法</th></tr>
+<tr><td>听力</td><td>90%</td><td>预读选项→抓关键词→速记</td></tr>
+<tr><td>单选</td><td>90%</td><td>分析结构，先排除后确认</td></tr>
+<tr><td>完形</td><td>85%</td><td>通读全文→上下文推断→语法验证</td></tr>
+<tr><td>阅读</td><td>85%</td><td>题干定位→同义替换→主旨概括</td></tr>
+<tr><td>词汇</td><td>85%</td><td>看词性→看时态→看搭配</td></tr>
+<tr><td>作文</td><td>12/15分</td><td>审题→列提纲→套句型→工整书写</td></tr>
+</table>
+</div>
+</details>
+
+<details>
+<summary><span class="badge math">数学</span> 七八年级知识清单</summary>
+<div class="detail-body">
+
+<h4>七年级（上）</h4>
+<ul class="checklist">
+  <li><strong>第1章 有理数</strong>：正负数、数轴、相反数、绝对值、加减乘除乘方、科学记数法</li>
+  <li><strong>第2章 整式加减</strong>：单项式/多项式、同类项、去括号、合并同类项</li>
+  <li><strong>第3章 一元一次方程</strong>：移项、去括号/去分母、应用题（行程/工程/利润/配套）</li>
+  <li><strong>第4章 几何初步</strong>：直线/射线/线段、角、余角补角</li>
+</ul>
+
+<h4>七年级（下）</h4>
+<ul class="checklist">
+  <li><strong>第5章 相交线与平行线</strong>：对顶角、垂线、平行线判定与性质（同位角/内错角/同旁内角）、命题与证明</li>
+  <li><strong>第6章 实数</strong>：平方根/立方根、无理数、实数运算</li>
+  <li><strong>第7章 平面直角坐标系</strong>：点的坐标特征、平移变化</li>
+  <li><strong>第8章 二元一次方程组</strong>：代入法/加减法、应用题</li>
+  <li><strong>第9章 不等式与不等式组</strong>：性质→解法→数轴表示→方案选择应用题</li>
+  <li><strong>第10章 数据的收集整理与描述</strong>：调查方式、条形/扇形/折线图/直方图</li>
+</ul>
+
+<h4>八年级（上）</h4>
+<ul class="checklist">
+  <li><strong>第11章 三角形</strong>：三边关系、中线/高/角平分线、内角和外角、多边形内角和</li>
+  <li><strong>第12章 全等三角形</strong>：SSS/SAS/ASA/AAS/HL 五种判定、角平分线性质</li>
+  <li><strong>第13章 轴对称</strong>：垂直平分线、等腰/等边三角形、最短路径</li>
+  <li><strong>第14章 整式乘法与因式分解</strong>：幂运算、平方差/完全平方公式、提公因式/公式法</li>
+  <li><strong>第15章 分式</strong>：约分通分、分式运算、分式方程（检验！）</li>
+</ul>
+
+<h4>八年级（下）</h4>
+<ul class="checklist">
+  <li><strong>第16章 二次根式</strong>：最简二次根式、加减乘除</li>
+  <li><strong>第17章 勾股定理</strong>：证明、逆定理、最短路径/折叠应用</li>
+  <li><strong>第18章 平行四边形</strong>：性质与判定、矩形/菱形/正方形、中位线定理</li>
+  <li><strong>第19章 一次函数</strong>：正比例→一次函数、待定系数法、图像与性质、与方程不等式关系</li>
+  <li><strong>第20章 数据的分析</strong>：平均数/加权平均数、中位数/众数、方差</li>
+</ul>
+
+<h4>分题型目标</h4>
+<table>
+<tr><th>题型</th><th>目标</th><th>方法</th></tr>
+<tr><td>计算题</td><td>零失误</td><td>审符号、分步写、必验算</td></tr>
+<tr><td>几何证明</td><td>全拿</td><td>条件→定理→结论，三步不缺</td></tr>
+<tr><td>函数题</td><td>少扣分</td><td>画图！画图！画图！</td></tr>
+<tr><td>应用题</td><td>审清再算</td><td>找等量/不等量关系</td></tr>
+<tr><td>选择填空</td><td>30min内</td><td>特殊值法、排除法、代入法</td></tr>
+<tr><td>统计题</td><td>全拿</td><td>概念区分+公式记准</td></tr>
+</table>
+</div>
+</details>
+
+<details>
+<summary><span class="badge ph">物理</span> 八年级知识清单</summary>
+<div class="detail-body">
+
+<h4>八年级（上）</h4>
+<ul class="checklist">
+  <li><strong>第1章 机械运动</strong>：长度/时间测量、参照物、v=s/t（m/s↔km/h）、s-t/v-t图像、平均速度≠速度平均值</li>
+  <li><strong>第2章 声现象</strong>：振动产生、介质传播、声速约340m/s、音调(频率)/响度(振幅)/音色、超声波/次声波、噪声控制三途径</li>
+  <li><strong>第3章 物态变化</strong>：温度计原理、六种物态变化（熔化/凝固/汽化/液化/升华/凝华）、晶体vs非晶体、沸点与气压</li>
+  <li><strong>第4章 光现象</strong>：直线传播、光速3×10⁸m/s、反射定律、镜面/漫反射、平面镜成像、折射规律、色散</li>
+  <li><strong>第5章 透镜及其应用</strong>：凸透镜会聚/凹透镜发散、五幅成像规律图、近视(凹透镜)/远视(凸透镜)</li>
+  <li><strong>第6章 质量与密度</strong>：天平使用(水平→归零→调平→左物右码)、ρ=m/V、量筒测体积、测密度实验</li>
+</ul>
+
+<h4>八年级（下）</h4>
+<ul class="checklist">
+  <li><strong>第7章 力</strong>：力的作用效果/三要素/示意图、弹力(伸长量与拉力成正比)、G=mg(g≈10N/kg)、摩擦力影响因素</li>
+  <li><strong>第8章 运动和力</strong>：牛顿第一定律、惯性(只与质量有关)、二力平衡(同体等大反向共线)、平衡力vs相互作用力</li>
+  <li><strong>第9章 压强</strong>：p=F/S(Pa=N/m²)、液体压强p=ρgh、连通器、大气压强(760mmHg=1.013×10⁵Pa)、流体压强与流速</li>
+  <li><strong>第10章 浮力</strong>：产生原因(F浮=F向上-F向下)、阿基米德原理(F浮=G排=ρ液gV排)、浮沉条件、四种计算方法(称重/压力差/阿基米德/平衡)</li>
+  <li><strong>第11章 功和机械能</strong>：W=Fs、P=W/t、动能/势能、机械能守恒</li>
+  <li><strong>第12章 简单机械</strong>：杠杆五要素、F₁L₁=F₂L₂、三类杠杆、定滑轮/动滑轮/滑轮组、η=W有/W总×100%</li>
+</ul>
+
+<h4>必会实验（7个）</h4>
+<table>
+<tr><th>实验</th><th>考点</th></tr>
+<tr><td>测平均速度</td><td>v=s/t，斜面坡度不宜过大</td></tr>
+<tr><td>凸透镜成像</td><td>五幅图每幅都会画</td></tr>
+<tr><td>测密度</td><td>天平+量筒，误差分析</td></tr>
+<tr><td>探究滑动摩擦力</td><td>控制变量法，匀速拉动</td></tr>
+<tr><td>探究液体压强</td><td>微小压强计U形管</td></tr>
+<tr><td>探究浮力</td><td>称重法F浮=G-F示</td></tr>
+<tr><td>探究杠杆平衡</td><td>调节平衡螺母，水平位置平衡</td></tr>
+</table>
+
+<h4>凸透镜成像五幅图（必背）</h4>
+<table>
+<tr><th>物距 u</th><th>像距 v</th><th>像的性质</th><th>应用</th></tr>
+<tr><td>u>2f</td><td>f＜v＜2f</td><td>倒立缩小实像</td><td>照相机</td></tr>
+<tr><td>u=2f</td><td>v=2f</td><td>倒立等大实像</td><td>—</td></tr>
+<tr><td>f＜u＜2f</td><td>v>2f</td><td>倒立放大实像</td><td>投影仪</td></tr>
+<tr><td>u=f</td><td>—</td><td>不成像</td><td>—</td></tr>
+<tr><td>u＜f</td><td>—</td><td>正立放大虚像</td><td>放大镜</td></tr>
+</table>
+
+<h4>浮沉条件</h4>
+<table>
+<tr><th>状态</th><th>条件</th><th>F浮 vs G</th></tr>
+<tr><td>上浮</td><td>ρ物＜ρ液</td><td>F浮＞G</td></tr>
+<tr><td>下沉</td><td>ρ物＞ρ液</td><td>F浮＜G</td></tr>
+<tr><td>悬浮</td><td>ρ物＝ρ液</td><td>F浮＝G</td></tr>
+<tr><td>漂浮</td><td>ρ物＜ρ液</td><td>F浮＝G</td></tr>
+</table>
+</div>
+</details>
+
+<!-- ===== PART 2 ===== -->
+<h2 id="p2">第二部分：6周每日课表</h2>
+
+<div class="note"><strong>每日固定仪式</strong>（早读10min + 睡前15min，不计入课表时间）：<br>
+早读：英语课文朗读（每单元选1篇）　|　睡前单日听力/双日物理实验题交替</div>
+
+<details><summary>第1周：基础回扫</summary><div class="detail-body">
+
+<h4>周一</h4>
+<table class="schedule-table"><tr><td>上午 2h</td><td><span class="badge math">数学</span> 七上有理数。数轴→相反数→绝对值→有理数加减</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 七上单词 U1-U6 跟读+听写。语法：be动词、人称代词、一般现在时。<strong>写作：仿写5个简单句</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第1章机械运动。长度测量→参照物→v=s/t公式→s-t图像</td></tr></table>
+
+<h4>周二</h4>
+<table class="schedule-table"><tr><td>上午 2h</td><td><span class="badge ph">物理</span> 第2章声现象。振动→介质→三特性→噪声控制（画思维导图）</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 七上单词 U7-U9+Starter。完形×1(限12min)+阅读×1(限8min)。<strong>写作：连词成句练习5道</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge math">数学</span> 有理数乘除、乘方。混合运算10道</td></tr></table>
+
+<h4>周三</h4>
+<table class="schedule-table"><tr><td>上午 2h</td><td><span class="badge math">数学</span> 七上整式加减。单项式/多项式→同类项→去括号合并</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 复习七上单词。语法：名词单复数、There be。<strong>写作：仿写3个There be段落</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第1-2章课后练习（只做基础题）</td></tr></table>
+
+<h4>周四</h4>
+<table class="schedule-table"><tr><td>上午 2h</td><td><span class="badge ph">物理</span> 第3章物态变化。六种变化→熔化凝固图像→沸腾条件</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 七下单词 U1-U6。语法：现在进行时、一般过去时。<strong>写作：两种时态各写3句话</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge math">数学</span> 一元一次方程。等式性质→移项→去括号→去分母→解方程10道</td></tr></table>
+
+<h4>周五</h4>
+<table class="schedule-table"><tr><td>上午 2h</td><td><span class="badge math">数学</span> 一元一次方程应用题。行程/工程/利润各2道</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 七下单词 U7-U12。完形×1+阅读×1。<strong>写作：仿写1篇短日记(50词)</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第3章课后练习+物态变化选择题15道</td></tr></table>
+
+<h4>周六</h4>
+<table class="schedule-table"><tr><td>上午 2h</td><td><span class="badge ph">物理</span> 第4章光现象。反射定律→平面镜成像→折射→色散（光路图每幅画3遍）</td></tr><tr><td>下午 2h</td><td><span class="badge math">数学</span> 七上几何初步。直线/角→余角补角。<span class="badge en">英语</span> 本周生词复习</td></tr><tr><td>晚上 1h</td><td>自由补弱</td></tr></table>
+
+<h4>周日检测</h4>
+<table class="schedule-table"><tr><td>上午 2h</td><td><span class="badge math">数学</span> 七上基础测试卷（不限时，目标＞85分）</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 七上词汇+语法测试卷（含听力+阅读+写作）</td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第1-4章概念自测（画图+公式默写+1道实验题）</td></tr></table>
+</div></details>
+
+<details><summary>第2周：推进巩固</summary><div class="detail-body">
+
+<h4>周一</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge math">数学</span> 七下相交线与平行线。判定与性质→证明题5道</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 八上单词 U1-U4。语法：复合不定代词、频率副词、比较级。<strong>写作：用比较级写5句话</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第4章课后练习+反射/折射作图10道+实验题：测平均速度</td></tr></table>
+
+<h4>周二</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge ph">物理</span> 第5章透镜。五幅成像图画熟（每幅5遍）</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 八上单词 U5-U7。语法：比较级最高级+be going to/will。<strong>写作：仿写1篇假期计划(60词)</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge math">数学</span> 平行线证明题进阶训练5道</td></tr></table>
+
+<h4>周三</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge math">数学</span> 七下实数。平方根/立方根→无理数→实数运算</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 八上单词 U8-U10。语法：条件状语从句if、should/could。<strong>写作：1篇建议信(80词)</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第5章透镜课后练习+照相机/投影仪/放大镜原理默写</td></tr></table>
+
+<h4>周四</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge ph">物理</span> 第6章质量密度。天平使用→ρ=m/V→密度计算→测密度实验步骤</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 八上全册单词复习。完形×1+阅读×2。<strong>写作：对照范文修改周三建议信</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge math">数学</span> 七下平面直角坐标系。点的坐标特征→平移变化→面积计算</td></tr></table>
+
+<h4>周五</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge math">数学</span> 七下二元一次方程组。代入法/加减法各5道→应用题3道</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 八下单词 U1-U4。语法：反身代词、动词不定式。<strong>写作：仿写1篇家务短文(70词)</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第6章课后练习+密度计算题10道+实验题：测密度步骤默写</td></tr></table>
+
+<h4>周六</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge ph">物理</span> 第4-6章综合复习+压强引入（p=F/S基本概念）</td></tr><tr><td>下午 2h</td><td><span class="badge math">数学</span> 七下不等式与不等式组。<span class="badge en">英语</span> 本周生词+错题</td></tr><tr><td>晚上 1h</td><td>自由补弱/缓冲时间</td></tr></table>
+
+<h4>周日检测</h4>
+<table class="schedule-table"><tr><td>上午 2h</td><td><span class="badge math">数学</span> 七下基础测试卷</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 八上词汇+语法测试（含听力+完形+阅读+写作）</td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第4-6章综合卷+1道实验题</td></tr></table>
+</div></details>
+
+<details><summary>第3周：力学入门</summary><div class="detail-body">
+
+<h4>周一</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge math">数学</span> 八上三角形。三边关系→中线/高/角平分线→内角和外角</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 八下单词 U5-U7。语法：过去进行时+现在完成时。<strong>写作：用过去进行时写1段(60词)</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第7章力。力的示意图10道→G=mg计算10道→摩擦力实验考点</td></tr></table>
+
+<h4>周二</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge ph">物理</span> 第8章运动和力。牛顿第一定律→惯性→二力平衡→平衡力vs相互作用力</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 八下单词 U8-U10。语法：现在完成时进阶+until/so that/although。<strong>写作：1篇"我的变化"(80词)</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge math">数学</span> 三角形专项训练</td></tr></table>
+
+<h4>周三</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge math">数学</span> 八上全等三角形。五种判定方法→证明规范→课本证明题8道</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 八下全册单词复习。完形×1+阅读×2。<strong>写作：修改周二短文</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第7-8章课后练习+中考基础题15道+实验题：探究滑动摩擦力</td></tr></table>
+
+<h4>周四</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge ph">物理</span> 第9章压强（一）。p=F/S→固体压强计算</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 时态综合复习（6种时态对照表）。<strong>写作：1篇书信(100词)</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge math">数学</span> 全等三角形证明进阶5道</td></tr></table>
+
+<h4>周五</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge math">数学</span> 八上轴对称。垂直平分线→等腰三角形→等边三角形→最短路径</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 作文专项。审题+列提纲3篇。万能句型10个。范文精读1篇</td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第9章压强（二）。液体压强p=ρgh→连通器→大气压强</td></tr></table>
+
+<h4>周六</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge ph">物理</span> 第9章课后练习+压强计算题10道+实验题：探究液体压强</td></tr><tr><td>下午 2h</td><td><span class="badge math">数学</span> 全等+轴对称综合证明5道。<span class="badge en">英语</span> 本周生词+作文1篇</td></tr><tr><td>晚上 1h</td><td>自由补弱/缓冲时间</td></tr></table>
+
+<h4>周日检测</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge ph">物理</span> 第7-9章综合卷+1道实验题</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 七八年级综合卷（含听力）</td></tr><tr><td>晚上 1h</td><td><span class="badge math">数学</span> 八上几何综合卷</td></tr></table>
+</div></details>
+
+<details><summary>第4周：力学深入+数学整合</summary><div class="detail-body">
+
+<h4>周一</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge math">数学</span> 八上整式乘法与因式分解。幂运算→平方差/完全平方公式→提公因式/公式法</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 宾语从句专题（3大考点）。练习10道。<strong>写作：含宾语从句短文(80词)</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第10章浮力（一）。产生原因→阿基米德原理推导</td></tr></table>
+
+<h4>周二</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge ph">物理</span> 第10章浮力（二）。浮沉条件→称重法与阿基米德法各3道</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 从句综合练习15道+完形×1+阅读×2</td></tr><tr><td>晚上 1h</td><td><span class="badge math">数学</span> 八上分式。约分通分→分式运算→分式方程（检验！）</td></tr></table>
+
+<h4>周三</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge math">数学</span> 八下勾股定理。证明→计算→逆定理→最短路径/折叠应用</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> <strong>作文专项。</strong>写2篇（书信+议论文各1）+对照范文修改</td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第10章浮力（三）。压力差法/平衡法各3道+浮沉应用题5道</td></tr></table>
+
+<h4>周四</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge ph">物理</span> 第11章功和机械能。W=Fs→P=W/t→动能/势能→机械能守恒</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 被动语态专项。结构→时态变化→练习15道。<strong>写作：被动语态改写5句话</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge math">数学</span> 八下平行四边形。性质→判定→中位线定理</td></tr></table>
+
+<h4>周五</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge math">数学</span> 八下一次函数。正比例→一次函数→待定系数法→图像与性质</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 听力训练2套（错题复听）。完形×1。<strong>写作：1篇议论文(100词)</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第12章简单机械。杠杆五要素→平衡条件→滑轮组→机械效率</td></tr></table>
+
+<h4>周六</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge ph">物理</span> 第10-12章综合复习（浮力四种方法对比+杠杆/滑轮综合5道）</td></tr><tr><td>下午 2h</td><td><span class="badge math">数学</span> 勾股+一次函数综合。<span class="badge en">英语</span> 本周生词+作文1篇</td></tr><tr><td>晚上 1h</td><td>自由补弱/缓冲时间</td></tr></table>
+
+<h4>周日检测</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge math">数学</span> 八下核心模块卷（勾股+函数+平行四边形）</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 七八年级语法+阅读综合卷（含听力）</td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第10-12章综合卷+1道实验题</td></tr></table>
+</div></details>
+
+<details><summary>第5周：综合训练</summary><div class="detail-body">
+
+<h4>周一</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge math">数学</span> 综合模拟卷一（七上+七下+八上，限时90min）</td></tr><tr><td>下午 2h</td><td>逐题分析数学错题，知识回补</td></tr><tr><td>晚上 1h</td><td><span class="badge en">英语</span> 听力1套+单选/语法重点练习</td></tr></table>
+
+<h4>周二</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge en">英语</span> 综合模拟卷一（含听力，限时100min）</td></tr><tr><td>下午 2h</td><td>逐题分析英语错题，作文对照范文修改</td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第1-6章综合复习（声光热+上半段力学）</td></tr></table>
+
+<h4>周三</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge ph">物理</span> 综合模拟卷一（全册，限时80min）</td></tr><tr><td>下午 2h</td><td>逐题分析物理错题，重点回补浮力+压强</td></tr><tr><td>晚上 1h</td><td><span class="badge math">数学</span> 弱项补充练习</td></tr></table>
+
+<h4>周四</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge math">数学</span> 综合模拟卷二（全七八年级，限时100min）</td></tr><tr><td>下午 2h</td><td>逐题分析数学卷二+函数与几何专项回补</td></tr><tr><td>晚上 1h</td><td><span class="badge en">英语</span> 本周错题语法练习+听力1套</td></tr></table>
+
+<h4>周五</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge en">英语</span> 综合模拟卷二（限时100min）</td></tr><tr><td>下午 2h</td><td>逐题分析英语卷二。作文模板背诵+仿写1篇</td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 作图题专项（光路图/受力图各5幅）+实验题2道</td></tr></table>
+
+<h4>周六</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge ph">物理</span> 综合模拟卷二（限时80min）</td></tr><tr><td>下午 2h</td><td>逐题分析物理卷二。<span class="badge math">数学</span> 计算题专项（有理数/整式/方程/不等式/因式分解/二次根式各3道）</td></tr><tr><td>晚上 1h</td><td>三科本周错题重做+统计章节回顾（30min）</td></tr></table>
+
+<h4>周日检测</h4>
+<table class="schedule-table"><tr><td colspan="2"><span class="badge" style="background:#fef3c7;color:#92400e;">若本周6套卷子已够，周日改为错题巩固日</span></td></tr></table>
+</div></details>
+
+<details><summary>第6周：冲刺模拟</summary><div class="detail-body">
+
+<h4>周一</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge math">数学</span> 冲刺模拟卷三（限时100min）</td></tr><tr><td>下午 2h</td><td>逐题分析数学错因</td></tr><tr><td>晚上 1h</td><td><span class="badge en">英语</span> 听力1套+作文模板背诵</td></tr></table>
+
+<h4>周二</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge en">英语</span> 冲刺模拟卷三（限时100min）</td></tr><tr><td>下午 2h</td><td>逐题分析英语错因+作文修改</td></tr><tr><td>晚上 1h</td><td><span class="badge math">数学</span> 两科模拟薄弱点回补</td></tr></table>
+
+<h4>周三</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge ph">物理</span> 冲刺模拟卷三（限时80min）</td></tr><tr><td>下午 2h</td><td>逐题分析物理，重点浮力/压强/实验题</td></tr><tr><td>晚上 1h</td><td>三科重叠错题→最后回补清单</td></tr></table>
+
+<h4>周四 — 回归课本</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge ph">物理</span> 每章黑体字默读→公式重新推导→实验题步骤全部默写</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 作文模板巩固+听力错题重听+核心单词速过(80个)</td></tr><tr><td>晚上 1h</td><td><span class="badge math">数学</span> 勾股定理证明/全等三角形判定推导/一次函数图像重画</td></tr></table>
+
+<h4>周五</h4>
+<table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge math">数学</span> 核心公式默写+经典错题10道重做</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 核心单词速过(80个)+完形×1+阅读×1</td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 核心公式默写+实验步骤默写+经典错题10道</td></tr></table>
+
+<h4>周六 — 保持手感</h4>
+<table class="schedule-table"><tr><td>上午 1.5h</td><td><span class="badge math">数学</span> 选择填空速练30道(30min)</td></tr><tr><td>下午 1.5h</td><td><span class="badge en">英语</span> 阅读×2+完形×1（严格限时）</td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 光路图+受力图各3幅+错题快速过</td></tr></table>
+
+<h4>周日</h4>
+<p style="text-align:center;padding:24px;font-size:18px;font-weight:700;">🎉 休息！不看书，放松心情</p>
+</div></details>
+
+<!-- ===== PART 3 ===== -->
+<h2 id="p3">第三部分：每日固定仪式</h2>
+
+<div class="note"><strong>以下内容已融入每日课表，不需另外挤出时间。</strong></div>
+
+<div class="flex-col">
+<div>
+<h4>🌅 早读（每天10分钟）</h4>
+<ul><li>英语课文朗读（每单元选1篇重点课文，大声朗读）</li><li>目的：培养语感、巩固词汇语境用法、提升听力反应速度</li></ul>
+</div>
+<div>
+<h4>🌙 睡前（隔天交替，约15分钟）</h4>
+<ul><li><strong>单日（一/三/五）</strong>：英语听力1套，错题标记</li><li><strong>双日（二/四/六）</strong>：物理实验题1道（默写步骤+原理+误差分析）</li></ul>
+</div>
+<div>
+<h4>📐 数学每日必做（10分钟）</h4>
+<ul><li>口算/计算5道（保持运算手感）——晚饭前后完成</li></ul>
+</div>
+</div>
+
+<!-- ===== PART 4 ===== -->
+<h2 id="p4">第四部分：错题管理规范</h2>
+
+<h3>错题本格式</h3>
+<pre style="background:var(--bg2);padding:12px 16px;border-radius:var(--r);font-size:13px;overflow-x:auto;">| 日期 | 来源 | 原题 | 错误答案 | 正确答案 | 错因分类 | 正确思路 |</pre>
+
+<h3>错因分类编码</h3>
+<table>
+<tr><th>编码</th><th>含义</th><th>举例</th></tr>
+<tr><td>A</td><td>知识漏洞</td><td>公式记错、概念混淆</td></tr>
+<tr><td>B</td><td>审题失误</td><td>看错条件、漏看关键词</td></tr>
+<tr><td>C</td><td>计算失误</td><td>符号错了、抄错数</td></tr>
+<tr><td>D</td><td>方法错误</td><td>思路不对、选错定理</td></tr>
+<tr><td>E</td><td>时间不够</td><td>没来得及做/仓促</td></tr>
+</table>
+
+<h3>处理流程</h3>
+<ol><li><strong>当天</strong>：错题整理到错题本</li><li><strong>第二天</strong>：重做一遍（不看答案）</li><li><strong>周末</strong>：本周错题全部重做</li><li><strong>仍出错</strong>：标 ⭐，下周末继续重做，直到消除</li></ol>
+
+<h3>每周错题统计</h3>
+<table>
+<tr><th>科目</th><th>A类</th><th>B类</th><th>C类</th><th>D类</th><th>E类</th></tr>
+<tr><td>数学</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>英语</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>物理</td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+<ul>
+<li>A类和C类最多→基础不牢，增加课本回顾</li>
+<li>B类最多→审题问题，每题圈画关键词</li>
+<li>D类最多→方法选择，多练一题多解</li>
+<li>E类最多→速度不足，增加限时训练</li>
+</ul>
+
+<!-- ===== PART 5 ===== -->
+<h2 id="p5">第五部分：每周日检查清单</h2>
+
+<div class="flex-col">
+<div>
+<h4>📊 进度检查</h4>
+<ul><li>本周计划完成率＞80%？</li><li>有2天以上未完成→分析原因，调整下周</li><li>周日模拟测试全部完成？</li><li>早读和睡前仪式坚持了几天？</li></ul>
+</div>
+<div>
+<h4>📈 效果检查</h4>
+<ul><li>数学：A类/C类错误减少？</li><li>英语：生词记住了？听力正确率提升？</li><li>物理：概念能复述？公式能推导？实验题步骤完整？</li></ul>
+</div>
+<div>
+<h4>🔧 方法检查</h4>
+<ul><li>物理作图规范（尺规、箭头、虚实线）？</li><li>数学证明有理有据（每步有理由）？</li><li>英语作文先列提纲再动笔？书写工整？</li><li>错题本持续更新？错因分类准确？</li></ul>
+</div>
+<div>
+<h4>💪 心态检查</h4>
+<ul><li>有没有逃避某科？</li><li>遇到瓶颈是否及时标记而非死磕？</li><li>下周需要调整什么？</li><li>缓冲时间是否有效使用？有积压＞3天未完成项？</li></ul>
+</div>
+</div>
+
+<!-- ===== PART 6 ===== -->
+<h2 id="p6">第六部分：各科得分策略</h2>
+
+<div class="flex-col">
+<div>
+<h3><span class="badge ph">物理</span> 提分突破口（按性价比排序）</h3>
+<ol><li><strong>作图题</strong>：送分题，练规范即可全拿</li><li><strong>计算题</strong>：格式规范+公式写对=至少拿一半</li><li><strong>实验题</strong>：背住7个实验的步骤和原理</li><li><strong>填空题</strong>：注意单位换算和物理量符号</li><li><strong>选择题</strong>：排除法+概念辨析</li></ol>
+<h4>考试策略</h4>
+<table>
+<tr><th>题型</th><th>策略</th></tr>
+<tr><td>选择题</td><td>排除法！不会的也要列公式</td></tr>
+<tr><td>填空题</td><td>注意单位！写公式推导</td></tr>
+<tr><td>作图题</td><td>用尺规！箭头/虚线/实线分明</td></tr>
+<tr><td>实验题</td><td>先写原理公式，再套实验</td></tr>
+<tr><td>计算题</td><td>已知→求→解→答，一步不跳</td></tr>
+</table>
+</div>
+
+<div>
+<h3><span class="badge math">数学</span> 提分突破口</h3>
+<ol><li><strong>计算零失误</strong>：符号+括号+检验，底线</li><li><strong>几何证明规范</strong>：每步写理由，阅卷按步给分</li><li><strong>函数画图分析</strong>：k/b含义搞清，图像对=对一半</li><li><strong>选择填空速度</strong>：30min练熟</li><li><strong>统计不丢分</strong>：概念对比记</li></ol>
+<h4>考试策略</h4>
+<table>
+<tr><th>题型</th><th>策略</th></tr>
+<tr><td>选择+填空</td><td>30min内。特殊值法、排除法</td></tr>
+<tr><td>计算/化简</td><td>步步写，不跳步，做完验算</td></tr>
+<tr><td>证明题</td><td>条件→定理→结论，缺一不可</td></tr>
+<tr><td>应用题</td><td>先找等量/不等量关系</td></tr>
+<tr><td>压轴第1问</td><td>必做！通常是基础计算</td></tr>
+</table>
+</div>
+
+<div>
+<h3><span class="badge en">英语</span> 提分突破口</h3>
+<ol><li><strong>单词量</strong>：1500+词必须认识</li><li><strong>听力积累</strong>：隔天1套不可断</li><li><strong>时态判断</strong>：时间状语是突破口</li><li><strong>完形逻辑</strong>：看前后句意思</li><li><strong>作文模板</strong>：5种体裁各一套框架</li><li><strong>语感培养</strong>：每日10min课文朗读</li></ol>
+<h4>考试策略</h4>
+<table>
+<tr><th>题型</th><th>策略</th></tr>
+<tr><td>听力</td><td>发卷先看题！预读+预测</td></tr>
+<tr><td>单选</td><td>看选项→判断考点→排除</td></tr>
+<tr><td>完形</td><td>通读不填→上下文推→语法验证</td></tr>
+<tr><td>阅读</td><td>先读题再读文→关键词定位→同义替换</td></tr>
+<tr><td>作文</td><td>5min审题+提纲→打草稿→工整抄写</td></tr>
+</table>
+</div>
+</div>
+
+<!-- ===== PART 7 ===== -->
+<h2 id="p7">第七部分：每周模拟卷要求</h2>
+
+<table>
+<tr><th>周次</th><th>数学</th><th>英语</th><th>物理</th></tr>
+<tr><td>第1周</td><td>七上基础</td><td>七上词汇+语法（含听力）</td><td>第1-4章概念</td></tr>
+<tr><td>第2周</td><td>七下基础</td><td>八上词汇+语法（含听力）</td><td>第4-6章+实验题</td></tr>
+<tr><td>第3周</td><td>八上几何</td><td>七八年级综合（含听力）</td><td>第7-9章+实验题</td></tr>
+<tr><td>第4周</td><td>八下核心</td><td>语法+阅读综合（含听力）</td><td>第10-12章+实验题</td></tr>
+<tr><td>第5周</td><td>全册综合×2</td><td>全册综合×2（均含听力）</td><td>全册综合×2+实验题</td></tr>
+<tr><td>第6周</td><td>冲刺×1+回归</td><td>冲刺×1+回归</td><td>冲刺×1+回归+实验</td></tr>
+</table>
+
+<div class="cta">
+  <h3 style="margin-bottom:12px;">📌 预期提升</h3>
+  <table style="margin:0 auto;max-width:600px;">
+    <tr><th>科目</th><th>预期</th><th>关键信心</th></tr>
+    <tr><td>英语</td><td>听力不掉分+写作有框架+完形提升</td><td>隔天听力+每周写作形成习惯</td></tr>
+    <tr><td>数学</td><td>计算零失误+证明规范+函数会画图</td><td>错题分类统计推动针对性回补</td></tr>
+    <tr><td>物理</td><td>概念能复述+作图规范+实验题不丢分</td><td>不作图不做题的原则贯穿始终</td></tr>
+  </table>
+</div>
+
+<blockquote>
+  <strong>最后提醒</strong>：这份计划的关键不在于"做完"，而在于"做对"。宁可少练10道题、也要把1道错题彻底搞懂。隔天听力和睡前实验题不能断——它们是拉开差距的慢变量。6周坚持下来，你会感谢现在的自己。
+</blockquote>
+
+</body>
+</html>

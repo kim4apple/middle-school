@@ -70,7 +70,7 @@
 .num-card:hover { background: var(--accent-light); }
 .num-card .num-digit { font-size: 24px; font-weight: 800; color: var(--accent); }
 .num-card .num-word { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
-</style>
+#sidebar.hidden{display:none!important}body.sidebar-hidden #content{margin-left:0!important}</style>
 <script>(function(){var t=localStorage.getItem("eng7-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
 </head>
 <body>
@@ -629,6 +629,7 @@
       var closeBtn = document.getElementById('speechCloseBtn');
       var toggleBtn = document.getElementById('speechToggleBtn');
       var panel = document.getElementById('speechPanel');
+      if(!rateInput||!voiceSelect||!stopBtn||!closeBtn||!toggleBtn)return;
 
       voiceSelect.addEventListener('change', function() {
         self.voiceURI = this.value;

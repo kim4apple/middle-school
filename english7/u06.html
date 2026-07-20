@@ -52,7 +52,7 @@
 /* Lazy render below-the-fold sections */
 .detail-module { content-visibility: auto; contain-intrinsic-size: 300px; }
 .reading { content-visibility: auto; contain-intrinsic-size: 400px; }
-</style>
+#sidebar.hidden{display:none!important}body.sidebar-hidden #content{margin-left:0!important}</style>
 <script>(function(){var t=localStorage.getItem("eng7-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
 </head>
 <body>
@@ -575,6 +575,7 @@
       var closeBtn = document.getElementById('speechCloseBtn');
       var toggleBtn = document.getElementById('speechToggleBtn');
       var panel = document.getElementById('speechPanel');
+      if(!rateInput||!voiceSelect||!stopBtn||!closeBtn||!toggleBtn)return;
 
       voiceSelect.addEventListener('change', function() {
         self.voiceURI = this.value;

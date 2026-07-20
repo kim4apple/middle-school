@@ -32,28 +32,80 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helv
 .cover h1 { font-size: 28px; font-weight: 800; margin-bottom: 6px; line-height: 1.3; }
 .cover .sub-en { font-size: 18px; color: var(--accent); font-weight: 500; margin-bottom: 8px; }
 .cover p { color: var(--text-secondary); font-size: 14px; margin-top: 4px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+.unit-meta span { font-size: 12px; padding: 3px 10px; border-radius: 12px; background: var(--accent-light); color: var(--accent); font-weight: 600; }
+
+/* ── Can-do Checklist ── */
+.can-do { background: var(--eng-green-light); border-radius: var(--radius); padding: 16px 20px; margin-bottom: 24px; border-left: 4px solid var(--eng-green); }
+.can-do h3 { font-size: 15px; color: var(--eng-green); font-weight: 700; margin-bottom: 10px; }
+.can-do label { display: flex; align-items: flex-start; gap: 8px; padding: 4px 0; font-size: 14px; cursor: pointer; }
+.can-do input[type="checkbox"] { margin-top: 4px; accent-color: var(--eng-green); }
 
 /* ── Dialogue ── */
+.dialogue { margin-bottom: 20px; }
 .dialogue-line { display: grid; grid-template-columns: 80px 1fr; gap: 8px; padding: 8px 12px; border-radius: 6px; font-size: 15px; line-height: 1.7; }
 .dialogue-line:nth-child(even) { background: var(--bg-secondary); }
+.dialogue-line .speaker { font-weight: 700; color: var(--accent); font-size: 13px; }
+.dialogue-line .en-text em { font-style: normal; background: var(--eng-amber-light); padding: 1px 4px; border-radius: 3px; font-weight: 600; }
+.dialogue-annotation { margin-top: 16px; padding: 14px 18px; background: var(--accent-light); border-radius: 6px; font-size: 14px; line-height: 1.8; }
+.dialogue-annotation p { margin-top: 6px; }
+.dialogue-annotation p:first-child { margin-top: 0; }
+.dialogue-annotation strong { color: var(--accent); }
 
 /* ── Reading ── */
 .reading { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 24px; margin-bottom: 16px; font-size: 15px; line-height: 1.9; }
+.reading .notice { background: var(--eng-amber-light); border: 1px dashed var(--eng-amber); border-radius: 6px; padding: 14px 18px; margin: 10px 0; }
+.reading .notice .title { font-weight: 700; color: var(--eng-amber); font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
 .reading .gloss { color: var(--text-secondary); font-size: 13px; }
+.read-glossary { margin-top: 12px; font-size: 14px; line-height: 1.8; }
+.read-glossary .gloss-item { display: inline-block; margin: 2px 6px 2px 0; padding: 1px 8px; background: var(--eng-pink-light); border-radius: 3px; color: var(--eng-pink); }
 
 /* ── Vocabulary ── */
 .vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
 .vocab-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; box-shadow: var(--shadow); }
 .vocab-card .headword { font-weight: 700; font-size: 17px; color: var(--accent); }
+.vocab-card .ipa { font-size: 13px; color: var(--text-secondary); margin-left: 6px; }
+.vocab-card .pos { font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--eng-pink); font-weight: 600; margin-left: 6px; }
+.vocab-card .definition { font-size: 14px; margin-top: 6px; color: var(--text-secondary); }
+.vocab-card .example { font-size: 14px; margin-top: 6px; padding: 6px 10px; background: var(--accent-light); border-radius: 4px; line-height: 1.6; }
+.vocab-card .example .trans { display: block; color: var(--text-secondary); font-size: 12px; margin-top: 2px; }
 
-/* ── Patterns ── */
+/* ── Sentence Patterns ── */
 .pattern-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px; }
 .pattern-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); border-left: 3px solid var(--accent); }
+.pattern-card .structure { font-weight: 700; font-size: 15px; color: var(--accent); margin-bottom: 8px; font-family: Georgia, "Times New Roman", serif; }
+.pattern-card .substitution { font-size: 14px; margin-top: 6px; color: var(--text-secondary); line-height: 1.7; }
+.pattern-card .substitution .slot { display: inline-block; padding: 1px 8px; background: var(--eng-amber-light); border: 1px dashed var(--eng-amber); border-radius: 3px; font-weight: 600; color: var(--eng-amber); }
 
 /* ── Grammar ── */
+.grammar-module { margin-bottom: 20px; }
+.grammar-module h3 { font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 10px; }
+.grammar-module p { font-size: 14px; line-height: 1.8; margin-bottom: 8px; }
 .grammar-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
 .grammar-table th { background: var(--accent-light); color: var(--accent); padding: 10px 14px; text-align: left; border: 1px solid var(--border); font-weight: 700; }
 .grammar-table td { padding: 10px 14px; border: 1px solid var(--border); line-height: 1.7; }
+.grammar-table tr:nth-child(even) td { background: var(--bg-secondary); }
+.grammar-tip { background: var(--eng-amber-light); border-left: 3px solid var(--eng-amber); border-radius: 0 6px 6px 0; padding: 10px 14px; margin: 10px 0; font-size: 14px; line-height: 1.7; }
+.grammar-tip strong { color: #b45309; }
+.chinese-error { background: var(--eng-red-light); border-left: 3px solid var(--eng-red); border-radius: 0 6px 6px 0; padding: 10px 14px; margin: 10px 0; font-size: 14px; line-height: 1.8; }
+.chinese-error .wrong { color: var(--eng-red); text-decoration: line-through; }
+.chinese-error .correct { color: var(--eng-green); font-weight: 600; }
+
+/* ── Micro Writing ── */
+.micro-writing { background: var(--eng-green-light); border: 1px solid var(--eng-green); border-radius: var(--radius); padding: 18px 22px; margin-top: 20px; }
+.micro-writing h3 { font-size: 16px; font-weight: 700; color: var(--eng-green); margin-bottom: 10px; }
+.micro-writing p { font-size: 14px; line-height: 1.7; }
+.micro-writing .model { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 12px 16px; margin-top: 10px; font-size: 14px; line-height: 1.7; }
+.micro-writing .model .en { color: var(--text); }
+.micro-writing .model .trans { color: var(--text-secondary); font-size: 13px; display: block; }
+
+/* ── Level Badges ── */
+.level-basic { color: #2563eb; font-size: 15px; font-weight: 600; margin: 0 0 10px; }
+.level-mid { color: #7c3aed; font-size: 15px; font-weight: 600; margin: 20px 0 10px; }
+.level-hard { color: #d97706; font-size: 15px; font-weight: 600; margin: 20px 0 10px; }
+[data-theme="dark"] .level-basic { color: #60a5fa; }
+[data-theme="dark"] .level-mid { color: #a78bfa; }
+[data-theme="dark"] .level-hard { color: #fbbf24; }
 
 /* ── Extra: 阅读专项 ── */
 .reading-module { margin-top: 18px; }
@@ -99,16 +151,28 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helv
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
-  .vocab-grid { grid-template-columns: 1fr; }
-  .pattern-grid { grid-template-columns: 1fr; }
-  .dialogue-line { grid-template-columns: 1fr; font-size: 14px; }
-  .grammar-table { font-size: 14px; display: block; overflow-x: auto; }
+  .vocab-grid { grid-template-columns: 1fr; gap: 10px; }
+  .vocab-card { padding: 12px 14px; }
+  .vocab-card .headword { font-size: 16px; }
+  .vocab-card .definition { font-size: 14px; }
+  .pattern-grid { grid-template-columns: 1fr; gap: 12px; }
+  .pattern-card { padding: 14px; }
+  .pattern-card .structure { font-size: 15px; }
+  .dialogue-line { grid-template-columns: 1fr; font-size: 14px; gap: 2px; padding: 10px 12px; }
+  .dialogue-line .speaker { font-size: 13px; }
+  .grammar-table { font-size: 14px; display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .grammar-table th, .grammar-table td { padding: 8px 10px; white-space: nowrap; }
+  .reading { padding: 16px 18px; font-size: 14px; }
   .reading-passage { padding: 14px; font-size: 14px; }
   .reading-q { font-size: 14px; padding: 10px 12px; }
   .exam-section .exam-q { padding: 12px; }
   .writing-prompt { padding: 12px 14px; }
   .writing-framework { padding: 10px 14px; }
   .project-steps .step { padding: 10px 12px; }
+  .cover h1 { font-size: 22px; }
+  .cover .sub-en { font-size: 16px; }
+  .can-do { padding: 14px 16px; }
+  .micro-writing { padding: 14px 16px; }
 }
 
 /* ── Print ── */

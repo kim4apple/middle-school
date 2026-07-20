@@ -11,10 +11,9 @@ TEMPLATE_PATH = BASE / "appendix-vocab.html"
 UNIT_FILES = [
     "st01.html", "st02.html", "st03.html",
     "u01.html", "u02.html", "u03.html", "u04.html", "u05.html",
-    "u06.html", "u07.html", "u08.html", "u09.html",
+    "u06.html", "u07.html",
     "b2u01.html", "b2u02.html", "b2u03.html", "b2u04.html", "b2u05.html",
-    "b2u06.html", "b2u07.html", "b2u08.html", "b2u09.html", "b2u10.html",
-    "b2u11.html", "b2u12.html",
+    "b2u06.html", "b2u07.html", "b2u08.html",
 ]
 
 

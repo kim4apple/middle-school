@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unit 1 My name's Gina. | 初中英语七年级</title>
+<title>Unit 1 You and Me | 初中英语七年级 2024</title>
 <link rel="stylesheet" href="css/english.css">
 <style>
 .speak-btn {
@@ -51,25 +51,6 @@
 [data-theme="dark"] .en-text.speaking { background: #452a08; }
 .detail-module { content-visibility: auto; contain-intrinsic-size: 300px; }
 .reading { content-visibility: auto; contain-intrinsic-size: 400px; }
-.num-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-  gap: 8px;
-  margin: 16px 0;
-}
-.num-card {
-  text-align: center;
-  padding: 12px 6px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--bg);
-  box-shadow: var(--shadow);
-  cursor: pointer;
-  transition: background 0.15s;
-}
-.num-card:hover { background: var(--accent-light); }
-.num-card .num-digit { font-size: 24px; font-weight: 800; color: var(--accent); }
-.num-card .num-word { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
 #sidebar.hidden{display:none!important}body.sidebar-hidden #content{margin-left:0!important}</style>
 <script>(function(){var t=localStorage.getItem("eng7-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
 </head>
@@ -88,31 +69,25 @@
     <a href="appendix-grammar.html" style="font-size:13px;">📌 语法全景图</a>
     <a href="appendix-vocab.html" style="font-size:13px;">📖 单词专项</a>
     <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 七 上 ━━</a>
-    <a href="st01.html">S1 Good morning!</a>
-    <a href="st02.html">S2 What's this in English?</a>
-    <a href="st03.html">S3 What color is it?</a>
-    <a href="u01.html" class="active">U1 My name's Gina.</a>
-    <a href="u02.html">U2 This is my sister.</a>
-    <a href="u03.html">U3 Is this your pencil?</a>
-    <a href="u04.html">U4 Where's my schoolbag?</a>
-    <a href="u05.html">U5 Do you have a soccer ball?</a>
-    <a href="u06.html">U6 Do you like bananas?</a>
-    <a href="u07.html">U7 How much are these socks?</a>
-    <a href="u08.html">U8 When is your birthday?</a>
-    <a href="u09.html">U9 My favorite subject is science.</a>
+    <a href="st01.html">S1 Hello!</a>
+    <a href="st02.html">S2 Keep Tidy!</a>
+    <a href="st03.html">S3 Welcome!</a>
+    <a href="u01.html" class="active">U1 You and Me</a>
+    <a href="u02.html">U2 We're Family!</a>
+    <a href="u03.html">U3 My School</a>
+    <a href="u04.html">U4 My Favourite Subject</a>
+    <a href="u05.html">U5 Fun Clubs</a>
+    <a href="u06.html">U6 A Day in the Life</a>
+    <a href="u07.html">U7 Happy Birthday!</a>
     <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 七 下 ━━</a>
-    <a href="b2u01.html">U1 Can you play the guitar?</a>
-    <a href="b2u02.html">U2 What time...?</a>
-    <a href="b2u03.html">U3 How do you get to school?</a>
-    <a href="b2u04.html">U4 Don't eat in class.</a>
-    <a href="b2u05.html">U5 Why do you like pandas?</a>
-    <a href="b2u06.html">U6 I'm watching TV.</a>
-    <a href="b2u07.html">U7 It's raining!</a>
-    <a href="b2u08.html">U8 Is there a post office...</a>
-    <a href="b2u09.html">U9 What does he look like?</a>
-    <a href="b2u10.html">U10 I'd like some noodles.</a>
-    <a href="b2u11.html">U11 How was your school trip?</a>
-    <a href="b2u12.html">U12 What did you do last weekend?</a>
+    <a href="b2u01.html">U1 Animal Friends</a>
+    <a href="b2u02.html">U2 No Rules, No Order</a>
+    <a href="b2u03.html">U3 Keep Fit</a>
+    <a href="b2u04.html">U4 Eat Well</a>
+    <a href="b2u05.html">U5 Here and Now</a>
+    <a href="b2u06.html">U6 Rain or Shine</a>
+    <a href="b2u07.html">U7 A Day to Remember</a>
+    <a href="b2u08.html">U8 Once upon a Time</a>
   </nav>
   <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
   <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
@@ -122,60 +97,73 @@
 
 <div class="cover">
   <div class="sub-en">Unit 1</div>
-  <h1>My name's Gina.</h1>
-  <p>自我介绍 · 询问姓名 · 数字 0–9 · be 动词</p>
+  <h1>You and Me</h1>
+  <p>自我介绍 · 个人信息 · 国籍城市 · be 动词</p>
 </div>
 
 <div class="unit-meta">
-  <span>📖 话题：Making friends</span>
-  <span>💬 功能：Introduce yourself & greet</span>
-  <span>📚 语法：be 动词 (am/is/are) · 形容词性物主代词</span>
-  <span>📝 写作：自我介绍段落</span>
+  <span>📖 话题：Getting to know each other</span>
+  <span>💬 功能：Introduce yourself and ask about others</span>
+  <span>📚 语法：be 动词 (am/is/are) · 缩写形式</span>
+  <span>📝 写作：个人信息介绍段落</span>
 </div>
 
 <div class="can-do">
   <h3>🎯 我能做到</h3>
-  <label><input type="checkbox"> I can introduce myself: "My name is ... / I'm ..."</label>
-  <label><input type="checkbox"> I can ask "What's your/his/her name?" and answer.</label>
-  <label><input type="checkbox"> I can use numbers 0–9 in conversations.</label>
-  <label><input type="checkbox"> I can use am, is, are correctly.</label>
-  <label><input type="checkbox"> I can use my, your, his, her correctly.</label>
+  <label><input type="checkbox"> I can introduce myself (name, age, city).</label>
+  <label><input type="checkbox"> I can ask "Where are you from?"</label>
+  <label><input type="checkbox"> I can ask "How old are you?"</label>
+  <label><input type="checkbox"> I can use am/is/are correctly.</label>
+  <label><input type="checkbox"> I can use my/your/his/her correctly.</label>
+  <label><input type="checkbox"> I can write a short self-introduction.</label>
 </div>
 
 <!-- ====== 课文精讲 ====== -->
 <details class="module" open>
-  <summary>📖 课文精讲 · Meeting New Friends</summary>
+  <summary>📖 课文精讲 · You and Me</summary>
   <div class="content">
 
     <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;">
-      <span style="font-size:13px;color:var(--text-secondary);">场景：开学第一天，新同学互相认识。</span>
+      <span style="font-size:13px;color:var(--text-secondary);">场景：开学第一周，两位新同学在课间聊天。</span>
       <button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话（含间隔）">🔊 朗读对话</button>
     </div>
 
     <div class="dialogue" id="dialogueText">
       <div class="dialogue-line">
-        <span class="speaker">Gina:</span>
-        <span class="en-text wotd-say" data-speak="Hi! My name's Gina. What's your name?">Hi! <em>My name's Gina</em>. What's your name?</span>
+        <span class="speaker">Peter:</span>
+        <span class="en-text wotd-say" data-speak="Hi! I'm Peter. What's your name?">Hi! I'm Peter. What's your name?</span>
       </div>
       <div class="dialogue-line">
-        <span class="speaker">Tony:</span>
-        <span class="en-text wotd-say" data-speak="My name is Tony. Nice to meet you, Gina!">My name is Tony. <em>Nice to meet you</em>, Gina!</span>
+        <span class="speaker">Chen Jie:</span>
+        <span class="en-text wotd-say" data-speak="My name is Chen Jie. Nice to meet you, Peter!">My name is Chen Jie. Nice to meet you, Peter!</span>
       </div>
       <div class="dialogue-line">
-        <span class="speaker">Gina:</span>
-        <span class="en-text wotd-say" data-speak="Nice to meet you too! Are you a new student?">Nice to meet you too! <em>Are you</em> a new student?</span>
+        <span class="speaker">Peter:</span>
+        <span class="en-text wotd-say" data-speak="Nice to meet you too, Chen Jie! Where are you from?">Nice to meet you too, Chen Jie! Where are you from?</span>
       </div>
       <div class="dialogue-line">
-        <span class="speaker">Tony:</span>
-        <span class="en-text wotd-say" data-speak="Yes, I am. I'm in Class 2. What about you?">Yes, I am. I'm in Class 2. <em>What about you</em>?</span>
+        <span class="speaker">Chen Jie:</span>
+        <span class="en-text wotd-say" data-speak="I'm from Beijing. It's the capital of China. Where are you from?">I'm from Beijing. It's the capital of China. Where are you from?</span>
       </div>
       <div class="dialogue-line">
-        <span class="speaker">Gina:</span>
-        <span class="en-text wotd-say" data-speak="I'm in Class 5. My phone number is 281-9176.">I'm in Class 5. <em>My phone number</em> is 281-9176.</span>
+        <span class="speaker">Peter:</span>
+        <span class="en-text wotd-say" data-speak="I'm from London. It's the capital of the UK.">I'm from London. It's the capital of the UK.</span>
       </div>
       <div class="dialogue-line">
-        <span class="speaker">Tony:</span>
-        <span class="en-text wotd-say" data-speak="Cool! My phone number is 358-6344. Let's be friends!">Cool! My phone number is 358-6344. <em>Let's be friends</em>!</span>
+        <span class="speaker">Chen Jie:</span>
+        <span class="en-text wotd-say" data-speak="Cool! How old are you, Peter?">Cool! How old are you, Peter?</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Peter:</span>
+        <span class="en-text wotd-say" data-speak="I'm 12 years old. And you?">I'm 12 years old. And you?</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Chen Jie:</span>
+        <span class="en-text wotd-say" data-speak="I'm 12 too. We're the same age!">I'm 12 too. We're the same age!</span>
+      </div>
+      <div class="dialogue-line">
+        <span class="speaker">Peter:</span>
+        <span class="en-text wotd-say" data-speak="Great! We're good friends now!">Great! We're good friends now!</span>
       </div>
     </div>
 
@@ -183,68 +171,121 @@
       <summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary>
       <div class="dialogue-annotation">
         <p><strong>逐句翻译：</strong></p>
-        <p>Gina: 嗨！我的名字是 Gina。你叫什么名字？</p>
-        <p>Tony: 我叫 Tony。很高兴认识你，Gina！</p>
-        <p>Gina: 我也很高兴认识你！你是新生吗？</p>
-        <p>Tony: 是的，我是。我在 2 班。你呢？</p>
-        <p>Gina: 我在 5 班。我的电话号码是 281-9176。</p>
-        <p>Tony: 酷！我的电话号码是 358-6344。我们做朋友吧！</p>
+        <p>Peter: 嗨！我是 Peter。你叫什么名字？</p>
+        <p>Chen Jie: 我叫陈洁。很高兴认识你，Peter！</p>
+        <p>Peter: 我也很高兴认识你，陈洁！你来自哪里？</p>
+        <p>Chen Jie: 我来自北京。它是中国的首都。你来自哪里？</p>
+        <p>Peter: 我来自伦敦。它是英国的首都。</p>
+        <p>Chen Jie: 酷！你多大了，Peter？</p>
+        <p>Peter: 我 12 岁。你呢？</p>
+        <p>Chen Jie: 我也 12 岁。我们同龄！</p>
+        <p>Peter: 太棒了！我们现在是好朋友了！</p>
       </div>
     </details>
 
     <div class="dialogue-annotation">
       <p><strong>🔑 重点讲解：</strong></p>
-      <p><strong>1.</strong> <em>My name's Gina.</em> → name's = name is。介绍姓名最常用的句型。</p>
-      <p><strong>2.</strong> <em>What's your name?</em> → "你叫什么名字？" 回答：My name is ... / I'm ...</p>
-      <p><strong>3.</strong> <em>Nice to meet you.</em> → "很高兴认识你。" 回答：Nice to meet you <strong>too</strong>.</p>
-      <p><strong>4.</strong> <em>What about you?</em> → "你呢？" 用于反问对方的情况。</p>
-      <p><strong>5.</strong> <em>Let's be friends!</em> → "我们做朋友吧！" Let's = Let us。</p>
+      <p><strong>1. Where are you from?</strong> — 询问"你来自哪里？"回答用 I'm from + 地点。</p>
+      <p><strong>2. How old are you?</strong> — 询问"你多大了？"回答用 I'm + 数字 + years old。</p>
+      <p><strong>3. be 动词三兄弟:</strong> I 用 am，you 用 are，he/she/it 用 is。缩写：I'm, You're, He's, She's, It's。</p>
+      <p><strong>4. Capital:</strong> 首都。Beijing is the capital of China. London is the capital of the UK.</p>
+      <p><strong>5. Too:</strong> "也"，用于肯定句末尾。如：I'm 12 too.</p>
     </div>
 
     <div style="display:flex;gap:8px;align-items:center;margin:20px 0 10px;">
-      <h3 style="font-size:15px;color:var(--accent);margin:0;">📖 More Introductions</h3>
-      <button class="speak-btn" data-dialogue="moreIntro" title="朗读更多自我介绍">🔊 朗读</button>
+      <h3 style="font-size:15px;color:var(--accent);margin:0;">📖 Reading: New Friends</h3>
+      <button class="speak-btn" data-dialogue="readingPassage" title="朗读短文">🔊 朗读</button>
     </div>
 
-    <div class="reading" id="moreIntro">
-      <p class="en-text" data-speak="Hello! I'm Zhang Wei. I'm twelve years old.">Hello! I'm Zhang Wei. I'm twelve years old.</p>
-      <p class="en-text" data-speak="This is my friend, Li Ming. He is thirteen.">This is my friend, Li Ming. He is thirteen.</p>
-      <p class="en-text" data-speak="She is Ms. Brown. She is our English teacher.">She is Ms. Brown. She is our English teacher.</p>
-      <p class="en-text" data-speak="What's your telephone number?">What's your telephone number?</p>
+    <div class="reading" id="readingPassage">
+      <p class="en-text wotd-say" data-speak="Hi! My name is Li Hua. I'm from Shanghai, China. I'm 13 years old. I'm a student.">Hi! My name is Li Hua. I'm from Shanghai, China. I'm 13 years old. I'm a student.</p>
+      <p class="en-text wotd-say" data-speak="This is my new friend, Mike. He is from Sydney, Australia. He is 13 too.">This is my new friend, Mike. He is from Sydney, Australia. He is 13 too.</p>
+      <p class="en-text wotd-say" data-speak="We are in the same class. We like sports. I like basketball and Mike likes football.">We are in the same class. We like sports. I like basketball and Mike likes football.</p>
+      <p class="en-text wotd-say" data-speak="We are good friends!">We are good friends!</p>
     </div>
+
+    <details style="margin-top:8px;">
+      <summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 翻译</summary>
+      <div>
+        <p>嗨！我叫李华。我来自中国上海。我 13 岁。我是一名学生。</p>
+        <p>这是我的新朋友 Mike。他来自澳大利亚悉尼。他也 13 岁。</p>
+        <p>我们在同一个班。我们喜欢运动。我喜欢篮球，Mike 喜欢足球。</p>
+        <p>我们是好朋友！</p>
+      </div>
+    </details>
 
   </div>
 </details>
 
 <!-- ====== 重点词汇 ====== -->
 <details class="module" open>
-  <summary>📝 重点词汇 · Names & Numbers <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇（含例句）">🔊 朗读全部词汇</button></summary>
+  <summary>📝 重点词汇 · You and Me <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇（含例句）">🔊 朗读全部词汇</button></summary>
   <div class="content">
 
     <div class="vocab-grid" id="vocabGrid">
 
       <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="name">name</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/neɪm/</span>
-        <span class="pos">n.</span>
-        <div class="definition">名字；姓名</div>
-        <div class="example"><span class="wotd-say" data-speak="My name is Gina.">My name is Gina.</span><span class="trans">我的名字是 Gina。</span></div>
+        <span class="headword wotd-say" data-speak="you">you</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/juː/</span>
+        <span class="pos">pron.</span>
+        <div class="definition">你；你们</div>
+        <div class="example"><span class="wotd-say" data-speak="You are my friend.">You are my friend.</span><span class="trans">你是我的朋友。</span></div>
       </div>
 
       <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="nice">nice</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/naɪs/</span>
+        <span class="headword wotd-say" data-speak="me">me</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/miː/</span>
+        <span class="pos">pron.</span>
+        <div class="definition">我(宾格)</div>
+        <div class="example"><span class="wotd-say" data-speak="You and me.">You and me.</span><span class="trans">你和我。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="from">from</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/frʌm/</span>
+        <span class="pos">prep.</span>
+        <div class="definition">从；来自</div>
+        <div class="example"><span class="wotd-say" data-speak="Where are you from?">Where are you from?</span><span class="trans">你来自哪里？</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="where">where</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/wer/</span>
+        <span class="pos">adv.</span>
+        <div class="definition">在哪里</div>
+        <div class="example"><span class="wotd-say" data-speak="Where are you from?">Where are you from?</span><span class="trans">你来自哪里？</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="how">how</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/haʊ/</span>
+        <span class="pos">adv.</span>
+        <div class="definition">怎样；多少</div>
+        <div class="example"><span class="wotd-say" data-speak="How old are you?">How old are you?</span><span class="trans">你多大了？</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="old">old</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/oʊld/</span>
         <span class="pos">adj.</span>
-        <div class="definition">好的；令人愉快的</div>
-        <div class="example"><span class="wotd-say" data-speak="Nice to meet you.">Nice to meet you.</span><span class="trans">很高兴认识你。</span></div>
+        <div class="definition">……岁的；老的</div>
+        <div class="example"><span class="wotd-say" data-speak="How old are you?">How old are you?</span><span class="trans">你多大了？</span></div>
       </div>
 
       <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="meet">meet</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/miːt/</span>
-        <span class="pos">v.</span>
-        <div class="definition">遇见；结识</div>
-        <div class="example"><span class="wotd-say" data-speak="I'm happy to meet you.">I'm happy to meet you.</span><span class="trans">很高兴遇见你。</span></div>
+        <span class="headword wotd-say" data-speak="year">year</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/jɪr/</span>
+        <span class="pos">n.</span>
+        <div class="definition">年</div>
+        <div class="example"><span class="wotd-say" data-speak="I'm 12 years old.">I'm 12 years old.</span><span class="trans">我 12 岁。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="class">class</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/klæs/</span>
+        <span class="pos">n.</span>
+        <div class="definition">班级；课</div>
+        <div class="example"><span class="wotd-say" data-speak="We are in the same class.">We are in the same class.</span><span class="trans">我们在同一个班。</span></div>
       </div>
 
       <div class="vocab-card">
@@ -252,55 +293,55 @@
         <span class="ipa">/frend/</span>
         <span class="pos">n.</span>
         <div class="definition">朋友</div>
-        <div class="example"><span class="wotd-say" data-speak="This is my friend.">This is my friend.</span><span class="trans">这是我的朋友。</span></div>
+        <div class="example"><span class="wotd-say" data-speak="This is my new friend.">This is my new friend.</span><span class="trans">这是我的新朋友。</span></div>
       </div>
 
       <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="telephone">telephone</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/ˈtelɪfoʊn/</span>
+        <span class="headword wotd-say" data-speak="student">student</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈstuːdnt/</span>
         <span class="pos">n.</span>
-        <div class="definition">电话</div>
-        <div class="example"><span class="wotd-say" data-speak="What's your telephone number?">What's your telephone number?</span><span class="trans">你的电话号码是多少？</span></div>
+        <div class="definition">学生</div>
+        <div class="example"><span class="wotd-say" data-speak="I'm a student.">I'm a student.</span><span class="trans">我是一名学生。</span></div>
       </div>
 
       <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="number">number</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/ˈnʌmbər/</span>
+        <span class="headword wotd-say" data-speak="capital">capital</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈkæpɪtl/</span>
         <span class="pos">n.</span>
-        <div class="definition">号码；数字</div>
-        <div class="example"><span class="wotd-say" data-speak="My lucky number is 7.">My lucky number is 7.</span><span class="trans">我的幸运数字是 7。</span></div>
+        <div class="definition">首都</div>
+        <div class="example"><span class="wotd-say" data-speak="Beijing is the capital of China.">Beijing is the capital of China.</span><span class="trans">北京是中国的首都。</span></div>
       </div>
 
       <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="zero">zero</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/ˈzɪroʊ/</span>
-        <span class="pos">num.</span>
-        <div class="definition">零</div>
-        <div class="example"><span class="wotd-say" data-speak="My number is 281-0916.">My number is 281-0916.</span><span class="trans">我的号码是 281-0916。</span></div>
+        <span class="headword wotd-say" data-speak="same">same</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/seɪm/</span>
+        <span class="pos">adj.</span>
+        <div class="definition">相同的</div>
+        <div class="example"><span class="wotd-say" data-speak="We are in the same class.">We are in the same class.</span><span class="trans">我们在同一个班。</span></div>
       </div>
 
       <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="first name">first name</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/fɜːrst neɪm/</span>
+        <span class="headword wotd-say" data-speak="too">too</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/tuː/</span>
+        <span class="pos">adv.</span>
+        <div class="definition">也；太</div>
+        <div class="example"><span class="wotd-say" data-speak="I'm 12 too.">I'm 12 too.</span><span class="trans">我也 12 岁。</span></div>
+      </div>
+
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="China">China</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈtʃaɪnə/</span>
         <span class="pos">n.</span>
-        <div class="definition">名字（西方名在前）</div>
-        <div class="example"><span class="wotd-say" data-speak="Gina is my first name.">Gina is my first name.</span><span class="trans">Gina 是我的名字。</span></div>
+        <div class="definition">中国</div>
+        <div class="example"><span class="wotd-say" data-speak="I'm from China.">I'm from China.</span><span class="trans">我来自中国。</span></div>
       </div>
 
       <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="last name">last name</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/læst neɪm/</span>
-        <span class="pos">n.</span>
-        <div class="definition">姓氏</div>
-        <div class="example"><span class="wotd-say" data-speak="Green is my last name.">Green is my last name.</span><span class="trans">Green 是我的姓。</span></div>
-      </div>
-
-      <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="middle school">middle school</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/ˈmɪdl skuːl/</span>
-        <span class="pos">n.</span>
-        <div class="definition">中学</div>
-        <div class="example"><span class="wotd-say" data-speak="I'm in No. 1 Middle School.">I'm in No. 1 Middle School.</span><span class="trans">我在第一中学。</span></div>
+        <span class="headword wotd-say" data-speak="new">new</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/nuː/</span>
+        <span class="pos">adj.</span>
+        <div class="definition">新的</div>
+        <div class="example"><span class="wotd-say" data-speak="This is my new friend.">This is my new friend.</span><span class="trans">这是我的新朋友。</span></div>
       </div>
 
     </div>
@@ -310,7 +351,7 @@
 
 <!-- ====== 重点句型 ====== -->
 <details class="module" open>
-  <summary>🔤 重点句型 · Introductions</summary>
+  <summary>🔤 重点句型 · Introductions & Questions</summary>
   <div class="content">
 
     <div class="pattern-grid">
@@ -320,27 +361,29 @@
         <div>询问姓名和回答的两种方式。</div>
         <div class="substitution"><span class="q-speak-wrap" id="sp1">
           ✅ <strong>What's your name?</strong><br>
-          ➡ <strong>My name is</strong> <span class="slot">Gina</span>.<br>
-          ➡ <strong>I'm</strong> <span class="slot">Tony</span>.</span></div>
+          ➡ My name is <span class="slot">Chen Jie</span>.<br>
+          ➡ I'm <span class="slot">Peter</span>.</span></div>
       </div>
 
       <div class="pattern-card">
-        <div class="structure">What's his / her name?</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
-        <div>介绍第三方时询问别人的名字。</div>
+        <div class="structure">Where are you from? — I'm from ...</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>询问来自哪里，回答用 I'm from + 地点。</div>
         <div class="substitution">
-          ✅ <strong>What's his name?</strong> — His name is <span class="slot">Mike</span>.<br>
-          ✅ <strong>What's her name?</strong> — Her name is <span class="slot">Alice</span>.<br>
-          ➡ his = 他的，her = 她的
+          ✅ <strong>Where are you from?</strong><br>
+          ➡ I'm from <span class="slot">Beijing</span>.<br>
+          ➡ I'm from <span class="slot">London</span>.<br>
+          ➡ 句型：Where + be + 主语 + from?
         </div>
       </div>
 
       <div class="pattern-card">
-        <div class="structure">What's your phone number?</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
-        <div>询问电话号码。</div>
+        <div class="structure">How old are you? — I'm ... years old.</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>询问年龄，回答用 I'm + 数字 + years old。</div>
         <div class="substitution">
-          ✅ <strong>What's your phone number?</strong><br>
-          ➡ My phone number is <span class="slot">281-9176</span>.<br>
-          ➡ It's <span class="slot">358-6344</span>.
+          ✅ <strong>How old are you?</strong><br>
+          ➡ I'm <span class="slot">12</span> years old.<br>
+          ➡ I'm <span class="slot">13</span> years old.<br>
+          ➡ 简略回答：I'm 12.
         </div>
       </div>
 
@@ -348,7 +391,7 @@
         <div class="structure">Are you ...? — Yes, I am. / No, I'm not.</div> <button class="speak-btn" data-target="sp4" title="朗读句型">🔊</button>
         <div>用 be 动词构成的一般疑问句。</div>
         <div class="substitution">
-          ✅ <strong>Are you</strong> <span class="slot">a new student</span>?<br>
+          ✅ <strong>Are you</strong> <span class="slot">a student</span>?<br>
           ➡ Yes, <strong>I am</strong>. / No, <strong>I'm not</strong>.<br>
           ✅ <strong>Is he</strong> <span class="slot">your friend</span>?<br>
           ➡ Yes, <strong>he is</strong>. / No, <strong>he isn't</strong>.
@@ -362,108 +405,81 @@
 
 <!-- ====== 语法聚焦 ====== -->
 <details class="module detail-module" open>
-  <summary>📚 语法聚焦 · Be-verb & Possessives <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary>
+  <summary>📚 语法聚焦 · Be Verbs & Possessives <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary>
   <div class="content">
 
-    <div class="grammar-module">
-      <h3>1️⃣ 数字 0–9</h3>
-
-      <div class="num-grid">
-        <div class="num-card wotd-say" data-speak="zero">
-          <div class="num-digit">0</div>
-          <div class="num-word">zero</div>
-          <div style="font-size:10px;color:var(--text-secondary);">/ˈzɪroʊ/</div>
-        </div>
-        <div class="num-card wotd-say" data-speak="one">
-          <div class="num-digit">1</div>
-          <div class="num-word">one</div>
-          <div style="font-size:10px;color:var(--text-secondary);">/wʌn/</div>
-        </div>
-        <div class="num-card wotd-say" data-speak="two">
-          <div class="num-digit">2</div>
-          <div class="num-word">two</div>
-          <div style="font-size:10px;color:var(--text-secondary);">/tuː/</div>
-        </div>
-        <div class="num-card wotd-say" data-speak="three">
-          <div class="num-digit">3</div>
-          <div class="num-word">three</div>
-          <div style="font-size:10px;color:var(--text-secondary);">/θriː/</div>
-        </div>
-        <div class="num-card wotd-say" data-speak="four">
-          <div class="num-digit">4</div>
-          <div class="num-word">four</div>
-          <div style="font-size:10px;color:var(--text-secondary);">/fɔːr/</div>
-        </div>
-        <div class="num-card wotd-say" data-speak="five">
-          <div class="num-digit">5</div>
-          <div class="num-word">five</div>
-          <div style="font-size:10px;color:var(--text-secondary);">/faɪv/</div>
-        </div>
-        <div class="num-card wotd-say" data-speak="six">
-          <div class="num-digit">6</div>
-          <div class="num-word">six</div>
-          <div style="font-size:10px;color:var(--text-secondary);">/sɪks/</div>
-        </div>
-        <div class="num-card wotd-say" data-speak="seven">
-          <div class="num-digit">7</div>
-          <div class="num-word">seven</div>
-          <div style="font-size:10px;color:var(--text-secondary);">/ˈsevn/</div>
-        </div>
-        <div class="num-card wotd-say" data-speak="eight">
-          <div class="num-digit">8</div>
-          <div class="num-word">eight</div>
-          <div style="font-size:10px;color:var(--text-secondary);">/eɪt/</div>
-        </div>
-        <div class="num-card wotd-say" data-speak="nine">
-          <div class="num-digit">9</div>
-          <div class="num-word">nine</div>
-          <div style="font-size:10px;color:var(--text-secondary);">/naɪn/</div>
-        </div>
-      </div>
-
-      <p style="font-size:14px;">📌 口播电话号码时，逐个数字朗读，如 281-9176 → two eight one, nine one seven six。</p>
-    </div>
-
-    <div class="grammar-module">
-      <h3>2️⃣ Be 动词：am / is / are</h3>
+    <div class="grammar-module" id="grammarContainer">
+      <h3>1️⃣ Be 动词：am / is / are</h3>
       <table class="grammar-table">
         <tr><th>人称</th><th>be 动词</th><th>缩写</th><th>例句</th></tr>
-        <tr><td>I（我）</td><td><span class="wotd-say" data-speak="am"><strong>am</strong></span></td><td>I'm</td><td><span class="wotd-say" data-speak="I am Gina.">I am Gina. → I'm Gina.</span></td></tr>
-        <tr><td>He / She / It（他/她/它）</td><td><span class="wotd-say" data-speak="is"><strong>is</strong></span></td><td>he's / she's / it's</td><td><span class="wotd-say" data-speak="He is Tony.">He is Tony.</span></td></tr>
-        <tr><td>You / We / They</td><td><span class="wotd-say" data-speak="are"><strong>are</strong></span></td><td>you're / we're / they're</td><td><span class="wotd-say" data-speak="You are a student.">You are a student.</span></td></tr>
+        <tr><td>I（我）</td><td><span class="wotd-say" data-speak="am"><strong>am</strong></span></td><td>I'm</td><td><span class="wotd-say" data-speak="I am a student. I'm 12.">I am a student. → I'm 12.</span></td></tr>
+        <tr><td>You（你/你们）</td><td><span class="wotd-say" data-speak="are"><strong>are</strong></span></td><td>you're</td><td><span class="wotd-say" data-speak="You are my friend.">You are my friend.</span></td></tr>
+        <tr><td>He / She / It（他/她/它）</td><td><span class="wotd-say" data-speak="is"><strong>is</strong></span></td><td>he's / she's / it's</td><td><span class="wotd-say" data-speak="He is from London.">He is from London.</span></td></tr>
+        <tr><td>We（我们）</td><td><span class="wotd-say" data-speak="are"><strong>are</strong></span></td><td>we're</td><td><span class="wotd-say" data-speak="We are in the same class.">We are in the same class.</span></td></tr>
+        <tr><td>They（他们/她们/它们）</td><td><span class="wotd-say" data-speak="are"><strong>are</strong></span></td><td>they're</td><td><span class="wotd-say" data-speak="They are good friends.">They are good friends.</span></td></tr>
       </table>
       <div class="grammar-tip">
-        <strong>💡 口诀：</strong>I 用 am，you 用 are，is 用于他她它。单数 is，复数 are。
+        <strong>💡 口诀：</strong>I 用 am，you 用 are，is 用于 he/she/it。单数 is，复数 are。
       </div>
     </div>
 
     <div class="grammar-module">
-      <h3>3️⃣ 形容词性物主代词：my / your / his / her</h3>
+      <h3>2️⃣ 缩写形式 (Contractions)</h3>
+      <table class="grammar-table">
+        <tr><th>完整形式</th><th>缩写</th><th>示例</th></tr>
+        <tr><td>I am</td><td>I'm</td><td><span class="wotd-say" data-speak="I'm from Beijing.">I'm from Beijing.</span></td></tr>
+        <tr><td>You are</td><td>You're</td><td><span class="wotd-say" data-speak="You're my friend.">You're my friend.</span></td></tr>
+        <tr><td>He is</td><td>He's</td><td><span class="wotd-say" data-speak="He's from London.">He's from London.</span></td></tr>
+        <tr><td>She is</td><td>She's</td><td><span class="wotd-say" data-speak="She's a student.">She's a student.</span></td></tr>
+        <tr><td>It is</td><td>It's</td><td><span class="wotd-say" data-speak="It's the capital.">It's the capital.</span></td></tr>
+        <tr><td>We are</td><td>We're</td><td><span class="wotd-say" data-speak="We're in the same class.">We're in the same class.</span></td></tr>
+        <tr><td>They are</td><td>They're</td><td><span class="wotd-say" data-speak="They're good friends.">They're good friends.</span></td></tr>
+      </table>
+      <div class="grammar-tip">
+        <strong>💡 注意：</strong>缩写中的撇号 (') 表示省略了字母。如 I'm = I <strong>a</strong>m，You're = You <strong>a</strong>re。
+      </div>
+    </div>
+
+    <div class="grammar-module">
+      <h3>3️⃣ Where are you from? 句型</h3>
+      <table class="grammar-table">
+        <tr><th>提问</th><th>回答</th></tr>
+        <tr><td><span class="wotd-say" data-speak="Where are you from?">Where are you <strong>from</strong>?</span></td><td>I'm from <span class="slot">Beijing</span>.</td></tr>
+        <tr><td><span class="wotd-say" data-speak="Where is he from?">Where <strong>is</strong> he from?</span></td><td>He is from <span class="slot">London</span>.</td></tr>
+        <tr><td><span class="wotd-say" data-speak="Where is she from?">Where <strong>is</strong> she from?</span></td><td>She is from <span class="slot">Sydney</span>.</td></tr>
+      </table>
+      <p style="font-size:14px;margin-top:6px;">📌 结构：Where + be + 主语 + from?</p>
+    </div>
+
+    <div class="grammar-module">
+      <h3>4️⃣ How old are you? 句型</h3>
+      <table class="grammar-table">
+        <tr><th>提问</th><th>回答</th></tr>
+        <tr><td><span class="wotd-say" data-speak="How old are you?">How old <strong>are</strong> you?</span></td><td>I'm <span class="slot">12</span> (years old).</td></tr>
+        <tr><td><span class="wotd-say" data-speak="How old is he?">How old <strong>is</strong> he?</span></td><td>He is <span class="slot">13</span> (years old).</td></tr>
+        <tr><td><span class="wotd-say" data-speak="How old is she?">How old <strong>is</strong> she?</span></td><td>She is <span class="slot">12</span> (years old).</td></tr>
+      </table>
+      <p style="font-size:14px;margin-top:6px;">📌 结构：How old + be + 主语? (years old 可省略)</p>
+    </div>
+
+    <div class="grammar-module">
+      <h3>5️⃣ 形容词性物主代词：my / your / his / her</h3>
       <table class="grammar-table">
         <tr><th>人称</th><th>物主代词</th><th>例句</th></tr>
-        <tr><td>第一人称</td><td><strong>my</strong> 我的</td><td><span class="wotd-say" data-speak="My name is Gina.">My name is Gina.</span></td></tr>
-        <tr><td>第二人称</td><td><strong>your</strong> 你的</td><td><span class="wotd-say" data-speak="What's your name?">What's your name?</span></td></tr>
-        <tr><td>第三人称(男)</td><td><strong>his</strong> 他的</td><td><span class="wotd-say" data-speak="His name is Tony.">His name is Tony.</span></td></tr>
-        <tr><td>第三人称(女)</td><td><strong>her</strong> 她的</td><td><span class="wotd-say" data-speak="Her name is Alice.">Her name is Alice.</span></td></tr>
+        <tr><td>第一人称</td><td><strong>my</strong> 我的</td><td><span class="wotd-say" data-speak="My name is Chen Jie.">My name is Chen Jie.</span></td></tr>
+        <tr><td>第二人称</td><td><strong>your</strong> 你的；你们的</td><td><span class="wotd-say" data-speak="What's your name?">What's your name?</span></td></tr>
+        <tr><td>第三人称(男)</td><td><strong>his</strong> 他的</td><td><span class="wotd-say" data-speak="His name is Peter.">His name is Peter.</span></td></tr>
+        <tr><td>第三人称(女)</td><td><strong>her</strong> 她的</td><td><span class="wotd-say" data-speak="Her name is Chen Jie.">Her name is Chen Jie.</span></td></tr>
       </table>
-      <p style="font-size:14px;margin-top:8px;">📌 形容词性物主代词 <strong>后面必须跟名词</strong>：my book, your pen, his ruler, her bag。</p>
+      <p style="font-size:14px;margin-top:8px;">📌 形容词性物主代词 <strong>后面必须跟名词</strong>：my friend, your class, his name, her book。</p>
 
       <div class="chinese-error">
         <strong>⚠️ 中式英语纠错：</strong><br>
-        ❌ <span class="wrong wotd-say" data-speak="I name is Gina.">I name is Gina.</span>（I 是主格，不能修饰名词）<br>
-        ✅ <span class="correct wotd-say" data-speak="My name is Gina.">My name is Gina.</span><br><br>
+        ❌ <span class="wrong wotd-say" data-speak="I name is Peter.">I name is Peter.</span>（I 是主格，不能修饰名词）<br>
+        ✅ <span class="correct wotd-say" data-speak="My name is Peter.">My name is Peter.</span><br><br>
         ❌ <span class="wrong wotd-say" data-speak="What's he name?">What's he name?</span>（he 是主格，要用 his）<br>
         ✅ <span class="correct wotd-say" data-speak="What's his name?">What's his name?</span>
       </div>
-    </div>
-
-    <div class="grammar-module">
-      <h3>4️⃣ 中英文姓名顺序对比</h3>
-      <table class="grammar-table">
-        <tr><th></th><th>顺序</th><th>例子</th></tr>
-        <tr><td>英文名</td><td>名字 (first name) + 姓氏 (last name)</td><td>Gina <strong>Green</strong> → first name: Gina, last name: Green</td></tr>
-        <tr><td>中文名</td><td>姓氏 + 名字</td><td><strong>Zhang</strong> Wei → last name: Zhang, first name: Wei</td></tr>
-      </table>
     </div>
 
   </div>
@@ -479,15 +495,7 @@
     <div class="exam-q">
       <span class="q-tag">基础</span>
       <span class="q-diff easy">★☆☆</span>
-      <div class="q-body"><span class="q-speak-wrap" id="q1">— ____ your name? — My name is Tony.</span> <button class="speak-btn" data-target="q1" title="朗读题目">🔊</button></div>
-      <span class="q-toggle">📝 查看答案</span>
-      <div class="q-solution"><strong>答案：</strong>What's<br><strong>解析：</strong>询问名字用 What's your name? What's = What is。</div>
-    </div>
-
-    <div class="exam-q">
-      <span class="q-tag">基础</span>
-      <span class="q-diff easy">★☆☆</span>
-      <div class="q-body"><span class="q-speak-wrap" id="q2">I ____ a student. (am / is / are)</span> <button class="speak-btn" data-target="q2" title="朗读题目">🔊</button></div>
+      <div class="q-body"><span class="q-speak-wrap" id="q1">I ____ a student. (am / is / are)</span> <button class="speak-btn" data-target="q1" title="朗读题目">🔊</button></div>
       <span class="q-toggle">📝 查看答案</span>
       <div class="q-solution"><strong>答案：</strong>am<br><strong>解析：</strong>I 后面用 am。I am = I'm。</div>
     </div>
@@ -495,9 +503,17 @@
     <div class="exam-q">
       <span class="q-tag">基础</span>
       <span class="q-diff easy">★☆☆</span>
-      <div class="q-body"><span class="q-speak-wrap" id="q3">— Nice to meet you!<br>— Nice to meet you, ____!</span> <button class="speak-btn" data-target="q3" title="朗读题目">🔊</button></div>
+      <div class="q-body"><span class="q-speak-wrap" id="q2">She ____ from Beijing. (am / is / are)</span> <button class="speak-btn" data-target="q2" title="朗读题目">🔊</button></div>
       <span class="q-toggle">📝 查看答案</span>
-      <div class="q-solution"><strong>答案：</strong>too<br><strong>解析：</strong>回应对方说 Nice to meet you 时，在句尾加 too，表示"也"。</div>
+      <div class="q-solution"><strong>答案：</strong>is<br><strong>解析：</strong>She 是第三人称单数，用 is。</div>
+    </div>
+
+    <div class="exam-q">
+      <span class="q-tag">基础</span>
+      <span class="q-diff easy">★☆☆</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q3">— ____ are you from? — I'm from China.</span> <button class="speak-btn" data-target="q3" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Where<br><strong>解析：</strong>询问"来自哪里"用 Where。Where are you from? 你来自哪里？</div>
     </div>
 
     <h3 class="level-mid">🥈 提升关 · 语境运用</h3>
@@ -505,41 +521,51 @@
     <div class="exam-q">
       <span class="q-tag">提升</span>
       <span class="q-diff mid">★★☆</span>
-      <div class="q-body"><span class="q-speak-wrap" id="q4">— What's ____ name? (he)<br>— ____ name is Mike.</span> <button class="speak-btn" data-target="q4" title="朗读题目">🔊</button></div>
+      <div class="q-body"><span class="q-speak-wrap" id="q4">— How old ____ you? — I ____ 12 years old.</span> <button class="speak-btn" data-target="q4" title="朗读题目">🔊</button></div>
       <span class="q-toggle">📝 查看答案</span>
-      <div class="q-solution"><strong>答案：</strong>his; His<br><strong>解析：</strong>提问男性名字用 his（他的）；回答也用 His name ...，注意首字母大写。</div>
+      <div class="q-solution"><strong>答案：</strong>are; am<br><strong>解析：</strong>You 后面用 are；I 后面用 am。</div>
     </div>
 
     <div class="exam-q">
       <span class="q-tag">提升</span>
       <span class="q-diff mid">★★☆</span>
-      <div class="q-body"><span class="q-speak-wrap" id="q5">连词成句：her / what's / name / ?</span> <button class="speak-btn" data-target="q5" title="朗读题目">🔊</button></div>
+      <div class="q-body"><span class="q-speak-wrap" id="q5">We ____ in the same class. (am / is / are)</span> <button class="speak-btn" data-target="q5" title="朗读题目">🔊</button></div>
       <span class="q-toggle">📝 查看答案</span>
-      <div class="q-solution"><strong>答案：</strong>What's her name?<br><strong>解析：</strong>What's 开头，注意 her 放在 name 前面作定语。</div>
+      <div class="q-solution"><strong>答案：</strong>are<br><strong>解析：</strong>We（我们）是复数，用 are。</div>
     </div>
 
     <div class="exam-q">
       <span class="q-tag">提升</span>
       <span class="q-diff mid">★★☆</span>
-      <div class="q-body"><span class="q-speak-wrap" id="q6">— Are you Ms. Brown?<br>— No, I ____. I ____ Ms. Smith.</span> <button class="speak-btn" data-target="q6" title="朗读题目">🔊</button></div>
+      <div class="q-body"><span class="q-speak-wrap" id="q6">你来自哪里？（翻译）</span> <button class="speak-btn" data-target="q6" title="朗读题目">🔊</button></div>
       <span class="q-toggle">📝 查看答案</span>
-      <div class="q-solution"><strong>答案：</strong>am not; am<br><strong>解析：</strong>否定回答用 I am not（缩写 I'm not）；肯定陈述用 I am。</div>
+      <div class="q-solution"><strong>答案：</strong>Where are you from?<br><strong>解析：</strong>where 表示"哪里"，be 动词用 are（与 you 搭配），from 表示"来自"。</div>
+    </div>
+
+    <h3 class="level-hard">🥇 挑战关 · 综合运用</h3>
+
+    <div class="exam-q">
+      <span class="q-tag">挑战</span>
+      <span class="q-diff hard">★★★</span>
+      <div class="q-body"><span class="q-speak-wrap" id="q7">短文改错：She are from Beijing. She am 12 years old.</span> <button class="speak-btn" data-target="q7" title="朗读题目">🔊</button></div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>She <strong>is</strong> from Beijing. She <strong>is</strong> 12 years old.<br><strong>解析：</strong>She 是第三人称单数，be 动词用 is，不能用 are 或 am。</div>
     </div>
 
     <div class="exam-q">
       <span class="q-tag">挑战</span>
       <span class="q-diff hard">★★★</span>
-      <div class="q-body"><span class="q-speak-wrap" id="q7">根据中文完成句子：她的电话号码是 358-9176。<br>____ phone ____ ____ 358-9176.</span> <button class="speak-btn" data-target="q7" title="朗读题目">🔊</button></div>
+      <div class="q-body"><span class="q-speak-wrap" id="q8">连词成句：from / where / you / are / ?</span> <button class="speak-btn" data-target="q8" title="朗读题目">🔊</button></div>
       <span class="q-toggle">📝 查看答案</span>
-      <div class="q-solution"><strong>答案：</strong>Her; number; is<br><strong>解析：</strong>"她的"用 Her；"电话号码"是 phone number；第三人称单数用 is。</div>
+      <div class="q-solution"><strong>答案：</strong>Where are you from?<br><strong>解析：</strong>疑问词 Where 放在句首，be 动词紧随其后，最后加 from 和问号。</div>
     </div>
 
     <div class="exam-q">
       <span class="q-tag">挑战</span>
       <span class="q-diff hard">★★★</span>
-      <div class="q-body"><span class="q-speak-wrap" id="q8">改错：She name is Lucy.</span> <button class="speak-btn" data-target="q8" title="朗读题目">🔊</button></div>
+      <div class="q-body"><span class="q-speak-wrap" id="q9">连词成句：years / I / 13 / old / am / .</span> <button class="speak-btn" data-target="q9" title="朗读题目">🔊</button></div>
       <span class="q-toggle">📝 查看答案</span>
-      <div class="q-solution"><strong>答案：</strong>Her name is Lucy.<br><strong>解析：</strong>名词前需要形容词性物主代词，She 是主格（作主语），应该改为 Her。</div>
+      <div class="q-solution"><strong>答案：</strong>I am 13 years old.<br><strong>解析：</strong>主语 I 开头，be 动词 am，数字 + years old 表示年龄。</div>
     </div>
 
   </div>
@@ -549,43 +575,41 @@
 <!-- ====== 微写作 ====== -->
 <div class="micro-writing detail-module">
   <h3>✍️ 微写作：自我介绍</h3>
-  <p>假设你是新同学，请用 4-5 句话向全班同学介绍自己。包括姓名、年龄、班级和电话号码。</p>
+  <p>请用 4-5 句话向新同学介绍自己。包括姓名、来自哪里、年龄、身份和兴趣爱好。</p>
   <div class="model" id="microModel">
-    <p class="en"><span class="wotd-say" data-speak="Good morning, everyone!">Good morning, everyone!</span></p>
-    <p class="en"><span class="wotd-say" data-speak="My name is Wang Fang.">My name is Wang Fang.</span></p>
-    <p class="en"><span class="wotd-say" data-speak="I'm twelve years old.">I'm twelve years old.</span></p>
-    <p class="en"><span class="wotd-say" data-speak="I'm in Class 3, Grade 7.">I'm in Class 3, Grade 7.</span></p>
-    <p class="en"><span class="wotd-say" data-speak="My phone number is 139-1234-5678.">My phone number is 139-1234-5678.</span></p>
-    <p class="en"><span class="wotd-say" data-speak="Nice to meet you all!">Nice to meet you all!</span></p>
-    <span class="trans">大家早上好！我叫王芳。我 12 岁。我在七年级三班。我的电话号码是 139-1234-5678。很高兴认识大家！</span>
+    <p class="en"><span class="wotd-say" data-speak="Hello! My name is Zhang Wei.">Hello! My name is Zhang Wei.</span></p>
+    <p class="en"><span class="wotd-say" data-speak="I am from Beijing, China.">I am from Beijing, China.</span></p>
+    <p class="en"><span class="wotd-say" data-speak="I am 13 years old.">I am 13 years old.</span></p>
+    <p class="en"><span class="wotd-say" data-speak="I am a student.">I am a student.</span></p>
+    <p class="en"><span class="wotd-say" data-speak="I like reading and sports.">I like reading and sports.</span></p>
+    <span class="trans">你好！我叫张伟。我来自中国北京。我 13 岁。我是一名学生。我喜欢阅读和运动。</span>
   </div>
 </div>
 
 <!-- ====== 自查清单 ====== -->
 <div class="checklist detail-module">
   <h3>✅ 章节自查清单</h3>
-  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 My name is ... / I'm ... 进行自我介绍</label>
-  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我会询问别人的名字：What's your / his / her name?</label>
-  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用英语说出数字 0–9 并报出电话号码</label>
-  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我理解 be 动词 am/is/are 的区别和用法</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 I'm ... / My name is ... 介绍姓名、年龄和城市</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我会问 "Where are you from?" 并能回答</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我会问 "How old are you?" 并能回答</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能正确使用 am/is/are</label>
   <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能区分并使用 my / your / his / her</label>
-  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我知道中英文姓名顺序的不同</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写一段简短的自我介绍</label>
   <p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;">
-    <strong>🧑‍🏫 费曼挑战：</strong>假设你是 Gina，新同学是 Tony，口头演练一遍完整的自我介绍对话——包括打招呼、问姓名、问班级、交换电话号码。
+    <strong>🧑‍🏫 费曼挑战：</strong>假设你是 Chen Jie，新同学叫 Tom，口头演练一遍完整的自我介绍对话——包括打招呼、问姓名、问来自哪里、问年龄。
   </p>
 </div>
 
 <div class="review-schedule">
   <strong>📅 间隔复习</strong>
-  <span class="review-dot">🔵 1天后：默写数字 0–9 和姓名句型</span>
-  <span class="review-dot">🟢 3天后：编写你的自我介绍（口述）</span>
-  <span class="review-dot">🟡 1周后：用 be 动词写 5 个句子</span>
-  <span class="review-dot">🔴 1月后：复习物主代词和 be 动词表格</span>
+  <span class="review-dot">🔵 1天后：默写 be 动词完整表格 (am/is/are) 及缩写形式</span>
+  <span class="review-dot">🟢 3天后：口头演练自我介绍对话（包括问姓名、来自哪里、年龄）</span>
+  <span class="review-dot">🟡 1周后：写一篇个人简介（4-5句话）</span>
 </div>
 
 <div class="next-stop">
-  <strong>➡️ 下一单元：Unit 2 This is my sister.</strong><br>
-  下一单元你将学习如何介绍家人和朋友，掌握 <strong>this / that / these / those</strong> 指示代词的用法。
+  <strong>➡️ 下一单元：Unit 2 "We're Family!"</strong><br>
+  下一单元你将学习如何介绍家庭成员，掌握名词所有格和更多家人称谓的表达方式。
 </div>
 
 </main>

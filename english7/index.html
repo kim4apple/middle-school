@@ -162,14 +162,14 @@ body.index-page { display: block; min-height: 100vh; }
 
   <div class="semester" id="s1">
     <div class="semester-header">
-      <div class="semester-title">📗 七年级上册 <span class="sub">Starter 1–3 + Unit 1–9</span></div>
+      <div class="semester-title">📗 七年级上册 <span class="sub">Starter 1–3 + Unit 1–7</span></div>
     </div>
     <div class="unit-grid" id="s1-grid"></div>
   </div>
 
   <div class="semester" id="s2">
     <div class="semester-header">
-      <div class="semester-title">📘 七年级下册 <span class="sub">Unit 1–12</span></div>
+      <div class="semester-title">📘 七年级下册 <span class="sub">Unit 1–8</span></div>
     </div>
     <div class="unit-grid" id="s2-grid"></div>
   </div>
@@ -186,37 +186,31 @@ body.index-page { display: block; min-height: 100vh; }
   var CONFIG = {
     key: 'eng7-progress',
     semesters: [
-      { id:'s1', label:'📗 七年级上册', sub:'Starter 1–3 + Unit 1–9' },
-      { id:'s2', label:'📘 七年级下册', sub:'Unit 1–12' }
+      { id:'s1', label:'📗 七年级上册', sub:'Starter 1–3 + Unit 1–7' },
+      { id:'s2', label:'📘 七年级下册', sub:'Unit 1–8' }
     ],
     units: {
       s1: [
-        {id:'st01', label:'S1', title:'Good morning!', topic:'字母·问候'},
-        {id:'st02', label:'S2', title:"What's this in English?", topic:'物品·字母'},
-        {id:'st03', label:'S3', title:'What color is it?', topic:'颜色·字母'},
-        {id:'u01', label:'U1', title:"My name's Gina.", topic:'自我介绍'},
-        {id:'u02', label:'U2', title:'This is my sister.', topic:'家庭成员'},
-        {id:'u03', label:'U3', title:'Is this your pencil?', topic:'学校物品'},
-        {id:'u04', label:'U4', title:"Where's my schoolbag?", topic:'房间物品'},
-        {id:'u05', label:'U5', title:'Do you have a soccer ball?', topic:'体育运动'},
-        {id:'u06', label:'U6', title:'Do you like bananas?', topic:'饮食偏好'},
-        {id:'u07', label:'U7', title:'How much are these socks?', topic:'购物'},
-        {id:'u08', label:'U8', title:'When is your birthday?', topic:'日期'},
-        {id:'u09', label:'U9', title:'My favorite subject is science.', topic:'学科喜好'}
+        {id:'st01', label:'S1', title:'Hello!', topic:'字母·问候'},
+        {id:'st02', label:'S2', title:'Keep Tidy!', topic:'物品·整洁'},
+        {id:'st03', label:'S3', title:'Welcome!', topic:'颜色·介绍'},
+        {id:'u01', label:'U1', title:'You and Me', topic:'自我介绍'},
+        {id:'u02', label:'U2', title:"We're Family!", topic:'家庭成员'},
+        {id:'u03', label:'U3', title:'My School', topic:'学校设施'},
+        {id:'u04', label:'U4', title:'My Favourite Subject', topic:'学科喜好'},
+        {id:'u05', label:'U5', title:'Fun Clubs', topic:'才能与俱乐部'},
+        {id:'u06', label:'U6', title:'A Day in the Life', topic:'日常作息'},
+        {id:'u07', label:'U7', title:'Happy Birthday!', topic:'日期·生日'}
       ],
       s2: [
-        {id:'b2u01', label:'U1', title:'Can you play the guitar?', topic:'才能与俱乐部'},
-        {id:'b2u02', label:'U2', title:'What time do you go to school?', topic:'日常作息'},
-        {id:'b2u03', label:'U3', title:'How do you get to school?', topic:'交通方式'},
-        {id:'b2u04', label:'U4', title:"Don't eat in class.", topic:'校规'},
-        {id:'b2u05', label:'U5', title:'Why do you like pandas?', topic:'动物'},
-        {id:'b2u06', label:'U6', title:"I'm watching TV.", topic:'日常活动'},
-        {id:'b2u07', label:'U7', title:"It's raining!", topic:'天气'},
-        {id:'b2u08', label:'U8', title:'Is there a post office near here?', topic:'问路指路'},
-        {id:'b2u09', label:'U9', title:'What does he look like?', topic:'外貌描述'},
-        {id:'b2u10', label:'U10', title:"I'd like some noodles.", topic:'点餐'},
-        {id:'b2u11', label:'U11', title:'How was your school trip?', topic:'学校旅行'},
-        {id:'b2u12', label:'U12', title:'What did you do last weekend?', topic:'周末活动'}
+        {id:'b2u01', label:'U1', title:'Animal Friends', topic:'动物'},
+        {id:'b2u02', label:'U2', title:'No Rules, No Order', topic:'规则'},
+        {id:'b2u03', label:'U3', title:'Keep Fit', topic:'健康'},
+        {id:'b2u04', label:'U4', title:'Eat Well', topic:'饮食'},
+        {id:'b2u05', label:'U5', title:'Here and Now', topic:'当下活动'},
+        {id:'b2u06', label:'U6', title:'Rain or Shine', topic:'天气'},
+        {id:'b2u07', label:'U7', title:'A Day to Remember', topic:'难忘一天'},
+        {id:'b2u08', label:'U8', title:'Once upon a Time', topic:'故事'}
       ]
     }
   };

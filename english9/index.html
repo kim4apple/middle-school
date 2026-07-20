@@ -74,7 +74,9 @@ body.index-page { display: block; min-height: 100vh; }
   <div class="nav-links">
     <a href="../index.html">🏠 返回首页</a>
     <span class="sep">·</span>
-    <a href="#s1">📕 九年级</a>
+    <a href="#s1">📕 九年级上册</a>
+    <span class="sep">·</span>
+    <a href="#s2">📘 九年级下册</a>
     <span class="sep">·</span>
     <a href="../grammar.html">📌 语法全景图</a>
     <span class="sep">·</span>
@@ -83,9 +85,16 @@ body.index-page { display: block; min-height: 100vh; }
 
   <div class="semester" id="s1">
     <div class="semester-header">
-      <div class="semester-title">📕 九年级全一册 <span class="sub">Unit 1–14</span></div>
+      <div class="semester-title">📕 九年级上册 <span class="sub">Unit 1–8</span></div>
     </div>
     <div class="unit-grid" id="s1-grid"></div>
+  </div>
+
+  <div class="semester" id="s2">
+    <div class="semester-header">
+      <div class="semester-title">📘 九年级下册 <span class="sub">Unit 1–5 + 戏剧</span></div>
+    </div>
+    <div class="unit-grid" id="s2-grid"></div>
   </div>
 
   <div class="footer-info">
@@ -102,24 +111,26 @@ body.index-page { display: block; min-height: 100vh; }
   var CONFIG = {
     key: 'eng9-progress',
     semesters: [
-      { id:'s1', label:'📕 九年级全一册', sub:'Unit 1–14' }
+      { id:'s1', label:'📕 九年级上册', sub:'Unit 1–8' },
+      { id:'s2', label:'📘 九年级下册', sub:'Unit 1–5 + 戏剧' }
     ],
     units: {
       s1: [
-        {id:'u01', label:'U1', title:'How can we become good learners?', topic:'学习方法'},
-        {id:'u02', label:'U2', title:'I think that mooncakes are delicious!', topic:'节日与文化'},
-        {id:'u03', label:'U3', title:'Could you please tell me where the restrooms are?', topic:'问路与请求'},
-        {id:'u04', label:'U4', title:'I used to be afraid of the dark.', topic:'变化与成长'},
-        {id:'u05', label:'U5', title:'What are the shirts made of?', topic:'产品与材料'},
-        {id:'u06', label:'U6', title:'When was it invented?', topic:'发明历史'},
-        {id:'u07', label:'U7', title:'Teenagers should be allowed to choose their own clothes.', topic:'规则与许可'},
-        {id:'u08', label:'U8', title:'It must belong to Carla.', topic:'推测与判断'},
-        {id:'u09', label:'U9', title:'I like music that I can dance to.', topic:'偏好与定从'},
-        {id:'u10', label:'U10', title:"You're supposed to shake hands.", topic:'礼仪与文化'},
-        {id:'u11', label:'U11', title:'Sad movies make me cry.', topic:'情感与感受'},
-        {id:'u12', label:'U12', title:'Life is full of the unexpected.', topic:'意外与经历'},
-        {id:'u13', label:'U13', title:"We're trying to save the earth!", topic:'环保与行动'},
-        {id:'u14', label:'U14', title:'I remember meeting all of you in Grade 7.', topic:'回忆与毕业'}
+        {id:'u01', label:'U1', title:'The Changing World', topic:'社会变迁'},
+        {id:'u02', label:'U2', title:'Inspiring People', topic:'榜样人物'},
+        {id:'u03', label:'U3', title:'Smart Learning', topic:'学习方法'},
+        {id:'u04', label:'U4', title:'Our Memory', topic:'记忆回忆'},
+        {id:'u05', label:'U5', title:'Power of Ideas', topic:'发明创新'},
+        {id:'u06', label:'U6', title:'Beyond Earth', topic:'太空探索'},
+        {id:'u07', label:'U7', title:'Feel the Rhythm', topic:'音乐节奏'},
+        {id:'u08', label:'U8', title:'More than a Game', topic:'运动精神'}
+      ],
+      s2: [
+        {id:'b2u01', label:'U1', title:"Let's Celebrate!", topic:'节日庆祝'},
+        {id:'b2u02', label:'U2', title:'A Look into the Past', topic:'回顾历史'},
+        {id:'b2u03', label:'U3', title:'A Taste of Art', topic:'艺术鉴赏'},
+        {id:'b2u04', label:'U4', title:'Reduce, Reuse, Recycle', topic:'环保3R'},
+        {id:'b2u05', label:'U5', title:'Open to New Beginnings', topic:'新的开始'}
       ]
     }
   };

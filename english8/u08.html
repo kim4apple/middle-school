@@ -65,315 +65,357 @@
       <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
     </nav>
 <main id="content">
-<div class="cover"><div class="sub-en">U8</div><h1>Let's Communicate!</h1><p>沟通表达</p></div>
-<div class="unit-meta"><span>📖 话题：Effective Communication</span><span>💬 功能：Give suggestions and respond politely</span><span>📚 语法：祈使句（肯定/否定）· Let's… · How about…? · 礼貌请求和回应</span><span>📝 写作：A Persuasive Letter</span></div>
-<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能用祈使句发出指令</label>
-  <label><input type="checkbox"> 能用 Let's 提建议</label>
-  <label><input type="checkbox"> 能用 How about/What about 给出方案</label>
-  <label><input type="checkbox"> 能用英语礼貌地请求和回应</label></div>
-<details class="module" open><summary>📖 课文精讲 · Let's Communicate!</summary><div class="content">
-<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：班长组织同学讨论班级存在问题并提出改进建议。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
-<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Monitor:</span><span class="en-text wotd-say" data-speak="Class, let's talk about our problems. First, some students talk in class. Let's make some rules.">Class, let's talk about our problems. First, some students talk in class. Let's make some rules.</span></div>
-      <div class="dialogue-line"><span class="speaker">Li Ming:</span><span class="en-text wotd-say" data-speak="Don't talk when the teacher is speaking. It's not polite.">Don't talk when the teacher is speaking. It's not polite.</span></div>
-      <div class="dialogue-line"><span class="speaker">Wang Fang:</span><span class="en-text wotd-say" data-speak="How about having a "quiet signal"? When the teacher raises her hand, everyone stops talking.">How about having a "quiet signal"? When the teacher raises her hand, everyone stops talking.</span></div>
-      <div class="dialogue-line"><span class="speaker">Monitor:</span><span class="en-text wotd-say" data-speak="Great idea! Let's try it. Next, homework. Some students don't hand it in on time.">Great idea! Let's try it. Next, homework. Some students don't hand it in on time.</span></div>
-      <div class="dialogue-line"><span class="speaker">Zhang Lei:</span><span class="en-text wotd-say" data-speak="Let's set up a homework reminder group. We can help each other.">Let's set up a homework reminder group. We can help each other.</span></div>
-      <div class="dialogue-line"><span class="speaker">Monitor:</span><span class="en-text wotd-say" data-speak="OK, let's do that. Let's work together to make our class better!">OK, let's do that. Let's work together to make our class better!</span></div></div>
-<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>Monitor:</strong> 同学们，我们来讨论问题。首先有同学上课说话。我们定些规则吧。</p>
-        <p><strong>Li Ming:</strong> 老师说话时不要讲话，这不礼貌。</p>
-        <p><strong>Wang Fang:</strong> 来个"安静信号"怎么样？老师一抬手，所有人停止说话。</p>
-        <p><strong>Monitor:</strong> 好主意！试试看。下一个问题，作业。有些同学不按时交。</p>
-        <p><strong>Zhang Lei:</strong> 建个作业提醒群吧。我们可以互相帮助。</p>
-        <p><strong>Monitor:</strong> 好的，就这么办。我们一起努力让班级更好！</p></div></details>
-<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p><strong>1.</strong> <em>Let's make some rules.</em> → <strong>Let's + 动词原形</strong> "让我们做……"，表建议。</p>
-      <p><strong>2.</strong> <em>Don't talk when the teacher is speaking.</em> → <strong>Don't + 动词原形</strong> "不要做……"，否定祈使句。</p>
-      <p><strong>3.</strong> <em>How about having a "quiet signal"?</em> → <strong>How about / What about + doing</strong> "……怎么样？" 提建议。</p>
-      <p><strong>4.</strong> <em>Let's set up a homework reminder group.</em> → <strong>set up</strong> 建立，<strong>reminder</strong> 提醒物。</p></div></div></details>
-<details class="module" open><summary>📝 重点词汇 · 沟通表达 <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+<div class="cover"><div class="sub-en">U8</div><h1>Let's Communicate!</h1><p>沟通技巧 · 建议 · 情态动词 should</p></div>
+<div class="unit-meta"><span>📖 话题：Communication skills</span><span>💬 功能：Give advice, express opinions</span><span>📚 语法：should/shouldn't · Why don't you …? · 提建议句型</span><span>📝 写作：如何有效沟通</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能用 should/shouldn't 给建议</label>
+  <label><input type="checkbox"> 能用多种句型提建议（Why don't you / How about / Let's）</label>
+  <label><input type="checkbox"> 能礼貌地表达同意或不同意</label>
+  <label><input type="checkbox"> 能谈论沟通方式与技巧</label>
+  <label><input type="checkbox"> 能写一封建议信</label></div>
+<details class="module" open><summary>📖 课文精讲 · A Communication Problem <button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：Amy 和 Tom 产生了误会，Li Ming 居中调解并给出沟通建议。</span></div>
+<div class="dialogue" id="dialogueText">
+      <div class="dialogue-line"><span class="speaker">Li Ming:</span><span class="en-text wotd-say" data-speak="Hey Amy, you look upset. What's wrong?">Hey Amy, you look upset. What's wrong?</span></div>
+      <div class="dialogue-line"><span class="speaker">Amy:</span><span class="en-text wotd-say" data-speak="I had a fight with Tom. He didn't talk to me today. I don't know why.">I had a fight with Tom. He didn't talk to me today. I don't know why.</span></div>
+      <div class="dialogue-line"><span class="speaker">Li Ming:</span><span class="en-text wotd-say" data-speak="Why don't you talk to him and find out what happened? You should communicate openly.">Why don't you talk to him and find out what happened? You should communicate openly.</span></div>
+      <div class="dialogue-line"><span class="speaker">Amy:</span><span class="en-text wotd-say" data-speak="I tried, but he just said "It's nothing." In my opinion, he's still angry.">I tried, but he just said "It's nothing." In my opinion, he's still angry.</span></div>
+      <div class="dialogue-line"><span class="speaker">Tom:</span><span class="en-text wotd-say" data-speak="Hi Li Ming. Hi Amy. I'm sorry I was quiet today. I was just stressed about the exam.">Hi Li Ming. Hi Amy. I'm sorry I was quiet today. I was just stressed about the exam.</span></div>
+      <div class="dialogue-line"><span class="speaker">Li Ming:</span><span class="en-text wotd-say" data-speak="See? You should tell her how you feel. How about studying together this weekend?">See? You should tell her how you feel. How about studying together this weekend?</span></div>
+      <div class="dialogue-line"><span class="speaker">Amy:</span><span class="en-text wotd-say" data-speak="That's a good idea! I agree. It's a good idea to talk about problems instead of hiding them.">That's a good idea! I agree. It's a good idea to talk about problems instead of hiding them.</span></div>
+      <div class="dialogue-line"><span class="speaker">Tom:</span><span class="en-text wotd-say" data-speak="You're right. Let's communicate better from now on!">You're right. Let's communicate better from now on!</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>Li Ming:</strong> 嘿 Amy，你看起来不开心。怎么了？</p>
+        <p><strong>Amy:</strong> 我和 Tom 吵架了。他今天没跟我说话。我不知道为什么。</p>
+        <p><strong>Li Ming:</strong> 你为什么不跟他谈谈，弄清楚发生了什么？你应该坦诚沟通。</p>
+        <p><strong>Amy:</strong> 我试过了，但他只说"没事"。在我看来，他还在生气。</p>
+        <p><strong>Tom:</strong> 嗨 Li Ming，嗨 Amy。抱歉我今天没说话。我只是因为考试压力大。</p>
+        <p><strong>Li Ming:</strong> 看吧？你应该告诉她你的感受。这个周末一起学习怎么样？</p>
+        <p><strong>Amy:</strong> 好主意！我同意。有问题就谈，而不是藏着掖着，这是个好办法。</p>
+        <p><strong>Tom:</strong> 你说得对。从现在起我们更好地沟通！</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p><strong>1.</strong> <em>Why don't you talk to him?</em> → <strong>Why don't you + 动词原形</strong> "你为什么不……？" 表建议。</p>
+      <p><strong>2.</strong> <em>You should communicate openly.</em> → <strong>should + 动词原形</strong> "应该"，表建议和义务。</p>
+      <p><strong>3.</strong> <em>In my opinion, he's still angry.</em> → <strong>In my opinion</strong> "在我看来"，表达个人观点。</p>
+      <p><strong>4.</strong> <em>How about studying together?</em> → <strong>How about + V-ing</strong> "……怎么样？" 提建议。</p>
+      <p><strong>5.</strong> <em>It's a good idea to talk about problems.</em> → <strong>It's a good idea to + 动词</strong> "做……是个好主意"。</p></div></div></details>
+<details class="module" open><summary>📝 核心词汇 · Communication <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">
+      <div class="vocab-card">
         <span class="headword wotd-say" data-speak="communicate">communicate</span><span class="headword-speak-indicator">🔊</span>
         <span class="ipa">/kəˈmjuːnɪkeɪt/</span><span class="pos">v.</span>
         <div class="definition">交流；沟通</div>
-        <div class="example"><span class="wotd-say" data-speak="We should communicate with our parents.">We should communicate with our parents.</span><span class="trans">我们应该和父母沟通。</span></div>
+        <div class="example"><span class="wotd-say" data-speak="We should learn to communicate with others.">We should learn to communicate with others.</span><span class="trans">我们应该学会与他人沟通。</span></div>
       </div>
       <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="suggestion">suggestion</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/səˈdʒestʃən/</span><span class="pos">n.</span>
+        <span class="headword wotd-say" data-speak="communication">communication</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/kəˌmjuːnɪˈkeɪʃn/</span><span class="pos">n.</span>
+        <div class="definition">交流；沟通</div>
+        <div class="example"><span class="wotd-say" data-speak="Good communication is important in a team.">Good communication is important in a team.</span><span class="trans">良好的沟通在团队中很重要。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="suggest">suggest</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/səˈdʒest/</span><span class="pos">v.</span>
         <div class="definition">建议</div>
-        <div class="example"><span class="wotd-say" data-speak="Do you have any suggestions?">Do you have any suggestions?</span><span class="trans">你有什么建议吗？</span></div>
+        <div class="example"><span class="wotd-say" data-speak="I suggest you talk to your parents.">I suggest you talk to your parents.</span><span class="trans">我建议你和父母谈谈。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="advice">advice</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ədˈvaɪs/</span><span class="pos">n.</span>
+        <div class="definition">建议（不可数）</div>
+        <div class="example"><span class="wotd-say" data-speak="Can you give me some advice?">Can you give me some advice?</span><span class="trans">你能给我一些建议吗？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="opinion">opinion</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/əˈpɪnjən/</span><span class="pos">n.</span>
+        <div class="definition">意见；看法</div>
+        <div class="example"><span class="wotd-say" data-speak="In my opinion, we should try again.">In my opinion, we should try again.</span><span class="trans">在我看来，我们应该再试一次。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="agree">agree</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/əˈɡriː/</span><span class="pos">v.</span>
+        <div class="definition">同意</div>
+        <div class="example"><span class="wotd-say" data-speak="I agree with your idea.">I agree with your idea.</span><span class="trans">我同意你的想法。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="disagree">disagree</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌdɪsəˈɡriː/</span><span class="pos">v.</span>
+        <div class="definition">不同意</div>
+        <div class="example"><span class="wotd-say" data-speak="I disagree. Let's think of another way.">I disagree. Let's think of another way.</span><span class="trans">我不同意。我们来想别的办法。</span></div>
       </div>
       <div class="vocab-card">
         <span class="headword wotd-say" data-speak="polite">polite</span><span class="headword-speak-indicator">🔊</span>
         <span class="ipa">/pəˈlaɪt/</span><span class="pos">adj.</span>
         <div class="definition">礼貌的</div>
-        <div class="example"><span class="wotd-say" data-speak="It's polite to say "thank you".">It's polite to say "thank you".</span><span class="trans">说"谢谢"是礼貌的。</span></div>
+        <div class="example"><span class="wotd-say" data-speak="It's polite to listen when others speak.">It's polite to listen when others speak.</span><span class="trans">别人说话时倾听是有礼貌的。</span></div>
       </div>
       <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="signal">signal</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/ˈsɪɡnəl/</span><span class="pos">n.</span>
-        <div class="definition">信号；暗号</div>
-        <div class="example"><span class="wotd-say" data-speak="Let's agree on a signal.">Let's agree on a signal.</span><span class="trans">我们来约定一个信号。</span></div>
+        <span class="headword wotd-say" data-speak="rude">rude</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ruːd/</span><span class="pos">adj.</span>
+        <div class="definition">粗鲁的</div>
+        <div class="example"><span class="wotd-say" data-speak="Don't interrupt others. It's rude.">Don't interrupt others. It's rude.</span><span class="trans">不要打断别人。这很粗鲁。</span></div>
       </div>
       <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="remind">remind</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/rɪˈmaɪnd/</span><span class="pos">v.</span>
-        <div class="definition">提醒</div>
-        <div class="example"><span class="wotd-say" data-speak="Please remind me to do my homework.">Please remind me to do my homework.</span><span class="trans">请提醒我做作业。</span></div>
+        <span class="headword wotd-say" data-speak="express">express</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɪkˈspres/</span><span class="pos">v.</span>
+        <div class="definition">表达</div>
+        <div class="example"><span class="wotd-say" data-speak="Learn to express your feelings clearly.">Learn to express your feelings clearly.</span><span class="trans">学会清晰地表达你的感受。</span></div>
       </div>
       <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="organize">organize</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/ˈɔːrɡənaɪz/</span><span class="pos">v.</span>
-        <div class="definition">组织</div>
-        <div class="example"><span class="wotd-say" data-speak="Let's organize a class meeting.">Let's organize a class meeting.</span><span class="trans">我们来组织一次班会。</span></div>
-      </div>
-      <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="discuss">discuss</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/dɪˈskʌs/</span><span class="pos">v.</span>
-        <div class="definition">讨论</div>
-        <div class="example"><span class="wotd-say" data-speak="Let's discuss this problem.">Let's discuss this problem.</span><span class="trans">我们来讨论这个问题。</span></div>
-      </div>
-      <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="solution">solution</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/səˈluːʃn/</span><span class="pos">n.</span>
-        <div class="definition">解决办法</div>
-        <div class="example"><span class="wotd-say" data-speak="We need to find a solution.">We need to find a solution.</span><span class="trans">我们需要找到解决办法。</span></div>
+        <span class="headword wotd-say" data-speak="understand">understand</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌʌndərˈstænd/</span><span class="pos">v.</span>
+        <div class="definition">理解；明白</div>
+        <div class="example"><span class="wotd-say" data-speak="I understand how you feel.">I understand how you feel.</span><span class="trans">我理解你的感受。</span></div>
       </div>
       <div class="vocab-card">
         <span class="headword wotd-say" data-speak="respect">respect</span><span class="headword-speak-indicator">🔊</span>
         <span class="ipa">/rɪˈspekt/</span><span class="pos">v./n.</span>
         <div class="definition">尊重</div>
-        <div class="example"><span class="wotd-say" data-speak="We should respect each other.">We should respect each other.</span><span class="trans">我们应该互相尊重。</span></div>
+        <div class="example"><span class="wotd-say" data-speak="We should respect different opinions.">We should respect different opinions.</span><span class="trans">我们应该尊重不同的意见。</span></div>
       </div>
       <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="support">support</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/səˈpɔːrt/</span><span class="pos">v./n.</span>
-        <div class="definition">支持</div>
-        <div class="example"><span class="wotd-say" data-speak="Thank you for your support.">Thank you for your support.</span><span class="trans">谢谢你的支持。</span></div>
+        <span class="headword wotd-say" data-speak="listen">listen</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈlɪsn/</span><span class="pos">v.</span>
+        <div class="definition">听；倾听</div>
+        <div class="example"><span class="wotd-say" data-speak="Listen carefully before you answer.">Listen carefully before you answer.</span><span class="trans">回答之前先仔细倾听。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="talk">talk</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/tɔːk/</span><span class="pos">v.</span>
+        <div class="definition">谈话；讨论</div>
+        <div class="example"><span class="wotd-say" data-speak="Let's talk about it face to face.">Let's talk about it face to face.</span><span class="trans">我们面对面谈谈吧。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="share">share</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ʃeər/</span><span class="pos">v.</span>
+        <div class="definition">分享</div>
+        <div class="example"><span class="wotd-say" data-speak="Share your thoughts with your friends.">Share your thoughts with your friends.</span><span class="trans">和你的朋友分享想法。</span></div>
       </div></div></div></details>
-<details class="module" open><summary>🥈 掌握词汇 · 沟通表达</summary><div class="content"><div class="vocab-grid">
-      <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="communicate">communicate</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/kəˈmjuːnɪkeɪt/</span><span class="pos">v.</span>
-        <div class="definition">交流；沟通</div>
-        <div class="example"><span class="wotd-say" data-speak="Learn to communicate clearly.">Learn to communicate clearly.</span><span class="trans">学会清晰交流。</span></div>
-      </div>
-      <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="expression">expression</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/ɪkˈspreʃn/</span><span class="pos">n.</span>
-        <div class="definition">表达；表情</div>
-        <div class="example"><span class="wotd-say" data-speak="Facial expressions show feelings.">Facial expressions show feelings.</span><span class="trans">面部表情表达感受。</span></div>
-      </div>
-      <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="common">common</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/ˈkɒmən/</span><span class="pos">adj.</span>
-        <div class="definition">共同的；常见的</div>
-        <div class="example"><span class="wotd-say" data-speak="English is a common language.">English is a common language.</span><span class="trans">英语是通用语言。</span></div>
-      </div>
-      <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="purpose">purpose</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/ˈpɜːrpəs/</span><span class="pos">n.</span>
-        <div class="definition">目的</div>
-        <div class="example"><span class="wotd-say" data-speak="What is the purpose of this message?">What is the purpose of this message?</span><span class="trans">这条信息的目的什么？</span></div>
-      </div>
+<details class="module" open><summary>📝 拓展词汇 · 深度沟通</summary><div class="content"><div class="vocab-grid">
       <div class="vocab-card">
         <span class="headword wotd-say" data-speak="conversation">conversation</span><span class="headword-speak-indicator">🔊</span>
         <span class="ipa">/ˌkɒnvərˈseɪʃn/</span><span class="pos">n.</span>
-        <div class="definition">对话</div>
+        <div class="definition">对话；交谈</div>
         <div class="example"><span class="wotd-say" data-speak="Start a conversation with a smile.">Start a conversation with a smile.</span><span class="trans">用微笑开始对话。</span></div>
       </div>
       <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="topic">topic</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/ˈtɒpɪk/</span><span class="pos">n.</span>
-        <div class="definition">话题</div>
-        <div class="example"><span class="wotd-say" data-speak="Change the topic if needed.">Change the topic if needed.</span><span class="trans">必要时换个话题。</span></div>
+        <span class="headword wotd-say" data-speak="discussion">discussion</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/dɪˈskʌʃn/</span><span class="pos">n.</span>
+        <div class="definition">讨论；商讨</div>
+        <div class="example"><span class="wotd-say" data-speak="We had a heated discussion in class.">We had a heated discussion in class.</span><span class="trans">我们在班上进行了热烈的讨论。</span></div>
       </div>
       <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="signal">signal</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/ˈsɪɡnəl/</span><span class="pos">n.</span>
-        <div class="definition">信号</div>
-        <div class="example"><span class="wotd-say" data-speak="Body language sends signals.">Body language sends signals.</span><span class="trans">肢体语言传递信号。</span></div>
+        <span class="headword wotd-say" data-speak="conflict">conflict</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈkɒnflɪkt/</span><span class="pos">n.</span>
+        <div class="definition">冲突；矛盾</div>
+        <div class="example"><span class="wotd-say" data-speak="Try to solve conflicts peacefully.">Try to solve conflicts peacefully.</span><span class="trans">尝试和平解决冲突。</span></div>
       </div>
       <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="gesture">gesture</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/ˈdʒestʃər/</span><span class="pos">n.</span>
-        <div class="definition">手势</div>
-        <div class="example"><span class="wotd-say" data-speak="Use gestures to help explain.">Use gestures to help explain.</span><span class="trans">用手势帮助解释。</span></div>
+        <span class="headword wotd-say" data-speak="resolve">resolve</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/rɪˈzɒlv/</span><span class="pos">v.</span>
+        <div class="definition">解决</div>
+        <div class="example"><span class="wotd-say" data-speak="Let's work together to resolve this problem.">Let's work together to resolve this problem.</span><span class="trans">我们一起努力解决这个问题。</span></div>
       </div>
       <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="proper">proper</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/ˈprɒpər/</span><span class="pos">adj.</span>
-        <div class="definition">恰当的；得体的</div>
-        <div class="example"><span class="wotd-say" data-speak="Use proper language in formal situations.">Use proper language in formal situations.</span><span class="trans">正式场合使用得体语言。</span></div>
+        <span class="headword wotd-say" data-speak="compromise">compromise</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈkɒmprəmaɪz/</span><span class="pos">v./n.</span>
+        <div class="definition">妥协；让步</div>
+        <div class="example"><span class="wotd-say" data-speak="Sometimes we need to compromise.">Sometimes we need to compromise.</span><span class="trans">有时我们需要妥协。</span></div>
       </div>
       <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="confident">confident</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/ˈkɒnfɪdənt/</span><span class="pos">adj.</span>
-        <div class="definition">自信的</div>
-        <div class="example"><span class="wotd-say" data-speak="Speak with confidence.">Speak with confidence.</span><span class="trans">自信地说话。</span></div>
-      </div>
-    </div></div></details>
-<details class="module" open><summary>🥉 学霸词汇 · 冲刺满分</summary><div class="content"><div class="vocab-grid">
-      <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="articulate">articulate</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/ɑːrˈtɪkjuleɪt/</span><span class="pos">v./adj.</span>
-        <div class="definition">清晰地表达；口才好的</div>
-        <div class="example"><span class="wotd-say" data-speak="She is an articulate speaker.">She is an articulate speaker.</span><span class="trans">她是个口才好的演讲者。</span></div>
+        <span class="headword wotd-say" data-speak="active">active</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈæktɪv/</span><span class="pos">adj.</span>
+        <div class="definition">积极的；主动的</div>
+        <div class="example"><span class="wotd-say" data-speak="Be an active listener in conversations.">Be an active listener in conversations.</span><span class="trans">在交谈中做一个积极的倾听者。</span></div>
       </div>
       <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="empathy">empathy</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/ˈempəθi/</span><span class="pos">n.</span>
-        <div class="definition">共情；同理心</div>
-        <div class="example"><span class="wotd-say" data-speak="Good communication needs empathy.">Good communication needs empathy.</span><span class="trans">好的沟通需要同理心。</span></div>
+        <span class="headword wotd-say" data-speak="clearly">clearly</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈklɪərli/</span><span class="pos">adv.</span>
+        <div class="definition">清晰地</div>
+        <div class="example"><span class="wotd-say" data-speak="Speak clearly so others can understand you.">Speak clearly so others can understand you.</span><span class="trans">说清楚，让别人能听懂。</span></div>
       </div>
       <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="negotiate">negotiate</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/nɪˈɡoʊʃieɪt/</span><span class="pos">v.</span>
-        <div class="definition">谈判；协商</div>
-        <div class="example"><span class="wotd-say" data-speak="Learn to negotiate politely.">Learn to negotiate politely.</span><span class="trans">学会礼貌地协商。</span></div>
-      </div>
-      <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="persuade">persuade</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/pərˈsweɪd/</span><span class="pos">v.</span>
-        <div class="definition">说服</div>
-        <div class="example"><span class="wotd-say" data-speak="She persuaded me to join the club.">She persuaded me to join the club.</span><span class="trans">她说服我加入了俱乐部。</span></div>
-      </div>
-      <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="interact">interact</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/ˌɪntərˈækt/</span><span class="pos">v.</span>
-        <div class="definition">互动；交流</div>
-        <div class="example"><span class="wotd-say" data-speak="Children interact through play.">Children interact through play.</span><span class="trans">孩子通过游戏互动。</span></div>
-      </div>
-      <div class="vocab-card">
-        <span class="headword wotd-say" data-speak="diplomatic">diplomatic</span><span class="headword-speak-indicator">🔊</span>
-        <span class="ipa">/ˌdɪpləˈmætɪk/</span><span class="pos">adj.</span>
-        <div class="definition">有外交手腕的；委婉的</div>
-        <div class="example"><span class="wotd-say" data-speak="Be diplomatic when giving feedback.">Be diplomatic when giving feedback.</span><span class="trans">给反馈时要委婉。</span></div>
-      </div>
-    </div></div></details>
-
-<details class="module" open><summary>🔤 重点句型 · Sentence Patterns</summary><div class="content"><div class="pattern-grid">      <div class="pattern-card">
-        <div class="structure">Let's + 动词原形</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
-        <div>提出建议</div>
-        <div class="substitution"><span class="q-speak-wrap" id="sp1"><strong>Let's</strong> <span class="slot">start the meeting</span>. / <strong>Let's</strong> <span class="slot">help each other</span>.</span></div>
-      </div>
-      <div class="pattern-card">
-        <div class="structure">Don't + 动词原形</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
-        <div>否定祈使句（禁止）</div>
-        <div class="substitution"><span class="q-speak-wrap" id="sp2"><strong>Don't</strong> <span class="slot">be late</span>. / <strong>Don't</strong> <span class="slot">talk in class</span>.</span></div>
-      </div>
-      <div class="pattern-card">
-        <div class="structure">How about + doing?</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
-        <div>委婉提建议</div>
-        <div class="substitution"><span class="q-speak-wrap" id="sp3"><strong>How about</strong> <span class="slot">making a plan</span>? / <strong>What about</strong> <span class="slot">asking the teacher</span>?</span></div>
+        <span class="headword wotd-say" data-speak="effectively">effectively</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɪˈfektɪvli/</span><span class="pos">adv.</span>
+        <div class="definition">有效地</div>
+        <div class="example"><span class="wotd-say" data-speak="Learn to communicate effectively with your classmates.">Learn to communicate effectively with your classmates.</span><span class="trans">学会与同学有效沟通。</span></div>
       </div></div></div></details>
-<details class="module detail-module" open><summary>📚 语法聚焦 · 祈使句 & 提建议的多种表达 <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module"><h3>祈使句</h3>
+<details class="module" open><summary>🔤 重点句型 · Sentence Patterns</summary><div class="content"><div class="pattern-grid">
+      <div class="pattern-card">
+        <div class="structure">should / shouldn't + 动词原形</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>应该 / 不应该</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1"><strong>You should</strong> <span class="slot">talk to her</span>. / <strong>You shouldn't</strong> <span class="slot">shout at others</span>.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">Why don't you + 动词原形?</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>你为什么不……？(提建议)</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp2"><strong>Why don't you</strong> <span class="slot">ask your teacher</span>? / <strong>Why don't you</strong> <span class="slot">try again</span>?</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">How / What about + V-ing?</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>……怎么样？</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp3"><strong>How about</strong> <span class="slot">saying sorry first</span>? / <strong>What about</strong> <span class="slot">writing a letter</span>?</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">Let's + 动词原形</div> <button class="speak-btn" data-target="sp4" title="朗读句型">🔊</button>
+        <div>让我们……吧</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp4"><strong>Let's</strong> <span class="slot">have a talk</span>. / <strong>Let's</strong> <span class="slot">find a solution together</span>.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">It's a good idea to + 动词</div> <button class="speak-btn" data-target="sp5" title="朗读句型">🔊</button>
+        <div>……是个好主意</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp5"><strong>It's a good idea to</strong> <span class="slot">listen first</span>. / <strong>It's a good idea to</strong> <span class="slot">share your feelings</span>.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">I think / In my opinion</div> <button class="speak-btn" data-target="sp6" title="朗读句型">🔊</button>
+        <div>我认为 / 在我看来</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp6"><strong>I think</strong> <span class="slot">you should apologize</span>. / <strong>In my opinion</strong>, <span class="slot">honesty is very important</span>.</span></div>
+      </div></div></div></details>
+<details class="module detail-module" open><summary>📚 语法聚焦 · should / 提建议句型 <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module" id="grammarContainer"><h3>1. 情态动词 should / shouldn't</h3>
 <table class="grammar-table">
-<tr><th>类型</th><th>结构</th><th>示例</th></tr>
-<tr><td>肯定祈使句</td><td>动词原形开头</td><td>Sit down, please.</td></tr>
-<tr><td>否定祈使句</td><td>Don't + 动词原形</td><td>Don't run in the hallways.</td></tr>
-<tr><td>Let's 祈使句</td><td>Let's + 动词原形</td><td>Let's go home together.</td></tr>
-<tr><td>礼貌祈使句</td><td>Please + 动词原形</td><td>Please open the door.</td></tr>
+<tr><th>句式</th><th>结构</th><th>示例</th></tr>
+<tr><td>肯定</td><td>should + 动词原形</td><td>You should say sorry to her.</td></tr>
+<tr><td>否定</td><td>shouldn't + 动词原形</td><td>You shouldn't ignore your friends.</td></tr>
+<tr><td>疑问</td><td>Should + 主语 + 动词? </td><td>Should I call him first?</td></tr>
 </table>
-<h3>提建议的多种方式</h3>
+<h3>2. 提建议常用句型</h3>
 <table class="grammar-table">
-<tr><th>表达</th><th>结构</th><th>示例</th></tr>
-<tr><td>Let's…</td><td>Let's + 动词</td><td>Let's clean the classroom.</td></tr>
-<tr><td>How about…</td><td>How about + doing</td><td>How about taking a walk?</td></tr>
-<tr><td>Why not…</td><td>Why not + 动词</td><td>Why not ask for help?</td></tr>
-<tr><td>Shall we…</td><td>Shall we + 动词</td><td>Shall we start now?</td></tr>
+<tr><th>句型</th><th>结构</th><th>示例</th></tr>
+<tr><td>Why don't you…?</td><td>Why don't you + 动词?</td><td>Why don't you talk to your parents?</td></tr>
+<tr><td>How/What about…?</td><td>How/What about + V-ing?</td><td>How about going for a walk together?</td></tr>
+<tr><td>Let's…</td><td>Let's + 动词</td><td>Let's discuss this later.</td></tr>
+<tr><td>It's a good idea to…</td><td>It's a good idea to + 动词</td><td>It's a good idea to listen first.</td></tr>
+<tr><td>I think you should…</td><td>I think + 主语 + should</td><td>I think you should be honest.</td></tr>
+<tr><td>In my opinion,…</td><td>In my opinion, + 句子</td><td>In my opinion, communication is key.</td></tr>
 </table>
-</div><div class="chinese-error">      <p>❌ <span class="wrong" data-speak="Don't to run in the hallways.">Don't to run in the hallways.</span>（Don't 后直接加动词原形）</p>
-      <p>✅ <span class="correct" data-speak="Don't run in the hallways.">Don't run in the hallways.</span></p>
-      <p>❌ <span class="wrong" data-speak="How about to go shopping?">How about to go shopping?</span>（How about 后跟 doing）</p>
+<h3>3. 表达同意与不同意</h3>
+<table class="grammar-table">
+<tr><th>功能</th><th>表达</th></tr>
+<tr><td>同意</td><td>I agree. / You're right. / That's a good point. / I think so too.</td></tr>
+<tr><td>不同意（委婉）</td><td>I disagree. / I don't think so. / I'm not sure about that. / That's a good point, but…</td></tr>
+</table>
+</div><div class="chinese-error">      <p>❌ <span class="wrong" data-speak="You should to talk to him.">You should to talk to him.</span>（should 后跟动词原形，不加 to）</p>
+      <p>✅ <span class="correct" data-speak="You should talk to him.">You should talk to him.</span></p>
+      <p>❌ <span class="wrong" data-speak="Why don't you to ask for help?">Why don't you to ask for help?</span>（Why don't you 后跟动词原形）</p>
+      <p>✅ <span class="correct" data-speak="Why don't you ask for help?">Why don't you ask for help?</span></p>
+      <p>❌ <span class="wrong" data-speak="How about go shopping?">How about go shopping?</span>（How about 后跟 doing）</p>
       <p>✅ <span class="correct" data-speak="How about going shopping?">How about going shopping?</span></p></div></div></details>
-<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
-      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
-      <div class="q-body">[祈使句] ____ (Don't / Not) be late for class.</div>
-      <span class="q-toggle">📝 查看答案</span>
-      <div class="q-solution"><strong>答案：</strong>Don't</div>
-    </div>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>
     <div class="exam-q">
       <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
-      <div class="q-body">[Let's] ____ ____ have a meeting this afternoon.</div>
+      <div class="q-body">[选择] You ____ (should / shouldn't) talk in class. It's not polite.</div>
       <span class="q-toggle">📝 查看答案</span>
-      <div class="q-solution"><strong>答案：</strong>Let's</div>
+      <div class="q-solution"><strong>答案：</strong>shouldn't</div>
     </div>
     <div class="exam-q">
       <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
-      <div class="q-body">[选择] How about ____ (go / going) to the park?</div>
+      <div class="q-body">[填空] Why ____ ____ ask your teacher for help?</div>
       <span class="q-toggle">📝 查看答案</span>
-      <div class="q-solution"><strong>答案：</strong>going</div>
-    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <div class="q-solution"><strong>答案：</strong>don't you</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[选择] How about ____ (have / having) a cup of tea?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>having</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[搭配] 将建议与问题配对：<br>1. I feel lonely. ____ a. You should talk to your parents.<br>2. I failed the exam. ____ b. Why don't you join a club?<br>3. My friend is angry. ____ c. Let's study harder together.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>1—b, 2—c, 3—a</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>
+    <div class="exam-q">
       <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
-      <div class="q-body">[改写] You should not eat in class. (改为否定祈使句)</div>
+      <div class="q-body">[改写] You should say sorry to him. (改成 Why don't you 句型)</div>
       <span class="q-toggle">📝 查看答案</span>
-      <div class="q-solution"><strong>答案：</strong>Don't eat in class.</div>
+      <div class="q-solution"><strong>答案：</strong>Why don't you say sorry to him?</div>
     </div>
     <div class="exam-q">
       <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
-      <div class="q-body">[建议] We need to clean the room. (用 Let's 改写)</div>
+      <div class="q-body">[填空] ____ ____ (……怎么样) writing a letter to express your feelings?</div>
       <span class="q-toggle">📝 查看答案</span>
-      <div class="q-solution"><strong>答案：</strong>Let's clean the room.</div>
+      <div class="q-solution"><strong>答案：</strong>How about / What about</div>
     </div>
     <div class="exam-q">
       <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
-      <div class="q-body">[填空] ____ ____ (为什么不) ask your teacher for help?</div>
+      <div class="q-body">[改错] It's a good idea to listen others carefully. (找出并改正错误)</div>
       <span class="q-toggle">📝 查看答案</span>
-      <div class="q-solution"><strong>答案：</strong>Why not</div>
-    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <div class="q-solution"><strong>答案：</strong>listen → listen to, 应为 It's a good idea to listen to others carefully.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[完成句子] I think you ____ ____ (应该分享) your feelings with your family.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>should share</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>
+    <div class="exam-q">
       <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
-      <div class="q-body">[汉译英] 我们为什么不成立一个学习小组呢？</div>
+      <div class="q-body">[汉译英] 在我看来，有效沟通的关键是尊重他人。</div>
       <span class="q-toggle">📝 查看答案</span>
-      <div class="q-solution"><strong>答案：</strong>Why don't we set up a study group? / Why not set up a study group?</div>
+      <div class="q-solution"><strong>答案：</strong>In my opinion, the key to effective communication is to respect others.</div>
     </div>
     <div class="exam-q">
       <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
-      <div class="q-body">[情景] 你的朋友上课总迟到，给出 2 条建议用不同句式。</div>
+      <div class="q-body">[情景] 你的朋友 Lily 和妈妈吵架了，两人都不说话。用不同句型给出至少 3 条建议。</div>
       <span class="q-toggle">📝 查看答案</span>
-      <div class="q-solution"><strong>答案：</strong>自由回答，如：Let's set an alarm. / How about going to bed earlier?</div>
+      <div class="q-solution"><strong>答案：</strong>自由回答，如：You should say sorry first. / Why don't you write a letter to your mom? / How about cooking dinner together? / Let's have a family talk.</div>
     </div></div></details>
-<details class="module detail-module" open><summary>📖 阅读专项 · How to Communicate Better</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">Do you sometimes find it hard to talk to others? Good communication skills can help. Here are some tips.</p>
-      <p class="en-text">First, listen carefully. Don't interrupt when others are speaking. Let them finish first.</p>
-      <p class="en-text">Second, use polite words. Say "please" and "thank you". Don't shout.</p>
-      <p class="en-text">Third, use "I" sentences. Say "I feel sad when you ignore me" instead of "You always ignore me". This helps people understand your feelings.</p>
-      <p class="en-text">Let's practice good communication every day!</p><div class="gloss"><span>communication n. 沟通；交流</span> <span>skill n. 技能</span> <span>interrupt v. 打断</span> <span>ignore v. 忽视；不理睬</span> <span>instead of 而不是</span> </div></div>    <div class="exam-q reading-q">
+<details class="module detail-module" open><summary>📖 阅读专项 · Better Communication, Better Life</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">Good communication makes life better. Here are some tips to help you communicate well with others.</p>
+      <p class="en-text"><strong>Listen actively.</strong> When someone is talking, look at them and listen carefully. Don't look at your phone. Show you care by nodding or saying "I see."</p>
+      <p class="en-text"><strong>Use polite words.</strong> Say "please" and "thank you." Don't interrupt when others are speaking. It's rude to cut in.</p>
+      <p class="en-text"><strong>Express your feelings, don't blame.</strong> Say "I feel sad when you don't talk to me" instead of "You never talk to me." "I" sentences help others understand you better.</p>
+      <p class="en-text"><strong>Respect different opinions.</strong> It's OK to disagree. You can say "I don't think so" politely. You don't have to win every argument.</p>
+      <p class="en-text"><strong>Talk face to face.</strong> When you have something important, talk in person. Texts and messages can be misunderstood.</p>
+      <p class="en-text">Practice these tips every day. You will have better relationships and a happier life!</p><div class="gloss"><span>tip n. 建议；提示</span> <span>actively adv. 积极地</span> <span>nod v. 点头</span> <span>blame v. 指责</span> <span>argument n. 争论</span> <span>misunderstand v. 误解</span> </div></div>
+    <div class="exam-q reading-q">
       <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
       <div class="q-body">1. How many tips does the passage give?</div>
       <span class="q-toggle">📝 查看答案</span>
-      <div class="q-solution"><strong>答案：</strong>Three.</div>
+      <div class="q-solution"><strong>答案：</strong>Five.</div>
     </div>
     <div class="exam-q reading-q">
       <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
-      <div class="q-body">2. Why should we say "I feel sad" instead of "You ignore me"?</div>
+      <div class="q-body">2. What should you do when someone is talking to you?</div>
       <span class="q-toggle">📝 查看答案</span>
-      <div class="q-solution"><strong>答案：</strong>It helps people understand your feelings.</div>
+      <div class="q-solution"><strong>答案：</strong>Look at them, listen carefully, and don't look at your phone.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">3. Why should we use "I" sentences when expressing feelings?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Because "I" sentences help others understand you better.</div>
     </div>
     <div class="exam-q reading-q">
       <span class="q-tag">阅读</span><span class="q-diff">★★★</span>
-      <div class="q-body">3. What is the first tip for good communication?</div>
+      <div class="q-body">4. What does the writer suggest about disagreements?</div>
       <span class="q-toggle">📝 查看答案</span>
-      <div class="q-solution"><strong>答案：</strong>Listen carefully and don't interrupt.</div>
+      <div class="q-solution"><strong>答案：</strong>It's OK to disagree, but do it politely. You don't have to win every argument.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★★</span>
+      <div class="q-body">5. Why should we talk face to face about important things?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Because texts and messages can be misunderstood.</div>
     </div></div></details>
-<details class="module detail-module" open><summary>🏆 中考题型专练 · 任务型阅读</summary><div class="content exam-section"><p style="font-size:13px;margin-bottom:8px;">阅读短文，完成以下任务。</p><div class="reading-passage" style="background:var(--bg-secondary);">      <p>We had a class meeting last Friday. The topic was "How to make our class better". (A) Let's read the suggestions. First, some students said: "Don't leave trash in the classroom." (B) Second, "Let's help each other with homework." (C) Also, "How about planting some flowers on the windowsill?" We all agreed these are good ideas. Let's make our class a better place together!</p></div><div class="exam-q" style="border-left-color:#f59e0b;"><span class="q-tag" style="background:#f59e0b;color:#fff;">答案</span><div class="q-body">任务1：找出文中 3 个建议句式：<br>1. Don't leave trash (否定祈使句)<br>2. Let's help each other (Let's 建议)<br>3. How about planting... (How about 建议)<br>任务2：自由回答</div></div></div></details>
-<details class="module detail-module" open><summary>✍️ 写作进阶 · A Persuasive Letter</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">假设你是班长，发现班里存在一些问题（乱扔垃圾、上课说话、作业拖拉），请写一封建议信给全班同学。</div></div><div class="writing-framework">      <div class="fw-step">开头：指出写信目的。</div>
-      <div class="fw-step">主体：列出 3 个问题+对应的建议（用 Let's/How about/Why not）。</div>
-      <div class="fw-step">结尾：鼓励大家一起行动。</div></div><div class="writing-model"><div class="en">Dear classmates, Let's make our class better! First, don't leave trash in the classroom. Please put it in the bin. Second, let's help each other with homework. We can form study groups. Third, how about keeping quiet when the teacher is speaking? Respect others. Let's work together and be the best class!</div><div class="trans">亲爱的同学们：让我们把班级变得更好！第一，不要把垃圾留在教室，请扔进垃圾桶。第二，让我们互相帮助做作业，可以结成学习小组。第三，老师讲话时保持安静。尊重他人。我们一起努力，成为最好的班级！</div></div></div></details>
-<details class="module detail-module" open><summary>🎯 Project · Class Communication Campaign</summary><div class="content project-module"><div class="project-brief"><div class="project-title">Class Communication Campaign</div><div class="project-desc">和小组一起设计一份"班级沟通改进计划"，用英语列出 5 条沟通规则，并制作成海报。</div></div><div class="project-steps">      <div class="step"><span class="step-num">1</span><span class="step-text">讨论班级沟通中的问题。</span></div>
-      <div class="step"><span class="step-num">2</span><span class="step-text">针对每个问题提出改进规则。</span></div>
-      <div class="step"><span class="step-num">3</span><span class="step-text">用祈使句/Let's/How about 写出 5 条规则。</span></div>
-      <div class="step"><span class="step-num">4</span><span class="step-text">制作海报并在班里展示。</span></div></div><div class="project-rubric"><table><tr><th>#</th><th>评价标准</th></tr><tr><td>1.</td><td>问题识别准确</td></tr>
-<tr><td>2.</td><td>规则用不同句式表达</td></tr>
-<tr><td>3.</td><td>海报设计美观</td></tr>
-<tr><td>4.</td><td>团队合作</td></tr></table></div></div></details>
-<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用祈使句发出指令</label>
-  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 Let's/How about 提建议</label>
-  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能礼貌请求和回应</label>
-  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写建议信</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>假装你是沟通培训师，给同学们上一节 2 分钟的"如何有效沟通"微课。练习祈使句和建议句式。</p></div>
-<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">用祈使句写 5 条班规</span>
-    <span class="review-dot">用 Let's/How about/Why not 各写 1 个建议</span>
-    <span class="review-dot">写一段关于沟通建议的短文</span>
-    <span class="review-dot">复习 where/when/how 疑问词</span></div>
+<details class="module detail-module" open><summary>🏆 中考题型专练 · 任务型阅读</summary><div class="content exam-section"><p style="font-size:13px;margin-bottom:8px;">阅读短文，完成以下任务。</p><div class="reading-passage" style="background:var(--bg-secondary);">      <p>Dear Dr. Know,<br>I have a problem. My best friend Amy is always on her phone when we hang out. (A) I think she should pay more attention to our conversation. I feel ignored. (B) Why don't you talk to her about it honestly? Let her know how you feel. (C) How about suggesting "phone-free time" when you meet? Good friends listen to each other. Respect starts with communication. — Mike</p></div><div class="exam-q" style="border-left-color:#f59e0b;"><span class="q-tag" style="background:#f59e0b;color:#fff;">任务</span><div class="q-body">任务1：判断下列说法正误（T/F）：<br>1. Mike's friend Amy talks a lot on the phone. (  )<br>2. Dr. Know gives advice in the letter. (  )<br><br>任务2：从文中找出与下列表达意思相近的建议句：<br>"你可以和她好好谈谈" → ____<br><br>任务3：你还有别的建议吗？用英语写一条。→ ____</div></div><div class="exam-q" style="border-left-color:#10b981;"><span class="q-tag" style="background:#10b981;color:#fff;">答案</span><div class="q-body">任务1：1. F (She is on her phone); 2. T<br>任务2：Why don't you talk to her about it honestly?<br>任务3：自由回答，如：Let's do fun activities together without phones.</div></div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · Give Advice to a Friend</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">你的朋友 Tom 最近总是和同桌吵架，因为他觉得同桌不听他说话。请你给他写一封建议信（不少于 60 词），用上 should / Why don't you / How about 等方式给他建议。</div></div><div class="writing-framework">      <div class="fw-step">开头：表明写信目的（安慰 + 表示理解）。</div>
+      <div class="fw-step">主体：2–3 条具体建议，使用不同句型。</div>
+      <div class="fw-step">结尾：鼓励 + 表达关心。</div></div><div class="writing-model"><div class="en">Dear Tom, I understand how you feel. Good communication takes practice. You should listen to your deskmate first and let him finish talking. Why don't you ask him about his hobbies? This can start a nice conversation. How about having lunch together and talking face to face? In my opinion, respect is the most important thing in a friendship. Let's try to be better communicators! Yours, Li Ming</div><div class="trans">亲爱的 Tom：我理解你的感受。良好的沟通需要练习。你应该先听听同桌的话，让他把话说完。你为什么不问问他有什么爱好？这样可以开始愉快的对话。一起吃午饭、面对面聊聊怎么样？在我看来，尊重是友谊中最重要的事。让我们一起努力成为更好的沟通者吧！你的朋友，李明</div></div></div></details>
+<details class="module detail-module" open><summary>🎯 Project · Communication Advice Cards</summary><div class="content project-module"><div class="project-brief"><div class="project-title">Communication Advice Cards</div><div class="project-desc">和小组一起制作一套"沟通建议卡"：每人写出一个常见沟通问题，组内讨论后用不同句型给出一条建议。</div></div><div class="project-steps">      <div class="step"><span class="step-num">1</span><span class="step-text">每人写一个生活中遇到的沟通问题（与父母、老师或朋友之间）。</span></div>
+      <div class="step"><span class="step-num">2</span><span class="step-text">轮流分享问题，小组讨论解决建议。</span></div>
+      <div class="step"><span class="step-num">3</span><span class="step-text">用 should / Why don't you / How about 等句型写出建议卡。</span></div>
+      <div class="step"><span class="step-num">4</span><span class="step-text">装饰建议卡并张贴在班级"沟通角"。</span></div></div><div class="project-rubric"><table><tr><th>#</th><th>评价标准</th></tr><tr><td>1.</td><td>问题真实具体</td></tr>
+<tr><td>2.</td><td>建议使用 3 种以上句型</td></tr>
+<tr><td>3.</td><td>建议切实可行</td></tr>
+<tr><td>4.</td><td>团队合作与分享</td></tr></table></div></div></details>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 should/shouldn't 给建议</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 Why don't you / How about / Let's 提建议</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能礼貌地表达同意或不同意</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用英语谈论沟通技巧</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写一封建议信</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>假装你是沟通教练，用英语给同学讲一个"如何有效沟通"的小 tips（至少用 3 个本节课句型）。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">复习 should/shouldn't 用法</span>
+    <span class="review-dot">用 Why don't you / How about / Let's 各造一个建议句</span>
+    <span class="review-dot">写一段关于沟通的短文</span>
+    <span class="review-dot">复习表达同意/不同意的礼貌用语</span></div>
 <div class="next-stop" style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;"><a href="u07.html" class="nav-arrow">← 上一单元</a><span></span></div>
-<div class="next-stop" style="margin-top:8px;"><strong>➡️ 下一单元：Time to Relax!</strong><br>下一单元你将进入八年级下册，学习如何谈论休闲活动和放松方式。</div>
+<div class="next-stop" style="margin-top:8px;"><strong>➡️ 祝贺你完成八年级上册！🎉 下册 Unit 1: Time to Relax!</strong><br>你已经学完了八年级上册全部 8 个单元。下学期我们将讨论休闲活动和放松方式，继续加油！</div>
 </main>
 <div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
 <button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>

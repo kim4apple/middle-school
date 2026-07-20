@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U4 Reduce, Reuse, Recycle | 初中英语九年级</title>
+<link rel="stylesheet" href="css/english9.css">
+<style>
+.speak-btn { display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;color:var(--accent);border:1px solid var(--border);border-radius:4px;padding:2px 8px;background:var(--bg);transition:background 0.15s; }
+.speak-btn:hover { background:var(--accent-light); }
+.speak-btn.speaking { background:var(--eng-amber-light);color:var(--eng-amber);border-color:var(--eng-amber); }
+.headword-speak-indicator { font-size:11px;margin-left:3px;opacity:0.55;cursor:pointer;vertical-align:super;line-height:1; }
+.headword-speak-indicator:hover { opacity:1; }
+.wotd-say { cursor:pointer;transition:color 0.15s; }
+.wotd-say:hover { color:var(--accent); }
+.wotd-say.speaking { color:var(--eng-pink); }
+.speech-panel { position:fixed;bottom:80px;right:24px;z-index:999;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);padding:14px 18px;display:none;min-width:180px; }
+.speech-panel.open { display:block; }
+.speech-panel .row { display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px; }
+.speech-panel .row label { color:var(--text-secondary);font-size:12px;min-width:36px; }
+.speech-panel select,.speech-panel input[type="range"] { flex:1; }
+.speech-panel button { padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px; }
+.speech-panel button:hover { background:var(--accent-light); }
+.speech-toggle-btn { position:fixed;bottom:24px;right:76px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--accent);cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center; }
+.speech-toggle-btn:hover { background:var(--accent-light); }
+.en-text.speaking { background:var(--eng-amber-light);border-radius:4px;padding:2px 4px;transition:background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background:#452a08; }
+.detail-module { content-visibility:auto;contain-intrinsic-size:300px; }
+.reading { content-visibility:auto;contain-intrinsic-size:400px; }
+</style>
+<script>(function(){var t=localStorage.getItem("eng9-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+    <nav id="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="margin-bottom:0;">英语九年级</h2>
+        <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+      </div><nav>
+        <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../grammar.html" style="font-size:13px;">📌 语法全景图</a>
+        <a href="appendix-vocab.html" style="font-size:13px;">📖 单词专项</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 九年级上册 ━━</a>
+        <a href="u01.html">U1 The Changing World</a>
+        <a href="u02.html">U2 Inspiring People</a>
+        <a href="u03.html">U3 Smart Learning</a>
+        <a href="u04.html">U4 Our Memory</a>
+        <a href="u05.html">U5 Power of Ideas</a>
+        <a href="u06.html">U6 Beyond Earth</a>
+        <a href="u07.html">U7 Feel the Rhythm</a>
+        <a href="u08.html">U8 More than a Game</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 九年级下册 ━━</a>
+        <a href="b2u01.html">U1 Let's Celebrate!</a>
+        <a href="b2u02.html">U2 A Look into the Past</a>
+        <a href="b2u03.html">U3 A Taste of Art</a>
+        <a href="b2u04.html" class="active">U4 Reduce, Reuse, Recycle</a>
+        <a href="b2u05.html">U5 Open to New Beginnings</a>
+      </nav>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+    </nav>
+<main id="content">
+<div class="cover"><div class="sub-en">U4</div><h1>Reduce, Reuse, Recycle</h1><p>环保3R · 状语从句和宾语从句 · 环境保护</p></div>
+<div class="unit-meta"><span>📖 话题：Environmental protection and the 3Rs</span><span>💬 功能：Give suggestions for environmental protection; express causes and results</span><span>📚 语法：状语从句 (时间/原因/条件/目的) · 宾语从句 (that/if/whether)</span><span>📝 写作：环保倡议</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能用状语从句 (when/because/if/so that) 表达条件与结果</label>
+  <label><input type="checkbox"> 能用宾语从句 (that/if/whether) 表达观点和态度</label>
+  <label><input type="checkbox"> 能给出环保建议并说明理由</label>
+  <label><input type="checkbox"> 能讨论3R原则（减少、再利用、回收）</label>
+  <label><input type="checkbox"> 能写一篇环保倡议短文</label></div>
+<details class="module" open><summary>📖 课文精讲 · Green Action at School</summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：李明、张华和Sarah在讨论如何在学校减少浪费。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
+<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Li Ming:</span><span class="en-text wotd-say" data-speak="I think that our school produces too much waste every day.">I think that our school produces too much waste every day.</span></div>
+      <div class="dialogue-line"><span class="speaker">Zhang Hua:</span><span class="en-text wotd-say" data-speak="You're right. When we use plastic bottles and throw them away, they end up in landfills.">You're right. When we use plastic bottles and throw them away, they end up in landfills.</span></div>
+      <div class="dialogue-line"><span class="speaker">Sarah:</span><span class="en-text wotd-say" data-speak="That's why we should follow the 3Rs: reduce, reuse, and recycle.">That's why we should follow the 3Rs: reduce, reuse, and recycle.</span></div>
+      <div class="dialogue-line"><span class="speaker">Li Ming:</span><span class="en-text wotd-say" data-speak="I wonder whether we can recycle paper in the classroom.">I wonder whether we can recycle paper in the classroom.</span></div>
+      <div class="dialogue-line"><span class="speaker">Zhang Hua:</span><span class="en-text wotd-say" data-speak="Yes! We can reuse paper by writing on both sides before recycling it.">Yes! We can reuse paper by writing on both sides before recycling it.</span></div>
+      <div class="dialogue-line"><span class="speaker">Sarah:</span><span class="en-text wotd-say" data-speak="I believe that if everyone makes small changes, we can make a big difference.">I believe that if everyone makes small changes, we can make a big difference.</span></div>
+      <div class="dialogue-line"><span class="speaker">Li Ming:</span><span class="en-text wotd-say" data-speak="So that we can protect our planet, we should start using reusable water bottles.">So that we can protect our planet, we should start using reusable water bottles.</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>李明：</strong>我觉得我们学校每天产生太多垃圾了。</p>
+        <p><strong>张华：</strong>你说得对。当我们使用塑料瓶然后扔掉，它们最终会进入垃圾填埋场。</p>
+        <p><strong>Sarah：</strong>这就是为什么我们应该遵循3R原则：减少、再利用和回收。</p>
+        <p><strong>李明：</strong>我想知道我们能否在教室回收纸张。</p>
+        <p><strong>张华：</strong>可以！我们可以在回收之前双面使用纸张来重复利用它。</p>
+        <p><strong>Sarah：</strong>我相信如果每个人做出小的改变，我们就能带来大的不同。</p>
+        <p><strong>李明：</strong>为了保护我们的地球，我们应该开始使用可重复使用的水瓶。</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p><b>I think that</b>... 表示「我认为……」 — <b>I think that</b> our school produces too much waste.</p>
+      <p><b>When</b>... 表示「当……时」 — <b>When</b> we use plastic bottles, they end up in landfills.</p>
+      <p><b>I wonder whether</b>... 表示「我想知道是否……」 — <b>I wonder whether</b> we can recycle paper.</p>
+      <p><b>If</b>... 表示「如果……」 — <b>If</b> everyone makes small changes, we can make a big difference.</p>
+      <p><b>So that</b>... 表示「为了/以便」 — <b>So that</b> we can protect our planet, we should use reusable bottles.</p></div></div></details>
+<details class="module" open><summary>📝 重点词汇 · 环境保护 <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="reduce">reduce</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/rɪˈdjuːs/</span><span class="pos">v.</span>
+        <div class="definition">减少；降低</div>
+        <div class="example"><span class="wotd-say" data-speak="We should reduce the use of plastic bags.">We should reduce the use of plastic bags.</span><span class="trans">我们应该减少塑料袋的使用。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="reuse">reuse</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌriːˈjuːz/</span><span class="pos">v.</span>
+        <div class="definition">重复使用；再利用</div>
+        <div class="example"><span class="wotd-say" data-speak="We can reuse glass jars for storage.">We can reuse glass jars for storage.</span><span class="trans">我们可以重复使用玻璃罐来储存东西。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="recycle">recycle</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌriːˈsaɪkl/</span><span class="pos">v.</span>
+        <div class="definition">回收；循环利用</div>
+        <div class="example"><span class="wotd-say" data-speak="We should recycle paper, glass, and metal.">We should recycle paper, glass, and metal.</span><span class="trans">我们应该回收纸张、玻璃和金属。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="waste">waste</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/weɪst/</span><span class="pos">n./v.</span>
+        <div class="definition">浪费；废弃物</div>
+        <div class="example"><span class="wotd-say" data-speak="Don't waste water. It's a precious resource.">Don't waste water. It's a precious resource.</span><span class="trans">不要浪费水。它是一种宝贵的资源。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="plastic">plastic</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈplæstɪk/</span><span class="pos">n./adj.</span>
+        <div class="definition">塑料；塑料的</div>
+        <div class="example"><span class="wotd-say" data-speak="Plastic pollution is a serious problem.">Plastic pollution is a serious problem.</span><span class="trans">塑料污染是一个严重的问题。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="paper">paper</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈpeɪpər/</span><span class="pos">n.</span>
+        <div class="definition">纸张；纸</div>
+        <div class="example"><span class="wotd-say" data-speak="We should use less paper to save trees.">We should use less paper to save trees.</span><span class="trans">我们应该少用纸来保护树木。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="glass">glass</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɡlɑːs/</span><span class="pos">n.</span>
+        <div class="definition">玻璃；玻璃制品</div>
+        <div class="example"><span class="wotd-say" data-speak="Glass bottles can be recycled many times.">Glass bottles can be recycled many times.</span><span class="trans">玻璃瓶可以多次回收利用。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="metal">metal</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈmetl/</span><span class="pos">n.</span>
+        <div class="definition">金属</div>
+        <div class="example"><span class="wotd-say" data-speak="Aluminum cans are made of metal and can be recycled.">Aluminum cans are made of metal and can be recycled.</span><span class="trans">铝罐由金属制成，可以回收。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="environment">environment</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɪnˈvaɪrənmənt/</span><span class="pos">n.</span>
+        <div class="definition">环境</div>
+        <div class="example"><span class="wotd-say" data-speak="We must protect the environment for future generations.">We must protect the environment for future generations.</span><span class="trans">我们必须为后代保护环境。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="pollution">pollution</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/pəˈluːʃn/</span><span class="pos">n.</span>
+        <div class="definition">污染</div>
+        <div class="example"><span class="wotd-say" data-speak="Air pollution makes it hard to breathe in some cities.">Air pollution makes it hard to breathe in some cities.</span><span class="trans">空气污染使一些城市的呼吸变得困难。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="protect">protect</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/prəˈtekt/</span><span class="pos">v.</span>
+        <div class="definition">保护</div>
+        <div class="example"><span class="wotd-say" data-speak="We should protect endangered animals.">We should protect endangered animals.</span><span class="trans">我们应该保护濒危动物。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="resource">resource</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/rɪˈzɔːrs/</span><span class="pos">n.</span>
+        <div class="definition">资源</div>
+        <div class="example"><span class="wotd-say" data-speak="Water is a limited resource that we should not waste.">Water is a limited resource that we should not waste.</span><span class="trans">水是一种有限的资源，我们不应该浪费。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="energy">energy</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈenərdʒi/</span><span class="pos">n.</span>
+        <div class="definition">能源；能量</div>
+        <div class="example"><span class="wotd-say" data-speak="Turn off the lights to save energy.">Turn off the lights to save energy.</span><span class="trans">关灯以节约能源。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="nature">nature</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈneɪtʃər/</span><span class="pos">n.</span>
+        <div class="definition">自然；大自然</div>
+        <div class="example"><span class="wotd-say" data-speak="We should spend more time in nature.">We should spend more time in nature.</span><span class="trans">我们应该多花时间在大自然中。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="planet">planet</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈplænɪt/</span><span class="pos">n.</span>
+        <div class="definition">行星；地球</div>
+        <div class="example"><span class="wotd-say" data-speak="Everyone can help protect our planet.">Everyone can help protect our planet.</span><span class="trans">每个人都能帮助保护我们的地球。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="sustainable">sustainable</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/səˈsteɪnəbl/</span><span class="pos">adj.</span>
+        <div class="definition">可持续的</div>
+        <div class="example"><span class="wotd-say" data-speak="We need sustainable development for our future.">We need sustainable development for our future.</span><span class="trans">我们需要可持续发展来面向未来。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="compost">compost</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈkɒmpɒst/</span><span class="pos">n./v.</span>
+        <div class="definition">堆肥；制成堆肥</div>
+        <div class="example"><span class="wotd-say" data-speak="We can compost food scraps instead of throwing them away.">We can compost food scraps instead of throwing them away.</span><span class="trans">我们可以把食物残渣堆肥而不是扔掉。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="landfill">landfill</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈlændfɪl/</span><span class="pos">n.</span>
+        <div class="definition">垃圾填埋场</div>
+        <div class="example"><span class="wotd-say" data-speak="Most of our trash ends up in landfills.">Most of our trash ends up in landfills.</span><span class="trans">我们的大部分垃圾最终都会进入垃圾填埋场。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="emission">emission</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɪˈmɪʃn/</span><span class="pos">n.</span>
+        <div class="definition">排放物；排放</div>
+        <div class="example"><span class="wotd-say" data-speak="We should reduce carbon emissions to fight climate change.">We should reduce carbon emissions to fight climate change.</span><span class="trans">我们应该减少碳排放来应对气候变化。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="conservation">conservation</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌkɒnsərˈveɪʃn/</span><span class="pos">n.</span>
+        <div class="definition">保护；节约</div>
+        <div class="example"><span class="wotd-say" data-speak="Water conservation is important in dry regions.">Water conservation is important in dry regions.</span><span class="trans">水资源保护在干旱地区很重要。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="biodegradable">biodegradable</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌbaɪəʊdɪˈɡreɪdəbl/</span><span class="pos">adj.</span>
+        <div class="definition">可生物降解的</div>
+        <div class="example"><span class="wotd-say" data-speak="Biodegradable materials break down naturally in the environment.">Biodegradable materials break down naturally in the environment.</span><span class="trans">可生物降解的材料会在环境中自然分解。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="eco-friendly">eco-friendly</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈiːkəʊ ˈfrendli/</span><span class="pos">adj.</span>
+        <div class="definition">环保的；生态友好的</div>
+        <div class="example"><span class="wotd-say" data-speak="Using cloth bags is more eco-friendly than plastic bags.">Using cloth bags is more eco-friendly than plastic bags.</span><span class="trans">使用布袋比塑料袋更环保。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="renewable">renewable</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/rɪˈnjuːəbl/</span><span class="pos">adj.</span>
+        <div class="definition">可再生的</div>
+        <div class="example"><span class="wotd-say" data-speak="Solar and wind energy are renewable resources.">Solar and wind energy are renewable resources.</span><span class="trans">太阳能和风能是可再生资源。</span></div>
+      </div></div></div></details>
+<details class="module" open><summary>📚 语法聚焦 · 状语从句 & 宾语从句 <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module" id="grammarContainer"><h3>一、状语从句 (Adverbial Clauses)</h3>
+<table class="grammar-table">
+<tr><th>类别</th><th>引导词</th><th>用法</th><th>例句</th></tr>
+<tr><td>时间</td><td>when / while / before / after</td><td>表示时间关系</td><td><b>When</b> we throw away plastic, it pollutes the earth.</td></tr>
+<tr><td>原因</td><td>because / as / since</td><td>说明原因或理由</td><td>We should recycle <b>because</b> it saves resources.</td></tr>
+<tr><td>条件</td><td>if / unless</td><td>表示条件（如果/除非）</td><td><b>If</b> everyone recycles, we can reduce waste.</td></tr>
+<tr><td>目的</td><td>so that</td><td>表示目的（为了/以便）</td><td>We save energy <b>so that</b> we can protect the planet.</td></tr>
+</table>
+<h3>二、宾语从句 (Object Clauses)</h3>
+<table class="grammar-table">
+<tr><th>引导词</th><th>用法</th><th>例句</th></tr>
+<tr><td>that</td><td>陈述句作宾语，that可省略</td><td>I <b>think (that)</b> recycling is important.</td></tr>
+<tr><td>if / whether</td><td>一般疑问句作宾语，"是否"</td><td>I wonder <b>whether</b> they recycle at home.<br>I'm not sure <b>if</b> this is recyclable.</td></tr>
+</table>
+<h3>宾语从句语序</h3>
+<table class="grammar-table">
+<tr><th>原问句</th><th>错误语序</th><th>正确语序</th></tr>
+<tr><td>Can we recycle this?</td><td>I wonder can we recycle this?</td><td>I wonder <b>whether we can recycle this</b>.</td></tr>
+<tr><td>Is it eco-friendly?</td><td>I'm not sure is it eco-friendly.</td><td>I'm not sure <b>if it is eco-friendly</b>.</td></tr>
+<tr><td>Does this help?</td><td>Do you know does this help?</td><td>Do you know <b>if this helps</b>?</td></tr>
+</table>
+</div><div class="chinese-error">      <p>状语从句的<strong>要点</strong>：从句主语与主句主语不一致时，各自保留主语；从句位置可在主句前（加逗号）或主句后。</p>
+      <p>宾语从句必须用<strong>陈述句语序</strong>：引导词 + 主语 + 谓语 + 其他。</p>
+      <p>if 和 whether 都表示"是否"，whether 更正式，可与 or not 连用：I don't know whether he recycles or not.</p>
+      <p><span class="wotd-say" data-speak="If you want to help the environment, start by reducing waste.">If you want to help the environment, start by reducing waste.</span> 如果你想帮助环境，从减少垃圾开始。</p></div></div></details>
+<details class="module detail-module" open><summary>📖 阅读专项 · The Power of Three</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">Have you ever wondered what happens to your trash after you throw it away? Every day, people around the world produce millions of tons of waste. Much of it ends up in landfills or pollutes the ocean. But there is a simple way to make a difference — the 3Rs: Reduce, Reuse, and Recycle.</p>
+      <p class="en-text"><strong>Reduce</strong> means using less. When you buy only what you need, you create less waste. For example, instead of buying bottled water, you can carry a reusable bottle. This simple change can reduce plastic waste significantly. Because we use fewer resources when we reduce, we also save energy and protect nature.</p>
+      <p class="en-text"><strong>Reuse</strong> means using things again instead of throwing them away. Glass jars can be used for storage. Old clothes can be turned into cleaning rags. If we think creatively, we can find new uses for old items. Reusing saves resources and reduces the amount of waste we produce.</p>
+      <p class="en-text"><strong>Recycle</strong> means turning waste into new products. Paper, glass, metal, and some plastics can all be recycled. When you put a plastic bottle in the recycling bin, it can be made into something new. So that we can save energy and reduce pollution, we should recycle as much as possible.</p>
+      <p class="en-text">The 3Rs are powerful because they work together. When we reduce, we create less waste. When we reuse, we give items a second life. When we recycle, we turn waste into resources. Remember: every small action counts. Start practicing the 3Rs today, and together we can protect our beautiful planet!</p><div class="gloss"><span>significantly 显著地</span> <span>storage 储存</span> <span>rag 抹布</span> <span>recycling bin 回收箱</span> <span>practice 实践</span> </div></div>    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">What does "Reduce" mean in the 3Rs?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>It means using less — buying only what you need to create less waste.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">How can old clothes be reused according to the passage?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>They can be turned into cleaning rags.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">Why are the 3Rs described as "powerful"?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Because they work together — reducing, reusing, and recycling help protect the environment and save resources.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">What is the main message of the passage?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>The 3Rs (Reduce, Reuse, Recycle) can help protect the environment, and every small action counts.</div>
+    </div></div></details>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">We should ____ (reduce/reuse) plastic bags by carrying our own bags. (选择正确动词)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>reduce</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">I think ____ (that/if) recycling is good for the environment. (选择正确引导词)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>that</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">____ (When/So that) we waste less, we save more resources. (选择正确引导词)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>When</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">We should turn off lights ____ (so that/because) we can save energy.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>so that</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">I wonder ____ (if/that) this bottle is recyclable.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>if</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">改错：I wonder if can I recycle this plastic bottle.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>I wonder if I can recycle this plastic bottle. (宾语从句用陈述语序)</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">用 unless 改写：If we don't act now, the environment will get worse. →</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Unless we act now, the environment will get worse.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">Why do we need to save energy? (用 because 回答)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>We need to save energy because it helps protect the environment.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">合并句子：I think. Everyone can help protect the Earth. →</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>I think (that) everyone can help protect the Earth.</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">选择：____ we recycle more, we can reduce pollution.<br>A. If B. So that C. Because D. When</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>A (If we recycle more, we can reduce pollution.)</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">改错：The reason is because plastic takes hundreds of years to break down.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>The reason is that plastic takes hundreds of years to break down. (reason 和 because 不连用)</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">完成句子：I'm not sure ____ (whether / that) the school has a recycling program.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>whether</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">用 so that 改写：People use reusable bags. They want to reduce plastic waste. →</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>People use reusable bags so that they can reduce plastic waste.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · 环保倡议</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">假设你是学校环保社团的成员，写一份倡议书，号召同学们践行3R原则来保护环境。请使用至少两个状语从句和两个宾语从句。</div></div><div class="writing-framework">      <div class="fw-step">开头：提出问题（环境污染/资源浪费的现状）</div>
+      <div class="fw-step">主体1：解释3R原则（Reduce / Reuse / Recycle）</div>
+      <div class="fw-step">主体2：提出具体行动建议</div>
+      <div class="fw-step">结尾：号召大家行动起来</div></div><div class="writing-model"><div class="en">Dear classmates, I believe that our school can become greener. Every day we produce a lot of waste, and much of it goes to landfills. That's why we need the 3Rs. First, reduce what you use. When you buy fewer things, you create less waste. Second, reuse items if possible. For example, you can use old jars for storage instead of throwing them away. Third, recycle as much as you can. I'm sure that if everyone recycles paper, glass, and metal, we can make a big difference. So that we can protect the Earth, let's start practicing the 3Rs today!</div><div class="trans">亲爱的同学们，我相信我们的学校可以变得更绿色。每天我们产生大量垃圾，其中很多进入了垃圾填埋场。这就是为什么我们需要3R原则。首先，减少你的使用量。当你少买东西时，产生的垃圾就更少。第二，如有可能重复使用物品。例如，你可以用旧罐子储存东西，而不是扔掉它们。第三，尽可能多地回收。我相信如果每个人都回收纸张、玻璃和金属，我们就能带来很大的改变。为了保护地球，让我们从今天开始实践3R原则！</div></div></div></details>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用 when/because/if/so that 引导状语从句</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能正确使用宾语从句的陈述语序</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能说出3R原则的含义</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用英语给出环保建议</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写一份环保倡议书</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>向同桌解释状语从句和宾语从句的区别，并各举一个有关环保的例子。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">🔵 1天后：复习状语从句的四种类型 (when/because/if/so that)</span>
+    <span class="review-dot">🟢 3天后：复习宾语从句 that/if/whether 和陈述语序</span>
+    <span class="review-dot">🟡 1周后：用英语分享你日常生活中的环保习惯</span>
+    <span class="review-dot">🔴 1月后：写一篇"My Green Habits"短文</span></div>
+<div class="next-stop" style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;"><a href="b2u03.html" class="nav-arrow">← 上一单元</a><a href="b2u05.html" class="nav-arrow">下一单元 →</a></div>
+<div class="next-stop" style="margin-top:8px;"><strong>➡️ 下一单元：U5: Open to New Beginnings</strong><br>迎接新的开始，展望未来，规划人生新篇章。</div>
+</main>
+<div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
+<button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis, currentUtterance: null, speaking: false, rate: 0.9, voiceURI: 'en-US',
+    init: function(){var s=this;document.getElementById('speechRate').addEventListener('input',function(){s.rate=+this.value;document.getElementById('speechRateLabel').textContent=this.value;});document.getElementById('speechVoice').addEventListener('change',function(){s.voiceURI=this.value;localStorage.setItem('speech-voice',this.value);});document.getElementById('speechStopBtn').addEventListener('click',function(){s.stop();});document.getElementById('speechCloseBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.remove('open');});document.getElementById('speechToggleBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.toggle('open');});},
+    speak: function(t,c){if(!t)return;this.stop();var u=new SpeechSynthesisUtterance(t);u.lang=this.voiceURI;u.rate=this.rate;u.onend=function(){if(c)c();};this.currentUtterance=u;this.synthesis.speak(u);},
+    speakDialogue: function(id,c){var s=this,el=document.getElementById(id),ls=el?el.querySelectorAll('.en-text'):[],i=0;this.stop();(function n(){if(i>=ls.length){if(c)c();return;}var e=ls[i],t=e.getAttribute('data-speak')||e.textContent;if(!t){i++;n();return;}e.classList.add('speaking');var u=new SpeechSynthesisUtterance(t);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){e.classList.remove('speaking');i++;setTimeout(n,500);};u.onerror=function(){e.classList.remove('speaking');i++;setTimeout(n,200);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    speakVocabSection: function(id,c){var s=this,el=document.getElementById(id),cs=el?el.querySelectorAll('.vocab-card'):[],i=0;this.stop();(function n(){if(i>=cs.length){if(c)c();return;}var e=cs[i],hw=e.querySelector('.headword'),ex=e.querySelector('.example .wotd-say'),t=[];if(hw)t.push(hw.getAttribute('data-speak')||hw.textContent);if(ex)t.push(ex.getAttribute('data-speak')||ex.textContent.replace(/<[^>]+>/g,'').trim());var ft=t.join('. ');if(!ft){i++;n();return;}hw.classList.add('speaking');var u=new SpeechSynthesisUtterance(ft);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){hw.classList.remove('speaking');i++;setTimeout(n,600);};u.onerror=function(){hw.classList.remove('speaking');i++;setTimeout(n,300);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    stop: function(){this.synthesis.cancel();this.speaking=false;}
+  };SpeechManager.init();
+  document.querySelectorAll('.wotd-say').forEach(function(el){el.addEventListener('click',function(){SpeechManager.speak(this.getAttribute('data-speak')||this.textContent);});});
+  document.querySelectorAll('.speak-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var d=this.getAttribute('data-dialogue'),v=this.getAttribute('data-vocab'),t=this.getAttribute('data-target');if(this.classList.contains('speaking')){SpeechManager.stop();this.classList.remove('speaking');return;}this.classList.add('speaking');var done=function(){btn.classList.remove('speaking');};if(d){SpeechManager.speakDialogue(d,done);}else if(v){SpeechManager.speakVocabSection(v,done);}else if(t){var tg=document.getElementById(t);if(!tg){btn.classList.remove('speaking');return;}SpeechManager.speak(tg.textContent.replace(/<[^>]+>/g,''),done);}else{btn.classList.remove('speaking');}});});
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();var hw=this.previousElementSibling;if(hw&&hw.classList.contains('wotd-say')){var t=hw.getAttribute('data-speak')||hw.textContent;SpeechManager.speak(t);}});});
+  (function(){var btn=document.getElementById('expandAllBtn');if(!btn)return;btn.addEventListener('click',function(){var ad=document.querySelectorAll('.module,.exam-module');var ao=true;for(var i=0;i<ad.length;i++){if(!ad[i].hasAttribute('open')){ao=false;break;}};for(var i=0;i<ad.length;i++){if(ao)ad[i].removeAttribute('open');else ad[i].setAttribute('open','');};btn.textContent=ao?'📂 展开全部模块':'📖 收起全部模块';});})();
+  var s=document.getElementById('sidebar'),k='eng9-theme-sidebar';if(!s)return;
+  if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
+  window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=window.scrollY>400?'flex':'none';},{passive:true});
+  document.getElementById('backToTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution');});});
+})();
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);localStorage.setItem("eng9-theme",t);var btn=document.getElementById("themeToggle");if(btn)btn.textContent=t==="dark"?"☀️":"🌙";}
+function toggleTheme(){setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark");}
+</script></body></html>

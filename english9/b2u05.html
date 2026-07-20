@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U5 Open to New Beginnings | 初中英语九年级</title>
+<link rel="stylesheet" href="css/english9.css">
+<style>
+.speak-btn { display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;color:var(--accent);border:1px solid var(--border);border-radius:4px;padding:2px 8px;background:var(--bg);transition:background 0.15s; }
+.speak-btn:hover { background:var(--accent-light); }
+.speak-btn.speaking { background:var(--eng-amber-light);color:var(--eng-amber);border-color:var(--eng-amber); }
+.headword-speak-indicator { font-size:11px;margin-left:3px;opacity:0.55;cursor:pointer;vertical-align:super;line-height:1; }
+.headword-speak-indicator:hover { opacity:1; }
+.wotd-say { cursor:pointer;transition:color 0.15s; }
+.wotd-say:hover { color:var(--accent); }
+.wotd-say.speaking { color:var(--eng-pink); }
+.speech-panel { position:fixed;bottom:80px;right:24px;z-index:999;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);padding:14px 18px;display:none;min-width:180px; }
+.speech-panel.open { display:block; }
+.speech-panel .row { display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px; }
+.speech-panel .row label { color:var(--text-secondary);font-size:12px;min-width:36px; }
+.speech-panel select,.speech-panel input[type="range"] { flex:1; }
+.speech-panel button { padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px; }
+.speech-panel button:hover { background:var(--accent-light); }
+.speech-toggle-btn { position:fixed;bottom:24px;right:76px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--accent);cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center; }
+.speech-toggle-btn:hover { background:var(--accent-light); }
+.en-text.speaking { background:var(--eng-amber-light);border-radius:4px;padding:2px 4px;transition:background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background:#452a08; }
+.detail-module { content-visibility:auto;contain-intrinsic-size:300px; }
+.reading { content-visibility:auto;contain-intrinsic-size:400px; }
+.graduation-banner {background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border-radius:16px;padding:28px 24px;margin:24px 0;text-align:center;}
+.graduation-banner h2 {color:#fff;font-size:22px;margin:0 0 8px;}
+.graduation-banner p {color:rgba(255,255,255,0.9);font-size:14px;margin:4px 0;}
+.graduation-banner .big {font-size:48px;line-height:1.3;}
+.tense-table th {background:var(--accent-light);font-size:13px;}
+.tense-table td {font-size:12px;}
+.tense-table .tense-name {font-weight:600;white-space:nowrap;}
+</style>
+<script>(function(){var t=localStorage.getItem("eng9-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+    <nav id="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="margin-bottom:0;">英语九年级</h2>
+        <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+      </div><nav>
+        <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../grammar.html" style="font-size:13px;">📌 语法全景图</a>
+        <a href="appendix-vocab.html" style="font-size:13px;">📖 单词专项</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 九年级上册 ━━</a>
+        <a href="u01.html">U1 How can we become good learners?</a>
+        <a href="u02.html">U2 I think that mooncakes are delicious!</a>
+        <a href="u03.html">U3 Could you please tell me where the restrooms are?</a>
+        <a href="u04.html">U4 Our Memory</a>
+        <a href="u05.html">U5 Power of Ideas</a>
+        <a href="u06.html">U6 When was it invented?</a>
+        <a href="u07.html">U7 Teenagers should be allowed to choose their own clothes.</a>
+        <a href="u08.html">U8 It must belong to Carla.</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 九年级下册 ━━</a>
+        <a href="b2u01.html">B2U1 Our World</a>
+        <a href="b2u02.html">B2U2 Health and Fitness</a>
+        <a href="b2u03.html">B2U3 Growing Up</a>
+        <a href="b2u04.html">B2U4 Nature and Environment</a>
+        <a href="b2u05.html" class="active">B2U5 Open to New Beginnings</a>
+      </nav>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+      <div style="margin-top:16px;padding:16px 12px;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:12px;text-align:center;">
+        <div style="font-size:32px;line-height:1;">🎉</div>
+        <div style="color:#fff;font-size:13px;font-weight:600;margin-top:6px;">初中英语毕业</div>
+        <div style="color:rgba(255,255,255,0.85);font-size:11px;margin-top:2px;">九年级全部完成！</div>
+      </div>
+    </nav>
+<main id="content">
+<div class="cover"><div class="sub-en">U5</div><h1>Open to New Beginnings</h1><p>新的开始 · 时态综合复习 · 毕业展望</p></div>
+<div class="unit-meta"><span>📖 话题：Graduation, future plans, and new beginnings</span><span>💬 功能：Talk about future plans; reflect on past experiences</span><span>📚 语法：时态综合复习 (8大时态 + 被动语态)</span><span>📝 写作：我的毕业感言</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能正确运用8大时态进行表达</label>
+  <label><input type="checkbox"> 能谈论未来的计划和打算</label>
+  <label><input type="checkbox"> 能回顾过去的经历并反思成长</label>
+  <label><input type="checkbox"> 能表达希望、梦想和目标</label>
+  <label><input type="checkbox"> 能写一篇毕业感言演讲稿</label></div>
+<div class="graduation-banner"><div class="big">🎉</div><h2>Congratulations!</h2><p>You have completed all of junior high English study!</p><p>初中英语全部完成，迎接新的开始！</p></div>
+<details class="module" open><summary>📖 课文精讲 · Graduation Day Memories</summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：毕业典礼结束后，Sarah、Mike和Lisa在校园里回忆三年时光，畅谈未来。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
+<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Sarah:</span><span class="en-text wotd-say" data-speak="I can't believe we're graduating! It feels like yesterday that we first walked into this school.">I can't believe we're graduating! It feels like yesterday that we first walked into this school.</span></div>
+      <div class="dialogue-line"><span class="speaker">Mike:</span><span class="en-text wotd-say" data-speak="I know! I still remember how nervous I was on the first day of Grade 7.">I know! I still remember how nervous I was on the first day of Grade 7.</span></div>
+      <div class="dialogue-line"><span class="speaker">Lisa:</span><span class="en-text wotd-say" data-speak="We have learned so much over these three years — not just English, but also how to be better people.">We have learned so much over these three years — not just English, but also how to be better people.</span></div>
+      <div class="dialogue-line"><span class="speaker">Sarah:</span><span class="en-text wotd-say" data-speak="What are your plans for senior high, Mike?">What are your plans for senior high, Mike?</span></div>
+      <div class="dialogue-line"><span class="speaker">Mike:</span><span class="en-text wotd-say" data-speak="I will study at No.1 High School. I hope to join the science club there. I've always been interested in physics.">I will study at No.1 High School. I hope to join the science club there. I've always been interested in physics.</span></div>
+      <div class="dialogue-line"><span class="speaker">Lisa:</span><span class="en-text wotd-say" data-speak="That's great! I'm going to a language school because I want to become a translator someday.">That's great! I'm going to a language school because I want to become a translator someday.</span></div>
+      <div class="dialogue-line"><span class="speaker">Sarah:</span><span class="en-text wotd-say" data-speak="Both of you have such clear goals. I'm still thinking about what I want to do. But I'm sure the future will be bright for all of us!">Both of you have such clear goals. I'm still thinking about what I want to do. But I'm sure the future will be bright for all of us!</span></div>
+      <div class="dialogue-line"><span class="speaker">Mike:</span><span class="en-text wotd-say" data-speak="Let's stay in touch and support each other. Even though we're going to different schools, our friendship will last forever.">Let's stay in touch and support each other. Even though we're going to different schools, our friendship will last forever.</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>Sarah:</strong> 真不敢相信我们就要毕业了！感觉就像昨天才第一次走进这所学校。</p>
+        <p><strong>Mike:</strong> 是啊！我还记得七年级第一天我有多紧张。</p>
+        <p><strong>Lisa:</strong> 这三年来我们学到了很多——不仅仅是英语，还有如何成为更好的人。</p>
+        <p><strong>Sarah:</strong> Mike，你高中有什么计划？</p>
+        <p><strong>Mike:</strong> 我将在第一高中学习。我希望加入那里的科学俱乐部。我一直对物理感兴趣。</p>
+        <p><strong>Lisa:</strong> 太棒了！我打算去一所语言学校，因为我想有一天成为一名翻译。</p>
+        <p><strong>Sarah:</strong> 你们俩都有这么明确的目标。我还在思考我想做什么。但我相信未来对我们所有人都会很美好！</p>
+        <p><strong>Mike:</strong> 让我们保持联系，互相支持。虽然我们要去不同的学校，但我们的友谊会永远持续下去。</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p><b>现在进行时 be + graduating</b> — 表示即将发生的动作（表将来）。</p>
+      <p><b>现在完成时 have learned</b> — 表示从过去持续到现在，强调经历和结果。</p>
+      <p><b>一般将来时 will study / be going to</b> — 表示将来的打算和预测。</p>
+      <p><b>一般现在时 are / want / is</b> — 描述当前的状态和事实。</p>
+      <p><b>过去时 walked / was / had</b> — 回忆过去的经历。</p></div></div></details>
+<details class="module" open><summary>📝 重点词汇 · Graduation &amp; New Beginnings <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="graduate">graduate</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈɡrædʒu.eɪt/</span><span class="pos">v.</span>
+        <div class="definition">毕业</div>
+        <div class="example"><span class="wotd-say" data-speak="I will graduate from junior high next month.">I will graduate from junior high next month.</span><span class="trans">我下个月将从初中毕业。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="graduation">graduation</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌɡrædʒuˈeɪʃn/</span><span class="pos">n.</span>
+        <div class="definition">毕业；毕业典礼</div>
+        <div class="example"><span class="wotd-say" data-speak="The graduation ceremony was so moving.">The graduation ceremony was so moving.</span><span class="trans">毕业典礼非常感人。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="future">future</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈfjuːtʃər/</span><span class="pos">n./adj.</span>
+        <div class="definition">未来；未来的</div>
+        <div class="example"><span class="wotd-say" data-speak="I am excited about my future in senior high.">I am excited about my future in senior high.</span><span class="trans">我对高中生活充满期待。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="dream">dream</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/driːm/</span><span class="pos">n./v.</span>
+        <div class="definition">梦想；做梦</div>
+        <div class="example"><span class="wotd-say" data-speak="My dream is to become a doctor.">My dream is to become a doctor.</span><span class="trans">我的梦想是成为一名医生。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="hope">hope</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/hoʊp/</span><span class="pos">v./n.</span>
+        <div class="definition">希望</div>
+        <div class="example"><span class="wotd-say" data-speak="I hope to make new friends in senior high.">I hope to make new friends in senior high.</span><span class="trans">我希望在高中结交新朋友。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="plan">plan</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/plæn/</span><span class="pos">n./v.</span>
+        <div class="definition">计划；打算</div>
+        <div class="example"><span class="wotd-say" data-speak="I plan to study harder in senior high.">I plan to study harder in senior high.</span><span class="trans">我计划在高中更加努力学习。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="goal">goal</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɡoʊl/</span><span class="pos">n.</span>
+        <div class="definition">目标；目的</div>
+        <div class="example"><span class="wotd-say" data-speak="Setting clear goals helps me stay focused.">Setting clear goals helps me stay focused.</span><span class="trans">设定明确的目标帮助我保持专注。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="memory">memory</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈmeməri/</span><span class="pos">n.</span>
+        <div class="definition">记忆；回忆</div>
+        <div class="example"><span class="wotd-say" data-speak="I have so many happy memories of junior high.">I have so many happy memories of junior high.</span><span class="trans">我有这么多美好的初中回忆。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="journey">journey</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈdʒɜːrni/</span><span class="pos">n.</span>
+        <div class="definition">旅程；历程</div>
+        <div class="example"><span class="wotd-say" data-speak="Junior high has been an amazing journey of growth.">Junior high has been an amazing journey of growth.</span><span class="trans">初中是一段令人惊叹的成长旅程。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="growth">growth</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɡroʊθ/</span><span class="pos">n.</span>
+        <div class="definition">成长；发展</div>
+        <div class="example"><span class="wotd-say" data-speak="I can see my growth over the past three years.">I can see my growth over the past three years.</span><span class="trans">我能看到自己过去三年的成长。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="challenge">challenge</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈtʃælɪndʒ/</span><span class="pos">n./v.</span>
+        <div class="definition">挑战</div>
+        <div class="example"><span class="wotd-say" data-speak="Every challenge has helped me become stronger.">Every challenge has helped me become stronger.</span><span class="trans">每一次挑战都让我变得更坚强。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="achievement">achievement</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/əˈtʃiːvmənt/</span><span class="pos">n.</span>
+        <div class="definition">成就；成绩</div>
+        <div class="example"><span class="wotd-say" data-speak="Graduating is a great achievement in my life.">Graduating is a great achievement in my life.</span><span class="trans">毕业是我人生中的一项巨大成就。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="success">success</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/səkˈses/</span><span class="pos">n.</span>
+        <div class="definition">成功</div>
+        <div class="example"><span class="wotd-say" data-speak="Success comes from hard work and determination.">Success comes from hard work and determination.</span><span class="trans">成功来自努力和决心。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="lesson">lesson</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈlesn/</span><span class="pos">n.</span>
+        <div class="definition">功课；教训；经验</div>
+        <div class="example"><span class="wotd-say" data-speak="Every failure taught me a valuable lesson.">Every failure taught me a valuable lesson.</span><span class="trans">每一次失败都教会了我宝贵的经验。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="beginning">beginning</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/bɪˈɡɪnɪŋ/</span><span class="pos">n.</span>
+        <div class="definition">开始；开端</div>
+        <div class="example"><span class="wotd-say" data-speak="Graduation is not an end, but a new beginning.">Graduation is not an end, but a new beginning.</span><span class="trans">毕业不是结束，而是新的开始。</span></div>
+      </div></div></div></details>
+<details class="module" open><summary>🥈 拓展词汇 · Aspirations &amp; Qualities <button class="speak-btn" data-vocab="vocabExtGrid" title="朗读全部拓展词汇">🔊 朗读</button></summary><div class="content"><div class="vocab-grid" id="vocabExtGrid">
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="farewell">farewell</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌferˈwel/</span><span class="pos">n./int.</span>
+        <div class="definition">告别；再见</div>
+        <div class="example"><span class="wotd-say" data-speak="We held a farewell party for the graduating class.">We held a farewell party for the graduating class.</span><span class="trans">我们为毕业班举办了一场告别会。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="promising">promising</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈprɑːmɪsɪŋ/</span><span class="pos">adj.</span>
+        <div class="definition">有前途的；有希望的</div>
+        <div class="example"><span class="wotd-say" data-speak="You have a promising future ahead of you.">You have a promising future ahead of you.</span><span class="trans">你的未来一片光明。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="ambition">ambition</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/æmˈbɪʃn/</span><span class="pos">n.</span>
+        <div class="definition">雄心；抱负</div>
+        <div class="example"><span class="wotd-say" data-speak="Her ambition is to become a scientist.">Her ambition is to become a scientist.</span><span class="trans">她的抱负是成为一名科学家。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="pursuit">pursuit</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/pərˈsuːt/</span><span class="pos">n.</span>
+        <div class="definition">追求；追逐</div>
+        <div class="example"><span class="wotd-say" data-speak="The pursuit of knowledge is a lifelong journey.">The pursuit of knowledge is a lifelong journey.</span><span class="trans">对知识的追求是终生的旅程。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="opportunity">opportunity</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌɑːpərˈtuːnəti/</span><span class="pos">n.</span>
+        <div class="definition">机会；机遇</div>
+        <div class="example"><span class="wotd-say" data-speak="Senior high will bring many new opportunities.">Senior high will bring many new opportunities.</span><span class="trans">高中将带来许多新机会。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="determination">determination</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/dɪˌtɜːrmɪˈneɪʃn/</span><span class="pos">n.</span>
+        <div class="definition">决心；坚定</div>
+        <div class="example"><span class="wotd-say" data-speak="With determination, you can achieve anything.">With determination, you can achieve anything.</span><span class="trans">只要有决心，你就能实现任何目标。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="courage">courage</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈkɜːrɪdʒ/</span><span class="pos">n.</span>
+        <div class="definition">勇气；勇敢</div>
+        <div class="example"><span class="wotd-say" data-speak="It takes courage to face new challenges.">It takes courage to face new challenges.</span><span class="trans">面对新挑战需要勇气。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="inspire">inspire</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ɪnˈspaɪər/</span><span class="pos">v.</span>
+        <div class="definition">激励；鼓舞</div>
+        <div class="example"><span class="wotd-say" data-speak="My teachers inspired me to never give up.">My teachers inspired me to never give up.</span><span class="trans">我的老师激励我永不放弃。</span></div>
+      </div>
+    </div></div></details>
+<details class="module" open><summary>📚 语法聚焦 · 时态综合复习 (8大时态 + 被动语态) <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module" id="grammarContainer"><h3>一、8大时态对比表</h3>
+<table class="grammar-table tense-table">
+<tr><th>时态</th><th>结构</th><th>用法</th><th>例句 (毕业主题)</th></tr>
+<tr><td class="tense-name">一般现在时</td><td>do/does</td><td>习惯、事实、状态</td><td>I <b>study</b> hard every day.</td></tr>
+<tr><td class="tense-name">一般过去时</td><td>did</td><td>过去的动作/状态</td><td>I <b>started</b> junior high in 2023.</td></tr>
+<tr><td class="tense-name">一般将来时</td><td>will do / be going to</td><td>将来的动作/打算</td><td>I <b>will study</b> at a senior high school.</td></tr>
+<tr><td class="tense-name">现在进行时</td><td>am/is/are + doing</td><td>正在发生 / 计划将来</td><td>We <b>are preparing</b> for the exam.</td></tr>
+<tr><td class="tense-name">过去进行时</td><td>was/were + doing</td><td>过去某时正在发生</td><td>I <b>was studying</b> when you called.</td></tr>
+<tr><td class="tense-name">现在完成时</td><td>have/has + done</td><td>从过去持续到现在</td><td>I <b>have learned</b> a lot in three years.</td></tr>
+<tr><td class="tense-name">现在完成进行时</td><td>have/has been doing</td><td>从过去持续到现在还在进行</td><td>I <b>have been studying</b> English for 9 years.</td></tr>
+<tr><td class="tense-name">过去完成时</td><td>had + done</td><td>过去的过去</td><td>I <b>had finished</b> my homework before dinner.</td></tr>
+</table>
+<h3>二、被动语态</h3>
+<table class="grammar-table tense-table">
+<tr><th>时态</th><th>被动结构</th><th>例句</th></tr>
+<tr><td class="tense-name">一般现在被动</td><td>am/is/are + done</td><td>English <b>is spoken</b> all over the world.</td></tr>
+<tr><td class="tense-name">一般过去被动</td><td>was/were + done</td><td>The graduation ceremony <b>was held</b> last week.</td></tr>
+<tr><td class="tense-name">一般将来被动</td><td>will be + done</td><td>A new school <b>will be built</b> next year.</td></tr>
+<tr><td class="tense-name">现在完成被动</td><td>have/has been + done</td><td>The plan <b>has been made</b> already.</td></tr>
+</table>
+<h3>三、时态综合运用 — 毕业主题段落</h3>
+<div class="reading-passage" style="background:var(--bg-secondary);margin-top:8px;">
+<p class="en-text">I <b>started</b> (一般过去) junior high school three years ago. At first, I <b>was</b> shy and nervous. But my teachers <b>encouraged</b> (一般过去) me, and I <b>have made</b> (现在完成) great progress. Right now, I <b>am preparing</b> (现在进行) for the senior high entrance exam. I <b>have been studying</b> (现在完成进行) English for nine years, and I <b>hope</b> (一般现在) to continue in senior high. The graduation ceremony <b>will be held</b> (一般将来被动) next week. I <b>will never forget</b> (一般将来) my time in junior high. A new chapter <b>is beginning</b> (现在进行表将来). I <b>am confident</b> (一般现在) that the future <b>will be</b> (一般将来) bright!</p></div>
+</div><div class="chinese-error">      <p>判断时态的关键：看<strong>时间状语</strong>（yesterday → 过去；tomorrow → 将来；for/since → 完成）。</p>
+      <p>be going to 表示"打算做"，will 表示"将要做"或"预测"。</p>
+      <p>现在完成时强调"影响"或"经历"，一般过去时强调"何时发生"。</p>
+      <p>被动语态中，动作的承受者作主语，by + 动作执行者。</p>
+      <p><span class="wotd-say" data-speak="The future belongs to those who believe in the beauty of their dreams.">The future belongs to those who believe in the beauty of their dreams.</span> 未来属于那些相信自己梦想之美的人。</p></div></div></details>
+<details class="module detail-module" open><summary>📖 阅读专项 · Looking Back, Moving Forward</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">Three years ago, I walked through the gates of this school with a mixture of excitement and fear. I didn't know what to expect. Would I make friends? Would I do well in my studies? Looking back now, I realize how much I have grown.</p>
+      <p class="en-text">I remember my first English class. I was so nervous that I couldn't say a complete sentence. But my teacher, Ms. Li, was patient and encouraging. She told us, "Mistakes are proof that you are trying." Those words have stayed with me ever since. Now I can give a speech in English without fear.</p>
+      <p class="en-text">There were challenges, of course. I failed a math test in Grade 8 and felt terrible. But that failure taught me a valuable lesson — success comes not from never falling, but from rising every time you fall. I worked harder, asked more questions, and finally improved.</p>
+      <p class="en-text">Junior high has been a journey of growth. I have learned not just knowledge from textbooks, but also the importance of friendship, perseverance, and courage. Every challenge has made me stronger. Every achievement has given me confidence.</p>
+      <p class="en-text">Now, as I prepare to say goodbye, I feel both sad and excited. Sad to leave behind familiar faces and places. But excited for the new adventures that await. Graduation is not an end — it is a new beginning. I am ready to open my arms to the future and embrace every opportunity that comes my way.</p><div class="gloss"><span>mixture 混合</span> <span>proof 证明</span> <span>perseverance 毅力</span> <span>familiar 熟悉的</span> <span>await 等待</span> <span>embrace 拥抱</span> </div></div>    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">How did the writer feel on the first day of junior high?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>She/He felt a mixture of excitement and fear.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">What did Ms. Li say that inspired the writer?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>"Mistakes are proof that you are trying."</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">What lesson did the writer learn from failing a math test?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Success comes not from never falling, but from rising every time you fall.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">Why does the writer think graduation is "a new beginning"?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Because she/he is ready to face new adventures and embrace new opportunities.</div>
+    </div></div></details>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">I ____ (study) English every day. (用一般现在时填空)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>study</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">She ____ (graduate) from junior high last year. (用一般过去时填空)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>graduated</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">We ____ (have) a graduation party next Friday. (用一般将来时填空)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>will have / are going to have</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">I ____ (learn) 2000 English words so far. (用现在完成时填空)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>have learned</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">The graduation ceremony ____ (hold) last week. (用一般过去被动填空)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>was held</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">选择：I ____ (have been studying / studied) English for nine years.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>have been studying（现在完成进行时，强调持续到现在还在进行）</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">改错：I am graduate from junior high next month.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>I will graduate from junior high next month. (一般将来时)</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">Every challenge ____ (make) me stronger over the past three years.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>has made（现在完成时）</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">翻译：毕业典礼将在下周举行。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>The graduation ceremony will be held next week.</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">改错：When I was in Grade 7, I have never spoken English before.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>When I was in Grade 7, I had never spoken English before. (用过去完成时)</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">用所给动词的正确时态填空：By the time I graduate, I ____ (study) at this school for three years.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>will have studied（将来完成时）</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">判断时态并填空：Look! The students ____ (prepare) for the graduation party right now.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>are preparing（现在进行时，表示此刻正在发生）</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">综合填空：用不同的时态翻译"我三年前开始学英语，现在已经学了很多，而且我还在继续学习。"</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>I started learning English three years ago. I have learned a lot already, and I am still learning.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">将主动语态变为被动语态：My teachers have inspired me greatly. →</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>I have been greatly inspired by my teachers.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · My Graduation Speech</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">假设你将在毕业典礼上作为学生代表发言。写一篇80-120词的毕业感言，回顾初中三年的成长经历，表达对老师同学的感谢，并展望未来的高中生活。尽量使用至少三种不同的时态。</div></div><div class="writing-framework">      <div class="fw-step">开场白：问候和引入</div>
+      <div class="fw-step">回顾：难忘的经历和成长（过去时 / 现在完成时）</div>
+      <div class="fw-step">感谢：对老师和同学的感谢</div>
+      <div class="fw-step">展望：对未来的期待和祝福（现在时 / 将来时）</div>
+      <div class="fw-step">结束语：激励的话语</div></div><div class="writing-model"><div class="en">Dear teachers and classmates,</div><div class="en">Good morning! Today is a special day — we are graduating from junior high school.</div><div class="en" style="margin-top:4px;">Looking back, I still remember the first day I walked into this school. I was shy and nervous. But with the help of my teachers and friends, I have grown so much. I have learned not only knowledge but also how to be a better person.</div><div class="en" style="margin-top:4px;">I want to thank all my teachers. You have inspired me to work hard and never give up. I also want to thank my classmates. We have shared so many happy memories together.</div><div class="en" style="margin-top:4px;">Now, a new chapter is beginning. I believe that all of us will achieve great things in the future. Let's carry the lessons we have learned and move forward with courage and hope.</div><div class="en" style="margin-top:4px;">Thank you, and good luck to everyone!</div><div class="trans" style="margin-top:8px;">尊敬的老师、亲爱的同学们，早上好！今天是一个特别的日子——我们即将从初中毕业。回首过去，我依然记得第一次走进这所学校的那一天。那时的我害羞又紧张。但在老师和朋友的帮助下，我成长了许多。我不仅学到了知识，也学会了如何成为一个更好的人。我要感谢所有的老师，你们激励我努力学习，永不放弃。我还要感谢我的同学们，我们一起分享了这么多快乐的回忆。现在，新的篇章即将开启。我相信我们所有人将来都会取得伟大的成就。让我们带着所学到的经验，带着勇气和希望继续前进。谢谢大家，祝大家好运！</div></div></div></details>
+<details class="module detail-module" open><summary>🎯 Project · My Dream Board for Senior High</summary><div class="content project-module"><div class="project-brief"><div class="project-title">Dream Board — My Goals for Senior High</div><div class="project-desc">制作一张梦想板，用图片和文字展示你在高中想要实现的目标。</div></div><div class="project-steps">      <div class="step"><span class="step-num">1</span><span class="step-text">思考你在高中想要达成的3-5个目标</span></div>
+      <div class="step"><span class="step-num">2</span><span class="step-text">为每个目标找一张代表图片</span></div>
+      <div class="step"><span class="step-num">3</span><span class="step-text">用英语写一段文字描述你的目标，使用不同时态</span></div>
+      <div class="step"><span class="step-num">4</span><span class="step-text">设计梦想板的布局</span></div>
+      <div class="step"><span class="step-num">5</span><span class="step-text">向同学用英语展示你的梦想板</span></div></div><div class="project-rubric"><table><tr><th>#</th><th>评价标准</th></tr><tr><td>1.</td><td>目标清晰、具体、有可行性</td></tr>
+<tr><td>2.</td><td>正确使用了多种时态</td></tr>
+<tr><td>3.</td><td>文字表达流畅、准确</td></tr>
+<tr><td>4.</td><td>梦想板设计有创意</td></tr>
+<tr><td>5.</td><td>口头展示自信、流利</td></tr></table></div></div></details>
+<div class="graduation-banner" style="margin-top:32px;"><div class="big">🎉🎉🎉</div><h2>Congratulations!</h2><p>You have successfully completed all of <strong>Junior High English</strong> (初中英语)!</p><p style="margin-top:6px;">🎊 九年级全部 13 个单元学习完成 🎊</p><p>This is not the end — it's a new beginning. Good luck in senior high!</p><p style="margin-top:8px;font-size:13px;"><span class="wotd-say" data-speak="The future belongs to those who prepare for it today.">✨ The future belongs to those who prepare for it today. ✨</span></p></div>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能区分并正确运用8大时态</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能正确使用被动语态</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能谈论未来的计划和目标</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能回顾和反思过去的经历</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写一篇完整的毕业感言</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 🎉 初中英语全部掌握！</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>用英语向你的朋友介绍初中三年最难忘的经历和高中计划，并在叙述中使用至少4种不同时态。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">🔵 1天后：复习8大时态结构对比表</span>
+    <span class="review-dot">🟢 3天后：复习被动语态四种时态</span>
+    <span class="review-dot">🟡 1周后：背诵毕业感言范文</span>
+    <span class="review-dot">🔴 1月后：复习整个初中英语重点语法</span></div>
+<div class="next-stop" style="display:flex;justify-content:center;margin-top:24px;"><a href="u08.html" class="nav-arrow">← 回顾：九年级上册</a></div>
+</main>
+<div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
+<button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis, currentUtterance: null, speaking: false, rate: 0.9, voiceURI: 'en-US',
+    init: function(){var s=this;document.getElementById('speechRate').addEventListener('input',function(){s.rate=+this.value;document.getElementById('speechRateLabel').textContent=this.value;});document.getElementById('speechVoice').addEventListener('change',function(){s.voiceURI=this.value;localStorage.setItem('speech-voice',this.value);});document.getElementById('speechStopBtn').addEventListener('click',function(){s.stop();});document.getElementById('speechCloseBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.remove('open');});document.getElementById('speechToggleBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.toggle('open');});},
+    speak: function(t,c){if(!t)return;this.stop();var u=new SpeechSynthesisUtterance(t);u.lang=this.voiceURI;u.rate=this.rate;u.onend=function(){if(c)c();};this.currentUtterance=u;this.synthesis.speak(u);},
+    speakDialogue: function(id,c){var s=this,el=document.getElementById(id),ls=el?el.querySelectorAll('.en-text'):[],i=0;this.stop();(function n(){if(i>=ls.length){if(c)c();return;}var e=ls[i],t=e.getAttribute('data-speak')||e.textContent;if(!t){i++;n();return;}e.classList.add('speaking');var u=new SpeechSynthesisUtterance(t);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){e.classList.remove('speaking');i++;setTimeout(n,500);};u.onerror=function(){e.classList.remove('speaking');i++;setTimeout(n,200);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    speakVocabSection: function(id,c){var s=this,el=document.getElementById(id),cs=el?el.querySelectorAll('.vocab-card'):[],i=0;this.stop();(function n(){if(i>=cs.length){if(c)c();return;}var e=cs[i],hw=e.querySelector('.headword'),ex=e.querySelector('.example .wotd-say'),t=[];if(hw)t.push(hw.getAttribute('data-speak')||hw.textContent);if(ex)t.push(ex.getAttribute('data-speak')||ex.textContent.replace(/<[^>]+>/g,'').trim());var ft=t.join('. ');if(!ft){i++;n();return;}hw.classList.add('speaking');var u=new SpeechSynthesisUtterance(ft);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){hw.classList.remove('speaking');i++;setTimeout(n,600);};u.onerror=function(){hw.classList.remove('speaking');i++;setTimeout(n,300);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    stop: function(){this.synthesis.cancel();this.speaking=false;}
+  };SpeechManager.init();
+  document.querySelectorAll('.wotd-say').forEach(function(el){el.addEventListener('click',function(){SpeechManager.speak(this.getAttribute('data-speak')||this.textContent);});});
+  document.querySelectorAll('.speak-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var d=this.getAttribute('data-dialogue'),v=this.getAttribute('data-vocab'),t=this.getAttribute('data-target');if(this.classList.contains('speaking')){SpeechManager.stop();this.classList.remove('speaking');return;}this.classList.add('speaking');var done=function(){btn.classList.remove('speaking');};if(d){SpeechManager.speakDialogue(d,done);}else if(v){SpeechManager.speakVocabSection(v,done);}else if(t){var tg=document.getElementById(t);if(!tg){btn.classList.remove('speaking');return;}SpeechManager.speak(tg.textContent.replace(/<[^>]+>/g,''),done);}else{btn.classList.remove('speaking');}});});
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();var hw=this.previousElementSibling;if(hw&&hw.classList.contains('wotd-say')){var t=hw.getAttribute('data-speak')||hw.textContent;SpeechManager.speak(t);}});});
+  (function(){var btn=document.getElementById('expandAllBtn');if(!btn)return;btn.addEventListener('click',function(){var ad=document.querySelectorAll('.module,.exam-module');var ao=true;for(var i=0;i<ad.length;i++){if(!ad[i].hasAttribute('open')){ao=false;break;}};for(var i=0;i<ad.length;i++){if(ao)ad[i].removeAttribute('open');else ad[i].setAttribute('open','');};btn.textContent=ao?'📂 展开全部模块':'📖 收起全部模块';});})();
+  var s=document.getElementById('sidebar'),k='eng9-theme-sidebar';if(!s)return;
+  if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
+  window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=window.scrollY>400?'flex':'none';},{passive:true});
+  document.getElementById('backToTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution');});});
+})();
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);localStorage.setItem("eng9-theme",t);var btn=document.getElementById("themeToggle");if(btn)btn.textContent=t==="dark"?"☀️":"🌙";}
+function toggleTheme(){setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark");}
+</script></body></html>

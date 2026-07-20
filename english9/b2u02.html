@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U2 A Look into the Past | 初中英语九年级</title>
+<link rel="stylesheet" href="css/english9.css">
+<style>
+.speak-btn { display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;color:var(--accent);border:1px solid var(--border);border-radius:4px;padding:2px 8px;background:var(--bg);transition:background 0.15s; }
+.speak-btn:hover { background:var(--accent-light); }
+.speak-btn.speaking { background:var(--eng-amber-light);color:var(--eng-amber);border-color:var(--eng-amber); }
+.headword-speak-indicator { font-size:11px;margin-left:3px;opacity:0.55;cursor:pointer;vertical-align:super;line-height:1; }
+.headword-speak-indicator:hover { opacity:1; }
+.wotd-say { cursor:pointer;transition:color 0.15s; }
+.wotd-say:hover { color:var(--accent); }
+.wotd-say.speaking { color:var(--eng-pink); }
+.speech-panel { position:fixed;bottom:80px;right:24px;z-index:999;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);padding:14px 18px;display:none;min-width:180px; }
+.speech-panel.open { display:block; }
+.speech-panel .row { display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px; }
+.speech-panel .row label { color:var(--text-secondary);font-size:12px;min-width:36px; }
+.speech-panel select,.speech-panel input[type="range"] { flex:1; }
+.speech-panel button { padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px; }
+.speech-panel button:hover { background:var(--accent-light); }
+.speech-toggle-btn { position:fixed;bottom:24px;right:76px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--accent);cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center; }
+.speech-toggle-btn:hover { background:var(--accent-light); }
+.en-text.speaking { background:var(--eng-amber-light);border-radius:4px;padding:2px 4px;transition:background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background:#452a08; }
+.detail-module { content-visibility:auto;contain-intrinsic-size:300px; }
+.reading { content-visibility:auto;contain-intrinsic-size:400px; }
+</style>
+<script>(function(){var t=localStorage.getItem("eng9-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+    <nav id="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="margin-bottom:0;">英语九年级</h2>
+        <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+      </div><nav>
+        <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../grammar.html" style="font-size:13px;">📌 语法全景图</a>
+        <a href="appendix-vocab.html" style="font-size:13px;">📖 单词专项</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 九年级上册 ━━</a>
+        <a href="u01.html">U1 The Changing World</a>
+        <a href="u02.html">U2 Inspiring People</a>
+        <a href="u03.html">U3 Smart Learning</a>
+        <a href="u04.html">U4 Our Memory</a>
+        <a href="u05.html">U5 Power of Ideas</a>
+        <a href="u06.html">U6 Beyond Earth</a>
+        <a href="u07.html">U7 Feel the Rhythm</a>
+        <a href="u08.html">U8 More than a Game</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 九年级下册 ━━</a>
+        <a href="b2u01.html">U1 The Call of Nature</a>
+        <a href="b2u02.html" class="active">U2 A Look into the Past</a>
+        <a href="b2u03.html">U3 A Taste of Art</a>
+        <a href="b2u04.html">U4 The Power of Science</a>
+        <a href="b2u05.html">U5 Global Understanding</a>
+      </nav>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+    </nav>
+<main id="content">
+<div class="cover"><div class="sub-en">U2</div><h1>A Look into the Past</h1><p>回顾历史 · 情态动词推测 · 历史事件</p></div>
+<div class="unit-meta"><span>📖 话题：History and historical events</span><span>💬 功能：Talk about past events, express speculation</span><span>📚 语法：情态动词推测 (must/can't/might/could/may) · 过去时复习</span><span>📝 写作：介绍一个历史事件</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能用情态动词进行推测 (must / can't / might / could / may)</label>
+  <label><input type="checkbox"> 能谈论历史事件和历史人物</label>
+  <label><input type="checkbox"> 能表达对过去事件的肯定性和可能性判断</label>
+  <label><input type="checkbox"> 能正确使用一般过去时和现在完成时</label>
+  <label><input type="checkbox"> 能写一篇介绍历史事件或人物的短文</label></div>
+<details class="module" open><summary>📖 课文精讲 · A Visit to the Museum</summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：Tom、Li Ming 和 Sarah 正在参观历史博物馆，他们对展出的文物和考古发现充满了好奇和推测。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
+<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Tom:</span><span class="en-text wotd-say" data-speak="Look at this ancient bronze vessel! It must be over two thousand years old.">Look at this ancient bronze vessel! It must be over two thousand years old.</span></div>
+      <div class="dialogue-line"><span class="speaker">Li Ming:</span><span class="en-text wotd-say" data-speak="You're right. It could have been used for cooking or ceremonies. The patterns are amazing.">You're right. It could have been used for cooking or ceremonies. The patterns are amazing.</span></div>
+      <div class="dialogue-line"><span class="speaker">Sarah:</span><span class="en-text wotd-say" data-speak="Look at this display about the Terracotta Army. The emperor must have spent years building his tomb.">Look at this display about the Terracotta Army. The emperor must have spent years building his tomb.</span></div>
+      <div class="dialogue-line"><span class="speaker">Tom:</span><span class="en-text wotd-say" data-speak="I can't believe it! These artifacts can't be real — they look so well preserved.">I can't believe it! These artifacts can't be real — they look so well preserved.</span></div>
+      <div class="dialogue-line"><span class="speaker">Li Ming:</span><span class="en-text wotd-say" data-speak="Actually, they are real. Archaeologists have discovered thousands of them in Xi'an.">Actually, they are real. Archaeologists have discovered thousands of them in Xi'an.</span></div>
+      <div class="dialogue-line"><span class="speaker">Sarah:</span><span class="en-text wotd-say" data-speak="What's that broken pottery over there? It might have belonged to an ancient civilization.">What's that broken pottery over there? It might have belonged to an ancient civilization.</span></div>
+      <div class="dialogue-line"><span class="speaker">Tom:</span><span class="en-text wotd-say" data-speak="This is fascinating. I wonder what life was like in those times. People must have lived very differently.">This is fascinating. I wonder what life was like in those times. People must have lived very differently.</span></div>
+      <div class="dialogue-line"><span class="speaker">Li Ming:</span><span class="en-text wotd-say" data-speak="Yes, but their discoveries help us understand our own history. The past is a treasure.">Yes, but their discoveries help us understand our own history. The past is a treasure.</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>Tom：</strong> 看这个古代青铜器！这一定有两千多年了。</p>
+        <p><strong>李明：</strong> 你说得对。它可能被用来做饭或举行仪式。那些图案太棒了。</p>
+        <p><strong>Sarah：</strong> 看这个关于兵马俑的展览。皇帝一定花了多年修建他的陵墓。</p>
+        <p><strong>Tom：</strong> 真不敢相信！这些文物不可能是真的——它们看起来保存得太好了。</p>
+        <p><strong>李明：</strong> 其实它们是真的。考古学家已经在西安发现了数千件。</p>
+        <p><strong>Sarah：</strong> 那边那个破陶器是什么？它可能属于某个古代文明。</p>
+        <p><strong>Tom：</strong> 太迷人了。我想知道那些时代的生活是什么样的。人们一定生活得非常不同。</p>
+        <p><strong>李明：</strong> 是的，但他们的发现帮助我们理解自己的历史。过去是一笔财富。</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p>must be + 名词/形容词 — 肯定推测 — It <b>must be</b> over two thousand years old.</p>
+      <p>can't be + 名词/形容词 — 否定推测 — These artifacts <b>can't be</b> real.</p>
+      <p>might / may / could + 动词原形 — 可能推测 — It <b>might have belonged</b> to an ancient civilization.</p>
+      <p>must / can't + have + 过去分词 — 对过去的推测 — The emperor <b>must have spent</b> years building his tomb.</p></div></div></details>
+<details class="module" open><summary>📝 重点词汇 · 历史与考古 <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="history">history</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈhɪstri/</span><span class="pos">n.</span>
+        <div class="definition">历史</div>
+        <div class="example"><span class="wotd-say" data-speak="History teaches us about the past.">History teaches us about the past.</span><span class="trans">历史教会我们关于过去的事情。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="past">past</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/pɑːst/</span><span class="pos">n./adj./prep.</span>
+        <div class="definition">过去；过去的</div>
+        <div class="example"><span class="wotd-say" data-speak="We can learn a lot from the past.">We can learn a lot from the past.</span><span class="trans">我们可以从过去学到很多东西。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="ancient">ancient</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈeɪnʃənt/</span><span class="pos">adj.</span>
+        <div class="definition">古代的</div>
+        <div class="example"><span class="wotd-say" data-speak="Ancient civilizations built amazing structures.">Ancient civilizations built amazing structures.</span><span class="trans">古代文明建造了令人惊叹的建筑。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="discovery">discovery</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/dɪˈskʌvəri/</span><span class="pos">n.</span>
+        <div class="definition">发现</div>
+        <div class="example"><span class="wotd-say" data-speak="The discovery of the tomb was exciting.">The discovery of the tomb was exciting.</span><span class="trans">这座陵墓的发现令人兴奋。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="archaeology">archaeology</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌɑːkiˈɒlədʒi/</span><span class="pos">n.</span>
+        <div class="definition">考古学</div>
+        <div class="example"><span class="wotd-say" data-speak="Archaeology helps us understand ancient cultures.">Archaeology helps us understand ancient cultures.</span><span class="trans">考古学帮助我们了解古代文化。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="artifact">artifact</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈɑːtɪfækt/</span><span class="pos">n.</span>
+        <div class="definition">文物；手工艺品</div>
+        <div class="example"><span class="wotd-say" data-speak="The museum has many ancient artifacts.">The museum has many ancient artifacts.</span><span class="trans">博物馆里有许多古代文物。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="ruin">ruin</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈruːɪn/</span><span class="pos">n.</span>
+        <div class="definition">废墟；遗迹</div>
+        <div class="example"><span class="wotd-say" data-speak="We visited the ruins of an ancient temple.">We visited the ruins of an ancient temple.</span><span class="trans">我们参观了一座古庙的遗迹。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="dynasty">dynasty</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈdɪnəsti/</span><span class="pos">n.</span>
+        <div class="definition">王朝；朝代</div>
+        <div class="example"><span class="wotd-say" data-speak="The Tang Dynasty was a golden age in China.">The Tang Dynasty was a golden age in China.</span><span class="trans">唐朝是中国的一个黄金时代。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="emperor">emperor</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈempərə/</span><span class="pos">n.</span>
+        <div class="definition">皇帝</div>
+        <div class="example"><span class="wotd-say" data-speak="The emperor built a magnificent palace.">The emperor built a magnificent palace.</span><span class="trans">皇帝建造了一座宏伟的宫殿。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="civilization">civilization</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌsɪvəlaɪˈzeɪʃn/</span><span class="pos">n.</span>
+        <div class="definition">文明</div>
+        <div class="example"><span class="wotd-say" data-speak="Ancient civilizations developed along rivers.">Ancient civilizations developed along rivers.</span><span class="trans">古代文明沿河流发展。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="treasure">treasure</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈtreʒə/</span><span class="pos">n.</span>
+        <div class="definition">宝藏；珍品</div>
+        <div class="example"><span class="wotd-say" data-speak="They discovered a treasure hidden in the cave.">They discovered a treasure hidden in the cave.</span><span class="trans">他们发现了藏在洞穴里的宝藏。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="tomb">tomb</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/tuːm/</span><span class="pos">n.</span>
+        <div class="definition">陵墓；坟墓</div>
+        <div class="example"><span class="wotd-say" data-speak="The tomb was built over two thousand years ago.">The tomb was built over two thousand years ago.</span><span class="trans">这座陵墓建于两千多年前。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="relic">relic</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈrelɪk/</span><span class="pos">n.</span>
+        <div class="definition">遗物；遗迹</div>
+        <div class="example"><span class="wotd-say" data-speak="These relics provide clues about ancient life.">These relics provide clues about ancient life.</span><span class="trans">这些遗物提供了关于古代生活的线索。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="origin">origin</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈɒrɪdʒɪn/</span><span class="pos">n.</span>
+        <div class="definition">起源；源头</div>
+        <div class="example"><span class="wotd-say" data-speak="What is the origin of this tradition?">What is the origin of this tradition?</span><span class="trans">这个传统的起源是什么？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="evidence">evidence</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈevɪdəns/</span><span class="pos">n.</span>
+        <div class="definition">证据；迹象</div>
+        <div class="example"><span class="wotd-say" data-speak="There is evidence that humans lived here long ago.">There is evidence that humans lived here long ago.</span><span class="trans">有证据表明人类很久以前就在这里居住。</span></div>
+      </div>
+</div></div></details>
+<details class="module" open><summary>🥈 学霸词汇 · 拓展提升</summary><div class="content"><div class="vocab-grid">
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="excavation">excavation</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌekskəˈveɪʃn/</span><span class="pos">n.</span>
+        <div class="definition">发掘；挖掘</div>
+        <div class="example"><span class="wotd-say" data-speak="The excavation of the site took several months.">The excavation of the site took several months.</span><span class="trans">该遗址的发掘历时数月。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="fossil">fossil</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈfɒsl/</span><span class="pos">n.</span>
+        <div class="definition">化石</div>
+        <div class="example"><span class="wotd-say" data-speak="Fossils show us what lived millions of years ago.">Fossils show us what lived millions of years ago.</span><span class="trans">化石向我们展示了数百万年前存在的生物。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="manuscript">manuscript</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈmænjuskrɪpt/</span><span class="pos">n.</span>
+        <div class="definition">手稿；手抄本</div>
+        <div class="example"><span class="wotd-say" data-speak="The ancient manuscript was written by hand.">The ancient manuscript was written by hand.</span><span class="trans">这部古代手稿是手写的。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="monument">monument</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈmɒnjumənt/</span><span class="pos">n.</span>
+        <div class="definition">纪念碑；历史遗迹</div>
+        <div class="example"><span class="wotd-say" data-speak="The Great Wall is a world-famous monument.">The Great Wall is a world-famous monument.</span><span class="trans">长城是世界著名的历史遗迹。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="heritage">heritage</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈherɪtɪdʒ/</span><span class="pos">n.</span>
+        <div class="definition">遗产；传统</div>
+        <div class="example"><span class="wotd-say" data-speak="We should protect our cultural heritage.">We should protect our cultural heritage.</span><span class="trans">我们应该保护我们的文化遗产。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="century">century</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈsentʃəri/</span><span class="pos">n.</span>
+        <div class="definition">世纪</div>
+        <div class="example"><span class="wotd-say" data-speak="This building was constructed in the 18th century.">This building was constructed in the 18th century.</span><span class="trans">这座建筑建于18世纪。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="era">era</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈɪərə/</span><span class="pos">n.</span>
+        <div class="definition">时代；纪元</div>
+        <div class="example"><span class="wotd-say" data-speak="We are living in a new era of technology.">We are living in a new era of technology.</span><span class="trans">我们生活在一个技术新时代。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="ancestor">ancestor</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈænsestə/</span><span class="pos">n.</span>
+        <div class="definition">祖先；祖宗</div>
+        <div class="example"><span class="wotd-say" data-speak="Our ancestors built this great civilization.">Our ancestors built this great civilization.</span><span class="trans">我们的祖先建立了这个伟大的文明。</span></div>
+      </div>
+    </div></div></details>
+<details class="module" open><summary>🔤 重点句型 · Key Sentence Patterns</summary><div class="content"><div class="pattern-grid">      <div class="pattern-card">
+        <div class="structure">must be + 名词/形容词</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>肯定推测，表示「一定是」。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1">It <b>must be</b> very old. / This <b>must be</b> the right place.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">can't be + 名词/形容词</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>否定推测，表示「不可能是」。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp2">That <b>can't be</b> true. / He <b>can't be</b> the thief.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">might / may / could + 动词原形</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>可能推测，表示「也许/可能」。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp3">It <b>might belong</b> to the king. / She <b>could be</b> at home.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">must / can't + have + 过去分词</div> <button class="speak-btn" data-target="sp4" title="朗读句型">🔊</button>
+        <div>对过去的推测，表示「一定已经/不可能已经」。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp4">They <b>must have arrived</b> already. / He <b>can't have forgotten</b>.</span></div>
+      </div></div></div></details>
+<details class="module detail-module" open><summary>📚 语法聚焦 · 情态动词推测 <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module" id="grammarContainer"><h3>情态动词 + 动词原形（对现在/将来的推测）</h3>
+<table class="grammar-table">
+<tr><th>情态动词</th><th>程度</th><th>含义</th><th>例句</th></tr>
+<tr><td>must</td><td>95% 肯定</td><td>一定；肯定</td><td>This must be a Ming Dynasty vase.</td></tr>
+<tr><td>may</td><td>50% 可能</td><td>也许；可能</td><td>She may know the answer.</td></tr>
+<tr><td>might</td><td>30% 可能</td><td>也许（语气弱）</td><td>He might be at the museum.</td></tr>
+<tr><td>could</td><td>40% 可能</td><td>可能；可以</td><td>It could be a valuable artifact.</td></tr>
+<tr><td>can't</td><td>95% 否定</td><td>不可能</td><td>That can't be a real dinosaur bone.</td></tr>
+</table>
+<h3>情态动词 + have + 过去分词（对过去的推测）</h3>
+<table class="grammar-table">
+<tr><th>结构</th><th>含义</th><th>例句</th></tr>
+<tr><td>must have done</td><td>一定已经（肯定推测）</td><td>They must have lived here for centuries.</td></tr>
+<tr><td>may/might have done</td><td>也许已经（可能推测）</td><td>She might have seen the artifact before.</td></tr>
+<tr><td>could have done</td><td>本来可能（过去可能但未发生）</td><td>He could have left earlier.</td></tr>
+<tr><td>can't have done</td><td>不可能已经（否定推测）</td><td>They can't have destroyed the evidence.</td></tr>
+</table>
+<h3>一般过去时 vs 现在完成时</h3>
+<table class="grammar-table">
+<tr><th>时态</th><th>用法</th><th>例句</th></tr>
+<tr><td>一般过去时</td><td>过去某个时间发生的动作，与现在无关</td><td>The emperor built the Great Wall.</td></tr>
+<tr><td>现在完成时</td><td>过去发生的动作与现在有联系</td><td>Archaeologists have discovered many tombs.</td></tr>
+<tr><td>一般过去时 + 时间点</td><td>有明确的过去时间</td><td>The dynasty fell in 1644.</td></tr>
+<tr><td>现在完成时 + 时间段</td><td>持续到现在的状态</td><td>This tradition has lasted for centuries.</td></tr>
+</table>
+</div><div class="chinese-error">      <p>must 表示肯定推测，can't 表示否定推测（不是 mustn't）。</p>
+      <p>might 比 may 语气更弱，可能性更低。</p>
+      <p>对已经发生的事情推测用 must have done / can't have done。</p>
+      <p><span class="wotd-say" data-speak="Those who do not learn history are doomed to repeat it.">Those who do not learn history are doomed to repeat it.</span> 以史为鉴，可以知兴替。</p></div></div></details>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">This old coin ____ be very valuable. Look at the gold! (must / can't)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>must</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">That ____ be a real dinosaur fossil — it looks like a model. (must / can't)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>can't</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">She ____ (may / must) know something about the ancient ruins. Let's ask her.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>may</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">They ____ (might / can't) be at the museum right now. I saw them at school.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>can't</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">The archaeologists ____ (must / might) have worked for years before finding the tomb.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>must</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">I can't find my phone. I ____ (might have left / must have left) it in the classroom.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>might have left</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">The emperor ____ (built / has built) the palace in the 15th century.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>built (一般过去时，有明确过去时间)</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">Archaeologists ____ (discovered / have discovered) many ancient tombs in this area over the last decade.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>have discovered</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">Rewrite: Maybe the artifact belongs to the Zhou Dynasty. → The artifact ____ ____ to the Zhou Dynasty.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>might / may belong</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">He ____ (can't have finished / must have finished) the project already — I see him still working on it.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>can't have finished</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">改错：She can't have been at the museum yesterday because I saw her there.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>can't → must (逻辑矛盾：看到她在那说明她一定在那)</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">完成句子：The ancient civilization ____ (一定曾经非常发达), because they built such advanced cities.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>must have been very advanced</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">阅读思考：In the reading "Secrets of the Past", why does the writer say that history is not just about the past?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Because what we learn from the past can help us build a better future.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>📖 阅读专项 · Secrets of the Past</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">Have you ever wondered what secrets lie beneath the ground? Archaeology is the science that helps us uncover these mysteries. Every discovery tells a story about how people lived thousands of years ago.</p>
+      <p class="en-text">One of the most amazing discoveries in China is the Terracotta Army. In 1974, farmers were digging a well when they found clay fragments. Archaeologists soon realized that they had uncovered one of the greatest archaeological sites in the world — the tomb of Emperor Qin Shi Huang. The army consists of thousands of life-sized soldiers, each with a unique face. The emperor must have spent decades building his tomb. These soldiers were meant to protect him in the afterlife.</p>
+      <p class="en-text">Another incredible discovery is the ancient city of Pompeii in Italy. In 79 AD, Mount Vesuvius erupted and buried the city under ash. For centuries, the city lay hidden. When archaeologists excavated the site, they found buildings, paintings, and even the remains of people exactly as they had been when the disaster struck. The ash had preserved everything. It's as if time had stopped.</p>
+      <p class="en-text">In Egypt, the discovery of Tutankhamun's tomb in 1922 revealed treasure beyond imagination. The tomb had remained untouched for over 3,000 years. Inside, archaeologists found gold, jewelry, furniture, and the king's mummy. The treasures must have belonged to one of the wealthiest kings of ancient Egypt.</p>
+      <p class="en-text">These discoveries remind us that history is not just about the past. It connects us to our ancestors and helps us understand who we are. Every artifact, every ruin, and every fossil holds a secret waiting to be discovered. What secrets might still be hidden beneath our feet?</p><div class="gloss"><span>beneath 在...之下</span> <span>uncover 揭开</span> <span>fragment 碎片</span> <span>life-sized 真人大小</span> <span>afterlife 来世</span> <span>erupt 喷发</span> <span>bury 埋葬</span> <span>preserve 保存</span> <span>mummy 木乃伊</span> </div></div>    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">What is the Terracotta Army, and where was it found?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>It is a collection of thousands of life-sized clay soldiers found in Xi'an, China, guarding Emperor Qin Shi Huang's tomb.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">How did the city of Pompeii become preserved for centuries?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Mount Vesuvius erupted in 79 AD and buried the city under ash, which preserved buildings, paintings, and remains exactly as they were.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">What does the writer mean by "history is not just about the past"?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>History connects us to our ancestors and helps us understand who we are today.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★★</span>
+      <div class="q-body">Which of the three discoveries described in the passage do you find most fascinating? Why?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>(Open) The Terracotta Army — because each soldier has a unique face, showing incredible craftsmanship. / Tutankhamun's tomb — because it was untouched for 3,000 years.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>🏆 中考题型专练 · 语法选择 — 情态动词推测</summary><div class="content exam-section"><p style="font-size:13px;margin-bottom:8px;">阅读短文，选择最佳答案。</p><div class="reading-passage" style="background:var(--bg-secondary);">      <p>Last week, our class visited the History Museum. The guide told us about an ancient tomb that archaeologists <strong>1</strong> (discover / have discovered) recently. "This <strong>2</strong> be one of the most important finds of the century," she said. Inside the tomb, there was a bronze mirror. It <strong>3</strong> (might have belonged / must belong) to a noblewoman because of the fine craftsmanship. Some pottery was broken, so it <strong>4</strong> (can't have been / must have been) damaged during the excavation. The guide also showed us a jade bracelet that <strong>5</strong> be over 3,000 years old. Our ancestors <strong>6</strong> (must have been / can't have been) very skilled at making such beautiful objects. I have never seen anything so amazing!</p></div><div style="margin:4px 0;font-size:13px;"><strong>1</strong> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> A. discover</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> B. have discovered</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> C. discovered</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> D. had discovered</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>2</strong> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> A. can't</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> B. must</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> C. might</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> D. could</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>3</strong> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> A. might have belonged</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> B. must belong</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> C. can't have belonged</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> D. must have belonged</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>4</strong> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> A. can't have been</span> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> B. must have been</span> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> C. might have been</span> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> D. could be</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>5</strong> <span style="margin-right:12px;"><input type="radio" name="exam_5" disabled> A. must</span> <span style="margin-right:12px;"><input type="radio" name="exam_5" disabled> B. can't</span> <span style="margin-right:12px;"><input type="radio" name="exam_5" disabled> C. may</span> <span style="margin-right:12px;"><input type="radio" name="exam_5" disabled> D. should</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>6</strong> <span style="margin-right:12px;"><input type="radio" name="exam_6" disabled> A. must have been</span> <span style="margin-right:12px;"><input type="radio" name="exam_6" disabled> B. can't have been</span> <span style="margin-right:12px;"><input type="radio" name="exam_6" disabled> C. might have been</span> <span style="margin-right:12px;"><input type="radio" name="exam_6" disabled> D. could be</span> </div>
+<div class="exam-q" style="border-left-color:#f59e0b;"><span class="q-tag" style="background:#f59e0b;color:#fff;">答案</span><div class="q-body">1. B；2. B；3. A；4. A；5. C；6. A</div></div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · 介绍一个历史事件</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">选择一个你感兴趣的历史事件或人物 ("An Important Event in History" 或 "A Historical Figure I Admire")，写一篇 80-100 词的短文。要求：使用情态动词推测，对比过去与现在的理解，表达你的感受。</div></div><div class="writing-framework">      <div class="fw-step">开头：引出历史事件/人物 — One of the most important events in history was ...</div>
+      <div class="fw-step">主体1：描述事件/人物的基本事实 (过去时)</div>
+      <div class="fw-step">主体2：用情态动词推测当时的情况 (must have / might have)</div>
+      <div class="fw-step">主体3：告诉我们今天可以学到什么</div>
+      <div class="fw-step">结尾：总结感受 — I believe / I think ...</div></div><div class="writing-model"><div class="en">A Historical Figure I Admire
+I admire Sima Qian, a great historian from the Han Dynasty. He wrote the famous book "Records of the Grand Historian." Life in ancient times must have been difficult for him. After offending the emperor, he could have given up, but he didn't. He must have been very determined to finish his work in prison. His book has influenced Chinese history for over two thousand years. We can learn from his courage that no matter what happens, we should never give up. I think he is one of the greatest writers in Chinese history.</div><div class="trans">我敬仰的历史人物
+我敬仰司马迁，汉朝的一位伟大史学家。他写了著名的《史记》。古代的生活对他来说一定很艰难。触怒皇帝后，他本可以放弃，但他没有。他一定非常坚定，在狱中完成了自己的著作。他的书影响中国历史两千多年。我们可以从他的勇气中学到：无论发生什么，都不应该放弃。我认为他是中国历史上最伟大的作家之一。</div></div></div></details>
+<details class="module" open><summary>📖 Project · History Detective — Research a Discovery</summary><div class="content project-module"><div class="project-brief"><div class="project-title">History Detective — Research a Discovery</div><div class="project-desc">研究一个考古发现或历史遗址，准备一份简短的报告，向全班展示你的发现。</div></div><div class="project-steps">      <div class="step"><span class="step-num">1</span><span class="step-text">选择一个考古发现 (如：兵马俑、庞贝古城、图坦卡蒙陵墓、三星堆等)</span></div>
+      <div class="step"><span class="step-num">2</span><span class="step-text">收集关于它的时间、地点和重要性的信息</span></div>
+      <div class="step"><span class="step-num">3</span><span class="step-text">用情态动词推测当时的情况 (must have / might have / can't have)</span></div>
+      <div class="step"><span class="step-num">4</span><span class="step-text">制作一张海报或 PPT，包含图片和关键信息</span></div>
+      <div class="step"><span class="step-num">5</span><span class="step-text">向全班展示，同学提问</span></div>
+      <div class="step"><span class="step-num">6</span><span class="step-text">总结：这个发现为什么重要？</span></div></div><div class="project-rubric"><table><tr><th>#</th><th>评价标准</th></tr><tr><td>1.</td><td>清晰介绍考古发现的时间、地点和背景</td></tr>
+<tr><td>2.</td><td>正确使用情态动词推测 (至少 3 个 must have / might have 等)</td></tr>
+<tr><td>3.</td><td>内容具体，有真实细节支撑</td></tr>
+<tr><td>4.</td><td>结构清晰，有开头、主体、结尾</td></tr>
+<tr><td>5.</td><td>能阐述该发现对今天的意义</td></tr></table></div></div></details>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能理解情态动词推测的用法 (must / can't / might / may / could)</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能区分对现在和对过去的推测 (must be / must have been)</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能谈论历史事件并表达自己的观点</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能区分一般过去时和现在完成时</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写一篇介绍历史事件或人物的短文</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>用情态动词推测向同学介绍一个你最喜欢的考古发现，至少使用 3 种不同的推测表达。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">🔵 1天后：复习 must / can't / might / may / could 区别</span>
+    <span class="review-dot">🟢 3天后：复习 must have done / can't have done</span>
+    <span class="review-dot">🟡 1周后：阅读文章 "Secrets of the Past" 复述</span>
+    <span class="review-dot">🔴 1月后：写作练习 — An Important Event in History</span></div>
+<div class="next-stop" style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;"><span></span><a href="b2u03.html" class="nav-arrow">下一单元 →</a></div>
+<div class="next-stop" style="margin-top:8px;"><strong>➡️ 下一单元：U3: A Taste of Art</strong><br>探索艺术世界，学习定语从句和艺术表达。</div>
+</main>
+<div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
+<button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis, currentUtterance: null, speaking: false, rate: 0.9, voiceURI: 'en-US',
+    init: function(){var s=this;document.getElementById('speechRate').addEventListener('input',function(){s.rate=+this.value;document.getElementById('speechRateLabel').textContent=this.value;});document.getElementById('speechVoice').addEventListener('change',function(){s.voiceURI=this.value;localStorage.setItem('speech-voice',this.value);});document.getElementById('speechStopBtn').addEventListener('click',function(){s.stop();});document.getElementById('speechCloseBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.remove('open');});document.getElementById('speechToggleBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.toggle('open');});},
+    speak: function(t,c){if(!t)return;this.stop();var u=new SpeechSynthesisUtterance(t);u.lang=this.voiceURI;u.rate=this.rate;u.onend=function(){if(c)c();};this.currentUtterance=u;this.synthesis.speak(u);},
+    speakDialogue: function(id,c){var s=this,el=document.getElementById(id),ls=el?el.querySelectorAll('.en-text'):[],i=0;this.stop();(function n(){if(i>=ls.length){if(c)c();return;}var e=ls[i],t=e.getAttribute('data-speak')||e.textContent;if(!t){i++;n();return;}e.classList.add('speaking');var u=new SpeechSynthesisUtterance(t);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){e.classList.remove('speaking');i++;setTimeout(n,500);};u.onerror=function(){e.classList.remove('speaking');i++;setTimeout(n,200);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    speakVocabSection: function(id,c){var s=this,el=document.getElementById(id),cs=el?el.querySelectorAll('.vocab-card'):[],i=0;this.stop();(function n(){if(i>=cs.length){if(c)c();return;}var e=cs[i],hw=e.querySelector('.headword'),ex=e.querySelector('.example .wotd-say'),t=[];if(hw)t.push(hw.getAttribute('data-speak')||hw.textContent);if(ex)t.push(ex.getAttribute('data-speak')||ex.textContent.replace(/<[^>]+>/g,'').trim());var ft=t.join('. ');if(!ft){i++;n();return;}hw.classList.add('speaking');var u=new SpeechSynthesisUtterance(ft);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){hw.classList.remove('speaking');i++;setTimeout(n,600);};u.onerror=function(){hw.classList.remove('speaking');i++;setTimeout(n,300);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    stop: function(){this.synthesis.cancel();this.speaking=false;}
+  };SpeechManager.init();
+  document.querySelectorAll('.wotd-say').forEach(function(el){el.addEventListener('click',function(){SpeechManager.speak(this.getAttribute('data-speak')||this.textContent);});});
+  document.querySelectorAll('.speak-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var d=this.getAttribute('data-dialogue'),v=this.getAttribute('data-vocab'),t=this.getAttribute('data-target');if(this.classList.contains('speaking')){SpeechManager.stop();this.classList.remove('speaking');return;}this.classList.add('speaking');var done=function(){btn.classList.remove('speaking');};if(d){SpeechManager.speakDialogue(d,done);}else if(v){SpeechManager.speakVocabSection(v,done);}else if(t){var tg=document.getElementById(t);if(!tg){btn.classList.remove('speaking');return;}SpeechManager.speak(tg.textContent.replace(/<[^>]+>/g,''),done);}else{btn.classList.remove('speaking');}});});
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();var hw=this.previousElementSibling;if(hw&&hw.classList.contains('wotd-say')){var t=hw.getAttribute('data-speak')||hw.textContent;SpeechManager.speak(t);}});});
+  (function(){var btn=document.getElementById('expandAllBtn');if(!btn)return;btn.addEventListener('click',function(){var ad=document.querySelectorAll('.module,.exam-module');var ao=true;for(var i=0;i<ad.length;i++){if(!ad[i].hasAttribute('open')){ao=false;break;}};for(var i=0;i<ad.length;i++){if(ao)ad[i].removeAttribute('open');else ad[i].setAttribute('open','');};btn.textContent=ao?'📂 展开全部模块':'📖 收起全部模块';});})();
+  var s=document.getElementById('sidebar'),k='eng9-theme-sidebar';if(!s)return;
+  if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
+  window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=window.scrollY>400?'flex':'none';},{passive:true});
+  document.getElementById('backToTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution');});});
+})();
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);localStorage.setItem("eng9-theme",t);var btn=document.getElementById("themeToggle");if(btn)btn.textContent=t==="dark"?"☀️":"🌙";}
+function toggleTheme(){setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark");}
+</script></body></html>

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U1 Let's Celebrate! | 初中英语九年级</title>
+<link rel="stylesheet" href="css/english9.css">
+<style>
+.speak-btn { display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;color:var(--accent);border:1px solid var(--border);border-radius:4px;padding:2px 8px;background:var(--bg);transition:background 0.15s; }
+.speak-btn:hover { background:var(--accent-light); }
+.speak-btn.speaking { background:var(--eng-amber-light);color:var(--eng-amber);border-color:var(--eng-amber); }
+.headword-speak-indicator { font-size:11px;margin-left:3px;opacity:0.55;cursor:pointer;vertical-align:super;line-height:1; }
+.headword-speak-indicator:hover { opacity:1; }
+.wotd-say { cursor:pointer;transition:color 0.15s; }
+.wotd-say:hover { color:var(--accent); }
+.wotd-say.speaking { color:var(--eng-pink); }
+.speech-panel { position:fixed;bottom:80px;right:24px;z-index:999;background:var(--bg);border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);padding:14px 18px;display:none;min-width:180px; }
+.speech-panel.open { display:block; }
+.speech-panel .row { display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px; }
+.speech-panel .row label { color:var(--text-secondary);font-size:12px;min-width:36px; }
+.speech-panel select,.speech-panel input[type="range"] { flex:1; }
+.speech-panel button { padding:4px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer;font-size:12px; }
+.speech-panel button:hover { background:var(--accent-light); }
+.speech-toggle-btn { position:fixed;bottom:24px;right:76px;z-index:999;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--accent);cursor:pointer;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center; }
+.speech-toggle-btn:hover { background:var(--accent-light); }
+.en-text.speaking { background:var(--eng-amber-light);border-radius:4px;padding:2px 4px;transition:background 0.2s; }
+[data-theme="dark"] .speech-panel { box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+[data-theme="dark"] .en-text.speaking { background:#452a08; }
+.detail-module { content-visibility:auto;contain-intrinsic-size:300px; }
+.reading { content-visibility:auto;contain-intrinsic-size:400px; }
+</style>
+<script>(function(){var t=localStorage.getItem("eng9-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
+</head>
+<body>
+<button id="sidebarShowBtn">☰ 侧栏</button>
+<button class="back-to-top" id="backToTop">↑</button>
+    <nav id="sidebar">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="margin-bottom:0;">英语九年级</h2>
+        <button id="sidebarHideBtn" style="background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-secondary);padding:2px 6px;border-radius:4px;">✕</button>
+      </div><nav>
+        <a href="index.html" style="font-weight:600;">🏠 返回首页</a>
+        <a href="../grammar.html" style="font-size:13px;">📌 语法全景图</a>
+        <a href="appendix-vocab.html" style="font-size:13px;">📖 单词专项</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 九年级上册 ━━</a>
+        <a href="u01.html">U1 The Changing World</a>
+        <a href="u02.html">U2 Inspiring People</a>
+        <a href="u03.html">U3 Smart Learning</a>
+        <a href="u04.html">U4 Our Memory</a>
+        <a href="u05.html">U5 Power of Ideas</a>
+        <a href="u06.html">U6 Beyond Earth</a>
+        <a href="u07.html">U7 Feel the Rhythm</a>
+        <a href="u08.html">U8 More than a Game</a>
+        <a href="#" style="font-size:12px;color:var(--text-secondary);margin:4px 0;">━━ 九年级下册 ━━</a>
+        <a href="b2u01.html" class="active">U1 Let's Celebrate!</a>
+        <a href="b2u02.html">U2 A Look into the Past</a>
+        <a href="b2u03.html">U3 Growing Up</a>
+        <a href="b2u04.html">U4 Nature's Wonders</a>
+        <a href="b2u05.html">U5 Our Future</a>
+      </nav>
+      <button class="expand-btn" id="expandAllBtn">📂 展开全部模块</button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+    </nav>
+<main id="content">
+<div class="cover"><div class="sub-en">U1</div><h1>Let's Celebrate!</h1><p>节日庆祝 · 简单句并列句复合句 · 中西方节日</p></div>
+<div class="unit-meta"><span>📖 话题：Festivals and celebrations around the world</span><span>💬 功能：Describe festivals, compare different celebrations</span><span>📚 语法：简单句(Simple) · 并列句(Compound) · 复合句(Complex)</span><span>📝 写作：介绍一个节日</span></div>
+<div class="can-do"><h3>🎯 我能做到</h3>  <label><input type="checkbox"> 能区分简单句、并列句和复合句</label>
+  <label><input type="checkbox"> 能用英语描述节日活动</label>
+  <label><input type="checkbox"> 能比较中西方节日的异同</label>
+  <label><input type="checkbox"> 能表达对节日的感受和看法</label>
+  <label><input type="checkbox"> 能写一篇介绍节日的短文</label></div>
+<details class="module" open><summary>📖 课文精讲 · Favorite Festivals</summary><div class="content">
+<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><span style="font-size:13px;color:var(--text-secondary);">场景：课间，Li Ming, Sarah 和 Chen Jie 在聊各自最喜欢的节日——中秋节、圣诞节和端午节。</span><button class="speak-btn" data-dialogue="dialogueText" title="朗读整段对话">🔊 朗读对话</button></div>
+<div class="dialogue" id="dialogueText">      <div class="dialogue-line"><span class="speaker">Li Ming:</span><span class="en-text wotd-say" data-speak="What's your favorite festival, Sarah?">What's your favorite festival, Sarah?</span></div>
+      <div class="dialogue-line"><span class="speaker">Sarah:</span><span class="en-text wotd-say" data-speak="I love Christmas! We decorate the tree, exchange gifts, and have a big feast with family.">I love Christmas! We decorate the tree, exchange gifts, and have a big feast with family.</span></div>
+      <div class="dialogue-line"><span class="speaker">Li Ming:</span><span class="en-text wotd-say" data-speak="Sounds wonderful! My favorite is the Mid-Autumn Festival. Families get together and enjoy mooncakes while admiring the full moon.">Sounds wonderful! My favorite is the Mid-Autumn Festival. Families get together and enjoy mooncakes while admiring the full moon.</span></div>
+      <div class="dialogue-line"><span class="speaker">Chen Jie:</span><span class="en-text wotd-say" data-speak="I like the Dragon Boat Festival best because I love watching the boat races. We also eat zongzi to honor Qu Yuan.">I like the Dragon Boat Festival best because I love watching the boat races. We also eat zongzi to honor Qu Yuan.</span></div>
+      <div class="dialogue-line"><span class="speaker">Sarah:</span><span class="en-text wotd-say" data-speak="That's interesting! Although festivals are different, they all bring people together.">That's interesting! Although festivals are different, they all bring people together.</span></div>
+      <div class="dialogue-line"><span class="speaker">Li Ming:</span><span class="en-text wotd-say" data-speak="You're right. Whether it's Spring Festival or Thanksgiving, celebrations remind us of what matters most — family and gratitude.">You're right. Whether it's Spring Festival or Thanksgiving, celebrations remind us of what matters most — family and gratitude.</span></div></div>
+<details style="margin-top:12px;"><summary style="cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;user-select:none;">📖 查看翻译</summary><div class="dialogue-annotation">        <p><strong>李明：</strong>你最喜欢的节日是什么，Sarah？</p>
+        <p><strong>Sarah：</strong>我爱圣诞节！我们装饰圣诞树，交换礼物，和家人一起吃大餐。</p>
+        <p><strong>李明：</strong>听起来太棒了！我最喜欢的是中秋节。家人团聚，一边吃着月饼一边赏月。</p>
+        <p><strong>陈洁：</strong>我最喜欢端午节，因为我喜欢看龙舟赛。我们还吃粽子来纪念屈原。</p>
+        <p><strong>Sarah：</strong>真有意思！虽然节日各不相同，但它们都让人们团聚在一起。</p>
+        <p><strong>李明：</strong>说得对。无论是春节还是感恩节，庆祝活动都提醒我们什么最重要——家人和感恩。</p></div></details>
+<div class="dialogue-annotation"><p><strong>🔑 重点讲解：</strong></p>      <p><strong>1.</strong> 简单句：<em>I love Christmas!</em> → S+V+O 结构。</p>
+      <p><strong>2.</strong> 并列句：<em>We decorate the tree, exchange gifts, <b>and</b> have a big feast.</em> → 用 and 连接并列动作。</p>
+      <p><strong>3.</strong> 复合句：<em>I like the Dragon Boat Festival best <b>because</b> I love watching the boat races.</em> → because 引导原因状语从句。</p>
+      <p><strong>4.</strong> 复合句：<em><b>Although</b> festivals are different, they all bring people together.</em> → although 引导让步状语从句。</p>
+      <p><strong>5.</strong> <b>Whether it's Spring Festival or Thanksgiving,</b> celebrations remind us of family. → whether…or… 引导让步状语从句。</p></div></div></details>
+<details class="module" open><summary>📝 重点词汇 · Festivals & Celebrations <button class="speak-btn" data-vocab="vocabGrid" title="朗读全部词汇">🔊 朗读全部词汇</button></summary><div class="content"><div class="vocab-grid" id="vocabGrid">      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="celebrate">celebrate</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈselɪbreɪt/</span><span class="pos">v.</span>
+        <div class="definition">庆祝</div>
+        <div class="example"><span class="wotd-say" data-speak="How do you celebrate the Spring Festival?">How do you celebrate the Spring Festival?</span><span class="trans">你们怎么庆祝春节？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="festival">festival</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈfestɪvl/</span><span class="pos">n.</span>
+        <div class="definition">节日</div>
+        <div class="example"><span class="wotd-say" data-speak="The Dragon Boat Festival is in summer.">The Dragon Boat Festival is in summer.</span><span class="trans">端午节在夏天。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="tradition">tradition</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/trəˈdɪʃn/</span><span class="pos">n.</span>
+        <div class="definition">传统</div>
+        <div class="example"><span class="wotd-say" data-speak="It is a tradition to eat mooncakes during Mid-Autumn Festival.">It is a tradition to eat mooncakes during Mid-Autumn Festival.</span><span class="trans">中秋节吃月饼是一种传统。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="custom">custom</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈkʌstəm/</span><span class="pos">n.</span>
+        <div class="definition">习俗；风俗</div>
+        <div class="example"><span class="wotd-say" data-speak="Every country has its own customs.">Every country has its own customs.</span><span class="trans">每个国家都有自己的风俗。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="reunion">reunion</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˌriːˈjuːniən/</span><span class="pos">n.</span>
+        <div class="definition">团聚；重聚</div>
+        <div class="example"><span class="wotd-say" data-speak="Spring Festival is a time for family reunion.">Spring Festival is a time for family reunion.</span><span class="trans">春节是家人团聚的时刻。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="mooncake">mooncake</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈmuːnkeɪk/</span><span class="pos">n.</span>
+        <div class="definition">月饼</div>
+        <div class="example"><span class="wotd-say" data-speak="Mooncakes come in many flavors.">Mooncakes come in many flavors.</span><span class="trans">月饼有很多口味。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="lantern">lantern</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈlæntən/</span><span class="pos">n.</span>
+        <div class="definition">灯笼</div>
+        <div class="example"><span class="wotd-say" data-speak="Children carry lanterns during the Lantern Festival.">Children carry lanterns during the Lantern Festival.</span><span class="trans">孩子们在元宵节提灯笼。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="dragon">dragon</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈdræɡən/</span><span class="pos">n.</span>
+        <div class="definition">龙</div>
+        <div class="example"><span class="wotd-say" data-speak="Dragon boats are long and narrow.">Dragon boats are long and narrow.</span><span class="trans">龙舟又长又窄。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="parade">parade</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/pəˈreɪd/</span><span class="pos">n.</span>
+        <div class="definition">游行；阅兵</div>
+        <div class="example"><span class="wotd-say" data-speak="There is a big parade on National Day.">There is a big parade on National Day.</span><span class="trans">国庆节有大游行。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="fireworks">fireworks</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈfaɪəwɜːks/</span><span class="pos">n.</span>
+        <div class="definition">烟花；焰火</div>
+        <div class="example"><span class="wotd-say" data-speak="Fireworks light up the sky on New Year's Eve.">Fireworks light up the sky on New Year's Eve.</span><span class="trans">除夕夜烟花照亮了天空。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="decorate">decorate</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈdekəreɪt/</span><span class="pos">v.</span>
+        <div class="definition">装饰；装点</div>
+        <div class="example"><span class="wotd-say" data-speak="We decorate our house with red lanterns.">We decorate our house with red lanterns.</span><span class="trans">我们用红灯笼装饰房子。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="feast">feast</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/fiːst/</span><span class="pos">n.</span>
+        <div class="definition">盛宴；宴会</div>
+        <div class="example"><span class="wotd-say" data-speak="A big feast is prepared for the Spring Festival.">A big feast is prepared for the Spring Festival.</span><span class="trans">春节会准备一顿丰盛的宴席。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="ceremony">ceremony</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈserəməni/</span><span class="pos">n.</span>
+        <div class="definition">仪式；典礼</div>
+        <div class="example"><span class="wotd-say" data-speak="The opening ceremony of the festival was amazing.">The opening ceremony of the festival was amazing.</span><span class="trans">节日的开幕式非常精彩。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="honor">honor</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈɒnə/</span><span class="pos">v./n.</span>
+        <div class="definition">尊敬； honoring 纪念</div>
+        <div class="example"><span class="wotd-say" data-speak="We hold the festival to honor our ancestors.">We hold the festival to honor our ancestors.</span><span class="trans">我们举办这个节日来纪念祖先。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="memory">memory</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈmeməri/</span><span class="pos">n.</span>
+        <div class="definition">记忆；回忆</div>
+        <div class="example"><span class="wotd-say" data-speak="The festival brings back happy memories.">The festival brings back happy memories.</span><span class="trans">这个节日带来了快乐的回忆。</span></div>
+      </div>
+</div></div></details>
+<details class="module" open><summary>⭐ 学霸词汇 · 拓展提升</summary><div class="content"><div class="vocab-grid">
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="lunar">lunar</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈluːnə/</span><span class="pos">adj.</span>
+        <div class="definition">月球的；阴历的</div>
+        <div class="example"><span class="wotd-say" data-speak="The Lunar New Year is the most important festival in China.">The Lunar New Year is the most important festival in China.</span><span class="trans">农历新年是中国最重要的节日。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="calendar">calendar</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈkælɪndə/</span><span class="pos">n.</span>
+        <div class="definition">日历；历法</div>
+        <div class="example"><span class="wotd-say" data-speak="The Chinese calendar is based on the moon.">The Chinese calendar is based on the moon.</span><span class="trans">中国历法以月亮为基础。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="commemorate">commemorate</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/kəˈmeməreɪt/</span><span class="pos">v.</span>
+        <div class="definition">纪念；庆祝</div>
+        <div class="example"><span class="wotd-say" data-speak="The festival commemorates an important event in history.">The festival commemorates an important event in history.</span><span class="trans">这个节日纪念历史上的一件重要事件。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="symbolize">symbolize</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈsɪmbəlaɪz/</span><span class="pos">v.</span>
+        <div class="definition">象征；代表</div>
+        <div class="example"><span class="wotd-say" data-speak="The dragon symbolizes power and good luck.">The dragon symbolizes power and good luck.</span><span class="trans">龙象征着力量和好运。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="origin">origin</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈɒrɪdʒɪn/</span><span class="pos">n.</span>
+        <div class="definition">起源；由来</div>
+        <div class="example"><span class="wotd-say" data-speak="Do you know the origin of the Dragon Boat Festival?">Do you know the origin of the Dragon Boat Festival?</span><span class="trans">你知道端午节的起源吗？</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="ancestor">ancestor</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈænsestə/</span><span class="pos">n.</span>
+        <div class="definition">祖先；祖宗</div>
+        <div class="example"><span class="wotd-say" data-speak="We honor our ancestors during the Qingming Festival.">We honor our ancestors during the Qingming Festival.</span><span class="trans">我们在清明节祭祖。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="gratitude">gratitude</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈɡrætɪtjuːd/</span><span class="pos">n.</span>
+        <div class="definition">感恩；感激</div>
+        <div class="example"><span class="wotd-say" data-speak="Thanksgiving is a time to express gratitude.">Thanksgiving is a time to express gratitude.</span><span class="trans">感恩节是表达感谢的时刻。</span></div>
+      </div>
+      <div class="vocab-card">
+        <span class="headword wotd-say" data-speak="blessing">blessing</span><span class="headword-speak-indicator">🔊</span>
+        <span class="ipa">/ˈblesɪŋ/</span><span class="pos">n.</span>
+        <div class="definition">祝福；福气</div>
+        <div class="example"><span class="wotd-say" data-speak="People send blessings to each other during the festival.">People send blessings to each other during the festival.</span><span class="trans">节日期间人们互相送祝福。</span></div>
+      </div>
+    </div></div></details>
+<details class="module" open><summary>🔤 重点句型 · Key Sentence Patterns</summary><div class="content"><div class="pattern-grid">      <div class="pattern-card">
+        <div class="structure">简单句：S + V (+ O)</div> <button class="speak-btn" data-target="sp1" title="朗读句型">🔊</button>
+        <div>只包含一个主谓结构，表达一个完整意思。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp1">I <span class="slot">love</span> Christmas. / Families <span class="slot">get together</span> for the reunion dinner.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">并列句：and / but / or / so</div> <button class="speak-btn" data-target="sp2" title="朗读句型">🔊</button>
+        <div>用并列连词连接两个或多个简单句。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp2">We eat mooncakes <span class="slot">and</span> enjoy the moon. / I like festivals, <span class="slot">but</span> my brother doesn't.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">复合句：because / when / although / if</div> <button class="speak-btn" data-target="sp3" title="朗读句型">🔊</button>
+        <div>包含一个主句和一个或多个从句，用从属连词连接。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp3">I love the festival <span class="slot">because</span> it's fun. / <span class="slot">Although</span> it's cold, people still go out.</span></div>
+      </div>
+      <div class="pattern-card">
+        <div class="structure">Whether…or… 引导从句</div> <button class="speak-btn" data-target="sp4" title="朗读句型">🔊</button>
+        <div>表示"无论是……还是……"，引导让步状语从句。</div>
+        <div class="substitution"><span class="q-speak-wrap" id="sp4"><span class="slot">Whether</span> it's rainy <span class="slot">or</span> sunny, we celebrate with joy.</span></div>
+      </div></div></div></details>
+<details class="module detail-module" open><summary>📚 语法聚焦 · 简单句 · 并列句 · 复合句 <button class="speak-btn" data-target="grammarContainer" title="朗读全部语法例句">🔊 朗读语法</button></summary><div class="content"><div class="grammar-module" id="grammarContainer"><h3>1. 简单句 (Simple Sentence)</h3>
+<p>只包含一个<strong>主谓结构</strong>的句子。常见结构：</p>
+<table class="grammar-table">
+<tr><th>结构</th><th>例句</th><th>中文</th></tr>
+<tr><td>S + V</td><td>We celebrate.</td><td>我们庆祝。</td></tr>
+<tr><td>S + V + O</td><td>I love Christmas.</td><td>我爱圣诞节。</td></tr>
+<tr><td>S + V + O + OC</td><td>We call it Spring Festival.</td><td>我们称它为春节。</td></tr>
+</table>
+<h3>2. 并列句 (Compound Sentence)</h3>
+<p>用<strong>并列连词</strong>连接两个或更多简单句。常见连词：</p>
+<table class="grammar-table">
+<tr><th>连词</th><th>含义</th><th>例句</th></tr>
+<tr><td>and</td><td>和；并且</td><td>We decorate the tree <b>and</b> exchange gifts.</td></tr>
+<tr><td>but</td><td>但是</td><td>I like festivals, <b>but</b> my sister prefers birthdays.</td></tr>
+<tr><td>or</td><td>或者；否则</td><td>Hurry up, <b>or</b> you'll miss the parade.</td></tr>
+<tr><td>so</td><td>所以</td><td>It was raining, <b>so</b> we stayed indoors.</td></tr>
+</table>
+<h3>3. 复合句 (Complex Sentence)</h3>
+<p>包含一个<strong>主句</strong>和一个或多个<strong>从句</strong>，用<strong>从属连词</strong>连接。</p>
+<table class="grammar-table">
+<tr><th>从句类型</th><th>连词</th><th>例句</th></tr>
+<tr><td>原因状语从句</td><td>because</td><td>I like the festival <b>because</b> we get together.</td></tr>
+<tr><td>时间状语从句</td><td>when</td><td><b>When</b> the festival comes, everyone feels excited.</td></tr>
+<tr><td>让步状语从句</td><td>although</td><td><b>Although</b> it's cold, people still go outside.</td></tr>
+<tr><td>条件状语从句</td><td>if</td><td><b>If</b> you visit during Spring Festival, you'll see red lanterns everywhere.</td></tr>
+</table>
+<h3>简单句 vs 并列句 vs 复合句</h3>
+<table class="grammar-table">
+<tr><th>类型</th><th>特点</th><th>例子</th></tr>
+<tr><td>简单句</td><td>一个主谓结构</td><td>I enjoy the festival.</td></tr>
+<tr><td>并列句</td><td>两个独立分句 + 并列连词</td><td>I enjoy the festival, <b>and</b> my family joins me.</td></tr>
+<tr><td>复合句</td><td>主句 + 从属连词 + 从句</td><td>I enjoy the festival <b>because</b> I am with my family.</td></tr>
+</table>
+</div><div class="chinese-error">      <p>❌ <span class="wrong" data-speak="Although it is cold, but people still celebrate.">Although it is cold, but people still celebrate.</span>（although 和 but 不能连用！）</p>
+      <p>✅ <span class="correct" data-speak="Although it is cold, people still celebrate.">Although it is cold, people still celebrate.</span></p>
+      <p>❌ <span class="wrong" data-speak="Because I like festivals, so I enjoy them.">Because I like festivals, so I enjoy them.</span>（because 和 so 不能连用！）</p>
+      <p>✅ <span class="correct" data-speak="Because I like festivals, I enjoy them.">Because I like festivals, I enjoy them.</span></p>
+      <p>❌ <span class="wrong" data-speak="I like spring, autumn and.">I like spring, autumn and.</span>（并列连词后缺少成分）</p>
+      <p>✅ <span class="correct" data-speak="I like spring and autumn.">I like spring and autumn.</span></p></div></div></details>
+<details class="exam-module" open><summary>📝 三级闯关 · 实战练习</summary><div class="content"><h3 class="level-basic">🥉 基础关 · 概念识记</h3>    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[简单句] Which is a simple sentence?<br>A) I like festivals because they are fun.<br>B) I like festivals and I enjoy them.<br>C) I like festivals.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>C</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[并列句] Choose the correct conjunction: I like Christmas, ____ I don't like the cold weather. (and / but / so)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>but</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[复合句] ____ it rains, we will still have the parade. (Although / Because / If)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Although</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[连词] We eat zongzi ____ the Dragon Boat Festival. (during / when / because)</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>during</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">基础</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">[句型] People celebrate ____ (happy / happily) during the festival.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>happily</div>
+    </div><h3 class="level-mid">🥈 提升关 · 语境运用</h3>    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[改错] Although the Spring Festival is in winter, but people feel warm inside.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>删除"but" — Although the Spring Festival is in winter, people feel warm inside.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[合并句子] We ate mooncakes. We watched the moon. (用 and 连接)<br>→ ____</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>We ate mooncakes and watched the moon.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[句型转换] It is a tradition. We eat dumplings during Spring Festival. (用 that 连接)<br>→ It is a tradition ____ we eat dumplings during Spring Festival.</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>that</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">提升</span><span class="q-diff">★★☆</span>
+      <div class="q-body">[完成句子] People around the world ____ (以不同的方式庆祝节日).</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>celebrate festivals in different ways</div>
+    </div><h3 class="level-hard">🥇 挑战关 · 综合运用</h3>    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">[汉译英] 无论你身在何处，春节都提醒我们家人团聚的重要性。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Wherever you are, the Spring Festival reminds us of the importance of family reunion.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">[仿写] 仿照"Although festivals are different, they all bring people together"用 although 写一个句子。</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>(示例) Although we celebrate in different ways, the spirit of the festival is the same.</div>
+    </div>
+    <div class="exam-q">
+      <span class="q-tag">挑战</span><span class="q-diff">★★★</span>
+      <div class="q-body">[阅读理解] According to the reading "Festivals Around the World", what do all festivals have in common?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>All festivals bring people together, express gratitude, create lasting memories, and carry traditions from the past.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>📖 阅读专项 · Festivals Around the World</summary><div class="content reading-module"><div class="reading-passage">      <p class="en-text">Every culture has its own festivals, but the joy they bring is universal. Some festivals honor historical events, while others celebrate the changing of seasons. Let's explore how different parts of the world celebrate.</p>
+      <p class="en-text">In China, the Spring Festival marks the beginning of the lunar new year. Families clean their houses, put up red decorations, and set off fireworks. Children receive red envelopes, and everyone enjoys a big reunion dinner. Although the traditions are ancient, the festival still feels fresh and exciting every year.</p>
+      <p class="en-text">In India, Diwali is known as the Festival of Lights. People light oil lamps and candles to symbolize the victory of light over darkness. Families decorate their homes with colorful rangoli patterns and share sweets with neighbors. The festival creates a warm and joyful atmosphere.</p>
+      <p class="en-text">Christmas is widely celebrated in Western countries. People decorate Christmas trees, sing carols, and exchange gifts. It is a time for family gatherings and expressing love and gratitude. Many people also attend church services to remember the birth of Jesus.</p>
+      <p class="en-text">Whether it's the harvest moon of Mid-Autumn Festival, the colorful lanterns of the Lantern Festival, or the dragon boats of the Duanwu Festival, every celebration carries deep meaning. Festivals connect us to our culture, our families, and our history. They remind us to be grateful and to share happiness with others.</p><div class="gloss"><span>universal 普遍的</span> <span>historical 历史的</span> <span>Diwali 排灯节</span> <span>rangoli 印度地画</span> <span>atmosphere 氛围</span> <span>carol 圣诞颂歌</span> <span>harvest 收获</span> </div></div>    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★☆☆</span>
+      <div class="q-body">1. What do families do during the Spring Festival?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>They clean houses, put up red decorations, set off fireworks, have a reunion dinner, and children get red envelopes.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">2. Why is Diwali called the "Festival of Lights"?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Because people light oil lamps and candles to symbolize the victory of light over darkness.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★☆</span>
+      <div class="q-body">3. What common purpose do all festivals serve according to the passage?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>Festivals connect us to our culture, families, and history, and remind us to be grateful and share happiness.</div>
+    </div>
+    <div class="exam-q reading-q">
+      <span class="q-tag">阅读</span><span class="q-diff">★★★</span>
+      <div class="q-body">4. What does the writer mean by "the joy they bring is universal"? Do you agree? Why or why not?</div>
+      <span class="q-toggle">📝 查看答案</span>
+      <div class="q-solution"><strong>答案：</strong>(Open) The writer means that although festivals are different everywhere, the happiness they create can be understood by everyone. Answers may vary.</div>
+    </div></div></details>
+<details class="module detail-module" open><summary>🏆 中考题型专练 · 语法选择 — 简单句·并列句·复合句</summary><div class="content exam-section"><p style="font-size:13px;margin-bottom:8px;">阅读短文，选择最佳答案。</p><div class="reading-passage" style="background:var(--bg-secondary);">      <p>Festivals are an important part of our lives. They bring joy <strong>1</strong> happiness to people. <strong>2</strong> festivals are different, the spirit behind them is often the same. My favorite festival is the Spring Festival <strong>3</strong> it marks the beginning of a new year. We clean our houses <strong>4</strong> we decorate them with red lanterns. <strong>5</strong> you visit China during this time, you will see fireworks everywhere. I love the Spring Festival <strong>6</strong> it is a time for family reunion.</p></div><div style="margin:4px 0;font-size:13px;"><strong>1</strong> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> A. and</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> B. but</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> C. or</span> <span style="margin-right:12px;"><input type="radio" name="exam_1" disabled> D. so</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>2</strong> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> A. Although</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> B. Because</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> C. If</span> <span style="margin-right:12px;"><input type="radio" name="exam_2" disabled> D. When</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>3</strong> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> A. and</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> B. so</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> C. because</span> <span style="margin-right:12px;"><input type="radio" name="exam_3" disabled> D. but</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>4</strong> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> A. and</span> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> B. or</span> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> C. but</span> <span style="margin-right:12px;"><input type="radio" name="exam_4" disabled> D. because</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>5</strong> <span style="margin-right:12px;"><input type="radio" name="exam_5" disabled> A. Although</span> <span style="margin-right:12px;"><input type="radio" name="exam_5" disabled> B. If</span> <span style="margin-right:12px;"><input type="radio" name="exam_5" disabled> C. When</span> <span style="margin-right:12px;"><input type="radio" name="exam_5" disabled> D. Because</span> </div>
+<div style="margin:4px 0;font-size:13px;"><strong>6</strong> <span style="margin-right:12px;"><input type="radio" name="exam_6" disabled> A. so</span> <span style="margin-right:12px;"><input type="radio" name="exam_6" disabled> B. because</span> <span style="margin-right:12px;"><input type="radio" name="exam_6" disabled> C. and</span> <span style="margin-right:12px;"><input type="radio" name="exam_6" disabled> D. although</span> </div>
+<div class="exam-q" style="border-left-color:#f59e0b;"><span class="q-tag" style="background:#f59e0b;color:#fff;">答案</span><div class="q-body">1. A；2. A；3. C；4. A；5. B；6. B</div></div></div></details>
+<details class="module detail-module" open><summary>✍️ 写作进阶 · 介绍一个节日</summary><div class="content writing-module"><div class="writing-prompt"><div class="prompt-title">📋 写作题目</div><div class="prompt-text">以 "My Favorite Festival" 为题，写一篇 80-100 词的短文。要求：介绍该节日的时间、传统活动、你最喜欢的部分，并至少使用 1 个并列句和 1 个复合句。</div></div><div class="writing-framework">      <div class="fw-step">开头：说明你最喜欢的节日是什么（简单句）</div>
+      <div class="fw-step">主体1：节日的时间和主要传统（并列句用 and / but）</div>
+      <div class="fw-step">主体2：你最喜欢的活动和原因（复合句用 because / although）</div>
+      <div class="fw-step">结尾：表达感受 — It makes me feel…</div></div><div class="writing-model"><div class="en">My Favorite Festival
+My favorite festival is the Mid-Autumn Festival. It falls on the 15th day of the eighth lunar month, and families get together to celebrate. We eat mooncakes and admire the full moon. I love this festival because the moon is always big and bright. Although I am busy with school, I always make time to be with my family. The festival reminds me that family is the most important thing in life.</div><div class="trans">我最喜欢的节日
+我最喜欢的节日是中秋节。它在农历八月十五，家人们团聚庆祝。我们吃月饼、赏月。我爱这个节日，因为月亮总是又大又亮。虽然我学习很忙，但我总是抽出时间和家人在一起。这个节日提醒我家人是生活中最重要的。</div></div></div></details>
+<div class="checklist detail-module"><h3>✅ 章节自查清单</h3>  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能区分简单句、并列句和复合句</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我会用 and / but / or / so 连接并列句</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我会用 because / when / although / if 写复合句</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能用英语描述节日传统和活动</label>
+  <label><span class="self-score">🟡→🟢</span><input type="checkbox"> 我能写一篇介绍节日的短文</label><p style="margin-top:12px;font-size:14px;color:var(--text-secondary);border-top:1px solid var(--border);padding-top:12px;"><strong>🧑‍🏫 费曼挑战：</strong>用英语向你的同学介绍一个你最喜欢的中国传统节日，至少使用 2 个并列句和 2 个复合句。</p></div>
+<div class="review-schedule"><strong>📅 间隔复习</strong>    <span class="review-dot">🔵 1天后：复习简单句 vs 并列句 vs 复合句区别</span>
+    <span class="review-dot">🟢 3天后：复习连词用法 (and/but/or/so/because/although)</span>
+    <span class="review-dot">🟡 1周后：复述阅读文章 "Festivals Around the World"</span>
+    <span class="review-dot">🔴 1月后：写作练习 — 介绍一个西方节日</span></div>
+<div class="next-stop" style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;"><span></span><a href="b2u02.html" class="nav-arrow">下一单元 →</a></div>
+<div class="next-stop" style="margin-top:8px;"><strong>➡️ 下一单元：U2: A Look into the Past</strong><br>学习用英语谈论过去的历史和文化遗产。</div>
+</main>
+<div class="speech-panel" id="speechPanel"><div style="font-weight:700;font-size:13px;margin-bottom:6px;">🔊 语音控制</div><div class="row"><label>语速</label><input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.9"><span id="speechRateLabel" style="font-size:12px;min-width:32px;text-align:right;">0.9</span></div><div class="row"><label>口音</label><select id="speechVoice"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></div><div class="row" style="justify-content:space-between;"><button id="speechStopBtn">⏹ 停止</button><button id="speechCloseBtn">✕ 关闭</button></div></div>
+<button class="speech-toggle-btn" id="speechToggleBtn">🔊</button>
+<script>
+(function() {
+  var SpeechManager = {
+    synthesis: window.speechSynthesis, currentUtterance: null, speaking: false, rate: 0.9, voiceURI: 'en-US',
+    init: function(){var s=this;document.getElementById('speechRate').addEventListener('input',function(){s.rate=+this.value;document.getElementById('speechRateLabel').textContent=this.value;});document.getElementById('speechVoice').addEventListener('change',function(){s.voiceURI=this.value;localStorage.setItem('speech-voice',this.value);});document.getElementById('speechStopBtn').addEventListener('click',function(){s.stop();});document.getElementById('speechCloseBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.remove('open');});document.getElementById('speechToggleBtn').addEventListener('click',function(){document.getElementById('speechPanel').classList.toggle('open');});},
+    speak: function(t,c){if(!t)return;this.stop();var u=new SpeechSynthesisUtterance(t);u.lang=this.voiceURI;u.rate=this.rate;u.onend=function(){if(c)c();};this.currentUtterance=u;this.synthesis.speak(u);},
+    speakDialogue: function(id,c){var s=this,el=document.getElementById(id),ls=el?el.querySelectorAll('.en-text'):[],i=0;this.stop();(function n(){if(i>=ls.length){if(c)c();return;}var e=ls[i],t=e.getAttribute('data-speak')||e.textContent;if(!t){i++;n();return;}e.classList.add('speaking');var u=new SpeechSynthesisUtterance(t);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){e.classList.remove('speaking');i++;setTimeout(n,500);};u.onerror=function(){e.classList.remove('speaking');i++;setTimeout(n,200);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    speakVocabSection: function(id,c){var s=this,el=document.getElementById(id),cs=el?el.querySelectorAll('.vocab-card'):[],i=0;this.stop();(function n(){if(i>=cs.length){if(c)c();return;}var e=cs[i],hw=e.querySelector('.headword'),ex=e.querySelector('.example .wotd-say'),t=[];if(hw)t.push(hw.getAttribute('data-speak')||hw.textContent);if(ex)t.push(ex.getAttribute('data-speak')||ex.textContent.replace(/<[^>]+>/g,'').trim());var ft=t.join('. ');if(!ft){i++;n();return;}hw.classList.add('speaking');var u=new SpeechSynthesisUtterance(ft);u.lang=s.voiceURI;u.rate=s.rate;u.onend=function(){hw.classList.remove('speaking');i++;setTimeout(n,600);};u.onerror=function(){hw.classList.remove('speaking');i++;setTimeout(n,300);};s.currentUtterance=u;s.synthesis.speak(u);})();},
+    stop: function(){this.synthesis.cancel();this.speaking=false;}
+  };SpeechManager.init();
+  document.querySelectorAll('.wotd-say').forEach(function(el){el.addEventListener('click',function(){SpeechManager.speak(this.getAttribute('data-speak')||this.textContent);});});
+  document.querySelectorAll('.speak-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var d=this.getAttribute('data-dialogue'),v=this.getAttribute('data-vocab'),t=this.getAttribute('data-target');if(this.classList.contains('speaking')){SpeechManager.stop();this.classList.remove('speaking');return;}this.classList.add('speaking');var done=function(){btn.classList.remove('speaking');};if(d){SpeechManager.speakDialogue(d,done);}else if(v){SpeechManager.speakVocabSection(v,done);}else if(t){var tg=document.getElementById(t);if(!tg){btn.classList.remove('speaking');return;}SpeechManager.speak(tg.textContent.replace(/<[^>]+>/g,''),done);}else{btn.classList.remove('speaking');}});});
+  document.querySelectorAll('.headword-speak-indicator').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();var hw=this.previousElementSibling;if(hw&&hw.classList.contains('wotd-say')){var t=hw.getAttribute('data-speak')||hw.textContent;SpeechManager.speak(t);}});});
+  (function(){var btn=document.getElementById('expandAllBtn');if(!btn)return;btn.addEventListener('click',function(){var ad=document.querySelectorAll('.module,.exam-module');var ao=true;for(var i=0;i<ad.length;i++){if(!ad[i].hasAttribute('open')){ao=false;break;}};for(var i=0;i<ad.length;i++){if(ao)ad[i].removeAttribute('open');else ad[i].setAttribute('open','');};btn.textContent=ao?'📂 展开全部模块':'📖 收起全部模块';});})();
+  var s=document.getElementById('sidebar'),k='eng9-theme-sidebar';if(!s)return;
+  if(localStorage.getItem(k)==='hidden'){s.classList.add('hidden');document.body.classList.add('sidebar-hidden')}
+  var h=document.getElementById('sidebarHideBtn'),w=document.getElementById('sidebarShowBtn');
+  if(h)h.addEventListener('click',function(){s.classList.add('hidden');document.body.classList.add('sidebar-hidden');localStorage.setItem(k,'hidden')});
+  if(w)w.addEventListener('click',function(){s.classList.remove('hidden');document.body.classList.remove('sidebar-hidden');localStorage.setItem(k,'')});
+  window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(b)b.style.display=window.scrollY>400?'flex':'none';},{passive:true});
+  document.getElementById('backToTop').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.querySelectorAll('.q-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();this.parentElement.classList.toggle('show-solution');});});
+})();
+function setTheme(t){document.documentElement.setAttribute("data-theme",t);localStorage.setItem("eng9-theme",t);var btn=document.getElementById("themeToggle");if(btn)btn.textContent=t==="dark"?"☀️":"🌙";}
+function toggleTheme(){setTheme(document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark");}
+</script></body></html>

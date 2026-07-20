@@ -50,13 +50,163 @@ blockquote{padding:12px 18px;border-left:3px solid var(--accent);background:var(
 .flex-col{display:flex;gap:24px;flex-wrap:wrap;}
 .flex-col>*{flex:1;min-width:260px;}
 @media(max-width:640px){body{padding:16px 12px 60px}h1{font-size:22px}h2{font-size:17px}.schedule-table td:first-child{width:auto;display:block;font-size:12px}.schedule-table td{display:block;padding:4px 6px;border:none}.schedule-table tr{border-bottom:1px solid var(--border);display:block;padding:8px 0}.toc{grid-template-columns:repeat(2,1fr)}}
+
+/* ===== 方案三 Dashboard & Tracking ===== */
+
+/* Dashboard banner */
+.dashboard{background:var(--bg2);border-radius:var(--r);padding:20px 24px;margin-bottom:28px;border:1px solid var(--border);}
+.dash-header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+.dash-title{font-size:18px;font-weight:800;}
+.dash-week{font-size:14px;color:var(--text2);}
+.dash-streak{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:600;padding:4px 12px;border-radius:20px;background:var(--gold-bg);color:var(--gold);}
+.dash-streak.hot{background:#fef2f2;color:#dc2626;}
+.dash-progress{display:flex;gap:16px;flex-wrap:wrap;margin:12px 0 16px;}
+.dash-progress .dp-item{flex:1;min-width:100px;}
+.dp-label{font-size:12px;color:var(--text2);margin-bottom:4px;}
+.dp-bar{height:8px;background:var(--border);border-radius:4px;overflow:hidden;}
+.dp-fill{height:100%;border-radius:4px;transition:width .4s;background:linear-gradient(90deg,#6366f1,#8b5cf6);}
+.dp-fill.gold{background:linear-gradient(90deg,#f59e0b,#d97706);}
+.dp-fill.green{background:linear-gradient(90deg,#22c55e,#16a34a);}
+.dp-num{font-size:13px;font-weight:700;margin-top:3px;}
+
+/* Today's task card */
+.today-card{background:var(--bg);border:2px solid var(--accent);border-radius:var(--r);padding:16px 20px;margin-bottom:14px;}
+.today-card .tc-title{font-size:15px;font-weight:700;margin-bottom:10px;color:var(--accent);}
+.today-card .tc-slot{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);cursor:pointer;}
+.today-card .tc-slot:last-child{border:none;}
+.tc-cb{width:20px;height:20px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;transition:all .15s;}
+.tc-slot.done .tc-cb{background:var(--accent);border-color:var(--accent);color:#fff;}
+.tc-slot.skipped .tc-cb{background:var(--text2);border-color:var(--text2);color:#fff;content:'—';}
+.tc-slot .tc-subject{font-size:12px;font-weight:600;padding:2px 8px;border-radius:4px;}
+.tc-subject.math{background:#eef2ff;color:#4f46e5;}
+.tc-subject.english{background:#ede9fe;color:#7c3aed;}
+.tc-subject.physics{background:#ecfeff;color:#0891b2;}
+[data-theme="dark"] .tc-subject.math{background:#1e1b4b;color:#a5b4fc;}
+[data-theme="dark"] .tc-subject.english{background:#3b1f6e;color:#c4b5fd;}
+[data-theme="dark"] .tc-subject.physics{background:#164e63;color:#67e8f9;}
+.tc-slot .tc-label{font-size:13px;flex:1;color:var(--text);}
+.tc-slot.done .tc-label{text-decoration:line-through;color:var(--text2);}
+.tc-slot .tc-status{font-size:11px;padding:2px 8px;border-radius:10px;font-weight:600;}
+.tc-status.done{background:#dcfce7;color:#16a34a;}
+.tc-status.skipped{background:#f1f5f9;color:#94a3b8;}
+
+/* Ritual check-in */
+.ritual-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;padding-top:12px;border-top:1px dashed var(--border);}
+.ritual-item{display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer;padding:6px 14px;border-radius:20px;border:1px solid var(--border);user-select:none;transition:all .15s;}
+.ritual-item.done{background:var(--alight);border-color:var(--accent);color:var(--accent);}
+.ritual-item .ri-icon{font-size:16px;}
+
+/* Checklist interactivity */
+.checklist li{cursor:pointer;user-select:none;transition:color .15s;}
+.checklist li:hover{color:var(--accent);}
+.checklist li.checked{color:var(--text2);}
+.checklist li.checked::before{content:'☑';color:var(--accent);}
+.checklist li.checked.dim::before{content:'📖';color:#ca8a04;}
+.checklist li .cl-status{font-size:10px;margin-left:6px;opacity:.7;}
+.checklist li .cl-badge{font-size:10px;padding:1px 6px;border-radius:8px;margin-left:6px;}
+.cl-badge.learning{background:#fef3c7;color:#92400e;}
+.cl-badge.mastered{background:#dcfce7;color:#16a34a;}
+
+/* Weekly error stats form */
+.err-stats{margin:16px 0;}
+.err-stats table{font-size:13px;}
+.err-stats input{width:48px;padding:4px 6px;border:1px solid var(--border);border-radius:6px;text-align:center;font-size:13px;background:var(--bg);color:var(--text);}
+.err-stats .es-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.es-chart{height:120px;display:flex;align-items:flex-end;gap:4px;margin-top:8px;padding:8px 0;}
+.es-bar{flex:1;border-radius:4px 4px 0 0;min-height:2px;transition:height .3s;position:relative;}
+.es-bar:hover{opacity:.8;}
+.es-bar .es-tip{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);font-size:10px;white-space:nowrap;background:var(--bg2);padding:2px 6px;border-radius:4px;display:none;}
+.es-bar:hover .es-tip{display:block;}
+.es-bar.math{background:#4f46e5;}
+.es-bar.english{background:#7c3aed;}
+.es-bar.physics{background:#0891b2;}
+
+/* Weekly report panel */
+
+.kn-item{display:flex;align-items:center;gap:6px;padding:4px 6px;cursor:pointer;border-radius:6px;font-size:12px;transition:background .15s;}
+.kn-item:hover{background:var(--bg2);}
+.kn-item .kn-cb{font-size:14px;flex-shrink:0;width:18px;text-align:center;}
+.kn-item.done .kn-text{text-decoration:line-through;color:var(--text2);}
+.kn-item.learning .kn-text{color:#ca8a04;}
+.kn-item .kn-badge{font-size:10px;padding:1px 6px;border-radius:6px;margin-left:4px;flex-shrink:0;}
+.kn-badge.mastered{background:#dcfce7;color:#16a34a;}
+.kn-badge.learning{background:#fef3c7;color:#92400e;}
+.weekly-report{margin:16px 0;}
+
+.kn-item{display:flex;align-items:center;gap:6px;padding:4px 6px;cursor:pointer;border-radius:6px;font-size:12px;transition:background .15s;}
+.kn-item:hover{background:var(--bg2);}
+.kn-item .kn-cb{font-size:14px;flex-shrink:0;width:18px;text-align:center;}
+.kn-item.done .kn-text{text-decoration:line-through;color:var(--text2);}
+.kn-item.learning .kn-text{color:#ca8a04;}
+.kn-item .kn-badge{font-size:10px;padding:1px 6px;border-radius:6px;margin-left:4px;flex-shrink:0;}
+.kn-badge.mastered{background:#dcfce7;color:#16a34a;}
+.kn-badge.learning{background:#fef3c7;color:#92400e;}
+.weekly-report .wr-week{display:flex;gap:16px;padding:12px;background:var(--bg);border-radius:var(--r);border:1px solid var(--border);margin-bottom:8px;cursor:pointer;transition:all .15s;}
+
+.kn-item{display:flex;align-items:center;gap:6px;padding:4px 6px;cursor:pointer;border-radius:6px;font-size:12px;transition:background .15s;}
+.kn-item:hover{background:var(--bg2);}
+.kn-item .kn-cb{font-size:14px;flex-shrink:0;width:18px;text-align:center;}
+.kn-item.done .kn-text{text-decoration:line-through;color:var(--text2);}
+.kn-item.learning .kn-text{color:#ca8a04;}
+.kn-item .kn-badge{font-size:10px;padding:1px 6px;border-radius:6px;margin-left:4px;flex-shrink:0;}
+.kn-badge.mastered{background:#dcfce7;color:#16a34a;}
+.kn-badge.learning{background:#fef3c7;color:#92400e;}
+.weekly-report .wr-week:hover{border-color:var(--accent);}
+.wr-week .wr-num{font-size:20px;font-weight:800;color:var(--accent);min-width:70px;}
+.wr-week .wr-detail{flex:1;}
+.wr-week .wr-bar{height:6px;background:var(--border);border-radius:3px;margin:6px 0;overflow:hidden;}
+.wr-week .wr-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,#6366f1,#8b5cf6);transition:width .4s;}
+.wr-week .wr-pct{font-size:13px;font-weight:700;}
+.wr-week.done .wr-num{color:#16a34a;}
+
+/* Milestone celebration */
+.milestone-popup{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;z-index:1000;animation:fadeIn .3s;}
+.milestone-card{background:var(--bg);border-radius:var(--r);padding:32px 40px;text-align:center;max-width:400px;animation:popIn .3s;}
+.milestone-card .ms-icon{font-size:64px;margin-bottom:12px;}
+.milestone-card .ms-title{font-size:20px;font-weight:800;margin-bottom:8px;}
+.milestone-card .ms-desc{font-size:14px;color:var(--text2);margin-bottom:20px;}
+.milestone-card button{padding:10px 28px;border-radius:20px;border:none;background:var(--accent);color:#fff;font-weight:600;font-size:14px;cursor:pointer;}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes popIn{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+
+/* Settings modal */
+.settings-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;z-index:1000;}
+.settings-card{background:var(--bg);border-radius:var(--r);padding:28px 32px;max-width:380px;width:90%;}
+.settings-card h3{font-size:18px;font-weight:700;margin-bottom:16px;}
+.settings-card label{display:block;font-size:14px;font-weight:600;margin-bottom:6px;}
+.settings-card input[type=date]{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-size:14px;background:var(--bg2);color:var(--text);margin-bottom:16px;}
+.settings-card .btn-row{display:flex;gap:12px;justify-content:flex-end;}
+.settings-card button{padding:8px 20px;border-radius:8px;border:none;font-weight:600;font-size:14px;cursor:pointer;}
+.settings-card .btn-primary{background:var(--accent);color:#fff;}
+.settings-card .btn-secondary{background:var(--bg2);color:var(--text2);}
+
+/* Section progress */
+.section-progress{display:flex;align-items:center;gap:8px;margin:6px 0;font-size:12px;}
+.section-progress .sp-bar{flex:1;height:4px;background:var(--border);border-radius:2px;overflow:hidden;}
+.section-progress .sp-fill{height:100%;border-radius:2px;background:var(--accent);transition:width .3s;}
+.section-progress .sp-label{color:var(--text2);white-space:nowrap;font-weight:600;}
+
+/* Today highlight in schedule */
+.today-highlight{outline:2px solid var(--accent);outline-offset:2px;border-radius:8px;background:var(--alight);}
+.today-badge{display:inline-block;font-size:10px;background:var(--accent);color:#fff;padding:1px 8px;border-radius:10px;margin-left:6px;font-weight:700;}
+
+/* Responsive */
+@media(max-width:640px){
+  .dash-progress{gap:8px;}
+  .dash-progress .dp-item{min-width:80px;}
+  .today-card{padding:12px 14px;}
+  .today-card .tc-slot{padding:6px 0;flex-wrap:wrap;}
+  .milestone-card{padding:24px 20px;margin:0 12px;}
+  .settings-card{padding:20px;margin:0 12px;}
+}
+
 </style>
 <script>(function(){var t=localStorage.getItem("site-theme");if(!t)t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);})();</script>
 </head>
 <body>
 
 <header>
-  <p style="margin-bottom:4px;"><a href="index.html">← 复习导航</a></p>
+  <p style="margin-bottom:4px;"><a href="../index.html">← 返回首页</a></p>
   <h1>📋 6周完整复习计划</h1>
   <p class="sub">英语七八年级 · 数学七八年级 · 物理八年级　|　特级教师修订版</p>
   <p class="sub" style="font-size:12px;margin-top:4px;">适用：已完成七八年级全部课程。每日 5-6 学习小时 + 早读/睡前仪式各 10-15 分钟。</p>
@@ -79,14 +229,14 @@ blockquote{padding:12px 18px;border-left:3px solid var(--accent);background:var(
 <summary><span class="badge en">英语</span> 七八年级知识清单</summary>
 <div class="detail-body">
 
-<h4>七年级（上）词汇</h4>
+<h4 data-section="en-7a-words">七年级（上）词汇</h4>
 <ul class="checklist">
   <li>Starter Units 1-3：问候、颜色、数字、日常物品</li>
   <li>Unit 1-3：个人信息、家庭成员、学校物品</li>
   <li>Unit 4-6：房间物品、食物、购物</li>
   <li>Unit 7-9：日期、学科、电影类型</li>
 </ul>
-<h4>七年级（上）语法</h4>
+<h4 data-section="en-7a-grammar">七年级（上）语法</h4>
 <ul class="checklist">
   <li>be 动词（am/is/are）</li><li>人称代词（主格/宾格）、物主代词</li>
   <li>名词单复数、可数与不可数</li><li>一般现在时（含第三人称单数）</li>
@@ -94,35 +244,35 @@ blockquote{padding:12px 18px;border-left:3px solid var(--accent);background:var(
   <li>特殊疑问句（what/where/when/why/who/how）</li>
 </ul>
 
-<h4>七年级（下）词汇</h4>
+<h4 data-section="en-7b-words">七年级（下）词汇</h4>
 <ul class="checklist">
   <li>Unit 1-3：能力、日常作息、交通方式</li><li>Unit 4-6：校规、动物、日常活动</li>
   <li>Unit 7-9：天气、街区、外貌</li><li>Unit 10-12：食物、学校旅行、周末活动</li>
 </ul>
-<h4>七年级（下）语法</h4>
+<h4 data-section="en-7b-grammar">七年级（下）语法</h4>
 <ul class="checklist">
   <li>情态动词 can/must/have to</li><li>现在进行时</li><li>There be 句型</li>
   <li>一般过去时（规则/不规则动词）</li><li>would like 句型</li><li>how 引导的特殊疑问句</li>
 </ul>
 
-<h4>八年级（上）词汇</h4>
+<h4 data-section="en-8a-words">八年级（上）词汇</h4>
 <ul class="checklist">
   <li>Unit 1-3：假期、频率、性格比较</li><li>Unit 4-6：交通/地点比较、娱乐、未来职业</li>
   <li>Unit 7-8：未来生活预测、食物制作</li><li>Unit 9-10：邀请、问题与建议</li>
 </ul>
-<h4>八年级（上）语法</h4>
+<h4 data-section="en-8a-grammar">八年级（上）语法</h4>
 <ul class="checklist">
   <li>复合不定代词（someone/anything/nobody 等）</li><li>频率副词</li>
   <li>形容词/副词比较级与最高级</li><li>be going to / will 表将来</li>
   <li>条件状语从句（if）</li><li>情态动词 should/could</li><li>动词不定式作宾语</li>
 </ul>
 
-<h4>八年级（下）词汇</h4>
+<h4 data-section="en-8b-words">八年级（下）词汇</h4>
 <ul class="checklist">
   <li>Unit 1-3：健康问题、志愿服务、家务</li><li>Unit 4-6：人际问题、过去进行时事件、传说故事</li>
   <li>Unit 7-8：世界之最、文学音乐</li><li>Unit 9-10：有趣地点、旧物处理</li>
 </ul>
-<h4>八年级（下）语法</h4>
+<h4 data-section="en-8b-grammar">八年级（下）语法</h4>
 <ul class="checklist">
   <li>反身代词</li><li>动词不定式作宾语/状语/宾补</li><li>could/should 提建议</li>
   <li>连词 until/so that/although</li><li>过去进行时</li><li>现在完成时</li>
@@ -148,7 +298,7 @@ blockquote{padding:12px 18px;border-left:3px solid var(--accent);background:var(
 <summary><span class="badge math">数学</span> 七八年级知识清单</summary>
 <div class="detail-body">
 
-<h4>七年级（上）</h4>
+<h4 data-section="math-7a">七年级（上）</h4>
 <ul class="checklist">
   <li><strong>第1章 有理数</strong>：正负数、数轴、相反数、绝对值、加减乘除乘方、科学记数法</li>
   <li><strong>第2章 整式加减</strong>：单项式/多项式、同类项、去括号、合并同类项</li>
@@ -156,7 +306,7 @@ blockquote{padding:12px 18px;border-left:3px solid var(--accent);background:var(
   <li><strong>第4章 几何初步</strong>：直线/射线/线段、角、余角补角</li>
 </ul>
 
-<h4>七年级（下）</h4>
+<h4 data-section="math-7b">七年级（下）</h4>
 <ul class="checklist">
   <li><strong>第5章 相交线与平行线</strong>：对顶角、垂线、平行线判定与性质（同位角/内错角/同旁内角）、命题与证明</li>
   <li><strong>第6章 实数</strong>：平方根/立方根、无理数、实数运算</li>
@@ -166,7 +316,7 @@ blockquote{padding:12px 18px;border-left:3px solid var(--accent);background:var(
   <li><strong>第10章 数据的收集整理与描述</strong>：调查方式、条形/扇形/折线图/直方图</li>
 </ul>
 
-<h4>八年级（上）</h4>
+<h4 data-section="math-8a">八年级（上）</h4>
 <ul class="checklist">
   <li><strong>第11章 三角形</strong>：三边关系、中线/高/角平分线、内角和外角、多边形内角和</li>
   <li><strong>第12章 全等三角形</strong>：SSS/SAS/ASA/AAS/HL 五种判定、角平分线性质</li>
@@ -175,7 +325,7 @@ blockquote{padding:12px 18px;border-left:3px solid var(--accent);background:var(
   <li><strong>第15章 分式</strong>：约分通分、分式运算、分式方程（检验！）</li>
 </ul>
 
-<h4>八年级（下）</h4>
+<h4 data-section="math-8b">八年级（下）</h4>
 <ul class="checklist">
   <li><strong>第16章 二次根式</strong>：最简二次根式、加减乘除</li>
   <li><strong>第17章 勾股定理</strong>：证明、逆定理、最短路径/折叠应用</li>
@@ -201,7 +351,7 @@ blockquote{padding:12px 18px;border-left:3px solid var(--accent);background:var(
 <summary><span class="badge ph">物理</span> 八年级知识清单</summary>
 <div class="detail-body">
 
-<h4>八年级（上）</h4>
+<h4 data-section="phys-8a">八年级（上）</h4>
 <ul class="checklist">
   <li><strong>第1章 机械运动</strong>：长度/时间测量、参照物、v=s/t（m/s↔km/h）、s-t/v-t图像、平均速度≠速度平均值</li>
   <li><strong>第2章 声现象</strong>：振动产生、介质传播、声速约340m/s、音调(频率)/响度(振幅)/音色、超声波/次声波、噪声控制三途径</li>
@@ -211,7 +361,7 @@ blockquote{padding:12px 18px;border-left:3px solid var(--accent);background:var(
   <li><strong>第6章 质量与密度</strong>：天平使用(水平→归零→调平→左物右码)、ρ=m/V、量筒测体积、测密度实验</li>
 </ul>
 
-<h4>八年级（下）</h4>
+<h4 data-section="phys-8b">八年级（下）</h4>
 <ul class="checklist">
   <li><strong>第7章 力</strong>：力的作用效果/三要素/示意图、弹力(伸长量与拉力成正比)、G=mg(g≈10N/kg)、摩擦力影响因素</li>
   <li><strong>第8章 运动和力</strong>：牛顿第一定律、惯性(只与质量有关)、二力平衡(同体等大反向共线)、平衡力vs相互作用力</li>
@@ -221,7 +371,7 @@ blockquote{padding:12px 18px;border-left:3px solid var(--accent);background:var(
   <li><strong>第12章 简单机械</strong>：杠杆五要素、F₁L₁=F₂L₂、三类杠杆、定滑轮/动滑轮/滑轮组、η=W有/W总×100%</li>
 </ul>
 
-<h4>必会实验（7个）</h4>
+<h4 data-section="phys-experiments">必会实验（7个）</h4>
 <table>
 <tr><th>实验</th><th>考点</th></tr>
 <tr><td>测平均速度</td><td>v=s/t，斜面坡度不宜过大</td></tr>
@@ -233,7 +383,7 @@ blockquote{padding:12px 18px;border-left:3px solid var(--accent);background:var(
 <tr><td>探究杠杆平衡</td><td>调节平衡螺母，水平位置平衡</td></tr>
 </table>
 
-<h4>凸透镜成像五幅图（必背）</h4>
+<h4 data-section="phys-lens">凸透镜成像五幅图（必背）</h4>
 <table>
 <tr><th>物距 u</th><th>像距 v</th><th>像的性质</th><th>应用</th></tr>
 <tr><td>u>2f</td><td>f＜v＜2f</td><td>倒立缩小实像</td><td>照相机</td></tr>
@@ -243,7 +393,7 @@ blockquote{padding:12px 18px;border-left:3px solid var(--accent);background:var(
 <tr><td>u＜f</td><td>—</td><td>正立放大虚像</td><td>放大镜</td></tr>
 </table>
 
-<h4>浮沉条件</h4>
+<h4 data-section="phys-buoyancy">浮沉条件</h4>
 <table>
 <tr><th>状态</th><th>条件</th><th>F浮 vs G</th></tr>
 <tr><td>上浮</td><td>ρ物＜ρ液</td><td>F浮＞G</td></tr>
@@ -262,145 +412,145 @@ blockquote{padding:12px 18px;border-left:3px solid var(--accent);background:var(
 
 <details><summary>第1周：基础回扫</summary><div class="detail-body">
 
-<h4>周一</h4>
+<h4 data-week="4" data-day="1">周一</h4>
 <table class="schedule-table"><tr><td>上午 2h</td><td><span class="badge math">数学</span> 七上有理数。数轴→相反数→绝对值→有理数加减</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 七上单词 U1-U6 跟读+听写。语法：be动词、人称代词、一般现在时。<strong>写作：仿写5个简单句</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第1章机械运动。长度测量→参照物→v=s/t公式→s-t图像</td></tr></table>
 
-<h4>周二</h4>
+<h4 data-week="4" data-day="2">周二</h4>
 <table class="schedule-table"><tr><td>上午 2h</td><td><span class="badge ph">物理</span> 第2章声现象。振动→介质→三特性→噪声控制（画思维导图）</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 七上单词 U7-U9+Starter。完形×1(限12min)+阅读×1(限8min)。<strong>写作：连词成句练习5道</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge math">数学</span> 有理数乘除、乘方。混合运算10道</td></tr></table>
 
-<h4>周三</h4>
+<h4 data-week="4" data-day="3">周三</h4>
 <table class="schedule-table"><tr><td>上午 2h</td><td><span class="badge math">数学</span> 七上整式加减。单项式/多项式→同类项→去括号合并</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 复习七上单词。语法：名词单复数、There be。<strong>写作：仿写3个There be段落</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第1-2章课后练习（只做基础题）</td></tr></table>
 
-<h4>周四</h4>
+<h4 data-week="4" data-day="4">周四</h4>
 <table class="schedule-table"><tr><td>上午 2h</td><td><span class="badge ph">物理</span> 第3章物态变化。六种变化→熔化凝固图像→沸腾条件</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 七下单词 U1-U6。语法：现在进行时、一般过去时。<strong>写作：两种时态各写3句话</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge math">数学</span> 一元一次方程。等式性质→移项→去括号→去分母→解方程10道</td></tr></table>
 
-<h4>周五</h4>
+<h4 data-week="4" data-day="5">周五</h4>
 <table class="schedule-table"><tr><td>上午 2h</td><td><span class="badge math">数学</span> 一元一次方程应用题。行程/工程/利润各2道</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 七下单词 U7-U12。完形×1+阅读×1。<strong>写作：仿写1篇短日记(50词)</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第3章课后练习+物态变化选择题15道</td></tr></table>
 
-<h4>周六</h4>
+<h4 data-week="4" data-day="6">周六</h4>
 <table class="schedule-table"><tr><td>上午 2h</td><td><span class="badge ph">物理</span> 第4章光现象。反射定律→平面镜成像→折射→色散（光路图每幅画3遍）</td></tr><tr><td>下午 2h</td><td><span class="badge math">数学</span> 七上几何初步。直线/角→余角补角。<span class="badge en">英语</span> 本周生词复习</td></tr><tr><td>晚上 1h</td><td>自由补弱</td></tr></table>
 
-<h4>周日检测</h4>
+<h4 data-week="4" data-day="7">周日检测</h4>
 <table class="schedule-table"><tr><td>上午 2h</td><td><span class="badge math">数学</span> 七上基础测试卷（不限时，目标＞85分）</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 七上词汇+语法测试卷（含听力+阅读+写作）</td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第1-4章概念自测（画图+公式默写+1道实验题）</td></tr></table>
 </div></details>
 
 <details><summary>第2周：推进巩固</summary><div class="detail-body">
 
-<h4>周一</h4>
+<h4 data-week="5" data-day="1">周一</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge math">数学</span> 七下相交线与平行线。判定与性质→证明题5道</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 八上单词 U1-U4。语法：复合不定代词、频率副词、比较级。<strong>写作：用比较级写5句话</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第4章课后练习+反射/折射作图10道+实验题：测平均速度</td></tr></table>
 
-<h4>周二</h4>
+<h4 data-week="5" data-day="2">周二</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge ph">物理</span> 第5章透镜。五幅成像图画熟（每幅5遍）</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 八上单词 U5-U7。语法：比较级最高级+be going to/will。<strong>写作：仿写1篇假期计划(60词)</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge math">数学</span> 平行线证明题进阶训练5道</td></tr></table>
 
-<h4>周三</h4>
+<h4 data-week="5" data-day="3">周三</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge math">数学</span> 七下实数。平方根/立方根→无理数→实数运算</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 八上单词 U8-U10。语法：条件状语从句if、should/could。<strong>写作：1篇建议信(80词)</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第5章透镜课后练习+照相机/投影仪/放大镜原理默写</td></tr></table>
 
-<h4>周四</h4>
+<h4 data-week="5" data-day="4">周四</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge ph">物理</span> 第6章质量密度。天平使用→ρ=m/V→密度计算→测密度实验步骤</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 八上全册单词复习。完形×1+阅读×2。<strong>写作：对照范文修改周三建议信</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge math">数学</span> 七下平面直角坐标系。点的坐标特征→平移变化→面积计算</td></tr></table>
 
-<h4>周五</h4>
+<h4 data-week="5" data-day="5">周五</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge math">数学</span> 七下二元一次方程组。代入法/加减法各5道→应用题3道</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 八下单词 U1-U4。语法：反身代词、动词不定式。<strong>写作：仿写1篇家务短文(70词)</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第6章课后练习+密度计算题10道+实验题：测密度步骤默写</td></tr></table>
 
-<h4>周六</h4>
+<h4 data-week="5" data-day="6">周六</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge ph">物理</span> 第4-6章综合复习+压强引入（p=F/S基本概念）</td></tr><tr><td>下午 2h</td><td><span class="badge math">数学</span> 七下不等式与不等式组。<span class="badge en">英语</span> 本周生词+错题</td></tr><tr><td>晚上 1h</td><td>自由补弱/缓冲时间</td></tr></table>
 
-<h4>周日检测</h4>
+<h4 data-week="5" data-day="7">周日检测</h4>
 <table class="schedule-table"><tr><td>上午 2h</td><td><span class="badge math">数学</span> 七下基础测试卷</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 八上词汇+语法测试（含听力+完形+阅读+写作）</td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第4-6章综合卷+1道实验题</td></tr></table>
 </div></details>
 
 <details><summary>第3周：力学入门</summary><div class="detail-body">
 
-<h4>周一</h4>
+<h4 data-week="6" data-day="1">周一</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge math">数学</span> 八上三角形。三边关系→中线/高/角平分线→内角和外角</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 八下单词 U5-U7。语法：过去进行时+现在完成时。<strong>写作：用过去进行时写1段(60词)</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第7章力。力的示意图10道→G=mg计算10道→摩擦力实验考点</td></tr></table>
 
-<h4>周二</h4>
+<h4 data-week="6" data-day="2">周二</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge ph">物理</span> 第8章运动和力。牛顿第一定律→惯性→二力平衡→平衡力vs相互作用力</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 八下单词 U8-U10。语法：现在完成时进阶+until/so that/although。<strong>写作：1篇"我的变化"(80词)</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge math">数学</span> 三角形专项训练</td></tr></table>
 
-<h4>周三</h4>
+<h4 data-week="6" data-day="3">周三</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge math">数学</span> 八上全等三角形。五种判定方法→证明规范→课本证明题8道</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 八下全册单词复习。完形×1+阅读×2。<strong>写作：修改周二短文</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第7-8章课后练习+中考基础题15道+实验题：探究滑动摩擦力</td></tr></table>
 
-<h4>周四</h4>
+<h4 data-week="6" data-day="4">周四</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge ph">物理</span> 第9章压强（一）。p=F/S→固体压强计算</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 时态综合复习（6种时态对照表）。<strong>写作：1篇书信(100词)</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge math">数学</span> 全等三角形证明进阶5道</td></tr></table>
 
-<h4>周五</h4>
+<h4 data-week="6" data-day="5">周五</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge math">数学</span> 八上轴对称。垂直平分线→等腰三角形→等边三角形→最短路径</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 作文专项。审题+列提纲3篇。万能句型10个。范文精读1篇</td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第9章压强（二）。液体压强p=ρgh→连通器→大气压强</td></tr></table>
 
-<h4>周六</h4>
+<h4 data-week="6" data-day="6">周六</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge ph">物理</span> 第9章课后练习+压强计算题10道+实验题：探究液体压强</td></tr><tr><td>下午 2h</td><td><span class="badge math">数学</span> 全等+轴对称综合证明5道。<span class="badge en">英语</span> 本周生词+作文1篇</td></tr><tr><td>晚上 1h</td><td>自由补弱/缓冲时间</td></tr></table>
 
-<h4>周日检测</h4>
+<h4 data-week="6" data-day="7">周日检测</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge ph">物理</span> 第7-9章综合卷+1道实验题</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 七八年级综合卷（含听力）</td></tr><tr><td>晚上 1h</td><td><span class="badge math">数学</span> 八上几何综合卷</td></tr></table>
 </div></details>
 
 <details><summary>第4周：力学深入+数学整合</summary><div class="detail-body">
 
-<h4>周一</h4>
+<h4 data-week="7" data-day="1">周一</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge math">数学</span> 八上整式乘法与因式分解。幂运算→平方差/完全平方公式→提公因式/公式法</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 宾语从句专题（3大考点）。练习10道。<strong>写作：含宾语从句短文(80词)</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第10章浮力（一）。产生原因→阿基米德原理推导</td></tr></table>
 
-<h4>周二</h4>
+<h4 data-week="7" data-day="2">周二</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge ph">物理</span> 第10章浮力（二）。浮沉条件→称重法与阿基米德法各3道</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 从句综合练习15道+完形×1+阅读×2</td></tr><tr><td>晚上 1h</td><td><span class="badge math">数学</span> 八上分式。约分通分→分式运算→分式方程（检验！）</td></tr></table>
 
-<h4>周三</h4>
+<h4 data-week="7" data-day="3">周三</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge math">数学</span> 八下勾股定理。证明→计算→逆定理→最短路径/折叠应用</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> <strong>作文专项。</strong>写2篇（书信+议论文各1）+对照范文修改</td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第10章浮力（三）。压力差法/平衡法各3道+浮沉应用题5道</td></tr></table>
 
-<h4>周四</h4>
+<h4 data-week="7" data-day="4">周四</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge ph">物理</span> 第11章功和机械能。W=Fs→P=W/t→动能/势能→机械能守恒</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 被动语态专项。结构→时态变化→练习15道。<strong>写作：被动语态改写5句话</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge math">数学</span> 八下平行四边形。性质→判定→中位线定理</td></tr></table>
 
-<h4>周五</h4>
+<h4 data-week="7" data-day="5">周五</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge math">数学</span> 八下一次函数。正比例→一次函数→待定系数法→图像与性质</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 听力训练2套（错题复听）。完形×1。<strong>写作：1篇议论文(100词)</strong></td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第12章简单机械。杠杆五要素→平衡条件→滑轮组→机械效率</td></tr></table>
 
-<h4>周六</h4>
+<h4 data-week="7" data-day="6">周六</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge ph">物理</span> 第10-12章综合复习（浮力四种方法对比+杠杆/滑轮综合5道）</td></tr><tr><td>下午 2h</td><td><span class="badge math">数学</span> 勾股+一次函数综合。<span class="badge en">英语</span> 本周生词+作文1篇</td></tr><tr><td>晚上 1h</td><td>自由补弱/缓冲时间</td></tr></table>
 
-<h4>周日检测</h4>
+<h4 data-week="7" data-day="7">周日检测</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge math">数学</span> 八下核心模块卷（勾股+函数+平行四边形）</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 七八年级语法+阅读综合卷（含听力）</td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第10-12章综合卷+1道实验题</td></tr></table>
 </div></details>
 
 <details><summary>第5周：综合训练</summary><div class="detail-body">
 
-<h4>周一</h4>
+<h4 data-week="8" data-day="1">周一</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge math">数学</span> 综合模拟卷一（七上+七下+八上，限时90min）</td></tr><tr><td>下午 2h</td><td>逐题分析数学错题，知识回补</td></tr><tr><td>晚上 1h</td><td><span class="badge en">英语</span> 听力1套+单选/语法重点练习</td></tr></table>
 
-<h4>周二</h4>
+<h4 data-week="8" data-day="2">周二</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge en">英语</span> 综合模拟卷一（含听力，限时100min）</td></tr><tr><td>下午 2h</td><td>逐题分析英语错题，作文对照范文修改</td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 第1-6章综合复习（声光热+上半段力学）</td></tr></table>
 
-<h4>周三</h4>
+<h4 data-week="8" data-day="3">周三</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge ph">物理</span> 综合模拟卷一（全册，限时80min）</td></tr><tr><td>下午 2h</td><td>逐题分析物理错题，重点回补浮力+压强</td></tr><tr><td>晚上 1h</td><td><span class="badge math">数学</span> 弱项补充练习</td></tr></table>
 
-<h4>周四</h4>
+<h4 data-week="8" data-day="4">周四</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge math">数学</span> 综合模拟卷二（全七八年级，限时100min）</td></tr><tr><td>下午 2h</td><td>逐题分析数学卷二+函数与几何专项回补</td></tr><tr><td>晚上 1h</td><td><span class="badge en">英语</span> 本周错题语法练习+听力1套</td></tr></table>
 
-<h4>周五</h4>
+<h4 data-week="8" data-day="5">周五</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge en">英语</span> 综合模拟卷二（限时100min）</td></tr><tr><td>下午 2h</td><td>逐题分析英语卷二。作文模板背诵+仿写1篇</td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 作图题专项（光路图/受力图各5幅）+实验题2道</td></tr></table>
 
-<h4>周六</h4>
+<h4 data-week="8" data-day="6">周六</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge ph">物理</span> 综合模拟卷二（限时80min）</td></tr><tr><td>下午 2h</td><td>逐题分析物理卷二。<span class="badge math">数学</span> 计算题专项（有理数/整式/方程/不等式/因式分解/二次根式各3道）</td></tr><tr><td>晚上 1h</td><td>三科本周错题重做+统计章节回顾（30min）</td></tr></table>
 
-<h4>周日检测</h4>
+<h4 data-week="8" data-day="7">周日检测</h4>
 <table class="schedule-table"><tr><td colspan="2"><span class="badge" style="background:#fef3c7;color:#92400e;">若本周6套卷子已够，周日改为错题巩固日</span></td></tr></table>
 </div></details>
 
 <details><summary>第6周：冲刺模拟</summary><div class="detail-body">
 
-<h4>周一</h4>
+<h4 data-week="9" data-day="1">周一</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge math">数学</span> 冲刺模拟卷三（限时100min）</td></tr><tr><td>下午 2h</td><td>逐题分析数学错因</td></tr><tr><td>晚上 1h</td><td><span class="badge en">英语</span> 听力1套+作文模板背诵</td></tr></table>
 
-<h4>周二</h4>
+<h4 data-week="9" data-day="2">周二</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge en">英语</span> 冲刺模拟卷三（限时100min）</td></tr><tr><td>下午 2h</td><td>逐题分析英语错因+作文修改</td></tr><tr><td>晚上 1h</td><td><span class="badge math">数学</span> 两科模拟薄弱点回补</td></tr></table>
 
-<h4>周三</h4>
+<h4 data-week="9" data-day="3">周三</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge ph">物理</span> 冲刺模拟卷三（限时80min）</td></tr><tr><td>下午 2h</td><td>逐题分析物理，重点浮力/压强/实验题</td></tr><tr><td>晚上 1h</td><td>三科重叠错题→最后回补清单</td></tr></table>
 
-<h4>周四 — 回归课本</h4>
+<h4 data-week="9" data-day="4">周四 — 回归课本</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge ph">物理</span> 每章黑体字默读→公式重新推导→实验题步骤全部默写</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 作文模板巩固+听力错题重听+核心单词速过(80个)</td></tr><tr><td>晚上 1h</td><td><span class="badge math">数学</span> 勾股定理证明/全等三角形判定推导/一次函数图像重画</td></tr></table>
 
-<h4>周五</h4>
+<h4 data-week="9" data-day="5">周五</h4>
 <table class="schedule-table"><tr><td>上午 2.5h</td><td><span class="badge math">数学</span> 核心公式默写+经典错题10道重做</td></tr><tr><td>下午 2h</td><td><span class="badge en">英语</span> 核心单词速过(80个)+完形×1+阅读×1</td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 核心公式默写+实验步骤默写+经典错题10道</td></tr></table>
 
-<h4>周六 — 保持手感</h4>
+<h4 data-week="9" data-day="6">周六 — 保持手感</h4>
 <table class="schedule-table"><tr><td>上午 1.5h</td><td><span class="badge math">数学</span> 选择填空速练30道(30min)</td></tr><tr><td>下午 1.5h</td><td><span class="badge en">英语</span> 阅读×2+完形×1（严格限时）</td></tr><tr><td>晚上 1h</td><td><span class="badge ph">物理</span> 光路图+受力图各3幅+错题快速过</td></tr></table>
 
-<h4>周日</h4>
+<h4 data-week="9" data-day="7">周日</h4>
 <p style="text-align:center;padding:24px;font-size:18px;font-weight:700;">🎉 休息！不看书，放松心情</p>
 </div></details>
 
@@ -552,6 +702,594 @@ blockquote{padding:12px 18px;border-left:3px solid var(--accent);background:var(
 <blockquote>
   <strong>最后提醒</strong>：这份计划的关键不在于"做完"，而在于"做对"。宁可少练10道题、也要把1道错题彻底搞懂。隔天听力和睡前实验题不能断——它们是拉开差距的慢变量。6周坚持下来，你会感谢现在的自己。
 </blockquote>
+
+
+<script>
+(function(){
+'use strict';
+
+/* ===========================================================
+   Plan data: compact schedule for 6 weeks
+   Each day: array of [period(0=上午,1=下午,2=晚上), subject(m/e/p/x)]
+   x = mixed/free/review
+   =========================================================== */
+var PLAN_DAYS = [
+  // W1: 基础回扫
+  [[0,'m'],[1,'e'],[2,'p']], [[0,'p'],[1,'e'],[2,'m']],
+  [[0,'m'],[1,'e'],[2,'p']], [[0,'p'],[1,'e'],[2,'m']],
+  [[0,'m'],[1,'e'],[2,'p']], [[0,'p'],[1,'x']],
+  [[0,'m'],[1,'e'],[2,'p']],
+  // W2: 推进巩固
+  [[0,'m'],[1,'e'],[2,'p']], [[0,'p'],[1,'e'],[2,'m']],
+  [[0,'m'],[1,'e'],[2,'p']], [[0,'p'],[1,'e'],[2,'m']],
+  [[0,'m'],[1,'e'],[2,'p']], [[0,'p'],[1,'x']],
+  [[0,'m'],[1,'e'],[2,'p']],
+  // W3: 力学入门
+  [[0,'m'],[1,'e'],[2,'p']], [[0,'p'],[1,'e'],[2,'m']],
+  [[0,'m'],[1,'e'],[2,'p']], [[0,'p'],[1,'e'],[2,'m']],
+  [[0,'m'],[1,'e'],[2,'p']], [[0,'p'],[1,'x']],
+  [[0,'p'],[1,'e'],[2,'m']],
+  // W4: 力学深入+数学整合
+  [[0,'m'],[1,'e'],[2,'p']], [[0,'p'],[1,'e'],[2,'m']],
+  [[0,'m'],[1,'e'],[2,'p']], [[0,'p'],[1,'e'],[2,'m']],
+  [[0,'m'],[1,'e'],[2,'p']], [[0,'p'],[1,'x']],
+  [[0,'m'],[1,'e'],[2,'p']],
+  // W5: 综合训练
+  [[0,'m'],[1,'m'],[2,'e']], [[0,'e'],[1,'e'],[2,'p']],
+  [[0,'p'],[1,'p'],[2,'m']], [[0,'m'],[1,'m'],[2,'e']],
+  [[0,'e'],[1,'e'],[2,'p']], [[0,'p'],[1,'m'],[2,'x']],
+  [[0,'x'],[1,'x'],[2,'x']],
+  // W6: 冲刺模拟
+  [[0,'m'],[1,'m'],[2,'e']], [[0,'e'],[1,'e'],[2,'m']],
+  [[0,'p'],[1,'p'],[2,'x']], [[0,'p'],[1,'e'],[2,'m']],
+  [[0,'m'],[1,'e'],[2,'p']], [[0,'m'],[1,'e'],[2,'p']],
+  []
+];
+
+
+var WEEK_SECTIONS = {
+  0: { m:["math-7a"], e:["en-7a-words","en-7a-grammar","en-7b-words"], p:["phys-8a"] },
+  1: { m:["math-7b"], e:["en-8a-words","en-8a-grammar","en-8b-words"], p:["phys-8a"] },
+  2: { m:["math-8a"], e:["en-8b-words","en-8b-grammar"], p:["phys-8b","phys-experiments","phys-lens","phys-buoyancy"] },
+  3: { m:["math-8a","math-8b"], e:["en-8a-grammar","en-8b-grammar"], p:["phys-8b","phys-experiments"] },
+  4: { m:["math-7a","math-7b","math-8a","math-8b"], e:["en-7a-words","en-7a-grammar","en-7b-words","en-7b-grammar","en-8a-words","en-8a-grammar","en-8b-words","en-8b-grammar"], p:["phys-8a","phys-8b","phys-experiments"] },
+  5: { m:["math-7a","math-7b","math-8a","math-8b"], e:["en-7a-words","en-7a-grammar","en-7b-words","en-7b-grammar","en-8a-words","en-8a-grammar","en-8b-words","en-8b-grammar"], p:["phys-8a","phys-8b","phys-experiments"] },
+};
+
+var SECTION_LABELS = {
+  'math-7a': '\u6570\u5b66 \u4e03\u5e74\u7ea7\uff08\u4e0a\uff09',
+  'math-7b': '\u6570\u5b66 \u4e03\u5e74\u7ea7\uff08\u4e0b\uff09',
+  'math-8a': '\u6570\u5b66 \u516b\u5e74\u7ea7\uff08\u4e0a\uff09',
+  'math-8b': '\u6570\u5b66 \u516b\u5e74\u7ea7\uff08\u4e0b\uff09',
+  'en-7a-words': '\u82f1\u8bed \u4e03\u5e74\u7ea7\uff08\u4e0a\uff09\u8bcd\u6c47',
+  'en-7a-grammar': '\u82f1\u8bed \u4e03\u5e74\u7ea7\uff08\u4e0a\uff09\u8bed\u6cd5',
+  'en-7b-words': '\u82f1\u8bed \u4e03\u5e74\u7ea7\uff08\u4e0b\uff09\u8bcd\u6c47',
+  'en-7b-grammar': '\u82f1\u8bed \u4e03\u5e74\u7ea7\uff08\u4e0b\uff09\u8bed\u6cd5',
+  'en-8a-words': '\u82f1\u8bed \u516b\u5e74\u7ea7\uff08\u4e0a\uff09\u8bcd\u6c47',
+  'en-8a-grammar': '\u82f1\u8bed \u516b\u5e74\u7ea7\uff08\u4e0a\uff09\u8bed\u6cd5',
+  'en-8b-words': '\u82f1\u8bed \u516b\u5e74\u7ea7\uff08\u4e0b\uff09\u8bcd\u6c47',
+  'en-8b-grammar': '\u82f1\u8bed \u516b\u5e74\u7ea7\uff08\u4e0b\uff09\u8bed\u6cd5',
+  'phys-8a': '\u7269\u7406 \u516b\u5e74\u7ea7\uff08\u4e0a\uff09',
+  'phys-8b': '\u7269\u7406 \u516b\u5e74\u7ea7\uff08\u4e0b\uff09',
+  'phys-experiments': '\u7269\u7406 \u5fc5\u4f1a\u5b9e\u9a8c',
+  'phys-lens': '\u7269\u7406 \u51f8\u900f\u955c\u6210\u50cf',
+  'phys-buoyancy': '\u7269\u7406 \u6d6e\u6c89\u6761\u4ef6',
+};
+
+var PERIOD_NAMES = ['上午','下午','晚上'];
+var SUBJECT_NAMES = {m:'数学',e:'英语',p:'物理',x:'综合/自由'};
+var SUBJECT_CLASS = {m:'math',e:'english',p:'physics',x:'math'};
+var SUBJECT_ICON = {m:'📐',e:'📖',p:'⚡',x:'📝'};
+var DAY_NAMES = ['周一','周二','周三','周四','周五','周六','周日'];
+var WEEK_TITLES = ['第1周：基础回扫','第2周：推进巩固','第3周：力学入门','第4周：力学深入+数学整合','第5周：综合训练','第6周：冲刺模拟'];
+
+/* ===========================================================
+   State
+   =========================================================== */
+var STORAGE_KEY = 'review-plan-v2';
+
+function defaultState() {
+  return {
+    startDate: null,       // ISO date string (Monday of week 1)
+    sessions: {},          // "w-d-p" -> 'done'|'skipped'
+    checklists: {},        // checklist item hash -> 'learning'|'mastered'
+    rituals: {},           // date string -> {morning:bool, bedtime:bool}
+    errors: {},            // "weekN" -> {math:{A:0,...}, english:{...}, physics:{...}}
+    milestones: [],        // milestone ids already shown
+  };
+}
+
+function loadState() {
+  try {
+    var raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) {
+      var s = JSON.parse(raw);
+      // Merge with defaults for new fields
+      var d = defaultState();
+      for (var k in d) { if (s[k] === undefined) s[k] = d[k]; }
+      return s;
+    }
+  } catch(e) {}
+  return defaultState();
+}
+
+var state = loadState();
+
+function saveState() {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e) {}
+}
+
+/* ===========================================================
+   Date helpers
+   =========================================================== */
+function todayStr() {
+  var d = new Date();
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+}
+
+function getMonday(d) {
+  d = new Date(d);
+  var day = d.getDay();
+  var diff = d.getDate() - day + (day === 0 ? -6 : 1);
+  d.setDate(diff);
+  d.setHours(0,0,0,0);
+  return d;
+}
+
+function getWeekDay(d) {
+  d = new Date(d);
+  if (!state.startDate) return {week:0,day:0,valid:false};
+  var start = new Date(state.startDate);
+  start.setHours(0,0,0,0);
+  var diff = Math.floor((d - start) / 86400000);
+  if (diff < 0) return {week:0,day:0,valid:false};
+  var week = Math.floor(diff / 7);
+  var day = diff % 7;
+  if (week >= 6) { week = 6; day = 6; } // clamp to last day of plan
+  return {week:week, day:day, valid:true};
+}
+
+/* ===========================================================
+   Dashboard
+   =========================================================== */
+function renderDashboard() {
+  var old = document.getElementById('planDashboard');
+  if (old) old.remove();
+
+  var today = todayStr();
+  var wd = getWeekDay(new Date());
+  var streaks = calcStreak();
+
+  var html = '<div id="planDashboard" class="dashboard">';
+
+  // Header
+  html += '<div class="dash-header">';
+  html += '<div><span class="dash-title">📋 学习伴侣</span>';
+  if (wd.valid) {
+    html += '<div class="dash-week">' + WEEK_TITLES[wd.week] + ' · ' + DAY_NAMES[wd.day] + '</div>';
+  }
+  html += '</div><div style="display:flex;gap:8px;align-items:center;">';
+  if (streaks.current > 0) {
+    html += '<span class="dash-streak' + (streaks.current >= 5 ? ' hot' : '') + '">🔥 ' + streaks.current + ' 天连续</span>';
+  }
+  html += '<span style="font-size:12px;color:var(--text2);cursor:pointer;" onclick="showPlanSettings()">⚙️ 设置</span>';
+  html += '</div></div>';
+
+  // Progress bars
+  var progress = calcProgress();
+  html += '<div class="dash-progress">';
+  html += '<div class="dp-item"><div class="dp-label">📅 总进度</div><div class="dp-bar"><div class="dp-fill" style="width:' + progress.overall + '%"></div></div><div class="dp-num">' + progress.overall + '%</div></div>';
+  html += '<div class="dp-item"><div class="dp-label">📅 本周</div><div class="dp-bar"><div class="dp-fill gold" style="width:' + progress.weekPct + '%"></div></div><div class="dp-num">' + progress.weekDone + '/' + progress.weekTotal + ' 项</div></div>';
+  html += '<div class="dp-item"><div class="dp-label">🎯 已掌握知识</div><div class="dp-bar"><div class="dp-fill green" style="width:' + progress.knowledgePct + '%"></div></div><div class="dp-num">' + progress.knowledgeDone + '/' + progress.knowledgeTotal + '</div></div>';
+  html += '</div>';
+
+  // Today tasks
+  if (wd.valid) {
+    html += renderTodayTasks(wd.week, wd.day, today);
+  } else {
+    html += '<div class="today-card"><div class="tc-title">📅 还没有设置开始日期</div>';
+    html += '<div style="font-size:14px;color:var(--text2);margin-bottom:12px;">点击右上角 ⚙️ 设置你的复习计划开始日期</div>';
+    html += '<button onclick="showPlanSettings()" style="padding:10px 24px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-weight:600;cursor:pointer;">📅 设置开始日期</button></div>';
+  }
+
+  // Rituals
+  html += '<div class="ritual-row">';
+  var rit = state.rituals[today] || {};
+  html += '<div class="ritual-item' + (rit.morning ? ' done' : '') + '" onclick="toggleRitual(\'morning\')"><span class="ri-icon">🌅</span> 早读 10min</div>';
+  html += '<div class="ritual-item' + (rit.bedtime ? ' done' : '') + '" onclick="toggleRitual(\'bedtime\')"><span class="ri-icon">🌙</span> 睡前 15min</div>';
+  html += '<div class="ritual-item' + (rit.mathDaily ? ' done' : '') + '" onclick="toggleRitual(\'mathDaily\')"><span class="ri-icon">✏️</span> 数学每日必做</div>';
+  html += '</div>';
+
+  html += '</div>';
+
+  var header = document.querySelector('header');
+  if (header) {
+    header.insertAdjacentHTML('afterend', html);
+  }
+}
+
+function renderTodayTasks(week, day, today) {
+  var sessions = PLAN_DAYS[week * 7 + day];
+  if (!sessions || sessions.length === 0) {
+    return '<div class="today-card"><div class="tc-title">\u{1f389} \u4eca\u65e5\u4f11\u606f</div><div style="font-size:14px;color:var(--text2);">\u597d\u597d\u653e\u677e\uff0c\u4e0d\u9700\u8981\u5b66\u4e60\u4efb\u52a1</div></div>';
+  }
+
+  var html = '<div class="today-card"><div class="tc-title">\u{1f4cc} \u4eca\u65e5\u4efb\u52a1</div>';
+  var doneCount = 0;
+  var subjects = {};
+
+  sessions.forEach(function(s, i) {
+    var key = week + '-' + day + '-' + i;
+    var status = state.sessions[key] || '';
+    var isDone = status === 'done';
+    var isSkipped = status === 'skipped';
+    if (isDone) doneCount++;
+    subjects[s[1]] = true;
+
+    html += '<div class="tc-slot' + (isDone ? ' done' : '') + (isSkipped ? ' skipped' : '') + '" onclick="toggleSession(' + week + ',' + day + ',' + i + ')">';
+    html += '<span class="tc-cb">' + (isDone ? '\u2713' : isSkipped ? '\u2014' : '') + '</span>';
+    html += '<span class="tc-subject ' + SUBJECT_CLASS[s[1]] + '">' + SUBJECT_ICON[s[1]] + ' ' + SUBJECT_NAMES[s[1]] + '</span>';
+    html += '<span class="tc-label">' + PERIOD_NAMES[s[0]] + '</span>';
+    html += '<span class="tc-status ' + status + '">' + (isDone ? '\u2705 \u5b8c\u6210' : isSkipped ? '\u23ed\ufe0f \u8df3\u8fc7' : '\u5f85\u5b8c\u6210') + '</span>';
+    html += '</div>';
+  });
+
+  if (doneCount === sessions.length) {
+    html += '<div style="margin-top:8px;font-size:13px;color:#16a34a;font-weight:600;">\u{1f389} \u4eca\u65e5\u5168\u90e8\u5b8c\u6210\uff01</div>';
+  }
+
+  // Knowledge topics for today
+  var wk = WEEK_SECTIONS[week];
+  if (wk) {
+    var sectionsToShow = [];
+    for (var subj in subjects) {
+      if (wk[subj]) {
+        wk[subj].forEach(function(sid) {
+          if (sectionsToShow.indexOf(sid) < 0) sectionsToShow.push(sid);
+        });
+      }
+    }
+    if (sectionsToShow.length > 0) {
+      html += '<div style="margin-top:14px;padding-top:12px;border-top:1px dashed var(--border);">';
+      html += '<div style="font-size:13px;font-weight:600;margin-bottom:8px;color:var(--text2);">\u{1f4da} \u4eca\u65e5\u76f8\u5173\u77e5\u8bc6\u70b9</div>';
+      sectionsToShow.forEach(function(sid) {
+        html += renderKnowledgeSection(sid);
+      });
+      html += '</div>';
+    }
+  }
+
+  html += '</div>';
+  return html;
+}
+
+function renderKnowledgeSection(sid) {
+  var label = SECTION_LABELS[sid] || sid;
+  var h4 = document.querySelector('h4[data-section="' + sid + '"]');
+  if (!h4) return '';
+  var detailBody = h4.closest('.detail-body');
+  if (!detailBody) return '';
+  var ul = detailBody.querySelector('.checklist');
+  if (!ul) return '';
+
+  var items = ul.querySelectorAll('li');
+  var total = items.length;
+  var done = 0;
+  var html = '<div style="margin-bottom:10px;"><div style="font-size:12px;font-weight:600;margin-bottom:4px;color:var(--accent);">' + label + '</div>';
+
+  items.forEach(function(li) {
+    var text = li.textContent.trim().replace(/[\u2610\u2611\u{1f4d6}]\s*/g, '').trim();
+    var hash = hashCode(text);
+    var saved = state.checklists[hash] || '';
+    var isChecked = saved === 'mastered';
+    var isLearning = saved === 'learning';
+    if (isChecked) done++;
+
+    html += '<div class="kn-item' + (isChecked ? ' done' : isLearning ? ' learning' : '') + '" data-kn-hash="' + hash + '" onclick="toggleKnowItem(this)">';
+    html += '<span class="kn-cb">' + (isChecked ? '\u2611' : isLearning ? '\u{1f4d6}' : '\u2610') + '</span>';
+    html += '<span class="kn-text">' + htmlEncode(text) + '</span>';
+    if (isChecked) html += '<span class="kn-badge mastered">\u5df2\u638c\u63e1</span>';
+    else if (isLearning) html += '<span class="kn-badge learning">\u5b66\u4e60\u4e2d</span>';
+    html += '</div>';
+  });
+
+  var pct = total > 0 ? Math.round(done / total * 100) : 0;
+  html += '<div class="section-progress" style="margin:2px 0 0;"><span class="sp-bar"><span class="sp-fill" style="width:' + pct + '%"></span></span><span class="sp-label">' + done + '/' + total + '</span></div>';
+  html += '</div>';
+  return html;
+}
+
+window.toggleKnowItem = function(el) {
+  var hash = el.getAttribute('data-kn-hash');
+  var cur = state.checklists[hash] || '';
+  if (cur === '') { state.checklists[hash] = 'learning'; }
+  else if (cur === 'learning') { state.checklists[hash] = 'mastered'; }
+  else { delete state.checklists[hash]; }
+  saveState();
+  // Open knowledge sections for DOM access
+  document.querySelectorAll('#p1 ~ details, #p2 ~ details').forEach(function(d) {
+    d.open = true;
+  });
+  // Close them back if user didn't explicitly open them (after rendering)
+  // Actually keep them open so DOM is accessible
+  
+  renderDashboard();
+};
+
+function htmlEncode(s) {
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+}
+
+function hashCode(s) {
+  var h = 0;
+  for (var i = 0; i < s.length; i++) {
+    h = ((h << 5) - h) + s.charCodeAt(i);
+    h |= 0;
+  }
+  return 'cl' + Math.abs(h);
+}
+
+function updateLiBadge(li, text, cls) {
+  removeLiBadge(li);
+  var badge = document.createElement('span');
+  badge.className = 'cl-badge ' + cls;
+  badge.textContent = text;
+  li.appendChild(badge);
+}
+
+function removeLiBadge(li) {
+  var badges = li.querySelectorAll('.cl-badge');
+  badges.forEach(function(b) { b.remove(); });
+}
+
+/* ===========================================================
+   Today highlight in schedule
+   =========================================================== */
+function updateTodayHighlight() {
+  // Remove old highlights
+  document.querySelectorAll('.today-highlight').forEach(function(el) {
+    el.classList.remove('today-highlight');
+  });
+  document.querySelectorAll('.today-badge').forEach(function(el) {
+    el.remove();
+  });
+
+  var wd = getWeekDay(new Date());
+  if (!wd.valid) return;
+
+  var htmlWeek = wd.week + 4; // offset: Part 2 starts at week 4 in HTML
+  var htmlDay = wd.day + 1;
+
+  var h4 = document.querySelector('h4[data-week="' + htmlWeek + '"][data-day="' + htmlDay + '"]');
+  if (!h4) return;
+
+  // Highlight the day section
+  var next = h4.nextElementSibling;
+  while (next && next.tagName !== 'H4') {
+    next.classList.add('today-highlight');
+    next = next.nextElementSibling;
+    // Stop at next h4 or end of details
+    if (!next || next.tagName === 'H4' || next.tagName === 'DIV' && next.classList.contains('detail-body')) break;
+    if (next.tagName === 'TABLE') {
+      // Find all table cells and add highlight
+      break;
+    }
+  }
+
+  // Auto-open the parent details
+  var details = h4.closest('details');
+  if (details) details.open = true;
+
+  // Add badge to h4
+  var badge = document.createElement('span');
+  badge.className = 'today-badge';
+  badge.textContent = '📌 今天';
+  h4.appendChild(badge);
+
+  // Scroll into view if not visible
+  setTimeout(function() {
+    var rect = h4.getBoundingClientRect();
+    if (rect.top < 0 || rect.top > window.innerHeight) {
+      h4.scrollIntoView({behavior:'smooth', block:'center'});
+    }
+  }, 500);
+}
+
+/* ===========================================================
+   Settings modal
+   =========================================================== */
+window.showPlanSettings = function() {
+  var overlay = document.createElement('div');
+  overlay.className = 'settings-overlay';
+  overlay.id = 'planSettingsOverlay';
+  var today = new Date();
+  var defaultVal = state.startDate || getMonday(today).toISOString().split('T')[0];
+  overlay.innerHTML = '<div class="settings-card"><h3>📅 设置开始日期</h3>' +
+    '<label>复习计划第1周·周一日期：</label>' +
+    '<input type="date" id="planStartDate" value="' + defaultVal + '">' +
+    '<div style="font-size:12px;color:var(--text2);margin-bottom:16px;">当前进度将根据此日期自动计算。</div>' +
+    '<div class="btn-row"><button class="btn-secondary" onclick="closePlanSettings()">取消</button>' +
+    '<button class="btn-primary" onclick="savePlanSettings()">保存</button></div></div>';
+  document.body.appendChild(overlay);
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) overlay.remove();
+  });
+};
+
+window.closePlanSettings = function() {
+  var el = document.getElementById('planSettingsOverlay');
+  if (el) el.remove();
+};
+
+window.savePlanSettings = function() {
+  var val = document.getElementById('planStartDate').value;
+  if (!val) return;
+  state.startDate = val;
+  saveState();
+  closePlanSettings();
+  refreshAll();
+};
+
+function refreshAll() {
+  // Open knowledge sections for DOM access
+  document.querySelectorAll('#p1 ~ details, #p2 ~ details').forEach(function(d) {
+    d.open = true;
+  });
+  // Close them back if user didn't explicitly open them (after rendering)
+  // Actually keep them open so DOM is accessible
+  
+  renderDashboard();
+  updateTodayHighlight();
+  checkMilestones();
+}
+
+/* ===========================================================
+   Weekly report
+   =========================================================== */
+function initWeeklyReport() {
+  var container = document.createElement('div');
+  container.className = 'weekly-report';
+  container.id = 'weeklyReport';
+  container.innerHTML = '<h3 style="margin-bottom:12px;">\u{1f4ca} \u6bcf\u5468\u5b8c\u6210\u62a5\u544a</h3>';
+
+  for (var w = 0; w < 6; w++) {
+    var weekTotal = 0, weekDone = 0;
+    for (var d = 0; d < 7; d++) {
+      var sessions = PLAN_DAYS[w * 7 + d];
+      if (!sessions) continue;
+      sessions.forEach(function(s, p) {
+        weekTotal++;
+        if (state.sessions[w + '-' + d + '-' + p] === 'done') weekDone++;
+      });
+    }
+    var pct = weekTotal > 0 ? Math.round(weekDone / weekTotal * 100) : 0;
+    var cls = pct >= 80 ? ' done' : '';
+
+    var div = document.createElement('div');
+    div.className = 'wr-week' + cls;
+    div.innerHTML = '<div class="wr-num">\u7b2c' + (w+1) + '\u5468</div>' +
+      '<div class="wr-detail"><div class="wr-bar"><div class="wr-fill" style="width:' + pct + '%"></div></div>' +
+      '<div style="font-size:12px;color:var(--text2);">' + weekDone + '/' + weekTotal + ' \u9879\u5b8c\u6210</div></div>' +
+      '<div class="wr-pct" style="color:' + (pct >= 80 ? '#16a34a' : pct >= 50 ? '#ca8a04' : '#dc2626') + '">' + pct + '%</div></div>';
+    div.addEventListener('click', (function(ww) {
+      return function() {
+        var el = document.querySelector('[data-week="' + (ww + 4) + '"]');
+        if (el) el.scrollIntoView({behavior: 'smooth'});
+      };
+    })(w));
+    container.appendChild(div);
+  }
+
+  var p5 = document.getElementById('p5');
+  if (p5) {
+    var p5section = p5.nextElementSibling;
+    while (p5section && p5section.tagName !== 'H2') p5section = p5section.nextElementSibling;
+    if (p5section) {
+      p5section.parentNode.insertBefore(container, p5section);
+    }
+  }
+}
+function checkMilestones() {
+  if (!state.milestones) state.milestones = [];
+  MILESTONES.forEach(function(m) {
+    if (state.milestones.indexOf(m.id) >= 0) return;
+    if (m.check()) {
+      state.milestones.push(m.id);
+      saveState();
+      showMilestone(m);
+    }
+  });
+}
+
+function showMilestone(m) {
+  var popup = document.createElement('div');
+  popup.className = 'milestone-popup';
+  
+  var card = document.createElement('div');
+  card.className = 'milestone-card';
+  card.innerHTML = '<div class="ms-icon">' + m.icon + '</div>' +
+    '<div class="ms-title">' + m.title + '</div>' +
+    '<div class="ms-desc">' + m.desc + '</div>' +
+    '<button id="msBtn">\u{1f389} \u7ee7\u7eed\u5b66\u4e60</button>';
+  
+  popup.appendChild(card);
+  document.body.appendChild(popup);
+  
+  document.getElementById('msBtn').addEventListener('click', function() {
+    popup.remove();
+  });
+  
+  popup.addEventListener('click', function(e) {
+    if (e.target === popup) popup.remove();
+  });
+}
+
+function htmlEncode(s) { return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+function init() {
+  // Ritual toggle via delegation
+  document.addEventListener('click', function(e) {
+    var target = e.target.closest('[data-ritual]');
+    if (target) {
+      e.preventDefault();
+      var today = todayStr();
+      if (!state.rituals[today]) state.rituals[today] = {};
+      state.rituals[today][target.getAttribute('data-ritual')] = !(state.rituals[today][target.getAttribute('data-ritual')] || false);
+      saveState();
+      // Open knowledge sections for DOM access
+  document.querySelectorAll('#p1 ~ details, #p2 ~ details').forEach(function(d) {
+    d.open = true;
+  });
+  // Close them back if user didn't explicitly open them (after rendering)
+  // Actually keep them open so DOM is accessible
+  
+  renderDashboard();
+    }
+  });
+
+  // Close milestone popup
+  document.addEventListener('click', function(e) {
+    if (e.target.hasAttribute('data-close-popup')) {
+      e.target.closest('.milestone-popup').remove();
+    }
+  });
+
+  // Open knowledge sections for DOM access
+  document.querySelectorAll('#p1 ~ details, #p2 ~ details').forEach(function(d) {
+    d.open = true;
+  });
+  // Close them back if user didn't explicitly open them (after rendering)
+  // Actually keep them open so DOM is accessible
+  
+  renderDashboard();
+  initChecklists();
+  updateTodayHighlight();
+  initErrorForms();
+  initWeeklyReport();
+  checkMilestones();
+
+  // Re-render dashboard when sessions change (from today-highlight scroll etc)
+  var lastState = JSON.stringify(state);
+  setInterval(function() {
+    var cur = JSON.stringify(loadState());
+    if (cur !== lastState) {
+      lastState = cur;
+      state = loadState();
+      // Open knowledge sections for DOM access
+  document.querySelectorAll('#p1 ~ details, #p2 ~ details').forEach(function(d) {
+    d.open = true;
+  });
+  // Close them back if user didn't explicitly open them (after rendering)
+  // Actually keep them open so DOM is accessible
+  
+  renderDashboard();
+    }
+  }, 30000);
+}
+
+document.addEventListener('DOMContentLoaded', init);
+})();
+</script>
 
 </body>
 </html>

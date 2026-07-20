@@ -61,6 +61,16 @@ body.index-page { display: block; min-height: 100vh; }
     </div>
   </div>
 
+  <div class="progress-panel" id="progressPanel" style="display:none">
+    <div class="pp-header">
+      <h2>📊 学习进度</h2>
+      <span class="pp-date" id="ppDate"></span>
+    </div>
+    <div class="pp-bar-label"><span>总进度</span><span id="ppTotalLabel">0 / 0</span></div>
+    <div class="pp-bar-bg"><div class="pp-bar-fill" id="ppTotalBar" style="width:0%"></div></div>
+    <div id="ppSemesters"></div>
+  </div>
+
   <div class="nav-links">
     <a href="../index.html">🏠 返回首页</a>
     <span class="sep">·</span>
@@ -74,7 +84,6 @@ body.index-page { display: block; min-height: 100vh; }
   <div class="semester" id="s1">
     <div class="semester-header">
       <div class="semester-title">📕 九年级全一册 <span class="sub">Unit 1–14</span></div>
-      <div class="semester-progress">已完成 <strong>14</strong> / 14 单元</div>
     </div>
     <div class="unit-grid" id="s1-grid"></div>
   </div>
@@ -89,31 +98,100 @@ body.index-page { display: block; min-height: 100vh; }
 </div>
 
 <script>
-(function() {
-  var units = [
-    {id:"u01", label:"U1", title:"How can we become good learners?", topic:"学习方法"},
-    {id:"u02", label:"U2", title:"I think that mooncakes are delicious!", topic:"节日与文化"},
-    {id:"u03", label:"U3", title:"Could you please tell me where the restrooms are?", topic:"问路与请求"},
-    {id:"u04", label:"U4", title:"I used to be afraid of the dark.", topic:"变化与成长"},
-    {id:"u05", label:"U5", title:"What are the shirts made of?", topic:"产品与材料"},
-    {id:"u06", label:"U6", title:"When was it invented?", topic:"发明历史"},
-    {id:"u07", label:"U7", title:"Teenagers should be allowed to choose their own clothes.", topic:"规则与许可"},
-    {id:"u08", label:"U8", title:"It must belong to Carla.", topic:"推测与判断"},
-    {id:"u09", label:"U9", title:"I like music that I can dance to.", topic:"偏好与定从"},
-    {id:"u10", label:"U10", title:"You're supposed to shake hands.", topic:"礼仪与文化"},
-    {id:"u11", label:"U11", title:"Sad movies make me cry.", topic:"情感与感受"},
-    {id:"u12", label:"U12", title:"Life is full of the unexpected.", topic:"意外与经历"},
-    {id:"u13", label:"U13", title:"We're trying to save the earth!", topic:"环保与行动"},
-    {id:"u14", label:"U14", title:"I remember meeting all of you in Grade 7.", topic:"回忆与毕业"}
-  ];
-  var g = document.getElementById('s1-grid');
-  units.forEach(function(u) {
-    var c = document.createElement('a');
-    c.className = 'unit-card done';
-    c.href = u.id + '.html';
-    c.innerHTML = '<span class="bg-label">' + u.label + '</span><div class="title">' + u.title + '</div><div class="topic">' + u.topic + '</div>';
-    g.appendChild(c);
-  });
+(function(){
+  var CONFIG = {
+    key: 'eng9-progress',
+    semesters: [
+      { id:'s1', label:'📕 九年级全一册', sub:'Unit 1–14' }
+    ],
+    units: {
+      s1: [
+        {id:'u01', label:'U1', title:'How can we become good learners?', topic:'学习方法'},
+        {id:'u02', label:'U2', title:'I think that mooncakes are delicious!', topic:'节日与文化'},
+        {id:'u03', label:'U3', title:'Could you please tell me where the restrooms are?', topic:'问路与请求'},
+        {id:'u04', label:'U4', title:'I used to be afraid of the dark.', topic:'变化与成长'},
+        {id:'u05', label:'U5', title:'What are the shirts made of?', topic:'产品与材料'},
+        {id:'u06', label:'U6', title:'When was it invented?', topic:'发明历史'},
+        {id:'u07', label:'U7', title:'Teenagers should be allowed to choose their own clothes.', topic:'规则与许可'},
+        {id:'u08', label:'U8', title:'It must belong to Carla.', topic:'推测与判断'},
+        {id:'u09', label:'U9', title:'I like music that I can dance to.', topic:'偏好与定从'},
+        {id:'u10', label:'U10', title:"You're supposed to shake hands.", topic:'礼仪与文化'},
+        {id:'u11', label:'U11', title:'Sad movies make me cry.', topic:'情感与感受'},
+        {id:'u12', label:'U12', title:'Life is full of the unexpected.', topic:'意外与经历'},
+        {id:'u13', label:'U13', title:"We're trying to save the earth!", topic:'环保与行动'},
+        {id:'u14', label:'U14', title:'I remember meeting all of you in Grade 7.', topic:'回忆与毕业'}
+      ]
+    }
+  };
+
+  function load() { var raw = localStorage.getItem(CONFIG.key); return raw ? JSON.parse(raw) : { completed: {}, lastStudyDate: null }; }
+  function save(data) { localStorage.setItem(CONFIG.key, JSON.stringify(data)); }
+
+  function renderUnits(data) {
+    CONFIG.semesters.forEach(function(sem) {
+      var grid = document.getElementById(sem.id + '-grid');
+      if (!grid) return;
+      grid.innerHTML = '';
+      CONFIG.units[sem.id].forEach(function(u) {
+        var isDone = !!data.completed[u.id];
+        var card = document.createElement('a');
+        card.className = 'unit-card' + (isDone ? ' completed' : '');
+        card.href = u.id + '.html';
+        card.innerHTML =
+          '<button class="toggle-btn" data-unit="' + u.id + '" title="标记完成">' +
+          (isDone ? '✅' : '○') + '</button>' +
+          '<span class="bg-label">' + u.label + '</span>' +
+          '<div class="title">' + u.title + '</div>' +
+          '<div class="topic">' + u.topic + '</div>';
+        card.querySelector('.toggle-btn').addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleComplete(u.id);
+        });
+        grid.appendChild(card);
+      });
+    });
+  }
+
+  function toggleComplete(id) {
+    var data = load();
+    if (data.completed[id]) { delete data.completed[id]; }
+    else { data.completed[id] = new Date().toISOString().slice(0,10); data.lastStudyDate = data.completed[id]; }
+    save(data);
+    renderUnits(data);
+    renderStats(data);
+  }
+
+  function semesterCount(data, semId) {
+    var list = CONFIG.units[semId] || [];
+    var done = 0;
+    list.forEach(function(u) { if (data.completed[u.id]) done++; });
+    return { done: done, total: list.length };
+  }
+
+  function renderStats(data) {
+    var panel = document.getElementById('progressPanel');
+    if (!panel) return;
+    panel.style.display = '';
+    var total = 0, done = 0;
+    CONFIG.semesters.forEach(function(sem) { var c = semesterCount(data, sem.id); total += c.total; done += c.done; });
+    var pct = total === 0 ? 0 : Math.round(done / total * 100);
+    document.getElementById('ppTotalLabel').textContent = done + ' / ' + total + ' (' + pct + '%)';
+    document.getElementById('ppTotalBar').style.width = pct + '%';
+    document.getElementById('ppDate').textContent = data.lastStudyDate ? '最近学习 ' + data.lastStudyDate : '';
+    var html = '';
+    CONFIG.semesters.forEach(function(sem) {
+      var c = semesterCount(data, sem.id);
+      var sp = c.total === 0 ? 0 : Math.round(c.done / c.total * 100);
+      html += '<div class="pp-semester"><div class="pp-bar-label"><span>' + sem.label + '</span><span>' + c.done + ' / ' + c.total + '</span></div><div class="pp-bar-bg"><div class="pp-bar-fill" style="width:' + sp + '%"></div></div></div>';
+    });
+    document.getElementById('ppSemesters').innerHTML = html;
+  }
+
+  var data = load();
+  renderUnits(data);
+  renderStats(data);
+
   var btn = document.getElementById('backToTop');
   window.addEventListener('scroll', function() { btn.style.display = window.scrollY > 300 ? 'flex' : 'none'; }, { passive: true });
   btn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });

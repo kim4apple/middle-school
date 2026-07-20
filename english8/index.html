@@ -64,6 +64,16 @@ body.index-page { display: block; min-height: 100vh; }
     </div>
   </div>
 
+  <div class="progress-panel" id="progressPanel" style="display:none">
+    <div class="pp-header">
+      <h2>📊 学习进度</h2>
+      <span class="pp-date" id="ppDate"></span>
+    </div>
+    <div class="pp-bar-label"><span>总进度</span><span id="ppTotalLabel">0 / 0</span></div>
+    <div class="pp-bar-bg"><div class="pp-bar-fill" id="ppTotalBar" style="width:0%"></div></div>
+    <div id="ppSemesters"></div>
+  </div>
+
   <div class="nav-links">
     <a href="../index.html">🏠 返回首页</a>
     <span class="sep">·</span>
@@ -79,7 +89,6 @@ body.index-page { display: block; min-height: 100vh; }
   <div class="semester" id="s1">
     <div class="semester-header">
       <div class="semester-title">📗 八年级上册 <span class="sub">Unit 1–8</span></div>
-      <div class="semester-progress">已完成 <strong>8</strong> / 8 单元</div>
     </div>
     <div class="unit-grid" id="s1-grid"></div>
   </div>
@@ -87,7 +96,6 @@ body.index-page { display: block; min-height: 100vh; }
   <div class="semester" id="s2">
     <div class="semester-header">
       <div class="semester-title">📘 八年级下册 <span class="sub">Unit 1–8</span></div>
-      <div class="semester-progress">已完成 <strong>8</strong> / 8 单元</div>
     </div>
     <div class="unit-grid" id="s2-grid"></div>
   </div>
@@ -102,39 +110,105 @@ body.index-page { display: block; min-height: 100vh; }
 </div>
 
 <script>
-(function() {
-  var units = {
-    s1: [
-      {id:"u01", label:"U1", title:"Happy Holiday!", topic:"假期活动", en:"假期计划与体验"},
-      {id:"u02", label:"U2", title:"How often do you exercise?", topic:"生活习惯", en:"频率与健康"},
-      {id:"u03", label:"U3", title:"I'm more outgoing than my sister.", topic:"个人特质", en:"比较级与性格"},
-      {id:"u04", label:"U4", title:"What's the best movie theater?", topic:"偏好比较", en:"最高级与评价"},
-      {id:"u05", label:"U5", title:"Do you want to watch a game show?", topic:"媒体偏好", en:"电视节目与喜好"},
-      {id:"u06", label:"U6", title:"I'm going to study computer science.", topic:"职业规划", en:"未来计划与志向"},
-      {id:"u07", label:"U7", title:"Will people have robots?", topic:"未来预测", en:"未来生活与科技"},
-      {id:"u08", label:"U8", title:"Let's Communicate!", topic:"沟通表达", en:"交流与观点表达"}
+(function(){
+  var CONFIG = {
+    key: 'eng8-progress',
+    semesters: [
+      { id:'s1', label:'📗 八年级上册', sub:'Unit 1–8' },
+      { id:'s2', label:'📘 八年级下册', sub:'Unit 1–8' }
     ],
-    s2: [
-      {id:"b2u01", label:"U1", title:"Time to Relax!", topic:"放松与娱乐", en:"休闲活动"},
-      {id:"b2u02", label:"U2", title:"Let's clean up!", topic:"环保行动", en:"环境保护"},
-      {id:"b2u03", label:"U3", title:"Could you please clean your room?", topic:"家务劳动", en:"请求与允许"},
-      {id:"b2u04", label:"U4", title:"Why don't you talk to your parents?", topic:"人际沟通", en:"建议与烦恼"},
-      {id:"b2u05", label:"U5", title:"What were you doing when the rainstorm came?", topic:"过去进行", en:"过去进行时"},
-      {id:"b2u06", label:"U6", title:"An old man tried to move the mountains.", topic:"故事传说", en:"叙事与文学"},
-      {id:"b2u07", label:"U7", title:"What's the highest mountain in the world?", topic:"世界之最", en:"比较与地理"},
-      {id:"b2u08", label:"U8", title:"Making a Difference", topic:"社会责任", en:"公益与影响力"}
-    ]
+    units: {
+      s1: [
+        {id:'u01', label:'U1', title:'Happy Holiday!', topic:'假期活动'},
+        {id:'u02', label:'U2', title:"How often do you exercise?", topic:'生活习惯'},
+        {id:'u03', label:'U3', title:"I'm more outgoing than my sister.", topic:'个人特质'},
+        {id:'u04', label:'U4', title:"What's the best movie theater?", topic:'偏好比较'},
+        {id:'u05', label:'U5', title:'Do you want to watch a game show?', topic:'媒体偏好'},
+        {id:'u06', label:'U6', title:"I'm going to study computer science.", topic:'职业规划'},
+        {id:'u07', label:'U7', title:'Will people have robots?', topic:'未来预测'},
+        {id:'u08', label:'U8', title:"Let's Communicate!", topic:'沟通表达'}
+      ],
+      s2: [
+        {id:'b2u01', label:'U1', title:'Time to Relax!', topic:'放松与娱乐'},
+        {id:'b2u02', label:'U2', title:"Let's clean up!", topic:'环保行动'},
+        {id:'b2u03', label:'U3', title:'Could you please clean your room?', topic:'家务劳动'},
+        {id:'b2u04', label:'U4', title:"Why don't you talk to your parents?", topic:'人际沟通'},
+        {id:'b2u05', label:'U5', title:'What were you doing when the rainstorm came?', topic:'过去进行'},
+        {id:'b2u06', label:'U6', title:'An old man tried to move the mountains.', topic:'故事传说'},
+        {id:'b2u07', label:'U7', title:"What's the highest mountain in the world?", topic:'世界之最'},
+        {id:'b2u08', label:'U8', title:'Making a Difference', topic:'社会责任'}
+      ]
+    }
   };
-  [].forEach.call(['s1','s2'], function(s) {
-    var g = document.getElementById(s+'-grid');
-    units[s].forEach(function(u) {
-      var c = document.createElement('a');
-      c.className = 'unit-card done';
-      c.href = u.id + '.html';
-      c.innerHTML = '<span class="bg-label">' + u.label + '</span><div class="title">' + u.title + '</div><div class="topic">' + u.topic + '</div>';
-      g.appendChild(c);
+
+  function load() { var raw = localStorage.getItem(CONFIG.key); return raw ? JSON.parse(raw) : { completed: {}, lastStudyDate: null }; }
+  function save(data) { localStorage.setItem(CONFIG.key, JSON.stringify(data)); }
+
+  function renderUnits(data) {
+    CONFIG.semesters.forEach(function(sem) {
+      var grid = document.getElementById(sem.id + '-grid');
+      if (!grid) return;
+      grid.innerHTML = '';
+      CONFIG.units[sem.id].forEach(function(u) {
+        var isDone = !!data.completed[u.id];
+        var card = document.createElement('a');
+        card.className = 'unit-card' + (isDone ? ' completed' : '');
+        card.href = u.id + '.html';
+        card.innerHTML =
+          '<button class="toggle-btn" data-unit="' + u.id + '" title="标记完成">' +
+          (isDone ? '✅' : '○') + '</button>' +
+          '<span class="bg-label">' + u.label + '</span>' +
+          '<div class="title">' + u.title + '</div>' +
+          '<div class="topic">' + u.topic + '</div>';
+        card.querySelector('.toggle-btn').addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleComplete(u.id);
+        });
+        grid.appendChild(card);
+      });
     });
-  });
+  }
+
+  function toggleComplete(id) {
+    var data = load();
+    if (data.completed[id]) { delete data.completed[id]; }
+    else { data.completed[id] = new Date().toISOString().slice(0,10); data.lastStudyDate = data.completed[id]; }
+    save(data);
+    renderUnits(data);
+    renderStats(data);
+  }
+
+  function semesterCount(data, semId) {
+    var list = CONFIG.units[semId] || [];
+    var done = 0;
+    list.forEach(function(u) { if (data.completed[u.id]) done++; });
+    return { done: done, total: list.length };
+  }
+
+  function renderStats(data) {
+    var panel = document.getElementById('progressPanel');
+    if (!panel) return;
+    panel.style.display = '';
+    var total = 0, done = 0;
+    CONFIG.semesters.forEach(function(sem) { var c = semesterCount(data, sem.id); total += c.total; done += c.done; });
+    var pct = total === 0 ? 0 : Math.round(done / total * 100);
+    document.getElementById('ppTotalLabel').textContent = done + ' / ' + total + ' (' + pct + '%)';
+    document.getElementById('ppTotalBar').style.width = pct + '%';
+    document.getElementById('ppDate').textContent = data.lastStudyDate ? '最近学习 ' + data.lastStudyDate : '';
+    var html = '';
+    CONFIG.semesters.forEach(function(sem) {
+      var c = semesterCount(data, sem.id);
+      var sp = c.total === 0 ? 0 : Math.round(c.done / c.total * 100);
+      html += '<div class="pp-semester"><div class="pp-bar-label"><span>' + sem.label + '</span><span>' + c.done + ' / ' + c.total + '</span></div><div class="pp-bar-bg"><div class="pp-bar-fill" style="width:' + sp + '%"></div></div></div>';
+    });
+    document.getElementById('ppSemesters').innerHTML = html;
+  }
+
+  var data = load();
+  renderUnits(data);
+  renderStats(data);
+
   var btn = document.getElementById('backToTop');
   window.addEventListener('scroll', function() { btn.style.display = window.scrollY > 300 ? 'flex' : 'none'; }, { passive: true });
   btn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });

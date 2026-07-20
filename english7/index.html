@@ -136,6 +136,16 @@ body.index-page { display: block; min-height: 100vh; }
     </div>
   </div>
 
+  <div class="progress-panel" id="progressPanel" style="display:none">
+    <div class="pp-header">
+      <h2>📊 学习进度</h2>
+      <span class="pp-date" id="ppDate"></span>
+    </div>
+    <div class="pp-bar-label"><span>总进度</span><span id="ppTotalLabel">0 / 0</span></div>
+    <div class="pp-bar-bg"><div class="pp-bar-fill" id="ppTotalBar" style="width:0%"></div></div>
+    <div id="ppSemesters"></div>
+  </div>
+
   <div class="nav-links">
     <a href="../index.html">🏠 返回首页</a>
     <span class="sep">·</span>
@@ -151,139 +161,15 @@ body.index-page { display: block; min-height: 100vh; }
   <div class="semester" id="s1">
     <div class="semester-header">
       <div class="semester-title">📗 七年级上册 <span class="sub">Starter 1–3 + Unit 1–9</span></div>
-      <div class="semester-progress">已完成 <strong>12</strong> / 12 单元</div>
     </div>
-    <div class="unit-grid">
-      <a href="st01.html" class="unit-card done">
-        <span class="bg-label">S1</span>
-        <div class="title">Good morning!</div>
-        <div class="topic">字母·问候</div>
-      </a>
-      <a href="st02.html" class="unit-card done">
-        <span class="bg-label">S2</span>
-        <div class="title">What's this in English?</div>
-        <div class="topic">物品·字母</div>
-      </a>
-      <a href="st03.html" class="unit-card done">
-        <span class="bg-label">S3</span>
-        <div class="title">What color is it?</div>
-        <div class="topic">颜色·字母</div>
-      </a>
-      <a href="u01.html" class="unit-card done">
-        <span class="bg-label">U1</span>
-        <div class="title">My name's Gina.</div>
-        <div class="topic">自我介绍</div>
-      </a>
-      <a href="u02.html" class="unit-card done">
-        <span class="bg-label">U2</span>
-        <div class="title">This is my sister.</div>
-        <div class="topic">家庭成员</div>
-      </a>
-      <a href="u03.html" class="unit-card done">
-        <span class="bg-label">U3</span>
-        <div class="title">Is this your pencil?</div>
-        <div class="topic">学校物品</div>
-      </a>
-      <a href="u04.html" class="unit-card done">
-        <span class="bg-label">U4</span>
-        <div class="title">Where's my schoolbag?</div>
-        <div class="topic">房间物品</div>
-      </a>
-      <a href="u05.html" class="unit-card done">
-        <span class="bg-label">U5</span>
-        <div class="title">Do you have a soccer ball?</div>
-        <div class="topic">体育运动</div>
-      </a>
-      <a href="u06.html" class="unit-card done">
-        <span class="bg-label">U6</span>
-        <div class="title">Do you like bananas?</div>
-        <div class="topic">饮食偏好</div>
-      </a>
-      <a href="u07.html" class="unit-card done">
-        <span class="bg-label">U7</span>
-        <div class="title">How much are these socks?</div>
-        <div class="topic">购物</div>
-      </a>
-      <a href="u08.html" class="unit-card done">
-        <span class="bg-label">U8</span>
-        <div class="title">When is your birthday?</div>
-        <div class="topic">日期</div>
-      </a>
-      <a href="u09.html" class="unit-card done">
-        <span class="bg-label">U9</span>
-        <div class="title">My favorite subject is science.</div>
-        <div class="topic">学科喜好</div>
-      </a>
-    </div>
+    <div class="unit-grid" id="s1-grid"></div>
   </div>
 
   <div class="semester" id="s2">
     <div class="semester-header">
       <div class="semester-title">📘 七年级下册 <span class="sub">Unit 1–12</span></div>
-      <div class="semester-progress">已完成 <strong>12</strong> / 12 单元</div>
     </div>
-    <div class="unit-grid">
-      <a href="b2u01.html" class="unit-card done">
-        <span class="bg-label">U1</span>
-        <div class="title">Can you play the guitar?</div>
-        <div class="topic">才能与俱乐部</div>
-      </a>
-      <a href="b2u02.html" class="unit-card done">
-        <span class="bg-label">U2</span>
-        <div class="title">What time do you go to school?</div>
-        <div class="topic">日常作息</div>
-      </a>
-      <a href="b2u03.html" class="unit-card done">
-        <span class="bg-label">U3</span>
-        <div class="title">How do you get to school?</div>
-        <div class="topic">交通方式</div>
-      </a>
-      <a href="b2u04.html" class="unit-card done">
-        <span class="bg-label">U4</span>
-        <div class="title">Don't eat in class.</div>
-        <div class="topic">校规</div>
-      </a>
-      <a href="b2u05.html" class="unit-card done">
-        <span class="bg-label">U5</span>
-        <div class="title">Why do you like pandas?</div>
-        <div class="topic">动物</div>
-      </a>
-      <a href="b2u06.html" class="unit-card done">
-        <span class="bg-label">U6</span>
-        <div class="title">I'm watching TV.</div>
-        <div class="topic">日常活动</div>
-      </a>
-      <a href="b2u07.html" class="unit-card done">
-        <span class="bg-label">U7</span>
-        <div class="title">It's raining!</div>
-        <div class="topic">天气</div>
-      </a>
-      <a href="b2u08.html" class="unit-card done">
-        <span class="bg-label">U8</span>
-        <div class="title">Is there a post office near here?</div>
-        <div class="topic">问路指路</div>
-      </a>
-      <a href="b2u09.html" class="unit-card done">
-        <span class="bg-label">U9</span>
-        <div class="title">What does he look like?</div>
-        <div class="topic">外貌描述</div>
-      </a>
-      <a href="b2u10.html" class="unit-card done">
-        <span class="bg-label">U10</span>
-        <div class="title">I'd like some noodles.</div>
-        <div class="topic">点餐</div>
-      </a>
-      <a href="b2u11.html" class="unit-card done">
-        <span class="bg-label">U11</span>
-        <div class="title">How was your school trip?</div>
-        <div class="topic">学校旅行</div>
-      </a>
-      <a href="b2u12.html" class="unit-card done">
-        <span class="bg-label">U12</span>
-        <div class="title">What did you do last weekend?</div>
-        <div class="topic">周末活动</div>
-      </a>
-    </div>
+    <div class="unit-grid" id="s2-grid"></div>
   </div>
 
   <div class="footer-info">
@@ -294,17 +180,119 @@ body.index-page { display: block; min-height: 100vh; }
 </div>
 
 <script>
-(function() {
+(function(){
+  var CONFIG = {
+    key: 'eng7-progress',
+    semesters: [
+      { id:'s1', label:'📗 七年级上册', sub:'Starter 1–3 + Unit 1–9' },
+      { id:'s2', label:'📘 七年级下册', sub:'Unit 1–12' }
+    ],
+    units: {
+      s1: [
+        {id:'st01', label:'S1', title:'Good morning!', topic:'字母·问候'},
+        {id:'st02', label:'S2', title:"What's this in English?", topic:'物品·字母'},
+        {id:'st03', label:'S3', title:'What color is it?', topic:'颜色·字母'},
+        {id:'u01', label:'U1', title:"My name's Gina.", topic:'自我介绍'},
+        {id:'u02', label:'U2', title:'This is my sister.', topic:'家庭成员'},
+        {id:'u03', label:'U3', title:'Is this your pencil?', topic:'学校物品'},
+        {id:'u04', label:'U4', title:"Where's my schoolbag?", topic:'房间物品'},
+        {id:'u05', label:'U5', title:'Do you have a soccer ball?', topic:'体育运动'},
+        {id:'u06', label:'U6', title:'Do you like bananas?', topic:'饮食偏好'},
+        {id:'u07', label:'U7', title:'How much are these socks?', topic:'购物'},
+        {id:'u08', label:'U8', title:'When is your birthday?', topic:'日期'},
+        {id:'u09', label:'U9', title:'My favorite subject is science.', topic:'学科喜好'}
+      ],
+      s2: [
+        {id:'b2u01', label:'U1', title:'Can you play the guitar?', topic:'才能与俱乐部'},
+        {id:'b2u02', label:'U2', title:'What time do you go to school?', topic:'日常作息'},
+        {id:'b2u03', label:'U3', title:'How do you get to school?', topic:'交通方式'},
+        {id:'b2u04', label:'U4', title:"Don't eat in class.", topic:'校规'},
+        {id:'b2u05', label:'U5', title:'Why do you like pandas?', topic:'动物'},
+        {id:'b2u06', label:'U6', title:"I'm watching TV.", topic:'日常活动'},
+        {id:'b2u07', label:'U7', title:"It's raining!", topic:'天气'},
+        {id:'b2u08', label:'U8', title:'Is there a post office near here?', topic:'问路指路'},
+        {id:'b2u09', label:'U9', title:'What does he look like?', topic:'外貌描述'},
+        {id:'b2u10', label:'U10', title:"I'd like some noodles.", topic:'点餐'},
+        {id:'b2u11', label:'U11', title:'How was your school trip?', topic:'学校旅行'},
+        {id:'b2u12', label:'U12', title:'What did you do last weekend?', topic:'周末活动'}
+      ]
+    }
+  };
+
+  function load() { var raw = localStorage.getItem(CONFIG.key); return raw ? JSON.parse(raw) : { completed: {}, lastStudyDate: null }; }
+  function save(data) { localStorage.setItem(CONFIG.key, JSON.stringify(data)); }
+
+  function renderUnits(data) {
+    CONFIG.semesters.forEach(function(sem) {
+      var grid = document.getElementById(sem.id + '-grid');
+      if (!grid) return;
+      grid.innerHTML = '';
+      CONFIG.units[sem.id].forEach(function(u) {
+        var isDone = !!data.completed[u.id];
+        var card = document.createElement('a');
+        card.className = 'unit-card' + (isDone ? ' completed' : '');
+        card.href = u.id + '.html';
+        card.innerHTML =
+          '<button class="toggle-btn" data-unit="' + u.id + '" title="标记完成">' +
+          (isDone ? '✅' : '○') + '</button>' +
+          '<span class="bg-label">' + u.label + '</span>' +
+          '<div class="title">' + u.title + '</div>' +
+          '<div class="topic">' + u.topic + '</div>';
+        card.querySelector('.toggle-btn').addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleComplete(u.id);
+        });
+        grid.appendChild(card);
+      });
+    });
+  }
+
+  function toggleComplete(id) {
+    var data = load();
+    if (data.completed[id]) { delete data.completed[id]; }
+    else { data.completed[id] = new Date().toISOString().slice(0,10); data.lastStudyDate = data.completed[id]; }
+    save(data);
+    renderUnits(data);
+    renderStats(data);
+  }
+
+  function semesterCount(data, semId) {
+    var list = CONFIG.units[semId] || [];
+    var done = 0;
+    list.forEach(function(u) { if (data.completed[u.id]) done++; });
+    return { done: done, total: list.length };
+  }
+
+  function renderStats(data) {
+    var panel = document.getElementById('progressPanel');
+    if (!panel) return;
+    panel.style.display = '';
+    var total = 0, done = 0;
+    CONFIG.semesters.forEach(function(sem) { var c = semesterCount(data, sem.id); total += c.total; done += c.done; });
+    var pct = total === 0 ? 0 : Math.round(done / total * 100);
+    document.getElementById('ppTotalLabel').textContent = done + ' / ' + total + ' (' + pct + '%)';
+    document.getElementById('ppTotalBar').style.width = pct + '%';
+    document.getElementById('ppDate').textContent = data.lastStudyDate ? '最近学习 ' + data.lastStudyDate : '';
+    var html = '';
+    CONFIG.semesters.forEach(function(sem) {
+      var c = semesterCount(data, sem.id);
+      var sp = c.total === 0 ? 0 : Math.round(c.done / c.total * 100);
+      html += '<div class="pp-semester"><div class="pp-bar-label"><span>' + sem.label + '</span><span>' + c.done + ' / ' + c.total + '</span></div><div class="pp-bar-bg"><div class="pp-bar-fill" style="width:' + sp + '%"></div></div></div>';
+    });
+    document.getElementById('ppSemesters').innerHTML = html;
+  }
+
+  var data = load();
+  renderUnits(data);
+  renderStats(data);
+
   var btn = document.getElementById('backToTop');
-  window.addEventListener('scroll', function() {
-    btn.style.display = window.scrollY > 300 ? 'flex' : 'none';
-  }, { passive: true });
+  window.addEventListener('scroll', function() { btn.style.display = window.scrollY > 300 ? 'flex' : 'none'; }, { passive: true });
   btn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 })();
-
 function setTheme(t) { document.documentElement.setAttribute("data-theme", t); localStorage.setItem("eng7-theme", t); var btn = document.getElementById("themeToggle"); if (btn) btn.textContent = t === "dark" ? "☀️" : "🌙"; }
 function toggleTheme() { setTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark"); }
-
 </script>
 </body>
 </html>

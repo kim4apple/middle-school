@@ -1,0 +1,5172 @@
+{
+  "st01": {
+    "master": [
+      {
+        "w": "how",
+        "ipa": "/haʊ/",
+        "pos": "adv.",
+        "defn": "怎样；如何",
+        "ex": "How are you today?",
+        "trans": "你今天怎么样？"
+      },
+      {
+        "w": "fine",
+        "ipa": "/faɪn/",
+        "pos": "adj.",
+        "defn": "好的；健康的",
+        "ex": "I am fine, thank you.",
+        "trans": "我很好，谢谢。"
+      },
+      {
+        "w": "thanks",
+        "ipa": "/θæŋks/",
+        "pos": "n.",
+        "defn": "感谢；谢谢",
+        "ex": "Thanks for your help.",
+        "trans": "谢谢你的帮助。"
+      },
+      {
+        "w": "teacher",
+        "ipa": "/ˈtiːtʃər/",
+        "pos": "n.",
+        "defn": "老师",
+        "ex": "Our teacher is very kind.",
+        "trans": "我们的老师很和蔼。"
+      },
+      {
+        "w": "classmate",
+        "ipa": "/ˈklæsmeɪt/",
+        "pos": "n.",
+        "defn": "同班同学",
+        "ex": "Tom is my new classmate.",
+        "trans": "汤姆是我的新同学。"
+      },
+      {
+        "w": "letter",
+        "ipa": "/ˈletər/",
+        "pos": "n.",
+        "defn": "字母；信",
+        "ex": "We learned the letter A today.",
+        "trans": "今天我们学了字母A。"
+      },
+      {
+        "w": "friend",
+        "ipa": "/frend/",
+        "pos": "n.",
+        "defn": "朋友",
+        "ex": "Li Ming is my good friend.",
+        "trans": "李明是我的好朋友。"
+      },
+      {
+        "w": "too",
+        "ipa": "/tuː/",
+        "pos": "adv.",
+        "defn": "也；太",
+        "ex": "I like English, too.",
+        "trans": "我也喜欢英语。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "introduce",
+        "ipa": "/ˌɪntrəˈdjuːs/",
+        "pos": "v.",
+        "defn": "介绍",
+        "ex": "Let me introduce my friend to you.",
+        "trans": "让我把我的朋友介绍给你。"
+      },
+      {
+        "w": "greet",
+        "ipa": "/ɡriːt/",
+        "pos": "v.",
+        "defn": "问候",
+        "ex": "We greet our teachers every morning.",
+        "trans": "我们每天早上向老师问好。"
+      },
+      {
+        "w": "spell",
+        "ipa": "/spel/",
+        "pos": "v.",
+        "defn": "拼写",
+        "ex": "Can you spell your name?",
+        "trans": "你能拼写你的名字吗？"
+      },
+      {
+        "w": "pronounce",
+        "ipa": "/prəˈnaʊns/",
+        "pos": "v.",
+        "defn": "发音",
+        "ex": "Please pronounce this word slowly.",
+        "trans": "请慢慢读这个单词。"
+      },
+      {
+        "w": "conversation",
+        "ipa": "/ˌkɒnvəˈseɪʃən/",
+        "pos": "n.",
+        "defn": "对话；交谈",
+        "ex": "We had a nice conversation in English.",
+        "trans": "我们用英语进行了愉快的对话。"
+      }
+    ]
+  },
+  "st02": {
+    "master": [
+      {
+        "w": "pencil case",
+        "ipa": "/ˈpensl keɪs/",
+        "pos": "n.",
+        "defn": "铅笔盒",
+        "ex": "My pencil case is blue.",
+        "trans": "我的铅笔盒是蓝色的。"
+      },
+      {
+        "w": "notebook",
+        "ipa": "/ˈnəʊtbʊk/",
+        "pos": "n.",
+        "defn": "笔记本",
+        "ex": "Write it in your notebook.",
+        "trans": "把它写在你的笔记本里。"
+      },
+      {
+        "w": "keep",
+        "ipa": "/kiːp/",
+        "pos": "v.",
+        "defn": "保持；保留",
+        "ex": "Please keep your desk tidy.",
+        "trans": "请保持你的书桌整洁。"
+      },
+      {
+        "w": "thing",
+        "ipa": "/θɪŋ/",
+        "pos": "n.",
+        "defn": "东西；事物",
+        "ex": "Put your things away.",
+        "trans": "把你的东西收好。"
+      },
+      {
+        "w": "find",
+        "ipa": "/faɪnd/",
+        "pos": "v.",
+        "defn": "找到",
+        "ex": "I can't find my pen.",
+        "trans": "我找不到我的钢笔了。"
+      },
+      {
+        "w": "lost",
+        "ipa": "/lɒst/",
+        "pos": "adj.",
+        "defn": "丢失的",
+        "ex": "I found a lost pencil.",
+        "trans": "我找到了一支丢失的铅笔。"
+      },
+      {
+        "w": "box",
+        "ipa": "/bɒks/",
+        "pos": "n.",
+        "defn": "盒子",
+        "ex": "The pencils are in the box.",
+        "trans": "铅笔在盒子里。"
+      },
+      {
+        "w": "under",
+        "ipa": "/ˈʌndər/",
+        "pos": "prep.",
+        "defn": "在……下面",
+        "ex": "The cat is under the desk.",
+        "trans": "猫在书桌下面。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "organize",
+        "ipa": "/ˈɔːrɡənaɪz/",
+        "pos": "v.",
+        "defn": "整理；组织",
+        "ex": "I organize my books every week.",
+        "trans": "我每周整理我的书。"
+      },
+      {
+        "w": "belong",
+        "ipa": "/bɪˈlɒŋ/",
+        "pos": "v.",
+        "defn": "属于",
+        "ex": "This pen belongs to me.",
+        "trans": "这支钢笔是我的。"
+      },
+      {
+        "w": "label",
+        "ipa": "/ˈleɪbl/",
+        "pos": "n.",
+        "defn": "标签",
+        "ex": "Put a label on your bottle.",
+        "trans": "给你的瓶子上贴个标签。"
+      },
+      {
+        "w": "drawer",
+        "ipa": "/drɔːr/",
+        "pos": "n.",
+        "defn": "抽屉",
+        "ex": "Put your toys in the drawer.",
+        "trans": "把你的玩具放进抽屉里。"
+      },
+      {
+        "w": "neat",
+        "ipa": "/niːt/",
+        "pos": "adj.",
+        "defn": "整洁的",
+        "ex": "Her room is always neat.",
+        "trans": "她的房间总是很整洁。"
+      }
+    ]
+  },
+  "st03": {
+    "master": [
+      {
+        "w": "brown",
+        "ipa": "/braʊn/",
+        "pos": "adj.",
+        "defn": "棕色的",
+        "ex": "The dog has brown eyes.",
+        "trans": "这只狗有棕色的眼睛。"
+      },
+      {
+        "w": "purple",
+        "ipa": "/ˈpɜːrpl/",
+        "pos": "adj.",
+        "defn": "紫色的",
+        "ex": "I like the purple flowers.",
+        "trans": "我喜欢紫色的花朵。"
+      },
+      {
+        "w": "pink",
+        "ipa": "/pɪŋk/",
+        "pos": "adj.",
+        "defn": "粉色的",
+        "ex": "Her bag is pink.",
+        "trans": "她的包是粉色的。"
+      },
+      {
+        "w": "grey",
+        "ipa": "/ɡreɪ/",
+        "pos": "adj.",
+        "defn": "灰色的",
+        "ex": "The cat is grey and white.",
+        "trans": "这只猫是灰白相间的。"
+      },
+      {
+        "w": "picture",
+        "ipa": "/ˈpɪktʃər/",
+        "pos": "n.",
+        "defn": "图片；图画",
+        "ex": "Draw a picture of your family.",
+        "trans": "画一张你家人的图片。"
+      },
+      {
+        "w": "paint",
+        "ipa": "/peɪnt/",
+        "pos": "v.",
+        "defn": "涂色；绘画",
+        "ex": "Let's paint the picture together.",
+        "trans": "我们一起画这幅画吧。"
+      },
+      {
+        "w": "show",
+        "ipa": "/ʃəʊ/",
+        "pos": "v.",
+        "defn": "展示",
+        "ex": "Show me your new schoolbag.",
+        "trans": "给我看看你的新书包。"
+      },
+      {
+        "w": "different",
+        "ipa": "/ˈdɪfərənt/",
+        "pos": "adj.",
+        "defn": "不同的",
+        "ex": "They are in different colors.",
+        "trans": "它们的颜色不同。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "rainbow",
+        "ipa": "/ˈreɪnbəʊ/",
+        "pos": "n.",
+        "defn": "彩虹",
+        "ex": "A rainbow appears after the rain.",
+        "trans": "雨后出现了彩虹。"
+      },
+      {
+        "w": "describe",
+        "ipa": "/dɪˈskraɪb/",
+        "pos": "v.",
+        "defn": "描述",
+        "ex": "Describe your favorite toy.",
+        "trans": "描述一下你最喜欢的玩具。"
+      },
+      {
+        "w": "bright",
+        "ipa": "/braɪt/",
+        "pos": "adj.",
+        "defn": "明亮的；鲜艳的",
+        "ex": "She wore a bright red dress.",
+        "trans": "她穿了一件鲜红色的连衣裙。"
+      },
+      {
+        "w": "colorful",
+        "ipa": "/ˈkʌlərfl/",
+        "pos": "adj.",
+        "defn": "色彩丰富的",
+        "ex": "The garden is colorful in spring.",
+        "trans": "春天的花园色彩丰富。"
+      },
+      {
+        "w": "prefer",
+        "ipa": "/prɪˈfɜːr/",
+        "pos": "v.",
+        "defn": "更喜欢",
+        "ex": "I prefer blue to green.",
+        "trans": "比起绿色我更喜欢蓝色。"
+      }
+    ]
+  },
+  "u01": {
+    "master": [
+      {
+        "w": "hobby",
+        "ipa": "/ˈhɒbi/",
+        "pos": "n.",
+        "defn": "爱好",
+        "ex": "Reading is my hobby.",
+        "trans": "阅读是我的爱好。"
+      },
+      {
+        "w": "age",
+        "ipa": "/eɪdʒ/",
+        "pos": "n.",
+        "defn": "年龄",
+        "ex": "What is your age?",
+        "trans": "你多大了？"
+      },
+      {
+        "w": "country",
+        "ipa": "/ˈkʌntri/",
+        "pos": "n.",
+        "defn": "国家",
+        "ex": "China is a big country.",
+        "trans": "中国是一个大国。"
+      },
+      {
+        "w": "city",
+        "ipa": "/ˈsɪti/",
+        "pos": "n.",
+        "defn": "城市",
+        "ex": "Beijing is a big city.",
+        "trans": "北京是一座大城市。"
+      },
+      {
+        "w": "phone",
+        "ipa": "/fəʊn/",
+        "pos": "n.",
+        "defn": "电话",
+        "ex": "What is your phone number?",
+        "trans": "你的电话号码是多少？"
+      },
+      {
+        "w": "number",
+        "ipa": "/ˈnʌmbər/",
+        "pos": "n.",
+        "defn": "号码；数字",
+        "ex": "My number is 123.",
+        "trans": "我的号码是123。"
+      },
+      {
+        "w": "email",
+        "ipa": "/ˈiːmeɪl/",
+        "pos": "n.",
+        "defn": "电子邮件",
+        "ex": "Send me an email.",
+        "trans": "给我发一封电子邮件。"
+      },
+      {
+        "w": "fun",
+        "ipa": "/fʌn/",
+        "pos": "adj.",
+        "defn": "有趣的",
+        "ex": "The game is fun.",
+        "trans": "这个游戏很有趣。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "background",
+        "ipa": "/ˈbækɡraʊnd/",
+        "pos": "n.",
+        "defn": "背景",
+        "ex": "Tell me about your family background.",
+        "trans": "说说你的家庭背景。"
+      },
+      {
+        "w": "self-introduction",
+        "ipa": "/ˌself ˌɪntrəˈdʌkʃn/",
+        "pos": "n.",
+        "defn": "自我介绍",
+        "ex": "Please give a self-introduction.",
+        "trans": "请做自我介绍。"
+      },
+      {
+        "w": "hometown",
+        "ipa": "/ˈhəʊmtaʊn/",
+        "pos": "n.",
+        "defn": "家乡",
+        "ex": "My hometown is a small town.",
+        "trans": "我的家乡是一个小镇。"
+      },
+      {
+        "w": "personal",
+        "ipa": "/ˈpɜːrsənl/",
+        "pos": "adj.",
+        "defn": "个人的；私人的",
+        "ex": "Don't share personal information online.",
+        "trans": "不要在网上分享个人信息。"
+      },
+      {
+        "w": "basic",
+        "ipa": "/ˈbeɪsɪk/",
+        "pos": "adj.",
+        "defn": "基本的",
+        "ex": "These are some basic questions.",
+        "trans": "这些是一些基本问题。"
+      }
+    ]
+  },
+  "u02": {
+    "master": [
+      {
+        "w": "parent",
+        "ipa": "/ˈpeərənt/",
+        "pos": "n.",
+        "defn": "父/母",
+        "ex": "My parents are very nice.",
+        "trans": "我的父母非常好。"
+      },
+      {
+        "w": "uncle",
+        "ipa": "/ˈʌŋkl/",
+        "pos": "n.",
+        "defn": "叔伯；舅舅",
+        "ex": "My uncle is a doctor.",
+        "trans": "我叔叔是一名医生。"
+      },
+      {
+        "w": "aunt",
+        "ipa": "/ɑːnt/",
+        "pos": "n.",
+        "defn": "姑；姨；婶",
+        "ex": "My aunt lives in Shanghai.",
+        "trans": "我姑姑住在上海。"
+      },
+      {
+        "w": "cousin",
+        "ipa": "/ˈkʌzn/",
+        "pos": "n.",
+        "defn": "堂/表兄弟姐妹",
+        "ex": "My cousin is ten years old.",
+        "trans": "我表弟十岁了。"
+      },
+      {
+        "w": "pretty",
+        "ipa": "/ˈprɪti/",
+        "pos": "adj.",
+        "defn": "漂亮的",
+        "ex": "She is a pretty girl.",
+        "trans": "她是一个漂亮的女孩。"
+      },
+      {
+        "w": "handsome",
+        "ipa": "/ˈhænsəm/",
+        "pos": "adj.",
+        "defn": "英俊的",
+        "ex": "He is tall and handsome.",
+        "trans": "他又高又英俊。"
+      },
+      {
+        "w": "young",
+        "ipa": "/jʌŋ/",
+        "pos": "adj.",
+        "defn": "年轻的",
+        "ex": "My mother looks very young.",
+        "trans": "我妈妈看起来很年轻。"
+      },
+      {
+        "w": "elder",
+        "ipa": "/ˈeldər/",
+        "pos": "adj.",
+        "defn": "年长的",
+        "ex": "My elder sister is in college.",
+        "trans": "我姐姐在上大学。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "relative",
+        "ipa": "/ˈrelətɪv/",
+        "pos": "n.",
+        "defn": "亲戚",
+        "ex": "Many relatives came to the party.",
+        "trans": "很多亲戚来参加了聚会。"
+      },
+      {
+        "w": "resemble",
+        "ipa": "/rɪˈzembl/",
+        "pos": "v.",
+        "defn": "像；相似",
+        "ex": "She resembles her mother.",
+        "trans": "她长得像她妈妈。"
+      },
+      {
+        "w": "generous",
+        "ipa": "/ˈdʒenərəs/",
+        "pos": "adj.",
+        "defn": "慷慨的；大方的",
+        "ex": "My grandpa is very generous.",
+        "trans": "我爷爷非常大方。"
+      },
+      {
+        "w": "patient",
+        "ipa": "/ˈpeɪʃnt/",
+        "pos": "adj.",
+        "defn": "有耐心的",
+        "ex": "My father is patient with me.",
+        "trans": "我爸爸对我很有耐心。"
+      },
+      {
+        "w": "family tree",
+        "ipa": "/ˈfæməli triː/",
+        "pos": "n.",
+        "defn": "家谱",
+        "ex": "We made a family tree in class.",
+        "trans": "我们在课堂上做了一个家谱。"
+      }
+    ]
+  },
+  "u03": {
+    "master": [
+      {
+        "w": "office",
+        "ipa": "/ˈɒfɪs/",
+        "pos": "n.",
+        "defn": "办公室",
+        "ex": "The teachers' office is on the second floor.",
+        "trans": "教师办公室在二楼。"
+      },
+      {
+        "w": "gate",
+        "ipa": "/ɡeɪt/",
+        "pos": "n.",
+        "defn": "大门",
+        "ex": "The school gate is very big.",
+        "trans": "学校大门很大。"
+      },
+      {
+        "w": "toilet",
+        "ipa": "/ˈtɔɪlət/",
+        "pos": "n.",
+        "defn": "厕所",
+        "ex": "Where is the toilet?",
+        "trans": "厕所在哪里？"
+      },
+      {
+        "w": "garden",
+        "ipa": "/ˈɡɑːrdn/",
+        "pos": "n.",
+        "defn": "花园",
+        "ex": "There is a beautiful garden at school.",
+        "trans": "学校有一个美丽的花园。"
+      },
+      {
+        "w": "wall",
+        "ipa": "/wɔːl/",
+        "pos": "n.",
+        "defn": "墙",
+        "ex": "There is a map on the wall.",
+        "trans": "墙上有一张地图。"
+      },
+      {
+        "w": "corner",
+        "ipa": "/ˈkɔːrnər/",
+        "pos": "n.",
+        "defn": "角落；拐角",
+        "ex": "The library is at the corner.",
+        "trans": "图书馆在拐角处。"
+      },
+      {
+        "w": "left",
+        "ipa": "/left/",
+        "pos": "adj./adv.",
+        "defn": "左边(的)",
+        "ex": "Turn left at the gate.",
+        "trans": "在大门口向左转。"
+      },
+      {
+        "w": "right",
+        "ipa": "/raɪt/",
+        "pos": "adj./adv.",
+        "defn": "右边(的)",
+        "ex": "The classroom is on the right.",
+        "trans": "教室在右边。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "facility",
+        "ipa": "/fəˈsɪləti/",
+        "pos": "n.",
+        "defn": "设施",
+        "ex": "Our school has great sports facilities.",
+        "trans": "我们学校有很棒的运动设施。"
+      },
+      {
+        "w": "direction",
+        "ipa": "/dɪˈrekʃn/",
+        "pos": "n.",
+        "defn": "方向",
+        "ex": "Which direction is the library?",
+        "trans": "图书馆在哪个方向？"
+      },
+      {
+        "w": "opposite",
+        "ipa": "/ˈɒpəzɪt/",
+        "pos": "prep.",
+        "defn": "在……对面",
+        "ex": "The garden is opposite the library.",
+        "trans": "花园在图书馆对面。"
+      },
+      {
+        "w": "campus",
+        "ipa": "/ˈkæmpəs/",
+        "pos": "n.",
+        "defn": "校园",
+        "ex": "Our campus is clean and beautiful.",
+        "trans": "我们校园干净又美丽。"
+      },
+      {
+        "w": "location",
+        "ipa": "/ləʊˈkeɪʃn/",
+        "pos": "n.",
+        "defn": "位置",
+        "ex": "The location of the gym is near the playground.",
+        "trans": "体育馆在操场附近。"
+      }
+    ]
+  },
+  "u04": {
+    "master": [
+      {
+        "w": "biology",
+        "ipa": "/baɪˈɒlədʒi/",
+        "pos": "n.",
+        "defn": "生物",
+        "ex": "We learn about plants in biology.",
+        "trans": "我们在生物课上学习植物。"
+      },
+      {
+        "w": "geography",
+        "ipa": "/dʒiˈɒɡrəfi/",
+        "pos": "n.",
+        "defn": "地理",
+        "ex": "Geography is very interesting.",
+        "trans": "地理课很有趣。"
+      },
+      {
+        "w": "physics",
+        "ipa": "/ˈfɪzɪks/",
+        "pos": "n.",
+        "defn": "物理",
+        "ex": "We did an experiment in physics class.",
+        "trans": "我们在物理课上做了实验。"
+      },
+      {
+        "w": "boring",
+        "ipa": "/ˈbɔːrɪŋ/",
+        "pos": "adj.",
+        "defn": "无聊的",
+        "ex": "Some think math is boring.",
+        "trans": "有些人觉得数学无聊。"
+      },
+      {
+        "w": "easy",
+        "ipa": "/ˈiːzi/",
+        "pos": "adj.",
+        "defn": "容易的",
+        "ex": "The test was very easy.",
+        "trans": "考试很简单。"
+      },
+      {
+        "w": "important",
+        "ipa": "/ɪmˈpɔːrtnt/",
+        "pos": "adj.",
+        "defn": "重要的",
+        "ex": "English is very important.",
+        "trans": "英语非常重要。"
+      },
+      {
+        "w": "understand",
+        "ipa": "/ˌʌndərˈstænd/",
+        "pos": "v.",
+        "defn": "理解",
+        "ex": "I understand the question now.",
+        "trans": "我现在理解这个问题了。"
+      },
+      {
+        "w": "explain",
+        "ipa": "/ɪkˈspleɪn/",
+        "pos": "v.",
+        "defn": "解释",
+        "ex": "Please explain the meaning to me.",
+        "trans": "请给我解释一下意思。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "curriculum",
+        "ipa": "/kəˈrɪkjələm/",
+        "pos": "n.",
+        "defn": "课程",
+        "ex": "Our curriculum includes many subjects.",
+        "trans": "我们的课程包括很多科目。"
+      },
+      {
+        "w": "practical",
+        "ipa": "/ˈpræktɪkl/",
+        "pos": "adj.",
+        "defn": "实用的",
+        "ex": "This subject is very practical.",
+        "trans": "这门课很实用。"
+      },
+      {
+        "w": "timetable",
+        "ipa": "/ˈtaɪmteɪbl/",
+        "pos": "n.",
+        "defn": "课程表",
+        "ex": "Check the timetable for tomorrow.",
+        "trans": "查看明天的课程表。"
+      },
+      {
+        "w": "strength",
+        "ipa": "/streŋθ/",
+        "pos": "n.",
+        "defn": "优势；长处",
+        "ex": "Math is my strength.",
+        "trans": "数学是我的优势。"
+      },
+      {
+        "w": "passion",
+        "ipa": "/ˈpæʃn/",
+        "pos": "n.",
+        "defn": "热情；热爱",
+        "ex": "She has a passion for science.",
+        "trans": "她对科学充满热情。"
+      }
+    ]
+  },
+  "u05": {
+    "master": [
+      {
+        "w": "talent",
+        "ipa": "/ˈtælənt/",
+        "pos": "n.",
+        "defn": "才能；天赋",
+        "ex": "She has a talent for dancing.",
+        "trans": "她有舞蹈天赋。"
+      },
+      {
+        "w": "choose",
+        "ipa": "/tʃuːz/",
+        "pos": "v.",
+        "defn": "选择",
+        "ex": "Which club do you choose?",
+        "trans": "你选择哪个俱乐部？"
+      },
+      {
+        "w": "demonstrate",
+        "ipa": "/ˈdemənstreɪt/",
+        "pos": "v.",
+        "defn": "展示；示范",
+        "ex": "We demonstrate our skills at the show.",
+        "trans": "我们在表演中展示技能。"
+      },
+      {
+        "w": "practice",
+        "ipa": "/ˈpræktɪs/",
+        "pos": "v.",
+        "defn": "练习",
+        "ex": "Practice the piano every day.",
+        "trans": "每天练习钢琴。"
+      },
+      {
+        "w": "member",
+        "ipa": "/ˈmembər/",
+        "pos": "n.",
+        "defn": "成员",
+        "ex": "I am a member of the chess club.",
+        "trans": "我是象棋俱乐部的成员。"
+      },
+      {
+        "w": "activity",
+        "ipa": "/ækˈtɪvəti/",
+        "pos": "n.",
+        "defn": "活动",
+        "ex": "There are many activities after school.",
+        "trans": "放学后有很多活动。"
+      },
+      {
+        "w": "team",
+        "ipa": "/tiːm/",
+        "pos": "n.",
+        "defn": "团队",
+        "ex": "We work as a team.",
+        "trans": "我们团队合作。"
+      },
+      {
+        "w": "competition",
+        "ipa": "/ˌkɒmpəˈtɪʃn/",
+        "pos": "n.",
+        "defn": "比赛",
+        "ex": "We won the singing competition.",
+        "trans": "我们赢了歌唱比赛。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "audition",
+        "ipa": "/ɔːˈdɪʃn/",
+        "pos": "n.",
+        "defn": "试演；面试",
+        "ex": "I have an audition for the play.",
+        "trans": "我要参加话剧的试演。"
+      },
+      {
+        "w": "volunteer",
+        "ipa": "/ˌvɒlənˈtɪər/",
+        "pos": "v.",
+        "defn": "自愿做",
+        "ex": "I volunteer in the art club.",
+        "trans": "我在美术俱乐部做志愿者。"
+      },
+      {
+        "w": "skill",
+        "ipa": "/skɪl/",
+        "pos": "n.",
+        "defn": "技能",
+        "ex": "Learning a new skill takes time.",
+        "trans": "学习新技能需要时间。"
+      },
+      {
+        "w": "coach",
+        "ipa": "/kəʊtʃ/",
+        "pos": "n.",
+        "defn": "教练",
+        "ex": "The coach teaches us how to play chess.",
+        "trans": "教练教我们下象棋。"
+      },
+      {
+        "w": "tryout",
+        "ipa": "/ˈtraɪaʊt/",
+        "pos": "n.",
+        "defn": "选拔；试训",
+        "ex": "The basketball tryout is next week.",
+        "trans": "篮球选拔赛在下周。"
+      }
+    ]
+  },
+  "u06": {
+    "master": [
+      {
+        "w": "early",
+        "ipa": "/ˈɜːrli/",
+        "pos": "adv.",
+        "defn": "早地",
+        "ex": "I get up early every day.",
+        "trans": "我每天早起。"
+      },
+      {
+        "w": "late",
+        "ipa": "/leɪt/",
+        "pos": "adv.",
+        "defn": "晚地；迟地",
+        "ex": "Don't be late for school.",
+        "trans": "上学不要迟到。"
+      },
+      {
+        "w": "brush",
+        "ipa": "/brʌʃ/",
+        "pos": "v.",
+        "defn": "刷",
+        "ex": "Brush your teeth before bed.",
+        "trans": "睡觉前刷牙。"
+      },
+      {
+        "w": "shower",
+        "ipa": "/ˈʃaʊər/",
+        "pos": "n.",
+        "defn": "淋浴",
+        "ex": "I take a shower every morning.",
+        "trans": "我每天早上洗澡。"
+      },
+      {
+        "w": "always",
+        "ipa": "/ˈɔːlweɪz/",
+        "pos": "adv.",
+        "defn": "总是",
+        "ex": "I always walk to school.",
+        "trans": "我总是走路去上学。"
+      },
+      {
+        "w": "never",
+        "ipa": "/ˈnevər/",
+        "pos": "adv.",
+        "defn": "从不",
+        "ex": "I never eat junk food.",
+        "trans": "我从不吃垃圾食品。"
+      },
+      {
+        "w": "schedule",
+        "ipa": "/ˈʃedjuːl/",
+        "pos": "n.",
+        "defn": "时间表",
+        "ex": "I have a busy schedule today.",
+        "trans": "我今天的时间表很紧。"
+      },
+      {
+        "w": "weekday",
+        "ipa": "/ˈwiːkdeɪ/",
+        "pos": "n.",
+        "defn": "工作日",
+        "ex": "On weekdays, I go to school.",
+        "trans": "工作日我去上学。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "routine",
+        "ipa": "/ruːˈtiːn/",
+        "pos": "n.",
+        "defn": "常规；日常事务",
+        "ex": "My daily routine is well organized.",
+        "trans": "我的日常安排很有条理。"
+      },
+      {
+        "w": "efficient",
+        "ipa": "/ɪˈfɪʃnt/",
+        "pos": "adj.",
+        "defn": "高效的",
+        "ex": "Plan ahead to be more efficient.",
+        "trans": "提前计划才能更高效。"
+      },
+      {
+        "w": "prepare",
+        "ipa": "/prɪˈpeər/",
+        "pos": "v.",
+        "defn": "准备",
+        "ex": "I prepare my bag the night before.",
+        "trans": "我头天晚上准备好书包。"
+      },
+      {
+        "w": "habit",
+        "ipa": "/ˈhæbɪt/",
+        "pos": "n.",
+        "defn": "习惯",
+        "ex": "Good habits help us learn better.",
+        "trans": "好习惯帮助我们学得更好。"
+      },
+      {
+        "w": "punctual",
+        "ipa": "/ˈpʌŋktʃuəl/",
+        "pos": "adj.",
+        "defn": "守时的",
+        "ex": "She is always punctual for class.",
+        "trans": "她上课总是很准时。"
+      }
+    ]
+  },
+  "u07": {
+    "master": [
+      {
+        "w": "calendar",
+        "ipa": "/ˈkælɪndər/",
+        "pos": "n.",
+        "defn": "日历",
+        "ex": "Check the calendar for the date.",
+        "trans": "查看日历找日期。"
+      },
+      {
+        "w": "celebrate",
+        "ipa": "/ˈselɪbreɪt/",
+        "pos": "v.",
+        "defn": "庆祝",
+        "ex": "We celebrate with a cake.",
+        "trans": "我们用蛋糕庆祝。"
+      },
+      {
+        "w": "present",
+        "ipa": "/ˈpreznt/",
+        "pos": "n.",
+        "defn": "礼物",
+        "ex": "I got a nice present.",
+        "trans": "我得到了一份好礼物。"
+      },
+      {
+        "w": "card",
+        "ipa": "/kɑːrd/",
+        "pos": "n.",
+        "defn": "卡片",
+        "ex": "I made a card for my mom.",
+        "trans": "我给妈妈做了一张卡片。"
+      },
+      {
+        "w": "candle",
+        "ipa": "/ˈkændl/",
+        "pos": "n.",
+        "defn": "蜡烛",
+        "ex": "Blow out the candles on the cake.",
+        "trans": "吹灭蛋糕上的蜡烛。"
+      },
+      {
+        "w": "surprise",
+        "ipa": "/sərˈpraɪz/",
+        "pos": "n.",
+        "defn": "惊喜",
+        "ex": "The party was a big surprise.",
+        "trans": "这个派对是一个大惊喜。"
+      },
+      {
+        "w": "invite",
+        "ipa": "/ɪnˈvaɪt/",
+        "pos": "v.",
+        "defn": "邀请",
+        "ex": "I invite my friends to the party.",
+        "trans": "我邀请朋友们来派对。"
+      },
+      {
+        "w": "balloon",
+        "ipa": "/bəˈluːn/",
+        "pos": "n.",
+        "defn": "气球",
+        "ex": "The room is full of balloons.",
+        "trans": "房间里满是气球。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "annual",
+        "ipa": "/ˈænjuəl/",
+        "pos": "adj.",
+        "defn": "每年的",
+        "ex": "My birthday is an annual event.",
+        "trans": "我的生日是一年一度的。"
+      },
+      {
+        "w": "tradition",
+        "ipa": "/trəˈdɪʃn/",
+        "pos": "n.",
+        "defn": "传统",
+        "ex": "Eating noodles on birthdays is a tradition.",
+        "trans": "生日吃面条是一个传统。"
+      },
+      {
+        "w": "celebration",
+        "ipa": "/ˌselɪˈbreɪʃn/",
+        "pos": "n.",
+        "defn": "庆祝活动",
+        "ex": "The celebration lasted all day.",
+        "trans": "庆祝活动持续了一整天。"
+      },
+      {
+        "w": "ceremony",
+        "ipa": "/ˈserɪməni/",
+        "pos": "n.",
+        "defn": "仪式",
+        "ex": "The opening ceremony was wonderful.",
+        "trans": "开幕式非常精彩。"
+      },
+      {
+        "w": "memorable",
+        "ipa": "/ˈmemərəbl/",
+        "pos": "adj.",
+        "defn": "难忘的",
+        "ex": "We had a memorable birthday party.",
+        "trans": "我们举办了一个难忘的生日派对。"
+      }
+    ]
+  },
+  "b2u01": {
+    "master": [
+      {
+        "w": "koala",
+        "ipa": "/kəʊˈɑːlə/",
+        "pos": "n.",
+        "defn": "考拉",
+        "ex": "Koalas sleep during the day.",
+        "trans": "考拉白天睡觉。"
+      },
+      {
+        "w": "giraffe",
+        "ipa": "/dʒɪˈræf/",
+        "pos": "n.",
+        "defn": "长颈鹿",
+        "ex": "The giraffe has a very long neck.",
+        "trans": "长颈鹿有很长的脖子。"
+      },
+      {
+        "w": "penguin",
+        "ipa": "/ˈpeŋɡwɪn/",
+        "pos": "n.",
+        "defn": "企鹅",
+        "ex": "Penguins live in cold places.",
+        "trans": "企鹅生活在寒冷的地方。"
+      },
+      {
+        "w": "dolphin",
+        "ipa": "/ˈdɒlfɪn/",
+        "pos": "n.",
+        "defn": "海豚",
+        "ex": "Dolphins are very smart animals.",
+        "trans": "海豚很聪明。"
+      },
+      {
+        "w": "wing",
+        "ipa": "/wɪŋ/",
+        "pos": "n.",
+        "defn": "翅膀",
+        "ex": "Birds use their wings to fly.",
+        "trans": "鸟用翅膀飞翔。"
+      },
+      {
+        "w": "fur",
+        "ipa": "/fɜːr/",
+        "pos": "n.",
+        "defn": "皮毛",
+        "ex": "The cat has soft fur.",
+        "trans": "猫有柔软的皮毛。"
+      },
+      {
+        "w": "tail",
+        "ipa": "/teɪl/",
+        "pos": "n.",
+        "defn": "尾巴",
+        "ex": "The monkey has a long tail.",
+        "trans": "猴子有长尾巴。"
+      },
+      {
+        "w": "claw",
+        "ipa": "/klɔː/",
+        "pos": "n.",
+        "defn": "爪子",
+        "ex": "The eagle has sharp claws.",
+        "trans": "鹰有锋利的爪子。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "species",
+        "ipa": "/ˈspiːʃiːz/",
+        "pos": "n.",
+        "defn": "物种",
+        "ex": "This species is in danger.",
+        "trans": "这个物种处于危险中。"
+      },
+      {
+        "w": "mammal",
+        "ipa": "/ˈmæml/",
+        "pos": "n.",
+        "defn": "哺乳动物",
+        "ex": "Dolphins are mammals, not fish.",
+        "trans": "海豚是哺乳动物，不是鱼。"
+      },
+      {
+        "w": "endangered",
+        "ipa": "/ɪnˈdeɪndʒərd/",
+        "pos": "adj.",
+        "defn": "濒危的",
+        "ex": "Pandas are an endangered species.",
+        "trans": "大熊猫是濒危物种。"
+      },
+      {
+        "w": "habitat",
+        "ipa": "/ˈhæbɪtæt/",
+        "pos": "n.",
+        "defn": "栖息地",
+        "ex": "The forest is the habitat of many animals.",
+        "trans": "森林是许多动物的栖息地。"
+      },
+      {
+        "w": "conservation",
+        "ipa": "/ˌkɒnsərˈveɪʃn/",
+        "pos": "n.",
+        "defn": "保护",
+        "ex": "Wildlife conservation is very important.",
+        "trans": "野生动物保护非常重要。"
+      }
+    ]
+  },
+  "b2u02": {
+    "master": [
+      {
+        "w": "follow",
+        "ipa": "/ˈfɒləʊ/",
+        "pos": "v.",
+        "defn": "遵守；跟随",
+        "ex": "Follow the school rules.",
+        "trans": "遵守学校规则。"
+      },
+      {
+        "w": "obey",
+        "ipa": "/əˈbeɪ/",
+        "pos": "v.",
+        "defn": "服从；遵守",
+        "ex": "We must obey the traffic rules.",
+        "trans": "我们必须遵守交通规则。"
+      },
+      {
+        "w": "punish",
+        "ipa": "/ˈpʌnɪʃ/",
+        "pos": "v.",
+        "defn": "惩罚",
+        "ex": "Bad behavior will be punished.",
+        "trans": "不良行为将受到惩罚。"
+      },
+      {
+        "w": "behave",
+        "ipa": "/bɪˈheɪv/",
+        "pos": "v.",
+        "defn": "表现；举止",
+        "ex": "Please behave well in class.",
+        "trans": "请在课堂上表现好。"
+      },
+      {
+        "w": "responsible",
+        "ipa": "/rɪˈspɒnsəbl/",
+        "pos": "adj.",
+        "defn": "负责的",
+        "ex": "Be responsible for your actions.",
+        "trans": "对你的行为负责。"
+      },
+      {
+        "w": "discipline",
+        "ipa": "/ˈdɪsəplɪn/",
+        "pos": "n.",
+        "defn": "纪律",
+        "ex": "Discipline is important in school.",
+        "trans": "纪律在学校很重要。"
+      },
+      {
+        "w": "respect",
+        "ipa": "/rɪˈspekt/",
+        "pos": "v.",
+        "defn": "尊敬；尊重",
+        "ex": "Respect your teachers and classmates.",
+        "trans": "尊敬你的老师和同学。"
+      },
+      {
+        "w": "warning",
+        "ipa": "/ˈwɔːrnɪŋ/",
+        "pos": "n.",
+        "defn": "警告",
+        "ex": "He got a warning for being late.",
+        "trans": "他因为迟到收到了警告。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "regulation",
+        "ipa": "/ˌreɡjuˈleɪʃn/",
+        "pos": "n.",
+        "defn": "规章",
+        "ex": "The school regulations must be followed.",
+        "trans": "必须遵守学校规章。"
+      },
+      {
+        "w": "consequence",
+        "ipa": "/ˈkɒnsɪkwəns/",
+        "pos": "n.",
+        "defn": "后果",
+        "ex": "Every action has a consequence.",
+        "trans": "每个行为都有后果。"
+      },
+      {
+        "w": "permission",
+        "ipa": "/pərˈmɪʃn/",
+        "pos": "n.",
+        "defn": "许可",
+        "ex": "Ask for permission before leaving.",
+        "trans": "离开前要征得许可。"
+      },
+      {
+        "w": "authority",
+        "ipa": "/ɔːˈθɒrəti/",
+        "pos": "n.",
+        "defn": "权威；当局",
+        "ex": "We should respect authority.",
+        "trans": "我们应该尊重权威。"
+      },
+      {
+        "w": "violation",
+        "ipa": "/ˌvaɪəˈleɪʃn/",
+        "pos": "n.",
+        "defn": "违反",
+        "ex": "Running in the hall is a rule violation.",
+        "trans": "在走廊跑是违规行为。"
+      }
+    ]
+  },
+  "b2u03": {
+    "master": [
+      {
+        "w": "jog",
+        "ipa": "/dʒɒɡ/",
+        "pos": "v.",
+        "defn": "慢跑",
+        "ex": "I jog in the park every morning.",
+        "trans": "我每天早上在公园慢跑。"
+      },
+      {
+        "w": "stretch",
+        "ipa": "/stretʃ/",
+        "pos": "v.",
+        "defn": "伸展",
+        "ex": "Stretch your body before exercise.",
+        "trans": "运动前伸展一下身体。"
+      },
+      {
+        "w": "energy",
+        "ipa": "/ˈenərdʒi/",
+        "pos": "n.",
+        "defn": "精力；能量",
+        "ex": "Eating well gives us energy.",
+        "trans": "吃好给我们能量。"
+      },
+      {
+        "w": "active",
+        "ipa": "/ˈæktɪv/",
+        "pos": "adj.",
+        "defn": "活跃的",
+        "ex": "She is very active in PE class.",
+        "trans": "她在体育课上很活跃。"
+      },
+      {
+        "w": "weight",
+        "ipa": "/weɪt/",
+        "pos": "n.",
+        "defn": "重量；体重",
+        "ex": "I want to keep a healthy weight.",
+        "trans": "我想保持健康的体重。"
+      },
+      {
+        "w": "muscle",
+        "ipa": "/ˈmʌsl/",
+        "pos": "n.",
+        "defn": "肌肉",
+        "ex": "Exercise helps build strong muscles.",
+        "trans": "锻炼帮助建立强壮的肌肉。"
+      },
+      {
+        "w": "amount",
+        "ipa": "/əˈmaʊnt/",
+        "pos": "n.",
+        "defn": "数量",
+        "ex": "A proper amount of exercise is good.",
+        "trans": "适量的运动有好处。"
+      },
+      {
+        "w": "daily",
+        "ipa": "/ˈdeɪli/",
+        "pos": "adj.",
+        "defn": "每日的",
+        "ex": "Daily exercise keeps you healthy.",
+        "trans": "每天锻炼让你保持健康。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "endurance",
+        "ipa": "/ɪnˈdjʊərəns/",
+        "pos": "n.",
+        "defn": "耐力",
+        "ex": "Running improves your endurance.",
+        "trans": "跑步提高你的耐力。"
+      },
+      {
+        "w": "workout",
+        "ipa": "/ˈwɜːrkaʊt/",
+        "pos": "n.",
+        "defn": "锻炼",
+        "ex": "I do a 30-minute workout every day.",
+        "trans": "我每天做30分钟锻炼。"
+      },
+      {
+        "w": "flexibility",
+        "ipa": "/ˌfleksəˈbɪləti/",
+        "pos": "n.",
+        "defn": "柔韧性",
+        "ex": "Yoga helps improve flexibility.",
+        "trans": "瑜伽有助于提高柔韧性。"
+      },
+      {
+        "w": "metabolism",
+        "ipa": "/məˈtæbəlɪzəm/",
+        "pos": "n.",
+        "defn": "新陈代谢",
+        "ex": "Exercise speeds up your metabolism.",
+        "trans": "运动加速新陈代谢。"
+      },
+      {
+        "w": "fitness",
+        "ipa": "/ˈfɪtnəs/",
+        "pos": "n.",
+        "defn": "健康",
+        "ex": "Physical fitness is important for students.",
+        "trans": "身体健康对学生很重要。"
+      }
+    ]
+  },
+  "b2u04": {
+    "master": [
+      {
+        "w": "tomato",
+        "ipa": "/təˈmɑːtəʊ/",
+        "pos": "n.",
+        "defn": "西红柿",
+        "ex": "Tomatoes are red and healthy.",
+        "trans": "西红柿又红又健康。"
+      },
+      {
+        "w": "potato",
+        "ipa": "/pəˈteɪtəʊ/",
+        "pos": "n.",
+        "defn": "土豆",
+        "ex": "Potatoes can be cooked in many ways.",
+        "trans": "土豆有很多种做法。"
+      },
+      {
+        "w": "carrot",
+        "ipa": "/ˈkærət/",
+        "pos": "n.",
+        "defn": "胡萝卜",
+        "ex": "Rabbits like eating carrots.",
+        "trans": "兔子喜欢吃胡萝卜。"
+      },
+      {
+        "w": "sandwich",
+        "ipa": "/ˈsænwɪtʃ/",
+        "pos": "n.",
+        "defn": "三明治",
+        "ex": "I had a sandwich for lunch.",
+        "trans": "我午餐吃了一个三明治。"
+      },
+      {
+        "w": "porridge",
+        "ipa": "/ˈpɒrɪdʒ/",
+        "pos": "n.",
+        "defn": "粥；麦片粥",
+        "ex": "I eat porridge for breakfast.",
+        "trans": "我早餐喝粥。"
+      },
+      {
+        "w": "hungry",
+        "ipa": "/ˈhʌŋɡri/",
+        "pos": "adj.",
+        "defn": "饥饿的",
+        "ex": "I feel hungry before dinner.",
+        "trans": "晚饭前我感到饿了。"
+      },
+      {
+        "w": "thirsty",
+        "ipa": "/ˈθɜːrsti/",
+        "pos": "adj.",
+        "defn": "口渴的",
+        "ex": "Drink water when you are thirsty.",
+        "trans": "口渴的时候喝水。"
+      },
+      {
+        "w": "full",
+        "ipa": "/fʊl/",
+        "pos": "adj.",
+        "defn": "饱的；满的",
+        "ex": "I am full after the meal.",
+        "trans": "我吃饱了。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "nutrition",
+        "ipa": "/njuˈtrɪʃn/",
+        "pos": "n.",
+        "defn": "营养",
+        "ex": "Fruits provide good nutrition.",
+        "trans": "水果提供良好的营养。"
+      },
+      {
+        "w": "diet",
+        "ipa": "/ˈdaɪət/",
+        "pos": "n.",
+        "defn": "饮食",
+        "ex": "A balanced diet is important.",
+        "trans": "均衡饮食很重要。"
+      },
+      {
+        "w": "ingredient",
+        "ipa": "/ɪnˈɡriːdiənt/",
+        "pos": "n.",
+        "defn": "原料",
+        "ex": "Fresh ingredients make better food.",
+        "trans": "新鲜食材做出更好的食物。"
+      },
+      {
+        "w": "appetite",
+        "ipa": "/ˈæpɪtaɪt/",
+        "pos": "n.",
+        "defn": "食欲",
+        "ex": "Exercise gives me a good appetite.",
+        "trans": "运动让我胃口好。"
+      },
+      {
+        "w": "digest",
+        "ipa": "/daɪˈdʒest/",
+        "pos": "v.",
+        "defn": "消化",
+        "ex": "This food is easy to digest.",
+        "trans": "这种食物容易消化。"
+      }
+    ]
+  },
+  "b2u05": {
+    "master": [
+      {
+        "w": "moment",
+        "ipa": "/ˈməʊmənt/",
+        "pos": "n.",
+        "defn": "时刻；瞬间",
+        "ex": "Wait a moment, please.",
+        "trans": "请稍等片刻。"
+      },
+      {
+        "w": "diary",
+        "ipa": "/ˈdaɪəri/",
+        "pos": "n.",
+        "defn": "日记",
+        "ex": "I write in my diary every night.",
+        "trans": "我每晚写日记。"
+      },
+      {
+        "w": "record",
+        "ipa": "/rɪˈkɔːrd/",
+        "pos": "v.",
+        "defn": "记录",
+        "ex": "I record what I do every day.",
+        "trans": "我记录每天做的事情。"
+      },
+      {
+        "w": "newspaper",
+        "ipa": "/ˈnjuːzpeɪpər/",
+        "pos": "n.",
+        "defn": "报纸",
+        "ex": "My dad reads the newspaper every morning.",
+        "trans": "我爸爸每天早上看报纸。"
+      },
+      {
+        "w": "text message",
+        "ipa": "/tekst ˈmesɪdʒ/",
+        "pos": "n.",
+        "defn": "短信",
+        "ex": "Send me a text message.",
+        "trans": "给我发条短信。"
+      },
+      {
+        "w": "video",
+        "ipa": "/ˈvɪdiəʊ/",
+        "pos": "n.",
+        "defn": "视频",
+        "ex": "I am watching a video now.",
+        "trans": "我正在看一个视频。"
+      },
+      {
+        "w": "phone call",
+        "ipa": "/fəʊn kɔːl/",
+        "pos": "n.",
+        "defn": "电话",
+        "ex": "I am making a phone call.",
+        "trans": "我正在打电话。"
+      },
+      {
+        "w": "right now",
+        "ipa": "/raɪt naʊ/",
+        "pos": "adv.",
+        "defn": "现在；立刻",
+        "ex": "I am doing my homework right now.",
+        "trans": "我正在做作业。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "currently",
+        "ipa": "/ˈkʌrəntli/",
+        "pos": "adv.",
+        "defn": "当前；目前",
+        "ex": "I am currently reading a book.",
+        "trans": "我目前正在读一本书。"
+      },
+      {
+        "w": "simultaneously",
+        "ipa": "/ˌsɪmlˈteɪniəsli/",
+        "pos": "adv.",
+        "defn": "同时地",
+        "ex": "Don't eat and watch TV simultaneously.",
+        "trans": "不要同时吃饭和看电视。"
+      },
+      {
+        "w": "presently",
+        "ipa": "/ˈprezntli/",
+        "pos": "adv.",
+        "defn": "此刻；目前",
+        "ex": "She is presently in class.",
+        "trans": "她此刻正在上课。"
+      },
+      {
+        "w": "update",
+        "ipa": "/ʌpˈdeɪt/",
+        "pos": "v.",
+        "defn": "更新",
+        "ex": "I update my blog every week.",
+        "trans": "我每周更新我的博客。"
+      },
+      {
+        "w": "progress",
+        "ipa": "/ˈprəʊɡres/",
+        "pos": "n.",
+        "defn": "进展；进步",
+        "ex": "I am making progress in English.",
+        "trans": "我在英语方面正在进步。"
+      }
+    ]
+  },
+  "b2u06": {
+    "master": [
+      {
+        "w": "temperature",
+        "ipa": "/ˈtemprətʃər/",
+        "pos": "n.",
+        "defn": "温度",
+        "ex": "The temperature today is 25 degrees.",
+        "trans": "今天气温25度。"
+      },
+      {
+        "w": "degree",
+        "ipa": "/dɪˈɡriː/",
+        "pos": "n.",
+        "defn": "度数",
+        "ex": "It is 30 degrees outside.",
+        "trans": "外面30度。"
+      },
+      {
+        "w": "raincoat",
+        "ipa": "/ˈreɪnkəʊt/",
+        "pos": "n.",
+        "defn": "雨衣",
+        "ex": "Take your raincoat in case it rains.",
+        "trans": "带上雨衣以防下雨。"
+      },
+      {
+        "w": "umbrella",
+        "ipa": "/ʌmˈbrelə/",
+        "pos": "n.",
+        "defn": "雨伞",
+        "ex": "Don't forget your umbrella today.",
+        "trans": "今天别忘了你的雨伞。"
+      },
+      {
+        "w": "forecast",
+        "ipa": "/ˈfɔːrkɑːst/",
+        "pos": "n.",
+        "defn": "预报",
+        "ex": "Check the weather forecast before going out.",
+        "trans": "出门前查看天气预报。"
+      },
+      {
+        "w": "lightning",
+        "ipa": "/ˈlaɪtnɪŋ/",
+        "pos": "n.",
+        "defn": "闪电",
+        "ex": "Lightning is very dangerous.",
+        "trans": "闪电非常危险。"
+      },
+      {
+        "w": "thunder",
+        "ipa": "/ˈθʌndər/",
+        "pos": "n.",
+        "defn": "雷声",
+        "ex": "The thunder was very loud last night.",
+        "trans": "昨晚雷声很大。"
+      },
+      {
+        "w": "storm",
+        "ipa": "/stɔːrm/",
+        "pos": "n.",
+        "defn": "暴风雨",
+        "ex": "The storm lasted for two hours.",
+        "trans": "暴风雨持续了两个小时。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "climate",
+        "ipa": "/ˈklaɪmət/",
+        "pos": "n.",
+        "defn": "气候",
+        "ex": "The climate in my city is mild.",
+        "trans": "我所在的城市气候温和。"
+      },
+      {
+        "w": "humid",
+        "ipa": "/ˈhjuːmɪd/",
+        "pos": "adj.",
+        "defn": "潮湿的",
+        "ex": "Summer is hot and humid here.",
+        "trans": "这里的夏天炎热潮湿。"
+      },
+      {
+        "w": "breeze",
+        "ipa": "/briːz/",
+        "pos": "n.",
+        "defn": "微风",
+        "ex": "A cool breeze feels great in summer.",
+        "trans": "夏天的凉爽微风很舒服。"
+      },
+      {
+        "w": "drought",
+        "ipa": "/draʊt/",
+        "pos": "n.",
+        "defn": "干旱",
+        "ex": "The plants died because of the drought.",
+        "trans": "植物因干旱而枯死。"
+      },
+      {
+        "w": "hail",
+        "ipa": "/heɪl/",
+        "pos": "n.",
+        "defn": "冰雹",
+        "ex": "Hail can damage crops.",
+        "trans": "冰雹会损坏庄稼。"
+      }
+    ]
+  },
+  "b2u07": {
+    "master": [
+      {
+        "w": "event",
+        "ipa": "/ɪˈvent/",
+        "pos": "n.",
+        "defn": "事件；大事",
+        "ex": "It was a special event for me.",
+        "trans": "这对我来说是一件特别的事。"
+      },
+      {
+        "w": "experience",
+        "ipa": "/ɪkˈspɪriəns/",
+        "pos": "n.",
+        "defn": "经历",
+        "ex": "I had a wonderful experience.",
+        "trans": "我有了一次美妙的经历。"
+      },
+      {
+        "w": "happen",
+        "ipa": "/ˈhæpən/",
+        "pos": "v.",
+        "defn": "发生",
+        "ex": "What happened yesterday?",
+        "trans": "昨天发生了什么？"
+      },
+      {
+        "w": "suddenly",
+        "ipa": "/ˈsʌdənli/",
+        "pos": "adv.",
+        "defn": "突然地",
+        "ex": "Suddenly, it started to rain.",
+        "trans": "突然开始下雨了。"
+      },
+      {
+        "w": "climb",
+        "ipa": "/klaɪm/",
+        "pos": "v.",
+        "defn": "爬；攀登",
+        "ex": "We climbed the mountain together.",
+        "trans": "我们一起爬了山。"
+      },
+      {
+        "w": "shout",
+        "ipa": "/ʃaʊt/",
+        "pos": "v.",
+        "defn": "喊叫",
+        "ex": "He shouted for help.",
+        "trans": "他大声呼救。"
+      },
+      {
+        "w": "cry",
+        "ipa": "/kraɪ/",
+        "pos": "v.",
+        "defn": "哭",
+        "ex": "Don't cry. Everything will be okay.",
+        "trans": "别哭，一切都会好起来的。"
+      },
+      {
+        "w": "smile",
+        "ipa": "/smaɪl/",
+        "pos": "v.",
+        "defn": "微笑",
+        "ex": "She smiled at me.",
+        "trans": "她对我微笑。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "adventure",
+        "ipa": "/ədˈventʃər/",
+        "pos": "n.",
+        "defn": "冒险",
+        "ex": "The trip was a great adventure.",
+        "trans": "这次旅行是一次大冒险。"
+      },
+      {
+        "w": "challenge",
+        "ipa": "/ˈtʃælɪndʒ/",
+        "pos": "n.",
+        "defn": "挑战",
+        "ex": "Climbing the mountain was a challenge.",
+        "trans": "爬山是一个挑战。"
+      },
+      {
+        "w": "overcome",
+        "ipa": "/ˌəʊvərˈkʌm/",
+        "pos": "v.",
+        "defn": "克服",
+        "ex": "We overcame many difficulties.",
+        "trans": "我们克服了很多困难。"
+      },
+      {
+        "w": "impression",
+        "ipa": "/ɪmˈpreʃn/",
+        "pos": "n.",
+        "defn": "印象",
+        "ex": "The trip left a deep impression on me.",
+        "trans": "这次旅行给我留下了深刻的印象。"
+      },
+      {
+        "w": "valuable",
+        "ipa": "/ˈvæljuəbl/",
+        "pos": "adj.",
+        "defn": "宝贵的",
+        "ex": "I learned a valuable lesson.",
+        "trans": "我学到了宝贵的一课。"
+      }
+    ]
+  },
+  "b2u08": {
+    "master": [
+      {
+        "w": "prince",
+        "ipa": "/prɪns/",
+        "pos": "n.",
+        "defn": "王子",
+        "ex": "The prince saved the princess.",
+        "trans": "王子救了公主。"
+      },
+      {
+        "w": "princess",
+        "ipa": "/ˌprɪnˈses/",
+        "pos": "n.",
+        "defn": "公主",
+        "ex": "The princess lived in a castle.",
+        "trans": "公主住在城堡里。"
+      },
+      {
+        "w": "castle",
+        "ipa": "/ˈkɑːsl/",
+        "pos": "n.",
+        "defn": "城堡",
+        "ex": "There is a big castle in the story.",
+        "trans": "故事里有一座大城堡。"
+      },
+      {
+        "w": "magic",
+        "ipa": "/ˈmædʒɪk/",
+        "pos": "adj.",
+        "defn": "有魔力的",
+        "ex": "The magic mirror can talk.",
+        "trans": "魔镜可以说话。"
+      },
+      {
+        "w": "beginning",
+        "ipa": "/bɪˈɡɪnɪŋ/",
+        "pos": "n.",
+        "defn": "开始",
+        "ex": "In the beginning, there was a forest.",
+        "trans": "一开始，有一片森林。"
+      },
+      {
+        "w": "middle",
+        "ipa": "/ˈmɪdl/",
+        "pos": "n.",
+        "defn": "中间",
+        "ex": "In the middle of the story, something happens.",
+        "trans": "故事中间发生了一些事情。"
+      },
+      {
+        "w": "ending",
+        "ipa": "/ˈendɪŋ/",
+        "pos": "n.",
+        "defn": "结尾",
+        "ex": "The story has a happy ending.",
+        "trans": "故事有一个幸福的结尾。"
+      },
+      {
+        "w": "brave",
+        "ipa": "/breɪv/",
+        "pos": "adj.",
+        "defn": "勇敢的",
+        "ex": "The brave boy saved his friend.",
+        "trans": "勇敢的男孩救了他的朋友。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "moral",
+        "ipa": "/ˈmɒrəl/",
+        "pos": "n.",
+        "defn": "寓意",
+        "ex": "The moral of the story is to be kind.",
+        "trans": "故事的寓意是要善良。"
+      },
+      {
+        "w": "fable",
+        "ipa": "/ˈfeɪbl/",
+        "pos": "n.",
+        "defn": "寓言",
+        "ex": "This fable teaches us a lesson.",
+        "trans": "这个寓言给我们一个教训。"
+      },
+      {
+        "w": "character",
+        "ipa": "/ˈkærɪktər/",
+        "pos": "n.",
+        "defn": "角色；人物",
+        "ex": "The main character is a clever fox.",
+        "trans": "主角是一只聪明的狐狸。"
+      },
+      {
+        "w": "plot",
+        "ipa": "/plɒt/",
+        "pos": "n.",
+        "defn": "情节",
+        "ex": "The plot of this story is very interesting.",
+        "trans": "这个故事的情节非常有趣。"
+      },
+      {
+        "w": "imagination",
+        "ipa": "/ɪˌmædʒɪˈneɪʃn/",
+        "pos": "n.",
+        "defn": "想象力",
+        "ex": "Reading stories develops our imagination.",
+        "trans": "读故事发展我们的想象力。"
+      }
+    ]
+  },
+  "u01_8": {
+    "master": [
+      {
+        "w": "destination",
+        "ipa": "/ˌdestɪˈneɪʃn/",
+        "pos": "n.",
+        "defn": "目的地",
+        "ex": "My holiday destination is Hainan.",
+        "trans": "我的度假目的地是海南。"
+      },
+      {
+        "w": "journey",
+        "ipa": "/ˈdʒɜːrni/",
+        "pos": "n.",
+        "defn": "旅行；旅程",
+        "ex": "The journey took five hours.",
+        "trans": "旅程花了五个小时。"
+      },
+      {
+        "w": "tourist",
+        "ipa": "/ˈtʊərɪst/",
+        "pos": "n.",
+        "defn": "游客",
+        "ex": "Many tourists visit the Great Wall.",
+        "trans": "很多游客游览长城。"
+      },
+      {
+        "w": "flight",
+        "ipa": "/flaɪt/",
+        "pos": "n.",
+        "defn": "航班",
+        "ex": "We took an early morning flight.",
+        "trans": "我们乘坐了早班航班。"
+      },
+      {
+        "w": "hotel",
+        "ipa": "/həʊˈtel/",
+        "pos": "n.",
+        "defn": "酒店",
+        "ex": "We stayed at a nice hotel.",
+        "trans": "我们住在一家不错的酒店。"
+      },
+      {
+        "w": "sightseeing",
+        "ipa": "/ˈsaɪtsiːɪŋ/",
+        "pos": "n.",
+        "defn": "观光",
+        "ex": "We went sightseeing in the city.",
+        "trans": "我们在城市里观光。"
+      },
+      {
+        "w": "souvenir",
+        "ipa": "/ˌsuːvəˈnɪər/",
+        "pos": "n.",
+        "defn": "纪念品",
+        "ex": "I bought a souvenir for my friend.",
+        "trans": "我给朋友买了一个纪念品。"
+      },
+      {
+        "w": "pack",
+        "ipa": "/pæk/",
+        "pos": "v.",
+        "defn": "打包",
+        "ex": "I need to pack my suitcase.",
+        "trans": "我需要收拾行李箱。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "itinerary",
+        "ipa": "/aɪˈtɪnərəri/",
+        "pos": "n.",
+        "defn": "行程表",
+        "ex": "We planned a detailed itinerary.",
+        "trans": "我们制定了详细的行程表。"
+      },
+      {
+        "w": "accommodation",
+        "ipa": "/əˌkɒməˈdeɪʃn/",
+        "pos": "n.",
+        "defn": "住宿",
+        "ex": "We found good accommodation near the beach.",
+        "trans": "我们在海滩附近找到了不错的住宿。"
+      },
+      {
+        "w": "landmark",
+        "ipa": "/ˈlændmɑːrk/",
+        "pos": "n.",
+        "defn": "地标",
+        "ex": "The Eiffel Tower is a famous landmark.",
+        "trans": "埃菲尔铁塔是著名的地标。"
+      },
+      {
+        "w": "reservation",
+        "ipa": "/ˌrezərˈveɪʃn/",
+        "pos": "n.",
+        "defn": "预订",
+        "ex": "I made a hotel reservation online.",
+        "trans": "我在网上预订了酒店。"
+      },
+      {
+        "w": "adventure",
+        "ipa": "/ədˈventʃər/",
+        "pos": "n.",
+        "defn": "冒险",
+        "ex": "Travelling is always an adventure.",
+        "trans": "旅行总是一次冒险。"
+      }
+    ]
+  },
+  "u02_8": {
+    "master": [
+      {
+        "w": "dust",
+        "ipa": "/dʌst/",
+        "pos": "v.",
+        "defn": "擦灰",
+        "ex": "Please dust the shelves.",
+        "trans": "请擦掉书架上的灰尘。"
+      },
+      {
+        "w": "fold",
+        "ipa": "/fəʊld/",
+        "pos": "v.",
+        "defn": "折叠",
+        "ex": "Fold your clothes and put them away.",
+        "trans": "叠好你的衣服放好。"
+      },
+      {
+        "w": "mop",
+        "ipa": "/mɒp/",
+        "pos": "v.",
+        "defn": "拖地",
+        "ex": "I mop the floor every weekend.",
+        "trans": "我每周末拖地。"
+      },
+      {
+        "w": "iron",
+        "ipa": "/ˈaɪərn/",
+        "pos": "v.",
+        "defn": "熨烫",
+        "ex": "My mom irons the clothes.",
+        "trans": "我妈妈熨衣服。"
+      },
+      {
+        "w": "mess",
+        "ipa": "/mes/",
+        "pos": "n.",
+        "defn": "杂乱",
+        "ex": "Clean up the mess in your room.",
+        "trans": "把你房间的杂乱收拾干净。"
+      },
+      {
+        "w": "neighbor",
+        "ipa": "/ˈneɪbər/",
+        "pos": "n.",
+        "defn": "邻居",
+        "ex": "Our neighbor is very friendly.",
+        "trans": "我们的邻居很友好。"
+      },
+      {
+        "w": "invitation",
+        "ipa": "/ˌɪnvɪˈteɪʃn/",
+        "pos": "n.",
+        "defn": "邀请",
+        "ex": "I got an invitation to the party.",
+        "trans": "我收到了派对的邀请。"
+      },
+      {
+        "w": "polite",
+        "ipa": "/pəˈlaɪt/",
+        "pos": "adj.",
+        "defn": "有礼貌的",
+        "ex": "It is polite to say thank you.",
+        "trans": "说谢谢是有礼貌的。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "household",
+        "ipa": "/ˈhaʊshəʊld/",
+        "pos": "n.",
+        "defn": "家庭；家务",
+        "ex": "Everyone should share household chores.",
+        "trans": "每个人都应该分担家务。"
+      },
+      {
+        "w": "responsibility",
+        "ipa": "/rɪˌspɒnsəˈbɪləti/",
+        "pos": "n.",
+        "defn": "责任",
+        "ex": "Doing chores is our responsibility.",
+        "trans": "做家务是我们的责任。"
+      },
+      {
+        "w": "cooperation",
+        "ipa": "/kəʊˌɒpəˈreɪʃn/",
+        "pos": "n.",
+        "defn": "合作",
+        "ex": "Housework needs family cooperation.",
+        "trans": "家务需要家庭合作。"
+      },
+      {
+        "w": "appreciate",
+        "ipa": "/əˈpriːʃieɪt/",
+        "pos": "v.",
+        "defn": "感激",
+        "ex": "I appreciate your help with the chores.",
+        "trans": "我感激你帮忙做家务。"
+      },
+      {
+        "w": "tidy up",
+        "ipa": "/ˈtaɪdi ʌp/",
+        "pos": "phr.",
+        "defn": "整理",
+        "ex": "Please tidy up your room before dinner.",
+        "trans": "晚饭前请整理好你的房间。"
+      }
+    ]
+  },
+  "u03_8": {
+    "master": [
+      {
+        "w": "gentle",
+        "ipa": "/ˈdʒentl/",
+        "pos": "adj.",
+        "defn": "温和的",
+        "ex": "She is gentler than her sister.",
+        "trans": "她比她姐姐更温和。"
+      },
+      {
+        "w": "clever",
+        "ipa": "/ˈklevər/",
+        "pos": "adj.",
+        "defn": "聪明的",
+        "ex": "He is the cleverest student in class.",
+        "trans": "他是班上最聪明的学生。"
+      },
+      {
+        "w": "lazy",
+        "ipa": "/ˈleɪzi/",
+        "pos": "adj.",
+        "defn": "懒惰的",
+        "ex": "Don't be so lazy. Do your work.",
+        "trans": "别这么懒，做你的功课。"
+      },
+      {
+        "w": "careful",
+        "ipa": "/ˈkeərfl/",
+        "pos": "adj.",
+        "defn": "仔细的",
+        "ex": "Be more careful next time.",
+        "trans": "下次更仔细些。"
+      },
+      {
+        "w": "popular",
+        "ipa": "/ˈpɒpjələr/",
+        "pos": "adj.",
+        "defn": "受欢迎的",
+        "ex": "She is the most popular girl in school.",
+        "trans": "她是学校里最受欢迎的女孩。"
+      },
+      {
+        "w": "confident",
+        "ipa": "/ˈkɒnfɪdənt/",
+        "pos": "adj.",
+        "defn": "自信的",
+        "ex": "He is more confident than before.",
+        "trans": "他比以前更自信了。"
+      },
+      {
+        "w": "similar",
+        "ipa": "/ˈsɪmələr/",
+        "pos": "adj.",
+        "defn": "相似的",
+        "ex": "We have similar interests.",
+        "trans": "我们有相似的兴趣。"
+      },
+      {
+        "w": "compare",
+        "ipa": "/kəmˈpeər/",
+        "pos": "v.",
+        "defn": "比较",
+        "ex": "Compare these two pictures.",
+        "trans": "比较这两张图片。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "personality",
+        "ipa": "/ˌpɜːrsəˈnæləti/",
+        "pos": "n.",
+        "defn": "个性；性格",
+        "ex": "Everyone has a unique personality.",
+        "trans": "每个人都有独特的个性。"
+      },
+      {
+        "w": "superior",
+        "ipa": "/suːˈpɪriər/",
+        "pos": "adj.",
+        "defn": "更优的",
+        "ex": "This method is superior to that one.",
+        "trans": "这个方法比那个更好。"
+      },
+      {
+        "w": "distinct",
+        "ipa": "/dɪˈstɪŋkt/",
+        "pos": "adj.",
+        "defn": "截然不同的",
+        "ex": "Their styles are quite distinct.",
+        "trans": "他们的风格截然不同。"
+      },
+      {
+        "w": "exception",
+        "ipa": "/ɪkˈsepʃn/",
+        "pos": "n.",
+        "defn": "例外",
+        "ex": "No one is an exception to this rule.",
+        "trans": "没有人是这条规则的例外。"
+      },
+      {
+        "w": "characteristic",
+        "ipa": "/ˌkærɪktəˈrɪstɪk/",
+        "pos": "n.",
+        "defn": "特征",
+        "ex": "Politeness is a good characteristic.",
+        "trans": "礼貌是一个好特征。"
+      }
+    ]
+  },
+  "u04_8": {
+    "master": [
+      {
+        "w": "toucan",
+        "ipa": "/ˈtuːkæn/",
+        "pos": "n.",
+        "defn": "巨嘴鸟",
+        "ex": "The toucan has a colorful beak.",
+        "trans": "巨嘴鸟有色彩鲜艳的喙。"
+      },
+      {
+        "w": "parrot",
+        "ipa": "/ˈpærət/",
+        "pos": "n.",
+        "defn": "鹦鹉",
+        "ex": "The parrot can imitate human speech.",
+        "trans": "鹦鹉能模仿人说话。"
+      },
+      {
+        "w": "jaguar",
+        "ipa": "/ˈdʒæɡjuər/",
+        "pos": "n.",
+        "defn": "美洲豹",
+        "ex": "Jaguars live in the rainforest.",
+        "trans": "美洲豹生活在雨林里。"
+      },
+      {
+        "w": "oxygen",
+        "ipa": "/ˈɒksɪdʒən/",
+        "pos": "n.",
+        "defn": "氧气",
+        "ex": "Trees produce oxygen for us to breathe.",
+        "trans": "树木产生我们呼吸的氧气。"
+      },
+      {
+        "w": "ecosystem",
+        "ipa": "/ˈiːkəʊsɪstəm/",
+        "pos": "n.",
+        "defn": "生态系统",
+        "ex": "The rainforest is a rich ecosystem.",
+        "trans": "雨林是一个丰富的生态系统。"
+      },
+      {
+        "w": "jungle",
+        "ipa": "/ˈdʒʌŋɡl/",
+        "pos": "n.",
+        "defn": "丛林",
+        "ex": "Many wild animals live in the jungle.",
+        "trans": "很多野生动物生活在丛林里。"
+      },
+      {
+        "w": "extinct",
+        "ipa": "/ɪkˈstɪŋkt/",
+        "pos": "adj.",
+        "defn": "灭绝的",
+        "ex": "Some animals are in danger of becoming extinct.",
+        "trans": "一些动物面临灭绝的危险。"
+      },
+      {
+        "w": "tropical",
+        "ipa": "/ˈtrɒpɪkl/",
+        "pos": "adj.",
+        "defn": "热带的",
+        "ex": "Tropical rainforests are near the equator.",
+        "trans": "热带雨林在赤道附近。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "biodiversity",
+        "ipa": "/ˌbaɪəʊdaɪˈvɜːrsəti/",
+        "pos": "n.",
+        "defn": "生物多样性",
+        "ex": "The Amazon has the richest biodiversity.",
+        "trans": "亚马孙有着最丰富的生物多样性。"
+      },
+      {
+        "w": "camouflage",
+        "ipa": "/ˈkæməflɑːʒ/",
+        "pos": "n.",
+        "defn": "伪装",
+        "ex": "The chameleon uses camouflage to hide.",
+        "trans": "变色龙用伪装来隐藏。"
+      },
+      {
+        "w": "predator",
+        "ipa": "/ˈpredətər/",
+        "pos": "n.",
+        "defn": "捕食者",
+        "ex": "Lions are powerful predators.",
+        "trans": "狮子是强大的捕食者。"
+      },
+      {
+        "w": "adaptation",
+        "ipa": "/ˌædæpˈteɪʃn/",
+        "pos": "n.",
+        "defn": "适应",
+        "ex": "Adaptation helps animals survive.",
+        "trans": "适应帮助动物生存。"
+      },
+      {
+        "w": "conservationist",
+        "ipa": "/ˌkɒnsərˈveɪʃənɪst/",
+        "pos": "n.",
+        "defn": "环保人士",
+        "ex": "Conservationists work to protect nature.",
+        "trans": "环保人士致力于保护自然。"
+      }
+    ]
+  },
+  "u05_8": {
+    "master": [
+      {
+        "w": "stir",
+        "ipa": "/stɜːr/",
+        "pos": "v.",
+        "defn": "搅拌",
+        "ex": "Stir the soup with a spoon.",
+        "trans": "用勺子搅拌汤。"
+      },
+      {
+        "w": "pour",
+        "ipa": "/pɔːr/",
+        "pos": "v.",
+        "defn": "倒；灌",
+        "ex": "Pour the milk into the glass.",
+        "trans": "把牛奶倒进杯子里。"
+      },
+      {
+        "w": "slice",
+        "ipa": "/slaɪs/",
+        "pos": "v.",
+        "defn": "切片",
+        "ex": "Slice the bread into pieces.",
+        "trans": "把面包切成片。"
+      },
+      {
+        "w": "peel",
+        "ipa": "/piːl/",
+        "pos": "v.",
+        "defn": "削皮",
+        "ex": "Peel the apple before eating it.",
+        "trans": "吃苹果之前削皮。"
+      },
+      {
+        "w": "mix",
+        "ipa": "/mɪks/",
+        "pos": "v.",
+        "defn": "混合",
+        "ex": "Mix the flour and water together.",
+        "trans": "把面粉和水混合在一起。"
+      },
+      {
+        "w": "oven",
+        "ipa": "/ˈʌvn/",
+        "pos": "n.",
+        "defn": "烤箱",
+        "ex": "Put the cake in the oven.",
+        "trans": "把蛋糕放进烤箱。"
+      },
+      {
+        "w": "delicious",
+        "ipa": "/dɪˈlɪʃəs/",
+        "pos": "adj.",
+        "defn": "美味的",
+        "ex": "The meal tastes delicious.",
+        "trans": "这顿饭尝起来很美味。"
+      },
+      {
+        "w": "steam",
+        "ipa": "/stiːm/",
+        "pos": "v.",
+        "defn": "蒸",
+        "ex": "We like to steam fish.",
+        "trans": "我们喜欢蒸鱼。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "cuisine",
+        "ipa": "/kwɪˈziːn/",
+        "pos": "n.",
+        "defn": "烹饪；菜肴",
+        "ex": "Chinese cuisine is famous worldwide.",
+        "trans": "中国菜世界闻名。"
+      },
+      {
+        "w": "gourmet",
+        "ipa": "/ˈɡʊərmeɪ/",
+        "pos": "n.",
+        "defn": "美食家",
+        "ex": "My uncle is a real gourmet.",
+        "trans": "我叔叔是个真正的美食家。"
+      },
+      {
+        "w": "marinate",
+        "ipa": "/ˈmærɪneɪt/",
+        "pos": "v.",
+        "defn": "腌制",
+        "ex": "Marinate the chicken for an hour.",
+        "trans": "把鸡肉腌制一小时。"
+      },
+      {
+        "w": "recipe",
+        "ipa": "/ˈresəpi/",
+        "pos": "n.",
+        "defn": "食谱",
+        "ex": "Follow the recipe carefully.",
+        "trans": "仔细按照食谱做。"
+      },
+      {
+        "w": "appetizing",
+        "ipa": "/ˈæpɪtaɪzɪŋ/",
+        "pos": "adj.",
+        "defn": "开胃的",
+        "ex": "The food looks very appetizing.",
+        "trans": "这食物看起来很开胃。"
+      }
+    ]
+  },
+  "u06_8": {
+    "master": [
+      {
+        "w": "ambition",
+        "ipa": "/æmˈbɪʃn/",
+        "pos": "n.",
+        "defn": "志向；抱负",
+        "ex": "My ambition is to become a doctor.",
+        "trans": "我的志向是成为一名医生。"
+      },
+      {
+        "w": "profession",
+        "ipa": "/prəˈfeʃn/",
+        "pos": "n.",
+        "defn": "职业",
+        "ex": "Teaching is a great profession.",
+        "trans": "教书是一个伟大的职业。"
+      },
+      {
+        "w": "achieve",
+        "ipa": "/əˈtʃiːv/",
+        "pos": "v.",
+        "defn": "实现；取得",
+        "ex": "Work hard to achieve your dream.",
+        "trans": "努力实现你的梦想。"
+      },
+      {
+        "w": "goal",
+        "ipa": "/ɡəʊl/",
+        "pos": "n.",
+        "defn": "目标",
+        "ex": "Set a clear goal for yourself.",
+        "trans": "为自己设定一个明确的目标。"
+      },
+      {
+        "w": "determination",
+        "ipa": "/dɪˌtɜːrmɪˈneɪʃn/",
+        "pos": "n.",
+        "defn": "决心",
+        "ex": "With determination, you can succeed.",
+        "trans": "有决心就能成功。"
+      },
+      {
+        "w": "career",
+        "ipa": "/kəˈrɪər/",
+        "pos": "n.",
+        "defn": "事业",
+        "ex": "She has a successful career as a scientist.",
+        "trans": "她作为科学家有着成功的事业。"
+      },
+      {
+        "w": "opportunity",
+        "ipa": "/ˌɒpəˈtjuːnəti/",
+        "pos": "n.",
+        "defn": "机会",
+        "ex": "Every challenge is an opportunity to learn.",
+        "trans": "每个挑战都是学习的机会。"
+      },
+      {
+        "w": "effort",
+        "ipa": "/ˈefərt/",
+        "pos": "n.",
+        "defn": "努力",
+        "ex": "Put more effort into your studies.",
+        "trans": "在学习上多努力。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "vocation",
+        "ipa": "/vəʊˈkeɪʃn/",
+        "pos": "n.",
+        "defn": "天职；使命感",
+        "ex": "Teaching is a vocation, not just a job.",
+        "trans": "教书不只是一种工作，更是一种使命。"
+      },
+      {
+        "w": "specialize",
+        "ipa": "/ˈspeʃəlaɪz/",
+        "pos": "v.",
+        "defn": "专攻",
+        "ex": "He wants to specialize in engineering.",
+        "trans": "他想专攻工程学。"
+      },
+      {
+        "w": "perseverance",
+        "ipa": "/ˌpɜːrsɪˈvɪərəns/",
+        "pos": "n.",
+        "defn": "坚持不懈",
+        "ex": "Perseverance is the key to success.",
+        "trans": "坚持不懈是成功的关键。"
+      },
+      {
+        "w": "milestone",
+        "ipa": "/ˈmaɪlstəʊn/",
+        "pos": "n.",
+        "defn": "里程碑",
+        "ex": "Graduation is an important milestone.",
+        "trans": "毕业是一个重要的里程碑。"
+      },
+      {
+        "w": "endeavour",
+        "ipa": "/ɪnˈdevər/",
+        "pos": "n.",
+        "defn": "努力；尝试",
+        "ex": "Learning is a lifelong endeavour.",
+        "trans": "学习是终身的努力。"
+      }
+    ]
+  },
+  "u07_8": {
+    "master": [
+      {
+        "w": "predict",
+        "ipa": "/prɪˈdɪkt/",
+        "pos": "v.",
+        "defn": "预测",
+        "ex": "It is hard to predict the future.",
+        "trans": "很难预测未来。"
+      },
+      {
+        "w": "robot",
+        "ipa": "/ˈrəʊbɒt/",
+        "pos": "n.",
+        "defn": "机器人",
+        "ex": "Robots will help us do housework.",
+        "trans": "机器人将帮助我们做家务。"
+      },
+      {
+        "w": "artificial",
+        "ipa": "/ˌɑːrtɪˈfɪʃl/",
+        "pos": "adj.",
+        "defn": "人造的",
+        "ex": "Artificial intelligence is changing our world.",
+        "trans": "人工智能正在改变我们的世界。"
+      },
+      {
+        "w": "pollute",
+        "ipa": "/pəˈluːt/",
+        "pos": "v.",
+        "defn": "污染",
+        "ex": "Factories should not pollute the rivers.",
+        "trans": "工厂不应该污染河流。"
+      },
+      {
+        "w": "renewable",
+        "ipa": "/rɪˈnjuːəbl/",
+        "pos": "adj.",
+        "defn": "可再生的",
+        "ex": "Solar energy is a renewable resource.",
+        "trans": "太阳能是可再生的资源。"
+      },
+      {
+        "w": "electric",
+        "ipa": "/ɪˈlektrɪk/",
+        "pos": "adj.",
+        "defn": "电动的",
+        "ex": "Electric cars are better for the environment.",
+        "trans": "电动车对环境更好。"
+      },
+      {
+        "w": "smart",
+        "ipa": "/smɑːrt/",
+        "pos": "adj.",
+        "defn": "智能的",
+        "ex": "Smart homes will become more common.",
+        "trans": "智能家居将变得更常见。"
+      },
+      {
+        "w": "solution",
+        "ipa": "/səˈluːʃn/",
+        "pos": "n.",
+        "defn": "解决方案",
+        "ex": "We need to find a solution to pollution.",
+        "trans": "我们需要找到污染问题的解决方案。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "innovation",
+        "ipa": "/ˌɪnəˈveɪʃn/",
+        "pos": "n.",
+        "defn": "创新",
+        "ex": "Innovation drives progress.",
+        "trans": "创新推动进步。"
+      },
+      {
+        "w": "sustainable",
+        "ipa": "/səˈsteɪnəbl/",
+        "pos": "adj.",
+        "defn": "可持续的",
+        "ex": "We need sustainable development.",
+        "trans": "我们需要可持续发展。"
+      },
+      {
+        "w": "optimistic",
+        "ipa": "/ˌɒptɪˈmɪstɪk/",
+        "pos": "adj.",
+        "defn": "乐观的",
+        "ex": "I am optimistic about the future.",
+        "trans": "我对未来很乐观。"
+      },
+      {
+        "w": "scenario",
+        "ipa": "/sɪˈnɑːriəʊ/",
+        "pos": "n.",
+        "defn": "设想；场景",
+        "ex": "Let's imagine a future scenario.",
+        "trans": "让我们想象一个未来的场景。"
+      },
+      {
+        "w": "breakthrough",
+        "ipa": "/ˈbreɪkθruː/",
+        "pos": "n.",
+        "defn": "突破",
+        "ex": "This is a major breakthrough in science.",
+        "trans": "这是科学上的重大突破。"
+      }
+    ]
+  },
+  "u08_8": {
+    "master": [
+      {
+        "w": "express",
+        "ipa": "/ɪkˈspres/",
+        "pos": "v.",
+        "defn": "表达",
+        "ex": "Learn to express your feelings.",
+        "trans": "学会表达你的感受。"
+      },
+      {
+        "w": "opinion",
+        "ipa": "/əˈpɪnjən/",
+        "pos": "n.",
+        "defn": "意见；看法",
+        "ex": "What is your opinion on this?",
+        "trans": "你对这个有什么看法？"
+      },
+      {
+        "w": "disagree",
+        "ipa": "/ˌdɪsəˈɡriː/",
+        "pos": "v.",
+        "defn": "不同意",
+        "ex": "It's okay to disagree politely.",
+        "trans": "礼貌地表达不同意是可以的。"
+      },
+      {
+        "w": "conversation",
+        "ipa": "/ˌkɒnvəˈseɪʃn/",
+        "pos": "n.",
+        "defn": "对话",
+        "ex": "Practice English conversations with friends.",
+        "trans": "和朋友练习英语对话。"
+      },
+      {
+        "w": "discussion",
+        "ipa": "/dɪˈskʌʃn/",
+        "pos": "n.",
+        "defn": "讨论",
+        "ex": "We had a lively discussion in class.",
+        "trans": "我们在课堂上进行了热烈的讨论。"
+      },
+      {
+        "w": "conflict",
+        "ipa": "/ˈkɒnflɪkt/",
+        "pos": "n.",
+        "defn": "冲突",
+        "ex": "Try to avoid conflicts with others.",
+        "trans": "尽量避免与他人的冲突。"
+      },
+      {
+        "w": "resolve",
+        "ipa": "/rɪˈzɒlv/",
+        "pos": "v.",
+        "defn": "解决",
+        "ex": "We can resolve problems by talking.",
+        "trans": "我们可以通过对话解决问题。"
+      },
+      {
+        "w": "compromise",
+        "ipa": "/ˈkɒmprəmaɪz/",
+        "pos": "n.",
+        "defn": "妥协",
+        "ex": "Sometimes compromise is necessary.",
+        "trans": "有时妥协是必要的。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "negotiate",
+        "ipa": "/nɪˈɡəʊʃieɪt/",
+        "pos": "v.",
+        "defn": "谈判；协商",
+        "ex": "We need to negotiate a fair solution.",
+        "trans": "我们需要协商出一个公平的解决方案。"
+      },
+      {
+        "w": "empathy",
+        "ipa": "/ˈempəθi/",
+        "pos": "n.",
+        "defn": "共情；同理心",
+        "ex": "Show empathy when others are sad.",
+        "trans": "当别人难过时表现出同理心。"
+      },
+      {
+        "w": "articulate",
+        "ipa": "/ɑːrˈtɪkjuleɪt/",
+        "pos": "v.",
+        "defn": "清晰地表达",
+        "ex": "Learn to articulate your thoughts.",
+        "trans": "学会清晰地表达你的想法。"
+      },
+      {
+        "w": "persuade",
+        "ipa": "/pərˈsweɪd/",
+        "pos": "v.",
+        "defn": "说服",
+        "ex": "Can you persuade him to join us?",
+        "trans": "你能说服他加入我们吗？"
+      },
+      {
+        "w": "diplomatic",
+        "ipa": "/ˌdɪpləˈmætɪk/",
+        "pos": "adj.",
+        "defn": "有外交手腕的；委婉的",
+        "ex": "A diplomatic reply can avoid arguments.",
+        "trans": "委婉的回复可以避免争论。"
+      }
+    ]
+  },
+  "b2u01_8": {
+    "master": [
+      {
+        "w": "hiking",
+        "ipa": "/ˈhaɪkɪŋ/",
+        "pos": "n.",
+        "defn": "徒步旅行",
+        "ex": "We went hiking in the mountains.",
+        "trans": "我们去山里徒步旅行了。"
+      },
+      {
+        "w": "painting",
+        "ipa": "/ˈpeɪntɪŋ/",
+        "pos": "n.",
+        "defn": "绘画；画画",
+        "ex": "I enjoy painting in my free time.",
+        "trans": "我喜欢在空闲时画画。"
+      },
+      {
+        "w": "gardening",
+        "ipa": "/ˈɡɑːrdnɪŋ/",
+        "pos": "n.",
+        "defn": "园艺",
+        "ex": "My grandmother loves gardening.",
+        "trans": "我奶奶喜欢园艺。"
+      },
+      {
+        "w": "photography",
+        "ipa": "/fəˈtɒɡrəfi/",
+        "pos": "n.",
+        "defn": "摄影",
+        "ex": "Photography is an interesting hobby.",
+        "trans": "摄影是一个有趣的爱好。"
+      },
+      {
+        "w": "leisure",
+        "ipa": "/ˈleʒər/",
+        "pos": "n.",
+        "defn": "闲暇；休闲",
+        "ex": "I read books for leisure.",
+        "trans": "我读书休闲。"
+      },
+      {
+        "w": "pastime",
+        "ipa": "/ˈpɑːstaɪm/",
+        "pos": "n.",
+        "defn": "消遣；娱乐",
+        "ex": "Reading is my favorite pastime.",
+        "trans": "阅读是我最喜欢的消遣。"
+      },
+      {
+        "w": "creative",
+        "ipa": "/kriˈeɪtɪv/",
+        "pos": "adj.",
+        "defn": "有创造力的",
+        "ex": "I want to do something creative.",
+        "trans": "我想做些有创意的事情。"
+      },
+      {
+        "w": "relaxation",
+        "ipa": "/ˌriːlækˈseɪʃn/",
+        "pos": "n.",
+        "defn": "放松；消遣",
+        "ex": "Listening to music is a good form of relaxation.",
+        "trans": "听音乐是一种很好的放松方式。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "recreational",
+        "ipa": "/ˌrekrɪˈeɪʃənl/",
+        "pos": "adj.",
+        "defn": "娱乐的；消遣的",
+        "ex": "We have many recreational activities at school.",
+        "trans": "我们学校有很多娱乐活动。"
+      },
+      {
+        "w": "meditation",
+        "ipa": "/ˌmedɪˈteɪʃn/",
+        "pos": "n.",
+        "defn": "冥想",
+        "ex": "Meditation helps me relax.",
+        "trans": "冥想帮助我放松。"
+      },
+      {
+        "w": "calligraphy",
+        "ipa": "/kəˈlɪɡrəfi/",
+        "pos": "n.",
+        "defn": "书法",
+        "ex": "I practice Chinese calligraphy every weekend.",
+        "trans": "我每周末练习中国书法。"
+      },
+      {
+        "w": "orienteering",
+        "ipa": "/ˌɔːriənˈtɪərɪŋ/",
+        "pos": "n.",
+        "defn": "定向越野",
+        "ex": "Orienteering is fun and challenging.",
+        "trans": "定向越野有趣又有挑战性。"
+      },
+      {
+        "w": "craftsmanship",
+        "ipa": "/ˈkræftsmənʃɪp/",
+        "pos": "n.",
+        "defn": "工艺；手艺",
+        "ex": "I admire the craftsmanship of old buildings.",
+        "trans": "我欣赏古老建筑的工艺。"
+      }
+    ]
+  },
+  "b2u02_8": {
+    "master": [
+      {
+        "w": "hygiene",
+        "ipa": "/ˈhaɪdʒiːn/",
+        "pos": "n.",
+        "defn": "卫生",
+        "ex": "Good hygiene keeps us healthy.",
+        "trans": "良好的卫生让我们保持健康。"
+      },
+      {
+        "w": "immunity",
+        "ipa": "/ɪˈmjuːnəti/",
+        "pos": "n.",
+        "defn": "免疫力",
+        "ex": "Exercise boosts your immunity.",
+        "trans": "运动提高你的免疫力。"
+      },
+      {
+        "w": "check-up",
+        "ipa": "/ˈtʃek ʌp/",
+        "pos": "n.",
+        "defn": "体检",
+        "ex": "I have a check-up once a year.",
+        "trans": "我每年做一次体检。"
+      },
+      {
+        "w": "moderate",
+        "ipa": "/ˈmɒdərət/",
+        "pos": "adj.",
+        "defn": "适度的",
+        "ex": "Moderate exercise is good for health.",
+        "trans": "适度的运动对健康有益。"
+      },
+      {
+        "w": "nutrition",
+        "ipa": "/njuˈtrɪʃn/",
+        "pos": "n.",
+        "defn": "营养",
+        "ex": "Good nutrition is important for growth.",
+        "trans": "良好的营养对成长很重要。"
+      },
+      {
+        "w": "recovery",
+        "ipa": "/rɪˈkʌvəri/",
+        "pos": "n.",
+        "defn": "恢复",
+        "ex": "Get enough sleep for full recovery.",
+        "trans": "充足睡眠来完全恢复。"
+      },
+      {
+        "w": "treatment",
+        "ipa": "/ˈtriːtmənt/",
+        "pos": "n.",
+        "defn": "治疗",
+        "ex": "He is receiving treatment at the hospital.",
+        "trans": "他正在医院接受治疗。"
+      },
+      {
+        "w": "prevention",
+        "ipa": "/prɪˈvenʃn/",
+        "pos": "n.",
+        "defn": "预防",
+        "ex": "Prevention is better than cure.",
+        "trans": "预防胜于治疗。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "well-being",
+        "ipa": "/ˌwel ˈbiːɪŋ/",
+        "pos": "n.",
+        "defn": "健康；幸福",
+        "ex": "Mental well-being is just as important.",
+        "trans": "心理健康同样重要。"
+      },
+      {
+        "w": "immune",
+        "ipa": "/ɪˈmjuːn/",
+        "pos": "adj.",
+        "defn": "免疫的",
+        "ex": "A strong immune system fights diseases.",
+        "trans": "强大的免疫系统抗击疾病。"
+      },
+      {
+        "w": "therapy",
+        "ipa": "/ˈθerəpi/",
+        "pos": "n.",
+        "defn": "疗法",
+        "ex": "Rest is the best therapy for illness.",
+        "trans": "休息是生病最好的疗法。"
+      },
+      {
+        "w": "lifestyle",
+        "ipa": "/ˈlaɪfstaɪl/",
+        "pos": "n.",
+        "defn": "生活方式",
+        "ex": "A healthy lifestyle includes exercise and good diet.",
+        "trans": "健康的生活方式包括运动和良好的饮食。"
+      },
+      {
+        "w": "epidemic",
+        "ipa": "/ˌepɪˈdemɪk/",
+        "pos": "n.",
+        "defn": "流行病",
+        "ex": "The government took action to stop the epidemic.",
+        "trans": "政府采取措施阻止流行病。"
+      }
+    ]
+  },
+  "b2u03_8": {
+    "master": [
+      {
+        "w": "adolescent",
+        "ipa": "/ˌædəˈlesnt/",
+        "pos": "n.",
+        "defn": "青少年",
+        "ex": "Adolescents experience many changes.",
+        "trans": "青少年经历很多变化。"
+      },
+      {
+        "w": "mature",
+        "ipa": "/məˈtʃʊər/",
+        "pos": "adj.",
+        "defn": "成熟的",
+        "ex": "She is mature for her age.",
+        "trans": "她比同龄人成熟。"
+      },
+      {
+        "w": "independent",
+        "ipa": "/ˌɪndɪˈpendənt/",
+        "pos": "adj.",
+        "defn": "独立的",
+        "ex": "I want to be more independent.",
+        "trans": "我想更独立。"
+      },
+      {
+        "w": "curious",
+        "ipa": "/ˈkjʊəriəs/",
+        "pos": "adj.",
+        "defn": "好奇的",
+        "ex": "Teenagers are curious about the world.",
+        "trans": "青少年对世界充满好奇。"
+      },
+      {
+        "w": "reflect",
+        "ipa": "/rɪˈflekt/",
+        "pos": "v.",
+        "defn": "反思；思考",
+        "ex": "Take time to reflect on your growth.",
+        "trans": "花时间反思你的成长。"
+      },
+      {
+        "w": "progress",
+        "ipa": "/ˈprəʊɡres/",
+        "pos": "v.",
+        "defn": "进步；进展",
+        "ex": "You have progressed a lot this year.",
+        "trans": "你今年进步了很多。"
+      },
+      {
+        "w": "milestone",
+        "ipa": "/ˈmaɪlstəʊn/",
+        "pos": "n.",
+        "defn": "里程碑",
+        "ex": "Turning 14 is a milestone for me.",
+        "trans": "满14岁对我来说是一个里程碑。"
+      },
+      {
+        "w": "self-esteem",
+        "ipa": "/ˌself ɪˈstiːm/",
+        "pos": "n.",
+        "defn": "自尊",
+        "ex": "Building self-esteem is important.",
+        "trans": "建立自尊很重要。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "transition",
+        "ipa": "/trænˈzɪʃn/",
+        "pos": "n.",
+        "defn": "过渡；转变",
+        "ex": "The transition to high school can be challenging.",
+        "trans": "过渡到高中可能很有挑战。"
+      },
+      {
+        "w": "identity",
+        "ipa": "/aɪˈdentəti/",
+        "pos": "n.",
+        "defn": "身份；认同",
+        "ex": "Teenagers often search for their identity.",
+        "trans": "青少年常常寻找自我认同。"
+      },
+      {
+        "w": "resilience",
+        "ipa": "/rɪˈzɪliəns/",
+        "pos": "n.",
+        "defn": "韧性；适应力",
+        "ex": "Resilience helps us face difficulties.",
+        "trans": "韧性帮助我们面对困难。"
+      },
+      {
+        "w": "empathy",
+        "ipa": "/ˈempəθi/",
+        "pos": "n.",
+        "defn": "共情；同理心",
+        "ex": "Show empathy towards others.",
+        "trans": "对别人表现出同理心。"
+      },
+      {
+        "w": "adolescence",
+        "ipa": "/ˌædəˈlesns/",
+        "pos": "n.",
+        "defn": "青春期",
+        "ex": "Adolescence is a time of change.",
+        "trans": "青春期是一个变化的时期。"
+      }
+    ]
+  },
+  "b2u04_8": {
+    "master": [
+      {
+        "w": "canyon",
+        "ipa": "/ˈkænjən/",
+        "pos": "n.",
+        "defn": "峡谷",
+        "ex": "The Grand Canyon is very deep.",
+        "trans": "大峡谷非常深。"
+      },
+      {
+        "w": "waterfall",
+        "ipa": "/ˈwɔːtəfɔːl/",
+        "pos": "n.",
+        "defn": "瀑布",
+        "ex": "The waterfall is 50 meters high.",
+        "trans": "瀑布有50米高。"
+      },
+      {
+        "w": "volcano",
+        "ipa": "/vɒlˈkeɪnəʊ/",
+        "pos": "n.",
+        "defn": "火山",
+        "ex": "The volcano erupted last year.",
+        "trans": "这座火山去年喷发了。"
+      },
+      {
+        "w": "reef",
+        "ipa": "/riːf/",
+        "pos": "n.",
+        "defn": "礁石",
+        "ex": "The Great Barrier Reef is amazing.",
+        "trans": "大堡礁非常壮观。"
+      },
+      {
+        "w": "magnificent",
+        "ipa": "/mæɡˈnɪfɪsnt/",
+        "pos": "adj.",
+        "defn": "壮丽的",
+        "ex": "The view from the top was magnificent.",
+        "trans": "从山顶看到的景色壮丽无比。"
+      },
+      {
+        "w": "breathtaking",
+        "ipa": "/ˈbreθteɪkɪŋ/",
+        "pos": "adj.",
+        "defn": "令人惊叹的",
+        "ex": "The sunset was breathtaking.",
+        "trans": "日落令人惊叹。"
+      },
+      {
+        "w": "spectacular",
+        "ipa": "/spekˈtækjələr/",
+        "pos": "adj.",
+        "defn": "壮观的",
+        "ex": "We saw a spectacular view of the mountains.",
+        "trans": "我们看到了壮观的群山景色。"
+      },
+      {
+        "w": "unique",
+        "ipa": "/juˈniːk/",
+        "pos": "adj.",
+        "defn": "独特的",
+        "ex": "Every natural wonder is unique.",
+        "trans": "每个自然奇观都是独一无二的。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "geological",
+        "ipa": "/ˌdʒiːəˈlɒdʒɪkl/",
+        "pos": "adj.",
+        "defn": "地质的",
+        "ex": "The canyon has a long geological history.",
+        "trans": "这个峡谷有着悠久的地质历史。"
+      },
+      {
+        "w": "erosion",
+        "ipa": "/ɪˈrəʊʒn/",
+        "pos": "n.",
+        "defn": "侵蚀",
+        "ex": "The rocks were shaped by erosion.",
+        "trans": "这些岩石被侵蚀塑造而成。"
+      },
+      {
+        "w": "tectonic",
+        "ipa": "/tekˈtɒnɪk/",
+        "pos": "adj.",
+        "defn": "地壳构造的",
+        "ex": "Tectonic activity created these mountains.",
+        "trans": "地壳构造活动创造了这些山脉。"
+      },
+      {
+        "w": "heritage",
+        "ipa": "/ˈherɪtɪdʒ/",
+        "pos": "n.",
+        "defn": "遗产",
+        "ex": "These sites are part of our natural heritage.",
+        "trans": "这些地方是我们自然遗产的一部分。"
+      },
+      {
+        "w": "expedition",
+        "ipa": "/ˌekspəˈdɪʃn/",
+        "pos": "n.",
+        "defn": "探险",
+        "ex": "They went on an expedition to the Arctic.",
+        "trans": "他们去北极探险了。"
+      }
+    ]
+  },
+  "b2u05_8": {
+    "master": [
+      {
+        "w": "hurricane",
+        "ipa": "/ˈhʌrɪkən/",
+        "pos": "n.",
+        "defn": "飓风",
+        "ex": "The hurricane destroyed many houses.",
+        "trans": "飓风摧毁了很多房屋。"
+      },
+      {
+        "w": "tornado",
+        "ipa": "/tɔːrˈneɪdəʊ/",
+        "pos": "n.",
+        "defn": "龙卷风",
+        "ex": "A tornado can lift cars into the air.",
+        "trans": "龙卷风能把汽车卷到空中。"
+      },
+      {
+        "w": "earthquake",
+        "ipa": "/ˈɜːrθkweɪk/",
+        "pos": "n.",
+        "defn": "地震",
+        "ex": "The ground shook during the earthquake.",
+        "trans": "地震时地面晃动。"
+      },
+      {
+        "w": "flood",
+        "ipa": "/flʌd/",
+        "pos": "n.",
+        "defn": "洪水",
+        "ex": "Heavy rain caused floods in the area.",
+        "trans": "大雨导致了该地区洪水。"
+      },
+      {
+        "w": "disaster",
+        "ipa": "/dɪˈzɑːstər/",
+        "pos": "n.",
+        "defn": "灾难",
+        "ex": "We should help people after a disaster.",
+        "trans": "灾难后我们应该帮助人们。"
+      },
+      {
+        "w": "rescue",
+        "ipa": "/ˈreskjuː/",
+        "pos": "v.",
+        "defn": "营救",
+        "ex": "Firefighters rescued the family from the fire.",
+        "trans": "消防员从火中救出了这家人。"
+      },
+      {
+        "w": "emergency",
+        "ipa": "/iˈmɜːrdʒənsi/",
+        "pos": "n.",
+        "defn": "紧急情况",
+        "ex": "In an emergency, call 110.",
+        "trans": "紧急情况下打110。"
+      },
+      {
+        "w": "shelter",
+        "ipa": "/ˈʃeltər/",
+        "pos": "n.",
+        "defn": "避难所",
+        "ex": "People took shelter from the storm.",
+        "trans": "人们在暴风雨中避难。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "evacuate",
+        "ipa": "/ɪˈvækjueɪt/",
+        "pos": "v.",
+        "defn": "疏散",
+        "ex": "The village was evacuated before the flood.",
+        "trans": "洪水前村庄被疏散了。"
+      },
+      {
+        "w": "catastrophe",
+        "ipa": "/kəˈtæstrəfi/",
+        "pos": "n.",
+        "defn": "大灾难",
+        "ex": "The earthquake was a terrible catastrophe.",
+        "trans": "地震是一场可怕的灾难。"
+      },
+      {
+        "w": "aftermath",
+        "ipa": "/ˈɑːftərmæθ/",
+        "pos": "n.",
+        "defn": "后果；灾后",
+        "ex": "The aftermath of the storm was devastating.",
+        "trans": "暴风雨的后果是毁灭性的。"
+      },
+      {
+        "w": "relief",
+        "ipa": "/rɪˈliːf/",
+        "pos": "n.",
+        "defn": "救援；救济",
+        "ex": "Relief teams arrived quickly.",
+        "trans": "救援队迅速到达。"
+      },
+      {
+        "w": "devastating",
+        "ipa": "/ˈdevəsteɪtɪŋ/",
+        "pos": "adj.",
+        "defn": "毁灭性的",
+        "ex": "The typhoon had devastating effects.",
+        "trans": "台风造成了毁灭性的影响。"
+      }
+    ]
+  },
+  "b2u06_8": {
+    "master": [
+      {
+        "w": "cross-cultural",
+        "ipa": "/krɒs ˈkʌltʃərəl/",
+        "pos": "adj.",
+        "defn": "跨文化的",
+        "ex": "Cross-cultural communication is important.",
+        "trans": "跨文化交流很重要。"
+      },
+      {
+        "w": "custom",
+        "ipa": "/ˈkʌstəm/",
+        "pos": "n.",
+        "defn": "风俗习惯",
+        "ex": "Every country has its own customs.",
+        "trans": "每个国家都有自己的风俗习惯。"
+      },
+      {
+        "w": "etiquette",
+        "ipa": "/ˈetɪket/",
+        "pos": "n.",
+        "defn": "礼仪",
+        "ex": "Table etiquette varies around the world.",
+        "trans": "餐桌礼仪世界各地不同。"
+      },
+      {
+        "w": "value",
+        "ipa": "/ˈvæljuː/",
+        "pos": "n.",
+        "defn": "价值观",
+        "ex": "Family values are important in many cultures.",
+        "trans": "家庭价值观在许多文化中很重要。"
+      },
+      {
+        "w": "belief",
+        "ipa": "/bɪˈliːf/",
+        "pos": "n.",
+        "defn": "信仰；信念",
+        "ex": "We should respect different beliefs.",
+        "trans": "我们应该尊重不同的信仰。"
+      },
+      {
+        "w": "heritage",
+        "ipa": "/ˈherɪtɪdʒ/",
+        "pos": "n.",
+        "defn": "遗产",
+        "ex": "The Great Wall is part of our cultural heritage.",
+        "trans": "长城是我们文化遗产的一部分。"
+      },
+      {
+        "w": "diversity",
+        "ipa": "/daɪˈvɜːrsəti/",
+        "pos": "n.",
+        "defn": "多样性",
+        "ex": "Cultural diversity makes the world interesting.",
+        "trans": "文化多样性让世界有趣。"
+      },
+      {
+        "w": "global",
+        "ipa": "/ˈɡləʊbl/",
+        "pos": "adj.",
+        "defn": "全球的",
+        "ex": "We live in a global village.",
+        "trans": "我们生活在一个地球村。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "multicultural",
+        "ipa": "/ˌmʌltiˈkʌltʃərəl/",
+        "pos": "adj.",
+        "defn": "多元文化的",
+        "ex": "We live in a multicultural society.",
+        "trans": "我们生活在一个多元文化的社会。"
+      },
+      {
+        "w": "stereotype",
+        "ipa": "/ˈsteriətaɪp/",
+        "pos": "n.",
+        "defn": "刻板印象",
+        "ex": "Try not to judge based on stereotypes.",
+        "trans": "尽量不要基于刻板印象做判断。"
+      },
+      {
+        "w": "tolerance",
+        "ipa": "/ˈtɒlərəns/",
+        "pos": "n.",
+        "defn": "宽容",
+        "ex": "Tolerance is important in a diverse world.",
+        "trans": "宽容在一个多元的世界很重要。"
+      },
+      {
+        "w": "assimilation",
+        "ipa": "/əˌsɪməˈleɪʃn/",
+        "pos": "n.",
+        "defn": "同化；融入",
+        "ex": "Assimilation into a new culture takes time.",
+        "trans": "融入新文化需要时间。"
+      },
+      {
+        "w": "perspective",
+        "ipa": "/pərˈspektɪv/",
+        "pos": "n.",
+        "defn": "视角；观点",
+        "ex": "Learning about other cultures gives us a new perspective.",
+        "trans": "了解其他文化给我们新的视角。"
+      }
+    ]
+  },
+  "b2u07_8": {
+    "master": [
+      {
+        "w": "fiction",
+        "ipa": "/ˈfɪkʃn/",
+        "pos": "n.",
+        "defn": "小说",
+        "ex": "I enjoy reading science fiction.",
+        "trans": "我喜欢读科幻小说。"
+      },
+      {
+        "w": "mystery",
+        "ipa": "/ˈmɪstri/",
+        "pos": "n.",
+        "defn": "悬疑；神秘",
+        "ex": "I love reading mystery novels.",
+        "trans": "我喜欢读悬疑小说。"
+      },
+      {
+        "w": "fantasy",
+        "ipa": "/ˈfæntəsi/",
+        "pos": "n.",
+        "defn": "奇幻",
+        "ex": "Harry Potter is a famous fantasy series.",
+        "trans": "《哈利·波特》是著名的奇幻系列。"
+      },
+      {
+        "w": "biography",
+        "ipa": "/baɪˈɒɡrəfi/",
+        "pos": "n.",
+        "defn": "传记",
+        "ex": "I read a biography of Albert Einstein.",
+        "trans": "我读了阿尔伯特·爱因斯坦的传记。"
+      },
+      {
+        "w": "chapter",
+        "ipa": "/ˈtʃæptər/",
+        "pos": "n.",
+        "defn": "章节",
+        "ex": "This book has twelve chapters.",
+        "trans": "这本书有十二章。"
+      },
+      {
+        "w": "poetry",
+        "ipa": "/ˈpəʊətri/",
+        "pos": "n.",
+        "defn": "诗歌",
+        "ex": "She writes poetry in her free time.",
+        "trans": "她在空闲时写诗。"
+      },
+      {
+        "w": "publish",
+        "ipa": "/ˈpʌblɪʃ/",
+        "pos": "v.",
+        "defn": "出版",
+        "ex": "The writer published his first novel at 25.",
+        "trans": "这位作家在25岁时出版了他的第一部小说。"
+      },
+      {
+        "w": "bestseller",
+        "ipa": "/ˌbestˈselər/",
+        "pos": "n.",
+        "defn": "畅销书",
+        "ex": "This novel became a bestseller.",
+        "trans": "这本小说成了畅销书。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "genre",
+        "ipa": "/ˈʒɒnrə/",
+        "pos": "n.",
+        "defn": "类型；体裁",
+        "ex": "What genre of books do you prefer?",
+        "trans": "你更喜欢哪种类型的书？"
+      },
+      {
+        "w": "narrative",
+        "ipa": "/ˈnærətɪv/",
+        "pos": "n.",
+        "defn": "叙述；故事",
+        "ex": "The narrative of this novel is very engaging.",
+        "trans": "这本小说的叙述非常吸引人。"
+      },
+      {
+        "w": "literature",
+        "ipa": "/ˈlɪtrətʃər/",
+        "pos": "n.",
+        "defn": "文学",
+        "ex": "We study classic literature in English class.",
+        "trans": "我们在英语课上学习经典文学。"
+      },
+      {
+        "w": "symbolism",
+        "ipa": "/ˈsɪmbəlɪzəm/",
+        "pos": "n.",
+        "defn": "象征主义",
+        "ex": "The author uses symbolism to express ideas.",
+        "trans": "作者使用象征主义来表达思想。"
+      },
+      {
+        "w": "manuscript",
+        "ipa": "/ˈmænjuskrɪpt/",
+        "pos": "n.",
+        "defn": "手稿；原稿",
+        "ex": "The writer's manuscript was found after his death.",
+        "trans": "作家的手稿在他去世后被发现了。"
+      }
+    ]
+  },
+  "b2u08_8": {
+    "master": [
+      {
+        "w": "donate",
+        "ipa": "/dəʊˈneɪt/",
+        "pos": "v.",
+        "defn": "捐赠",
+        "ex": "We donate clothes to people in need.",
+        "trans": "我们向需要的人捐赠衣物。"
+      },
+      {
+        "w": "charity",
+        "ipa": "/ˈtʃærəti/",
+        "pos": "n.",
+        "defn": "慈善机构",
+        "ex": "The charity helps homeless people.",
+        "trans": "这家慈善机构帮助无家可归的人。"
+      },
+      {
+        "w": "volunteer",
+        "ipa": "/ˌvɒlənˈtɪər/",
+        "pos": "n.",
+        "defn": "志愿者",
+        "ex": "I work as a volunteer at the old people's home.",
+        "trans": "我在养老院做志愿者。"
+      },
+      {
+        "w": "campaign",
+        "ipa": "/kæmˈpeɪn/",
+        "pos": "n.",
+        "defn": "运动；活动",
+        "ex": "We started a campaign to clean up the park.",
+        "trans": "我们发起了清理公园的活动。"
+      },
+      {
+        "w": "sponsor",
+        "ipa": "/ˈspɒnsər/",
+        "pos": "v.",
+        "defn": "赞助",
+        "ex": "Local businesses sponsored our event.",
+        "trans": "当地企业赞助了我们的活动。"
+      },
+      {
+        "w": "impact",
+        "ipa": "/ˈɪmpækt/",
+        "pos": "n.",
+        "defn": "影响",
+        "ex": "Small actions can have a big impact.",
+        "trans": "小行动可以有大影响。"
+      },
+      {
+        "w": "community",
+        "ipa": "/kəˈmjuːnəti/",
+        "pos": "n.",
+        "defn": "社区",
+        "ex": "We should help our local community.",
+        "trans": "我们应该帮助本地社区。"
+      },
+      {
+        "w": "awareness",
+        "ipa": "/əˈweərnəs/",
+        "pos": "n.",
+        "defn": "意识",
+        "ex": "We need to raise awareness about environmental issues.",
+        "trans": "我们需要提高对环境问题的意识。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "philanthropy",
+        "ipa": "/fɪˈlænθrəpi/",
+        "pos": "n.",
+        "defn": "慈善事业",
+        "ex": "Philanthropy can change the world.",
+        "trans": "慈善事业可以改变世界。"
+      },
+      {
+        "w": "advocate",
+        "ipa": "/ˈædvəkeɪt/",
+        "pos": "v.",
+        "defn": "提倡；倡导",
+        "ex": "We advocate for equal rights for everyone.",
+        "trans": "我们倡导人人平等。"
+      },
+      {
+        "w": "grassroots",
+        "ipa": "/ˈɡrɑːsruːts/",
+        "pos": "adj.",
+        "defn": "基层的",
+        "ex": "Grassroots movements can bring real change.",
+        "trans": "基层运动可以带来真正的改变。"
+      },
+      {
+        "w": "sustainable",
+        "ipa": "/səˈsteɪnəbl/",
+        "pos": "adj.",
+        "defn": "可持续的",
+        "ex": "We need sustainable solutions to global problems.",
+        "trans": "我们需要可持续的全球问题解决方案。"
+      },
+      {
+        "w": "initiative",
+        "ipa": "/ɪˈnɪʃətɪv/",
+        "pos": "n.",
+        "defn": "倡议；主动行动",
+        "ex": "She started a community recycling initiative.",
+        "trans": "她发起了一个社区回收倡议。"
+      }
+    ]
+  },
+  "u01_9": {
+    "master": [
+      {
+        "w": "transform",
+        "ipa": "/trænsˈfɔːrm/",
+        "pos": "v.",
+        "defn": "转变；改变",
+        "ex": "Technology has transformed our lives.",
+        "trans": "技术改变了我们的生活。"
+      },
+      {
+        "w": "decade",
+        "ipa": "/ˈdekeɪd/",
+        "pos": "n.",
+        "defn": "十年",
+        "ex": "Great changes happened in the past decade.",
+        "trans": "过去十年发生了巨大变化。"
+      },
+      {
+        "w": "urbanization",
+        "ipa": "/ˌɜːrbənaɪˈzeɪʃn/",
+        "pos": "n.",
+        "defn": "城市化",
+        "ex": "Urbanization has changed many small towns.",
+        "trans": "城市化改变了许多小镇。"
+      },
+      {
+        "w": "globalization",
+        "ipa": "/ˌɡləʊbəlaɪˈzeɪʃn/",
+        "pos": "n.",
+        "defn": "全球化",
+        "ex": "Globalization connects people around the world.",
+        "trans": "全球化把世界各地的人们联系起来。"
+      },
+      {
+        "w": "trend",
+        "ipa": "/trend/",
+        "pos": "n.",
+        "defn": "趋势；潮流",
+        "ex": "This is a growing trend in education.",
+        "trans": "这是教育发展的一个趋势。"
+      },
+      {
+        "w": "welfare",
+        "ipa": "/ˈwelfeər/",
+        "pos": "n.",
+        "defn": "福利",
+        "ex": "The government improved social welfare.",
+        "trans": "政府改善了社会福利。"
+      },
+      {
+        "w": "inequality",
+        "ipa": "/ˌɪnɪˈkwɒləti/",
+        "pos": "n.",
+        "defn": "不平等",
+        "ex": "We should work to reduce inequality.",
+        "trans": "我们应该努力减少不平等。"
+      },
+      {
+        "w": "prosperity",
+        "ipa": "/prɒˈsperəti/",
+        "pos": "n.",
+        "defn": "繁荣；兴旺",
+        "ex": "The country has enjoyed years of prosperity.",
+        "trans": "这个国家享受了多年的繁荣。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "paradigm",
+        "ipa": "/ˈpærədaɪm/",
+        "pos": "n.",
+        "defn": "范式；模式",
+        "ex": "The internet created a new communication paradigm.",
+        "trans": "互联网创造了新的沟通范式。"
+      },
+      {
+        "w": "demographic",
+        "ipa": "/ˌdeməˈɡræfɪk/",
+        "pos": "adj.",
+        "defn": "人口的",
+        "ex": "Demographic changes affect the economy.",
+        "trans": "人口变化影响经济。"
+      },
+      {
+        "w": "infrastructure",
+        "ipa": "/ˈɪnfrəstrʌktʃər/",
+        "pos": "n.",
+        "defn": "基础设施",
+        "ex": "The city has modern infrastructure.",
+        "trans": "这座城市拥有现代化的基础设施。"
+      },
+      {
+        "w": "metropolitan",
+        "ipa": "/ˌmetrəˈpɒlɪtən/",
+        "pos": "adj.",
+        "defn": "大都市的",
+        "ex": "Metropolitan areas attract many young people.",
+        "trans": "大都市地区吸引了很多年轻人。"
+      },
+      {
+        "w": "innovation",
+        "ipa": "/ˌɪnəˈveɪʃn/",
+        "pos": "n.",
+        "defn": "创新",
+        "ex": "Technological innovation drives economic growth.",
+        "trans": "技术创新推动经济增长。"
+      }
+    ]
+  },
+  "u02_9": {
+    "master": [
+      {
+        "w": "admire",
+        "ipa": "/ədˈmaɪər/",
+        "pos": "v.",
+        "defn": "钦佩；赞赏",
+        "ex": "I admire people who help others.",
+        "trans": "我钦佩帮助他人的人。"
+      },
+      {
+        "w": "achievement",
+        "ipa": "/əˈtʃiːvmənt/",
+        "pos": "n.",
+        "defn": "成就",
+        "ex": "Her achievements inspired many young people.",
+        "trans": "她的成就激励了很多年轻人。"
+      },
+      {
+        "w": "dedicate",
+        "ipa": "/ˈdedɪkeɪt/",
+        "pos": "v.",
+        "defn": "奉献",
+        "ex": "She dedicated her life to science.",
+        "trans": "她将一生奉献给了科学。"
+      },
+      {
+        "w": "pioneer",
+        "ipa": "/ˌpaɪəˈnɪər/",
+        "pos": "n.",
+        "defn": "先驱；先锋",
+        "ex": "Marie Curie was a pioneer in physics.",
+        "trans": "居里夫人是物理学领域的先驱。"
+      },
+      {
+        "w": "courage",
+        "ipa": "/ˈkʌrɪdʒ/",
+        "pos": "n.",
+        "defn": "勇气",
+        "ex": "It takes courage to follow your dreams.",
+        "trans": "追随梦想需要勇气。"
+      },
+      {
+        "w": "perseverance",
+        "ipa": "/ˌpɜːrsɪˈvɪərəns/",
+        "pos": "n.",
+        "defn": "毅力",
+        "ex": "Success requires hard work and perseverance.",
+        "trans": "成功需要努力和毅力。"
+      },
+      {
+        "w": "legacy",
+        "ipa": "/ˈleɡəsi/",
+        "pos": "n.",
+        "defn": "遗产；遗赠",
+        "ex": "Her legacy continues to inspire people.",
+        "trans": "她的遗产继续激励着人们。"
+      },
+      {
+        "w": "contribution",
+        "ipa": "/ˌkɒntrɪˈbjuːʃn/",
+        "pos": "n.",
+        "defn": "贡献",
+        "ex": "He made great contributions to medicine.",
+        "trans": "他对医学做出了巨大贡献。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "admiration",
+        "ipa": "/ˌædməˈreɪʃn/",
+        "pos": "n.",
+        "defn": "钦佩；赞赏",
+        "ex": "I have great admiration for her work.",
+        "trans": "我非常钦佩她的工作。"
+      },
+      {
+        "w": "selfless",
+        "ipa": "/ˈselfləs/",
+        "pos": "adj.",
+        "defn": "无私的",
+        "ex": "Her selfless dedication touched everyone.",
+        "trans": "她的无私奉献感动了每个人。"
+      },
+      {
+        "w": "humanitarian",
+        "ipa": "/hjuːˌmænɪˈteəriən/",
+        "pos": "adj.",
+        "defn": "人道主义的",
+        "ex": "She received an award for her humanitarian work.",
+        "trans": "她因人道主义工作获奖。"
+      },
+      {
+        "w": "inspirational",
+        "ipa": "/ˌɪnspəˈreɪʃənl/",
+        "pos": "adj.",
+        "defn": "鼓舞人心的",
+        "ex": "His story is truly inspirational.",
+        "trans": "他的故事真的很鼓舞人心。"
+      },
+      {
+        "w": "iconic",
+        "ipa": "/aɪˈkɒnɪk/",
+        "pos": "adj.",
+        "defn": "标志性的；偶像级的",
+        "ex": "She became an iconic figure in history.",
+        "trans": "她成为历史上的标志性人物。"
+      }
+    ]
+  },
+  "u03_9": {
+    "master": [
+      {
+        "w": "strategy",
+        "ipa": "/ˈstrætədʒi/",
+        "pos": "n.",
+        "defn": "策略；方法",
+        "ex": "Good study strategies help you learn better.",
+        "trans": "好的学习策略帮助你学得更好。"
+      },
+      {
+        "w": "memorize",
+        "ipa": "/ˈmeməraɪz/",
+        "pos": "v.",
+        "defn": "记住；背诵",
+        "ex": "Don't just memorize facts; try to understand them.",
+        "trans": "不要只背事实，要试着理解。"
+      },
+      {
+        "w": "concentrate",
+        "ipa": "/ˈkɒnsntreɪt/",
+        "pos": "v.",
+        "defn": "集中注意力",
+        "ex": "I need to concentrate on my studies.",
+        "trans": "我需要集中精力学习。"
+      },
+      {
+        "w": "distraction",
+        "ipa": "/dɪˈstrækʃn/",
+        "pos": "n.",
+        "defn": "分心的事物",
+        "ex": "Turn off your phone to avoid distractions.",
+        "trans": "关掉手机避免分心。"
+      },
+      {
+        "w": "curiosity",
+        "ipa": "/ˌkjʊəriˈɒsəti/",
+        "pos": "n.",
+        "defn": "好奇心",
+        "ex": "Curiosity drives us to learn new things.",
+        "trans": "好奇心驱使我们学习新东西。"
+      },
+      {
+        "w": "review",
+        "ipa": "/rɪˈvjuː/",
+        "pos": "v.",
+        "defn": "复习",
+        "ex": "Review your notes after class.",
+        "trans": "课后复习你的笔记。"
+      },
+      {
+        "w": "summarize",
+        "ipa": "/ˈsʌməraɪz/",
+        "pos": "v.",
+        "defn": "总结",
+        "ex": "Summarize the main points of the lesson.",
+        "trans": "总结本课要点。"
+      },
+      {
+        "w": "reflect",
+        "ipa": "/rɪˈflekt/",
+        "pos": "v.",
+        "defn": "反思",
+        "ex": "Reflect on what you have learned.",
+        "trans": "反思你学到了什么。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "metacognition",
+        "ipa": "/ˌmetəkɒɡˈnɪʃn/",
+        "pos": "n.",
+        "defn": "元认知",
+        "ex": "Metacognition helps you think about your own thinking.",
+        "trans": "元认知帮助你思考自己的思维过程。"
+      },
+      {
+        "w": "retention",
+        "ipa": "/rɪˈtenʃn/",
+        "pos": "n.",
+        "defn": "记忆；保持",
+        "ex": "Spaced repetition improves memory retention.",
+        "trans": "间隔重复提高记忆保持率。"
+      },
+      {
+        "w": "cognitive",
+        "ipa": "/ˈkɒɡnətɪv/",
+        "pos": "adj.",
+        "defn": "认知的",
+        "ex": "Regular reading improves cognitive abilities.",
+        "trans": "定期阅读提高认知能力。"
+      },
+      {
+        "w": "critical thinking",
+        "ipa": "/ˈkrɪtɪkl ˈθɪŋkɪŋ/",
+        "pos": "n.",
+        "defn": "批判性思维",
+        "ex": "Critical thinking helps you analyze information.",
+        "trans": "批判性思维帮助你分析信息。"
+      },
+      {
+        "w": "self-discipline",
+        "ipa": "/ˌself ˈdɪsəplɪn/",
+        "pos": "n.",
+        "defn": "自律",
+        "ex": "Self-discipline is the key to effective learning.",
+        "trans": "自律是高效学习的关键。"
+      }
+    ]
+  },
+  "u04_9": {
+    "master": [
+      {
+        "w": "recall",
+        "ipa": "/rɪˈkɔːl/",
+        "pos": "v.",
+        "defn": "回忆；回想",
+        "ex": "I can still recall my first day at school.",
+        "trans": "我仍然能回忆起第一天上学的情景。"
+      },
+      {
+        "w": "remind",
+        "ipa": "/rɪˈmaɪnd/",
+        "pos": "v.",
+        "defn": "提醒",
+        "ex": "This photo reminds me of my childhood.",
+        "trans": "这张照片让我想起我的童年。"
+      },
+      {
+        "w": "childhood",
+        "ipa": "/ˈtʃaɪldhʊd/",
+        "pos": "n.",
+        "defn": "童年",
+        "ex": "I have happy memories of my childhood.",
+        "trans": "我对童年有快乐的回忆。"
+      },
+      {
+        "w": "precious",
+        "ipa": "/ˈpreʃəs/",
+        "pos": "adj.",
+        "defn": "珍贵的",
+        "ex": "These memories are precious to me.",
+        "trans": "这些记忆对我来说很珍贵。"
+      },
+      {
+        "w": "cherish",
+        "ipa": "/ˈtʃerɪʃ/",
+        "pos": "v.",
+        "defn": "珍惜",
+        "ex": "Cherish every moment with your family.",
+        "trans": "珍惜与家人在一起的每一刻。"
+      },
+      {
+        "w": "nostalgic",
+        "ipa": "/nɒˈstældʒɪk/",
+        "pos": "adj.",
+        "defn": "怀旧的",
+        "ex": "Looking at old photos makes me feel nostalgic.",
+        "trans": "看老照片让我感到怀旧。"
+      },
+      {
+        "w": "anniversary",
+        "ipa": "/ˌænɪˈvɜːrsəri/",
+        "pos": "n.",
+        "defn": "周年纪念日",
+        "ex": "Today is my parents' wedding anniversary.",
+        "trans": "今天是我父母的结婚纪念日。"
+      },
+      {
+        "w": "commemorate",
+        "ipa": "/kəˈmeməreɪt/",
+        "pos": "v.",
+        "defn": "纪念",
+        "ex": "We hold a ceremony to commemorate the event.",
+        "trans": "我们举行仪式来纪念这个事件。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "reminisce",
+        "ipa": "/ˌremɪˈnɪs/",
+        "pos": "v.",
+        "defn": "回忆；追忆",
+        "ex": "Grandparents love to reminisce about the past.",
+        "trans": "祖父母喜欢回忆过去。"
+      },
+      {
+        "w": "sentimental",
+        "ipa": "/ˌsentɪˈmentl/",
+        "pos": "adj.",
+        "defn": "情感的；多愁善感的",
+        "ex": "This song makes me feel sentimental.",
+        "trans": "这首歌让我感到伤感。"
+      },
+      {
+        "w": "permanent",
+        "ipa": "/ˈpɜːrmənənt/",
+        "pos": "adj.",
+        "defn": "永久的",
+        "ex": "Some memories leave a permanent mark.",
+        "trans": "有些记忆留下永久的印记。"
+      },
+      {
+        "w": "evoke",
+        "ipa": "/ɪˈvəʊk/",
+        "pos": "v.",
+        "defn": "唤起",
+        "ex": "The smell of the sea evokes happy memories.",
+        "trans": "大海的味道唤起快乐的回忆。"
+      },
+      {
+        "w": "legacy",
+        "ipa": "/ˈleɡəsi/",
+        "pos": "n.",
+        "defn": "遗产；传承",
+        "ex": "Family stories are a legacy passed down through generations.",
+        "trans": "家庭故事是代代相传的遗产。"
+      }
+    ]
+  },
+  "u05_9": {
+    "master": [
+      {
+        "w": "invent",
+        "ipa": "/ɪnˈvent/",
+        "pos": "v.",
+        "defn": "发明",
+        "ex": "Edison invented the light bulb.",
+        "trans": "爱迪生发明了电灯泡。"
+      },
+      {
+        "w": "design",
+        "ipa": "/dɪˈzaɪn/",
+        "pos": "v.",
+        "defn": "设计",
+        "ex": "Engineers design new machines.",
+        "trans": "工程师设计新机器。"
+      },
+      {
+        "w": "manufacture",
+        "ipa": "/ˌmænjuˈfæktʃər/",
+        "pos": "v.",
+        "defn": "制造",
+        "ex": "This factory manufactures car parts.",
+        "trans": "这家工厂制造汽车零件。"
+      },
+      {
+        "w": "patent",
+        "ipa": "/ˈpeɪtnt/",
+        "pos": "n.",
+        "defn": "专利",
+        "ex": "The inventor applied for a patent.",
+        "trans": "发明者申请了专利。"
+      },
+      {
+        "w": "prototype",
+        "ipa": "/ˈprəʊtətaɪp/",
+        "pos": "n.",
+        "defn": "原型",
+        "ex": "They built a prototype of the new device.",
+        "trans": "他们制作了新设备的原型。"
+      },
+      {
+        "w": "solve",
+        "ipa": "/sɒlv/",
+        "pos": "v.",
+        "defn": "解决",
+        "ex": "We need to solve this problem.",
+        "trans": "我们需要解决这个问题。"
+      },
+      {
+        "w": "problem",
+        "ipa": "/ˈprɒbləm/",
+        "pos": "n.",
+        "defn": "问题",
+        "ex": "Every invention solves a problem.",
+        "trans": "每一个发明都解决一个问题。"
+      },
+      {
+        "w": "creative",
+        "ipa": "/kriˈeɪtɪv/",
+        "pos": "adj.",
+        "defn": "有创造力的",
+        "ex": "Creative thinking leads to new inventions.",
+        "trans": "创造性思维带来新发明。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "innovation",
+        "ipa": "/ˌɪnəˈveɪʃn/",
+        "pos": "n.",
+        "defn": "创新；革新",
+        "ex": "Innovation drives progress in society.",
+        "trans": "创新推动社会进步。"
+      },
+      {
+        "w": "revolutionize",
+        "ipa": "/ˌrevəˈluːʃənaɪz/",
+        "pos": "v.",
+        "defn": "彻底改变",
+        "ex": "The internet revolutionized communication.",
+        "trans": "互联网彻底改变了通信。"
+      },
+      {
+        "w": "breakthrough",
+        "ipa": "/ˈbreɪkθruː/",
+        "pos": "n.",
+        "defn": "突破",
+        "ex": "This breakthrough will change medicine.",
+        "trans": "这个突破将改变医学。"
+      },
+      {
+        "w": "ingenuity",
+        "ipa": "/ˌɪndʒəˈnjuːəti/",
+        "pos": "n.",
+        "defn": "独创性；巧思",
+        "ex": "Human ingenuity has no limits.",
+        "trans": "人类的创造力没有极限。"
+      },
+      {
+        "w": "cutting-edge",
+        "ipa": "/ˌkʌtɪŋ ˈedʒ/",
+        "pos": "adj.",
+        "defn": "前沿的；尖端的",
+        "ex": "This lab uses cutting-edge technology.",
+        "trans": "这个实验室使用前沿技术。"
+      }
+    ]
+  },
+  "u06_9": {
+    "master": [
+      {
+        "w": "exploration",
+        "ipa": "/ˌekspləˈreɪʃn/",
+        "pos": "n.",
+        "defn": "探索",
+        "ex": "Space exploration requires courage.",
+        "trans": "太空探索需要勇气。"
+      },
+      {
+        "w": "astronaut",
+        "ipa": "/ˈæstrənɔːt/",
+        "pos": "n.",
+        "defn": "宇航员",
+        "ex": "Astronauts train for years before space missions.",
+        "trans": "宇航员在太空任务前训练多年。"
+      },
+      {
+        "w": "telescope",
+        "ipa": "/ˈtelɪskəʊp/",
+        "pos": "n.",
+        "defn": "望远镜",
+        "ex": "We can see stars through a telescope.",
+        "trans": "我们可以通过望远镜看星星。"
+      },
+      {
+        "w": "orbit",
+        "ipa": "/ˈɔːrbɪt/",
+        "pos": "v.",
+        "defn": "绕轨道运行",
+        "ex": "The moon orbits the Earth.",
+        "trans": "月亮绕地球运行。"
+      },
+      {
+        "w": "gravity",
+        "ipa": "/ˈɡrævəti/",
+        "pos": "n.",
+        "defn": "重力；引力",
+        "ex": "Astronauts float in space because of low gravity.",
+        "trans": "宇航员在太空中漂浮是因为低重力。"
+      },
+      {
+        "w": "atmosphere",
+        "ipa": "/ˈætməsfɪər/",
+        "pos": "n.",
+        "defn": "大气层",
+        "ex": "The Earth's atmosphere protects us.",
+        "trans": "地球的大气层保护着我们。"
+      },
+      {
+        "w": "colony",
+        "ipa": "/ˈkɒləni/",
+        "pos": "n.",
+        "defn": "殖民地；定居点",
+        "ex": "Scientists dream of building a colony on Mars.",
+        "trans": "科学家梦想在火星上建立定居点。"
+      },
+      {
+        "w": "frontier",
+        "ipa": "/frʌnˈtɪər/",
+        "pos": "n.",
+        "defn": "前沿；边境",
+        "ex": "Space is the final frontier.",
+        "trans": "太空是最后的前沿。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "cosmic",
+        "ipa": "/ˈkɒzmɪk/",
+        "pos": "adj.",
+        "defn": "宇宙的",
+        "ex": "Cosmic radiation is a challenge for space travel.",
+        "trans": "宇宙辐射是太空旅行的挑战。"
+      },
+      {
+        "w": "interstellar",
+        "ipa": "/ˌɪntərˈstelər/",
+        "pos": "adj.",
+        "defn": "星际的",
+        "ex": "Interstellar travel is still science fiction.",
+        "trans": "星际旅行仍然只是科幻。"
+      },
+      {
+        "w": "observatory",
+        "ipa": "/əbˈzɜːrvətɔːri/",
+        "pos": "n.",
+        "defn": "天文台",
+        "ex": "The observatory has a powerful telescope.",
+        "trans": "天文台有一架强大的望远镜。"
+      },
+      {
+        "w": "extraterrestrial",
+        "ipa": "/ˌekstrətəˈrestriəl/",
+        "pos": "adj./n.",
+        "defn": "外星(的)；地外生物",
+        "ex": "Scientists search for extraterrestrial life.",
+        "trans": "科学家寻找地外生命。"
+      },
+      {
+        "w": "propulsion",
+        "ipa": "/prəˈpʌlʃn/",
+        "pos": "n.",
+        "defn": "推进力；推进系统",
+        "ex": "New propulsion technology could shorten space travel.",
+        "trans": "新的推进技术可以缩短太空旅行。"
+      }
+    ]
+  },
+  "u07_9": {
+    "master": [
+      {
+        "w": "melody",
+        "ipa": "/ˈmelədi/",
+        "pos": "n.",
+        "defn": "旋律",
+        "ex": "The melody of this song is beautiful.",
+        "trans": "这首歌的旋律很美。"
+      },
+      {
+        "w": "rhythm",
+        "ipa": "/ˈrɪðəm/",
+        "pos": "n.",
+        "defn": "节奏",
+        "ex": "The rhythm of the drums makes me want to dance.",
+        "trans": "鼓的节奏让我想跳舞。"
+      },
+      {
+        "w": "genre",
+        "ipa": "/ˈʒɒnrə/",
+        "pos": "n.",
+        "defn": "类型；流派",
+        "ex": "What genre of music do you like?",
+        "trans": "你喜欢什么类型的音乐？"
+      },
+      {
+        "w": "instrument",
+        "ipa": "/ˈɪnstrəmənt/",
+        "pos": "n.",
+        "defn": "乐器",
+        "ex": "I can play three musical instruments.",
+        "trans": "我会演奏三种乐器。"
+      },
+      {
+        "w": "performance",
+        "ipa": "/pərˈfɔːrməns/",
+        "pos": "n.",
+        "defn": "表演；演出",
+        "ex": "The performance was amazing.",
+        "trans": "表演非常精彩。"
+      },
+      {
+        "w": "audience",
+        "ipa": "/ˈɔːdiəns/",
+        "pos": "n.",
+        "defn": "观众",
+        "ex": "The audience clapped loudly.",
+        "trans": "观众大声鼓掌。"
+      },
+      {
+        "w": "conductor",
+        "ipa": "/kənˈdʌktər/",
+        "pos": "n.",
+        "defn": "指挥",
+        "ex": "The conductor led the orchestra beautifully.",
+        "trans": "指挥优美地带领着管弦乐队。"
+      },
+      {
+        "w": "compose",
+        "ipa": "/kəmˈpəʊz/",
+        "pos": "v.",
+        "defn": "作曲",
+        "ex": "Mozart composed his first piece at age five.",
+        "trans": "莫扎特五岁时创作了他的第一首曲子。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "symphony",
+        "ipa": "/ˈsɪmfəni/",
+        "pos": "n.",
+        "defn": "交响乐",
+        "ex": "Beethoven's symphonies are world-famous.",
+        "trans": "贝多芬的交响乐世界闻名。"
+      },
+      {
+        "w": "improvisation",
+        "ipa": "/ˌɪmprəvaɪˈzeɪʃn/",
+        "pos": "n.",
+        "defn": "即兴创作",
+        "ex": "Jazz musicians are known for improvisation.",
+        "trans": "爵士音乐家以即兴创作闻名。"
+      },
+      {
+        "w": "harmony",
+        "ipa": "/ˈhɑːrməni/",
+        "pos": "n.",
+        "defn": "和声；和谐",
+        "ex": "The choir sang in perfect harmony.",
+        "trans": "合唱团唱出了完美的和声。"
+      },
+      {
+        "w": "virtuoso",
+        "ipa": "/ˌvɜːrtʃuˈəʊsəʊ/",
+        "pos": "n.",
+        "defn": "大师；演奏家",
+        "ex": "The pianist is a true virtuoso.",
+        "trans": "这位钢琴家是真正的大师。"
+      },
+      {
+        "w": "orchestra",
+        "ipa": "/ˈɔːrkɪstrə/",
+        "pos": "n.",
+        "defn": "管弦乐队",
+        "ex": "The orchestra performed a classic piece.",
+        "trans": "管弦乐队演奏了一首经典曲目。"
+      }
+    ]
+  },
+  "u08_9": {
+    "master": [
+      {
+        "w": "champion",
+        "ipa": "/ˈtʃæmpiən/",
+        "pos": "n.",
+        "defn": "冠军",
+        "ex": "He became the champion after years of training.",
+        "trans": "经过多年训练他成为了冠军。"
+      },
+      {
+        "w": "victory",
+        "ipa": "/ˈvɪktəri/",
+        "pos": "n.",
+        "defn": "胜利",
+        "ex": "The team celebrated their victory.",
+        "trans": "团队庆祝他们的胜利。"
+      },
+      {
+        "w": "defeat",
+        "ipa": "/dɪˈfiːt/",
+        "pos": "v.",
+        "defn": "击败",
+        "ex": "They defeated the opposing team 3-0.",
+        "trans": "他们以3比0击败了对手。"
+      },
+      {
+        "w": "opponent",
+        "ipa": "/əˈpəʊnənt/",
+        "pos": "n.",
+        "defn": "对手",
+        "ex": "Respect your opponent whether you win or lose.",
+        "trans": "无论输赢都要尊重你的对手。"
+      },
+      {
+        "w": "tournament",
+        "ipa": "/ˈtʊərnəmənt/",
+        "pos": "n.",
+        "defn": "锦标赛",
+        "ex": "The school held a basketball tournament.",
+        "trans": "学校举办了一场篮球锦标赛。"
+      },
+      {
+        "w": "referee",
+        "ipa": "/ˌrefəˈriː/",
+        "pos": "n.",
+        "defn": "裁判",
+        "ex": "The referee made a fair decision.",
+        "trans": "裁判做出了公平的判决。"
+      },
+      {
+        "w": "sportsmanship",
+        "ipa": "/ˈspɔːrtsmənʃɪp/",
+        "pos": "n.",
+        "defn": "体育精神",
+        "ex": "Good sportsmanship is more important than winning.",
+        "trans": "良好的体育精神比赢更重要。"
+      },
+      {
+        "w": "medal",
+        "ipa": "/ˈmedl/",
+        "pos": "n.",
+        "defn": "奖牌",
+        "ex": "She won a gold medal in swimming.",
+        "trans": "她在游泳比赛中获得了金牌。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "perseverance",
+        "ipa": "/ˌpɜːrsɪˈvɪərəns/",
+        "pos": "n.",
+        "defn": "毅力；坚持",
+        "ex": "The athlete's perseverance led to success.",
+        "trans": "运动员的坚持带来了成功。"
+      },
+      {
+        "w": "discipline",
+        "ipa": "/ˈdɪsəplɪn/",
+        "pos": "n.",
+        "defn": "纪律；训练",
+        "ex": "Professional athletes need strict discipline.",
+        "trans": "职业运动员需要严格的纪律。"
+      },
+      {
+        "w": "dedication",
+        "ipa": "/ˌdedɪˈkeɪʃn/",
+        "pos": "n.",
+        "defn": "奉献；投入",
+        "ex": "Her dedication to training was incredible.",
+        "trans": "她对训练的投入令人难以置信。"
+      },
+      {
+        "w": "underdog",
+        "ipa": "/ˈʌndərdɒɡ/",
+        "pos": "n.",
+        "defn": "不被看好的一方",
+        "ex": "The underdog team won the championship.",
+        "trans": "不被看好的队伍赢得了冠军。"
+      },
+      {
+        "w": "mentor",
+        "ipa": "/ˈmentɔːr/",
+        "pos": "n.",
+        "defn": "导师；指导者",
+        "ex": "The coach was a great mentor to the young players.",
+        "trans": "教练是年轻球员的良师益友。"
+      }
+    ]
+  },
+  "b2u01_9": {
+    "master": [
+      {
+        "w": "lunar",
+        "ipa": "/ˈluːnər/",
+        "pos": "adj.",
+        "defn": "月球的；阴历的",
+        "ex": "The Spring Festival follows the lunar calendar.",
+        "trans": "春节遵循农历。"
+      },
+      {
+        "w": "reunion",
+        "ipa": "/riːˈjuːniən/",
+        "pos": "n.",
+        "defn": "团圆；重聚",
+        "ex": "Family reunion is important during the Spring Festival.",
+        "trans": "春节期间家庭团圆很重要。"
+      },
+      {
+        "w": "decorate",
+        "ipa": "/ˈdekəreɪt/",
+        "pos": "v.",
+        "defn": "装饰",
+        "ex": "We decorate the house with red lanterns.",
+        "trans": "我们用红灯笼装饰房子。"
+      },
+      {
+        "w": "feast",
+        "ipa": "/fiːst/",
+        "pos": "n.",
+        "defn": "盛宴；宴会",
+        "ex": "The Spring Festival feast is delicious.",
+        "trans": "春节盛宴很美味。"
+      },
+      {
+        "w": "blessing",
+        "ipa": "/ˈblesɪŋ/",
+        "pos": "n.",
+        "defn": "祝福；福气",
+        "ex": "Elders give blessings to children during the festival.",
+        "trans": "节日期间长辈给孩子们祝福。"
+      },
+      {
+        "w": "ancestor",
+        "ipa": "/ˈænsestər/",
+        "pos": "n.",
+        "defn": "祖先",
+        "ex": "We honor our ancestors during festivals.",
+        "trans": "我们在节日期间祭祖。"
+      },
+      {
+        "w": "symbolize",
+        "ipa": "/ˈsɪmbəlaɪz/",
+        "pos": "v.",
+        "defn": "象征",
+        "ex": "Red symbolizes good luck in Chinese culture.",
+        "trans": "红色在中国文化中象征好运。"
+      },
+      {
+        "w": "gratitude",
+        "ipa": "/ˈɡrætɪtjuːd/",
+        "pos": "n.",
+        "defn": "感恩；感激",
+        "ex": "We express gratitude for what we have.",
+        "trans": "我们感恩所拥有的一切。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "commemorate",
+        "ipa": "/kəˈmeməreɪt/",
+        "pos": "v.",
+        "defn": "纪念",
+        "ex": "This festival commemorates an important historical event.",
+        "trans": "这个节日纪念一个重要历史事件。"
+      },
+      {
+        "w": "customary",
+        "ipa": "/ˈkʌstəməri/",
+        "pos": "adj.",
+        "defn": "习俗的；惯例的",
+        "ex": "It is customary to give red packets during the Spring Festival.",
+        "trans": "春节给红包是习俗。"
+      },
+      {
+        "w": "festive",
+        "ipa": "/ˈfestɪv/",
+        "pos": "adj.",
+        "defn": "节日的；喜庆的",
+        "ex": "The streets are decorated in a festive atmosphere.",
+        "trans": "街道装饰着节日气氛。"
+      },
+      {
+        "w": "observe",
+        "ipa": "/əbˈzɜːrv/",
+        "pos": "v.",
+        "defn": "庆祝；遵守",
+        "ex": "People observe the festival in different ways.",
+        "trans": "人们以不同方式庆祝这个节日。"
+      },
+      {
+        "w": "cultural heritage",
+        "ipa": "/ˈkʌltʃərəl ˈherɪtɪdʒ/",
+        "pos": "n.",
+        "defn": "文化遗产",
+        "ex": "Festivals are an important part of cultural heritage.",
+        "trans": "节日是文化遗产的重要组成部分。"
+      }
+    ]
+  },
+  "b2u02_9": {
+    "master": [
+      {
+        "w": "ancient",
+        "ipa": "/ˈeɪnʃənt/",
+        "pos": "adj.",
+        "defn": "古代的",
+        "ex": "China has a long ancient history.",
+        "trans": "中国有悠久的古代历史。"
+      },
+      {
+        "w": "civilization",
+        "ipa": "/ˌsɪvəlaɪˈzeɪʃn/",
+        "pos": "n.",
+        "defn": "文明",
+        "ex": "The Yellow River is the birthplace of Chinese civilization.",
+        "trans": "黄河是中华文明的发源地。"
+      },
+      {
+        "w": "archaeologist",
+        "ipa": "/ˌɑːrkiˈɒlədʒɪst/",
+        "pos": "n.",
+        "defn": "考古学家",
+        "ex": "Archaeologists discovered ancient tombs.",
+        "trans": "考古学家发现了古墓。"
+      },
+      {
+        "w": "artifact",
+        "ipa": "/ˈɑːrtɪfækt/",
+        "pos": "n.",
+        "defn": "手工艺品；文物",
+        "ex": "These artifacts are over 2,000 years old.",
+        "trans": "这些文物已有两千多年历史。"
+      },
+      {
+        "w": "dynasty",
+        "ipa": "/ˈdɪnəsti/",
+        "pos": "n.",
+        "defn": "王朝；朝代",
+        "ex": "The Tang Dynasty was a golden age of Chinese poetry.",
+        "trans": "唐朝是中国诗歌的黄金时代。"
+      },
+      {
+        "w": "relic",
+        "ipa": "/ˈrelɪk/",
+        "pos": "n.",
+        "defn": "遗迹；遗物",
+        "ex": "The museum displays many historical relics.",
+        "trans": "博物馆展示了许多历史遗迹。"
+      },
+      {
+        "w": "ruin",
+        "ipa": "/ˈruːɪn/",
+        "pos": "n.",
+        "defn": "废墟",
+        "ex": "We visited the ruins of an ancient city.",
+        "trans": "我们参观了一座古城的废墟。"
+      },
+      {
+        "w": "treasure",
+        "ipa": "/ˈtreʒər/",
+        "pos": "n.",
+        "defn": "宝藏",
+        "ex": "The tomb was full of treasures.",
+        "trans": "墓穴里满是宝藏。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "excavation",
+        "ipa": "/ˌekskəˈveɪʃn/",
+        "pos": "n.",
+        "defn": "挖掘；发掘",
+        "ex": "The excavation revealed a hidden palace.",
+        "trans": "挖掘发现了一座隐藏的宫殿。"
+      },
+      {
+        "w": "archaeology",
+        "ipa": "/ˌɑːrkiˈɒlədʒi/",
+        "pos": "n.",
+        "defn": "考古学",
+        "ex": "Archaeology helps us understand the past.",
+        "trans": "考古学帮助我们了解过去。"
+      },
+      {
+        "w": "preservation",
+        "ipa": "/ˌprezərˈveɪʃn/",
+        "pos": "n.",
+        "defn": "保存；保护",
+        "ex": "The preservation of historical sites is important.",
+        "trans": "历史遗迹的保护很重要。"
+      },
+      {
+        "w": "remains",
+        "ipa": "/rɪˈmeɪnz/",
+        "pos": "n.",
+        "defn": "遗迹；遗骸",
+        "ex": "Archaeologists found the remains of an ancient temple.",
+        "trans": "考古学家发现了一座古庙的遗迹。"
+      },
+      {
+        "w": "hieroglyph",
+        "ipa": "/ˈhaɪərəɡlɪf/",
+        "pos": "n.",
+        "defn": "象形文字",
+        "ex": "Ancient Egyptians used hieroglyphs to write.",
+        "trans": "古埃及人使用象形文字书写。"
+      }
+    ]
+  },
+  "b2u03_9": {
+    "master": [
+      {
+        "w": "sculpture",
+        "ipa": "/ˈskʌlptʃər/",
+        "pos": "n.",
+        "defn": "雕塑",
+        "ex": "The sculpture in the park is made of marble.",
+        "trans": "公园里的雕塑是大理石做的。"
+      },
+      {
+        "w": "masterpiece",
+        "ipa": "/ˈmɑːstərpiːs/",
+        "pos": "n.",
+        "defn": "杰作",
+        "ex": "Mona Lisa is a masterpiece of art.",
+        "trans": "《蒙娜丽莎》是一件艺术杰作。"
+      },
+      {
+        "w": "gallery",
+        "ipa": "/ˈɡæləri/",
+        "pos": "n.",
+        "defn": "画廊；美术馆",
+        "ex": "We visited an art gallery on Sunday.",
+        "trans": "我们周日参观了一个美术馆。"
+      },
+      {
+        "w": "abstract",
+        "ipa": "/ˈæbstrækt/",
+        "pos": "adj.",
+        "defn": "抽象的",
+        "ex": "Abstract art can be hard to understand.",
+        "trans": "抽象艺术可能很难理解。"
+      },
+      {
+        "w": "realistic",
+        "ipa": "/ˌriːəˈlɪstɪk/",
+        "pos": "adj.",
+        "defn": "现实主义的；逼真的",
+        "ex": "This painting is very realistic.",
+        "trans": "这幅画非常逼真。"
+      },
+      {
+        "w": "landscape",
+        "ipa": "/ˈlændskeɪp/",
+        "pos": "n.",
+        "defn": "风景画",
+        "ex": "She paints beautiful landscapes.",
+        "trans": "她画美丽的风景画。"
+      },
+      {
+        "w": "portrait",
+        "ipa": "/ˈpɔːrtrət/",
+        "pos": "n.",
+        "defn": "肖像画",
+        "ex": "The portrait of the queen is in the museum.",
+        "trans": "女王的肖像画在博物馆里。"
+      },
+      {
+        "w": "exhibition",
+        "ipa": "/ˌeksɪˈbɪʃn/",
+        "pos": "n.",
+        "defn": "展览",
+        "ex": "The art exhibition attracted many visitors.",
+        "trans": "艺术展吸引了很多参观者。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "aesthetic",
+        "ipa": "/iːsˈθetɪk/",
+        "pos": "adj.",
+        "defn": "美学的；审美的",
+        "ex": "Everyone has their own aesthetic taste.",
+        "trans": "每个人都有自己的审美品味。"
+      },
+      {
+        "w": "perspective",
+        "ipa": "/pərˈspektɪv/",
+        "pos": "n.",
+        "defn": "透视法；视角",
+        "ex": "The artist uses perspective to create depth.",
+        "trans": "艺术家使用透视法创造深度。"
+      },
+      {
+        "w": "impressionism",
+        "ipa": "/ɪmˈpreʃənɪzəm/",
+        "pos": "n.",
+        "defn": "印象派",
+        "ex": "Impressionism focuses on light and color.",
+        "trans": "印象派注重光和色彩。"
+      },
+      {
+        "w": "Renaissance",
+        "ipa": "/rɪˈneɪsns/",
+        "pos": "n.",
+        "defn": "文艺复兴",
+        "ex": "The Renaissance was a golden age of art.",
+        "trans": "文艺复兴是艺术的黄金时代。"
+      },
+      {
+        "w": "composition",
+        "ipa": "/ˌkɒmpəˈzɪʃn/",
+        "pos": "n.",
+        "defn": "构图；作品",
+        "ex": "The composition of this painting is balanced.",
+        "trans": "这幅画的构图很平衡。"
+      }
+    ]
+  },
+  "b2u04_9": {
+    "master": [
+      {
+        "w": "waste",
+        "ipa": "/weɪst/",
+        "pos": "n.",
+        "defn": "垃圾；浪费",
+        "ex": "We should reduce household waste.",
+        "trans": "我们应该减少家庭垃圾。"
+      },
+      {
+        "w": "plastic",
+        "ipa": "/ˈplæstɪk/",
+        "pos": "n.",
+        "defn": "塑料",
+        "ex": "Plastic pollution is a serious problem.",
+        "trans": "塑料污染是一个严重的问题。"
+      },
+      {
+        "w": "recycle",
+        "ipa": "/ˌriːˈsaɪkl/",
+        "pos": "v.",
+        "defn": "回收利用",
+        "ex": "Remember to recycle paper and glass.",
+        "trans": "记得回收纸张和玻璃。"
+      },
+      {
+        "w": "compost",
+        "ipa": "/ˈkɒmpɒst/",
+        "pos": "v.",
+        "defn": "堆肥",
+        "ex": "We compost food scraps in the garden.",
+        "trans": "我们在花园里把食物残渣做堆肥。"
+      },
+      {
+        "w": "landfill",
+        "ipa": "/ˈlændfɪl/",
+        "pos": "n.",
+        "defn": "垃圾填埋场",
+        "ex": "Much of our trash ends up in landfills.",
+        "trans": "我们的很多垃圾最终进了填埋场。"
+      },
+      {
+        "w": "pollution",
+        "ipa": "/pəˈluːʃn/",
+        "pos": "n.",
+        "defn": "污染",
+        "ex": "Air pollution is harmful to our health.",
+        "trans": "空气污染对我们的健康有害。"
+      },
+      {
+        "w": "resource",
+        "ipa": "/rɪˈsɔːrs/",
+        "pos": "n.",
+        "defn": "资源",
+        "ex": "We must use natural resources wisely.",
+        "trans": "我们必须明智地使用自然资源。"
+      },
+      {
+        "w": "sustainable",
+        "ipa": "/səˈsteɪnəbl/",
+        "pos": "adj.",
+        "defn": "可持续的",
+        "ex": "We need a sustainable future for our planet.",
+        "trans": "我们需要一个可持续的未来。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "carbon footprint",
+        "ipa": "/ˈkɑːrbən ˈfʊtprɪnt/",
+        "pos": "n.",
+        "defn": "碳足迹",
+        "ex": "We should reduce our carbon footprint.",
+        "trans": "我们应该减少碳足迹。"
+      },
+      {
+        "w": "biodegradable",
+        "ipa": "/ˌbaɪəʊdɪˈɡreɪdəbl/",
+        "pos": "adj.",
+        "defn": "可生物降解的",
+        "ex": "Use biodegradable bags instead of plastic ones.",
+        "trans": "使用可生物降解的袋子代替塑料袋。"
+      },
+      {
+        "w": "conservation",
+        "ipa": "/ˌkɒnsərˈveɪʃn/",
+        "pos": "n.",
+        "defn": "节约；保护",
+        "ex": "Energy conservation helps protect the environment.",
+        "trans": "节约能源有助于保护环境。"
+      },
+      {
+        "w": "emission",
+        "ipa": "/ɪˈmɪʃn/",
+        "pos": "n.",
+        "defn": "排放",
+        "ex": "The government is reducing carbon emissions.",
+        "trans": "政府正在减少碳排放。"
+      },
+      {
+        "w": "eco-friendly",
+        "ipa": "/ˌiːkəʊ ˈfrendli/",
+        "pos": "adj.",
+        "defn": "环保的",
+        "ex": "Choose eco-friendly products when possible.",
+        "trans": "尽量选择环保产品。"
+      }
+    ]
+  },
+  "b2u05_9": {
+    "master": [
+      {
+        "w": "graduation",
+        "ipa": "/ˌɡrædʒuˈeɪʃn/",
+        "pos": "n.",
+        "defn": "毕业",
+        "ex": "Graduation is both exciting and sad.",
+        "trans": "毕业既兴奋又伤感。"
+      },
+      {
+        "w": "farewell",
+        "ipa": "/ˌfeərˈwel/",
+        "pos": "n.",
+        "defn": "告别",
+        "ex": "We said a tearful farewell to our teachers.",
+        "trans": "我们含泪告别了老师们。"
+      },
+      {
+        "w": "journey",
+        "ipa": "/ˈdʒɜːrni/",
+        "pos": "n.",
+        "defn": "旅程",
+        "ex": "Life is a long journey of learning.",
+        "trans": "人生是一场漫长的学习旅程。"
+      },
+      {
+        "w": "growth",
+        "ipa": "/ɡrəʊθ/",
+        "pos": "n.",
+        "defn": "成长",
+        "ex": "I have seen great growth in the past three years.",
+        "trans": "过去三年我看到了巨大的成长。"
+      },
+      {
+        "w": "memorable",
+        "ipa": "/ˈmemərəbl/",
+        "pos": "adj.",
+        "defn": "难忘的",
+        "ex": "My middle school years were truly memorable.",
+        "trans": "我的中学时光真的令人难忘。"
+      },
+      {
+        "w": "promising",
+        "ipa": "/ˈprɒmɪsɪŋ/",
+        "pos": "adj.",
+        "defn": "有前途的",
+        "ex": "The future looks promising for our generation.",
+        "trans": "未来对我们这一代来说充满希望。"
+      },
+      {
+        "w": "opportunity",
+        "ipa": "/ˌɒpəˈtjuːnəti/",
+        "pos": "n.",
+        "defn": "机会",
+        "ex": "High school will bring new opportunities.",
+        "trans": "高中将带来新的机会。"
+      },
+      {
+        "w": "determination",
+        "ipa": "/dɪˌtɜːrmɪˈneɪʃn/",
+        "pos": "n.",
+        "defn": "决心",
+        "ex": "Face the future with courage and determination.",
+        "trans": "带着勇气和决心面对未来。"
+      }
+    ],
+    "expert": [
+      {
+        "w": "commencement",
+        "ipa": "/kəˈmensmənt/",
+        "pos": "n.",
+        "defn": "毕业典礼；开始",
+        "ex": "The commencement ceremony was held in the auditorium.",
+        "trans": "毕业典礼在大礼堂举行。"
+      },
+      {
+        "w": "nostalgia",
+        "ipa": "/nɒˈstældʒə/",
+        "pos": "n.",
+        "defn": "怀旧；乡愁",
+        "ex": "Looking at yearbook photos fills me with nostalgia.",
+        "trans": "看年鉴照片让我充满怀旧之情。"
+      },
+      {
+        "w": "aspiration",
+        "ipa": "/ˌæspəˈreɪʃn/",
+        "pos": "n.",
+        "defn": "抱负；志向",
+        "ex": "She has high aspirations for her future career.",
+        "trans": "她对未来的职业有很高的抱负。"
+      },
+      {
+        "w": "cherish",
+        "ipa": "/ˈtʃerɪʃ/",
+        "pos": "v.",
+        "defn": "珍惜；珍视",
+        "ex": "I will always cherish the memories of my school days.",
+        "trans": "我会永远珍惜学生时代的记忆。"
+      },
+      {
+        "w": "commence",
+        "ipa": "/kəˈmens/",
+        "pos": "v.",
+        "defn": "开始",
+        "ex": "A new chapter of life is about to commence.",
+        "trans": "人生的新篇章即将开始。"
+      }
+    ]
+  }
+}

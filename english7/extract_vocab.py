@@ -17,11 +17,35 @@ UNIT_FILES = [
 ]
 
 
+def build_level_map(html):
+    boundaries = [(0, 'basic')]
+    for m in re.finditer(r'<summary>[^<]*词汇[^<]*</summary>', html):
+        s = m.group()
+        if '学霸' in s:
+            boundaries.append((m.start(), 'expert'))
+        elif '掌握' in s:
+            boundaries.append((m.start(), 'master'))
+        elif '基础' in s:
+            boundaries.append((m.start(), 'basic'))
+    return boundaries
+
+
+def get_level_for_card(pos, boundaries):
+    level = 'basic'
+    for b_pos, b_level in boundaries:
+        if b_pos < pos:
+            level = b_level
+        else:
+            break
+    return level
+
+
 def extract_units():
     units = []
     for fname in UNIT_FILES:
         path = BASE / fname
         html = path.read_text(encoding="utf-8")
+        level_map = build_level_map(html)
 
         title_m = re.search(r'<title>(.+?)</title>', html)
         title = title_m.group(1) if title_m else fname
@@ -29,10 +53,12 @@ def extract_units():
         unit_label = fname.replace(".html", "")
         words = []
 
-        cards = re.findall(
-            r'<div class="vocab-card">(.*?)</div>\s*</div>', html, re.DOTALL
-        )
-        for card in cards:
+        for m_card in re.finditer(
+            r'<div class="vocab-card">(.*?)(?=</div>\s*(?:<div class="vocab-card"|</div>\s*</div>\s*</details>|</div>\s*</div>\s*</div>\s*</details>))',
+            html, re.DOTALL
+        ):
+            card = m_card.group(1)
+            pos = m_card.start()
             headword_m = re.search(r'data-speak="([^"]*)"', card)
             if not headword_m:
                 continue
@@ -49,6 +75,8 @@ def extract_units():
 
             trans_m = re.search(r'<span class="trans">([^<]*)</span>', card)
 
+            level = get_level_for_card(pos, level_map)
+
             words.append({
                 "w": word,
                 "ipa": ipa_m.group(1) if ipa_m else "",
@@ -56,6 +84,7 @@ def extract_units():
                 "def": defn_m.group(1).strip() if defn_m else "",
                 "ex": example,
                 "trans": trans_m.group(1) if trans_m else "",
+                "level": level,
             })
 
         units.append({"label": unit_label, "title": title, "words": words})
@@ -75,6 +104,8 @@ def merge_supplement(units):
         existing_words = {w["w"] for w in unit["words"]}
         for w in extra:
             if w["w"] not in existing_words:
+                if "level" not in w:
+                    w["level"] = "basic"
                 unit["words"].append(w)
                 existing_words.add(w["w"])
     return units

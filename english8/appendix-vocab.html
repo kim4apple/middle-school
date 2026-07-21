@@ -501,9 +501,10 @@ body { display: flex; min-height: 100vh; padding: 0; }
   .search-input { padding: 12px 14px; font-size: 16px; }
   .back-link { font-size: 12px; margin-bottom: 12px; padding: 0 2px; }
 
-  /* ── Vocab units: clean title + full-height bg progress on mobile ── */
+  /* ── Vocab units: title + stat on mobile ── */
   .vocab-unit summary { font-size: 13px; padding: 10px 12px; }
-  .vocab-unit summary .unit-progress { display: none; }
+  .vocab-unit summary .sum-content > span:first-child { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .vocab-unit summary .unit-progress .pct { display: none; }
 
   /* ── Table → Card layout for mobile ── */
   .vocab-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 14px; }

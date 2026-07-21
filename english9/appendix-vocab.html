@@ -537,10 +537,14 @@ body { display: flex; min-height: 100vh; padding: 0; }
   .stat-card .stat-value { font-size: 22px; }
   .stat-card { padding: 14px; }
   .stats-wrong-list { max-height: 200px; }
-  .stats-units .su-row { padding: 6px 8px; position: relative; }
-  .stats-units .su-row::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: var(--su-pct, 0%); background: var(--su-bar-color, transparent); border-radius: 6px; pointer-events: none; }
+  .stats-units .su-row { position: relative; overflow: hidden; border-radius: 10px; margin-bottom: 6px; border: 1px solid var(--border); padding: 10px 12px; }
+  .stats-units .su-row:last-child { margin-bottom: 0; }
+  .stats-units .su-row::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: var(--su-pct, 0%); background: var(--accent); opacity: 0.08; pointer-events: none; border-radius: 10px; }
+  [data-theme="dark"] .stats-units .su-row::before { opacity: 0.18; }
   .stats-units .su-label, .stats-units .su-count, .stats-units .su-badge { position: relative; z-index: 1; }
+  .stats-units .su-label { flex: 1; min-width: 0; }
   .stats-units .su-bar-wrap { display: none; }
+  .stats-units .su-badge .badge-text { display: none; }
   .stats-units .su-label { font-size: 11px; min-width: 0; }
 }
 /* ── Tablet (769-1024px) ── */
@@ -1438,16 +1442,15 @@ function renderStats() {
     var pct = total > 0 ? Math.round(done / total * 100) : 0;
     var label = shortUnitLabel(unit.label, unit.title);
 
-    var barClass = pct >= 100 ? 'full' : pct >= 60 ? 'high' : pct >= 30 ? 'mid' : 'low';
     var badge = '';
-    if (pct >= 100) badge = '<span class="su-badge done">🏆 全部掌握</span>';
-    else if (pct >= 80) badge = '<span class="su-badge hot">🔥 即将完成</span>';
+    if (pct >= 100) badge = '<span class="su-badge done">🏆<span class="badge-text"> 全部掌握</span></span>';
+    else if (pct >= 80) badge = '<span class="su-badge hot">🔥 ' + pct + '%<span class="badge-text"> 即将完成</span></span>';
     else if (pct >= 50) badge = '<span class="su-badge go">💪 ' + pct + '%</span>';
-    else if (pct >= 20) badge = '<span class="su-badge soon">📖 加油</span>';
-    else badge = '<span class="su-badge none">⏳ 开始学</span>';
+    else if (pct >= 20) badge = '<span class="su-badge soon">📖<span class="badge-text"> 加油</span></span>';
+    else badge = '<span class="su-badge none">⏳<span class="badge-text"> 开始学</span></span>';
 
-    var barColors = { low: '#f87171', mid: '#fbbf24', high: '#6366f1', full: '#16a34a' };
-    html += '<div class="su-row" style="--su-pct:' + pct + '%;--su-bar-color:' + barColors[barClass] + '">';
+    var barClass = pct >= 100 ? 'full' : pct >= 60 ? 'high' : pct >= 30 ? 'mid' : 'low';
+    html += '<div class="su-row" style="--su-pct:' + pct + '%">';
     html += '<span class="su-label">' + htmlEncode(label) + '</span>';
     html += '<div class="su-bar-wrap"><div class="su-bar ' + barClass + '" style="width:' + pct + '%"></div></div>';
     html += '<span class="su-count">' + done + '/' + total + '</span>';

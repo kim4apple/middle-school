@@ -519,8 +519,11 @@ body { display: flex; min-height: 100vh; padding: 0; }
   .vocab-table .word-cell .wrong-tag { font-size: 10px; padding: 1px 6px; vertical-align: middle; }
   .vocab-table .ipa-cell { display: inline; font-size: 12px; color: var(--text-secondary); margin-left: 6px; }
   .vocab-table .pos-cell { display: inline; font-size: 11px; color: var(--accent); text-transform: uppercase; margin-left: 4px; }
-  .vocab-table .def-cell { display: block; font-size: 14px; color: var(--text); margin-top: 6px; padding-left: 0 !important; white-space: normal; }
-  .vocab-table .ex-cell { display: none; }
+  .vocab-table .def-cell { display: block; font-size: 14px; color: var(--text); margin-top: 4px; padding-left: 28px !important; white-space: normal; }
+  .vocab-table .ex-cell { display: block; margin-top: 6px; padding-left: 28px !important; }
+  .vocab-table .ex-cell .ex-en { font-size: 13px; color: var(--text-secondary); cursor: pointer; line-height: 1.5; }
+  .vocab-table .ex-cell .ex-en:hover { color: var(--accent); }
+  .vocab-table .ex-cell .ex-zh { font-size: 12px; color: var(--text-secondary); opacity: 0.65; margin-top: 1px; line-height: 1.4; }
   .vocab-table .mastered td { opacity: 0.55; }
   .vocab-table .wrong-row { background: #fef2f2; border-color: #fecaca; }
   [data-theme="dark"] .vocab-table .wrong-row { background: #2d0a0a; border-color: #7f1d1d; }

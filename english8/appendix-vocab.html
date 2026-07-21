@@ -501,12 +501,14 @@ body { display: flex; min-height: 100vh; padding: 0; }
   .search-input { padding: 12px 14px; font-size: 16px; }
   .back-link { font-size: 12px; margin-bottom: 12px; padding: 0 2px; }
 
-  /* ── Vocab units ── */
-  .vocab-unit summary { font-size: 13px; padding: 8px 10px; }
-  .vocab-unit summary .unit-progress { font-size: 10px; white-space: nowrap; }
-  .vocab-unit summary .unit-progress .pct { min-width: 20px; }
-  .vocab-unit summary .unit-progress .srs-due { font-size: 9px; padding: 1px 5px; }
-  .vocab-unit summary .sum-content span { max-width: 55%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: inline-block; vertical-align: middle; }
+  /* ── Vocab units: 2-line card on mobile ── */
+  .vocab-unit summary { font-size: 13px; padding: 10px 12px; }
+  .vocab-unit summary::before { height: 3px; top: auto; bottom: 0; }
+  .vocab-unit summary .sum-content { flex-direction: column; align-items: stretch; gap: 3px; }
+  .vocab-unit summary .sum-content > span:first-child { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .vocab-unit summary .unit-progress { font-size: 10px; justify-content: flex-end; }
+  .vocab-unit summary .unit-progress .pct { display: none; }
+  .vocab-unit summary .unit-progress .srs-due { font-size: 9px; padding: 1px 6px; }
 
   /* ── Table → Card layout for mobile ── */
   .vocab-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 14px; }
@@ -589,16 +591,16 @@ body { display: flex; min-height: 100vh; padding: 0; }
   .vocab-table .pos-cell { font-size: 10px; }
   .vocab-table .def-cell { font-size: 13px; }
   .vocab-table .cb-cell input { width: 16px; height: 16px; }
-  .vocab-unit summary { font-size: 12px; padding: 6px 8px; }
-  .vocab-unit summary .sum-content span { max-width: 50%; font-size: 11px; }
+  .vocab-unit summary { font-size: 12px; padding: 8px 10px; }
+  .vocab-unit summary .sum-content > span:first-child { font-size: 11px; }
   .vocab-unit summary .unit-progress .srs-due { display: none; }
 }
 @media (max-width: 320px) {
   .wrapper { padding: 12px 6px 30px; }
   .hero h1 { font-size: 16px; }
   .view-toggle button { font-size: 8px; padding: 3px 5px; }
-  .vocab-unit summary { font-size: 11px; padding: 6px; }
-  .vocab-unit summary .sum-content span { max-width: 45%; font-size: 10px; }
+  .vocab-unit summary { font-size: 11px; padding: 8px 8px; }
+  .vocab-unit summary .sum-content > span:first-child { font-size: 10px; }
   .vocab-table tr { padding: 8px 6px; }
   .vocab-table .word-cell { font-size: 14px; }
   .vocab-table .pos-cell { display: none; }

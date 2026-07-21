@@ -542,7 +542,10 @@ body { display: flex; min-height: 100vh; padding: 0; }
   .stat-card .stat-value { font-size: 22px; }
   .stat-card { padding: 14px; }
   .stats-wrong-list { max-height: 200px; }
-  .stats-units .su-row { padding: 6px 8px; }
+  .stats-units .su-row { padding: 6px 8px; position: relative; }
+  .stats-units .su-row::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: var(--su-pct, 0%); background: var(--su-bar-color, transparent); border-radius: 6px; pointer-events: none; }
+  .stats-units .su-label, .stats-units .su-count, .stats-units .su-badge { position: relative; z-index: 1; }
+  .stats-units .su-bar-wrap { display: none; }
   .stats-units .su-label { font-size: 11px; min-width: 0; }
 }
 /* ── Tablet (769-1024px) ── */
@@ -1447,7 +1450,8 @@ function renderStats() {
     else if (pct >= 20) badge = '<span class="su-badge soon">📖 加油</span>';
     else badge = '<span class="su-badge none">⏳ 开始学</span>';
 
-    html += '<div class="su-row">';
+    var barColors = { low: '#f87171', mid: '#fbbf24', high: '#6366f1', full: '#16a34a' };
+    html += '<div class="su-row" style="--su-pct:' + pct + '%;--su-bar-color:' + barColors[barClass] + '">';
     html += '<span class="su-label">' + htmlEncode(label) + '</span>';
     html += '<div class="su-bar-wrap"><div class="su-bar ' + barClass + '" style="width:' + pct + '%"></div></div>';
     html += '<span class="su-count">' + done + '/' + total + '</span>';

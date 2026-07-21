@@ -789,7 +789,9 @@ function htmlEncode(s) {
 }
 
 function shortUnitLabel(label, title) {
-  return parseInt(label.slice(1)) + '. ' + title.replace(/^U\d+ /, '');
+  var t = title.replace(/ \| 初中英语.*$/, '');
+  if (label.indexOf('b2u') === 0) return '9B-U' + parseInt(label.slice(3)) + ' ' + t.replace(/^U\d+ /, '');
+  return '9A-U' + parseInt(label.slice(1)) + ' ' + t.replace(/^U\d+ /, '');
 }
 
 function shuffle(arr) {

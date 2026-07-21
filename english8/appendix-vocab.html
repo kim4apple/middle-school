@@ -795,9 +795,10 @@ function htmlEncode(s) {
 }
 
 function shortUnitLabel(label, title) {
-  if (label.indexOf('st') === 0) return '8A-S' + parseInt(label.slice(2)) + ' ' + title.replace(/^Starter \d+ /, '');
-  if (label.indexOf('b2u') === 0) return '8B-U' + parseInt(label.slice(3)) + ' ' + title.replace(/^U\d+ /, '');
-  return '8A-U' + parseInt(label.slice(1)) + ' ' + title.replace(/^U\d+ /, '');
+  var t = title.replace(/ \| 初中英语.*$/, '');
+  if (label.indexOf('st') === 0) return '8A-S' + parseInt(label.slice(2)) + ' ' + t.replace(/^Starter \d+ /, '');
+  if (label.indexOf('b2u') === 0) return '8B-U' + parseInt(label.slice(3)) + ' ' + t.replace(/^U\d+ /, '');
+  return '8A-U' + parseInt(label.slice(1)) + ' ' + t.replace(/^U\d+ /, '');
 }
 
 function shuffle(arr) {

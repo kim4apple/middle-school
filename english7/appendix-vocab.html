@@ -792,9 +792,10 @@ function htmlEncode(s) {
 }
 
 function shortUnitLabel(label, title) {
-  if (label.indexOf('st') === 0) return '7A-S' + parseInt(label.slice(2)) + ' ' + title.replace(/^Starter \d+ /, '');
-  if (label.indexOf('b2u') === 0) return '7B-U' + parseInt(label.slice(3)) + ' ' + title.replace(/^七下 Unit \d+ /, '');
-  return '7A-U' + parseInt(label.slice(1)) + ' ' + title.replace(/^Unit \d+ /, '');
+  var t = title.replace(/ \| 初中英语.*$/, '');
+  if (label.indexOf('st') === 0) return '7A-S' + parseInt(label.slice(2)) + ' ' + t.replace(/^Starter \d+ /, '');
+  if (label.indexOf('b2u') === 0) return '7B-U' + parseInt(label.slice(3)) + ' ' + t.replace(/^七下 Unit \d+ /, '');
+  return '7A-U' + parseInt(label.slice(1)) + ' ' + t.replace(/^Unit \d+ /, '');
 }
 
 function shuffle(arr) {

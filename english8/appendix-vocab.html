@@ -501,14 +501,9 @@ body { display: flex; min-height: 100vh; padding: 0; }
   .search-input { padding: 12px 14px; font-size: 16px; }
   .back-link { font-size: 12px; margin-bottom: 12px; padding: 0 2px; }
 
-  /* ── Vocab units: 2-line card on mobile ── */
+  /* ── Vocab units: clean title + full-height bg progress on mobile ── */
   .vocab-unit summary { font-size: 13px; padding: 10px 12px; }
-  .vocab-unit summary::before { height: 3px; top: auto; bottom: 0; }
-  .vocab-unit summary .sum-content { flex-direction: column; align-items: stretch; gap: 3px; }
-  .vocab-unit summary .sum-content > span:first-child { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .vocab-unit summary .unit-progress { font-size: 10px; justify-content: flex-end; }
-  .vocab-unit summary .unit-progress .pct { display: none; }
-  .vocab-unit summary .unit-progress .srs-due { font-size: 9px; padding: 1px 6px; }
+  .vocab-unit summary .unit-progress { display: none; }
 
   /* ── Table → Card layout for mobile ── */
   .vocab-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 14px; }
@@ -593,7 +588,6 @@ body { display: flex; min-height: 100vh; padding: 0; }
   .vocab-table .cb-cell input { width: 16px; height: 16px; }
   .vocab-unit summary { font-size: 12px; padding: 8px 10px; }
   .vocab-unit summary .sum-content > span:first-child { font-size: 11px; }
-  .vocab-unit summary .unit-progress .srs-due { display: none; }
 }
 @media (max-width: 320px) {
   .wrapper { padding: 12px 6px 30px; }
